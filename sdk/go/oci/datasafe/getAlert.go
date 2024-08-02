@@ -59,6 +59,10 @@ type LookupAlertArgs struct {
 // A collection of values returned by getAlert.
 type LookupAlertResult struct {
 	AlertId string `pulumi:"alertId"`
+	// The key of the rule of alert policy that triggered alert.
+	AlertPolicyRuleKey string `pulumi:"alertPolicyRuleKey"`
+	// The display name of the rule of alert policy that triggered alert.
+	AlertPolicyRuleName string `pulumi:"alertPolicyRuleName"`
 	// Type of the alert. Indicates the Data Safe feature triggering the alert.
 	AlertType string `pulumi:"alertType"`
 	// A comment for the alert. Entered by the user.
@@ -145,6 +149,16 @@ func (o LookupAlertResultOutput) ToLookupAlertResultOutputWithContext(ctx contex
 
 func (o LookupAlertResultOutput) AlertId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAlertResult) string { return v.AlertId }).(pulumi.StringOutput)
+}
+
+// The key of the rule of alert policy that triggered alert.
+func (o LookupAlertResultOutput) AlertPolicyRuleKey() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAlertResult) string { return v.AlertPolicyRuleKey }).(pulumi.StringOutput)
+}
+
+// The display name of the rule of alert policy that triggered alert.
+func (o LookupAlertResultOutput) AlertPolicyRuleName() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAlertResult) string { return v.AlertPolicyRuleName }).(pulumi.StringOutput)
 }
 
 // Type of the alert. Indicates the Data Safe feature triggering the alert.

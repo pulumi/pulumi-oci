@@ -13,8 +13,7 @@ import (
 
 // This data source provides details about a specific Alert Policy Rule resource in Oracle Cloud Infrastructure Data Safe service.
 //
-// Lists the rules of the specified alert policy. The alert policy is said to be satisfied when all rules in the policy evaulate to true.
-// If there are three rules: rule1,rule2 and rule3, the policy is satisfied if rule1 AND rule2 AND rule3 is True.
+// Gets the details of a policy rule by its key.
 //
 // ## Example Usage
 //
@@ -32,6 +31,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetAlertPolicyRule(ctx, &datasafe.GetAlertPolicyRuleArgs{
 //				AlertPolicyId: testAlertPolicy.Id,
+//				RuleKey:       alertPolicyRuleRuleKey,
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -41,9 +41,9 @@ import (
 //	}
 //
 // ```
-func GetAlertPolicyRule(ctx *pulumi.Context, args *GetAlertPolicyRuleArgs, opts ...pulumi.InvokeOption) (*GetAlertPolicyRuleResult, error) {
+func LookupAlertPolicyRule(ctx *pulumi.Context, args *LookupAlertPolicyRuleArgs, opts ...pulumi.InvokeOption) (*LookupAlertPolicyRuleResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
-	var rv GetAlertPolicyRuleResult
+	var rv LookupAlertPolicyRuleResult
 	err := ctx.Invoke("oci:DataSafe/getAlertPolicyRule:getAlertPolicyRule", args, &rv, opts...)
 	if err != nil {
 		return nil, err
@@ -52,72 +52,114 @@ func GetAlertPolicyRule(ctx *pulumi.Context, args *GetAlertPolicyRuleArgs, opts 
 }
 
 // A collection of arguments for invoking getAlertPolicyRule.
-type GetAlertPolicyRuleArgs struct {
+type LookupAlertPolicyRuleArgs struct {
 	// The OCID of the alert policy.
 	AlertPolicyId string `pulumi:"alertPolicyId"`
+	// The key of the alert policy rule.
+	RuleKey string `pulumi:"ruleKey"`
 }
 
 // A collection of values returned by getAlertPolicyRule.
-type GetAlertPolicyRuleResult struct {
+type LookupAlertPolicyRuleResult struct {
 	AlertPolicyId string `pulumi:"alertPolicyId"`
-	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
-	// Array of alert policy rules summary
-	Items []GetAlertPolicyRuleItem `pulumi:"items"`
+	// Describes the alert policy rule.
+	Description string `pulumi:"description"`
+	// The display name of the alert policy rule.
+	DisplayName string `pulumi:"displayName"`
+	// The conditional expression of the alert policy rule which evaluates to boolean value.
+	Expression string `pulumi:"expression"`
+	Id         string `pulumi:"id"`
+	// The unique key of the alert policy rule.
+	Key     string `pulumi:"key"`
+	RuleKey string `pulumi:"ruleKey"`
+	// The current state of the alert policy rule.
+	State string `pulumi:"state"`
+	// Creation date and time of the alert policy rule, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreated string `pulumi:"timeCreated"`
 }
 
-func GetAlertPolicyRuleOutput(ctx *pulumi.Context, args GetAlertPolicyRuleOutputArgs, opts ...pulumi.InvokeOption) GetAlertPolicyRuleResultOutput {
+func LookupAlertPolicyRuleOutput(ctx *pulumi.Context, args LookupAlertPolicyRuleOutputArgs, opts ...pulumi.InvokeOption) LookupAlertPolicyRuleResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAlertPolicyRuleResult, error) {
-			args := v.(GetAlertPolicyRuleArgs)
-			r, err := GetAlertPolicyRule(ctx, &args, opts...)
-			var s GetAlertPolicyRuleResult
+		ApplyT(func(v interface{}) (LookupAlertPolicyRuleResult, error) {
+			args := v.(LookupAlertPolicyRuleArgs)
+			r, err := LookupAlertPolicyRule(ctx, &args, opts...)
+			var s LookupAlertPolicyRuleResult
 			if r != nil {
 				s = *r
 			}
 			return s, err
-		}).(GetAlertPolicyRuleResultOutput)
+		}).(LookupAlertPolicyRuleResultOutput)
 }
 
 // A collection of arguments for invoking getAlertPolicyRule.
-type GetAlertPolicyRuleOutputArgs struct {
+type LookupAlertPolicyRuleOutputArgs struct {
 	// The OCID of the alert policy.
 	AlertPolicyId pulumi.StringInput `pulumi:"alertPolicyId"`
+	// The key of the alert policy rule.
+	RuleKey pulumi.StringInput `pulumi:"ruleKey"`
 }
 
-func (GetAlertPolicyRuleOutputArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetAlertPolicyRuleArgs)(nil)).Elem()
+func (LookupAlertPolicyRuleOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupAlertPolicyRuleArgs)(nil)).Elem()
 }
 
 // A collection of values returned by getAlertPolicyRule.
-type GetAlertPolicyRuleResultOutput struct{ *pulumi.OutputState }
+type LookupAlertPolicyRuleResultOutput struct{ *pulumi.OutputState }
 
-func (GetAlertPolicyRuleResultOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetAlertPolicyRuleResult)(nil)).Elem()
+func (LookupAlertPolicyRuleResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupAlertPolicyRuleResult)(nil)).Elem()
 }
 
-func (o GetAlertPolicyRuleResultOutput) ToGetAlertPolicyRuleResultOutput() GetAlertPolicyRuleResultOutput {
+func (o LookupAlertPolicyRuleResultOutput) ToLookupAlertPolicyRuleResultOutput() LookupAlertPolicyRuleResultOutput {
 	return o
 }
 
-func (o GetAlertPolicyRuleResultOutput) ToGetAlertPolicyRuleResultOutputWithContext(ctx context.Context) GetAlertPolicyRuleResultOutput {
+func (o LookupAlertPolicyRuleResultOutput) ToLookupAlertPolicyRuleResultOutputWithContext(ctx context.Context) LookupAlertPolicyRuleResultOutput {
 	return o
 }
 
-func (o GetAlertPolicyRuleResultOutput) AlertPolicyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlertPolicyRuleResult) string { return v.AlertPolicyId }).(pulumi.StringOutput)
+func (o LookupAlertPolicyRuleResultOutput) AlertPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAlertPolicyRuleResult) string { return v.AlertPolicyId }).(pulumi.StringOutput)
 }
 
-// The provider-assigned unique ID for this managed resource.
-func (o GetAlertPolicyRuleResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlertPolicyRuleResult) string { return v.Id }).(pulumi.StringOutput)
+// Describes the alert policy rule.
+func (o LookupAlertPolicyRuleResultOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAlertPolicyRuleResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// Array of alert policy rules summary
-func (o GetAlertPolicyRuleResultOutput) Items() GetAlertPolicyRuleItemArrayOutput {
-	return o.ApplyT(func(v GetAlertPolicyRuleResult) []GetAlertPolicyRuleItem { return v.Items }).(GetAlertPolicyRuleItemArrayOutput)
+// The display name of the alert policy rule.
+func (o LookupAlertPolicyRuleResultOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAlertPolicyRuleResult) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The conditional expression of the alert policy rule which evaluates to boolean value.
+func (o LookupAlertPolicyRuleResultOutput) Expression() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAlertPolicyRuleResult) string { return v.Expression }).(pulumi.StringOutput)
+}
+
+func (o LookupAlertPolicyRuleResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAlertPolicyRuleResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The unique key of the alert policy rule.
+func (o LookupAlertPolicyRuleResultOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAlertPolicyRuleResult) string { return v.Key }).(pulumi.StringOutput)
+}
+
+func (o LookupAlertPolicyRuleResultOutput) RuleKey() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAlertPolicyRuleResult) string { return v.RuleKey }).(pulumi.StringOutput)
+}
+
+// The current state of the alert policy rule.
+func (o LookupAlertPolicyRuleResultOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAlertPolicyRuleResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Creation date and time of the alert policy rule, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o LookupAlertPolicyRuleResultOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAlertPolicyRuleResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
 func init() {
-	pulumi.RegisterOutputType(GetAlertPolicyRuleResultOutput{})
+	pulumi.RegisterOutputType(LookupAlertPolicyRuleResultOutput{})
 }

@@ -16,6 +16,10 @@ import java.util.Objects;
 
 @CustomType
 public final class GetModelsModelCollectionItem {
+    /**
+     * @return The OCID of the base model that&#39;s used for fine-tuning. For pretrained models, the value is null.
+     * 
+     */
     private String baseModelId;
     /**
      * @return Describes what this model can be used for.
@@ -27,44 +31,72 @@ public final class GetModelsModelCollectionItem {
      * 
      */
     private String compartmentId;
+    private Map<String,Object> definedTags;
     /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * @return An optional description of the model.
      * 
      */
-    private Map<String,Object> definedTags;
     private String description;
     /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
     private String displayName;
+    /**
+     * @return Details about fine-tuning a custom model.
+     * 
+     */
     private List<GetModelsModelCollectionItemFineTuneDetail> fineTuneDetails;
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
     private Map<String,Object> freeformTags;
     /**
      * @return The ID of the model.
      * 
      */
     private String id;
+    /**
+     * @return Whether a model is supported long-term. Only applicable to base models.
+     * 
+     */
     private Boolean isLongTermSupported;
+    /**
+     * @return A message describing the current state of the model in more detail that can provide actionable information.
+     * 
+     */
     private String lifecycleDetails;
+    /**
+     * @return Model metrics during the creation of a new model.
+     * 
+     */
     private List<GetModelsModelCollectionItemModelMetric> modelMetrics;
     /**
      * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
      * 
      */
     private String state;
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
     private Map<String,Object> systemTags;
+    /**
+     * @return The date and time that the model was created in the format of an RFC3339 datetime string.
+     * 
+     */
     private String timeCreated;
     /**
      * @return Corresponds to the time when the custom model and its associated foundation model will be deprecated.
      * 
      */
     private String timeDeprecated;
-    private String timeUpdated;
     /**
-     * @return The model type indicating whether this is a pretrained/base model or a custom/fine-tuned model.
+     * @return The date and time that the model was updated in the format of an RFC3339 datetime string.
      * 
      */
+    private String timeUpdated;
     private String type;
     /**
      * @return A filter to return only resources that match the entire vendor given.
@@ -78,6 +110,10 @@ public final class GetModelsModelCollectionItem {
     private String version;
 
     private GetModelsModelCollectionItem() {}
+    /**
+     * @return The OCID of the base model that&#39;s used for fine-tuning. For pretrained models, the value is null.
+     * 
+     */
     public String baseModelId() {
         return this.baseModelId;
     }
@@ -95,13 +131,13 @@ public final class GetModelsModelCollectionItem {
     public String compartmentId() {
         return this.compartmentId;
     }
-    /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
-     * 
-     */
     public Map<String,Object> definedTags() {
         return this.definedTags;
     }
+    /**
+     * @return An optional description of the model.
+     * 
+     */
     public String description() {
         return this.description;
     }
@@ -112,9 +148,17 @@ public final class GetModelsModelCollectionItem {
     public String displayName() {
         return this.displayName;
     }
+    /**
+     * @return Details about fine-tuning a custom model.
+     * 
+     */
     public List<GetModelsModelCollectionItemFineTuneDetail> fineTuneDetails() {
         return this.fineTuneDetails;
     }
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
     public Map<String,Object> freeformTags() {
         return this.freeformTags;
     }
@@ -125,12 +169,24 @@ public final class GetModelsModelCollectionItem {
     public String id() {
         return this.id;
     }
+    /**
+     * @return Whether a model is supported long-term. Only applicable to base models.
+     * 
+     */
     public Boolean isLongTermSupported() {
         return this.isLongTermSupported;
     }
+    /**
+     * @return A message describing the current state of the model in more detail that can provide actionable information.
+     * 
+     */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
     }
+    /**
+     * @return Model metrics during the creation of a new model.
+     * 
+     */
     public List<GetModelsModelCollectionItemModelMetric> modelMetrics() {
         return this.modelMetrics;
     }
@@ -141,9 +197,17 @@ public final class GetModelsModelCollectionItem {
     public String state() {
         return this.state;
     }
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
     public Map<String,Object> systemTags() {
         return this.systemTags;
     }
+    /**
+     * @return The date and time that the model was created in the format of an RFC3339 datetime string.
+     * 
+     */
     public String timeCreated() {
         return this.timeCreated;
     }
@@ -154,13 +218,13 @@ public final class GetModelsModelCollectionItem {
     public String timeDeprecated() {
         return this.timeDeprecated;
     }
+    /**
+     * @return The date and time that the model was updated in the format of an RFC3339 datetime string.
+     * 
+     */
     public String timeUpdated() {
         return this.timeUpdated;
     }
-    /**
-     * @return The model type indicating whether this is a pretrained/base model or a custom/fine-tuned model.
-     * 
-     */
     public String type() {
         return this.type;
     }

@@ -17049,6 +17049,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
                  byol_compute_count_limit: float,
                  character_set: str,
                  clone_type: str,
+                 cluster_placement_group_id: str,
                  compartment_id: str,
                  compute_count: float,
                  compute_model: str,
@@ -17181,6 +17182,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseBackupConfigArgs'] backup_configs: Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
         :param int backup_retention_period_in_days: Retention period, in days, for backups.
         :param str character_set: The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
+        :param str cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param float compute_count: Compute used by database tools.
         :param str compute_model: The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
@@ -17307,6 +17309,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "byol_compute_count_limit", byol_compute_count_limit)
         pulumi.set(__self__, "character_set", character_set)
         pulumi.set(__self__, "clone_type", clone_type)
+        pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "compute_count", compute_count)
         pulumi.set(__self__, "compute_model", compute_model)
@@ -17547,6 +17550,14 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="cloneType")
     def clone_type(self) -> str:
         return pulumi.get(self, "clone_type")
+
+    @property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
+        """
+        return pulumi.get(self, "cluster_placement_group_id")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -19335,6 +19346,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
                  backup_retention_period_in_days: int,
                  byol_compute_count_limit: float,
                  character_set: str,
+                 cluster_placement_group_id: str,
                  compartment_id: str,
                  compute_count: float,
                  compute_model: str,
@@ -19451,6 +19463,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfigArgs'] backup_configs: Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
         :param int backup_retention_period_in_days: Retention period, in days, for backups.
         :param str character_set: The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
+        :param str cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param float compute_count: Compute used by database tools.
         :param str compute_model: The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
@@ -19572,6 +19585,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "backup_retention_period_in_days", backup_retention_period_in_days)
         pulumi.set(__self__, "byol_compute_count_limit", byol_compute_count_limit)
         pulumi.set(__self__, "character_set", character_set)
+        pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "compute_count", compute_count)
         pulumi.set(__self__, "compute_model", compute_model)
@@ -19776,6 +19790,14 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
         """
         return pulumi.get(self, "character_set")
+
+    @property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
+        """
+        return pulumi.get(self, "cluster_placement_group_id")
 
     @property
     @pulumi.getter(name="compartmentId")

@@ -827,11 +827,18 @@ public class DomainsPolicy extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public DomainsPolicy(String name, DomainsPolicyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsPolicy:DomainsPolicy", name, args == null ? DomainsPolicyArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Identity/domainsPolicy:DomainsPolicy", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DomainsPolicy(String name, Output<String> id, @Nullable DomainsPolicyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Identity/domainsPolicy:DomainsPolicy", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DomainsPolicyArgs makeArgs(DomainsPolicyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DomainsPolicyArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

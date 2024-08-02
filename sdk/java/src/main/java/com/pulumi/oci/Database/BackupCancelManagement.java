@@ -120,11 +120,18 @@ public class BackupCancelManagement extends com.pulumi.resources.CustomResource 
      * @param options A bag of options that control this resource's behavior.
      */
     public BackupCancelManagement(String name, BackupCancelManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/backupCancelManagement:BackupCancelManagement", name, args == null ? BackupCancelManagementArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Database/backupCancelManagement:BackupCancelManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private BackupCancelManagement(String name, Output<String> id, @Nullable BackupCancelManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Database/backupCancelManagement:BackupCancelManagement", name, state, makeResourceOptions(options, id));
+    }
+
+    private static BackupCancelManagementArgs makeArgs(BackupCancelManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? BackupCancelManagementArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

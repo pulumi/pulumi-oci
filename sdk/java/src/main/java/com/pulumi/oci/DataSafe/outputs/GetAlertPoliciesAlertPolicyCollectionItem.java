@@ -5,14 +5,17 @@ package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.DataSafe.outputs.GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetail;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
 @CustomType
 public final class GetAlertPoliciesAlertPolicyCollectionItem {
+    private List<GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetail> alertPolicyRuleDetails;
     /**
      * @return Indicates the Data Safe feature to which the alert policy belongs.
      * 
@@ -54,6 +57,11 @@ public final class GetAlertPoliciesAlertPolicyCollectionItem {
      */
     private Boolean isUserDefined;
     /**
+     * @return Details about the current state of the alert policy.
+     * 
+     */
+    private String lifecycleDetails;
+    /**
      * @return Severity level of the alert raised by this policy.
      * 
      */
@@ -80,6 +88,9 @@ public final class GetAlertPoliciesAlertPolicyCollectionItem {
     private String timeUpdated;
 
     private GetAlertPoliciesAlertPolicyCollectionItem() {}
+    public List<GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetail> alertPolicyRuleDetails() {
+        return this.alertPolicyRuleDetails;
+    }
     /**
      * @return Indicates the Data Safe feature to which the alert policy belongs.
      * 
@@ -137,6 +148,13 @@ public final class GetAlertPoliciesAlertPolicyCollectionItem {
         return this.isUserDefined;
     }
     /**
+     * @return Details about the current state of the alert policy.
+     * 
+     */
+    public String lifecycleDetails() {
+        return this.lifecycleDetails;
+    }
+    /**
      * @return Severity level of the alert raised by this policy.
      * 
      */
@@ -181,6 +199,7 @@ public final class GetAlertPoliciesAlertPolicyCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetail> alertPolicyRuleDetails;
         private String alertPolicyType;
         private String compartmentId;
         private Map<String,Object> definedTags;
@@ -189,6 +208,7 @@ public final class GetAlertPoliciesAlertPolicyCollectionItem {
         private Map<String,Object> freeformTags;
         private String id;
         private Boolean isUserDefined;
+        private String lifecycleDetails;
         private String severity;
         private String state;
         private Map<String,Object> systemTags;
@@ -197,6 +217,7 @@ public final class GetAlertPoliciesAlertPolicyCollectionItem {
         public Builder() {}
         public Builder(GetAlertPoliciesAlertPolicyCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.alertPolicyRuleDetails = defaults.alertPolicyRuleDetails;
     	      this.alertPolicyType = defaults.alertPolicyType;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
@@ -205,6 +226,7 @@ public final class GetAlertPoliciesAlertPolicyCollectionItem {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isUserDefined = defaults.isUserDefined;
+    	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.severity = defaults.severity;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
@@ -212,6 +234,17 @@ public final class GetAlertPoliciesAlertPolicyCollectionItem {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
+        public Builder alertPolicyRuleDetails(List<GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetail> alertPolicyRuleDetails) {
+            if (alertPolicyRuleDetails == null) {
+              throw new MissingRequiredPropertyException("GetAlertPoliciesAlertPolicyCollectionItem", "alertPolicyRuleDetails");
+            }
+            this.alertPolicyRuleDetails = alertPolicyRuleDetails;
+            return this;
+        }
+        public Builder alertPolicyRuleDetails(GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetail... alertPolicyRuleDetails) {
+            return alertPolicyRuleDetails(List.of(alertPolicyRuleDetails));
+        }
         @CustomType.Setter
         public Builder alertPolicyType(String alertPolicyType) {
             if (alertPolicyType == null) {
@@ -277,6 +310,14 @@ public final class GetAlertPoliciesAlertPolicyCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetAlertPoliciesAlertPolicyCollectionItem", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
+            return this;
+        }
+        @CustomType.Setter
         public Builder severity(String severity) {
             if (severity == null) {
               throw new MissingRequiredPropertyException("GetAlertPoliciesAlertPolicyCollectionItem", "severity");
@@ -318,6 +359,7 @@ public final class GetAlertPoliciesAlertPolicyCollectionItem {
         }
         public GetAlertPoliciesAlertPolicyCollectionItem build() {
             final var _resultValue = new GetAlertPoliciesAlertPolicyCollectionItem();
+            _resultValue.alertPolicyRuleDetails = alertPolicyRuleDetails;
             _resultValue.alertPolicyType = alertPolicyType;
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
@@ -326,6 +368,7 @@ public final class GetAlertPoliciesAlertPolicyCollectionItem {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.isUserDefined = isUserDefined;
+            _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.severity = severity;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;

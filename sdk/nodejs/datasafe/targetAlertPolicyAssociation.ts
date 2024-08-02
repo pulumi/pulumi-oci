@@ -92,6 +92,10 @@ export class TargetAlertPolicyAssociation extends pulumi.CustomResource {
      */
     public readonly isEnabled!: pulumi.Output<boolean>;
     /**
+     * Details about the current state of the target-alert policy association.
+     */
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    /**
      * The OCID of the alert policy.
      */
     public readonly policyId!: pulumi.Output<string>;
@@ -139,6 +143,7 @@ export class TargetAlertPolicyAssociation extends pulumi.CustomResource {
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["isEnabled"] = state ? state.isEnabled : undefined;
+            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["policyId"] = state ? state.policyId : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
@@ -167,6 +172,7 @@ export class TargetAlertPolicyAssociation extends pulumi.CustomResource {
             resourceInputs["isEnabled"] = args ? args.isEnabled : undefined;
             resourceInputs["policyId"] = args ? args.policyId : undefined;
             resourceInputs["targetId"] = args ? args.targetId : undefined;
+            resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
@@ -205,6 +211,10 @@ export interface TargetAlertPolicyAssociationState {
      * (Updatable) Indicates if the target-alert policy association is enabled or disabled.
      */
     isEnabled?: pulumi.Input<boolean>;
+    /**
+     * Details about the current state of the target-alert policy association.
+     */
+    lifecycleDetails?: pulumi.Input<string>;
     /**
      * The OCID of the alert policy.
      */

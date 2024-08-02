@@ -125,11 +125,18 @@ public class LifecycleStageAttachManagedInstancesManagement extends com.pulumi.r
      * @param options A bag of options that control this resource's behavior.
      */
     public LifecycleStageAttachManagedInstancesManagement(String name, LifecycleStageAttachManagedInstancesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:OsManagementHub/lifecycleStageAttachManagedInstancesManagement:LifecycleStageAttachManagedInstancesManagement", name, args == null ? LifecycleStageAttachManagedInstancesManagementArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:OsManagementHub/lifecycleStageAttachManagedInstancesManagement:LifecycleStageAttachManagedInstancesManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private LifecycleStageAttachManagedInstancesManagement(String name, Output<String> id, @Nullable LifecycleStageAttachManagedInstancesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:OsManagementHub/lifecycleStageAttachManagedInstancesManagement:LifecycleStageAttachManagedInstancesManagement", name, state, makeResourceOptions(options, id));
+    }
+
+    private static LifecycleStageAttachManagedInstancesManagementArgs makeArgs(LifecycleStageAttachManagedInstancesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? LifecycleStageAttachManagedInstancesManagementArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

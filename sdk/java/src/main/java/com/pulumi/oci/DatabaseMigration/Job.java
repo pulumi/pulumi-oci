@@ -9,13 +9,16 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.DatabaseMigration.JobArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.JobState;
+import com.pulumi.oci.DatabaseMigration.outputs.JobParameterFileVersion;
 import com.pulumi.oci.DatabaseMigration.outputs.JobProgress;
 import com.pulumi.oci.DatabaseMigration.outputs.JobUnsupportedObject;
 import com.pulumi.oci.Utilities;
+import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -77,18 +80,12 @@ public class Job extends com.pulumi.resources.CustomResource {
     /**
      * The OCID of the job
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="jobId", refs={String.class}, tree="[0]")
     private Output<String> jobId;
 
     /**
      * @return The OCID of the job
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> jobId() {
@@ -123,6 +120,20 @@ public class Job extends com.pulumi.resources.CustomResource {
         return this.migrationId;
     }
     /**
+     * A list of parameter file versions that can be viewed or edited for the current job.
+     * 
+     */
+    @Export(name="parameterFileVersions", refs={List.class,JobParameterFileVersion.class}, tree="[0,1]")
+    private Output<List<JobParameterFileVersion>> parameterFileVersions;
+
+    /**
+     * @return A list of parameter file versions that can be viewed or edited for the current job.
+     * 
+     */
+    public Output<List<JobParameterFileVersion>> parameterFileVersions() {
+        return this.parameterFileVersions;
+    }
+    /**
      * Percent progress of job phase.
      * 
      */
@@ -149,6 +160,26 @@ public class Job extends com.pulumi.resources.CustomResource {
      */
     public Output<String> state() {
         return this.state;
+    }
+    /**
+     * (Updatable) An optional property when incremented triggers Suspend. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Export(name="suspendTrigger", refs={Integer.class}, tree="[0]")
+    private Output</* @Nullable */ Integer> suspendTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Suspend. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<Optional<Integer>> suspendTrigger() {
+        return Codegen.optional(this.suspendTrigger);
     }
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
@@ -243,11 +274,18 @@ public class Job extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public Job(String name, JobArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseMigration/job:Job", name, args == null ? JobArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DatabaseMigration/job:Job", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private Job(String name, Output<String> id, @Nullable JobState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DatabaseMigration/job:Job", name, state, makeResourceOptions(options, id));
+    }
+
+    private static JobArgs makeArgs(JobArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? JobArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

@@ -859,11 +859,18 @@ public class DomainsGrant extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public DomainsGrant(String name, DomainsGrantArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsGrant:DomainsGrant", name, args == null ? DomainsGrantArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Identity/domainsGrant:DomainsGrant", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DomainsGrant(String name, Output<String> id, @Nullable DomainsGrantState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Identity/domainsGrant:DomainsGrant", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DomainsGrantArgs makeArgs(DomainsGrantArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DomainsGrantArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

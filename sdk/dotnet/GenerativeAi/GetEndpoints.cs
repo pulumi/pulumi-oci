@@ -156,15 +156,15 @@ namespace Pulumi.Oci.GenerativeAi
     public sealed class GetEndpointsResult
     {
         public readonly string CompartmentId;
+        /// <summary>
+        /// A user-friendly name. Does not have to be unique, and it's changeable.
+        /// </summary>
         public readonly string? DisplayName;
         /// <summary>
         /// The list of endpoint_collection.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetEndpointsEndpointCollectionResult> EndpointCollections;
         public readonly ImmutableArray<Outputs.GetEndpointsFilterResult> Filters;
-        /// <summary>
-        /// An OCID that uniquely identifies this endpoint resource.
-        /// </summary>
         public readonly string? Id;
         /// <summary>
         /// The current state of the endpoint.

@@ -218,11 +218,18 @@ public class ExportSet extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public ExportSet(String name, ExportSetArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:FileStorage/exportSet:ExportSet", name, args == null ? ExportSetArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:FileStorage/exportSet:ExportSet", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ExportSet(String name, Output<String> id, @Nullable ExportSetState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:FileStorage/exportSet:ExportSet", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ExportSetArgs makeArgs(ExportSetArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ExportSetArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

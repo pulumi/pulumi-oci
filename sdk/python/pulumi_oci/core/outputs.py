@@ -499,6 +499,8 @@ __all__ = [
     'GetInstanceLaunchOptionResult',
     'GetInstanceLaunchVolumeAttachmentResult',
     'GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailResult',
+    'GetInstanceMaintenanceEventsFilterResult',
+    'GetInstanceMaintenanceEventsInstanceMaintenanceEventResult',
     'GetInstanceMeasuredBootReportMeasurementResult',
     'GetInstanceMeasuredBootReportMeasurementActualResult',
     'GetInstanceMeasuredBootReportMeasurementPolicyResult',
@@ -33377,6 +33379,318 @@ class GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailResult(dict):
     @pulumi.getter(name="vpusPerGb")
     def vpus_per_gb(self) -> str:
         return pulumi.get(self, "vpus_per_gb")
+
+
+@pulumi.output_type
+class GetInstanceMaintenanceEventsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetInstanceMaintenanceEventsInstanceMaintenanceEventResult(dict):
+    def __init__(__self__, *,
+                 additional_details: Mapping[str, Any],
+                 alternative_resolution_action: str,
+                 alternative_resolution_actions: Sequence[str],
+                 can_delete_local_storage: bool,
+                 can_reschedule: bool,
+                 compartment_id: str,
+                 correlation_token: str,
+                 created_by: str,
+                 defined_tags: Mapping[str, Any],
+                 description: str,
+                 display_name: str,
+                 estimated_duration: str,
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 instance_action: str,
+                 instance_id: str,
+                 instance_maintenance_event_id: str,
+                 maintenance_category: str,
+                 maintenance_reason: str,
+                 start_window_duration: str,
+                 state: str,
+                 time_created: str,
+                 time_finished: str,
+                 time_hard_due_date: str,
+                 time_started: str,
+                 time_window_start: str):
+        """
+        :param Mapping[str, Any] additional_details: Additional details of the maintenance in the form of json.
+        :param Sequence[str] alternative_resolution_actions: These are alternative actions to the requested instanceAction that can be taken to resolve the Maintenance.
+        :param bool can_delete_local_storage: For Instances that have local storage, this field is set to true when local storage will be deleted as a result of the Maintenance.
+        :param bool can_reschedule: Indicates if this MaintenanceEvent is capable of being rescheduled up to the timeHardDueDate.
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param str correlation_token: A filter to only return resources that have a matching correlationToken.
+        :param str created_by: The creator of the maintenance event.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param str description: It is the descriptive information about the maintenance taking place on the customer instance.
+        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param str estimated_duration: This is the estimated duration of the Maintenance, once the Maintenance has entered the STARTED state.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance event.
+        :param str instance_action: A filter to only return resources that match the given instance action.
+        :param str instance_id: The OCID of the instance.
+        :param str maintenance_category: This indicates the priority and allowed actions for this Maintenance. Higher priority forms of Maintenance have tighter restrictions and may not be rescheduled, while lower priority/severity Maintenance can be rescheduled, deferred, or even cancelled. Please see the [Instance Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm) documentation for details.
+        :param str maintenance_reason: This is the reason that Maintenance is being performed. See [Instance Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm) documentation for details.
+        :param str start_window_duration: The duration of the time window Maintenance is scheduled to begin within.
+        :param str state: A filter to only return resources that match the given lifecycle state.
+        :param str time_created: The date and time the maintenance event was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        :param str time_finished: The time at which the Maintenance actually finished.
+        :param str time_hard_due_date: It is the scheduled hard due date and time of the maintenance event. The maintenance event will happen at this time and the due date will not be extended.
+        :param str time_started: The time at which the Maintenance actually started.
+        :param str time_window_start: The beginning of the time window when Maintenance is scheduled to begin. The Maintenance will not begin before this time.
+        """
+        pulumi.set(__self__, "additional_details", additional_details)
+        pulumi.set(__self__, "alternative_resolution_action", alternative_resolution_action)
+        pulumi.set(__self__, "alternative_resolution_actions", alternative_resolution_actions)
+        pulumi.set(__self__, "can_delete_local_storage", can_delete_local_storage)
+        pulumi.set(__self__, "can_reschedule", can_reschedule)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "correlation_token", correlation_token)
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "estimated_duration", estimated_duration)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "instance_action", instance_action)
+        pulumi.set(__self__, "instance_id", instance_id)
+        pulumi.set(__self__, "instance_maintenance_event_id", instance_maintenance_event_id)
+        pulumi.set(__self__, "maintenance_category", maintenance_category)
+        pulumi.set(__self__, "maintenance_reason", maintenance_reason)
+        pulumi.set(__self__, "start_window_duration", start_window_duration)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_finished", time_finished)
+        pulumi.set(__self__, "time_hard_due_date", time_hard_due_date)
+        pulumi.set(__self__, "time_started", time_started)
+        pulumi.set(__self__, "time_window_start", time_window_start)
+
+    @property
+    @pulumi.getter(name="additionalDetails")
+    def additional_details(self) -> Mapping[str, Any]:
+        """
+        Additional details of the maintenance in the form of json.
+        """
+        return pulumi.get(self, "additional_details")
+
+    @property
+    @pulumi.getter(name="alternativeResolutionAction")
+    def alternative_resolution_action(self) -> str:
+        return pulumi.get(self, "alternative_resolution_action")
+
+    @property
+    @pulumi.getter(name="alternativeResolutionActions")
+    def alternative_resolution_actions(self) -> Sequence[str]:
+        """
+        These are alternative actions to the requested instanceAction that can be taken to resolve the Maintenance.
+        """
+        return pulumi.get(self, "alternative_resolution_actions")
+
+    @property
+    @pulumi.getter(name="canDeleteLocalStorage")
+    def can_delete_local_storage(self) -> bool:
+        """
+        For Instances that have local storage, this field is set to true when local storage will be deleted as a result of the Maintenance.
+        """
+        return pulumi.get(self, "can_delete_local_storage")
+
+    @property
+    @pulumi.getter(name="canReschedule")
+    def can_reschedule(self) -> bool:
+        """
+        Indicates if this MaintenanceEvent is capable of being rescheduled up to the timeHardDueDate.
+        """
+        return pulumi.get(self, "can_reschedule")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="correlationToken")
+    def correlation_token(self) -> str:
+        """
+        A filter to only return resources that have a matching correlationToken.
+        """
+        return pulumi.get(self, "correlation_token")
+
+    @property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> str:
+        """
+        The creator of the maintenance event.
+        """
+        return pulumi.get(self, "created_by")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        It is the descriptive information about the maintenance taking place on the customer instance.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="estimatedDuration")
+    def estimated_duration(self) -> str:
+        """
+        This is the estimated duration of the Maintenance, once the Maintenance has entered the STARTED state.
+        """
+        return pulumi.get(self, "estimated_duration")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance event.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="instanceAction")
+    def instance_action(self) -> str:
+        """
+        A filter to only return resources that match the given instance action.
+        """
+        return pulumi.get(self, "instance_action")
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> str:
+        """
+        The OCID of the instance.
+        """
+        return pulumi.get(self, "instance_id")
+
+    @property
+    @pulumi.getter(name="instanceMaintenanceEventId")
+    def instance_maintenance_event_id(self) -> str:
+        return pulumi.get(self, "instance_maintenance_event_id")
+
+    @property
+    @pulumi.getter(name="maintenanceCategory")
+    def maintenance_category(self) -> str:
+        """
+        This indicates the priority and allowed actions for this Maintenance. Higher priority forms of Maintenance have tighter restrictions and may not be rescheduled, while lower priority/severity Maintenance can be rescheduled, deferred, or even cancelled. Please see the [Instance Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm) documentation for details.
+        """
+        return pulumi.get(self, "maintenance_category")
+
+    @property
+    @pulumi.getter(name="maintenanceReason")
+    def maintenance_reason(self) -> str:
+        """
+        This is the reason that Maintenance is being performed. See [Instance Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm) documentation for details.
+        """
+        return pulumi.get(self, "maintenance_reason")
+
+    @property
+    @pulumi.getter(name="startWindowDuration")
+    def start_window_duration(self) -> str:
+        """
+        The duration of the time window Maintenance is scheduled to begin within.
+        """
+        return pulumi.get(self, "start_window_duration")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to only return resources that match the given lifecycle state.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the maintenance event was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeFinished")
+    def time_finished(self) -> str:
+        """
+        The time at which the Maintenance actually finished.
+        """
+        return pulumi.get(self, "time_finished")
+
+    @property
+    @pulumi.getter(name="timeHardDueDate")
+    def time_hard_due_date(self) -> str:
+        """
+        It is the scheduled hard due date and time of the maintenance event. The maintenance event will happen at this time and the due date will not be extended.
+        """
+        return pulumi.get(self, "time_hard_due_date")
+
+    @property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> str:
+        """
+        The time at which the Maintenance actually started.
+        """
+        return pulumi.get(self, "time_started")
+
+    @property
+    @pulumi.getter(name="timeWindowStart")
+    def time_window_start(self) -> str:
+        """
+        The beginning of the time window when Maintenance is scheduled to begin. The Maintenance will not begin before this time.
+        """
+        return pulumi.get(self, "time_window_start")
 
 
 @pulumi.output_type

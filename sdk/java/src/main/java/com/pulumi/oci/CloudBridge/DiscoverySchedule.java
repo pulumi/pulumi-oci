@@ -239,11 +239,18 @@ public class DiscoverySchedule extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public DiscoverySchedule(String name, DiscoveryScheduleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:CloudBridge/discoverySchedule:DiscoverySchedule", name, args == null ? DiscoveryScheduleArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:CloudBridge/discoverySchedule:DiscoverySchedule", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DiscoverySchedule(String name, Output<String> id, @Nullable DiscoveryScheduleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:CloudBridge/discoverySchedule:DiscoverySchedule", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DiscoveryScheduleArgs makeArgs(DiscoveryScheduleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DiscoveryScheduleArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

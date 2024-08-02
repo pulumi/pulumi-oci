@@ -67,6 +67,10 @@ export interface GetReportResult {
      */
     readonly id: string;
     /**
+     * Details about the current state of the report in Data Safe.
+     */
+    readonly lifecycleDetails: string;
+    /**
      * Specifies the format of report to be .xls or .pdf or .json
      */
     readonly mimeType: string;

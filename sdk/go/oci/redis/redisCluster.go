@@ -80,7 +80,7 @@ type RedisCluster struct {
 	NodeCount pulumi.IntOutput `pulumi:"nodeCount"`
 	// (Updatable) The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
 	NodeMemoryInGbs pulumi.Float64Output `pulumi:"nodeMemoryInGbs"`
-	// (Updatable) OCIDs of the NSGs to control access in the customer network
+	// (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
 	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
 	// The private IP address of the API endpoint for the Redis cluster's primary node.
 	PrimaryEndpointIpAddress pulumi.StringOutput `pulumi:"primaryEndpointIpAddress"`
@@ -171,7 +171,7 @@ type redisClusterState struct {
 	NodeCount *int `pulumi:"nodeCount"`
 	// (Updatable) The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
 	NodeMemoryInGbs *float64 `pulumi:"nodeMemoryInGbs"`
-	// (Updatable) OCIDs of the NSGs to control access in the customer network
+	// (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
 	NsgIds []string `pulumi:"nsgIds"`
 	// The private IP address of the API endpoint for the Redis cluster's primary node.
 	PrimaryEndpointIpAddress *string `pulumi:"primaryEndpointIpAddress"`
@@ -215,7 +215,7 @@ type RedisClusterState struct {
 	NodeCount pulumi.IntPtrInput
 	// (Updatable) The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
 	NodeMemoryInGbs pulumi.Float64PtrInput
-	// (Updatable) OCIDs of the NSGs to control access in the customer network
+	// (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
 	NsgIds pulumi.StringArrayInput
 	// The private IP address of the API endpoint for the Redis cluster's primary node.
 	PrimaryEndpointIpAddress pulumi.StringPtrInput
@@ -259,7 +259,7 @@ type redisClusterArgs struct {
 	NodeCount int `pulumi:"nodeCount"`
 	// (Updatable) The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
 	NodeMemoryInGbs float64 `pulumi:"nodeMemoryInGbs"`
-	// (Updatable) OCIDs of the NSGs to control access in the customer network
+	// (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
 	NsgIds []string `pulumi:"nsgIds"`
 	// The Redis version that the cluster is running.
 	SoftwareVersion string `pulumi:"softwareVersion"`
@@ -284,7 +284,7 @@ type RedisClusterArgs struct {
 	NodeCount pulumi.IntInput
 	// (Updatable) The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
 	NodeMemoryInGbs pulumi.Float64Input
-	// (Updatable) OCIDs of the NSGs to control access in the customer network
+	// (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
 	NsgIds pulumi.StringArrayInput
 	// The Redis version that the cluster is running.
 	SoftwareVersion pulumi.StringInput
@@ -422,7 +422,7 @@ func (o RedisClusterOutput) NodeMemoryInGbs() pulumi.Float64Output {
 	return o.ApplyT(func(v *RedisCluster) pulumi.Float64Output { return v.NodeMemoryInGbs }).(pulumi.Float64Output)
 }
 
-// (Updatable) OCIDs of the NSGs to control access in the customer network
+// (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
 func (o RedisClusterOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *RedisCluster) pulumi.StringArrayOutput { return v.NsgIds }).(pulumi.StringArrayOutput)
 }

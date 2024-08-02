@@ -33,9 +33,10 @@ import (
 //			_, err := StackMonitoring.NewBaselineableMetric(ctx, "test_baselineable_metric", &StackMonitoring.BaselineableMetricArgs{
 //				Column:        pulumi.Any(baselineableMetricColumn),
 //				CompartmentId: pulumi.Any(compartmentId),
-//				Name:          pulumi.Any(baselineableMetricName),
 //				Namespace:     pulumi.Any(baselineableMetricNamespace),
+//				Name:          pulumi.Any(baselineableMetricName),
 //				ResourceGroup: pulumi.Any(baselineableMetricResourceGroup),
+//				ResourceType:  pulumi.Any(baselineableMetricResourceType),
 //			})
 //			if err != nil {
 //				return err
@@ -75,10 +76,12 @@ type BaselineableMetric struct {
 	// (Updatable) namespace of the metric
 	Namespace pulumi.StringOutput `pulumi:"namespace"`
 	// (Updatable) Resource group of the metric
+	ResourceGroup pulumi.StringOutput `pulumi:"resourceGroup"`
+	// (Updatable) Resource type of the metric
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	ResourceGroup pulumi.StringOutput `pulumi:"resourceGroup"`
+	ResourceType pulumi.StringOutput `pulumi:"resourceType"`
 	// The current lifecycle state of the metric extension
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -106,9 +109,6 @@ func NewBaselineableMetric(ctx *pulumi.Context,
 	}
 	if args.Namespace == nil {
 		return nil, errors.New("invalid value for required argument 'Namespace'")
-	}
-	if args.ResourceGroup == nil {
-		return nil, errors.New("invalid value for required argument 'ResourceGroup'")
 	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource BaselineableMetric
@@ -152,10 +152,12 @@ type baselineableMetricState struct {
 	// (Updatable) namespace of the metric
 	Namespace *string `pulumi:"namespace"`
 	// (Updatable) Resource group of the metric
+	ResourceGroup *string `pulumi:"resourceGroup"`
+	// (Updatable) Resource type of the metric
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	ResourceGroup *string `pulumi:"resourceGroup"`
+	ResourceType *string `pulumi:"resourceType"`
 	// The current lifecycle state of the metric extension
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -188,10 +190,12 @@ type BaselineableMetricState struct {
 	// (Updatable) namespace of the metric
 	Namespace pulumi.StringPtrInput
 	// (Updatable) Resource group of the metric
+	ResourceGroup pulumi.StringPtrInput
+	// (Updatable) Resource type of the metric
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	ResourceGroup pulumi.StringPtrInput
+	ResourceType pulumi.StringPtrInput
 	// The current lifecycle state of the metric extension
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -218,10 +222,12 @@ type baselineableMetricArgs struct {
 	// (Updatable) namespace of the metric
 	Namespace string `pulumi:"namespace"`
 	// (Updatable) Resource group of the metric
+	ResourceGroup *string `pulumi:"resourceGroup"`
+	// (Updatable) Resource type of the metric
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	ResourceGroup string `pulumi:"resourceGroup"`
+	ResourceType *string `pulumi:"resourceType"`
 }
 
 // The set of arguments for constructing a BaselineableMetric resource.
@@ -235,10 +241,12 @@ type BaselineableMetricArgs struct {
 	// (Updatable) namespace of the metric
 	Namespace pulumi.StringInput
 	// (Updatable) Resource group of the metric
+	ResourceGroup pulumi.StringPtrInput
+	// (Updatable) Resource type of the metric
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	ResourceGroup pulumi.StringInput
+	ResourceType pulumi.StringPtrInput
 }
 
 func (BaselineableMetricArgs) ElementType() reflect.Type {
@@ -374,11 +382,16 @@ func (o BaselineableMetricOutput) Namespace() pulumi.StringOutput {
 }
 
 // (Updatable) Resource group of the metric
+func (o BaselineableMetricOutput) ResourceGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v *BaselineableMetric) pulumi.StringOutput { return v.ResourceGroup }).(pulumi.StringOutput)
+}
+
+// (Updatable) Resource type of the metric
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o BaselineableMetricOutput) ResourceGroup() pulumi.StringOutput {
-	return o.ApplyT(func(v *BaselineableMetric) pulumi.StringOutput { return v.ResourceGroup }).(pulumi.StringOutput)
+func (o BaselineableMetricOutput) ResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v *BaselineableMetric) pulumi.StringOutput { return v.ResourceType }).(pulumi.StringOutput)
 }
 
 // The current lifecycle state of the metric extension

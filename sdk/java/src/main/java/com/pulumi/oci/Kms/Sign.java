@@ -164,11 +164,18 @@ public class Sign extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public Sign(String name, SignArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Kms/sign:Sign", name, args == null ? SignArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Kms/sign:Sign", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private Sign(String name, Output<String> id, @Nullable SignState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Kms/sign:Sign", name, state, makeResourceOptions(options, id));
+    }
+
+    private static SignArgs makeArgs(SignArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? SignArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

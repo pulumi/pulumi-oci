@@ -296,11 +296,18 @@ public class RemediationRun extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public RemediationRun(String name, RemediationRunArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Adm/remediationRun:RemediationRun", name, args == null ? RemediationRunArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Adm/remediationRun:RemediationRun", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private RemediationRun(String name, Output<String> id, @Nullable RemediationRunState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Adm/remediationRun:RemediationRun", name, state, makeResourceOptions(options, id));
+    }
+
+    private static RemediationRunArgs makeArgs(RemediationRunArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? RemediationRunArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

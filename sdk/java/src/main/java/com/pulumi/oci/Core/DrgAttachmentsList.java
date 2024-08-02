@@ -151,11 +151,18 @@ public class DrgAttachmentsList extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public DrgAttachmentsList(String name, DrgAttachmentsListArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/drgAttachmentsList:DrgAttachmentsList", name, args == null ? DrgAttachmentsListArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Core/drgAttachmentsList:DrgAttachmentsList", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DrgAttachmentsList(String name, Output<String> id, @Nullable DrgAttachmentsListState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Core/drgAttachmentsList:DrgAttachmentsList", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DrgAttachmentsListArgs makeArgs(DrgAttachmentsListArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DrgAttachmentsListArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

@@ -21,11 +21,11 @@ public final class GetEndpointsEndpointCollectionItem {
     private String compartmentId;
     private List<GetEndpointsEndpointCollectionItemContentModerationConfig> contentModerationConfigs;
     private String dedicatedAiClusterId;
+    private Map<String,Object> definedTags;
     /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * @return An optional description of the endpoint.
      * 
      */
-    private Map<String,Object> definedTags;
     private String description;
     /**
      * @return A filter to return only resources that match the given display name exactly.
@@ -50,10 +50,6 @@ public final class GetEndpointsEndpointCollectionItem {
      */
     private String state;
     private Map<String,Object> systemTags;
-    /**
-     * @return The date and time that the endpoint was created in the format of an RFC3339 datetime string.
-     * 
-     */
     private String timeCreated;
     /**
      * @return The date and time that the endpoint was updated in the format of an RFC3339 datetime string.
@@ -75,13 +71,13 @@ public final class GetEndpointsEndpointCollectionItem {
     public String dedicatedAiClusterId() {
         return this.dedicatedAiClusterId;
     }
-    /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
-     * 
-     */
     public Map<String,Object> definedTags() {
         return this.definedTags;
     }
+    /**
+     * @return An optional description of the endpoint.
+     * 
+     */
     public String description() {
         return this.description;
     }
@@ -122,10 +118,6 @@ public final class GetEndpointsEndpointCollectionItem {
     public Map<String,Object> systemTags() {
         return this.systemTags;
     }
-    /**
-     * @return The date and time that the endpoint was created in the format of an RFC3339 datetime string.
-     * 
-     */
     public String timeCreated() {
         return this.timeCreated;
     }

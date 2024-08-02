@@ -15,6 +15,16 @@ export type Alert = import("./alert").Alert;
 export const Alert: typeof import("./alert").Alert = null as any;
 utilities.lazyLoad(exports, ["Alert"], () => require("./alert"));
 
+export { AlertPolicyArgs, AlertPolicyState } from "./alertPolicy";
+export type AlertPolicy = import("./alertPolicy").AlertPolicy;
+export const AlertPolicy: typeof import("./alertPolicy").AlertPolicy = null as any;
+utilities.lazyLoad(exports, ["AlertPolicy"], () => require("./alertPolicy"));
+
+export { AlertPolicyRuleArgs, AlertPolicyRuleState } from "./alertPolicyRule";
+export type AlertPolicyRule = import("./alertPolicyRule").AlertPolicyRule;
+export const AlertPolicyRule: typeof import("./alertPolicyRule").AlertPolicyRule = null as any;
+utilities.lazyLoad(exports, ["AlertPolicyRule"], () => require("./alertPolicyRule"));
+
 export { AuditArchiveRetrievalArgs, AuditArchiveRetrievalState } from "./auditArchiveRetrieval";
 export type AuditArchiveRetrieval = import("./auditArchiveRetrieval").AuditArchiveRetrieval;
 export const AuditArchiveRetrieval: typeof import("./auditArchiveRetrieval").AuditArchiveRetrieval = null as any;
@@ -680,16 +690,6 @@ export type MaskingPolicy = import("./maskingPolicy").MaskingPolicy;
 export const MaskingPolicy: typeof import("./maskingPolicy").MaskingPolicy = null as any;
 utilities.lazyLoad(exports, ["MaskingPolicy"], () => require("./maskingPolicy"));
 
-export { MaskingPolicyHealthReportManagementArgs, MaskingPolicyHealthReportManagementState } from "./maskingPolicyHealthReportManagement";
-export type MaskingPolicyHealthReportManagement = import("./maskingPolicyHealthReportManagement").MaskingPolicyHealthReportManagement;
-export const MaskingPolicyHealthReportManagement: typeof import("./maskingPolicyHealthReportManagement").MaskingPolicyHealthReportManagement = null as any;
-utilities.lazyLoad(exports, ["MaskingPolicyHealthReportManagement"], () => require("./maskingPolicyHealthReportManagement"));
-
-export { MaskingReportManagementArgs, MaskingReportManagementState } from "./maskingReportManagement";
-export type MaskingReportManagement = import("./maskingReportManagement").MaskingReportManagement;
-export const MaskingReportManagement: typeof import("./maskingReportManagement").MaskingReportManagement = null as any;
-utilities.lazyLoad(exports, ["MaskingReportManagement"], () => require("./maskingReportManagement"));
-
 export { OnPremConnectorArgs, OnPremConnectorState } from "./onPremConnector";
 export type OnPremConnector = import("./onPremConnector").OnPremConnector;
 export const OnPremConnector: typeof import("./onPremConnector").OnPremConnector = null as any;
@@ -760,20 +760,10 @@ export type SetSecurityAssessmentBaseline = import("./setSecurityAssessmentBasel
 export const SetSecurityAssessmentBaseline: typeof import("./setSecurityAssessmentBaseline").SetSecurityAssessmentBaseline = null as any;
 utilities.lazyLoad(exports, ["SetSecurityAssessmentBaseline"], () => require("./setSecurityAssessmentBaseline"));
 
-export { SetSecurityAssessmentBaselineManagementArgs, SetSecurityAssessmentBaselineManagementState } from "./setSecurityAssessmentBaselineManagement";
-export type SetSecurityAssessmentBaselineManagement = import("./setSecurityAssessmentBaselineManagement").SetSecurityAssessmentBaselineManagement;
-export const SetSecurityAssessmentBaselineManagement: typeof import("./setSecurityAssessmentBaselineManagement").SetSecurityAssessmentBaselineManagement = null as any;
-utilities.lazyLoad(exports, ["SetSecurityAssessmentBaselineManagement"], () => require("./setSecurityAssessmentBaselineManagement"));
-
 export { SetUserAssessmentBaselineArgs, SetUserAssessmentBaselineState } from "./setUserAssessmentBaseline";
 export type SetUserAssessmentBaseline = import("./setUserAssessmentBaseline").SetUserAssessmentBaseline;
 export const SetUserAssessmentBaseline: typeof import("./setUserAssessmentBaseline").SetUserAssessmentBaseline = null as any;
 utilities.lazyLoad(exports, ["SetUserAssessmentBaseline"], () => require("./setUserAssessmentBaseline"));
-
-export { SetUserAssessmentBaselineManagementArgs, SetUserAssessmentBaselineManagementState } from "./setUserAssessmentBaselineManagement";
-export type SetUserAssessmentBaselineManagement = import("./setUserAssessmentBaselineManagement").SetUserAssessmentBaselineManagement;
-export const SetUserAssessmentBaselineManagement: typeof import("./setUserAssessmentBaselineManagement").SetUserAssessmentBaselineManagement = null as any;
-utilities.lazyLoad(exports, ["SetUserAssessmentBaselineManagement"], () => require("./setUserAssessmentBaselineManagement"));
 
 export { SqlCollectionArgs, SqlCollectionState } from "./sqlCollection";
 export type SqlCollection = import("./sqlCollection").SqlCollection;
@@ -829,6 +819,10 @@ const _module = {
                 return new AddSdmColumns(name, <any>undefined, { urn })
             case "oci:DataSafe/alert:Alert":
                 return new Alert(name, <any>undefined, { urn })
+            case "oci:DataSafe/alertPolicy:AlertPolicy":
+                return new AlertPolicy(name, <any>undefined, { urn })
+            case "oci:DataSafe/alertPolicyRule:AlertPolicyRule":
+                return new AlertPolicyRule(name, <any>undefined, { urn })
             case "oci:DataSafe/auditArchiveRetrieval:AuditArchiveRetrieval":
                 return new AuditArchiveRetrieval(name, <any>undefined, { urn })
             case "oci:DataSafe/auditPolicy:AuditPolicy":
@@ -869,10 +863,6 @@ const _module = {
                 return new MaskingPoliciesMaskingColumn(name, <any>undefined, { urn })
             case "oci:DataSafe/maskingPolicy:MaskingPolicy":
                 return new MaskingPolicy(name, <any>undefined, { urn })
-            case "oci:DataSafe/maskingPolicyHealthReportManagement:MaskingPolicyHealthReportManagement":
-                return new MaskingPolicyHealthReportManagement(name, <any>undefined, { urn })
-            case "oci:DataSafe/maskingReportManagement:MaskingReportManagement":
-                return new MaskingReportManagement(name, <any>undefined, { urn })
             case "oci:DataSafe/onPremConnector:OnPremConnector":
                 return new OnPremConnector(name, <any>undefined, { urn })
             case "oci:DataSafe/report:Report":
@@ -901,12 +891,8 @@ const _module = {
                 return new SensitiveType(name, <any>undefined, { urn })
             case "oci:DataSafe/setSecurityAssessmentBaseline:SetSecurityAssessmentBaseline":
                 return new SetSecurityAssessmentBaseline(name, <any>undefined, { urn })
-            case "oci:DataSafe/setSecurityAssessmentBaselineManagement:SetSecurityAssessmentBaselineManagement":
-                return new SetSecurityAssessmentBaselineManagement(name, <any>undefined, { urn })
             case "oci:DataSafe/setUserAssessmentBaseline:SetUserAssessmentBaseline":
                 return new SetUserAssessmentBaseline(name, <any>undefined, { urn })
-            case "oci:DataSafe/setUserAssessmentBaselineManagement:SetUserAssessmentBaselineManagement":
-                return new SetUserAssessmentBaselineManagement(name, <any>undefined, { urn })
             case "oci:DataSafe/sqlCollection:SqlCollection":
                 return new SqlCollection(name, <any>undefined, { urn })
             case "oci:DataSafe/sqlFirewallPolicy:SqlFirewallPolicy":
@@ -932,6 +918,8 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("oci", "DataSafe/addSdmColumns", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/alert", _module)
+pulumi.runtime.registerResourceModule("oci", "DataSafe/alertPolicy", _module)
+pulumi.runtime.registerResourceModule("oci", "DataSafe/alertPolicyRule", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/auditArchiveRetrieval", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/auditPolicy", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/auditPolicyManagement", _module)
@@ -952,8 +940,6 @@ pulumi.runtime.registerResourceModule("oci", "DataSafe/maskData", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/maskingPoliciesApplyDifferenceToMaskingColumns", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/maskingPoliciesMaskingColumn", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/maskingPolicy", _module)
-pulumi.runtime.registerResourceModule("oci", "DataSafe/maskingPolicyHealthReportManagement", _module)
-pulumi.runtime.registerResourceModule("oci", "DataSafe/maskingReportManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/onPremConnector", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/report", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/reportDefinition", _module)
@@ -968,9 +954,7 @@ pulumi.runtime.registerResourceModule("oci", "DataSafe/sensitiveDataModelsApplyD
 pulumi.runtime.registerResourceModule("oci", "DataSafe/sensitiveDataModelsSensitiveColumn", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/sensitiveType", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/setSecurityAssessmentBaseline", _module)
-pulumi.runtime.registerResourceModule("oci", "DataSafe/setSecurityAssessmentBaselineManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/setUserAssessmentBaseline", _module)
-pulumi.runtime.registerResourceModule("oci", "DataSafe/setUserAssessmentBaselineManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/sqlCollection", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/sqlFirewallPolicy", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/sqlFirewallPolicyManagement", _module)

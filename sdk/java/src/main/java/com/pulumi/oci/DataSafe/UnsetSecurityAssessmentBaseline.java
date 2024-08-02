@@ -125,11 +125,18 @@ public class UnsetSecurityAssessmentBaseline extends com.pulumi.resources.Custom
      * @param options A bag of options that control this resource's behavior.
      */
     public UnsetSecurityAssessmentBaseline(String name, UnsetSecurityAssessmentBaselineArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/unsetSecurityAssessmentBaseline:UnsetSecurityAssessmentBaseline", name, args == null ? UnsetSecurityAssessmentBaselineArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DataSafe/unsetSecurityAssessmentBaseline:UnsetSecurityAssessmentBaseline", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private UnsetSecurityAssessmentBaseline(String name, Output<String> id, @Nullable UnsetSecurityAssessmentBaselineState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DataSafe/unsetSecurityAssessmentBaseline:UnsetSecurityAssessmentBaseline", name, state, makeResourceOptions(options, id));
+    }
+
+    private static UnsetSecurityAssessmentBaselineArgs makeArgs(UnsetSecurityAssessmentBaselineArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? UnsetSecurityAssessmentBaselineArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

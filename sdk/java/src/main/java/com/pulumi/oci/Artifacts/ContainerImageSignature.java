@@ -299,11 +299,18 @@ public class ContainerImageSignature extends com.pulumi.resources.CustomResource
      * @param options A bag of options that control this resource's behavior.
      */
     public ContainerImageSignature(String name, ContainerImageSignatureArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Artifacts/containerImageSignature:ContainerImageSignature", name, args == null ? ContainerImageSignatureArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Artifacts/containerImageSignature:ContainerImageSignature", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ContainerImageSignature(String name, Output<String> id, @Nullable ContainerImageSignatureState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Artifacts/containerImageSignature:ContainerImageSignature", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ContainerImageSignatureArgs makeArgs(ContainerImageSignatureArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ContainerImageSignatureArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

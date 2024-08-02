@@ -176,6 +176,12 @@ namespace Pulumi.Oci.DataSafe
         public Output<bool> IsSeeded { get; private set; } = null!;
 
         /// <summary>
+        /// Details about the current state of the report definition in Data Safe.
+        /// </summary>
+        [Output("lifecycleDetails")]
+        public Output<string> LifecycleDetails { get; private set; } = null!;
+
+        /// <summary>
         /// The OCID of the parent report definition.
         /// </summary>
         [Output("parentId")]
@@ -516,6 +522,12 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         [Input("isSeeded")]
         public Input<bool>? IsSeeded { get; set; }
+
+        /// <summary>
+        /// Details about the current state of the report definition in Data Safe.
+        /// </summary>
+        [Input("lifecycleDetails")]
+        public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
         /// The OCID of the parent report definition.

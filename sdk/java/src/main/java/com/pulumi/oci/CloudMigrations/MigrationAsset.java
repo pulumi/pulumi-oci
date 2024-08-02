@@ -333,11 +333,18 @@ public class MigrationAsset extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public MigrationAsset(String name, MigrationAssetArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:CloudMigrations/migrationAsset:MigrationAsset", name, args == null ? MigrationAssetArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:CloudMigrations/migrationAsset:MigrationAsset", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private MigrationAsset(String name, Output<String> id, @Nullable MigrationAssetState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:CloudMigrations/migrationAsset:MigrationAsset", name, state, makeResourceOptions(options, id));
+    }
+
+    private static MigrationAssetArgs makeArgs(MigrationAssetArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? MigrationAssetArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

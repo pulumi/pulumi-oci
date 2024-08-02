@@ -331,11 +331,18 @@ public class AuditProfile extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public AuditProfile(String name, AuditProfileArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/auditProfile:AuditProfile", name, args == null ? AuditProfileArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DataSafe/auditProfile:AuditProfile", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private AuditProfile(String name, Output<String> id, @Nullable AuditProfileState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DataSafe/auditProfile:AuditProfile", name, state, makeResourceOptions(options, id));
+    }
+
+    private static AuditProfileArgs makeArgs(AuditProfileArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? AuditProfileArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

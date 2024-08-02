@@ -316,11 +316,18 @@ public class OperationsInsightsPrivateEndpoint extends com.pulumi.resources.Cust
      * @param options A bag of options that control this resource's behavior.
      */
     public OperationsInsightsPrivateEndpoint(String name, OperationsInsightsPrivateEndpointArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Opsi/operationsInsightsPrivateEndpoint:OperationsInsightsPrivateEndpoint", name, args == null ? OperationsInsightsPrivateEndpointArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Opsi/operationsInsightsPrivateEndpoint:OperationsInsightsPrivateEndpoint", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private OperationsInsightsPrivateEndpoint(String name, Output<String> id, @Nullable OperationsInsightsPrivateEndpointState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Opsi/operationsInsightsPrivateEndpoint:OperationsInsightsPrivateEndpoint", name, state, makeResourceOptions(options, id));
+    }
+
+    private static OperationsInsightsPrivateEndpointArgs makeArgs(OperationsInsightsPrivateEndpointArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? OperationsInsightsPrivateEndpointArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

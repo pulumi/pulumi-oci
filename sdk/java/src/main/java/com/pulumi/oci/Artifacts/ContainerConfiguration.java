@@ -117,11 +117,18 @@ public class ContainerConfiguration extends com.pulumi.resources.CustomResource 
      * @param options A bag of options that control this resource's behavior.
      */
     public ContainerConfiguration(String name, ContainerConfigurationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Artifacts/containerConfiguration:ContainerConfiguration", name, args == null ? ContainerConfigurationArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Artifacts/containerConfiguration:ContainerConfiguration", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ContainerConfiguration(String name, Output<String> id, @Nullable ContainerConfigurationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Artifacts/containerConfiguration:ContainerConfiguration", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ContainerConfigurationArgs makeArgs(ContainerConfigurationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ContainerConfigurationArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

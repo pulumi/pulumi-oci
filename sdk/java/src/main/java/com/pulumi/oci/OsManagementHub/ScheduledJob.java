@@ -504,11 +504,18 @@ public class ScheduledJob extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public ScheduledJob(String name, ScheduledJobArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:OsManagementHub/scheduledJob:ScheduledJob", name, args == null ? ScheduledJobArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:OsManagementHub/scheduledJob:ScheduledJob", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ScheduledJob(String name, Output<String> id, @Nullable ScheduledJobState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:OsManagementHub/scheduledJob:ScheduledJob", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ScheduledJobArgs makeArgs(ScheduledJobArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ScheduledJobArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

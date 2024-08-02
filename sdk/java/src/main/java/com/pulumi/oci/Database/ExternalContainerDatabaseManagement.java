@@ -110,11 +110,18 @@ public class ExternalContainerDatabaseManagement extends com.pulumi.resources.Cu
      * @param options A bag of options that control this resource's behavior.
      */
     public ExternalContainerDatabaseManagement(String name, ExternalContainerDatabaseManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/externalContainerDatabaseManagement:ExternalContainerDatabaseManagement", name, args == null ? ExternalContainerDatabaseManagementArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Database/externalContainerDatabaseManagement:ExternalContainerDatabaseManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ExternalContainerDatabaseManagement(String name, Output<String> id, @Nullable ExternalContainerDatabaseManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Database/externalContainerDatabaseManagement:ExternalContainerDatabaseManagement", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ExternalContainerDatabaseManagementArgs makeArgs(ExternalContainerDatabaseManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ExternalContainerDatabaseManagementArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

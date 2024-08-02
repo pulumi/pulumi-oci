@@ -518,11 +518,18 @@ public class FusionEnvironment extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public FusionEnvironment(String name, FusionEnvironmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:FusionApps/fusionEnvironment:FusionEnvironment", name, args == null ? FusionEnvironmentArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:FusionApps/fusionEnvironment:FusionEnvironment", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private FusionEnvironment(String name, Output<String> id, @Nullable FusionEnvironmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:FusionApps/fusionEnvironment:FusionEnvironment", name, state, makeResourceOptions(options, id));
+    }
+
+    private static FusionEnvironmentArgs makeArgs(FusionEnvironmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? FusionEnvironmentArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

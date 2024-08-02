@@ -21,7 +21,7 @@ public final class GetDomainsIdentityProvidersIdentityProviderJitUserProvAssigne
      */
     private String ref;
     /**
-     * @return Value of the tag.
+     * @return Group identifier
      * 
      */
     private String value;
@@ -42,7 +42,7 @@ public final class GetDomainsIdentityProvidersIdentityProviderJitUserProvAssigne
         return this.ref;
     }
     /**
-     * @return Value of the tag.
+     * @return Group identifier
      * 
      */
     public String value() {

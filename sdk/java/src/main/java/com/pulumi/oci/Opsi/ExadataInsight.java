@@ -473,11 +473,18 @@ public class ExadataInsight extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public ExadataInsight(String name, ExadataInsightArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Opsi/exadataInsight:ExadataInsight", name, args == null ? ExadataInsightArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Opsi/exadataInsight:ExadataInsight", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ExadataInsight(String name, Output<String> id, @Nullable ExadataInsightState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Opsi/exadataInsight:ExadataInsight", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ExadataInsightArgs makeArgs(ExadataInsightArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ExadataInsightArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

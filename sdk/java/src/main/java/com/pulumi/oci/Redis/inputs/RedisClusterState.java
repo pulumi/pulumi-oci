@@ -142,14 +142,14 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) OCIDs of the NSGs to control access in the customer network
+     * (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
      * 
      */
     @Import(name="nsgIds")
     private @Nullable Output<List<String>> nsgIds;
 
     /**
-     * @return (Updatable) OCIDs of the NSGs to control access in the customer network
+     * @return (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
      * 
      */
     public Optional<Output<List<String>>> nsgIds() {
@@ -533,7 +533,7 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nsgIds (Updatable) OCIDs of the NSGs to control access in the customer network
+         * @param nsgIds (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
          * 
          * @return builder
          * 
@@ -544,7 +544,7 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nsgIds (Updatable) OCIDs of the NSGs to control access in the customer network
+         * @param nsgIds (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
          * 
          * @return builder
          * 
@@ -554,7 +554,7 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nsgIds (Updatable) OCIDs of the NSGs to control access in the customer network
+         * @param nsgIds (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
          * 
          * @return builder
          * 

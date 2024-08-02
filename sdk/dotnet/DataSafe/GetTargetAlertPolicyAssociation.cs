@@ -122,9 +122,13 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Indicates if the target-alert policy association is enabled or disabled.
+        /// Indicates if the target-alert policy association is enabled or disabled by user.
         /// </summary>
         public readonly bool IsEnabled;
+        /// <summary>
+        /// Details about the current state of the target-alert policy association.
+        /// </summary>
+        public readonly string LifecycleDetails;
         /// <summary>
         /// The OCID of the alert policy.
         /// </summary>
@@ -167,6 +171,8 @@ namespace Pulumi.Oci.DataSafe
 
             bool isEnabled,
 
+            string lifecycleDetails,
+
             string policyId,
 
             string state,
@@ -188,6 +194,7 @@ namespace Pulumi.Oci.DataSafe
             FreeformTags = freeformTags;
             Id = id;
             IsEnabled = isEnabled;
+            LifecycleDetails = lifecycleDetails;
             PolicyId = policyId;
             State = state;
             SystemTags = systemTags;

@@ -198,11 +198,18 @@ public class FusionEnvironmentAdminUser extends com.pulumi.resources.CustomResou
      * @param options A bag of options that control this resource's behavior.
      */
     public FusionEnvironmentAdminUser(String name, FusionEnvironmentAdminUserArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:FusionApps/fusionEnvironmentAdminUser:FusionEnvironmentAdminUser", name, args == null ? FusionEnvironmentAdminUserArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:FusionApps/fusionEnvironmentAdminUser:FusionEnvironmentAdminUser", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private FusionEnvironmentAdminUser(String name, Output<String> id, @Nullable FusionEnvironmentAdminUserState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:FusionApps/fusionEnvironmentAdminUser:FusionEnvironmentAdminUser", name, state, makeResourceOptions(options, id));
+    }
+
+    private static FusionEnvironmentAdminUserArgs makeArgs(FusionEnvironmentAdminUserArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? FusionEnvironmentAdminUserArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

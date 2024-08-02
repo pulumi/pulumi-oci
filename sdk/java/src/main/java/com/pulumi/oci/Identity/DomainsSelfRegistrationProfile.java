@@ -1203,11 +1203,18 @@ public class DomainsSelfRegistrationProfile extends com.pulumi.resources.CustomR
      * @param options A bag of options that control this resource's behavior.
      */
     public DomainsSelfRegistrationProfile(String name, DomainsSelfRegistrationProfileArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsSelfRegistrationProfile:DomainsSelfRegistrationProfile", name, args == null ? DomainsSelfRegistrationProfileArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Identity/domainsSelfRegistrationProfile:DomainsSelfRegistrationProfile", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DomainsSelfRegistrationProfile(String name, Output<String> id, @Nullable DomainsSelfRegistrationProfileState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Identity/domainsSelfRegistrationProfile:DomainsSelfRegistrationProfile", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DomainsSelfRegistrationProfileArgs makeArgs(DomainsSelfRegistrationProfileArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DomainsSelfRegistrationProfileArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

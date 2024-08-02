@@ -155,11 +155,18 @@ public class MonitoredResourcesListMember extends com.pulumi.resources.CustomRes
      * @param options A bag of options that control this resource's behavior.
      */
     public MonitoredResourcesListMember(String name, MonitoredResourcesListMemberArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:StackMonitoring/monitoredResourcesListMember:MonitoredResourcesListMember", name, args == null ? MonitoredResourcesListMemberArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:StackMonitoring/monitoredResourcesListMember:MonitoredResourcesListMember", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private MonitoredResourcesListMember(String name, Output<String> id, @Nullable MonitoredResourcesListMemberState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:StackMonitoring/monitoredResourcesListMember:MonitoredResourcesListMember", name, state, makeResourceOptions(options, id));
+    }
+
+    private static MonitoredResourcesListMemberArgs makeArgs(MonitoredResourcesListMemberArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? MonitoredResourcesListMemberArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

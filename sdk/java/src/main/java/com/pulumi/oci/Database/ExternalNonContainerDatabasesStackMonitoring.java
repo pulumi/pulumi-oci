@@ -134,11 +134,18 @@ public class ExternalNonContainerDatabasesStackMonitoring extends com.pulumi.res
      * @param options A bag of options that control this resource's behavior.
      */
     public ExternalNonContainerDatabasesStackMonitoring(String name, ExternalNonContainerDatabasesStackMonitoringArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/externalNonContainerDatabasesStackMonitoring:ExternalNonContainerDatabasesStackMonitoring", name, args == null ? ExternalNonContainerDatabasesStackMonitoringArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Database/externalNonContainerDatabasesStackMonitoring:ExternalNonContainerDatabasesStackMonitoring", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ExternalNonContainerDatabasesStackMonitoring(String name, Output<String> id, @Nullable ExternalNonContainerDatabasesStackMonitoringState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Database/externalNonContainerDatabasesStackMonitoring:ExternalNonContainerDatabasesStackMonitoring", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ExternalNonContainerDatabasesStackMonitoringArgs makeArgs(ExternalNonContainerDatabasesStackMonitoringArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ExternalNonContainerDatabasesStackMonitoringArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

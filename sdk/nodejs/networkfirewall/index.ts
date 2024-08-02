@@ -110,6 +110,16 @@ export const getNetworkFirewallPolicyServices: typeof import("./getNetworkFirewa
 export const getNetworkFirewallPolicyServicesOutput: typeof import("./getNetworkFirewallPolicyServices").getNetworkFirewallPolicyServicesOutput = null as any;
 utilities.lazyLoad(exports, ["getNetworkFirewallPolicyServices","getNetworkFirewallPolicyServicesOutput"], () => require("./getNetworkFirewallPolicyServices"));
 
+export { GetNetworkFirewallPolicyTunnelInspectionRuleArgs, GetNetworkFirewallPolicyTunnelInspectionRuleResult, GetNetworkFirewallPolicyTunnelInspectionRuleOutputArgs } from "./getNetworkFirewallPolicyTunnelInspectionRule";
+export const getNetworkFirewallPolicyTunnelInspectionRule: typeof import("./getNetworkFirewallPolicyTunnelInspectionRule").getNetworkFirewallPolicyTunnelInspectionRule = null as any;
+export const getNetworkFirewallPolicyTunnelInspectionRuleOutput: typeof import("./getNetworkFirewallPolicyTunnelInspectionRule").getNetworkFirewallPolicyTunnelInspectionRuleOutput = null as any;
+utilities.lazyLoad(exports, ["getNetworkFirewallPolicyTunnelInspectionRule","getNetworkFirewallPolicyTunnelInspectionRuleOutput"], () => require("./getNetworkFirewallPolicyTunnelInspectionRule"));
+
+export { GetNetworkFirewallPolicyTunnelInspectionRulesArgs, GetNetworkFirewallPolicyTunnelInspectionRulesResult, GetNetworkFirewallPolicyTunnelInspectionRulesOutputArgs } from "./getNetworkFirewallPolicyTunnelInspectionRules";
+export const getNetworkFirewallPolicyTunnelInspectionRules: typeof import("./getNetworkFirewallPolicyTunnelInspectionRules").getNetworkFirewallPolicyTunnelInspectionRules = null as any;
+export const getNetworkFirewallPolicyTunnelInspectionRulesOutput: typeof import("./getNetworkFirewallPolicyTunnelInspectionRules").getNetworkFirewallPolicyTunnelInspectionRulesOutput = null as any;
+utilities.lazyLoad(exports, ["getNetworkFirewallPolicyTunnelInspectionRules","getNetworkFirewallPolicyTunnelInspectionRulesOutput"], () => require("./getNetworkFirewallPolicyTunnelInspectionRules"));
+
 export { GetNetworkFirewallPolicyUrlListArgs, GetNetworkFirewallPolicyUrlListResult, GetNetworkFirewallPolicyUrlListOutputArgs } from "./getNetworkFirewallPolicyUrlList";
 export const getNetworkFirewallPolicyUrlList: typeof import("./getNetworkFirewallPolicyUrlList").getNetworkFirewallPolicyUrlList = null as any;
 export const getNetworkFirewallPolicyUrlListOutput: typeof import("./getNetworkFirewallPolicyUrlList").getNetworkFirewallPolicyUrlListOutput = null as any;
@@ -180,6 +190,11 @@ export type NetworkFirewallPolicyServiceList = import("./networkFirewallPolicySe
 export const NetworkFirewallPolicyServiceList: typeof import("./networkFirewallPolicyServiceList").NetworkFirewallPolicyServiceList = null as any;
 utilities.lazyLoad(exports, ["NetworkFirewallPolicyServiceList"], () => require("./networkFirewallPolicyServiceList"));
 
+export { NetworkFirewallPolicyTunnelInspectionRuleArgs, NetworkFirewallPolicyTunnelInspectionRuleState } from "./networkFirewallPolicyTunnelInspectionRule";
+export type NetworkFirewallPolicyTunnelInspectionRule = import("./networkFirewallPolicyTunnelInspectionRule").NetworkFirewallPolicyTunnelInspectionRule;
+export const NetworkFirewallPolicyTunnelInspectionRule: typeof import("./networkFirewallPolicyTunnelInspectionRule").NetworkFirewallPolicyTunnelInspectionRule = null as any;
+utilities.lazyLoad(exports, ["NetworkFirewallPolicyTunnelInspectionRule"], () => require("./networkFirewallPolicyTunnelInspectionRule"));
+
 export { NetworkFirewallPolicyUrlListArgs, NetworkFirewallPolicyUrlListState } from "./networkFirewallPolicyUrlList";
 export type NetworkFirewallPolicyUrlList = import("./networkFirewallPolicyUrlList").NetworkFirewallPolicyUrlList;
 export const NetworkFirewallPolicyUrlList: typeof import("./networkFirewallPolicyUrlList").NetworkFirewallPolicyUrlList = null as any;
@@ -212,6 +227,8 @@ const _module = {
                 return new NetworkFirewallPolicyService(name, <any>undefined, { urn })
             case "oci:NetworkFirewall/networkFirewallPolicyServiceList:NetworkFirewallPolicyServiceList":
                 return new NetworkFirewallPolicyServiceList(name, <any>undefined, { urn })
+            case "oci:NetworkFirewall/networkFirewallPolicyTunnelInspectionRule:NetworkFirewallPolicyTunnelInspectionRule":
+                return new NetworkFirewallPolicyTunnelInspectionRule(name, <any>undefined, { urn })
             case "oci:NetworkFirewall/networkFirewallPolicyUrlList:NetworkFirewallPolicyUrlList":
                 return new NetworkFirewallPolicyUrlList(name, <any>undefined, { urn })
             default:
@@ -230,4 +247,5 @@ pulumi.runtime.registerResourceModule("oci", "NetworkFirewall/networkFirewallPol
 pulumi.runtime.registerResourceModule("oci", "NetworkFirewall/networkFirewallPolicySecurityRule", _module)
 pulumi.runtime.registerResourceModule("oci", "NetworkFirewall/networkFirewallPolicyService", _module)
 pulumi.runtime.registerResourceModule("oci", "NetworkFirewall/networkFirewallPolicyServiceList", _module)
+pulumi.runtime.registerResourceModule("oci", "NetworkFirewall/networkFirewallPolicyTunnelInspectionRule", _module)
 pulumi.runtime.registerResourceModule("oci", "NetworkFirewall/networkFirewallPolicyUrlList", _module)

@@ -52,6 +52,8 @@ type BdsInstance struct {
 	EdgeNode    BdsInstanceEdgeNodePtrOutput `pulumi:"edgeNode"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	// Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafkaBroker nodes, in a list format, when new nodes are added with a different shape.
+	IgnoreExistingNodesShapes pulumi.StringArrayOutput `pulumi:"ignoreExistingNodesShapes"`
 	// (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
 	IsCloudSqlConfigured pulumi.BoolOutput `pulumi:"isCloudSqlConfigured"`
 	// (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
@@ -184,6 +186,8 @@ type bdsInstanceState struct {
 	EdgeNode    *BdsInstanceEdgeNode `pulumi:"edgeNode"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafkaBroker nodes, in a list format, when new nodes are added with a different shape.
+	IgnoreExistingNodesShapes []string `pulumi:"ignoreExistingNodesShapes"`
 	// (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
 	IsCloudSqlConfigured *bool `pulumi:"isCloudSqlConfigured"`
 	// (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
@@ -250,6 +254,8 @@ type BdsInstanceState struct {
 	EdgeNode    BdsInstanceEdgeNodePtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
+	// Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafkaBroker nodes, in a list format, when new nodes are added with a different shape.
+	IgnoreExistingNodesShapes pulumi.StringArrayInput
 	// (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
 	IsCloudSqlConfigured pulumi.BoolPtrInput
 	// (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
@@ -316,6 +322,8 @@ type bdsInstanceArgs struct {
 	EdgeNode    *BdsInstanceEdgeNode `pulumi:"edgeNode"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafkaBroker nodes, in a list format, when new nodes are added with a different shape.
+	IgnoreExistingNodesShapes []string `pulumi:"ignoreExistingNodesShapes"`
 	// (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
 	IsCloudSqlConfigured *bool `pulumi:"isCloudSqlConfigured"`
 	// (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
@@ -369,6 +377,8 @@ type BdsInstanceArgs struct {
 	EdgeNode    BdsInstanceEdgeNodePtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
+	// Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafkaBroker nodes, in a list format, when new nodes are added with a different shape.
+	IgnoreExistingNodesShapes pulumi.StringArrayInput
 	// (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
 	IsCloudSqlConfigured pulumi.BoolPtrInput
 	// (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
@@ -551,6 +561,11 @@ func (o BdsInstanceOutput) EdgeNode() BdsInstanceEdgeNodePtrOutput {
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 func (o BdsInstanceOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *BdsInstance) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafkaBroker nodes, in a list format, when new nodes are added with a different shape.
+func (o BdsInstanceOutput) IgnoreExistingNodesShapes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *BdsInstance) pulumi.StringArrayOutput { return v.IgnoreExistingNodesShapes }).(pulumi.StringArrayOutput)
 }
 
 // (Updatable) Boolean flag specifying whether we configure Cloud SQL or not

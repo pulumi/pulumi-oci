@@ -3870,11 +3870,18 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public DomainsApp(String name, DomainsAppArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsApp:DomainsApp", name, args == null ? DomainsAppArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Identity/domainsApp:DomainsApp", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DomainsApp(String name, Output<String> id, @Nullable DomainsAppState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Identity/domainsApp:DomainsApp", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DomainsAppArgs makeArgs(DomainsAppArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DomainsAppArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

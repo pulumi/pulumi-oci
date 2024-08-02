@@ -74,11 +74,18 @@ public class ModelArtifactImport extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public ModelArtifactImport(String name, ModelArtifactImportArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataScience/modelArtifactImport:ModelArtifactImport", name, args == null ? ModelArtifactImportArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DataScience/modelArtifactImport:ModelArtifactImport", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ModelArtifactImport(String name, Output<String> id, @Nullable ModelArtifactImportState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DataScience/modelArtifactImport:ModelArtifactImport", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ModelArtifactImportArgs makeArgs(ModelArtifactImportArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ModelArtifactImportArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

@@ -324,11 +324,18 @@ public class ResourceAction extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public ResourceAction(String name, ResourceActionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Optimizer/resourceAction:ResourceAction", name, args == null ? ResourceActionArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Optimizer/resourceAction:ResourceAction", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ResourceAction(String name, Output<String> id, @Nullable ResourceActionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Optimizer/resourceAction:ResourceAction", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ResourceActionArgs makeArgs(ResourceActionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ResourceActionArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

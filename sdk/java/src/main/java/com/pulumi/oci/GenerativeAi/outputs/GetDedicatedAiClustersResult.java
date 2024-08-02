@@ -23,6 +23,10 @@ public final class GetDedicatedAiClustersResult {
     private List<GetDedicatedAiClustersDedicatedAiClusterCollection> dedicatedAiClusterCollections;
     private @Nullable String displayName;
     private @Nullable List<GetDedicatedAiClustersFilter> filters;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated AI cluster.
+     * 
+     */
     private @Nullable String id;
     private @Nullable String state;
 
@@ -43,6 +47,10 @@ public final class GetDedicatedAiClustersResult {
     public List<GetDedicatedAiClustersFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated AI cluster.
+     * 
+     */
     public Optional<String> id() {
         return Optional.ofNullable(this.id);
     }

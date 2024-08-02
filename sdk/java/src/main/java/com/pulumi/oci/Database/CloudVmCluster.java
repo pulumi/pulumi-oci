@@ -859,11 +859,18 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public CloudVmCluster(String name, CloudVmClusterArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/cloudVmCluster:CloudVmCluster", name, args == null ? CloudVmClusterArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Database/cloudVmCluster:CloudVmCluster", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private CloudVmCluster(String name, Output<String> id, @Nullable CloudVmClusterState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Database/cloudVmCluster:CloudVmCluster", name, state, makeResourceOptions(options, id));
+    }
+
+    private static CloudVmClusterArgs makeArgs(CloudVmClusterArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? CloudVmClusterArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

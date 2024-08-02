@@ -299,11 +299,18 @@ public class VirtualServiceRouteTable extends com.pulumi.resources.CustomResourc
      * @param options A bag of options that control this resource's behavior.
      */
     public VirtualServiceRouteTable(String name, VirtualServiceRouteTableArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:ServiceMesh/virtualServiceRouteTable:VirtualServiceRouteTable", name, args == null ? VirtualServiceRouteTableArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:ServiceMesh/virtualServiceRouteTable:VirtualServiceRouteTable", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private VirtualServiceRouteTable(String name, Output<String> id, @Nullable VirtualServiceRouteTableState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:ServiceMesh/virtualServiceRouteTable:VirtualServiceRouteTable", name, state, makeResourceOptions(options, id));
+    }
+
+    private static VirtualServiceRouteTableArgs makeArgs(VirtualServiceRouteTableArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? VirtualServiceRouteTableArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

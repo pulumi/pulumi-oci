@@ -325,11 +325,18 @@ public class InstancePool extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public InstancePool(String name, InstancePoolArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/instancePool:InstancePool", name, args == null ? InstancePoolArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Core/instancePool:InstancePool", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private InstancePool(String name, Output<String> id, @Nullable InstancePoolState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Core/instancePool:InstancePool", name, state, makeResourceOptions(options, id));
+    }
+
+    private static InstancePoolArgs makeArgs(InstancePoolArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? InstancePoolArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

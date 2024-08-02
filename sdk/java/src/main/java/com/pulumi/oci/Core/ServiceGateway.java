@@ -267,11 +267,18 @@ public class ServiceGateway extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public ServiceGateway(String name, ServiceGatewayArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/serviceGateway:ServiceGateway", name, args == null ? ServiceGatewayArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Core/serviceGateway:ServiceGateway", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ServiceGateway(String name, Output<String> id, @Nullable ServiceGatewayState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Core/serviceGateway:ServiceGateway", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ServiceGatewayArgs makeArgs(ServiceGatewayArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ServiceGatewayArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

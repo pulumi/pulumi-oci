@@ -147,6 +147,10 @@ export class ReportDefinition extends pulumi.CustomResource {
      */
     public /*out*/ readonly isSeeded!: pulumi.Output<boolean>;
     /**
+     * Details about the current state of the report definition in Data Safe.
+     */
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    /**
      * The OCID of the parent report definition.
      */
     public readonly parentId!: pulumi.Output<string>;
@@ -225,6 +229,7 @@ export class ReportDefinition extends pulumi.CustomResource {
             resourceInputs["displayOrder"] = state ? state.displayOrder : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["isSeeded"] = state ? state.isSeeded : undefined;
+            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["parentId"] = state ? state.parentId : undefined;
             resourceInputs["recordTimeSpan"] = state ? state.recordTimeSpan : undefined;
             resourceInputs["schedule"] = state ? state.schedule : undefined;
@@ -276,6 +281,7 @@ export class ReportDefinition extends pulumi.CustomResource {
             resourceInputs["dataSource"] = undefined /*out*/;
             resourceInputs["displayOrder"] = undefined /*out*/;
             resourceInputs["isSeeded"] = undefined /*out*/;
+            resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["recordTimeSpan"] = undefined /*out*/;
             resourceInputs["schedule"] = undefined /*out*/;
             resourceInputs["scheduledReportCompartmentId"] = undefined /*out*/;
@@ -349,6 +355,10 @@ export interface ReportDefinitionState {
      * Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
      */
     isSeeded?: pulumi.Input<boolean>;
+    /**
+     * Details about the current state of the report definition in Data Safe.
+     */
+    lifecycleDetails?: pulumi.Input<string>;
     /**
      * The OCID of the parent report definition.
      */

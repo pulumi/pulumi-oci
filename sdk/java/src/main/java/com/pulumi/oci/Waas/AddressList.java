@@ -213,11 +213,18 @@ public class AddressList extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public AddressList(String name, AddressListArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Waas/addressList:AddressList", name, args == null ? AddressListArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Waas/addressList:AddressList", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private AddressList(String name, Output<String> id, @Nullable AddressListState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Waas/addressList:AddressList", name, state, makeResourceOptions(options, id));
+    }
+
+    private static AddressListArgs makeArgs(AddressListArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? AddressListArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

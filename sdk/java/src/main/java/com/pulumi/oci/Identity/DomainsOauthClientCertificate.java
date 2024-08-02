@@ -896,11 +896,18 @@ public class DomainsOauthClientCertificate extends com.pulumi.resources.CustomRe
      * @param options A bag of options that control this resource's behavior.
      */
     public DomainsOauthClientCertificate(String name, DomainsOauthClientCertificateArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsOauthClientCertificate:DomainsOauthClientCertificate", name, args == null ? DomainsOauthClientCertificateArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Identity/domainsOauthClientCertificate:DomainsOauthClientCertificate", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DomainsOauthClientCertificate(String name, Output<String> id, @Nullable DomainsOauthClientCertificateState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Identity/domainsOauthClientCertificate:DomainsOauthClientCertificate", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DomainsOauthClientCertificateArgs makeArgs(DomainsOauthClientCertificateArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DomainsOauthClientCertificateArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

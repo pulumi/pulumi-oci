@@ -102,6 +102,20 @@ public class Report extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
+     * Details about the current state of the report in Data Safe.
+     * 
+     */
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
+    private Output<String> lifecycleDetails;
+
+    /**
+     * @return Details about the current state of the report in Data Safe.
+     * 
+     */
+    public Output<String> lifecycleDetails() {
+        return this.lifecycleDetails;
+    }
+    /**
      * Specifies the format of report to be .xls or .pdf or .json
      * 
      */
@@ -228,11 +242,18 @@ public class Report extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public Report(String name, ReportArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/report:Report", name, args == null ? ReportArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DataSafe/report:Report", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private Report(String name, Output<String> id, @Nullable ReportState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DataSafe/report:Report", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ReportArgs makeArgs(ReportArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ReportArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

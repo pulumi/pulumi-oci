@@ -162,11 +162,18 @@ public class AppCatalogListingResourceVersionAgreement extends com.pulumi.resour
      * @param options A bag of options that control this resource's behavior.
      */
     public AppCatalogListingResourceVersionAgreement(String name, AppCatalogListingResourceVersionAgreementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/appCatalogListingResourceVersionAgreement:AppCatalogListingResourceVersionAgreement", name, args == null ? AppCatalogListingResourceVersionAgreementArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Core/appCatalogListingResourceVersionAgreement:AppCatalogListingResourceVersionAgreement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private AppCatalogListingResourceVersionAgreement(String name, Output<String> id, @Nullable AppCatalogListingResourceVersionAgreementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Core/appCatalogListingResourceVersionAgreement:AppCatalogListingResourceVersionAgreement", name, state, makeResourceOptions(options, id));
+    }
+
+    private static AppCatalogListingResourceVersionAgreementArgs makeArgs(AppCatalogListingResourceVersionAgreementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? AppCatalogListingResourceVersionAgreementArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

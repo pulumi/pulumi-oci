@@ -835,11 +835,18 @@ public class DomainsMyRequest extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public DomainsMyRequest(String name, DomainsMyRequestArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsMyRequest:DomainsMyRequest", name, args == null ? DomainsMyRequestArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Identity/domainsMyRequest:DomainsMyRequest", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DomainsMyRequest(String name, Output<String> id, @Nullable DomainsMyRequestState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Identity/domainsMyRequest:DomainsMyRequest", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DomainsMyRequestArgs makeArgs(DomainsMyRequestArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DomainsMyRequestArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

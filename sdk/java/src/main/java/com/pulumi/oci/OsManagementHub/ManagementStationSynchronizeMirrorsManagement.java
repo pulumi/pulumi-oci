@@ -123,11 +123,18 @@ public class ManagementStationSynchronizeMirrorsManagement extends com.pulumi.re
      * @param options A bag of options that control this resource's behavior.
      */
     public ManagementStationSynchronizeMirrorsManagement(String name, ManagementStationSynchronizeMirrorsManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:OsManagementHub/managementStationSynchronizeMirrorsManagement:ManagementStationSynchronizeMirrorsManagement", name, args == null ? ManagementStationSynchronizeMirrorsManagementArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:OsManagementHub/managementStationSynchronizeMirrorsManagement:ManagementStationSynchronizeMirrorsManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ManagementStationSynchronizeMirrorsManagement(String name, Output<String> id, @Nullable ManagementStationSynchronizeMirrorsManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:OsManagementHub/managementStationSynchronizeMirrorsManagement:ManagementStationSynchronizeMirrorsManagement", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ManagementStationSynchronizeMirrorsManagementArgs makeArgs(ManagementStationSynchronizeMirrorsManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ManagementStationSynchronizeMirrorsManagementArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

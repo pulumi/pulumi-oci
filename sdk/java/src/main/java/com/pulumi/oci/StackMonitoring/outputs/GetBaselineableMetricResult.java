@@ -70,6 +70,11 @@ public final class GetBaselineableMetricResult {
      */
     private String resourceGroup;
     /**
+     * @return Resource type of the metric
+     * 
+     */
+    private String resourceType;
+    /**
      * @return The current lifecycle state of the metric extension
      * 
      */
@@ -177,6 +182,13 @@ public final class GetBaselineableMetricResult {
         return this.resourceGroup;
     }
     /**
+     * @return Resource type of the metric
+     * 
+     */
+    public String resourceType() {
+        return this.resourceType;
+    }
+    /**
      * @return The current lifecycle state of the metric extension
      * 
      */
@@ -233,6 +245,7 @@ public final class GetBaselineableMetricResult {
         private String name;
         private String namespace;
         private String resourceGroup;
+        private String resourceType;
         private String state;
         private Map<String,Object> systemTags;
         private String tenancyId;
@@ -253,6 +266,7 @@ public final class GetBaselineableMetricResult {
     	      this.name = defaults.name;
     	      this.namespace = defaults.namespace;
     	      this.resourceGroup = defaults.resourceGroup;
+    	      this.resourceType = defaults.resourceType;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.tenancyId = defaults.tenancyId;
@@ -357,6 +371,14 @@ public final class GetBaselineableMetricResult {
             return this;
         }
         @CustomType.Setter
+        public Builder resourceType(String resourceType) {
+            if (resourceType == null) {
+              throw new MissingRequiredPropertyException("GetBaselineableMetricResult", "resourceType");
+            }
+            this.resourceType = resourceType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetBaselineableMetricResult", "state");
@@ -410,6 +432,7 @@ public final class GetBaselineableMetricResult {
             _resultValue.name = name;
             _resultValue.namespace = namespace;
             _resultValue.resourceGroup = resourceGroup;
+            _resultValue.resourceType = resourceType;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.tenancyId = tenancyId;

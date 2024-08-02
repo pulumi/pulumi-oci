@@ -240,11 +240,18 @@ public class DynamicGroup extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public DynamicGroup(String name, DynamicGroupArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/dynamicGroup:DynamicGroup", name, args == null ? DynamicGroupArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Identity/dynamicGroup:DynamicGroup", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DynamicGroup(String name, Output<String> id, @Nullable DynamicGroupState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Identity/dynamicGroup:DynamicGroup", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DynamicGroupArgs makeArgs(DynamicGroupArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DynamicGroupArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

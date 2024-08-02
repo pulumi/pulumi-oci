@@ -143,6 +143,10 @@ namespace Pulumi.Oci.StackMonitoring
         /// </summary>
         public readonly string ResourceGroup;
         /// <summary>
+        /// Resource type of the metric
+        /// </summary>
+        public readonly string ResourceType;
+        /// <summary>
         /// The current lifecycle state of the metric extension
         /// </summary>
         public readonly string State;
@@ -189,6 +193,8 @@ namespace Pulumi.Oci.StackMonitoring
 
             string resourceGroup,
 
+            string resourceType,
+
             string state,
 
             ImmutableDictionary<string, object> systemTags,
@@ -211,6 +217,7 @@ namespace Pulumi.Oci.StackMonitoring
             Name = name;
             Namespace = @namespace;
             ResourceGroup = resourceGroup;
+            ResourceType = resourceType;
             State = state;
             SystemTags = systemTags;
             TenancyId = tenancyId;

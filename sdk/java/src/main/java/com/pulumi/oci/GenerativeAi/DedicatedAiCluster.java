@@ -329,11 +329,18 @@ public class DedicatedAiCluster extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public DedicatedAiCluster(String name, DedicatedAiClusterArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:GenerativeAi/dedicatedAiCluster:DedicatedAiCluster", name, args == null ? DedicatedAiClusterArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:GenerativeAi/dedicatedAiCluster:DedicatedAiCluster", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DedicatedAiCluster(String name, Output<String> id, @Nullable DedicatedAiClusterState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:GenerativeAi/dedicatedAiCluster:DedicatedAiCluster", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DedicatedAiClusterArgs makeArgs(DedicatedAiClusterArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DedicatedAiClusterArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

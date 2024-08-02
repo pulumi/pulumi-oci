@@ -292,11 +292,18 @@ public class DetectAnomalyJob extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public DetectAnomalyJob(String name, DetectAnomalyJobArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:AiAnomalyDetection/detectAnomalyJob:DetectAnomalyJob", name, args == null ? DetectAnomalyJobArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:AiAnomalyDetection/detectAnomalyJob:DetectAnomalyJob", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DetectAnomalyJob(String name, Output<String> id, @Nullable DetectAnomalyJobState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:AiAnomalyDetection/detectAnomalyJob:DetectAnomalyJob", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DetectAnomalyJobArgs makeArgs(DetectAnomalyJobArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DetectAnomalyJobArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

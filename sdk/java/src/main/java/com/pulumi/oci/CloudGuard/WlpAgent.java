@@ -273,11 +273,18 @@ public class WlpAgent extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public WlpAgent(String name, WlpAgentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:CloudGuard/wlpAgent:WlpAgent", name, args == null ? WlpAgentArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:CloudGuard/wlpAgent:WlpAgent", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private WlpAgent(String name, Output<String> id, @Nullable WlpAgentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:CloudGuard/wlpAgent:WlpAgent", name, state, makeResourceOptions(options, id));
+    }
+
+    private static WlpAgentArgs makeArgs(WlpAgentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? WlpAgentArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

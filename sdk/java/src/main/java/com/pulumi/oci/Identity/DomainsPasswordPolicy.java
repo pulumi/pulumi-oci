@@ -1785,11 +1785,18 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public DomainsPasswordPolicy(String name, DomainsPasswordPolicyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsPasswordPolicy:DomainsPasswordPolicy", name, args == null ? DomainsPasswordPolicyArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Identity/domainsPasswordPolicy:DomainsPasswordPolicy", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DomainsPasswordPolicy(String name, Output<String> id, @Nullable DomainsPasswordPolicyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Identity/domainsPasswordPolicy:DomainsPasswordPolicy", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DomainsPasswordPolicyArgs makeArgs(DomainsPasswordPolicyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DomainsPasswordPolicyArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

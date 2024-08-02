@@ -90,6 +90,9 @@ class GetModelResult:
     @property
     @pulumi.getter(name="baseModelId")
     def base_model_id(self) -> str:
+        """
+        The OCID of the base model that's used for fine-tuning. For pretrained models, the value is null.
+        """
         return pulumi.get(self, "base_model_id")
 
     @property
@@ -111,29 +114,38 @@ class GetModelResult:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
     def description(self) -> str:
+        """
+        An optional description of the model.
+        """
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
+        """
+        A user-friendly name.
+        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="fineTuneDetails")
     def fine_tune_details(self) -> Sequence['outputs.GetModelFineTuneDetailResult']:
+        """
+        Details about fine-tuning a custom model.
+        """
         return pulumi.get(self, "fine_tune_details")
 
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
         return pulumi.get(self, "freeform_tags")
 
     @property
@@ -147,11 +159,17 @@ class GetModelResult:
     @property
     @pulumi.getter(name="isLongTermSupported")
     def is_long_term_supported(self) -> bool:
+        """
+        Whether a model is supported long-term. Only applicable to base models.
+        """
         return pulumi.get(self, "is_long_term_supported")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
+        """
+        A message describing the current state of the model in more detail that can provide actionable information.
+        """
         return pulumi.get(self, "lifecycle_details")
 
     @property
@@ -162,6 +180,9 @@ class GetModelResult:
     @property
     @pulumi.getter(name="modelMetrics")
     def model_metrics(self) -> Sequence['outputs.GetModelModelMetricResult']:
+        """
+        Model metrics during the creation of a new model.
+        """
         return pulumi.get(self, "model_metrics")
 
     @property
@@ -175,11 +196,17 @@ class GetModelResult:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
+        """
+        The date and time that the model was created in the format of an RFC3339 datetime string.
+        """
         return pulumi.get(self, "time_created")
 
     @property
@@ -193,19 +220,22 @@ class GetModelResult:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
+        """
+        The date and time that the model was updated in the format of an RFC3339 datetime string.
+        """
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter
     def type(self) -> str:
-        """
-        The model type indicating whether this is a pretrained/base model or a custom/fine-tuned model.
-        """
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter
     def vendor(self) -> str:
+        """
+        The provider of the base model.
+        """
         return pulumi.get(self, "vendor")
 
     @property

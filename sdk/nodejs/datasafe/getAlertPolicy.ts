@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -43,6 +45,7 @@ export interface GetAlertPolicyArgs {
  */
 export interface GetAlertPolicyResult {
     readonly alertPolicyId: string;
+    readonly alertPolicyRuleDetails: outputs.DataSafe.GetAlertPolicyAlertPolicyRuleDetail[];
     /**
      * Indicates the Data Safe feature to which the alert policy belongs.
      */
@@ -68,13 +71,17 @@ export interface GetAlertPolicyResult {
      */
     readonly freeformTags: {[key: string]: any};
     /**
-     * The provider-assigned unique ID for this managed resource.
+     * The OCID of the alert policy.
      */
     readonly id: string;
     /**
      * Indicates if the alert policy is user-defined (true) or pre-defined (false).
      */
     readonly isUserDefined: boolean;
+    /**
+     * Details about the current state of the alert policy.
+     */
+    readonly lifecycleDetails: string;
     /**
      * Severity level of the alert raised by this policy.
      */

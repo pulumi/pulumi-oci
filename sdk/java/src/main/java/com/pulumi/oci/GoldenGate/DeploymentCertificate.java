@@ -391,11 +391,18 @@ public class DeploymentCertificate extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public DeploymentCertificate(String name, DeploymentCertificateArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:GoldenGate/deploymentCertificate:DeploymentCertificate", name, args == null ? DeploymentCertificateArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:GoldenGate/deploymentCertificate:DeploymentCertificate", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DeploymentCertificate(String name, Output<String> id, @Nullable DeploymentCertificateState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:GoldenGate/deploymentCertificate:DeploymentCertificate", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DeploymentCertificateArgs makeArgs(DeploymentCertificateArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DeploymentCertificateArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

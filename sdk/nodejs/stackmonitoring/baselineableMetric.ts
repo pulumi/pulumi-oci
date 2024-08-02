@@ -18,9 +18,10 @@ import * as utilities from "../utilities";
  * const testBaselineableMetric = new oci.stackmonitoring.BaselineableMetric("test_baselineable_metric", {
  *     column: baselineableMetricColumn,
  *     compartmentId: compartmentId,
- *     name: baselineableMetricName,
  *     namespace: baselineableMetricNamespace,
+ *     name: baselineableMetricName,
  *     resourceGroup: baselineableMetricResourceGroup,
+ *     resourceType: baselineableMetricResourceType,
  * });
  * ```
  *
@@ -98,12 +99,16 @@ export class BaselineableMetric extends pulumi.CustomResource {
     public readonly namespace!: pulumi.Output<string>;
     /**
      * (Updatable) Resource group of the metric
+     */
+    public readonly resourceGroup!: pulumi.Output<string>;
+    /**
+     * (Updatable) Resource type of the metric
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly resourceGroup!: pulumi.Output<string>;
+    public readonly resourceType!: pulumi.Output<string>;
     /**
      * The current lifecycle state of the metric extension
      */
@@ -148,6 +153,7 @@ export class BaselineableMetric extends pulumi.CustomResource {
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["namespace"] = state ? state.namespace : undefined;
             resourceInputs["resourceGroup"] = state ? state.resourceGroup : undefined;
+            resourceInputs["resourceType"] = state ? state.resourceType : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["tenancyId"] = state ? state.tenancyId : undefined;
@@ -164,14 +170,12 @@ export class BaselineableMetric extends pulumi.CustomResource {
             if ((!args || args.namespace === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'namespace'");
             }
-            if ((!args || args.resourceGroup === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'resourceGroup'");
-            }
             resourceInputs["column"] = args ? args.column : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["namespace"] = args ? args.namespace : undefined;
             resourceInputs["resourceGroup"] = args ? args.resourceGroup : undefined;
+            resourceInputs["resourceType"] = args ? args.resourceType : undefined;
             resourceInputs["createdBy"] = undefined /*out*/;
             resourceInputs["definedTags"] = undefined /*out*/;
             resourceInputs["freeformTags"] = undefined /*out*/;
@@ -230,12 +234,16 @@ export interface BaselineableMetricState {
     namespace?: pulumi.Input<string>;
     /**
      * (Updatable) Resource group of the metric
+     */
+    resourceGroup?: pulumi.Input<string>;
+    /**
+     * (Updatable) Resource type of the metric
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string>;
     /**
      * The current lifecycle state of the metric extension
      */
@@ -280,10 +288,14 @@ export interface BaselineableMetricArgs {
     namespace: pulumi.Input<string>;
     /**
      * (Updatable) Resource group of the metric
+     */
+    resourceGroup?: pulumi.Input<string>;
+    /**
+     * (Updatable) Resource type of the metric
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    resourceGroup: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string>;
 }

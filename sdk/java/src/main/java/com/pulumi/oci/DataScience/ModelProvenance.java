@@ -197,11 +197,18 @@ public class ModelProvenance extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public ModelProvenance(String name, ModelProvenanceArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataScience/modelProvenance:ModelProvenance", name, args == null ? ModelProvenanceArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DataScience/modelProvenance:ModelProvenance", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ModelProvenance(String name, Output<String> id, @Nullable ModelProvenanceState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DataScience/modelProvenance:ModelProvenance", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ModelProvenanceArgs makeArgs(ModelProvenanceArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ModelProvenanceArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

@@ -63,11 +63,18 @@ public class AutonomousContainerDatabaseDataguardRoleChange extends com.pulumi.r
      * @param options A bag of options that control this resource's behavior.
      */
     public AutonomousContainerDatabaseDataguardRoleChange(String name, AutonomousContainerDatabaseDataguardRoleChangeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/autonomousContainerDatabaseDataguardRoleChange:AutonomousContainerDatabaseDataguardRoleChange", name, args == null ? AutonomousContainerDatabaseDataguardRoleChangeArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Database/autonomousContainerDatabaseDataguardRoleChange:AutonomousContainerDatabaseDataguardRoleChange", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private AutonomousContainerDatabaseDataguardRoleChange(String name, Output<String> id, @Nullable AutonomousContainerDatabaseDataguardRoleChangeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Database/autonomousContainerDatabaseDataguardRoleChange:AutonomousContainerDatabaseDataguardRoleChange", name, state, makeResourceOptions(options, id));
+    }
+
+    private static AutonomousContainerDatabaseDataguardRoleChangeArgs makeArgs(AutonomousContainerDatabaseDataguardRoleChangeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? AutonomousContainerDatabaseDataguardRoleChangeArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

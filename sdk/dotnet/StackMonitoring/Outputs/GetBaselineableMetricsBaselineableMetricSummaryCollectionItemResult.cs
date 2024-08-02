@@ -38,7 +38,7 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Is the metric created out of box, default false
+        /// Is the baseline enabled metric defined out of box by Oracle or by end-user
         /// </summary>
         public readonly bool IsOutOfBox;
         /// <summary>
@@ -57,6 +57,10 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// Resource Group
         /// </summary>
         public readonly string ResourceGroup;
+        /// <summary>
+        /// Resource Type
+        /// </summary>
+        public readonly string ResourceType;
         /// <summary>
         /// The current lifecycle state of the metric extension
         /// </summary>
@@ -102,6 +106,8 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
 
             string resourceGroup,
 
+            string resourceType,
+
             string state,
 
             ImmutableDictionary<string, object> systemTags,
@@ -123,6 +129,7 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
             Name = name;
             Namespace = @namespace;
             ResourceGroup = resourceGroup;
+            ResourceType = resourceType;
             State = state;
             SystemTags = systemTags;
             TenancyId = tenancyId;

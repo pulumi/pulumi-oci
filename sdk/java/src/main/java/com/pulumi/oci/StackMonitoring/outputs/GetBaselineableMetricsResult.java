@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.StackMonitoring.outputs.GetBaselineableMetricsBaselineableMetricSummaryCollection;
 import com.pulumi.oci.StackMonitoring.outputs.GetBaselineableMetricsFilter;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -32,6 +33,11 @@ public final class GetBaselineableMetricsResult {
      * 
      */
     private String id;
+    /**
+     * @return Is the metric created out of box, default false
+     * 
+     */
+    private @Nullable Boolean isOutOfBox;
     private @Nullable String metricNamespace;
     /**
      * @return name of the metric
@@ -43,6 +49,11 @@ public final class GetBaselineableMetricsResult {
      * 
      */
     private @Nullable String resourceGroup;
+    /**
+     * @return Resource type of the metric
+     * 
+     */
+    private @Nullable String resourceType;
 
     private GetBaselineableMetricsResult() {}
     public Optional<String> baselineableMetricId() {
@@ -72,6 +83,13 @@ public final class GetBaselineableMetricsResult {
     public String id() {
         return this.id;
     }
+    /**
+     * @return Is the metric created out of box, default false
+     * 
+     */
+    public Optional<Boolean> isOutOfBox() {
+        return Optional.ofNullable(this.isOutOfBox);
+    }
     public Optional<String> metricNamespace() {
         return Optional.ofNullable(this.metricNamespace);
     }
@@ -89,6 +107,13 @@ public final class GetBaselineableMetricsResult {
     public Optional<String> resourceGroup() {
         return Optional.ofNullable(this.resourceGroup);
     }
+    /**
+     * @return Resource type of the metric
+     * 
+     */
+    public Optional<String> resourceType() {
+        return Optional.ofNullable(this.resourceType);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -104,9 +129,11 @@ public final class GetBaselineableMetricsResult {
         private @Nullable String compartmentId;
         private @Nullable List<GetBaselineableMetricsFilter> filters;
         private String id;
+        private @Nullable Boolean isOutOfBox;
         private @Nullable String metricNamespace;
         private @Nullable String name;
         private @Nullable String resourceGroup;
+        private @Nullable String resourceType;
         public Builder() {}
         public Builder(GetBaselineableMetricsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -115,9 +142,11 @@ public final class GetBaselineableMetricsResult {
     	      this.compartmentId = defaults.compartmentId;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.isOutOfBox = defaults.isOutOfBox;
     	      this.metricNamespace = defaults.metricNamespace;
     	      this.name = defaults.name;
     	      this.resourceGroup = defaults.resourceGroup;
+    	      this.resourceType = defaults.resourceType;
         }
 
         @CustomType.Setter
@@ -161,6 +190,12 @@ public final class GetBaselineableMetricsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isOutOfBox(@Nullable Boolean isOutOfBox) {
+
+            this.isOutOfBox = isOutOfBox;
+            return this;
+        }
+        @CustomType.Setter
         public Builder metricNamespace(@Nullable String metricNamespace) {
 
             this.metricNamespace = metricNamespace;
@@ -178,6 +213,12 @@ public final class GetBaselineableMetricsResult {
             this.resourceGroup = resourceGroup;
             return this;
         }
+        @CustomType.Setter
+        public Builder resourceType(@Nullable String resourceType) {
+
+            this.resourceType = resourceType;
+            return this;
+        }
         public GetBaselineableMetricsResult build() {
             final var _resultValue = new GetBaselineableMetricsResult();
             _resultValue.baselineableMetricId = baselineableMetricId;
@@ -185,9 +226,11 @@ public final class GetBaselineableMetricsResult {
             _resultValue.compartmentId = compartmentId;
             _resultValue.filters = filters;
             _resultValue.id = id;
+            _resultValue.isOutOfBox = isOutOfBox;
             _resultValue.metricNamespace = metricNamespace;
             _resultValue.name = name;
             _resultValue.resourceGroup = resourceGroup;
+            _resultValue.resourceType = resourceType;
             return _resultValue;
         }
     }

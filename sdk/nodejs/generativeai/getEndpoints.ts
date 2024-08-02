@@ -65,15 +65,15 @@ export interface GetEndpointsArgs {
  */
 export interface GetEndpointsResult {
     readonly compartmentId: string;
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     */
     readonly displayName?: string;
     /**
      * The list of endpoint_collection.
      */
     readonly endpointCollections: outputs.GenerativeAi.GetEndpointsEndpointCollection[];
     readonly filters?: outputs.GenerativeAi.GetEndpointsFilter[];
-    /**
-     * An OCID that uniquely identifies this endpoint resource.
-     */
     readonly id?: string;
     /**
      * The current state of the endpoint.

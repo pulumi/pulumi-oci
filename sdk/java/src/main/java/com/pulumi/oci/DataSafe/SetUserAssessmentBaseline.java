@@ -123,11 +123,18 @@ public class SetUserAssessmentBaseline extends com.pulumi.resources.CustomResour
      * @param options A bag of options that control this resource's behavior.
      */
     public SetUserAssessmentBaseline(String name, SetUserAssessmentBaselineArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/setUserAssessmentBaseline:SetUserAssessmentBaseline", name, args == null ? SetUserAssessmentBaselineArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DataSafe/setUserAssessmentBaseline:SetUserAssessmentBaseline", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private SetUserAssessmentBaseline(String name, Output<String> id, @Nullable SetUserAssessmentBaselineState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DataSafe/setUserAssessmentBaseline:SetUserAssessmentBaseline", name, state, makeResourceOptions(options, id));
+    }
+
+    private static SetUserAssessmentBaselineArgs makeArgs(SetUserAssessmentBaselineArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? SetUserAssessmentBaselineArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

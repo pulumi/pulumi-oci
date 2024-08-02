@@ -130,11 +130,18 @@ public class DomainReplicationToRegion extends com.pulumi.resources.CustomResour
      * @param options A bag of options that control this resource's behavior.
      */
     public DomainReplicationToRegion(String name, DomainReplicationToRegionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainReplicationToRegion:DomainReplicationToRegion", name, args == null ? DomainReplicationToRegionArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Identity/domainReplicationToRegion:DomainReplicationToRegion", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DomainReplicationToRegion(String name, Output<String> id, @Nullable DomainReplicationToRegionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Identity/domainReplicationToRegion:DomainReplicationToRegion", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DomainReplicationToRegionArgs makeArgs(DomainReplicationToRegionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DomainReplicationToRegionArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

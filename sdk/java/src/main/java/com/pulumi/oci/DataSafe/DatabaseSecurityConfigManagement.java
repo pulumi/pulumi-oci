@@ -127,11 +127,18 @@ public class DatabaseSecurityConfigManagement extends com.pulumi.resources.Custo
      * @param options A bag of options that control this resource's behavior.
      */
     public DatabaseSecurityConfigManagement(String name, @Nullable DatabaseSecurityConfigManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/databaseSecurityConfigManagement:DatabaseSecurityConfigManagement", name, args == null ? DatabaseSecurityConfigManagementArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DataSafe/databaseSecurityConfigManagement:DatabaseSecurityConfigManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DatabaseSecurityConfigManagement(String name, Output<String> id, @Nullable DatabaseSecurityConfigManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DataSafe/databaseSecurityConfigManagement:DatabaseSecurityConfigManagement", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DatabaseSecurityConfigManagementArgs makeArgs(@Nullable DatabaseSecurityConfigManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DatabaseSecurityConfigManagementArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

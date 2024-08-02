@@ -61,6 +61,7 @@ import * as dns from "./dns";
 import * as email from "./email";
 import * as events from "./events";
 import * as filestorage from "./filestorage";
+import * as fleetsoftwareupdate from "./fleetsoftwareupdate";
 import * as functions from "./functions";
 import * as fusionapps from "./fusionapps";
 import * as generativeai from "./generativeai";
@@ -180,6 +181,7 @@ export {
     email,
     events,
     filestorage,
+    fleetsoftwareupdate,
     functions,
     fusionapps,
     generativeai,

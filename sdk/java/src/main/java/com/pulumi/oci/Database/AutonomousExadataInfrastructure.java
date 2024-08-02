@@ -428,11 +428,18 @@ public class AutonomousExadataInfrastructure extends com.pulumi.resources.Custom
      * @param options A bag of options that control this resource's behavior.
      */
     public AutonomousExadataInfrastructure(String name, AutonomousExadataInfrastructureArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/autonomousExadataInfrastructure:AutonomousExadataInfrastructure", name, args == null ? AutonomousExadataInfrastructureArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Database/autonomousExadataInfrastructure:AutonomousExadataInfrastructure", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private AutonomousExadataInfrastructure(String name, Output<String> id, @Nullable AutonomousExadataInfrastructureState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Database/autonomousExadataInfrastructure:AutonomousExadataInfrastructure", name, state, makeResourceOptions(options, id));
+    }
+
+    private static AutonomousExadataInfrastructureArgs makeArgs(AutonomousExadataInfrastructureArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? AutonomousExadataInfrastructureArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

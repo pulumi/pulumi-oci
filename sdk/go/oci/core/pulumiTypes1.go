@@ -13,6 +13,231 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail struct {
+	// Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+	Ipv6subnetCidr string `pulumi:"ipv6subnetCidr"`
+}
+
+// GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailInput is an input type that accepts GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs and GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput values.
+// You can construct a concrete instance of `GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailInput` via:
+//
+//	GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs{...}
+type GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailInput interface {
+	pulumi.Input
+
+	ToGetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput() GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput
+	ToGetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutputWithContext(context.Context) GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput
+}
+
+type GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs struct {
+	// Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+	Ipv6subnetCidr pulumi.StringInput `pulumi:"ipv6subnetCidr"`
+}
+
+func (GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (i GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs) ToGetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput() GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput {
+	return i.ToGetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutputWithContext(context.Background())
+}
+
+func (i GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs) ToGetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutputWithContext(ctx context.Context) GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput)
+}
+
+// GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayInput is an input type that accepts GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArray and GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput values.
+// You can construct a concrete instance of `GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayInput` via:
+//
+//	GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArray{ GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs{...} }
+type GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput
+	ToGetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(context.Context) GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput
+}
+
+type GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArray []GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailInput
+
+func (GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (i GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArray) ToGetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return i.ToGetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArray) ToGetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(ctx context.Context) GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput)
+}
+
+type GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (o GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput) ToGetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput() GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput {
+	return o
+}
+
+func (o GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput) ToGetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutputWithContext(ctx context.Context) GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput {
+	return o
+}
+
+// Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+func (o GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6subnetCidr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail) string {
+		return v.Ipv6subnetCidr
+	}).(pulumi.StringOutput)
+}
+
+type GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (o GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput) ToGetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o
+}
+
+func (o GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput) ToGetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(ctx context.Context) GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o
+}
+
+func (o GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput) Index(i pulumi.IntInput) GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail {
+		return vs[0].([]GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail)[vs[1].(int)]
+	}).(GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput)
+}
+
+type GetInstancePoolPlacementConfigurationSecondaryVnicSubnet struct {
+	// The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+	DisplayName string `pulumi:"displayName"`
+	// A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+	Ipv6addressIpv6subnetCidrPairDetails []GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail `pulumi:"ipv6addressIpv6subnetCidrPairDetails"`
+	// Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+	IsAssignIpv6ip bool `pulumi:"isAssignIpv6ip"`
+	// The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetInstancePoolPlacementConfigurationSecondaryVnicSubnetInput is an input type that accepts GetInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs and GetInstancePoolPlacementConfigurationSecondaryVnicSubnetOutput values.
+// You can construct a concrete instance of `GetInstancePoolPlacementConfigurationSecondaryVnicSubnetInput` via:
+//
+//	GetInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs{...}
+type GetInstancePoolPlacementConfigurationSecondaryVnicSubnetInput interface {
+	pulumi.Input
+
+	ToGetInstancePoolPlacementConfigurationSecondaryVnicSubnetOutput() GetInstancePoolPlacementConfigurationSecondaryVnicSubnetOutput
+	ToGetInstancePoolPlacementConfigurationSecondaryVnicSubnetOutputWithContext(context.Context) GetInstancePoolPlacementConfigurationSecondaryVnicSubnetOutput
+}
+
+type GetInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs struct {
+	// The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+	Ipv6addressIpv6subnetCidrPairDetails GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayInput `pulumi:"ipv6addressIpv6subnetCidrPairDetails"`
+	// Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+	IsAssignIpv6ip pulumi.BoolInput `pulumi:"isAssignIpv6ip"`
+	// The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePoolPlacementConfigurationSecondaryVnicSubnet)(nil)).Elem()
+}
+
+func (i GetInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs) ToGetInstancePoolPlacementConfigurationSecondaryVnicSubnetOutput() GetInstancePoolPlacementConfigurationSecondaryVnicSubnetOutput {
+	return i.ToGetInstancePoolPlacementConfigurationSecondaryVnicSubnetOutputWithContext(context.Background())
+}
+
+func (i GetInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs) ToGetInstancePoolPlacementConfigurationSecondaryVnicSubnetOutputWithContext(ctx context.Context) GetInstancePoolPlacementConfigurationSecondaryVnicSubnetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePoolPlacementConfigurationSecondaryVnicSubnetOutput)
+}
+
+// GetInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayInput is an input type that accepts GetInstancePoolPlacementConfigurationSecondaryVnicSubnetArray and GetInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutput values.
+// You can construct a concrete instance of `GetInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayInput` via:
+//
+//	GetInstancePoolPlacementConfigurationSecondaryVnicSubnetArray{ GetInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs{...} }
+type GetInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayInput interface {
+	pulumi.Input
+
+	ToGetInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutput() GetInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutput
+	ToGetInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutputWithContext(context.Context) GetInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutput
+}
+
+type GetInstancePoolPlacementConfigurationSecondaryVnicSubnetArray []GetInstancePoolPlacementConfigurationSecondaryVnicSubnetInput
+
+func (GetInstancePoolPlacementConfigurationSecondaryVnicSubnetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancePoolPlacementConfigurationSecondaryVnicSubnet)(nil)).Elem()
+}
+
+func (i GetInstancePoolPlacementConfigurationSecondaryVnicSubnetArray) ToGetInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutput() GetInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutput {
+	return i.ToGetInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstancePoolPlacementConfigurationSecondaryVnicSubnetArray) ToGetInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutputWithContext(ctx context.Context) GetInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutput)
+}
+
+type GetInstancePoolPlacementConfigurationSecondaryVnicSubnetOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePoolPlacementConfigurationSecondaryVnicSubnetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePoolPlacementConfigurationSecondaryVnicSubnet)(nil)).Elem()
+}
+
+func (o GetInstancePoolPlacementConfigurationSecondaryVnicSubnetOutput) ToGetInstancePoolPlacementConfigurationSecondaryVnicSubnetOutput() GetInstancePoolPlacementConfigurationSecondaryVnicSubnetOutput {
+	return o
+}
+
+func (o GetInstancePoolPlacementConfigurationSecondaryVnicSubnetOutput) ToGetInstancePoolPlacementConfigurationSecondaryVnicSubnetOutputWithContext(ctx context.Context) GetInstancePoolPlacementConfigurationSecondaryVnicSubnetOutput {
+	return o
+}
+
+// The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+func (o GetInstancePoolPlacementConfigurationSecondaryVnicSubnetOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancePoolPlacementConfigurationSecondaryVnicSubnet) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+func (o GetInstancePoolPlacementConfigurationSecondaryVnicSubnetOutput) Ipv6addressIpv6subnetCidrPairDetails() GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o.ApplyT(func(v GetInstancePoolPlacementConfigurationSecondaryVnicSubnet) []GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail {
+		return v.Ipv6addressIpv6subnetCidrPairDetails
+	}).(GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput)
+}
+
+// Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+func (o GetInstancePoolPlacementConfigurationSecondaryVnicSubnetOutput) IsAssignIpv6ip() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstancePoolPlacementConfigurationSecondaryVnicSubnet) bool { return v.IsAssignIpv6ip }).(pulumi.BoolOutput)
+}
+
+// The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
+func (o GetInstancePoolPlacementConfigurationSecondaryVnicSubnetOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancePoolPlacementConfigurationSecondaryVnicSubnet) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type GetInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancePoolPlacementConfigurationSecondaryVnicSubnet)(nil)).Elem()
+}
+
+func (o GetInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutput) ToGetInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutput() GetInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutput {
+	return o
+}
+
+func (o GetInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutput) ToGetInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutputWithContext(ctx context.Context) GetInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutput {
+	return o
+}
+
+func (o GetInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutput) Index(i pulumi.IntInput) GetInstancePoolPlacementConfigurationSecondaryVnicSubnetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstancePoolPlacementConfigurationSecondaryVnicSubnet {
+		return vs[0].([]GetInstancePoolPlacementConfigurationSecondaryVnicSubnet)[vs[1].(int)]
+	}).(GetInstancePoolPlacementConfigurationSecondaryVnicSubnetOutput)
+}
+
 type GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail struct {
 	// Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
 	Ipv6subnetCidr string `pulumi:"ipv6subnetCidr"`
@@ -29234,6 +29459,10 @@ func (o GetVtapsVtapArrayOutput) Index(i pulumi.IntInput) GetVtapsVtapOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailInput)(nil)).Elem(), GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayInput)(nil)).Elem(), GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolPlacementConfigurationSecondaryVnicSubnetInput)(nil)).Elem(), GetInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayInput)(nil)).Elem(), GetInstancePoolPlacementConfigurationSecondaryVnicSubnetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailInput)(nil)).Elem(), GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayInput)(nil)).Elem(), GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolsFilterInput)(nil)).Elem(), GetInstancePoolsFilterArgs{})
@@ -29658,6 +29887,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsFilterArrayInput)(nil)).Elem(), GetVtapsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsVtapInput)(nil)).Elem(), GetVtapsVtapArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsVtapArrayInput)(nil)).Elem(), GetVtapsVtapArray{})
+	pulumi.RegisterOutputType(GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput{})
+	pulumi.RegisterOutputType(GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetInstancePoolPlacementConfigurationSecondaryVnicSubnetOutput{})
+	pulumi.RegisterOutputType(GetInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutput{})
 	pulumi.RegisterOutputType(GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput{})
 	pulumi.RegisterOutputType(GetInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetInstancePoolsFilterOutput{})

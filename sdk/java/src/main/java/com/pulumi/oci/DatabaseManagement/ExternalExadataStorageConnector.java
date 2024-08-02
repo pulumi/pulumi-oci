@@ -361,11 +361,18 @@ public class ExternalExadataStorageConnector extends com.pulumi.resources.Custom
      * @param options A bag of options that control this resource's behavior.
      */
     public ExternalExadataStorageConnector(String name, ExternalExadataStorageConnectorArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseManagement/externalExadataStorageConnector:ExternalExadataStorageConnector", name, args == null ? ExternalExadataStorageConnectorArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DatabaseManagement/externalExadataStorageConnector:ExternalExadataStorageConnector", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ExternalExadataStorageConnector(String name, Output<String> id, @Nullable ExternalExadataStorageConnectorState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DatabaseManagement/externalExadataStorageConnector:ExternalExadataStorageConnector", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ExternalExadataStorageConnectorArgs makeArgs(ExternalExadataStorageConnectorArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ExternalExadataStorageConnectorArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

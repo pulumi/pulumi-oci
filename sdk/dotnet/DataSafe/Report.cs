@@ -56,6 +56,12 @@ namespace Pulumi.Oci.DataSafe
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
+        /// Details about the current state of the report in Data Safe.
+        /// </summary>
+        [Output("lifecycleDetails")]
+        public Output<string> LifecycleDetails { get; private set; } = null!;
+
+        /// <summary>
         /// Specifies the format of report to be .xls or .pdf or .json
         /// </summary>
         [Output("mimeType")]
@@ -236,6 +242,12 @@ namespace Pulumi.Oci.DataSafe
             get => _freeformTags ?? (_freeformTags = new InputMap<object>());
             set => _freeformTags = value;
         }
+
+        /// <summary>
+        /// Details about the current state of the report in Data Safe.
+        /// </summary>
+        [Input("lifecycleDetails")]
+        public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
         /// Specifies the format of report to be .xls or .pdf or .json

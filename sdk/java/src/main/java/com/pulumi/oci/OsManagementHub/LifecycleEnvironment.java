@@ -330,11 +330,18 @@ public class LifecycleEnvironment extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public LifecycleEnvironment(String name, LifecycleEnvironmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:OsManagementHub/lifecycleEnvironment:LifecycleEnvironment", name, args == null ? LifecycleEnvironmentArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:OsManagementHub/lifecycleEnvironment:LifecycleEnvironment", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private LifecycleEnvironment(String name, Output<String> id, @Nullable LifecycleEnvironmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:OsManagementHub/lifecycleEnvironment:LifecycleEnvironment", name, state, makeResourceOptions(options, id));
+    }
+
+    private static LifecycleEnvironmentArgs makeArgs(LifecycleEnvironmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? LifecycleEnvironmentArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

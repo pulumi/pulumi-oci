@@ -16,7 +16,7 @@ public final class GetDomainsIdentityProviderTag {
      */
     private String key;
     /**
-     * @return Value of the tag.
+     * @return Group identifier
      * 
      */
     private String value;
@@ -30,7 +30,7 @@ public final class GetDomainsIdentityProviderTag {
         return this.key;
     }
     /**
-     * @return Value of the tag.
+     * @return Group identifier
      * 
      */
     public String value() {

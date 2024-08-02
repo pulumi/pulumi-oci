@@ -103,7 +103,7 @@ export class RedisCluster extends pulumi.CustomResource {
      */
     public readonly nodeMemoryInGbs!: pulumi.Output<number>;
     /**
-     * (Updatable) OCIDs of the NSGs to control access in the customer network
+     * (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
      */
     public readonly nsgIds!: pulumi.Output<string[]>;
     /**
@@ -265,7 +265,7 @@ export interface RedisClusterState {
      */
     nodeMemoryInGbs?: pulumi.Input<number>;
     /**
-     * (Updatable) OCIDs of the NSGs to control access in the customer network
+     * (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -343,7 +343,7 @@ export interface RedisClusterArgs {
      */
     nodeMemoryInGbs: pulumi.Input<number>;
     /**
-     * (Updatable) OCIDs of the NSGs to control access in the customer network
+     * (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**

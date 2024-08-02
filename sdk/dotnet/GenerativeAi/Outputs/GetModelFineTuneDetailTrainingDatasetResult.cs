@@ -13,9 +13,21 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
     [OutputType]
     public sealed class GetModelFineTuneDetailTrainingDatasetResult
     {
+        /// <summary>
+        /// The Object Storage bucket name.
+        /// </summary>
         public readonly string Bucket;
+        /// <summary>
+        /// The type of the data asset.
+        /// </summary>
         public readonly string DatasetType;
+        /// <summary>
+        /// The Object Storage namespace.
+        /// </summary>
         public readonly string Namespace;
+        /// <summary>
+        /// The Object Storage object name.
+        /// </summary>
         public readonly string Object;
 
         [OutputConstructor]

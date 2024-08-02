@@ -310,11 +310,18 @@ public class SecurityList extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public SecurityList(String name, SecurityListArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/securityList:SecurityList", name, args == null ? SecurityListArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Core/securityList:SecurityList", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private SecurityList(String name, Output<String> id, @Nullable SecurityListState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Core/securityList:SecurityList", name, state, makeResourceOptions(options, id));
+    }
+
+    private static SecurityListArgs makeArgs(SecurityListArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? SecurityListArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

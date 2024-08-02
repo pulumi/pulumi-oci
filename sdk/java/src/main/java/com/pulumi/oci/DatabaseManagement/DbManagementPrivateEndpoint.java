@@ -286,11 +286,18 @@ public class DbManagementPrivateEndpoint extends com.pulumi.resources.CustomReso
      * @param options A bag of options that control this resource's behavior.
      */
     public DbManagementPrivateEndpoint(String name, DbManagementPrivateEndpointArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseManagement/dbManagementPrivateEndpoint:DbManagementPrivateEndpoint", name, args == null ? DbManagementPrivateEndpointArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DatabaseManagement/dbManagementPrivateEndpoint:DbManagementPrivateEndpoint", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DbManagementPrivateEndpoint(String name, Output<String> id, @Nullable DbManagementPrivateEndpointState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DatabaseManagement/dbManagementPrivateEndpoint:DbManagementPrivateEndpoint", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DbManagementPrivateEndpointArgs makeArgs(DbManagementPrivateEndpointArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DbManagementPrivateEndpointArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

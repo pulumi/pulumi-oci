@@ -6467,6 +6467,7 @@ class GetBdsInstancesBdsInstanceResult(dict):
                  edge_nodes: Sequence['outputs.GetBdsInstancesBdsInstanceEdgeNodeResult'],
                  freeform_tags: Mapping[str, Any],
                  id: str,
+                 ignore_existing_nodes_shapes: Sequence[str],
                  is_cloud_sql_configured: bool,
                  is_force_stop_jobs: bool,
                  is_high_availability: bool,
@@ -6526,6 +6527,7 @@ class GetBdsInstancesBdsInstanceResult(dict):
         pulumi.set(__self__, "edge_nodes", edge_nodes)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "ignore_existing_nodes_shapes", ignore_existing_nodes_shapes)
         pulumi.set(__self__, "is_cloud_sql_configured", is_cloud_sql_configured)
         pulumi.set(__self__, "is_force_stop_jobs", is_force_stop_jobs)
         pulumi.set(__self__, "is_high_availability", is_high_availability)
@@ -6653,6 +6655,11 @@ class GetBdsInstancesBdsInstanceResult(dict):
         The OCID of the Big Data Service resource.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="ignoreExistingNodesShapes")
+    def ignore_existing_nodes_shapes(self) -> Sequence[str]:
+        return pulumi.get(self, "ignore_existing_nodes_shapes")
 
     @property
     @pulumi.getter(name="isCloudSqlConfigured")

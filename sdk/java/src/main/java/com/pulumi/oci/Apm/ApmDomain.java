@@ -241,11 +241,18 @@ public class ApmDomain extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public ApmDomain(String name, ApmDomainArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Apm/apmDomain:ApmDomain", name, args == null ? ApmDomainArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Apm/apmDomain:ApmDomain", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ApmDomain(String name, Output<String> id, @Nullable ApmDomainState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Apm/apmDomain:ApmDomain", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ApmDomainArgs makeArgs(ApmDomainArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ApmDomainArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

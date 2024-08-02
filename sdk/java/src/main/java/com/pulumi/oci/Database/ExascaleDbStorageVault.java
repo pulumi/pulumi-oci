@@ -319,11 +319,18 @@ public class ExascaleDbStorageVault extends com.pulumi.resources.CustomResource 
      * @param options A bag of options that control this resource's behavior.
      */
     public ExascaleDbStorageVault(String name, ExascaleDbStorageVaultArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/exascaleDbStorageVault:ExascaleDbStorageVault", name, args == null ? ExascaleDbStorageVaultArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Database/exascaleDbStorageVault:ExascaleDbStorageVault", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ExascaleDbStorageVault(String name, Output<String> id, @Nullable ExascaleDbStorageVaultState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Database/exascaleDbStorageVault:ExascaleDbStorageVault", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ExascaleDbStorageVaultArgs makeArgs(ExascaleDbStorageVaultArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ExascaleDbStorageVaultArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

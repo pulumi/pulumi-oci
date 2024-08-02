@@ -191,14 +191,14 @@ public class RedisCluster extends com.pulumi.resources.CustomResource {
         return this.nodeMemoryInGbs;
     }
     /**
-     * (Updatable) OCIDs of the NSGs to control access in the customer network
+     * (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
      * 
      */
     @Export(name="nsgIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> nsgIds;
 
     /**
-     * @return (Updatable) OCIDs of the NSGs to control access in the customer network
+     * @return (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
      * 
      */
     public Output<List<String>> nsgIds() {
@@ -373,11 +373,18 @@ public class RedisCluster extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public RedisCluster(String name, RedisClusterArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Redis/redisCluster:RedisCluster", name, args == null ? RedisClusterArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Redis/redisCluster:RedisCluster", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private RedisCluster(String name, Output<String> id, @Nullable RedisClusterState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Redis/redisCluster:RedisCluster", name, state, makeResourceOptions(options, id));
+    }
+
+    private static RedisClusterArgs makeArgs(RedisClusterArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? RedisClusterArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

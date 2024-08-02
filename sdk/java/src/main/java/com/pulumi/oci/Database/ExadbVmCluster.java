@@ -698,11 +698,18 @@ public class ExadbVmCluster extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public ExadbVmCluster(String name, ExadbVmClusterArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/exadbVmCluster:ExadbVmCluster", name, args == null ? ExadbVmClusterArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Database/exadbVmCluster:ExadbVmCluster", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ExadbVmCluster(String name, Output<String> id, @Nullable ExadbVmClusterState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Database/exadbVmCluster:ExadbVmCluster", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ExadbVmClusterArgs makeArgs(ExadbVmClusterArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ExadbVmClusterArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

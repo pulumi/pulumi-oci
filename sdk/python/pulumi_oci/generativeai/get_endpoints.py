@@ -51,6 +51,9 @@ class GetEndpointsResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -69,9 +72,6 @@ class GetEndpointsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        An OCID that uniquely identifies this endpoint resource.
-        """
         return pulumi.get(self, "id")
 
     @property

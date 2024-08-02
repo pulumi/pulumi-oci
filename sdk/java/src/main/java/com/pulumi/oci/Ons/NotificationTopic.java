@@ -266,11 +266,18 @@ public class NotificationTopic extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public NotificationTopic(String name, NotificationTopicArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Ons/notificationTopic:NotificationTopic", name, args == null ? NotificationTopicArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Ons/notificationTopic:NotificationTopic", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private NotificationTopic(String name, Output<String> id, @Nullable NotificationTopicState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Ons/notificationTopic:NotificationTopic", name, state, makeResourceOptions(options, id));
+    }
+
+    private static NotificationTopicArgs makeArgs(NotificationTopicArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? NotificationTopicArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

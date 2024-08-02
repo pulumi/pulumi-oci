@@ -216,6 +216,175 @@ func (o ConnectionIngressIpArrayOutput) Index(i pulumi.IntInput) ConnectionIngre
 	}).(ConnectionIngressIpOutput)
 }
 
+type JobParameterFileVersion struct {
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A description to discribe the current parameter file version
+	Description *string `pulumi:"description"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// Return boolean true/false for the currently in-use parameter file (factory or a versioned file)
+	IsCurrent *bool `pulumi:"isCurrent"`
+	// Return true/false for whether the parameter file is oracle provided (Factory)
+	IsFactory *bool `pulumi:"isFactory"`
+	// Indicator of Parameter File 'kind' (for an EXTRACT or a REPLICAT)
+	Kind *string `pulumi:"kind"`
+	// Phase name
+	Name *string `pulumi:"name"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The time the Migration Job was created. An RFC3339 formatted datetime string
+	TimeCreated *string `pulumi:"timeCreated"`
+}
+
+// JobParameterFileVersionInput is an input type that accepts JobParameterFileVersionArgs and JobParameterFileVersionOutput values.
+// You can construct a concrete instance of `JobParameterFileVersionInput` via:
+//
+//	JobParameterFileVersionArgs{...}
+type JobParameterFileVersionInput interface {
+	pulumi.Input
+
+	ToJobParameterFileVersionOutput() JobParameterFileVersionOutput
+	ToJobParameterFileVersionOutputWithContext(context.Context) JobParameterFileVersionOutput
+}
+
+type JobParameterFileVersionArgs struct {
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A description to discribe the current parameter file version
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// Return boolean true/false for the currently in-use parameter file (factory or a versioned file)
+	IsCurrent pulumi.BoolPtrInput `pulumi:"isCurrent"`
+	// Return true/false for whether the parameter file is oracle provided (Factory)
+	IsFactory pulumi.BoolPtrInput `pulumi:"isFactory"`
+	// Indicator of Parameter File 'kind' (for an EXTRACT or a REPLICAT)
+	Kind pulumi.StringPtrInput `pulumi:"kind"`
+	// Phase name
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// The time the Migration Job was created. An RFC3339 formatted datetime string
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+}
+
+func (JobParameterFileVersionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*JobParameterFileVersion)(nil)).Elem()
+}
+
+func (i JobParameterFileVersionArgs) ToJobParameterFileVersionOutput() JobParameterFileVersionOutput {
+	return i.ToJobParameterFileVersionOutputWithContext(context.Background())
+}
+
+func (i JobParameterFileVersionArgs) ToJobParameterFileVersionOutputWithContext(ctx context.Context) JobParameterFileVersionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobParameterFileVersionOutput)
+}
+
+// JobParameterFileVersionArrayInput is an input type that accepts JobParameterFileVersionArray and JobParameterFileVersionArrayOutput values.
+// You can construct a concrete instance of `JobParameterFileVersionArrayInput` via:
+//
+//	JobParameterFileVersionArray{ JobParameterFileVersionArgs{...} }
+type JobParameterFileVersionArrayInput interface {
+	pulumi.Input
+
+	ToJobParameterFileVersionArrayOutput() JobParameterFileVersionArrayOutput
+	ToJobParameterFileVersionArrayOutputWithContext(context.Context) JobParameterFileVersionArrayOutput
+}
+
+type JobParameterFileVersionArray []JobParameterFileVersionInput
+
+func (JobParameterFileVersionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]JobParameterFileVersion)(nil)).Elem()
+}
+
+func (i JobParameterFileVersionArray) ToJobParameterFileVersionArrayOutput() JobParameterFileVersionArrayOutput {
+	return i.ToJobParameterFileVersionArrayOutputWithContext(context.Background())
+}
+
+func (i JobParameterFileVersionArray) ToJobParameterFileVersionArrayOutputWithContext(ctx context.Context) JobParameterFileVersionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobParameterFileVersionArrayOutput)
+}
+
+type JobParameterFileVersionOutput struct{ *pulumi.OutputState }
+
+func (JobParameterFileVersionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*JobParameterFileVersion)(nil)).Elem()
+}
+
+func (o JobParameterFileVersionOutput) ToJobParameterFileVersionOutput() JobParameterFileVersionOutput {
+	return o
+}
+
+func (o JobParameterFileVersionOutput) ToJobParameterFileVersionOutputWithContext(ctx context.Context) JobParameterFileVersionOutput {
+	return o
+}
+
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o JobParameterFileVersionOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v JobParameterFileVersion) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// A description to discribe the current parameter file version
+func (o JobParameterFileVersionOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobParameterFileVersion) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
+func (o JobParameterFileVersionOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v JobParameterFileVersion) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// Return boolean true/false for the currently in-use parameter file (factory or a versioned file)
+func (o JobParameterFileVersionOutput) IsCurrent() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v JobParameterFileVersion) *bool { return v.IsCurrent }).(pulumi.BoolPtrOutput)
+}
+
+// Return true/false for whether the parameter file is oracle provided (Factory)
+func (o JobParameterFileVersionOutput) IsFactory() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v JobParameterFileVersion) *bool { return v.IsFactory }).(pulumi.BoolPtrOutput)
+}
+
+// Indicator of Parameter File 'kind' (for an EXTRACT or a REPLICAT)
+func (o JobParameterFileVersionOutput) Kind() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobParameterFileVersion) *string { return v.Kind }).(pulumi.StringPtrOutput)
+}
+
+// Phase name
+func (o JobParameterFileVersionOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobParameterFileVersion) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o JobParameterFileVersionOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v JobParameterFileVersion) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+}
+
+// The time the Migration Job was created. An RFC3339 formatted datetime string
+func (o JobParameterFileVersionOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobParameterFileVersion) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+type JobParameterFileVersionArrayOutput struct{ *pulumi.OutputState }
+
+func (JobParameterFileVersionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]JobParameterFileVersion)(nil)).Elem()
+}
+
+func (o JobParameterFileVersionArrayOutput) ToJobParameterFileVersionArrayOutput() JobParameterFileVersionArrayOutput {
+	return o
+}
+
+func (o JobParameterFileVersionArrayOutput) ToJobParameterFileVersionArrayOutputWithContext(ctx context.Context) JobParameterFileVersionArrayOutput {
+	return o
+}
+
+func (o JobParameterFileVersionArrayOutput) Index(i pulumi.IntInput) JobParameterFileVersionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) JobParameterFileVersion {
+		return vs[0].([]JobParameterFileVersion)[vs[1].(int)]
+	}).(JobParameterFileVersionOutput)
+}
+
 type JobProgress struct {
 	// Current phase of the job.
 	CurrentPhase *string `pulumi:"currentPhase"`
@@ -336,10 +505,14 @@ type JobProgressPhase struct {
 	Action *string `pulumi:"action"`
 	// Duration of the phase in milliseconds
 	DurationInMs *int `pulumi:"durationInMs"`
+	// Attribute that returns an array of names and types of GoldenGate configuration files that are available for read or update.
+	EditableParameterFiles []string `pulumi:"editableParameterFiles"`
 	// Summary of phase status results.
 	Extracts []JobProgressPhaseExtract `pulumi:"extracts"`
 	// True if a Pre-Migration Advisor report is available for this phase. False or null if no report is available.
 	IsAdvisorReportAvailable *bool `pulumi:"isAdvisorReportAvailable"`
+	// This is returned as true if the current phase can be suspended.
+	IsSuspendAvailable *bool `pulumi:"isSuspendAvailable"`
 	// The text describing the root cause of the reported issue
 	Issue *string `pulumi:"issue"`
 	// Details to access log file in the specified Object Storage bucket, if any.
@@ -368,10 +541,14 @@ type JobProgressPhaseArgs struct {
 	Action pulumi.StringPtrInput `pulumi:"action"`
 	// Duration of the phase in milliseconds
 	DurationInMs pulumi.IntPtrInput `pulumi:"durationInMs"`
+	// Attribute that returns an array of names and types of GoldenGate configuration files that are available for read or update.
+	EditableParameterFiles pulumi.StringArrayInput `pulumi:"editableParameterFiles"`
 	// Summary of phase status results.
 	Extracts JobProgressPhaseExtractArrayInput `pulumi:"extracts"`
 	// True if a Pre-Migration Advisor report is available for this phase. False or null if no report is available.
 	IsAdvisorReportAvailable pulumi.BoolPtrInput `pulumi:"isAdvisorReportAvailable"`
+	// This is returned as true if the current phase can be suspended.
+	IsSuspendAvailable pulumi.BoolPtrInput `pulumi:"isSuspendAvailable"`
 	// The text describing the root cause of the reported issue
 	Issue pulumi.StringPtrInput `pulumi:"issue"`
 	// Details to access log file in the specified Object Storage bucket, if any.
@@ -445,6 +622,11 @@ func (o JobProgressPhaseOutput) DurationInMs() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v JobProgressPhase) *int { return v.DurationInMs }).(pulumi.IntPtrOutput)
 }
 
+// Attribute that returns an array of names and types of GoldenGate configuration files that are available for read or update.
+func (o JobProgressPhaseOutput) EditableParameterFiles() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v JobProgressPhase) []string { return v.EditableParameterFiles }).(pulumi.StringArrayOutput)
+}
+
 // Summary of phase status results.
 func (o JobProgressPhaseOutput) Extracts() JobProgressPhaseExtractArrayOutput {
 	return o.ApplyT(func(v JobProgressPhase) []JobProgressPhaseExtract { return v.Extracts }).(JobProgressPhaseExtractArrayOutput)
@@ -453,6 +635,11 @@ func (o JobProgressPhaseOutput) Extracts() JobProgressPhaseExtractArrayOutput {
 // True if a Pre-Migration Advisor report is available for this phase. False or null if no report is available.
 func (o JobProgressPhaseOutput) IsAdvisorReportAvailable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v JobProgressPhase) *bool { return v.IsAdvisorReportAvailable }).(pulumi.BoolPtrOutput)
+}
+
+// This is returned as true if the current phase can be suspended.
+func (o JobProgressPhaseOutput) IsSuspendAvailable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v JobProgressPhase) *bool { return v.IsSuspendAvailable }).(pulumi.BoolPtrOutput)
 }
 
 // The text describing the root cause of the reported issue
@@ -11807,6 +11994,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionAdditionalAttributeArrayInput)(nil)).Elem(), ConnectionAdditionalAttributeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionIngressIpInput)(nil)).Elem(), ConnectionIngressIpArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionIngressIpArrayInput)(nil)).Elem(), ConnectionIngressIpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JobParameterFileVersionInput)(nil)).Elem(), JobParameterFileVersionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JobParameterFileVersionArrayInput)(nil)).Elem(), JobParameterFileVersionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobProgressInput)(nil)).Elem(), JobProgressArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobProgressArrayInput)(nil)).Elem(), JobProgressArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobProgressPhaseInput)(nil)).Elem(), JobProgressPhaseArgs{})
@@ -11979,6 +12168,8 @@ func init() {
 	pulumi.RegisterOutputType(ConnectionAdditionalAttributeArrayOutput{})
 	pulumi.RegisterOutputType(ConnectionIngressIpOutput{})
 	pulumi.RegisterOutputType(ConnectionIngressIpArrayOutput{})
+	pulumi.RegisterOutputType(JobParameterFileVersionOutput{})
+	pulumi.RegisterOutputType(JobParameterFileVersionArrayOutput{})
 	pulumi.RegisterOutputType(JobProgressOutput{})
 	pulumi.RegisterOutputType(JobProgressArrayOutput{})
 	pulumi.RegisterOutputType(JobProgressPhaseOutput{})

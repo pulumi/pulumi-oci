@@ -70,8 +70,10 @@ type LookupTargetAlertPolicyAssociationResult struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the target-alert policy association.
 	Id string `pulumi:"id"`
-	// Indicates if the target-alert policy association is enabled or disabled.
+	// Indicates if the target-alert policy association is enabled or disabled by user.
 	IsEnabled bool `pulumi:"isEnabled"`
+	// Details about the current state of the target-alert policy association.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The OCID of the alert policy.
 	PolicyId string `pulumi:"policyId"`
 	// The current state of the target-alert policy association.
@@ -155,9 +157,14 @@ func (o LookupTargetAlertPolicyAssociationResultOutput) Id() pulumi.StringOutput
 	return o.ApplyT(func(v LookupTargetAlertPolicyAssociationResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Indicates if the target-alert policy association is enabled or disabled.
+// Indicates if the target-alert policy association is enabled or disabled by user.
 func (o LookupTargetAlertPolicyAssociationResultOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupTargetAlertPolicyAssociationResult) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+// Details about the current state of the target-alert policy association.
+func (o LookupTargetAlertPolicyAssociationResultOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupTargetAlertPolicyAssociationResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
 // The OCID of the alert policy.

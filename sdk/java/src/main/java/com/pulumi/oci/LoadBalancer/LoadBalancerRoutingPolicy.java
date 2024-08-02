@@ -163,11 +163,18 @@ public class LoadBalancerRoutingPolicy extends com.pulumi.resources.CustomResour
      * @param options A bag of options that control this resource's behavior.
      */
     public LoadBalancerRoutingPolicy(String name, LoadBalancerRoutingPolicyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:LoadBalancer/loadBalancerRoutingPolicy:LoadBalancerRoutingPolicy", name, args == null ? LoadBalancerRoutingPolicyArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:LoadBalancer/loadBalancerRoutingPolicy:LoadBalancerRoutingPolicy", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private LoadBalancerRoutingPolicy(String name, Output<String> id, @Nullable LoadBalancerRoutingPolicyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:LoadBalancer/loadBalancerRoutingPolicy:LoadBalancerRoutingPolicy", name, state, makeResourceOptions(options, id));
+    }
+
+    private static LoadBalancerRoutingPolicyArgs makeArgs(LoadBalancerRoutingPolicyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? LoadBalancerRoutingPolicyArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

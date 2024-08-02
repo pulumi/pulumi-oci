@@ -11,17 +11,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAlertPolicyRulesAlertPolicyRuleCollection {
-    /**
-     * @return Array of alert policy rules summary
-     * 
-     */
     private List<GetAlertPolicyRulesAlertPolicyRuleCollectionItem> items;
 
     private GetAlertPolicyRulesAlertPolicyRuleCollection() {}
-    /**
-     * @return Array of alert policy rules summary
-     * 
-     */
     public List<GetAlertPolicyRulesAlertPolicyRuleCollectionItem> items() {
         return this.items;
     }

@@ -690,11 +690,18 @@ public class DomainsAuthToken extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public DomainsAuthToken(String name, DomainsAuthTokenArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsAuthToken:DomainsAuthToken", name, args == null ? DomainsAuthTokenArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Identity/domainsAuthToken:DomainsAuthToken", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DomainsAuthToken(String name, Output<String> id, @Nullable DomainsAuthTokenState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Identity/domainsAuthToken:DomainsAuthToken", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DomainsAuthTokenArgs makeArgs(DomainsAuthTokenArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DomainsAuthTokenArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

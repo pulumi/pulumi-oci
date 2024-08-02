@@ -345,11 +345,18 @@ public class DatabaseSoftwareImage extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public DatabaseSoftwareImage(String name, DatabaseSoftwareImageArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/databaseSoftwareImage:DatabaseSoftwareImage", name, args == null ? DatabaseSoftwareImageArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Database/databaseSoftwareImage:DatabaseSoftwareImage", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DatabaseSoftwareImage(String name, Output<String> id, @Nullable DatabaseSoftwareImageState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Database/databaseSoftwareImage:DatabaseSoftwareImage", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DatabaseSoftwareImageArgs makeArgs(DatabaseSoftwareImageArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DatabaseSoftwareImageArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

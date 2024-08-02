@@ -142,11 +142,18 @@ public class UsageCarbonEmissionsQuery extends com.pulumi.resources.CustomResour
      * @param options A bag of options that control this resource's behavior.
      */
     public UsageCarbonEmissionsQuery(String name, UsageCarbonEmissionsQueryArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:MeteringComputation/usageCarbonEmissionsQuery:UsageCarbonEmissionsQuery", name, args == null ? UsageCarbonEmissionsQueryArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:MeteringComputation/usageCarbonEmissionsQuery:UsageCarbonEmissionsQuery", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private UsageCarbonEmissionsQuery(String name, Output<String> id, @Nullable UsageCarbonEmissionsQueryState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:MeteringComputation/usageCarbonEmissionsQuery:UsageCarbonEmissionsQuery", name, state, makeResourceOptions(options, id));
+    }
+
+    private static UsageCarbonEmissionsQueryArgs makeArgs(UsageCarbonEmissionsQueryArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? UsageCarbonEmissionsQueryArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

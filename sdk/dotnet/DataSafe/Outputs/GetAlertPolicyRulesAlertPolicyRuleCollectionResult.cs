@@ -13,9 +13,6 @@ namespace Pulumi.Oci.DataSafe.Outputs
     [OutputType]
     public sealed class GetAlertPolicyRulesAlertPolicyRuleCollectionResult
     {
-        /// <summary>
-        /// Array of alert policy rules summary
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetAlertPolicyRulesAlertPolicyRuleCollectionItemResult> Items;
 
         [OutputConstructor]

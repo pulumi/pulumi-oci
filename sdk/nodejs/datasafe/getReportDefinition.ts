@@ -101,6 +101,10 @@ export interface GetReportDefinitionResult {
      */
     readonly isSeeded: boolean;
     /**
+     * Details about the current state of the report definition in Data Safe.
+     */
+    readonly lifecycleDetails: string;
+    /**
      * The OCID of the parent report definition. In the case of seeded report definition, this is same as definition OCID.
      */
     readonly parentId: string;

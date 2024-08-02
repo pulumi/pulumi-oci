@@ -5,6 +5,7 @@ package com.pulumi.oci.StackMonitoring.inputs;
 
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsFilter;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -54,6 +55,21 @@ public final class GetBaselineableMetricsPlainArgs extends com.pulumi.resources.
     }
 
     /**
+     * Is the baseline enabled metric defined out of box by Oracle or by end-user
+     * 
+     */
+    @Import(name="isOutOfBox")
+    private @Nullable Boolean isOutOfBox;
+
+    /**
+     * @return Is the baseline enabled metric defined out of box by Oracle or by end-user
+     * 
+     */
+    public Optional<Boolean> isOutOfBox() {
+        return Optional.ofNullable(this.isOutOfBox);
+    }
+
+    /**
      * A filter to return monitored resource types that has the matching namespace.
      * 
      */
@@ -98,15 +114,32 @@ public final class GetBaselineableMetricsPlainArgs extends com.pulumi.resources.
         return Optional.ofNullable(this.resourceGroup);
     }
 
+    /**
+     * Resource Type
+     * 
+     */
+    @Import(name="resourceType")
+    private @Nullable String resourceType;
+
+    /**
+     * @return Resource Type
+     * 
+     */
+    public Optional<String> resourceType() {
+        return Optional.ofNullable(this.resourceType);
+    }
+
     private GetBaselineableMetricsPlainArgs() {}
 
     private GetBaselineableMetricsPlainArgs(GetBaselineableMetricsPlainArgs $) {
         this.baselineableMetricId = $.baselineableMetricId;
         this.compartmentId = $.compartmentId;
         this.filters = $.filters;
+        this.isOutOfBox = $.isOutOfBox;
         this.metricNamespace = $.metricNamespace;
         this.name = $.name;
         this.resourceGroup = $.resourceGroup;
+        this.resourceType = $.resourceType;
     }
 
     public static Builder builder() {
@@ -159,6 +192,17 @@ public final class GetBaselineableMetricsPlainArgs extends com.pulumi.resources.
         }
 
         /**
+         * @param isOutOfBox Is the baseline enabled metric defined out of box by Oracle or by end-user
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isOutOfBox(@Nullable Boolean isOutOfBox) {
+            $.isOutOfBox = isOutOfBox;
+            return this;
+        }
+
+        /**
          * @param metricNamespace A filter to return monitored resource types that has the matching namespace.
          * 
          * @return builder
@@ -188,6 +232,17 @@ public final class GetBaselineableMetricsPlainArgs extends com.pulumi.resources.
          */
         public Builder resourceGroup(@Nullable String resourceGroup) {
             $.resourceGroup = resourceGroup;
+            return this;
+        }
+
+        /**
+         * @param resourceType Resource Type
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceType(@Nullable String resourceType) {
+            $.resourceType = resourceType;
             return this;
         }
 

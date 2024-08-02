@@ -258,11 +258,18 @@ public class SdmMaskingPolicyDifference extends com.pulumi.resources.CustomResou
      * @param options A bag of options that control this resource's behavior.
      */
     public SdmMaskingPolicyDifference(String name, SdmMaskingPolicyDifferenceArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/sdmMaskingPolicyDifference:SdmMaskingPolicyDifference", name, args == null ? SdmMaskingPolicyDifferenceArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DataSafe/sdmMaskingPolicyDifference:SdmMaskingPolicyDifference", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private SdmMaskingPolicyDifference(String name, Output<String> id, @Nullable SdmMaskingPolicyDifferenceState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DataSafe/sdmMaskingPolicyDifference:SdmMaskingPolicyDifference", name, state, makeResourceOptions(options, id));
+    }
+
+    private static SdmMaskingPolicyDifferenceArgs makeArgs(SdmMaskingPolicyDifferenceArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? SdmMaskingPolicyDifferenceArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

@@ -399,11 +399,18 @@ public class SqlCollection extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public SqlCollection(String name, SqlCollectionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/sqlCollection:SqlCollection", name, args == null ? SqlCollectionArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DataSafe/sqlCollection:SqlCollection", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private SqlCollection(String name, Output<String> id, @Nullable SqlCollectionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DataSafe/sqlCollection:SqlCollection", name, state, makeResourceOptions(options, id));
+    }
+
+    private static SqlCollectionArgs makeArgs(SqlCollectionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? SqlCollectionArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

@@ -269,11 +269,18 @@ public class NetworkLoadBalancersBackendSetsUnified extends com.pulumi.resources
      * @param options A bag of options that control this resource's behavior.
      */
     public NetworkLoadBalancersBackendSetsUnified(String name, NetworkLoadBalancersBackendSetsUnifiedArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:NetworkLoadBalancer/networkLoadBalancersBackendSetsUnified:NetworkLoadBalancersBackendSetsUnified", name, args == null ? NetworkLoadBalancersBackendSetsUnifiedArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:NetworkLoadBalancer/networkLoadBalancersBackendSetsUnified:NetworkLoadBalancersBackendSetsUnified", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private NetworkLoadBalancersBackendSetsUnified(String name, Output<String> id, @Nullable NetworkLoadBalancersBackendSetsUnifiedState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:NetworkLoadBalancer/networkLoadBalancersBackendSetsUnified:NetworkLoadBalancersBackendSetsUnified", name, state, makeResourceOptions(options, id));
+    }
+
+    private static NetworkLoadBalancersBackendSetsUnifiedArgs makeArgs(NetworkLoadBalancersBackendSetsUnifiedArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? NetworkLoadBalancersBackendSetsUnifiedArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

@@ -300,11 +300,18 @@ public class DataAsset extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public DataAsset(String name, DataAssetArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:AiAnomalyDetection/dataAsset:DataAsset", name, args == null ? DataAssetArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:AiAnomalyDetection/dataAsset:DataAsset", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DataAsset(String name, Output<String> id, @Nullable DataAssetState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:AiAnomalyDetection/dataAsset:DataAsset", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DataAssetArgs makeArgs(DataAssetArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DataAssetArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

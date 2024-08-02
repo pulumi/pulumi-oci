@@ -122,6 +122,8 @@ type ReportDefinition struct {
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
 	IsSeeded pulumi.BoolOutput `pulumi:"isSeeded"`
+	// Details about the current state of the report definition in Data Safe.
+	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The OCID of the parent report definition.
 	ParentId pulumi.StringOutput `pulumi:"parentId"`
 	// The time span for the records in the report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
@@ -227,6 +229,8 @@ type reportDefinitionState struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
 	IsSeeded *bool `pulumi:"isSeeded"`
+	// Details about the current state of the report definition in Data Safe.
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The OCID of the parent report definition.
 	ParentId *string `pulumi:"parentId"`
 	// The time span for the records in the report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
@@ -282,6 +286,8 @@ type ReportDefinitionState struct {
 	FreeformTags pulumi.MapInput
 	// Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
 	IsSeeded pulumi.BoolPtrInput
+	// Details about the current state of the report definition in Data Safe.
+	LifecycleDetails pulumi.StringPtrInput
 	// The OCID of the parent report definition.
 	ParentId pulumi.StringPtrInput
 	// The time span for the records in the report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
@@ -511,6 +517,11 @@ func (o ReportDefinitionOutput) FreeformTags() pulumi.MapOutput {
 // Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
 func (o ReportDefinitionOutput) IsSeeded() pulumi.BoolOutput {
 	return o.ApplyT(func(v *ReportDefinition) pulumi.BoolOutput { return v.IsSeeded }).(pulumi.BoolOutput)
+}
+
+// Details about the current state of the report definition in Data Safe.
+func (o ReportDefinitionOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v *ReportDefinition) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
 // The OCID of the parent report definition.

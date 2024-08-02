@@ -51,6 +51,9 @@ export interface GetDedicatedAiClusterResult {
     readonly description: string;
     readonly displayName: string;
     readonly freeformTags: {[key: string]: any};
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated AI cluster.
+     */
     readonly id: string;
     readonly lifecycleDetails: string;
     readonly state: string;

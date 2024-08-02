@@ -108,11 +108,18 @@ public class ManagedInstanceDetachProfileManagement extends com.pulumi.resources
      * @param options A bag of options that control this resource's behavior.
      */
     public ManagedInstanceDetachProfileManagement(String name, ManagedInstanceDetachProfileManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:OsManagementHub/managedInstanceDetachProfileManagement:ManagedInstanceDetachProfileManagement", name, args == null ? ManagedInstanceDetachProfileManagementArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:OsManagementHub/managedInstanceDetachProfileManagement:ManagedInstanceDetachProfileManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ManagedInstanceDetachProfileManagement(String name, Output<String> id, @Nullable ManagedInstanceDetachProfileManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:OsManagementHub/managedInstanceDetachProfileManagement:ManagedInstanceDetachProfileManagement", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ManagedInstanceDetachProfileManagementArgs makeArgs(ManagedInstanceDetachProfileManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ManagedInstanceDetachProfileManagementArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

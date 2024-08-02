@@ -11,6 +11,7 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'AlertPolicyAlertPolicyRuleDetail',
     'AuditPolicyAuditCondition',
     'AuditPolicyAuditConditionEnableCondition',
     'AuditPolicyAuditSpecification',
@@ -56,8 +57,9 @@ __all__ = [
     'GetAlertAnalyticItemDimensionResult',
     'GetAlertPoliciesAlertPolicyCollectionResult',
     'GetAlertPoliciesAlertPolicyCollectionItemResult',
+    'GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailResult',
     'GetAlertPoliciesFilterResult',
-    'GetAlertPolicyRuleItemResult',
+    'GetAlertPolicyAlertPolicyRuleDetailResult',
     'GetAlertPolicyRulesAlertPolicyRuleCollectionResult',
     'GetAlertPolicyRulesAlertPolicyRuleCollectionItemResult',
     'GetAlertPolicyRulesFilterResult',
@@ -367,6 +369,65 @@ __all__ = [
     'GetUserAssessmentsUserAssessmentResult',
     'GetUserAssessmentsUserAssessmentIgnoredTargetResult',
 ]
+
+@pulumi.output_type
+class AlertPolicyAlertPolicyRuleDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AlertPolicyAlertPolicyRuleDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AlertPolicyAlertPolicyRuleDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AlertPolicyAlertPolicyRuleDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 expression: str,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None):
+        """
+        :param str expression: The conditional expression of the alert policy rule which evaluates to boolean value.
+        :param str description: Describes the alert policy rule.
+        :param str display_name: The display name of the alert policy rule.
+        """
+        pulumi.set(__self__, "expression", expression)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @property
+    @pulumi.getter
+    def expression(self) -> str:
+        """
+        The conditional expression of the alert policy rule which evaluates to boolean value.
+        """
+        return pulumi.get(self, "expression")
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[str]:
+        """
+        Describes the alert policy rule.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[str]:
+        """
+        The display name of the alert policy rule.
+        """
+        return pulumi.get(self, "display_name")
+
 
 @pulumi.output_type
 class AuditPolicyAuditCondition(dict):
@@ -5398,6 +5459,7 @@ class GetAlertPoliciesAlertPolicyCollectionResult(dict):
 @pulumi.output_type
 class GetAlertPoliciesAlertPolicyCollectionItemResult(dict):
     def __init__(__self__, *,
+                 alert_policy_rule_details: Sequence['outputs.GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailResult'],
                  alert_policy_type: str,
                  compartment_id: str,
                  defined_tags: Mapping[str, Any],
@@ -5406,6 +5468,7 @@ class GetAlertPoliciesAlertPolicyCollectionItemResult(dict):
                  freeform_tags: Mapping[str, Any],
                  id: str,
                  is_user_defined: bool,
+                 lifecycle_details: str,
                  severity: str,
                  state: str,
                  system_tags: Mapping[str, Any],
@@ -5420,12 +5483,14 @@ class GetAlertPoliciesAlertPolicyCollectionItemResult(dict):
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param str id: The OCID of the alert policy.
         :param bool is_user_defined: An optional filter to return only alert policies that are user-defined or not.
+        :param str lifecycle_details: Details about the current state of the alert policy.
         :param str severity: Severity level of the alert raised by this policy.
         :param str state: An optional filter to return only alert policies that have the given life-cycle state.
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_updated: Last date and time the alert policy was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
+        pulumi.set(__self__, "alert_policy_rule_details", alert_policy_rule_details)
         pulumi.set(__self__, "alert_policy_type", alert_policy_type)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -5434,11 +5499,17 @@ class GetAlertPoliciesAlertPolicyCollectionItemResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_user_defined", is_user_defined)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "severity", severity)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="alertPolicyRuleDetails")
+    def alert_policy_rule_details(self) -> Sequence['outputs.GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailResult']:
+        return pulumi.get(self, "alert_policy_rule_details")
 
     @property
     @pulumi.getter(name="alertPolicyType")
@@ -5505,6 +5576,14 @@ class GetAlertPoliciesAlertPolicyCollectionItemResult(dict):
         return pulumi.get(self, "is_user_defined")
 
     @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Details about the current state of the alert policy.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
     @pulumi.getter
     def severity(self) -> str:
         """
@@ -5546,6 +5625,42 @@ class GetAlertPoliciesAlertPolicyCollectionItemResult(dict):
 
 
 @pulumi.output_type
+class GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailResult(dict):
+    def __init__(__self__, *,
+                 description: str,
+                 display_name: str,
+                 expression: str):
+        """
+        :param str description: The description of the alert policy.
+        :param str display_name: A filter to return only resources that match the specified display name.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "expression", expression)
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        The description of the alert policy.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the specified display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def expression(self) -> str:
+        return pulumi.get(self, "expression")
+
+
+@pulumi.output_type
 class GetAlertPoliciesFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
@@ -5573,77 +5688,87 @@ class GetAlertPoliciesFilterResult(dict):
 
 
 @pulumi.output_type
-class GetAlertPolicyRuleItemResult(dict):
+class GetAlertPolicyAlertPolicyRuleDetailResult(dict):
     def __init__(__self__, *,
                  description: str,
-                 expression: str,
-                 key: str):
+                 display_name: str,
+                 expression: str):
         """
-        :param str description: Describes the alert policy rule.
-        :param str expression: The conditional expression of the alert policy rule which evaluates to boolean value.
-        :param str key: The unique key of the alert policy rule.
+        :param str description: The description of the alert policy.
+        :param str display_name: The display name of the alert policy.
         """
         pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "expression", expression)
-        pulumi.set(__self__, "key", key)
 
     @property
     @pulumi.getter
     def description(self) -> str:
         """
-        Describes the alert policy rule.
+        The description of the alert policy.
         """
         return pulumi.get(self, "description")
 
     @property
-    @pulumi.getter
-    def expression(self) -> str:
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
         """
-        The conditional expression of the alert policy rule which evaluates to boolean value.
+        The display name of the alert policy.
         """
-        return pulumi.get(self, "expression")
+        return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        The unique key of the alert policy rule.
-        """
-        return pulumi.get(self, "key")
+    def expression(self) -> str:
+        return pulumi.get(self, "expression")
 
 
 @pulumi.output_type
 class GetAlertPolicyRulesAlertPolicyRuleCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetAlertPolicyRulesAlertPolicyRuleCollectionItemResult']):
-        """
-        :param Sequence['GetAlertPolicyRulesAlertPolicyRuleCollectionItemArgs'] items: Array of alert policy rules summary
-        """
         pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
     def items(self) -> Sequence['outputs.GetAlertPolicyRulesAlertPolicyRuleCollectionItemResult']:
-        """
-        Array of alert policy rules summary
-        """
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetAlertPolicyRulesAlertPolicyRuleCollectionItemResult(dict):
     def __init__(__self__, *,
+                 alert_policy_id: str,
                  description: str,
+                 display_name: str,
                  expression: str,
-                 key: str):
+                 key: str,
+                 state: str,
+                 time_created: str):
         """
+        :param str alert_policy_id: The OCID of the alert policy.
         :param str description: Describes the alert policy rule.
+        :param str display_name: The display name of the alert policy rule.
         :param str expression: The conditional expression of the alert policy rule which evaluates to boolean value.
         :param str key: The unique key of the alert policy rule.
+        :param str state: The current state of the alert policy rule.
+        :param str time_created: Creation date and time of the alert policy rule, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
+        pulumi.set(__self__, "alert_policy_id", alert_policy_id)
         pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "expression", expression)
         pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter(name="alertPolicyId")
+    def alert_policy_id(self) -> str:
+        """
+        The OCID of the alert policy.
+        """
+        return pulumi.get(self, "alert_policy_id")
 
     @property
     @pulumi.getter
@@ -5652,6 +5777,14 @@ class GetAlertPolicyRulesAlertPolicyRuleCollectionItemResult(dict):
         Describes the alert policy rule.
         """
         return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        The display name of the alert policy rule.
+        """
+        return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
@@ -5668,6 +5801,22 @@ class GetAlertPolicyRulesAlertPolicyRuleCollectionItemResult(dict):
         The unique key of the alert policy rule.
         """
         return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the alert policy rule.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        Creation date and time of the alert policy rule, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_created")
 
 
 @pulumi.output_type
@@ -5713,6 +5862,8 @@ class GetAlertsAlertCollectionResult(dict):
 class GetAlertsAlertCollectionItemResult(dict):
     def __init__(__self__, *,
                  alert_id: str,
+                 alert_policy_rule_key: str,
+                 alert_policy_rule_name: str,
                  alert_type: str,
                  comment: str,
                  compartment_id: str,
@@ -5736,6 +5887,8 @@ class GetAlertsAlertCollectionItemResult(dict):
                  time_created: str,
                  time_updated: str):
         """
+        :param str alert_policy_rule_key: The key of the rule of alert policy that triggered alert.
+        :param str alert_policy_rule_name: The display name of the rule of alert policy that triggered alert.
         :param str alert_type: Type of the alert. Indicates the Data Safe feature triggering the alert.
         :param str comment: A comment for the alert. Entered by the user.
         :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
@@ -5760,6 +5913,8 @@ class GetAlertsAlertCollectionItemResult(dict):
         :param str time_updated: Last date and time the alert was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         pulumi.set(__self__, "alert_id", alert_id)
+        pulumi.set(__self__, "alert_policy_rule_key", alert_policy_rule_key)
+        pulumi.set(__self__, "alert_policy_rule_name", alert_policy_rule_name)
         pulumi.set(__self__, "alert_type", alert_type)
         pulumi.set(__self__, "comment", comment)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -5787,6 +5942,22 @@ class GetAlertsAlertCollectionItemResult(dict):
     @pulumi.getter(name="alertId")
     def alert_id(self) -> str:
         return pulumi.get(self, "alert_id")
+
+    @property
+    @pulumi.getter(name="alertPolicyRuleKey")
+    def alert_policy_rule_key(self) -> str:
+        """
+        The key of the rule of alert policy that triggered alert.
+        """
+        return pulumi.get(self, "alert_policy_rule_key")
+
+    @property
+    @pulumi.getter(name="alertPolicyRuleName")
+    def alert_policy_rule_name(self) -> str:
+        """
+        The display name of the rule of alert policy that triggered alert.
+        """
+        return pulumi.get(self, "alert_policy_rule_name")
 
     @property
     @pulumi.getter(name="alertType")
@@ -14140,6 +14311,7 @@ class GetReportDefinitionsReportDefinitionCollectionItemResult(dict):
                  freeform_tags: Mapping[str, Any],
                  id: str,
                  is_seeded: bool,
+                 lifecycle_details: str,
                  parent_id: str,
                  record_time_span: str,
                  schedule: str,
@@ -14168,6 +14340,7 @@ class GetReportDefinitionsReportDefinitionCollectionItemResult(dict):
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param str id: The OCID of the report definition.
         :param bool is_seeded: A boolean flag indicating to list seeded report definitions. Set this parameter to get list of seeded report definitions.
+        :param str lifecycle_details: Details about the current state of the report definition in Data Safe.
         :param str parent_id: The OCID of the parent report definition. In the case of seeded report definition, this is same as definition OCID.
         :param str record_time_span: The time span for the records in the report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
         :param str schedule: The schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
@@ -14196,6 +14369,7 @@ class GetReportDefinitionsReportDefinitionCollectionItemResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_seeded", is_seeded)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "parent_id", parent_id)
         pulumi.set(__self__, "record_time_span", record_time_span)
         pulumi.set(__self__, "schedule", schedule)
@@ -14321,6 +14495,14 @@ class GetReportDefinitionsReportDefinitionCollectionItemResult(dict):
         A boolean flag indicating to list seeded report definitions. Set this parameter to get list of seeded report definitions.
         """
         return pulumi.get(self, "is_seeded")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Details about the current state of the report definition in Data Safe.
+        """
+        return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="parentId")
@@ -14712,6 +14894,7 @@ class GetReportsReportCollectionItemResult(dict):
                  display_name: str,
                  freeform_tags: Mapping[str, Any],
                  id: str,
+                 lifecycle_details: str,
                  mime_type: str,
                  report_definition_id: str,
                  report_id: str,
@@ -14726,6 +14909,7 @@ class GetReportsReportCollectionItemResult(dict):
         :param str display_name: The name of the report definition to query.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param str id: The OCID of the report.
+        :param str lifecycle_details: Details about the current state of the report in Data Safe.
         :param str mime_type: Specifies the format of report to be .xls or .pdf or .json
         :param str report_definition_id: The ID of the report definition to filter the list of reports
         :param str state: An optional filter to return only resources that match the specified lifecycle state.
@@ -14739,6 +14923,7 @@ class GetReportsReportCollectionItemResult(dict):
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "mime_type", mime_type)
         pulumi.set(__self__, "report_definition_id", report_definition_id)
         pulumi.set(__self__, "report_id", report_id)
@@ -14794,6 +14979,14 @@ class GetReportsReportCollectionItemResult(dict):
         The OCID of the report.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Details about the current state of the report in Data Safe.
+        """
+        return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="mimeType")
@@ -24797,6 +24990,7 @@ class GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem
                  freeform_tags: Mapping[str, Any],
                  id: str,
                  is_enabled: bool,
+                 lifecycle_details: str,
                  policy_id: str,
                  state: str,
                  system_tags: Mapping[str, Any],
@@ -24810,7 +25004,8 @@ class GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem
         :param str display_name: The display name of the target-alert policy association.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param str id: The OCID of the target-alert policy association.
-        :param bool is_enabled: Indicates if the target-alert policy association is enabled or disabled.
+        :param bool is_enabled: Indicates if the target-alert policy association is enabled or disabled by user.
+        :param str lifecycle_details: Details about the current state of the target-alert policy association.
         :param str policy_id: The OCID of the alert policy.
         :param str state: An optional filter to return only alert policies that have the given life-cycle state.
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -24825,6 +25020,7 @@ class GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "policy_id", policy_id)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
@@ -24884,9 +25080,17 @@ class GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> bool:
         """
-        Indicates if the target-alert policy association is enabled or disabled.
+        Indicates if the target-alert policy association is enabled or disabled by user.
         """
         return pulumi.get(self, "is_enabled")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Details about the current state of the target-alert policy association.
+        """
+        return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="policyId")

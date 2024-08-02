@@ -162,11 +162,18 @@ public class ListingResourceVersionAgreement extends com.pulumi.resources.Custom
      * @param options A bag of options that control this resource's behavior.
      */
     public ListingResourceVersionAgreement(String name, ListingResourceVersionAgreementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/listingResourceVersionAgreement:ListingResourceVersionAgreement", name, args == null ? ListingResourceVersionAgreementArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Core/listingResourceVersionAgreement:ListingResourceVersionAgreement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ListingResourceVersionAgreement(String name, Output<String> id, @Nullable ListingResourceVersionAgreementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Core/listingResourceVersionAgreement:ListingResourceVersionAgreement", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ListingResourceVersionAgreementArgs makeArgs(ListingResourceVersionAgreementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ListingResourceVersionAgreementArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

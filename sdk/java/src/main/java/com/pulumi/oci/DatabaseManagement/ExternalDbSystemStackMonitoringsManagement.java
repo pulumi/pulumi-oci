@@ -146,11 +146,18 @@ public class ExternalDbSystemStackMonitoringsManagement extends com.pulumi.resou
      * @param options A bag of options that control this resource's behavior.
      */
     public ExternalDbSystemStackMonitoringsManagement(String name, ExternalDbSystemStackMonitoringsManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseManagement/externalDbSystemStackMonitoringsManagement:ExternalDbSystemStackMonitoringsManagement", name, args == null ? ExternalDbSystemStackMonitoringsManagementArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DatabaseManagement/externalDbSystemStackMonitoringsManagement:ExternalDbSystemStackMonitoringsManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ExternalDbSystemStackMonitoringsManagement(String name, Output<String> id, @Nullable ExternalDbSystemStackMonitoringsManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DatabaseManagement/externalDbSystemStackMonitoringsManagement:ExternalDbSystemStackMonitoringsManagement", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ExternalDbSystemStackMonitoringsManagementArgs makeArgs(ExternalDbSystemStackMonitoringsManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ExternalDbSystemStackMonitoringsManagementArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

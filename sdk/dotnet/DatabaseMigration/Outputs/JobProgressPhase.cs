@@ -22,6 +22,10 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// </summary>
         public readonly int? DurationInMs;
         /// <summary>
+        /// Attribute that returns an array of names and types of GoldenGate configuration files that are available for read or update.
+        /// </summary>
+        public readonly ImmutableArray<string> EditableParameterFiles;
+        /// <summary>
         /// Summary of phase status results.
         /// </summary>
         public readonly ImmutableArray<Outputs.JobProgressPhaseExtract> Extracts;
@@ -29,6 +33,10 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// True if a Pre-Migration Advisor report is available for this phase. False or null if no report is available.
         /// </summary>
         public readonly bool? IsAdvisorReportAvailable;
+        /// <summary>
+        /// This is returned as true if the current phase can be suspended.
+        /// </summary>
+        public readonly bool? IsSuspendAvailable;
         /// <summary>
         /// The text describing the root cause of the reported issue
         /// </summary>
@@ -56,9 +64,13 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
 
             int? durationInMs,
 
+            ImmutableArray<string> editableParameterFiles,
+
             ImmutableArray<Outputs.JobProgressPhaseExtract> extracts,
 
             bool? isAdvisorReportAvailable,
+
+            bool? isSuspendAvailable,
 
             string? issue,
 
@@ -72,8 +84,10 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         {
             Action = action;
             DurationInMs = durationInMs;
+            EditableParameterFiles = editableParameterFiles;
             Extracts = extracts;
             IsAdvisorReportAvailable = isAdvisorReportAvailable;
+            IsSuspendAvailable = isSuspendAvailable;
             Issue = issue;
             LogLocations = logLocations;
             Name = name;

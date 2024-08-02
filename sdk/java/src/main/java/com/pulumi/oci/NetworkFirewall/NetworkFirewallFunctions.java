@@ -49,6 +49,10 @@ import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyServiceList
 import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyServicePlainArgs;
 import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyServicesArgs;
 import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyServicesPlainArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyTunnelInspectionRuleArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyTunnelInspectionRulePlainArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyTunnelInspectionRulesArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyTunnelInspectionRulesPlainArgs;
 import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyUrlListArgs;
 import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyUrlListPlainArgs;
 import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyUrlListsArgs;
@@ -75,6 +79,8 @@ import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyServiceLis
 import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyServiceListsResult;
 import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyServiceResult;
 import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyServicesResult;
+import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyTunnelInspectionRuleResult;
+import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyTunnelInspectionRulesResult;
 import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyUrlListResult;
 import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyUrlListsResult;
 import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallResult;
@@ -3870,6 +3876,370 @@ public final class NetworkFirewallFunctions {
      */
     public static CompletableFuture<GetNetworkFirewallPolicyServicesResult> getNetworkFirewallPolicyServicesPlain(GetNetworkFirewallPolicyServicesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:NetworkFirewall/getNetworkFirewallPolicyServices:getNetworkFirewallPolicyServices", TypeShape.of(GetNetworkFirewallPolicyServicesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Tunnel Inspection Rule resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get tunnel inspection rule by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyTunnelInspectionRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyTunnelInspectionRule = NetworkFirewallFunctions.getNetworkFirewallPolicyTunnelInspectionRule(GetNetworkFirewallPolicyTunnelInspectionRuleArgs.builder()
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .tunnelInspectionRuleName(testRule.name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyTunnelInspectionRuleResult> getNetworkFirewallPolicyTunnelInspectionRule(GetNetworkFirewallPolicyTunnelInspectionRuleArgs args) {
+        return getNetworkFirewallPolicyTunnelInspectionRule(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Tunnel Inspection Rule resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get tunnel inspection rule by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyTunnelInspectionRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyTunnelInspectionRule = NetworkFirewallFunctions.getNetworkFirewallPolicyTunnelInspectionRule(GetNetworkFirewallPolicyTunnelInspectionRuleArgs.builder()
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .tunnelInspectionRuleName(testRule.name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicyTunnelInspectionRuleResult> getNetworkFirewallPolicyTunnelInspectionRulePlain(GetNetworkFirewallPolicyTunnelInspectionRulePlainArgs args) {
+        return getNetworkFirewallPolicyTunnelInspectionRulePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Tunnel Inspection Rule resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get tunnel inspection rule by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyTunnelInspectionRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyTunnelInspectionRule = NetworkFirewallFunctions.getNetworkFirewallPolicyTunnelInspectionRule(GetNetworkFirewallPolicyTunnelInspectionRuleArgs.builder()
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .tunnelInspectionRuleName(testRule.name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyTunnelInspectionRuleResult> getNetworkFirewallPolicyTunnelInspectionRule(GetNetworkFirewallPolicyTunnelInspectionRuleArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyTunnelInspectionRule:getNetworkFirewallPolicyTunnelInspectionRule", TypeShape.of(GetNetworkFirewallPolicyTunnelInspectionRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Tunnel Inspection Rule resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get tunnel inspection rule by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyTunnelInspectionRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyTunnelInspectionRule = NetworkFirewallFunctions.getNetworkFirewallPolicyTunnelInspectionRule(GetNetworkFirewallPolicyTunnelInspectionRuleArgs.builder()
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .tunnelInspectionRuleName(testRule.name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicyTunnelInspectionRuleResult> getNetworkFirewallPolicyTunnelInspectionRulePlain(GetNetworkFirewallPolicyTunnelInspectionRulePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:NetworkFirewall/getNetworkFirewallPolicyTunnelInspectionRule:getNetworkFirewallPolicyTunnelInspectionRule", TypeShape.of(GetNetworkFirewallPolicyTunnelInspectionRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Tunnel Inspection Rules in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of tunnel inspection rules for the network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyTunnelInspectionRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyTunnelInspectionRules = NetworkFirewallFunctions.getNetworkFirewallPolicyTunnelInspectionRules(GetNetworkFirewallPolicyTunnelInspectionRulesArgs.builder()
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .displayName(networkFirewallPolicyTunnelInspectionRuleDisplayName)
+     *             .tunnelInspectionRulePriorityOrder(networkFirewallPolicyTunnelInspectionRuleTunnelInspectionRulePriorityOrder)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyTunnelInspectionRulesResult> getNetworkFirewallPolicyTunnelInspectionRules(GetNetworkFirewallPolicyTunnelInspectionRulesArgs args) {
+        return getNetworkFirewallPolicyTunnelInspectionRules(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Tunnel Inspection Rules in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of tunnel inspection rules for the network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyTunnelInspectionRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyTunnelInspectionRules = NetworkFirewallFunctions.getNetworkFirewallPolicyTunnelInspectionRules(GetNetworkFirewallPolicyTunnelInspectionRulesArgs.builder()
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .displayName(networkFirewallPolicyTunnelInspectionRuleDisplayName)
+     *             .tunnelInspectionRulePriorityOrder(networkFirewallPolicyTunnelInspectionRuleTunnelInspectionRulePriorityOrder)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicyTunnelInspectionRulesResult> getNetworkFirewallPolicyTunnelInspectionRulesPlain(GetNetworkFirewallPolicyTunnelInspectionRulesPlainArgs args) {
+        return getNetworkFirewallPolicyTunnelInspectionRulesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Tunnel Inspection Rules in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of tunnel inspection rules for the network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyTunnelInspectionRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyTunnelInspectionRules = NetworkFirewallFunctions.getNetworkFirewallPolicyTunnelInspectionRules(GetNetworkFirewallPolicyTunnelInspectionRulesArgs.builder()
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .displayName(networkFirewallPolicyTunnelInspectionRuleDisplayName)
+     *             .tunnelInspectionRulePriorityOrder(networkFirewallPolicyTunnelInspectionRuleTunnelInspectionRulePriorityOrder)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyTunnelInspectionRulesResult> getNetworkFirewallPolicyTunnelInspectionRules(GetNetworkFirewallPolicyTunnelInspectionRulesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyTunnelInspectionRules:getNetworkFirewallPolicyTunnelInspectionRules", TypeShape.of(GetNetworkFirewallPolicyTunnelInspectionRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Tunnel Inspection Rules in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of tunnel inspection rules for the network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyTunnelInspectionRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyTunnelInspectionRules = NetworkFirewallFunctions.getNetworkFirewallPolicyTunnelInspectionRules(GetNetworkFirewallPolicyTunnelInspectionRulesArgs.builder()
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .displayName(networkFirewallPolicyTunnelInspectionRuleDisplayName)
+     *             .tunnelInspectionRulePriorityOrder(networkFirewallPolicyTunnelInspectionRuleTunnelInspectionRulePriorityOrder)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicyTunnelInspectionRulesResult> getNetworkFirewallPolicyTunnelInspectionRulesPlain(GetNetworkFirewallPolicyTunnelInspectionRulesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:NetworkFirewall/getNetworkFirewallPolicyTunnelInspectionRules:getNetworkFirewallPolicyTunnelInspectionRules", TypeShape.of(GetNetworkFirewallPolicyTunnelInspectionRulesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Network Firewall Policy Url List resource in Oracle Cloud Infrastructure Network Firewall service.

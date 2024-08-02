@@ -98,6 +98,10 @@ export class BdsInstance extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
+     * Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafkaBroker nodes, in a list format, when new nodes are added with a different shape.
+     */
+    public readonly ignoreExistingNodesShapes!: pulumi.Output<string[] | undefined>;
+    /**
      * (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
      */
     public readonly isCloudSqlConfigured!: pulumi.Output<boolean>;
@@ -198,6 +202,7 @@ export class BdsInstance extends pulumi.CustomResource {
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["edgeNode"] = state ? state.edgeNode : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["ignoreExistingNodesShapes"] = state ? state.ignoreExistingNodesShapes : undefined;
             resourceInputs["isCloudSqlConfigured"] = state ? state.isCloudSqlConfigured : undefined;
             resourceInputs["isForceStopJobs"] = state ? state.isForceStopJobs : undefined;
             resourceInputs["isHighAvailability"] = state ? state.isHighAvailability : undefined;
@@ -261,6 +266,7 @@ export class BdsInstance extends pulumi.CustomResource {
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["edgeNode"] = args ? args.edgeNode : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["ignoreExistingNodesShapes"] = args ? args.ignoreExistingNodesShapes : undefined;
             resourceInputs["isCloudSqlConfigured"] = args ? args.isCloudSqlConfigured : undefined;
             resourceInputs["isForceStopJobs"] = args ? args.isForceStopJobs : undefined;
             resourceInputs["isHighAvailability"] = args ? args.isHighAvailability : undefined;
@@ -344,6 +350,10 @@ export interface BdsInstanceState {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafkaBroker nodes, in a list format, when new nodes are added with a different shape.
+     */
+    ignoreExistingNodesShapes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
      */
@@ -465,6 +475,10 @@ export interface BdsInstanceArgs {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafkaBroker nodes, in a list format, when new nodes are added with a different shape.
+     */
+    ignoreExistingNodesShapes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
      */

@@ -399,11 +399,18 @@ public class PluggableDatabasesRemoteClone extends com.pulumi.resources.CustomRe
      * @param options A bag of options that control this resource's behavior.
      */
     public PluggableDatabasesRemoteClone(String name, PluggableDatabasesRemoteCloneArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/pluggableDatabasesRemoteClone:PluggableDatabasesRemoteClone", name, args == null ? PluggableDatabasesRemoteCloneArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Database/pluggableDatabasesRemoteClone:PluggableDatabasesRemoteClone", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private PluggableDatabasesRemoteClone(String name, Output<String> id, @Nullable PluggableDatabasesRemoteCloneState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Database/pluggableDatabasesRemoteClone:PluggableDatabasesRemoteClone", name, state, makeResourceOptions(options, id));
+    }
+
+    private static PluggableDatabasesRemoteCloneArgs makeArgs(PluggableDatabasesRemoteCloneArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? PluggableDatabasesRemoteCloneArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

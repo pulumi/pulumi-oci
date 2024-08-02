@@ -408,11 +408,18 @@ public class SqlEndpoint extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public SqlEndpoint(String name, SqlEndpointArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataFlow/sqlEndpoint:SqlEndpoint", name, args == null ? SqlEndpointArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DataFlow/sqlEndpoint:SqlEndpoint", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private SqlEndpoint(String name, Output<String> id, @Nullable SqlEndpointState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DataFlow/sqlEndpoint:SqlEndpoint", name, state, makeResourceOptions(options, id));
+    }
+
+    private static SqlEndpointArgs makeArgs(SqlEndpointArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? SqlEndpointArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

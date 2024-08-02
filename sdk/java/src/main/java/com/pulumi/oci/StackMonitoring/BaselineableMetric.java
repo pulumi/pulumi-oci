@@ -49,9 +49,10 @@ import javax.annotation.Nullable;
  *         var testBaselineableMetric = new BaselineableMetric("testBaselineableMetric", BaselineableMetricArgs.builder()
  *             .column(baselineableMetricColumn)
  *             .compartmentId(compartmentId)
- *             .name(baselineableMetricName)
  *             .namespace(baselineableMetricNamespace)
+ *             .name(baselineableMetricName)
  *             .resourceGroup(baselineableMetricResourceGroup)
+ *             .resourceType(baselineableMetricResourceType)
  *             .build());
  * 
  *     }
@@ -200,9 +201,6 @@ public class BaselineableMetric extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Resource group of the metric
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="resourceGroup", refs={String.class}, tree="[0]")
     private Output<String> resourceGroup;
@@ -210,12 +208,29 @@ public class BaselineableMetric extends com.pulumi.resources.CustomResource {
     /**
      * @return (Updatable) Resource group of the metric
      * 
+     */
+    public Output<String> resourceGroup() {
+        return this.resourceGroup;
+    }
+    /**
+     * (Updatable) Resource type of the metric
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> resourceGroup() {
-        return this.resourceGroup;
+    @Export(name="resourceType", refs={String.class}, tree="[0]")
+    private Output<String> resourceType;
+
+    /**
+     * @return (Updatable) Resource type of the metric
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<String> resourceType() {
+        return this.resourceType;
     }
     /**
      * The current lifecycle state of the metric extension
@@ -310,11 +325,18 @@ public class BaselineableMetric extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public BaselineableMetric(String name, BaselineableMetricArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:StackMonitoring/baselineableMetric:BaselineableMetric", name, args == null ? BaselineableMetricArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:StackMonitoring/baselineableMetric:BaselineableMetric", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private BaselineableMetric(String name, Output<String> id, @Nullable BaselineableMetricState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:StackMonitoring/baselineableMetric:BaselineableMetric", name, state, makeResourceOptions(options, id));
+    }
+
+    private static BaselineableMetricArgs makeArgs(BaselineableMetricArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? BaselineableMetricArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

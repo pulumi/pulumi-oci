@@ -68,13 +68,13 @@ type GetEndpointsArgs struct {
 
 // A collection of values returned by getEndpoints.
 type GetEndpointsResult struct {
-	CompartmentId string  `pulumi:"compartmentId"`
-	DisplayName   *string `pulumi:"displayName"`
+	CompartmentId string `pulumi:"compartmentId"`
+	// A user-friendly name. Does not have to be unique, and it's changeable.
+	DisplayName *string `pulumi:"displayName"`
 	// The list of endpoint_collection.
 	EndpointCollections []GetEndpointsEndpointCollection `pulumi:"endpointCollections"`
 	Filters             []GetEndpointsFilter             `pulumi:"filters"`
-	// An OCID that uniquely identifies this endpoint resource.
-	Id *string `pulumi:"id"`
+	Id                  *string                          `pulumi:"id"`
 	// The current state of the endpoint.
 	State *string `pulumi:"state"`
 }
@@ -128,6 +128,7 @@ func (o GetEndpointsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEndpointsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// A user-friendly name. Does not have to be unique, and it's changeable.
 func (o GetEndpointsResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetEndpointsResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -141,7 +142,6 @@ func (o GetEndpointsResultOutput) Filters() GetEndpointsFilterArrayOutput {
 	return o.ApplyT(func(v GetEndpointsResult) []GetEndpointsFilter { return v.Filters }).(GetEndpointsFilterArrayOutput)
 }
 
-// An OCID that uniquely identifies this endpoint resource.
 func (o GetEndpointsResultOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetEndpointsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }

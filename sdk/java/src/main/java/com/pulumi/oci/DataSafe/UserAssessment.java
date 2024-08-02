@@ -447,11 +447,18 @@ public class UserAssessment extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public UserAssessment(String name, UserAssessmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/userAssessment:UserAssessment", name, args == null ? UserAssessmentArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DataSafe/userAssessment:UserAssessment", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private UserAssessment(String name, Output<String> id, @Nullable UserAssessmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DataSafe/userAssessment:UserAssessment", name, state, makeResourceOptions(options, id));
+    }
+
+    private static UserAssessmentArgs makeArgs(UserAssessmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? UserAssessmentArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

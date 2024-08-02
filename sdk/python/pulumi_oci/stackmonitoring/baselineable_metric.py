@@ -17,26 +17,31 @@ class BaselineableMetricArgs:
                  column: pulumi.Input[str],
                  compartment_id: pulumi.Input[str],
                  namespace: pulumi.Input[str],
-                 resource_group: pulumi.Input[str],
-                 name: Optional[pulumi.Input[str]] = None):
+                 name: Optional[pulumi.Input[str]] = None,
+                 resource_group: Optional[pulumi.Input[str]] = None,
+                 resource_type: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a BaselineableMetric resource.
         :param pulumi.Input[str] column: (Updatable) metric column name
         :param pulumi.Input[str] compartment_id: (Updatable) OCID of the compartment
         :param pulumi.Input[str] namespace: (Updatable) namespace of the metric
+        :param pulumi.Input[str] name: (Updatable) name of the metric
         :param pulumi.Input[str] resource_group: (Updatable) Resource group of the metric
+        :param pulumi.Input[str] resource_type: (Updatable) Resource type of the metric
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] name: (Updatable) name of the metric
         """
         pulumi.set(__self__, "column", column)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "resource_group", resource_group)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if resource_group is not None:
+            pulumi.set(__self__, "resource_group", resource_group)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
 
     @property
     @pulumi.getter
@@ -75,22 +80,6 @@ class BaselineableMetricArgs:
         pulumi.set(self, "namespace", value)
 
     @property
-    @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Resource group of the metric
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-        return pulumi.get(self, "resource_group")
-
-    @resource_group.setter
-    def resource_group(self, value: pulumi.Input[str]):
-        pulumi.set(self, "resource_group", value)
-
-    @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -101,6 +90,34 @@ class BaselineableMetricArgs:
     @name.setter
     def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="resourceGroup")
+    def resource_group(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Resource group of the metric
+        """
+        return pulumi.get(self, "resource_group")
+
+    @resource_group.setter
+    def resource_group(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_group", value)
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Resource type of the metric
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "resource_type")
+
+    @resource_type.setter
+    def resource_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_type", value)
 
 
 @pulumi.input_type
@@ -116,6 +133,7 @@ class _BaselineableMetricState:
                  name: Optional[pulumi.Input[str]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  resource_group: Optional[pulumi.Input[str]] = None,
+                 resource_type: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  tenancy_id: Optional[pulumi.Input[str]] = None,
@@ -133,6 +151,7 @@ class _BaselineableMetricState:
         :param pulumi.Input[str] name: (Updatable) name of the metric
         :param pulumi.Input[str] namespace: (Updatable) namespace of the metric
         :param pulumi.Input[str] resource_group: (Updatable) Resource group of the metric
+        :param pulumi.Input[str] resource_type: (Updatable) Resource type of the metric
                
                
                ** IMPORTANT **
@@ -163,6 +182,8 @@ class _BaselineableMetricState:
             pulumi.set(__self__, "namespace", namespace)
         if resource_group is not None:
             pulumi.set(__self__, "resource_group", resource_group)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if system_tags is not None:
@@ -287,16 +308,28 @@ class _BaselineableMetricState:
     def resource_group(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Resource group of the metric
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
     def resource_group(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "resource_group", value)
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Resource type of the metric
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "resource_type")
+
+    @resource_type.setter
+    def resource_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_type", value)
 
     @property
     @pulumi.getter
@@ -369,6 +402,7 @@ class BaselineableMetric(pulumi.CustomResource):
                  name: Optional[pulumi.Input[str]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  resource_group: Optional[pulumi.Input[str]] = None,
+                 resource_type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         This resource provides the Baselineable Metric resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -384,9 +418,10 @@ class BaselineableMetric(pulumi.CustomResource):
         test_baselineable_metric = oci.stack_monitoring.BaselineableMetric("test_baselineable_metric",
             column=baselineable_metric_column,
             compartment_id=compartment_id,
-            name=baselineable_metric_name,
             namespace=baselineable_metric_namespace,
-            resource_group=baselineable_metric_resource_group)
+            name=baselineable_metric_name,
+            resource_group=baselineable_metric_resource_group,
+            resource_type=baselineable_metric_resource_type)
         ```
 
         ## Import
@@ -404,6 +439,7 @@ class BaselineableMetric(pulumi.CustomResource):
         :param pulumi.Input[str] name: (Updatable) name of the metric
         :param pulumi.Input[str] namespace: (Updatable) namespace of the metric
         :param pulumi.Input[str] resource_group: (Updatable) Resource group of the metric
+        :param pulumi.Input[str] resource_type: (Updatable) Resource type of the metric
                
                
                ** IMPORTANT **
@@ -429,9 +465,10 @@ class BaselineableMetric(pulumi.CustomResource):
         test_baselineable_metric = oci.stack_monitoring.BaselineableMetric("test_baselineable_metric",
             column=baselineable_metric_column,
             compartment_id=compartment_id,
-            name=baselineable_metric_name,
             namespace=baselineable_metric_namespace,
-            resource_group=baselineable_metric_resource_group)
+            name=baselineable_metric_name,
+            resource_group=baselineable_metric_resource_group,
+            resource_type=baselineable_metric_resource_type)
         ```
 
         ## Import
@@ -462,6 +499,7 @@ class BaselineableMetric(pulumi.CustomResource):
                  name: Optional[pulumi.Input[str]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  resource_group: Optional[pulumi.Input[str]] = None,
+                 resource_type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -481,9 +519,8 @@ class BaselineableMetric(pulumi.CustomResource):
             if namespace is None and not opts.urn:
                 raise TypeError("Missing required property 'namespace'")
             __props__.__dict__["namespace"] = namespace
-            if resource_group is None and not opts.urn:
-                raise TypeError("Missing required property 'resource_group'")
             __props__.__dict__["resource_group"] = resource_group
+            __props__.__dict__["resource_type"] = resource_type
             __props__.__dict__["created_by"] = None
             __props__.__dict__["defined_tags"] = None
             __props__.__dict__["freeform_tags"] = None
@@ -514,6 +551,7 @@ class BaselineableMetric(pulumi.CustomResource):
             name: Optional[pulumi.Input[str]] = None,
             namespace: Optional[pulumi.Input[str]] = None,
             resource_group: Optional[pulumi.Input[str]] = None,
+            resource_type: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             tenancy_id: Optional[pulumi.Input[str]] = None,
@@ -536,6 +574,7 @@ class BaselineableMetric(pulumi.CustomResource):
         :param pulumi.Input[str] name: (Updatable) name of the metric
         :param pulumi.Input[str] namespace: (Updatable) namespace of the metric
         :param pulumi.Input[str] resource_group: (Updatable) Resource group of the metric
+        :param pulumi.Input[str] resource_type: (Updatable) Resource type of the metric
                
                
                ** IMPORTANT **
@@ -560,6 +599,7 @@ class BaselineableMetric(pulumi.CustomResource):
         __props__.__dict__["name"] = name
         __props__.__dict__["namespace"] = namespace
         __props__.__dict__["resource_group"] = resource_group
+        __props__.__dict__["resource_type"] = resource_type
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["tenancy_id"] = tenancy_id
@@ -644,12 +684,20 @@ class BaselineableMetric(pulumi.CustomResource):
     def resource_group(self) -> pulumi.Output[str]:
         """
         (Updatable) Resource group of the metric
+        """
+        return pulumi.get(self, "resource_group")
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> pulumi.Output[str]:
+        """
+        (Updatable) Resource type of the metric
 
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        return pulumi.get(self, "resource_group")
+        return pulumi.get(self, "resource_type")
 
     @property
     @pulumi.getter

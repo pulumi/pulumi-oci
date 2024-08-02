@@ -556,11 +556,18 @@ public class AddressActionVerification extends com.pulumi.resources.CustomResour
      * @param options A bag of options that control this resource's behavior.
      */
     public AddressActionVerification(String name, AddressActionVerificationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:OspGateway/addressActionVerification:AddressActionVerification", name, args == null ? AddressActionVerificationArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:OspGateway/addressActionVerification:AddressActionVerification", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private AddressActionVerification(String name, Output<String> id, @Nullable AddressActionVerificationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:OspGateway/addressActionVerification:AddressActionVerification", name, state, makeResourceOptions(options, id));
+    }
+
+    private static AddressActionVerificationArgs makeArgs(AddressActionVerificationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? AddressActionVerificationArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

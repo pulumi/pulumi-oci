@@ -282,11 +282,18 @@ public class ArtifactByPath extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public ArtifactByPath(String name, ArtifactByPathArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:GenericArtifactsContent/artifactByPath:ArtifactByPath", name, args == null ? ArtifactByPathArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:GenericArtifactsContent/artifactByPath:ArtifactByPath", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ArtifactByPath(String name, Output<String> id, @Nullable ArtifactByPathState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:GenericArtifactsContent/artifactByPath:ArtifactByPath", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ArtifactByPathArgs makeArgs(ArtifactByPathArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ArtifactByPathArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

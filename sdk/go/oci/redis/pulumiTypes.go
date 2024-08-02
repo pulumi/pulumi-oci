@@ -661,7 +661,7 @@ type GetRedisClustersRedisClusterCollectionItem struct {
 	NodeCount int `pulumi:"nodeCount"`
 	// The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
 	NodeMemoryInGbs float64 `pulumi:"nodeMemoryInGbs"`
-	// OCIDs of the NSGs to control access in the customer network
+	// A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
 	NsgIds []string `pulumi:"nsgIds"`
 	// The private IP address of the API endpoint for the Redis cluster's primary node.
 	PrimaryEndpointIpAddress string `pulumi:"primaryEndpointIpAddress"`
@@ -715,7 +715,7 @@ type GetRedisClustersRedisClusterCollectionItemArgs struct {
 	NodeCount pulumi.IntInput `pulumi:"nodeCount"`
 	// The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
 	NodeMemoryInGbs pulumi.Float64Input `pulumi:"nodeMemoryInGbs"`
-	// OCIDs of the NSGs to control access in the customer network
+	// A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// The private IP address of the API endpoint for the Redis cluster's primary node.
 	PrimaryEndpointIpAddress pulumi.StringInput `pulumi:"primaryEndpointIpAddress"`
@@ -837,7 +837,7 @@ func (o GetRedisClustersRedisClusterCollectionItemOutput) NodeMemoryInGbs() pulu
 	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItem) float64 { return v.NodeMemoryInGbs }).(pulumi.Float64Output)
 }
 
-// OCIDs of the NSGs to control access in the customer network
+// A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
 func (o GetRedisClustersRedisClusterCollectionItemOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItem) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
 }

@@ -725,11 +725,18 @@ public class DomainsDynamicResourceGroup extends com.pulumi.resources.CustomReso
      * @param options A bag of options that control this resource's behavior.
      */
     public DomainsDynamicResourceGroup(String name, DomainsDynamicResourceGroupArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsDynamicResourceGroup:DomainsDynamicResourceGroup", name, args == null ? DomainsDynamicResourceGroupArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Identity/domainsDynamicResourceGroup:DomainsDynamicResourceGroup", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DomainsDynamicResourceGroup(String name, Output<String> id, @Nullable DomainsDynamicResourceGroupState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Identity/domainsDynamicResourceGroup:DomainsDynamicResourceGroup", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DomainsDynamicResourceGroupArgs makeArgs(DomainsDynamicResourceGroupArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DomainsDynamicResourceGroupArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

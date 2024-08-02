@@ -28,9 +28,10 @@ namespace Pulumi.Oci.StackMonitoring
     ///     {
     ///         Column = baselineableMetricColumn,
     ///         CompartmentId = compartmentId,
-    ///         Name = baselineableMetricName,
     ///         Namespace = baselineableMetricNamespace,
+    ///         Name = baselineableMetricName,
     ///         ResourceGroup = baselineableMetricResourceGroup,
+    ///         ResourceType = baselineableMetricResourceType,
     ///     });
     /// 
     /// });
@@ -103,13 +104,19 @@ namespace Pulumi.Oci.StackMonitoring
 
         /// <summary>
         /// (Updatable) Resource group of the metric
+        /// </summary>
+        [Output("resourceGroup")]
+        public Output<string> ResourceGroup { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Resource type of the metric
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Output("resourceGroup")]
-        public Output<string> ResourceGroup { get; private set; } = null!;
+        [Output("resourceType")]
+        public Output<string> ResourceType { get; private set; } = null!;
 
         /// <summary>
         /// The current lifecycle state of the metric extension
@@ -213,13 +220,19 @@ namespace Pulumi.Oci.StackMonitoring
 
         /// <summary>
         /// (Updatable) Resource group of the metric
+        /// </summary>
+        [Input("resourceGroup")]
+        public Input<string>? ResourceGroup { get; set; }
+
+        /// <summary>
+        /// (Updatable) Resource type of the metric
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("resourceGroup", required: true)]
-        public Input<string> ResourceGroup { get; set; } = null!;
+        [Input("resourceType")]
+        public Input<string>? ResourceType { get; set; }
 
         public BaselineableMetricArgs()
         {
@@ -297,13 +310,19 @@ namespace Pulumi.Oci.StackMonitoring
 
         /// <summary>
         /// (Updatable) Resource group of the metric
+        /// </summary>
+        [Input("resourceGroup")]
+        public Input<string>? ResourceGroup { get; set; }
+
+        /// <summary>
+        /// (Updatable) Resource type of the metric
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("resourceGroup")]
-        public Input<string>? ResourceGroup { get; set; }
+        [Input("resourceType")]
+        public Input<string>? ResourceType { get; set; }
 
         /// <summary>
         /// The current lifecycle state of the metric extension

@@ -302,11 +302,18 @@ public class OperationsInsightsWarehouseUser extends com.pulumi.resources.Custom
      * @param options A bag of options that control this resource's behavior.
      */
     public OperationsInsightsWarehouseUser(String name, OperationsInsightsWarehouseUserArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Opsi/operationsInsightsWarehouseUser:OperationsInsightsWarehouseUser", name, args == null ? OperationsInsightsWarehouseUserArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Opsi/operationsInsightsWarehouseUser:OperationsInsightsWarehouseUser", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private OperationsInsightsWarehouseUser(String name, Output<String> id, @Nullable OperationsInsightsWarehouseUserState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Opsi/operationsInsightsWarehouseUser:OperationsInsightsWarehouseUser", name, state, makeResourceOptions(options, id));
+    }
+
+    private static OperationsInsightsWarehouseUserArgs makeArgs(OperationsInsightsWarehouseUserArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? OperationsInsightsWarehouseUserArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

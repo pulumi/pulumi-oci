@@ -11,17 +11,41 @@ import java.util.Objects;
 
 @CustomType
 public final class GetModelModelMetric {
+    /**
+     * @return Fine-tuned model accuracy.
+     * 
+     */
     private Double finalAccuracy;
+    /**
+     * @return Fine-tuned model loss.
+     * 
+     */
     private Double finalLoss;
+    /**
+     * @return The type of the model metrics. Each type of model can expect a different set of model metrics.
+     * 
+     */
     private String modelMetricsType;
 
     private GetModelModelMetric() {}
+    /**
+     * @return Fine-tuned model accuracy.
+     * 
+     */
     public Double finalAccuracy() {
         return this.finalAccuracy;
     }
+    /**
+     * @return Fine-tuned model loss.
+     * 
+     */
     public Double finalLoss() {
         return this.finalLoss;
     }
+    /**
+     * @return The type of the model metrics. Each type of model can expect a different set of model metrics.
+     * 
+     */
     public String modelMetricsType() {
         return this.modelMetricsType;
     }

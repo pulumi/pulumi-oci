@@ -266,11 +266,18 @@ public class FusionEnvironmentServiceAttachment extends com.pulumi.resources.Cus
      * @param options A bag of options that control this resource's behavior.
      */
     public FusionEnvironmentServiceAttachment(String name, FusionEnvironmentServiceAttachmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:FusionApps/fusionEnvironmentServiceAttachment:FusionEnvironmentServiceAttachment", name, args == null ? FusionEnvironmentServiceAttachmentArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:FusionApps/fusionEnvironmentServiceAttachment:FusionEnvironmentServiceAttachment", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private FusionEnvironmentServiceAttachment(String name, Output<String> id, @Nullable FusionEnvironmentServiceAttachmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:FusionApps/fusionEnvironmentServiceAttachment:FusionEnvironmentServiceAttachment", name, state, makeResourceOptions(options, id));
+    }
+
+    private static FusionEnvironmentServiceAttachmentArgs makeArgs(FusionEnvironmentServiceAttachmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? FusionEnvironmentServiceAttachmentArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

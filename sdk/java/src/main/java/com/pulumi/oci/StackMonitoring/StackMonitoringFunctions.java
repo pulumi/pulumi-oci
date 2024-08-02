@@ -274,9 +274,11 @@ public final class StackMonitoringFunctions {
      *         final var testBaselineableMetrics = StackMonitoringFunctions.getBaselineableMetrics(GetBaselineableMetricsArgs.builder()
      *             .baselineableMetricId(testBaselineableMetric.id())
      *             .compartmentId(compartmentId)
+     *             .isOutOfBox(baselineableMetricIsOutOfBox)
      *             .metricNamespace(baselineableMetricMetricNamespace)
      *             .name(baselineableMetricName)
      *             .resourceGroup(baselineableMetricResourceGroup)
+     *             .resourceType(baselineableMetricResourceType)
      *             .build());
      * 
      *     }
@@ -322,9 +324,11 @@ public final class StackMonitoringFunctions {
      *         final var testBaselineableMetrics = StackMonitoringFunctions.getBaselineableMetrics(GetBaselineableMetricsArgs.builder()
      *             .baselineableMetricId(testBaselineableMetric.id())
      *             .compartmentId(compartmentId)
+     *             .isOutOfBox(baselineableMetricIsOutOfBox)
      *             .metricNamespace(baselineableMetricMetricNamespace)
      *             .name(baselineableMetricName)
      *             .resourceGroup(baselineableMetricResourceGroup)
+     *             .resourceType(baselineableMetricResourceType)
      *             .build());
      * 
      *     }
@@ -370,9 +374,11 @@ public final class StackMonitoringFunctions {
      *         final var testBaselineableMetrics = StackMonitoringFunctions.getBaselineableMetrics(GetBaselineableMetricsArgs.builder()
      *             .baselineableMetricId(testBaselineableMetric.id())
      *             .compartmentId(compartmentId)
+     *             .isOutOfBox(baselineableMetricIsOutOfBox)
      *             .metricNamespace(baselineableMetricMetricNamespace)
      *             .name(baselineableMetricName)
      *             .resourceGroup(baselineableMetricResourceGroup)
+     *             .resourceType(baselineableMetricResourceType)
      *             .build());
      * 
      *     }
@@ -418,9 +424,11 @@ public final class StackMonitoringFunctions {
      *         final var testBaselineableMetrics = StackMonitoringFunctions.getBaselineableMetrics(GetBaselineableMetricsArgs.builder()
      *             .baselineableMetricId(testBaselineableMetric.id())
      *             .compartmentId(compartmentId)
+     *             .isOutOfBox(baselineableMetricIsOutOfBox)
      *             .metricNamespace(baselineableMetricMetricNamespace)
      *             .name(baselineableMetricName)
      *             .resourceGroup(baselineableMetricResourceGroup)
+     *             .resourceType(baselineableMetricResourceType)
      *             .build());
      * 
      *     }
@@ -466,9 +474,11 @@ public final class StackMonitoringFunctions {
      *         final var testBaselineableMetrics = StackMonitoringFunctions.getBaselineableMetrics(GetBaselineableMetricsArgs.builder()
      *             .baselineableMetricId(testBaselineableMetric.id())
      *             .compartmentId(compartmentId)
+     *             .isOutOfBox(baselineableMetricIsOutOfBox)
      *             .metricNamespace(baselineableMetricMetricNamespace)
      *             .name(baselineableMetricName)
      *             .resourceGroup(baselineableMetricResourceGroup)
+     *             .resourceType(baselineableMetricResourceType)
      *             .build());
      * 
      *     }
@@ -514,9 +524,11 @@ public final class StackMonitoringFunctions {
      *         final var testBaselineableMetrics = StackMonitoringFunctions.getBaselineableMetrics(GetBaselineableMetricsArgs.builder()
      *             .baselineableMetricId(testBaselineableMetric.id())
      *             .compartmentId(compartmentId)
+     *             .isOutOfBox(baselineableMetricIsOutOfBox)
      *             .metricNamespace(baselineableMetricMetricNamespace)
      *             .name(baselineableMetricName)
      *             .resourceGroup(baselineableMetricResourceGroup)
+     *             .resourceType(baselineableMetricResourceType)
      *             .build());
      * 
      *     }

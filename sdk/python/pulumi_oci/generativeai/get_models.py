@@ -65,6 +65,9 @@ class GetModelsResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
+        """
+        A user-friendly name.
+        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -99,6 +102,9 @@ class GetModelsResult:
     @property
     @pulumi.getter
     def vendor(self) -> Optional[str]:
+        """
+        The provider of the base model.
+        """
         return pulumi.get(self, "vendor")
 
 

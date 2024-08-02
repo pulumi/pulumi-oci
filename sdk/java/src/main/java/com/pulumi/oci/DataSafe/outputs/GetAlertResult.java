@@ -15,6 +15,16 @@ import java.util.Objects;
 public final class GetAlertResult {
     private String alertId;
     /**
+     * @return The key of the rule of alert policy that triggered alert.
+     * 
+     */
+    private String alertPolicyRuleKey;
+    /**
+     * @return The display name of the rule of alert policy that triggered alert.
+     * 
+     */
+    private String alertPolicyRuleName;
+    /**
      * @return Type of the alert. Indicates the Data Safe feature triggering the alert.
      * 
      */
@@ -128,6 +138,20 @@ public final class GetAlertResult {
     private GetAlertResult() {}
     public String alertId() {
         return this.alertId;
+    }
+    /**
+     * @return The key of the rule of alert policy that triggered alert.
+     * 
+     */
+    public String alertPolicyRuleKey() {
+        return this.alertPolicyRuleKey;
+    }
+    /**
+     * @return The display name of the rule of alert policy that triggered alert.
+     * 
+     */
+    public String alertPolicyRuleName() {
+        return this.alertPolicyRuleName;
     }
     /**
      * @return Type of the alert. Indicates the Data Safe feature triggering the alert.
@@ -294,6 +318,8 @@ public final class GetAlertResult {
     @CustomType.Builder
     public static final class Builder {
         private String alertId;
+        private String alertPolicyRuleKey;
+        private String alertPolicyRuleName;
         private String alertType;
         private String comment;
         private String compartmentId;
@@ -320,6 +346,8 @@ public final class GetAlertResult {
         public Builder(GetAlertResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.alertId = defaults.alertId;
+    	      this.alertPolicyRuleKey = defaults.alertPolicyRuleKey;
+    	      this.alertPolicyRuleName = defaults.alertPolicyRuleName;
     	      this.alertType = defaults.alertType;
     	      this.comment = defaults.comment;
     	      this.compartmentId = defaults.compartmentId;
@@ -350,6 +378,22 @@ public final class GetAlertResult {
               throw new MissingRequiredPropertyException("GetAlertResult", "alertId");
             }
             this.alertId = alertId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder alertPolicyRuleKey(String alertPolicyRuleKey) {
+            if (alertPolicyRuleKey == null) {
+              throw new MissingRequiredPropertyException("GetAlertResult", "alertPolicyRuleKey");
+            }
+            this.alertPolicyRuleKey = alertPolicyRuleKey;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder alertPolicyRuleName(String alertPolicyRuleName) {
+            if (alertPolicyRuleName == null) {
+              throw new MissingRequiredPropertyException("GetAlertResult", "alertPolicyRuleName");
+            }
+            this.alertPolicyRuleName = alertPolicyRuleName;
             return this;
         }
         @CustomType.Setter
@@ -537,6 +581,8 @@ public final class GetAlertResult {
         public GetAlertResult build() {
             final var _resultValue = new GetAlertResult();
             _resultValue.alertId = alertId;
+            _resultValue.alertPolicyRuleKey = alertPolicyRuleKey;
+            _resultValue.alertPolicyRuleName = alertPolicyRuleName;
             _resultValue.alertType = alertType;
             _resultValue.comment = comment;
             _resultValue.compartmentId = compartmentId;

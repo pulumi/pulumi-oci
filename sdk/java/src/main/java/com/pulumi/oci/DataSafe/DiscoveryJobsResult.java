@@ -379,11 +379,18 @@ public class DiscoveryJobsResult extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public DiscoveryJobsResult(String name, DiscoveryJobsResultArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/discoveryJobsResult:DiscoveryJobsResult", name, args == null ? DiscoveryJobsResultArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DataSafe/discoveryJobsResult:DiscoveryJobsResult", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DiscoveryJobsResult(String name, Output<String> id, @Nullable DiscoveryJobsResultState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DataSafe/discoveryJobsResult:DiscoveryJobsResult", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DiscoveryJobsResultArgs makeArgs(DiscoveryJobsResultArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DiscoveryJobsResultArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

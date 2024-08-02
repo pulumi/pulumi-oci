@@ -182,11 +182,18 @@ public class NetworkFirewallPolicyDecryptionRule extends com.pulumi.resources.Cu
      * @param options A bag of options that control this resource's behavior.
      */
     public NetworkFirewallPolicyDecryptionRule(String name, NetworkFirewallPolicyDecryptionRuleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:NetworkFirewall/networkFirewallPolicyDecryptionRule:NetworkFirewallPolicyDecryptionRule", name, args == null ? NetworkFirewallPolicyDecryptionRuleArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:NetworkFirewall/networkFirewallPolicyDecryptionRule:NetworkFirewallPolicyDecryptionRule", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private NetworkFirewallPolicyDecryptionRule(String name, Output<String> id, @Nullable NetworkFirewallPolicyDecryptionRuleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:NetworkFirewall/networkFirewallPolicyDecryptionRule:NetworkFirewallPolicyDecryptionRule", name, state, makeResourceOptions(options, id));
+    }
+
+    private static NetworkFirewallPolicyDecryptionRuleArgs makeArgs(NetworkFirewallPolicyDecryptionRuleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? NetworkFirewallPolicyDecryptionRuleArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

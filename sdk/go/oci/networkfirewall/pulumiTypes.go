@@ -771,6 +771,455 @@ func (o NetworkFirewallPolicyServicePortRangeArrayOutput) Index(i pulumi.IntInpu
 	}).(NetworkFirewallPolicyServicePortRangeOutput)
 }
 
+type NetworkFirewallPolicyTunnelInspectionRuleCondition struct {
+	// (Updatable) An array of address list names to be evaluated against the traffic destination address.
+	DestinationAddresses []string `pulumi:"destinationAddresses"`
+	// (Updatable) An array of address list names to be evaluated against the traffic source address.
+	SourceAddresses []string `pulumi:"sourceAddresses"`
+}
+
+// NetworkFirewallPolicyTunnelInspectionRuleConditionInput is an input type that accepts NetworkFirewallPolicyTunnelInspectionRuleConditionArgs and NetworkFirewallPolicyTunnelInspectionRuleConditionOutput values.
+// You can construct a concrete instance of `NetworkFirewallPolicyTunnelInspectionRuleConditionInput` via:
+//
+//	NetworkFirewallPolicyTunnelInspectionRuleConditionArgs{...}
+type NetworkFirewallPolicyTunnelInspectionRuleConditionInput interface {
+	pulumi.Input
+
+	ToNetworkFirewallPolicyTunnelInspectionRuleConditionOutput() NetworkFirewallPolicyTunnelInspectionRuleConditionOutput
+	ToNetworkFirewallPolicyTunnelInspectionRuleConditionOutputWithContext(context.Context) NetworkFirewallPolicyTunnelInspectionRuleConditionOutput
+}
+
+type NetworkFirewallPolicyTunnelInspectionRuleConditionArgs struct {
+	// (Updatable) An array of address list names to be evaluated against the traffic destination address.
+	DestinationAddresses pulumi.StringArrayInput `pulumi:"destinationAddresses"`
+	// (Updatable) An array of address list names to be evaluated against the traffic source address.
+	SourceAddresses pulumi.StringArrayInput `pulumi:"sourceAddresses"`
+}
+
+func (NetworkFirewallPolicyTunnelInspectionRuleConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NetworkFirewallPolicyTunnelInspectionRuleCondition)(nil)).Elem()
+}
+
+func (i NetworkFirewallPolicyTunnelInspectionRuleConditionArgs) ToNetworkFirewallPolicyTunnelInspectionRuleConditionOutput() NetworkFirewallPolicyTunnelInspectionRuleConditionOutput {
+	return i.ToNetworkFirewallPolicyTunnelInspectionRuleConditionOutputWithContext(context.Background())
+}
+
+func (i NetworkFirewallPolicyTunnelInspectionRuleConditionArgs) ToNetworkFirewallPolicyTunnelInspectionRuleConditionOutputWithContext(ctx context.Context) NetworkFirewallPolicyTunnelInspectionRuleConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyTunnelInspectionRuleConditionOutput)
+}
+
+func (i NetworkFirewallPolicyTunnelInspectionRuleConditionArgs) ToNetworkFirewallPolicyTunnelInspectionRuleConditionPtrOutput() NetworkFirewallPolicyTunnelInspectionRuleConditionPtrOutput {
+	return i.ToNetworkFirewallPolicyTunnelInspectionRuleConditionPtrOutputWithContext(context.Background())
+}
+
+func (i NetworkFirewallPolicyTunnelInspectionRuleConditionArgs) ToNetworkFirewallPolicyTunnelInspectionRuleConditionPtrOutputWithContext(ctx context.Context) NetworkFirewallPolicyTunnelInspectionRuleConditionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyTunnelInspectionRuleConditionOutput).ToNetworkFirewallPolicyTunnelInspectionRuleConditionPtrOutputWithContext(ctx)
+}
+
+// NetworkFirewallPolicyTunnelInspectionRuleConditionPtrInput is an input type that accepts NetworkFirewallPolicyTunnelInspectionRuleConditionArgs, NetworkFirewallPolicyTunnelInspectionRuleConditionPtr and NetworkFirewallPolicyTunnelInspectionRuleConditionPtrOutput values.
+// You can construct a concrete instance of `NetworkFirewallPolicyTunnelInspectionRuleConditionPtrInput` via:
+//
+//	        NetworkFirewallPolicyTunnelInspectionRuleConditionArgs{...}
+//
+//	or:
+//
+//	        nil
+type NetworkFirewallPolicyTunnelInspectionRuleConditionPtrInput interface {
+	pulumi.Input
+
+	ToNetworkFirewallPolicyTunnelInspectionRuleConditionPtrOutput() NetworkFirewallPolicyTunnelInspectionRuleConditionPtrOutput
+	ToNetworkFirewallPolicyTunnelInspectionRuleConditionPtrOutputWithContext(context.Context) NetworkFirewallPolicyTunnelInspectionRuleConditionPtrOutput
+}
+
+type networkFirewallPolicyTunnelInspectionRuleConditionPtrType NetworkFirewallPolicyTunnelInspectionRuleConditionArgs
+
+func NetworkFirewallPolicyTunnelInspectionRuleConditionPtr(v *NetworkFirewallPolicyTunnelInspectionRuleConditionArgs) NetworkFirewallPolicyTunnelInspectionRuleConditionPtrInput {
+	return (*networkFirewallPolicyTunnelInspectionRuleConditionPtrType)(v)
+}
+
+func (*networkFirewallPolicyTunnelInspectionRuleConditionPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**NetworkFirewallPolicyTunnelInspectionRuleCondition)(nil)).Elem()
+}
+
+func (i *networkFirewallPolicyTunnelInspectionRuleConditionPtrType) ToNetworkFirewallPolicyTunnelInspectionRuleConditionPtrOutput() NetworkFirewallPolicyTunnelInspectionRuleConditionPtrOutput {
+	return i.ToNetworkFirewallPolicyTunnelInspectionRuleConditionPtrOutputWithContext(context.Background())
+}
+
+func (i *networkFirewallPolicyTunnelInspectionRuleConditionPtrType) ToNetworkFirewallPolicyTunnelInspectionRuleConditionPtrOutputWithContext(ctx context.Context) NetworkFirewallPolicyTunnelInspectionRuleConditionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyTunnelInspectionRuleConditionPtrOutput)
+}
+
+type NetworkFirewallPolicyTunnelInspectionRuleConditionOutput struct{ *pulumi.OutputState }
+
+func (NetworkFirewallPolicyTunnelInspectionRuleConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NetworkFirewallPolicyTunnelInspectionRuleCondition)(nil)).Elem()
+}
+
+func (o NetworkFirewallPolicyTunnelInspectionRuleConditionOutput) ToNetworkFirewallPolicyTunnelInspectionRuleConditionOutput() NetworkFirewallPolicyTunnelInspectionRuleConditionOutput {
+	return o
+}
+
+func (o NetworkFirewallPolicyTunnelInspectionRuleConditionOutput) ToNetworkFirewallPolicyTunnelInspectionRuleConditionOutputWithContext(ctx context.Context) NetworkFirewallPolicyTunnelInspectionRuleConditionOutput {
+	return o
+}
+
+func (o NetworkFirewallPolicyTunnelInspectionRuleConditionOutput) ToNetworkFirewallPolicyTunnelInspectionRuleConditionPtrOutput() NetworkFirewallPolicyTunnelInspectionRuleConditionPtrOutput {
+	return o.ToNetworkFirewallPolicyTunnelInspectionRuleConditionPtrOutputWithContext(context.Background())
+}
+
+func (o NetworkFirewallPolicyTunnelInspectionRuleConditionOutput) ToNetworkFirewallPolicyTunnelInspectionRuleConditionPtrOutputWithContext(ctx context.Context) NetworkFirewallPolicyTunnelInspectionRuleConditionPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v NetworkFirewallPolicyTunnelInspectionRuleCondition) *NetworkFirewallPolicyTunnelInspectionRuleCondition {
+		return &v
+	}).(NetworkFirewallPolicyTunnelInspectionRuleConditionPtrOutput)
+}
+
+// (Updatable) An array of address list names to be evaluated against the traffic destination address.
+func (o NetworkFirewallPolicyTunnelInspectionRuleConditionOutput) DestinationAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v NetworkFirewallPolicyTunnelInspectionRuleCondition) []string { return v.DestinationAddresses }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) An array of address list names to be evaluated against the traffic source address.
+func (o NetworkFirewallPolicyTunnelInspectionRuleConditionOutput) SourceAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v NetworkFirewallPolicyTunnelInspectionRuleCondition) []string { return v.SourceAddresses }).(pulumi.StringArrayOutput)
+}
+
+type NetworkFirewallPolicyTunnelInspectionRuleConditionPtrOutput struct{ *pulumi.OutputState }
+
+func (NetworkFirewallPolicyTunnelInspectionRuleConditionPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**NetworkFirewallPolicyTunnelInspectionRuleCondition)(nil)).Elem()
+}
+
+func (o NetworkFirewallPolicyTunnelInspectionRuleConditionPtrOutput) ToNetworkFirewallPolicyTunnelInspectionRuleConditionPtrOutput() NetworkFirewallPolicyTunnelInspectionRuleConditionPtrOutput {
+	return o
+}
+
+func (o NetworkFirewallPolicyTunnelInspectionRuleConditionPtrOutput) ToNetworkFirewallPolicyTunnelInspectionRuleConditionPtrOutputWithContext(ctx context.Context) NetworkFirewallPolicyTunnelInspectionRuleConditionPtrOutput {
+	return o
+}
+
+func (o NetworkFirewallPolicyTunnelInspectionRuleConditionPtrOutput) Elem() NetworkFirewallPolicyTunnelInspectionRuleConditionOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicyTunnelInspectionRuleCondition) NetworkFirewallPolicyTunnelInspectionRuleCondition {
+		if v != nil {
+			return *v
+		}
+		var ret NetworkFirewallPolicyTunnelInspectionRuleCondition
+		return ret
+	}).(NetworkFirewallPolicyTunnelInspectionRuleConditionOutput)
+}
+
+// (Updatable) An array of address list names to be evaluated against the traffic destination address.
+func (o NetworkFirewallPolicyTunnelInspectionRuleConditionPtrOutput) DestinationAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicyTunnelInspectionRuleCondition) []string {
+		if v == nil {
+			return nil
+		}
+		return v.DestinationAddresses
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) An array of address list names to be evaluated against the traffic source address.
+func (o NetworkFirewallPolicyTunnelInspectionRuleConditionPtrOutput) SourceAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicyTunnelInspectionRuleCondition) []string {
+		if v == nil {
+			return nil
+		}
+		return v.SourceAddresses
+	}).(pulumi.StringArrayOutput)
+}
+
+type NetworkFirewallPolicyTunnelInspectionRulePosition struct {
+	// (Updatable) Identifier for rule after which this rule lies.
+	AfterRule *string `pulumi:"afterRule"`
+	// (Updatable) Identifier for rule before which this rule lies.
+	BeforeRule *string `pulumi:"beforeRule"`
+}
+
+// NetworkFirewallPolicyTunnelInspectionRulePositionInput is an input type that accepts NetworkFirewallPolicyTunnelInspectionRulePositionArgs and NetworkFirewallPolicyTunnelInspectionRulePositionOutput values.
+// You can construct a concrete instance of `NetworkFirewallPolicyTunnelInspectionRulePositionInput` via:
+//
+//	NetworkFirewallPolicyTunnelInspectionRulePositionArgs{...}
+type NetworkFirewallPolicyTunnelInspectionRulePositionInput interface {
+	pulumi.Input
+
+	ToNetworkFirewallPolicyTunnelInspectionRulePositionOutput() NetworkFirewallPolicyTunnelInspectionRulePositionOutput
+	ToNetworkFirewallPolicyTunnelInspectionRulePositionOutputWithContext(context.Context) NetworkFirewallPolicyTunnelInspectionRulePositionOutput
+}
+
+type NetworkFirewallPolicyTunnelInspectionRulePositionArgs struct {
+	// (Updatable) Identifier for rule after which this rule lies.
+	AfterRule pulumi.StringPtrInput `pulumi:"afterRule"`
+	// (Updatable) Identifier for rule before which this rule lies.
+	BeforeRule pulumi.StringPtrInput `pulumi:"beforeRule"`
+}
+
+func (NetworkFirewallPolicyTunnelInspectionRulePositionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NetworkFirewallPolicyTunnelInspectionRulePosition)(nil)).Elem()
+}
+
+func (i NetworkFirewallPolicyTunnelInspectionRulePositionArgs) ToNetworkFirewallPolicyTunnelInspectionRulePositionOutput() NetworkFirewallPolicyTunnelInspectionRulePositionOutput {
+	return i.ToNetworkFirewallPolicyTunnelInspectionRulePositionOutputWithContext(context.Background())
+}
+
+func (i NetworkFirewallPolicyTunnelInspectionRulePositionArgs) ToNetworkFirewallPolicyTunnelInspectionRulePositionOutputWithContext(ctx context.Context) NetworkFirewallPolicyTunnelInspectionRulePositionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyTunnelInspectionRulePositionOutput)
+}
+
+func (i NetworkFirewallPolicyTunnelInspectionRulePositionArgs) ToNetworkFirewallPolicyTunnelInspectionRulePositionPtrOutput() NetworkFirewallPolicyTunnelInspectionRulePositionPtrOutput {
+	return i.ToNetworkFirewallPolicyTunnelInspectionRulePositionPtrOutputWithContext(context.Background())
+}
+
+func (i NetworkFirewallPolicyTunnelInspectionRulePositionArgs) ToNetworkFirewallPolicyTunnelInspectionRulePositionPtrOutputWithContext(ctx context.Context) NetworkFirewallPolicyTunnelInspectionRulePositionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyTunnelInspectionRulePositionOutput).ToNetworkFirewallPolicyTunnelInspectionRulePositionPtrOutputWithContext(ctx)
+}
+
+// NetworkFirewallPolicyTunnelInspectionRulePositionPtrInput is an input type that accepts NetworkFirewallPolicyTunnelInspectionRulePositionArgs, NetworkFirewallPolicyTunnelInspectionRulePositionPtr and NetworkFirewallPolicyTunnelInspectionRulePositionPtrOutput values.
+// You can construct a concrete instance of `NetworkFirewallPolicyTunnelInspectionRulePositionPtrInput` via:
+//
+//	        NetworkFirewallPolicyTunnelInspectionRulePositionArgs{...}
+//
+//	or:
+//
+//	        nil
+type NetworkFirewallPolicyTunnelInspectionRulePositionPtrInput interface {
+	pulumi.Input
+
+	ToNetworkFirewallPolicyTunnelInspectionRulePositionPtrOutput() NetworkFirewallPolicyTunnelInspectionRulePositionPtrOutput
+	ToNetworkFirewallPolicyTunnelInspectionRulePositionPtrOutputWithContext(context.Context) NetworkFirewallPolicyTunnelInspectionRulePositionPtrOutput
+}
+
+type networkFirewallPolicyTunnelInspectionRulePositionPtrType NetworkFirewallPolicyTunnelInspectionRulePositionArgs
+
+func NetworkFirewallPolicyTunnelInspectionRulePositionPtr(v *NetworkFirewallPolicyTunnelInspectionRulePositionArgs) NetworkFirewallPolicyTunnelInspectionRulePositionPtrInput {
+	return (*networkFirewallPolicyTunnelInspectionRulePositionPtrType)(v)
+}
+
+func (*networkFirewallPolicyTunnelInspectionRulePositionPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**NetworkFirewallPolicyTunnelInspectionRulePosition)(nil)).Elem()
+}
+
+func (i *networkFirewallPolicyTunnelInspectionRulePositionPtrType) ToNetworkFirewallPolicyTunnelInspectionRulePositionPtrOutput() NetworkFirewallPolicyTunnelInspectionRulePositionPtrOutput {
+	return i.ToNetworkFirewallPolicyTunnelInspectionRulePositionPtrOutputWithContext(context.Background())
+}
+
+func (i *networkFirewallPolicyTunnelInspectionRulePositionPtrType) ToNetworkFirewallPolicyTunnelInspectionRulePositionPtrOutputWithContext(ctx context.Context) NetworkFirewallPolicyTunnelInspectionRulePositionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyTunnelInspectionRulePositionPtrOutput)
+}
+
+type NetworkFirewallPolicyTunnelInspectionRulePositionOutput struct{ *pulumi.OutputState }
+
+func (NetworkFirewallPolicyTunnelInspectionRulePositionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NetworkFirewallPolicyTunnelInspectionRulePosition)(nil)).Elem()
+}
+
+func (o NetworkFirewallPolicyTunnelInspectionRulePositionOutput) ToNetworkFirewallPolicyTunnelInspectionRulePositionOutput() NetworkFirewallPolicyTunnelInspectionRulePositionOutput {
+	return o
+}
+
+func (o NetworkFirewallPolicyTunnelInspectionRulePositionOutput) ToNetworkFirewallPolicyTunnelInspectionRulePositionOutputWithContext(ctx context.Context) NetworkFirewallPolicyTunnelInspectionRulePositionOutput {
+	return o
+}
+
+func (o NetworkFirewallPolicyTunnelInspectionRulePositionOutput) ToNetworkFirewallPolicyTunnelInspectionRulePositionPtrOutput() NetworkFirewallPolicyTunnelInspectionRulePositionPtrOutput {
+	return o.ToNetworkFirewallPolicyTunnelInspectionRulePositionPtrOutputWithContext(context.Background())
+}
+
+func (o NetworkFirewallPolicyTunnelInspectionRulePositionOutput) ToNetworkFirewallPolicyTunnelInspectionRulePositionPtrOutputWithContext(ctx context.Context) NetworkFirewallPolicyTunnelInspectionRulePositionPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v NetworkFirewallPolicyTunnelInspectionRulePosition) *NetworkFirewallPolicyTunnelInspectionRulePosition {
+		return &v
+	}).(NetworkFirewallPolicyTunnelInspectionRulePositionPtrOutput)
+}
+
+// (Updatable) Identifier for rule after which this rule lies.
+func (o NetworkFirewallPolicyTunnelInspectionRulePositionOutput) AfterRule() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NetworkFirewallPolicyTunnelInspectionRulePosition) *string { return v.AfterRule }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Identifier for rule before which this rule lies.
+func (o NetworkFirewallPolicyTunnelInspectionRulePositionOutput) BeforeRule() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NetworkFirewallPolicyTunnelInspectionRulePosition) *string { return v.BeforeRule }).(pulumi.StringPtrOutput)
+}
+
+type NetworkFirewallPolicyTunnelInspectionRulePositionPtrOutput struct{ *pulumi.OutputState }
+
+func (NetworkFirewallPolicyTunnelInspectionRulePositionPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**NetworkFirewallPolicyTunnelInspectionRulePosition)(nil)).Elem()
+}
+
+func (o NetworkFirewallPolicyTunnelInspectionRulePositionPtrOutput) ToNetworkFirewallPolicyTunnelInspectionRulePositionPtrOutput() NetworkFirewallPolicyTunnelInspectionRulePositionPtrOutput {
+	return o
+}
+
+func (o NetworkFirewallPolicyTunnelInspectionRulePositionPtrOutput) ToNetworkFirewallPolicyTunnelInspectionRulePositionPtrOutputWithContext(ctx context.Context) NetworkFirewallPolicyTunnelInspectionRulePositionPtrOutput {
+	return o
+}
+
+func (o NetworkFirewallPolicyTunnelInspectionRulePositionPtrOutput) Elem() NetworkFirewallPolicyTunnelInspectionRulePositionOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicyTunnelInspectionRulePosition) NetworkFirewallPolicyTunnelInspectionRulePosition {
+		if v != nil {
+			return *v
+		}
+		var ret NetworkFirewallPolicyTunnelInspectionRulePosition
+		return ret
+	}).(NetworkFirewallPolicyTunnelInspectionRulePositionOutput)
+}
+
+// (Updatable) Identifier for rule after which this rule lies.
+func (o NetworkFirewallPolicyTunnelInspectionRulePositionPtrOutput) AfterRule() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicyTunnelInspectionRulePosition) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AfterRule
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Identifier for rule before which this rule lies.
+func (o NetworkFirewallPolicyTunnelInspectionRulePositionPtrOutput) BeforeRule() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicyTunnelInspectionRulePosition) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BeforeRule
+	}).(pulumi.StringPtrOutput)
+}
+
+type NetworkFirewallPolicyTunnelInspectionRuleProfile struct {
+	// (Updatable) Return scanned VXLAN tunnel traffic to source.
+	MustReturnTrafficToSource *bool `pulumi:"mustReturnTrafficToSource"`
+}
+
+// NetworkFirewallPolicyTunnelInspectionRuleProfileInput is an input type that accepts NetworkFirewallPolicyTunnelInspectionRuleProfileArgs and NetworkFirewallPolicyTunnelInspectionRuleProfileOutput values.
+// You can construct a concrete instance of `NetworkFirewallPolicyTunnelInspectionRuleProfileInput` via:
+//
+//	NetworkFirewallPolicyTunnelInspectionRuleProfileArgs{...}
+type NetworkFirewallPolicyTunnelInspectionRuleProfileInput interface {
+	pulumi.Input
+
+	ToNetworkFirewallPolicyTunnelInspectionRuleProfileOutput() NetworkFirewallPolicyTunnelInspectionRuleProfileOutput
+	ToNetworkFirewallPolicyTunnelInspectionRuleProfileOutputWithContext(context.Context) NetworkFirewallPolicyTunnelInspectionRuleProfileOutput
+}
+
+type NetworkFirewallPolicyTunnelInspectionRuleProfileArgs struct {
+	// (Updatable) Return scanned VXLAN tunnel traffic to source.
+	MustReturnTrafficToSource pulumi.BoolPtrInput `pulumi:"mustReturnTrafficToSource"`
+}
+
+func (NetworkFirewallPolicyTunnelInspectionRuleProfileArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NetworkFirewallPolicyTunnelInspectionRuleProfile)(nil)).Elem()
+}
+
+func (i NetworkFirewallPolicyTunnelInspectionRuleProfileArgs) ToNetworkFirewallPolicyTunnelInspectionRuleProfileOutput() NetworkFirewallPolicyTunnelInspectionRuleProfileOutput {
+	return i.ToNetworkFirewallPolicyTunnelInspectionRuleProfileOutputWithContext(context.Background())
+}
+
+func (i NetworkFirewallPolicyTunnelInspectionRuleProfileArgs) ToNetworkFirewallPolicyTunnelInspectionRuleProfileOutputWithContext(ctx context.Context) NetworkFirewallPolicyTunnelInspectionRuleProfileOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyTunnelInspectionRuleProfileOutput)
+}
+
+func (i NetworkFirewallPolicyTunnelInspectionRuleProfileArgs) ToNetworkFirewallPolicyTunnelInspectionRuleProfilePtrOutput() NetworkFirewallPolicyTunnelInspectionRuleProfilePtrOutput {
+	return i.ToNetworkFirewallPolicyTunnelInspectionRuleProfilePtrOutputWithContext(context.Background())
+}
+
+func (i NetworkFirewallPolicyTunnelInspectionRuleProfileArgs) ToNetworkFirewallPolicyTunnelInspectionRuleProfilePtrOutputWithContext(ctx context.Context) NetworkFirewallPolicyTunnelInspectionRuleProfilePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyTunnelInspectionRuleProfileOutput).ToNetworkFirewallPolicyTunnelInspectionRuleProfilePtrOutputWithContext(ctx)
+}
+
+// NetworkFirewallPolicyTunnelInspectionRuleProfilePtrInput is an input type that accepts NetworkFirewallPolicyTunnelInspectionRuleProfileArgs, NetworkFirewallPolicyTunnelInspectionRuleProfilePtr and NetworkFirewallPolicyTunnelInspectionRuleProfilePtrOutput values.
+// You can construct a concrete instance of `NetworkFirewallPolicyTunnelInspectionRuleProfilePtrInput` via:
+//
+//	        NetworkFirewallPolicyTunnelInspectionRuleProfileArgs{...}
+//
+//	or:
+//
+//	        nil
+type NetworkFirewallPolicyTunnelInspectionRuleProfilePtrInput interface {
+	pulumi.Input
+
+	ToNetworkFirewallPolicyTunnelInspectionRuleProfilePtrOutput() NetworkFirewallPolicyTunnelInspectionRuleProfilePtrOutput
+	ToNetworkFirewallPolicyTunnelInspectionRuleProfilePtrOutputWithContext(context.Context) NetworkFirewallPolicyTunnelInspectionRuleProfilePtrOutput
+}
+
+type networkFirewallPolicyTunnelInspectionRuleProfilePtrType NetworkFirewallPolicyTunnelInspectionRuleProfileArgs
+
+func NetworkFirewallPolicyTunnelInspectionRuleProfilePtr(v *NetworkFirewallPolicyTunnelInspectionRuleProfileArgs) NetworkFirewallPolicyTunnelInspectionRuleProfilePtrInput {
+	return (*networkFirewallPolicyTunnelInspectionRuleProfilePtrType)(v)
+}
+
+func (*networkFirewallPolicyTunnelInspectionRuleProfilePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**NetworkFirewallPolicyTunnelInspectionRuleProfile)(nil)).Elem()
+}
+
+func (i *networkFirewallPolicyTunnelInspectionRuleProfilePtrType) ToNetworkFirewallPolicyTunnelInspectionRuleProfilePtrOutput() NetworkFirewallPolicyTunnelInspectionRuleProfilePtrOutput {
+	return i.ToNetworkFirewallPolicyTunnelInspectionRuleProfilePtrOutputWithContext(context.Background())
+}
+
+func (i *networkFirewallPolicyTunnelInspectionRuleProfilePtrType) ToNetworkFirewallPolicyTunnelInspectionRuleProfilePtrOutputWithContext(ctx context.Context) NetworkFirewallPolicyTunnelInspectionRuleProfilePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyTunnelInspectionRuleProfilePtrOutput)
+}
+
+type NetworkFirewallPolicyTunnelInspectionRuleProfileOutput struct{ *pulumi.OutputState }
+
+func (NetworkFirewallPolicyTunnelInspectionRuleProfileOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NetworkFirewallPolicyTunnelInspectionRuleProfile)(nil)).Elem()
+}
+
+func (o NetworkFirewallPolicyTunnelInspectionRuleProfileOutput) ToNetworkFirewallPolicyTunnelInspectionRuleProfileOutput() NetworkFirewallPolicyTunnelInspectionRuleProfileOutput {
+	return o
+}
+
+func (o NetworkFirewallPolicyTunnelInspectionRuleProfileOutput) ToNetworkFirewallPolicyTunnelInspectionRuleProfileOutputWithContext(ctx context.Context) NetworkFirewallPolicyTunnelInspectionRuleProfileOutput {
+	return o
+}
+
+func (o NetworkFirewallPolicyTunnelInspectionRuleProfileOutput) ToNetworkFirewallPolicyTunnelInspectionRuleProfilePtrOutput() NetworkFirewallPolicyTunnelInspectionRuleProfilePtrOutput {
+	return o.ToNetworkFirewallPolicyTunnelInspectionRuleProfilePtrOutputWithContext(context.Background())
+}
+
+func (o NetworkFirewallPolicyTunnelInspectionRuleProfileOutput) ToNetworkFirewallPolicyTunnelInspectionRuleProfilePtrOutputWithContext(ctx context.Context) NetworkFirewallPolicyTunnelInspectionRuleProfilePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v NetworkFirewallPolicyTunnelInspectionRuleProfile) *NetworkFirewallPolicyTunnelInspectionRuleProfile {
+		return &v
+	}).(NetworkFirewallPolicyTunnelInspectionRuleProfilePtrOutput)
+}
+
+// (Updatable) Return scanned VXLAN tunnel traffic to source.
+func (o NetworkFirewallPolicyTunnelInspectionRuleProfileOutput) MustReturnTrafficToSource() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v NetworkFirewallPolicyTunnelInspectionRuleProfile) *bool { return v.MustReturnTrafficToSource }).(pulumi.BoolPtrOutput)
+}
+
+type NetworkFirewallPolicyTunnelInspectionRuleProfilePtrOutput struct{ *pulumi.OutputState }
+
+func (NetworkFirewallPolicyTunnelInspectionRuleProfilePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**NetworkFirewallPolicyTunnelInspectionRuleProfile)(nil)).Elem()
+}
+
+func (o NetworkFirewallPolicyTunnelInspectionRuleProfilePtrOutput) ToNetworkFirewallPolicyTunnelInspectionRuleProfilePtrOutput() NetworkFirewallPolicyTunnelInspectionRuleProfilePtrOutput {
+	return o
+}
+
+func (o NetworkFirewallPolicyTunnelInspectionRuleProfilePtrOutput) ToNetworkFirewallPolicyTunnelInspectionRuleProfilePtrOutputWithContext(ctx context.Context) NetworkFirewallPolicyTunnelInspectionRuleProfilePtrOutput {
+	return o
+}
+
+func (o NetworkFirewallPolicyTunnelInspectionRuleProfilePtrOutput) Elem() NetworkFirewallPolicyTunnelInspectionRuleProfileOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicyTunnelInspectionRuleProfile) NetworkFirewallPolicyTunnelInspectionRuleProfile {
+		if v != nil {
+			return *v
+		}
+		var ret NetworkFirewallPolicyTunnelInspectionRuleProfile
+		return ret
+	}).(NetworkFirewallPolicyTunnelInspectionRuleProfileOutput)
+}
+
+// (Updatable) Return scanned VXLAN tunnel traffic to source.
+func (o NetworkFirewallPolicyTunnelInspectionRuleProfilePtrOutput) MustReturnTrafficToSource() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicyTunnelInspectionRuleProfile) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.MustReturnTrafficToSource
+	}).(pulumi.BoolPtrOutput)
+}
+
 type NetworkFirewallPolicyUrlListUrl struct {
 	// (Updatable) A string consisting of a concatenation of optional host component and optional path component. The host component may start with `*.` to match the case-insensitive domain and all its subdomains. The path component must start with a `/`, and may end with `*` to match all paths of which it is a case-sensitive prefix. A missing host component matches all request domains, and a missing path component matches all request paths. An empty value matches all requests.
 	Pattern string `pulumi:"pattern"`
@@ -5527,6 +5976,900 @@ func (o GetNetworkFirewallPolicyServicesServiceSummaryCollectionItemPortRangeArr
 	}).(GetNetworkFirewallPolicyServicesServiceSummaryCollectionItemPortRangeOutput)
 }
 
+type GetNetworkFirewallPolicyTunnelInspectionRuleCondition struct {
+	// An array of address list names to be evaluated against the traffic destination address.
+	DestinationAddresses []string `pulumi:"destinationAddresses"`
+	// An array of address list names to be evaluated against the traffic source address.
+	SourceAddresses []string `pulumi:"sourceAddresses"`
+}
+
+// GetNetworkFirewallPolicyTunnelInspectionRuleConditionInput is an input type that accepts GetNetworkFirewallPolicyTunnelInspectionRuleConditionArgs and GetNetworkFirewallPolicyTunnelInspectionRuleConditionOutput values.
+// You can construct a concrete instance of `GetNetworkFirewallPolicyTunnelInspectionRuleConditionInput` via:
+//
+//	GetNetworkFirewallPolicyTunnelInspectionRuleConditionArgs{...}
+type GetNetworkFirewallPolicyTunnelInspectionRuleConditionInput interface {
+	pulumi.Input
+
+	ToGetNetworkFirewallPolicyTunnelInspectionRuleConditionOutput() GetNetworkFirewallPolicyTunnelInspectionRuleConditionOutput
+	ToGetNetworkFirewallPolicyTunnelInspectionRuleConditionOutputWithContext(context.Context) GetNetworkFirewallPolicyTunnelInspectionRuleConditionOutput
+}
+
+type GetNetworkFirewallPolicyTunnelInspectionRuleConditionArgs struct {
+	// An array of address list names to be evaluated against the traffic destination address.
+	DestinationAddresses pulumi.StringArrayInput `pulumi:"destinationAddresses"`
+	// An array of address list names to be evaluated against the traffic source address.
+	SourceAddresses pulumi.StringArrayInput `pulumi:"sourceAddresses"`
+}
+
+func (GetNetworkFirewallPolicyTunnelInspectionRuleConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkFirewallPolicyTunnelInspectionRuleCondition)(nil)).Elem()
+}
+
+func (i GetNetworkFirewallPolicyTunnelInspectionRuleConditionArgs) ToGetNetworkFirewallPolicyTunnelInspectionRuleConditionOutput() GetNetworkFirewallPolicyTunnelInspectionRuleConditionOutput {
+	return i.ToGetNetworkFirewallPolicyTunnelInspectionRuleConditionOutputWithContext(context.Background())
+}
+
+func (i GetNetworkFirewallPolicyTunnelInspectionRuleConditionArgs) ToGetNetworkFirewallPolicyTunnelInspectionRuleConditionOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyTunnelInspectionRuleConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyTunnelInspectionRuleConditionOutput)
+}
+
+// GetNetworkFirewallPolicyTunnelInspectionRuleConditionArrayInput is an input type that accepts GetNetworkFirewallPolicyTunnelInspectionRuleConditionArray and GetNetworkFirewallPolicyTunnelInspectionRuleConditionArrayOutput values.
+// You can construct a concrete instance of `GetNetworkFirewallPolicyTunnelInspectionRuleConditionArrayInput` via:
+//
+//	GetNetworkFirewallPolicyTunnelInspectionRuleConditionArray{ GetNetworkFirewallPolicyTunnelInspectionRuleConditionArgs{...} }
+type GetNetworkFirewallPolicyTunnelInspectionRuleConditionArrayInput interface {
+	pulumi.Input
+
+	ToGetNetworkFirewallPolicyTunnelInspectionRuleConditionArrayOutput() GetNetworkFirewallPolicyTunnelInspectionRuleConditionArrayOutput
+	ToGetNetworkFirewallPolicyTunnelInspectionRuleConditionArrayOutputWithContext(context.Context) GetNetworkFirewallPolicyTunnelInspectionRuleConditionArrayOutput
+}
+
+type GetNetworkFirewallPolicyTunnelInspectionRuleConditionArray []GetNetworkFirewallPolicyTunnelInspectionRuleConditionInput
+
+func (GetNetworkFirewallPolicyTunnelInspectionRuleConditionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkFirewallPolicyTunnelInspectionRuleCondition)(nil)).Elem()
+}
+
+func (i GetNetworkFirewallPolicyTunnelInspectionRuleConditionArray) ToGetNetworkFirewallPolicyTunnelInspectionRuleConditionArrayOutput() GetNetworkFirewallPolicyTunnelInspectionRuleConditionArrayOutput {
+	return i.ToGetNetworkFirewallPolicyTunnelInspectionRuleConditionArrayOutputWithContext(context.Background())
+}
+
+func (i GetNetworkFirewallPolicyTunnelInspectionRuleConditionArray) ToGetNetworkFirewallPolicyTunnelInspectionRuleConditionArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyTunnelInspectionRuleConditionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyTunnelInspectionRuleConditionArrayOutput)
+}
+
+type GetNetworkFirewallPolicyTunnelInspectionRuleConditionOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkFirewallPolicyTunnelInspectionRuleConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkFirewallPolicyTunnelInspectionRuleCondition)(nil)).Elem()
+}
+
+func (o GetNetworkFirewallPolicyTunnelInspectionRuleConditionOutput) ToGetNetworkFirewallPolicyTunnelInspectionRuleConditionOutput() GetNetworkFirewallPolicyTunnelInspectionRuleConditionOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyTunnelInspectionRuleConditionOutput) ToGetNetworkFirewallPolicyTunnelInspectionRuleConditionOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyTunnelInspectionRuleConditionOutput {
+	return o
+}
+
+// An array of address list names to be evaluated against the traffic destination address.
+func (o GetNetworkFirewallPolicyTunnelInspectionRuleConditionOutput) DestinationAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyTunnelInspectionRuleCondition) []string { return v.DestinationAddresses }).(pulumi.StringArrayOutput)
+}
+
+// An array of address list names to be evaluated against the traffic source address.
+func (o GetNetworkFirewallPolicyTunnelInspectionRuleConditionOutput) SourceAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyTunnelInspectionRuleCondition) []string { return v.SourceAddresses }).(pulumi.StringArrayOutput)
+}
+
+type GetNetworkFirewallPolicyTunnelInspectionRuleConditionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkFirewallPolicyTunnelInspectionRuleConditionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkFirewallPolicyTunnelInspectionRuleCondition)(nil)).Elem()
+}
+
+func (o GetNetworkFirewallPolicyTunnelInspectionRuleConditionArrayOutput) ToGetNetworkFirewallPolicyTunnelInspectionRuleConditionArrayOutput() GetNetworkFirewallPolicyTunnelInspectionRuleConditionArrayOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyTunnelInspectionRuleConditionArrayOutput) ToGetNetworkFirewallPolicyTunnelInspectionRuleConditionArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyTunnelInspectionRuleConditionArrayOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyTunnelInspectionRuleConditionArrayOutput) Index(i pulumi.IntInput) GetNetworkFirewallPolicyTunnelInspectionRuleConditionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkFirewallPolicyTunnelInspectionRuleCondition {
+		return vs[0].([]GetNetworkFirewallPolicyTunnelInspectionRuleCondition)[vs[1].(int)]
+	}).(GetNetworkFirewallPolicyTunnelInspectionRuleConditionOutput)
+}
+
+type GetNetworkFirewallPolicyTunnelInspectionRulePosition struct {
+	// Identifier for rule after which this rule lies.
+	AfterRule string `pulumi:"afterRule"`
+	// Identifier for rule before which this rule lies.
+	BeforeRule string `pulumi:"beforeRule"`
+}
+
+// GetNetworkFirewallPolicyTunnelInspectionRulePositionInput is an input type that accepts GetNetworkFirewallPolicyTunnelInspectionRulePositionArgs and GetNetworkFirewallPolicyTunnelInspectionRulePositionOutput values.
+// You can construct a concrete instance of `GetNetworkFirewallPolicyTunnelInspectionRulePositionInput` via:
+//
+//	GetNetworkFirewallPolicyTunnelInspectionRulePositionArgs{...}
+type GetNetworkFirewallPolicyTunnelInspectionRulePositionInput interface {
+	pulumi.Input
+
+	ToGetNetworkFirewallPolicyTunnelInspectionRulePositionOutput() GetNetworkFirewallPolicyTunnelInspectionRulePositionOutput
+	ToGetNetworkFirewallPolicyTunnelInspectionRulePositionOutputWithContext(context.Context) GetNetworkFirewallPolicyTunnelInspectionRulePositionOutput
+}
+
+type GetNetworkFirewallPolicyTunnelInspectionRulePositionArgs struct {
+	// Identifier for rule after which this rule lies.
+	AfterRule pulumi.StringInput `pulumi:"afterRule"`
+	// Identifier for rule before which this rule lies.
+	BeforeRule pulumi.StringInput `pulumi:"beforeRule"`
+}
+
+func (GetNetworkFirewallPolicyTunnelInspectionRulePositionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkFirewallPolicyTunnelInspectionRulePosition)(nil)).Elem()
+}
+
+func (i GetNetworkFirewallPolicyTunnelInspectionRulePositionArgs) ToGetNetworkFirewallPolicyTunnelInspectionRulePositionOutput() GetNetworkFirewallPolicyTunnelInspectionRulePositionOutput {
+	return i.ToGetNetworkFirewallPolicyTunnelInspectionRulePositionOutputWithContext(context.Background())
+}
+
+func (i GetNetworkFirewallPolicyTunnelInspectionRulePositionArgs) ToGetNetworkFirewallPolicyTunnelInspectionRulePositionOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyTunnelInspectionRulePositionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyTunnelInspectionRulePositionOutput)
+}
+
+// GetNetworkFirewallPolicyTunnelInspectionRulePositionArrayInput is an input type that accepts GetNetworkFirewallPolicyTunnelInspectionRulePositionArray and GetNetworkFirewallPolicyTunnelInspectionRulePositionArrayOutput values.
+// You can construct a concrete instance of `GetNetworkFirewallPolicyTunnelInspectionRulePositionArrayInput` via:
+//
+//	GetNetworkFirewallPolicyTunnelInspectionRulePositionArray{ GetNetworkFirewallPolicyTunnelInspectionRulePositionArgs{...} }
+type GetNetworkFirewallPolicyTunnelInspectionRulePositionArrayInput interface {
+	pulumi.Input
+
+	ToGetNetworkFirewallPolicyTunnelInspectionRulePositionArrayOutput() GetNetworkFirewallPolicyTunnelInspectionRulePositionArrayOutput
+	ToGetNetworkFirewallPolicyTunnelInspectionRulePositionArrayOutputWithContext(context.Context) GetNetworkFirewallPolicyTunnelInspectionRulePositionArrayOutput
+}
+
+type GetNetworkFirewallPolicyTunnelInspectionRulePositionArray []GetNetworkFirewallPolicyTunnelInspectionRulePositionInput
+
+func (GetNetworkFirewallPolicyTunnelInspectionRulePositionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkFirewallPolicyTunnelInspectionRulePosition)(nil)).Elem()
+}
+
+func (i GetNetworkFirewallPolicyTunnelInspectionRulePositionArray) ToGetNetworkFirewallPolicyTunnelInspectionRulePositionArrayOutput() GetNetworkFirewallPolicyTunnelInspectionRulePositionArrayOutput {
+	return i.ToGetNetworkFirewallPolicyTunnelInspectionRulePositionArrayOutputWithContext(context.Background())
+}
+
+func (i GetNetworkFirewallPolicyTunnelInspectionRulePositionArray) ToGetNetworkFirewallPolicyTunnelInspectionRulePositionArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyTunnelInspectionRulePositionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyTunnelInspectionRulePositionArrayOutput)
+}
+
+type GetNetworkFirewallPolicyTunnelInspectionRulePositionOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkFirewallPolicyTunnelInspectionRulePositionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkFirewallPolicyTunnelInspectionRulePosition)(nil)).Elem()
+}
+
+func (o GetNetworkFirewallPolicyTunnelInspectionRulePositionOutput) ToGetNetworkFirewallPolicyTunnelInspectionRulePositionOutput() GetNetworkFirewallPolicyTunnelInspectionRulePositionOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyTunnelInspectionRulePositionOutput) ToGetNetworkFirewallPolicyTunnelInspectionRulePositionOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyTunnelInspectionRulePositionOutput {
+	return o
+}
+
+// Identifier for rule after which this rule lies.
+func (o GetNetworkFirewallPolicyTunnelInspectionRulePositionOutput) AfterRule() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyTunnelInspectionRulePosition) string { return v.AfterRule }).(pulumi.StringOutput)
+}
+
+// Identifier for rule before which this rule lies.
+func (o GetNetworkFirewallPolicyTunnelInspectionRulePositionOutput) BeforeRule() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyTunnelInspectionRulePosition) string { return v.BeforeRule }).(pulumi.StringOutput)
+}
+
+type GetNetworkFirewallPolicyTunnelInspectionRulePositionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkFirewallPolicyTunnelInspectionRulePositionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkFirewallPolicyTunnelInspectionRulePosition)(nil)).Elem()
+}
+
+func (o GetNetworkFirewallPolicyTunnelInspectionRulePositionArrayOutput) ToGetNetworkFirewallPolicyTunnelInspectionRulePositionArrayOutput() GetNetworkFirewallPolicyTunnelInspectionRulePositionArrayOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyTunnelInspectionRulePositionArrayOutput) ToGetNetworkFirewallPolicyTunnelInspectionRulePositionArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyTunnelInspectionRulePositionArrayOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyTunnelInspectionRulePositionArrayOutput) Index(i pulumi.IntInput) GetNetworkFirewallPolicyTunnelInspectionRulePositionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkFirewallPolicyTunnelInspectionRulePosition {
+		return vs[0].([]GetNetworkFirewallPolicyTunnelInspectionRulePosition)[vs[1].(int)]
+	}).(GetNetworkFirewallPolicyTunnelInspectionRulePositionOutput)
+}
+
+type GetNetworkFirewallPolicyTunnelInspectionRuleProfile struct {
+	// Return scanned VXLAN tunnel traffic to source.
+	MustReturnTrafficToSource bool `pulumi:"mustReturnTrafficToSource"`
+}
+
+// GetNetworkFirewallPolicyTunnelInspectionRuleProfileInput is an input type that accepts GetNetworkFirewallPolicyTunnelInspectionRuleProfileArgs and GetNetworkFirewallPolicyTunnelInspectionRuleProfileOutput values.
+// You can construct a concrete instance of `GetNetworkFirewallPolicyTunnelInspectionRuleProfileInput` via:
+//
+//	GetNetworkFirewallPolicyTunnelInspectionRuleProfileArgs{...}
+type GetNetworkFirewallPolicyTunnelInspectionRuleProfileInput interface {
+	pulumi.Input
+
+	ToGetNetworkFirewallPolicyTunnelInspectionRuleProfileOutput() GetNetworkFirewallPolicyTunnelInspectionRuleProfileOutput
+	ToGetNetworkFirewallPolicyTunnelInspectionRuleProfileOutputWithContext(context.Context) GetNetworkFirewallPolicyTunnelInspectionRuleProfileOutput
+}
+
+type GetNetworkFirewallPolicyTunnelInspectionRuleProfileArgs struct {
+	// Return scanned VXLAN tunnel traffic to source.
+	MustReturnTrafficToSource pulumi.BoolInput `pulumi:"mustReturnTrafficToSource"`
+}
+
+func (GetNetworkFirewallPolicyTunnelInspectionRuleProfileArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkFirewallPolicyTunnelInspectionRuleProfile)(nil)).Elem()
+}
+
+func (i GetNetworkFirewallPolicyTunnelInspectionRuleProfileArgs) ToGetNetworkFirewallPolicyTunnelInspectionRuleProfileOutput() GetNetworkFirewallPolicyTunnelInspectionRuleProfileOutput {
+	return i.ToGetNetworkFirewallPolicyTunnelInspectionRuleProfileOutputWithContext(context.Background())
+}
+
+func (i GetNetworkFirewallPolicyTunnelInspectionRuleProfileArgs) ToGetNetworkFirewallPolicyTunnelInspectionRuleProfileOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyTunnelInspectionRuleProfileOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyTunnelInspectionRuleProfileOutput)
+}
+
+// GetNetworkFirewallPolicyTunnelInspectionRuleProfileArrayInput is an input type that accepts GetNetworkFirewallPolicyTunnelInspectionRuleProfileArray and GetNetworkFirewallPolicyTunnelInspectionRuleProfileArrayOutput values.
+// You can construct a concrete instance of `GetNetworkFirewallPolicyTunnelInspectionRuleProfileArrayInput` via:
+//
+//	GetNetworkFirewallPolicyTunnelInspectionRuleProfileArray{ GetNetworkFirewallPolicyTunnelInspectionRuleProfileArgs{...} }
+type GetNetworkFirewallPolicyTunnelInspectionRuleProfileArrayInput interface {
+	pulumi.Input
+
+	ToGetNetworkFirewallPolicyTunnelInspectionRuleProfileArrayOutput() GetNetworkFirewallPolicyTunnelInspectionRuleProfileArrayOutput
+	ToGetNetworkFirewallPolicyTunnelInspectionRuleProfileArrayOutputWithContext(context.Context) GetNetworkFirewallPolicyTunnelInspectionRuleProfileArrayOutput
+}
+
+type GetNetworkFirewallPolicyTunnelInspectionRuleProfileArray []GetNetworkFirewallPolicyTunnelInspectionRuleProfileInput
+
+func (GetNetworkFirewallPolicyTunnelInspectionRuleProfileArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkFirewallPolicyTunnelInspectionRuleProfile)(nil)).Elem()
+}
+
+func (i GetNetworkFirewallPolicyTunnelInspectionRuleProfileArray) ToGetNetworkFirewallPolicyTunnelInspectionRuleProfileArrayOutput() GetNetworkFirewallPolicyTunnelInspectionRuleProfileArrayOutput {
+	return i.ToGetNetworkFirewallPolicyTunnelInspectionRuleProfileArrayOutputWithContext(context.Background())
+}
+
+func (i GetNetworkFirewallPolicyTunnelInspectionRuleProfileArray) ToGetNetworkFirewallPolicyTunnelInspectionRuleProfileArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyTunnelInspectionRuleProfileArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyTunnelInspectionRuleProfileArrayOutput)
+}
+
+type GetNetworkFirewallPolicyTunnelInspectionRuleProfileOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkFirewallPolicyTunnelInspectionRuleProfileOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkFirewallPolicyTunnelInspectionRuleProfile)(nil)).Elem()
+}
+
+func (o GetNetworkFirewallPolicyTunnelInspectionRuleProfileOutput) ToGetNetworkFirewallPolicyTunnelInspectionRuleProfileOutput() GetNetworkFirewallPolicyTunnelInspectionRuleProfileOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyTunnelInspectionRuleProfileOutput) ToGetNetworkFirewallPolicyTunnelInspectionRuleProfileOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyTunnelInspectionRuleProfileOutput {
+	return o
+}
+
+// Return scanned VXLAN tunnel traffic to source.
+func (o GetNetworkFirewallPolicyTunnelInspectionRuleProfileOutput) MustReturnTrafficToSource() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyTunnelInspectionRuleProfile) bool { return v.MustReturnTrafficToSource }).(pulumi.BoolOutput)
+}
+
+type GetNetworkFirewallPolicyTunnelInspectionRuleProfileArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkFirewallPolicyTunnelInspectionRuleProfileArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkFirewallPolicyTunnelInspectionRuleProfile)(nil)).Elem()
+}
+
+func (o GetNetworkFirewallPolicyTunnelInspectionRuleProfileArrayOutput) ToGetNetworkFirewallPolicyTunnelInspectionRuleProfileArrayOutput() GetNetworkFirewallPolicyTunnelInspectionRuleProfileArrayOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyTunnelInspectionRuleProfileArrayOutput) ToGetNetworkFirewallPolicyTunnelInspectionRuleProfileArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyTunnelInspectionRuleProfileArrayOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyTunnelInspectionRuleProfileArrayOutput) Index(i pulumi.IntInput) GetNetworkFirewallPolicyTunnelInspectionRuleProfileOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkFirewallPolicyTunnelInspectionRuleProfile {
+		return vs[0].([]GetNetworkFirewallPolicyTunnelInspectionRuleProfile)[vs[1].(int)]
+	}).(GetNetworkFirewallPolicyTunnelInspectionRuleProfileOutput)
+}
+
+type GetNetworkFirewallPolicyTunnelInspectionRulesFilter struct {
+	// Name for the Tunnel Inspection Rule, must be unique within the policy.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetNetworkFirewallPolicyTunnelInspectionRulesFilterInput is an input type that accepts GetNetworkFirewallPolicyTunnelInspectionRulesFilterArgs and GetNetworkFirewallPolicyTunnelInspectionRulesFilterOutput values.
+// You can construct a concrete instance of `GetNetworkFirewallPolicyTunnelInspectionRulesFilterInput` via:
+//
+//	GetNetworkFirewallPolicyTunnelInspectionRulesFilterArgs{...}
+type GetNetworkFirewallPolicyTunnelInspectionRulesFilterInput interface {
+	pulumi.Input
+
+	ToGetNetworkFirewallPolicyTunnelInspectionRulesFilterOutput() GetNetworkFirewallPolicyTunnelInspectionRulesFilterOutput
+	ToGetNetworkFirewallPolicyTunnelInspectionRulesFilterOutputWithContext(context.Context) GetNetworkFirewallPolicyTunnelInspectionRulesFilterOutput
+}
+
+type GetNetworkFirewallPolicyTunnelInspectionRulesFilterArgs struct {
+	// Name for the Tunnel Inspection Rule, must be unique within the policy.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetNetworkFirewallPolicyTunnelInspectionRulesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkFirewallPolicyTunnelInspectionRulesFilter)(nil)).Elem()
+}
+
+func (i GetNetworkFirewallPolicyTunnelInspectionRulesFilterArgs) ToGetNetworkFirewallPolicyTunnelInspectionRulesFilterOutput() GetNetworkFirewallPolicyTunnelInspectionRulesFilterOutput {
+	return i.ToGetNetworkFirewallPolicyTunnelInspectionRulesFilterOutputWithContext(context.Background())
+}
+
+func (i GetNetworkFirewallPolicyTunnelInspectionRulesFilterArgs) ToGetNetworkFirewallPolicyTunnelInspectionRulesFilterOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyTunnelInspectionRulesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyTunnelInspectionRulesFilterOutput)
+}
+
+// GetNetworkFirewallPolicyTunnelInspectionRulesFilterArrayInput is an input type that accepts GetNetworkFirewallPolicyTunnelInspectionRulesFilterArray and GetNetworkFirewallPolicyTunnelInspectionRulesFilterArrayOutput values.
+// You can construct a concrete instance of `GetNetworkFirewallPolicyTunnelInspectionRulesFilterArrayInput` via:
+//
+//	GetNetworkFirewallPolicyTunnelInspectionRulesFilterArray{ GetNetworkFirewallPolicyTunnelInspectionRulesFilterArgs{...} }
+type GetNetworkFirewallPolicyTunnelInspectionRulesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetNetworkFirewallPolicyTunnelInspectionRulesFilterArrayOutput() GetNetworkFirewallPolicyTunnelInspectionRulesFilterArrayOutput
+	ToGetNetworkFirewallPolicyTunnelInspectionRulesFilterArrayOutputWithContext(context.Context) GetNetworkFirewallPolicyTunnelInspectionRulesFilterArrayOutput
+}
+
+type GetNetworkFirewallPolicyTunnelInspectionRulesFilterArray []GetNetworkFirewallPolicyTunnelInspectionRulesFilterInput
+
+func (GetNetworkFirewallPolicyTunnelInspectionRulesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkFirewallPolicyTunnelInspectionRulesFilter)(nil)).Elem()
+}
+
+func (i GetNetworkFirewallPolicyTunnelInspectionRulesFilterArray) ToGetNetworkFirewallPolicyTunnelInspectionRulesFilterArrayOutput() GetNetworkFirewallPolicyTunnelInspectionRulesFilterArrayOutput {
+	return i.ToGetNetworkFirewallPolicyTunnelInspectionRulesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetNetworkFirewallPolicyTunnelInspectionRulesFilterArray) ToGetNetworkFirewallPolicyTunnelInspectionRulesFilterArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyTunnelInspectionRulesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyTunnelInspectionRulesFilterArrayOutput)
+}
+
+type GetNetworkFirewallPolicyTunnelInspectionRulesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkFirewallPolicyTunnelInspectionRulesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkFirewallPolicyTunnelInspectionRulesFilter)(nil)).Elem()
+}
+
+func (o GetNetworkFirewallPolicyTunnelInspectionRulesFilterOutput) ToGetNetworkFirewallPolicyTunnelInspectionRulesFilterOutput() GetNetworkFirewallPolicyTunnelInspectionRulesFilterOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyTunnelInspectionRulesFilterOutput) ToGetNetworkFirewallPolicyTunnelInspectionRulesFilterOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyTunnelInspectionRulesFilterOutput {
+	return o
+}
+
+// Name for the Tunnel Inspection Rule, must be unique within the policy.
+func (o GetNetworkFirewallPolicyTunnelInspectionRulesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyTunnelInspectionRulesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetNetworkFirewallPolicyTunnelInspectionRulesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyTunnelInspectionRulesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetNetworkFirewallPolicyTunnelInspectionRulesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyTunnelInspectionRulesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetNetworkFirewallPolicyTunnelInspectionRulesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkFirewallPolicyTunnelInspectionRulesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkFirewallPolicyTunnelInspectionRulesFilter)(nil)).Elem()
+}
+
+func (o GetNetworkFirewallPolicyTunnelInspectionRulesFilterArrayOutput) ToGetNetworkFirewallPolicyTunnelInspectionRulesFilterArrayOutput() GetNetworkFirewallPolicyTunnelInspectionRulesFilterArrayOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyTunnelInspectionRulesFilterArrayOutput) ToGetNetworkFirewallPolicyTunnelInspectionRulesFilterArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyTunnelInspectionRulesFilterArrayOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyTunnelInspectionRulesFilterArrayOutput) Index(i pulumi.IntInput) GetNetworkFirewallPolicyTunnelInspectionRulesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkFirewallPolicyTunnelInspectionRulesFilter {
+		return vs[0].([]GetNetworkFirewallPolicyTunnelInspectionRulesFilter)[vs[1].(int)]
+	}).(GetNetworkFirewallPolicyTunnelInspectionRulesFilterOutput)
+}
+
+type GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollection struct {
+	Items []GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItem `pulumi:"items"`
+}
+
+// GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionInput is an input type that accepts GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionArgs and GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionOutput values.
+// You can construct a concrete instance of `GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionInput` via:
+//
+//	GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionArgs{...}
+type GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionInput interface {
+	pulumi.Input
+
+	ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionOutput() GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionOutput
+	ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionOutputWithContext(context.Context) GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionOutput
+}
+
+type GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionArgs struct {
+	Items GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollection)(nil)).Elem()
+}
+
+func (i GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionArgs) ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionOutput() GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionOutput {
+	return i.ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionOutputWithContext(context.Background())
+}
+
+func (i GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionArgs) ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionOutput)
+}
+
+// GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionArrayInput is an input type that accepts GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionArray and GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionArrayOutput values.
+// You can construct a concrete instance of `GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionArrayInput` via:
+//
+//	GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionArray{ GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionArgs{...} }
+type GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionArrayOutput() GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionArrayOutput
+	ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionArrayOutputWithContext(context.Context) GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionArrayOutput
+}
+
+type GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionArray []GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionInput
+
+func (GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollection)(nil)).Elem()
+}
+
+func (i GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionArray) ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionArrayOutput() GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionArrayOutput {
+	return i.ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionArray) ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionArrayOutput)
+}
+
+type GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollection)(nil)).Elem()
+}
+
+func (o GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionOutput) ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionOutput() GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionOutput) ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionOutput) Items() GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollection) []GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItem {
+		return v.Items
+	}).(GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemArrayOutput)
+}
+
+type GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollection)(nil)).Elem()
+}
+
+func (o GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionArrayOutput) ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionArrayOutput() GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionArrayOutput) ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollection {
+		return vs[0].([]GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollection)[vs[1].(int)]
+	}).(GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionOutput)
+}
+
+type GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItem struct {
+	// Types of Inspect Action on the Traffic flow.
+	// * INSPECT - Inspect the traffic.
+	// * INSPECT_AND_CAPTURE_LOG - Inspect and capture logs for the traffic.
+	Action string `pulumi:"action"`
+	// Criteria to evaluate against incoming network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
+	Condition GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemCondition `pulumi:"condition"`
+	// Name for the Tunnel Inspection Rule, must be unique within the policy.
+	Name string `pulumi:"name"`
+	// Unique Network Firewall Policy identifier
+	NetworkFirewallPolicyId string `pulumi:"networkFirewallPolicyId"`
+	// OCID of the Network Firewall Policy this Tunnel Inspection Rule belongs to.
+	ParentResourceId string `pulumi:"parentResourceId"`
+	// An object which defines the position of the rule.
+	Position GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPosition `pulumi:"position"`
+	// The priority order in which this rule should be evaluated
+	PriorityOrder string `pulumi:"priorityOrder"`
+	// Vxlan Inspect profile used in Vxlan Tunnel Inspection Rules.
+	Profile GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfile `pulumi:"profile"`
+	// Types of Tunnel Inspection Protocol to be applied on the traffic.
+	// * VXLAN - VXLAN Tunnel Inspection Protocol will be applied on the traffic.
+	Protocol string `pulumi:"protocol"`
+}
+
+// GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemInput is an input type that accepts GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemArgs and GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemOutput values.
+// You can construct a concrete instance of `GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemInput` via:
+//
+//	GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemArgs{...}
+type GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemOutput() GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemOutput
+	ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemOutputWithContext(context.Context) GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemOutput
+}
+
+type GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemArgs struct {
+	// Types of Inspect Action on the Traffic flow.
+	// * INSPECT - Inspect the traffic.
+	// * INSPECT_AND_CAPTURE_LOG - Inspect and capture logs for the traffic.
+	Action pulumi.StringInput `pulumi:"action"`
+	// Criteria to evaluate against incoming network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
+	Condition GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemConditionInput `pulumi:"condition"`
+	// Name for the Tunnel Inspection Rule, must be unique within the policy.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Unique Network Firewall Policy identifier
+	NetworkFirewallPolicyId pulumi.StringInput `pulumi:"networkFirewallPolicyId"`
+	// OCID of the Network Firewall Policy this Tunnel Inspection Rule belongs to.
+	ParentResourceId pulumi.StringInput `pulumi:"parentResourceId"`
+	// An object which defines the position of the rule.
+	Position GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPositionInput `pulumi:"position"`
+	// The priority order in which this rule should be evaluated
+	PriorityOrder pulumi.StringInput `pulumi:"priorityOrder"`
+	// Vxlan Inspect profile used in Vxlan Tunnel Inspection Rules.
+	Profile GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfileInput `pulumi:"profile"`
+	// Types of Tunnel Inspection Protocol to be applied on the traffic.
+	// * VXLAN - VXLAN Tunnel Inspection Protocol will be applied on the traffic.
+	Protocol pulumi.StringInput `pulumi:"protocol"`
+}
+
+func (GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemArgs) ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemOutput() GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemOutput {
+	return i.ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemArgs) ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemOutput)
+}
+
+// GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemArrayInput is an input type that accepts GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemArray and GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemArrayInput` via:
+//
+//	GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemArray{ GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemArgs{...} }
+type GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemArrayOutput() GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemArrayOutput
+	ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemArrayOutputWithContext(context.Context) GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemArrayOutput
+}
+
+type GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemArray []GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemInput
+
+func (GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemArray) ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemArrayOutput() GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemArrayOutput {
+	return i.ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemArray) ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemArrayOutput)
+}
+
+type GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemOutput) ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemOutput() GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemOutput) ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemOutput {
+	return o
+}
+
+// Types of Inspect Action on the Traffic flow.
+// * INSPECT - Inspect the traffic.
+// * INSPECT_AND_CAPTURE_LOG - Inspect and capture logs for the traffic.
+func (o GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItem) string {
+		return v.Action
+	}).(pulumi.StringOutput)
+}
+
+// Criteria to evaluate against incoming network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
+func (o GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemOutput) Condition() GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemConditionOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItem) GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemCondition {
+		return v.Condition
+	}).(GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemConditionOutput)
+}
+
+// Name for the Tunnel Inspection Rule, must be unique within the policy.
+func (o GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItem) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// Unique Network Firewall Policy identifier
+func (o GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemOutput) NetworkFirewallPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItem) string {
+		return v.NetworkFirewallPolicyId
+	}).(pulumi.StringOutput)
+}
+
+// OCID of the Network Firewall Policy this Tunnel Inspection Rule belongs to.
+func (o GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemOutput) ParentResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItem) string {
+		return v.ParentResourceId
+	}).(pulumi.StringOutput)
+}
+
+// An object which defines the position of the rule.
+func (o GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemOutput) Position() GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPositionOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItem) GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPosition {
+		return v.Position
+	}).(GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPositionOutput)
+}
+
+// The priority order in which this rule should be evaluated
+func (o GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemOutput) PriorityOrder() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItem) string {
+		return v.PriorityOrder
+	}).(pulumi.StringOutput)
+}
+
+// Vxlan Inspect profile used in Vxlan Tunnel Inspection Rules.
+func (o GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemOutput) Profile() GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfileOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItem) GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfile {
+		return v.Profile
+	}).(GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfileOutput)
+}
+
+// Types of Tunnel Inspection Protocol to be applied on the traffic.
+// * VXLAN - VXLAN Tunnel Inspection Protocol will be applied on the traffic.
+func (o GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemOutput) Protocol() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItem) string {
+		return v.Protocol
+	}).(pulumi.StringOutput)
+}
+
+type GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemArrayOutput) ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemArrayOutput() GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemArrayOutput) ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItem {
+		return vs[0].([]GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItem)[vs[1].(int)]
+	}).(GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemOutput)
+}
+
+type GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemCondition struct {
+	// An array of address list names to be evaluated against the traffic destination address.
+	DestinationAddresses []string `pulumi:"destinationAddresses"`
+	// An array of address list names to be evaluated against the traffic source address.
+	SourceAddresses []string `pulumi:"sourceAddresses"`
+}
+
+// GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemConditionInput is an input type that accepts GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemConditionArgs and GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemConditionOutput values.
+// You can construct a concrete instance of `GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemConditionInput` via:
+//
+//	GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemConditionArgs{...}
+type GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemConditionInput interface {
+	pulumi.Input
+
+	ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemConditionOutput() GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemConditionOutput
+	ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemConditionOutputWithContext(context.Context) GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemConditionOutput
+}
+
+type GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemConditionArgs struct {
+	// An array of address list names to be evaluated against the traffic destination address.
+	DestinationAddresses pulumi.StringArrayInput `pulumi:"destinationAddresses"`
+	// An array of address list names to be evaluated against the traffic source address.
+	SourceAddresses pulumi.StringArrayInput `pulumi:"sourceAddresses"`
+}
+
+func (GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemCondition)(nil)).Elem()
+}
+
+func (i GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemConditionArgs) ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemConditionOutput() GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemConditionOutput {
+	return i.ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemConditionOutputWithContext(context.Background())
+}
+
+func (i GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemConditionArgs) ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemConditionOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemConditionOutput)
+}
+
+type GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemConditionOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemCondition)(nil)).Elem()
+}
+
+func (o GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemConditionOutput) ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemConditionOutput() GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemConditionOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemConditionOutput) ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemConditionOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemConditionOutput {
+	return o
+}
+
+// An array of address list names to be evaluated against the traffic destination address.
+func (o GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemConditionOutput) DestinationAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemCondition) []string {
+		return v.DestinationAddresses
+	}).(pulumi.StringArrayOutput)
+}
+
+// An array of address list names to be evaluated against the traffic source address.
+func (o GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemConditionOutput) SourceAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemCondition) []string {
+		return v.SourceAddresses
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPosition struct {
+	// Identifier for rule after which this rule lies.
+	AfterRule string `pulumi:"afterRule"`
+	// Identifier for rule before which this rule lies.
+	BeforeRule string `pulumi:"beforeRule"`
+}
+
+// GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPositionInput is an input type that accepts GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPositionArgs and GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPositionOutput values.
+// You can construct a concrete instance of `GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPositionInput` via:
+//
+//	GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPositionArgs{...}
+type GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPositionInput interface {
+	pulumi.Input
+
+	ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPositionOutput() GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPositionOutput
+	ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPositionOutputWithContext(context.Context) GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPositionOutput
+}
+
+type GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPositionArgs struct {
+	// Identifier for rule after which this rule lies.
+	AfterRule pulumi.StringInput `pulumi:"afterRule"`
+	// Identifier for rule before which this rule lies.
+	BeforeRule pulumi.StringInput `pulumi:"beforeRule"`
+}
+
+func (GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPositionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPosition)(nil)).Elem()
+}
+
+func (i GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPositionArgs) ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPositionOutput() GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPositionOutput {
+	return i.ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPositionOutputWithContext(context.Background())
+}
+
+func (i GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPositionArgs) ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPositionOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPositionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPositionOutput)
+}
+
+type GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPositionOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPositionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPosition)(nil)).Elem()
+}
+
+func (o GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPositionOutput) ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPositionOutput() GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPositionOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPositionOutput) ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPositionOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPositionOutput {
+	return o
+}
+
+// Identifier for rule after which this rule lies.
+func (o GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPositionOutput) AfterRule() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPosition) string {
+		return v.AfterRule
+	}).(pulumi.StringOutput)
+}
+
+// Identifier for rule before which this rule lies.
+func (o GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPositionOutput) BeforeRule() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPosition) string {
+		return v.BeforeRule
+	}).(pulumi.StringOutput)
+}
+
+type GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfile struct {
+	// Return scanned VXLAN tunnel traffic to source.
+	MustReturnTrafficToSource bool `pulumi:"mustReturnTrafficToSource"`
+}
+
+// GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfileInput is an input type that accepts GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfileArgs and GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfileOutput values.
+// You can construct a concrete instance of `GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfileInput` via:
+//
+//	GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfileArgs{...}
+type GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfileInput interface {
+	pulumi.Input
+
+	ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfileOutput() GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfileOutput
+	ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfileOutputWithContext(context.Context) GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfileOutput
+}
+
+type GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfileArgs struct {
+	// Return scanned VXLAN tunnel traffic to source.
+	MustReturnTrafficToSource pulumi.BoolInput `pulumi:"mustReturnTrafficToSource"`
+}
+
+func (GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfileArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfile)(nil)).Elem()
+}
+
+func (i GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfileArgs) ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfileOutput() GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfileOutput {
+	return i.ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfileOutputWithContext(context.Background())
+}
+
+func (i GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfileArgs) ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfileOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfileOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfileOutput)
+}
+
+type GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfileOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfileOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfile)(nil)).Elem()
+}
+
+func (o GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfileOutput) ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfileOutput() GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfileOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfileOutput) ToGetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfileOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfileOutput {
+	return o
+}
+
+// Return scanned VXLAN tunnel traffic to source.
+func (o GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfileOutput) MustReturnTrafficToSource() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfile) bool {
+		return v.MustReturnTrafficToSource
+	}).(pulumi.BoolOutput)
+}
+
 type GetNetworkFirewallPolicyUrlListUrl struct {
 	// A string consisting of a concatenation of optional host component and optional path component. The host component may start with `*.` to match the case-insensitive domain and all its subdomains. The path component must start with a `/`, and may end with `*` to match all paths of which it is a case-sensitive prefix. A missing host component matches all request domains, and a missing path component matches all request paths. An empty value matches all requests.
 	Pattern string `pulumi:"pattern"`
@@ -6532,6 +7875,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*NetworkFirewallPolicySecurityRulePositionArrayInput)(nil)).Elem(), NetworkFirewallPolicySecurityRulePositionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NetworkFirewallPolicyServicePortRangeInput)(nil)).Elem(), NetworkFirewallPolicyServicePortRangeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NetworkFirewallPolicyServicePortRangeArrayInput)(nil)).Elem(), NetworkFirewallPolicyServicePortRangeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NetworkFirewallPolicyTunnelInspectionRuleConditionInput)(nil)).Elem(), NetworkFirewallPolicyTunnelInspectionRuleConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NetworkFirewallPolicyTunnelInspectionRuleConditionPtrInput)(nil)).Elem(), NetworkFirewallPolicyTunnelInspectionRuleConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NetworkFirewallPolicyTunnelInspectionRulePositionInput)(nil)).Elem(), NetworkFirewallPolicyTunnelInspectionRulePositionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NetworkFirewallPolicyTunnelInspectionRulePositionPtrInput)(nil)).Elem(), NetworkFirewallPolicyTunnelInspectionRulePositionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NetworkFirewallPolicyTunnelInspectionRuleProfileInput)(nil)).Elem(), NetworkFirewallPolicyTunnelInspectionRuleProfileArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NetworkFirewallPolicyTunnelInspectionRuleProfilePtrInput)(nil)).Elem(), NetworkFirewallPolicyTunnelInspectionRuleProfileArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NetworkFirewallPolicyUrlListUrlInput)(nil)).Elem(), NetworkFirewallPolicyUrlListUrlArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NetworkFirewallPolicyUrlListUrlArrayInput)(nil)).Elem(), NetworkFirewallPolicyUrlListUrlArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPoliciesFilterInput)(nil)).Elem(), GetNetworkFirewallPoliciesFilterArgs{})
@@ -6609,6 +7958,21 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyServicesServiceSummaryCollectionItemArrayInput)(nil)).Elem(), GetNetworkFirewallPolicyServicesServiceSummaryCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyServicesServiceSummaryCollectionItemPortRangeInput)(nil)).Elem(), GetNetworkFirewallPolicyServicesServiceSummaryCollectionItemPortRangeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyServicesServiceSummaryCollectionItemPortRangeArrayInput)(nil)).Elem(), GetNetworkFirewallPolicyServicesServiceSummaryCollectionItemPortRangeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyTunnelInspectionRuleConditionInput)(nil)).Elem(), GetNetworkFirewallPolicyTunnelInspectionRuleConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyTunnelInspectionRuleConditionArrayInput)(nil)).Elem(), GetNetworkFirewallPolicyTunnelInspectionRuleConditionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyTunnelInspectionRulePositionInput)(nil)).Elem(), GetNetworkFirewallPolicyTunnelInspectionRulePositionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyTunnelInspectionRulePositionArrayInput)(nil)).Elem(), GetNetworkFirewallPolicyTunnelInspectionRulePositionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyTunnelInspectionRuleProfileInput)(nil)).Elem(), GetNetworkFirewallPolicyTunnelInspectionRuleProfileArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyTunnelInspectionRuleProfileArrayInput)(nil)).Elem(), GetNetworkFirewallPolicyTunnelInspectionRuleProfileArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyTunnelInspectionRulesFilterInput)(nil)).Elem(), GetNetworkFirewallPolicyTunnelInspectionRulesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyTunnelInspectionRulesFilterArrayInput)(nil)).Elem(), GetNetworkFirewallPolicyTunnelInspectionRulesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionInput)(nil)).Elem(), GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionArrayInput)(nil)).Elem(), GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemInput)(nil)).Elem(), GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemArrayInput)(nil)).Elem(), GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemConditionInput)(nil)).Elem(), GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPositionInput)(nil)).Elem(), GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPositionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfileInput)(nil)).Elem(), GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfileArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyUrlListUrlInput)(nil)).Elem(), GetNetworkFirewallPolicyUrlListUrlArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyUrlListUrlArrayInput)(nil)).Elem(), GetNetworkFirewallPolicyUrlListUrlArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyUrlListsFilterInput)(nil)).Elem(), GetNetworkFirewallPolicyUrlListsFilterArgs{})
@@ -6635,6 +7999,12 @@ func init() {
 	pulumi.RegisterOutputType(NetworkFirewallPolicySecurityRulePositionArrayOutput{})
 	pulumi.RegisterOutputType(NetworkFirewallPolicyServicePortRangeOutput{})
 	pulumi.RegisterOutputType(NetworkFirewallPolicyServicePortRangeArrayOutput{})
+	pulumi.RegisterOutputType(NetworkFirewallPolicyTunnelInspectionRuleConditionOutput{})
+	pulumi.RegisterOutputType(NetworkFirewallPolicyTunnelInspectionRuleConditionPtrOutput{})
+	pulumi.RegisterOutputType(NetworkFirewallPolicyTunnelInspectionRulePositionOutput{})
+	pulumi.RegisterOutputType(NetworkFirewallPolicyTunnelInspectionRulePositionPtrOutput{})
+	pulumi.RegisterOutputType(NetworkFirewallPolicyTunnelInspectionRuleProfileOutput{})
+	pulumi.RegisterOutputType(NetworkFirewallPolicyTunnelInspectionRuleProfilePtrOutput{})
 	pulumi.RegisterOutputType(NetworkFirewallPolicyUrlListUrlOutput{})
 	pulumi.RegisterOutputType(NetworkFirewallPolicyUrlListUrlArrayOutput{})
 	pulumi.RegisterOutputType(GetNetworkFirewallPoliciesFilterOutput{})
@@ -6712,6 +8082,21 @@ func init() {
 	pulumi.RegisterOutputType(GetNetworkFirewallPolicyServicesServiceSummaryCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetNetworkFirewallPolicyServicesServiceSummaryCollectionItemPortRangeOutput{})
 	pulumi.RegisterOutputType(GetNetworkFirewallPolicyServicesServiceSummaryCollectionItemPortRangeArrayOutput{})
+	pulumi.RegisterOutputType(GetNetworkFirewallPolicyTunnelInspectionRuleConditionOutput{})
+	pulumi.RegisterOutputType(GetNetworkFirewallPolicyTunnelInspectionRuleConditionArrayOutput{})
+	pulumi.RegisterOutputType(GetNetworkFirewallPolicyTunnelInspectionRulePositionOutput{})
+	pulumi.RegisterOutputType(GetNetworkFirewallPolicyTunnelInspectionRulePositionArrayOutput{})
+	pulumi.RegisterOutputType(GetNetworkFirewallPolicyTunnelInspectionRuleProfileOutput{})
+	pulumi.RegisterOutputType(GetNetworkFirewallPolicyTunnelInspectionRuleProfileArrayOutput{})
+	pulumi.RegisterOutputType(GetNetworkFirewallPolicyTunnelInspectionRulesFilterOutput{})
+	pulumi.RegisterOutputType(GetNetworkFirewallPolicyTunnelInspectionRulesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionOutput{})
+	pulumi.RegisterOutputType(GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemConditionOutput{})
+	pulumi.RegisterOutputType(GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPositionOutput{})
+	pulumi.RegisterOutputType(GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfileOutput{})
 	pulumi.RegisterOutputType(GetNetworkFirewallPolicyUrlListUrlOutput{})
 	pulumi.RegisterOutputType(GetNetworkFirewallPolicyUrlListUrlArrayOutput{})
 	pulumi.RegisterOutputType(GetNetworkFirewallPolicyUrlListsFilterOutput{})

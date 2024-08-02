@@ -15,6 +15,9 @@ __all__ = [
     'NetworkFirewallPolicySecurityRuleConditionArgs',
     'NetworkFirewallPolicySecurityRulePositionArgs',
     'NetworkFirewallPolicyServicePortRangeArgs',
+    'NetworkFirewallPolicyTunnelInspectionRuleConditionArgs',
+    'NetworkFirewallPolicyTunnelInspectionRulePositionArgs',
+    'NetworkFirewallPolicyTunnelInspectionRuleProfileArgs',
     'NetworkFirewallPolicyUrlListUrlArgs',
     'GetNetworkFirewallPoliciesFilterArgs',
     'GetNetworkFirewallPolicyAddressListsFilterArgs',
@@ -25,6 +28,7 @@ __all__ = [
     'GetNetworkFirewallPolicySecurityRulesFilterArgs',
     'GetNetworkFirewallPolicyServiceListsFilterArgs',
     'GetNetworkFirewallPolicyServicesFilterArgs',
+    'GetNetworkFirewallPolicyTunnelInspectionRulesFilterArgs',
     'GetNetworkFirewallPolicyUrlListsFilterArgs',
     'GetNetworkFirewallsFilterArgs',
 ]
@@ -285,6 +289,107 @@ class NetworkFirewallPolicyServicePortRangeArgs:
     @maximum_port.setter
     def maximum_port(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "maximum_port", value)
+
+
+@pulumi.input_type
+class NetworkFirewallPolicyTunnelInspectionRuleConditionArgs:
+    def __init__(__self__, *,
+                 destination_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 source_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] destination_addresses: (Updatable) An array of address list names to be evaluated against the traffic destination address.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] source_addresses: (Updatable) An array of address list names to be evaluated against the traffic source address.
+        """
+        if destination_addresses is not None:
+            pulumi.set(__self__, "destination_addresses", destination_addresses)
+        if source_addresses is not None:
+            pulumi.set(__self__, "source_addresses", source_addresses)
+
+    @property
+    @pulumi.getter(name="destinationAddresses")
+    def destination_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) An array of address list names to be evaluated against the traffic destination address.
+        """
+        return pulumi.get(self, "destination_addresses")
+
+    @destination_addresses.setter
+    def destination_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "destination_addresses", value)
+
+    @property
+    @pulumi.getter(name="sourceAddresses")
+    def source_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) An array of address list names to be evaluated against the traffic source address.
+        """
+        return pulumi.get(self, "source_addresses")
+
+    @source_addresses.setter
+    def source_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "source_addresses", value)
+
+
+@pulumi.input_type
+class NetworkFirewallPolicyTunnelInspectionRulePositionArgs:
+    def __init__(__self__, *,
+                 after_rule: Optional[pulumi.Input[str]] = None,
+                 before_rule: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] after_rule: (Updatable) Identifier for rule after which this rule lies.
+        :param pulumi.Input[str] before_rule: (Updatable) Identifier for rule before which this rule lies.
+        """
+        if after_rule is not None:
+            pulumi.set(__self__, "after_rule", after_rule)
+        if before_rule is not None:
+            pulumi.set(__self__, "before_rule", before_rule)
+
+    @property
+    @pulumi.getter(name="afterRule")
+    def after_rule(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Identifier for rule after which this rule lies.
+        """
+        return pulumi.get(self, "after_rule")
+
+    @after_rule.setter
+    def after_rule(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "after_rule", value)
+
+    @property
+    @pulumi.getter(name="beforeRule")
+    def before_rule(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Identifier for rule before which this rule lies.
+        """
+        return pulumi.get(self, "before_rule")
+
+    @before_rule.setter
+    def before_rule(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "before_rule", value)
+
+
+@pulumi.input_type
+class NetworkFirewallPolicyTunnelInspectionRuleProfileArgs:
+    def __init__(__self__, *,
+                 must_return_traffic_to_source: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[bool] must_return_traffic_to_source: (Updatable) Return scanned VXLAN tunnel traffic to source.
+        """
+        if must_return_traffic_to_source is not None:
+            pulumi.set(__self__, "must_return_traffic_to_source", must_return_traffic_to_source)
+
+    @property
+    @pulumi.getter(name="mustReturnTrafficToSource")
+    def must_return_traffic_to_source(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Return scanned VXLAN tunnel traffic to source.
+        """
+        return pulumi.get(self, "must_return_traffic_to_source")
+
+    @must_return_traffic_to_source.setter
+    def must_return_traffic_to_source(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "must_return_traffic_to_source", value)
 
 
 @pulumi.input_type
@@ -707,6 +812,51 @@ class GetNetworkFirewallPolicyServicesFilterArgs:
     def name(self) -> str:
         """
         Name of the service.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetNetworkFirewallPolicyTunnelInspectionRulesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: Name for the Tunnel Inspection Rule, must be unique within the policy.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name for the Tunnel Inspection Rule, must be unique within the policy.
         """
         return pulumi.get(self, "name")
 

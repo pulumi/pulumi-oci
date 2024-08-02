@@ -32,6 +32,18 @@ namespace Pulumi.Oci.DataSafe
         public Output<string> AlertId { get; private set; } = null!;
 
         /// <summary>
+        /// The key of the rule of alert policy that triggered alert.
+        /// </summary>
+        [Output("alertPolicyRuleKey")]
+        public Output<string> AlertPolicyRuleKey { get; private set; } = null!;
+
+        /// <summary>
+        /// The display name of the rule of alert policy that triggered alert.
+        /// </summary>
+        [Output("alertPolicyRuleName")]
+        public Output<string> AlertPolicyRuleName { get; private set; } = null!;
+
+        /// <summary>
         /// Type of the alert. Indicates the Data Safe feature triggering the alert.
         /// </summary>
         [Output("alertType")]
@@ -272,6 +284,18 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         [Input("alertId")]
         public Input<string>? AlertId { get; set; }
+
+        /// <summary>
+        /// The key of the rule of alert policy that triggered alert.
+        /// </summary>
+        [Input("alertPolicyRuleKey")]
+        public Input<string>? AlertPolicyRuleKey { get; set; }
+
+        /// <summary>
+        /// The display name of the rule of alert policy that triggered alert.
+        /// </summary>
+        [Input("alertPolicyRuleName")]
+        public Input<string>? AlertPolicyRuleName { get; set; }
 
         /// <summary>
         /// Type of the alert. Indicates the Data Safe feature triggering the alert.

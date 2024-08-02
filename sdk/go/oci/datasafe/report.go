@@ -36,6 +36,8 @@ type Report struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	// Details about the current state of the report in Data Safe.
+	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// Specifies the format of report to be .xls or .pdf or .json
 	MimeType pulumi.StringOutput `pulumi:"mimeType"`
 	// The OCID of the report definition.
@@ -98,6 +100,8 @@ type reportState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// Details about the current state of the report in Data Safe.
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Specifies the format of report to be .xls or .pdf or .json
 	MimeType *string `pulumi:"mimeType"`
 	// The OCID of the report definition.
@@ -128,6 +132,8 @@ type ReportState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
+	// Details about the current state of the report in Data Safe.
+	LifecycleDetails pulumi.StringPtrInput
 	// Specifies the format of report to be .xls or .pdf or .json
 	MimeType pulumi.StringPtrInput
 	// The OCID of the report definition.
@@ -290,6 +296,11 @@ func (o ReportOutput) DisplayName() pulumi.StringOutput {
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 func (o ReportOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *Report) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// Details about the current state of the report in Data Safe.
+func (o ReportOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v *Report) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
 // Specifies the format of report to be .xls or .pdf or .json

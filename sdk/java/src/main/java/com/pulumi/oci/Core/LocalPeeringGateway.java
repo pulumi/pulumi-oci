@@ -307,11 +307,18 @@ public class LocalPeeringGateway extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public LocalPeeringGateway(String name, LocalPeeringGatewayArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/localPeeringGateway:LocalPeeringGateway", name, args == null ? LocalPeeringGatewayArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Core/localPeeringGateway:LocalPeeringGateway", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private LocalPeeringGateway(String name, Output<String> id, @Nullable LocalPeeringGatewayState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Core/localPeeringGateway:LocalPeeringGateway", name, state, makeResourceOptions(options, id));
+    }
+
+    private static LocalPeeringGatewayArgs makeArgs(LocalPeeringGatewayArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? LocalPeeringGatewayArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

@@ -16,6 +16,9 @@ __all__ = [
     'NetworkFirewallPolicySecurityRuleCondition',
     'NetworkFirewallPolicySecurityRulePosition',
     'NetworkFirewallPolicyServicePortRange',
+    'NetworkFirewallPolicyTunnelInspectionRuleCondition',
+    'NetworkFirewallPolicyTunnelInspectionRulePosition',
+    'NetworkFirewallPolicyTunnelInspectionRuleProfile',
     'NetworkFirewallPolicyUrlListUrl',
     'GetNetworkFirewallPoliciesFilterResult',
     'GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionResult',
@@ -56,6 +59,15 @@ __all__ = [
     'GetNetworkFirewallPolicyServicesServiceSummaryCollectionResult',
     'GetNetworkFirewallPolicyServicesServiceSummaryCollectionItemResult',
     'GetNetworkFirewallPolicyServicesServiceSummaryCollectionItemPortRangeResult',
+    'GetNetworkFirewallPolicyTunnelInspectionRuleConditionResult',
+    'GetNetworkFirewallPolicyTunnelInspectionRulePositionResult',
+    'GetNetworkFirewallPolicyTunnelInspectionRuleProfileResult',
+    'GetNetworkFirewallPolicyTunnelInspectionRulesFilterResult',
+    'GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionResult',
+    'GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemResult',
+    'GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemConditionResult',
+    'GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPositionResult',
+    'GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfileResult',
     'GetNetworkFirewallPolicyUrlListUrlResult',
     'GetNetworkFirewallPolicyUrlListsFilterResult',
     'GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionResult',
@@ -365,6 +377,142 @@ class NetworkFirewallPolicyServicePortRange(dict):
         (Updatable) The maximum port in the range (inclusive), which may be absent for a single-port range.
         """
         return pulumi.get(self, "maximum_port")
+
+
+@pulumi.output_type
+class NetworkFirewallPolicyTunnelInspectionRuleCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "destinationAddresses":
+            suggest = "destination_addresses"
+        elif key == "sourceAddresses":
+            suggest = "source_addresses"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NetworkFirewallPolicyTunnelInspectionRuleCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NetworkFirewallPolicyTunnelInspectionRuleCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NetworkFirewallPolicyTunnelInspectionRuleCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 destination_addresses: Optional[Sequence[str]] = None,
+                 source_addresses: Optional[Sequence[str]] = None):
+        """
+        :param Sequence[str] destination_addresses: (Updatable) An array of address list names to be evaluated against the traffic destination address.
+        :param Sequence[str] source_addresses: (Updatable) An array of address list names to be evaluated against the traffic source address.
+        """
+        if destination_addresses is not None:
+            pulumi.set(__self__, "destination_addresses", destination_addresses)
+        if source_addresses is not None:
+            pulumi.set(__self__, "source_addresses", source_addresses)
+
+    @property
+    @pulumi.getter(name="destinationAddresses")
+    def destination_addresses(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) An array of address list names to be evaluated against the traffic destination address.
+        """
+        return pulumi.get(self, "destination_addresses")
+
+    @property
+    @pulumi.getter(name="sourceAddresses")
+    def source_addresses(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) An array of address list names to be evaluated against the traffic source address.
+        """
+        return pulumi.get(self, "source_addresses")
+
+
+@pulumi.output_type
+class NetworkFirewallPolicyTunnelInspectionRulePosition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "afterRule":
+            suggest = "after_rule"
+        elif key == "beforeRule":
+            suggest = "before_rule"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NetworkFirewallPolicyTunnelInspectionRulePosition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NetworkFirewallPolicyTunnelInspectionRulePosition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NetworkFirewallPolicyTunnelInspectionRulePosition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 after_rule: Optional[str] = None,
+                 before_rule: Optional[str] = None):
+        """
+        :param str after_rule: (Updatable) Identifier for rule after which this rule lies.
+        :param str before_rule: (Updatable) Identifier for rule before which this rule lies.
+        """
+        if after_rule is not None:
+            pulumi.set(__self__, "after_rule", after_rule)
+        if before_rule is not None:
+            pulumi.set(__self__, "before_rule", before_rule)
+
+    @property
+    @pulumi.getter(name="afterRule")
+    def after_rule(self) -> Optional[str]:
+        """
+        (Updatable) Identifier for rule after which this rule lies.
+        """
+        return pulumi.get(self, "after_rule")
+
+    @property
+    @pulumi.getter(name="beforeRule")
+    def before_rule(self) -> Optional[str]:
+        """
+        (Updatable) Identifier for rule before which this rule lies.
+        """
+        return pulumi.get(self, "before_rule")
+
+
+@pulumi.output_type
+class NetworkFirewallPolicyTunnelInspectionRuleProfile(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "mustReturnTrafficToSource":
+            suggest = "must_return_traffic_to_source"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NetworkFirewallPolicyTunnelInspectionRuleProfile. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NetworkFirewallPolicyTunnelInspectionRuleProfile.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NetworkFirewallPolicyTunnelInspectionRuleProfile.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 must_return_traffic_to_source: Optional[bool] = None):
+        """
+        :param bool must_return_traffic_to_source: (Updatable) Return scanned VXLAN tunnel traffic to source.
+        """
+        if must_return_traffic_to_source is not None:
+            pulumi.set(__self__, "must_return_traffic_to_source", must_return_traffic_to_source)
+
+    @property
+    @pulumi.getter(name="mustReturnTrafficToSource")
+    def must_return_traffic_to_source(self) -> Optional[bool]:
+        """
+        (Updatable) Return scanned VXLAN tunnel traffic to source.
+        """
+        return pulumi.get(self, "must_return_traffic_to_source")
 
 
 @pulumi.output_type
@@ -2090,6 +2238,315 @@ class GetNetworkFirewallPolicyServicesServiceSummaryCollectionItemPortRangeResul
         The minimum port in the range (inclusive), or the sole port of a single-port range.
         """
         return pulumi.get(self, "minimum_port")
+
+
+@pulumi.output_type
+class GetNetworkFirewallPolicyTunnelInspectionRuleConditionResult(dict):
+    def __init__(__self__, *,
+                 destination_addresses: Sequence[str],
+                 source_addresses: Sequence[str]):
+        """
+        :param Sequence[str] destination_addresses: An array of address list names to be evaluated against the traffic destination address.
+        :param Sequence[str] source_addresses: An array of address list names to be evaluated against the traffic source address.
+        """
+        pulumi.set(__self__, "destination_addresses", destination_addresses)
+        pulumi.set(__self__, "source_addresses", source_addresses)
+
+    @property
+    @pulumi.getter(name="destinationAddresses")
+    def destination_addresses(self) -> Sequence[str]:
+        """
+        An array of address list names to be evaluated against the traffic destination address.
+        """
+        return pulumi.get(self, "destination_addresses")
+
+    @property
+    @pulumi.getter(name="sourceAddresses")
+    def source_addresses(self) -> Sequence[str]:
+        """
+        An array of address list names to be evaluated against the traffic source address.
+        """
+        return pulumi.get(self, "source_addresses")
+
+
+@pulumi.output_type
+class GetNetworkFirewallPolicyTunnelInspectionRulePositionResult(dict):
+    def __init__(__self__, *,
+                 after_rule: str,
+                 before_rule: str):
+        """
+        :param str after_rule: Identifier for rule after which this rule lies.
+        :param str before_rule: Identifier for rule before which this rule lies.
+        """
+        pulumi.set(__self__, "after_rule", after_rule)
+        pulumi.set(__self__, "before_rule", before_rule)
+
+    @property
+    @pulumi.getter(name="afterRule")
+    def after_rule(self) -> str:
+        """
+        Identifier for rule after which this rule lies.
+        """
+        return pulumi.get(self, "after_rule")
+
+    @property
+    @pulumi.getter(name="beforeRule")
+    def before_rule(self) -> str:
+        """
+        Identifier for rule before which this rule lies.
+        """
+        return pulumi.get(self, "before_rule")
+
+
+@pulumi.output_type
+class GetNetworkFirewallPolicyTunnelInspectionRuleProfileResult(dict):
+    def __init__(__self__, *,
+                 must_return_traffic_to_source: bool):
+        """
+        :param bool must_return_traffic_to_source: Return scanned VXLAN tunnel traffic to source.
+        """
+        pulumi.set(__self__, "must_return_traffic_to_source", must_return_traffic_to_source)
+
+    @property
+    @pulumi.getter(name="mustReturnTrafficToSource")
+    def must_return_traffic_to_source(self) -> bool:
+        """
+        Return scanned VXLAN tunnel traffic to source.
+        """
+        return pulumi.get(self, "must_return_traffic_to_source")
+
+
+@pulumi.output_type
+class GetNetworkFirewallPolicyTunnelInspectionRulesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: Name for the Tunnel Inspection Rule, must be unique within the policy.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name for the Tunnel Inspection Rule, must be unique within the policy.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 action: str,
+                 condition: 'outputs.GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemConditionResult',
+                 name: str,
+                 network_firewall_policy_id: str,
+                 parent_resource_id: str,
+                 position: 'outputs.GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPositionResult',
+                 priority_order: str,
+                 profile: 'outputs.GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfileResult',
+                 protocol: str):
+        """
+        :param str action: Types of Inspect Action on the Traffic flow.
+               * INSPECT - Inspect the traffic.
+               * INSPECT_AND_CAPTURE_LOG - Inspect and capture logs for the traffic.
+        :param 'GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemConditionArgs' condition: Criteria to evaluate against incoming network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
+        :param str name: Name for the Tunnel Inspection Rule, must be unique within the policy.
+        :param str network_firewall_policy_id: Unique Network Firewall Policy identifier
+        :param str parent_resource_id: OCID of the Network Firewall Policy this Tunnel Inspection Rule belongs to.
+        :param 'GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPositionArgs' position: An object which defines the position of the rule.
+        :param str priority_order: The priority order in which this rule should be evaluated
+        :param 'GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfileArgs' profile: Vxlan Inspect profile used in Vxlan Tunnel Inspection Rules.
+        :param str protocol: Types of Tunnel Inspection Protocol to be applied on the traffic.
+               * VXLAN - VXLAN Tunnel Inspection Protocol will be applied on the traffic.
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
+        pulumi.set(__self__, "parent_resource_id", parent_resource_id)
+        pulumi.set(__self__, "position", position)
+        pulumi.set(__self__, "priority_order", priority_order)
+        pulumi.set(__self__, "profile", profile)
+        pulumi.set(__self__, "protocol", protocol)
+
+    @property
+    @pulumi.getter
+    def action(self) -> str:
+        """
+        Types of Inspect Action on the Traffic flow.
+        * INSPECT - Inspect the traffic.
+        * INSPECT_AND_CAPTURE_LOG - Inspect and capture logs for the traffic.
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter
+    def condition(self) -> 'outputs.GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemConditionResult':
+        """
+        Criteria to evaluate against incoming network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
+        """
+        return pulumi.get(self, "condition")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name for the Tunnel Inspection Rule, must be unique within the policy.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="networkFirewallPolicyId")
+    def network_firewall_policy_id(self) -> str:
+        """
+        Unique Network Firewall Policy identifier
+        """
+        return pulumi.get(self, "network_firewall_policy_id")
+
+    @property
+    @pulumi.getter(name="parentResourceId")
+    def parent_resource_id(self) -> str:
+        """
+        OCID of the Network Firewall Policy this Tunnel Inspection Rule belongs to.
+        """
+        return pulumi.get(self, "parent_resource_id")
+
+    @property
+    @pulumi.getter
+    def position(self) -> 'outputs.GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPositionResult':
+        """
+        An object which defines the position of the rule.
+        """
+        return pulumi.get(self, "position")
+
+    @property
+    @pulumi.getter(name="priorityOrder")
+    def priority_order(self) -> str:
+        """
+        The priority order in which this rule should be evaluated
+        """
+        return pulumi.get(self, "priority_order")
+
+    @property
+    @pulumi.getter
+    def profile(self) -> 'outputs.GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfileResult':
+        """
+        Vxlan Inspect profile used in Vxlan Tunnel Inspection Rules.
+        """
+        return pulumi.get(self, "profile")
+
+    @property
+    @pulumi.getter
+    def protocol(self) -> str:
+        """
+        Types of Tunnel Inspection Protocol to be applied on the traffic.
+        * VXLAN - VXLAN Tunnel Inspection Protocol will be applied on the traffic.
+        """
+        return pulumi.get(self, "protocol")
+
+
+@pulumi.output_type
+class GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemConditionResult(dict):
+    def __init__(__self__, *,
+                 destination_addresses: Sequence[str],
+                 source_addresses: Sequence[str]):
+        """
+        :param Sequence[str] destination_addresses: An array of address list names to be evaluated against the traffic destination address.
+        :param Sequence[str] source_addresses: An array of address list names to be evaluated against the traffic source address.
+        """
+        pulumi.set(__self__, "destination_addresses", destination_addresses)
+        pulumi.set(__self__, "source_addresses", source_addresses)
+
+    @property
+    @pulumi.getter(name="destinationAddresses")
+    def destination_addresses(self) -> Sequence[str]:
+        """
+        An array of address list names to be evaluated against the traffic destination address.
+        """
+        return pulumi.get(self, "destination_addresses")
+
+    @property
+    @pulumi.getter(name="sourceAddresses")
+    def source_addresses(self) -> Sequence[str]:
+        """
+        An array of address list names to be evaluated against the traffic source address.
+        """
+        return pulumi.get(self, "source_addresses")
+
+
+@pulumi.output_type
+class GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemPositionResult(dict):
+    def __init__(__self__, *,
+                 after_rule: str,
+                 before_rule: str):
+        """
+        :param str after_rule: Identifier for rule after which this rule lies.
+        :param str before_rule: Identifier for rule before which this rule lies.
+        """
+        pulumi.set(__self__, "after_rule", after_rule)
+        pulumi.set(__self__, "before_rule", before_rule)
+
+    @property
+    @pulumi.getter(name="afterRule")
+    def after_rule(self) -> str:
+        """
+        Identifier for rule after which this rule lies.
+        """
+        return pulumi.get(self, "after_rule")
+
+    @property
+    @pulumi.getter(name="beforeRule")
+    def before_rule(self) -> str:
+        """
+        Identifier for rule before which this rule lies.
+        """
+        return pulumi.get(self, "before_rule")
+
+
+@pulumi.output_type
+class GetNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemProfileResult(dict):
+    def __init__(__self__, *,
+                 must_return_traffic_to_source: bool):
+        """
+        :param bool must_return_traffic_to_source: Return scanned VXLAN tunnel traffic to source.
+        """
+        pulumi.set(__self__, "must_return_traffic_to_source", must_return_traffic_to_source)
+
+    @property
+    @pulumi.getter(name="mustReturnTrafficToSource")
+    def must_return_traffic_to_source(self) -> bool:
+        """
+        Return scanned VXLAN tunnel traffic to source.
+        """
+        return pulumi.get(self, "must_return_traffic_to_source")
 
 
 @pulumi.output_type

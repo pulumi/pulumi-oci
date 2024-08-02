@@ -484,11 +484,18 @@ public class VmClusterRemoveVirtualMachine extends com.pulumi.resources.CustomRe
      * @param options A bag of options that control this resource's behavior.
      */
     public VmClusterRemoveVirtualMachine(String name, VmClusterRemoveVirtualMachineArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/vmClusterRemoveVirtualMachine:VmClusterRemoveVirtualMachine", name, args == null ? VmClusterRemoveVirtualMachineArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Database/vmClusterRemoveVirtualMachine:VmClusterRemoveVirtualMachine", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private VmClusterRemoveVirtualMachine(String name, Output<String> id, @Nullable VmClusterRemoveVirtualMachineState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Database/vmClusterRemoveVirtualMachine:VmClusterRemoveVirtualMachine", name, state, makeResourceOptions(options, id));
+    }
+
+    private static VmClusterRemoveVirtualMachineArgs makeArgs(VmClusterRemoveVirtualMachineArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? VmClusterRemoveVirtualMachineArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

@@ -177,11 +177,18 @@ public class RuleSet extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public RuleSet(String name, RuleSetArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:LoadBalancer/ruleSet:RuleSet", name, args == null ? RuleSetArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:LoadBalancer/ruleSet:RuleSet", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private RuleSet(String name, Output<String> id, @Nullable RuleSetState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:LoadBalancer/ruleSet:RuleSet", name, state, makeResourceOptions(options, id));
+    }
+
+    private static RuleSetArgs makeArgs(RuleSetArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? RuleSetArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

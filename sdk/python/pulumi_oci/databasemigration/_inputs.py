@@ -12,6 +12,7 @@ from .. import _utilities
 __all__ = [
     'ConnectionAdditionalAttributeArgs',
     'ConnectionIngressIpArgs',
+    'JobParameterFileVersionArgs',
     'JobProgressArgs',
     'JobProgressPhaseArgs',
     'JobProgressPhaseExtractArgs',
@@ -106,6 +107,157 @@ class ConnectionIngressIpArgs:
 
 
 @pulumi.input_type
+class JobParameterFileVersionArgs:
+    def __init__(__self__, *,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 description: Optional[pulumi.Input[str]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 is_current: Optional[pulumi.Input[bool]] = None,
+                 is_factory: Optional[pulumi.Input[bool]] = None,
+                 kind: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 time_created: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[str] description: A description to discribe the current parameter file version
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
+        :param pulumi.Input[bool] is_current: Return boolean true/false for the currently in-use parameter file (factory or a versioned file)
+        :param pulumi.Input[bool] is_factory: Return true/false for whether the parameter file is oracle provided (Factory)
+        :param pulumi.Input[str] kind: Indicator of Parameter File 'kind' (for an EXTRACT or a REPLICAT)
+        :param pulumi.Input[str] name: Phase name
+        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[str] time_created: The time the Migration Job was created. An RFC3339 formatted datetime string
+        """
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_current is not None:
+            pulumi.set(__self__, "is_current", is_current)
+        if is_factory is not None:
+            pulumi.set(__self__, "is_factory", is_factory)
+        if kind is not None:
+            pulumi.set(__self__, "kind", kind)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @defined_tags.setter
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "defined_tags", value)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        A description to discribe the current parameter file version
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @freeform_tags.setter
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter(name="isCurrent")
+    def is_current(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Return boolean true/false for the currently in-use parameter file (factory or a versioned file)
+        """
+        return pulumi.get(self, "is_current")
+
+    @is_current.setter
+    def is_current(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_current", value)
+
+    @property
+    @pulumi.getter(name="isFactory")
+    def is_factory(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Return true/false for whether the parameter file is oracle provided (Factory)
+        """
+        return pulumi.get(self, "is_factory")
+
+    @is_factory.setter
+    def is_factory(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_factory", value)
+
+    @property
+    @pulumi.getter
+    def kind(self) -> Optional[pulumi.Input[str]]:
+        """
+        Indicator of Parameter File 'kind' (for an EXTRACT or a REPLICAT)
+        """
+        return pulumi.get(self, "kind")
+
+    @kind.setter
+    def kind(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "kind", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Phase name
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "system_tags", value)
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[str]]:
+        """
+        The time the Migration Job was created. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_created", value)
+
+
+@pulumi.input_type
 class JobProgressArgs:
     def __init__(__self__, *,
                  current_phase: Optional[pulumi.Input[str]] = None,
@@ -165,8 +317,10 @@ class JobProgressPhaseArgs:
     def __init__(__self__, *,
                  action: Optional[pulumi.Input[str]] = None,
                  duration_in_ms: Optional[pulumi.Input[int]] = None,
+                 editable_parameter_files: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  extracts: Optional[pulumi.Input[Sequence[pulumi.Input['JobProgressPhaseExtractArgs']]]] = None,
                  is_advisor_report_available: Optional[pulumi.Input[bool]] = None,
+                 is_suspend_available: Optional[pulumi.Input[bool]] = None,
                  issue: Optional[pulumi.Input[str]] = None,
                  log_locations: Optional[pulumi.Input[Sequence[pulumi.Input['JobProgressPhaseLogLocationArgs']]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
@@ -175,8 +329,10 @@ class JobProgressPhaseArgs:
         """
         :param pulumi.Input[str] action: The text describing the action required to fix the issue
         :param pulumi.Input[int] duration_in_ms: Duration of the phase in milliseconds
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] editable_parameter_files: Attribute that returns an array of names and types of GoldenGate configuration files that are available for read or update.
         :param pulumi.Input[Sequence[pulumi.Input['JobProgressPhaseExtractArgs']]] extracts: Summary of phase status results.
         :param pulumi.Input[bool] is_advisor_report_available: True if a Pre-Migration Advisor report is available for this phase. False or null if no report is available.
+        :param pulumi.Input[bool] is_suspend_available: This is returned as true if the current phase can be suspended.
         :param pulumi.Input[str] issue: The text describing the root cause of the reported issue
         :param pulumi.Input[Sequence[pulumi.Input['JobProgressPhaseLogLocationArgs']]] log_locations: Details to access log file in the specified Object Storage bucket, if any.
         :param pulumi.Input[str] name: Phase name
@@ -187,10 +343,14 @@ class JobProgressPhaseArgs:
             pulumi.set(__self__, "action", action)
         if duration_in_ms is not None:
             pulumi.set(__self__, "duration_in_ms", duration_in_ms)
+        if editable_parameter_files is not None:
+            pulumi.set(__self__, "editable_parameter_files", editable_parameter_files)
         if extracts is not None:
             pulumi.set(__self__, "extracts", extracts)
         if is_advisor_report_available is not None:
             pulumi.set(__self__, "is_advisor_report_available", is_advisor_report_available)
+        if is_suspend_available is not None:
+            pulumi.set(__self__, "is_suspend_available", is_suspend_available)
         if issue is not None:
             pulumi.set(__self__, "issue", issue)
         if log_locations is not None:
@@ -227,6 +387,18 @@ class JobProgressPhaseArgs:
         pulumi.set(self, "duration_in_ms", value)
 
     @property
+    @pulumi.getter(name="editableParameterFiles")
+    def editable_parameter_files(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Attribute that returns an array of names and types of GoldenGate configuration files that are available for read or update.
+        """
+        return pulumi.get(self, "editable_parameter_files")
+
+    @editable_parameter_files.setter
+    def editable_parameter_files(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "editable_parameter_files", value)
+
+    @property
     @pulumi.getter
     def extracts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['JobProgressPhaseExtractArgs']]]]:
         """
@@ -249,6 +421,18 @@ class JobProgressPhaseArgs:
     @is_advisor_report_available.setter
     def is_advisor_report_available(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_advisor_report_available", value)
+
+    @property
+    @pulumi.getter(name="isSuspendAvailable")
+    def is_suspend_available(self) -> Optional[pulumi.Input[bool]]:
+        """
+        This is returned as true if the current phase can be suspended.
+        """
+        return pulumi.get(self, "is_suspend_available")
+
+    @is_suspend_available.setter
+    def is_suspend_available(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_suspend_available", value)
 
     @property
     @pulumi.getter

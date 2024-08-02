@@ -137,11 +137,18 @@ public class ManagedInstanceGroupRemovePackagesManagement extends com.pulumi.res
      * @param options A bag of options that control this resource's behavior.
      */
     public ManagedInstanceGroupRemovePackagesManagement(String name, ManagedInstanceGroupRemovePackagesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:OsManagementHub/managedInstanceGroupRemovePackagesManagement:ManagedInstanceGroupRemovePackagesManagement", name, args == null ? ManagedInstanceGroupRemovePackagesManagementArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:OsManagementHub/managedInstanceGroupRemovePackagesManagement:ManagedInstanceGroupRemovePackagesManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ManagedInstanceGroupRemovePackagesManagement(String name, Output<String> id, @Nullable ManagedInstanceGroupRemovePackagesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:OsManagementHub/managedInstanceGroupRemovePackagesManagement:ManagedInstanceGroupRemovePackagesManagement", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ManagedInstanceGroupRemovePackagesManagementArgs makeArgs(ManagedInstanceGroupRemovePackagesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ManagedInstanceGroupRemovePackagesManagementArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

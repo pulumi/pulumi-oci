@@ -344,11 +344,18 @@ public class LicenseRecord extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public LicenseRecord(String name, LicenseRecordArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:LicenseManager/licenseRecord:LicenseRecord", name, args == null ? LicenseRecordArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:LicenseManager/licenseRecord:LicenseRecord", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private LicenseRecord(String name, Output<String> id, @Nullable LicenseRecordState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:LicenseManager/licenseRecord:LicenseRecord", name, state, makeResourceOptions(options, id));
+    }
+
+    private static LicenseRecordArgs makeArgs(LicenseRecordArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? LicenseRecordArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

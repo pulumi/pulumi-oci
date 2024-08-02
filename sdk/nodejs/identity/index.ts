@@ -255,6 +255,11 @@ export type DomainsSmtpCredential = import("./domainsSmtpCredential").DomainsSmt
 export const DomainsSmtpCredential: typeof import("./domainsSmtpCredential").DomainsSmtpCredential = null as any;
 utilities.lazyLoad(exports, ["DomainsSmtpCredential"], () => require("./domainsSmtpCredential"));
 
+export { DomainsSocialIdentityProviderArgs, DomainsSocialIdentityProviderState } from "./domainsSocialIdentityProvider";
+export type DomainsSocialIdentityProvider = import("./domainsSocialIdentityProvider").DomainsSocialIdentityProvider;
+export const DomainsSocialIdentityProvider: typeof import("./domainsSocialIdentityProvider").DomainsSocialIdentityProvider = null as any;
+utilities.lazyLoad(exports, ["DomainsSocialIdentityProvider"], () => require("./domainsSocialIdentityProvider"));
+
 export { DomainsUserArgs, DomainsUserState } from "./domainsUser";
 export type DomainsUser = import("./domainsUser").DomainsUser;
 export const DomainsUser: typeof import("./domainsUser").DomainsUser = null as any;
@@ -830,6 +835,16 @@ export const getDomainsSmtpCredentials: typeof import("./getDomainsSmtpCredentia
 export const getDomainsSmtpCredentialsOutput: typeof import("./getDomainsSmtpCredentials").getDomainsSmtpCredentialsOutput = null as any;
 utilities.lazyLoad(exports, ["getDomainsSmtpCredentials","getDomainsSmtpCredentialsOutput"], () => require("./getDomainsSmtpCredentials"));
 
+export { GetDomainsSocialIdentityProviderArgs, GetDomainsSocialIdentityProviderResult, GetDomainsSocialIdentityProviderOutputArgs } from "./getDomainsSocialIdentityProvider";
+export const getDomainsSocialIdentityProvider: typeof import("./getDomainsSocialIdentityProvider").getDomainsSocialIdentityProvider = null as any;
+export const getDomainsSocialIdentityProviderOutput: typeof import("./getDomainsSocialIdentityProvider").getDomainsSocialIdentityProviderOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsSocialIdentityProvider","getDomainsSocialIdentityProviderOutput"], () => require("./getDomainsSocialIdentityProvider"));
+
+export { GetDomainsSocialIdentityProvidersArgs, GetDomainsSocialIdentityProvidersResult, GetDomainsSocialIdentityProvidersOutputArgs } from "./getDomainsSocialIdentityProviders";
+export const getDomainsSocialIdentityProviders: typeof import("./getDomainsSocialIdentityProviders").getDomainsSocialIdentityProviders = null as any;
+export const getDomainsSocialIdentityProvidersOutput: typeof import("./getDomainsSocialIdentityProviders").getDomainsSocialIdentityProvidersOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsSocialIdentityProviders","getDomainsSocialIdentityProvidersOutput"], () => require("./getDomainsSocialIdentityProviders"));
+
 export { GetDomainsUserArgs, GetDomainsUserResult, GetDomainsUserOutputArgs } from "./getDomainsUser";
 export const getDomainsUser: typeof import("./getDomainsUser").getDomainsUser = null as any;
 export const getDomainsUserOutput: typeof import("./getDomainsUser").getDomainsUserOutput = null as any;
@@ -1180,6 +1195,8 @@ const _module = {
                 return new DomainsSetting(name, <any>undefined, { urn })
             case "oci:Identity/domainsSmtpCredential:DomainsSmtpCredential":
                 return new DomainsSmtpCredential(name, <any>undefined, { urn })
+            case "oci:Identity/domainsSocialIdentityProvider:DomainsSocialIdentityProvider":
+                return new DomainsSocialIdentityProvider(name, <any>undefined, { urn })
             case "oci:Identity/domainsUser:DomainsUser":
                 return new DomainsUser(name, <any>undefined, { urn })
             case "oci:Identity/domainsUserDbCredential:DomainsUserDbCredential":
@@ -1269,6 +1286,7 @@ pulumi.runtime.registerResourceModule("oci", "Identity/domainsSecurityQuestionSe
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsSelfRegistrationProfile", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsSetting", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsSmtpCredential", _module)
+pulumi.runtime.registerResourceModule("oci", "Identity/domainsSocialIdentityProvider", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsUser", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsUserDbCredential", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/dynamicGroup", _module)

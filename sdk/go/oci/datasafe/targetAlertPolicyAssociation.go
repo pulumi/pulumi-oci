@@ -75,6 +75,8 @@ type TargetAlertPolicyAssociation struct {
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) Indicates if the target-alert policy association is enabled or disabled.
 	IsEnabled pulumi.BoolOutput `pulumi:"isEnabled"`
+	// Details about the current state of the target-alert policy association.
+	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The OCID of the alert policy.
 	PolicyId pulumi.StringOutput `pulumi:"policyId"`
 	// The current state of the target-alert policy association.
@@ -146,6 +148,8 @@ type targetAlertPolicyAssociationState struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) Indicates if the target-alert policy association is enabled or disabled.
 	IsEnabled *bool `pulumi:"isEnabled"`
+	// Details about the current state of the target-alert policy association.
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The OCID of the alert policy.
 	PolicyId *string `pulumi:"policyId"`
 	// The current state of the target-alert policy association.
@@ -176,6 +180,8 @@ type TargetAlertPolicyAssociationState struct {
 	FreeformTags pulumi.MapInput
 	// (Updatable) Indicates if the target-alert policy association is enabled or disabled.
 	IsEnabled pulumi.BoolPtrInput
+	// Details about the current state of the target-alert policy association.
+	LifecycleDetails pulumi.StringPtrInput
 	// The OCID of the alert policy.
 	PolicyId pulumi.StringPtrInput
 	// The current state of the target-alert policy association.
@@ -357,6 +363,11 @@ func (o TargetAlertPolicyAssociationOutput) FreeformTags() pulumi.MapOutput {
 // (Updatable) Indicates if the target-alert policy association is enabled or disabled.
 func (o TargetAlertPolicyAssociationOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *TargetAlertPolicyAssociation) pulumi.BoolOutput { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+// Details about the current state of the target-alert policy association.
+func (o TargetAlertPolicyAssociationOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v *TargetAlertPolicyAssociation) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
 // The OCID of the alert policy.

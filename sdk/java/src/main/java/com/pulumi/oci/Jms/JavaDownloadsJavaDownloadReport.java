@@ -307,11 +307,18 @@ public class JavaDownloadsJavaDownloadReport extends com.pulumi.resources.Custom
      * @param options A bag of options that control this resource's behavior.
      */
     public JavaDownloadsJavaDownloadReport(String name, JavaDownloadsJavaDownloadReportArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Jms/javaDownloadsJavaDownloadReport:JavaDownloadsJavaDownloadReport", name, args == null ? JavaDownloadsJavaDownloadReportArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Jms/javaDownloadsJavaDownloadReport:JavaDownloadsJavaDownloadReport", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private JavaDownloadsJavaDownloadReport(String name, Output<String> id, @Nullable JavaDownloadsJavaDownloadReportState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Jms/javaDownloadsJavaDownloadReport:JavaDownloadsJavaDownloadReport", name, state, makeResourceOptions(options, id));
+    }
+
+    private static JavaDownloadsJavaDownloadReportArgs makeArgs(JavaDownloadsJavaDownloadReportArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? JavaDownloadsJavaDownloadReportArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

@@ -220,6 +220,21 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
     }
 
     /**
+     * Details about the current state of the report definition in Data Safe.
+     * 
+     */
+    @Import(name="lifecycleDetails")
+    private @Nullable Output<String> lifecycleDetails;
+
+    /**
+     * @return Details about the current state of the report definition in Data Safe.
+     * 
+     */
+    public Optional<Output<String>> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
+    }
+
+    /**
      * The OCID of the parent report definition.
      * 
      */
@@ -430,6 +445,7 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
         this.displayOrder = $.displayOrder;
         this.freeformTags = $.freeformTags;
         this.isSeeded = $.isSeeded;
+        this.lifecycleDetails = $.lifecycleDetails;
         this.parentId = $.parentId;
         this.recordTimeSpan = $.recordTimeSpan;
         this.schedule = $.schedule;
@@ -774,6 +790,27 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
          */
         public Builder isSeeded(Boolean isSeeded) {
             return isSeeded(Output.of(isSeeded));
+        }
+
+        /**
+         * @param lifecycleDetails Details about the current state of the report definition in Data Safe.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifecycleDetails(@Nullable Output<String> lifecycleDetails) {
+            $.lifecycleDetails = lifecycleDetails;
+            return this;
+        }
+
+        /**
+         * @param lifecycleDetails Details about the current state of the report definition in Data Safe.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            return lifecycleDetails(Output.of(lifecycleDetails));
         }
 
         /**

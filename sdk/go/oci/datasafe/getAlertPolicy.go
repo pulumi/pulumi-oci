@@ -40,9 +40,9 @@ import (
 //	}
 //
 // ```
-func GetAlertPolicy(ctx *pulumi.Context, args *GetAlertPolicyArgs, opts ...pulumi.InvokeOption) (*GetAlertPolicyResult, error) {
+func LookupAlertPolicy(ctx *pulumi.Context, args *LookupAlertPolicyArgs, opts ...pulumi.InvokeOption) (*LookupAlertPolicyResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
-	var rv GetAlertPolicyResult
+	var rv LookupAlertPolicyResult
 	err := ctx.Invoke("oci:DataSafe/getAlertPolicy:getAlertPolicy", args, &rv, opts...)
 	if err != nil {
 		return nil, err
@@ -51,14 +51,15 @@ func GetAlertPolicy(ctx *pulumi.Context, args *GetAlertPolicyArgs, opts ...pulum
 }
 
 // A collection of arguments for invoking getAlertPolicy.
-type GetAlertPolicyArgs struct {
+type LookupAlertPolicyArgs struct {
 	// The OCID of the alert policy.
 	AlertPolicyId string `pulumi:"alertPolicyId"`
 }
 
 // A collection of values returned by getAlertPolicy.
-type GetAlertPolicyResult struct {
-	AlertPolicyId string `pulumi:"alertPolicyId"`
+type LookupAlertPolicyResult struct {
+	AlertPolicyId          string                                `pulumi:"alertPolicyId"`
+	AlertPolicyRuleDetails []GetAlertPolicyAlertPolicyRuleDetail `pulumi:"alertPolicyRuleDetails"`
 	// Indicates the Data Safe feature to which the alert policy belongs.
 	AlertPolicyType string `pulumi:"alertPolicyType"`
 	// The OCID of the compartment that contains the alert policy.
@@ -71,10 +72,12 @@ type GetAlertPolicyResult struct {
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The provider-assigned unique ID for this managed resource.
+	// The OCID of the alert policy.
 	Id string `pulumi:"id"`
 	// Indicates if the alert policy is user-defined (true) or pre-defined (false).
 	IsUserDefined bool `pulumi:"isUserDefined"`
+	// Details about the current state of the alert policy.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Severity level of the alert raised by this policy.
 	Severity string `pulumi:"severity"`
 	// The current state of the alert.
@@ -87,113 +90,122 @@ type GetAlertPolicyResult struct {
 	TimeUpdated string `pulumi:"timeUpdated"`
 }
 
-func GetAlertPolicyOutput(ctx *pulumi.Context, args GetAlertPolicyOutputArgs, opts ...pulumi.InvokeOption) GetAlertPolicyResultOutput {
+func LookupAlertPolicyOutput(ctx *pulumi.Context, args LookupAlertPolicyOutputArgs, opts ...pulumi.InvokeOption) LookupAlertPolicyResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAlertPolicyResult, error) {
-			args := v.(GetAlertPolicyArgs)
-			r, err := GetAlertPolicy(ctx, &args, opts...)
-			var s GetAlertPolicyResult
+		ApplyT(func(v interface{}) (LookupAlertPolicyResult, error) {
+			args := v.(LookupAlertPolicyArgs)
+			r, err := LookupAlertPolicy(ctx, &args, opts...)
+			var s LookupAlertPolicyResult
 			if r != nil {
 				s = *r
 			}
 			return s, err
-		}).(GetAlertPolicyResultOutput)
+		}).(LookupAlertPolicyResultOutput)
 }
 
 // A collection of arguments for invoking getAlertPolicy.
-type GetAlertPolicyOutputArgs struct {
+type LookupAlertPolicyOutputArgs struct {
 	// The OCID of the alert policy.
 	AlertPolicyId pulumi.StringInput `pulumi:"alertPolicyId"`
 }
 
-func (GetAlertPolicyOutputArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetAlertPolicyArgs)(nil)).Elem()
+func (LookupAlertPolicyOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupAlertPolicyArgs)(nil)).Elem()
 }
 
 // A collection of values returned by getAlertPolicy.
-type GetAlertPolicyResultOutput struct{ *pulumi.OutputState }
+type LookupAlertPolicyResultOutput struct{ *pulumi.OutputState }
 
-func (GetAlertPolicyResultOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetAlertPolicyResult)(nil)).Elem()
+func (LookupAlertPolicyResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupAlertPolicyResult)(nil)).Elem()
 }
 
-func (o GetAlertPolicyResultOutput) ToGetAlertPolicyResultOutput() GetAlertPolicyResultOutput {
+func (o LookupAlertPolicyResultOutput) ToLookupAlertPolicyResultOutput() LookupAlertPolicyResultOutput {
 	return o
 }
 
-func (o GetAlertPolicyResultOutput) ToGetAlertPolicyResultOutputWithContext(ctx context.Context) GetAlertPolicyResultOutput {
+func (o LookupAlertPolicyResultOutput) ToLookupAlertPolicyResultOutputWithContext(ctx context.Context) LookupAlertPolicyResultOutput {
 	return o
 }
 
-func (o GetAlertPolicyResultOutput) AlertPolicyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlertPolicyResult) string { return v.AlertPolicyId }).(pulumi.StringOutput)
+func (o LookupAlertPolicyResultOutput) AlertPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAlertPolicyResult) string { return v.AlertPolicyId }).(pulumi.StringOutput)
+}
+
+func (o LookupAlertPolicyResultOutput) AlertPolicyRuleDetails() GetAlertPolicyAlertPolicyRuleDetailArrayOutput {
+	return o.ApplyT(func(v LookupAlertPolicyResult) []GetAlertPolicyAlertPolicyRuleDetail { return v.AlertPolicyRuleDetails }).(GetAlertPolicyAlertPolicyRuleDetailArrayOutput)
 }
 
 // Indicates the Data Safe feature to which the alert policy belongs.
-func (o GetAlertPolicyResultOutput) AlertPolicyType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlertPolicyResult) string { return v.AlertPolicyType }).(pulumi.StringOutput)
+func (o LookupAlertPolicyResultOutput) AlertPolicyType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAlertPolicyResult) string { return v.AlertPolicyType }).(pulumi.StringOutput)
 }
 
 // The OCID of the compartment that contains the alert policy.
-func (o GetAlertPolicyResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlertPolicyResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupAlertPolicyResultOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAlertPolicyResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o GetAlertPolicyResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAlertPolicyResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupAlertPolicyResultOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupAlertPolicyResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
 // The description of the alert policy.
-func (o GetAlertPolicyResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlertPolicyResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupAlertPolicyResultOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAlertPolicyResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
 // The display name of the alert policy.
-func (o GetAlertPolicyResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlertPolicyResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupAlertPolicyResultOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAlertPolicyResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o GetAlertPolicyResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAlertPolicyResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupAlertPolicyResultOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupAlertPolicyResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// The provider-assigned unique ID for this managed resource.
-func (o GetAlertPolicyResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlertPolicyResult) string { return v.Id }).(pulumi.StringOutput)
+// The OCID of the alert policy.
+func (o LookupAlertPolicyResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAlertPolicyResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 // Indicates if the alert policy is user-defined (true) or pre-defined (false).
-func (o GetAlertPolicyResultOutput) IsUserDefined() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetAlertPolicyResult) bool { return v.IsUserDefined }).(pulumi.BoolOutput)
+func (o LookupAlertPolicyResultOutput) IsUserDefined() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupAlertPolicyResult) bool { return v.IsUserDefined }).(pulumi.BoolOutput)
+}
+
+// Details about the current state of the alert policy.
+func (o LookupAlertPolicyResultOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAlertPolicyResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
 // Severity level of the alert raised by this policy.
-func (o GetAlertPolicyResultOutput) Severity() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlertPolicyResult) string { return v.Severity }).(pulumi.StringOutput)
+func (o LookupAlertPolicyResultOutput) Severity() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAlertPolicyResult) string { return v.Severity }).(pulumi.StringOutput)
 }
 
 // The current state of the alert.
-func (o GetAlertPolicyResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlertPolicyResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupAlertPolicyResultOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAlertPolicyResult) string { return v.State }).(pulumi.StringOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetAlertPolicyResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAlertPolicyResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupAlertPolicyResultOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupAlertPolicyResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
 // Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o GetAlertPolicyResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlertPolicyResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupAlertPolicyResultOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAlertPolicyResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
 // Last date and time the alert policy was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o GetAlertPolicyResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlertPolicyResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupAlertPolicyResultOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAlertPolicyResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
 func init() {
-	pulumi.RegisterOutputType(GetAlertPolicyResultOutput{})
+	pulumi.RegisterOutputType(LookupAlertPolicyResultOutput{})
 }

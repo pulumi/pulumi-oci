@@ -267,11 +267,18 @@ public class ExternalDbSystemDiscovery extends com.pulumi.resources.CustomResour
      * @param options A bag of options that control this resource's behavior.
      */
     public ExternalDbSystemDiscovery(String name, ExternalDbSystemDiscoveryArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseManagement/externalDbSystemDiscovery:ExternalDbSystemDiscovery", name, args == null ? ExternalDbSystemDiscoveryArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DatabaseManagement/externalDbSystemDiscovery:ExternalDbSystemDiscovery", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ExternalDbSystemDiscovery(String name, Output<String> id, @Nullable ExternalDbSystemDiscoveryState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DatabaseManagement/externalDbSystemDiscovery:ExternalDbSystemDiscovery", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ExternalDbSystemDiscoveryArgs makeArgs(ExternalDbSystemDiscoveryArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ExternalDbSystemDiscoveryArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

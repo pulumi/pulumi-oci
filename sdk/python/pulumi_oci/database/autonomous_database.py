@@ -1455,6 +1455,7 @@ class _AutonomousDatabaseState:
                  byol_compute_count_limit: Optional[pulumi.Input[float]] = None,
                  character_set: Optional[pulumi.Input[str]] = None,
                  clone_type: Optional[pulumi.Input[str]] = None,
+                 cluster_placement_group_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  compute_count: Optional[pulumi.Input[float]] = None,
                  compute_model: Optional[pulumi.Input[str]] = None,
@@ -1597,6 +1598,7 @@ class _AutonomousDatabaseState:
         :param pulumi.Input[str] clone_type: The Autonomous Database clone type. This parameter is not used to create a refreshable clone type, and for refreshable clones one must use the (source=CLONE_TO_REFRESHABLE) parameter.
                * `FULL` - This option creates a new database that includes all source database data.
                * `METADATA` - This option creates a new database that includes the source database schema and select metadata, but not the source database data.
+        :param pulumi.Input[str] cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Database.
         :param pulumi.Input[float] compute_count: (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure. For an Autonomous Database Serverless instance, the 'ECPU' compute model requires a minimum value of one, for databases in the elastic resource pool and minimum value of two, otherwise. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value. Providing `computeModel` and `computeCount` is the preferred method for both OCPU and ECPU.
         :param pulumi.Input[str] compute_model: (Updatable) The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
@@ -1820,6 +1822,8 @@ class _AutonomousDatabaseState:
             pulumi.set(__self__, "character_set", character_set)
         if clone_type is not None:
             pulumi.set(__self__, "clone_type", clone_type)
+        if cluster_placement_group_id is not None:
+            pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if compute_count is not None:
@@ -2266,6 +2270,18 @@ class _AutonomousDatabaseState:
     @clone_type.setter
     def clone_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "clone_type", value)
+
+    @property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
+        """
+        return pulumi.get(self, "cluster_placement_group_id")
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "cluster_placement_group_id", value)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -4221,6 +4237,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["apex_details"] = None
             __props__.__dict__["available_upgrade_versions"] = None
             __props__.__dict__["backup_configs"] = None
+            __props__.__dict__["cluster_placement_group_id"] = None
             __props__.__dict__["connection_strings"] = None
             __props__.__dict__["connection_urls"] = None
             __props__.__dict__["dataguard_region_type"] = None
@@ -4301,6 +4318,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             byol_compute_count_limit: Optional[pulumi.Input[float]] = None,
             character_set: Optional[pulumi.Input[str]] = None,
             clone_type: Optional[pulumi.Input[str]] = None,
+            cluster_placement_group_id: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             compute_count: Optional[pulumi.Input[float]] = None,
             compute_model: Optional[pulumi.Input[str]] = None,
@@ -4448,6 +4466,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] clone_type: The Autonomous Database clone type. This parameter is not used to create a refreshable clone type, and for refreshable clones one must use the (source=CLONE_TO_REFRESHABLE) parameter.
                * `FULL` - This option creates a new database that includes all source database data.
                * `METADATA` - This option creates a new database that includes the source database schema and select metadata, but not the source database data.
+        :param pulumi.Input[str] cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Database.
         :param pulumi.Input[float] compute_count: (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure. For an Autonomous Database Serverless instance, the 'ECPU' compute model requires a minimum value of one, for databases in the elastic resource pool and minimum value of two, otherwise. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value. Providing `computeModel` and `computeCount` is the preferred method for both OCPU and ECPU.
         :param pulumi.Input[str] compute_model: (Updatable) The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
@@ -4658,6 +4677,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         __props__.__dict__["byol_compute_count_limit"] = byol_compute_count_limit
         __props__.__dict__["character_set"] = character_set
         __props__.__dict__["clone_type"] = clone_type
+        __props__.__dict__["cluster_placement_group_id"] = cluster_placement_group_id
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["compute_count"] = compute_count
         __props__.__dict__["compute_model"] = compute_model
@@ -4916,6 +4936,14 @@ class AutonomousDatabase(pulumi.CustomResource):
         * `METADATA` - This option creates a new database that includes the source database schema and select metadata, but not the source database data.
         """
         return pulumi.get(self, "clone_type")
+
+    @property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> pulumi.Output[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
+        """
+        return pulumi.get(self, "cluster_placement_group_id")
 
     @property
     @pulumi.getter(name="compartmentId")

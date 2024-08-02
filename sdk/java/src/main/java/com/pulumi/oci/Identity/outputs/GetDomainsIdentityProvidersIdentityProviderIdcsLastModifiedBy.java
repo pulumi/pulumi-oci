@@ -31,7 +31,7 @@ public final class GetDomainsIdentityProvidersIdentityProviderIdcsLastModifiedBy
      */
     private String type;
     /**
-     * @return Value of the tag.
+     * @return Group identifier
      * 
      */
     private String value;
@@ -66,7 +66,7 @@ public final class GetDomainsIdentityProvidersIdentityProviderIdcsLastModifiedBy
         return this.type;
     }
     /**
-     * @return Value of the tag.
+     * @return Group identifier
      * 
      */
     public String value() {

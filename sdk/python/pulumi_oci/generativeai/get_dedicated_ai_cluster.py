@@ -110,6 +110,9 @@ class GetDedicatedAiClusterResult:
     @property
     @pulumi.getter
     def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated AI cluster.
+        """
         return pulumi.get(self, "id")
 
     @property

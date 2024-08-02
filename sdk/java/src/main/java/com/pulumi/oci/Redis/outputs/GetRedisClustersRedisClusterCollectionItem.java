@@ -62,7 +62,7 @@ public final class GetRedisClustersRedisClusterCollectionItem {
      */
     private Double nodeMemoryInGbs;
     /**
-     * @return OCIDs of the NSGs to control access in the customer network
+     * @return A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
      * 
      */
     private List<String> nsgIds;
@@ -182,7 +182,7 @@ public final class GetRedisClustersRedisClusterCollectionItem {
         return this.nodeMemoryInGbs;
     }
     /**
-     * @return OCIDs of the NSGs to control access in the customer network
+     * @return A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
      * 
      */
     public List<String> nsgIds() {

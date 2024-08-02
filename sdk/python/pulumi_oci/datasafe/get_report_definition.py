@@ -22,7 +22,7 @@ class GetReportDefinitionResult:
     """
     A collection of values returned by getReportDefinition.
     """
-    def __init__(__self__, category=None, column_filters=None, column_infos=None, column_sortings=None, compartment_id=None, compliance_standards=None, data_source=None, defined_tags=None, description=None, display_name=None, display_order=None, freeform_tags=None, id=None, is_seeded=None, parent_id=None, record_time_span=None, report_definition_id=None, schedule=None, scheduled_report_compartment_id=None, scheduled_report_mime_type=None, scheduled_report_name=None, scheduled_report_row_limit=None, scim_filter=None, state=None, summaries=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, category=None, column_filters=None, column_infos=None, column_sortings=None, compartment_id=None, compliance_standards=None, data_source=None, defined_tags=None, description=None, display_name=None, display_order=None, freeform_tags=None, id=None, is_seeded=None, lifecycle_details=None, parent_id=None, record_time_span=None, report_definition_id=None, schedule=None, scheduled_report_compartment_id=None, scheduled_report_mime_type=None, scheduled_report_name=None, scheduled_report_row_limit=None, scim_filter=None, state=None, summaries=None, system_tags=None, time_created=None, time_updated=None):
         if category and not isinstance(category, str):
             raise TypeError("Expected argument 'category' to be a str")
         pulumi.set(__self__, "category", category)
@@ -65,6 +65,9 @@ class GetReportDefinitionResult:
         if is_seeded and not isinstance(is_seeded, bool):
             raise TypeError("Expected argument 'is_seeded' to be a bool")
         pulumi.set(__self__, "is_seeded", is_seeded)
+        if lifecycle_details and not isinstance(lifecycle_details, str):
+            raise TypeError("Expected argument 'lifecycle_details' to be a str")
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if parent_id and not isinstance(parent_id, str):
             raise TypeError("Expected argument 'parent_id' to be a str")
         pulumi.set(__self__, "parent_id", parent_id)
@@ -221,6 +224,14 @@ class GetReportDefinitionResult:
         return pulumi.get(self, "is_seeded")
 
     @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Details about the current state of the report definition in Data Safe.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
     @pulumi.getter(name="parentId")
     def parent_id(self) -> str:
         """
@@ -350,6 +361,7 @@ class AwaitableGetReportDefinitionResult(GetReportDefinitionResult):
             freeform_tags=self.freeform_tags,
             id=self.id,
             is_seeded=self.is_seeded,
+            lifecycle_details=self.lifecycle_details,
             parent_id=self.parent_id,
             record_time_span=self.record_time_span,
             report_definition_id=self.report_definition_id,
@@ -405,6 +417,7 @@ def get_report_definition(report_definition_id: Optional[str] = None,
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         is_seeded=pulumi.get(__ret__, 'is_seeded'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         parent_id=pulumi.get(__ret__, 'parent_id'),
         record_time_span=pulumi.get(__ret__, 'record_time_span'),
         report_definition_id=pulumi.get(__ret__, 'report_definition_id'),

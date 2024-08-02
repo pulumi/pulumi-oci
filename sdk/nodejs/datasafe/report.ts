@@ -66,6 +66,10 @@ export class Report extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
+     * Details about the current state of the report in Data Safe.
+     */
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    /**
      * Specifies the format of report to be .xls or .pdf or .json
      */
     public /*out*/ readonly mimeType!: pulumi.Output<string>;
@@ -116,6 +120,7 @@ export class Report extends pulumi.CustomResource {
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["mimeType"] = state ? state.mimeType : undefined;
             resourceInputs["reportDefinitionId"] = state ? state.reportDefinitionId : undefined;
             resourceInputs["reportId"] = state ? state.reportId : undefined;
@@ -134,6 +139,7 @@ export class Report extends pulumi.CustomResource {
             resourceInputs["reportId"] = args ? args.reportId : undefined;
             resourceInputs["description"] = undefined /*out*/;
             resourceInputs["displayName"] = undefined /*out*/;
+            resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["mimeType"] = undefined /*out*/;
             resourceInputs["reportDefinitionId"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
@@ -170,6 +176,10 @@ export interface ReportState {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * Details about the current state of the report in Data Safe.
+     */
+    lifecycleDetails?: pulumi.Input<string>;
     /**
      * Specifies the format of report to be .xls or .pdf or .json
      */

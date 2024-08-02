@@ -61,22 +61,21 @@ type LookupEndpointResult struct {
 	CompartmentId            string                               `pulumi:"compartmentId"`
 	ContentModerationConfigs []GetEndpointContentModerationConfig `pulumi:"contentModerationConfigs"`
 	DedicatedAiClusterId     string                               `pulumi:"dedicatedAiClusterId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags  map[string]interface{} `pulumi:"definedTags"`
-	Description  string                 `pulumi:"description"`
-	DisplayName  string                 `pulumi:"displayName"`
-	EndpointId   string                 `pulumi:"endpointId"`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// An OCID that uniquely identifies this endpoint resource.
-	Id               string `pulumi:"id"`
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	DefinedTags              map[string]interface{}               `pulumi:"definedTags"`
+	// An optional description of the endpoint.
+	Description string `pulumi:"description"`
+	// A user-friendly name. Does not have to be unique, and it's changeable.
+	DisplayName      string                 `pulumi:"displayName"`
+	EndpointId       string                 `pulumi:"endpointId"`
+	FreeformTags     map[string]interface{} `pulumi:"freeformTags"`
+	Id               string                 `pulumi:"id"`
+	LifecycleDetails string                 `pulumi:"lifecycleDetails"`
 	// The OCID of the model that's used to create this endpoint.
 	ModelId string `pulumi:"modelId"`
 	// The current state of the endpoint.
-	State      string                 `pulumi:"state"`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The date and time that the endpoint was created in the format of an RFC3339 datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	State       string                 `pulumi:"state"`
+	SystemTags  map[string]interface{} `pulumi:"systemTags"`
+	TimeCreated string                 `pulumi:"timeCreated"`
 	// The date and time that the endpoint was updated in the format of an RFC3339 datetime string.
 	TimeUpdated string `pulumi:"timeUpdated"`
 }
@@ -131,15 +130,16 @@ func (o LookupEndpointResultOutput) DedicatedAiClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupEndpointResult) string { return v.DedicatedAiClusterId }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 func (o LookupEndpointResultOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupEndpointResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
+// An optional description of the endpoint.
 func (o LookupEndpointResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupEndpointResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
+// A user-friendly name. Does not have to be unique, and it's changeable.
 func (o LookupEndpointResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupEndpointResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -152,7 +152,6 @@ func (o LookupEndpointResultOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupEndpointResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// An OCID that uniquely identifies this endpoint resource.
 func (o LookupEndpointResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupEndpointResult) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -175,7 +174,6 @@ func (o LookupEndpointResultOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupEndpointResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// The date and time that the endpoint was created in the format of an RFC3339 datetime string.
 func (o LookupEndpointResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupEndpointResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }

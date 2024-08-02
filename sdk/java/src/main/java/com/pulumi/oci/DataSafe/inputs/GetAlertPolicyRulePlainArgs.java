@@ -28,10 +28,26 @@ public final class GetAlertPolicyRulePlainArgs extends com.pulumi.resources.Invo
         return this.alertPolicyId;
     }
 
+    /**
+     * The key of the alert policy rule.
+     * 
+     */
+    @Import(name="ruleKey", required=true)
+    private String ruleKey;
+
+    /**
+     * @return The key of the alert policy rule.
+     * 
+     */
+    public String ruleKey() {
+        return this.ruleKey;
+    }
+
     private GetAlertPolicyRulePlainArgs() {}
 
     private GetAlertPolicyRulePlainArgs(GetAlertPolicyRulePlainArgs $) {
         this.alertPolicyId = $.alertPolicyId;
+        this.ruleKey = $.ruleKey;
     }
 
     public static Builder builder() {
@@ -63,9 +79,23 @@ public final class GetAlertPolicyRulePlainArgs extends com.pulumi.resources.Invo
             return this;
         }
 
+        /**
+         * @param ruleKey The key of the alert policy rule.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ruleKey(String ruleKey) {
+            $.ruleKey = ruleKey;
+            return this;
+        }
+
         public GetAlertPolicyRulePlainArgs build() {
             if ($.alertPolicyId == null) {
                 throw new MissingRequiredPropertyException("GetAlertPolicyRulePlainArgs", "alertPolicyId");
+            }
+            if ($.ruleKey == null) {
+                throw new MissingRequiredPropertyException("GetAlertPolicyRulePlainArgs", "ruleKey");
             }
             return $;
         }

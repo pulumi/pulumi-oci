@@ -93,6 +93,12 @@ namespace Pulumi.Oci.DataSafe
         public Output<bool> IsEnabled { get; private set; } = null!;
 
         /// <summary>
+        /// Details about the current state of the target-alert policy association.
+        /// </summary>
+        [Output("lifecycleDetails")]
+        public Output<string> LifecycleDetails { get; private set; } = null!;
+
+        /// <summary>
         /// The OCID of the alert policy.
         /// </summary>
         [Output("policyId")]
@@ -297,6 +303,12 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         [Input("isEnabled")]
         public Input<bool>? IsEnabled { get; set; }
+
+        /// <summary>
+        /// Details about the current state of the target-alert policy association.
+        /// </summary>
+        [Input("lifecycleDetails")]
+        public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
         /// The OCID of the alert policy.

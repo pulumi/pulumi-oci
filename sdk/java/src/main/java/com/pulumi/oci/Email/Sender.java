@@ -225,11 +225,18 @@ public class Sender extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public Sender(String name, SenderArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Email/sender:Sender", name, args == null ? SenderArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Email/sender:Sender", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private Sender(String name, Output<String> id, @Nullable SenderState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Email/sender:Sender", name, state, makeResourceOptions(options, id));
+    }
+
+    private static SenderArgs makeArgs(SenderArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? SenderArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

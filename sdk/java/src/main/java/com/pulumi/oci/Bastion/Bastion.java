@@ -373,11 +373,18 @@ public class Bastion extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public Bastion(String name, BastionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Bastion/bastion:Bastion", name, args == null ? BastionArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Bastion/bastion:Bastion", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private Bastion(String name, Output<String> id, @Nullable BastionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Bastion/bastion:Bastion", name, state, makeResourceOptions(options, id));
+    }
+
+    private static BastionArgs makeArgs(BastionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? BastionArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

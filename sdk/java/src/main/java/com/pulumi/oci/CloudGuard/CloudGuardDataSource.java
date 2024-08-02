@@ -319,11 +319,18 @@ public class CloudGuardDataSource extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public CloudGuardDataSource(String name, CloudGuardDataSourceArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:CloudGuard/cloudGuardDataSource:CloudGuardDataSource", name, args == null ? CloudGuardDataSourceArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:CloudGuard/cloudGuardDataSource:CloudGuardDataSource", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private CloudGuardDataSource(String name, Output<String> id, @Nullable CloudGuardDataSourceState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:CloudGuard/cloudGuardDataSource:CloudGuardDataSource", name, state, makeResourceOptions(options, id));
+    }
+
+    private static CloudGuardDataSourceArgs makeArgs(CloudGuardDataSourceArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? CloudGuardDataSourceArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

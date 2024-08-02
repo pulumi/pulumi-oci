@@ -385,11 +385,18 @@ public class MaskingPolicy extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public MaskingPolicy(String name, MaskingPolicyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/maskingPolicy:MaskingPolicy", name, args == null ? MaskingPolicyArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DataSafe/maskingPolicy:MaskingPolicy", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private MaskingPolicy(String name, Output<String> id, @Nullable MaskingPolicyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DataSafe/maskingPolicy:MaskingPolicy", name, state, makeResourceOptions(options, id));
+    }
+
+    private static MaskingPolicyArgs makeArgs(MaskingPolicyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? MaskingPolicyArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

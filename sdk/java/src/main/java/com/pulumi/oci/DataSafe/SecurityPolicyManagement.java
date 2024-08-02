@@ -106,11 +106,18 @@ public class SecurityPolicyManagement extends com.pulumi.resources.CustomResourc
      * @param options A bag of options that control this resource's behavior.
      */
     public SecurityPolicyManagement(String name, @Nullable SecurityPolicyManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/securityPolicyManagement:SecurityPolicyManagement", name, args == null ? SecurityPolicyManagementArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DataSafe/securityPolicyManagement:SecurityPolicyManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private SecurityPolicyManagement(String name, Output<String> id, @Nullable SecurityPolicyManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DataSafe/securityPolicyManagement:SecurityPolicyManagement", name, state, makeResourceOptions(options, id));
+    }
+
+    private static SecurityPolicyManagementArgs makeArgs(@Nullable SecurityPolicyManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? SecurityPolicyManagementArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

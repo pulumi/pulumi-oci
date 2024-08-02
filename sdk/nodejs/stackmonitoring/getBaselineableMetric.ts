@@ -88,6 +88,10 @@ export interface GetBaselineableMetricResult {
      */
     readonly resourceGroup: string;
     /**
+     * Resource type of the metric
+     */
+    readonly resourceType: string;
+    /**
      * The current lifecycle state of the metric extension
      */
     readonly state: string;

@@ -220,11 +220,18 @@ public class LibraryMasingFormat extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public LibraryMasingFormat(String name, LibraryMasingFormatArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/libraryMasingFormat:LibraryMasingFormat", name, args == null ? LibraryMasingFormatArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DataSafe/libraryMasingFormat:LibraryMasingFormat", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private LibraryMasingFormat(String name, Output<String> id, @Nullable LibraryMasingFormatState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DataSafe/libraryMasingFormat:LibraryMasingFormat", name, state, makeResourceOptions(options, id));
+    }
+
+    private static LibraryMasingFormatArgs makeArgs(LibraryMasingFormatArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? LibraryMasingFormatArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

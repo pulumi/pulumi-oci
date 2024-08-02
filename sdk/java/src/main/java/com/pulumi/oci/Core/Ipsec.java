@@ -324,11 +324,18 @@ public class Ipsec extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public Ipsec(String name, IpsecArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/ipsec:Ipsec", name, args == null ? IpsecArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Core/ipsec:Ipsec", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private Ipsec(String name, Output<String> id, @Nullable IpsecState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Core/ipsec:Ipsec", name, state, makeResourceOptions(options, id));
+    }
+
+    private static IpsecArgs makeArgs(IpsecArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? IpsecArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

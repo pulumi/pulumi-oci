@@ -23,7 +23,7 @@ class GetBaselineableMetricsResult:
     """
     A collection of values returned by getBaselineableMetrics.
     """
-    def __init__(__self__, baselineable_metric_id=None, baselineable_metric_summary_collections=None, compartment_id=None, filters=None, id=None, metric_namespace=None, name=None, resource_group=None):
+    def __init__(__self__, baselineable_metric_id=None, baselineable_metric_summary_collections=None, compartment_id=None, filters=None, id=None, is_out_of_box=None, metric_namespace=None, name=None, resource_group=None, resource_type=None):
         if baselineable_metric_id and not isinstance(baselineable_metric_id, str):
             raise TypeError("Expected argument 'baselineable_metric_id' to be a str")
         pulumi.set(__self__, "baselineable_metric_id", baselineable_metric_id)
@@ -39,6 +39,9 @@ class GetBaselineableMetricsResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_out_of_box and not isinstance(is_out_of_box, bool):
+            raise TypeError("Expected argument 'is_out_of_box' to be a bool")
+        pulumi.set(__self__, "is_out_of_box", is_out_of_box)
         if metric_namespace and not isinstance(metric_namespace, str):
             raise TypeError("Expected argument 'metric_namespace' to be a str")
         pulumi.set(__self__, "metric_namespace", metric_namespace)
@@ -48,6 +51,9 @@ class GetBaselineableMetricsResult:
         if resource_group and not isinstance(resource_group, str):
             raise TypeError("Expected argument 'resource_group' to be a str")
         pulumi.set(__self__, "resource_group", resource_group)
+        if resource_type and not isinstance(resource_type, str):
+            raise TypeError("Expected argument 'resource_type' to be a str")
+        pulumi.set(__self__, "resource_type", resource_type)
 
     @property
     @pulumi.getter(name="baselineableMetricId")
@@ -84,6 +90,14 @@ class GetBaselineableMetricsResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isOutOfBox")
+    def is_out_of_box(self) -> Optional[bool]:
+        """
+        Is the metric created out of box, default false
+        """
+        return pulumi.get(self, "is_out_of_box")
+
+    @property
     @pulumi.getter(name="metricNamespace")
     def metric_namespace(self) -> Optional[str]:
         return pulumi.get(self, "metric_namespace")
@@ -104,6 +118,14 @@ class GetBaselineableMetricsResult:
         """
         return pulumi.get(self, "resource_group")
 
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[str]:
+        """
+        Resource type of the metric
+        """
+        return pulumi.get(self, "resource_type")
+
 
 class AwaitableGetBaselineableMetricsResult(GetBaselineableMetricsResult):
     # pylint: disable=using-constant-test
@@ -116,17 +138,21 @@ class AwaitableGetBaselineableMetricsResult(GetBaselineableMetricsResult):
             compartment_id=self.compartment_id,
             filters=self.filters,
             id=self.id,
+            is_out_of_box=self.is_out_of_box,
             metric_namespace=self.metric_namespace,
             name=self.name,
-            resource_group=self.resource_group)
+            resource_group=self.resource_group,
+            resource_type=self.resource_type)
 
 
 def get_baselineable_metrics(baselineable_metric_id: Optional[str] = None,
                              compartment_id: Optional[str] = None,
                              filters: Optional[Sequence[pulumi.InputType['GetBaselineableMetricsFilterArgs']]] = None,
+                             is_out_of_box: Optional[bool] = None,
                              metric_namespace: Optional[str] = None,
                              name: Optional[str] = None,
                              resource_group: Optional[str] = None,
+                             resource_type: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBaselineableMetricsResult:
     """
     This data source provides the list of Baselineable Metrics in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -141,25 +167,31 @@ def get_baselineable_metrics(baselineable_metric_id: Optional[str] = None,
 
     test_baselineable_metrics = oci.StackMonitoring.get_baselineable_metrics(baselineable_metric_id=test_baselineable_metric["id"],
         compartment_id=compartment_id,
+        is_out_of_box=baselineable_metric_is_out_of_box,
         metric_namespace=baselineable_metric_metric_namespace,
         name=baselineable_metric_name,
-        resource_group=baselineable_metric_resource_group)
+        resource_group=baselineable_metric_resource_group,
+        resource_type=baselineable_metric_resource_type)
     ```
 
 
     :param str baselineable_metric_id: Identifier for the metric
     :param str compartment_id: The ID of the compartment in which data is listed.
+    :param bool is_out_of_box: Is the baseline enabled metric defined out of box by Oracle or by end-user
     :param str metric_namespace: A filter to return monitored resource types that has the matching namespace.
     :param str name: Metric Name
     :param str resource_group: Resource Group
+    :param str resource_type: Resource Type
     """
     __args__ = dict()
     __args__['baselineableMetricId'] = baselineable_metric_id
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
+    __args__['isOutOfBox'] = is_out_of_box
     __args__['metricNamespace'] = metric_namespace
     __args__['name'] = name
     __args__['resourceGroup'] = resource_group
+    __args__['resourceType'] = resource_type
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:StackMonitoring/getBaselineableMetrics:getBaselineableMetrics', __args__, opts=opts, typ=GetBaselineableMetricsResult).value
 
@@ -169,18 +201,22 @@ def get_baselineable_metrics(baselineable_metric_id: Optional[str] = None,
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
+        is_out_of_box=pulumi.get(__ret__, 'is_out_of_box'),
         metric_namespace=pulumi.get(__ret__, 'metric_namespace'),
         name=pulumi.get(__ret__, 'name'),
-        resource_group=pulumi.get(__ret__, 'resource_group'))
+        resource_group=pulumi.get(__ret__, 'resource_group'),
+        resource_type=pulumi.get(__ret__, 'resource_type'))
 
 
 @_utilities.lift_output_func(get_baselineable_metrics)
 def get_baselineable_metrics_output(baselineable_metric_id: Optional[pulumi.Input[Optional[str]]] = None,
                                     compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                     filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetBaselineableMetricsFilterArgs']]]]] = None,
+                                    is_out_of_box: Optional[pulumi.Input[Optional[bool]]] = None,
                                     metric_namespace: Optional[pulumi.Input[Optional[str]]] = None,
                                     name: Optional[pulumi.Input[Optional[str]]] = None,
                                     resource_group: Optional[pulumi.Input[Optional[str]]] = None,
+                                    resource_type: Optional[pulumi.Input[Optional[str]]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBaselineableMetricsResult]:
     """
     This data source provides the list of Baselineable Metrics in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -195,16 +231,20 @@ def get_baselineable_metrics_output(baselineable_metric_id: Optional[pulumi.Inpu
 
     test_baselineable_metrics = oci.StackMonitoring.get_baselineable_metrics(baselineable_metric_id=test_baselineable_metric["id"],
         compartment_id=compartment_id,
+        is_out_of_box=baselineable_metric_is_out_of_box,
         metric_namespace=baselineable_metric_metric_namespace,
         name=baselineable_metric_name,
-        resource_group=baselineable_metric_resource_group)
+        resource_group=baselineable_metric_resource_group,
+        resource_type=baselineable_metric_resource_type)
     ```
 
 
     :param str baselineable_metric_id: Identifier for the metric
     :param str compartment_id: The ID of the compartment in which data is listed.
+    :param bool is_out_of_box: Is the baseline enabled metric defined out of box by Oracle or by end-user
     :param str metric_namespace: A filter to return monitored resource types that has the matching namespace.
     :param str name: Metric Name
     :param str resource_group: Resource Group
+    :param str resource_type: Resource Type
     """
     ...

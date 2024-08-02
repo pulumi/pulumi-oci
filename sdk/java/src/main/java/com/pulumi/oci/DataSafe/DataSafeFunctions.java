@@ -1124,8 +1124,7 @@ public final class DataSafeFunctions {
     /**
      * This data source provides details about a specific Alert Policy Rule resource in Oracle Cloud Infrastructure Data Safe service.
      * 
-     * Lists the rules of the specified alert policy. The alert policy is said to be satisfied when all rules in the policy evaulate to true.
-     * If there are three rules: rule1,rule2 and rule3, the policy is satisfied if rule1 AND rule2 AND rule3 is True.
+     * Gets the details of a policy rule by its key.
      * 
      * ## Example Usage
      * 
@@ -1154,6 +1153,7 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAlertPolicyRule = DataSafeFunctions.getAlertPolicyRule(GetAlertPolicyRuleArgs.builder()
      *             .alertPolicyId(testAlertPolicy.id())
+     *             .ruleKey(alertPolicyRuleRuleKey)
      *             .build());
      * 
      *     }
@@ -1169,8 +1169,7 @@ public final class DataSafeFunctions {
     /**
      * This data source provides details about a specific Alert Policy Rule resource in Oracle Cloud Infrastructure Data Safe service.
      * 
-     * Lists the rules of the specified alert policy. The alert policy is said to be satisfied when all rules in the policy evaulate to true.
-     * If there are three rules: rule1,rule2 and rule3, the policy is satisfied if rule1 AND rule2 AND rule3 is True.
+     * Gets the details of a policy rule by its key.
      * 
      * ## Example Usage
      * 
@@ -1199,6 +1198,7 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAlertPolicyRule = DataSafeFunctions.getAlertPolicyRule(GetAlertPolicyRuleArgs.builder()
      *             .alertPolicyId(testAlertPolicy.id())
+     *             .ruleKey(alertPolicyRuleRuleKey)
      *             .build());
      * 
      *     }
@@ -1214,8 +1214,7 @@ public final class DataSafeFunctions {
     /**
      * This data source provides details about a specific Alert Policy Rule resource in Oracle Cloud Infrastructure Data Safe service.
      * 
-     * Lists the rules of the specified alert policy. The alert policy is said to be satisfied when all rules in the policy evaulate to true.
-     * If there are three rules: rule1,rule2 and rule3, the policy is satisfied if rule1 AND rule2 AND rule3 is True.
+     * Gets the details of a policy rule by its key.
      * 
      * ## Example Usage
      * 
@@ -1244,6 +1243,7 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAlertPolicyRule = DataSafeFunctions.getAlertPolicyRule(GetAlertPolicyRuleArgs.builder()
      *             .alertPolicyId(testAlertPolicy.id())
+     *             .ruleKey(alertPolicyRuleRuleKey)
      *             .build());
      * 
      *     }
@@ -1259,8 +1259,7 @@ public final class DataSafeFunctions {
     /**
      * This data source provides details about a specific Alert Policy Rule resource in Oracle Cloud Infrastructure Data Safe service.
      * 
-     * Lists the rules of the specified alert policy. The alert policy is said to be satisfied when all rules in the policy evaulate to true.
-     * If there are three rules: rule1,rule2 and rule3, the policy is satisfied if rule1 AND rule2 AND rule3 is True.
+     * Gets the details of a policy rule by its key.
      * 
      * ## Example Usage
      * 
@@ -1289,6 +1288,7 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAlertPolicyRule = DataSafeFunctions.getAlertPolicyRule(GetAlertPolicyRuleArgs.builder()
      *             .alertPolicyId(testAlertPolicy.id())
+     *             .ruleKey(alertPolicyRuleRuleKey)
      *             .build());
      * 
      *     }

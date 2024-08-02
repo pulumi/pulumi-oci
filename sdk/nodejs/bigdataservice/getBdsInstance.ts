@@ -93,6 +93,7 @@ export interface GetBdsInstanceResult {
      * The OCID of the Big Data Service resource.
      */
     readonly id: string;
+    readonly ignoreExistingNodesShapes: string[];
     /**
      * Boolean flag specifying whether or not Cloud SQL should be configured.
      */

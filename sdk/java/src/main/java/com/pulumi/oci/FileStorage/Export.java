@@ -236,11 +236,18 @@ public class Export extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public Export(String name, ExportArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:FileStorage/export:Export", name, args == null ? ExportArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:FileStorage/export:Export", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private Export(String name, Output<String> id, @Nullable ExportState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:FileStorage/export:Export", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ExportArgs makeArgs(ExportArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ExportArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

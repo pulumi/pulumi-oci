@@ -14,9 +14,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// This data source provides details about a specific Alert Policy Rule resource in Oracle Cloud Infrastructure Data Safe service.
         /// 
-        /// Lists the rules of the specified alert policy. The alert policy is said to be satisfied when all rules in the policy evaulate to true.
-        /// If there are three rules: rule1,rule2 and rule3, the policy is satisfied if rule1 AND rule2 AND rule3 is True.
-        /// 
+        /// Gets the details of a policy rule by its key.
         /// 
         /// ## Example Usage
         /// 
@@ -31,6 +29,7 @@ namespace Pulumi.Oci.DataSafe
         ///     var testAlertPolicyRule = Oci.DataSafe.GetAlertPolicyRule.Invoke(new()
         ///     {
         ///         AlertPolicyId = testAlertPolicy.Id,
+        ///         RuleKey = alertPolicyRuleRuleKey,
         ///     });
         /// 
         /// });
@@ -42,9 +41,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// This data source provides details about a specific Alert Policy Rule resource in Oracle Cloud Infrastructure Data Safe service.
         /// 
-        /// Lists the rules of the specified alert policy. The alert policy is said to be satisfied when all rules in the policy evaulate to true.
-        /// If there are three rules: rule1,rule2 and rule3, the policy is satisfied if rule1 AND rule2 AND rule3 is True.
-        /// 
+        /// Gets the details of a policy rule by its key.
         /// 
         /// ## Example Usage
         /// 
@@ -59,6 +56,7 @@ namespace Pulumi.Oci.DataSafe
         ///     var testAlertPolicyRule = Oci.DataSafe.GetAlertPolicyRule.Invoke(new()
         ///     {
         ///         AlertPolicyId = testAlertPolicy.Id,
+        ///         RuleKey = alertPolicyRuleRuleKey,
         ///     });
         /// 
         /// });
@@ -77,6 +75,12 @@ namespace Pulumi.Oci.DataSafe
         [Input("alertPolicyId", required: true)]
         public string AlertPolicyId { get; set; } = null!;
 
+        /// <summary>
+        /// The key of the alert policy rule.
+        /// </summary>
+        [Input("ruleKey", required: true)]
+        public string RuleKey { get; set; } = null!;
+
         public GetAlertPolicyRuleArgs()
         {
         }
@@ -91,6 +95,12 @@ namespace Pulumi.Oci.DataSafe
         [Input("alertPolicyId", required: true)]
         public Input<string> AlertPolicyId { get; set; } = null!;
 
+        /// <summary>
+        /// The key of the alert policy rule.
+        /// </summary>
+        [Input("ruleKey", required: true)]
+        public Input<string> RuleKey { get; set; } = null!;
+
         public GetAlertPolicyRuleInvokeArgs()
         {
         }
@@ -103,25 +113,61 @@ namespace Pulumi.Oci.DataSafe
     {
         public readonly string AlertPolicyId;
         /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
+        /// Describes the alert policy rule.
         /// </summary>
+        public readonly string Description;
+        /// <summary>
+        /// The display name of the alert policy rule.
+        /// </summary>
+        public readonly string DisplayName;
+        /// <summary>
+        /// The conditional expression of the alert policy rule which evaluates to boolean value.
+        /// </summary>
+        public readonly string Expression;
         public readonly string Id;
         /// <summary>
-        /// Array of alert policy rules summary
+        /// The unique key of the alert policy rule.
         /// </summary>
-        public readonly ImmutableArray<Outputs.GetAlertPolicyRuleItemResult> Items;
+        public readonly string Key;
+        public readonly string RuleKey;
+        /// <summary>
+        /// The current state of the alert policy rule.
+        /// </summary>
+        public readonly string State;
+        /// <summary>
+        /// Creation date and time of the alert policy rule, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        /// </summary>
+        public readonly string TimeCreated;
 
         [OutputConstructor]
         private GetAlertPolicyRuleResult(
             string alertPolicyId,
 
+            string description,
+
+            string displayName,
+
+            string expression,
+
             string id,
 
-            ImmutableArray<Outputs.GetAlertPolicyRuleItemResult> items)
+            string key,
+
+            string ruleKey,
+
+            string state,
+
+            string timeCreated)
         {
             AlertPolicyId = alertPolicyId;
+            Description = description;
+            DisplayName = displayName;
+            Expression = expression;
             Id = id;
-            Items = items;
+            Key = key;
+            RuleKey = ruleKey;
+            State = state;
+            TimeCreated = timeCreated;
         }
     }
 }

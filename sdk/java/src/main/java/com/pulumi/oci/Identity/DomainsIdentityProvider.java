@@ -2166,11 +2166,18 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * @param options A bag of options that control this resource's behavior.
      */
     public DomainsIdentityProvider(String name, DomainsIdentityProviderArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsIdentityProvider:DomainsIdentityProvider", name, args == null ? DomainsIdentityProviderArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Identity/domainsIdentityProvider:DomainsIdentityProvider", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DomainsIdentityProvider(String name, Output<String> id, @Nullable DomainsIdentityProviderState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Identity/domainsIdentityProvider:DomainsIdentityProvider", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DomainsIdentityProviderArgs makeArgs(DomainsIdentityProviderArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DomainsIdentityProviderArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

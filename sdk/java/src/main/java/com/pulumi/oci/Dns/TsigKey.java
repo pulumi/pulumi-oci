@@ -250,11 +250,18 @@ public class TsigKey extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public TsigKey(String name, TsigKeyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Dns/tsigKey:TsigKey", name, args == null ? TsigKeyArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Dns/tsigKey:TsigKey", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private TsigKey(String name, Output<String> id, @Nullable TsigKeyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Dns/tsigKey:TsigKey", name, state, makeResourceOptions(options, id));
+    }
+
+    private static TsigKeyArgs makeArgs(TsigKeyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? TsigKeyArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

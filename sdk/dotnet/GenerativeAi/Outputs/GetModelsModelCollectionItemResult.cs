@@ -13,6 +13,9 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
     [OutputType]
     public sealed class GetModelsModelCollectionItemResult
     {
+        /// <summary>
+        /// The OCID of the base model that's used for fine-tuning. For pretrained models, the value is null.
+        /// </summary>
         public readonly string BaseModelId;
         /// <summary>
         /// Describes what this model can be used for.
@@ -22,38 +25,59 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         /// </summary>
         public readonly string CompartmentId;
-        /// <summary>
-        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
+        /// <summary>
+        /// An optional description of the model.
+        /// </summary>
         public readonly string Description;
         /// <summary>
         /// A filter to return only resources that match the given display name exactly.
         /// </summary>
         public readonly string DisplayName;
+        /// <summary>
+        /// Details about fine-tuning a custom model.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetModelsModelCollectionItemFineTuneDetailResult> FineTuneDetails;
+        /// <summary>
+        /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
         /// The ID of the model.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// Whether a model is supported long-term. Only applicable to base models.
+        /// </summary>
         public readonly bool IsLongTermSupported;
+        /// <summary>
+        /// A message describing the current state of the model in more detail that can provide actionable information.
+        /// </summary>
         public readonly string LifecycleDetails;
+        /// <summary>
+        /// Model metrics during the creation of a new model.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetModelsModelCollectionItemModelMetricResult> ModelMetrics;
         /// <summary>
         /// A filter to return only resources their lifecycleState matches the given lifecycleState.
         /// </summary>
         public readonly string State;
+        /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
+        /// <summary>
+        /// The date and time that the model was created in the format of an RFC3339 datetime string.
+        /// </summary>
         public readonly string TimeCreated;
         /// <summary>
         /// Corresponds to the time when the custom model and its associated foundation model will be deprecated.
         /// </summary>
         public readonly string TimeDeprecated;
-        public readonly string TimeUpdated;
         /// <summary>
-        /// The model type indicating whether this is a pretrained/base model or a custom/fine-tuned model.
+        /// The date and time that the model was updated in the format of an RFC3339 datetime string.
         /// </summary>
+        public readonly string TimeUpdated;
         public readonly string Type;
         /// <summary>
         /// A filter to return only resources that match the entire vendor given.

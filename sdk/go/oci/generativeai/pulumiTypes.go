@@ -1901,9 +1901,9 @@ type GetEndpointsEndpointCollectionItem struct {
 	CompartmentId            string                                                      `pulumi:"compartmentId"`
 	ContentModerationConfigs []GetEndpointsEndpointCollectionItemContentModerationConfig `pulumi:"contentModerationConfigs"`
 	DedicatedAiClusterId     string                                                      `pulumi:"dedicatedAiClusterId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	Description string                 `pulumi:"description"`
+	DefinedTags              map[string]interface{}                                      `pulumi:"definedTags"`
+	// An optional description of the endpoint.
+	Description string `pulumi:"description"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName  string                 `pulumi:"displayName"`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -1913,10 +1913,9 @@ type GetEndpointsEndpointCollectionItem struct {
 	// The OCID of the model that's used to create this endpoint.
 	ModelId string `pulumi:"modelId"`
 	// A filter to return only resources that their lifecycle state matches the given lifecycle state.
-	State      string                 `pulumi:"state"`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The date and time that the endpoint was created in the format of an RFC3339 datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	State       string                 `pulumi:"state"`
+	SystemTags  map[string]interface{} `pulumi:"systemTags"`
+	TimeCreated string                 `pulumi:"timeCreated"`
 	// The date and time that the endpoint was updated in the format of an RFC3339 datetime string.
 	TimeUpdated string `pulumi:"timeUpdated"`
 }
@@ -1937,8 +1936,8 @@ type GetEndpointsEndpointCollectionItemArgs struct {
 	CompartmentId            pulumi.StringInput                                                  `pulumi:"compartmentId"`
 	ContentModerationConfigs GetEndpointsEndpointCollectionItemContentModerationConfigArrayInput `pulumi:"contentModerationConfigs"`
 	DedicatedAiClusterId     pulumi.StringInput                                                  `pulumi:"dedicatedAiClusterId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput    `pulumi:"definedTags"`
+	DefinedTags              pulumi.MapInput                                                     `pulumi:"definedTags"`
+	// An optional description of the endpoint.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName  pulumi.StringInput `pulumi:"displayName"`
@@ -1949,9 +1948,8 @@ type GetEndpointsEndpointCollectionItemArgs struct {
 	// The OCID of the model that's used to create this endpoint.
 	ModelId pulumi.StringInput `pulumi:"modelId"`
 	// A filter to return only resources that their lifecycle state matches the given lifecycle state.
-	State      pulumi.StringInput `pulumi:"state"`
-	SystemTags pulumi.MapInput    `pulumi:"systemTags"`
-	// The date and time that the endpoint was created in the format of an RFC3339 datetime string.
+	State       pulumi.StringInput `pulumi:"state"`
+	SystemTags  pulumi.MapInput    `pulumi:"systemTags"`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time that the endpoint was updated in the format of an RFC3339 datetime string.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
@@ -2023,11 +2021,11 @@ func (o GetEndpointsEndpointCollectionItemOutput) DedicatedAiClusterId() pulumi.
 	return o.ApplyT(func(v GetEndpointsEndpointCollectionItem) string { return v.DedicatedAiClusterId }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 func (o GetEndpointsEndpointCollectionItemOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetEndpointsEndpointCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
+// An optional description of the endpoint.
 func (o GetEndpointsEndpointCollectionItemOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEndpointsEndpointCollectionItem) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -2064,7 +2062,6 @@ func (o GetEndpointsEndpointCollectionItemOutput) SystemTags() pulumi.MapOutput 
 	return o.ApplyT(func(v GetEndpointsEndpointCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// The date and time that the endpoint was created in the format of an RFC3339 datetime string.
 func (o GetEndpointsEndpointCollectionItemOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEndpointsEndpointCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
@@ -2295,9 +2292,12 @@ func (o GetEndpointsFilterArrayOutput) Index(i pulumi.IntInput) GetEndpointsFilt
 }
 
 type GetModelFineTuneDetail struct {
-	DedicatedAiClusterId string                                  `pulumi:"dedicatedAiClusterId"`
-	TrainingConfigs      []GetModelFineTuneDetailTrainingConfig  `pulumi:"trainingConfigs"`
-	TrainingDatasets     []GetModelFineTuneDetailTrainingDataset `pulumi:"trainingDatasets"`
+	// The OCID of the dedicated AI cluster this fine-tuning runs on.
+	DedicatedAiClusterId string `pulumi:"dedicatedAiClusterId"`
+	// The fine-tuning method and hyperparameters used for fine-tuning a custom model.
+	TrainingConfigs []GetModelFineTuneDetailTrainingConfig `pulumi:"trainingConfigs"`
+	// The dataset used to fine-tune the model.
+	TrainingDatasets []GetModelFineTuneDetailTrainingDataset `pulumi:"trainingDatasets"`
 }
 
 // GetModelFineTuneDetailInput is an input type that accepts GetModelFineTuneDetailArgs and GetModelFineTuneDetailOutput values.
@@ -2312,9 +2312,12 @@ type GetModelFineTuneDetailInput interface {
 }
 
 type GetModelFineTuneDetailArgs struct {
-	DedicatedAiClusterId pulumi.StringInput                              `pulumi:"dedicatedAiClusterId"`
-	TrainingConfigs      GetModelFineTuneDetailTrainingConfigArrayInput  `pulumi:"trainingConfigs"`
-	TrainingDatasets     GetModelFineTuneDetailTrainingDatasetArrayInput `pulumi:"trainingDatasets"`
+	// The OCID of the dedicated AI cluster this fine-tuning runs on.
+	DedicatedAiClusterId pulumi.StringInput `pulumi:"dedicatedAiClusterId"`
+	// The fine-tuning method and hyperparameters used for fine-tuning a custom model.
+	TrainingConfigs GetModelFineTuneDetailTrainingConfigArrayInput `pulumi:"trainingConfigs"`
+	// The dataset used to fine-tune the model.
+	TrainingDatasets GetModelFineTuneDetailTrainingDatasetArrayInput `pulumi:"trainingDatasets"`
 }
 
 func (GetModelFineTuneDetailArgs) ElementType() reflect.Type {
@@ -2368,14 +2371,17 @@ func (o GetModelFineTuneDetailOutput) ToGetModelFineTuneDetailOutputWithContext(
 	return o
 }
 
+// The OCID of the dedicated AI cluster this fine-tuning runs on.
 func (o GetModelFineTuneDetailOutput) DedicatedAiClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelFineTuneDetail) string { return v.DedicatedAiClusterId }).(pulumi.StringOutput)
 }
 
+// The fine-tuning method and hyperparameters used for fine-tuning a custom model.
 func (o GetModelFineTuneDetailOutput) TrainingConfigs() GetModelFineTuneDetailTrainingConfigArrayOutput {
 	return o.ApplyT(func(v GetModelFineTuneDetail) []GetModelFineTuneDetailTrainingConfig { return v.TrainingConfigs }).(GetModelFineTuneDetailTrainingConfigArrayOutput)
 }
 
+// The dataset used to fine-tune the model.
 func (o GetModelFineTuneDetailOutput) TrainingDatasets() GetModelFineTuneDetailTrainingDatasetArrayOutput {
 	return o.ApplyT(func(v GetModelFineTuneDetail) []GetModelFineTuneDetailTrainingDataset { return v.TrainingDatasets }).(GetModelFineTuneDetailTrainingDatasetArrayOutput)
 }
@@ -2401,17 +2407,28 @@ func (o GetModelFineTuneDetailArrayOutput) Index(i pulumi.IntInput) GetModelFine
 }
 
 type GetModelFineTuneDetailTrainingConfig struct {
-	EarlyStoppingPatience          int     `pulumi:"earlyStoppingPatience"`
-	EarlyStoppingThreshold         float64 `pulumi:"earlyStoppingThreshold"`
-	LearningRate                   float64 `pulumi:"learningRate"`
-	LogModelMetricsIntervalInSteps int     `pulumi:"logModelMetricsIntervalInSteps"`
-	LoraAlpha                      int     `pulumi:"loraAlpha"`
-	LoraDropout                    float64 `pulumi:"loraDropout"`
-	LoraR                          int     `pulumi:"loraR"`
-	NumOfLastLayers                int     `pulumi:"numOfLastLayers"`
-	TotalTrainingEpochs            int     `pulumi:"totalTrainingEpochs"`
-	TrainingBatchSize              int     `pulumi:"trainingBatchSize"`
-	TrainingConfigType             string  `pulumi:"trainingConfigType"`
+	// Stop training if the loss metric does not improve beyond 'early_stopping_threshold' for this many times of evaluation.
+	EarlyStoppingPatience int `pulumi:"earlyStoppingPatience"`
+	// How much the loss must improve to prevent early stopping.
+	EarlyStoppingThreshold float64 `pulumi:"earlyStoppingThreshold"`
+	// The initial learning rate to be used during training
+	LearningRate float64 `pulumi:"learningRate"`
+	// Determines how frequently to log model metrics.
+	LogModelMetricsIntervalInSteps int `pulumi:"logModelMetricsIntervalInSteps"`
+	// This parameter represents the scaling factor for the weight matrices in LoRA.
+	LoraAlpha int `pulumi:"loraAlpha"`
+	// This parameter indicates the dropout probability for LoRA layers.
+	LoraDropout float64 `pulumi:"loraDropout"`
+	// This parameter represents the LoRA rank of the update matrices.
+	LoraR int `pulumi:"loraR"`
+	// The number of last layers to be fine-tuned.
+	NumOfLastLayers int `pulumi:"numOfLastLayers"`
+	// The maximum number of training epochs to run for.
+	TotalTrainingEpochs int `pulumi:"totalTrainingEpochs"`
+	// The batch size used during training.
+	TrainingBatchSize int `pulumi:"trainingBatchSize"`
+	// The fine-tuning method for training a custom model.
+	TrainingConfigType string `pulumi:"trainingConfigType"`
 }
 
 // GetModelFineTuneDetailTrainingConfigInput is an input type that accepts GetModelFineTuneDetailTrainingConfigArgs and GetModelFineTuneDetailTrainingConfigOutput values.
@@ -2426,17 +2443,28 @@ type GetModelFineTuneDetailTrainingConfigInput interface {
 }
 
 type GetModelFineTuneDetailTrainingConfigArgs struct {
-	EarlyStoppingPatience          pulumi.IntInput     `pulumi:"earlyStoppingPatience"`
-	EarlyStoppingThreshold         pulumi.Float64Input `pulumi:"earlyStoppingThreshold"`
-	LearningRate                   pulumi.Float64Input `pulumi:"learningRate"`
-	LogModelMetricsIntervalInSteps pulumi.IntInput     `pulumi:"logModelMetricsIntervalInSteps"`
-	LoraAlpha                      pulumi.IntInput     `pulumi:"loraAlpha"`
-	LoraDropout                    pulumi.Float64Input `pulumi:"loraDropout"`
-	LoraR                          pulumi.IntInput     `pulumi:"loraR"`
-	NumOfLastLayers                pulumi.IntInput     `pulumi:"numOfLastLayers"`
-	TotalTrainingEpochs            pulumi.IntInput     `pulumi:"totalTrainingEpochs"`
-	TrainingBatchSize              pulumi.IntInput     `pulumi:"trainingBatchSize"`
-	TrainingConfigType             pulumi.StringInput  `pulumi:"trainingConfigType"`
+	// Stop training if the loss metric does not improve beyond 'early_stopping_threshold' for this many times of evaluation.
+	EarlyStoppingPatience pulumi.IntInput `pulumi:"earlyStoppingPatience"`
+	// How much the loss must improve to prevent early stopping.
+	EarlyStoppingThreshold pulumi.Float64Input `pulumi:"earlyStoppingThreshold"`
+	// The initial learning rate to be used during training
+	LearningRate pulumi.Float64Input `pulumi:"learningRate"`
+	// Determines how frequently to log model metrics.
+	LogModelMetricsIntervalInSteps pulumi.IntInput `pulumi:"logModelMetricsIntervalInSteps"`
+	// This parameter represents the scaling factor for the weight matrices in LoRA.
+	LoraAlpha pulumi.IntInput `pulumi:"loraAlpha"`
+	// This parameter indicates the dropout probability for LoRA layers.
+	LoraDropout pulumi.Float64Input `pulumi:"loraDropout"`
+	// This parameter represents the LoRA rank of the update matrices.
+	LoraR pulumi.IntInput `pulumi:"loraR"`
+	// The number of last layers to be fine-tuned.
+	NumOfLastLayers pulumi.IntInput `pulumi:"numOfLastLayers"`
+	// The maximum number of training epochs to run for.
+	TotalTrainingEpochs pulumi.IntInput `pulumi:"totalTrainingEpochs"`
+	// The batch size used during training.
+	TrainingBatchSize pulumi.IntInput `pulumi:"trainingBatchSize"`
+	// The fine-tuning method for training a custom model.
+	TrainingConfigType pulumi.StringInput `pulumi:"trainingConfigType"`
 }
 
 func (GetModelFineTuneDetailTrainingConfigArgs) ElementType() reflect.Type {
@@ -2490,46 +2518,57 @@ func (o GetModelFineTuneDetailTrainingConfigOutput) ToGetModelFineTuneDetailTrai
 	return o
 }
 
+// Stop training if the loss metric does not improve beyond 'early_stopping_threshold' for this many times of evaluation.
 func (o GetModelFineTuneDetailTrainingConfigOutput) EarlyStoppingPatience() pulumi.IntOutput {
 	return o.ApplyT(func(v GetModelFineTuneDetailTrainingConfig) int { return v.EarlyStoppingPatience }).(pulumi.IntOutput)
 }
 
+// How much the loss must improve to prevent early stopping.
 func (o GetModelFineTuneDetailTrainingConfigOutput) EarlyStoppingThreshold() pulumi.Float64Output {
 	return o.ApplyT(func(v GetModelFineTuneDetailTrainingConfig) float64 { return v.EarlyStoppingThreshold }).(pulumi.Float64Output)
 }
 
+// The initial learning rate to be used during training
 func (o GetModelFineTuneDetailTrainingConfigOutput) LearningRate() pulumi.Float64Output {
 	return o.ApplyT(func(v GetModelFineTuneDetailTrainingConfig) float64 { return v.LearningRate }).(pulumi.Float64Output)
 }
 
+// Determines how frequently to log model metrics.
 func (o GetModelFineTuneDetailTrainingConfigOutput) LogModelMetricsIntervalInSteps() pulumi.IntOutput {
 	return o.ApplyT(func(v GetModelFineTuneDetailTrainingConfig) int { return v.LogModelMetricsIntervalInSteps }).(pulumi.IntOutput)
 }
 
+// This parameter represents the scaling factor for the weight matrices in LoRA.
 func (o GetModelFineTuneDetailTrainingConfigOutput) LoraAlpha() pulumi.IntOutput {
 	return o.ApplyT(func(v GetModelFineTuneDetailTrainingConfig) int { return v.LoraAlpha }).(pulumi.IntOutput)
 }
 
+// This parameter indicates the dropout probability for LoRA layers.
 func (o GetModelFineTuneDetailTrainingConfigOutput) LoraDropout() pulumi.Float64Output {
 	return o.ApplyT(func(v GetModelFineTuneDetailTrainingConfig) float64 { return v.LoraDropout }).(pulumi.Float64Output)
 }
 
+// This parameter represents the LoRA rank of the update matrices.
 func (o GetModelFineTuneDetailTrainingConfigOutput) LoraR() pulumi.IntOutput {
 	return o.ApplyT(func(v GetModelFineTuneDetailTrainingConfig) int { return v.LoraR }).(pulumi.IntOutput)
 }
 
+// The number of last layers to be fine-tuned.
 func (o GetModelFineTuneDetailTrainingConfigOutput) NumOfLastLayers() pulumi.IntOutput {
 	return o.ApplyT(func(v GetModelFineTuneDetailTrainingConfig) int { return v.NumOfLastLayers }).(pulumi.IntOutput)
 }
 
+// The maximum number of training epochs to run for.
 func (o GetModelFineTuneDetailTrainingConfigOutput) TotalTrainingEpochs() pulumi.IntOutput {
 	return o.ApplyT(func(v GetModelFineTuneDetailTrainingConfig) int { return v.TotalTrainingEpochs }).(pulumi.IntOutput)
 }
 
+// The batch size used during training.
 func (o GetModelFineTuneDetailTrainingConfigOutput) TrainingBatchSize() pulumi.IntOutput {
 	return o.ApplyT(func(v GetModelFineTuneDetailTrainingConfig) int { return v.TrainingBatchSize }).(pulumi.IntOutput)
 }
 
+// The fine-tuning method for training a custom model.
 func (o GetModelFineTuneDetailTrainingConfigOutput) TrainingConfigType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelFineTuneDetailTrainingConfig) string { return v.TrainingConfigType }).(pulumi.StringOutput)
 }
@@ -2555,10 +2594,14 @@ func (o GetModelFineTuneDetailTrainingConfigArrayOutput) Index(i pulumi.IntInput
 }
 
 type GetModelFineTuneDetailTrainingDataset struct {
-	Bucket      string `pulumi:"bucket"`
+	// The Object Storage bucket name.
+	Bucket string `pulumi:"bucket"`
+	// The type of the data asset.
 	DatasetType string `pulumi:"datasetType"`
-	Namespace   string `pulumi:"namespace"`
-	Object      string `pulumi:"object"`
+	// The Object Storage namespace.
+	Namespace string `pulumi:"namespace"`
+	// The Object Storage object name.
+	Object string `pulumi:"object"`
 }
 
 // GetModelFineTuneDetailTrainingDatasetInput is an input type that accepts GetModelFineTuneDetailTrainingDatasetArgs and GetModelFineTuneDetailTrainingDatasetOutput values.
@@ -2573,10 +2616,14 @@ type GetModelFineTuneDetailTrainingDatasetInput interface {
 }
 
 type GetModelFineTuneDetailTrainingDatasetArgs struct {
-	Bucket      pulumi.StringInput `pulumi:"bucket"`
+	// The Object Storage bucket name.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The type of the data asset.
 	DatasetType pulumi.StringInput `pulumi:"datasetType"`
-	Namespace   pulumi.StringInput `pulumi:"namespace"`
-	Object      pulumi.StringInput `pulumi:"object"`
+	// The Object Storage namespace.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The Object Storage object name.
+	Object pulumi.StringInput `pulumi:"object"`
 }
 
 func (GetModelFineTuneDetailTrainingDatasetArgs) ElementType() reflect.Type {
@@ -2630,18 +2677,22 @@ func (o GetModelFineTuneDetailTrainingDatasetOutput) ToGetModelFineTuneDetailTra
 	return o
 }
 
+// The Object Storage bucket name.
 func (o GetModelFineTuneDetailTrainingDatasetOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelFineTuneDetailTrainingDataset) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
+// The type of the data asset.
 func (o GetModelFineTuneDetailTrainingDatasetOutput) DatasetType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelFineTuneDetailTrainingDataset) string { return v.DatasetType }).(pulumi.StringOutput)
 }
 
+// The Object Storage namespace.
 func (o GetModelFineTuneDetailTrainingDatasetOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelFineTuneDetailTrainingDataset) string { return v.Namespace }).(pulumi.StringOutput)
 }
 
+// The Object Storage object name.
 func (o GetModelFineTuneDetailTrainingDatasetOutput) Object() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelFineTuneDetailTrainingDataset) string { return v.Object }).(pulumi.StringOutput)
 }
@@ -2667,9 +2718,12 @@ func (o GetModelFineTuneDetailTrainingDatasetArrayOutput) Index(i pulumi.IntInpu
 }
 
 type GetModelModelMetric struct {
-	FinalAccuracy    float64 `pulumi:"finalAccuracy"`
-	FinalLoss        float64 `pulumi:"finalLoss"`
-	ModelMetricsType string  `pulumi:"modelMetricsType"`
+	// Fine-tuned model accuracy.
+	FinalAccuracy float64 `pulumi:"finalAccuracy"`
+	// Fine-tuned model loss.
+	FinalLoss float64 `pulumi:"finalLoss"`
+	// The type of the model metrics. Each type of model can expect a different set of model metrics.
+	ModelMetricsType string `pulumi:"modelMetricsType"`
 }
 
 // GetModelModelMetricInput is an input type that accepts GetModelModelMetricArgs and GetModelModelMetricOutput values.
@@ -2684,9 +2738,12 @@ type GetModelModelMetricInput interface {
 }
 
 type GetModelModelMetricArgs struct {
-	FinalAccuracy    pulumi.Float64Input `pulumi:"finalAccuracy"`
-	FinalLoss        pulumi.Float64Input `pulumi:"finalLoss"`
-	ModelMetricsType pulumi.StringInput  `pulumi:"modelMetricsType"`
+	// Fine-tuned model accuracy.
+	FinalAccuracy pulumi.Float64Input `pulumi:"finalAccuracy"`
+	// Fine-tuned model loss.
+	FinalLoss pulumi.Float64Input `pulumi:"finalLoss"`
+	// The type of the model metrics. Each type of model can expect a different set of model metrics.
+	ModelMetricsType pulumi.StringInput `pulumi:"modelMetricsType"`
 }
 
 func (GetModelModelMetricArgs) ElementType() reflect.Type {
@@ -2740,14 +2797,17 @@ func (o GetModelModelMetricOutput) ToGetModelModelMetricOutputWithContext(ctx co
 	return o
 }
 
+// Fine-tuned model accuracy.
 func (o GetModelModelMetricOutput) FinalAccuracy() pulumi.Float64Output {
 	return o.ApplyT(func(v GetModelModelMetric) float64 { return v.FinalAccuracy }).(pulumi.Float64Output)
 }
 
+// Fine-tuned model loss.
 func (o GetModelModelMetricOutput) FinalLoss() pulumi.Float64Output {
 	return o.ApplyT(func(v GetModelModelMetric) float64 { return v.FinalLoss }).(pulumi.Float64Output)
 }
 
+// The type of the model metrics. Each type of model can expect a different set of model metrics.
 func (o GetModelModelMetricOutput) ModelMetricsType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelModelMetric) string { return v.ModelMetricsType }).(pulumi.StringOutput)
 }
@@ -2973,32 +3033,40 @@ func (o GetModelsModelCollectionArrayOutput) Index(i pulumi.IntInput) GetModelsM
 }
 
 type GetModelsModelCollectionItem struct {
+	// The OCID of the base model that's used for fine-tuning. For pretrained models, the value is null.
 	BaseModelId string `pulumi:"baseModelId"`
 	// Describes what this model can be used for.
 	Capabilities []string `pulumi:"capabilities"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	Description string                 `pulumi:"description"`
+	CompartmentId string                 `pulumi:"compartmentId"`
+	DefinedTags   map[string]interface{} `pulumi:"definedTags"`
+	// An optional description of the model.
+	Description string `pulumi:"description"`
 	// A filter to return only resources that match the given display name exactly.
-	DisplayName     string                                       `pulumi:"displayName"`
+	DisplayName string `pulumi:"displayName"`
+	// Details about fine-tuning a custom model.
 	FineTuneDetails []GetModelsModelCollectionItemFineTuneDetail `pulumi:"fineTuneDetails"`
-	FreeformTags    map[string]interface{}                       `pulumi:"freeformTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The ID of the model.
-	Id                  string                                    `pulumi:"id"`
-	IsLongTermSupported bool                                      `pulumi:"isLongTermSupported"`
-	LifecycleDetails    string                                    `pulumi:"lifecycleDetails"`
-	ModelMetrics        []GetModelsModelCollectionItemModelMetric `pulumi:"modelMetrics"`
+	Id string `pulumi:"id"`
+	// Whether a model is supported long-term. Only applicable to base models.
+	IsLongTermSupported bool `pulumi:"isLongTermSupported"`
+	// A message describing the current state of the model in more detail that can provide actionable information.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Model metrics during the creation of a new model.
+	ModelMetrics []GetModelsModelCollectionItemModelMetric `pulumi:"modelMetrics"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
-	State       string                 `pulumi:"state"`
-	SystemTags  map[string]interface{} `pulumi:"systemTags"`
-	TimeCreated string                 `pulumi:"timeCreated"`
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The date and time that the model was created in the format of an RFC3339 datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
 	// Corresponds to the time when the custom model and its associated foundation model will be deprecated.
 	TimeDeprecated string `pulumi:"timeDeprecated"`
-	TimeUpdated    string `pulumi:"timeUpdated"`
-	// The model type indicating whether this is a pretrained/base model or a custom/fine-tuned model.
-	Type string `pulumi:"type"`
+	// The date and time that the model was updated in the format of an RFC3339 datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	Type        string `pulumi:"type"`
 	// A filter to return only resources that match the entire vendor given.
 	Vendor string `pulumi:"vendor"`
 	// The version of the model.
@@ -3017,32 +3085,40 @@ type GetModelsModelCollectionItemInput interface {
 }
 
 type GetModelsModelCollectionItemArgs struct {
+	// The OCID of the base model that's used for fine-tuning. For pretrained models, the value is null.
 	BaseModelId pulumi.StringInput `pulumi:"baseModelId"`
 	// Describes what this model can be used for.
 	Capabilities pulumi.StringArrayInput `pulumi:"capabilities"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput    `pulumi:"definedTags"`
+	DefinedTags   pulumi.MapInput    `pulumi:"definedTags"`
+	// An optional description of the model.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the given display name exactly.
-	DisplayName     pulumi.StringInput                                   `pulumi:"displayName"`
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Details about fine-tuning a custom model.
 	FineTuneDetails GetModelsModelCollectionItemFineTuneDetailArrayInput `pulumi:"fineTuneDetails"`
-	FreeformTags    pulumi.MapInput                                      `pulumi:"freeformTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The ID of the model.
-	Id                  pulumi.StringInput                                `pulumi:"id"`
-	IsLongTermSupported pulumi.BoolInput                                  `pulumi:"isLongTermSupported"`
-	LifecycleDetails    pulumi.StringInput                                `pulumi:"lifecycleDetails"`
-	ModelMetrics        GetModelsModelCollectionItemModelMetricArrayInput `pulumi:"modelMetrics"`
+	Id pulumi.StringInput `pulumi:"id"`
+	// Whether a model is supported long-term. Only applicable to base models.
+	IsLongTermSupported pulumi.BoolInput `pulumi:"isLongTermSupported"`
+	// A message describing the current state of the model in more detail that can provide actionable information.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Model metrics during the creation of a new model.
+	ModelMetrics GetModelsModelCollectionItemModelMetricArrayInput `pulumi:"modelMetrics"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
-	State       pulumi.StringInput `pulumi:"state"`
-	SystemTags  pulumi.MapInput    `pulumi:"systemTags"`
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// The date and time that the model was created in the format of an RFC3339 datetime string.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// Corresponds to the time when the custom model and its associated foundation model will be deprecated.
 	TimeDeprecated pulumi.StringInput `pulumi:"timeDeprecated"`
-	TimeUpdated    pulumi.StringInput `pulumi:"timeUpdated"`
-	// The model type indicating whether this is a pretrained/base model or a custom/fine-tuned model.
-	Type pulumi.StringInput `pulumi:"type"`
+	// The date and time that the model was updated in the format of an RFC3339 datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	Type        pulumi.StringInput `pulumi:"type"`
 	// A filter to return only resources that match the entire vendor given.
 	Vendor pulumi.StringInput `pulumi:"vendor"`
 	// The version of the model.
@@ -3100,6 +3176,7 @@ func (o GetModelsModelCollectionItemOutput) ToGetModelsModelCollectionItemOutput
 	return o
 }
 
+// The OCID of the base model that's used for fine-tuning. For pretrained models, the value is null.
 func (o GetModelsModelCollectionItemOutput) BaseModelId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.BaseModelId }).(pulumi.StringOutput)
 }
@@ -3114,11 +3191,11 @@ func (o GetModelsModelCollectionItemOutput) CompartmentId() pulumi.StringOutput 
 	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 func (o GetModelsModelCollectionItemOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
+// An optional description of the model.
 func (o GetModelsModelCollectionItemOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -3128,12 +3205,14 @@ func (o GetModelsModelCollectionItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+// Details about fine-tuning a custom model.
 func (o GetModelsModelCollectionItemOutput) FineTuneDetails() GetModelsModelCollectionItemFineTuneDetailArrayOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) []GetModelsModelCollectionItemFineTuneDetail {
 		return v.FineTuneDetails
 	}).(GetModelsModelCollectionItemFineTuneDetailArrayOutput)
 }
 
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 func (o GetModelsModelCollectionItemOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
@@ -3143,14 +3222,17 @@ func (o GetModelsModelCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// Whether a model is supported long-term. Only applicable to base models.
 func (o GetModelsModelCollectionItemOutput) IsLongTermSupported() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) bool { return v.IsLongTermSupported }).(pulumi.BoolOutput)
 }
 
+// A message describing the current state of the model in more detail that can provide actionable information.
 func (o GetModelsModelCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// Model metrics during the creation of a new model.
 func (o GetModelsModelCollectionItemOutput) ModelMetrics() GetModelsModelCollectionItemModelMetricArrayOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) []GetModelsModelCollectionItemModelMetric { return v.ModelMetrics }).(GetModelsModelCollectionItemModelMetricArrayOutput)
 }
@@ -3160,10 +3242,12 @@ func (o GetModelsModelCollectionItemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.State }).(pulumi.StringOutput)
 }
 
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o GetModelsModelCollectionItemOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
+// The date and time that the model was created in the format of an RFC3339 datetime string.
 func (o GetModelsModelCollectionItemOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
@@ -3173,11 +3257,11 @@ func (o GetModelsModelCollectionItemOutput) TimeDeprecated() pulumi.StringOutput
 	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.TimeDeprecated }).(pulumi.StringOutput)
 }
 
+// The date and time that the model was updated in the format of an RFC3339 datetime string.
 func (o GetModelsModelCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// The model type indicating whether this is a pretrained/base model or a custom/fine-tuned model.
 func (o GetModelsModelCollectionItemOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -3213,9 +3297,12 @@ func (o GetModelsModelCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMod
 }
 
 type GetModelsModelCollectionItemFineTuneDetail struct {
-	DedicatedAiClusterId string                                                      `pulumi:"dedicatedAiClusterId"`
-	TrainingConfigs      []GetModelsModelCollectionItemFineTuneDetailTrainingConfig  `pulumi:"trainingConfigs"`
-	TrainingDatasets     []GetModelsModelCollectionItemFineTuneDetailTrainingDataset `pulumi:"trainingDatasets"`
+	// The OCID of the dedicated AI cluster this fine-tuning runs on.
+	DedicatedAiClusterId string `pulumi:"dedicatedAiClusterId"`
+	// The fine-tuning method and hyperparameters used for fine-tuning a custom model.
+	TrainingConfigs []GetModelsModelCollectionItemFineTuneDetailTrainingConfig `pulumi:"trainingConfigs"`
+	// The dataset used to fine-tune the model.
+	TrainingDatasets []GetModelsModelCollectionItemFineTuneDetailTrainingDataset `pulumi:"trainingDatasets"`
 }
 
 // GetModelsModelCollectionItemFineTuneDetailInput is an input type that accepts GetModelsModelCollectionItemFineTuneDetailArgs and GetModelsModelCollectionItemFineTuneDetailOutput values.
@@ -3230,9 +3317,12 @@ type GetModelsModelCollectionItemFineTuneDetailInput interface {
 }
 
 type GetModelsModelCollectionItemFineTuneDetailArgs struct {
-	DedicatedAiClusterId pulumi.StringInput                                                  `pulumi:"dedicatedAiClusterId"`
-	TrainingConfigs      GetModelsModelCollectionItemFineTuneDetailTrainingConfigArrayInput  `pulumi:"trainingConfigs"`
-	TrainingDatasets     GetModelsModelCollectionItemFineTuneDetailTrainingDatasetArrayInput `pulumi:"trainingDatasets"`
+	// The OCID of the dedicated AI cluster this fine-tuning runs on.
+	DedicatedAiClusterId pulumi.StringInput `pulumi:"dedicatedAiClusterId"`
+	// The fine-tuning method and hyperparameters used for fine-tuning a custom model.
+	TrainingConfigs GetModelsModelCollectionItemFineTuneDetailTrainingConfigArrayInput `pulumi:"trainingConfigs"`
+	// The dataset used to fine-tune the model.
+	TrainingDatasets GetModelsModelCollectionItemFineTuneDetailTrainingDatasetArrayInput `pulumi:"trainingDatasets"`
 }
 
 func (GetModelsModelCollectionItemFineTuneDetailArgs) ElementType() reflect.Type {
@@ -3286,16 +3376,19 @@ func (o GetModelsModelCollectionItemFineTuneDetailOutput) ToGetModelsModelCollec
 	return o
 }
 
+// The OCID of the dedicated AI cluster this fine-tuning runs on.
 func (o GetModelsModelCollectionItemFineTuneDetailOutput) DedicatedAiClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItemFineTuneDetail) string { return v.DedicatedAiClusterId }).(pulumi.StringOutput)
 }
 
+// The fine-tuning method and hyperparameters used for fine-tuning a custom model.
 func (o GetModelsModelCollectionItemFineTuneDetailOutput) TrainingConfigs() GetModelsModelCollectionItemFineTuneDetailTrainingConfigArrayOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItemFineTuneDetail) []GetModelsModelCollectionItemFineTuneDetailTrainingConfig {
 		return v.TrainingConfigs
 	}).(GetModelsModelCollectionItemFineTuneDetailTrainingConfigArrayOutput)
 }
 
+// The dataset used to fine-tune the model.
 func (o GetModelsModelCollectionItemFineTuneDetailOutput) TrainingDatasets() GetModelsModelCollectionItemFineTuneDetailTrainingDatasetArrayOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItemFineTuneDetail) []GetModelsModelCollectionItemFineTuneDetailTrainingDataset {
 		return v.TrainingDatasets
@@ -3323,17 +3416,28 @@ func (o GetModelsModelCollectionItemFineTuneDetailArrayOutput) Index(i pulumi.In
 }
 
 type GetModelsModelCollectionItemFineTuneDetailTrainingConfig struct {
-	EarlyStoppingPatience          int     `pulumi:"earlyStoppingPatience"`
-	EarlyStoppingThreshold         float64 `pulumi:"earlyStoppingThreshold"`
-	LearningRate                   float64 `pulumi:"learningRate"`
-	LogModelMetricsIntervalInSteps int     `pulumi:"logModelMetricsIntervalInSteps"`
-	LoraAlpha                      int     `pulumi:"loraAlpha"`
-	LoraDropout                    float64 `pulumi:"loraDropout"`
-	LoraR                          int     `pulumi:"loraR"`
-	NumOfLastLayers                int     `pulumi:"numOfLastLayers"`
-	TotalTrainingEpochs            int     `pulumi:"totalTrainingEpochs"`
-	TrainingBatchSize              int     `pulumi:"trainingBatchSize"`
-	TrainingConfigType             string  `pulumi:"trainingConfigType"`
+	// Stop training if the loss metric does not improve beyond 'early_stopping_threshold' for this many times of evaluation.
+	EarlyStoppingPatience int `pulumi:"earlyStoppingPatience"`
+	// How much the loss must improve to prevent early stopping.
+	EarlyStoppingThreshold float64 `pulumi:"earlyStoppingThreshold"`
+	// The initial learning rate to be used during training
+	LearningRate float64 `pulumi:"learningRate"`
+	// Determines how frequently to log model metrics.
+	LogModelMetricsIntervalInSteps int `pulumi:"logModelMetricsIntervalInSteps"`
+	// This parameter represents the scaling factor for the weight matrices in LoRA.
+	LoraAlpha int `pulumi:"loraAlpha"`
+	// This parameter indicates the dropout probability for LoRA layers.
+	LoraDropout float64 `pulumi:"loraDropout"`
+	// This parameter represents the LoRA rank of the update matrices.
+	LoraR int `pulumi:"loraR"`
+	// The number of last layers to be fine-tuned.
+	NumOfLastLayers int `pulumi:"numOfLastLayers"`
+	// The maximum number of training epochs to run for.
+	TotalTrainingEpochs int `pulumi:"totalTrainingEpochs"`
+	// The batch size used during training.
+	TrainingBatchSize int `pulumi:"trainingBatchSize"`
+	// The fine-tuning method for training a custom model.
+	TrainingConfigType string `pulumi:"trainingConfigType"`
 }
 
 // GetModelsModelCollectionItemFineTuneDetailTrainingConfigInput is an input type that accepts GetModelsModelCollectionItemFineTuneDetailTrainingConfigArgs and GetModelsModelCollectionItemFineTuneDetailTrainingConfigOutput values.
@@ -3348,17 +3452,28 @@ type GetModelsModelCollectionItemFineTuneDetailTrainingConfigInput interface {
 }
 
 type GetModelsModelCollectionItemFineTuneDetailTrainingConfigArgs struct {
-	EarlyStoppingPatience          pulumi.IntInput     `pulumi:"earlyStoppingPatience"`
-	EarlyStoppingThreshold         pulumi.Float64Input `pulumi:"earlyStoppingThreshold"`
-	LearningRate                   pulumi.Float64Input `pulumi:"learningRate"`
-	LogModelMetricsIntervalInSteps pulumi.IntInput     `pulumi:"logModelMetricsIntervalInSteps"`
-	LoraAlpha                      pulumi.IntInput     `pulumi:"loraAlpha"`
-	LoraDropout                    pulumi.Float64Input `pulumi:"loraDropout"`
-	LoraR                          pulumi.IntInput     `pulumi:"loraR"`
-	NumOfLastLayers                pulumi.IntInput     `pulumi:"numOfLastLayers"`
-	TotalTrainingEpochs            pulumi.IntInput     `pulumi:"totalTrainingEpochs"`
-	TrainingBatchSize              pulumi.IntInput     `pulumi:"trainingBatchSize"`
-	TrainingConfigType             pulumi.StringInput  `pulumi:"trainingConfigType"`
+	// Stop training if the loss metric does not improve beyond 'early_stopping_threshold' for this many times of evaluation.
+	EarlyStoppingPatience pulumi.IntInput `pulumi:"earlyStoppingPatience"`
+	// How much the loss must improve to prevent early stopping.
+	EarlyStoppingThreshold pulumi.Float64Input `pulumi:"earlyStoppingThreshold"`
+	// The initial learning rate to be used during training
+	LearningRate pulumi.Float64Input `pulumi:"learningRate"`
+	// Determines how frequently to log model metrics.
+	LogModelMetricsIntervalInSteps pulumi.IntInput `pulumi:"logModelMetricsIntervalInSteps"`
+	// This parameter represents the scaling factor for the weight matrices in LoRA.
+	LoraAlpha pulumi.IntInput `pulumi:"loraAlpha"`
+	// This parameter indicates the dropout probability for LoRA layers.
+	LoraDropout pulumi.Float64Input `pulumi:"loraDropout"`
+	// This parameter represents the LoRA rank of the update matrices.
+	LoraR pulumi.IntInput `pulumi:"loraR"`
+	// The number of last layers to be fine-tuned.
+	NumOfLastLayers pulumi.IntInput `pulumi:"numOfLastLayers"`
+	// The maximum number of training epochs to run for.
+	TotalTrainingEpochs pulumi.IntInput `pulumi:"totalTrainingEpochs"`
+	// The batch size used during training.
+	TrainingBatchSize pulumi.IntInput `pulumi:"trainingBatchSize"`
+	// The fine-tuning method for training a custom model.
+	TrainingConfigType pulumi.StringInput `pulumi:"trainingConfigType"`
 }
 
 func (GetModelsModelCollectionItemFineTuneDetailTrainingConfigArgs) ElementType() reflect.Type {
@@ -3412,50 +3527,61 @@ func (o GetModelsModelCollectionItemFineTuneDetailTrainingConfigOutput) ToGetMod
 	return o
 }
 
+// Stop training if the loss metric does not improve beyond 'early_stopping_threshold' for this many times of evaluation.
 func (o GetModelsModelCollectionItemFineTuneDetailTrainingConfigOutput) EarlyStoppingPatience() pulumi.IntOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItemFineTuneDetailTrainingConfig) int { return v.EarlyStoppingPatience }).(pulumi.IntOutput)
 }
 
+// How much the loss must improve to prevent early stopping.
 func (o GetModelsModelCollectionItemFineTuneDetailTrainingConfigOutput) EarlyStoppingThreshold() pulumi.Float64Output {
 	return o.ApplyT(func(v GetModelsModelCollectionItemFineTuneDetailTrainingConfig) float64 {
 		return v.EarlyStoppingThreshold
 	}).(pulumi.Float64Output)
 }
 
+// The initial learning rate to be used during training
 func (o GetModelsModelCollectionItemFineTuneDetailTrainingConfigOutput) LearningRate() pulumi.Float64Output {
 	return o.ApplyT(func(v GetModelsModelCollectionItemFineTuneDetailTrainingConfig) float64 { return v.LearningRate }).(pulumi.Float64Output)
 }
 
+// Determines how frequently to log model metrics.
 func (o GetModelsModelCollectionItemFineTuneDetailTrainingConfigOutput) LogModelMetricsIntervalInSteps() pulumi.IntOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItemFineTuneDetailTrainingConfig) int {
 		return v.LogModelMetricsIntervalInSteps
 	}).(pulumi.IntOutput)
 }
 
+// This parameter represents the scaling factor for the weight matrices in LoRA.
 func (o GetModelsModelCollectionItemFineTuneDetailTrainingConfigOutput) LoraAlpha() pulumi.IntOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItemFineTuneDetailTrainingConfig) int { return v.LoraAlpha }).(pulumi.IntOutput)
 }
 
+// This parameter indicates the dropout probability for LoRA layers.
 func (o GetModelsModelCollectionItemFineTuneDetailTrainingConfigOutput) LoraDropout() pulumi.Float64Output {
 	return o.ApplyT(func(v GetModelsModelCollectionItemFineTuneDetailTrainingConfig) float64 { return v.LoraDropout }).(pulumi.Float64Output)
 }
 
+// This parameter represents the LoRA rank of the update matrices.
 func (o GetModelsModelCollectionItemFineTuneDetailTrainingConfigOutput) LoraR() pulumi.IntOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItemFineTuneDetailTrainingConfig) int { return v.LoraR }).(pulumi.IntOutput)
 }
 
+// The number of last layers to be fine-tuned.
 func (o GetModelsModelCollectionItemFineTuneDetailTrainingConfigOutput) NumOfLastLayers() pulumi.IntOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItemFineTuneDetailTrainingConfig) int { return v.NumOfLastLayers }).(pulumi.IntOutput)
 }
 
+// The maximum number of training epochs to run for.
 func (o GetModelsModelCollectionItemFineTuneDetailTrainingConfigOutput) TotalTrainingEpochs() pulumi.IntOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItemFineTuneDetailTrainingConfig) int { return v.TotalTrainingEpochs }).(pulumi.IntOutput)
 }
 
+// The batch size used during training.
 func (o GetModelsModelCollectionItemFineTuneDetailTrainingConfigOutput) TrainingBatchSize() pulumi.IntOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItemFineTuneDetailTrainingConfig) int { return v.TrainingBatchSize }).(pulumi.IntOutput)
 }
 
+// The fine-tuning method for training a custom model.
 func (o GetModelsModelCollectionItemFineTuneDetailTrainingConfigOutput) TrainingConfigType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItemFineTuneDetailTrainingConfig) string { return v.TrainingConfigType }).(pulumi.StringOutput)
 }
@@ -3481,10 +3607,14 @@ func (o GetModelsModelCollectionItemFineTuneDetailTrainingConfigArrayOutput) Ind
 }
 
 type GetModelsModelCollectionItemFineTuneDetailTrainingDataset struct {
-	Bucket      string `pulumi:"bucket"`
+	// The Object Storage bucket name.
+	Bucket string `pulumi:"bucket"`
+	// The type of the data asset.
 	DatasetType string `pulumi:"datasetType"`
-	Namespace   string `pulumi:"namespace"`
-	Object      string `pulumi:"object"`
+	// The Object Storage namespace.
+	Namespace string `pulumi:"namespace"`
+	// The Object Storage object name.
+	Object string `pulumi:"object"`
 }
 
 // GetModelsModelCollectionItemFineTuneDetailTrainingDatasetInput is an input type that accepts GetModelsModelCollectionItemFineTuneDetailTrainingDatasetArgs and GetModelsModelCollectionItemFineTuneDetailTrainingDatasetOutput values.
@@ -3499,10 +3629,14 @@ type GetModelsModelCollectionItemFineTuneDetailTrainingDatasetInput interface {
 }
 
 type GetModelsModelCollectionItemFineTuneDetailTrainingDatasetArgs struct {
-	Bucket      pulumi.StringInput `pulumi:"bucket"`
+	// The Object Storage bucket name.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The type of the data asset.
 	DatasetType pulumi.StringInput `pulumi:"datasetType"`
-	Namespace   pulumi.StringInput `pulumi:"namespace"`
-	Object      pulumi.StringInput `pulumi:"object"`
+	// The Object Storage namespace.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The Object Storage object name.
+	Object pulumi.StringInput `pulumi:"object"`
 }
 
 func (GetModelsModelCollectionItemFineTuneDetailTrainingDatasetArgs) ElementType() reflect.Type {
@@ -3556,18 +3690,22 @@ func (o GetModelsModelCollectionItemFineTuneDetailTrainingDatasetOutput) ToGetMo
 	return o
 }
 
+// The Object Storage bucket name.
 func (o GetModelsModelCollectionItemFineTuneDetailTrainingDatasetOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItemFineTuneDetailTrainingDataset) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
+// The type of the data asset.
 func (o GetModelsModelCollectionItemFineTuneDetailTrainingDatasetOutput) DatasetType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItemFineTuneDetailTrainingDataset) string { return v.DatasetType }).(pulumi.StringOutput)
 }
 
+// The Object Storage namespace.
 func (o GetModelsModelCollectionItemFineTuneDetailTrainingDatasetOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItemFineTuneDetailTrainingDataset) string { return v.Namespace }).(pulumi.StringOutput)
 }
 
+// The Object Storage object name.
 func (o GetModelsModelCollectionItemFineTuneDetailTrainingDatasetOutput) Object() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItemFineTuneDetailTrainingDataset) string { return v.Object }).(pulumi.StringOutput)
 }
@@ -3593,9 +3731,12 @@ func (o GetModelsModelCollectionItemFineTuneDetailTrainingDatasetArrayOutput) In
 }
 
 type GetModelsModelCollectionItemModelMetric struct {
-	FinalAccuracy    float64 `pulumi:"finalAccuracy"`
-	FinalLoss        float64 `pulumi:"finalLoss"`
-	ModelMetricsType string  `pulumi:"modelMetricsType"`
+	// Fine-tuned model accuracy.
+	FinalAccuracy float64 `pulumi:"finalAccuracy"`
+	// Fine-tuned model loss.
+	FinalLoss float64 `pulumi:"finalLoss"`
+	// The type of the model metrics. Each type of model can expect a different set of model metrics.
+	ModelMetricsType string `pulumi:"modelMetricsType"`
 }
 
 // GetModelsModelCollectionItemModelMetricInput is an input type that accepts GetModelsModelCollectionItemModelMetricArgs and GetModelsModelCollectionItemModelMetricOutput values.
@@ -3610,9 +3751,12 @@ type GetModelsModelCollectionItemModelMetricInput interface {
 }
 
 type GetModelsModelCollectionItemModelMetricArgs struct {
-	FinalAccuracy    pulumi.Float64Input `pulumi:"finalAccuracy"`
-	FinalLoss        pulumi.Float64Input `pulumi:"finalLoss"`
-	ModelMetricsType pulumi.StringInput  `pulumi:"modelMetricsType"`
+	// Fine-tuned model accuracy.
+	FinalAccuracy pulumi.Float64Input `pulumi:"finalAccuracy"`
+	// Fine-tuned model loss.
+	FinalLoss pulumi.Float64Input `pulumi:"finalLoss"`
+	// The type of the model metrics. Each type of model can expect a different set of model metrics.
+	ModelMetricsType pulumi.StringInput `pulumi:"modelMetricsType"`
 }
 
 func (GetModelsModelCollectionItemModelMetricArgs) ElementType() reflect.Type {
@@ -3666,14 +3810,17 @@ func (o GetModelsModelCollectionItemModelMetricOutput) ToGetModelsModelCollectio
 	return o
 }
 
+// Fine-tuned model accuracy.
 func (o GetModelsModelCollectionItemModelMetricOutput) FinalAccuracy() pulumi.Float64Output {
 	return o.ApplyT(func(v GetModelsModelCollectionItemModelMetric) float64 { return v.FinalAccuracy }).(pulumi.Float64Output)
 }
 
+// Fine-tuned model loss.
 func (o GetModelsModelCollectionItemModelMetricOutput) FinalLoss() pulumi.Float64Output {
 	return o.ApplyT(func(v GetModelsModelCollectionItemModelMetric) float64 { return v.FinalLoss }).(pulumi.Float64Output)
 }
 
+// The type of the model metrics. Each type of model can expect a different set of model metrics.
 func (o GetModelsModelCollectionItemModelMetricOutput) ModelMetricsType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItemModelMetric) string { return v.ModelMetricsType }).(pulumi.StringOutput)
 }

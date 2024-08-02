@@ -2,15 +2,12 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import * as inputs from "../types/input";
-import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
  * This data source provides details about a specific Alert Policy Rule resource in Oracle Cloud Infrastructure Data Safe service.
  *
- * Lists the rules of the specified alert policy. The alert policy is said to be satisfied when all rules in the policy evaulate to true.
- * If there are three rules: rule1,rule2 and rule3, the policy is satisfied if rule1 AND rule2 AND rule3 is True.
+ * Gets the details of a policy rule by its key.
  *
  * ## Example Usage
  *
@@ -20,6 +17,7 @@ import * as utilities from "../utilities";
  *
  * const testAlertPolicyRule = oci.DataSafe.getAlertPolicyRule({
  *     alertPolicyId: testAlertPolicy.id,
+ *     ruleKey: alertPolicyRuleRuleKey,
  * });
  * ```
  */
@@ -28,6 +26,7 @@ export function getAlertPolicyRule(args: GetAlertPolicyRuleArgs, opts?: pulumi.I
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getAlertPolicyRule:getAlertPolicyRule", {
         "alertPolicyId": args.alertPolicyId,
+        "ruleKey": args.ruleKey,
     }, opts);
 }
 
@@ -39,6 +38,10 @@ export interface GetAlertPolicyRuleArgs {
      * The OCID of the alert policy.
      */
     alertPolicyId: string;
+    /**
+     * The key of the alert policy rule.
+     */
+    ruleKey: string;
 }
 
 /**
@@ -47,19 +50,36 @@ export interface GetAlertPolicyRuleArgs {
 export interface GetAlertPolicyRuleResult {
     readonly alertPolicyId: string;
     /**
-     * The provider-assigned unique ID for this managed resource.
+     * Describes the alert policy rule.
      */
+    readonly description: string;
+    /**
+     * The display name of the alert policy rule.
+     */
+    readonly displayName: string;
+    /**
+     * The conditional expression of the alert policy rule which evaluates to boolean value.
+     */
+    readonly expression: string;
     readonly id: string;
     /**
-     * Array of alert policy rules summary
+     * The unique key of the alert policy rule.
      */
-    readonly items: outputs.DataSafe.GetAlertPolicyRuleItem[];
+    readonly key: string;
+    readonly ruleKey: string;
+    /**
+     * The current state of the alert policy rule.
+     */
+    readonly state: string;
+    /**
+     * Creation date and time of the alert policy rule, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     */
+    readonly timeCreated: string;
 }
 /**
  * This data source provides details about a specific Alert Policy Rule resource in Oracle Cloud Infrastructure Data Safe service.
  *
- * Lists the rules of the specified alert policy. The alert policy is said to be satisfied when all rules in the policy evaulate to true.
- * If there are three rules: rule1,rule2 and rule3, the policy is satisfied if rule1 AND rule2 AND rule3 is True.
+ * Gets the details of a policy rule by its key.
  *
  * ## Example Usage
  *
@@ -69,6 +89,7 @@ export interface GetAlertPolicyRuleResult {
  *
  * const testAlertPolicyRule = oci.DataSafe.getAlertPolicyRule({
  *     alertPolicyId: testAlertPolicy.id,
+ *     ruleKey: alertPolicyRuleRuleKey,
  * });
  * ```
  */
@@ -84,4 +105,8 @@ export interface GetAlertPolicyRuleOutputArgs {
      * The OCID of the alert policy.
      */
     alertPolicyId: pulumi.Input<string>;
+    /**
+     * The key of the alert policy rule.
+     */
+    ruleKey: pulumi.Input<string>;
 }

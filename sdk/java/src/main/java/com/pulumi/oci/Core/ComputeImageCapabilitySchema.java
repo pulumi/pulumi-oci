@@ -226,11 +226,18 @@ public class ComputeImageCapabilitySchema extends com.pulumi.resources.CustomRes
      * @param options A bag of options that control this resource's behavior.
      */
     public ComputeImageCapabilitySchema(String name, ComputeImageCapabilitySchemaArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/computeImageCapabilitySchema:ComputeImageCapabilitySchema", name, args == null ? ComputeImageCapabilitySchemaArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Core/computeImageCapabilitySchema:ComputeImageCapabilitySchema", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ComputeImageCapabilitySchema(String name, Output<String> id, @Nullable ComputeImageCapabilitySchemaState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Core/computeImageCapabilitySchema:ComputeImageCapabilitySchema", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ComputeImageCapabilitySchemaArgs makeArgs(ComputeImageCapabilitySchemaArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ComputeImageCapabilitySchemaArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

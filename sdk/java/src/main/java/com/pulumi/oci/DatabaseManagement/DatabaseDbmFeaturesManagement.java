@@ -164,11 +164,18 @@ public class DatabaseDbmFeaturesManagement extends com.pulumi.resources.CustomRe
      * @param options A bag of options that control this resource's behavior.
      */
     public DatabaseDbmFeaturesManagement(String name, DatabaseDbmFeaturesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseManagement/databaseDbmFeaturesManagement:DatabaseDbmFeaturesManagement", name, args == null ? DatabaseDbmFeaturesManagementArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DatabaseManagement/databaseDbmFeaturesManagement:DatabaseDbmFeaturesManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DatabaseDbmFeaturesManagement(String name, Output<String> id, @Nullable DatabaseDbmFeaturesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DatabaseManagement/databaseDbmFeaturesManagement:DatabaseDbmFeaturesManagement", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DatabaseDbmFeaturesManagementArgs makeArgs(DatabaseDbmFeaturesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DatabaseDbmFeaturesManagementArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

@@ -44,10 +44,15 @@ public final class GetTargetAlertPolicyAssociationResult {
      */
     private String id;
     /**
-     * @return Indicates if the target-alert policy association is enabled or disabled.
+     * @return Indicates if the target-alert policy association is enabled or disabled by user.
      * 
      */
     private Boolean isEnabled;
+    /**
+     * @return Details about the current state of the target-alert policy association.
+     * 
+     */
+    private String lifecycleDetails;
     /**
      * @return The OCID of the alert policy.
      * 
@@ -124,11 +129,18 @@ public final class GetTargetAlertPolicyAssociationResult {
         return this.id;
     }
     /**
-     * @return Indicates if the target-alert policy association is enabled or disabled.
+     * @return Indicates if the target-alert policy association is enabled or disabled by user.
      * 
      */
     public Boolean isEnabled() {
         return this.isEnabled;
+    }
+    /**
+     * @return Details about the current state of the target-alert policy association.
+     * 
+     */
+    public String lifecycleDetails() {
+        return this.lifecycleDetails;
     }
     /**
      * @return The OCID of the alert policy.
@@ -192,6 +204,7 @@ public final class GetTargetAlertPolicyAssociationResult {
         private Map<String,Object> freeformTags;
         private String id;
         private Boolean isEnabled;
+        private String lifecycleDetails;
         private String policyId;
         private String state;
         private Map<String,Object> systemTags;
@@ -209,6 +222,7 @@ public final class GetTargetAlertPolicyAssociationResult {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isEnabled = defaults.isEnabled;
+    	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.policyId = defaults.policyId;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
@@ -272,6 +286,14 @@ public final class GetTargetAlertPolicyAssociationResult {
               throw new MissingRequiredPropertyException("GetTargetAlertPolicyAssociationResult", "isEnabled");
             }
             this.isEnabled = isEnabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetTargetAlertPolicyAssociationResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
@@ -339,6 +361,7 @@ public final class GetTargetAlertPolicyAssociationResult {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.isEnabled = isEnabled;
+            _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.policyId = policyId;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;

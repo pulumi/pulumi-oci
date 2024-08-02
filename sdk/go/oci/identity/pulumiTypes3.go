@@ -13,6 +13,2985 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetIdentityProviderGroupsFilter struct {
+	// A filter to only return resources that match the given name exactly.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetIdentityProviderGroupsFilterInput is an input type that accepts GetIdentityProviderGroupsFilterArgs and GetIdentityProviderGroupsFilterOutput values.
+// You can construct a concrete instance of `GetIdentityProviderGroupsFilterInput` via:
+//
+//	GetIdentityProviderGroupsFilterArgs{...}
+type GetIdentityProviderGroupsFilterInput interface {
+	pulumi.Input
+
+	ToGetIdentityProviderGroupsFilterOutput() GetIdentityProviderGroupsFilterOutput
+	ToGetIdentityProviderGroupsFilterOutputWithContext(context.Context) GetIdentityProviderGroupsFilterOutput
+}
+
+type GetIdentityProviderGroupsFilterArgs struct {
+	// A filter to only return resources that match the given name exactly.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetIdentityProviderGroupsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIdentityProviderGroupsFilter)(nil)).Elem()
+}
+
+func (i GetIdentityProviderGroupsFilterArgs) ToGetIdentityProviderGroupsFilterOutput() GetIdentityProviderGroupsFilterOutput {
+	return i.ToGetIdentityProviderGroupsFilterOutputWithContext(context.Background())
+}
+
+func (i GetIdentityProviderGroupsFilterArgs) ToGetIdentityProviderGroupsFilterOutputWithContext(ctx context.Context) GetIdentityProviderGroupsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIdentityProviderGroupsFilterOutput)
+}
+
+// GetIdentityProviderGroupsFilterArrayInput is an input type that accepts GetIdentityProviderGroupsFilterArray and GetIdentityProviderGroupsFilterArrayOutput values.
+// You can construct a concrete instance of `GetIdentityProviderGroupsFilterArrayInput` via:
+//
+//	GetIdentityProviderGroupsFilterArray{ GetIdentityProviderGroupsFilterArgs{...} }
+type GetIdentityProviderGroupsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetIdentityProviderGroupsFilterArrayOutput() GetIdentityProviderGroupsFilterArrayOutput
+	ToGetIdentityProviderGroupsFilterArrayOutputWithContext(context.Context) GetIdentityProviderGroupsFilterArrayOutput
+}
+
+type GetIdentityProviderGroupsFilterArray []GetIdentityProviderGroupsFilterInput
+
+func (GetIdentityProviderGroupsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIdentityProviderGroupsFilter)(nil)).Elem()
+}
+
+func (i GetIdentityProviderGroupsFilterArray) ToGetIdentityProviderGroupsFilterArrayOutput() GetIdentityProviderGroupsFilterArrayOutput {
+	return i.ToGetIdentityProviderGroupsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetIdentityProviderGroupsFilterArray) ToGetIdentityProviderGroupsFilterArrayOutputWithContext(ctx context.Context) GetIdentityProviderGroupsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIdentityProviderGroupsFilterArrayOutput)
+}
+
+type GetIdentityProviderGroupsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetIdentityProviderGroupsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIdentityProviderGroupsFilter)(nil)).Elem()
+}
+
+func (o GetIdentityProviderGroupsFilterOutput) ToGetIdentityProviderGroupsFilterOutput() GetIdentityProviderGroupsFilterOutput {
+	return o
+}
+
+func (o GetIdentityProviderGroupsFilterOutput) ToGetIdentityProviderGroupsFilterOutputWithContext(ctx context.Context) GetIdentityProviderGroupsFilterOutput {
+	return o
+}
+
+// A filter to only return resources that match the given name exactly.
+func (o GetIdentityProviderGroupsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIdentityProviderGroupsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetIdentityProviderGroupsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetIdentityProviderGroupsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetIdentityProviderGroupsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIdentityProviderGroupsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetIdentityProviderGroupsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIdentityProviderGroupsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIdentityProviderGroupsFilter)(nil)).Elem()
+}
+
+func (o GetIdentityProviderGroupsFilterArrayOutput) ToGetIdentityProviderGroupsFilterArrayOutput() GetIdentityProviderGroupsFilterArrayOutput {
+	return o
+}
+
+func (o GetIdentityProviderGroupsFilterArrayOutput) ToGetIdentityProviderGroupsFilterArrayOutputWithContext(ctx context.Context) GetIdentityProviderGroupsFilterArrayOutput {
+	return o
+}
+
+func (o GetIdentityProviderGroupsFilterArrayOutput) Index(i pulumi.IntInput) GetIdentityProviderGroupsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIdentityProviderGroupsFilter {
+		return vs[0].([]GetIdentityProviderGroupsFilter)[vs[1].(int)]
+	}).(GetIdentityProviderGroupsFilterOutput)
+}
+
+type GetIdentityProviderGroupsIdentityProviderGroup struct {
+	// Display name of the group
+	DisplayName string `pulumi:"displayName"`
+	// Identifier of the group in the identity provider
+	ExternalIdentifier string `pulumi:"externalIdentifier"`
+	// The OCID of the `IdentityProviderGroup`.
+	Id string `pulumi:"id"`
+	// The OCID of the identity provider.
+	IdentityProviderId string `pulumi:"identityProviderId"`
+	// A filter to only return resources that match the given name exactly.
+	Name string `pulumi:"name"`
+	// Date and time the `IdentityProviderGroup` was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// Date and time the `IdentityProviderGroup` was last modified, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+	TimeModified string `pulumi:"timeModified"`
+}
+
+// GetIdentityProviderGroupsIdentityProviderGroupInput is an input type that accepts GetIdentityProviderGroupsIdentityProviderGroupArgs and GetIdentityProviderGroupsIdentityProviderGroupOutput values.
+// You can construct a concrete instance of `GetIdentityProviderGroupsIdentityProviderGroupInput` via:
+//
+//	GetIdentityProviderGroupsIdentityProviderGroupArgs{...}
+type GetIdentityProviderGroupsIdentityProviderGroupInput interface {
+	pulumi.Input
+
+	ToGetIdentityProviderGroupsIdentityProviderGroupOutput() GetIdentityProviderGroupsIdentityProviderGroupOutput
+	ToGetIdentityProviderGroupsIdentityProviderGroupOutputWithContext(context.Context) GetIdentityProviderGroupsIdentityProviderGroupOutput
+}
+
+type GetIdentityProviderGroupsIdentityProviderGroupArgs struct {
+	// Display name of the group
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Identifier of the group in the identity provider
+	ExternalIdentifier pulumi.StringInput `pulumi:"externalIdentifier"`
+	// The OCID of the `IdentityProviderGroup`.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The OCID of the identity provider.
+	IdentityProviderId pulumi.StringInput `pulumi:"identityProviderId"`
+	// A filter to only return resources that match the given name exactly.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Date and time the `IdentityProviderGroup` was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Date and time the `IdentityProviderGroup` was last modified, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+	TimeModified pulumi.StringInput `pulumi:"timeModified"`
+}
+
+func (GetIdentityProviderGroupsIdentityProviderGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIdentityProviderGroupsIdentityProviderGroup)(nil)).Elem()
+}
+
+func (i GetIdentityProviderGroupsIdentityProviderGroupArgs) ToGetIdentityProviderGroupsIdentityProviderGroupOutput() GetIdentityProviderGroupsIdentityProviderGroupOutput {
+	return i.ToGetIdentityProviderGroupsIdentityProviderGroupOutputWithContext(context.Background())
+}
+
+func (i GetIdentityProviderGroupsIdentityProviderGroupArgs) ToGetIdentityProviderGroupsIdentityProviderGroupOutputWithContext(ctx context.Context) GetIdentityProviderGroupsIdentityProviderGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIdentityProviderGroupsIdentityProviderGroupOutput)
+}
+
+// GetIdentityProviderGroupsIdentityProviderGroupArrayInput is an input type that accepts GetIdentityProviderGroupsIdentityProviderGroupArray and GetIdentityProviderGroupsIdentityProviderGroupArrayOutput values.
+// You can construct a concrete instance of `GetIdentityProviderGroupsIdentityProviderGroupArrayInput` via:
+//
+//	GetIdentityProviderGroupsIdentityProviderGroupArray{ GetIdentityProviderGroupsIdentityProviderGroupArgs{...} }
+type GetIdentityProviderGroupsIdentityProviderGroupArrayInput interface {
+	pulumi.Input
+
+	ToGetIdentityProviderGroupsIdentityProviderGroupArrayOutput() GetIdentityProviderGroupsIdentityProviderGroupArrayOutput
+	ToGetIdentityProviderGroupsIdentityProviderGroupArrayOutputWithContext(context.Context) GetIdentityProviderGroupsIdentityProviderGroupArrayOutput
+}
+
+type GetIdentityProviderGroupsIdentityProviderGroupArray []GetIdentityProviderGroupsIdentityProviderGroupInput
+
+func (GetIdentityProviderGroupsIdentityProviderGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIdentityProviderGroupsIdentityProviderGroup)(nil)).Elem()
+}
+
+func (i GetIdentityProviderGroupsIdentityProviderGroupArray) ToGetIdentityProviderGroupsIdentityProviderGroupArrayOutput() GetIdentityProviderGroupsIdentityProviderGroupArrayOutput {
+	return i.ToGetIdentityProviderGroupsIdentityProviderGroupArrayOutputWithContext(context.Background())
+}
+
+func (i GetIdentityProviderGroupsIdentityProviderGroupArray) ToGetIdentityProviderGroupsIdentityProviderGroupArrayOutputWithContext(ctx context.Context) GetIdentityProviderGroupsIdentityProviderGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIdentityProviderGroupsIdentityProviderGroupArrayOutput)
+}
+
+type GetIdentityProviderGroupsIdentityProviderGroupOutput struct{ *pulumi.OutputState }
+
+func (GetIdentityProviderGroupsIdentityProviderGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIdentityProviderGroupsIdentityProviderGroup)(nil)).Elem()
+}
+
+func (o GetIdentityProviderGroupsIdentityProviderGroupOutput) ToGetIdentityProviderGroupsIdentityProviderGroupOutput() GetIdentityProviderGroupsIdentityProviderGroupOutput {
+	return o
+}
+
+func (o GetIdentityProviderGroupsIdentityProviderGroupOutput) ToGetIdentityProviderGroupsIdentityProviderGroupOutputWithContext(ctx context.Context) GetIdentityProviderGroupsIdentityProviderGroupOutput {
+	return o
+}
+
+// Display name of the group
+func (o GetIdentityProviderGroupsIdentityProviderGroupOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIdentityProviderGroupsIdentityProviderGroup) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Identifier of the group in the identity provider
+func (o GetIdentityProviderGroupsIdentityProviderGroupOutput) ExternalIdentifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIdentityProviderGroupsIdentityProviderGroup) string { return v.ExternalIdentifier }).(pulumi.StringOutput)
+}
+
+// The OCID of the `IdentityProviderGroup`.
+func (o GetIdentityProviderGroupsIdentityProviderGroupOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIdentityProviderGroupsIdentityProviderGroup) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The OCID of the identity provider.
+func (o GetIdentityProviderGroupsIdentityProviderGroupOutput) IdentityProviderId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIdentityProviderGroupsIdentityProviderGroup) string { return v.IdentityProviderId }).(pulumi.StringOutput)
+}
+
+// A filter to only return resources that match the given name exactly.
+func (o GetIdentityProviderGroupsIdentityProviderGroupOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIdentityProviderGroupsIdentityProviderGroup) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Date and time the `IdentityProviderGroup` was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+func (o GetIdentityProviderGroupsIdentityProviderGroupOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIdentityProviderGroupsIdentityProviderGroup) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Date and time the `IdentityProviderGroup` was last modified, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+func (o GetIdentityProviderGroupsIdentityProviderGroupOutput) TimeModified() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIdentityProviderGroupsIdentityProviderGroup) string { return v.TimeModified }).(pulumi.StringOutput)
+}
+
+type GetIdentityProviderGroupsIdentityProviderGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIdentityProviderGroupsIdentityProviderGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIdentityProviderGroupsIdentityProviderGroup)(nil)).Elem()
+}
+
+func (o GetIdentityProviderGroupsIdentityProviderGroupArrayOutput) ToGetIdentityProviderGroupsIdentityProviderGroupArrayOutput() GetIdentityProviderGroupsIdentityProviderGroupArrayOutput {
+	return o
+}
+
+func (o GetIdentityProviderGroupsIdentityProviderGroupArrayOutput) ToGetIdentityProviderGroupsIdentityProviderGroupArrayOutputWithContext(ctx context.Context) GetIdentityProviderGroupsIdentityProviderGroupArrayOutput {
+	return o
+}
+
+func (o GetIdentityProviderGroupsIdentityProviderGroupArrayOutput) Index(i pulumi.IntInput) GetIdentityProviderGroupsIdentityProviderGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIdentityProviderGroupsIdentityProviderGroup {
+		return vs[0].([]GetIdentityProviderGroupsIdentityProviderGroup)[vs[1].(int)]
+	}).(GetIdentityProviderGroupsIdentityProviderGroupOutput)
+}
+
+type GetIdentityProvidersFilter struct {
+	// A filter to only return resources that match the given name exactly.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetIdentityProvidersFilterInput is an input type that accepts GetIdentityProvidersFilterArgs and GetIdentityProvidersFilterOutput values.
+// You can construct a concrete instance of `GetIdentityProvidersFilterInput` via:
+//
+//	GetIdentityProvidersFilterArgs{...}
+type GetIdentityProvidersFilterInput interface {
+	pulumi.Input
+
+	ToGetIdentityProvidersFilterOutput() GetIdentityProvidersFilterOutput
+	ToGetIdentityProvidersFilterOutputWithContext(context.Context) GetIdentityProvidersFilterOutput
+}
+
+type GetIdentityProvidersFilterArgs struct {
+	// A filter to only return resources that match the given name exactly.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetIdentityProvidersFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIdentityProvidersFilter)(nil)).Elem()
+}
+
+func (i GetIdentityProvidersFilterArgs) ToGetIdentityProvidersFilterOutput() GetIdentityProvidersFilterOutput {
+	return i.ToGetIdentityProvidersFilterOutputWithContext(context.Background())
+}
+
+func (i GetIdentityProvidersFilterArgs) ToGetIdentityProvidersFilterOutputWithContext(ctx context.Context) GetIdentityProvidersFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIdentityProvidersFilterOutput)
+}
+
+// GetIdentityProvidersFilterArrayInput is an input type that accepts GetIdentityProvidersFilterArray and GetIdentityProvidersFilterArrayOutput values.
+// You can construct a concrete instance of `GetIdentityProvidersFilterArrayInput` via:
+//
+//	GetIdentityProvidersFilterArray{ GetIdentityProvidersFilterArgs{...} }
+type GetIdentityProvidersFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetIdentityProvidersFilterArrayOutput() GetIdentityProvidersFilterArrayOutput
+	ToGetIdentityProvidersFilterArrayOutputWithContext(context.Context) GetIdentityProvidersFilterArrayOutput
+}
+
+type GetIdentityProvidersFilterArray []GetIdentityProvidersFilterInput
+
+func (GetIdentityProvidersFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIdentityProvidersFilter)(nil)).Elem()
+}
+
+func (i GetIdentityProvidersFilterArray) ToGetIdentityProvidersFilterArrayOutput() GetIdentityProvidersFilterArrayOutput {
+	return i.ToGetIdentityProvidersFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetIdentityProvidersFilterArray) ToGetIdentityProvidersFilterArrayOutputWithContext(ctx context.Context) GetIdentityProvidersFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIdentityProvidersFilterArrayOutput)
+}
+
+type GetIdentityProvidersFilterOutput struct{ *pulumi.OutputState }
+
+func (GetIdentityProvidersFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIdentityProvidersFilter)(nil)).Elem()
+}
+
+func (o GetIdentityProvidersFilterOutput) ToGetIdentityProvidersFilterOutput() GetIdentityProvidersFilterOutput {
+	return o
+}
+
+func (o GetIdentityProvidersFilterOutput) ToGetIdentityProvidersFilterOutputWithContext(ctx context.Context) GetIdentityProvidersFilterOutput {
+	return o
+}
+
+// A filter to only return resources that match the given name exactly.
+func (o GetIdentityProvidersFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIdentityProvidersFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetIdentityProvidersFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetIdentityProvidersFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetIdentityProvidersFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIdentityProvidersFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetIdentityProvidersFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIdentityProvidersFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIdentityProvidersFilter)(nil)).Elem()
+}
+
+func (o GetIdentityProvidersFilterArrayOutput) ToGetIdentityProvidersFilterArrayOutput() GetIdentityProvidersFilterArrayOutput {
+	return o
+}
+
+func (o GetIdentityProvidersFilterArrayOutput) ToGetIdentityProvidersFilterArrayOutputWithContext(ctx context.Context) GetIdentityProvidersFilterArrayOutput {
+	return o
+}
+
+func (o GetIdentityProvidersFilterArrayOutput) Index(i pulumi.IntInput) GetIdentityProvidersFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIdentityProvidersFilter {
+		return vs[0].([]GetIdentityProvidersFilter)[vs[1].(int)]
+	}).(GetIdentityProvidersFilterOutput)
+}
+
+type GetIdentityProvidersIdentityProvider struct {
+	// The OCID of the compartment (remember that the tenancy is simply the root compartment).
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// The description you assign to the `IdentityProvider` during creation. Does not have to be unique, and it's changeable.
+	Description string `pulumi:"description"`
+	// Extra name value pairs associated with this identity provider. Example: `{"clientId": "appSf3kdjf3"}`
+	FreeformAttributes map[string]interface{} `pulumi:"freeformAttributes"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The OCID of the `IdentityProvider`.
+	Id string `pulumi:"id"`
+	// The detailed status of INACTIVE lifecycleState.
+	InactiveState string `pulumi:"inactiveState"`
+	// The XML that contains the information required for federating Identity with SAML2 Identity Provider.
+	Metadata string `pulumi:"metadata"`
+	// The URL for retrieving the identity provider's metadata, which contains information required for federating.
+	MetadataUrl string `pulumi:"metadataUrl"`
+	// A filter to only return resources that match the given name exactly.
+	Name string `pulumi:"name"`
+	// The identity provider service or product. Supported identity providers are Oracle Identity Cloud Service (IDCS) and Microsoft Active Directory Federation Services (ADFS).
+	ProductType string `pulumi:"productType"`
+	// The protocol used for federation.
+	Protocol string `pulumi:"protocol"`
+	// The URL to redirect federated users to for authentication with the identity provider.
+	RedirectUrl string `pulumi:"redirectUrl"`
+	// The identity provider's signing certificate used by the IAM Service to validate the SAML2 token.
+	SigningCertificate string `pulumi:"signingCertificate"`
+	// A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// Date and time the `IdentityProvider` was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+}
+
+// GetIdentityProvidersIdentityProviderInput is an input type that accepts GetIdentityProvidersIdentityProviderArgs and GetIdentityProvidersIdentityProviderOutput values.
+// You can construct a concrete instance of `GetIdentityProvidersIdentityProviderInput` via:
+//
+//	GetIdentityProvidersIdentityProviderArgs{...}
+type GetIdentityProvidersIdentityProviderInput interface {
+	pulumi.Input
+
+	ToGetIdentityProvidersIdentityProviderOutput() GetIdentityProvidersIdentityProviderOutput
+	ToGetIdentityProvidersIdentityProviderOutputWithContext(context.Context) GetIdentityProvidersIdentityProviderOutput
+}
+
+type GetIdentityProvidersIdentityProviderArgs struct {
+	// The OCID of the compartment (remember that the tenancy is simply the root compartment).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// The description you assign to the `IdentityProvider` during creation. Does not have to be unique, and it's changeable.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Extra name value pairs associated with this identity provider. Example: `{"clientId": "appSf3kdjf3"}`
+	FreeformAttributes pulumi.MapInput `pulumi:"freeformAttributes"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The OCID of the `IdentityProvider`.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The detailed status of INACTIVE lifecycleState.
+	InactiveState pulumi.StringInput `pulumi:"inactiveState"`
+	// The XML that contains the information required for federating Identity with SAML2 Identity Provider.
+	Metadata pulumi.StringInput `pulumi:"metadata"`
+	// The URL for retrieving the identity provider's metadata, which contains information required for federating.
+	MetadataUrl pulumi.StringInput `pulumi:"metadataUrl"`
+	// A filter to only return resources that match the given name exactly.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The identity provider service or product. Supported identity providers are Oracle Identity Cloud Service (IDCS) and Microsoft Active Directory Federation Services (ADFS).
+	ProductType pulumi.StringInput `pulumi:"productType"`
+	// The protocol used for federation.
+	Protocol pulumi.StringInput `pulumi:"protocol"`
+	// The URL to redirect federated users to for authentication with the identity provider.
+	RedirectUrl pulumi.StringInput `pulumi:"redirectUrl"`
+	// The identity provider's signing certificate used by the IAM Service to validate the SAML2 token.
+	SigningCertificate pulumi.StringInput `pulumi:"signingCertificate"`
+	// A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// Date and time the `IdentityProvider` was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+}
+
+func (GetIdentityProvidersIdentityProviderArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIdentityProvidersIdentityProvider)(nil)).Elem()
+}
+
+func (i GetIdentityProvidersIdentityProviderArgs) ToGetIdentityProvidersIdentityProviderOutput() GetIdentityProvidersIdentityProviderOutput {
+	return i.ToGetIdentityProvidersIdentityProviderOutputWithContext(context.Background())
+}
+
+func (i GetIdentityProvidersIdentityProviderArgs) ToGetIdentityProvidersIdentityProviderOutputWithContext(ctx context.Context) GetIdentityProvidersIdentityProviderOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIdentityProvidersIdentityProviderOutput)
+}
+
+// GetIdentityProvidersIdentityProviderArrayInput is an input type that accepts GetIdentityProvidersIdentityProviderArray and GetIdentityProvidersIdentityProviderArrayOutput values.
+// You can construct a concrete instance of `GetIdentityProvidersIdentityProviderArrayInput` via:
+//
+//	GetIdentityProvidersIdentityProviderArray{ GetIdentityProvidersIdentityProviderArgs{...} }
+type GetIdentityProvidersIdentityProviderArrayInput interface {
+	pulumi.Input
+
+	ToGetIdentityProvidersIdentityProviderArrayOutput() GetIdentityProvidersIdentityProviderArrayOutput
+	ToGetIdentityProvidersIdentityProviderArrayOutputWithContext(context.Context) GetIdentityProvidersIdentityProviderArrayOutput
+}
+
+type GetIdentityProvidersIdentityProviderArray []GetIdentityProvidersIdentityProviderInput
+
+func (GetIdentityProvidersIdentityProviderArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIdentityProvidersIdentityProvider)(nil)).Elem()
+}
+
+func (i GetIdentityProvidersIdentityProviderArray) ToGetIdentityProvidersIdentityProviderArrayOutput() GetIdentityProvidersIdentityProviderArrayOutput {
+	return i.ToGetIdentityProvidersIdentityProviderArrayOutputWithContext(context.Background())
+}
+
+func (i GetIdentityProvidersIdentityProviderArray) ToGetIdentityProvidersIdentityProviderArrayOutputWithContext(ctx context.Context) GetIdentityProvidersIdentityProviderArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIdentityProvidersIdentityProviderArrayOutput)
+}
+
+type GetIdentityProvidersIdentityProviderOutput struct{ *pulumi.OutputState }
+
+func (GetIdentityProvidersIdentityProviderOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIdentityProvidersIdentityProvider)(nil)).Elem()
+}
+
+func (o GetIdentityProvidersIdentityProviderOutput) ToGetIdentityProvidersIdentityProviderOutput() GetIdentityProvidersIdentityProviderOutput {
+	return o
+}
+
+func (o GetIdentityProvidersIdentityProviderOutput) ToGetIdentityProvidersIdentityProviderOutputWithContext(ctx context.Context) GetIdentityProvidersIdentityProviderOutput {
+	return o
+}
+
+// The OCID of the compartment (remember that the tenancy is simply the root compartment).
+func (o GetIdentityProvidersIdentityProviderOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIdentityProvidersIdentityProvider) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetIdentityProvidersIdentityProviderOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetIdentityProvidersIdentityProvider) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// The description you assign to the `IdentityProvider` during creation. Does not have to be unique, and it's changeable.
+func (o GetIdentityProvidersIdentityProviderOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIdentityProvidersIdentityProvider) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Extra name value pairs associated with this identity provider. Example: `{"clientId": "appSf3kdjf3"}`
+func (o GetIdentityProvidersIdentityProviderOutput) FreeformAttributes() pulumi.MapOutput {
+	return o.ApplyT(func(v GetIdentityProvidersIdentityProvider) map[string]interface{} { return v.FreeformAttributes }).(pulumi.MapOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetIdentityProvidersIdentityProviderOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetIdentityProvidersIdentityProvider) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The OCID of the `IdentityProvider`.
+func (o GetIdentityProvidersIdentityProviderOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIdentityProvidersIdentityProvider) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The detailed status of INACTIVE lifecycleState.
+func (o GetIdentityProvidersIdentityProviderOutput) InactiveState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIdentityProvidersIdentityProvider) string { return v.InactiveState }).(pulumi.StringOutput)
+}
+
+// The XML that contains the information required for federating Identity with SAML2 Identity Provider.
+func (o GetIdentityProvidersIdentityProviderOutput) Metadata() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIdentityProvidersIdentityProvider) string { return v.Metadata }).(pulumi.StringOutput)
+}
+
+// The URL for retrieving the identity provider's metadata, which contains information required for federating.
+func (o GetIdentityProvidersIdentityProviderOutput) MetadataUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIdentityProvidersIdentityProvider) string { return v.MetadataUrl }).(pulumi.StringOutput)
+}
+
+// A filter to only return resources that match the given name exactly.
+func (o GetIdentityProvidersIdentityProviderOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIdentityProvidersIdentityProvider) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The identity provider service or product. Supported identity providers are Oracle Identity Cloud Service (IDCS) and Microsoft Active Directory Federation Services (ADFS).
+func (o GetIdentityProvidersIdentityProviderOutput) ProductType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIdentityProvidersIdentityProvider) string { return v.ProductType }).(pulumi.StringOutput)
+}
+
+// The protocol used for federation.
+func (o GetIdentityProvidersIdentityProviderOutput) Protocol() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIdentityProvidersIdentityProvider) string { return v.Protocol }).(pulumi.StringOutput)
+}
+
+// The URL to redirect federated users to for authentication with the identity provider.
+func (o GetIdentityProvidersIdentityProviderOutput) RedirectUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIdentityProvidersIdentityProvider) string { return v.RedirectUrl }).(pulumi.StringOutput)
+}
+
+// The identity provider's signing certificate used by the IAM Service to validate the SAML2 token.
+func (o GetIdentityProvidersIdentityProviderOutput) SigningCertificate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIdentityProvidersIdentityProvider) string { return v.SigningCertificate }).(pulumi.StringOutput)
+}
+
+// A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+func (o GetIdentityProvidersIdentityProviderOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIdentityProvidersIdentityProvider) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Date and time the `IdentityProvider` was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+func (o GetIdentityProvidersIdentityProviderOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIdentityProvidersIdentityProvider) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+type GetIdentityProvidersIdentityProviderArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIdentityProvidersIdentityProviderArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIdentityProvidersIdentityProvider)(nil)).Elem()
+}
+
+func (o GetIdentityProvidersIdentityProviderArrayOutput) ToGetIdentityProvidersIdentityProviderArrayOutput() GetIdentityProvidersIdentityProviderArrayOutput {
+	return o
+}
+
+func (o GetIdentityProvidersIdentityProviderArrayOutput) ToGetIdentityProvidersIdentityProviderArrayOutputWithContext(ctx context.Context) GetIdentityProvidersIdentityProviderArrayOutput {
+	return o
+}
+
+func (o GetIdentityProvidersIdentityProviderArrayOutput) Index(i pulumi.IntInput) GetIdentityProvidersIdentityProviderOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIdentityProvidersIdentityProvider {
+		return vs[0].([]GetIdentityProvidersIdentityProvider)[vs[1].(int)]
+	}).(GetIdentityProvidersIdentityProviderOutput)
+}
+
+type GetIdpGroupMappingsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetIdpGroupMappingsFilterInput is an input type that accepts GetIdpGroupMappingsFilterArgs and GetIdpGroupMappingsFilterOutput values.
+// You can construct a concrete instance of `GetIdpGroupMappingsFilterInput` via:
+//
+//	GetIdpGroupMappingsFilterArgs{...}
+type GetIdpGroupMappingsFilterInput interface {
+	pulumi.Input
+
+	ToGetIdpGroupMappingsFilterOutput() GetIdpGroupMappingsFilterOutput
+	ToGetIdpGroupMappingsFilterOutputWithContext(context.Context) GetIdpGroupMappingsFilterOutput
+}
+
+type GetIdpGroupMappingsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetIdpGroupMappingsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIdpGroupMappingsFilter)(nil)).Elem()
+}
+
+func (i GetIdpGroupMappingsFilterArgs) ToGetIdpGroupMappingsFilterOutput() GetIdpGroupMappingsFilterOutput {
+	return i.ToGetIdpGroupMappingsFilterOutputWithContext(context.Background())
+}
+
+func (i GetIdpGroupMappingsFilterArgs) ToGetIdpGroupMappingsFilterOutputWithContext(ctx context.Context) GetIdpGroupMappingsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIdpGroupMappingsFilterOutput)
+}
+
+// GetIdpGroupMappingsFilterArrayInput is an input type that accepts GetIdpGroupMappingsFilterArray and GetIdpGroupMappingsFilterArrayOutput values.
+// You can construct a concrete instance of `GetIdpGroupMappingsFilterArrayInput` via:
+//
+//	GetIdpGroupMappingsFilterArray{ GetIdpGroupMappingsFilterArgs{...} }
+type GetIdpGroupMappingsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetIdpGroupMappingsFilterArrayOutput() GetIdpGroupMappingsFilterArrayOutput
+	ToGetIdpGroupMappingsFilterArrayOutputWithContext(context.Context) GetIdpGroupMappingsFilterArrayOutput
+}
+
+type GetIdpGroupMappingsFilterArray []GetIdpGroupMappingsFilterInput
+
+func (GetIdpGroupMappingsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIdpGroupMappingsFilter)(nil)).Elem()
+}
+
+func (i GetIdpGroupMappingsFilterArray) ToGetIdpGroupMappingsFilterArrayOutput() GetIdpGroupMappingsFilterArrayOutput {
+	return i.ToGetIdpGroupMappingsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetIdpGroupMappingsFilterArray) ToGetIdpGroupMappingsFilterArrayOutputWithContext(ctx context.Context) GetIdpGroupMappingsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIdpGroupMappingsFilterArrayOutput)
+}
+
+type GetIdpGroupMappingsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetIdpGroupMappingsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIdpGroupMappingsFilter)(nil)).Elem()
+}
+
+func (o GetIdpGroupMappingsFilterOutput) ToGetIdpGroupMappingsFilterOutput() GetIdpGroupMappingsFilterOutput {
+	return o
+}
+
+func (o GetIdpGroupMappingsFilterOutput) ToGetIdpGroupMappingsFilterOutputWithContext(ctx context.Context) GetIdpGroupMappingsFilterOutput {
+	return o
+}
+
+func (o GetIdpGroupMappingsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIdpGroupMappingsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetIdpGroupMappingsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetIdpGroupMappingsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetIdpGroupMappingsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIdpGroupMappingsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetIdpGroupMappingsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIdpGroupMappingsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIdpGroupMappingsFilter)(nil)).Elem()
+}
+
+func (o GetIdpGroupMappingsFilterArrayOutput) ToGetIdpGroupMappingsFilterArrayOutput() GetIdpGroupMappingsFilterArrayOutput {
+	return o
+}
+
+func (o GetIdpGroupMappingsFilterArrayOutput) ToGetIdpGroupMappingsFilterArrayOutputWithContext(ctx context.Context) GetIdpGroupMappingsFilterArrayOutput {
+	return o
+}
+
+func (o GetIdpGroupMappingsFilterArrayOutput) Index(i pulumi.IntInput) GetIdpGroupMappingsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIdpGroupMappingsFilter {
+		return vs[0].([]GetIdpGroupMappingsFilter)[vs[1].(int)]
+	}).(GetIdpGroupMappingsFilterOutput)
+}
+
+type GetIdpGroupMappingsIdpGroupMapping struct {
+	// The OCID of the tenancy containing the `IdentityProvider`.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The OCID of the IAM Service group that is mapped to the IdP group.
+	GroupId string `pulumi:"groupId"`
+	// The OCID of the `IdpGroupMapping`.
+	Id string `pulumi:"id"`
+	// The OCID of the identity provider.
+	IdentityProviderId string `pulumi:"identityProviderId"`
+	// The name of the IdP group that is mapped to the IAM Service group.
+	IdpGroupName string `pulumi:"idpGroupName"`
+	// The detailed status of INACTIVE lifecycleState.
+	InactiveState string `pulumi:"inactiveState"`
+	// The mapping's current state.
+	State string `pulumi:"state"`
+	// Date and time the mapping was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+}
+
+// GetIdpGroupMappingsIdpGroupMappingInput is an input type that accepts GetIdpGroupMappingsIdpGroupMappingArgs and GetIdpGroupMappingsIdpGroupMappingOutput values.
+// You can construct a concrete instance of `GetIdpGroupMappingsIdpGroupMappingInput` via:
+//
+//	GetIdpGroupMappingsIdpGroupMappingArgs{...}
+type GetIdpGroupMappingsIdpGroupMappingInput interface {
+	pulumi.Input
+
+	ToGetIdpGroupMappingsIdpGroupMappingOutput() GetIdpGroupMappingsIdpGroupMappingOutput
+	ToGetIdpGroupMappingsIdpGroupMappingOutputWithContext(context.Context) GetIdpGroupMappingsIdpGroupMappingOutput
+}
+
+type GetIdpGroupMappingsIdpGroupMappingArgs struct {
+	// The OCID of the tenancy containing the `IdentityProvider`.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The OCID of the IAM Service group that is mapped to the IdP group.
+	GroupId pulumi.StringInput `pulumi:"groupId"`
+	// The OCID of the `IdpGroupMapping`.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The OCID of the identity provider.
+	IdentityProviderId pulumi.StringInput `pulumi:"identityProviderId"`
+	// The name of the IdP group that is mapped to the IAM Service group.
+	IdpGroupName pulumi.StringInput `pulumi:"idpGroupName"`
+	// The detailed status of INACTIVE lifecycleState.
+	InactiveState pulumi.StringInput `pulumi:"inactiveState"`
+	// The mapping's current state.
+	State pulumi.StringInput `pulumi:"state"`
+	// Date and time the mapping was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+}
+
+func (GetIdpGroupMappingsIdpGroupMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIdpGroupMappingsIdpGroupMapping)(nil)).Elem()
+}
+
+func (i GetIdpGroupMappingsIdpGroupMappingArgs) ToGetIdpGroupMappingsIdpGroupMappingOutput() GetIdpGroupMappingsIdpGroupMappingOutput {
+	return i.ToGetIdpGroupMappingsIdpGroupMappingOutputWithContext(context.Background())
+}
+
+func (i GetIdpGroupMappingsIdpGroupMappingArgs) ToGetIdpGroupMappingsIdpGroupMappingOutputWithContext(ctx context.Context) GetIdpGroupMappingsIdpGroupMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIdpGroupMappingsIdpGroupMappingOutput)
+}
+
+// GetIdpGroupMappingsIdpGroupMappingArrayInput is an input type that accepts GetIdpGroupMappingsIdpGroupMappingArray and GetIdpGroupMappingsIdpGroupMappingArrayOutput values.
+// You can construct a concrete instance of `GetIdpGroupMappingsIdpGroupMappingArrayInput` via:
+//
+//	GetIdpGroupMappingsIdpGroupMappingArray{ GetIdpGroupMappingsIdpGroupMappingArgs{...} }
+type GetIdpGroupMappingsIdpGroupMappingArrayInput interface {
+	pulumi.Input
+
+	ToGetIdpGroupMappingsIdpGroupMappingArrayOutput() GetIdpGroupMappingsIdpGroupMappingArrayOutput
+	ToGetIdpGroupMappingsIdpGroupMappingArrayOutputWithContext(context.Context) GetIdpGroupMappingsIdpGroupMappingArrayOutput
+}
+
+type GetIdpGroupMappingsIdpGroupMappingArray []GetIdpGroupMappingsIdpGroupMappingInput
+
+func (GetIdpGroupMappingsIdpGroupMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIdpGroupMappingsIdpGroupMapping)(nil)).Elem()
+}
+
+func (i GetIdpGroupMappingsIdpGroupMappingArray) ToGetIdpGroupMappingsIdpGroupMappingArrayOutput() GetIdpGroupMappingsIdpGroupMappingArrayOutput {
+	return i.ToGetIdpGroupMappingsIdpGroupMappingArrayOutputWithContext(context.Background())
+}
+
+func (i GetIdpGroupMappingsIdpGroupMappingArray) ToGetIdpGroupMappingsIdpGroupMappingArrayOutputWithContext(ctx context.Context) GetIdpGroupMappingsIdpGroupMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIdpGroupMappingsIdpGroupMappingArrayOutput)
+}
+
+type GetIdpGroupMappingsIdpGroupMappingOutput struct{ *pulumi.OutputState }
+
+func (GetIdpGroupMappingsIdpGroupMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIdpGroupMappingsIdpGroupMapping)(nil)).Elem()
+}
+
+func (o GetIdpGroupMappingsIdpGroupMappingOutput) ToGetIdpGroupMappingsIdpGroupMappingOutput() GetIdpGroupMappingsIdpGroupMappingOutput {
+	return o
+}
+
+func (o GetIdpGroupMappingsIdpGroupMappingOutput) ToGetIdpGroupMappingsIdpGroupMappingOutputWithContext(ctx context.Context) GetIdpGroupMappingsIdpGroupMappingOutput {
+	return o
+}
+
+// The OCID of the tenancy containing the `IdentityProvider`.
+func (o GetIdpGroupMappingsIdpGroupMappingOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIdpGroupMappingsIdpGroupMapping) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The OCID of the IAM Service group that is mapped to the IdP group.
+func (o GetIdpGroupMappingsIdpGroupMappingOutput) GroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIdpGroupMappingsIdpGroupMapping) string { return v.GroupId }).(pulumi.StringOutput)
+}
+
+// The OCID of the `IdpGroupMapping`.
+func (o GetIdpGroupMappingsIdpGroupMappingOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIdpGroupMappingsIdpGroupMapping) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The OCID of the identity provider.
+func (o GetIdpGroupMappingsIdpGroupMappingOutput) IdentityProviderId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIdpGroupMappingsIdpGroupMapping) string { return v.IdentityProviderId }).(pulumi.StringOutput)
+}
+
+// The name of the IdP group that is mapped to the IAM Service group.
+func (o GetIdpGroupMappingsIdpGroupMappingOutput) IdpGroupName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIdpGroupMappingsIdpGroupMapping) string { return v.IdpGroupName }).(pulumi.StringOutput)
+}
+
+// The detailed status of INACTIVE lifecycleState.
+func (o GetIdpGroupMappingsIdpGroupMappingOutput) InactiveState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIdpGroupMappingsIdpGroupMapping) string { return v.InactiveState }).(pulumi.StringOutput)
+}
+
+// The mapping's current state.
+func (o GetIdpGroupMappingsIdpGroupMappingOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIdpGroupMappingsIdpGroupMapping) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Date and time the mapping was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+func (o GetIdpGroupMappingsIdpGroupMappingOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIdpGroupMappingsIdpGroupMapping) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+type GetIdpGroupMappingsIdpGroupMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIdpGroupMappingsIdpGroupMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIdpGroupMappingsIdpGroupMapping)(nil)).Elem()
+}
+
+func (o GetIdpGroupMappingsIdpGroupMappingArrayOutput) ToGetIdpGroupMappingsIdpGroupMappingArrayOutput() GetIdpGroupMappingsIdpGroupMappingArrayOutput {
+	return o
+}
+
+func (o GetIdpGroupMappingsIdpGroupMappingArrayOutput) ToGetIdpGroupMappingsIdpGroupMappingArrayOutputWithContext(ctx context.Context) GetIdpGroupMappingsIdpGroupMappingArrayOutput {
+	return o
+}
+
+func (o GetIdpGroupMappingsIdpGroupMappingArrayOutput) Index(i pulumi.IntInput) GetIdpGroupMappingsIdpGroupMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIdpGroupMappingsIdpGroupMapping {
+		return vs[0].([]GetIdpGroupMappingsIdpGroupMapping)[vs[1].(int)]
+	}).(GetIdpGroupMappingsIdpGroupMappingOutput)
+}
+
+type GetNetworkSourceVirtualSourceList struct {
+	IpRanges []string `pulumi:"ipRanges"`
+	VcnId    string   `pulumi:"vcnId"`
+}
+
+// GetNetworkSourceVirtualSourceListInput is an input type that accepts GetNetworkSourceVirtualSourceListArgs and GetNetworkSourceVirtualSourceListOutput values.
+// You can construct a concrete instance of `GetNetworkSourceVirtualSourceListInput` via:
+//
+//	GetNetworkSourceVirtualSourceListArgs{...}
+type GetNetworkSourceVirtualSourceListInput interface {
+	pulumi.Input
+
+	ToGetNetworkSourceVirtualSourceListOutput() GetNetworkSourceVirtualSourceListOutput
+	ToGetNetworkSourceVirtualSourceListOutputWithContext(context.Context) GetNetworkSourceVirtualSourceListOutput
+}
+
+type GetNetworkSourceVirtualSourceListArgs struct {
+	IpRanges pulumi.StringArrayInput `pulumi:"ipRanges"`
+	VcnId    pulumi.StringInput      `pulumi:"vcnId"`
+}
+
+func (GetNetworkSourceVirtualSourceListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkSourceVirtualSourceList)(nil)).Elem()
+}
+
+func (i GetNetworkSourceVirtualSourceListArgs) ToGetNetworkSourceVirtualSourceListOutput() GetNetworkSourceVirtualSourceListOutput {
+	return i.ToGetNetworkSourceVirtualSourceListOutputWithContext(context.Background())
+}
+
+func (i GetNetworkSourceVirtualSourceListArgs) ToGetNetworkSourceVirtualSourceListOutputWithContext(ctx context.Context) GetNetworkSourceVirtualSourceListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSourceVirtualSourceListOutput)
+}
+
+// GetNetworkSourceVirtualSourceListArrayInput is an input type that accepts GetNetworkSourceVirtualSourceListArray and GetNetworkSourceVirtualSourceListArrayOutput values.
+// You can construct a concrete instance of `GetNetworkSourceVirtualSourceListArrayInput` via:
+//
+//	GetNetworkSourceVirtualSourceListArray{ GetNetworkSourceVirtualSourceListArgs{...} }
+type GetNetworkSourceVirtualSourceListArrayInput interface {
+	pulumi.Input
+
+	ToGetNetworkSourceVirtualSourceListArrayOutput() GetNetworkSourceVirtualSourceListArrayOutput
+	ToGetNetworkSourceVirtualSourceListArrayOutputWithContext(context.Context) GetNetworkSourceVirtualSourceListArrayOutput
+}
+
+type GetNetworkSourceVirtualSourceListArray []GetNetworkSourceVirtualSourceListInput
+
+func (GetNetworkSourceVirtualSourceListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkSourceVirtualSourceList)(nil)).Elem()
+}
+
+func (i GetNetworkSourceVirtualSourceListArray) ToGetNetworkSourceVirtualSourceListArrayOutput() GetNetworkSourceVirtualSourceListArrayOutput {
+	return i.ToGetNetworkSourceVirtualSourceListArrayOutputWithContext(context.Background())
+}
+
+func (i GetNetworkSourceVirtualSourceListArray) ToGetNetworkSourceVirtualSourceListArrayOutputWithContext(ctx context.Context) GetNetworkSourceVirtualSourceListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSourceVirtualSourceListArrayOutput)
+}
+
+type GetNetworkSourceVirtualSourceListOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkSourceVirtualSourceListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkSourceVirtualSourceList)(nil)).Elem()
+}
+
+func (o GetNetworkSourceVirtualSourceListOutput) ToGetNetworkSourceVirtualSourceListOutput() GetNetworkSourceVirtualSourceListOutput {
+	return o
+}
+
+func (o GetNetworkSourceVirtualSourceListOutput) ToGetNetworkSourceVirtualSourceListOutputWithContext(ctx context.Context) GetNetworkSourceVirtualSourceListOutput {
+	return o
+}
+
+func (o GetNetworkSourceVirtualSourceListOutput) IpRanges() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNetworkSourceVirtualSourceList) []string { return v.IpRanges }).(pulumi.StringArrayOutput)
+}
+
+func (o GetNetworkSourceVirtualSourceListOutput) VcnId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkSourceVirtualSourceList) string { return v.VcnId }).(pulumi.StringOutput)
+}
+
+type GetNetworkSourceVirtualSourceListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkSourceVirtualSourceListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkSourceVirtualSourceList)(nil)).Elem()
+}
+
+func (o GetNetworkSourceVirtualSourceListArrayOutput) ToGetNetworkSourceVirtualSourceListArrayOutput() GetNetworkSourceVirtualSourceListArrayOutput {
+	return o
+}
+
+func (o GetNetworkSourceVirtualSourceListArrayOutput) ToGetNetworkSourceVirtualSourceListArrayOutputWithContext(ctx context.Context) GetNetworkSourceVirtualSourceListArrayOutput {
+	return o
+}
+
+func (o GetNetworkSourceVirtualSourceListArrayOutput) Index(i pulumi.IntInput) GetNetworkSourceVirtualSourceListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkSourceVirtualSourceList {
+		return vs[0].([]GetNetworkSourceVirtualSourceList)[vs[1].(int)]
+	}).(GetNetworkSourceVirtualSourceListOutput)
+}
+
+type GetNetworkSourcesFilter struct {
+	// A filter to only return resources that match the given name exactly.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetNetworkSourcesFilterInput is an input type that accepts GetNetworkSourcesFilterArgs and GetNetworkSourcesFilterOutput values.
+// You can construct a concrete instance of `GetNetworkSourcesFilterInput` via:
+//
+//	GetNetworkSourcesFilterArgs{...}
+type GetNetworkSourcesFilterInput interface {
+	pulumi.Input
+
+	ToGetNetworkSourcesFilterOutput() GetNetworkSourcesFilterOutput
+	ToGetNetworkSourcesFilterOutputWithContext(context.Context) GetNetworkSourcesFilterOutput
+}
+
+type GetNetworkSourcesFilterArgs struct {
+	// A filter to only return resources that match the given name exactly.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetNetworkSourcesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkSourcesFilter)(nil)).Elem()
+}
+
+func (i GetNetworkSourcesFilterArgs) ToGetNetworkSourcesFilterOutput() GetNetworkSourcesFilterOutput {
+	return i.ToGetNetworkSourcesFilterOutputWithContext(context.Background())
+}
+
+func (i GetNetworkSourcesFilterArgs) ToGetNetworkSourcesFilterOutputWithContext(ctx context.Context) GetNetworkSourcesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSourcesFilterOutput)
+}
+
+// GetNetworkSourcesFilterArrayInput is an input type that accepts GetNetworkSourcesFilterArray and GetNetworkSourcesFilterArrayOutput values.
+// You can construct a concrete instance of `GetNetworkSourcesFilterArrayInput` via:
+//
+//	GetNetworkSourcesFilterArray{ GetNetworkSourcesFilterArgs{...} }
+type GetNetworkSourcesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetNetworkSourcesFilterArrayOutput() GetNetworkSourcesFilterArrayOutput
+	ToGetNetworkSourcesFilterArrayOutputWithContext(context.Context) GetNetworkSourcesFilterArrayOutput
+}
+
+type GetNetworkSourcesFilterArray []GetNetworkSourcesFilterInput
+
+func (GetNetworkSourcesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkSourcesFilter)(nil)).Elem()
+}
+
+func (i GetNetworkSourcesFilterArray) ToGetNetworkSourcesFilterArrayOutput() GetNetworkSourcesFilterArrayOutput {
+	return i.ToGetNetworkSourcesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetNetworkSourcesFilterArray) ToGetNetworkSourcesFilterArrayOutputWithContext(ctx context.Context) GetNetworkSourcesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSourcesFilterArrayOutput)
+}
+
+type GetNetworkSourcesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkSourcesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkSourcesFilter)(nil)).Elem()
+}
+
+func (o GetNetworkSourcesFilterOutput) ToGetNetworkSourcesFilterOutput() GetNetworkSourcesFilterOutput {
+	return o
+}
+
+func (o GetNetworkSourcesFilterOutput) ToGetNetworkSourcesFilterOutputWithContext(ctx context.Context) GetNetworkSourcesFilterOutput {
+	return o
+}
+
+// A filter to only return resources that match the given name exactly.
+func (o GetNetworkSourcesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkSourcesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetNetworkSourcesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNetworkSourcesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetNetworkSourcesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNetworkSourcesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetNetworkSourcesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkSourcesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkSourcesFilter)(nil)).Elem()
+}
+
+func (o GetNetworkSourcesFilterArrayOutput) ToGetNetworkSourcesFilterArrayOutput() GetNetworkSourcesFilterArrayOutput {
+	return o
+}
+
+func (o GetNetworkSourcesFilterArrayOutput) ToGetNetworkSourcesFilterArrayOutputWithContext(ctx context.Context) GetNetworkSourcesFilterArrayOutput {
+	return o
+}
+
+func (o GetNetworkSourcesFilterArrayOutput) Index(i pulumi.IntInput) GetNetworkSourcesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkSourcesFilter {
+		return vs[0].([]GetNetworkSourcesFilter)[vs[1].(int)]
+	}).(GetNetworkSourcesFilterOutput)
+}
+
+type GetNetworkSourcesNetworkSource struct {
+	// The OCID of the compartment (remember that the tenancy is simply the root compartment).
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// The description you assign to the network source. Does not have to be unique, and it's changeable.
+	Description string `pulumi:"description"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The OCID of the network source.
+	Id string `pulumi:"id"`
+	// The detailed status of INACTIVE lifecycleState.
+	InactiveState string `pulumi:"inactiveState"`
+	// A filter to only return resources that match the given name exactly.
+	Name string `pulumi:"name"`
+	// A list of allowed public IP addresses and CIDR ranges.
+	PublicSourceLists []string `pulumi:"publicSourceLists"`
+	// A list of services allowed to make on-behalf-of requests. These requests can have different source IPs than those specified in the network source. Currently, only `all` and `none` are supported. The default is `all`.
+	Services []string `pulumi:"services"`
+	// A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// Date and time the group was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// A list of allowed VCN OCID and IP range pairs. Example:`"vcnId": "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]`
+	VirtualSourceLists []GetNetworkSourcesNetworkSourceVirtualSourceList `pulumi:"virtualSourceLists"`
+}
+
+// GetNetworkSourcesNetworkSourceInput is an input type that accepts GetNetworkSourcesNetworkSourceArgs and GetNetworkSourcesNetworkSourceOutput values.
+// You can construct a concrete instance of `GetNetworkSourcesNetworkSourceInput` via:
+//
+//	GetNetworkSourcesNetworkSourceArgs{...}
+type GetNetworkSourcesNetworkSourceInput interface {
+	pulumi.Input
+
+	ToGetNetworkSourcesNetworkSourceOutput() GetNetworkSourcesNetworkSourceOutput
+	ToGetNetworkSourcesNetworkSourceOutputWithContext(context.Context) GetNetworkSourcesNetworkSourceOutput
+}
+
+type GetNetworkSourcesNetworkSourceArgs struct {
+	// The OCID of the compartment (remember that the tenancy is simply the root compartment).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// The description you assign to the network source. Does not have to be unique, and it's changeable.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The OCID of the network source.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The detailed status of INACTIVE lifecycleState.
+	InactiveState pulumi.StringInput `pulumi:"inactiveState"`
+	// A filter to only return resources that match the given name exactly.
+	Name pulumi.StringInput `pulumi:"name"`
+	// A list of allowed public IP addresses and CIDR ranges.
+	PublicSourceLists pulumi.StringArrayInput `pulumi:"publicSourceLists"`
+	// A list of services allowed to make on-behalf-of requests. These requests can have different source IPs than those specified in the network source. Currently, only `all` and `none` are supported. The default is `all`.
+	Services pulumi.StringArrayInput `pulumi:"services"`
+	// A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// Date and time the group was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// A list of allowed VCN OCID and IP range pairs. Example:`"vcnId": "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]`
+	VirtualSourceLists GetNetworkSourcesNetworkSourceVirtualSourceListArrayInput `pulumi:"virtualSourceLists"`
+}
+
+func (GetNetworkSourcesNetworkSourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkSourcesNetworkSource)(nil)).Elem()
+}
+
+func (i GetNetworkSourcesNetworkSourceArgs) ToGetNetworkSourcesNetworkSourceOutput() GetNetworkSourcesNetworkSourceOutput {
+	return i.ToGetNetworkSourcesNetworkSourceOutputWithContext(context.Background())
+}
+
+func (i GetNetworkSourcesNetworkSourceArgs) ToGetNetworkSourcesNetworkSourceOutputWithContext(ctx context.Context) GetNetworkSourcesNetworkSourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSourcesNetworkSourceOutput)
+}
+
+// GetNetworkSourcesNetworkSourceArrayInput is an input type that accepts GetNetworkSourcesNetworkSourceArray and GetNetworkSourcesNetworkSourceArrayOutput values.
+// You can construct a concrete instance of `GetNetworkSourcesNetworkSourceArrayInput` via:
+//
+//	GetNetworkSourcesNetworkSourceArray{ GetNetworkSourcesNetworkSourceArgs{...} }
+type GetNetworkSourcesNetworkSourceArrayInput interface {
+	pulumi.Input
+
+	ToGetNetworkSourcesNetworkSourceArrayOutput() GetNetworkSourcesNetworkSourceArrayOutput
+	ToGetNetworkSourcesNetworkSourceArrayOutputWithContext(context.Context) GetNetworkSourcesNetworkSourceArrayOutput
+}
+
+type GetNetworkSourcesNetworkSourceArray []GetNetworkSourcesNetworkSourceInput
+
+func (GetNetworkSourcesNetworkSourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkSourcesNetworkSource)(nil)).Elem()
+}
+
+func (i GetNetworkSourcesNetworkSourceArray) ToGetNetworkSourcesNetworkSourceArrayOutput() GetNetworkSourcesNetworkSourceArrayOutput {
+	return i.ToGetNetworkSourcesNetworkSourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetNetworkSourcesNetworkSourceArray) ToGetNetworkSourcesNetworkSourceArrayOutputWithContext(ctx context.Context) GetNetworkSourcesNetworkSourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSourcesNetworkSourceArrayOutput)
+}
+
+type GetNetworkSourcesNetworkSourceOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkSourcesNetworkSourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkSourcesNetworkSource)(nil)).Elem()
+}
+
+func (o GetNetworkSourcesNetworkSourceOutput) ToGetNetworkSourcesNetworkSourceOutput() GetNetworkSourcesNetworkSourceOutput {
+	return o
+}
+
+func (o GetNetworkSourcesNetworkSourceOutput) ToGetNetworkSourcesNetworkSourceOutputWithContext(ctx context.Context) GetNetworkSourcesNetworkSourceOutput {
+	return o
+}
+
+// The OCID of the compartment (remember that the tenancy is simply the root compartment).
+func (o GetNetworkSourcesNetworkSourceOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkSourcesNetworkSource) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetNetworkSourcesNetworkSourceOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetNetworkSourcesNetworkSource) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// The description you assign to the network source. Does not have to be unique, and it's changeable.
+func (o GetNetworkSourcesNetworkSourceOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkSourcesNetworkSource) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetNetworkSourcesNetworkSourceOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetNetworkSourcesNetworkSource) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The OCID of the network source.
+func (o GetNetworkSourcesNetworkSourceOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkSourcesNetworkSource) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The detailed status of INACTIVE lifecycleState.
+func (o GetNetworkSourcesNetworkSourceOutput) InactiveState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkSourcesNetworkSource) string { return v.InactiveState }).(pulumi.StringOutput)
+}
+
+// A filter to only return resources that match the given name exactly.
+func (o GetNetworkSourcesNetworkSourceOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkSourcesNetworkSource) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// A list of allowed public IP addresses and CIDR ranges.
+func (o GetNetworkSourcesNetworkSourceOutput) PublicSourceLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNetworkSourcesNetworkSource) []string { return v.PublicSourceLists }).(pulumi.StringArrayOutput)
+}
+
+// A list of services allowed to make on-behalf-of requests. These requests can have different source IPs than those specified in the network source. Currently, only `all` and `none` are supported. The default is `all`.
+func (o GetNetworkSourcesNetworkSourceOutput) Services() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNetworkSourcesNetworkSource) []string { return v.Services }).(pulumi.StringArrayOutput)
+}
+
+// A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+func (o GetNetworkSourcesNetworkSourceOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkSourcesNetworkSource) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Date and time the group was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+func (o GetNetworkSourcesNetworkSourceOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkSourcesNetworkSource) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// A list of allowed VCN OCID and IP range pairs. Example:`"vcnId": "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]`
+func (o GetNetworkSourcesNetworkSourceOutput) VirtualSourceLists() GetNetworkSourcesNetworkSourceVirtualSourceListArrayOutput {
+	return o.ApplyT(func(v GetNetworkSourcesNetworkSource) []GetNetworkSourcesNetworkSourceVirtualSourceList {
+		return v.VirtualSourceLists
+	}).(GetNetworkSourcesNetworkSourceVirtualSourceListArrayOutput)
+}
+
+type GetNetworkSourcesNetworkSourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkSourcesNetworkSourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkSourcesNetworkSource)(nil)).Elem()
+}
+
+func (o GetNetworkSourcesNetworkSourceArrayOutput) ToGetNetworkSourcesNetworkSourceArrayOutput() GetNetworkSourcesNetworkSourceArrayOutput {
+	return o
+}
+
+func (o GetNetworkSourcesNetworkSourceArrayOutput) ToGetNetworkSourcesNetworkSourceArrayOutputWithContext(ctx context.Context) GetNetworkSourcesNetworkSourceArrayOutput {
+	return o
+}
+
+func (o GetNetworkSourcesNetworkSourceArrayOutput) Index(i pulumi.IntInput) GetNetworkSourcesNetworkSourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkSourcesNetworkSource {
+		return vs[0].([]GetNetworkSourcesNetworkSource)[vs[1].(int)]
+	}).(GetNetworkSourcesNetworkSourceOutput)
+}
+
+type GetNetworkSourcesNetworkSourceVirtualSourceList struct {
+	IpRanges []string `pulumi:"ipRanges"`
+	VcnId    string   `pulumi:"vcnId"`
+}
+
+// GetNetworkSourcesNetworkSourceVirtualSourceListInput is an input type that accepts GetNetworkSourcesNetworkSourceVirtualSourceListArgs and GetNetworkSourcesNetworkSourceVirtualSourceListOutput values.
+// You can construct a concrete instance of `GetNetworkSourcesNetworkSourceVirtualSourceListInput` via:
+//
+//	GetNetworkSourcesNetworkSourceVirtualSourceListArgs{...}
+type GetNetworkSourcesNetworkSourceVirtualSourceListInput interface {
+	pulumi.Input
+
+	ToGetNetworkSourcesNetworkSourceVirtualSourceListOutput() GetNetworkSourcesNetworkSourceVirtualSourceListOutput
+	ToGetNetworkSourcesNetworkSourceVirtualSourceListOutputWithContext(context.Context) GetNetworkSourcesNetworkSourceVirtualSourceListOutput
+}
+
+type GetNetworkSourcesNetworkSourceVirtualSourceListArgs struct {
+	IpRanges pulumi.StringArrayInput `pulumi:"ipRanges"`
+	VcnId    pulumi.StringInput      `pulumi:"vcnId"`
+}
+
+func (GetNetworkSourcesNetworkSourceVirtualSourceListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkSourcesNetworkSourceVirtualSourceList)(nil)).Elem()
+}
+
+func (i GetNetworkSourcesNetworkSourceVirtualSourceListArgs) ToGetNetworkSourcesNetworkSourceVirtualSourceListOutput() GetNetworkSourcesNetworkSourceVirtualSourceListOutput {
+	return i.ToGetNetworkSourcesNetworkSourceVirtualSourceListOutputWithContext(context.Background())
+}
+
+func (i GetNetworkSourcesNetworkSourceVirtualSourceListArgs) ToGetNetworkSourcesNetworkSourceVirtualSourceListOutputWithContext(ctx context.Context) GetNetworkSourcesNetworkSourceVirtualSourceListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSourcesNetworkSourceVirtualSourceListOutput)
+}
+
+// GetNetworkSourcesNetworkSourceVirtualSourceListArrayInput is an input type that accepts GetNetworkSourcesNetworkSourceVirtualSourceListArray and GetNetworkSourcesNetworkSourceVirtualSourceListArrayOutput values.
+// You can construct a concrete instance of `GetNetworkSourcesNetworkSourceVirtualSourceListArrayInput` via:
+//
+//	GetNetworkSourcesNetworkSourceVirtualSourceListArray{ GetNetworkSourcesNetworkSourceVirtualSourceListArgs{...} }
+type GetNetworkSourcesNetworkSourceVirtualSourceListArrayInput interface {
+	pulumi.Input
+
+	ToGetNetworkSourcesNetworkSourceVirtualSourceListArrayOutput() GetNetworkSourcesNetworkSourceVirtualSourceListArrayOutput
+	ToGetNetworkSourcesNetworkSourceVirtualSourceListArrayOutputWithContext(context.Context) GetNetworkSourcesNetworkSourceVirtualSourceListArrayOutput
+}
+
+type GetNetworkSourcesNetworkSourceVirtualSourceListArray []GetNetworkSourcesNetworkSourceVirtualSourceListInput
+
+func (GetNetworkSourcesNetworkSourceVirtualSourceListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkSourcesNetworkSourceVirtualSourceList)(nil)).Elem()
+}
+
+func (i GetNetworkSourcesNetworkSourceVirtualSourceListArray) ToGetNetworkSourcesNetworkSourceVirtualSourceListArrayOutput() GetNetworkSourcesNetworkSourceVirtualSourceListArrayOutput {
+	return i.ToGetNetworkSourcesNetworkSourceVirtualSourceListArrayOutputWithContext(context.Background())
+}
+
+func (i GetNetworkSourcesNetworkSourceVirtualSourceListArray) ToGetNetworkSourcesNetworkSourceVirtualSourceListArrayOutputWithContext(ctx context.Context) GetNetworkSourcesNetworkSourceVirtualSourceListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSourcesNetworkSourceVirtualSourceListArrayOutput)
+}
+
+type GetNetworkSourcesNetworkSourceVirtualSourceListOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkSourcesNetworkSourceVirtualSourceListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkSourcesNetworkSourceVirtualSourceList)(nil)).Elem()
+}
+
+func (o GetNetworkSourcesNetworkSourceVirtualSourceListOutput) ToGetNetworkSourcesNetworkSourceVirtualSourceListOutput() GetNetworkSourcesNetworkSourceVirtualSourceListOutput {
+	return o
+}
+
+func (o GetNetworkSourcesNetworkSourceVirtualSourceListOutput) ToGetNetworkSourcesNetworkSourceVirtualSourceListOutputWithContext(ctx context.Context) GetNetworkSourcesNetworkSourceVirtualSourceListOutput {
+	return o
+}
+
+func (o GetNetworkSourcesNetworkSourceVirtualSourceListOutput) IpRanges() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNetworkSourcesNetworkSourceVirtualSourceList) []string { return v.IpRanges }).(pulumi.StringArrayOutput)
+}
+
+func (o GetNetworkSourcesNetworkSourceVirtualSourceListOutput) VcnId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkSourcesNetworkSourceVirtualSourceList) string { return v.VcnId }).(pulumi.StringOutput)
+}
+
+type GetNetworkSourcesNetworkSourceVirtualSourceListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkSourcesNetworkSourceVirtualSourceListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkSourcesNetworkSourceVirtualSourceList)(nil)).Elem()
+}
+
+func (o GetNetworkSourcesNetworkSourceVirtualSourceListArrayOutput) ToGetNetworkSourcesNetworkSourceVirtualSourceListArrayOutput() GetNetworkSourcesNetworkSourceVirtualSourceListArrayOutput {
+	return o
+}
+
+func (o GetNetworkSourcesNetworkSourceVirtualSourceListArrayOutput) ToGetNetworkSourcesNetworkSourceVirtualSourceListArrayOutputWithContext(ctx context.Context) GetNetworkSourcesNetworkSourceVirtualSourceListArrayOutput {
+	return o
+}
+
+func (o GetNetworkSourcesNetworkSourceVirtualSourceListArrayOutput) Index(i pulumi.IntInput) GetNetworkSourcesNetworkSourceVirtualSourceListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkSourcesNetworkSourceVirtualSourceList {
+		return vs[0].([]GetNetworkSourcesNetworkSourceVirtualSourceList)[vs[1].(int)]
+	}).(GetNetworkSourcesNetworkSourceVirtualSourceListOutput)
+}
+
+type GetPoliciesFilter struct {
+	// A filter to only return resources that match the given name exactly.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetPoliciesFilterInput is an input type that accepts GetPoliciesFilterArgs and GetPoliciesFilterOutput values.
+// You can construct a concrete instance of `GetPoliciesFilterInput` via:
+//
+//	GetPoliciesFilterArgs{...}
+type GetPoliciesFilterInput interface {
+	pulumi.Input
+
+	ToGetPoliciesFilterOutput() GetPoliciesFilterOutput
+	ToGetPoliciesFilterOutputWithContext(context.Context) GetPoliciesFilterOutput
+}
+
+type GetPoliciesFilterArgs struct {
+	// A filter to only return resources that match the given name exactly.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetPoliciesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPoliciesFilter)(nil)).Elem()
+}
+
+func (i GetPoliciesFilterArgs) ToGetPoliciesFilterOutput() GetPoliciesFilterOutput {
+	return i.ToGetPoliciesFilterOutputWithContext(context.Background())
+}
+
+func (i GetPoliciesFilterArgs) ToGetPoliciesFilterOutputWithContext(ctx context.Context) GetPoliciesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPoliciesFilterOutput)
+}
+
+// GetPoliciesFilterArrayInput is an input type that accepts GetPoliciesFilterArray and GetPoliciesFilterArrayOutput values.
+// You can construct a concrete instance of `GetPoliciesFilterArrayInput` via:
+//
+//	GetPoliciesFilterArray{ GetPoliciesFilterArgs{...} }
+type GetPoliciesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetPoliciesFilterArrayOutput() GetPoliciesFilterArrayOutput
+	ToGetPoliciesFilterArrayOutputWithContext(context.Context) GetPoliciesFilterArrayOutput
+}
+
+type GetPoliciesFilterArray []GetPoliciesFilterInput
+
+func (GetPoliciesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPoliciesFilter)(nil)).Elem()
+}
+
+func (i GetPoliciesFilterArray) ToGetPoliciesFilterArrayOutput() GetPoliciesFilterArrayOutput {
+	return i.ToGetPoliciesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetPoliciesFilterArray) ToGetPoliciesFilterArrayOutputWithContext(ctx context.Context) GetPoliciesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPoliciesFilterArrayOutput)
+}
+
+type GetPoliciesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetPoliciesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPoliciesFilter)(nil)).Elem()
+}
+
+func (o GetPoliciesFilterOutput) ToGetPoliciesFilterOutput() GetPoliciesFilterOutput {
+	return o
+}
+
+func (o GetPoliciesFilterOutput) ToGetPoliciesFilterOutputWithContext(ctx context.Context) GetPoliciesFilterOutput {
+	return o
+}
+
+// A filter to only return resources that match the given name exactly.
+func (o GetPoliciesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPoliciesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetPoliciesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetPoliciesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetPoliciesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPoliciesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetPoliciesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPoliciesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPoliciesFilter)(nil)).Elem()
+}
+
+func (o GetPoliciesFilterArrayOutput) ToGetPoliciesFilterArrayOutput() GetPoliciesFilterArrayOutput {
+	return o
+}
+
+func (o GetPoliciesFilterArrayOutput) ToGetPoliciesFilterArrayOutputWithContext(ctx context.Context) GetPoliciesFilterArrayOutput {
+	return o
+}
+
+func (o GetPoliciesFilterArrayOutput) Index(i pulumi.IntInput) GetPoliciesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPoliciesFilter {
+		return vs[0].([]GetPoliciesFilter)[vs[1].(int)]
+	}).(GetPoliciesFilterOutput)
+}
+
+type GetPoliciesPolicy struct {
+	// Deprecated: The 'ETag' field has been deprecated and may be removed in a future version. Do not use this field.
+	ETag string `pulumi:"ETag"`
+	// The OCID of the compartment (remember that the tenancy is simply the root compartment).
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// The description you assign to the policy. Does not have to be unique, and it's changeable.
+	Description string `pulumi:"description"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The OCID of the policy.
+	Id string `pulumi:"id"`
+	// The detailed status of INACTIVE lifecycleState.
+	InactiveState string `pulumi:"inactiveState"`
+	// Deprecated: The 'lastUpdateETag' field has been deprecated and may be removed in a future version. Do not use this field.
+	LastUpdateETag string `pulumi:"lastUpdateETag"`
+	// A filter to only return resources that match the given name exactly.
+	Name string `pulumi:"name"`
+	// Deprecated: The 'policyHash' field has been deprecated and may be removed in a future version. Do not use this field.
+	PolicyHash string `pulumi:"policyHash"`
+	// A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// An array of one or more policy statements written in the policy language.
+	Statements []string `pulumi:"statements"`
+	// Date and time the policy was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The version of the policy. If null or set to an empty string, when a request comes in for authorization, the policy will be evaluated according to the current behavior of the services at that moment. If set to a particular date (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date.
+	VersionDate string `pulumi:"versionDate"`
+}
+
+// GetPoliciesPolicyInput is an input type that accepts GetPoliciesPolicyArgs and GetPoliciesPolicyOutput values.
+// You can construct a concrete instance of `GetPoliciesPolicyInput` via:
+//
+//	GetPoliciesPolicyArgs{...}
+type GetPoliciesPolicyInput interface {
+	pulumi.Input
+
+	ToGetPoliciesPolicyOutput() GetPoliciesPolicyOutput
+	ToGetPoliciesPolicyOutputWithContext(context.Context) GetPoliciesPolicyOutput
+}
+
+type GetPoliciesPolicyArgs struct {
+	// Deprecated: The 'ETag' field has been deprecated and may be removed in a future version. Do not use this field.
+	ETag pulumi.StringInput `pulumi:"ETag"`
+	// The OCID of the compartment (remember that the tenancy is simply the root compartment).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// The description you assign to the policy. Does not have to be unique, and it's changeable.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The OCID of the policy.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The detailed status of INACTIVE lifecycleState.
+	InactiveState pulumi.StringInput `pulumi:"inactiveState"`
+	// Deprecated: The 'lastUpdateETag' field has been deprecated and may be removed in a future version. Do not use this field.
+	LastUpdateETag pulumi.StringInput `pulumi:"lastUpdateETag"`
+	// A filter to only return resources that match the given name exactly.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Deprecated: The 'policyHash' field has been deprecated and may be removed in a future version. Do not use this field.
+	PolicyHash pulumi.StringInput `pulumi:"policyHash"`
+	// A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// An array of one or more policy statements written in the policy language.
+	Statements pulumi.StringArrayInput `pulumi:"statements"`
+	// Date and time the policy was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The version of the policy. If null or set to an empty string, when a request comes in for authorization, the policy will be evaluated according to the current behavior of the services at that moment. If set to a particular date (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date.
+	VersionDate pulumi.StringInput `pulumi:"versionDate"`
+}
+
+func (GetPoliciesPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPoliciesPolicy)(nil)).Elem()
+}
+
+func (i GetPoliciesPolicyArgs) ToGetPoliciesPolicyOutput() GetPoliciesPolicyOutput {
+	return i.ToGetPoliciesPolicyOutputWithContext(context.Background())
+}
+
+func (i GetPoliciesPolicyArgs) ToGetPoliciesPolicyOutputWithContext(ctx context.Context) GetPoliciesPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPoliciesPolicyOutput)
+}
+
+// GetPoliciesPolicyArrayInput is an input type that accepts GetPoliciesPolicyArray and GetPoliciesPolicyArrayOutput values.
+// You can construct a concrete instance of `GetPoliciesPolicyArrayInput` via:
+//
+//	GetPoliciesPolicyArray{ GetPoliciesPolicyArgs{...} }
+type GetPoliciesPolicyArrayInput interface {
+	pulumi.Input
+
+	ToGetPoliciesPolicyArrayOutput() GetPoliciesPolicyArrayOutput
+	ToGetPoliciesPolicyArrayOutputWithContext(context.Context) GetPoliciesPolicyArrayOutput
+}
+
+type GetPoliciesPolicyArray []GetPoliciesPolicyInput
+
+func (GetPoliciesPolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPoliciesPolicy)(nil)).Elem()
+}
+
+func (i GetPoliciesPolicyArray) ToGetPoliciesPolicyArrayOutput() GetPoliciesPolicyArrayOutput {
+	return i.ToGetPoliciesPolicyArrayOutputWithContext(context.Background())
+}
+
+func (i GetPoliciesPolicyArray) ToGetPoliciesPolicyArrayOutputWithContext(ctx context.Context) GetPoliciesPolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPoliciesPolicyArrayOutput)
+}
+
+type GetPoliciesPolicyOutput struct{ *pulumi.OutputState }
+
+func (GetPoliciesPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPoliciesPolicy)(nil)).Elem()
+}
+
+func (o GetPoliciesPolicyOutput) ToGetPoliciesPolicyOutput() GetPoliciesPolicyOutput {
+	return o
+}
+
+func (o GetPoliciesPolicyOutput) ToGetPoliciesPolicyOutputWithContext(ctx context.Context) GetPoliciesPolicyOutput {
+	return o
+}
+
+// Deprecated: The 'ETag' field has been deprecated and may be removed in a future version. Do not use this field.
+func (o GetPoliciesPolicyOutput) ETag() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPoliciesPolicy) string { return v.ETag }).(pulumi.StringOutput)
+}
+
+// The OCID of the compartment (remember that the tenancy is simply the root compartment).
+func (o GetPoliciesPolicyOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPoliciesPolicy) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetPoliciesPolicyOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetPoliciesPolicy) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// The description you assign to the policy. Does not have to be unique, and it's changeable.
+func (o GetPoliciesPolicyOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPoliciesPolicy) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetPoliciesPolicyOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetPoliciesPolicy) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The OCID of the policy.
+func (o GetPoliciesPolicyOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPoliciesPolicy) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The detailed status of INACTIVE lifecycleState.
+func (o GetPoliciesPolicyOutput) InactiveState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPoliciesPolicy) string { return v.InactiveState }).(pulumi.StringOutput)
+}
+
+// Deprecated: The 'lastUpdateETag' field has been deprecated and may be removed in a future version. Do not use this field.
+func (o GetPoliciesPolicyOutput) LastUpdateETag() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPoliciesPolicy) string { return v.LastUpdateETag }).(pulumi.StringOutput)
+}
+
+// A filter to only return resources that match the given name exactly.
+func (o GetPoliciesPolicyOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPoliciesPolicy) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Deprecated: The 'policyHash' field has been deprecated and may be removed in a future version. Do not use this field.
+func (o GetPoliciesPolicyOutput) PolicyHash() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPoliciesPolicy) string { return v.PolicyHash }).(pulumi.StringOutput)
+}
+
+// A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+func (o GetPoliciesPolicyOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPoliciesPolicy) string { return v.State }).(pulumi.StringOutput)
+}
+
+// An array of one or more policy statements written in the policy language.
+func (o GetPoliciesPolicyOutput) Statements() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPoliciesPolicy) []string { return v.Statements }).(pulumi.StringArrayOutput)
+}
+
+// Date and time the policy was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+func (o GetPoliciesPolicyOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPoliciesPolicy) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The version of the policy. If null or set to an empty string, when a request comes in for authorization, the policy will be evaluated according to the current behavior of the services at that moment. If set to a particular date (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date.
+func (o GetPoliciesPolicyOutput) VersionDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPoliciesPolicy) string { return v.VersionDate }).(pulumi.StringOutput)
+}
+
+type GetPoliciesPolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPoliciesPolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPoliciesPolicy)(nil)).Elem()
+}
+
+func (o GetPoliciesPolicyArrayOutput) ToGetPoliciesPolicyArrayOutput() GetPoliciesPolicyArrayOutput {
+	return o
+}
+
+func (o GetPoliciesPolicyArrayOutput) ToGetPoliciesPolicyArrayOutputWithContext(ctx context.Context) GetPoliciesPolicyArrayOutput {
+	return o
+}
+
+func (o GetPoliciesPolicyArrayOutput) Index(i pulumi.IntInput) GetPoliciesPolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPoliciesPolicy {
+		return vs[0].([]GetPoliciesPolicy)[vs[1].(int)]
+	}).(GetPoliciesPolicyOutput)
+}
+
+type GetRegionSubscriptionsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetRegionSubscriptionsFilterInput is an input type that accepts GetRegionSubscriptionsFilterArgs and GetRegionSubscriptionsFilterOutput values.
+// You can construct a concrete instance of `GetRegionSubscriptionsFilterInput` via:
+//
+//	GetRegionSubscriptionsFilterArgs{...}
+type GetRegionSubscriptionsFilterInput interface {
+	pulumi.Input
+
+	ToGetRegionSubscriptionsFilterOutput() GetRegionSubscriptionsFilterOutput
+	ToGetRegionSubscriptionsFilterOutputWithContext(context.Context) GetRegionSubscriptionsFilterOutput
+}
+
+type GetRegionSubscriptionsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetRegionSubscriptionsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRegionSubscriptionsFilter)(nil)).Elem()
+}
+
+func (i GetRegionSubscriptionsFilterArgs) ToGetRegionSubscriptionsFilterOutput() GetRegionSubscriptionsFilterOutput {
+	return i.ToGetRegionSubscriptionsFilterOutputWithContext(context.Background())
+}
+
+func (i GetRegionSubscriptionsFilterArgs) ToGetRegionSubscriptionsFilterOutputWithContext(ctx context.Context) GetRegionSubscriptionsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRegionSubscriptionsFilterOutput)
+}
+
+// GetRegionSubscriptionsFilterArrayInput is an input type that accepts GetRegionSubscriptionsFilterArray and GetRegionSubscriptionsFilterArrayOutput values.
+// You can construct a concrete instance of `GetRegionSubscriptionsFilterArrayInput` via:
+//
+//	GetRegionSubscriptionsFilterArray{ GetRegionSubscriptionsFilterArgs{...} }
+type GetRegionSubscriptionsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetRegionSubscriptionsFilterArrayOutput() GetRegionSubscriptionsFilterArrayOutput
+	ToGetRegionSubscriptionsFilterArrayOutputWithContext(context.Context) GetRegionSubscriptionsFilterArrayOutput
+}
+
+type GetRegionSubscriptionsFilterArray []GetRegionSubscriptionsFilterInput
+
+func (GetRegionSubscriptionsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRegionSubscriptionsFilter)(nil)).Elem()
+}
+
+func (i GetRegionSubscriptionsFilterArray) ToGetRegionSubscriptionsFilterArrayOutput() GetRegionSubscriptionsFilterArrayOutput {
+	return i.ToGetRegionSubscriptionsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetRegionSubscriptionsFilterArray) ToGetRegionSubscriptionsFilterArrayOutputWithContext(ctx context.Context) GetRegionSubscriptionsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRegionSubscriptionsFilterArrayOutput)
+}
+
+type GetRegionSubscriptionsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetRegionSubscriptionsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRegionSubscriptionsFilter)(nil)).Elem()
+}
+
+func (o GetRegionSubscriptionsFilterOutput) ToGetRegionSubscriptionsFilterOutput() GetRegionSubscriptionsFilterOutput {
+	return o
+}
+
+func (o GetRegionSubscriptionsFilterOutput) ToGetRegionSubscriptionsFilterOutputWithContext(ctx context.Context) GetRegionSubscriptionsFilterOutput {
+	return o
+}
+
+func (o GetRegionSubscriptionsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRegionSubscriptionsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetRegionSubscriptionsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRegionSubscriptionsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetRegionSubscriptionsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRegionSubscriptionsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetRegionSubscriptionsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRegionSubscriptionsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRegionSubscriptionsFilter)(nil)).Elem()
+}
+
+func (o GetRegionSubscriptionsFilterArrayOutput) ToGetRegionSubscriptionsFilterArrayOutput() GetRegionSubscriptionsFilterArrayOutput {
+	return o
+}
+
+func (o GetRegionSubscriptionsFilterArrayOutput) ToGetRegionSubscriptionsFilterArrayOutputWithContext(ctx context.Context) GetRegionSubscriptionsFilterArrayOutput {
+	return o
+}
+
+func (o GetRegionSubscriptionsFilterArrayOutput) Index(i pulumi.IntInput) GetRegionSubscriptionsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRegionSubscriptionsFilter {
+		return vs[0].([]GetRegionSubscriptionsFilter)[vs[1].(int)]
+	}).(GetRegionSubscriptionsFilterOutput)
+}
+
+type GetRegionSubscriptionsRegionSubscription struct {
+	// Indicates if the region is the home region or not.
+	IsHomeRegion bool `pulumi:"isHomeRegion"`
+	// The region's key. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported 3-letter region codes.  Example: `PHX`
+	RegionKey string `pulumi:"regionKey"`
+	// The region's name. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
+	RegionName string `pulumi:"regionName"`
+	State      string `pulumi:"state"`
+	// The OCID of the tenancy.
+	TenancyId string `pulumi:"tenancyId"`
+}
+
+// GetRegionSubscriptionsRegionSubscriptionInput is an input type that accepts GetRegionSubscriptionsRegionSubscriptionArgs and GetRegionSubscriptionsRegionSubscriptionOutput values.
+// You can construct a concrete instance of `GetRegionSubscriptionsRegionSubscriptionInput` via:
+//
+//	GetRegionSubscriptionsRegionSubscriptionArgs{...}
+type GetRegionSubscriptionsRegionSubscriptionInput interface {
+	pulumi.Input
+
+	ToGetRegionSubscriptionsRegionSubscriptionOutput() GetRegionSubscriptionsRegionSubscriptionOutput
+	ToGetRegionSubscriptionsRegionSubscriptionOutputWithContext(context.Context) GetRegionSubscriptionsRegionSubscriptionOutput
+}
+
+type GetRegionSubscriptionsRegionSubscriptionArgs struct {
+	// Indicates if the region is the home region or not.
+	IsHomeRegion pulumi.BoolInput `pulumi:"isHomeRegion"`
+	// The region's key. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported 3-letter region codes.  Example: `PHX`
+	RegionKey pulumi.StringInput `pulumi:"regionKey"`
+	// The region's name. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
+	RegionName pulumi.StringInput `pulumi:"regionName"`
+	State      pulumi.StringInput `pulumi:"state"`
+	// The OCID of the tenancy.
+	TenancyId pulumi.StringInput `pulumi:"tenancyId"`
+}
+
+func (GetRegionSubscriptionsRegionSubscriptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRegionSubscriptionsRegionSubscription)(nil)).Elem()
+}
+
+func (i GetRegionSubscriptionsRegionSubscriptionArgs) ToGetRegionSubscriptionsRegionSubscriptionOutput() GetRegionSubscriptionsRegionSubscriptionOutput {
+	return i.ToGetRegionSubscriptionsRegionSubscriptionOutputWithContext(context.Background())
+}
+
+func (i GetRegionSubscriptionsRegionSubscriptionArgs) ToGetRegionSubscriptionsRegionSubscriptionOutputWithContext(ctx context.Context) GetRegionSubscriptionsRegionSubscriptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRegionSubscriptionsRegionSubscriptionOutput)
+}
+
+// GetRegionSubscriptionsRegionSubscriptionArrayInput is an input type that accepts GetRegionSubscriptionsRegionSubscriptionArray and GetRegionSubscriptionsRegionSubscriptionArrayOutput values.
+// You can construct a concrete instance of `GetRegionSubscriptionsRegionSubscriptionArrayInput` via:
+//
+//	GetRegionSubscriptionsRegionSubscriptionArray{ GetRegionSubscriptionsRegionSubscriptionArgs{...} }
+type GetRegionSubscriptionsRegionSubscriptionArrayInput interface {
+	pulumi.Input
+
+	ToGetRegionSubscriptionsRegionSubscriptionArrayOutput() GetRegionSubscriptionsRegionSubscriptionArrayOutput
+	ToGetRegionSubscriptionsRegionSubscriptionArrayOutputWithContext(context.Context) GetRegionSubscriptionsRegionSubscriptionArrayOutput
+}
+
+type GetRegionSubscriptionsRegionSubscriptionArray []GetRegionSubscriptionsRegionSubscriptionInput
+
+func (GetRegionSubscriptionsRegionSubscriptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRegionSubscriptionsRegionSubscription)(nil)).Elem()
+}
+
+func (i GetRegionSubscriptionsRegionSubscriptionArray) ToGetRegionSubscriptionsRegionSubscriptionArrayOutput() GetRegionSubscriptionsRegionSubscriptionArrayOutput {
+	return i.ToGetRegionSubscriptionsRegionSubscriptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetRegionSubscriptionsRegionSubscriptionArray) ToGetRegionSubscriptionsRegionSubscriptionArrayOutputWithContext(ctx context.Context) GetRegionSubscriptionsRegionSubscriptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRegionSubscriptionsRegionSubscriptionArrayOutput)
+}
+
+type GetRegionSubscriptionsRegionSubscriptionOutput struct{ *pulumi.OutputState }
+
+func (GetRegionSubscriptionsRegionSubscriptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRegionSubscriptionsRegionSubscription)(nil)).Elem()
+}
+
+func (o GetRegionSubscriptionsRegionSubscriptionOutput) ToGetRegionSubscriptionsRegionSubscriptionOutput() GetRegionSubscriptionsRegionSubscriptionOutput {
+	return o
+}
+
+func (o GetRegionSubscriptionsRegionSubscriptionOutput) ToGetRegionSubscriptionsRegionSubscriptionOutputWithContext(ctx context.Context) GetRegionSubscriptionsRegionSubscriptionOutput {
+	return o
+}
+
+// Indicates if the region is the home region or not.
+func (o GetRegionSubscriptionsRegionSubscriptionOutput) IsHomeRegion() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetRegionSubscriptionsRegionSubscription) bool { return v.IsHomeRegion }).(pulumi.BoolOutput)
+}
+
+// The region's key. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported 3-letter region codes.  Example: `PHX`
+func (o GetRegionSubscriptionsRegionSubscriptionOutput) RegionKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRegionSubscriptionsRegionSubscription) string { return v.RegionKey }).(pulumi.StringOutput)
+}
+
+// The region's name. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
+func (o GetRegionSubscriptionsRegionSubscriptionOutput) RegionName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRegionSubscriptionsRegionSubscription) string { return v.RegionName }).(pulumi.StringOutput)
+}
+
+func (o GetRegionSubscriptionsRegionSubscriptionOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRegionSubscriptionsRegionSubscription) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The OCID of the tenancy.
+func (o GetRegionSubscriptionsRegionSubscriptionOutput) TenancyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRegionSubscriptionsRegionSubscription) string { return v.TenancyId }).(pulumi.StringOutput)
+}
+
+type GetRegionSubscriptionsRegionSubscriptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRegionSubscriptionsRegionSubscriptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRegionSubscriptionsRegionSubscription)(nil)).Elem()
+}
+
+func (o GetRegionSubscriptionsRegionSubscriptionArrayOutput) ToGetRegionSubscriptionsRegionSubscriptionArrayOutput() GetRegionSubscriptionsRegionSubscriptionArrayOutput {
+	return o
+}
+
+func (o GetRegionSubscriptionsRegionSubscriptionArrayOutput) ToGetRegionSubscriptionsRegionSubscriptionArrayOutputWithContext(ctx context.Context) GetRegionSubscriptionsRegionSubscriptionArrayOutput {
+	return o
+}
+
+func (o GetRegionSubscriptionsRegionSubscriptionArrayOutput) Index(i pulumi.IntInput) GetRegionSubscriptionsRegionSubscriptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRegionSubscriptionsRegionSubscription {
+		return vs[0].([]GetRegionSubscriptionsRegionSubscription)[vs[1].(int)]
+	}).(GetRegionSubscriptionsRegionSubscriptionOutput)
+}
+
+type GetRegionsFilter struct {
+	// The name of the region. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetRegionsFilterInput is an input type that accepts GetRegionsFilterArgs and GetRegionsFilterOutput values.
+// You can construct a concrete instance of `GetRegionsFilterInput` via:
+//
+//	GetRegionsFilterArgs{...}
+type GetRegionsFilterInput interface {
+	pulumi.Input
+
+	ToGetRegionsFilterOutput() GetRegionsFilterOutput
+	ToGetRegionsFilterOutputWithContext(context.Context) GetRegionsFilterOutput
+}
+
+type GetRegionsFilterArgs struct {
+	// The name of the region. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetRegionsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRegionsFilter)(nil)).Elem()
+}
+
+func (i GetRegionsFilterArgs) ToGetRegionsFilterOutput() GetRegionsFilterOutput {
+	return i.ToGetRegionsFilterOutputWithContext(context.Background())
+}
+
+func (i GetRegionsFilterArgs) ToGetRegionsFilterOutputWithContext(ctx context.Context) GetRegionsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRegionsFilterOutput)
+}
+
+// GetRegionsFilterArrayInput is an input type that accepts GetRegionsFilterArray and GetRegionsFilterArrayOutput values.
+// You can construct a concrete instance of `GetRegionsFilterArrayInput` via:
+//
+//	GetRegionsFilterArray{ GetRegionsFilterArgs{...} }
+type GetRegionsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetRegionsFilterArrayOutput() GetRegionsFilterArrayOutput
+	ToGetRegionsFilterArrayOutputWithContext(context.Context) GetRegionsFilterArrayOutput
+}
+
+type GetRegionsFilterArray []GetRegionsFilterInput
+
+func (GetRegionsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRegionsFilter)(nil)).Elem()
+}
+
+func (i GetRegionsFilterArray) ToGetRegionsFilterArrayOutput() GetRegionsFilterArrayOutput {
+	return i.ToGetRegionsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetRegionsFilterArray) ToGetRegionsFilterArrayOutputWithContext(ctx context.Context) GetRegionsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRegionsFilterArrayOutput)
+}
+
+type GetRegionsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetRegionsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRegionsFilter)(nil)).Elem()
+}
+
+func (o GetRegionsFilterOutput) ToGetRegionsFilterOutput() GetRegionsFilterOutput {
+	return o
+}
+
+func (o GetRegionsFilterOutput) ToGetRegionsFilterOutputWithContext(ctx context.Context) GetRegionsFilterOutput {
+	return o
+}
+
+// The name of the region. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
+func (o GetRegionsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRegionsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetRegionsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRegionsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetRegionsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRegionsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetRegionsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRegionsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRegionsFilter)(nil)).Elem()
+}
+
+func (o GetRegionsFilterArrayOutput) ToGetRegionsFilterArrayOutput() GetRegionsFilterArrayOutput {
+	return o
+}
+
+func (o GetRegionsFilterArrayOutput) ToGetRegionsFilterArrayOutputWithContext(ctx context.Context) GetRegionsFilterArrayOutput {
+	return o
+}
+
+func (o GetRegionsFilterArrayOutput) Index(i pulumi.IntInput) GetRegionsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRegionsFilter {
+		return vs[0].([]GetRegionsFilter)[vs[1].(int)]
+	}).(GetRegionsFilterOutput)
+}
+
+type GetRegionsRegion struct {
+	// The key of the region. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported 3-letter region codes.  Example: `PHX`
+	Key string `pulumi:"key"`
+	// The name of the region. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
+	Name string `pulumi:"name"`
+}
+
+// GetRegionsRegionInput is an input type that accepts GetRegionsRegionArgs and GetRegionsRegionOutput values.
+// You can construct a concrete instance of `GetRegionsRegionInput` via:
+//
+//	GetRegionsRegionArgs{...}
+type GetRegionsRegionInput interface {
+	pulumi.Input
+
+	ToGetRegionsRegionOutput() GetRegionsRegionOutput
+	ToGetRegionsRegionOutputWithContext(context.Context) GetRegionsRegionOutput
+}
+
+type GetRegionsRegionArgs struct {
+	// The key of the region. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported 3-letter region codes.  Example: `PHX`
+	Key pulumi.StringInput `pulumi:"key"`
+	// The name of the region. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetRegionsRegionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRegionsRegion)(nil)).Elem()
+}
+
+func (i GetRegionsRegionArgs) ToGetRegionsRegionOutput() GetRegionsRegionOutput {
+	return i.ToGetRegionsRegionOutputWithContext(context.Background())
+}
+
+func (i GetRegionsRegionArgs) ToGetRegionsRegionOutputWithContext(ctx context.Context) GetRegionsRegionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRegionsRegionOutput)
+}
+
+// GetRegionsRegionArrayInput is an input type that accepts GetRegionsRegionArray and GetRegionsRegionArrayOutput values.
+// You can construct a concrete instance of `GetRegionsRegionArrayInput` via:
+//
+//	GetRegionsRegionArray{ GetRegionsRegionArgs{...} }
+type GetRegionsRegionArrayInput interface {
+	pulumi.Input
+
+	ToGetRegionsRegionArrayOutput() GetRegionsRegionArrayOutput
+	ToGetRegionsRegionArrayOutputWithContext(context.Context) GetRegionsRegionArrayOutput
+}
+
+type GetRegionsRegionArray []GetRegionsRegionInput
+
+func (GetRegionsRegionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRegionsRegion)(nil)).Elem()
+}
+
+func (i GetRegionsRegionArray) ToGetRegionsRegionArrayOutput() GetRegionsRegionArrayOutput {
+	return i.ToGetRegionsRegionArrayOutputWithContext(context.Background())
+}
+
+func (i GetRegionsRegionArray) ToGetRegionsRegionArrayOutputWithContext(ctx context.Context) GetRegionsRegionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRegionsRegionArrayOutput)
+}
+
+type GetRegionsRegionOutput struct{ *pulumi.OutputState }
+
+func (GetRegionsRegionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRegionsRegion)(nil)).Elem()
+}
+
+func (o GetRegionsRegionOutput) ToGetRegionsRegionOutput() GetRegionsRegionOutput {
+	return o
+}
+
+func (o GetRegionsRegionOutput) ToGetRegionsRegionOutputWithContext(ctx context.Context) GetRegionsRegionOutput {
+	return o
+}
+
+// The key of the region. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported 3-letter region codes.  Example: `PHX`
+func (o GetRegionsRegionOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRegionsRegion) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// The name of the region. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
+func (o GetRegionsRegionOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRegionsRegion) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetRegionsRegionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRegionsRegionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRegionsRegion)(nil)).Elem()
+}
+
+func (o GetRegionsRegionArrayOutput) ToGetRegionsRegionArrayOutput() GetRegionsRegionArrayOutput {
+	return o
+}
+
+func (o GetRegionsRegionArrayOutput) ToGetRegionsRegionArrayOutputWithContext(ctx context.Context) GetRegionsRegionArrayOutput {
+	return o
+}
+
+func (o GetRegionsRegionArrayOutput) Index(i pulumi.IntInput) GetRegionsRegionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRegionsRegion {
+		return vs[0].([]GetRegionsRegion)[vs[1].(int)]
+	}).(GetRegionsRegionOutput)
+}
+
+type GetSmtpCredentialsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSmtpCredentialsFilterInput is an input type that accepts GetSmtpCredentialsFilterArgs and GetSmtpCredentialsFilterOutput values.
+// You can construct a concrete instance of `GetSmtpCredentialsFilterInput` via:
+//
+//	GetSmtpCredentialsFilterArgs{...}
+type GetSmtpCredentialsFilterInput interface {
+	pulumi.Input
+
+	ToGetSmtpCredentialsFilterOutput() GetSmtpCredentialsFilterOutput
+	ToGetSmtpCredentialsFilterOutputWithContext(context.Context) GetSmtpCredentialsFilterOutput
+}
+
+type GetSmtpCredentialsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSmtpCredentialsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSmtpCredentialsFilter)(nil)).Elem()
+}
+
+func (i GetSmtpCredentialsFilterArgs) ToGetSmtpCredentialsFilterOutput() GetSmtpCredentialsFilterOutput {
+	return i.ToGetSmtpCredentialsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSmtpCredentialsFilterArgs) ToGetSmtpCredentialsFilterOutputWithContext(ctx context.Context) GetSmtpCredentialsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSmtpCredentialsFilterOutput)
+}
+
+// GetSmtpCredentialsFilterArrayInput is an input type that accepts GetSmtpCredentialsFilterArray and GetSmtpCredentialsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSmtpCredentialsFilterArrayInput` via:
+//
+//	GetSmtpCredentialsFilterArray{ GetSmtpCredentialsFilterArgs{...} }
+type GetSmtpCredentialsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSmtpCredentialsFilterArrayOutput() GetSmtpCredentialsFilterArrayOutput
+	ToGetSmtpCredentialsFilterArrayOutputWithContext(context.Context) GetSmtpCredentialsFilterArrayOutput
+}
+
+type GetSmtpCredentialsFilterArray []GetSmtpCredentialsFilterInput
+
+func (GetSmtpCredentialsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSmtpCredentialsFilter)(nil)).Elem()
+}
+
+func (i GetSmtpCredentialsFilterArray) ToGetSmtpCredentialsFilterArrayOutput() GetSmtpCredentialsFilterArrayOutput {
+	return i.ToGetSmtpCredentialsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSmtpCredentialsFilterArray) ToGetSmtpCredentialsFilterArrayOutputWithContext(ctx context.Context) GetSmtpCredentialsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSmtpCredentialsFilterArrayOutput)
+}
+
+type GetSmtpCredentialsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSmtpCredentialsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSmtpCredentialsFilter)(nil)).Elem()
+}
+
+func (o GetSmtpCredentialsFilterOutput) ToGetSmtpCredentialsFilterOutput() GetSmtpCredentialsFilterOutput {
+	return o
+}
+
+func (o GetSmtpCredentialsFilterOutput) ToGetSmtpCredentialsFilterOutputWithContext(ctx context.Context) GetSmtpCredentialsFilterOutput {
+	return o
+}
+
+func (o GetSmtpCredentialsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSmtpCredentialsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSmtpCredentialsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSmtpCredentialsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSmtpCredentialsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSmtpCredentialsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSmtpCredentialsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSmtpCredentialsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSmtpCredentialsFilter)(nil)).Elem()
+}
+
+func (o GetSmtpCredentialsFilterArrayOutput) ToGetSmtpCredentialsFilterArrayOutput() GetSmtpCredentialsFilterArrayOutput {
+	return o
+}
+
+func (o GetSmtpCredentialsFilterArrayOutput) ToGetSmtpCredentialsFilterArrayOutputWithContext(ctx context.Context) GetSmtpCredentialsFilterArrayOutput {
+	return o
+}
+
+func (o GetSmtpCredentialsFilterArrayOutput) Index(i pulumi.IntInput) GetSmtpCredentialsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSmtpCredentialsFilter {
+		return vs[0].([]GetSmtpCredentialsFilter)[vs[1].(int)]
+	}).(GetSmtpCredentialsFilterOutput)
+}
+
+type GetSmtpCredentialsSmtpCredential struct {
+	// The description you assign to the SMTP credential. Does not have to be unique, and it's changeable.
+	Description string `pulumi:"description"`
+	// The OCID of the SMTP credential.
+	Id string `pulumi:"id"`
+	// The detailed status of INACTIVE lifecycleState.
+	InactiveState string `pulumi:"inactiveState"`
+	Password      string `pulumi:"password"`
+	// The credential's current state.
+	State string `pulumi:"state"`
+	// Date and time the `SmtpCredential` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// Date and time when this credential will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
+	TimeExpires string `pulumi:"timeExpires"`
+	// The OCID of the user.
+	UserId string `pulumi:"userId"`
+	// The SMTP user name.
+	Username string `pulumi:"username"`
+}
+
+// GetSmtpCredentialsSmtpCredentialInput is an input type that accepts GetSmtpCredentialsSmtpCredentialArgs and GetSmtpCredentialsSmtpCredentialOutput values.
+// You can construct a concrete instance of `GetSmtpCredentialsSmtpCredentialInput` via:
+//
+//	GetSmtpCredentialsSmtpCredentialArgs{...}
+type GetSmtpCredentialsSmtpCredentialInput interface {
+	pulumi.Input
+
+	ToGetSmtpCredentialsSmtpCredentialOutput() GetSmtpCredentialsSmtpCredentialOutput
+	ToGetSmtpCredentialsSmtpCredentialOutputWithContext(context.Context) GetSmtpCredentialsSmtpCredentialOutput
+}
+
+type GetSmtpCredentialsSmtpCredentialArgs struct {
+	// The description you assign to the SMTP credential. Does not have to be unique, and it's changeable.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The OCID of the SMTP credential.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The detailed status of INACTIVE lifecycleState.
+	InactiveState pulumi.StringInput `pulumi:"inactiveState"`
+	Password      pulumi.StringInput `pulumi:"password"`
+	// The credential's current state.
+	State pulumi.StringInput `pulumi:"state"`
+	// Date and time the `SmtpCredential` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Date and time when this credential will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
+	TimeExpires pulumi.StringInput `pulumi:"timeExpires"`
+	// The OCID of the user.
+	UserId pulumi.StringInput `pulumi:"userId"`
+	// The SMTP user name.
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (GetSmtpCredentialsSmtpCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSmtpCredentialsSmtpCredential)(nil)).Elem()
+}
+
+func (i GetSmtpCredentialsSmtpCredentialArgs) ToGetSmtpCredentialsSmtpCredentialOutput() GetSmtpCredentialsSmtpCredentialOutput {
+	return i.ToGetSmtpCredentialsSmtpCredentialOutputWithContext(context.Background())
+}
+
+func (i GetSmtpCredentialsSmtpCredentialArgs) ToGetSmtpCredentialsSmtpCredentialOutputWithContext(ctx context.Context) GetSmtpCredentialsSmtpCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSmtpCredentialsSmtpCredentialOutput)
+}
+
+// GetSmtpCredentialsSmtpCredentialArrayInput is an input type that accepts GetSmtpCredentialsSmtpCredentialArray and GetSmtpCredentialsSmtpCredentialArrayOutput values.
+// You can construct a concrete instance of `GetSmtpCredentialsSmtpCredentialArrayInput` via:
+//
+//	GetSmtpCredentialsSmtpCredentialArray{ GetSmtpCredentialsSmtpCredentialArgs{...} }
+type GetSmtpCredentialsSmtpCredentialArrayInput interface {
+	pulumi.Input
+
+	ToGetSmtpCredentialsSmtpCredentialArrayOutput() GetSmtpCredentialsSmtpCredentialArrayOutput
+	ToGetSmtpCredentialsSmtpCredentialArrayOutputWithContext(context.Context) GetSmtpCredentialsSmtpCredentialArrayOutput
+}
+
+type GetSmtpCredentialsSmtpCredentialArray []GetSmtpCredentialsSmtpCredentialInput
+
+func (GetSmtpCredentialsSmtpCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSmtpCredentialsSmtpCredential)(nil)).Elem()
+}
+
+func (i GetSmtpCredentialsSmtpCredentialArray) ToGetSmtpCredentialsSmtpCredentialArrayOutput() GetSmtpCredentialsSmtpCredentialArrayOutput {
+	return i.ToGetSmtpCredentialsSmtpCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i GetSmtpCredentialsSmtpCredentialArray) ToGetSmtpCredentialsSmtpCredentialArrayOutputWithContext(ctx context.Context) GetSmtpCredentialsSmtpCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSmtpCredentialsSmtpCredentialArrayOutput)
+}
+
+type GetSmtpCredentialsSmtpCredentialOutput struct{ *pulumi.OutputState }
+
+func (GetSmtpCredentialsSmtpCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSmtpCredentialsSmtpCredential)(nil)).Elem()
+}
+
+func (o GetSmtpCredentialsSmtpCredentialOutput) ToGetSmtpCredentialsSmtpCredentialOutput() GetSmtpCredentialsSmtpCredentialOutput {
+	return o
+}
+
+func (o GetSmtpCredentialsSmtpCredentialOutput) ToGetSmtpCredentialsSmtpCredentialOutputWithContext(ctx context.Context) GetSmtpCredentialsSmtpCredentialOutput {
+	return o
+}
+
+// The description you assign to the SMTP credential. Does not have to be unique, and it's changeable.
+func (o GetSmtpCredentialsSmtpCredentialOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSmtpCredentialsSmtpCredential) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The OCID of the SMTP credential.
+func (o GetSmtpCredentialsSmtpCredentialOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSmtpCredentialsSmtpCredential) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The detailed status of INACTIVE lifecycleState.
+func (o GetSmtpCredentialsSmtpCredentialOutput) InactiveState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSmtpCredentialsSmtpCredential) string { return v.InactiveState }).(pulumi.StringOutput)
+}
+
+func (o GetSmtpCredentialsSmtpCredentialOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSmtpCredentialsSmtpCredential) string { return v.Password }).(pulumi.StringOutput)
+}
+
+// The credential's current state.
+func (o GetSmtpCredentialsSmtpCredentialOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSmtpCredentialsSmtpCredential) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Date and time the `SmtpCredential` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+func (o GetSmtpCredentialsSmtpCredentialOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSmtpCredentialsSmtpCredential) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Date and time when this credential will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
+func (o GetSmtpCredentialsSmtpCredentialOutput) TimeExpires() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSmtpCredentialsSmtpCredential) string { return v.TimeExpires }).(pulumi.StringOutput)
+}
+
+// The OCID of the user.
+func (o GetSmtpCredentialsSmtpCredentialOutput) UserId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSmtpCredentialsSmtpCredential) string { return v.UserId }).(pulumi.StringOutput)
+}
+
+// The SMTP user name.
+func (o GetSmtpCredentialsSmtpCredentialOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSmtpCredentialsSmtpCredential) string { return v.Username }).(pulumi.StringOutput)
+}
+
+type GetSmtpCredentialsSmtpCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSmtpCredentialsSmtpCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSmtpCredentialsSmtpCredential)(nil)).Elem()
+}
+
+func (o GetSmtpCredentialsSmtpCredentialArrayOutput) ToGetSmtpCredentialsSmtpCredentialArrayOutput() GetSmtpCredentialsSmtpCredentialArrayOutput {
+	return o
+}
+
+func (o GetSmtpCredentialsSmtpCredentialArrayOutput) ToGetSmtpCredentialsSmtpCredentialArrayOutputWithContext(ctx context.Context) GetSmtpCredentialsSmtpCredentialArrayOutput {
+	return o
+}
+
+func (o GetSmtpCredentialsSmtpCredentialArrayOutput) Index(i pulumi.IntInput) GetSmtpCredentialsSmtpCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSmtpCredentialsSmtpCredential {
+		return vs[0].([]GetSmtpCredentialsSmtpCredential)[vs[1].(int)]
+	}).(GetSmtpCredentialsSmtpCredentialOutput)
+}
+
+type GetTagDefaultsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetTagDefaultsFilterInput is an input type that accepts GetTagDefaultsFilterArgs and GetTagDefaultsFilterOutput values.
+// You can construct a concrete instance of `GetTagDefaultsFilterInput` via:
+//
+//	GetTagDefaultsFilterArgs{...}
+type GetTagDefaultsFilterInput interface {
+	pulumi.Input
+
+	ToGetTagDefaultsFilterOutput() GetTagDefaultsFilterOutput
+	ToGetTagDefaultsFilterOutputWithContext(context.Context) GetTagDefaultsFilterOutput
+}
+
+type GetTagDefaultsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetTagDefaultsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTagDefaultsFilter)(nil)).Elem()
+}
+
+func (i GetTagDefaultsFilterArgs) ToGetTagDefaultsFilterOutput() GetTagDefaultsFilterOutput {
+	return i.ToGetTagDefaultsFilterOutputWithContext(context.Background())
+}
+
+func (i GetTagDefaultsFilterArgs) ToGetTagDefaultsFilterOutputWithContext(ctx context.Context) GetTagDefaultsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTagDefaultsFilterOutput)
+}
+
+// GetTagDefaultsFilterArrayInput is an input type that accepts GetTagDefaultsFilterArray and GetTagDefaultsFilterArrayOutput values.
+// You can construct a concrete instance of `GetTagDefaultsFilterArrayInput` via:
+//
+//	GetTagDefaultsFilterArray{ GetTagDefaultsFilterArgs{...} }
+type GetTagDefaultsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetTagDefaultsFilterArrayOutput() GetTagDefaultsFilterArrayOutput
+	ToGetTagDefaultsFilterArrayOutputWithContext(context.Context) GetTagDefaultsFilterArrayOutput
+}
+
+type GetTagDefaultsFilterArray []GetTagDefaultsFilterInput
+
+func (GetTagDefaultsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTagDefaultsFilter)(nil)).Elem()
+}
+
+func (i GetTagDefaultsFilterArray) ToGetTagDefaultsFilterArrayOutput() GetTagDefaultsFilterArrayOutput {
+	return i.ToGetTagDefaultsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetTagDefaultsFilterArray) ToGetTagDefaultsFilterArrayOutputWithContext(ctx context.Context) GetTagDefaultsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTagDefaultsFilterArrayOutput)
+}
+
+type GetTagDefaultsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetTagDefaultsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTagDefaultsFilter)(nil)).Elem()
+}
+
+func (o GetTagDefaultsFilterOutput) ToGetTagDefaultsFilterOutput() GetTagDefaultsFilterOutput {
+	return o
+}
+
+func (o GetTagDefaultsFilterOutput) ToGetTagDefaultsFilterOutputWithContext(ctx context.Context) GetTagDefaultsFilterOutput {
+	return o
+}
+
+func (o GetTagDefaultsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTagDefaultsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetTagDefaultsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetTagDefaultsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetTagDefaultsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTagDefaultsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetTagDefaultsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTagDefaultsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTagDefaultsFilter)(nil)).Elem()
+}
+
+func (o GetTagDefaultsFilterArrayOutput) ToGetTagDefaultsFilterArrayOutput() GetTagDefaultsFilterArrayOutput {
+	return o
+}
+
+func (o GetTagDefaultsFilterArrayOutput) ToGetTagDefaultsFilterArrayOutputWithContext(ctx context.Context) GetTagDefaultsFilterArrayOutput {
+	return o
+}
+
+func (o GetTagDefaultsFilterArrayOutput) Index(i pulumi.IntInput) GetTagDefaultsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTagDefaultsFilter {
+		return vs[0].([]GetTagDefaultsFilter)[vs[1].(int)]
+	}).(GetTagDefaultsFilterOutput)
+}
+
+type GetTagDefaultsTagDefault struct {
+	// The OCID of the compartment (remember that the tenancy is simply the root compartment).
+	CompartmentId string `pulumi:"compartmentId"`
+	// A filter to only return resources that match the specified OCID exactly.
+	Id string `pulumi:"id"`
+	// If you specify that a value is required, a value is set during resource creation (either by the user creating the resource or another tag defualt). If no value is set, resource creation is blocked.
+	// * If the `isRequired` flag is set to "true", the value is set during resource creation.
+	// * If the `isRequired` flag is set to "false", the value you enter is set during resource creation.
+	IsRequired bool `pulumi:"isRequired"`
+	// A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// The OCID of the tag definition.
+	TagDefinitionId string `pulumi:"tagDefinitionId"`
+	// The name used in the tag definition. This field is informational in the context of the tag default.
+	TagDefinitionName string `pulumi:"tagDefinitionName"`
+	// The OCID of the tag namespace that contains the tag definition.
+	TagNamespaceId string `pulumi:"tagNamespaceId"`
+	// Date and time the `TagDefault` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The default value for the tag definition. This will be applied to all new resources created in the compartment.
+	Value string `pulumi:"value"`
+}
+
+// GetTagDefaultsTagDefaultInput is an input type that accepts GetTagDefaultsTagDefaultArgs and GetTagDefaultsTagDefaultOutput values.
+// You can construct a concrete instance of `GetTagDefaultsTagDefaultInput` via:
+//
+//	GetTagDefaultsTagDefaultArgs{...}
+type GetTagDefaultsTagDefaultInput interface {
+	pulumi.Input
+
+	ToGetTagDefaultsTagDefaultOutput() GetTagDefaultsTagDefaultOutput
+	ToGetTagDefaultsTagDefaultOutputWithContext(context.Context) GetTagDefaultsTagDefaultOutput
+}
+
+type GetTagDefaultsTagDefaultArgs struct {
+	// The OCID of the compartment (remember that the tenancy is simply the root compartment).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A filter to only return resources that match the specified OCID exactly.
+	Id pulumi.StringInput `pulumi:"id"`
+	// If you specify that a value is required, a value is set during resource creation (either by the user creating the resource or another tag defualt). If no value is set, resource creation is blocked.
+	// * If the `isRequired` flag is set to "true", the value is set during resource creation.
+	// * If the `isRequired` flag is set to "false", the value you enter is set during resource creation.
+	IsRequired pulumi.BoolInput `pulumi:"isRequired"`
+	// A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// The OCID of the tag definition.
+	TagDefinitionId pulumi.StringInput `pulumi:"tagDefinitionId"`
+	// The name used in the tag definition. This field is informational in the context of the tag default.
+	TagDefinitionName pulumi.StringInput `pulumi:"tagDefinitionName"`
+	// The OCID of the tag namespace that contains the tag definition.
+	TagNamespaceId pulumi.StringInput `pulumi:"tagNamespaceId"`
+	// Date and time the `TagDefault` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The default value for the tag definition. This will be applied to all new resources created in the compartment.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetTagDefaultsTagDefaultArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTagDefaultsTagDefault)(nil)).Elem()
+}
+
+func (i GetTagDefaultsTagDefaultArgs) ToGetTagDefaultsTagDefaultOutput() GetTagDefaultsTagDefaultOutput {
+	return i.ToGetTagDefaultsTagDefaultOutputWithContext(context.Background())
+}
+
+func (i GetTagDefaultsTagDefaultArgs) ToGetTagDefaultsTagDefaultOutputWithContext(ctx context.Context) GetTagDefaultsTagDefaultOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTagDefaultsTagDefaultOutput)
+}
+
+// GetTagDefaultsTagDefaultArrayInput is an input type that accepts GetTagDefaultsTagDefaultArray and GetTagDefaultsTagDefaultArrayOutput values.
+// You can construct a concrete instance of `GetTagDefaultsTagDefaultArrayInput` via:
+//
+//	GetTagDefaultsTagDefaultArray{ GetTagDefaultsTagDefaultArgs{...} }
+type GetTagDefaultsTagDefaultArrayInput interface {
+	pulumi.Input
+
+	ToGetTagDefaultsTagDefaultArrayOutput() GetTagDefaultsTagDefaultArrayOutput
+	ToGetTagDefaultsTagDefaultArrayOutputWithContext(context.Context) GetTagDefaultsTagDefaultArrayOutput
+}
+
+type GetTagDefaultsTagDefaultArray []GetTagDefaultsTagDefaultInput
+
+func (GetTagDefaultsTagDefaultArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTagDefaultsTagDefault)(nil)).Elem()
+}
+
+func (i GetTagDefaultsTagDefaultArray) ToGetTagDefaultsTagDefaultArrayOutput() GetTagDefaultsTagDefaultArrayOutput {
+	return i.ToGetTagDefaultsTagDefaultArrayOutputWithContext(context.Background())
+}
+
+func (i GetTagDefaultsTagDefaultArray) ToGetTagDefaultsTagDefaultArrayOutputWithContext(ctx context.Context) GetTagDefaultsTagDefaultArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTagDefaultsTagDefaultArrayOutput)
+}
+
+type GetTagDefaultsTagDefaultOutput struct{ *pulumi.OutputState }
+
+func (GetTagDefaultsTagDefaultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTagDefaultsTagDefault)(nil)).Elem()
+}
+
+func (o GetTagDefaultsTagDefaultOutput) ToGetTagDefaultsTagDefaultOutput() GetTagDefaultsTagDefaultOutput {
+	return o
+}
+
+func (o GetTagDefaultsTagDefaultOutput) ToGetTagDefaultsTagDefaultOutputWithContext(ctx context.Context) GetTagDefaultsTagDefaultOutput {
+	return o
+}
+
+// The OCID of the compartment (remember that the tenancy is simply the root compartment).
+func (o GetTagDefaultsTagDefaultOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTagDefaultsTagDefault) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// A filter to only return resources that match the specified OCID exactly.
+func (o GetTagDefaultsTagDefaultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTagDefaultsTagDefault) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// If you specify that a value is required, a value is set during resource creation (either by the user creating the resource or another tag defualt). If no value is set, resource creation is blocked.
+// * If the `isRequired` flag is set to "true", the value is set during resource creation.
+// * If the `isRequired` flag is set to "false", the value you enter is set during resource creation.
+func (o GetTagDefaultsTagDefaultOutput) IsRequired() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetTagDefaultsTagDefault) bool { return v.IsRequired }).(pulumi.BoolOutput)
+}
+
+// A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+func (o GetTagDefaultsTagDefaultOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTagDefaultsTagDefault) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The OCID of the tag definition.
+func (o GetTagDefaultsTagDefaultOutput) TagDefinitionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTagDefaultsTagDefault) string { return v.TagDefinitionId }).(pulumi.StringOutput)
+}
+
+// The name used in the tag definition. This field is informational in the context of the tag default.
+func (o GetTagDefaultsTagDefaultOutput) TagDefinitionName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTagDefaultsTagDefault) string { return v.TagDefinitionName }).(pulumi.StringOutput)
+}
+
+// The OCID of the tag namespace that contains the tag definition.
+func (o GetTagDefaultsTagDefaultOutput) TagNamespaceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTagDefaultsTagDefault) string { return v.TagNamespaceId }).(pulumi.StringOutput)
+}
+
+// Date and time the `TagDefault` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+func (o GetTagDefaultsTagDefaultOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTagDefaultsTagDefault) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The default value for the tag definition. This will be applied to all new resources created in the compartment.
+func (o GetTagDefaultsTagDefaultOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTagDefaultsTagDefault) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetTagDefaultsTagDefaultArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTagDefaultsTagDefaultArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTagDefaultsTagDefault)(nil)).Elem()
+}
+
+func (o GetTagDefaultsTagDefaultArrayOutput) ToGetTagDefaultsTagDefaultArrayOutput() GetTagDefaultsTagDefaultArrayOutput {
+	return o
+}
+
+func (o GetTagDefaultsTagDefaultArrayOutput) ToGetTagDefaultsTagDefaultArrayOutputWithContext(ctx context.Context) GetTagDefaultsTagDefaultArrayOutput {
+	return o
+}
+
+func (o GetTagDefaultsTagDefaultArrayOutput) Index(i pulumi.IntInput) GetTagDefaultsTagDefaultOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTagDefaultsTagDefault {
+		return vs[0].([]GetTagDefaultsTagDefault)[vs[1].(int)]
+	}).(GetTagDefaultsTagDefaultOutput)
+}
+
+type GetTagNamespacesFilter struct {
+	// The name of the tag namespace. It must be unique across all tag namespaces in the tenancy and cannot be changed.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetTagNamespacesFilterInput is an input type that accepts GetTagNamespacesFilterArgs and GetTagNamespacesFilterOutput values.
+// You can construct a concrete instance of `GetTagNamespacesFilterInput` via:
+//
+//	GetTagNamespacesFilterArgs{...}
+type GetTagNamespacesFilterInput interface {
+	pulumi.Input
+
+	ToGetTagNamespacesFilterOutput() GetTagNamespacesFilterOutput
+	ToGetTagNamespacesFilterOutputWithContext(context.Context) GetTagNamespacesFilterOutput
+}
+
+type GetTagNamespacesFilterArgs struct {
+	// The name of the tag namespace. It must be unique across all tag namespaces in the tenancy and cannot be changed.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetTagNamespacesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTagNamespacesFilter)(nil)).Elem()
+}
+
+func (i GetTagNamespacesFilterArgs) ToGetTagNamespacesFilterOutput() GetTagNamespacesFilterOutput {
+	return i.ToGetTagNamespacesFilterOutputWithContext(context.Background())
+}
+
+func (i GetTagNamespacesFilterArgs) ToGetTagNamespacesFilterOutputWithContext(ctx context.Context) GetTagNamespacesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTagNamespacesFilterOutput)
+}
+
+// GetTagNamespacesFilterArrayInput is an input type that accepts GetTagNamespacesFilterArray and GetTagNamespacesFilterArrayOutput values.
+// You can construct a concrete instance of `GetTagNamespacesFilterArrayInput` via:
+//
+//	GetTagNamespacesFilterArray{ GetTagNamespacesFilterArgs{...} }
+type GetTagNamespacesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetTagNamespacesFilterArrayOutput() GetTagNamespacesFilterArrayOutput
+	ToGetTagNamespacesFilterArrayOutputWithContext(context.Context) GetTagNamespacesFilterArrayOutput
+}
+
+type GetTagNamespacesFilterArray []GetTagNamespacesFilterInput
+
+func (GetTagNamespacesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTagNamespacesFilter)(nil)).Elem()
+}
+
+func (i GetTagNamespacesFilterArray) ToGetTagNamespacesFilterArrayOutput() GetTagNamespacesFilterArrayOutput {
+	return i.ToGetTagNamespacesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetTagNamespacesFilterArray) ToGetTagNamespacesFilterArrayOutputWithContext(ctx context.Context) GetTagNamespacesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTagNamespacesFilterArrayOutput)
+}
+
+type GetTagNamespacesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetTagNamespacesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTagNamespacesFilter)(nil)).Elem()
+}
+
+func (o GetTagNamespacesFilterOutput) ToGetTagNamespacesFilterOutput() GetTagNamespacesFilterOutput {
+	return o
+}
+
+func (o GetTagNamespacesFilterOutput) ToGetTagNamespacesFilterOutputWithContext(ctx context.Context) GetTagNamespacesFilterOutput {
+	return o
+}
+
+// The name of the tag namespace. It must be unique across all tag namespaces in the tenancy and cannot be changed.
+func (o GetTagNamespacesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTagNamespacesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetTagNamespacesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetTagNamespacesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetTagNamespacesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTagNamespacesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetTagNamespacesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTagNamespacesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTagNamespacesFilter)(nil)).Elem()
+}
+
+func (o GetTagNamespacesFilterArrayOutput) ToGetTagNamespacesFilterArrayOutput() GetTagNamespacesFilterArrayOutput {
+	return o
+}
+
+func (o GetTagNamespacesFilterArrayOutput) ToGetTagNamespacesFilterArrayOutputWithContext(ctx context.Context) GetTagNamespacesFilterArrayOutput {
+	return o
+}
+
+func (o GetTagNamespacesFilterArrayOutput) Index(i pulumi.IntInput) GetTagNamespacesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTagNamespacesFilter {
+		return vs[0].([]GetTagNamespacesFilter)[vs[1].(int)]
+	}).(GetTagNamespacesFilterOutput)
+}
+
+type GetTagNamespacesTagNamespace struct {
+	// The OCID of the compartment (remember that the tenancy is simply the root compartment).
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// The description you assign to the tag namespace.
+	Description string `pulumi:"description"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The OCID of the tag namespace.
+	Id string `pulumi:"id"`
+	// Whether the tag namespace is retired. For more information, see [Retiring Key Definitions and Namespace Definitions](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Retiring).
+	IsRetired bool `pulumi:"isRetired"`
+	// The name of the tag namespace. It must be unique across all tag namespaces in the tenancy and cannot be changed.
+	Name string `pulumi:"name"`
+	// A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// Date and time the tag namespace was created, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+}
+
+// GetTagNamespacesTagNamespaceInput is an input type that accepts GetTagNamespacesTagNamespaceArgs and GetTagNamespacesTagNamespaceOutput values.
+// You can construct a concrete instance of `GetTagNamespacesTagNamespaceInput` via:
+//
+//	GetTagNamespacesTagNamespaceArgs{...}
+type GetTagNamespacesTagNamespaceInput interface {
+	pulumi.Input
+
+	ToGetTagNamespacesTagNamespaceOutput() GetTagNamespacesTagNamespaceOutput
+	ToGetTagNamespacesTagNamespaceOutputWithContext(context.Context) GetTagNamespacesTagNamespaceOutput
+}
+
+type GetTagNamespacesTagNamespaceArgs struct {
+	// The OCID of the compartment (remember that the tenancy is simply the root compartment).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// The description you assign to the tag namespace.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The OCID of the tag namespace.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Whether the tag namespace is retired. For more information, see [Retiring Key Definitions and Namespace Definitions](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Retiring).
+	IsRetired pulumi.BoolInput `pulumi:"isRetired"`
+	// The name of the tag namespace. It must be unique across all tag namespaces in the tenancy and cannot be changed.
+	Name pulumi.StringInput `pulumi:"name"`
+	// A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// Date and time the tag namespace was created, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+}
+
+func (GetTagNamespacesTagNamespaceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTagNamespacesTagNamespace)(nil)).Elem()
+}
+
+func (i GetTagNamespacesTagNamespaceArgs) ToGetTagNamespacesTagNamespaceOutput() GetTagNamespacesTagNamespaceOutput {
+	return i.ToGetTagNamespacesTagNamespaceOutputWithContext(context.Background())
+}
+
+func (i GetTagNamespacesTagNamespaceArgs) ToGetTagNamespacesTagNamespaceOutputWithContext(ctx context.Context) GetTagNamespacesTagNamespaceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTagNamespacesTagNamespaceOutput)
+}
+
+// GetTagNamespacesTagNamespaceArrayInput is an input type that accepts GetTagNamespacesTagNamespaceArray and GetTagNamespacesTagNamespaceArrayOutput values.
+// You can construct a concrete instance of `GetTagNamespacesTagNamespaceArrayInput` via:
+//
+//	GetTagNamespacesTagNamespaceArray{ GetTagNamespacesTagNamespaceArgs{...} }
+type GetTagNamespacesTagNamespaceArrayInput interface {
+	pulumi.Input
+
+	ToGetTagNamespacesTagNamespaceArrayOutput() GetTagNamespacesTagNamespaceArrayOutput
+	ToGetTagNamespacesTagNamespaceArrayOutputWithContext(context.Context) GetTagNamespacesTagNamespaceArrayOutput
+}
+
+type GetTagNamespacesTagNamespaceArray []GetTagNamespacesTagNamespaceInput
+
+func (GetTagNamespacesTagNamespaceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTagNamespacesTagNamespace)(nil)).Elem()
+}
+
+func (i GetTagNamespacesTagNamespaceArray) ToGetTagNamespacesTagNamespaceArrayOutput() GetTagNamespacesTagNamespaceArrayOutput {
+	return i.ToGetTagNamespacesTagNamespaceArrayOutputWithContext(context.Background())
+}
+
+func (i GetTagNamespacesTagNamespaceArray) ToGetTagNamespacesTagNamespaceArrayOutputWithContext(ctx context.Context) GetTagNamespacesTagNamespaceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTagNamespacesTagNamespaceArrayOutput)
+}
+
+type GetTagNamespacesTagNamespaceOutput struct{ *pulumi.OutputState }
+
+func (GetTagNamespacesTagNamespaceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTagNamespacesTagNamespace)(nil)).Elem()
+}
+
+func (o GetTagNamespacesTagNamespaceOutput) ToGetTagNamespacesTagNamespaceOutput() GetTagNamespacesTagNamespaceOutput {
+	return o
+}
+
+func (o GetTagNamespacesTagNamespaceOutput) ToGetTagNamespacesTagNamespaceOutputWithContext(ctx context.Context) GetTagNamespacesTagNamespaceOutput {
+	return o
+}
+
+// The OCID of the compartment (remember that the tenancy is simply the root compartment).
+func (o GetTagNamespacesTagNamespaceOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTagNamespacesTagNamespace) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetTagNamespacesTagNamespaceOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetTagNamespacesTagNamespace) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// The description you assign to the tag namespace.
+func (o GetTagNamespacesTagNamespaceOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTagNamespacesTagNamespace) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetTagNamespacesTagNamespaceOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetTagNamespacesTagNamespace) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The OCID of the tag namespace.
+func (o GetTagNamespacesTagNamespaceOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTagNamespacesTagNamespace) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Whether the tag namespace is retired. For more information, see [Retiring Key Definitions and Namespace Definitions](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Retiring).
+func (o GetTagNamespacesTagNamespaceOutput) IsRetired() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetTagNamespacesTagNamespace) bool { return v.IsRetired }).(pulumi.BoolOutput)
+}
+
+// The name of the tag namespace. It must be unique across all tag namespaces in the tenancy and cannot be changed.
+func (o GetTagNamespacesTagNamespaceOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTagNamespacesTagNamespace) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+func (o GetTagNamespacesTagNamespaceOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTagNamespacesTagNamespace) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Date and time the tag namespace was created, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
+func (o GetTagNamespacesTagNamespaceOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTagNamespacesTagNamespace) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+type GetTagNamespacesTagNamespaceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTagNamespacesTagNamespaceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTagNamespacesTagNamespace)(nil)).Elem()
+}
+
+func (o GetTagNamespacesTagNamespaceArrayOutput) ToGetTagNamespacesTagNamespaceArrayOutput() GetTagNamespacesTagNamespaceArrayOutput {
+	return o
+}
+
+func (o GetTagNamespacesTagNamespaceArrayOutput) ToGetTagNamespacesTagNamespaceArrayOutputWithContext(ctx context.Context) GetTagNamespacesTagNamespaceArrayOutput {
+	return o
+}
+
+func (o GetTagNamespacesTagNamespaceArrayOutput) Index(i pulumi.IntInput) GetTagNamespacesTagNamespaceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTagNamespacesTagNamespace {
+		return vs[0].([]GetTagNamespacesTagNamespace)[vs[1].(int)]
+	}).(GetTagNamespacesTagNamespaceOutput)
+}
+
 type GetTagStandardTagNamespaceTemplateTagDefinitionTemplate struct {
 	// The default description of the tag namespace that users can use to create the tag definition
 	Description string `pulumi:"description"`
@@ -1808,6 +4787,50 @@ func (o GetUsersUserCapabilityArrayOutput) Index(i pulumi.IntInput) GetUsersUser
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIdentityProviderGroupsFilterInput)(nil)).Elem(), GetIdentityProviderGroupsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIdentityProviderGroupsFilterArrayInput)(nil)).Elem(), GetIdentityProviderGroupsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIdentityProviderGroupsIdentityProviderGroupInput)(nil)).Elem(), GetIdentityProviderGroupsIdentityProviderGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIdentityProviderGroupsIdentityProviderGroupArrayInput)(nil)).Elem(), GetIdentityProviderGroupsIdentityProviderGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIdentityProvidersFilterInput)(nil)).Elem(), GetIdentityProvidersFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIdentityProvidersFilterArrayInput)(nil)).Elem(), GetIdentityProvidersFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIdentityProvidersIdentityProviderInput)(nil)).Elem(), GetIdentityProvidersIdentityProviderArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIdentityProvidersIdentityProviderArrayInput)(nil)).Elem(), GetIdentityProvidersIdentityProviderArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIdpGroupMappingsFilterInput)(nil)).Elem(), GetIdpGroupMappingsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIdpGroupMappingsFilterArrayInput)(nil)).Elem(), GetIdpGroupMappingsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIdpGroupMappingsIdpGroupMappingInput)(nil)).Elem(), GetIdpGroupMappingsIdpGroupMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIdpGroupMappingsIdpGroupMappingArrayInput)(nil)).Elem(), GetIdpGroupMappingsIdpGroupMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkSourceVirtualSourceListInput)(nil)).Elem(), GetNetworkSourceVirtualSourceListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkSourceVirtualSourceListArrayInput)(nil)).Elem(), GetNetworkSourceVirtualSourceListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkSourcesFilterInput)(nil)).Elem(), GetNetworkSourcesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkSourcesFilterArrayInput)(nil)).Elem(), GetNetworkSourcesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkSourcesNetworkSourceInput)(nil)).Elem(), GetNetworkSourcesNetworkSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkSourcesNetworkSourceArrayInput)(nil)).Elem(), GetNetworkSourcesNetworkSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkSourcesNetworkSourceVirtualSourceListInput)(nil)).Elem(), GetNetworkSourcesNetworkSourceVirtualSourceListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkSourcesNetworkSourceVirtualSourceListArrayInput)(nil)).Elem(), GetNetworkSourcesNetworkSourceVirtualSourceListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPoliciesFilterInput)(nil)).Elem(), GetPoliciesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPoliciesFilterArrayInput)(nil)).Elem(), GetPoliciesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPoliciesPolicyInput)(nil)).Elem(), GetPoliciesPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPoliciesPolicyArrayInput)(nil)).Elem(), GetPoliciesPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRegionSubscriptionsFilterInput)(nil)).Elem(), GetRegionSubscriptionsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRegionSubscriptionsFilterArrayInput)(nil)).Elem(), GetRegionSubscriptionsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRegionSubscriptionsRegionSubscriptionInput)(nil)).Elem(), GetRegionSubscriptionsRegionSubscriptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRegionSubscriptionsRegionSubscriptionArrayInput)(nil)).Elem(), GetRegionSubscriptionsRegionSubscriptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRegionsFilterInput)(nil)).Elem(), GetRegionsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRegionsFilterArrayInput)(nil)).Elem(), GetRegionsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRegionsRegionInput)(nil)).Elem(), GetRegionsRegionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRegionsRegionArrayInput)(nil)).Elem(), GetRegionsRegionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSmtpCredentialsFilterInput)(nil)).Elem(), GetSmtpCredentialsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSmtpCredentialsFilterArrayInput)(nil)).Elem(), GetSmtpCredentialsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSmtpCredentialsSmtpCredentialInput)(nil)).Elem(), GetSmtpCredentialsSmtpCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSmtpCredentialsSmtpCredentialArrayInput)(nil)).Elem(), GetSmtpCredentialsSmtpCredentialArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTagDefaultsFilterInput)(nil)).Elem(), GetTagDefaultsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTagDefaultsFilterArrayInput)(nil)).Elem(), GetTagDefaultsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTagDefaultsTagDefaultInput)(nil)).Elem(), GetTagDefaultsTagDefaultArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTagDefaultsTagDefaultArrayInput)(nil)).Elem(), GetTagDefaultsTagDefaultArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTagNamespacesFilterInput)(nil)).Elem(), GetTagNamespacesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTagNamespacesFilterArrayInput)(nil)).Elem(), GetTagNamespacesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTagNamespacesTagNamespaceInput)(nil)).Elem(), GetTagNamespacesTagNamespaceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTagNamespacesTagNamespaceArrayInput)(nil)).Elem(), GetTagNamespacesTagNamespaceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTagStandardTagNamespaceTemplateTagDefinitionTemplateInput)(nil)).Elem(), GetTagStandardTagNamespaceTemplateTagDefinitionTemplateArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTagStandardTagNamespaceTemplateTagDefinitionTemplateArrayInput)(nil)).Elem(), GetTagStandardTagNamespaceTemplateTagDefinitionTemplateArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTagStandardTagNamespaceTemplatesFilterInput)(nil)).Elem(), GetTagStandardTagNamespaceTemplatesFilterArgs{})
@@ -1834,6 +4857,50 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUsersUserArrayInput)(nil)).Elem(), GetUsersUserArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUsersUserCapabilityInput)(nil)).Elem(), GetUsersUserCapabilityArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUsersUserCapabilityArrayInput)(nil)).Elem(), GetUsersUserCapabilityArray{})
+	pulumi.RegisterOutputType(GetIdentityProviderGroupsFilterOutput{})
+	pulumi.RegisterOutputType(GetIdentityProviderGroupsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetIdentityProviderGroupsIdentityProviderGroupOutput{})
+	pulumi.RegisterOutputType(GetIdentityProviderGroupsIdentityProviderGroupArrayOutput{})
+	pulumi.RegisterOutputType(GetIdentityProvidersFilterOutput{})
+	pulumi.RegisterOutputType(GetIdentityProvidersFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetIdentityProvidersIdentityProviderOutput{})
+	pulumi.RegisterOutputType(GetIdentityProvidersIdentityProviderArrayOutput{})
+	pulumi.RegisterOutputType(GetIdpGroupMappingsFilterOutput{})
+	pulumi.RegisterOutputType(GetIdpGroupMappingsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetIdpGroupMappingsIdpGroupMappingOutput{})
+	pulumi.RegisterOutputType(GetIdpGroupMappingsIdpGroupMappingArrayOutput{})
+	pulumi.RegisterOutputType(GetNetworkSourceVirtualSourceListOutput{})
+	pulumi.RegisterOutputType(GetNetworkSourceVirtualSourceListArrayOutput{})
+	pulumi.RegisterOutputType(GetNetworkSourcesFilterOutput{})
+	pulumi.RegisterOutputType(GetNetworkSourcesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetNetworkSourcesNetworkSourceOutput{})
+	pulumi.RegisterOutputType(GetNetworkSourcesNetworkSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetNetworkSourcesNetworkSourceVirtualSourceListOutput{})
+	pulumi.RegisterOutputType(GetNetworkSourcesNetworkSourceVirtualSourceListArrayOutput{})
+	pulumi.RegisterOutputType(GetPoliciesFilterOutput{})
+	pulumi.RegisterOutputType(GetPoliciesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetPoliciesPolicyOutput{})
+	pulumi.RegisterOutputType(GetPoliciesPolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetRegionSubscriptionsFilterOutput{})
+	pulumi.RegisterOutputType(GetRegionSubscriptionsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetRegionSubscriptionsRegionSubscriptionOutput{})
+	pulumi.RegisterOutputType(GetRegionSubscriptionsRegionSubscriptionArrayOutput{})
+	pulumi.RegisterOutputType(GetRegionsFilterOutput{})
+	pulumi.RegisterOutputType(GetRegionsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetRegionsRegionOutput{})
+	pulumi.RegisterOutputType(GetRegionsRegionArrayOutput{})
+	pulumi.RegisterOutputType(GetSmtpCredentialsFilterOutput{})
+	pulumi.RegisterOutputType(GetSmtpCredentialsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSmtpCredentialsSmtpCredentialOutput{})
+	pulumi.RegisterOutputType(GetSmtpCredentialsSmtpCredentialArrayOutput{})
+	pulumi.RegisterOutputType(GetTagDefaultsFilterOutput{})
+	pulumi.RegisterOutputType(GetTagDefaultsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetTagDefaultsTagDefaultOutput{})
+	pulumi.RegisterOutputType(GetTagDefaultsTagDefaultArrayOutput{})
+	pulumi.RegisterOutputType(GetTagNamespacesFilterOutput{})
+	pulumi.RegisterOutputType(GetTagNamespacesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetTagNamespacesTagNamespaceOutput{})
+	pulumi.RegisterOutputType(GetTagNamespacesTagNamespaceArrayOutput{})
 	pulumi.RegisterOutputType(GetTagStandardTagNamespaceTemplateTagDefinitionTemplateOutput{})
 	pulumi.RegisterOutputType(GetTagStandardTagNamespaceTemplateTagDefinitionTemplateArrayOutput{})
 	pulumi.RegisterOutputType(GetTagStandardTagNamespaceTemplatesFilterOutput{})

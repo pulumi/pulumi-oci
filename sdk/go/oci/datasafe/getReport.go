@@ -70,6 +70,8 @@ type LookupReportResult struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the report.
 	Id string `pulumi:"id"`
+	// Details about the current state of the report in Data Safe.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Specifies the format of report to be .xls or .pdf or .json
 	MimeType string `pulumi:"mimeType"`
 	// The OCID of the report definition.
@@ -151,6 +153,11 @@ func (o LookupReportResultOutput) FreeformTags() pulumi.MapOutput {
 // The OCID of the report.
 func (o LookupReportResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupReportResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Details about the current state of the report in Data Safe.
+func (o LookupReportResultOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupReportResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
 // Specifies the format of report to be .xls or .pdf or .json

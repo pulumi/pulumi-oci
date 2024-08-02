@@ -284,11 +284,18 @@ public class Usage extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public Usage(String name, UsageArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:MeteringComputation/usage:Usage", name, args == null ? UsageArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:MeteringComputation/usage:Usage", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private Usage(String name, Output<String> id, @Nullable UsageState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:MeteringComputation/usage:Usage", name, state, makeResourceOptions(options, id));
+    }
+
+    private static UsageArgs makeArgs(UsageArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? UsageArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

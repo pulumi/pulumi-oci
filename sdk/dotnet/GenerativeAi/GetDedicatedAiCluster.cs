@@ -104,6 +104,9 @@ namespace Pulumi.Oci.GenerativeAi
         public readonly string Description;
         public readonly string DisplayName;
         public readonly ImmutableDictionary<string, object> FreeformTags;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated AI cluster.
+        /// </summary>
         public readonly string Id;
         public readonly string LifecycleDetails;
         public readonly string State;

@@ -32,9 +32,11 @@ import (
 //			_, err := StackMonitoring.GetBaselineableMetrics(ctx, &stackmonitoring.GetBaselineableMetricsArgs{
 //				BaselineableMetricId: pulumi.StringRef(testBaselineableMetric.Id),
 //				CompartmentId:        pulumi.StringRef(compartmentId),
+//				IsOutOfBox:           pulumi.BoolRef(baselineableMetricIsOutOfBox),
 //				MetricNamespace:      pulumi.StringRef(baselineableMetricMetricNamespace),
 //				Name:                 pulumi.StringRef(baselineableMetricName),
 //				ResourceGroup:        pulumi.StringRef(baselineableMetricResourceGroup),
+//				ResourceType:         pulumi.StringRef(baselineableMetricResourceType),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -61,12 +63,16 @@ type GetBaselineableMetricsArgs struct {
 	// The ID of the compartment in which data is listed.
 	CompartmentId *string                        `pulumi:"compartmentId"`
 	Filters       []GetBaselineableMetricsFilter `pulumi:"filters"`
+	// Is the baseline enabled metric defined out of box by Oracle or by end-user
+	IsOutOfBox *bool `pulumi:"isOutOfBox"`
 	// A filter to return monitored resource types that has the matching namespace.
 	MetricNamespace *string `pulumi:"metricNamespace"`
 	// Metric Name
 	Name *string `pulumi:"name"`
 	// Resource Group
 	ResourceGroup *string `pulumi:"resourceGroup"`
+	// Resource Type
+	ResourceType *string `pulumi:"resourceType"`
 }
 
 // A collection of values returned by getBaselineableMetrics.
@@ -78,12 +84,16 @@ type GetBaselineableMetricsResult struct {
 	CompartmentId *string                        `pulumi:"compartmentId"`
 	Filters       []GetBaselineableMetricsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id              string  `pulumi:"id"`
+	Id string `pulumi:"id"`
+	// Is the metric created out of box, default false
+	IsOutOfBox      *bool   `pulumi:"isOutOfBox"`
 	MetricNamespace *string `pulumi:"metricNamespace"`
 	// name of the metric
 	Name *string `pulumi:"name"`
 	// Resource group of the metric
 	ResourceGroup *string `pulumi:"resourceGroup"`
+	// Resource type of the metric
+	ResourceType *string `pulumi:"resourceType"`
 }
 
 func GetBaselineableMetricsOutput(ctx *pulumi.Context, args GetBaselineableMetricsOutputArgs, opts ...pulumi.InvokeOption) GetBaselineableMetricsResultOutput {
@@ -106,12 +116,16 @@ type GetBaselineableMetricsOutputArgs struct {
 	// The ID of the compartment in which data is listed.
 	CompartmentId pulumi.StringPtrInput                  `pulumi:"compartmentId"`
 	Filters       GetBaselineableMetricsFilterArrayInput `pulumi:"filters"`
+	// Is the baseline enabled metric defined out of box by Oracle or by end-user
+	IsOutOfBox pulumi.BoolPtrInput `pulumi:"isOutOfBox"`
 	// A filter to return monitored resource types that has the matching namespace.
 	MetricNamespace pulumi.StringPtrInput `pulumi:"metricNamespace"`
 	// Metric Name
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Resource Group
 	ResourceGroup pulumi.StringPtrInput `pulumi:"resourceGroup"`
+	// Resource Type
+	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
 }
 
 func (GetBaselineableMetricsOutputArgs) ElementType() reflect.Type {
@@ -158,6 +172,11 @@ func (o GetBaselineableMetricsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBaselineableMetricsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// Is the metric created out of box, default false
+func (o GetBaselineableMetricsResultOutput) IsOutOfBox() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBaselineableMetricsResult) *bool { return v.IsOutOfBox }).(pulumi.BoolPtrOutput)
+}
+
 func (o GetBaselineableMetricsResultOutput) MetricNamespace() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetBaselineableMetricsResult) *string { return v.MetricNamespace }).(pulumi.StringPtrOutput)
 }
@@ -170,6 +189,11 @@ func (o GetBaselineableMetricsResultOutput) Name() pulumi.StringPtrOutput {
 // Resource group of the metric
 func (o GetBaselineableMetricsResultOutput) ResourceGroup() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetBaselineableMetricsResult) *string { return v.ResourceGroup }).(pulumi.StringPtrOutput)
+}
+
+// Resource type of the metric
+func (o GetBaselineableMetricsResultOutput) ResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBaselineableMetricsResult) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
 }
 
 func init() {

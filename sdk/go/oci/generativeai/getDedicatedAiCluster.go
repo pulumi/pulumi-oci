@@ -65,15 +65,16 @@ type LookupDedicatedAiClusterResult struct {
 	Description          string                          `pulumi:"description"`
 	DisplayName          string                          `pulumi:"displayName"`
 	FreeformTags         map[string]interface{}          `pulumi:"freeformTags"`
-	Id                   string                          `pulumi:"id"`
-	LifecycleDetails     string                          `pulumi:"lifecycleDetails"`
-	State                string                          `pulumi:"state"`
-	SystemTags           map[string]interface{}          `pulumi:"systemTags"`
-	TimeCreated          string                          `pulumi:"timeCreated"`
-	TimeUpdated          string                          `pulumi:"timeUpdated"`
-	Type                 string                          `pulumi:"type"`
-	UnitCount            int                             `pulumi:"unitCount"`
-	UnitShape            string                          `pulumi:"unitShape"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated AI cluster.
+	Id               string                 `pulumi:"id"`
+	LifecycleDetails string                 `pulumi:"lifecycleDetails"`
+	State            string                 `pulumi:"state"`
+	SystemTags       map[string]interface{} `pulumi:"systemTags"`
+	TimeCreated      string                 `pulumi:"timeCreated"`
+	TimeUpdated      string                 `pulumi:"timeUpdated"`
+	Type             string                 `pulumi:"type"`
+	UnitCount        int                    `pulumi:"unitCount"`
+	UnitShape        string                 `pulumi:"unitShape"`
 }
 
 func LookupDedicatedAiClusterOutput(ctx *pulumi.Context, args LookupDedicatedAiClusterOutputArgs, opts ...pulumi.InvokeOption) LookupDedicatedAiClusterResultOutput {
@@ -142,6 +143,7 @@ func (o LookupDedicatedAiClusterResultOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupDedicatedAiClusterResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated AI cluster.
 func (o LookupDedicatedAiClusterResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDedicatedAiClusterResult) string { return v.Id }).(pulumi.StringOutput)
 }

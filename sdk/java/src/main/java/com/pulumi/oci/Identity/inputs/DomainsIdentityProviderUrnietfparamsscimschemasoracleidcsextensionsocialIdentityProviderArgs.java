@@ -6,6 +6,7 @@ package com.pulumi.oci.Identity.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Identity.inputs.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderJitProvAssignedGroupArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -173,6 +174,45 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
      */
     public Optional<Output<String>> authzUrl() {
         return Optional.ofNullable(this.authzUrl);
+    }
+
+    /**
+     * (Updatable) Whether social auto redirect is enabled. The IDP policy should be configured with only one Social IDP, and without username/password selected.
+     * 
+     * **Added In:** 2310202314
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
+     */
+    @Import(name="autoRedirectEnabled")
+    private @Nullable Output<Boolean> autoRedirectEnabled;
+
+    /**
+     * @return (Updatable) Whether social auto redirect is enabled. The IDP policy should be configured with only one Social IDP, and without username/password selected.
+     * 
+     * **Added In:** 2310202314
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
+     */
+    public Optional<Output<Boolean>> autoRedirectEnabled() {
+        return Optional.ofNullable(this.autoRedirectEnabled);
     }
 
     /**
@@ -410,6 +450,84 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
     }
 
     /**
+     * (Updatable) Lists the groups each social JIT-provisioned user is a member. Just-in-Time user-provisioning applies this static list when jitProvGroupStaticListEnabled:true.
+     * 
+     * **Added In:** 2310202314
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
+     */
+    @Import(name="jitProvAssignedGroups")
+    private @Nullable Output<List<DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderJitProvAssignedGroupArgs>> jitProvAssignedGroups;
+
+    /**
+     * @return (Updatable) Lists the groups each social JIT-provisioned user is a member. Just-in-Time user-provisioning applies this static list when jitProvGroupStaticListEnabled:true.
+     * 
+     * **Added In:** 2310202314
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
+     */
+    public Optional<Output<List<DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderJitProvAssignedGroupArgs>>> jitProvAssignedGroups() {
+        return Optional.ofNullable(this.jitProvAssignedGroups);
+    }
+
+    /**
+     * (Updatable) Set to true to indicate Social JIT User Provisioning Groups should be assigned from a static list
+     * 
+     * **Added In:** 2310202314
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
+     */
+    @Import(name="jitProvGroupStaticListEnabled")
+    private @Nullable Output<Boolean> jitProvGroupStaticListEnabled;
+
+    /**
+     * @return (Updatable) Set to true to indicate Social JIT User Provisioning Groups should be assigned from a static list
+     * 
+     * **Added In:** 2310202314
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
+     */
+    public Optional<Output<Boolean>> jitProvGroupStaticListEnabled() {
+        return Optional.ofNullable(this.jitProvGroupStaticListEnabled);
+    }
+
+    /**
      * (Updatable) Social IDP User profile URL
      * 
      * **Added In:** 20.1.3
@@ -605,6 +723,45 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
     }
 
     /**
+     * (Updatable) Whether Social JIT Provisioning is enabled
+     * 
+     * **Added In:** 2307282043
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
+     */
+    @Import(name="socialJitProvisioningEnabled")
+    private @Nullable Output<Boolean> socialJitProvisioningEnabled;
+
+    /**
+     * @return (Updatable) Whether Social JIT Provisioning is enabled
+     * 
+     * **Added In:** 2307282043
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
+     */
+    public Optional<Output<Boolean>> socialJitProvisioningEnabled() {
+        return Optional.ofNullable(this.socialJitProvisioningEnabled);
+    }
+
+    /**
      * (Updatable) Status
      * 
      * **Added In:** 20.1.3
@@ -650,17 +807,21 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
         this.accountLinkingEnabled = $.accountLinkingEnabled;
         this.adminScopes = $.adminScopes;
         this.authzUrl = $.authzUrl;
+        this.autoRedirectEnabled = $.autoRedirectEnabled;
         this.clientCredentialInPayload = $.clientCredentialInPayload;
         this.clockSkewInSeconds = $.clockSkewInSeconds;
         this.consumerKey = $.consumerKey;
         this.consumerSecret = $.consumerSecret;
         this.discoveryUrl = $.discoveryUrl;
         this.idAttribute = $.idAttribute;
+        this.jitProvAssignedGroups = $.jitProvAssignedGroups;
+        this.jitProvGroupStaticListEnabled = $.jitProvGroupStaticListEnabled;
         this.profileUrl = $.profileUrl;
         this.redirectUrl = $.redirectUrl;
         this.registrationEnabled = $.registrationEnabled;
         this.scopes = $.scopes;
         this.serviceProviderName = $.serviceProviderName;
+        this.socialJitProvisioningEnabled = $.socialJitProvisioningEnabled;
         this.status = $.status;
     }
 
@@ -882,6 +1043,51 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
          */
         public Builder authzUrl(String authzUrl) {
             return authzUrl(Output.of(authzUrl));
+        }
+
+        /**
+         * @param autoRedirectEnabled (Updatable) Whether social auto redirect is enabled. The IDP policy should be configured with only one Social IDP, and without username/password selected.
+         * 
+         * **Added In:** 2310202314
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autoRedirectEnabled(@Nullable Output<Boolean> autoRedirectEnabled) {
+            $.autoRedirectEnabled = autoRedirectEnabled;
+            return this;
+        }
+
+        /**
+         * @param autoRedirectEnabled (Updatable) Whether social auto redirect is enabled. The IDP policy should be configured with only one Social IDP, and without username/password selected.
+         * 
+         * **Added In:** 2310202314
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autoRedirectEnabled(Boolean autoRedirectEnabled) {
+            return autoRedirectEnabled(Output.of(autoRedirectEnabled));
         }
 
         /**
@@ -1155,6 +1361,118 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
         }
 
         /**
+         * @param jitProvAssignedGroups (Updatable) Lists the groups each social JIT-provisioned user is a member. Just-in-Time user-provisioning applies this static list when jitProvGroupStaticListEnabled:true.
+         * 
+         * **Added In:** 2310202314
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder jitProvAssignedGroups(@Nullable Output<List<DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderJitProvAssignedGroupArgs>> jitProvAssignedGroups) {
+            $.jitProvAssignedGroups = jitProvAssignedGroups;
+            return this;
+        }
+
+        /**
+         * @param jitProvAssignedGroups (Updatable) Lists the groups each social JIT-provisioned user is a member. Just-in-Time user-provisioning applies this static list when jitProvGroupStaticListEnabled:true.
+         * 
+         * **Added In:** 2310202314
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder jitProvAssignedGroups(List<DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderJitProvAssignedGroupArgs> jitProvAssignedGroups) {
+            return jitProvAssignedGroups(Output.of(jitProvAssignedGroups));
+        }
+
+        /**
+         * @param jitProvAssignedGroups (Updatable) Lists the groups each social JIT-provisioned user is a member. Just-in-Time user-provisioning applies this static list when jitProvGroupStaticListEnabled:true.
+         * 
+         * **Added In:** 2310202314
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder jitProvAssignedGroups(DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderJitProvAssignedGroupArgs... jitProvAssignedGroups) {
+            return jitProvAssignedGroups(List.of(jitProvAssignedGroups));
+        }
+
+        /**
+         * @param jitProvGroupStaticListEnabled (Updatable) Set to true to indicate Social JIT User Provisioning Groups should be assigned from a static list
+         * 
+         * **Added In:** 2310202314
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder jitProvGroupStaticListEnabled(@Nullable Output<Boolean> jitProvGroupStaticListEnabled) {
+            $.jitProvGroupStaticListEnabled = jitProvGroupStaticListEnabled;
+            return this;
+        }
+
+        /**
+         * @param jitProvGroupStaticListEnabled (Updatable) Set to true to indicate Social JIT User Provisioning Groups should be assigned from a static list
+         * 
+         * **Added In:** 2310202314
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder jitProvGroupStaticListEnabled(Boolean jitProvGroupStaticListEnabled) {
+            return jitProvGroupStaticListEnabled(Output.of(jitProvGroupStaticListEnabled));
+        }
+
+        /**
          * @param profileUrl (Updatable) Social IDP User profile URL
          * 
          * **Added In:** 20.1.3
@@ -1399,6 +1717,51 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
          */
         public Builder serviceProviderName(String serviceProviderName) {
             return serviceProviderName(Output.of(serviceProviderName));
+        }
+
+        /**
+         * @param socialJitProvisioningEnabled (Updatable) Whether Social JIT Provisioning is enabled
+         * 
+         * **Added In:** 2307282043
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder socialJitProvisioningEnabled(@Nullable Output<Boolean> socialJitProvisioningEnabled) {
+            $.socialJitProvisioningEnabled = socialJitProvisioningEnabled;
+            return this;
+        }
+
+        /**
+         * @param socialJitProvisioningEnabled (Updatable) Whether Social JIT Provisioning is enabled
+         * 
+         * **Added In:** 2307282043
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder socialJitProvisioningEnabled(Boolean socialJitProvisioningEnabled) {
+            return socialJitProvisioningEnabled(Output.of(socialJitProvisioningEnabled));
         }
 
         /**

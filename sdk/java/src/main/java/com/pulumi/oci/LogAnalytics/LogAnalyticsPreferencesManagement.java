@@ -125,11 +125,18 @@ public class LogAnalyticsPreferencesManagement extends com.pulumi.resources.Cust
      * @param options A bag of options that control this resource's behavior.
      */
     public LogAnalyticsPreferencesManagement(String name, LogAnalyticsPreferencesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:LogAnalytics/logAnalyticsPreferencesManagement:LogAnalyticsPreferencesManagement", name, args == null ? LogAnalyticsPreferencesManagementArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:LogAnalytics/logAnalyticsPreferencesManagement:LogAnalyticsPreferencesManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private LogAnalyticsPreferencesManagement(String name, Output<String> id, @Nullable LogAnalyticsPreferencesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:LogAnalytics/logAnalyticsPreferencesManagement:LogAnalyticsPreferencesManagement", name, state, makeResourceOptions(options, id));
+    }
+
+    private static LogAnalyticsPreferencesManagementArgs makeArgs(LogAnalyticsPreferencesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? LogAnalyticsPreferencesManagementArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

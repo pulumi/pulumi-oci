@@ -13,6 +13,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
     [OutputType]
     public sealed class GetAlertPoliciesAlertPolicyCollectionItemResult
     {
+        public readonly ImmutableArray<Outputs.GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailResult> AlertPolicyRuleDetails;
         /// <summary>
         /// Indicates the Data Safe feature to which the alert policy belongs.
         /// </summary>
@@ -46,6 +47,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly bool IsUserDefined;
         /// <summary>
+        /// Details about the current state of the alert policy.
+        /// </summary>
+        public readonly string LifecycleDetails;
+        /// <summary>
         /// Severity level of the alert raised by this policy.
         /// </summary>
         public readonly string Severity;
@@ -68,6 +73,8 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
         [OutputConstructor]
         private GetAlertPoliciesAlertPolicyCollectionItemResult(
+            ImmutableArray<Outputs.GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailResult> alertPolicyRuleDetails,
+
             string alertPolicyType,
 
             string compartmentId,
@@ -84,6 +91,8 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             bool isUserDefined,
 
+            string lifecycleDetails,
+
             string severity,
 
             string state,
@@ -94,6 +103,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             string timeUpdated)
         {
+            AlertPolicyRuleDetails = alertPolicyRuleDetails;
             AlertPolicyType = alertPolicyType;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
@@ -102,6 +112,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
             FreeformTags = freeformTags;
             Id = id;
             IsUserDefined = isUserDefined;
+            LifecycleDetails = lifecycleDetails;
             Severity = severity;
             State = state;
             SystemTags = systemTags;

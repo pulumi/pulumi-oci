@@ -19,17 +19,19 @@ class JobArgs:
                  job_id: pulumi.Input[str],
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 suspend_trigger: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a Job resource.
         :param pulumi.Input[str] job_id: The OCID of the job
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[str] display_name: (Updatable) Name of the job.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
+        :param pulumi.Input[int] suspend_trigger: (Updatable) An optional property when incremented triggers Suspend. Could be set to any integer value.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Name of the job.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
         """
         pulumi.set(__self__, "job_id", job_id)
         if defined_tags is not None:
@@ -38,16 +40,14 @@ class JobArgs:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if suspend_trigger is not None:
+            pulumi.set(__self__, "suspend_trigger", suspend_trigger)
 
     @property
     @pulumi.getter(name="jobId")
     def job_id(self) -> pulumi.Input[str]:
         """
         The OCID of the job
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "job_id")
 
@@ -91,6 +91,22 @@ class JobArgs:
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
 
+    @property
+    @pulumi.getter(name="suspendTrigger")
+    def suspend_trigger(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Suspend. Could be set to any integer value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "suspend_trigger")
+
+    @suspend_trigger.setter
+    def suspend_trigger(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "suspend_trigger", value)
+
 
 @pulumi.input_type
 class _JobState:
@@ -101,8 +117,10 @@ class _JobState:
                  job_id: Optional[pulumi.Input[str]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  migration_id: Optional[pulumi.Input[str]] = None,
+                 parameter_file_versions: Optional[pulumi.Input[Sequence[pulumi.Input['JobParameterFileVersionArgs']]]] = None,
                  progresses: Optional[pulumi.Input[Sequence[pulumi.Input['JobProgressArgs']]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
+                 suspend_trigger: Optional[pulumi.Input[int]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
@@ -114,14 +132,16 @@ class _JobState:
         :param pulumi.Input[str] display_name: (Updatable) Name of the job.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
         :param pulumi.Input[str] job_id: The OCID of the job
+        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        :param pulumi.Input[str] migration_id: The OCID of the Migration that this job belongs to.
+        :param pulumi.Input[Sequence[pulumi.Input['JobParameterFileVersionArgs']]] parameter_file_versions: A list of parameter file versions that can be viewed or edited for the current job.
+        :param pulumi.Input[Sequence[pulumi.Input['JobProgressArgs']]] progresses: Percent progress of job phase.
+        :param pulumi.Input[str] state: The current state of the migration job.
+        :param pulumi.Input[int] suspend_trigger: (Updatable) An optional property when incremented triggers Suspend. Could be set to any integer value.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] migration_id: The OCID of the Migration that this job belongs to.
-        :param pulumi.Input[Sequence[pulumi.Input['JobProgressArgs']]] progresses: Percent progress of job phase.
-        :param pulumi.Input[str] state: The current state of the migration job.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time the Migration Job was created. An RFC3339 formatted datetime string
         :param pulumi.Input[str] time_updated: The time the Migration Job was last updated. An RFC3339 formatted datetime string
@@ -140,10 +160,14 @@ class _JobState:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if migration_id is not None:
             pulumi.set(__self__, "migration_id", migration_id)
+        if parameter_file_versions is not None:
+            pulumi.set(__self__, "parameter_file_versions", parameter_file_versions)
         if progresses is not None:
             pulumi.set(__self__, "progresses", progresses)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if suspend_trigger is not None:
+            pulumi.set(__self__, "suspend_trigger", suspend_trigger)
         if system_tags is not None:
             pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
@@ -196,10 +220,6 @@ class _JobState:
     def job_id(self) -> Optional[pulumi.Input[str]]:
         """
         The OCID of the job
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "job_id")
 
@@ -232,6 +252,18 @@ class _JobState:
         pulumi.set(self, "migration_id", value)
 
     @property
+    @pulumi.getter(name="parameterFileVersions")
+    def parameter_file_versions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['JobParameterFileVersionArgs']]]]:
+        """
+        A list of parameter file versions that can be viewed or edited for the current job.
+        """
+        return pulumi.get(self, "parameter_file_versions")
+
+    @parameter_file_versions.setter
+    def parameter_file_versions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['JobParameterFileVersionArgs']]]]):
+        pulumi.set(self, "parameter_file_versions", value)
+
+    @property
     @pulumi.getter
     def progresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['JobProgressArgs']]]]:
         """
@@ -254,6 +286,22 @@ class _JobState:
     @state.setter
     def state(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "state", value)
+
+    @property
+    @pulumi.getter(name="suspendTrigger")
+    def suspend_trigger(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Suspend. Could be set to any integer value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "suspend_trigger")
+
+    @suspend_trigger.setter
+    def suspend_trigger(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "suspend_trigger", value)
 
     @property
     @pulumi.getter(name="systemTags")
@@ -325,6 +373,7 @@ class Job(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  job_id: Optional[pulumi.Input[str]] = None,
+                 suspend_trigger: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
         ## Example Usage
@@ -343,6 +392,7 @@ class Job(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) Name of the job.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
         :param pulumi.Input[str] job_id: The OCID of the job
+        :param pulumi.Input[int] suspend_trigger: (Updatable) An optional property when incremented triggers Suspend. Could be set to any integer value.
                
                
                ** IMPORTANT **
@@ -384,6 +434,7 @@ class Job(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  job_id: Optional[pulumi.Input[str]] = None,
+                 suspend_trigger: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -399,8 +450,10 @@ class Job(pulumi.CustomResource):
             if job_id is None and not opts.urn:
                 raise TypeError("Missing required property 'job_id'")
             __props__.__dict__["job_id"] = job_id
+            __props__.__dict__["suspend_trigger"] = suspend_trigger
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["migration_id"] = None
+            __props__.__dict__["parameter_file_versions"] = None
             __props__.__dict__["progresses"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
@@ -424,8 +477,10 @@ class Job(pulumi.CustomResource):
             job_id: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             migration_id: Optional[pulumi.Input[str]] = None,
+            parameter_file_versions: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['JobParameterFileVersionArgs']]]]] = None,
             progresses: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['JobProgressArgs']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
+            suspend_trigger: Optional[pulumi.Input[int]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
@@ -442,14 +497,16 @@ class Job(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) Name of the job.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
         :param pulumi.Input[str] job_id: The OCID of the job
+        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        :param pulumi.Input[str] migration_id: The OCID of the Migration that this job belongs to.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['JobParameterFileVersionArgs']]]] parameter_file_versions: A list of parameter file versions that can be viewed or edited for the current job.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['JobProgressArgs']]]] progresses: Percent progress of job phase.
+        :param pulumi.Input[str] state: The current state of the migration job.
+        :param pulumi.Input[int] suspend_trigger: (Updatable) An optional property when incremented triggers Suspend. Could be set to any integer value.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] migration_id: The OCID of the Migration that this job belongs to.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['JobProgressArgs']]]] progresses: Percent progress of job phase.
-        :param pulumi.Input[str] state: The current state of the migration job.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time the Migration Job was created. An RFC3339 formatted datetime string
         :param pulumi.Input[str] time_updated: The time the Migration Job was last updated. An RFC3339 formatted datetime string
@@ -466,8 +523,10 @@ class Job(pulumi.CustomResource):
         __props__.__dict__["job_id"] = job_id
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["migration_id"] = migration_id
+        __props__.__dict__["parameter_file_versions"] = parameter_file_versions
         __props__.__dict__["progresses"] = progresses
         __props__.__dict__["state"] = state
+        __props__.__dict__["suspend_trigger"] = suspend_trigger
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
@@ -504,10 +563,6 @@ class Job(pulumi.CustomResource):
     def job_id(self) -> pulumi.Output[str]:
         """
         The OCID of the job
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "job_id")
 
@@ -528,6 +583,14 @@ class Job(pulumi.CustomResource):
         return pulumi.get(self, "migration_id")
 
     @property
+    @pulumi.getter(name="parameterFileVersions")
+    def parameter_file_versions(self) -> pulumi.Output[Sequence['outputs.JobParameterFileVersion']]:
+        """
+        A list of parameter file versions that can be viewed or edited for the current job.
+        """
+        return pulumi.get(self, "parameter_file_versions")
+
+    @property
     @pulumi.getter
     def progresses(self) -> pulumi.Output[Sequence['outputs.JobProgress']]:
         """
@@ -542,6 +605,18 @@ class Job(pulumi.CustomResource):
         The current state of the migration job.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="suspendTrigger")
+    def suspend_trigger(self) -> pulumi.Output[Optional[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Suspend. Could be set to any integer value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "suspend_trigger")
 
     @property
     @pulumi.getter(name="systemTags")

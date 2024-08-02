@@ -21,7 +21,7 @@ class GetTargetAlertPolicyAssociationResult:
     """
     A collection of values returned by getTargetAlertPolicyAssociation.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, is_enabled=None, policy_id=None, state=None, system_tags=None, target_alert_policy_association_id=None, target_id=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, is_enabled=None, lifecycle_details=None, policy_id=None, state=None, system_tags=None, target_alert_policy_association_id=None, target_id=None, time_created=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -43,6 +43,9 @@ class GetTargetAlertPolicyAssociationResult:
         if is_enabled and not isinstance(is_enabled, bool):
             raise TypeError("Expected argument 'is_enabled' to be a bool")
         pulumi.set(__self__, "is_enabled", is_enabled)
+        if lifecycle_details and not isinstance(lifecycle_details, str):
+            raise TypeError("Expected argument 'lifecycle_details' to be a str")
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if policy_id and not isinstance(policy_id, str):
             raise TypeError("Expected argument 'policy_id' to be a str")
         pulumi.set(__self__, "policy_id", policy_id)
@@ -117,9 +120,17 @@ class GetTargetAlertPolicyAssociationResult:
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> bool:
         """
-        Indicates if the target-alert policy association is enabled or disabled.
+        Indicates if the target-alert policy association is enabled or disabled by user.
         """
         return pulumi.get(self, "is_enabled")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Details about the current state of the target-alert policy association.
+        """
+        return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="policyId")
@@ -188,6 +199,7 @@ class AwaitableGetTargetAlertPolicyAssociationResult(GetTargetAlertPolicyAssocia
             freeform_tags=self.freeform_tags,
             id=self.id,
             is_enabled=self.is_enabled,
+            lifecycle_details=self.lifecycle_details,
             policy_id=self.policy_id,
             state=self.state,
             system_tags=self.system_tags,
@@ -229,6 +241,7 @@ def get_target_alert_policy_association(target_alert_policy_association_id: Opti
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         is_enabled=pulumi.get(__ret__, 'is_enabled'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         policy_id=pulumi.get(__ret__, 'policy_id'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),

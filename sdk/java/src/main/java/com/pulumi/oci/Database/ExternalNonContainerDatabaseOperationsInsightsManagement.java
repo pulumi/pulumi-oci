@@ -135,11 +135,18 @@ public class ExternalNonContainerDatabaseOperationsInsightsManagement extends co
      * @param options A bag of options that control this resource's behavior.
      */
     public ExternalNonContainerDatabaseOperationsInsightsManagement(String name, ExternalNonContainerDatabaseOperationsInsightsManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/externalNonContainerDatabaseOperationsInsightsManagement:ExternalNonContainerDatabaseOperationsInsightsManagement", name, args == null ? ExternalNonContainerDatabaseOperationsInsightsManagementArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Database/externalNonContainerDatabaseOperationsInsightsManagement:ExternalNonContainerDatabaseOperationsInsightsManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ExternalNonContainerDatabaseOperationsInsightsManagement(String name, Output<String> id, @Nullable ExternalNonContainerDatabaseOperationsInsightsManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Database/externalNonContainerDatabaseOperationsInsightsManagement:ExternalNonContainerDatabaseOperationsInsightsManagement", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ExternalNonContainerDatabaseOperationsInsightsManagementArgs makeArgs(ExternalNonContainerDatabaseOperationsInsightsManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ExternalNonContainerDatabaseOperationsInsightsManagementArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

@@ -51,6 +51,21 @@ public final class JobProgressPhaseArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
+     * Attribute that returns an array of names and types of GoldenGate configuration files that are available for read or update.
+     * 
+     */
+    @Import(name="editableParameterFiles")
+    private @Nullable Output<List<String>> editableParameterFiles;
+
+    /**
+     * @return Attribute that returns an array of names and types of GoldenGate configuration files that are available for read or update.
+     * 
+     */
+    public Optional<Output<List<String>>> editableParameterFiles() {
+        return Optional.ofNullable(this.editableParameterFiles);
+    }
+
+    /**
      * Summary of phase status results.
      * 
      */
@@ -78,6 +93,21 @@ public final class JobProgressPhaseArgs extends com.pulumi.resources.ResourceArg
      */
     public Optional<Output<Boolean>> isAdvisorReportAvailable() {
         return Optional.ofNullable(this.isAdvisorReportAvailable);
+    }
+
+    /**
+     * This is returned as true if the current phase can be suspended.
+     * 
+     */
+    @Import(name="isSuspendAvailable")
+    private @Nullable Output<Boolean> isSuspendAvailable;
+
+    /**
+     * @return This is returned as true if the current phase can be suspended.
+     * 
+     */
+    public Optional<Output<Boolean>> isSuspendAvailable() {
+        return Optional.ofNullable(this.isSuspendAvailable);
     }
 
     /**
@@ -160,8 +190,10 @@ public final class JobProgressPhaseArgs extends com.pulumi.resources.ResourceArg
     private JobProgressPhaseArgs(JobProgressPhaseArgs $) {
         this.action = $.action;
         this.durationInMs = $.durationInMs;
+        this.editableParameterFiles = $.editableParameterFiles;
         this.extracts = $.extracts;
         this.isAdvisorReportAvailable = $.isAdvisorReportAvailable;
+        this.isSuspendAvailable = $.isSuspendAvailable;
         this.issue = $.issue;
         this.logLocations = $.logLocations;
         this.name = $.name;
@@ -230,6 +262,37 @@ public final class JobProgressPhaseArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
+         * @param editableParameterFiles Attribute that returns an array of names and types of GoldenGate configuration files that are available for read or update.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder editableParameterFiles(@Nullable Output<List<String>> editableParameterFiles) {
+            $.editableParameterFiles = editableParameterFiles;
+            return this;
+        }
+
+        /**
+         * @param editableParameterFiles Attribute that returns an array of names and types of GoldenGate configuration files that are available for read or update.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder editableParameterFiles(List<String> editableParameterFiles) {
+            return editableParameterFiles(Output.of(editableParameterFiles));
+        }
+
+        /**
+         * @param editableParameterFiles Attribute that returns an array of names and types of GoldenGate configuration files that are available for read or update.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder editableParameterFiles(String... editableParameterFiles) {
+            return editableParameterFiles(List.of(editableParameterFiles));
+        }
+
+        /**
          * @param extracts Summary of phase status results.
          * 
          * @return builder
@@ -279,6 +342,27 @@ public final class JobProgressPhaseArgs extends com.pulumi.resources.ResourceArg
          */
         public Builder isAdvisorReportAvailable(Boolean isAdvisorReportAvailable) {
             return isAdvisorReportAvailable(Output.of(isAdvisorReportAvailable));
+        }
+
+        /**
+         * @param isSuspendAvailable This is returned as true if the current phase can be suspended.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isSuspendAvailable(@Nullable Output<Boolean> isSuspendAvailable) {
+            $.isSuspendAvailable = isSuspendAvailable;
+            return this;
+        }
+
+        /**
+         * @param isSuspendAvailable This is returned as true if the current phase can be suspended.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isSuspendAvailable(Boolean isSuspendAvailable) {
+            return isSuspendAvailable(Output.of(isSuspendAvailable));
         }
 
         /**

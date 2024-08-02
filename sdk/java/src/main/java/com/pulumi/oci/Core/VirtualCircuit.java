@@ -551,11 +551,18 @@ public class VirtualCircuit extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public VirtualCircuit(String name, VirtualCircuitArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/virtualCircuit:VirtualCircuit", name, args == null ? VirtualCircuitArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Core/virtualCircuit:VirtualCircuit", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private VirtualCircuit(String name, Output<String> id, @Nullable VirtualCircuitState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Core/virtualCircuit:VirtualCircuit", name, state, makeResourceOptions(options, id));
+    }
+
+    private static VirtualCircuitArgs makeArgs(VirtualCircuitArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? VirtualCircuitArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

@@ -673,11 +673,18 @@ public class DomainsNetworkPerimeter extends com.pulumi.resources.CustomResource
      * @param options A bag of options that control this resource's behavior.
      */
     public DomainsNetworkPerimeter(String name, DomainsNetworkPerimeterArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsNetworkPerimeter:DomainsNetworkPerimeter", name, args == null ? DomainsNetworkPerimeterArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Identity/domainsNetworkPerimeter:DomainsNetworkPerimeter", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DomainsNetworkPerimeter(String name, Output<String> id, @Nullable DomainsNetworkPerimeterState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Identity/domainsNetworkPerimeter:DomainsNetworkPerimeter", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DomainsNetworkPerimeterArgs makeArgs(DomainsNetworkPerimeterArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DomainsNetworkPerimeterArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

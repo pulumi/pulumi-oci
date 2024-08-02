@@ -90,6 +90,11 @@ public final class GetReportDefinitionResult {
      */
     private Boolean isSeeded;
     /**
+     * @return Details about the current state of the report definition in Data Safe.
+     * 
+     */
+    private String lifecycleDetails;
+    /**
      * @return The OCID of the parent report definition. In the case of seeded report definition, this is same as definition OCID.
      * 
      */
@@ -256,6 +261,13 @@ public final class GetReportDefinitionResult {
         return this.isSeeded;
     }
     /**
+     * @return Details about the current state of the report definition in Data Safe.
+     * 
+     */
+    public String lifecycleDetails() {
+        return this.lifecycleDetails;
+    }
+    /**
      * @return The OCID of the parent report definition. In the case of seeded report definition, this is same as definition OCID.
      * 
      */
@@ -373,6 +385,7 @@ public final class GetReportDefinitionResult {
         private Map<String,Object> freeformTags;
         private String id;
         private Boolean isSeeded;
+        private String lifecycleDetails;
         private String parentId;
         private String recordTimeSpan;
         private String reportDefinitionId;
@@ -404,6 +417,7 @@ public final class GetReportDefinitionResult {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isSeeded = defaults.isSeeded;
+    	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.parentId = defaults.parentId;
     	      this.recordTimeSpan = defaults.recordTimeSpan;
     	      this.reportDefinitionId = defaults.reportDefinitionId;
@@ -545,6 +559,14 @@ public final class GetReportDefinitionResult {
             return this;
         }
         @CustomType.Setter
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetReportDefinitionResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
+            return this;
+        }
+        @CustomType.Setter
         public Builder parentId(String parentId) {
             if (parentId == null) {
               throw new MissingRequiredPropertyException("GetReportDefinitionResult", "parentId");
@@ -675,6 +697,7 @@ public final class GetReportDefinitionResult {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.isSeeded = isSeeded;
+            _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.parentId = parentId;
             _resultValue.recordTimeSpan = recordTimeSpan;
             _resultValue.reportDefinitionId = reportDefinitionId;

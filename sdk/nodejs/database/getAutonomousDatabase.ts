@@ -98,6 +98,10 @@ export interface GetAutonomousDatabaseResult {
     readonly characterSet: string;
     readonly cloneType: string;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
+     */
+    readonly clusterPlacementGroupId: string;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     readonly compartmentId: string;

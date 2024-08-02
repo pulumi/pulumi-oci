@@ -33,6 +33,7 @@ class BdsInstanceArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  edge_node: Optional[pulumi.Input['BdsInstanceEdgeNodeArgs']] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 ignore_existing_nodes_shapes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  is_cloud_sql_configured: Optional[pulumi.Input[bool]] = None,
                  is_force_stop_jobs: Optional[pulumi.Input[bool]] = None,
                  is_kafka_configured: Optional[pulumi.Input[bool]] = None,
@@ -58,6 +59,7 @@ class BdsInstanceArgs:
         :param pulumi.Input[str] cluster_profile: Profile of the Big Data Service cluster.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] ignore_existing_nodes_shapes: Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafka_broker nodes, in a list format, when new nodes are added with a different shape.
         :param pulumi.Input[bool] is_cloud_sql_configured: (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
         :param pulumi.Input[bool] is_force_stop_jobs: (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
         :param pulumi.Input[bool] is_kafka_configured: Boolean flag specifying whether or not Kafka should be configured.
@@ -92,6 +94,8 @@ class BdsInstanceArgs:
             pulumi.set(__self__, "edge_node", edge_node)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if ignore_existing_nodes_shapes is not None:
+            pulumi.set(__self__, "ignore_existing_nodes_shapes", ignore_existing_nodes_shapes)
         if is_cloud_sql_configured is not None:
             pulumi.set(__self__, "is_cloud_sql_configured", is_cloud_sql_configured)
         if is_force_stop_jobs is not None:
@@ -307,6 +311,18 @@ class BdsInstanceArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter(name="ignoreExistingNodesShapes")
+    def ignore_existing_nodes_shapes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafka_broker nodes, in a list format, when new nodes are added with a different shape.
+        """
+        return pulumi.get(self, "ignore_existing_nodes_shapes")
+
+    @ignore_existing_nodes_shapes.setter
+    def ignore_existing_nodes_shapes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "ignore_existing_nodes_shapes", value)
+
+    @property
     @pulumi.getter(name="isCloudSqlConfigured")
     def is_cloud_sql_configured(self) -> Optional[pulumi.Input[bool]]:
         """
@@ -432,6 +448,7 @@ class _BdsInstanceState:
                  display_name: Optional[pulumi.Input[str]] = None,
                  edge_node: Optional[pulumi.Input['BdsInstanceEdgeNodeArgs']] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 ignore_existing_nodes_shapes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  is_cloud_sql_configured: Optional[pulumi.Input[bool]] = None,
                  is_force_stop_jobs: Optional[pulumi.Input[bool]] = None,
                  is_high_availability: Optional[pulumi.Input[bool]] = None,
@@ -465,6 +482,7 @@ class _BdsInstanceState:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Name of the BDS instance
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] ignore_existing_nodes_shapes: Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafka_broker nodes, in a list format, when new nodes are added with a different shape.
         :param pulumi.Input[bool] is_cloud_sql_configured: (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
         :param pulumi.Input[bool] is_force_stop_jobs: (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
         :param pulumi.Input[bool] is_high_availability: Boolean flag specifying whether or not the cluster is HA
@@ -512,6 +530,8 @@ class _BdsInstanceState:
             pulumi.set(__self__, "edge_node", edge_node)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if ignore_existing_nodes_shapes is not None:
+            pulumi.set(__self__, "ignore_existing_nodes_shapes", ignore_existing_nodes_shapes)
         if is_cloud_sql_configured is not None:
             pulumi.set(__self__, "is_cloud_sql_configured", is_cloud_sql_configured)
         if is_force_stop_jobs is not None:
@@ -712,6 +732,18 @@ class _BdsInstanceState:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter(name="ignoreExistingNodesShapes")
+    def ignore_existing_nodes_shapes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafka_broker nodes, in a list format, when new nodes are added with a different shape.
+        """
+        return pulumi.get(self, "ignore_existing_nodes_shapes")
+
+    @ignore_existing_nodes_shapes.setter
+    def ignore_existing_nodes_shapes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "ignore_existing_nodes_shapes", value)
 
     @property
     @pulumi.getter(name="isCloudSqlConfigured")
@@ -956,6 +988,7 @@ class BdsInstance(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  edge_node: Optional[pulumi.Input[pulumi.InputType['BdsInstanceEdgeNodeArgs']]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 ignore_existing_nodes_shapes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  is_cloud_sql_configured: Optional[pulumi.Input[bool]] = None,
                  is_force_stop_jobs: Optional[pulumi.Input[bool]] = None,
                  is_high_availability: Optional[pulumi.Input[bool]] = None,
@@ -996,6 +1029,7 @@ class BdsInstance(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Name of the BDS instance
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] ignore_existing_nodes_shapes: Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafka_broker nodes, in a list format, when new nodes are added with a different shape.
         :param pulumi.Input[bool] is_cloud_sql_configured: (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
         :param pulumi.Input[bool] is_force_stop_jobs: (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
         :param pulumi.Input[bool] is_high_availability: Boolean flag specifying whether or not the cluster is HA
@@ -1056,6 +1090,7 @@ class BdsInstance(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  edge_node: Optional[pulumi.Input[pulumi.InputType['BdsInstanceEdgeNodeArgs']]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 ignore_existing_nodes_shapes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  is_cloud_sql_configured: Optional[pulumi.Input[bool]] = None,
                  is_force_stop_jobs: Optional[pulumi.Input[bool]] = None,
                  is_high_availability: Optional[pulumi.Input[bool]] = None,
@@ -1101,6 +1136,7 @@ class BdsInstance(pulumi.CustomResource):
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["edge_node"] = edge_node
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["ignore_existing_nodes_shapes"] = ignore_existing_nodes_shapes
             __props__.__dict__["is_cloud_sql_configured"] = is_cloud_sql_configured
             __props__.__dict__["is_force_stop_jobs"] = is_force_stop_jobs
             if is_high_availability is None and not opts.urn:
@@ -1158,6 +1194,7 @@ class BdsInstance(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[str]] = None,
             edge_node: Optional[pulumi.Input[pulumi.InputType['BdsInstanceEdgeNodeArgs']]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            ignore_existing_nodes_shapes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             is_cloud_sql_configured: Optional[pulumi.Input[bool]] = None,
             is_force_stop_jobs: Optional[pulumi.Input[bool]] = None,
             is_high_availability: Optional[pulumi.Input[bool]] = None,
@@ -1196,6 +1233,7 @@ class BdsInstance(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Name of the BDS instance
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] ignore_existing_nodes_shapes: Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafka_broker nodes, in a list format, when new nodes are added with a different shape.
         :param pulumi.Input[bool] is_cloud_sql_configured: (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
         :param pulumi.Input[bool] is_force_stop_jobs: (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
         :param pulumi.Input[bool] is_high_availability: Boolean flag specifying whether or not the cluster is HA
@@ -1233,6 +1271,7 @@ class BdsInstance(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["edge_node"] = edge_node
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["ignore_existing_nodes_shapes"] = ignore_existing_nodes_shapes
         __props__.__dict__["is_cloud_sql_configured"] = is_cloud_sql_configured
         __props__.__dict__["is_force_stop_jobs"] = is_force_stop_jobs
         __props__.__dict__["is_high_availability"] = is_high_availability
@@ -1359,6 +1398,14 @@ class BdsInstance(pulumi.CustomResource):
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="ignoreExistingNodesShapes")
+    def ignore_existing_nodes_shapes(self) -> pulumi.Output[Optional[Sequence[str]]]:
+        """
+        Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafka_broker nodes, in a list format, when new nodes are added with a different shape.
+        """
+        return pulumi.get(self, "ignore_existing_nodes_shapes")
 
     @property
     @pulumi.getter(name="isCloudSqlConfigured")

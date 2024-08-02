@@ -293,11 +293,18 @@ public class AutoScalingConfiguration extends com.pulumi.resources.CustomResourc
      * @param options A bag of options that control this resource's behavior.
      */
     public AutoScalingConfiguration(String name, AutoScalingConfigurationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:BigDataService/autoScalingConfiguration:AutoScalingConfiguration", name, args == null ? AutoScalingConfigurationArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:BigDataService/autoScalingConfiguration:AutoScalingConfiguration", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private AutoScalingConfiguration(String name, Output<String> id, @Nullable AutoScalingConfigurationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:BigDataService/autoScalingConfiguration:AutoScalingConfiguration", name, state, makeResourceOptions(options, id));
+    }
+
+    private static AutoScalingConfigurationArgs makeArgs(AutoScalingConfigurationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? AutoScalingConfigurationArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

@@ -199,11 +199,18 @@ public class ListingPackageAgreement extends com.pulumi.resources.CustomResource
      * @param options A bag of options that control this resource's behavior.
      */
     public ListingPackageAgreement(String name, ListingPackageAgreementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Marketplace/listingPackageAgreement:ListingPackageAgreement", name, args == null ? ListingPackageAgreementArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Marketplace/listingPackageAgreement:ListingPackageAgreement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ListingPackageAgreement(String name, Output<String> id, @Nullable ListingPackageAgreementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Marketplace/listingPackageAgreement:ListingPackageAgreement", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ListingPackageAgreementArgs makeArgs(ListingPackageAgreementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ListingPackageAgreementArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

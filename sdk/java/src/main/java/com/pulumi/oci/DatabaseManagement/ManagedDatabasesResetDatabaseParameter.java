@@ -184,11 +184,18 @@ public class ManagedDatabasesResetDatabaseParameter extends com.pulumi.resources
      * @param options A bag of options that control this resource's behavior.
      */
     public ManagedDatabasesResetDatabaseParameter(String name, ManagedDatabasesResetDatabaseParameterArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseManagement/managedDatabasesResetDatabaseParameter:ManagedDatabasesResetDatabaseParameter", name, args == null ? ManagedDatabasesResetDatabaseParameterArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DatabaseManagement/managedDatabasesResetDatabaseParameter:ManagedDatabasesResetDatabaseParameter", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ManagedDatabasesResetDatabaseParameter(String name, Output<String> id, @Nullable ManagedDatabasesResetDatabaseParameterState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DatabaseManagement/managedDatabasesResetDatabaseParameter:ManagedDatabasesResetDatabaseParameter", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ManagedDatabasesResetDatabaseParameterArgs makeArgs(ManagedDatabasesResetDatabaseParameterArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ManagedDatabasesResetDatabaseParameterArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

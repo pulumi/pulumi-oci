@@ -92,6 +92,11 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private String characterSet;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
+     * 
+     */
+    private String clusterPlacementGroupId;
+    /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
@@ -695,6 +700,13 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     public String characterSet() {
         return this.characterSet;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
+     * 
+     */
+    public String clusterPlacementGroupId() {
+        return this.clusterPlacementGroupId;
     }
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -1441,6 +1453,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         private Integer backupRetentionPeriodInDays;
         private Double byolComputeCountLimit;
         private String characterSet;
+        private String clusterPlacementGroupId;
         private String compartmentId;
         private Double computeCount;
         private String computeModel;
@@ -1560,6 +1573,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
     	      this.backupRetentionPeriodInDays = defaults.backupRetentionPeriodInDays;
     	      this.byolComputeCountLimit = defaults.byolComputeCountLimit;
     	      this.characterSet = defaults.characterSet;
+    	      this.clusterPlacementGroupId = defaults.clusterPlacementGroupId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.computeCount = defaults.computeCount;
     	      this.computeModel = defaults.computeModel;
@@ -1776,6 +1790,14 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
               throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabase", "characterSet");
             }
             this.characterSet = characterSet;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            if (clusterPlacementGroupId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabase", "clusterPlacementGroupId");
+            }
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
             return this;
         }
         @CustomType.Setter
@@ -2671,6 +2693,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
             _resultValue.backupRetentionPeriodInDays = backupRetentionPeriodInDays;
             _resultValue.byolComputeCountLimit = byolComputeCountLimit;
             _resultValue.characterSet = characterSet;
+            _resultValue.clusterPlacementGroupId = clusterPlacementGroupId;
             _resultValue.compartmentId = compartmentId;
             _resultValue.computeCount = computeCount;
             _resultValue.computeModel = computeModel;

@@ -304,11 +304,18 @@ public class DhcpOptions extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public DhcpOptions(String name, DhcpOptionsArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/dhcpOptions:DhcpOptions", name, args == null ? DhcpOptionsArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Core/dhcpOptions:DhcpOptions", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DhcpOptions(String name, Output<String> id, @Nullable DhcpOptionsState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Core/dhcpOptions:DhcpOptions", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DhcpOptionsArgs makeArgs(DhcpOptionsArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DhcpOptionsArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

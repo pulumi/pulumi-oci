@@ -241,7 +241,7 @@ class GetRedisClustersRedisClusterCollectionItemResult(dict):
         :param Sequence['GetRedisClustersRedisClusterCollectionItemNodeCollectionArgs'] node_collections: The collection of Redis cluster nodes.
         :param int node_count: The number of nodes in the Redis cluster.
         :param float node_memory_in_gbs: The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
-        :param Sequence[str] nsg_ids: OCIDs of the NSGs to control access in the customer network
+        :param Sequence[str] nsg_ids: A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
         :param str primary_endpoint_ip_address: The private IP address of the API endpoint for the Redis cluster's primary node.
         :param str primary_fqdn: The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's primary node.
         :param str replicas_endpoint_ip_address: The private IP address of the API endpoint for the Redis cluster's replica nodes.
@@ -350,7 +350,7 @@ class GetRedisClustersRedisClusterCollectionItemResult(dict):
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Sequence[str]:
         """
-        OCIDs of the NSGs to control access in the customer network
+        A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
         """
         return pulumi.get(self, "nsg_ids")
 

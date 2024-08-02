@@ -193,6 +193,21 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafka_broker nodes, in a list format, when new nodes are added with a different shape.
+     * 
+     */
+    @Import(name="ignoreExistingNodesShapes")
+    private @Nullable Output<List<String>> ignoreExistingNodesShapes;
+
+    /**
+     * @return Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafka_broker nodes, in a list format, when new nodes are added with a different shape.
+     * 
+     */
+    public Optional<Output<List<String>>> ignoreExistingNodesShapes() {
+        return Optional.ofNullable(this.ignoreExistingNodesShapes);
+    }
+
+    /**
      * (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
      * 
      */
@@ -409,6 +424,7 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
         this.displayName = $.displayName;
         this.edgeNode = $.edgeNode;
         this.freeformTags = $.freeformTags;
+        this.ignoreExistingNodesShapes = $.ignoreExistingNodesShapes;
         this.isCloudSqlConfigured = $.isCloudSqlConfigured;
         this.isForceStopJobs = $.isForceStopJobs;
         this.isHighAvailability = $.isHighAvailability;
@@ -679,6 +695,37 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder freeformTags(Map<String,Object> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param ignoreExistingNodesShapes Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafka_broker nodes, in a list format, when new nodes are added with a different shape.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ignoreExistingNodesShapes(@Nullable Output<List<String>> ignoreExistingNodesShapes) {
+            $.ignoreExistingNodesShapes = ignoreExistingNodesShapes;
+            return this;
+        }
+
+        /**
+         * @param ignoreExistingNodesShapes Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafka_broker nodes, in a list format, when new nodes are added with a different shape.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ignoreExistingNodesShapes(List<String> ignoreExistingNodesShapes) {
+            return ignoreExistingNodesShapes(Output.of(ignoreExistingNodesShapes));
+        }
+
+        /**
+         * @param ignoreExistingNodesShapes Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafka_broker nodes, in a list format, when new nodes are added with a different shape.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ignoreExistingNodesShapes(String... ignoreExistingNodesShapes) {
+            return ignoreExistingNodesShapes(List.of(ignoreExistingNodesShapes));
         }
 
         /**

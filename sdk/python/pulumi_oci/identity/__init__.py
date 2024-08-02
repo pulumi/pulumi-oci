@@ -55,6 +55,7 @@ from .domains_security_question_setting import *
 from .domains_self_registration_profile import *
 from .domains_setting import *
 from .domains_smtp_credential import *
+from .domains_social_identity_provider import *
 from .domains_user import *
 from .domains_user_db_credential import *
 from .dynamic_group import *
@@ -170,6 +171,8 @@ from .get_domains_setting import *
 from .get_domains_settings import *
 from .get_domains_smtp_credential import *
 from .get_domains_smtp_credentials import *
+from .get_domains_social_identity_provider import *
+from .get_domains_social_identity_providers import *
 from .get_domains_user import *
 from .get_domains_user_attributes_setting import *
 from .get_domains_user_attributes_settings import *

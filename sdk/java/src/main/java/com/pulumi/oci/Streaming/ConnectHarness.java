@@ -198,11 +198,18 @@ public class ConnectHarness extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public ConnectHarness(String name, ConnectHarnessArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Streaming/connectHarness:ConnectHarness", name, args == null ? ConnectHarnessArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Streaming/connectHarness:ConnectHarness", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ConnectHarness(String name, Output<String> id, @Nullable ConnectHarnessState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Streaming/connectHarness:ConnectHarness", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ConnectHarnessArgs makeArgs(ConnectHarnessArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ConnectHarnessArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

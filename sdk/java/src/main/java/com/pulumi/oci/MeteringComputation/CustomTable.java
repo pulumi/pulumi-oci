@@ -150,11 +150,18 @@ public class CustomTable extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public CustomTable(String name, CustomTableArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:MeteringComputation/customTable:CustomTable", name, args == null ? CustomTableArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:MeteringComputation/customTable:CustomTable", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private CustomTable(String name, Output<String> id, @Nullable CustomTableState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:MeteringComputation/customTable:CustomTable", name, state, makeResourceOptions(options, id));
+    }
+
+    private static CustomTableArgs makeArgs(CustomTableArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? CustomTableArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

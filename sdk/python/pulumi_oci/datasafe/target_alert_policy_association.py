@@ -160,6 +160,7 @@ class _TargetAlertPolicyAssociationState:
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_enabled: Optional[pulumi.Input[bool]] = None,
+                 lifecycle_details: Optional[pulumi.Input[str]] = None,
                  policy_id: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -174,6 +175,7 @@ class _TargetAlertPolicyAssociationState:
         :param pulumi.Input[str] display_name: (Updatable) The display name of the target-alert policy association.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_enabled: (Updatable) Indicates if the target-alert policy association is enabled or disabled.
+        :param pulumi.Input[str] lifecycle_details: Details about the current state of the target-alert policy association.
         :param pulumi.Input[str] policy_id: The OCID of the alert policy.
         :param pulumi.Input[str] state: The current state of the target-alert policy association.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -197,6 +199,8 @@ class _TargetAlertPolicyAssociationState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_enabled is not None:
             pulumi.set(__self__, "is_enabled", is_enabled)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if policy_id is not None:
             pulumi.set(__self__, "policy_id", policy_id)
         if state is not None:
@@ -281,6 +285,18 @@ class _TargetAlertPolicyAssociationState:
     @is_enabled.setter
     def is_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_enabled", value)
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
+        """
+        Details about the current state of the target-alert policy association.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "lifecycle_details", value)
 
     @property
     @pulumi.getter(name="policyId")
@@ -510,6 +526,7 @@ class TargetAlertPolicyAssociation(pulumi.CustomResource):
             if target_id is None and not opts.urn:
                 raise TypeError("Missing required property 'target_id'")
             __props__.__dict__["target_id"] = target_id
+            __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
@@ -530,6 +547,7 @@ class TargetAlertPolicyAssociation(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             is_enabled: Optional[pulumi.Input[bool]] = None,
+            lifecycle_details: Optional[pulumi.Input[str]] = None,
             policy_id: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -549,6 +567,7 @@ class TargetAlertPolicyAssociation(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) The display name of the target-alert policy association.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_enabled: (Updatable) Indicates if the target-alert policy association is enabled or disabled.
+        :param pulumi.Input[str] lifecycle_details: Details about the current state of the target-alert policy association.
         :param pulumi.Input[str] policy_id: The OCID of the alert policy.
         :param pulumi.Input[str] state: The current state of the target-alert policy association.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -570,6 +589,7 @@ class TargetAlertPolicyAssociation(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["is_enabled"] = is_enabled
+        __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["policy_id"] = policy_id
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
@@ -625,6 +645,14 @@ class TargetAlertPolicyAssociation(pulumi.CustomResource):
         (Updatable) Indicates if the target-alert policy association is enabled or disabled.
         """
         return pulumi.get(self, "is_enabled")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> pulumi.Output[str]:
+        """
+        Details about the current state of the target-alert policy association.
+        """
+        return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="policyId")

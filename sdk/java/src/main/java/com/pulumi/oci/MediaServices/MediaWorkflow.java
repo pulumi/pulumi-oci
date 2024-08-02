@@ -318,11 +318,18 @@ public class MediaWorkflow extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public MediaWorkflow(String name, MediaWorkflowArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:MediaServices/mediaWorkflow:MediaWorkflow", name, args == null ? MediaWorkflowArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:MediaServices/mediaWorkflow:MediaWorkflow", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private MediaWorkflow(String name, Output<String> id, @Nullable MediaWorkflowState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:MediaServices/mediaWorkflow:MediaWorkflow", name, state, makeResourceOptions(options, id));
+    }
+
+    private static MediaWorkflowArgs makeArgs(MediaWorkflowArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? MediaWorkflowArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

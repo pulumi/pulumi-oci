@@ -163,11 +163,18 @@ public class AutonomousVmClusterSslCertificateManagement extends com.pulumi.reso
      * @param options A bag of options that control this resource's behavior.
      */
     public AutonomousVmClusterSslCertificateManagement(String name, AutonomousVmClusterSslCertificateManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/autonomousVmClusterSslCertificateManagement:AutonomousVmClusterSslCertificateManagement", name, args == null ? AutonomousVmClusterSslCertificateManagementArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Database/autonomousVmClusterSslCertificateManagement:AutonomousVmClusterSslCertificateManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private AutonomousVmClusterSslCertificateManagement(String name, Output<String> id, @Nullable AutonomousVmClusterSslCertificateManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Database/autonomousVmClusterSslCertificateManagement:AutonomousVmClusterSslCertificateManagement", name, state, makeResourceOptions(options, id));
+    }
+
+    private static AutonomousVmClusterSslCertificateManagementArgs makeArgs(AutonomousVmClusterSslCertificateManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? AutonomousVmClusterSslCertificateManagementArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

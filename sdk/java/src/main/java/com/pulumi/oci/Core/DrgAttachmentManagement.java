@@ -331,11 +331,18 @@ public class DrgAttachmentManagement extends com.pulumi.resources.CustomResource
      * @param options A bag of options that control this resource's behavior.
      */
     public DrgAttachmentManagement(String name, DrgAttachmentManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/drgAttachmentManagement:DrgAttachmentManagement", name, args == null ? DrgAttachmentManagementArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Core/drgAttachmentManagement:DrgAttachmentManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DrgAttachmentManagement(String name, Output<String> id, @Nullable DrgAttachmentManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Core/drgAttachmentManagement:DrgAttachmentManagement", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DrgAttachmentManagementArgs makeArgs(DrgAttachmentManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DrgAttachmentManagementArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

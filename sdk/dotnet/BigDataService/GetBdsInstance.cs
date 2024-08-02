@@ -146,6 +146,7 @@ namespace Pulumi.Oci.BigDataService
         /// The OCID of the Big Data Service resource.
         /// </summary>
         public readonly string Id;
+        public readonly ImmutableArray<string> IgnoreExistingNodesShapes;
         /// <summary>
         /// Boolean flag specifying whether or not Cloud SQL should be configured.
         /// </summary>
@@ -236,6 +237,8 @@ namespace Pulumi.Oci.BigDataService
 
             string id,
 
+            ImmutableArray<string> ignoreExistingNodesShapes,
+
             bool isCloudSqlConfigured,
 
             bool isForceStopJobs,
@@ -290,6 +293,7 @@ namespace Pulumi.Oci.BigDataService
             EdgeNodes = edgeNodes;
             FreeformTags = freeformTags;
             Id = id;
+            IgnoreExistingNodesShapes = ignoreExistingNodesShapes;
             IsCloudSqlConfigured = isCloudSqlConfigured;
             IsForceStopJobs = isForceStopJobs;
             IsHighAvailability = isHighAvailability;

@@ -104,6 +104,12 @@ namespace Pulumi.Oci.BigDataService
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
+        /// Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafka_broker nodes, in a list format, when new nodes are added with a different shape.
+        /// </summary>
+        [Output("ignoreExistingNodesShapes")]
+        public Output<ImmutableArray<string>> IgnoreExistingNodesShapes { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
         /// </summary>
         [Output("isCloudSqlConfigured")]
@@ -358,6 +364,18 @@ namespace Pulumi.Oci.BigDataService
             set => _freeformTags = value;
         }
 
+        [Input("ignoreExistingNodesShapes")]
+        private InputList<string>? _ignoreExistingNodesShapes;
+
+        /// <summary>
+        /// Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafka_broker nodes, in a list format, when new nodes are added with a different shape.
+        /// </summary>
+        public InputList<string> IgnoreExistingNodesShapes
+        {
+            get => _ignoreExistingNodesShapes ?? (_ignoreExistingNodesShapes = new InputList<string>());
+            set => _ignoreExistingNodesShapes = value;
+        }
+
         /// <summary>
         /// (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
         /// </summary>
@@ -557,6 +575,18 @@ namespace Pulumi.Oci.BigDataService
         {
             get => _freeformTags ?? (_freeformTags = new InputMap<object>());
             set => _freeformTags = value;
+        }
+
+        [Input("ignoreExistingNodesShapes")]
+        private InputList<string>? _ignoreExistingNodesShapes;
+
+        /// <summary>
+        /// Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafka_broker nodes, in a list format, when new nodes are added with a different shape.
+        /// </summary>
+        public InputList<string> IgnoreExistingNodesShapes
+        {
+            get => _ignoreExistingNodesShapes ?? (_ignoreExistingNodesShapes = new InputList<string>());
+            set => _ignoreExistingNodesShapes = value;
         }
 
         /// <summary>

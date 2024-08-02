@@ -190,11 +190,18 @@ public class OdaPrivateEndpointScanProxy extends com.pulumi.resources.CustomReso
      * @param options A bag of options that control this resource's behavior.
      */
     public OdaPrivateEndpointScanProxy(String name, OdaPrivateEndpointScanProxyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Oda/odaPrivateEndpointScanProxy:OdaPrivateEndpointScanProxy", name, args == null ? OdaPrivateEndpointScanProxyArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Oda/odaPrivateEndpointScanProxy:OdaPrivateEndpointScanProxy", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private OdaPrivateEndpointScanProxy(String name, Output<String> id, @Nullable OdaPrivateEndpointScanProxyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Oda/odaPrivateEndpointScanProxy:OdaPrivateEndpointScanProxy", name, state, makeResourceOptions(options, id));
+    }
+
+    private static OdaPrivateEndpointScanProxyArgs makeArgs(OdaPrivateEndpointScanProxyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? OdaPrivateEndpointScanProxyArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

@@ -281,11 +281,18 @@ public class TargetDatabasePeerTargetDatabase extends com.pulumi.resources.Custo
      * @param options A bag of options that control this resource's behavior.
      */
     public TargetDatabasePeerTargetDatabase(String name, TargetDatabasePeerTargetDatabaseArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/targetDatabasePeerTargetDatabase:TargetDatabasePeerTargetDatabase", name, args == null ? TargetDatabasePeerTargetDatabaseArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DataSafe/targetDatabasePeerTargetDatabase:TargetDatabasePeerTargetDatabase", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private TargetDatabasePeerTargetDatabase(String name, Output<String> id, @Nullable TargetDatabasePeerTargetDatabaseState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DataSafe/targetDatabasePeerTargetDatabase:TargetDatabasePeerTargetDatabase", name, state, makeResourceOptions(options, id));
+    }
+
+    private static TargetDatabasePeerTargetDatabaseArgs makeArgs(TargetDatabasePeerTargetDatabaseArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? TargetDatabasePeerTargetDatabaseArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

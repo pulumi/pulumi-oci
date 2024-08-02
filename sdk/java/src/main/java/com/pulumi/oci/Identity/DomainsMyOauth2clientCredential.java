@@ -746,11 +746,18 @@ public class DomainsMyOauth2clientCredential extends com.pulumi.resources.Custom
      * @param options A bag of options that control this resource's behavior.
      */
     public DomainsMyOauth2clientCredential(String name, DomainsMyOauth2clientCredentialArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsMyOauth2clientCredential:DomainsMyOauth2clientCredential", name, args == null ? DomainsMyOauth2clientCredentialArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Identity/domainsMyOauth2clientCredential:DomainsMyOauth2clientCredential", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DomainsMyOauth2clientCredential(String name, Output<String> id, @Nullable DomainsMyOauth2clientCredentialState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Identity/domainsMyOauth2clientCredential:DomainsMyOauth2clientCredential", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DomainsMyOauth2clientCredentialArgs makeArgs(DomainsMyOauth2clientCredentialArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DomainsMyOauth2clientCredentialArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

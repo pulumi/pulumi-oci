@@ -687,11 +687,18 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
      * @param options A bag of options that control this resource's behavior.
      */
     public ExadataInfrastructureCompute(String name, ExadataInfrastructureComputeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/exadataInfrastructureCompute:ExadataInfrastructureCompute", name, args == null ? ExadataInfrastructureComputeArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Database/exadataInfrastructureCompute:ExadataInfrastructureCompute", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ExadataInfrastructureCompute(String name, Output<String> id, @Nullable ExadataInfrastructureComputeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Database/exadataInfrastructureCompute:ExadataInfrastructureCompute", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ExadataInfrastructureComputeArgs makeArgs(ExadataInfrastructureComputeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ExadataInfrastructureComputeArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

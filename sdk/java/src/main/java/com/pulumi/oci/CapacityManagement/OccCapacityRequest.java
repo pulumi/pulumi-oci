@@ -336,11 +336,18 @@ public class OccCapacityRequest extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public OccCapacityRequest(String name, OccCapacityRequestArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:CapacityManagement/occCapacityRequest:OccCapacityRequest", name, args == null ? OccCapacityRequestArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:CapacityManagement/occCapacityRequest:OccCapacityRequest", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private OccCapacityRequest(String name, Output<String> id, @Nullable OccCapacityRequestState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:CapacityManagement/occCapacityRequest:OccCapacityRequest", name, state, makeResourceOptions(options, id));
+    }
+
+    private static OccCapacityRequestArgs makeArgs(OccCapacityRequestArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? OccCapacityRequestArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

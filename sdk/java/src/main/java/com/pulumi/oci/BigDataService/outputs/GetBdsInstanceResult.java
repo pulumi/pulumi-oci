@@ -85,6 +85,7 @@ public final class GetBdsInstanceResult {
      * 
      */
     private String id;
+    private List<String> ignoreExistingNodesShapes;
     /**
      * @return Boolean flag specifying whether or not Cloud SQL should be configured.
      * 
@@ -246,6 +247,9 @@ public final class GetBdsInstanceResult {
     public String id() {
         return this.id;
     }
+    public List<String> ignoreExistingNodesShapes() {
+        return this.ignoreExistingNodesShapes;
+    }
     /**
      * @return Boolean flag specifying whether or not Cloud SQL should be configured.
      * 
@@ -377,6 +381,7 @@ public final class GetBdsInstanceResult {
         private List<GetBdsInstanceEdgeNode> edgeNodes;
         private Map<String,Object> freeformTags;
         private String id;
+        private List<String> ignoreExistingNodesShapes;
         private Boolean isCloudSqlConfigured;
         private Boolean isForceStopJobs;
         private Boolean isHighAvailability;
@@ -415,6 +420,7 @@ public final class GetBdsInstanceResult {
     	      this.edgeNodes = defaults.edgeNodes;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.ignoreExistingNodesShapes = defaults.ignoreExistingNodesShapes;
     	      this.isCloudSqlConfigured = defaults.isCloudSqlConfigured;
     	      this.isForceStopJobs = defaults.isForceStopJobs;
     	      this.isHighAvailability = defaults.isHighAvailability;
@@ -575,6 +581,17 @@ public final class GetBdsInstanceResult {
             }
             this.id = id;
             return this;
+        }
+        @CustomType.Setter
+        public Builder ignoreExistingNodesShapes(List<String> ignoreExistingNodesShapes) {
+            if (ignoreExistingNodesShapes == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceResult", "ignoreExistingNodesShapes");
+            }
+            this.ignoreExistingNodesShapes = ignoreExistingNodesShapes;
+            return this;
+        }
+        public Builder ignoreExistingNodesShapes(String... ignoreExistingNodesShapes) {
+            return ignoreExistingNodesShapes(List.of(ignoreExistingNodesShapes));
         }
         @CustomType.Setter
         public Builder isCloudSqlConfigured(Boolean isCloudSqlConfigured) {
@@ -764,6 +781,7 @@ public final class GetBdsInstanceResult {
             _resultValue.edgeNodes = edgeNodes;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.ignoreExistingNodesShapes = ignoreExistingNodesShapes;
             _resultValue.isCloudSqlConfigured = isCloudSqlConfigured;
             _resultValue.isForceStopJobs = isForceStopJobs;
             _resultValue.isHighAvailability = isHighAvailability;

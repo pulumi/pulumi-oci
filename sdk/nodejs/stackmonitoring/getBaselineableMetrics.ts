@@ -20,9 +20,11 @@ import * as utilities from "../utilities";
  * const testBaselineableMetrics = oci.StackMonitoring.getBaselineableMetrics({
  *     baselineableMetricId: testBaselineableMetric.id,
  *     compartmentId: compartmentId,
+ *     isOutOfBox: baselineableMetricIsOutOfBox,
  *     metricNamespace: baselineableMetricMetricNamespace,
  *     name: baselineableMetricName,
  *     resourceGroup: baselineableMetricResourceGroup,
+ *     resourceType: baselineableMetricResourceType,
  * });
  * ```
  */
@@ -34,9 +36,11 @@ export function getBaselineableMetrics(args?: GetBaselineableMetricsArgs, opts?:
         "baselineableMetricId": args.baselineableMetricId,
         "compartmentId": args.compartmentId,
         "filters": args.filters,
+        "isOutOfBox": args.isOutOfBox,
         "metricNamespace": args.metricNamespace,
         "name": args.name,
         "resourceGroup": args.resourceGroup,
+        "resourceType": args.resourceType,
     }, opts);
 }
 
@@ -54,6 +58,10 @@ export interface GetBaselineableMetricsArgs {
     compartmentId?: string;
     filters?: inputs.StackMonitoring.GetBaselineableMetricsFilter[];
     /**
+     * Is the baseline enabled metric defined out of box by Oracle or by end-user
+     */
+    isOutOfBox?: boolean;
+    /**
      * A filter to return monitored resource types that has the matching namespace.
      */
     metricNamespace?: string;
@@ -65,6 +73,10 @@ export interface GetBaselineableMetricsArgs {
      * Resource Group
      */
     resourceGroup?: string;
+    /**
+     * Resource Type
+     */
+    resourceType?: string;
 }
 
 /**
@@ -85,6 +97,10 @@ export interface GetBaselineableMetricsResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * Is the metric created out of box, default false
+     */
+    readonly isOutOfBox?: boolean;
     readonly metricNamespace?: string;
     /**
      * name of the metric
@@ -94,6 +110,10 @@ export interface GetBaselineableMetricsResult {
      * Resource group of the metric
      */
     readonly resourceGroup?: string;
+    /**
+     * Resource type of the metric
+     */
+    readonly resourceType?: string;
 }
 /**
  * This data source provides the list of Baselineable Metrics in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -109,9 +129,11 @@ export interface GetBaselineableMetricsResult {
  * const testBaselineableMetrics = oci.StackMonitoring.getBaselineableMetrics({
  *     baselineableMetricId: testBaselineableMetric.id,
  *     compartmentId: compartmentId,
+ *     isOutOfBox: baselineableMetricIsOutOfBox,
  *     metricNamespace: baselineableMetricMetricNamespace,
  *     name: baselineableMetricName,
  *     resourceGroup: baselineableMetricResourceGroup,
+ *     resourceType: baselineableMetricResourceType,
  * });
  * ```
  */
@@ -133,6 +155,10 @@ export interface GetBaselineableMetricsOutputArgs {
     compartmentId?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.GetBaselineableMetricsFilterArgs>[]>;
     /**
+     * Is the baseline enabled metric defined out of box by Oracle or by end-user
+     */
+    isOutOfBox?: pulumi.Input<boolean>;
+    /**
      * A filter to return monitored resource types that has the matching namespace.
      */
     metricNamespace?: pulumi.Input<string>;
@@ -144,4 +170,8 @@ export interface GetBaselineableMetricsOutputArgs {
      * Resource Group
      */
     resourceGroup?: pulumi.Input<string>;
+    /**
+     * Resource Type
+     */
+    resourceType?: pulumi.Input<string>;
 }

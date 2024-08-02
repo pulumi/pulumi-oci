@@ -74,11 +74,18 @@ public class ModelArtifactExport extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public ModelArtifactExport(String name, ModelArtifactExportArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataScience/modelArtifactExport:ModelArtifactExport", name, args == null ? ModelArtifactExportArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DataScience/modelArtifactExport:ModelArtifactExport", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ModelArtifactExport(String name, Output<String> id, @Nullable ModelArtifactExportState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DataScience/modelArtifactExport:ModelArtifactExport", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ModelArtifactExportArgs makeArgs(ModelArtifactExportArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ModelArtifactExportArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

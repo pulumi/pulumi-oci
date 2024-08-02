@@ -327,11 +327,18 @@ public class ClusterPlacementGroup extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public ClusterPlacementGroup(String name, ClusterPlacementGroupArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:ClusterPlacementGroups/clusterPlacementGroup:ClusterPlacementGroup", name, args == null ? ClusterPlacementGroupArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:ClusterPlacementGroups/clusterPlacementGroup:ClusterPlacementGroup", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ClusterPlacementGroup(String name, Output<String> id, @Nullable ClusterPlacementGroupState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:ClusterPlacementGroups/clusterPlacementGroup:ClusterPlacementGroup", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ClusterPlacementGroupArgs makeArgs(ClusterPlacementGroupArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ClusterPlacementGroupArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

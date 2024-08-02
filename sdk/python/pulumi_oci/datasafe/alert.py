@@ -126,6 +126,8 @@ class AlertArgs:
 class _AlertState:
     def __init__(__self__, *,
                  alert_id: Optional[pulumi.Input[str]] = None,
+                 alert_policy_rule_key: Optional[pulumi.Input[str]] = None,
+                 alert_policy_rule_name: Optional[pulumi.Input[str]] = None,
                  alert_type: Optional[pulumi.Input[str]] = None,
                  comment: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
@@ -150,6 +152,8 @@ class _AlertState:
         """
         Input properties used for looking up and filtering Alert resources.
         :param pulumi.Input[str] alert_id: The OCID of alert.
+        :param pulumi.Input[str] alert_policy_rule_key: The key of the rule of alert policy that triggered alert.
+        :param pulumi.Input[str] alert_policy_rule_name: The display name of the rule of alert policy that triggered alert.
         :param pulumi.Input[str] alert_type: Type of the alert. Indicates the Data Safe feature triggering the alert.
         :param pulumi.Input[str] comment: (Updatable) A comment can be entered to track the alert changes done by the user.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the alert.
@@ -178,6 +182,10 @@ class _AlertState:
         """
         if alert_id is not None:
             pulumi.set(__self__, "alert_id", alert_id)
+        if alert_policy_rule_key is not None:
+            pulumi.set(__self__, "alert_policy_rule_key", alert_policy_rule_key)
+        if alert_policy_rule_name is not None:
+            pulumi.set(__self__, "alert_policy_rule_name", alert_policy_rule_name)
         if alert_type is not None:
             pulumi.set(__self__, "alert_type", alert_type)
         if comment is not None:
@@ -232,6 +240,30 @@ class _AlertState:
     @alert_id.setter
     def alert_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "alert_id", value)
+
+    @property
+    @pulumi.getter(name="alertPolicyRuleKey")
+    def alert_policy_rule_key(self) -> Optional[pulumi.Input[str]]:
+        """
+        The key of the rule of alert policy that triggered alert.
+        """
+        return pulumi.get(self, "alert_policy_rule_key")
+
+    @alert_policy_rule_key.setter
+    def alert_policy_rule_key(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "alert_policy_rule_key", value)
+
+    @property
+    @pulumi.getter(name="alertPolicyRuleName")
+    def alert_policy_rule_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The display name of the rule of alert policy that triggered alert.
+        """
+        return pulumi.get(self, "alert_policy_rule_name")
+
+    @alert_policy_rule_name.setter
+    def alert_policy_rule_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "alert_policy_rule_name", value)
 
     @property
     @pulumi.getter(name="alertType")
@@ -585,6 +617,8 @@ class Alert(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["status"] = status
+            __props__.__dict__["alert_policy_rule_key"] = None
+            __props__.__dict__["alert_policy_rule_name"] = None
             __props__.__dict__["alert_type"] = None
             __props__.__dict__["description"] = None
             __props__.__dict__["display_name"] = None
@@ -612,6 +646,8 @@ class Alert(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             alert_id: Optional[pulumi.Input[str]] = None,
+            alert_policy_rule_key: Optional[pulumi.Input[str]] = None,
+            alert_policy_rule_name: Optional[pulumi.Input[str]] = None,
             alert_type: Optional[pulumi.Input[str]] = None,
             comment: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
@@ -641,6 +677,8 @@ class Alert(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] alert_id: The OCID of alert.
+        :param pulumi.Input[str] alert_policy_rule_key: The key of the rule of alert policy that triggered alert.
+        :param pulumi.Input[str] alert_policy_rule_name: The display name of the rule of alert policy that triggered alert.
         :param pulumi.Input[str] alert_type: Type of the alert. Indicates the Data Safe feature triggering the alert.
         :param pulumi.Input[str] comment: (Updatable) A comment can be entered to track the alert changes done by the user.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the alert.
@@ -672,6 +710,8 @@ class Alert(pulumi.CustomResource):
         __props__ = _AlertState.__new__(_AlertState)
 
         __props__.__dict__["alert_id"] = alert_id
+        __props__.__dict__["alert_policy_rule_key"] = alert_policy_rule_key
+        __props__.__dict__["alert_policy_rule_name"] = alert_policy_rule_name
         __props__.__dict__["alert_type"] = alert_type
         __props__.__dict__["comment"] = comment
         __props__.__dict__["compartment_id"] = compartment_id
@@ -702,6 +742,22 @@ class Alert(pulumi.CustomResource):
         The OCID of alert.
         """
         return pulumi.get(self, "alert_id")
+
+    @property
+    @pulumi.getter(name="alertPolicyRuleKey")
+    def alert_policy_rule_key(self) -> pulumi.Output[str]:
+        """
+        The key of the rule of alert policy that triggered alert.
+        """
+        return pulumi.get(self, "alert_policy_rule_key")
+
+    @property
+    @pulumi.getter(name="alertPolicyRuleName")
+    def alert_policy_rule_name(self) -> pulumi.Output[str]:
+        """
+        The display name of the rule of alert policy that triggered alert.
+        """
+        return pulumi.get(self, "alert_policy_rule_name")
 
     @property
     @pulumi.getter(name="alertType")

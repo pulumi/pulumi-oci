@@ -107,6 +107,8 @@ if typing.TYPE_CHECKING:
     events = __events
     import pulumi_oci.filestorage as __filestorage
     filestorage = __filestorage
+    import pulumi_oci.fleetsoftwareupdate as __fleetsoftwareupdate
+    fleetsoftwareupdate = __fleetsoftwareupdate
     import pulumi_oci.functions as __functions
     functions = __functions
     import pulumi_oci.fusionapps as __fusionapps
@@ -291,6 +293,7 @@ else:
     email = _utilities.lazy_import('pulumi_oci.email')
     events = _utilities.lazy_import('pulumi_oci.events')
     filestorage = _utilities.lazy_import('pulumi_oci.filestorage')
+    fleetsoftwareupdate = _utilities.lazy_import('pulumi_oci.fleetsoftwareupdate')
     functions = _utilities.lazy_import('pulumi_oci.functions')
     fusionapps = _utilities.lazy_import('pulumi_oci.fusionapps')
     generativeai = _utilities.lazy_import('pulumi_oci.generativeai')
@@ -1412,6 +1415,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Core/instanceMaintenanceEvent",
+  "fqn": "pulumi_oci.core",
+  "classes": {
+   "oci:Core/instanceMaintenanceEvent:InstanceMaintenanceEvent": "InstanceMaintenanceEvent"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Core/instancePool",
   "fqn": "pulumi_oci.core",
   "classes": {
@@ -1884,6 +1895,22 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DataSafe/alertPolicy",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/alertPolicy:AlertPolicy": "AlertPolicy"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataSafe/alertPolicyRule",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/alertPolicyRule:AlertPolicyRule": "AlertPolicyRule"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DataSafe/auditArchiveRetrieval",
   "fqn": "pulumi_oci.datasafe",
   "classes": {
@@ -2044,22 +2071,6 @@ _utilities.register(
  },
  {
   "pkg": "oci",
-  "mod": "DataSafe/maskingPolicyHealthReportManagement",
-  "fqn": "pulumi_oci.datasafe",
-  "classes": {
-   "oci:DataSafe/maskingPolicyHealthReportManagement:MaskingPolicyHealthReportManagement": "MaskingPolicyHealthReportManagement"
-  }
- },
- {
-  "pkg": "oci",
-  "mod": "DataSafe/maskingReportManagement",
-  "fqn": "pulumi_oci.datasafe",
-  "classes": {
-   "oci:DataSafe/maskingReportManagement:MaskingReportManagement": "MaskingReportManagement"
-  }
- },
- {
-  "pkg": "oci",
   "mod": "DataSafe/onPremConnector",
   "fqn": "pulumi_oci.datasafe",
   "classes": {
@@ -2172,26 +2183,10 @@ _utilities.register(
  },
  {
   "pkg": "oci",
-  "mod": "DataSafe/setSecurityAssessmentBaselineManagement",
-  "fqn": "pulumi_oci.datasafe",
-  "classes": {
-   "oci:DataSafe/setSecurityAssessmentBaselineManagement:SetSecurityAssessmentBaselineManagement": "SetSecurityAssessmentBaselineManagement"
-  }
- },
- {
-  "pkg": "oci",
   "mod": "DataSafe/setUserAssessmentBaseline",
   "fqn": "pulumi_oci.datasafe",
   "classes": {
    "oci:DataSafe/setUserAssessmentBaseline:SetUserAssessmentBaseline": "SetUserAssessmentBaseline"
-  }
- },
- {
-  "pkg": "oci",
-  "mod": "DataSafe/setUserAssessmentBaselineManagement",
-  "fqn": "pulumi_oci.datasafe",
-  "classes": {
-   "oci:DataSafe/setUserAssessmentBaselineManagement:SetUserAssessmentBaselineManagement": "SetUserAssessmentBaselineManagement"
   }
  },
  {
@@ -3476,6 +3471,22 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "FleetSoftwareUpdate/fsuCollection",
+  "fqn": "pulumi_oci.fleetsoftwareupdate",
+  "classes": {
+   "oci:FleetSoftwareUpdate/fsuCollection:FsuCollection": "FsuCollection"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "FleetSoftwareUpdate/fsuCycle",
+  "fqn": "pulumi_oci.fleetsoftwareupdate",
+  "classes": {
+   "oci:FleetSoftwareUpdate/fsuCycle:FsuCycle": "FsuCycle"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Functions/application",
   "fqn": "pulumi_oci.functions",
   "classes": {
@@ -4072,6 +4083,14 @@ _utilities.register(
   "fqn": "pulumi_oci.identity",
   "classes": {
    "oci:Identity/domainsSmtpCredential:DomainsSmtpCredential": "DomainsSmtpCredential"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Identity/domainsSocialIdentityProvider",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsSocialIdentityProvider:DomainsSocialIdentityProvider": "DomainsSocialIdentityProvider"
   }
  },
  {
@@ -4896,6 +4915,14 @@ _utilities.register(
   "fqn": "pulumi_oci.networkfirewall",
   "classes": {
    "oci:NetworkFirewall/networkFirewallPolicyServiceList:NetworkFirewallPolicyServiceList": "NetworkFirewallPolicyServiceList"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "NetworkFirewall/networkFirewallPolicyTunnelInspectionRule",
+  "fqn": "pulumi_oci.networkfirewall",
+  "classes": {
+   "oci:NetworkFirewall/networkFirewallPolicyTunnelInspectionRule:NetworkFirewallPolicyTunnelInspectionRule": "NetworkFirewallPolicyTunnelInspectionRule"
   }
  },
  {

@@ -96,6 +96,11 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     private String characterSet;
     private String cloneType;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
+     * 
+     */
+    private String clusterPlacementGroupId;
+    /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
@@ -749,6 +754,13 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     }
     public String cloneType() {
         return this.cloneType;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
+     * 
+     */
+    public String clusterPlacementGroupId() {
+        return this.clusterPlacementGroupId;
     }
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -1569,6 +1581,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         private Double byolComputeCountLimit;
         private String characterSet;
         private String cloneType;
+        private String clusterPlacementGroupId;
         private String compartmentId;
         private Double computeCount;
         private String computeModel;
@@ -1708,6 +1721,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     	      this.byolComputeCountLimit = defaults.byolComputeCountLimit;
     	      this.characterSet = defaults.characterSet;
     	      this.cloneType = defaults.cloneType;
+    	      this.clusterPlacementGroupId = defaults.clusterPlacementGroupId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.computeCount = defaults.computeCount;
     	      this.computeModel = defaults.computeModel;
@@ -1972,6 +1986,14 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
               throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "cloneType");
             }
             this.cloneType = cloneType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            if (clusterPlacementGroupId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "clusterPlacementGroupId");
+            }
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
             return this;
         }
         @CustomType.Setter
@@ -2999,6 +3021,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
             _resultValue.byolComputeCountLimit = byolComputeCountLimit;
             _resultValue.characterSet = characterSet;
             _resultValue.cloneType = cloneType;
+            _resultValue.clusterPlacementGroupId = clusterPlacementGroupId;
             _resultValue.compartmentId = compartmentId;
             _resultValue.computeCount = computeCount;
             _resultValue.computeModel = computeModel;

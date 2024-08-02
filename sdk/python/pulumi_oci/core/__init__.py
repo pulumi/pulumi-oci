@@ -112,6 +112,8 @@ from .get_instance_configurations import *
 from .get_instance_console_connections import *
 from .get_instance_credentials import *
 from .get_instance_devices import *
+from .get_instance_maintenance_event import *
+from .get_instance_maintenance_events import *
 from .get_instance_maintenance_reboot import *
 from .get_instance_measured_boot_report import *
 from .get_instance_pool import *
@@ -188,6 +190,7 @@ from .image import *
 from .instance import *
 from .instance_configuration import *
 from .instance_console_connection import *
+from .instance_maintenance_event import *
 from .instance_pool import *
 from .instance_pool_instance import *
 from .internet_gateway import *

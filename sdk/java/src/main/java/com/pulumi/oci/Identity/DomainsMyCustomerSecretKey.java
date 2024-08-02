@@ -699,11 +699,18 @@ public class DomainsMyCustomerSecretKey extends com.pulumi.resources.CustomResou
      * @param options A bag of options that control this resource's behavior.
      */
     public DomainsMyCustomerSecretKey(String name, DomainsMyCustomerSecretKeyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsMyCustomerSecretKey:DomainsMyCustomerSecretKey", name, args == null ? DomainsMyCustomerSecretKeyArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Identity/domainsMyCustomerSecretKey:DomainsMyCustomerSecretKey", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DomainsMyCustomerSecretKey(String name, Output<String> id, @Nullable DomainsMyCustomerSecretKeyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Identity/domainsMyCustomerSecretKey:DomainsMyCustomerSecretKey", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DomainsMyCustomerSecretKeyArgs makeArgs(DomainsMyCustomerSecretKeyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DomainsMyCustomerSecretKeyArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

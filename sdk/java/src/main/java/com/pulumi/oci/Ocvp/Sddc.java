@@ -1062,11 +1062,18 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public Sddc(String name, SddcArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Ocvp/sddc:Sddc", name, args == null ? SddcArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Ocvp/sddc:Sddc", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private Sddc(String name, Output<String> id, @Nullable SddcState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Ocvp/sddc:Sddc", name, state, makeResourceOptions(options, id));
+    }
+
+    private static SddcArgs makeArgs(SddcArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? SddcArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

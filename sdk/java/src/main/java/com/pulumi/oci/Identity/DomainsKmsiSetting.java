@@ -822,11 +822,18 @@ public class DomainsKmsiSetting extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public DomainsKmsiSetting(String name, DomainsKmsiSettingArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsKmsiSetting:DomainsKmsiSetting", name, args == null ? DomainsKmsiSettingArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Identity/domainsKmsiSetting:DomainsKmsiSetting", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DomainsKmsiSetting(String name, Output<String> id, @Nullable DomainsKmsiSettingState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Identity/domainsKmsiSetting:DomainsKmsiSetting", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DomainsKmsiSettingArgs makeArgs(DomainsKmsiSettingArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DomainsKmsiSettingArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

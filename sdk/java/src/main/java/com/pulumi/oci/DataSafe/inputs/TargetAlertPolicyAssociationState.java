@@ -109,6 +109,21 @@ public final class TargetAlertPolicyAssociationState extends com.pulumi.resource
     }
 
     /**
+     * Details about the current state of the target-alert policy association.
+     * 
+     */
+    @Import(name="lifecycleDetails")
+    private @Nullable Output<String> lifecycleDetails;
+
+    /**
+     * @return Details about the current state of the target-alert policy association.
+     * 
+     */
+    public Optional<Output<String>> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
+    }
+
+    /**
      * The OCID of the alert policy.
      * 
      */
@@ -213,6 +228,7 @@ public final class TargetAlertPolicyAssociationState extends com.pulumi.resource
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.isEnabled = $.isEnabled;
+        this.lifecycleDetails = $.lifecycleDetails;
         this.policyId = $.policyId;
         this.state = $.state;
         this.systemTags = $.systemTags;
@@ -363,6 +379,27 @@ public final class TargetAlertPolicyAssociationState extends com.pulumi.resource
          */
         public Builder isEnabled(Boolean isEnabled) {
             return isEnabled(Output.of(isEnabled));
+        }
+
+        /**
+         * @param lifecycleDetails Details about the current state of the target-alert policy association.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifecycleDetails(@Nullable Output<String> lifecycleDetails) {
+            $.lifecycleDetails = lifecycleDetails;
+            return this;
+        }
+
+        /**
+         * @param lifecycleDetails Details about the current state of the target-alert policy association.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            return lifecycleDetails(Output.of(lifecycleDetails));
         }
 
         /**

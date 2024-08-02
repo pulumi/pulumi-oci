@@ -190,6 +190,7 @@ class _ReportDefinitionState:
                  display_order: Optional[pulumi.Input[int]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_seeded: Optional[pulumi.Input[bool]] = None,
+                 lifecycle_details: Optional[pulumi.Input[str]] = None,
                  parent_id: Optional[pulumi.Input[str]] = None,
                  record_time_span: Optional[pulumi.Input[str]] = None,
                  schedule: Optional[pulumi.Input[str]] = None,
@@ -218,6 +219,7 @@ class _ReportDefinitionState:
         :param pulumi.Input[int] display_order: Specifies the order in which the summary must be displayed.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_seeded: Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
+        :param pulumi.Input[str] lifecycle_details: Details about the current state of the report definition in Data Safe.
         :param pulumi.Input[str] parent_id: The OCID of the parent report definition.
         :param pulumi.Input[str] record_time_span: The time span for the records in the report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
         :param pulumi.Input[str] schedule: The schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
@@ -258,6 +260,8 @@ class _ReportDefinitionState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_seeded is not None:
             pulumi.set(__self__, "is_seeded", is_seeded)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if parent_id is not None:
             pulumi.set(__self__, "parent_id", parent_id)
         if record_time_span is not None:
@@ -440,6 +444,18 @@ class _ReportDefinitionState:
     @is_seeded.setter
     def is_seeded(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_seeded", value)
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
+        """
+        Details about the current state of the report definition in Data Safe.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "lifecycle_details", value)
 
     @property
     @pulumi.getter(name="parentId")
@@ -814,6 +830,7 @@ class ReportDefinition(pulumi.CustomResource):
             __props__.__dict__["data_source"] = None
             __props__.__dict__["display_order"] = None
             __props__.__dict__["is_seeded"] = None
+            __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["record_time_span"] = None
             __props__.__dict__["schedule"] = None
             __props__.__dict__["scheduled_report_compartment_id"] = None
@@ -848,6 +865,7 @@ class ReportDefinition(pulumi.CustomResource):
             display_order: Optional[pulumi.Input[int]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             is_seeded: Optional[pulumi.Input[bool]] = None,
+            lifecycle_details: Optional[pulumi.Input[str]] = None,
             parent_id: Optional[pulumi.Input[str]] = None,
             record_time_span: Optional[pulumi.Input[str]] = None,
             schedule: Optional[pulumi.Input[str]] = None,
@@ -881,6 +899,7 @@ class ReportDefinition(pulumi.CustomResource):
         :param pulumi.Input[int] display_order: Specifies the order in which the summary must be displayed.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_seeded: Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
+        :param pulumi.Input[str] lifecycle_details: Details about the current state of the report definition in Data Safe.
         :param pulumi.Input[str] parent_id: The OCID of the parent report definition.
         :param pulumi.Input[str] record_time_span: The time span for the records in the report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
         :param pulumi.Input[str] schedule: The schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
@@ -912,6 +931,7 @@ class ReportDefinition(pulumi.CustomResource):
         __props__.__dict__["display_order"] = display_order
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["is_seeded"] = is_seeded
+        __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["parent_id"] = parent_id
         __props__.__dict__["record_time_span"] = record_time_span
         __props__.__dict__["schedule"] = schedule
@@ -1030,6 +1050,14 @@ class ReportDefinition(pulumi.CustomResource):
         Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
         """
         return pulumi.get(self, "is_seeded")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> pulumi.Output[str]:
+        """
+        Details about the current state of the report definition in Data Safe.
+        """
+        return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="parentId")

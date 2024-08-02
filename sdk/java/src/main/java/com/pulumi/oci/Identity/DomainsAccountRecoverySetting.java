@@ -686,11 +686,18 @@ public class DomainsAccountRecoverySetting extends com.pulumi.resources.CustomRe
      * @param options A bag of options that control this resource's behavior.
      */
     public DomainsAccountRecoverySetting(String name, DomainsAccountRecoverySettingArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsAccountRecoverySetting:DomainsAccountRecoverySetting", name, args == null ? DomainsAccountRecoverySettingArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Identity/domainsAccountRecoverySetting:DomainsAccountRecoverySetting", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DomainsAccountRecoverySetting(String name, Output<String> id, @Nullable DomainsAccountRecoverySettingState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Identity/domainsAccountRecoverySetting:DomainsAccountRecoverySetting", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DomainsAccountRecoverySettingArgs makeArgs(DomainsAccountRecoverySettingArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DomainsAccountRecoverySettingArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

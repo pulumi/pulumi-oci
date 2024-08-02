@@ -8,7 +8,6 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
-from . import outputs
 
 __all__ = [
     'GetAlertPolicyRuleResult',
@@ -22,16 +21,34 @@ class GetAlertPolicyRuleResult:
     """
     A collection of values returned by getAlertPolicyRule.
     """
-    def __init__(__self__, alert_policy_id=None, id=None, items=None):
+    def __init__(__self__, alert_policy_id=None, description=None, display_name=None, expression=None, id=None, key=None, rule_key=None, state=None, time_created=None):
         if alert_policy_id and not isinstance(alert_policy_id, str):
             raise TypeError("Expected argument 'alert_policy_id' to be a str")
         pulumi.set(__self__, "alert_policy_id", alert_policy_id)
+        if description and not isinstance(description, str):
+            raise TypeError("Expected argument 'description' to be a str")
+        pulumi.set(__self__, "description", description)
+        if display_name and not isinstance(display_name, str):
+            raise TypeError("Expected argument 'display_name' to be a str")
+        pulumi.set(__self__, "display_name", display_name)
+        if expression and not isinstance(expression, str):
+            raise TypeError("Expected argument 'expression' to be a str")
+        pulumi.set(__self__, "expression", expression)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
-        if items and not isinstance(items, list):
-            raise TypeError("Expected argument 'items' to be a list")
-        pulumi.set(__self__, "items", items)
+        if key and not isinstance(key, str):
+            raise TypeError("Expected argument 'key' to be a str")
+        pulumi.set(__self__, "key", key)
+        if rule_key and not isinstance(rule_key, str):
+            raise TypeError("Expected argument 'rule_key' to be a str")
+        pulumi.set(__self__, "rule_key", rule_key)
+        if state and not isinstance(state, str):
+            raise TypeError("Expected argument 'state' to be a str")
+        pulumi.set(__self__, "state", state)
+        if time_created and not isinstance(time_created, str):
+            raise TypeError("Expected argument 'time_created' to be a str")
+        pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter(name="alertPolicyId")
@@ -40,19 +57,61 @@ class GetAlertPolicyRuleResult:
 
     @property
     @pulumi.getter
+    def description(self) -> str:
+        """
+        Describes the alert policy rule.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        The display name of the alert policy rule.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def expression(self) -> str:
+        """
+        The conditional expression of the alert policy rule which evaluates to boolean value.
+        """
+        return pulumi.get(self, "expression")
+
+    @property
+    @pulumi.getter
     def id(self) -> str:
-        """
-        The provider-assigned unique ID for this managed resource.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetAlertPolicyRuleItemResult']:
+    def key(self) -> str:
         """
-        Array of alert policy rules summary
+        The unique key of the alert policy rule.
         """
-        return pulumi.get(self, "items")
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="ruleKey")
+    def rule_key(self) -> str:
+        return pulumi.get(self, "rule_key")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the alert policy rule.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        Creation date and time of the alert policy rule, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_created")
 
 
 class AwaitableGetAlertPolicyRuleResult(GetAlertPolicyRuleResult):
@@ -62,17 +121,23 @@ class AwaitableGetAlertPolicyRuleResult(GetAlertPolicyRuleResult):
             yield self
         return GetAlertPolicyRuleResult(
             alert_policy_id=self.alert_policy_id,
+            description=self.description,
+            display_name=self.display_name,
+            expression=self.expression,
             id=self.id,
-            items=self.items)
+            key=self.key,
+            rule_key=self.rule_key,
+            state=self.state,
+            time_created=self.time_created)
 
 
 def get_alert_policy_rule(alert_policy_id: Optional[str] = None,
+                          rule_key: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAlertPolicyRuleResult:
     """
     This data source provides details about a specific Alert Policy Rule resource in Oracle Cloud Infrastructure Data Safe service.
 
-    Lists the rules of the specified alert policy. The alert policy is said to be satisfied when all rules in the policy evaulate to true.
-    If there are three rules: rule1,rule2 and rule3, the policy is satisfied if rule1 AND rule2 AND rule3 is True.
+    Gets the details of a policy rule by its key.
 
     ## Example Usage
 
@@ -80,31 +145,40 @@ def get_alert_policy_rule(alert_policy_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_alert_policy_rule = oci.DataSafe.get_alert_policy_rule(alert_policy_id=test_alert_policy["id"])
+    test_alert_policy_rule = oci.DataSafe.get_alert_policy_rule(alert_policy_id=test_alert_policy["id"],
+        rule_key=alert_policy_rule_rule_key)
     ```
 
 
     :param str alert_policy_id: The OCID of the alert policy.
+    :param str rule_key: The key of the alert policy rule.
     """
     __args__ = dict()
     __args__['alertPolicyId'] = alert_policy_id
+    __args__['ruleKey'] = rule_key
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getAlertPolicyRule:getAlertPolicyRule', __args__, opts=opts, typ=GetAlertPolicyRuleResult).value
 
     return AwaitableGetAlertPolicyRuleResult(
         alert_policy_id=pulumi.get(__ret__, 'alert_policy_id'),
+        description=pulumi.get(__ret__, 'description'),
+        display_name=pulumi.get(__ret__, 'display_name'),
+        expression=pulumi.get(__ret__, 'expression'),
         id=pulumi.get(__ret__, 'id'),
-        items=pulumi.get(__ret__, 'items'))
+        key=pulumi.get(__ret__, 'key'),
+        rule_key=pulumi.get(__ret__, 'rule_key'),
+        state=pulumi.get(__ret__, 'state'),
+        time_created=pulumi.get(__ret__, 'time_created'))
 
 
 @_utilities.lift_output_func(get_alert_policy_rule)
 def get_alert_policy_rule_output(alert_policy_id: Optional[pulumi.Input[str]] = None,
+                                 rule_key: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAlertPolicyRuleResult]:
     """
     This data source provides details about a specific Alert Policy Rule resource in Oracle Cloud Infrastructure Data Safe service.
 
-    Lists the rules of the specified alert policy. The alert policy is said to be satisfied when all rules in the policy evaulate to true.
-    If there are three rules: rule1,rule2 and rule3, the policy is satisfied if rule1 AND rule2 AND rule3 is True.
+    Gets the details of a policy rule by its key.
 
     ## Example Usage
 
@@ -112,10 +186,12 @@ def get_alert_policy_rule_output(alert_policy_id: Optional[pulumi.Input[str]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_alert_policy_rule = oci.DataSafe.get_alert_policy_rule(alert_policy_id=test_alert_policy["id"])
+    test_alert_policy_rule = oci.DataSafe.get_alert_policy_rule(alert_policy_id=test_alert_policy["id"],
+        rule_key=alert_policy_rule_rule_key)
     ```
 
 
     :param str alert_policy_id: The OCID of the alert policy.
+    :param str rule_key: The key of the alert policy rule.
     """
     ...

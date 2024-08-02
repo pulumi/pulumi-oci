@@ -270,11 +270,18 @@ public class FusionEnvironmentRefreshActivity extends com.pulumi.resources.Custo
      * @param options A bag of options that control this resource's behavior.
      */
     public FusionEnvironmentRefreshActivity(String name, FusionEnvironmentRefreshActivityArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:FusionApps/fusionEnvironmentRefreshActivity:FusionEnvironmentRefreshActivity", name, args == null ? FusionEnvironmentRefreshActivityArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:FusionApps/fusionEnvironmentRefreshActivity:FusionEnvironmentRefreshActivity", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private FusionEnvironmentRefreshActivity(String name, Output<String> id, @Nullable FusionEnvironmentRefreshActivityState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:FusionApps/fusionEnvironmentRefreshActivity:FusionEnvironmentRefreshActivity", name, state, makeResourceOptions(options, id));
+    }
+
+    private static FusionEnvironmentRefreshActivityArgs makeArgs(FusionEnvironmentRefreshActivityArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? FusionEnvironmentRefreshActivityArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

@@ -129,11 +129,18 @@ public class ImportStandardTagsManagement extends com.pulumi.resources.CustomRes
      * @param options A bag of options that control this resource's behavior.
      */
     public ImportStandardTagsManagement(String name, ImportStandardTagsManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/importStandardTagsManagement:ImportStandardTagsManagement", name, args == null ? ImportStandardTagsManagementArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Identity/importStandardTagsManagement:ImportStandardTagsManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ImportStandardTagsManagement(String name, Output<String> id, @Nullable ImportStandardTagsManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Identity/importStandardTagsManagement:ImportStandardTagsManagement", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ImportStandardTagsManagementArgs makeArgs(ImportStandardTagsManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ImportStandardTagsManagementArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

@@ -231,6 +231,10 @@ import com.pulumi.oci.Identity.inputs.GetDomainsSmtpCredentialArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsSmtpCredentialPlainArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsSmtpCredentialsArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsSmtpCredentialsPlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsSocialIdentityProviderArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsSocialIdentityProviderPlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsSocialIdentityProvidersArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsSocialIdentityProvidersPlainArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsUserArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsUserAttributesSettingArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsUserAttributesSettingPlainArgs;
@@ -413,6 +417,8 @@ import com.pulumi.oci.Identity.outputs.GetDomainsSettingResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsSettingsResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsSmtpCredentialResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsSmtpCredentialsResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsSocialIdentityProviderResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsSocialIdentityProvidersResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsUserAttributesSettingResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsUserAttributesSettingsResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsUserDbCredentialResult;
@@ -22601,6 +22607,390 @@ public final class IdentityFunctions {
      */
     public static CompletableFuture<GetDomainsSmtpCredentialsResult> getDomainsSmtpCredentialsPlain(GetDomainsSmtpCredentialsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsSmtpCredentials:getDomainsSmtpCredentials", TypeShape.of(GetDomainsSmtpCredentialsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Social Identity Provider resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get a Social Identity Provider
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsSocialIdentityProviderArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSocialIdentityProvider = IdentityFunctions.getDomainsSocialIdentityProvider(GetDomainsSocialIdentityProviderArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .socialIdentityProviderId(testIdentityProvider.id())
+     *             .authorization(socialIdentityProviderAuthorization)
+     *             .resourceTypeSchemaVersion(socialIdentityProviderResourceTypeSchemaVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDomainsSocialIdentityProviderResult> getDomainsSocialIdentityProvider(GetDomainsSocialIdentityProviderArgs args) {
+        return getDomainsSocialIdentityProvider(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Social Identity Provider resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get a Social Identity Provider
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsSocialIdentityProviderArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSocialIdentityProvider = IdentityFunctions.getDomainsSocialIdentityProvider(GetDomainsSocialIdentityProviderArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .socialIdentityProviderId(testIdentityProvider.id())
+     *             .authorization(socialIdentityProviderAuthorization)
+     *             .resourceTypeSchemaVersion(socialIdentityProviderResourceTypeSchemaVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDomainsSocialIdentityProviderResult> getDomainsSocialIdentityProviderPlain(GetDomainsSocialIdentityProviderPlainArgs args) {
+        return getDomainsSocialIdentityProviderPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Social Identity Provider resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get a Social Identity Provider
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsSocialIdentityProviderArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSocialIdentityProvider = IdentityFunctions.getDomainsSocialIdentityProvider(GetDomainsSocialIdentityProviderArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .socialIdentityProviderId(testIdentityProvider.id())
+     *             .authorization(socialIdentityProviderAuthorization)
+     *             .resourceTypeSchemaVersion(socialIdentityProviderResourceTypeSchemaVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDomainsSocialIdentityProviderResult> getDomainsSocialIdentityProvider(GetDomainsSocialIdentityProviderArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsSocialIdentityProvider:getDomainsSocialIdentityProvider", TypeShape.of(GetDomainsSocialIdentityProviderResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Social Identity Provider resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get a Social Identity Provider
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsSocialIdentityProviderArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSocialIdentityProvider = IdentityFunctions.getDomainsSocialIdentityProvider(GetDomainsSocialIdentityProviderArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .socialIdentityProviderId(testIdentityProvider.id())
+     *             .authorization(socialIdentityProviderAuthorization)
+     *             .resourceTypeSchemaVersion(socialIdentityProviderResourceTypeSchemaVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDomainsSocialIdentityProviderResult> getDomainsSocialIdentityProviderPlain(GetDomainsSocialIdentityProviderPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsSocialIdentityProvider:getDomainsSocialIdentityProvider", TypeShape.of(GetDomainsSocialIdentityProviderResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Social Identity Providers in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Social Identity Providers
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsSocialIdentityProvidersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSocialIdentityProviders = IdentityFunctions.getDomainsSocialIdentityProviders(GetDomainsSocialIdentityProvidersArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .socialIdentityProviderCount(socialIdentityProviderSocialIdentityProviderCount)
+     *             .socialIdentityProviderFilter(socialIdentityProviderSocialIdentityProviderFilter)
+     *             .authorization(socialIdentityProviderAuthorization)
+     *             .resourceTypeSchemaVersion(socialIdentityProviderResourceTypeSchemaVersion)
+     *             .startIndex(socialIdentityProviderStartIndex)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDomainsSocialIdentityProvidersResult> getDomainsSocialIdentityProviders(GetDomainsSocialIdentityProvidersArgs args) {
+        return getDomainsSocialIdentityProviders(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Social Identity Providers in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Social Identity Providers
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsSocialIdentityProvidersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSocialIdentityProviders = IdentityFunctions.getDomainsSocialIdentityProviders(GetDomainsSocialIdentityProvidersArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .socialIdentityProviderCount(socialIdentityProviderSocialIdentityProviderCount)
+     *             .socialIdentityProviderFilter(socialIdentityProviderSocialIdentityProviderFilter)
+     *             .authorization(socialIdentityProviderAuthorization)
+     *             .resourceTypeSchemaVersion(socialIdentityProviderResourceTypeSchemaVersion)
+     *             .startIndex(socialIdentityProviderStartIndex)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDomainsSocialIdentityProvidersResult> getDomainsSocialIdentityProvidersPlain(GetDomainsSocialIdentityProvidersPlainArgs args) {
+        return getDomainsSocialIdentityProvidersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Social Identity Providers in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Social Identity Providers
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsSocialIdentityProvidersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSocialIdentityProviders = IdentityFunctions.getDomainsSocialIdentityProviders(GetDomainsSocialIdentityProvidersArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .socialIdentityProviderCount(socialIdentityProviderSocialIdentityProviderCount)
+     *             .socialIdentityProviderFilter(socialIdentityProviderSocialIdentityProviderFilter)
+     *             .authorization(socialIdentityProviderAuthorization)
+     *             .resourceTypeSchemaVersion(socialIdentityProviderResourceTypeSchemaVersion)
+     *             .startIndex(socialIdentityProviderStartIndex)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDomainsSocialIdentityProvidersResult> getDomainsSocialIdentityProviders(GetDomainsSocialIdentityProvidersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsSocialIdentityProviders:getDomainsSocialIdentityProviders", TypeShape.of(GetDomainsSocialIdentityProvidersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Social Identity Providers in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Social Identity Providers
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsSocialIdentityProvidersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSocialIdentityProviders = IdentityFunctions.getDomainsSocialIdentityProviders(GetDomainsSocialIdentityProvidersArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .socialIdentityProviderCount(socialIdentityProviderSocialIdentityProviderCount)
+     *             .socialIdentityProviderFilter(socialIdentityProviderSocialIdentityProviderFilter)
+     *             .authorization(socialIdentityProviderAuthorization)
+     *             .resourceTypeSchemaVersion(socialIdentityProviderResourceTypeSchemaVersion)
+     *             .startIndex(socialIdentityProviderStartIndex)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDomainsSocialIdentityProvidersResult> getDomainsSocialIdentityProvidersPlain(GetDomainsSocialIdentityProvidersPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsSocialIdentityProviders:getDomainsSocialIdentityProviders", TypeShape.of(GetDomainsSocialIdentityProvidersResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific User resource in Oracle Cloud Infrastructure Identity Domains service.

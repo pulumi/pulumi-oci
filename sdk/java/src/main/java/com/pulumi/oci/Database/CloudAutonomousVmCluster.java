@@ -917,11 +917,18 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
      * @param options A bag of options that control this resource's behavior.
      */
     public CloudAutonomousVmCluster(String name, CloudAutonomousVmClusterArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/cloudAutonomousVmCluster:CloudAutonomousVmCluster", name, args == null ? CloudAutonomousVmClusterArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Database/cloudAutonomousVmCluster:CloudAutonomousVmCluster", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private CloudAutonomousVmCluster(String name, Output<String> id, @Nullable CloudAutonomousVmClusterState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Database/cloudAutonomousVmCluster:CloudAutonomousVmCluster", name, state, makeResourceOptions(options, id));
+    }
+
+    private static CloudAutonomousVmClusterArgs makeArgs(CloudAutonomousVmClusterArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? CloudAutonomousVmClusterArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

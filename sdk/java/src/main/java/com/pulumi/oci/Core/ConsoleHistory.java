@@ -226,11 +226,18 @@ public class ConsoleHistory extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public ConsoleHistory(String name, ConsoleHistoryArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/consoleHistory:ConsoleHistory", name, args == null ? ConsoleHistoryArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Core/consoleHistory:ConsoleHistory", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ConsoleHistory(String name, Output<String> id, @Nullable ConsoleHistoryState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Core/consoleHistory:ConsoleHistory", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ConsoleHistoryArgs makeArgs(ConsoleHistoryArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ConsoleHistoryArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

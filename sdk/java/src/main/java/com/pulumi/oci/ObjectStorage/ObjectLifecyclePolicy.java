@@ -161,11 +161,18 @@ public class ObjectLifecyclePolicy extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public ObjectLifecyclePolicy(String name, ObjectLifecyclePolicyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:ObjectStorage/objectLifecyclePolicy:ObjectLifecyclePolicy", name, args == null ? ObjectLifecyclePolicyArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:ObjectStorage/objectLifecyclePolicy:ObjectLifecyclePolicy", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ObjectLifecyclePolicy(String name, Output<String> id, @Nullable ObjectLifecyclePolicyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:ObjectStorage/objectLifecyclePolicy:ObjectLifecyclePolicy", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ObjectLifecyclePolicyArgs makeArgs(ObjectLifecyclePolicyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ObjectLifecyclePolicyArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

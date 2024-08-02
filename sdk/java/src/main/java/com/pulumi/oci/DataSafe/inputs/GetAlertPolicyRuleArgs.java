@@ -29,10 +29,26 @@ public final class GetAlertPolicyRuleArgs extends com.pulumi.resources.InvokeArg
         return this.alertPolicyId;
     }
 
+    /**
+     * The key of the alert policy rule.
+     * 
+     */
+    @Import(name="ruleKey", required=true)
+    private Output<String> ruleKey;
+
+    /**
+     * @return The key of the alert policy rule.
+     * 
+     */
+    public Output<String> ruleKey() {
+        return this.ruleKey;
+    }
+
     private GetAlertPolicyRuleArgs() {}
 
     private GetAlertPolicyRuleArgs(GetAlertPolicyRuleArgs $) {
         this.alertPolicyId = $.alertPolicyId;
+        this.ruleKey = $.ruleKey;
     }
 
     public static Builder builder() {
@@ -74,9 +90,33 @@ public final class GetAlertPolicyRuleArgs extends com.pulumi.resources.InvokeArg
             return alertPolicyId(Output.of(alertPolicyId));
         }
 
+        /**
+         * @param ruleKey The key of the alert policy rule.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ruleKey(Output<String> ruleKey) {
+            $.ruleKey = ruleKey;
+            return this;
+        }
+
+        /**
+         * @param ruleKey The key of the alert policy rule.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ruleKey(String ruleKey) {
+            return ruleKey(Output.of(ruleKey));
+        }
+
         public GetAlertPolicyRuleArgs build() {
             if ($.alertPolicyId == null) {
                 throw new MissingRequiredPropertyException("GetAlertPolicyRuleArgs", "alertPolicyId");
+            }
+            if ($.ruleKey == null) {
+                throw new MissingRequiredPropertyException("GetAlertPolicyRuleArgs", "ruleKey");
             }
             return $;
         }

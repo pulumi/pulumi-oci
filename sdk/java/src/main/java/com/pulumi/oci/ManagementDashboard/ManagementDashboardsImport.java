@@ -114,11 +114,18 @@ public class ManagementDashboardsImport extends com.pulumi.resources.CustomResou
      * @param options A bag of options that control this resource's behavior.
      */
     public ManagementDashboardsImport(String name, @Nullable ManagementDashboardsImportArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:ManagementDashboard/managementDashboardsImport:ManagementDashboardsImport", name, args == null ? ManagementDashboardsImportArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:ManagementDashboard/managementDashboardsImport:ManagementDashboardsImport", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ManagementDashboardsImport(String name, Output<String> id, @Nullable ManagementDashboardsImportState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:ManagementDashboard/managementDashboardsImport:ManagementDashboardsImport", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ManagementDashboardsImportArgs makeArgs(@Nullable ManagementDashboardsImportArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ManagementDashboardsImportArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

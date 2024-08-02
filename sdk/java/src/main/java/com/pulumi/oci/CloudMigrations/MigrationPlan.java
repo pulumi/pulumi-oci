@@ -282,11 +282,18 @@ public class MigrationPlan extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public MigrationPlan(String name, MigrationPlanArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:CloudMigrations/migrationPlan:MigrationPlan", name, args == null ? MigrationPlanArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:CloudMigrations/migrationPlan:MigrationPlan", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private MigrationPlan(String name, Output<String> id, @Nullable MigrationPlanState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:CloudMigrations/migrationPlan:MigrationPlan", name, state, makeResourceOptions(options, id));
+    }
+
+    private static MigrationPlanArgs makeArgs(MigrationPlanArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? MigrationPlanArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

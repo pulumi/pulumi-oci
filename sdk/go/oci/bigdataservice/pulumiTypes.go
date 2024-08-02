@@ -15629,7 +15629,8 @@ type GetBdsInstancesBdsInstance struct {
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the Big Data Service resource.
-	Id string `pulumi:"id"`
+	Id                        string   `pulumi:"id"`
+	IgnoreExistingNodesShapes []string `pulumi:"ignoreExistingNodesShapes"`
 	// Boolean flag specifying whether or not Cloud SQL should be configured.
 	IsCloudSqlConfigured bool `pulumi:"isCloudSqlConfigured"`
 	IsForceStopJobs      bool `pulumi:"isForceStopJobs"`
@@ -15700,7 +15701,8 @@ type GetBdsInstancesBdsInstanceArgs struct {
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the Big Data Service resource.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id                        pulumi.StringInput      `pulumi:"id"`
+	IgnoreExistingNodesShapes pulumi.StringArrayInput `pulumi:"ignoreExistingNodesShapes"`
 	// Boolean flag specifying whether or not Cloud SQL should be configured.
 	IsCloudSqlConfigured pulumi.BoolInput `pulumi:"isCloudSqlConfigured"`
 	IsForceStopJobs      pulumi.BoolInput `pulumi:"isForceStopJobs"`
@@ -15858,6 +15860,10 @@ func (o GetBdsInstancesBdsInstanceOutput) FreeformTags() pulumi.MapOutput {
 // The OCID of the Big Data Service resource.
 func (o GetBdsInstancesBdsInstanceOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstancesBdsInstance) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetBdsInstancesBdsInstanceOutput) IgnoreExistingNodesShapes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstance) []string { return v.IgnoreExistingNodesShapes }).(pulumi.StringArrayOutput)
 }
 
 // Boolean flag specifying whether or not Cloud SQL should be configured.

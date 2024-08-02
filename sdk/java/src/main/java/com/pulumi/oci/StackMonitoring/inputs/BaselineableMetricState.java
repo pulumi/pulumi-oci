@@ -156,9 +156,6 @@ public final class BaselineableMetricState extends com.pulumi.resources.Resource
     /**
      * (Updatable) Resource group of the metric
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="resourceGroup")
     private @Nullable Output<String> resourceGroup;
@@ -166,12 +163,30 @@ public final class BaselineableMetricState extends com.pulumi.resources.Resource
     /**
      * @return (Updatable) Resource group of the metric
      * 
+     */
+    public Optional<Output<String>> resourceGroup() {
+        return Optional.ofNullable(this.resourceGroup);
+    }
+
+    /**
+     * (Updatable) Resource type of the metric
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Optional<Output<String>> resourceGroup() {
-        return Optional.ofNullable(this.resourceGroup);
+    @Import(name="resourceType")
+    private @Nullable Output<String> resourceType;
+
+    /**
+     * @return (Updatable) Resource type of the metric
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<String>> resourceType() {
+        return Optional.ofNullable(this.resourceType);
     }
 
     /**
@@ -262,6 +277,7 @@ public final class BaselineableMetricState extends com.pulumi.resources.Resource
         this.name = $.name;
         this.namespace = $.namespace;
         this.resourceGroup = $.resourceGroup;
+        this.resourceType = $.resourceType;
         this.state = $.state;
         this.systemTags = $.systemTags;
         this.tenancyId = $.tenancyId;
@@ -479,9 +495,6 @@ public final class BaselineableMetricState extends com.pulumi.resources.Resource
         /**
          * @param resourceGroup (Updatable) Resource group of the metric
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -493,14 +506,38 @@ public final class BaselineableMetricState extends com.pulumi.resources.Resource
         /**
          * @param resourceGroup (Updatable) Resource group of the metric
          * 
+         * @return builder
+         * 
+         */
+        public Builder resourceGroup(String resourceGroup) {
+            return resourceGroup(Output.of(resourceGroup));
+        }
+
+        /**
+         * @param resourceType (Updatable) Resource type of the metric
+         * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
          */
-        public Builder resourceGroup(String resourceGroup) {
-            return resourceGroup(Output.of(resourceGroup));
+        public Builder resourceType(@Nullable Output<String> resourceType) {
+            $.resourceType = resourceType;
+            return this;
+        }
+
+        /**
+         * @param resourceType (Updatable) Resource type of the metric
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceType(String resourceType) {
+            return resourceType(Output.of(resourceType));
         }
 
         /**

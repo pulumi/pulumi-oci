@@ -930,11 +930,18 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public DbSystem(String name, DbSystemArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/dbSystem:DbSystem", name, args == null ? DbSystemArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Database/dbSystem:DbSystem", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DbSystem(String name, Output<String> id, @Nullable DbSystemState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Database/dbSystem:DbSystem", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DbSystemArgs makeArgs(DbSystemArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DbSystemArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

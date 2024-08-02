@@ -328,11 +328,18 @@ public class AuditArchiveRetrieval extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public AuditArchiveRetrieval(String name, AuditArchiveRetrievalArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/auditArchiveRetrieval:AuditArchiveRetrieval", name, args == null ? AuditArchiveRetrievalArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DataSafe/auditArchiveRetrieval:AuditArchiveRetrieval", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private AuditArchiveRetrieval(String name, Output<String> id, @Nullable AuditArchiveRetrievalState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DataSafe/auditArchiveRetrieval:AuditArchiveRetrieval", name, state, makeResourceOptions(options, id));
+    }
+
+    private static AuditArchiveRetrievalArgs makeArgs(AuditArchiveRetrievalArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? AuditArchiveRetrievalArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

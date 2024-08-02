@@ -308,11 +308,18 @@ public class StreamCdnConfig extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public StreamCdnConfig(String name, StreamCdnConfigArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:MediaServices/streamCdnConfig:StreamCdnConfig", name, args == null ? StreamCdnConfigArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:MediaServices/streamCdnConfig:StreamCdnConfig", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private StreamCdnConfig(String name, Output<String> id, @Nullable StreamCdnConfigState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:MediaServices/streamCdnConfig:StreamCdnConfig", name, state, makeResourceOptions(options, id));
+    }
+
+    private static StreamCdnConfigArgs makeArgs(StreamCdnConfigArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? StreamCdnConfigArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

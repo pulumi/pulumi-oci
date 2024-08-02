@@ -30,9 +30,11 @@ namespace Pulumi.Oci.StackMonitoring
         ///     {
         ///         BaselineableMetricId = testBaselineableMetric.Id,
         ///         CompartmentId = compartmentId,
+        ///         IsOutOfBox = baselineableMetricIsOutOfBox,
         ///         MetricNamespace = baselineableMetricMetricNamespace,
         ///         Name = baselineableMetricName,
         ///         ResourceGroup = baselineableMetricResourceGroup,
+        ///         ResourceType = baselineableMetricResourceType,
         ///     });
         /// 
         /// });
@@ -60,9 +62,11 @@ namespace Pulumi.Oci.StackMonitoring
         ///     {
         ///         BaselineableMetricId = testBaselineableMetric.Id,
         ///         CompartmentId = compartmentId,
+        ///         IsOutOfBox = baselineableMetricIsOutOfBox,
         ///         MetricNamespace = baselineableMetricMetricNamespace,
         ///         Name = baselineableMetricName,
         ///         ResourceGroup = baselineableMetricResourceGroup,
+        ///         ResourceType = baselineableMetricResourceType,
         ///     });
         /// 
         /// });
@@ -96,6 +100,12 @@ namespace Pulumi.Oci.StackMonitoring
         }
 
         /// <summary>
+        /// Is the baseline enabled metric defined out of box by Oracle or by end-user
+        /// </summary>
+        [Input("isOutOfBox")]
+        public bool? IsOutOfBox { get; set; }
+
+        /// <summary>
         /// A filter to return monitored resource types that has the matching namespace.
         /// </summary>
         [Input("metricNamespace")]
@@ -112,6 +122,12 @@ namespace Pulumi.Oci.StackMonitoring
         /// </summary>
         [Input("resourceGroup")]
         public string? ResourceGroup { get; set; }
+
+        /// <summary>
+        /// Resource Type
+        /// </summary>
+        [Input("resourceType")]
+        public string? ResourceType { get; set; }
 
         public GetBaselineableMetricsArgs()
         {
@@ -142,6 +158,12 @@ namespace Pulumi.Oci.StackMonitoring
         }
 
         /// <summary>
+        /// Is the baseline enabled metric defined out of box by Oracle or by end-user
+        /// </summary>
+        [Input("isOutOfBox")]
+        public Input<bool>? IsOutOfBox { get; set; }
+
+        /// <summary>
         /// A filter to return monitored resource types that has the matching namespace.
         /// </summary>
         [Input("metricNamespace")]
@@ -158,6 +180,12 @@ namespace Pulumi.Oci.StackMonitoring
         /// </summary>
         [Input("resourceGroup")]
         public Input<string>? ResourceGroup { get; set; }
+
+        /// <summary>
+        /// Resource Type
+        /// </summary>
+        [Input("resourceType")]
+        public Input<string>? ResourceType { get; set; }
 
         public GetBaselineableMetricsInvokeArgs()
         {
@@ -183,6 +211,10 @@ namespace Pulumi.Oci.StackMonitoring
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// Is the metric created out of box, default false
+        /// </summary>
+        public readonly bool? IsOutOfBox;
         public readonly string? MetricNamespace;
         /// <summary>
         /// name of the metric
@@ -192,6 +224,10 @@ namespace Pulumi.Oci.StackMonitoring
         /// Resource group of the metric
         /// </summary>
         public readonly string? ResourceGroup;
+        /// <summary>
+        /// Resource type of the metric
+        /// </summary>
+        public readonly string? ResourceType;
 
         [OutputConstructor]
         private GetBaselineableMetricsResult(
@@ -205,20 +241,26 @@ namespace Pulumi.Oci.StackMonitoring
 
             string id,
 
+            bool? isOutOfBox,
+
             string? metricNamespace,
 
             string? name,
 
-            string? resourceGroup)
+            string? resourceGroup,
+
+            string? resourceType)
         {
             BaselineableMetricId = baselineableMetricId;
             BaselineableMetricSummaryCollections = baselineableMetricSummaryCollections;
             CompartmentId = compartmentId;
             Filters = filters;
             Id = id;
+            IsOutOfBox = isOutOfBox;
             MetricNamespace = metricNamespace;
             Name = name;
             ResourceGroup = resourceGroup;
+            ResourceType = resourceType;
         }
     }
 }

@@ -15,6 +15,14 @@ namespace Pulumi.Oci.DataSafe.Outputs
     {
         public readonly string AlertId;
         /// <summary>
+        /// The key of the rule of alert policy that triggered alert.
+        /// </summary>
+        public readonly string AlertPolicyRuleKey;
+        /// <summary>
+        /// The display name of the rule of alert policy that triggered alert.
+        /// </summary>
+        public readonly string AlertPolicyRuleName;
+        /// <summary>
         /// Type of the alert. Indicates the Data Safe feature triggering the alert.
         /// </summary>
         public readonly string AlertType;
@@ -107,6 +115,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
         private GetAlertsAlertCollectionItemResult(
             string alertId,
 
+            string alertPolicyRuleKey,
+
+            string alertPolicyRuleName,
+
             string alertType,
 
             string comment,
@@ -152,6 +164,8 @@ namespace Pulumi.Oci.DataSafe.Outputs
             string timeUpdated)
         {
             AlertId = alertId;
+            AlertPolicyRuleKey = alertPolicyRuleKey;
+            AlertPolicyRuleName = alertPolicyRuleName;
             AlertType = alertType;
             Comment = comment;
             CompartmentId = compartmentId;

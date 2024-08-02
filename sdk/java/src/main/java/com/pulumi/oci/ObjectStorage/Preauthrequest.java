@@ -271,11 +271,18 @@ public class Preauthrequest extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public Preauthrequest(String name, PreauthrequestArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:ObjectStorage/preauthrequest:Preauthrequest", name, args == null ? PreauthrequestArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:ObjectStorage/preauthrequest:Preauthrequest", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private Preauthrequest(String name, Output<String> id, @Nullable PreauthrequestState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:ObjectStorage/preauthrequest:Preauthrequest", name, state, makeResourceOptions(options, id));
+    }
+
+    private static PreauthrequestArgs makeArgs(PreauthrequestArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? PreauthrequestArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

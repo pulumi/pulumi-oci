@@ -295,6 +295,21 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
+     * 
+     */
+    @Import(name="clusterPlacementGroupId")
+    private @Nullable Output<String> clusterPlacementGroupId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
+     * 
+     */
+    public Optional<Output<String>> clusterPlacementGroupId() {
+        return Optional.ofNullable(this.clusterPlacementGroupId);
+    }
+
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Database.
      * 
      */
@@ -2220,6 +2235,7 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         this.byolComputeCountLimit = $.byolComputeCountLimit;
         this.characterSet = $.characterSet;
         this.cloneType = $.cloneType;
+        this.clusterPlacementGroupId = $.clusterPlacementGroupId;
         this.compartmentId = $.compartmentId;
         this.computeCount = $.computeCount;
         this.computeModel = $.computeModel;
@@ -2743,6 +2759,27 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
          */
         public Builder cloneType(String cloneType) {
             return cloneType(Output.of(cloneType));
+        }
+
+        /**
+         * @param clusterPlacementGroupId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterPlacementGroupId(@Nullable Output<String> clusterPlacementGroupId) {
+            $.clusterPlacementGroupId = clusterPlacementGroupId;
+            return this;
+        }
+
+        /**
+         * @param clusterPlacementGroupId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            return clusterPlacementGroupId(Output.of(clusterPlacementGroupId));
         }
 
         /**

@@ -773,11 +773,18 @@ public class DomainsGroup extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public DomainsGroup(String name, DomainsGroupArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsGroup:DomainsGroup", name, args == null ? DomainsGroupArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Identity/domainsGroup:DomainsGroup", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DomainsGroup(String name, Output<String> id, @Nullable DomainsGroupState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Identity/domainsGroup:DomainsGroup", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DomainsGroupArgs makeArgs(DomainsGroupArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DomainsGroupArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

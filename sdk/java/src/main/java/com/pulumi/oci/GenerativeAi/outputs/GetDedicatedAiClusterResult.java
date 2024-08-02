@@ -22,6 +22,10 @@ public final class GetDedicatedAiClusterResult {
     private String description;
     private String displayName;
     private Map<String,Object> freeformTags;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated AI cluster.
+     * 
+     */
     private String id;
     private String lifecycleDetails;
     private String state;
@@ -54,6 +58,10 @@ public final class GetDedicatedAiClusterResult {
     public Map<String,Object> freeformTags() {
         return this.freeformTags;
     }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated AI cluster.
+     * 
+     */
     public String id() {
         return this.id;
     }

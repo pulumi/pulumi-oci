@@ -18,7 +18,7 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// </summary>
         public readonly int AvailabilityProxyMetricCollectionInterval;
         /// <summary>
-        /// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
+        /// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for the resource during the specified interval using the property 'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
         /// </summary>
         public readonly ImmutableArray<string> AvailabilityProxyMetrics;
         /// <summary>

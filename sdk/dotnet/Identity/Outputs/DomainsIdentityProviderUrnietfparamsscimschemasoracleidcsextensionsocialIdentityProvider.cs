@@ -78,6 +78,22 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? AuthzUrl;
         /// <summary>
+        /// (Updatable) Whether social auto redirect is enabled. The IDP policy should be configured with only one Social IDP, and without username/password selected.
+        /// 
+        /// **Added In:** 2310202314
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
+        /// </summary>
+        public readonly bool? AutoRedirectEnabled;
+        /// <summary>
         /// (Updatable) Whether the client credential is contained in payload
         /// 
         /// **Added In:** 20.1.3
@@ -174,6 +190,38 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? IdAttribute;
         /// <summary>
+        /// (Updatable) Lists the groups each social JIT-provisioned user is a member. Just-in-Time user-provisioning applies this static list when jitProvGroupStaticListEnabled:true.
+        /// 
+        /// **Added In:** 2310202314
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [value]
+        /// * idcsSearchable: false
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
+        /// </summary>
+        public readonly ImmutableArray<Outputs.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderJitProvAssignedGroup> JitProvAssignedGroups;
+        /// <summary>
+        /// (Updatable) Set to true to indicate Social JIT User Provisioning Groups should be assigned from a static list
+        /// 
+        /// **Added In:** 2310202314
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
+        /// </summary>
+        public readonly bool? JitProvGroupStaticListEnabled;
+        /// <summary>
         /// (Updatable) Social IDP User profile URL
         /// 
         /// **Added In:** 20.1.3
@@ -254,6 +302,22 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string ServiceProviderName;
         /// <summary>
+        /// (Updatable) Whether Social JIT Provisioning is enabled
+        /// 
+        /// **Added In:** 2307282043
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
+        /// </summary>
+        public readonly bool? SocialJitProvisioningEnabled;
+        /// <summary>
         /// (Updatable) Status
         /// 
         /// **Added In:** 20.1.3
@@ -280,6 +344,8 @@ namespace Pulumi.Oci.Identity.Outputs
 
             string? authzUrl,
 
+            bool? autoRedirectEnabled,
+
             bool? clientCredentialInPayload,
 
             int? clockSkewInSeconds,
@@ -292,6 +358,10 @@ namespace Pulumi.Oci.Identity.Outputs
 
             string? idAttribute,
 
+            ImmutableArray<Outputs.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderJitProvAssignedGroup> jitProvAssignedGroups,
+
+            bool? jitProvGroupStaticListEnabled,
+
             string? profileUrl,
 
             string? redirectUrl,
@@ -302,23 +372,29 @@ namespace Pulumi.Oci.Identity.Outputs
 
             string serviceProviderName,
 
+            bool? socialJitProvisioningEnabled,
+
             string? status)
         {
             AccessTokenUrl = accessTokenUrl;
             AccountLinkingEnabled = accountLinkingEnabled;
             AdminScopes = adminScopes;
             AuthzUrl = authzUrl;
+            AutoRedirectEnabled = autoRedirectEnabled;
             ClientCredentialInPayload = clientCredentialInPayload;
             ClockSkewInSeconds = clockSkewInSeconds;
             ConsumerKey = consumerKey;
             ConsumerSecret = consumerSecret;
             DiscoveryUrl = discoveryUrl;
             IdAttribute = idAttribute;
+            JitProvAssignedGroups = jitProvAssignedGroups;
+            JitProvGroupStaticListEnabled = jitProvGroupStaticListEnabled;
             ProfileUrl = profileUrl;
             RedirectUrl = redirectUrl;
             RegistrationEnabled = registrationEnabled;
             Scopes = scopes;
             ServiceProviderName = serviceProviderName;
+            SocialJitProvisioningEnabled = socialJitProvisioningEnabled;
             Status = status;
         }
     }

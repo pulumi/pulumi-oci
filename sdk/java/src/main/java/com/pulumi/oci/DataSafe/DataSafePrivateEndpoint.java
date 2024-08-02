@@ -300,11 +300,18 @@ public class DataSafePrivateEndpoint extends com.pulumi.resources.CustomResource
      * @param options A bag of options that control this resource's behavior.
      */
     public DataSafePrivateEndpoint(String name, DataSafePrivateEndpointArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/dataSafePrivateEndpoint:DataSafePrivateEndpoint", name, args == null ? DataSafePrivateEndpointArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DataSafe/dataSafePrivateEndpoint:DataSafePrivateEndpoint", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DataSafePrivateEndpoint(String name, Output<String> id, @Nullable DataSafePrivateEndpointState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DataSafe/dataSafePrivateEndpoint:DataSafePrivateEndpoint", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DataSafePrivateEndpointArgs makeArgs(DataSafePrivateEndpointArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DataSafePrivateEndpointArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

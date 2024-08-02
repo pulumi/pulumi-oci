@@ -230,11 +230,18 @@ public class GeneratedKey extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public GeneratedKey(String name, GeneratedKeyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Kms/generatedKey:GeneratedKey", name, args == null ? GeneratedKeyArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Kms/generatedKey:GeneratedKey", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private GeneratedKey(String name, Output<String> id, @Nullable GeneratedKeyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Kms/generatedKey:GeneratedKey", name, state, makeResourceOptions(options, id));
+    }
+
+    private static GeneratedKeyArgs makeArgs(GeneratedKeyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? GeneratedKeyArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

@@ -211,11 +211,18 @@ public class RepositoryRef extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public RepositoryRef(String name, RepositoryRefArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DevOps/repositoryRef:RepositoryRef", name, args == null ? RepositoryRefArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DevOps/repositoryRef:RepositoryRef", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private RepositoryRef(String name, Output<String> id, @Nullable RepositoryRefState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DevOps/repositoryRef:RepositoryRef", name, state, makeResourceOptions(options, id));
+    }
+
+    private static RepositoryRefArgs makeArgs(RepositoryRefArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? RepositoryRefArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

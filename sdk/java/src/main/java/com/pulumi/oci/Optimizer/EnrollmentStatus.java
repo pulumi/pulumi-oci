@@ -156,11 +156,18 @@ public class EnrollmentStatus extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public EnrollmentStatus(String name, EnrollmentStatusArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Optimizer/enrollmentStatus:EnrollmentStatus", name, args == null ? EnrollmentStatusArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Optimizer/enrollmentStatus:EnrollmentStatus", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private EnrollmentStatus(String name, Output<String> id, @Nullable EnrollmentStatusState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Optimizer/enrollmentStatus:EnrollmentStatus", name, state, makeResourceOptions(options, id));
+    }
+
+    private static EnrollmentStatusArgs makeArgs(EnrollmentStatusArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? EnrollmentStatusArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

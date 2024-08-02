@@ -822,11 +822,18 @@ public class DomainsCondition extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public DomainsCondition(String name, DomainsConditionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsCondition:DomainsCondition", name, args == null ? DomainsConditionArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Identity/domainsCondition:DomainsCondition", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DomainsCondition(String name, Output<String> id, @Nullable DomainsConditionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Identity/domainsCondition:DomainsCondition", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DomainsConditionArgs makeArgs(DomainsConditionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DomainsConditionArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

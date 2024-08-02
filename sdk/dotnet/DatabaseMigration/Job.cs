@@ -43,10 +43,6 @@ namespace Pulumi.Oci.DatabaseMigration
 
         /// <summary>
         /// The OCID of the job
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("jobId")]
         public Output<string> JobId { get; private set; } = null!;
@@ -64,6 +60,12 @@ namespace Pulumi.Oci.DatabaseMigration
         public Output<string> MigrationId { get; private set; } = null!;
 
         /// <summary>
+        /// A list of parameter file versions that can be viewed or edited for the current job.
+        /// </summary>
+        [Output("parameterFileVersions")]
+        public Output<ImmutableArray<Outputs.JobParameterFileVersion>> ParameterFileVersions { get; private set; } = null!;
+
+        /// <summary>
         /// Percent progress of job phase.
         /// </summary>
         [Output("progresses")]
@@ -74,6 +76,16 @@ namespace Pulumi.Oci.DatabaseMigration
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Suspend. Could be set to any integer value.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Output("suspendTrigger")]
+        public Output<int?> SuspendTrigger { get; private set; } = null!;
 
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -183,13 +195,19 @@ namespace Pulumi.Oci.DatabaseMigration
 
         /// <summary>
         /// The OCID of the job
+        /// </summary>
+        [Input("jobId", required: true)]
+        public Input<string> JobId { get; set; } = null!;
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Suspend. Could be set to any integer value.
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("jobId", required: true)]
-        public Input<string> JobId { get; set; } = null!;
+        [Input("suspendTrigger")]
+        public Input<int>? SuspendTrigger { get; set; }
 
         public JobArgs()
         {
@@ -231,10 +249,6 @@ namespace Pulumi.Oci.DatabaseMigration
 
         /// <summary>
         /// The OCID of the job
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("jobId")]
         public Input<string>? JobId { get; set; }
@@ -250,6 +264,18 @@ namespace Pulumi.Oci.DatabaseMigration
         /// </summary>
         [Input("migrationId")]
         public Input<string>? MigrationId { get; set; }
+
+        [Input("parameterFileVersions")]
+        private InputList<Inputs.JobParameterFileVersionGetArgs>? _parameterFileVersions;
+
+        /// <summary>
+        /// A list of parameter file versions that can be viewed or edited for the current job.
+        /// </summary>
+        public InputList<Inputs.JobParameterFileVersionGetArgs> ParameterFileVersions
+        {
+            get => _parameterFileVersions ?? (_parameterFileVersions = new InputList<Inputs.JobParameterFileVersionGetArgs>());
+            set => _parameterFileVersions = value;
+        }
 
         [Input("progresses")]
         private InputList<Inputs.JobProgressGetArgs>? _progresses;
@@ -268,6 +294,16 @@ namespace Pulumi.Oci.DatabaseMigration
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Suspend. Could be set to any integer value.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("suspendTrigger")]
+        public Input<int>? SuspendTrigger { get; set; }
 
         [Input("systemTags")]
         private InputMap<object>? _systemTags;

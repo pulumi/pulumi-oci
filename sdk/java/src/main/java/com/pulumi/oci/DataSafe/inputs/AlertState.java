@@ -34,6 +34,36 @@ public final class AlertState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The key of the rule of alert policy that triggered alert.
+     * 
+     */
+    @Import(name="alertPolicyRuleKey")
+    private @Nullable Output<String> alertPolicyRuleKey;
+
+    /**
+     * @return The key of the rule of alert policy that triggered alert.
+     * 
+     */
+    public Optional<Output<String>> alertPolicyRuleKey() {
+        return Optional.ofNullable(this.alertPolicyRuleKey);
+    }
+
+    /**
+     * The display name of the rule of alert policy that triggered alert.
+     * 
+     */
+    @Import(name="alertPolicyRuleName")
+    private @Nullable Output<String> alertPolicyRuleName;
+
+    /**
+     * @return The display name of the rule of alert policy that triggered alert.
+     * 
+     */
+    public Optional<Output<String>> alertPolicyRuleName() {
+        return Optional.ofNullable(this.alertPolicyRuleName);
+    }
+
+    /**
      * Type of the alert. Indicates the Data Safe feature triggering the alert.
      * 
      */
@@ -358,6 +388,8 @@ public final class AlertState extends com.pulumi.resources.ResourceArgs {
 
     private AlertState(AlertState $) {
         this.alertId = $.alertId;
+        this.alertPolicyRuleKey = $.alertPolicyRuleKey;
+        this.alertPolicyRuleName = $.alertPolicyRuleName;
         this.alertType = $.alertType;
         this.comment = $.comment;
         this.compartmentId = $.compartmentId;
@@ -418,6 +450,48 @@ public final class AlertState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder alertId(String alertId) {
             return alertId(Output.of(alertId));
+        }
+
+        /**
+         * @param alertPolicyRuleKey The key of the rule of alert policy that triggered alert.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder alertPolicyRuleKey(@Nullable Output<String> alertPolicyRuleKey) {
+            $.alertPolicyRuleKey = alertPolicyRuleKey;
+            return this;
+        }
+
+        /**
+         * @param alertPolicyRuleKey The key of the rule of alert policy that triggered alert.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder alertPolicyRuleKey(String alertPolicyRuleKey) {
+            return alertPolicyRuleKey(Output.of(alertPolicyRuleKey));
+        }
+
+        /**
+         * @param alertPolicyRuleName The display name of the rule of alert policy that triggered alert.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder alertPolicyRuleName(@Nullable Output<String> alertPolicyRuleName) {
+            $.alertPolicyRuleName = alertPolicyRuleName;
+            return this;
+        }
+
+        /**
+         * @param alertPolicyRuleName The display name of the rule of alert policy that triggered alert.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder alertPolicyRuleName(String alertPolicyRuleName) {
+            return alertPolicyRuleName(Output.of(alertPolicyRuleName));
         }
 
         /**

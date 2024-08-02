@@ -149,11 +149,18 @@ public class LogAnalyticsResourceCategoriesManagement extends com.pulumi.resourc
      * @param options A bag of options that control this resource's behavior.
      */
     public LogAnalyticsResourceCategoriesManagement(String name, LogAnalyticsResourceCategoriesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:LogAnalytics/logAnalyticsResourceCategoriesManagement:LogAnalyticsResourceCategoriesManagement", name, args == null ? LogAnalyticsResourceCategoriesManagementArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:LogAnalytics/logAnalyticsResourceCategoriesManagement:LogAnalyticsResourceCategoriesManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private LogAnalyticsResourceCategoriesManagement(String name, Output<String> id, @Nullable LogAnalyticsResourceCategoriesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:LogAnalytics/logAnalyticsResourceCategoriesManagement:LogAnalyticsResourceCategoriesManagement", name, state, makeResourceOptions(options, id));
+    }
+
+    private static LogAnalyticsResourceCategoriesManagementArgs makeArgs(LogAnalyticsResourceCategoriesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? LogAnalyticsResourceCategoriesManagementArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

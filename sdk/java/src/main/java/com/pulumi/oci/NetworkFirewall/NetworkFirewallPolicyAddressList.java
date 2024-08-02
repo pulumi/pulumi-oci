@@ -182,11 +182,18 @@ public class NetworkFirewallPolicyAddressList extends com.pulumi.resources.Custo
      * @param options A bag of options that control this resource's behavior.
      */
     public NetworkFirewallPolicyAddressList(String name, NetworkFirewallPolicyAddressListArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:NetworkFirewall/networkFirewallPolicyAddressList:NetworkFirewallPolicyAddressList", name, args == null ? NetworkFirewallPolicyAddressListArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:NetworkFirewall/networkFirewallPolicyAddressList:NetworkFirewallPolicyAddressList", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private NetworkFirewallPolicyAddressList(String name, Output<String> id, @Nullable NetworkFirewallPolicyAddressListState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:NetworkFirewall/networkFirewallPolicyAddressList:NetworkFirewallPolicyAddressList", name, state, makeResourceOptions(options, id));
+    }
+
+    private static NetworkFirewallPolicyAddressListArgs makeArgs(NetworkFirewallPolicyAddressListArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? NetworkFirewallPolicyAddressListArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

@@ -73,8 +73,9 @@ type GetDedicatedAiClustersResult struct {
 	DedicatedAiClusterCollections []GetDedicatedAiClustersDedicatedAiClusterCollection `pulumi:"dedicatedAiClusterCollections"`
 	DisplayName                   *string                                              `pulumi:"displayName"`
 	Filters                       []GetDedicatedAiClustersFilter                       `pulumi:"filters"`
-	Id                            *string                                              `pulumi:"id"`
-	State                         *string                                              `pulumi:"state"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated AI cluster.
+	Id    *string `pulumi:"id"`
+	State *string `pulumi:"state"`
 }
 
 func GetDedicatedAiClustersOutput(ctx *pulumi.Context, args GetDedicatedAiClustersOutputArgs, opts ...pulumi.InvokeOption) GetDedicatedAiClustersResultOutput {
@@ -141,6 +142,7 @@ func (o GetDedicatedAiClustersResultOutput) Filters() GetDedicatedAiClustersFilt
 	return o.ApplyT(func(v GetDedicatedAiClustersResult) []GetDedicatedAiClustersFilter { return v.Filters }).(GetDedicatedAiClustersFilterArrayOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated AI cluster.
 func (o GetDedicatedAiClustersResultOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDedicatedAiClustersResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }

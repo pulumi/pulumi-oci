@@ -318,11 +318,18 @@ public class WorkspaceFolder extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public WorkspaceFolder(String name, WorkspaceFolderArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataIntegration/workspaceFolder:WorkspaceFolder", name, args == null ? WorkspaceFolderArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DataIntegration/workspaceFolder:WorkspaceFolder", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private WorkspaceFolder(String name, Output<String> id, @Nullable WorkspaceFolderState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DataIntegration/workspaceFolder:WorkspaceFolder", name, state, makeResourceOptions(options, id));
+    }
+
+    private static WorkspaceFolderArgs makeArgs(WorkspaceFolderArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? WorkspaceFolderArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

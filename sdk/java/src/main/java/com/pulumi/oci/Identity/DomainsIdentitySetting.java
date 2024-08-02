@@ -881,11 +881,18 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * @param options A bag of options that control this resource's behavior.
      */
     public DomainsIdentitySetting(String name, DomainsIdentitySettingArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsIdentitySetting:DomainsIdentitySetting", name, args == null ? DomainsIdentitySettingArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Identity/domainsIdentitySetting:DomainsIdentitySetting", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DomainsIdentitySetting(String name, Output<String> id, @Nullable DomainsIdentitySettingState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Identity/domainsIdentitySetting:DomainsIdentitySetting", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DomainsIdentitySettingArgs makeArgs(DomainsIdentitySettingArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DomainsIdentitySettingArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

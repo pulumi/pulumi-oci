@@ -388,11 +388,18 @@ public class NetworkLoadBalancer extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public NetworkLoadBalancer(String name, NetworkLoadBalancerArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:NetworkLoadBalancer/networkLoadBalancer:NetworkLoadBalancer", name, args == null ? NetworkLoadBalancerArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:NetworkLoadBalancer/networkLoadBalancer:NetworkLoadBalancer", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private NetworkLoadBalancer(String name, Output<String> id, @Nullable NetworkLoadBalancerState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:NetworkLoadBalancer/networkLoadBalancer:NetworkLoadBalancer", name, state, makeResourceOptions(options, id));
+    }
+
+    private static NetworkLoadBalancerArgs makeArgs(NetworkLoadBalancerArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? NetworkLoadBalancerArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

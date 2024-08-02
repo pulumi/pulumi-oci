@@ -43,6 +43,11 @@ public final class GetReportsReportCollectionItem {
      */
     private String id;
     /**
+     * @return Details about the current state of the report in Data Safe.
+     * 
+     */
+    private String lifecycleDetails;
+    /**
      * @return Specifies the format of report to be .xls or .pdf or .json
      * 
      */
@@ -118,6 +123,13 @@ public final class GetReportsReportCollectionItem {
         return this.id;
     }
     /**
+     * @return Details about the current state of the report in Data Safe.
+     * 
+     */
+    public String lifecycleDetails() {
+        return this.lifecycleDetails;
+    }
+    /**
      * @return Specifies the format of report to be .xls or .pdf or .json
      * 
      */
@@ -178,6 +190,7 @@ public final class GetReportsReportCollectionItem {
         private String displayName;
         private Map<String,Object> freeformTags;
         private String id;
+        private String lifecycleDetails;
         private String mimeType;
         private String reportDefinitionId;
         private String reportId;
@@ -194,6 +207,7 @@ public final class GetReportsReportCollectionItem {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.mimeType = defaults.mimeType;
     	      this.reportDefinitionId = defaults.reportDefinitionId;
     	      this.reportId = defaults.reportId;
@@ -249,6 +263,14 @@ public final class GetReportsReportCollectionItem {
               throw new MissingRequiredPropertyException("GetReportsReportCollectionItem", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetReportsReportCollectionItem", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
@@ -315,6 +337,7 @@ public final class GetReportsReportCollectionItem {
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.mimeType = mimeType;
             _resultValue.reportDefinitionId = reportDefinitionId;
             _resultValue.reportId = reportId;

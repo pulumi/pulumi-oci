@@ -44,6 +44,14 @@ export interface GetAlertArgs {
 export interface GetAlertResult {
     readonly alertId: string;
     /**
+     * The key of the rule of alert policy that triggered alert.
+     */
+    readonly alertPolicyRuleKey: string;
+    /**
+     * The display name of the rule of alert policy that triggered alert.
+     */
+    readonly alertPolicyRuleName: string;
+    /**
      * Type of the alert. Indicates the Data Safe feature triggering the alert.
      */
     readonly alertType: string;

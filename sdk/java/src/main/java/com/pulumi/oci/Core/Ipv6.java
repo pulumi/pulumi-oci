@@ -240,11 +240,18 @@ public class Ipv6 extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public Ipv6(String name, Ipv6Args args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/ipv6:Ipv6", name, args == null ? Ipv6Args.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Core/ipv6:Ipv6", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private Ipv6(String name, Output<String> id, @Nullable Ipv6State state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Core/ipv6:Ipv6", name, state, makeResourceOptions(options, id));
+    }
+
+    private static Ipv6Args makeArgs(Ipv6Args args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? Ipv6Args.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

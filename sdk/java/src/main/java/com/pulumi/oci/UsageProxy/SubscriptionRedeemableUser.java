@@ -159,11 +159,18 @@ public class SubscriptionRedeemableUser extends com.pulumi.resources.CustomResou
      * @param options A bag of options that control this resource's behavior.
      */
     public SubscriptionRedeemableUser(String name, SubscriptionRedeemableUserArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:UsageProxy/subscriptionRedeemableUser:SubscriptionRedeemableUser", name, args == null ? SubscriptionRedeemableUserArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:UsageProxy/subscriptionRedeemableUser:SubscriptionRedeemableUser", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private SubscriptionRedeemableUser(String name, Output<String> id, @Nullable SubscriptionRedeemableUserState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:UsageProxy/subscriptionRedeemableUser:SubscriptionRedeemableUser", name, state, makeResourceOptions(options, id));
+    }
+
+    private static SubscriptionRedeemableUserArgs makeArgs(SubscriptionRedeemableUserArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? SubscriptionRedeemableUserArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

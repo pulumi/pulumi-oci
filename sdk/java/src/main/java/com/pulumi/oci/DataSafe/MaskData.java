@@ -50,11 +50,18 @@ public class MaskData extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public MaskData(String name, MaskDataArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/maskData:MaskData", name, args == null ? MaskDataArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DataSafe/maskData:MaskData", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private MaskData(String name, Output<String> id, @Nullable MaskDataState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DataSafe/maskData:MaskData", name, state, makeResourceOptions(options, id));
+    }
+
+    private static MaskDataArgs makeArgs(MaskDataArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? MaskDataArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

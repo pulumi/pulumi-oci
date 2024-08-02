@@ -130,11 +130,18 @@ public class NamespaceIngestTimeRulesManagement extends com.pulumi.resources.Cus
      * @param options A bag of options that control this resource's behavior.
      */
     public NamespaceIngestTimeRulesManagement(String name, NamespaceIngestTimeRulesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:LogAnalytics/namespaceIngestTimeRulesManagement:NamespaceIngestTimeRulesManagement", name, args == null ? NamespaceIngestTimeRulesManagementArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:LogAnalytics/namespaceIngestTimeRulesManagement:NamespaceIngestTimeRulesManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private NamespaceIngestTimeRulesManagement(String name, Output<String> id, @Nullable NamespaceIngestTimeRulesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:LogAnalytics/namespaceIngestTimeRulesManagement:NamespaceIngestTimeRulesManagement", name, state, makeResourceOptions(options, id));
+    }
+
+    private static NamespaceIngestTimeRulesManagementArgs makeArgs(NamespaceIngestTimeRulesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? NamespaceIngestTimeRulesManagementArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

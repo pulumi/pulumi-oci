@@ -8,6 +8,7 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetAlertPolicyResult',
@@ -21,10 +22,13 @@ class GetAlertPolicyResult:
     """
     A collection of values returned by getAlertPolicy.
     """
-    def __init__(__self__, alert_policy_id=None, alert_policy_type=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, is_user_defined=None, severity=None, state=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, alert_policy_id=None, alert_policy_rule_details=None, alert_policy_type=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, is_user_defined=None, lifecycle_details=None, severity=None, state=None, system_tags=None, time_created=None, time_updated=None):
         if alert_policy_id and not isinstance(alert_policy_id, str):
             raise TypeError("Expected argument 'alert_policy_id' to be a str")
         pulumi.set(__self__, "alert_policy_id", alert_policy_id)
+        if alert_policy_rule_details and not isinstance(alert_policy_rule_details, list):
+            raise TypeError("Expected argument 'alert_policy_rule_details' to be a list")
+        pulumi.set(__self__, "alert_policy_rule_details", alert_policy_rule_details)
         if alert_policy_type and not isinstance(alert_policy_type, str):
             raise TypeError("Expected argument 'alert_policy_type' to be a str")
         pulumi.set(__self__, "alert_policy_type", alert_policy_type)
@@ -49,6 +53,9 @@ class GetAlertPolicyResult:
         if is_user_defined and not isinstance(is_user_defined, bool):
             raise TypeError("Expected argument 'is_user_defined' to be a bool")
         pulumi.set(__self__, "is_user_defined", is_user_defined)
+        if lifecycle_details and not isinstance(lifecycle_details, str):
+            raise TypeError("Expected argument 'lifecycle_details' to be a str")
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if severity and not isinstance(severity, str):
             raise TypeError("Expected argument 'severity' to be a str")
         pulumi.set(__self__, "severity", severity)
@@ -69,6 +76,11 @@ class GetAlertPolicyResult:
     @pulumi.getter(name="alertPolicyId")
     def alert_policy_id(self) -> str:
         return pulumi.get(self, "alert_policy_id")
+
+    @property
+    @pulumi.getter(name="alertPolicyRuleDetails")
+    def alert_policy_rule_details(self) -> Sequence['outputs.GetAlertPolicyAlertPolicyRuleDetailResult']:
+        return pulumi.get(self, "alert_policy_rule_details")
 
     @property
     @pulumi.getter(name="alertPolicyType")
@@ -122,7 +134,7 @@ class GetAlertPolicyResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        The provider-assigned unique ID for this managed resource.
+        The OCID of the alert policy.
         """
         return pulumi.get(self, "id")
 
@@ -133,6 +145,14 @@ class GetAlertPolicyResult:
         Indicates if the alert policy is user-defined (true) or pre-defined (false).
         """
         return pulumi.get(self, "is_user_defined")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Details about the current state of the alert policy.
+        """
+        return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
@@ -182,6 +202,7 @@ class AwaitableGetAlertPolicyResult(GetAlertPolicyResult):
             yield self
         return GetAlertPolicyResult(
             alert_policy_id=self.alert_policy_id,
+            alert_policy_rule_details=self.alert_policy_rule_details,
             alert_policy_type=self.alert_policy_type,
             compartment_id=self.compartment_id,
             defined_tags=self.defined_tags,
@@ -190,6 +211,7 @@ class AwaitableGetAlertPolicyResult(GetAlertPolicyResult):
             freeform_tags=self.freeform_tags,
             id=self.id,
             is_user_defined=self.is_user_defined,
+            lifecycle_details=self.lifecycle_details,
             severity=self.severity,
             state=self.state,
             system_tags=self.system_tags,
@@ -223,6 +245,7 @@ def get_alert_policy(alert_policy_id: Optional[str] = None,
 
     return AwaitableGetAlertPolicyResult(
         alert_policy_id=pulumi.get(__ret__, 'alert_policy_id'),
+        alert_policy_rule_details=pulumi.get(__ret__, 'alert_policy_rule_details'),
         alert_policy_type=pulumi.get(__ret__, 'alert_policy_type'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
@@ -231,6 +254,7 @@ def get_alert_policy(alert_policy_id: Optional[str] = None,
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         is_user_defined=pulumi.get(__ret__, 'is_user_defined'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         severity=pulumi.get(__ret__, 'severity'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),

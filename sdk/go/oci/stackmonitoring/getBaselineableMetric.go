@@ -81,6 +81,8 @@ type LookupBaselineableMetricResult struct {
 	Namespace string `pulumi:"namespace"`
 	// Resource group of the metric
 	ResourceGroup string `pulumi:"resourceGroup"`
+	// Resource type of the metric
+	ResourceType string `pulumi:"resourceType"`
 	// The current lifecycle state of the metric extension
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -188,6 +190,11 @@ func (o LookupBaselineableMetricResultOutput) Namespace() pulumi.StringOutput {
 // Resource group of the metric
 func (o LookupBaselineableMetricResultOutput) ResourceGroup() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBaselineableMetricResult) string { return v.ResourceGroup }).(pulumi.StringOutput)
+}
+
+// Resource type of the metric
+func (o LookupBaselineableMetricResultOutput) ResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupBaselineableMetricResult) string { return v.ResourceType }).(pulumi.StringOutput)
 }
 
 // The current lifecycle state of the metric extension

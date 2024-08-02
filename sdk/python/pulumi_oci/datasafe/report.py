@@ -98,6 +98,7 @@ class _ReportState:
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 lifecycle_details: Optional[pulumi.Input[str]] = None,
                  mime_type: Optional[pulumi.Input[str]] = None,
                  report_definition_id: Optional[pulumi.Input[str]] = None,
                  report_id: Optional[pulumi.Input[str]] = None,
@@ -112,6 +113,7 @@ class _ReportState:
         :param pulumi.Input[str] description: Specifies a description of the report.
         :param pulumi.Input[str] display_name: Name of the report.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[str] lifecycle_details: Details about the current state of the report in Data Safe.
         :param pulumi.Input[str] mime_type: Specifies the format of report to be .xls or .pdf or .json
         :param pulumi.Input[str] report_definition_id: The OCID of the report definition.
         :param pulumi.Input[str] report_id: Unique report identifier
@@ -134,6 +136,8 @@ class _ReportState:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if mime_type is not None:
             pulumi.set(__self__, "mime_type", mime_type)
         if report_definition_id is not None:
@@ -208,6 +212,18 @@ class _ReportState:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
+        """
+        Details about the current state of the report in Data Safe.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "lifecycle_details", value)
 
     @property
     @pulumi.getter(name="mimeType")
@@ -387,6 +403,7 @@ class Report(pulumi.CustomResource):
             __props__.__dict__["report_id"] = report_id
             __props__.__dict__["description"] = None
             __props__.__dict__["display_name"] = None
+            __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["mime_type"] = None
             __props__.__dict__["report_definition_id"] = None
             __props__.__dict__["state"] = None
@@ -408,6 +425,7 @@ class Report(pulumi.CustomResource):
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            lifecycle_details: Optional[pulumi.Input[str]] = None,
             mime_type: Optional[pulumi.Input[str]] = None,
             report_definition_id: Optional[pulumi.Input[str]] = None,
             report_id: Optional[pulumi.Input[str]] = None,
@@ -427,6 +445,7 @@ class Report(pulumi.CustomResource):
         :param pulumi.Input[str] description: Specifies a description of the report.
         :param pulumi.Input[str] display_name: Name of the report.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[str] lifecycle_details: Details about the current state of the report in Data Safe.
         :param pulumi.Input[str] mime_type: Specifies the format of report to be .xls or .pdf or .json
         :param pulumi.Input[str] report_definition_id: The OCID of the report definition.
         :param pulumi.Input[str] report_id: Unique report identifier
@@ -448,6 +467,7 @@ class Report(pulumi.CustomResource):
         __props__.__dict__["description"] = description
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["mime_type"] = mime_type
         __props__.__dict__["report_definition_id"] = report_definition_id
         __props__.__dict__["report_id"] = report_id
@@ -496,6 +516,14 @@ class Report(pulumi.CustomResource):
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> pulumi.Output[str]:
+        """
+        Details about the current state of the report in Data Safe.
+        """
+        return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="mimeType")

@@ -98,6 +98,7 @@ namespace Pulumi.Oci.DataSafe
     public sealed class GetAlertPolicyResult
     {
         public readonly string AlertPolicyId;
+        public readonly ImmutableArray<Outputs.GetAlertPolicyAlertPolicyRuleDetailResult> AlertPolicyRuleDetails;
         /// <summary>
         /// Indicates the Data Safe feature to which the alert policy belongs.
         /// </summary>
@@ -123,13 +124,17 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
+        /// The OCID of the alert policy.
         /// </summary>
         public readonly string Id;
         /// <summary>
         /// Indicates if the alert policy is user-defined (true) or pre-defined (false).
         /// </summary>
         public readonly bool IsUserDefined;
+        /// <summary>
+        /// Details about the current state of the alert policy.
+        /// </summary>
+        public readonly string LifecycleDetails;
         /// <summary>
         /// Severity level of the alert raised by this policy.
         /// </summary>
@@ -155,6 +160,8 @@ namespace Pulumi.Oci.DataSafe
         private GetAlertPolicyResult(
             string alertPolicyId,
 
+            ImmutableArray<Outputs.GetAlertPolicyAlertPolicyRuleDetailResult> alertPolicyRuleDetails,
+
             string alertPolicyType,
 
             string compartmentId,
@@ -171,6 +178,8 @@ namespace Pulumi.Oci.DataSafe
 
             bool isUserDefined,
 
+            string lifecycleDetails,
+
             string severity,
 
             string state,
@@ -182,6 +191,7 @@ namespace Pulumi.Oci.DataSafe
             string timeUpdated)
         {
             AlertPolicyId = alertPolicyId;
+            AlertPolicyRuleDetails = alertPolicyRuleDetails;
             AlertPolicyType = alertPolicyType;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
@@ -190,6 +200,7 @@ namespace Pulumi.Oci.DataSafe
             FreeformTags = freeformTags;
             Id = id;
             IsUserDefined = isUserDefined;
+            LifecycleDetails = lifecycleDetails;
             Severity = severity;
             State = state;
             SystemTags = systemTags;

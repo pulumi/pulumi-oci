@@ -259,11 +259,18 @@ public class CrossConnectGroup extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public CrossConnectGroup(String name, CrossConnectGroupArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/crossConnectGroup:CrossConnectGroup", name, args == null ? CrossConnectGroupArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Core/crossConnectGroup:CrossConnectGroup", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private CrossConnectGroup(String name, Output<String> id, @Nullable CrossConnectGroupState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Core/crossConnectGroup:CrossConnectGroup", name, state, makeResourceOptions(options, id));
+    }
+
+    private static CrossConnectGroupArgs makeArgs(CrossConnectGroupArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? CrossConnectGroupArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

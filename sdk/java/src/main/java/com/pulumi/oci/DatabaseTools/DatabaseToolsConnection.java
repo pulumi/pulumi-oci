@@ -354,11 +354,18 @@ public class DatabaseToolsConnection extends com.pulumi.resources.CustomResource
      * @param options A bag of options that control this resource's behavior.
      */
     public DatabaseToolsConnection(String name, DatabaseToolsConnectionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseTools/databaseToolsConnection:DatabaseToolsConnection", name, args == null ? DatabaseToolsConnectionArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DatabaseTools/databaseToolsConnection:DatabaseToolsConnection", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DatabaseToolsConnection(String name, Output<String> id, @Nullable DatabaseToolsConnectionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DatabaseTools/databaseToolsConnection:DatabaseToolsConnection", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DatabaseToolsConnectionArgs makeArgs(DatabaseToolsConnectionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DatabaseToolsConnectionArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

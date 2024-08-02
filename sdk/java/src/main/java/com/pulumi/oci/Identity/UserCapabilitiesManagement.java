@@ -185,11 +185,18 @@ public class UserCapabilitiesManagement extends com.pulumi.resources.CustomResou
      * @param options A bag of options that control this resource's behavior.
      */
     public UserCapabilitiesManagement(String name, UserCapabilitiesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/userCapabilitiesManagement:UserCapabilitiesManagement", name, args == null ? UserCapabilitiesManagementArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Identity/userCapabilitiesManagement:UserCapabilitiesManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private UserCapabilitiesManagement(String name, Output<String> id, @Nullable UserCapabilitiesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Identity/userCapabilitiesManagement:UserCapabilitiesManagement", name, state, makeResourceOptions(options, id));
+    }
+
+    private static UserCapabilitiesManagementArgs makeArgs(UserCapabilitiesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? UserCapabilitiesManagementArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

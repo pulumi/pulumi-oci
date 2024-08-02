@@ -284,11 +284,18 @@ public class ExternalAsmInstance extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public ExternalAsmInstance(String name, ExternalAsmInstanceArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseManagement/externalAsmInstance:ExternalAsmInstance", name, args == null ? ExternalAsmInstanceArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DatabaseManagement/externalAsmInstance:ExternalAsmInstance", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ExternalAsmInstance(String name, Output<String> id, @Nullable ExternalAsmInstanceState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DatabaseManagement/externalAsmInstance:ExternalAsmInstance", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ExternalAsmInstanceArgs makeArgs(ExternalAsmInstanceArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ExternalAsmInstanceArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

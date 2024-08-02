@@ -315,11 +315,18 @@ public class OneoffPatch extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public OneoffPatch(String name, OneoffPatchArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/oneoffPatch:OneoffPatch", name, args == null ? OneoffPatchArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Database/oneoffPatch:OneoffPatch", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private OneoffPatch(String name, Output<String> id, @Nullable OneoffPatchState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Database/oneoffPatch:OneoffPatch", name, state, makeResourceOptions(options, id));
+    }
+
+    private static OneoffPatchArgs makeArgs(OneoffPatchArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? OneoffPatchArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

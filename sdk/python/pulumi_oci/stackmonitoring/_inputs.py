@@ -1590,7 +1590,7 @@ class MonitoredResourceTaskTaskDetailsArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[int] availability_proxy_metric_collection_interval: Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property 'availabilityProxyMetrics'.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] availability_proxy_metrics: List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] availability_proxy_metrics: List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for the resource during the specified interval using the property 'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
         :param pulumi.Input[str] console_path_prefix: The console path prefix to use for providing service home url page navigation.  For example if the prefix provided is 'security/bastion/bastions', the URL used for navigation will be https://<cloudhostname>/security/bastion/bastions/<resourceOcid>. If not provided, service home page link  will not be shown in the stack monitoring home page.
         :param pulumi.Input[str] external_id_mapping: The external resource identifier property in the metric dimensions.  Resources imported will be using this property value for external id.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] lifecycle_status_mappings_for_up_statuses: Lifecycle states of the external resource which reflects the status of the resource being up.
@@ -1688,7 +1688,7 @@ class MonitoredResourceTaskTaskDetailsArgs:
     @pulumi.getter(name="availabilityProxyMetrics")
     def availability_proxy_metrics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
+        List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for the resource during the specified interval using the property 'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
         """
         return pulumi.get(self, "availability_proxy_metrics")
 

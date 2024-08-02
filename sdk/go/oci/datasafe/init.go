@@ -25,6 +25,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AddSdmColumns{}
 	case "oci:DataSafe/alert:Alert":
 		r = &Alert{}
+	case "oci:DataSafe/alertPolicy:AlertPolicy":
+		r = &AlertPolicy{}
+	case "oci:DataSafe/alertPolicyRule:AlertPolicyRule":
+		r = &AlertPolicyRule{}
 	case "oci:DataSafe/auditArchiveRetrieval:AuditArchiveRetrieval":
 		r = &AuditArchiveRetrieval{}
 	case "oci:DataSafe/auditPolicy:AuditPolicy":
@@ -65,10 +69,6 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &MaskingPoliciesMaskingColumn{}
 	case "oci:DataSafe/maskingPolicy:MaskingPolicy":
 		r = &MaskingPolicy{}
-	case "oci:DataSafe/maskingPolicyHealthReportManagement:MaskingPolicyHealthReportManagement":
-		r = &MaskingPolicyHealthReportManagement{}
-	case "oci:DataSafe/maskingReportManagement:MaskingReportManagement":
-		r = &MaskingReportManagement{}
 	case "oci:DataSafe/onPremConnector:OnPremConnector":
 		r = &OnPremConnector{}
 	case "oci:DataSafe/report:Report":
@@ -97,12 +97,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &SensitiveType{}
 	case "oci:DataSafe/setSecurityAssessmentBaseline:SetSecurityAssessmentBaseline":
 		r = &SetSecurityAssessmentBaseline{}
-	case "oci:DataSafe/setSecurityAssessmentBaselineManagement:SetSecurityAssessmentBaselineManagement":
-		r = &SetSecurityAssessmentBaselineManagement{}
 	case "oci:DataSafe/setUserAssessmentBaseline:SetUserAssessmentBaseline":
 		r = &SetUserAssessmentBaseline{}
-	case "oci:DataSafe/setUserAssessmentBaselineManagement:SetUserAssessmentBaselineManagement":
-		r = &SetUserAssessmentBaselineManagement{}
 	case "oci:DataSafe/sqlCollection:SqlCollection":
 		r = &SqlCollection{}
 	case "oci:DataSafe/sqlFirewallPolicy:SqlFirewallPolicy":
@@ -142,6 +138,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"DataSafe/alert",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataSafe/alertPolicy",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataSafe/alertPolicyRule",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -246,16 +252,6 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
-		"DataSafe/maskingPolicyHealthReportManagement",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"oci",
-		"DataSafe/maskingReportManagement",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"oci",
 		"DataSafe/onPremConnector",
 		&module{version},
 	)
@@ -326,17 +322,7 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
-		"DataSafe/setSecurityAssessmentBaselineManagement",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"oci",
 		"DataSafe/setUserAssessmentBaseline",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"oci",
-		"DataSafe/setUserAssessmentBaselineManagement",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

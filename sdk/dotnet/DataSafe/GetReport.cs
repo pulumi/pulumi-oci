@@ -122,6 +122,10 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// Details about the current state of the report in Data Safe.
+        /// </summary>
+        public readonly string LifecycleDetails;
+        /// <summary>
         /// Specifies the format of report to be .xls or .pdf or .json
         /// </summary>
         public readonly string MimeType;
@@ -161,6 +165,8 @@ namespace Pulumi.Oci.DataSafe
 
             string id,
 
+            string lifecycleDetails,
+
             string mimeType,
 
             string reportDefinitionId,
@@ -181,6 +187,7 @@ namespace Pulumi.Oci.DataSafe
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            LifecycleDetails = lifecycleDetails;
             MimeType = mimeType;
             ReportDefinitionId = reportDefinitionId;
             ReportId = reportId;

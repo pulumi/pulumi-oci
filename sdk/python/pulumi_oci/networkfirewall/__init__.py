@@ -26,6 +26,8 @@ from .get_network_firewall_policy_service import *
 from .get_network_firewall_policy_service_list import *
 from .get_network_firewall_policy_service_lists import *
 from .get_network_firewall_policy_services import *
+from .get_network_firewall_policy_tunnel_inspection_rule import *
+from .get_network_firewall_policy_tunnel_inspection_rules import *
 from .get_network_firewall_policy_url_list import *
 from .get_network_firewall_policy_url_lists import *
 from .get_network_firewalls import *
@@ -40,6 +42,7 @@ from .network_firewall_policy_mapped_secret import *
 from .network_firewall_policy_security_rule import *
 from .network_firewall_policy_service import *
 from .network_firewall_policy_service_list import *
+from .network_firewall_policy_tunnel_inspection_rule import *
 from .network_firewall_policy_url_list import *
 from ._inputs import *
 from . import outputs

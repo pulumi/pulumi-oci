@@ -96,11 +96,18 @@ public class DefaultDhcpOptions extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public DefaultDhcpOptions(String name, DefaultDhcpOptionsArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/defaultDhcpOptions:DefaultDhcpOptions", name, args == null ? DefaultDhcpOptionsArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Core/defaultDhcpOptions:DefaultDhcpOptions", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DefaultDhcpOptions(String name, Output<String> id, @Nullable DefaultDhcpOptionsState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Core/defaultDhcpOptions:DefaultDhcpOptions", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DefaultDhcpOptionsArgs makeArgs(DefaultDhcpOptionsArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DefaultDhcpOptionsArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

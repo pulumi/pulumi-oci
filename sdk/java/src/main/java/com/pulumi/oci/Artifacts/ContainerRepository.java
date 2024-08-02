@@ -340,11 +340,18 @@ public class ContainerRepository extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public ContainerRepository(String name, ContainerRepositoryArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Artifacts/containerRepository:ContainerRepository", name, args == null ? ContainerRepositoryArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Artifacts/containerRepository:ContainerRepository", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ContainerRepository(String name, Output<String> id, @Nullable ContainerRepositoryState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Artifacts/containerRepository:ContainerRepository", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ContainerRepositoryArgs makeArgs(ContainerRepositoryArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ContainerRepositoryArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

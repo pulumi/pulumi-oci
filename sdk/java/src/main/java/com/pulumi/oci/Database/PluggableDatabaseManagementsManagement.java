@@ -399,11 +399,18 @@ public class PluggableDatabaseManagementsManagement extends com.pulumi.resources
      * @param options A bag of options that control this resource's behavior.
      */
     public PluggableDatabaseManagementsManagement(String name, PluggableDatabaseManagementsManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/pluggableDatabaseManagementsManagement:PluggableDatabaseManagementsManagement", name, args == null ? PluggableDatabaseManagementsManagementArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Database/pluggableDatabaseManagementsManagement:PluggableDatabaseManagementsManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private PluggableDatabaseManagementsManagement(String name, Output<String> id, @Nullable PluggableDatabaseManagementsManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Database/pluggableDatabaseManagementsManagement:PluggableDatabaseManagementsManagement", name, state, makeResourceOptions(options, id));
+    }
+
+    private static PluggableDatabaseManagementsManagementArgs makeArgs(PluggableDatabaseManagementsManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? PluggableDatabaseManagementsManagementArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

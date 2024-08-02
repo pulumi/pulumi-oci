@@ -5,42 +5,96 @@ package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import com.pulumi.oci.DataSafe.outputs.GetAlertPolicyRuleItem;
 import java.lang.String;
-import java.util.List;
 import java.util.Objects;
 
 @CustomType
 public final class GetAlertPolicyRuleResult {
     private String alertPolicyId;
     /**
-     * @return The provider-assigned unique ID for this managed resource.
+     * @return Describes the alert policy rule.
      * 
      */
+    private String description;
+    /**
+     * @return The display name of the alert policy rule.
+     * 
+     */
+    private String displayName;
+    /**
+     * @return The conditional expression of the alert policy rule which evaluates to boolean value.
+     * 
+     */
+    private String expression;
     private String id;
     /**
-     * @return Array of alert policy rules summary
+     * @return The unique key of the alert policy rule.
      * 
      */
-    private List<GetAlertPolicyRuleItem> items;
+    private String key;
+    private String ruleKey;
+    /**
+     * @return The current state of the alert policy rule.
+     * 
+     */
+    private String state;
+    /**
+     * @return Creation date and time of the alert policy rule, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * 
+     */
+    private String timeCreated;
 
     private GetAlertPolicyRuleResult() {}
     public String alertPolicyId() {
         return this.alertPolicyId;
     }
     /**
-     * @return The provider-assigned unique ID for this managed resource.
+     * @return Describes the alert policy rule.
      * 
      */
+    public String description() {
+        return this.description;
+    }
+    /**
+     * @return The display name of the alert policy rule.
+     * 
+     */
+    public String displayName() {
+        return this.displayName;
+    }
+    /**
+     * @return The conditional expression of the alert policy rule which evaluates to boolean value.
+     * 
+     */
+    public String expression() {
+        return this.expression;
+    }
     public String id() {
         return this.id;
     }
     /**
-     * @return Array of alert policy rules summary
+     * @return The unique key of the alert policy rule.
      * 
      */
-    public List<GetAlertPolicyRuleItem> items() {
-        return this.items;
+    public String key() {
+        return this.key;
+    }
+    public String ruleKey() {
+        return this.ruleKey;
+    }
+    /**
+     * @return The current state of the alert policy rule.
+     * 
+     */
+    public String state() {
+        return this.state;
+    }
+    /**
+     * @return Creation date and time of the alert policy rule, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * 
+     */
+    public String timeCreated() {
+        return this.timeCreated;
     }
 
     public static Builder builder() {
@@ -53,14 +107,26 @@ public final class GetAlertPolicyRuleResult {
     @CustomType.Builder
     public static final class Builder {
         private String alertPolicyId;
+        private String description;
+        private String displayName;
+        private String expression;
         private String id;
-        private List<GetAlertPolicyRuleItem> items;
+        private String key;
+        private String ruleKey;
+        private String state;
+        private String timeCreated;
         public Builder() {}
         public Builder(GetAlertPolicyRuleResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.alertPolicyId = defaults.alertPolicyId;
+    	      this.description = defaults.description;
+    	      this.displayName = defaults.displayName;
+    	      this.expression = defaults.expression;
     	      this.id = defaults.id;
-    	      this.items = defaults.items;
+    	      this.key = defaults.key;
+    	      this.ruleKey = defaults.ruleKey;
+    	      this.state = defaults.state;
+    	      this.timeCreated = defaults.timeCreated;
         }
 
         @CustomType.Setter
@@ -72,6 +138,30 @@ public final class GetAlertPolicyRuleResult {
             return this;
         }
         @CustomType.Setter
+        public Builder description(String description) {
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetAlertPolicyRuleResult", "description");
+            }
+            this.description = description;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder displayName(String displayName) {
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetAlertPolicyRuleResult", "displayName");
+            }
+            this.displayName = displayName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder expression(String expression) {
+            if (expression == null) {
+              throw new MissingRequiredPropertyException("GetAlertPolicyRuleResult", "expression");
+            }
+            this.expression = expression;
+            return this;
+        }
+        @CustomType.Setter
         public Builder id(String id) {
             if (id == null) {
               throw new MissingRequiredPropertyException("GetAlertPolicyRuleResult", "id");
@@ -80,21 +170,48 @@ public final class GetAlertPolicyRuleResult {
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetAlertPolicyRuleItem> items) {
-            if (items == null) {
-              throw new MissingRequiredPropertyException("GetAlertPolicyRuleResult", "items");
+        public Builder key(String key) {
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetAlertPolicyRuleResult", "key");
             }
-            this.items = items;
+            this.key = key;
             return this;
         }
-        public Builder items(GetAlertPolicyRuleItem... items) {
-            return items(List.of(items));
+        @CustomType.Setter
+        public Builder ruleKey(String ruleKey) {
+            if (ruleKey == null) {
+              throw new MissingRequiredPropertyException("GetAlertPolicyRuleResult", "ruleKey");
+            }
+            this.ruleKey = ruleKey;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder state(String state) {
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetAlertPolicyRuleResult", "state");
+            }
+            this.state = state;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeCreated(String timeCreated) {
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetAlertPolicyRuleResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
+            return this;
         }
         public GetAlertPolicyRuleResult build() {
             final var _resultValue = new GetAlertPolicyRuleResult();
             _resultValue.alertPolicyId = alertPolicyId;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.expression = expression;
             _resultValue.id = id;
-            _resultValue.items = items;
+            _resultValue.key = key;
+            _resultValue.ruleKey = ruleKey;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
             return _resultValue;
         }
     }

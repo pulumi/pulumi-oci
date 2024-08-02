@@ -308,11 +308,18 @@ public class DataMaskRule extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public DataMaskRule(String name, DataMaskRuleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:CloudGuard/dataMaskRule:DataMaskRule", name, args == null ? DataMaskRuleArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:CloudGuard/dataMaskRule:DataMaskRule", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DataMaskRule(String name, Output<String> id, @Nullable DataMaskRuleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:CloudGuard/dataMaskRule:DataMaskRule", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DataMaskRuleArgs makeArgs(DataMaskRuleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DataMaskRuleArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

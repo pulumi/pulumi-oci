@@ -262,11 +262,18 @@ public class ExadataInfrastructureStorage extends com.pulumi.resources.CustomRes
      * @param options A bag of options that control this resource's behavior.
      */
     public ExadataInfrastructureStorage(String name, ExadataInfrastructureStorageArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/exadataInfrastructureStorage:ExadataInfrastructureStorage", name, args == null ? ExadataInfrastructureStorageArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Database/exadataInfrastructureStorage:ExadataInfrastructureStorage", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ExadataInfrastructureStorage(String name, Output<String> id, @Nullable ExadataInfrastructureStorageState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Database/exadataInfrastructureStorage:ExadataInfrastructureStorage", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ExadataInfrastructureStorageArgs makeArgs(ExadataInfrastructureStorageArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ExadataInfrastructureStorageArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

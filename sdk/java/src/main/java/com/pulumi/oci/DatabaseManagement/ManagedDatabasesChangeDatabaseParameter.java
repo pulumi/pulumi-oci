@@ -202,11 +202,18 @@ public class ManagedDatabasesChangeDatabaseParameter extends com.pulumi.resource
      * @param options A bag of options that control this resource's behavior.
      */
     public ManagedDatabasesChangeDatabaseParameter(String name, ManagedDatabasesChangeDatabaseParameterArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseManagement/managedDatabasesChangeDatabaseParameter:ManagedDatabasesChangeDatabaseParameter", name, args == null ? ManagedDatabasesChangeDatabaseParameterArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DatabaseManagement/managedDatabasesChangeDatabaseParameter:ManagedDatabasesChangeDatabaseParameter", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ManagedDatabasesChangeDatabaseParameter(String name, Output<String> id, @Nullable ManagedDatabasesChangeDatabaseParameterState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DatabaseManagement/managedDatabasesChangeDatabaseParameter:ManagedDatabasesChangeDatabaseParameter", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ManagedDatabasesChangeDatabaseParameterArgs makeArgs(ManagedDatabasesChangeDatabaseParameterArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ManagedDatabasesChangeDatabaseParameterArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

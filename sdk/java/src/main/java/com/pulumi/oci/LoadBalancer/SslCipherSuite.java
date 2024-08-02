@@ -166,11 +166,18 @@ public class SslCipherSuite extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public SslCipherSuite(String name, SslCipherSuiteArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:LoadBalancer/sslCipherSuite:SslCipherSuite", name, args == null ? SslCipherSuiteArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:LoadBalancer/sslCipherSuite:SslCipherSuite", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private SslCipherSuite(String name, Output<String> id, @Nullable SslCipherSuiteState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:LoadBalancer/sslCipherSuite:SslCipherSuite", name, state, makeResourceOptions(options, id));
+    }
+
+    private static SslCipherSuiteArgs makeArgs(SslCipherSuiteArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? SslCipherSuiteArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

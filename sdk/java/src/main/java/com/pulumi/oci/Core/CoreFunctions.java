@@ -164,6 +164,10 @@ import com.pulumi.oci.Core.inputs.GetInstanceCredentialsArgs;
 import com.pulumi.oci.Core.inputs.GetInstanceCredentialsPlainArgs;
 import com.pulumi.oci.Core.inputs.GetInstanceDevicesArgs;
 import com.pulumi.oci.Core.inputs.GetInstanceDevicesPlainArgs;
+import com.pulumi.oci.Core.inputs.GetInstanceMaintenanceEventArgs;
+import com.pulumi.oci.Core.inputs.GetInstanceMaintenanceEventPlainArgs;
+import com.pulumi.oci.Core.inputs.GetInstanceMaintenanceEventsArgs;
+import com.pulumi.oci.Core.inputs.GetInstanceMaintenanceEventsPlainArgs;
 import com.pulumi.oci.Core.inputs.GetInstanceMaintenanceRebootArgs;
 import com.pulumi.oci.Core.inputs.GetInstanceMaintenanceRebootPlainArgs;
 import com.pulumi.oci.Core.inputs.GetInstanceMeasuredBootReportArgs;
@@ -385,6 +389,8 @@ import com.pulumi.oci.Core.outputs.GetInstanceConfigurationsResult;
 import com.pulumi.oci.Core.outputs.GetInstanceConsoleConnectionsResult;
 import com.pulumi.oci.Core.outputs.GetInstanceCredentialsResult;
 import com.pulumi.oci.Core.outputs.GetInstanceDevicesResult;
+import com.pulumi.oci.Core.outputs.GetInstanceMaintenanceEventResult;
+import com.pulumi.oci.Core.outputs.GetInstanceMaintenanceEventsResult;
 import com.pulumi.oci.Core.outputs.GetInstanceMaintenanceRebootResult;
 import com.pulumi.oci.Core.outputs.GetInstanceMeasuredBootReportResult;
 import com.pulumi.oci.Core.outputs.GetInstancePoolInstancesResult;
@@ -15764,6 +15770,382 @@ public final class CoreFunctions {
      */
     public static CompletableFuture<GetInstanceDevicesResult> getInstanceDevicesPlain(GetInstanceDevicesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getInstanceDevices:getInstanceDevices", TypeShape.of(GetInstanceDevicesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Instance Maintenance Event resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the maintenance event for the given instance.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceMaintenanceEventArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceMaintenanceEvent = CoreFunctions.getInstanceMaintenanceEvent(GetInstanceMaintenanceEventArgs.builder()
+     *             .instanceMaintenanceEventId(testInstanceMaintenanceEventOciCoreInstanceMaintenanceEvent.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetInstanceMaintenanceEventResult> getInstanceMaintenanceEvent(GetInstanceMaintenanceEventArgs args) {
+        return getInstanceMaintenanceEvent(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Instance Maintenance Event resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the maintenance event for the given instance.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceMaintenanceEventArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceMaintenanceEvent = CoreFunctions.getInstanceMaintenanceEvent(GetInstanceMaintenanceEventArgs.builder()
+     *             .instanceMaintenanceEventId(testInstanceMaintenanceEventOciCoreInstanceMaintenanceEvent.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetInstanceMaintenanceEventResult> getInstanceMaintenanceEventPlain(GetInstanceMaintenanceEventPlainArgs args) {
+        return getInstanceMaintenanceEventPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Instance Maintenance Event resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the maintenance event for the given instance.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceMaintenanceEventArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceMaintenanceEvent = CoreFunctions.getInstanceMaintenanceEvent(GetInstanceMaintenanceEventArgs.builder()
+     *             .instanceMaintenanceEventId(testInstanceMaintenanceEventOciCoreInstanceMaintenanceEvent.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetInstanceMaintenanceEventResult> getInstanceMaintenanceEvent(GetInstanceMaintenanceEventArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getInstanceMaintenanceEvent:getInstanceMaintenanceEvent", TypeShape.of(GetInstanceMaintenanceEventResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Instance Maintenance Event resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the maintenance event for the given instance.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceMaintenanceEventArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceMaintenanceEvent = CoreFunctions.getInstanceMaintenanceEvent(GetInstanceMaintenanceEventArgs.builder()
+     *             .instanceMaintenanceEventId(testInstanceMaintenanceEventOciCoreInstanceMaintenanceEvent.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetInstanceMaintenanceEventResult> getInstanceMaintenanceEventPlain(GetInstanceMaintenanceEventPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Core/getInstanceMaintenanceEvent:getInstanceMaintenanceEvent", TypeShape.of(GetInstanceMaintenanceEventResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Instance Maintenance Events in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets a list of all the maintenance events for the given instance.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceMaintenanceEventsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceMaintenanceEvents = CoreFunctions.getInstanceMaintenanceEvents(GetInstanceMaintenanceEventsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .correlationToken(instanceMaintenanceEventCorrelationToken)
+     *             .instanceAction(instanceMaintenanceEventInstanceAction)
+     *             .instanceId(testInstance.id())
+     *             .state(instanceMaintenanceEventState)
+     *             .timeWindowStartGreaterThanOrEqualTo(instanceMaintenanceEventTimeWindowStartGreaterThanOrEqualTo)
+     *             .timeWindowStartLessThanOrEqualTo(instanceMaintenanceEventTimeWindowStartLessThanOrEqualTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetInstanceMaintenanceEventsResult> getInstanceMaintenanceEvents(GetInstanceMaintenanceEventsArgs args) {
+        return getInstanceMaintenanceEvents(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Instance Maintenance Events in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets a list of all the maintenance events for the given instance.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceMaintenanceEventsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceMaintenanceEvents = CoreFunctions.getInstanceMaintenanceEvents(GetInstanceMaintenanceEventsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .correlationToken(instanceMaintenanceEventCorrelationToken)
+     *             .instanceAction(instanceMaintenanceEventInstanceAction)
+     *             .instanceId(testInstance.id())
+     *             .state(instanceMaintenanceEventState)
+     *             .timeWindowStartGreaterThanOrEqualTo(instanceMaintenanceEventTimeWindowStartGreaterThanOrEqualTo)
+     *             .timeWindowStartLessThanOrEqualTo(instanceMaintenanceEventTimeWindowStartLessThanOrEqualTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetInstanceMaintenanceEventsResult> getInstanceMaintenanceEventsPlain(GetInstanceMaintenanceEventsPlainArgs args) {
+        return getInstanceMaintenanceEventsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Instance Maintenance Events in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets a list of all the maintenance events for the given instance.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceMaintenanceEventsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceMaintenanceEvents = CoreFunctions.getInstanceMaintenanceEvents(GetInstanceMaintenanceEventsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .correlationToken(instanceMaintenanceEventCorrelationToken)
+     *             .instanceAction(instanceMaintenanceEventInstanceAction)
+     *             .instanceId(testInstance.id())
+     *             .state(instanceMaintenanceEventState)
+     *             .timeWindowStartGreaterThanOrEqualTo(instanceMaintenanceEventTimeWindowStartGreaterThanOrEqualTo)
+     *             .timeWindowStartLessThanOrEqualTo(instanceMaintenanceEventTimeWindowStartLessThanOrEqualTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetInstanceMaintenanceEventsResult> getInstanceMaintenanceEvents(GetInstanceMaintenanceEventsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getInstanceMaintenanceEvents:getInstanceMaintenanceEvents", TypeShape.of(GetInstanceMaintenanceEventsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Instance Maintenance Events in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets a list of all the maintenance events for the given instance.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceMaintenanceEventsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceMaintenanceEvents = CoreFunctions.getInstanceMaintenanceEvents(GetInstanceMaintenanceEventsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .correlationToken(instanceMaintenanceEventCorrelationToken)
+     *             .instanceAction(instanceMaintenanceEventInstanceAction)
+     *             .instanceId(testInstance.id())
+     *             .state(instanceMaintenanceEventState)
+     *             .timeWindowStartGreaterThanOrEqualTo(instanceMaintenanceEventTimeWindowStartGreaterThanOrEqualTo)
+     *             .timeWindowStartLessThanOrEqualTo(instanceMaintenanceEventTimeWindowStartLessThanOrEqualTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetInstanceMaintenanceEventsResult> getInstanceMaintenanceEventsPlain(GetInstanceMaintenanceEventsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Core/getInstanceMaintenanceEvents:getInstanceMaintenanceEvents", TypeShape.of(GetInstanceMaintenanceEventsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Instance Maintenance Reboot resource in Oracle Cloud Infrastructure Core service.

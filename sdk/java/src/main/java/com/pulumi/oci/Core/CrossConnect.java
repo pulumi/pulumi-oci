@@ -374,11 +374,18 @@ public class CrossConnect extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public CrossConnect(String name, CrossConnectArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/crossConnect:CrossConnect", name, args == null ? CrossConnectArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Core/crossConnect:CrossConnect", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private CrossConnect(String name, Output<String> id, @Nullable CrossConnectState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Core/crossConnect:CrossConnect", name, state, makeResourceOptions(options, id));
+    }
+
+    private static CrossConnectArgs makeArgs(CrossConnectArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? CrossConnectArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

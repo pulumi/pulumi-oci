@@ -326,11 +326,18 @@ public class ExternalClusterInstance extends com.pulumi.resources.CustomResource
      * @param options A bag of options that control this resource's behavior.
      */
     public ExternalClusterInstance(String name, ExternalClusterInstanceArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseManagement/externalClusterInstance:ExternalClusterInstance", name, args == null ? ExternalClusterInstanceArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DatabaseManagement/externalClusterInstance:ExternalClusterInstance", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ExternalClusterInstance(String name, Output<String> id, @Nullable ExternalClusterInstanceState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DatabaseManagement/externalClusterInstance:ExternalClusterInstance", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ExternalClusterInstanceArgs makeArgs(ExternalClusterInstanceArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ExternalClusterInstanceArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

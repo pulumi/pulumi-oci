@@ -351,11 +351,18 @@ public class AnalyticsInstance extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public AnalyticsInstance(String name, AnalyticsInstanceArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Analytics/analyticsInstance:AnalyticsInstance", name, args == null ? AnalyticsInstanceArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Analytics/analyticsInstance:AnalyticsInstance", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private AnalyticsInstance(String name, Output<String> id, @Nullable AnalyticsInstanceState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Analytics/analyticsInstance:AnalyticsInstance", name, state, makeResourceOptions(options, id));
+    }
+
+    private static AnalyticsInstanceArgs makeArgs(AnalyticsInstanceArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? AnalyticsInstanceArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

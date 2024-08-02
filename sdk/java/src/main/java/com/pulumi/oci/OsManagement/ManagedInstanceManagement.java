@@ -310,11 +310,18 @@ public class ManagedInstanceManagement extends com.pulumi.resources.CustomResour
      * @param options A bag of options that control this resource's behavior.
      */
     public ManagedInstanceManagement(String name, ManagedInstanceManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:OsManagement/managedInstanceManagement:ManagedInstanceManagement", name, args == null ? ManagedInstanceManagementArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:OsManagement/managedInstanceManagement:ManagedInstanceManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ManagedInstanceManagement(String name, Output<String> id, @Nullable ManagedInstanceManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:OsManagement/managedInstanceManagement:ManagedInstanceManagement", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ManagedInstanceManagementArgs makeArgs(ManagedInstanceManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ManagedInstanceManagementArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

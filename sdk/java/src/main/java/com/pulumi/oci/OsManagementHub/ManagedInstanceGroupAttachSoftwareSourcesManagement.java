@@ -137,11 +137,18 @@ public class ManagedInstanceGroupAttachSoftwareSourcesManagement extends com.pul
      * @param options A bag of options that control this resource's behavior.
      */
     public ManagedInstanceGroupAttachSoftwareSourcesManagement(String name, ManagedInstanceGroupAttachSoftwareSourcesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:OsManagementHub/managedInstanceGroupAttachSoftwareSourcesManagement:ManagedInstanceGroupAttachSoftwareSourcesManagement", name, args == null ? ManagedInstanceGroupAttachSoftwareSourcesManagementArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:OsManagementHub/managedInstanceGroupAttachSoftwareSourcesManagement:ManagedInstanceGroupAttachSoftwareSourcesManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ManagedInstanceGroupAttachSoftwareSourcesManagement(String name, Output<String> id, @Nullable ManagedInstanceGroupAttachSoftwareSourcesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:OsManagementHub/managedInstanceGroupAttachSoftwareSourcesManagement:ManagedInstanceGroupAttachSoftwareSourcesManagement", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ManagedInstanceGroupAttachSoftwareSourcesManagementArgs makeArgs(ManagedInstanceGroupAttachSoftwareSourcesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ManagedInstanceGroupAttachSoftwareSourcesManagementArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

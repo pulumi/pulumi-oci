@@ -984,11 +984,18 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public DomainsAppRole(String name, DomainsAppRoleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsAppRole:DomainsAppRole", name, args == null ? DomainsAppRoleArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Identity/domainsAppRole:DomainsAppRole", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DomainsAppRole(String name, Output<String> id, @Nullable DomainsAppRoleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Identity/domainsAppRole:DomainsAppRole", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DomainsAppRoleArgs makeArgs(DomainsAppRoleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DomainsAppRoleArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

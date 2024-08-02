@@ -59,10 +59,6 @@ export class Job extends pulumi.CustomResource {
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
      * The OCID of the job
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly jobId!: pulumi.Output<string>;
     /**
@@ -74,6 +70,10 @@ export class Job extends pulumi.CustomResource {
      */
     public /*out*/ readonly migrationId!: pulumi.Output<string>;
     /**
+     * A list of parameter file versions that can be viewed or edited for the current job.
+     */
+    public /*out*/ readonly parameterFileVersions!: pulumi.Output<outputs.DatabaseMigration.JobParameterFileVersion[]>;
+    /**
      * Percent progress of job phase.
      */
     public /*out*/ readonly progresses!: pulumi.Output<outputs.DatabaseMigration.JobProgress[]>;
@@ -81,6 +81,14 @@ export class Job extends pulumi.CustomResource {
      * The current state of the migration job.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
+    /**
+     * (Updatable) An optional property when incremented triggers Suspend. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    public readonly suspendTrigger!: pulumi.Output<number | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
@@ -121,8 +129,10 @@ export class Job extends pulumi.CustomResource {
             resourceInputs["jobId"] = state ? state.jobId : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["migrationId"] = state ? state.migrationId : undefined;
+            resourceInputs["parameterFileVersions"] = state ? state.parameterFileVersions : undefined;
             resourceInputs["progresses"] = state ? state.progresses : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["suspendTrigger"] = state ? state.suspendTrigger : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
@@ -137,8 +147,10 @@ export class Job extends pulumi.CustomResource {
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["jobId"] = args ? args.jobId : undefined;
+            resourceInputs["suspendTrigger"] = args ? args.suspendTrigger : undefined;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["migrationId"] = undefined /*out*/;
+            resourceInputs["parameterFileVersions"] = undefined /*out*/;
             resourceInputs["progresses"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
@@ -170,10 +182,6 @@ export interface JobState {
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * The OCID of the job
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     jobId?: pulumi.Input<string>;
     /**
@@ -185,6 +193,10 @@ export interface JobState {
      */
     migrationId?: pulumi.Input<string>;
     /**
+     * A list of parameter file versions that can be viewed or edited for the current job.
+     */
+    parameterFileVersions?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.JobParameterFileVersion>[]>;
+    /**
      * Percent progress of job phase.
      */
     progresses?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.JobProgress>[]>;
@@ -192,6 +204,14 @@ export interface JobState {
      * The current state of the migration job.
      */
     state?: pulumi.Input<string>;
+    /**
+     * (Updatable) An optional property when incremented triggers Suspend. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    suspendTrigger?: pulumi.Input<number>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
@@ -232,10 +252,14 @@ export interface JobArgs {
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * The OCID of the job
+     */
+    jobId: pulumi.Input<string>;
+    /**
+     * (Updatable) An optional property when incremented triggers Suspend. Could be set to any integer value.
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    jobId: pulumi.Input<string>;
+    suspendTrigger?: pulumi.Input<number>;
 }

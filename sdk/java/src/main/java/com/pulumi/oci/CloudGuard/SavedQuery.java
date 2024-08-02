@@ -244,11 +244,18 @@ public class SavedQuery extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public SavedQuery(String name, SavedQueryArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:CloudGuard/savedQuery:SavedQuery", name, args == null ? SavedQueryArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:CloudGuard/savedQuery:SavedQuery", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private SavedQuery(String name, Output<String> id, @Nullable SavedQueryState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:CloudGuard/savedQuery:SavedQuery", name, state, makeResourceOptions(options, id));
+    }
+
+    private static SavedQueryArgs makeArgs(SavedQueryArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? SavedQueryArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

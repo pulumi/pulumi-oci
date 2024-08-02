@@ -50,6 +50,14 @@ export class Alert extends pulumi.CustomResource {
      */
     public readonly alertId!: pulumi.Output<string>;
     /**
+     * The key of the rule of alert policy that triggered alert.
+     */
+    public /*out*/ readonly alertPolicyRuleKey!: pulumi.Output<string>;
+    /**
+     * The display name of the rule of alert policy that triggered alert.
+     */
+    public /*out*/ readonly alertPolicyRuleName!: pulumi.Output<string>;
+    /**
      * Type of the alert. Indicates the Data Safe feature triggering the alert.
      */
     public /*out*/ readonly alertType!: pulumi.Output<string>;
@@ -152,6 +160,8 @@ export class Alert extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as AlertState | undefined;
             resourceInputs["alertId"] = state ? state.alertId : undefined;
+            resourceInputs["alertPolicyRuleKey"] = state ? state.alertPolicyRuleKey : undefined;
+            resourceInputs["alertPolicyRuleName"] = state ? state.alertPolicyRuleName : undefined;
             resourceInputs["alertType"] = state ? state.alertType : undefined;
             resourceInputs["comment"] = state ? state.comment : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
@@ -184,6 +194,8 @@ export class Alert extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["status"] = args ? args.status : undefined;
+            resourceInputs["alertPolicyRuleKey"] = undefined /*out*/;
+            resourceInputs["alertPolicyRuleName"] = undefined /*out*/;
             resourceInputs["alertType"] = undefined /*out*/;
             resourceInputs["description"] = undefined /*out*/;
             resourceInputs["displayName"] = undefined /*out*/;
@@ -214,6 +226,14 @@ export interface AlertState {
      * The OCID of alert.
      */
     alertId?: pulumi.Input<string>;
+    /**
+     * The key of the rule of alert policy that triggered alert.
+     */
+    alertPolicyRuleKey?: pulumi.Input<string>;
+    /**
+     * The display name of the rule of alert policy that triggered alert.
+     */
+    alertPolicyRuleName?: pulumi.Input<string>;
     /**
      * Type of the alert. Indicates the Data Safe feature triggering the alert.
      */

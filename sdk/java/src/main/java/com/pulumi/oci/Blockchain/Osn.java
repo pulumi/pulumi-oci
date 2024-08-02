@@ -163,11 +163,18 @@ public class Osn extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public Osn(String name, OsnArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Blockchain/osn:Osn", name, args == null ? OsnArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Blockchain/osn:Osn", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private Osn(String name, Output<String> id, @Nullable OsnState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Blockchain/osn:Osn", name, state, makeResourceOptions(options, id));
+    }
+
+    private static OsnArgs makeArgs(OsnArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? OsnArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

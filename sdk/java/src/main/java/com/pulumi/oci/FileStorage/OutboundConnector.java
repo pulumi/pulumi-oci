@@ -298,11 +298,18 @@ public class OutboundConnector extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public OutboundConnector(String name, OutboundConnectorArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:FileStorage/outboundConnector:OutboundConnector", name, args == null ? OutboundConnectorArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:FileStorage/outboundConnector:OutboundConnector", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private OutboundConnector(String name, Output<String> id, @Nullable OutboundConnectorState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:FileStorage/outboundConnector:OutboundConnector", name, state, makeResourceOptions(options, id));
+    }
+
+    private static OutboundConnectorArgs makeArgs(OutboundConnectorArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? OutboundConnectorArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

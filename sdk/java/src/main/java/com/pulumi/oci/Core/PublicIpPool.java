@@ -197,11 +197,18 @@ public class PublicIpPool extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public PublicIpPool(String name, PublicIpPoolArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/publicIpPool:PublicIpPool", name, args == null ? PublicIpPoolArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Core/publicIpPool:PublicIpPool", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private PublicIpPool(String name, Output<String> id, @Nullable PublicIpPoolState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Core/publicIpPool:PublicIpPool", name, state, makeResourceOptions(options, id));
+    }
+
+    private static PublicIpPoolArgs makeArgs(PublicIpPoolArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? PublicIpPoolArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

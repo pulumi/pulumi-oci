@@ -107,11 +107,18 @@ public class SoftwareSourceChangeAvailabilityManagement extends com.pulumi.resou
      * @param options A bag of options that control this resource's behavior.
      */
     public SoftwareSourceChangeAvailabilityManagement(String name, SoftwareSourceChangeAvailabilityManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:OsManagementHub/softwareSourceChangeAvailabilityManagement:SoftwareSourceChangeAvailabilityManagement", name, args == null ? SoftwareSourceChangeAvailabilityManagementArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:OsManagementHub/softwareSourceChangeAvailabilityManagement:SoftwareSourceChangeAvailabilityManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private SoftwareSourceChangeAvailabilityManagement(String name, Output<String> id, @Nullable SoftwareSourceChangeAvailabilityManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:OsManagementHub/softwareSourceChangeAvailabilityManagement:SoftwareSourceChangeAvailabilityManagement", name, state, makeResourceOptions(options, id));
+    }
+
+    private static SoftwareSourceChangeAvailabilityManagementArgs makeArgs(SoftwareSourceChangeAvailabilityManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? SoftwareSourceChangeAvailabilityManagementArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

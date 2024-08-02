@@ -163,7 +163,7 @@ class GetRedisClusterResult:
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Sequence[str]:
         """
-        OCIDs of the NSGs to control access in the customer network
+        A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
         """
         return pulumi.get(self, "nsg_ids")
 

@@ -622,11 +622,18 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      * @param options A bag of options that control this resource's behavior.
      */
     public CloudExadataInfrastructure(String name, CloudExadataInfrastructureArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/cloudExadataInfrastructure:CloudExadataInfrastructure", name, args == null ? CloudExadataInfrastructureArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Database/cloudExadataInfrastructure:CloudExadataInfrastructure", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private CloudExadataInfrastructure(String name, Output<String> id, @Nullable CloudExadataInfrastructureState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Database/cloudExadataInfrastructure:CloudExadataInfrastructure", name, state, makeResourceOptions(options, id));
+    }
+
+    private static CloudExadataInfrastructureArgs makeArgs(CloudExadataInfrastructureArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? CloudExadataInfrastructureArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

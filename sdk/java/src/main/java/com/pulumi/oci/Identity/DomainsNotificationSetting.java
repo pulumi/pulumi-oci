@@ -823,11 +823,18 @@ public class DomainsNotificationSetting extends com.pulumi.resources.CustomResou
      * @param options A bag of options that control this resource's behavior.
      */
     public DomainsNotificationSetting(String name, DomainsNotificationSettingArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsNotificationSetting:DomainsNotificationSetting", name, args == null ? DomainsNotificationSettingArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Identity/domainsNotificationSetting:DomainsNotificationSetting", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DomainsNotificationSetting(String name, Output<String> id, @Nullable DomainsNotificationSettingState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Identity/domainsNotificationSetting:DomainsNotificationSetting", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DomainsNotificationSettingArgs makeArgs(DomainsNotificationSettingArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DomainsNotificationSettingArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

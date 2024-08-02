@@ -306,11 +306,18 @@ public class StreamPackagingConfig extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public StreamPackagingConfig(String name, StreamPackagingConfigArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:MediaServices/streamPackagingConfig:StreamPackagingConfig", name, args == null ? StreamPackagingConfigArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:MediaServices/streamPackagingConfig:StreamPackagingConfig", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private StreamPackagingConfig(String name, Output<String> id, @Nullable StreamPackagingConfigState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:MediaServices/streamPackagingConfig:StreamPackagingConfig", name, state, makeResourceOptions(options, id));
+    }
+
+    private static StreamPackagingConfigArgs makeArgs(StreamPackagingConfigArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? StreamPackagingConfigArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

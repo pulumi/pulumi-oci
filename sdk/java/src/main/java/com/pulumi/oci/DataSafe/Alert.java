@@ -47,6 +47,34 @@ public class Alert extends com.pulumi.resources.CustomResource {
         return this.alertId;
     }
     /**
+     * The key of the rule of alert policy that triggered alert.
+     * 
+     */
+    @Export(name="alertPolicyRuleKey", refs={String.class}, tree="[0]")
+    private Output<String> alertPolicyRuleKey;
+
+    /**
+     * @return The key of the rule of alert policy that triggered alert.
+     * 
+     */
+    public Output<String> alertPolicyRuleKey() {
+        return this.alertPolicyRuleKey;
+    }
+    /**
+     * The display name of the rule of alert policy that triggered alert.
+     * 
+     */
+    @Export(name="alertPolicyRuleName", refs={String.class}, tree="[0]")
+    private Output<String> alertPolicyRuleName;
+
+    /**
+     * @return The display name of the rule of alert policy that triggered alert.
+     * 
+     */
+    public Output<String> alertPolicyRuleName() {
+        return this.alertPolicyRuleName;
+    }
+    /**
      * Type of the alert. Indicates the Data Safe feature triggering the alert.
      * 
      */
@@ -369,11 +397,18 @@ public class Alert extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public Alert(String name, AlertArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/alert:Alert", name, args == null ? AlertArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DataSafe/alert:Alert", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private Alert(String name, Output<String> id, @Nullable AlertState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DataSafe/alert:Alert", name, state, makeResourceOptions(options, id));
+    }
+
+    private static AlertArgs makeArgs(AlertArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? AlertArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

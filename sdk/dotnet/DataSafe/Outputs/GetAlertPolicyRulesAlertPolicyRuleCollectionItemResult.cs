@@ -14,9 +14,17 @@ namespace Pulumi.Oci.DataSafe.Outputs
     public sealed class GetAlertPolicyRulesAlertPolicyRuleCollectionItemResult
     {
         /// <summary>
+        /// The OCID of the alert policy.
+        /// </summary>
+        public readonly string AlertPolicyId;
+        /// <summary>
         /// Describes the alert policy rule.
         /// </summary>
         public readonly string Description;
+        /// <summary>
+        /// The display name of the alert policy rule.
+        /// </summary>
+        public readonly string DisplayName;
         /// <summary>
         /// The conditional expression of the alert policy rule which evaluates to boolean value.
         /// </summary>
@@ -25,18 +33,38 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// The unique key of the alert policy rule.
         /// </summary>
         public readonly string Key;
+        /// <summary>
+        /// The current state of the alert policy rule.
+        /// </summary>
+        public readonly string State;
+        /// <summary>
+        /// Creation date and time of the alert policy rule, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        /// </summary>
+        public readonly string TimeCreated;
 
         [OutputConstructor]
         private GetAlertPolicyRulesAlertPolicyRuleCollectionItemResult(
+            string alertPolicyId,
+
             string description,
+
+            string displayName,
 
             string expression,
 
-            string key)
+            string key,
+
+            string state,
+
+            string timeCreated)
         {
+            AlertPolicyId = alertPolicyId;
             Description = description;
+            DisplayName = displayName;
             Expression = expression;
             Key = key;
+            State = state;
+            TimeCreated = timeCreated;
         }
     }
 }

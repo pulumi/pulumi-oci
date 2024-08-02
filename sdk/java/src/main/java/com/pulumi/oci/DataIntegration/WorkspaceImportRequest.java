@@ -350,11 +350,18 @@ public class WorkspaceImportRequest extends com.pulumi.resources.CustomResource 
      * @param options A bag of options that control this resource's behavior.
      */
     public WorkspaceImportRequest(String name, WorkspaceImportRequestArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataIntegration/workspaceImportRequest:WorkspaceImportRequest", name, args == null ? WorkspaceImportRequestArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DataIntegration/workspaceImportRequest:WorkspaceImportRequest", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private WorkspaceImportRequest(String name, Output<String> id, @Nullable WorkspaceImportRequestState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DataIntegration/workspaceImportRequest:WorkspaceImportRequest", name, state, makeResourceOptions(options, id));
+    }
+
+    private static WorkspaceImportRequestArgs makeArgs(WorkspaceImportRequestArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? WorkspaceImportRequestArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

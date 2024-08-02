@@ -228,11 +228,18 @@ public class SteeringPolicyAttachment extends com.pulumi.resources.CustomResourc
      * @param options A bag of options that control this resource's behavior.
      */
     public SteeringPolicyAttachment(String name, SteeringPolicyAttachmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Dns/steeringPolicyAttachment:SteeringPolicyAttachment", name, args == null ? SteeringPolicyAttachmentArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Dns/steeringPolicyAttachment:SteeringPolicyAttachment", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private SteeringPolicyAttachment(String name, Output<String> id, @Nullable SteeringPolicyAttachmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Dns/steeringPolicyAttachment:SteeringPolicyAttachment", name, state, makeResourceOptions(options, id));
+    }
+
+    private static SteeringPolicyAttachmentArgs makeArgs(SteeringPolicyAttachmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? SteeringPolicyAttachmentArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

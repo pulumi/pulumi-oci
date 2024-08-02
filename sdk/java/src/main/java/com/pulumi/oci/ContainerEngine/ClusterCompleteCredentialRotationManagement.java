@@ -106,11 +106,18 @@ public class ClusterCompleteCredentialRotationManagement extends com.pulumi.reso
      * @param options A bag of options that control this resource's behavior.
      */
     public ClusterCompleteCredentialRotationManagement(String name, ClusterCompleteCredentialRotationManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:ContainerEngine/clusterCompleteCredentialRotationManagement:ClusterCompleteCredentialRotationManagement", name, args == null ? ClusterCompleteCredentialRotationManagementArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:ContainerEngine/clusterCompleteCredentialRotationManagement:ClusterCompleteCredentialRotationManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ClusterCompleteCredentialRotationManagement(String name, Output<String> id, @Nullable ClusterCompleteCredentialRotationManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:ContainerEngine/clusterCompleteCredentialRotationManagement:ClusterCompleteCredentialRotationManagement", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ClusterCompleteCredentialRotationManagementArgs makeArgs(ClusterCompleteCredentialRotationManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ClusterCompleteCredentialRotationManagementArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

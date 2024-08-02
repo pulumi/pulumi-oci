@@ -145,11 +145,18 @@ public class AnnouncementSubscriptionsFilterGroup extends com.pulumi.resources.C
      * @param options A bag of options that control this resource's behavior.
      */
     public AnnouncementSubscriptionsFilterGroup(String name, AnnouncementSubscriptionsFilterGroupArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:AnnouncementsService/announcementSubscriptionsFilterGroup:AnnouncementSubscriptionsFilterGroup", name, args == null ? AnnouncementSubscriptionsFilterGroupArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:AnnouncementsService/announcementSubscriptionsFilterGroup:AnnouncementSubscriptionsFilterGroup", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private AnnouncementSubscriptionsFilterGroup(String name, Output<String> id, @Nullable AnnouncementSubscriptionsFilterGroupState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:AnnouncementsService/announcementSubscriptionsFilterGroup:AnnouncementSubscriptionsFilterGroup", name, state, makeResourceOptions(options, id));
+    }
+
+    private static AnnouncementSubscriptionsFilterGroupArgs makeArgs(AnnouncementSubscriptionsFilterGroupArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? AnnouncementSubscriptionsFilterGroupArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

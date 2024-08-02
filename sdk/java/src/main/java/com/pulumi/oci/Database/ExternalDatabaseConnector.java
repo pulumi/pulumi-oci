@@ -314,11 +314,18 @@ public class ExternalDatabaseConnector extends com.pulumi.resources.CustomResour
      * @param options A bag of options that control this resource's behavior.
      */
     public ExternalDatabaseConnector(String name, ExternalDatabaseConnectorArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/externalDatabaseConnector:ExternalDatabaseConnector", name, args == null ? ExternalDatabaseConnectorArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Database/externalDatabaseConnector:ExternalDatabaseConnector", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ExternalDatabaseConnector(String name, Output<String> id, @Nullable ExternalDatabaseConnectorState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Database/externalDatabaseConnector:ExternalDatabaseConnector", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ExternalDatabaseConnectorArgs makeArgs(ExternalDatabaseConnectorArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ExternalDatabaseConnectorArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

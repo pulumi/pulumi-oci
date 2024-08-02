@@ -423,11 +423,18 @@ public class DrProtectionGroup extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public DrProtectionGroup(String name, DrProtectionGroupArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DisasterRecovery/drProtectionGroup:DrProtectionGroup", name, args == null ? DrProtectionGroupArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DisasterRecovery/drProtectionGroup:DrProtectionGroup", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DrProtectionGroup(String name, Output<String> id, @Nullable DrProtectionGroupState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DisasterRecovery/drProtectionGroup:DrProtectionGroup", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DrProtectionGroupArgs makeArgs(DrProtectionGroupArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DrProtectionGroupArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

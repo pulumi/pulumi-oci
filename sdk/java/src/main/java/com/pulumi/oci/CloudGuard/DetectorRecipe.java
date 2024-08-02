@@ -299,11 +299,18 @@ public class DetectorRecipe extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public DetectorRecipe(String name, DetectorRecipeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:CloudGuard/detectorRecipe:DetectorRecipe", name, args == null ? DetectorRecipeArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:CloudGuard/detectorRecipe:DetectorRecipe", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DetectorRecipe(String name, Output<String> id, @Nullable DetectorRecipeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:CloudGuard/detectorRecipe:DetectorRecipe", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DetectorRecipeArgs makeArgs(DetectorRecipeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DetectorRecipeArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

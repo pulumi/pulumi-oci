@@ -298,11 +298,18 @@ public class PrivateIp extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public PrivateIp(String name, @Nullable PrivateIpArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/privateIp:PrivateIp", name, args == null ? PrivateIpArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Core/privateIp:PrivateIp", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private PrivateIp(String name, Output<String> id, @Nullable PrivateIpState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Core/privateIp:PrivateIp", name, state, makeResourceOptions(options, id));
+    }
+
+    private static PrivateIpArgs makeArgs(@Nullable PrivateIpArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? PrivateIpArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

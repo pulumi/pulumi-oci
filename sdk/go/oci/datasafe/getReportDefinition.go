@@ -86,6 +86,8 @@ type LookupReportDefinitionResult struct {
 	Id string `pulumi:"id"`
 	// Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
 	IsSeeded bool `pulumi:"isSeeded"`
+	// Details about the current state of the report definition in Data Safe.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The OCID of the parent report definition. In the case of seeded report definition, this is same as definition OCID.
 	ParentId string `pulumi:"parentId"`
 	// The time span for the records in the report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
@@ -221,6 +223,11 @@ func (o LookupReportDefinitionResultOutput) Id() pulumi.StringOutput {
 // Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
 func (o LookupReportDefinitionResultOutput) IsSeeded() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupReportDefinitionResult) bool { return v.IsSeeded }).(pulumi.BoolOutput)
+}
+
+// Details about the current state of the report definition in Data Safe.
+func (o LookupReportDefinitionResultOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
 // The OCID of the parent report definition. In the case of seeded report definition, this is same as definition OCID.

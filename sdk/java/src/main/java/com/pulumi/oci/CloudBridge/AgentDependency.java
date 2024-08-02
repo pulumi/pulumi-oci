@@ -329,11 +329,18 @@ public class AgentDependency extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public AgentDependency(String name, AgentDependencyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:CloudBridge/agentDependency:AgentDependency", name, args == null ? AgentDependencyArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:CloudBridge/agentDependency:AgentDependency", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private AgentDependency(String name, Output<String> id, @Nullable AgentDependencyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:CloudBridge/agentDependency:AgentDependency", name, state, makeResourceOptions(options, id));
+    }
+
+    private static AgentDependencyArgs makeArgs(AgentDependencyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? AgentDependencyArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

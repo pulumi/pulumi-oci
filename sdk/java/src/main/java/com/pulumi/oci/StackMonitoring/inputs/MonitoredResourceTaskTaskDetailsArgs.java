@@ -35,14 +35,14 @@ public final class MonitoredResourceTaskTaskDetailsArgs extends com.pulumi.resou
     }
 
     /**
-     * List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  &#39;availabilityProxyMetricCollectionIntervalInSeconds&#39;. If no metrics are specified, availability will not be calculated for the resource.
+     * List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for the resource during the specified interval using the property &#39;availabilityProxyMetricCollectionIntervalInSeconds&#39;. If no metrics are specified, availability will not be calculated for the resource.
      * 
      */
     @Import(name="availabilityProxyMetrics")
     private @Nullable Output<List<String>> availabilityProxyMetrics;
 
     /**
-     * @return List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  &#39;availabilityProxyMetricCollectionIntervalInSeconds&#39;. If no metrics are specified, availability will not be calculated for the resource.
+     * @return List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for the resource during the specified interval using the property &#39;availabilityProxyMetricCollectionIntervalInSeconds&#39;. If no metrics are specified, availability will not be calculated for the resource.
      * 
      */
     public Optional<Output<List<String>>> availabilityProxyMetrics() {
@@ -314,7 +314,7 @@ public final class MonitoredResourceTaskTaskDetailsArgs extends com.pulumi.resou
         }
 
         /**
-         * @param availabilityProxyMetrics List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  &#39;availabilityProxyMetricCollectionIntervalInSeconds&#39;. If no metrics are specified, availability will not be calculated for the resource.
+         * @param availabilityProxyMetrics List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for the resource during the specified interval using the property &#39;availabilityProxyMetricCollectionIntervalInSeconds&#39;. If no metrics are specified, availability will not be calculated for the resource.
          * 
          * @return builder
          * 
@@ -325,7 +325,7 @@ public final class MonitoredResourceTaskTaskDetailsArgs extends com.pulumi.resou
         }
 
         /**
-         * @param availabilityProxyMetrics List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  &#39;availabilityProxyMetricCollectionIntervalInSeconds&#39;. If no metrics are specified, availability will not be calculated for the resource.
+         * @param availabilityProxyMetrics List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for the resource during the specified interval using the property &#39;availabilityProxyMetricCollectionIntervalInSeconds&#39;. If no metrics are specified, availability will not be calculated for the resource.
          * 
          * @return builder
          * 
@@ -335,7 +335,7 @@ public final class MonitoredResourceTaskTaskDetailsArgs extends com.pulumi.resou
         }
 
         /**
-         * @param availabilityProxyMetrics List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  &#39;availabilityProxyMetricCollectionIntervalInSeconds&#39;. If no metrics are specified, availability will not be calculated for the resource.
+         * @param availabilityProxyMetrics List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for the resource during the specified interval using the property &#39;availabilityProxyMetricCollectionIntervalInSeconds&#39;. If no metrics are specified, availability will not be calculated for the resource.
          * 
          * @return builder
          * 

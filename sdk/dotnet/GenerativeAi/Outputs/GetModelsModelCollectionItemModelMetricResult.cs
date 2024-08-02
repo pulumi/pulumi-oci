@@ -13,8 +13,17 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
     [OutputType]
     public sealed class GetModelsModelCollectionItemModelMetricResult
     {
+        /// <summary>
+        /// Fine-tuned model accuracy.
+        /// </summary>
         public readonly double FinalAccuracy;
+        /// <summary>
+        /// Fine-tuned model loss.
+        /// </summary>
         public readonly double FinalLoss;
+        /// <summary>
+        /// The type of the model metrics. Each type of model can expect a different set of model metrics.
+        /// </summary>
         public readonly string ModelMetricsType;
 
         [OutputConstructor]

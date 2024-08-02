@@ -7,6 +7,8 @@ import typing
 # Export this package's modules as members:
 from .add_sdm_columns import *
 from .alert import *
+from .alert_policy import *
+from .alert_policy_rule import *
 from .audit_archive_retrieval import *
 from .audit_policy import *
 from .audit_policy_management import *
@@ -140,8 +142,6 @@ from .mask_data import *
 from .masking_policies_apply_difference_to_masking_columns import *
 from .masking_policies_masking_column import *
 from .masking_policy import *
-from .masking_policy_health_report_management import *
-from .masking_report_management import *
 from .on_prem_connector import *
 from .report import *
 from .report_definition import *
@@ -156,9 +156,7 @@ from .sensitive_data_models_apply_discovery_job_results import *
 from .sensitive_data_models_sensitive_column import *
 from .sensitive_type import *
 from .set_security_assessment_baseline import *
-from .set_security_assessment_baseline_management import *
 from .set_user_assessment_baseline import *
-from .set_user_assessment_baseline_management import *
 from .sql_collection import *
 from .sql_firewall_policy import *
 from .sql_firewall_policy_management import *

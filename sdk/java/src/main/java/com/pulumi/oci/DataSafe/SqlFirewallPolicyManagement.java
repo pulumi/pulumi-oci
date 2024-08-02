@@ -173,11 +173,18 @@ public class SqlFirewallPolicyManagement extends com.pulumi.resources.CustomReso
      * @param options A bag of options that control this resource's behavior.
      */
     public SqlFirewallPolicyManagement(String name, @Nullable SqlFirewallPolicyManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/sqlFirewallPolicyManagement:SqlFirewallPolicyManagement", name, args == null ? SqlFirewallPolicyManagementArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DataSafe/sqlFirewallPolicyManagement:SqlFirewallPolicyManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private SqlFirewallPolicyManagement(String name, Output<String> id, @Nullable SqlFirewallPolicyManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DataSafe/sqlFirewallPolicyManagement:SqlFirewallPolicyManagement", name, state, makeResourceOptions(options, id));
+    }
+
+    private static SqlFirewallPolicyManagementArgs makeArgs(@Nullable SqlFirewallPolicyManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? SqlFirewallPolicyManagementArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

@@ -302,11 +302,18 @@ public class WorkspaceProject extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public WorkspaceProject(String name, WorkspaceProjectArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataIntegration/workspaceProject:WorkspaceProject", name, args == null ? WorkspaceProjectArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DataIntegration/workspaceProject:WorkspaceProject", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private WorkspaceProject(String name, Output<String> id, @Nullable WorkspaceProjectState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DataIntegration/workspaceProject:WorkspaceProject", name, state, makeResourceOptions(options, id));
+    }
+
+    private static WorkspaceProjectArgs makeArgs(WorkspaceProjectArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? WorkspaceProjectArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

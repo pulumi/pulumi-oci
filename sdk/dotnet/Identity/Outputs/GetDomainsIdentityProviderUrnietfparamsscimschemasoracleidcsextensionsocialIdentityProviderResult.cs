@@ -30,6 +30,10 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string AuthzUrl;
         /// <summary>
+        /// Whether social auto redirect is enabled. The IDP policy should be configured with only one Social IDP, and without username/password selected.
+        /// </summary>
+        public readonly bool AutoRedirectEnabled;
+        /// <summary>
         /// Whether the client credential is contained in payload
         /// </summary>
         public readonly bool ClientCredentialInPayload;
@@ -54,6 +58,14 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string IdAttribute;
         /// <summary>
+        /// Lists the groups each social JIT-provisioned user is a member. Just-in-Time user-provisioning applies this static list when jitProvGroupStaticListEnabled:true.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderJitProvAssignedGroupResult> JitProvAssignedGroups;
+        /// <summary>
+        /// Set to true to indicate Social JIT User Provisioning Groups should be assigned from a static list
+        /// </summary>
+        public readonly bool JitProvGroupStaticListEnabled;
+        /// <summary>
         /// Social IDP User profile URL
         /// </summary>
         public readonly string ProfileUrl;
@@ -74,6 +86,10 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string ServiceProviderName;
         /// <summary>
+        /// Whether Social JIT Provisioning is enabled
+        /// </summary>
+        public readonly bool SocialJitProvisioningEnabled;
+        /// <summary>
         /// Status
         /// </summary>
         public readonly string Status;
@@ -88,6 +104,8 @@ namespace Pulumi.Oci.Identity.Outputs
 
             string authzUrl,
 
+            bool autoRedirectEnabled,
+
             bool clientCredentialInPayload,
 
             int clockSkewInSeconds,
@@ -100,6 +118,10 @@ namespace Pulumi.Oci.Identity.Outputs
 
             string idAttribute,
 
+            ImmutableArray<Outputs.GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderJitProvAssignedGroupResult> jitProvAssignedGroups,
+
+            bool jitProvGroupStaticListEnabled,
+
             string profileUrl,
 
             string redirectUrl,
@@ -110,23 +132,29 @@ namespace Pulumi.Oci.Identity.Outputs
 
             string serviceProviderName,
 
+            bool socialJitProvisioningEnabled,
+
             string status)
         {
             AccessTokenUrl = accessTokenUrl;
             AccountLinkingEnabled = accountLinkingEnabled;
             AdminScopes = adminScopes;
             AuthzUrl = authzUrl;
+            AutoRedirectEnabled = autoRedirectEnabled;
             ClientCredentialInPayload = clientCredentialInPayload;
             ClockSkewInSeconds = clockSkewInSeconds;
             ConsumerKey = consumerKey;
             ConsumerSecret = consumerSecret;
             DiscoveryUrl = discoveryUrl;
             IdAttribute = idAttribute;
+            JitProvAssignedGroups = jitProvAssignedGroups;
+            JitProvGroupStaticListEnabled = jitProvGroupStaticListEnabled;
             ProfileUrl = profileUrl;
             RedirectUrl = redirectUrl;
             RegistrationEnabled = registrationEnabled;
             Scopes = scopes;
             ServiceProviderName = serviceProviderName;
+            SocialJitProvisioningEnabled = socialJitProvisioningEnabled;
             Status = status;
         }
     }

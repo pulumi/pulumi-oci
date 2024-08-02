@@ -87,6 +87,8 @@ type LookupAutonomousDatabaseResult struct {
 	// The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
 	CharacterSet string `pulumi:"characterSet"`
 	CloneType    string `pulumi:"cloneType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
+	ClusterPlacementGroupId string `pulumi:"clusterPlacementGroupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Compute used by database tools.
@@ -438,6 +440,11 @@ func (o LookupAutonomousDatabaseResultOutput) CharacterSet() pulumi.StringOutput
 
 func (o LookupAutonomousDatabaseResultOutput) CloneType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.CloneType }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
+func (o LookupAutonomousDatabaseResultOutput) ClusterPlacementGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.ClusterPlacementGroupId }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

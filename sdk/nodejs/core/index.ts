@@ -540,6 +540,16 @@ export const getInstanceDevices: typeof import("./getInstanceDevices").getInstan
 export const getInstanceDevicesOutput: typeof import("./getInstanceDevices").getInstanceDevicesOutput = null as any;
 utilities.lazyLoad(exports, ["getInstanceDevices","getInstanceDevicesOutput"], () => require("./getInstanceDevices"));
 
+export { GetInstanceMaintenanceEventArgs, GetInstanceMaintenanceEventResult, GetInstanceMaintenanceEventOutputArgs } from "./getInstanceMaintenanceEvent";
+export const getInstanceMaintenanceEvent: typeof import("./getInstanceMaintenanceEvent").getInstanceMaintenanceEvent = null as any;
+export const getInstanceMaintenanceEventOutput: typeof import("./getInstanceMaintenanceEvent").getInstanceMaintenanceEventOutput = null as any;
+utilities.lazyLoad(exports, ["getInstanceMaintenanceEvent","getInstanceMaintenanceEventOutput"], () => require("./getInstanceMaintenanceEvent"));
+
+export { GetInstanceMaintenanceEventsArgs, GetInstanceMaintenanceEventsResult, GetInstanceMaintenanceEventsOutputArgs } from "./getInstanceMaintenanceEvents";
+export const getInstanceMaintenanceEvents: typeof import("./getInstanceMaintenanceEvents").getInstanceMaintenanceEvents = null as any;
+export const getInstanceMaintenanceEventsOutput: typeof import("./getInstanceMaintenanceEvents").getInstanceMaintenanceEventsOutput = null as any;
+utilities.lazyLoad(exports, ["getInstanceMaintenanceEvents","getInstanceMaintenanceEventsOutput"], () => require("./getInstanceMaintenanceEvents"));
+
 export { GetInstanceMaintenanceRebootArgs, GetInstanceMaintenanceRebootResult, GetInstanceMaintenanceRebootOutputArgs } from "./getInstanceMaintenanceReboot";
 export const getInstanceMaintenanceReboot: typeof import("./getInstanceMaintenanceReboot").getInstanceMaintenanceReboot = null as any;
 export const getInstanceMaintenanceRebootOutput: typeof import("./getInstanceMaintenanceReboot").getInstanceMaintenanceRebootOutput = null as any;
@@ -920,6 +930,11 @@ export type InstanceConsoleConnection = import("./instanceConsoleConnection").In
 export const InstanceConsoleConnection: typeof import("./instanceConsoleConnection").InstanceConsoleConnection = null as any;
 utilities.lazyLoad(exports, ["InstanceConsoleConnection"], () => require("./instanceConsoleConnection"));
 
+export { InstanceMaintenanceEventArgs, InstanceMaintenanceEventState } from "./instanceMaintenanceEvent";
+export type InstanceMaintenanceEvent = import("./instanceMaintenanceEvent").InstanceMaintenanceEvent;
+export const InstanceMaintenanceEvent: typeof import("./instanceMaintenanceEvent").InstanceMaintenanceEvent = null as any;
+utilities.lazyLoad(exports, ["InstanceMaintenanceEvent"], () => require("./instanceMaintenanceEvent"));
+
 export { InstancePoolArgs, InstancePoolState } from "./instancePool";
 export type InstancePool = import("./instancePool").InstancePool;
 export const InstancePool: typeof import("./instancePool").InstancePool = null as any;
@@ -1164,6 +1179,8 @@ const _module = {
                 return new InstanceConfiguration(name, <any>undefined, { urn })
             case "oci:Core/instanceConsoleConnection:InstanceConsoleConnection":
                 return new InstanceConsoleConnection(name, <any>undefined, { urn })
+            case "oci:Core/instanceMaintenanceEvent:InstanceMaintenanceEvent":
+                return new InstanceMaintenanceEvent(name, <any>undefined, { urn })
             case "oci:Core/instancePool:InstancePool":
                 return new InstancePool(name, <any>undefined, { urn })
             case "oci:Core/instancePoolInstance:InstancePoolInstance":
@@ -1271,6 +1288,7 @@ pulumi.runtime.registerResourceModule("oci", "Core/image", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/instance", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/instanceConfiguration", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/instanceConsoleConnection", _module)
+pulumi.runtime.registerResourceModule("oci", "Core/instanceMaintenanceEvent", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/instancePool", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/instancePoolInstance", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/internetGateway", _module)

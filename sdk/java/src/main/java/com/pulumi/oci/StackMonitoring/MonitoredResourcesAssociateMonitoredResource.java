@@ -233,11 +233,18 @@ public class MonitoredResourcesAssociateMonitoredResource extends com.pulumi.res
      * @param options A bag of options that control this resource's behavior.
      */
     public MonitoredResourcesAssociateMonitoredResource(String name, MonitoredResourcesAssociateMonitoredResourceArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:StackMonitoring/monitoredResourcesAssociateMonitoredResource:MonitoredResourcesAssociateMonitoredResource", name, args == null ? MonitoredResourcesAssociateMonitoredResourceArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:StackMonitoring/monitoredResourcesAssociateMonitoredResource:MonitoredResourcesAssociateMonitoredResource", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private MonitoredResourcesAssociateMonitoredResource(String name, Output<String> id, @Nullable MonitoredResourcesAssociateMonitoredResourceState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:StackMonitoring/monitoredResourcesAssociateMonitoredResource:MonitoredResourcesAssociateMonitoredResource", name, state, makeResourceOptions(options, id));
+    }
+
+    private static MonitoredResourcesAssociateMonitoredResourceArgs makeArgs(MonitoredResourcesAssociateMonitoredResourceArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? MonitoredResourcesAssociateMonitoredResourceArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

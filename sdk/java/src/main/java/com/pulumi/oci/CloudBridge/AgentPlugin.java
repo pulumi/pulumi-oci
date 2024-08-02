@@ -265,11 +265,18 @@ public class AgentPlugin extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public AgentPlugin(String name, AgentPluginArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:CloudBridge/agentPlugin:AgentPlugin", name, args == null ? AgentPluginArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:CloudBridge/agentPlugin:AgentPlugin", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private AgentPlugin(String name, Output<String> id, @Nullable AgentPluginState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:CloudBridge/agentPlugin:AgentPlugin", name, state, makeResourceOptions(options, id));
+    }
+
+    private static AgentPluginArgs makeArgs(AgentPluginArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? AgentPluginArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

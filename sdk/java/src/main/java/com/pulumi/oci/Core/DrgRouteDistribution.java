@@ -214,11 +214,18 @@ public class DrgRouteDistribution extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public DrgRouteDistribution(String name, DrgRouteDistributionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/drgRouteDistribution:DrgRouteDistribution", name, args == null ? DrgRouteDistributionArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Core/drgRouteDistribution:DrgRouteDistribution", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DrgRouteDistribution(String name, Output<String> id, @Nullable DrgRouteDistributionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Core/drgRouteDistribution:DrgRouteDistribution", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DrgRouteDistributionArgs makeArgs(DrgRouteDistributionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DrgRouteDistributionArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

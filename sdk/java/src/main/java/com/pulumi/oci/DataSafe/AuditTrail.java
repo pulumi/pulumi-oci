@@ -413,11 +413,18 @@ public class AuditTrail extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public AuditTrail(String name, AuditTrailArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/auditTrail:AuditTrail", name, args == null ? AuditTrailArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DataSafe/auditTrail:AuditTrail", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private AuditTrail(String name, Output<String> id, @Nullable AuditTrailState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DataSafe/auditTrail:AuditTrail", name, state, makeResourceOptions(options, id));
+    }
+
+    private static AuditTrailArgs makeArgs(AuditTrailArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? AuditTrailArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

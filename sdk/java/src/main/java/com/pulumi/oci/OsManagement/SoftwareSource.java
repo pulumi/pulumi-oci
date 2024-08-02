@@ -404,11 +404,18 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public SoftwareSource(String name, SoftwareSourceArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:OsManagement/softwareSource:SoftwareSource", name, args == null ? SoftwareSourceArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:OsManagement/softwareSource:SoftwareSource", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private SoftwareSource(String name, Output<String> id, @Nullable SoftwareSourceState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:OsManagement/softwareSource:SoftwareSource", name, state, makeResourceOptions(options, id));
+    }
+
+    private static SoftwareSourceArgs makeArgs(SoftwareSourceArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? SoftwareSourceArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

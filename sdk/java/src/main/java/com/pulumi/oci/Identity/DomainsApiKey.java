@@ -682,11 +682,18 @@ public class DomainsApiKey extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public DomainsApiKey(String name, DomainsApiKeyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsApiKey:DomainsApiKey", name, args == null ? DomainsApiKeyArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Identity/domainsApiKey:DomainsApiKey", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DomainsApiKey(String name, Output<String> id, @Nullable DomainsApiKeyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Identity/domainsApiKey:DomainsApiKey", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DomainsApiKeyArgs makeArgs(DomainsApiKeyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DomainsApiKeyArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

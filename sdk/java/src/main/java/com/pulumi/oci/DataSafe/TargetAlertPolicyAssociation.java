@@ -159,6 +159,20 @@ public class TargetAlertPolicyAssociation extends com.pulumi.resources.CustomRes
         return this.isEnabled;
     }
     /**
+     * Details about the current state of the target-alert policy association.
+     * 
+     */
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
+    private Output<String> lifecycleDetails;
+
+    /**
+     * @return Details about the current state of the target-alert policy association.
+     * 
+     */
+    public Output<String> lifecycleDetails() {
+        return this.lifecycleDetails;
+    }
+    /**
      * The OCID of the alert policy.
      * 
      */
@@ -271,11 +285,18 @@ public class TargetAlertPolicyAssociation extends com.pulumi.resources.CustomRes
      * @param options A bag of options that control this resource's behavior.
      */
     public TargetAlertPolicyAssociation(String name, TargetAlertPolicyAssociationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/targetAlertPolicyAssociation:TargetAlertPolicyAssociation", name, args == null ? TargetAlertPolicyAssociationArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DataSafe/targetAlertPolicyAssociation:TargetAlertPolicyAssociation", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private TargetAlertPolicyAssociation(String name, Output<String> id, @Nullable TargetAlertPolicyAssociationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DataSafe/targetAlertPolicyAssociation:TargetAlertPolicyAssociation", name, state, makeResourceOptions(options, id));
+    }
+
+    private static TargetAlertPolicyAssociationArgs makeArgs(TargetAlertPolicyAssociationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? TargetAlertPolicyAssociationArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

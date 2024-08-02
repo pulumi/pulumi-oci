@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Identity.outputs.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderJitProvAssignedGroup;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -83,6 +84,23 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
      * 
      */
     private @Nullable String authzUrl;
+    /**
+     * @return (Updatable) Whether social auto redirect is enabled. The IDP policy should be configured with only one Social IDP, and without username/password selected.
+     * 
+     * **Added In:** 2310202314
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
+     */
+    private @Nullable Boolean autoRedirectEnabled;
     /**
      * @return (Updatable) Whether the client credential is contained in payload
      * 
@@ -186,6 +204,40 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
      */
     private @Nullable String idAttribute;
     /**
+     * @return (Updatable) Lists the groups each social JIT-provisioned user is a member. Just-in-Time user-provisioning applies this static list when jitProvGroupStaticListEnabled:true.
+     * 
+     * **Added In:** 2310202314
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
+     */
+    private @Nullable List<DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderJitProvAssignedGroup> jitProvAssignedGroups;
+    /**
+     * @return (Updatable) Set to true to indicate Social JIT User Provisioning Groups should be assigned from a static list
+     * 
+     * **Added In:** 2310202314
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
+     */
+    private @Nullable Boolean jitProvGroupStaticListEnabled;
+    /**
      * @return (Updatable) Social IDP User profile URL
      * 
      * **Added In:** 20.1.3
@@ -270,6 +322,23 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
      * 
      */
     private String serviceProviderName;
+    /**
+     * @return (Updatable) Whether Social JIT Provisioning is enabled
+     * 
+     * **Added In:** 2307282043
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
+     */
+    private @Nullable Boolean socialJitProvisioningEnabled;
     /**
      * @return (Updatable) Status
      * 
@@ -364,6 +433,25 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
      */
     public Optional<String> authzUrl() {
         return Optional.ofNullable(this.authzUrl);
+    }
+    /**
+     * @return (Updatable) Whether social auto redirect is enabled. The IDP policy should be configured with only one Social IDP, and without username/password selected.
+     * 
+     * **Added In:** 2310202314
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
+     */
+    public Optional<Boolean> autoRedirectEnabled() {
+        return Optional.ofNullable(this.autoRedirectEnabled);
     }
     /**
      * @return (Updatable) Whether the client credential is contained in payload
@@ -480,6 +568,44 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
         return Optional.ofNullable(this.idAttribute);
     }
     /**
+     * @return (Updatable) Lists the groups each social JIT-provisioned user is a member. Just-in-Time user-provisioning applies this static list when jitProvGroupStaticListEnabled:true.
+     * 
+     * **Added In:** 2310202314
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
+     */
+    public List<DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderJitProvAssignedGroup> jitProvAssignedGroups() {
+        return this.jitProvAssignedGroups == null ? List.of() : this.jitProvAssignedGroups;
+    }
+    /**
+     * @return (Updatable) Set to true to indicate Social JIT User Provisioning Groups should be assigned from a static list
+     * 
+     * **Added In:** 2310202314
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
+     */
+    public Optional<Boolean> jitProvGroupStaticListEnabled() {
+        return Optional.ofNullable(this.jitProvGroupStaticListEnabled);
+    }
+    /**
      * @return (Updatable) Social IDP User profile URL
      * 
      * **Added In:** 20.1.3
@@ -575,6 +701,25 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
         return this.serviceProviderName;
     }
     /**
+     * @return (Updatable) Whether Social JIT Provisioning is enabled
+     * 
+     * **Added In:** 2307282043
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
+     */
+    public Optional<Boolean> socialJitProvisioningEnabled() {
+        return Optional.ofNullable(this.socialJitProvisioningEnabled);
+    }
+    /**
      * @return (Updatable) Status
      * 
      * **Added In:** 20.1.3
@@ -607,17 +752,21 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
         private Boolean accountLinkingEnabled;
         private @Nullable List<String> adminScopes;
         private @Nullable String authzUrl;
+        private @Nullable Boolean autoRedirectEnabled;
         private @Nullable Boolean clientCredentialInPayload;
         private @Nullable Integer clockSkewInSeconds;
         private String consumerKey;
         private String consumerSecret;
         private @Nullable String discoveryUrl;
         private @Nullable String idAttribute;
+        private @Nullable List<DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderJitProvAssignedGroup> jitProvAssignedGroups;
+        private @Nullable Boolean jitProvGroupStaticListEnabled;
         private @Nullable String profileUrl;
         private @Nullable String redirectUrl;
         private Boolean registrationEnabled;
         private @Nullable List<String> scopes;
         private String serviceProviderName;
+        private @Nullable Boolean socialJitProvisioningEnabled;
         private @Nullable String status;
         public Builder() {}
         public Builder(DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider defaults) {
@@ -626,17 +775,21 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
     	      this.accountLinkingEnabled = defaults.accountLinkingEnabled;
     	      this.adminScopes = defaults.adminScopes;
     	      this.authzUrl = defaults.authzUrl;
+    	      this.autoRedirectEnabled = defaults.autoRedirectEnabled;
     	      this.clientCredentialInPayload = defaults.clientCredentialInPayload;
     	      this.clockSkewInSeconds = defaults.clockSkewInSeconds;
     	      this.consumerKey = defaults.consumerKey;
     	      this.consumerSecret = defaults.consumerSecret;
     	      this.discoveryUrl = defaults.discoveryUrl;
     	      this.idAttribute = defaults.idAttribute;
+    	      this.jitProvAssignedGroups = defaults.jitProvAssignedGroups;
+    	      this.jitProvGroupStaticListEnabled = defaults.jitProvGroupStaticListEnabled;
     	      this.profileUrl = defaults.profileUrl;
     	      this.redirectUrl = defaults.redirectUrl;
     	      this.registrationEnabled = defaults.registrationEnabled;
     	      this.scopes = defaults.scopes;
     	      this.serviceProviderName = defaults.serviceProviderName;
+    	      this.socialJitProvisioningEnabled = defaults.socialJitProvisioningEnabled;
     	      this.status = defaults.status;
         }
 
@@ -667,6 +820,12 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
         public Builder authzUrl(@Nullable String authzUrl) {
 
             this.authzUrl = authzUrl;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder autoRedirectEnabled(@Nullable Boolean autoRedirectEnabled) {
+
+            this.autoRedirectEnabled = autoRedirectEnabled;
             return this;
         }
         @CustomType.Setter
@@ -710,6 +869,21 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
             return this;
         }
         @CustomType.Setter
+        public Builder jitProvAssignedGroups(@Nullable List<DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderJitProvAssignedGroup> jitProvAssignedGroups) {
+
+            this.jitProvAssignedGroups = jitProvAssignedGroups;
+            return this;
+        }
+        public Builder jitProvAssignedGroups(DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderJitProvAssignedGroup... jitProvAssignedGroups) {
+            return jitProvAssignedGroups(List.of(jitProvAssignedGroups));
+        }
+        @CustomType.Setter
+        public Builder jitProvGroupStaticListEnabled(@Nullable Boolean jitProvGroupStaticListEnabled) {
+
+            this.jitProvGroupStaticListEnabled = jitProvGroupStaticListEnabled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder profileUrl(@Nullable String profileUrl) {
 
             this.profileUrl = profileUrl;
@@ -747,6 +921,12 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
             return this;
         }
         @CustomType.Setter
+        public Builder socialJitProvisioningEnabled(@Nullable Boolean socialJitProvisioningEnabled) {
+
+            this.socialJitProvisioningEnabled = socialJitProvisioningEnabled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder status(@Nullable String status) {
 
             this.status = status;
@@ -758,17 +938,21 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
             _resultValue.accountLinkingEnabled = accountLinkingEnabled;
             _resultValue.adminScopes = adminScopes;
             _resultValue.authzUrl = authzUrl;
+            _resultValue.autoRedirectEnabled = autoRedirectEnabled;
             _resultValue.clientCredentialInPayload = clientCredentialInPayload;
             _resultValue.clockSkewInSeconds = clockSkewInSeconds;
             _resultValue.consumerKey = consumerKey;
             _resultValue.consumerSecret = consumerSecret;
             _resultValue.discoveryUrl = discoveryUrl;
             _resultValue.idAttribute = idAttribute;
+            _resultValue.jitProvAssignedGroups = jitProvAssignedGroups;
+            _resultValue.jitProvGroupStaticListEnabled = jitProvGroupStaticListEnabled;
             _resultValue.profileUrl = profileUrl;
             _resultValue.redirectUrl = redirectUrl;
             _resultValue.registrationEnabled = registrationEnabled;
             _resultValue.scopes = scopes;
             _resultValue.serviceProviderName = serviceProviderName;
+            _resultValue.socialJitProvisioningEnabled = socialJitProvisioningEnabled;
             _resultValue.status = status;
             return _resultValue;
         }

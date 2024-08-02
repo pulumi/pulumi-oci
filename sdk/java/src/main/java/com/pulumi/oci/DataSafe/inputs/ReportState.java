@@ -93,6 +93,21 @@ public final class ReportState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Details about the current state of the report in Data Safe.
+     * 
+     */
+    @Import(name="lifecycleDetails")
+    private @Nullable Output<String> lifecycleDetails;
+
+    /**
+     * @return Details about the current state of the report in Data Safe.
+     * 
+     */
+    public Optional<Output<String>> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
+    }
+
+    /**
      * Specifies the format of report to be .xls or .pdf or .json
      * 
      */
@@ -211,6 +226,7 @@ public final class ReportState extends com.pulumi.resources.ResourceArgs {
         this.description = $.description;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.lifecycleDetails = $.lifecycleDetails;
         this.mimeType = $.mimeType;
         this.reportDefinitionId = $.reportDefinitionId;
         this.reportId = $.reportId;
@@ -341,6 +357,27 @@ public final class ReportState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder freeformTags(Map<String,Object> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param lifecycleDetails Details about the current state of the report in Data Safe.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifecycleDetails(@Nullable Output<String> lifecycleDetails) {
+            $.lifecycleDetails = lifecycleDetails;
+            return this;
+        }
+
+        /**
+         * @param lifecycleDetails Details about the current state of the report in Data Safe.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            return lifecycleDetails(Output.of(lifecycleDetails));
         }
 
         /**

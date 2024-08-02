@@ -43,6 +43,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &NetworkFirewallPolicyService{}
 	case "oci:NetworkFirewall/networkFirewallPolicyServiceList:NetworkFirewallPolicyServiceList":
 		r = &NetworkFirewallPolicyServiceList{}
+	case "oci:NetworkFirewall/networkFirewallPolicyTunnelInspectionRule:NetworkFirewallPolicyTunnelInspectionRule":
+		r = &NetworkFirewallPolicyTunnelInspectionRule{}
 	case "oci:NetworkFirewall/networkFirewallPolicyUrlList:NetworkFirewallPolicyUrlList":
 		r = &NetworkFirewallPolicyUrlList{}
 	default:
@@ -111,6 +113,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"NetworkFirewall/networkFirewallPolicyServiceList",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"NetworkFirewall/networkFirewallPolicyTunnelInspectionRule",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

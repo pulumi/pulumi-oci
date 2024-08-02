@@ -295,6 +295,20 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.cloneType;
     }
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
+     * 
+     */
+    @Export(name="clusterPlacementGroupId", refs={String.class}, tree="[0]")
+    private Output<String> clusterPlacementGroupId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
+     * 
+     */
+    public Output<String> clusterPlacementGroupId() {
+        return this.clusterPlacementGroupId;
+    }
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Database.
      * 
      */
@@ -2101,11 +2115,18 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public AutonomousDatabase(String name, AutonomousDatabaseArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/autonomousDatabase:AutonomousDatabase", name, args == null ? AutonomousDatabaseArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Database/autonomousDatabase:AutonomousDatabase", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private AutonomousDatabase(String name, Output<String> id, @Nullable AutonomousDatabaseState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Database/autonomousDatabase:AutonomousDatabase", name, state, makeResourceOptions(options, id));
+    }
+
+    private static AutonomousDatabaseArgs makeArgs(AutonomousDatabaseArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? AutonomousDatabaseArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

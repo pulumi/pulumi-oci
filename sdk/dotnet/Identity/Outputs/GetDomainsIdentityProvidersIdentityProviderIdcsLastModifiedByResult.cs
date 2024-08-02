@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string Type;
         /// <summary>
-        /// Value of the tag.
+        /// Group identifier
         /// </summary>
         public readonly string Value;
 

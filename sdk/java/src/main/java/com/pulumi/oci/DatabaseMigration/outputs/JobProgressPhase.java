@@ -27,6 +27,11 @@ public final class JobProgressPhase {
      */
     private @Nullable Integer durationInMs;
     /**
+     * @return Attribute that returns an array of names and types of GoldenGate configuration files that are available for read or update.
+     * 
+     */
+    private @Nullable List<String> editableParameterFiles;
+    /**
      * @return Summary of phase status results.
      * 
      */
@@ -36,6 +41,11 @@ public final class JobProgressPhase {
      * 
      */
     private @Nullable Boolean isAdvisorReportAvailable;
+    /**
+     * @return This is returned as true if the current phase can be suspended.
+     * 
+     */
+    private @Nullable Boolean isSuspendAvailable;
     /**
      * @return The text describing the root cause of the reported issue
      * 
@@ -78,6 +88,13 @@ public final class JobProgressPhase {
         return Optional.ofNullable(this.durationInMs);
     }
     /**
+     * @return Attribute that returns an array of names and types of GoldenGate configuration files that are available for read or update.
+     * 
+     */
+    public List<String> editableParameterFiles() {
+        return this.editableParameterFiles == null ? List.of() : this.editableParameterFiles;
+    }
+    /**
      * @return Summary of phase status results.
      * 
      */
@@ -90,6 +107,13 @@ public final class JobProgressPhase {
      */
     public Optional<Boolean> isAdvisorReportAvailable() {
         return Optional.ofNullable(this.isAdvisorReportAvailable);
+    }
+    /**
+     * @return This is returned as true if the current phase can be suspended.
+     * 
+     */
+    public Optional<Boolean> isSuspendAvailable() {
+        return Optional.ofNullable(this.isSuspendAvailable);
     }
     /**
      * @return The text describing the root cause of the reported issue
@@ -138,8 +162,10 @@ public final class JobProgressPhase {
     public static final class Builder {
         private @Nullable String action;
         private @Nullable Integer durationInMs;
+        private @Nullable List<String> editableParameterFiles;
         private @Nullable List<JobProgressPhaseExtract> extracts;
         private @Nullable Boolean isAdvisorReportAvailable;
+        private @Nullable Boolean isSuspendAvailable;
         private @Nullable String issue;
         private @Nullable List<JobProgressPhaseLogLocation> logLocations;
         private @Nullable String name;
@@ -150,8 +176,10 @@ public final class JobProgressPhase {
     	      Objects.requireNonNull(defaults);
     	      this.action = defaults.action;
     	      this.durationInMs = defaults.durationInMs;
+    	      this.editableParameterFiles = defaults.editableParameterFiles;
     	      this.extracts = defaults.extracts;
     	      this.isAdvisorReportAvailable = defaults.isAdvisorReportAvailable;
+    	      this.isSuspendAvailable = defaults.isSuspendAvailable;
     	      this.issue = defaults.issue;
     	      this.logLocations = defaults.logLocations;
     	      this.name = defaults.name;
@@ -172,6 +200,15 @@ public final class JobProgressPhase {
             return this;
         }
         @CustomType.Setter
+        public Builder editableParameterFiles(@Nullable List<String> editableParameterFiles) {
+
+            this.editableParameterFiles = editableParameterFiles;
+            return this;
+        }
+        public Builder editableParameterFiles(String... editableParameterFiles) {
+            return editableParameterFiles(List.of(editableParameterFiles));
+        }
+        @CustomType.Setter
         public Builder extracts(@Nullable List<JobProgressPhaseExtract> extracts) {
 
             this.extracts = extracts;
@@ -184,6 +221,12 @@ public final class JobProgressPhase {
         public Builder isAdvisorReportAvailable(@Nullable Boolean isAdvisorReportAvailable) {
 
             this.isAdvisorReportAvailable = isAdvisorReportAvailable;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isSuspendAvailable(@Nullable Boolean isSuspendAvailable) {
+
+            this.isSuspendAvailable = isSuspendAvailable;
             return this;
         }
         @CustomType.Setter
@@ -223,8 +266,10 @@ public final class JobProgressPhase {
             final var _resultValue = new JobProgressPhase();
             _resultValue.action = action;
             _resultValue.durationInMs = durationInMs;
+            _resultValue.editableParameterFiles = editableParameterFiles;
             _resultValue.extracts = extracts;
             _resultValue.isAdvisorReportAvailable = isAdvisorReportAvailable;
+            _resultValue.isSuspendAvailable = isSuspendAvailable;
             _resultValue.issue = issue;
             _resultValue.logLocations = logLocations;
             _resultValue.name = name;

@@ -226,11 +226,18 @@ public class CaBundle extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public CaBundle(String name, CaBundleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:CertificatesManagement/caBundle:CaBundle", name, args == null ? CaBundleArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:CertificatesManagement/caBundle:CaBundle", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private CaBundle(String name, Output<String> id, @Nullable CaBundleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:CertificatesManagement/caBundle:CaBundle", name, state, makeResourceOptions(options, id));
+    }
+
+    private static CaBundleArgs makeArgs(CaBundleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? CaBundleArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

@@ -240,11 +240,18 @@ public class ManagedDatabaseGroup extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public ManagedDatabaseGroup(String name, ManagedDatabaseGroupArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseManagement/managedDatabaseGroup:ManagedDatabaseGroup", name, args == null ? ManagedDatabaseGroupArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DatabaseManagement/managedDatabaseGroup:ManagedDatabaseGroup", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ManagedDatabaseGroup(String name, Output<String> id, @Nullable ManagedDatabaseGroupState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DatabaseManagement/managedDatabaseGroup:ManagedDatabaseGroup", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ManagedDatabaseGroupArgs makeArgs(ManagedDatabaseGroupArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ManagedDatabaseGroupArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

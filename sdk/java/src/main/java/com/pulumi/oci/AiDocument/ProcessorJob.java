@@ -276,11 +276,18 @@ public class ProcessorJob extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public ProcessorJob(String name, ProcessorJobArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:AiDocument/processorJob:ProcessorJob", name, args == null ? ProcessorJobArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:AiDocument/processorJob:ProcessorJob", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ProcessorJob(String name, Output<String> id, @Nullable ProcessorJobState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:AiDocument/processorJob:ProcessorJob", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ProcessorJobArgs makeArgs(ProcessorJobArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ProcessorJobArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

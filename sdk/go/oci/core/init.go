@@ -85,6 +85,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &InstanceConfiguration{}
 	case "oci:Core/instanceConsoleConnection:InstanceConsoleConnection":
 		r = &InstanceConsoleConnection{}
+	case "oci:Core/instanceMaintenanceEvent:InstanceMaintenanceEvent":
+		r = &InstanceMaintenanceEvent{}
 	case "oci:Core/instancePool:InstancePool":
 		r = &InstancePool{}
 	case "oci:Core/instancePoolInstance:InstancePoolInstance":
@@ -326,6 +328,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Core/instanceConsoleConnection",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Core/instanceMaintenanceEvent",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

@@ -6,6 +6,7 @@ package com.pulumi.oci.DatabaseMigration;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -66,9 +67,6 @@ public final class JobArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * The OCID of the job
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="jobId", required=true)
     private Output<String> jobId;
@@ -76,12 +74,30 @@ public final class JobArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return The OCID of the job
      * 
+     */
+    public Output<String> jobId() {
+        return this.jobId;
+    }
+
+    /**
+     * (Updatable) An optional property when incremented triggers Suspend. Could be set to any integer value.
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> jobId() {
-        return this.jobId;
+    @Import(name="suspendTrigger")
+    private @Nullable Output<Integer> suspendTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Suspend. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<Integer>> suspendTrigger() {
+        return Optional.ofNullable(this.suspendTrigger);
     }
 
     private JobArgs() {}
@@ -91,6 +107,7 @@ public final class JobArgs extends com.pulumi.resources.ResourceArgs {
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.jobId = $.jobId;
+        this.suspendTrigger = $.suspendTrigger;
     }
 
     public static Builder builder() {
@@ -177,9 +194,6 @@ public final class JobArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param jobId The OCID of the job
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -191,14 +205,38 @@ public final class JobArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param jobId The OCID of the job
          * 
+         * @return builder
+         * 
+         */
+        public Builder jobId(String jobId) {
+            return jobId(Output.of(jobId));
+        }
+
+        /**
+         * @param suspendTrigger (Updatable) An optional property when incremented triggers Suspend. Could be set to any integer value.
+         * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
          */
-        public Builder jobId(String jobId) {
-            return jobId(Output.of(jobId));
+        public Builder suspendTrigger(@Nullable Output<Integer> suspendTrigger) {
+            $.suspendTrigger = suspendTrigger;
+            return this;
+        }
+
+        /**
+         * @param suspendTrigger (Updatable) An optional property when incremented triggers Suspend. Could be set to any integer value.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder suspendTrigger(Integer suspendTrigger) {
+            return suspendTrigger(Output.of(suspendTrigger));
         }
 
         public JobArgs build() {

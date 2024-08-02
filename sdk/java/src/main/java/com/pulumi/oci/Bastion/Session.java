@@ -304,11 +304,18 @@ public class Session extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public Session(String name, SessionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Bastion/session:Session", name, args == null ? SessionArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Bastion/session:Session", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private Session(String name, Output<String> id, @Nullable SessionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Bastion/session:Session", name, state, makeResourceOptions(options, id));
+    }
+
+    private static SessionArgs makeArgs(SessionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? SessionArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

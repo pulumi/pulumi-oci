@@ -708,11 +708,18 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public MysqlDbSystem(String name, MysqlDbSystemArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Mysql/mysqlDbSystem:MysqlDbSystem", name, args == null ? MysqlDbSystemArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Mysql/mysqlDbSystem:MysqlDbSystem", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private MysqlDbSystem(String name, Output<String> id, @Nullable MysqlDbSystemState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Mysql/mysqlDbSystem:MysqlDbSystem", name, state, makeResourceOptions(options, id));
+    }
+
+    private static MysqlDbSystemArgs makeArgs(MysqlDbSystemArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? MysqlDbSystemArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

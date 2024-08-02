@@ -28,6 +28,10 @@ type Alert struct {
 
 	// The OCID of alert.
 	AlertId pulumi.StringOutput `pulumi:"alertId"`
+	// The key of the rule of alert policy that triggered alert.
+	AlertPolicyRuleKey pulumi.StringOutput `pulumi:"alertPolicyRuleKey"`
+	// The display name of the rule of alert policy that triggered alert.
+	AlertPolicyRuleName pulumi.StringOutput `pulumi:"alertPolicyRuleName"`
 	// Type of the alert. Indicates the Data Safe feature triggering the alert.
 	AlertType pulumi.StringOutput `pulumi:"alertType"`
 	// (Updatable) A comment can be entered to track the alert changes done by the user.
@@ -110,6 +114,10 @@ func GetAlert(ctx *pulumi.Context,
 type alertState struct {
 	// The OCID of alert.
 	AlertId *string `pulumi:"alertId"`
+	// The key of the rule of alert policy that triggered alert.
+	AlertPolicyRuleKey *string `pulumi:"alertPolicyRuleKey"`
+	// The display name of the rule of alert policy that triggered alert.
+	AlertPolicyRuleName *string `pulumi:"alertPolicyRuleName"`
 	// Type of the alert. Indicates the Data Safe feature triggering the alert.
 	AlertType *string `pulumi:"alertType"`
 	// (Updatable) A comment can be entered to track the alert changes done by the user.
@@ -160,6 +168,10 @@ type alertState struct {
 type AlertState struct {
 	// The OCID of alert.
 	AlertId pulumi.StringPtrInput
+	// The key of the rule of alert policy that triggered alert.
+	AlertPolicyRuleKey pulumi.StringPtrInput
+	// The display name of the rule of alert policy that triggered alert.
+	AlertPolicyRuleName pulumi.StringPtrInput
 	// Type of the alert. Indicates the Data Safe feature triggering the alert.
 	AlertType pulumi.StringPtrInput
 	// (Updatable) A comment can be entered to track the alert changes done by the user.
@@ -338,6 +350,16 @@ func (o AlertOutput) ToAlertOutputWithContext(ctx context.Context) AlertOutput {
 // The OCID of alert.
 func (o AlertOutput) AlertId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Alert) pulumi.StringOutput { return v.AlertId }).(pulumi.StringOutput)
+}
+
+// The key of the rule of alert policy that triggered alert.
+func (o AlertOutput) AlertPolicyRuleKey() pulumi.StringOutput {
+	return o.ApplyT(func(v *Alert) pulumi.StringOutput { return v.AlertPolicyRuleKey }).(pulumi.StringOutput)
+}
+
+// The display name of the rule of alert policy that triggered alert.
+func (o AlertOutput) AlertPolicyRuleName() pulumi.StringOutput {
+	return o.ApplyT(func(v *Alert) pulumi.StringOutput { return v.AlertPolicyRuleName }).(pulumi.StringOutput)
 }
 
 // Type of the alert. Indicates the Data Safe feature triggering the alert.

@@ -21,7 +21,7 @@ class GetBaselineableMetricResult:
     """
     A collection of values returned by getBaselineableMetric.
     """
-    def __init__(__self__, baselineable_metric_id=None, column=None, compartment_id=None, created_by=None, defined_tags=None, freeform_tags=None, id=None, is_out_of_box=None, last_updated_by=None, name=None, namespace=None, resource_group=None, state=None, system_tags=None, tenancy_id=None, time_created=None, time_last_updated=None):
+    def __init__(__self__, baselineable_metric_id=None, column=None, compartment_id=None, created_by=None, defined_tags=None, freeform_tags=None, id=None, is_out_of_box=None, last_updated_by=None, name=None, namespace=None, resource_group=None, resource_type=None, state=None, system_tags=None, tenancy_id=None, time_created=None, time_last_updated=None):
         if baselineable_metric_id and not isinstance(baselineable_metric_id, str):
             raise TypeError("Expected argument 'baselineable_metric_id' to be a str")
         pulumi.set(__self__, "baselineable_metric_id", baselineable_metric_id)
@@ -58,6 +58,9 @@ class GetBaselineableMetricResult:
         if resource_group and not isinstance(resource_group, str):
             raise TypeError("Expected argument 'resource_group' to be a str")
         pulumi.set(__self__, "resource_group", resource_group)
+        if resource_type and not isinstance(resource_type, str):
+            raise TypeError("Expected argument 'resource_type' to be a str")
+        pulumi.set(__self__, "resource_type", resource_type)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -168,6 +171,14 @@ class GetBaselineableMetricResult:
         return pulumi.get(self, "resource_group")
 
     @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> str:
+        """
+        Resource type of the metric
+        """
+        return pulumi.get(self, "resource_type")
+
+    @property
     @pulumi.getter
     def state(self) -> str:
         """
@@ -226,6 +237,7 @@ class AwaitableGetBaselineableMetricResult(GetBaselineableMetricResult):
             name=self.name,
             namespace=self.namespace,
             resource_group=self.resource_group,
+            resource_type=self.resource_type,
             state=self.state,
             system_tags=self.system_tags,
             tenancy_id=self.tenancy_id,
@@ -270,6 +282,7 @@ def get_baselineable_metric(baselineable_metric_id: Optional[str] = None,
         name=pulumi.get(__ret__, 'name'),
         namespace=pulumi.get(__ret__, 'namespace'),
         resource_group=pulumi.get(__ret__, 'resource_group'),
+        resource_type=pulumi.get(__ret__, 'resource_type'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         tenancy_id=pulumi.get(__ret__, 'tenancy_id'),

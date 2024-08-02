@@ -820,11 +820,18 @@ public class ExadataInfrastructure extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public ExadataInfrastructure(String name, ExadataInfrastructureArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/exadataInfrastructure:ExadataInfrastructure", name, args == null ? ExadataInfrastructureArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Database/exadataInfrastructure:ExadataInfrastructure", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ExadataInfrastructure(String name, Output<String> id, @Nullable ExadataInfrastructureState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Database/exadataInfrastructure:ExadataInfrastructure", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ExadataInfrastructureArgs makeArgs(ExadataInfrastructureArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ExadataInfrastructureArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

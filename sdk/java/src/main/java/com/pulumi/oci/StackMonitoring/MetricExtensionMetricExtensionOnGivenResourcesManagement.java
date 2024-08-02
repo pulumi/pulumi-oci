@@ -130,11 +130,18 @@ public class MetricExtensionMetricExtensionOnGivenResourcesManagement extends co
      * @param options A bag of options that control this resource's behavior.
      */
     public MetricExtensionMetricExtensionOnGivenResourcesManagement(String name, MetricExtensionMetricExtensionOnGivenResourcesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:StackMonitoring/metricExtensionMetricExtensionOnGivenResourcesManagement:MetricExtensionMetricExtensionOnGivenResourcesManagement", name, args == null ? MetricExtensionMetricExtensionOnGivenResourcesManagementArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:StackMonitoring/metricExtensionMetricExtensionOnGivenResourcesManagement:MetricExtensionMetricExtensionOnGivenResourcesManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private MetricExtensionMetricExtensionOnGivenResourcesManagement(String name, Output<String> id, @Nullable MetricExtensionMetricExtensionOnGivenResourcesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:StackMonitoring/metricExtensionMetricExtensionOnGivenResourcesManagement:MetricExtensionMetricExtensionOnGivenResourcesManagement", name, state, makeResourceOptions(options, id));
+    }
+
+    private static MetricExtensionMetricExtensionOnGivenResourcesManagementArgs makeArgs(MetricExtensionMetricExtensionOnGivenResourcesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? MetricExtensionMetricExtensionOnGivenResourcesManagementArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

@@ -21,10 +21,16 @@ class GetAlertResult:
     """
     A collection of values returned by getAlert.
     """
-    def __init__(__self__, alert_id=None, alert_type=None, comment=None, compartment_id=None, defined_tags=None, description=None, display_name=None, feature_details=None, freeform_tags=None, id=None, operation=None, operation_status=None, operation_time=None, policy_id=None, resource_name=None, severity=None, state=None, status=None, system_tags=None, target_ids=None, target_names=None, time_created=None, time_updated=None):
+    def __init__(__self__, alert_id=None, alert_policy_rule_key=None, alert_policy_rule_name=None, alert_type=None, comment=None, compartment_id=None, defined_tags=None, description=None, display_name=None, feature_details=None, freeform_tags=None, id=None, operation=None, operation_status=None, operation_time=None, policy_id=None, resource_name=None, severity=None, state=None, status=None, system_tags=None, target_ids=None, target_names=None, time_created=None, time_updated=None):
         if alert_id and not isinstance(alert_id, str):
             raise TypeError("Expected argument 'alert_id' to be a str")
         pulumi.set(__self__, "alert_id", alert_id)
+        if alert_policy_rule_key and not isinstance(alert_policy_rule_key, str):
+            raise TypeError("Expected argument 'alert_policy_rule_key' to be a str")
+        pulumi.set(__self__, "alert_policy_rule_key", alert_policy_rule_key)
+        if alert_policy_rule_name and not isinstance(alert_policy_rule_name, str):
+            raise TypeError("Expected argument 'alert_policy_rule_name' to be a str")
+        pulumi.set(__self__, "alert_policy_rule_name", alert_policy_rule_name)
         if alert_type and not isinstance(alert_type, str):
             raise TypeError("Expected argument 'alert_type' to be a str")
         pulumi.set(__self__, "alert_type", alert_type)
@@ -96,6 +102,22 @@ class GetAlertResult:
     @pulumi.getter(name="alertId")
     def alert_id(self) -> str:
         return pulumi.get(self, "alert_id")
+
+    @property
+    @pulumi.getter(name="alertPolicyRuleKey")
+    def alert_policy_rule_key(self) -> str:
+        """
+        The key of the rule of alert policy that triggered alert.
+        """
+        return pulumi.get(self, "alert_policy_rule_key")
+
+    @property
+    @pulumi.getter(name="alertPolicyRuleName")
+    def alert_policy_rule_name(self) -> str:
+        """
+        The display name of the rule of alert policy that triggered alert.
+        """
+        return pulumi.get(self, "alert_policy_rule_name")
 
     @property
     @pulumi.getter(name="alertType")
@@ -281,6 +303,8 @@ class AwaitableGetAlertResult(GetAlertResult):
             yield self
         return GetAlertResult(
             alert_id=self.alert_id,
+            alert_policy_rule_key=self.alert_policy_rule_key,
+            alert_policy_rule_name=self.alert_policy_rule_name,
             alert_type=self.alert_type,
             comment=self.comment,
             compartment_id=self.compartment_id,
@@ -331,6 +355,8 @@ def get_alert(alert_id: Optional[str] = None,
 
     return AwaitableGetAlertResult(
         alert_id=pulumi.get(__ret__, 'alert_id'),
+        alert_policy_rule_key=pulumi.get(__ret__, 'alert_policy_rule_key'),
+        alert_policy_rule_name=pulumi.get(__ret__, 'alert_policy_rule_name'),
         alert_type=pulumi.get(__ret__, 'alert_type'),
         comment=pulumi.get(__ret__, 'comment'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),

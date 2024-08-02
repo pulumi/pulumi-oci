@@ -230,11 +230,18 @@ public class HttpRedirect extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public HttpRedirect(String name, HttpRedirectArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Waas/httpRedirect:HttpRedirect", name, args == null ? HttpRedirectArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Waas/httpRedirect:HttpRedirect", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private HttpRedirect(String name, Output<String> id, @Nullable HttpRedirectState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Waas/httpRedirect:HttpRedirect", name, state, makeResourceOptions(options, id));
+    }
+
+    private static HttpRedirectArgs makeArgs(HttpRedirectArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? HttpRedirectArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

@@ -306,11 +306,18 @@ public class PingMonitor extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public PingMonitor(String name, PingMonitorArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:HealthChecks/pingMonitor:PingMonitor", name, args == null ? PingMonitorArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:HealthChecks/pingMonitor:PingMonitor", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private PingMonitor(String name, Output<String> id, @Nullable PingMonitorState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:HealthChecks/pingMonitor:PingMonitor", name, state, makeResourceOptions(options, id));
+    }
+
+    private static PingMonitorArgs makeArgs(PingMonitorArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? PingMonitorArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

@@ -382,11 +382,18 @@ public class VirtualNodePool extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public VirtualNodePool(String name, VirtualNodePoolArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:ContainerEngine/virtualNodePool:VirtualNodePool", name, args == null ? VirtualNodePoolArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:ContainerEngine/virtualNodePool:VirtualNodePool", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private VirtualNodePool(String name, Output<String> id, @Nullable VirtualNodePoolState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:ContainerEngine/virtualNodePool:VirtualNodePool", name, state, makeResourceOptions(options, id));
+    }
+
+    private static VirtualNodePoolArgs makeArgs(VirtualNodePoolArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? VirtualNodePoolArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

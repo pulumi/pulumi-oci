@@ -429,11 +429,18 @@ public class MetricExtension extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public MetricExtension(String name, MetricExtensionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:StackMonitoring/metricExtension:MetricExtension", name, args == null ? MetricExtensionArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:StackMonitoring/metricExtension:MetricExtension", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private MetricExtension(String name, Output<String> id, @Nullable MetricExtensionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:StackMonitoring/metricExtension:MetricExtension", name, state, makeResourceOptions(options, id));
+    }
+
+    private static MetricExtensionArgs makeArgs(MetricExtensionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? MetricExtensionArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

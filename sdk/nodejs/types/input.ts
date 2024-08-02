@@ -13124,6 +13124,18 @@ export namespace Core {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetInstanceMaintenanceEventsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetInstanceMaintenanceEventsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetInstancePoolInstancesFilter {
         name: string;
         regex?: boolean;
@@ -19915,6 +19927,21 @@ export namespace DataLabellingService {
 }
 
 export namespace DataSafe {
+    export interface AlertPolicyAlertPolicyRuleDetail {
+        /**
+         * Describes the alert policy rule.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * The display name of the alert policy rule.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * The conditional expression of the alert policy rule which evaluates to boolean value.
+         */
+        expression: pulumi.Input<string>;
+    }
+
     export interface AuditPolicyAuditCondition {
         /**
          * Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
@@ -30056,6 +30083,45 @@ export namespace DatabaseMigration {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface JobParameterFileVersion {
+        /**
+         * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+         */
+        definedTags?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * A description to discribe the current parameter file version
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
+         */
+        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * Return boolean true/false for the currently in-use parameter file (factory or a versioned file)
+         */
+        isCurrent?: pulumi.Input<boolean>;
+        /**
+         * Return true/false for whether the parameter file is oracle provided (Factory)
+         */
+        isFactory?: pulumi.Input<boolean>;
+        /**
+         * Indicator of Parameter File 'kind' (for an EXTRACT or a REPLICAT)
+         */
+        kind?: pulumi.Input<string>;
+        /**
+         * Phase name
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * The time the Migration Job was created. An RFC3339 formatted datetime string
+         */
+        timeCreated?: pulumi.Input<string>;
+    }
+
     export interface JobProgress {
         /**
          * Current phase of the job.
@@ -30081,6 +30147,10 @@ export namespace DatabaseMigration {
          */
         durationInMs?: pulumi.Input<number>;
         /**
+         * Attribute that returns an array of names and types of GoldenGate configuration files that are available for read or update.
+         */
+        editableParameterFiles?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
          * Summary of phase status results.
          */
         extracts?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.JobProgressPhaseExtract>[]>;
@@ -30088,6 +30158,10 @@ export namespace DatabaseMigration {
          * True if a Pre-Migration Advisor report is available for this phase. False or null if no report is available.
          */
         isAdvisorReportAvailable?: pulumi.Input<boolean>;
+        /**
+         * This is returned as true if the current phase can be suspended.
+         */
+        isSuspendAvailable?: pulumi.Input<boolean>;
         /**
          * The text describing the root cause of the reported issue
          */
@@ -33650,6 +33724,97 @@ export namespace FileStorage {
          */
         port: pulumi.Input<string>;
     }
+}
+
+export namespace FleetSoftwareUpdate {
+    export interface FsuCollectionActiveFsuCycle {
+        displayName?: pulumi.Input<string>;
+        id?: pulumi.Input<string>;
+    }
+
+    export interface FsuCollectionFleetDiscovery {
+        filters?: pulumi.Input<pulumi.Input<inputs.FleetSoftwareUpdate.FsuCollectionFleetDiscoveryFilter>[]>;
+        fsuDiscoveryId?: pulumi.Input<string>;
+        query?: pulumi.Input<string>;
+        strategy: pulumi.Input<string>;
+        targets?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface FsuCollectionFleetDiscoveryFilter {
+        entityType?: pulumi.Input<string>;
+        identifiers?: pulumi.Input<pulumi.Input<string>[]>;
+        mode?: pulumi.Input<string>;
+        names?: pulumi.Input<pulumi.Input<string>[]>;
+        operator?: pulumi.Input<string>;
+        tags?: pulumi.Input<pulumi.Input<inputs.FleetSoftwareUpdate.FsuCollectionFleetDiscoveryFilterTag>[]>;
+        type: pulumi.Input<string>;
+        versions?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface FsuCollectionFleetDiscoveryFilterTag {
+        key: pulumi.Input<string>;
+        namespace?: pulumi.Input<string>;
+        value: pulumi.Input<string>;
+    }
+
+    export interface FsuCycleApplyActionSchedule {
+        timeToStart: pulumi.Input<string>;
+        type: pulumi.Input<string>;
+    }
+
+    export interface FsuCycleBatchingStrategy {
+        isForceRolling?: pulumi.Input<boolean>;
+        isWaitForBatchResume?: pulumi.Input<boolean>;
+        percentage?: pulumi.Input<number>;
+        type?: pulumi.Input<string>;
+    }
+
+    export interface FsuCycleDiagnosticsCollection {
+        logCollectionMode?: pulumi.Input<string>;
+    }
+
+    export interface FsuCycleGoalVersionDetails {
+        homePolicy?: pulumi.Input<string>;
+        newHomePrefix?: pulumi.Input<string>;
+        softwareImageId?: pulumi.Input<string>;
+        type: pulumi.Input<string>;
+        version?: pulumi.Input<string>;
+    }
+
+    export interface FsuCycleNextActionToExecute {
+        timeToStart?: pulumi.Input<string>;
+        type?: pulumi.Input<string>;
+    }
+
+    export interface FsuCycleStageActionSchedule {
+        timeToStart: pulumi.Input<string>;
+        type: pulumi.Input<string>;
+    }
+
+    export interface GetFsuCollectionsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFsuCollectionsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetFsuCyclesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFsuCyclesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
 }
 
 export namespace Functions {
@@ -48029,6 +48194,22 @@ export namespace Identity {
          */
         authzUrl?: pulumi.Input<string>;
         /**
+         * (Updatable) Whether social auto redirect is enabled. The IDP policy should be configured with only one Social IDP, and without username/password selected.
+         *
+         * **Added In:** 2310202314
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         */
+        autoRedirectEnabled?: pulumi.Input<boolean>;
+        /**
          * (Updatable) Whether the client credential is contained in payload
          *
          * **Added In:** 20.1.3
@@ -48125,6 +48306,38 @@ export namespace Identity {
          */
         idAttribute?: pulumi.Input<string>;
         /**
+         * (Updatable) Lists the groups each social JIT-provisioned user is a member. Just-in-Time user-provisioning applies this static list when jitProvGroupStaticListEnabled:true.
+         *
+         * **Added In:** 2310202314
+         *
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
+         */
+        jitProvAssignedGroups?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderJitProvAssignedGroup>[]>;
+        /**
+         * (Updatable) Set to true to indicate Social JIT User Provisioning Groups should be assigned from a static list
+         *
+         * **Added In:** 2310202314
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         */
+        jitProvGroupStaticListEnabled?: pulumi.Input<boolean>;
+        /**
          * (Updatable) Social IDP User profile URL
          *
          * **Added In:** 20.1.3
@@ -48205,6 +48418,22 @@ export namespace Identity {
          */
         serviceProviderName: pulumi.Input<string>;
         /**
+         * (Updatable) Whether Social JIT Provisioning is enabled
+         *
+         * **Added In:** 2307282043
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         */
+        socialJitProvisioningEnabled?: pulumi.Input<boolean>;
+        /**
          * (Updatable) Status
          *
          * **Added In:** 20.1.3
@@ -48220,6 +48449,44 @@ export namespace Identity {
          * * uniqueness: none
          */
         status?: pulumi.Input<string>;
+    }
+
+    export interface DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderJitProvAssignedGroup {
+        /**
+         * (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
+         *
+         * **Added In:** 2310202314
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * Group URI
+         */
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) Group identifier
+         *
+         * **Added In:** 2310202314
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        value: pulumi.Input<string>;
     }
 
     export interface DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider {
@@ -56755,6 +57022,296 @@ export namespace Identity {
          * * uniqueness: none
          */
         value?: pulumi.Input<string>;
+    }
+
+    export interface DomainsSocialIdentityProviderIdcsCreatedBy {
+        /**
+         * (Updatable) The displayName of the User or App who created this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the SCIM resource that represents the User or App who created this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        ocid?: pulumi.Input<string>;
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of resource, User or App, that created this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * (Updatable) The ID of the SCIM resource that represents the User or App who created this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsSocialIdentityProviderIdcsLastModifiedBy {
+        /**
+         * (Updatable) The displayName of the User or App who modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the SCIM resource that represents the User or App who modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        ocid?: pulumi.Input<string>;
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of resource, User or App, that modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * (Updatable) The ID of the SCIM resource that represents the User or App who modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsSocialIdentityProviderJitProvAssignedGroup {
+        /**
+         * (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
+         *
+         * **Added In:** 2309290043
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
+         */
+        display?: pulumi.Input<string>;
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) Group identifier
+         *
+         * **Added In:** 2309290043
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsSocialIdentityProviderMeta {
+        /**
+         * (Updatable) The DateTime the Resource was added to the Service Provider
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
+         */
+        created?: pulumi.Input<string>;
+        /**
+         * (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
+         */
+        lastModified?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        location?: pulumi.Input<string>;
+        /**
+         * (Updatable) Name of the resource type of the resource--for example, Users or Groups
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        resourceType?: pulumi.Input<string>;
+        /**
+         * (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        version?: pulumi.Input<string>;
+    }
+
+    export interface DomainsSocialIdentityProviderRelayIdpParamMapping {
+        /**
+         * (Updatable) Key or name of the relayParam.
+         *
+         * **Added In:** 2305190132
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        relayParamKey: pulumi.Input<string>;
+        /**
+         * (Updatable) Value of the relayParam (if defined)
+         *
+         * **Added In:** 2305190132
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        relayParamValue?: pulumi.Input<string>;
+    }
+
+    export interface DomainsSocialIdentityProviderTag {
+        /**
+         * (Updatable) Key or name of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        key: pulumi.Input<string>;
+        /**
+         * (Updatable) Value of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        value: pulumi.Input<string>;
     }
 
     export interface DomainsUserAddress {
@@ -68891,6 +69448,24 @@ export namespace NetworkFirewall {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetNetworkFirewallPolicyTunnelInspectionRulesFilter {
+        /**
+         * Name for the Tunnel Inspection Rule, must be unique within the policy.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetNetworkFirewallPolicyTunnelInspectionRulesFilterArgs {
+        /**
+         * Name for the Tunnel Inspection Rule, must be unique within the policy.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetNetworkFirewallPolicyUrlListsFilter {
         /**
          * Unique name identifier for the URL list.
@@ -68994,6 +69569,35 @@ export namespace NetworkFirewall {
          * (Updatable) The minimum port in the range (inclusive), or the sole port of a single-port range.
          */
         minimumPort: pulumi.Input<number>;
+    }
+
+    export interface NetworkFirewallPolicyTunnelInspectionRuleCondition {
+        /**
+         * (Updatable) An array of address list names to be evaluated against the traffic destination address.
+         */
+        destinationAddresses?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) An array of address list names to be evaluated against the traffic source address.
+         */
+        sourceAddresses?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface NetworkFirewallPolicyTunnelInspectionRulePosition {
+        /**
+         * (Updatable) Identifier for rule after which this rule lies.
+         */
+        afterRule?: pulumi.Input<string>;
+        /**
+         * (Updatable) Identifier for rule before which this rule lies.
+         */
+        beforeRule?: pulumi.Input<string>;
+    }
+
+    export interface NetworkFirewallPolicyTunnelInspectionRuleProfile {
+        /**
+         * (Updatable) Return scanned VXLAN tunnel traffic to source.
+         */
+        mustReturnTrafficToSource?: pulumi.Input<boolean>;
     }
 
     export interface NetworkFirewallPolicyUrlListUrl {
@@ -75935,7 +76539,7 @@ export namespace StackMonitoring {
          */
         availabilityProxyMetricCollectionInterval?: pulumi.Input<number>;
         /**
-         * List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
+         * List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for the resource during the specified interval using the property 'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
          */
         availabilityProxyMetrics?: pulumi.Input<pulumi.Input<string>[]>;
         /**

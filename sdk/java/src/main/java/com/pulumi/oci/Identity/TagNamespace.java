@@ -226,11 +226,18 @@ public class TagNamespace extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public TagNamespace(String name, TagNamespaceArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/tagNamespace:TagNamespace", name, args == null ? TagNamespaceArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Identity/tagNamespace:TagNamespace", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private TagNamespace(String name, Output<String> id, @Nullable TagNamespaceState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Identity/tagNamespace:TagNamespace", name, state, makeResourceOptions(options, id));
+    }
+
+    private static TagNamespaceArgs makeArgs(TagNamespaceArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? TagNamespaceArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

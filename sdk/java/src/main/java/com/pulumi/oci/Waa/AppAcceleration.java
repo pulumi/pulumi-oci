@@ -270,11 +270,18 @@ public class AppAcceleration extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public AppAcceleration(String name, AppAccelerationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Waa/appAcceleration:AppAcceleration", name, args == null ? AppAccelerationArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Waa/appAcceleration:AppAcceleration", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private AppAcceleration(String name, Output<String> id, @Nullable AppAccelerationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Waa/appAcceleration:AppAcceleration", name, state, makeResourceOptions(options, id));
+    }
+
+    private static AppAccelerationArgs makeArgs(AppAccelerationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? AppAccelerationArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

@@ -308,11 +308,18 @@ public class NamedCredential extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public NamedCredential(String name, NamedCredentialArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseManagement/namedCredential:NamedCredential", name, args == null ? NamedCredentialArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DatabaseManagement/namedCredential:NamedCredential", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private NamedCredential(String name, Output<String> id, @Nullable NamedCredentialState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DatabaseManagement/namedCredential:NamedCredential", name, state, makeResourceOptions(options, id));
+    }
+
+    private static NamedCredentialArgs makeArgs(NamedCredentialArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? NamedCredentialArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

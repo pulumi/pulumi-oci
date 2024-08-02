@@ -377,11 +377,18 @@ public class MaskingPoliciesMaskingColumn extends com.pulumi.resources.CustomRes
      * @param options A bag of options that control this resource's behavior.
      */
     public MaskingPoliciesMaskingColumn(String name, MaskingPoliciesMaskingColumnArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/maskingPoliciesMaskingColumn:MaskingPoliciesMaskingColumn", name, args == null ? MaskingPoliciesMaskingColumnArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DataSafe/maskingPoliciesMaskingColumn:MaskingPoliciesMaskingColumn", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private MaskingPoliciesMaskingColumn(String name, Output<String> id, @Nullable MaskingPoliciesMaskingColumnState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DataSafe/maskingPoliciesMaskingColumn:MaskingPoliciesMaskingColumn", name, state, makeResourceOptions(options, id));
+    }
+
+    private static MaskingPoliciesMaskingColumnArgs makeArgs(MaskingPoliciesMaskingColumnArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? MaskingPoliciesMaskingColumnArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

@@ -143,11 +143,18 @@ public class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement ext
      * @param options A bag of options that control this resource's behavior.
      */
     public ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement(String name, ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseManagement/externalcontainerdatabaseExternalContainerDbmFeaturesManagement:ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement", name, args == null ? ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DatabaseManagement/externalcontainerdatabaseExternalContainerDbmFeaturesManagement:ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement(String name, Output<String> id, @Nullable ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DatabaseManagement/externalcontainerdatabaseExternalContainerDbmFeaturesManagement:ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementArgs makeArgs(ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

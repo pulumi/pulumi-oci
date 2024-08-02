@@ -44,7 +44,7 @@ public final class GetBaselineableMetricsBaselineableMetricSummaryCollectionItem
      */
     private String id;
     /**
-     * @return Is the metric created out of box, default false
+     * @return Is the baseline enabled metric defined out of box by Oracle or by end-user
      * 
      */
     private Boolean isOutOfBox;
@@ -68,6 +68,11 @@ public final class GetBaselineableMetricsBaselineableMetricSummaryCollectionItem
      * 
      */
     private String resourceGroup;
+    /**
+     * @return Resource Type
+     * 
+     */
+    private String resourceType;
     /**
      * @return The current lifecycle state of the metric extension
      * 
@@ -138,7 +143,7 @@ public final class GetBaselineableMetricsBaselineableMetricSummaryCollectionItem
         return this.id;
     }
     /**
-     * @return Is the metric created out of box, default false
+     * @return Is the baseline enabled metric defined out of box by Oracle or by end-user
      * 
      */
     public Boolean isOutOfBox() {
@@ -171,6 +176,13 @@ public final class GetBaselineableMetricsBaselineableMetricSummaryCollectionItem
      */
     public String resourceGroup() {
         return this.resourceGroup;
+    }
+    /**
+     * @return Resource Type
+     * 
+     */
+    public String resourceType() {
+        return this.resourceType;
     }
     /**
      * @return The current lifecycle state of the metric extension
@@ -228,6 +240,7 @@ public final class GetBaselineableMetricsBaselineableMetricSummaryCollectionItem
         private String name;
         private String namespace;
         private String resourceGroup;
+        private String resourceType;
         private String state;
         private Map<String,Object> systemTags;
         private String tenancyId;
@@ -247,6 +260,7 @@ public final class GetBaselineableMetricsBaselineableMetricSummaryCollectionItem
     	      this.name = defaults.name;
     	      this.namespace = defaults.namespace;
     	      this.resourceGroup = defaults.resourceGroup;
+    	      this.resourceType = defaults.resourceType;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.tenancyId = defaults.tenancyId;
@@ -343,6 +357,14 @@ public final class GetBaselineableMetricsBaselineableMetricSummaryCollectionItem
             return this;
         }
         @CustomType.Setter
+        public Builder resourceType(String resourceType) {
+            if (resourceType == null) {
+              throw new MissingRequiredPropertyException("GetBaselineableMetricsBaselineableMetricSummaryCollectionItem", "resourceType");
+            }
+            this.resourceType = resourceType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetBaselineableMetricsBaselineableMetricSummaryCollectionItem", "state");
@@ -395,6 +417,7 @@ public final class GetBaselineableMetricsBaselineableMetricSummaryCollectionItem
             _resultValue.name = name;
             _resultValue.namespace = namespace;
             _resultValue.resourceGroup = resourceGroup;
+            _resultValue.resourceType = resourceType;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.tenancyId = tenancyId;

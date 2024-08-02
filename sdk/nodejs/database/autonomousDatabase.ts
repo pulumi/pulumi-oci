@@ -121,6 +121,10 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     public readonly cloneType!: pulumi.Output<string>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
+     */
+    public /*out*/ readonly clusterPlacementGroupId!: pulumi.Output<string>;
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Database.
      */
     public readonly compartmentId!: pulumi.Output<string>;
@@ -691,6 +695,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["byolComputeCountLimit"] = state ? state.byolComputeCountLimit : undefined;
             resourceInputs["characterSet"] = state ? state.characterSet : undefined;
             resourceInputs["cloneType"] = state ? state.cloneType : undefined;
+            resourceInputs["clusterPlacementGroupId"] = state ? state.clusterPlacementGroupId : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["computeCount"] = state ? state.computeCount : undefined;
             resourceInputs["computeModel"] = state ? state.computeModel : undefined;
@@ -901,6 +906,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["apexDetails"] = undefined /*out*/;
             resourceInputs["availableUpgradeVersions"] = undefined /*out*/;
             resourceInputs["backupConfigs"] = undefined /*out*/;
+            resourceInputs["clusterPlacementGroupId"] = undefined /*out*/;
             resourceInputs["connectionStrings"] = undefined /*out*/;
             resourceInputs["connectionUrls"] = undefined /*out*/;
             resourceInputs["dataguardRegionType"] = undefined /*out*/;
@@ -1035,6 +1041,10 @@ export interface AutonomousDatabaseState {
      * * `METADATA` - This option creates a new database that includes the source database schema and select metadata, but not the source database data.
      */
     cloneType?: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
+     */
+    clusterPlacementGroupId?: pulumi.Input<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Database.
      */

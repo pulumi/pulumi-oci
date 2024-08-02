@@ -10,6 +10,7 @@ from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
+    'AlertPolicyAlertPolicyRuleDetailArgs',
     'AuditPolicyAuditConditionArgs',
     'AuditPolicyAuditConditionEnableConditionArgs',
     'AuditPolicyAuditSpecificationArgs',
@@ -115,6 +116,60 @@ __all__ = [
     'GetUserAssessmentUsersFilterArgs',
     'GetUserAssessmentsFilterArgs',
 ]
+
+@pulumi.input_type
+class AlertPolicyAlertPolicyRuleDetailArgs:
+    def __init__(__self__, *,
+                 expression: pulumi.Input[str],
+                 description: Optional[pulumi.Input[str]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] expression: The conditional expression of the alert policy rule which evaluates to boolean value.
+        :param pulumi.Input[str] description: Describes the alert policy rule.
+        :param pulumi.Input[str] display_name: The display name of the alert policy rule.
+        """
+        pulumi.set(__self__, "expression", expression)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @property
+    @pulumi.getter
+    def expression(self) -> pulumi.Input[str]:
+        """
+        The conditional expression of the alert policy rule which evaluates to boolean value.
+        """
+        return pulumi.get(self, "expression")
+
+    @expression.setter
+    def expression(self, value: pulumi.Input[str]):
+        pulumi.set(self, "expression", value)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        Describes the alert policy rule.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The display name of the alert policy rule.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
 
 @pulumi.input_type
 class AuditPolicyAuditConditionArgs:

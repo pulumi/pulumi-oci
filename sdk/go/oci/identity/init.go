@@ -121,6 +121,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &DomainsSetting{}
 	case "oci:Identity/domainsSmtpCredential:DomainsSmtpCredential":
 		r = &DomainsSmtpCredential{}
+	case "oci:Identity/domainsSocialIdentityProvider:DomainsSocialIdentityProvider":
+		r = &DomainsSocialIdentityProvider{}
 	case "oci:Identity/domainsUser:DomainsUser":
 		r = &DomainsUser{}
 	case "oci:Identity/domainsUserDbCredential:DomainsUserDbCredential":
@@ -416,6 +418,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Identity/domainsSmtpCredential",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Identity/domainsSocialIdentityProvider",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

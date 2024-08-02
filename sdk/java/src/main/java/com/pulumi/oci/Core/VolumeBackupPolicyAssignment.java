@@ -138,11 +138,18 @@ public class VolumeBackupPolicyAssignment extends com.pulumi.resources.CustomRes
      * @param options A bag of options that control this resource's behavior.
      */
     public VolumeBackupPolicyAssignment(String name, VolumeBackupPolicyAssignmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/volumeBackupPolicyAssignment:VolumeBackupPolicyAssignment", name, args == null ? VolumeBackupPolicyAssignmentArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Core/volumeBackupPolicyAssignment:VolumeBackupPolicyAssignment", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private VolumeBackupPolicyAssignment(String name, Output<String> id, @Nullable VolumeBackupPolicyAssignmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Core/volumeBackupPolicyAssignment:VolumeBackupPolicyAssignment", name, state, makeResourceOptions(options, id));
+    }
+
+    private static VolumeBackupPolicyAssignmentArgs makeArgs(VolumeBackupPolicyAssignmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? VolumeBackupPolicyAssignmentArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

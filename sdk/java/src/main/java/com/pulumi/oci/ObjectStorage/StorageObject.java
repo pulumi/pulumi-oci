@@ -375,11 +375,18 @@ public class StorageObject extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public StorageObject(String name, StorageObjectArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:ObjectStorage/storageObject:StorageObject", name, args == null ? StorageObjectArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:ObjectStorage/storageObject:StorageObject", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private StorageObject(String name, Output<String> id, @Nullable StorageObjectState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:ObjectStorage/storageObject:StorageObject", name, state, makeResourceOptions(options, id));
+    }
+
+    private static StorageObjectArgs makeArgs(StorageObjectArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? StorageObjectArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

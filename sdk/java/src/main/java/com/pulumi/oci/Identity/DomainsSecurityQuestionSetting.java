@@ -724,11 +724,18 @@ public class DomainsSecurityQuestionSetting extends com.pulumi.resources.CustomR
      * @param options A bag of options that control this resource's behavior.
      */
     public DomainsSecurityQuestionSetting(String name, DomainsSecurityQuestionSettingArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsSecurityQuestionSetting:DomainsSecurityQuestionSetting", name, args == null ? DomainsSecurityQuestionSettingArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Identity/domainsSecurityQuestionSetting:DomainsSecurityQuestionSetting", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DomainsSecurityQuestionSetting(String name, Output<String> id, @Nullable DomainsSecurityQuestionSettingState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Identity/domainsSecurityQuestionSetting:DomainsSecurityQuestionSetting", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DomainsSecurityQuestionSettingArgs makeArgs(DomainsSecurityQuestionSettingArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DomainsSecurityQuestionSettingArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

@@ -299,11 +299,18 @@ public class Log extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public Log(String name, LogArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Logging/log:Log", name, args == null ? LogArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Logging/log:Log", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private Log(String name, Output<String> id, @Nullable LogState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Logging/log:Log", name, state, makeResourceOptions(options, id));
+    }
+
+    private static LogArgs makeArgs(LogArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? LogArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

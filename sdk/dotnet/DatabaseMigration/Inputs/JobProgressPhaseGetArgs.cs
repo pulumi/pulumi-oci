@@ -24,6 +24,18 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         [Input("durationInMs")]
         public Input<int>? DurationInMs { get; set; }
 
+        [Input("editableParameterFiles")]
+        private InputList<string>? _editableParameterFiles;
+
+        /// <summary>
+        /// Attribute that returns an array of names and types of GoldenGate configuration files that are available for read or update.
+        /// </summary>
+        public InputList<string> EditableParameterFiles
+        {
+            get => _editableParameterFiles ?? (_editableParameterFiles = new InputList<string>());
+            set => _editableParameterFiles = value;
+        }
+
         [Input("extracts")]
         private InputList<Inputs.JobProgressPhaseExtractGetArgs>? _extracts;
 
@@ -41,6 +53,12 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         /// </summary>
         [Input("isAdvisorReportAvailable")]
         public Input<bool>? IsAdvisorReportAvailable { get; set; }
+
+        /// <summary>
+        /// This is returned as true if the current phase can be suspended.
+        /// </summary>
+        [Input("isSuspendAvailable")]
+        public Input<bool>? IsSuspendAvailable { get; set; }
 
         /// <summary>
         /// The text describing the root cause of the reported issue

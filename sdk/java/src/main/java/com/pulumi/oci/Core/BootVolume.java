@@ -438,11 +438,18 @@ public class BootVolume extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public BootVolume(String name, BootVolumeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/bootVolume:BootVolume", name, args == null ? BootVolumeArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Core/bootVolume:BootVolume", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private BootVolume(String name, Output<String> id, @Nullable BootVolumeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Core/bootVolume:BootVolume", name, state, makeResourceOptions(options, id));
+    }
+
+    private static BootVolumeArgs makeArgs(BootVolumeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? BootVolumeArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

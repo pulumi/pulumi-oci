@@ -13,8 +13,17 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
     [OutputType]
     public sealed class GetModelsModelCollectionItemFineTuneDetailResult
     {
+        /// <summary>
+        /// The OCID of the dedicated AI cluster this fine-tuning runs on.
+        /// </summary>
         public readonly string DedicatedAiClusterId;
+        /// <summary>
+        /// The fine-tuning method and hyperparameters used for fine-tuning a custom model.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetModelsModelCollectionItemFineTuneDetailTrainingConfigResult> TrainingConfigs;
+        /// <summary>
+        /// The dataset used to fine-tune the model.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetModelsModelCollectionItemFineTuneDetailTrainingDatasetResult> TrainingDatasets;
 
         [OutputConstructor]

@@ -505,11 +505,18 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public EsxiHost(String name, @Nullable EsxiHostArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Ocvp/esxiHost:EsxiHost", name, args == null ? EsxiHostArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Ocvp/esxiHost:EsxiHost", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private EsxiHost(String name, Output<String> id, @Nullable EsxiHostState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Ocvp/esxiHost:EsxiHost", name, state, makeResourceOptions(options, id));
+    }
+
+    private static EsxiHostArgs makeArgs(@Nullable EsxiHostArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? EsxiHostArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

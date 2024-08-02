@@ -5,8 +5,10 @@ package com.pulumi.oci.DatabaseMigration.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.DatabaseMigration.inputs.JobParameterFileVersionArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.JobProgressArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.JobUnsupportedObjectArgs;
+import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -68,18 +70,12 @@ public final class JobState extends com.pulumi.resources.ResourceArgs {
     /**
      * The OCID of the job
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="jobId")
     private @Nullable Output<String> jobId;
 
     /**
      * @return The OCID of the job
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> jobId() {
@@ -117,6 +113,21 @@ public final class JobState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * A list of parameter file versions that can be viewed or edited for the current job.
+     * 
+     */
+    @Import(name="parameterFileVersions")
+    private @Nullable Output<List<JobParameterFileVersionArgs>> parameterFileVersions;
+
+    /**
+     * @return A list of parameter file versions that can be viewed or edited for the current job.
+     * 
+     */
+    public Optional<Output<List<JobParameterFileVersionArgs>>> parameterFileVersions() {
+        return Optional.ofNullable(this.parameterFileVersions);
+    }
+
+    /**
      * Percent progress of job phase.
      * 
      */
@@ -144,6 +155,27 @@ public final class JobState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> state() {
         return Optional.ofNullable(this.state);
+    }
+
+    /**
+     * (Updatable) An optional property when incremented triggers Suspend. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Import(name="suspendTrigger")
+    private @Nullable Output<Integer> suspendTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Suspend. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<Integer>> suspendTrigger() {
+        return Optional.ofNullable(this.suspendTrigger);
     }
 
     /**
@@ -230,8 +262,10 @@ public final class JobState extends com.pulumi.resources.ResourceArgs {
         this.jobId = $.jobId;
         this.lifecycleDetails = $.lifecycleDetails;
         this.migrationId = $.migrationId;
+        this.parameterFileVersions = $.parameterFileVersions;
         this.progresses = $.progresses;
         this.state = $.state;
+        this.suspendTrigger = $.suspendTrigger;
         this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
@@ -323,9 +357,6 @@ public final class JobState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param jobId The OCID of the job
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -336,9 +367,6 @@ public final class JobState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param jobId The OCID of the job
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -387,6 +415,37 @@ public final class JobState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder migrationId(String migrationId) {
             return migrationId(Output.of(migrationId));
+        }
+
+        /**
+         * @param parameterFileVersions A list of parameter file versions that can be viewed or edited for the current job.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder parameterFileVersions(@Nullable Output<List<JobParameterFileVersionArgs>> parameterFileVersions) {
+            $.parameterFileVersions = parameterFileVersions;
+            return this;
+        }
+
+        /**
+         * @param parameterFileVersions A list of parameter file versions that can be viewed or edited for the current job.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder parameterFileVersions(List<JobParameterFileVersionArgs> parameterFileVersions) {
+            return parameterFileVersions(Output.of(parameterFileVersions));
+        }
+
+        /**
+         * @param parameterFileVersions A list of parameter file versions that can be viewed or edited for the current job.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder parameterFileVersions(JobParameterFileVersionArgs... parameterFileVersions) {
+            return parameterFileVersions(List.of(parameterFileVersions));
         }
 
         /**
@@ -439,6 +498,33 @@ public final class JobState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder state(String state) {
             return state(Output.of(state));
+        }
+
+        /**
+         * @param suspendTrigger (Updatable) An optional property when incremented triggers Suspend. Could be set to any integer value.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder suspendTrigger(@Nullable Output<Integer> suspendTrigger) {
+            $.suspendTrigger = suspendTrigger;
+            return this;
+        }
+
+        /**
+         * @param suspendTrigger (Updatable) An optional property when incremented triggers Suspend. Could be set to any integer value.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder suspendTrigger(Integer suspendTrigger) {
+            return suspendTrigger(Output.of(suspendTrigger));
         }
 
         /**

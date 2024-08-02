@@ -276,11 +276,18 @@ public class KeyVersion extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public KeyVersion(String name, KeyVersionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Kms/keyVersion:KeyVersion", name, args == null ? KeyVersionArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Kms/keyVersion:KeyVersion", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private KeyVersion(String name, Output<String> id, @Nullable KeyVersionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Kms/keyVersion:KeyVersion", name, state, makeResourceOptions(options, id));
+    }
+
+    private static KeyVersionArgs makeArgs(KeyVersionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? KeyVersionArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

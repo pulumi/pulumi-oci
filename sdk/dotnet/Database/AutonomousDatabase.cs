@@ -133,6 +133,12 @@ namespace Pulumi.Oci.Database
         public Output<string> CloneType { get; private set; } = null!;
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
+        /// </summary>
+        [Output("clusterPlacementGroupId")]
+        public Output<string> ClusterPlacementGroupId { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Database.
         /// </summary>
         [Output("compartmentId")]
@@ -1706,6 +1712,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("cloneType")]
         public Input<string>? CloneType { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
+        /// </summary>
+        [Input("clusterPlacementGroupId")]
+        public Input<string>? ClusterPlacementGroupId { get; set; }
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Database.

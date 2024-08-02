@@ -788,11 +788,18 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public AutonomousVmCluster(String name, AutonomousVmClusterArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/autonomousVmCluster:AutonomousVmCluster", name, args == null ? AutonomousVmClusterArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Database/autonomousVmCluster:AutonomousVmCluster", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private AutonomousVmCluster(String name, Output<String> id, @Nullable AutonomousVmClusterState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Database/autonomousVmCluster:AutonomousVmCluster", name, state, makeResourceOptions(options, id));
+    }
+
+    private static AutonomousVmClusterArgs makeArgs(AutonomousVmClusterArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? AutonomousVmClusterArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

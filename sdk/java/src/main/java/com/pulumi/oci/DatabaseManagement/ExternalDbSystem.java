@@ -315,11 +315,18 @@ public class ExternalDbSystem extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public ExternalDbSystem(String name, ExternalDbSystemArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseManagement/externalDbSystem:ExternalDbSystem", name, args == null ? ExternalDbSystemArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DatabaseManagement/externalDbSystem:ExternalDbSystem", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ExternalDbSystem(String name, Output<String> id, @Nullable ExternalDbSystemState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DatabaseManagement/externalDbSystem:ExternalDbSystem", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ExternalDbSystemArgs makeArgs(ExternalDbSystemArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ExternalDbSystemArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

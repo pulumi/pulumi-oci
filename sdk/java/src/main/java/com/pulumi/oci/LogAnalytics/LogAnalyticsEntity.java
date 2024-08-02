@@ -425,11 +425,18 @@ public class LogAnalyticsEntity extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public LogAnalyticsEntity(String name, LogAnalyticsEntityArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:LogAnalytics/logAnalyticsEntity:LogAnalyticsEntity", name, args == null ? LogAnalyticsEntityArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:LogAnalytics/logAnalyticsEntity:LogAnalyticsEntity", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private LogAnalyticsEntity(String name, Output<String> id, @Nullable LogAnalyticsEntityState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:LogAnalytics/logAnalyticsEntity:LogAnalyticsEntity", name, state, makeResourceOptions(options, id));
+    }
+
+    private static LogAnalyticsEntityArgs makeArgs(LogAnalyticsEntityArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? LogAnalyticsEntityArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

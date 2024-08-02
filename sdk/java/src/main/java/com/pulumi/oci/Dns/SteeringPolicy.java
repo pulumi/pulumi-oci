@@ -338,11 +338,18 @@ public class SteeringPolicy extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public SteeringPolicy(String name, SteeringPolicyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Dns/steeringPolicy:SteeringPolicy", name, args == null ? SteeringPolicyArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Dns/steeringPolicy:SteeringPolicy", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private SteeringPolicy(String name, Output<String> id, @Nullable SteeringPolicyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Dns/steeringPolicy:SteeringPolicy", name, state, makeResourceOptions(options, id));
+    }
+
+    private static SteeringPolicyArgs makeArgs(SteeringPolicyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? SteeringPolicyArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

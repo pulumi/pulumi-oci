@@ -86,11 +86,18 @@ public class ShapeManagement extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public ShapeManagement(String name, ShapeManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/shapeManagement:ShapeManagement", name, args == null ? ShapeManagementArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Core/shapeManagement:ShapeManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ShapeManagement(String name, Output<String> id, @Nullable ShapeManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Core/shapeManagement:ShapeManagement", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ShapeManagementArgs makeArgs(ShapeManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ShapeManagementArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

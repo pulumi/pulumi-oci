@@ -153,6 +153,10 @@ namespace Pulumi.Oci.Database
         public readonly string CharacterSet;
         public readonly string CloneType;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
+        /// </summary>
+        public readonly string ClusterPlacementGroupId;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         public readonly string CompartmentId;
@@ -635,6 +639,8 @@ namespace Pulumi.Oci.Database
 
             string cloneType,
 
+            string clusterPlacementGroupId,
+
             string compartmentId,
 
             double computeCount,
@@ -890,6 +896,7 @@ namespace Pulumi.Oci.Database
             ByolComputeCountLimit = byolComputeCountLimit;
             CharacterSet = characterSet;
             CloneType = cloneType;
+            ClusterPlacementGroupId = clusterPlacementGroupId;
             CompartmentId = compartmentId;
             ComputeCount = computeCount;
             ComputeModel = computeModel;

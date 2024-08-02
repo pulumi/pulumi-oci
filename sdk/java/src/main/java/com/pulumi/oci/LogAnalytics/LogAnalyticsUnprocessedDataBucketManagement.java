@@ -163,11 +163,18 @@ public class LogAnalyticsUnprocessedDataBucketManagement extends com.pulumi.reso
      * @param options A bag of options that control this resource's behavior.
      */
     public LogAnalyticsUnprocessedDataBucketManagement(String name, LogAnalyticsUnprocessedDataBucketManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:LogAnalytics/logAnalyticsUnprocessedDataBucketManagement:LogAnalyticsUnprocessedDataBucketManagement", name, args == null ? LogAnalyticsUnprocessedDataBucketManagementArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:LogAnalytics/logAnalyticsUnprocessedDataBucketManagement:LogAnalyticsUnprocessedDataBucketManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private LogAnalyticsUnprocessedDataBucketManagement(String name, Output<String> id, @Nullable LogAnalyticsUnprocessedDataBucketManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:LogAnalytics/logAnalyticsUnprocessedDataBucketManagement:LogAnalyticsUnprocessedDataBucketManagement", name, state, makeResourceOptions(options, id));
+    }
+
+    private static LogAnalyticsUnprocessedDataBucketManagementArgs makeArgs(LogAnalyticsUnprocessedDataBucketManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? LogAnalyticsUnprocessedDataBucketManagementArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

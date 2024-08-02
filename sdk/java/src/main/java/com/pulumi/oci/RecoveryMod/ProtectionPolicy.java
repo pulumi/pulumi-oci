@@ -282,11 +282,18 @@ public class ProtectionPolicy extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public ProtectionPolicy(String name, ProtectionPolicyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:RecoveryMod/protectionPolicy:ProtectionPolicy", name, args == null ? ProtectionPolicyArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:RecoveryMod/protectionPolicy:ProtectionPolicy", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ProtectionPolicy(String name, Output<String> id, @Nullable ProtectionPolicyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:RecoveryMod/protectionPolicy:ProtectionPolicy", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ProtectionPolicyArgs makeArgs(ProtectionPolicyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ProtectionPolicyArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

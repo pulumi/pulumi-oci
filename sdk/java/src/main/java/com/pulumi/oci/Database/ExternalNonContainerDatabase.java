@@ -368,11 +368,18 @@ public class ExternalNonContainerDatabase extends com.pulumi.resources.CustomRes
      * @param options A bag of options that control this resource's behavior.
      */
     public ExternalNonContainerDatabase(String name, ExternalNonContainerDatabaseArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/externalNonContainerDatabase:ExternalNonContainerDatabase", name, args == null ? ExternalNonContainerDatabaseArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Database/externalNonContainerDatabase:ExternalNonContainerDatabase", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ExternalNonContainerDatabase(String name, Output<String> id, @Nullable ExternalNonContainerDatabaseState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Database/externalNonContainerDatabase:ExternalNonContainerDatabase", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ExternalNonContainerDatabaseArgs makeArgs(ExternalNonContainerDatabaseArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ExternalNonContainerDatabaseArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

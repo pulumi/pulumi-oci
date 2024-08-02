@@ -480,11 +480,18 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public IntegrationInstance(String name, IntegrationInstanceArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Integration/integrationInstance:IntegrationInstance", name, args == null ? IntegrationInstanceArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Integration/integrationInstance:IntegrationInstance", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private IntegrationInstance(String name, Output<String> id, @Nullable IntegrationInstanceState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Integration/integrationInstance:IntegrationInstance", name, state, makeResourceOptions(options, id));
+    }
+
+    private static IntegrationInstanceArgs makeArgs(IntegrationInstanceArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? IntegrationInstanceArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

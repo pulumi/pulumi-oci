@@ -411,11 +411,18 @@ public class DbNode extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public DbNode(String name, DbNodeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/dbNode:DbNode", name, args == null ? DbNodeArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Database/dbNode:DbNode", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private DbNode(String name, Output<String> id, @Nullable DbNodeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Database/dbNode:DbNode", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DbNodeArgs makeArgs(DbNodeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DbNodeArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

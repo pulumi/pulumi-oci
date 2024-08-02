@@ -263,11 +263,18 @@ public class GenericArtifact extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public GenericArtifact(String name, GenericArtifactArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Artifacts/genericArtifact:GenericArtifact", name, args == null ? GenericArtifactArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Artifacts/genericArtifact:GenericArtifact", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private GenericArtifact(String name, Output<String> id, @Nullable GenericArtifactState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Artifacts/genericArtifact:GenericArtifact", name, state, makeResourceOptions(options, id));
+    }
+
+    private static GenericArtifactArgs makeArgs(GenericArtifactArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? GenericArtifactArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

@@ -307,11 +307,18 @@ public class Dkim extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public Dkim(String name, DkimArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Email/dkim:Dkim", name, args == null ? DkimArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Email/dkim:Dkim", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private Dkim(String name, Output<String> id, @Nullable DkimState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Email/dkim:Dkim", name, state, makeResourceOptions(options, id));
+    }
+
+    private static DkimArgs makeArgs(DkimArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? DkimArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

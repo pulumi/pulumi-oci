@@ -225,11 +225,18 @@ public class UnifiedAgentConfiguration extends com.pulumi.resources.CustomResour
      * @param options A bag of options that control this resource's behavior.
      */
     public UnifiedAgentConfiguration(String name, UnifiedAgentConfigurationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Logging/unifiedAgentConfiguration:UnifiedAgentConfiguration", name, args == null ? UnifiedAgentConfigurationArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Logging/unifiedAgentConfiguration:UnifiedAgentConfiguration", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private UnifiedAgentConfiguration(String name, Output<String> id, @Nullable UnifiedAgentConfigurationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Logging/unifiedAgentConfiguration:UnifiedAgentConfiguration", name, state, makeResourceOptions(options, id));
+    }
+
+    private static UnifiedAgentConfigurationArgs makeArgs(UnifiedAgentConfigurationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? UnifiedAgentConfigurationArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

@@ -271,11 +271,18 @@ public class NetworkAddressList extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public NetworkAddressList(String name, NetworkAddressListArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Waf/networkAddressList:NetworkAddressList", name, args == null ? NetworkAddressListArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Waf/networkAddressList:NetworkAddressList", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private NetworkAddressList(String name, Output<String> id, @Nullable NetworkAddressListState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Waf/networkAddressList:NetworkAddressList", name, state, makeResourceOptions(options, id));
+    }
+
+    private static NetworkAddressListArgs makeArgs(NetworkAddressListArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? NetworkAddressListArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

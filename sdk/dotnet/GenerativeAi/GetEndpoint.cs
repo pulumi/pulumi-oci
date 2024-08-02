@@ -100,17 +100,17 @@ namespace Pulumi.Oci.GenerativeAi
         public readonly string CompartmentId;
         public readonly ImmutableArray<Outputs.GetEndpointContentModerationConfigResult> ContentModerationConfigs;
         public readonly string DedicatedAiClusterId;
-        /// <summary>
-        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
+        /// <summary>
+        /// An optional description of the endpoint.
+        /// </summary>
         public readonly string Description;
+        /// <summary>
+        /// A user-friendly name. Does not have to be unique, and it's changeable.
+        /// </summary>
         public readonly string DisplayName;
         public readonly string EndpointId;
         public readonly ImmutableDictionary<string, object> FreeformTags;
-        /// <summary>
-        /// An OCID that uniquely identifies this endpoint resource.
-        /// </summary>
         public readonly string Id;
         public readonly string LifecycleDetails;
         /// <summary>
@@ -122,9 +122,6 @@ namespace Pulumi.Oci.GenerativeAi
         /// </summary>
         public readonly string State;
         public readonly ImmutableDictionary<string, object> SystemTags;
-        /// <summary>
-        /// The date and time that the endpoint was created in the format of an RFC3339 datetime string.
-        /// </summary>
         public readonly string TimeCreated;
         /// <summary>
         /// The date and time that the endpoint was updated in the format of an RFC3339 datetime string.

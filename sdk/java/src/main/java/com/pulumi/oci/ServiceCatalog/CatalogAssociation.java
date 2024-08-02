@@ -151,11 +151,18 @@ public class CatalogAssociation extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public CatalogAssociation(String name, CatalogAssociationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:ServiceCatalog/catalogAssociation:CatalogAssociation", name, args == null ? CatalogAssociationArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:ServiceCatalog/catalogAssociation:CatalogAssociation", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private CatalogAssociation(String name, Output<String> id, @Nullable CatalogAssociationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:ServiceCatalog/catalogAssociation:CatalogAssociation", name, state, makeResourceOptions(options, id));
+    }
+
+    private static CatalogAssociationArgs makeArgs(CatalogAssociationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? CatalogAssociationArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

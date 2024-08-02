@@ -70,6 +70,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly bool IsSeeded;
         /// <summary>
+        /// Details about the current state of the report definition in Data Safe.
+        /// </summary>
+        public readonly string LifecycleDetails;
+        /// <summary>
         /// The OCID of the parent report definition. In the case of seeded report definition, this is same as definition OCID.
         /// </summary>
         public readonly string ParentId;
@@ -152,6 +156,8 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             bool isSeeded,
 
+            string lifecycleDetails,
+
             string parentId,
 
             string recordTimeSpan,
@@ -192,6 +198,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
             FreeformTags = freeformTags;
             Id = id;
             IsSeeded = isSeeded;
+            LifecycleDetails = lifecycleDetails;
             ParentId = parentId;
             RecordTimeSpan = recordTimeSpan;
             Schedule = schedule;

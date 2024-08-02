@@ -22,7 +22,7 @@ class GetBdsInstanceResult:
     """
     A collection of values returned by getBdsInstance.
     """
-    def __init__(__self__, bds_instance_id=None, bootstrap_script_url=None, cloud_sql_details=None, cluster_admin_password=None, cluster_details=None, cluster_profile=None, cluster_public_key=None, cluster_version=None, compartment_id=None, compute_only_worker_nodes=None, created_by=None, defined_tags=None, display_name=None, edge_nodes=None, freeform_tags=None, id=None, is_cloud_sql_configured=None, is_force_stop_jobs=None, is_high_availability=None, is_kafka_configured=None, is_secure=None, kafka_broker_nodes=None, kerberos_realm_name=None, kms_key_id=None, master_nodes=None, network_configs=None, nodes=None, number_of_nodes=None, number_of_nodes_requiring_maintenance_reboot=None, os_patch_version=None, state=None, time_created=None, time_updated=None, util_nodes=None, worker_nodes=None):
+    def __init__(__self__, bds_instance_id=None, bootstrap_script_url=None, cloud_sql_details=None, cluster_admin_password=None, cluster_details=None, cluster_profile=None, cluster_public_key=None, cluster_version=None, compartment_id=None, compute_only_worker_nodes=None, created_by=None, defined_tags=None, display_name=None, edge_nodes=None, freeform_tags=None, id=None, ignore_existing_nodes_shapes=None, is_cloud_sql_configured=None, is_force_stop_jobs=None, is_high_availability=None, is_kafka_configured=None, is_secure=None, kafka_broker_nodes=None, kerberos_realm_name=None, kms_key_id=None, master_nodes=None, network_configs=None, nodes=None, number_of_nodes=None, number_of_nodes_requiring_maintenance_reboot=None, os_patch_version=None, state=None, time_created=None, time_updated=None, util_nodes=None, worker_nodes=None):
         if bds_instance_id and not isinstance(bds_instance_id, str):
             raise TypeError("Expected argument 'bds_instance_id' to be a str")
         pulumi.set(__self__, "bds_instance_id", bds_instance_id)
@@ -71,6 +71,9 @@ class GetBdsInstanceResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if ignore_existing_nodes_shapes and not isinstance(ignore_existing_nodes_shapes, list):
+            raise TypeError("Expected argument 'ignore_existing_nodes_shapes' to be a list")
+        pulumi.set(__self__, "ignore_existing_nodes_shapes", ignore_existing_nodes_shapes)
         if is_cloud_sql_configured and not isinstance(is_cloud_sql_configured, bool):
             raise TypeError("Expected argument 'is_cloud_sql_configured' to be a bool")
         pulumi.set(__self__, "is_cloud_sql_configured", is_cloud_sql_configured)
@@ -243,6 +246,11 @@ class GetBdsInstanceResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="ignoreExistingNodesShapes")
+    def ignore_existing_nodes_shapes(self) -> Sequence[str]:
+        return pulumi.get(self, "ignore_existing_nodes_shapes")
+
+    @property
     @pulumi.getter(name="isCloudSqlConfigured")
     def is_cloud_sql_configured(self) -> bool:
         """
@@ -396,6 +404,7 @@ class AwaitableGetBdsInstanceResult(GetBdsInstanceResult):
             edge_nodes=self.edge_nodes,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            ignore_existing_nodes_shapes=self.ignore_existing_nodes_shapes,
             is_cloud_sql_configured=self.is_cloud_sql_configured,
             is_force_stop_jobs=self.is_force_stop_jobs,
             is_high_availability=self.is_high_availability,
@@ -458,6 +467,7 @@ def get_bds_instance(bds_instance_id: Optional[str] = None,
         edge_nodes=pulumi.get(__ret__, 'edge_nodes'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        ignore_existing_nodes_shapes=pulumi.get(__ret__, 'ignore_existing_nodes_shapes'),
         is_cloud_sql_configured=pulumi.get(__ret__, 'is_cloud_sql_configured'),
         is_force_stop_jobs=pulumi.get(__ret__, 'is_force_stop_jobs'),
         is_high_availability=pulumi.get(__ret__, 'is_high_availability'),

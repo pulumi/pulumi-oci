@@ -427,11 +427,18 @@ public class WorkspaceApplicationPatch extends com.pulumi.resources.CustomResour
      * @param options A bag of options that control this resource's behavior.
      */
     public WorkspaceApplicationPatch(String name, WorkspaceApplicationPatchArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataIntegration/workspaceApplicationPatch:WorkspaceApplicationPatch", name, args == null ? WorkspaceApplicationPatchArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DataIntegration/workspaceApplicationPatch:WorkspaceApplicationPatch", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private WorkspaceApplicationPatch(String name, Output<String> id, @Nullable WorkspaceApplicationPatchState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DataIntegration/workspaceApplicationPatch:WorkspaceApplicationPatch", name, state, makeResourceOptions(options, id));
+    }
+
+    private static WorkspaceApplicationPatchArgs makeArgs(WorkspaceApplicationPatchArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? WorkspaceApplicationPatchArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

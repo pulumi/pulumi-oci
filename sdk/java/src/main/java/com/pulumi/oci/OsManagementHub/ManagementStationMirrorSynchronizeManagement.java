@@ -122,11 +122,18 @@ public class ManagementStationMirrorSynchronizeManagement extends com.pulumi.res
      * @param options A bag of options that control this resource's behavior.
      */
     public ManagementStationMirrorSynchronizeManagement(String name, ManagementStationMirrorSynchronizeManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:OsManagementHub/managementStationMirrorSynchronizeManagement:ManagementStationMirrorSynchronizeManagement", name, args == null ? ManagementStationMirrorSynchronizeManagementArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:OsManagementHub/managementStationMirrorSynchronizeManagement:ManagementStationMirrorSynchronizeManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ManagementStationMirrorSynchronizeManagement(String name, Output<String> id, @Nullable ManagementStationMirrorSynchronizeManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:OsManagementHub/managementStationMirrorSynchronizeManagement:ManagementStationMirrorSynchronizeManagement", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ManagementStationMirrorSynchronizeManagementArgs makeArgs(ManagementStationMirrorSynchronizeManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ManagementStationMirrorSynchronizeManagementArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

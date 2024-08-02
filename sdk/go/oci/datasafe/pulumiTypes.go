@@ -13,6 +13,121 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type AlertPolicyAlertPolicyRuleDetail struct {
+	// Describes the alert policy rule.
+	Description *string `pulumi:"description"`
+	// The display name of the alert policy rule.
+	DisplayName *string `pulumi:"displayName"`
+	// The conditional expression of the alert policy rule which evaluates to boolean value.
+	Expression string `pulumi:"expression"`
+}
+
+// AlertPolicyAlertPolicyRuleDetailInput is an input type that accepts AlertPolicyAlertPolicyRuleDetailArgs and AlertPolicyAlertPolicyRuleDetailOutput values.
+// You can construct a concrete instance of `AlertPolicyAlertPolicyRuleDetailInput` via:
+//
+//	AlertPolicyAlertPolicyRuleDetailArgs{...}
+type AlertPolicyAlertPolicyRuleDetailInput interface {
+	pulumi.Input
+
+	ToAlertPolicyAlertPolicyRuleDetailOutput() AlertPolicyAlertPolicyRuleDetailOutput
+	ToAlertPolicyAlertPolicyRuleDetailOutputWithContext(context.Context) AlertPolicyAlertPolicyRuleDetailOutput
+}
+
+type AlertPolicyAlertPolicyRuleDetailArgs struct {
+	// Describes the alert policy rule.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// The display name of the alert policy rule.
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// The conditional expression of the alert policy rule which evaluates to boolean value.
+	Expression pulumi.StringInput `pulumi:"expression"`
+}
+
+func (AlertPolicyAlertPolicyRuleDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlertPolicyAlertPolicyRuleDetail)(nil)).Elem()
+}
+
+func (i AlertPolicyAlertPolicyRuleDetailArgs) ToAlertPolicyAlertPolicyRuleDetailOutput() AlertPolicyAlertPolicyRuleDetailOutput {
+	return i.ToAlertPolicyAlertPolicyRuleDetailOutputWithContext(context.Background())
+}
+
+func (i AlertPolicyAlertPolicyRuleDetailArgs) ToAlertPolicyAlertPolicyRuleDetailOutputWithContext(ctx context.Context) AlertPolicyAlertPolicyRuleDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlertPolicyAlertPolicyRuleDetailOutput)
+}
+
+// AlertPolicyAlertPolicyRuleDetailArrayInput is an input type that accepts AlertPolicyAlertPolicyRuleDetailArray and AlertPolicyAlertPolicyRuleDetailArrayOutput values.
+// You can construct a concrete instance of `AlertPolicyAlertPolicyRuleDetailArrayInput` via:
+//
+//	AlertPolicyAlertPolicyRuleDetailArray{ AlertPolicyAlertPolicyRuleDetailArgs{...} }
+type AlertPolicyAlertPolicyRuleDetailArrayInput interface {
+	pulumi.Input
+
+	ToAlertPolicyAlertPolicyRuleDetailArrayOutput() AlertPolicyAlertPolicyRuleDetailArrayOutput
+	ToAlertPolicyAlertPolicyRuleDetailArrayOutputWithContext(context.Context) AlertPolicyAlertPolicyRuleDetailArrayOutput
+}
+
+type AlertPolicyAlertPolicyRuleDetailArray []AlertPolicyAlertPolicyRuleDetailInput
+
+func (AlertPolicyAlertPolicyRuleDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AlertPolicyAlertPolicyRuleDetail)(nil)).Elem()
+}
+
+func (i AlertPolicyAlertPolicyRuleDetailArray) ToAlertPolicyAlertPolicyRuleDetailArrayOutput() AlertPolicyAlertPolicyRuleDetailArrayOutput {
+	return i.ToAlertPolicyAlertPolicyRuleDetailArrayOutputWithContext(context.Background())
+}
+
+func (i AlertPolicyAlertPolicyRuleDetailArray) ToAlertPolicyAlertPolicyRuleDetailArrayOutputWithContext(ctx context.Context) AlertPolicyAlertPolicyRuleDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlertPolicyAlertPolicyRuleDetailArrayOutput)
+}
+
+type AlertPolicyAlertPolicyRuleDetailOutput struct{ *pulumi.OutputState }
+
+func (AlertPolicyAlertPolicyRuleDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlertPolicyAlertPolicyRuleDetail)(nil)).Elem()
+}
+
+func (o AlertPolicyAlertPolicyRuleDetailOutput) ToAlertPolicyAlertPolicyRuleDetailOutput() AlertPolicyAlertPolicyRuleDetailOutput {
+	return o
+}
+
+func (o AlertPolicyAlertPolicyRuleDetailOutput) ToAlertPolicyAlertPolicyRuleDetailOutputWithContext(ctx context.Context) AlertPolicyAlertPolicyRuleDetailOutput {
+	return o
+}
+
+// Describes the alert policy rule.
+func (o AlertPolicyAlertPolicyRuleDetailOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlertPolicyAlertPolicyRuleDetail) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// The display name of the alert policy rule.
+func (o AlertPolicyAlertPolicyRuleDetailOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlertPolicyAlertPolicyRuleDetail) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// The conditional expression of the alert policy rule which evaluates to boolean value.
+func (o AlertPolicyAlertPolicyRuleDetailOutput) Expression() pulumi.StringOutput {
+	return o.ApplyT(func(v AlertPolicyAlertPolicyRuleDetail) string { return v.Expression }).(pulumi.StringOutput)
+}
+
+type AlertPolicyAlertPolicyRuleDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (AlertPolicyAlertPolicyRuleDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AlertPolicyAlertPolicyRuleDetail)(nil)).Elem()
+}
+
+func (o AlertPolicyAlertPolicyRuleDetailArrayOutput) ToAlertPolicyAlertPolicyRuleDetailArrayOutput() AlertPolicyAlertPolicyRuleDetailArrayOutput {
+	return o
+}
+
+func (o AlertPolicyAlertPolicyRuleDetailArrayOutput) ToAlertPolicyAlertPolicyRuleDetailArrayOutputWithContext(ctx context.Context) AlertPolicyAlertPolicyRuleDetailArrayOutput {
+	return o
+}
+
+func (o AlertPolicyAlertPolicyRuleDetailArrayOutput) Index(i pulumi.IntInput) AlertPolicyAlertPolicyRuleDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AlertPolicyAlertPolicyRuleDetail {
+		return vs[0].([]AlertPolicyAlertPolicyRuleDetail)[vs[1].(int)]
+	}).(AlertPolicyAlertPolicyRuleDetailOutput)
+}
+
 type AuditPolicyAuditCondition struct {
 	// Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
 	AuditPolicyName *string `pulumi:"auditPolicyName"`
@@ -7390,6 +7505,7 @@ func (o GetAlertPoliciesAlertPolicyCollectionArrayOutput) Index(i pulumi.IntInpu
 }
 
 type GetAlertPoliciesAlertPolicyCollectionItem struct {
+	AlertPolicyRuleDetails []GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetail `pulumi:"alertPolicyRuleDetails"`
 	// Indicates the Data Safe feature to which the alert policy belongs.
 	AlertPolicyType string `pulumi:"alertPolicyType"`
 	// A filter to return only resources that match the specified compartment OCID.
@@ -7406,6 +7522,8 @@ type GetAlertPoliciesAlertPolicyCollectionItem struct {
 	Id string `pulumi:"id"`
 	// An optional filter to return only alert policies that are user-defined or not.
 	IsUserDefined bool `pulumi:"isUserDefined"`
+	// Details about the current state of the alert policy.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Severity level of the alert raised by this policy.
 	Severity string `pulumi:"severity"`
 	// An optional filter to return only alert policies that have the given life-cycle state.
@@ -7430,6 +7548,7 @@ type GetAlertPoliciesAlertPolicyCollectionItemInput interface {
 }
 
 type GetAlertPoliciesAlertPolicyCollectionItemArgs struct {
+	AlertPolicyRuleDetails GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailArrayInput `pulumi:"alertPolicyRuleDetails"`
 	// Indicates the Data Safe feature to which the alert policy belongs.
 	AlertPolicyType pulumi.StringInput `pulumi:"alertPolicyType"`
 	// A filter to return only resources that match the specified compartment OCID.
@@ -7446,6 +7565,8 @@ type GetAlertPoliciesAlertPolicyCollectionItemArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// An optional filter to return only alert policies that are user-defined or not.
 	IsUserDefined pulumi.BoolInput `pulumi:"isUserDefined"`
+	// Details about the current state of the alert policy.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// Severity level of the alert raised by this policy.
 	Severity pulumi.StringInput `pulumi:"severity"`
 	// An optional filter to return only alert policies that have the given life-cycle state.
@@ -7509,6 +7630,12 @@ func (o GetAlertPoliciesAlertPolicyCollectionItemOutput) ToGetAlertPoliciesAlert
 	return o
 }
 
+func (o GetAlertPoliciesAlertPolicyCollectionItemOutput) AlertPolicyRuleDetails() GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailArrayOutput {
+	return o.ApplyT(func(v GetAlertPoliciesAlertPolicyCollectionItem) []GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetail {
+		return v.AlertPolicyRuleDetails
+	}).(GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailArrayOutput)
+}
+
 // Indicates the Data Safe feature to which the alert policy belongs.
 func (o GetAlertPoliciesAlertPolicyCollectionItemOutput) AlertPolicyType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlertPoliciesAlertPolicyCollectionItem) string { return v.AlertPolicyType }).(pulumi.StringOutput)
@@ -7547,6 +7674,11 @@ func (o GetAlertPoliciesAlertPolicyCollectionItemOutput) Id() pulumi.StringOutpu
 // An optional filter to return only alert policies that are user-defined or not.
 func (o GetAlertPoliciesAlertPolicyCollectionItemOutput) IsUserDefined() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetAlertPoliciesAlertPolicyCollectionItem) bool { return v.IsUserDefined }).(pulumi.BoolOutput)
+}
+
+// Details about the current state of the alert policy.
+func (o GetAlertPoliciesAlertPolicyCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertPoliciesAlertPolicyCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
 // Severity level of the alert raised by this policy.
@@ -7592,6 +7724,118 @@ func (o GetAlertPoliciesAlertPolicyCollectionItemArrayOutput) Index(i pulumi.Int
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlertPoliciesAlertPolicyCollectionItem {
 		return vs[0].([]GetAlertPoliciesAlertPolicyCollectionItem)[vs[1].(int)]
 	}).(GetAlertPoliciesAlertPolicyCollectionItemOutput)
+}
+
+type GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetail struct {
+	// The description of the alert policy.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName string `pulumi:"displayName"`
+	Expression  string `pulumi:"expression"`
+}
+
+// GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailInput is an input type that accepts GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailArgs and GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailOutput values.
+// You can construct a concrete instance of `GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailInput` via:
+//
+//	GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailArgs{...}
+type GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailInput interface {
+	pulumi.Input
+
+	ToGetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailOutput() GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailOutput
+	ToGetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailOutputWithContext(context.Context) GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailOutput
+}
+
+type GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailArgs struct {
+	// The description of the alert policy.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	Expression  pulumi.StringInput `pulumi:"expression"`
+}
+
+func (GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetail)(nil)).Elem()
+}
+
+func (i GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailArgs) ToGetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailOutput() GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailOutput {
+	return i.ToGetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailOutputWithContext(context.Background())
+}
+
+func (i GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailArgs) ToGetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailOutputWithContext(ctx context.Context) GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailOutput)
+}
+
+// GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailArrayInput is an input type that accepts GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailArray and GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailArrayOutput values.
+// You can construct a concrete instance of `GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailArrayInput` via:
+//
+//	GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailArray{ GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailArgs{...} }
+type GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailArrayOutput() GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailArrayOutput
+	ToGetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailArrayOutputWithContext(context.Context) GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailArrayOutput
+}
+
+type GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailArray []GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailInput
+
+func (GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetail)(nil)).Elem()
+}
+
+func (i GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailArray) ToGetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailArrayOutput() GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailArrayOutput {
+	return i.ToGetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailArray) ToGetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailArrayOutputWithContext(ctx context.Context) GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailArrayOutput)
+}
+
+type GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailOutput struct{ *pulumi.OutputState }
+
+func (GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetail)(nil)).Elem()
+}
+
+func (o GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailOutput) ToGetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailOutput() GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailOutput {
+	return o
+}
+
+func (o GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailOutput) ToGetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailOutputWithContext(ctx context.Context) GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailOutput {
+	return o
+}
+
+// The description of the alert policy.
+func (o GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetail) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the specified display name.
+func (o GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetail) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+func (o GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailOutput) Expression() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetail) string { return v.Expression }).(pulumi.StringOutput)
+}
+
+type GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetail)(nil)).Elem()
+}
+
+func (o GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailArrayOutput) ToGetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailArrayOutput() GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailArrayOutput {
+	return o
+}
+
+func (o GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailArrayOutput) ToGetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailArrayOutputWithContext(ctx context.Context) GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailArrayOutput {
+	return o
+}
+
+func (o GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailArrayOutput) Index(i pulumi.IntInput) GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetail {
+		return vs[0].([]GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetail)[vs[1].(int)]
+	}).(GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailOutput)
 }
 
 type GetAlertPoliciesFilter struct {
@@ -7700,123 +7944,119 @@ func (o GetAlertPoliciesFilterArrayOutput) Index(i pulumi.IntInput) GetAlertPoli
 	}).(GetAlertPoliciesFilterOutput)
 }
 
-type GetAlertPolicyRuleItem struct {
-	// Describes the alert policy rule.
+type GetAlertPolicyAlertPolicyRuleDetail struct {
+	// The description of the alert policy.
 	Description string `pulumi:"description"`
-	// The conditional expression of the alert policy rule which evaluates to boolean value.
-	Expression string `pulumi:"expression"`
-	// The unique key of the alert policy rule.
-	Key string `pulumi:"key"`
+	// The display name of the alert policy.
+	DisplayName string `pulumi:"displayName"`
+	Expression  string `pulumi:"expression"`
 }
 
-// GetAlertPolicyRuleItemInput is an input type that accepts GetAlertPolicyRuleItemArgs and GetAlertPolicyRuleItemOutput values.
-// You can construct a concrete instance of `GetAlertPolicyRuleItemInput` via:
+// GetAlertPolicyAlertPolicyRuleDetailInput is an input type that accepts GetAlertPolicyAlertPolicyRuleDetailArgs and GetAlertPolicyAlertPolicyRuleDetailOutput values.
+// You can construct a concrete instance of `GetAlertPolicyAlertPolicyRuleDetailInput` via:
 //
-//	GetAlertPolicyRuleItemArgs{...}
-type GetAlertPolicyRuleItemInput interface {
+//	GetAlertPolicyAlertPolicyRuleDetailArgs{...}
+type GetAlertPolicyAlertPolicyRuleDetailInput interface {
 	pulumi.Input
 
-	ToGetAlertPolicyRuleItemOutput() GetAlertPolicyRuleItemOutput
-	ToGetAlertPolicyRuleItemOutputWithContext(context.Context) GetAlertPolicyRuleItemOutput
+	ToGetAlertPolicyAlertPolicyRuleDetailOutput() GetAlertPolicyAlertPolicyRuleDetailOutput
+	ToGetAlertPolicyAlertPolicyRuleDetailOutputWithContext(context.Context) GetAlertPolicyAlertPolicyRuleDetailOutput
 }
 
-type GetAlertPolicyRuleItemArgs struct {
-	// Describes the alert policy rule.
+type GetAlertPolicyAlertPolicyRuleDetailArgs struct {
+	// The description of the alert policy.
 	Description pulumi.StringInput `pulumi:"description"`
-	// The conditional expression of the alert policy rule which evaluates to boolean value.
-	Expression pulumi.StringInput `pulumi:"expression"`
-	// The unique key of the alert policy rule.
-	Key pulumi.StringInput `pulumi:"key"`
+	// The display name of the alert policy.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	Expression  pulumi.StringInput `pulumi:"expression"`
 }
 
-func (GetAlertPolicyRuleItemArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetAlertPolicyRuleItem)(nil)).Elem()
+func (GetAlertPolicyAlertPolicyRuleDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertPolicyAlertPolicyRuleDetail)(nil)).Elem()
 }
 
-func (i GetAlertPolicyRuleItemArgs) ToGetAlertPolicyRuleItemOutput() GetAlertPolicyRuleItemOutput {
-	return i.ToGetAlertPolicyRuleItemOutputWithContext(context.Background())
+func (i GetAlertPolicyAlertPolicyRuleDetailArgs) ToGetAlertPolicyAlertPolicyRuleDetailOutput() GetAlertPolicyAlertPolicyRuleDetailOutput {
+	return i.ToGetAlertPolicyAlertPolicyRuleDetailOutputWithContext(context.Background())
 }
 
-func (i GetAlertPolicyRuleItemArgs) ToGetAlertPolicyRuleItemOutputWithContext(ctx context.Context) GetAlertPolicyRuleItemOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetAlertPolicyRuleItemOutput)
+func (i GetAlertPolicyAlertPolicyRuleDetailArgs) ToGetAlertPolicyAlertPolicyRuleDetailOutputWithContext(ctx context.Context) GetAlertPolicyAlertPolicyRuleDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertPolicyAlertPolicyRuleDetailOutput)
 }
 
-// GetAlertPolicyRuleItemArrayInput is an input type that accepts GetAlertPolicyRuleItemArray and GetAlertPolicyRuleItemArrayOutput values.
-// You can construct a concrete instance of `GetAlertPolicyRuleItemArrayInput` via:
+// GetAlertPolicyAlertPolicyRuleDetailArrayInput is an input type that accepts GetAlertPolicyAlertPolicyRuleDetailArray and GetAlertPolicyAlertPolicyRuleDetailArrayOutput values.
+// You can construct a concrete instance of `GetAlertPolicyAlertPolicyRuleDetailArrayInput` via:
 //
-//	GetAlertPolicyRuleItemArray{ GetAlertPolicyRuleItemArgs{...} }
-type GetAlertPolicyRuleItemArrayInput interface {
+//	GetAlertPolicyAlertPolicyRuleDetailArray{ GetAlertPolicyAlertPolicyRuleDetailArgs{...} }
+type GetAlertPolicyAlertPolicyRuleDetailArrayInput interface {
 	pulumi.Input
 
-	ToGetAlertPolicyRuleItemArrayOutput() GetAlertPolicyRuleItemArrayOutput
-	ToGetAlertPolicyRuleItemArrayOutputWithContext(context.Context) GetAlertPolicyRuleItemArrayOutput
+	ToGetAlertPolicyAlertPolicyRuleDetailArrayOutput() GetAlertPolicyAlertPolicyRuleDetailArrayOutput
+	ToGetAlertPolicyAlertPolicyRuleDetailArrayOutputWithContext(context.Context) GetAlertPolicyAlertPolicyRuleDetailArrayOutput
 }
 
-type GetAlertPolicyRuleItemArray []GetAlertPolicyRuleItemInput
+type GetAlertPolicyAlertPolicyRuleDetailArray []GetAlertPolicyAlertPolicyRuleDetailInput
 
-func (GetAlertPolicyRuleItemArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetAlertPolicyRuleItem)(nil)).Elem()
+func (GetAlertPolicyAlertPolicyRuleDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlertPolicyAlertPolicyRuleDetail)(nil)).Elem()
 }
 
-func (i GetAlertPolicyRuleItemArray) ToGetAlertPolicyRuleItemArrayOutput() GetAlertPolicyRuleItemArrayOutput {
-	return i.ToGetAlertPolicyRuleItemArrayOutputWithContext(context.Background())
+func (i GetAlertPolicyAlertPolicyRuleDetailArray) ToGetAlertPolicyAlertPolicyRuleDetailArrayOutput() GetAlertPolicyAlertPolicyRuleDetailArrayOutput {
+	return i.ToGetAlertPolicyAlertPolicyRuleDetailArrayOutputWithContext(context.Background())
 }
 
-func (i GetAlertPolicyRuleItemArray) ToGetAlertPolicyRuleItemArrayOutputWithContext(ctx context.Context) GetAlertPolicyRuleItemArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetAlertPolicyRuleItemArrayOutput)
+func (i GetAlertPolicyAlertPolicyRuleDetailArray) ToGetAlertPolicyAlertPolicyRuleDetailArrayOutputWithContext(ctx context.Context) GetAlertPolicyAlertPolicyRuleDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlertPolicyAlertPolicyRuleDetailArrayOutput)
 }
 
-type GetAlertPolicyRuleItemOutput struct{ *pulumi.OutputState }
+type GetAlertPolicyAlertPolicyRuleDetailOutput struct{ *pulumi.OutputState }
 
-func (GetAlertPolicyRuleItemOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetAlertPolicyRuleItem)(nil)).Elem()
+func (GetAlertPolicyAlertPolicyRuleDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlertPolicyAlertPolicyRuleDetail)(nil)).Elem()
 }
 
-func (o GetAlertPolicyRuleItemOutput) ToGetAlertPolicyRuleItemOutput() GetAlertPolicyRuleItemOutput {
+func (o GetAlertPolicyAlertPolicyRuleDetailOutput) ToGetAlertPolicyAlertPolicyRuleDetailOutput() GetAlertPolicyAlertPolicyRuleDetailOutput {
 	return o
 }
 
-func (o GetAlertPolicyRuleItemOutput) ToGetAlertPolicyRuleItemOutputWithContext(ctx context.Context) GetAlertPolicyRuleItemOutput {
+func (o GetAlertPolicyAlertPolicyRuleDetailOutput) ToGetAlertPolicyAlertPolicyRuleDetailOutputWithContext(ctx context.Context) GetAlertPolicyAlertPolicyRuleDetailOutput {
 	return o
 }
 
-// Describes the alert policy rule.
-func (o GetAlertPolicyRuleItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlertPolicyRuleItem) string { return v.Description }).(pulumi.StringOutput)
+// The description of the alert policy.
+func (o GetAlertPolicyAlertPolicyRuleDetailOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertPolicyAlertPolicyRuleDetail) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// The conditional expression of the alert policy rule which evaluates to boolean value.
-func (o GetAlertPolicyRuleItemOutput) Expression() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlertPolicyRuleItem) string { return v.Expression }).(pulumi.StringOutput)
+// The display name of the alert policy.
+func (o GetAlertPolicyAlertPolicyRuleDetailOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertPolicyAlertPolicyRuleDetail) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// The unique key of the alert policy rule.
-func (o GetAlertPolicyRuleItemOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlertPolicyRuleItem) string { return v.Key }).(pulumi.StringOutput)
+func (o GetAlertPolicyAlertPolicyRuleDetailOutput) Expression() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertPolicyAlertPolicyRuleDetail) string { return v.Expression }).(pulumi.StringOutput)
 }
 
-type GetAlertPolicyRuleItemArrayOutput struct{ *pulumi.OutputState }
+type GetAlertPolicyAlertPolicyRuleDetailArrayOutput struct{ *pulumi.OutputState }
 
-func (GetAlertPolicyRuleItemArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetAlertPolicyRuleItem)(nil)).Elem()
+func (GetAlertPolicyAlertPolicyRuleDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlertPolicyAlertPolicyRuleDetail)(nil)).Elem()
 }
 
-func (o GetAlertPolicyRuleItemArrayOutput) ToGetAlertPolicyRuleItemArrayOutput() GetAlertPolicyRuleItemArrayOutput {
+func (o GetAlertPolicyAlertPolicyRuleDetailArrayOutput) ToGetAlertPolicyAlertPolicyRuleDetailArrayOutput() GetAlertPolicyAlertPolicyRuleDetailArrayOutput {
 	return o
 }
 
-func (o GetAlertPolicyRuleItemArrayOutput) ToGetAlertPolicyRuleItemArrayOutputWithContext(ctx context.Context) GetAlertPolicyRuleItemArrayOutput {
+func (o GetAlertPolicyAlertPolicyRuleDetailArrayOutput) ToGetAlertPolicyAlertPolicyRuleDetailArrayOutputWithContext(ctx context.Context) GetAlertPolicyAlertPolicyRuleDetailArrayOutput {
 	return o
 }
 
-func (o GetAlertPolicyRuleItemArrayOutput) Index(i pulumi.IntInput) GetAlertPolicyRuleItemOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlertPolicyRuleItem {
-		return vs[0].([]GetAlertPolicyRuleItem)[vs[1].(int)]
-	}).(GetAlertPolicyRuleItemOutput)
+func (o GetAlertPolicyAlertPolicyRuleDetailArrayOutput) Index(i pulumi.IntInput) GetAlertPolicyAlertPolicyRuleDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlertPolicyAlertPolicyRuleDetail {
+		return vs[0].([]GetAlertPolicyAlertPolicyRuleDetail)[vs[1].(int)]
+	}).(GetAlertPolicyAlertPolicyRuleDetailOutput)
 }
 
 type GetAlertPolicyRulesAlertPolicyRuleCollection struct {
-	// Array of alert policy rules summary
 	Items []GetAlertPolicyRulesAlertPolicyRuleCollectionItem `pulumi:"items"`
 }
 
@@ -7832,7 +8072,6 @@ type GetAlertPolicyRulesAlertPolicyRuleCollectionInput interface {
 }
 
 type GetAlertPolicyRulesAlertPolicyRuleCollectionArgs struct {
-	// Array of alert policy rules summary
 	Items GetAlertPolicyRulesAlertPolicyRuleCollectionItemArrayInput `pulumi:"items"`
 }
 
@@ -7887,7 +8126,6 @@ func (o GetAlertPolicyRulesAlertPolicyRuleCollectionOutput) ToGetAlertPolicyRule
 	return o
 }
 
-// Array of alert policy rules summary
 func (o GetAlertPolicyRulesAlertPolicyRuleCollectionOutput) Items() GetAlertPolicyRulesAlertPolicyRuleCollectionItemArrayOutput {
 	return o.ApplyT(func(v GetAlertPolicyRulesAlertPolicyRuleCollection) []GetAlertPolicyRulesAlertPolicyRuleCollectionItem {
 		return v.Items
@@ -7915,12 +8153,20 @@ func (o GetAlertPolicyRulesAlertPolicyRuleCollectionArrayOutput) Index(i pulumi.
 }
 
 type GetAlertPolicyRulesAlertPolicyRuleCollectionItem struct {
+	// The OCID of the alert policy.
+	AlertPolicyId string `pulumi:"alertPolicyId"`
 	// Describes the alert policy rule.
 	Description string `pulumi:"description"`
+	// The display name of the alert policy rule.
+	DisplayName string `pulumi:"displayName"`
 	// The conditional expression of the alert policy rule which evaluates to boolean value.
 	Expression string `pulumi:"expression"`
 	// The unique key of the alert policy rule.
 	Key string `pulumi:"key"`
+	// The current state of the alert policy rule.
+	State string `pulumi:"state"`
+	// Creation date and time of the alert policy rule, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreated string `pulumi:"timeCreated"`
 }
 
 // GetAlertPolicyRulesAlertPolicyRuleCollectionItemInput is an input type that accepts GetAlertPolicyRulesAlertPolicyRuleCollectionItemArgs and GetAlertPolicyRulesAlertPolicyRuleCollectionItemOutput values.
@@ -7935,12 +8181,20 @@ type GetAlertPolicyRulesAlertPolicyRuleCollectionItemInput interface {
 }
 
 type GetAlertPolicyRulesAlertPolicyRuleCollectionItemArgs struct {
+	// The OCID of the alert policy.
+	AlertPolicyId pulumi.StringInput `pulumi:"alertPolicyId"`
 	// Describes the alert policy rule.
 	Description pulumi.StringInput `pulumi:"description"`
+	// The display name of the alert policy rule.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The conditional expression of the alert policy rule which evaluates to boolean value.
 	Expression pulumi.StringInput `pulumi:"expression"`
 	// The unique key of the alert policy rule.
 	Key pulumi.StringInput `pulumi:"key"`
+	// The current state of the alert policy rule.
+	State pulumi.StringInput `pulumi:"state"`
+	// Creation date and time of the alert policy rule, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 }
 
 func (GetAlertPolicyRulesAlertPolicyRuleCollectionItemArgs) ElementType() reflect.Type {
@@ -7994,9 +8248,19 @@ func (o GetAlertPolicyRulesAlertPolicyRuleCollectionItemOutput) ToGetAlertPolicy
 	return o
 }
 
+// The OCID of the alert policy.
+func (o GetAlertPolicyRulesAlertPolicyRuleCollectionItemOutput) AlertPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertPolicyRulesAlertPolicyRuleCollectionItem) string { return v.AlertPolicyId }).(pulumi.StringOutput)
+}
+
 // Describes the alert policy rule.
 func (o GetAlertPolicyRulesAlertPolicyRuleCollectionItemOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlertPolicyRulesAlertPolicyRuleCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The display name of the alert policy rule.
+func (o GetAlertPolicyRulesAlertPolicyRuleCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertPolicyRulesAlertPolicyRuleCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
 // The conditional expression of the alert policy rule which evaluates to boolean value.
@@ -8007,6 +8271,16 @@ func (o GetAlertPolicyRulesAlertPolicyRuleCollectionItemOutput) Expression() pul
 // The unique key of the alert policy rule.
 func (o GetAlertPolicyRulesAlertPolicyRuleCollectionItemOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlertPolicyRulesAlertPolicyRuleCollectionItem) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// The current state of the alert policy rule.
+func (o GetAlertPolicyRulesAlertPolicyRuleCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertPolicyRulesAlertPolicyRuleCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Creation date and time of the alert policy rule, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetAlertPolicyRulesAlertPolicyRuleCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertPolicyRulesAlertPolicyRuleCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
 type GetAlertPolicyRulesAlertPolicyRuleCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -8231,6 +8505,10 @@ func (o GetAlertsAlertCollectionArrayOutput) Index(i pulumi.IntInput) GetAlertsA
 
 type GetAlertsAlertCollectionItem struct {
 	AlertId string `pulumi:"alertId"`
+	// The key of the rule of alert policy that triggered alert.
+	AlertPolicyRuleKey string `pulumi:"alertPolicyRuleKey"`
+	// The display name of the rule of alert policy that triggered alert.
+	AlertPolicyRuleName string `pulumi:"alertPolicyRuleName"`
 	// Type of the alert. Indicates the Data Safe feature triggering the alert.
 	AlertType string `pulumi:"alertType"`
 	// A comment for the alert. Entered by the user.
@@ -8290,6 +8568,10 @@ type GetAlertsAlertCollectionItemInput interface {
 
 type GetAlertsAlertCollectionItemArgs struct {
 	AlertId pulumi.StringInput `pulumi:"alertId"`
+	// The key of the rule of alert policy that triggered alert.
+	AlertPolicyRuleKey pulumi.StringInput `pulumi:"alertPolicyRuleKey"`
+	// The display name of the rule of alert policy that triggered alert.
+	AlertPolicyRuleName pulumi.StringInput `pulumi:"alertPolicyRuleName"`
 	// Type of the alert. Indicates the Data Safe feature triggering the alert.
 	AlertType pulumi.StringInput `pulumi:"alertType"`
 	// A comment for the alert. Entered by the user.
@@ -8389,6 +8671,16 @@ func (o GetAlertsAlertCollectionItemOutput) ToGetAlertsAlertCollectionItemOutput
 
 func (o GetAlertsAlertCollectionItemOutput) AlertId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlertsAlertCollectionItem) string { return v.AlertId }).(pulumi.StringOutput)
+}
+
+// The key of the rule of alert policy that triggered alert.
+func (o GetAlertsAlertCollectionItemOutput) AlertPolicyRuleKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertsAlertCollectionItem) string { return v.AlertPolicyRuleKey }).(pulumi.StringOutput)
+}
+
+// The display name of the rule of alert policy that triggered alert.
+func (o GetAlertsAlertCollectionItemOutput) AlertPolicyRuleName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlertsAlertCollectionItem) string { return v.AlertPolicyRuleName }).(pulumi.StringOutput)
 }
 
 // Type of the alert. Indicates the Data Safe feature triggering the alert.
@@ -24793,6 +25085,8 @@ type GetReportDefinitionsReportDefinitionCollectionItem struct {
 	Id string `pulumi:"id"`
 	// A boolean flag indicating to list seeded report definitions. Set this parameter to get list of seeded report definitions.
 	IsSeeded bool `pulumi:"isSeeded"`
+	// Details about the current state of the report definition in Data Safe.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The OCID of the parent report definition. In the case of seeded report definition, this is same as definition OCID.
 	ParentId string `pulumi:"parentId"`
 	// The time span for the records in the report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
@@ -24861,6 +25155,8 @@ type GetReportDefinitionsReportDefinitionCollectionItemArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// A boolean flag indicating to list seeded report definitions. Set this parameter to get list of seeded report definitions.
 	IsSeeded pulumi.BoolInput `pulumi:"isSeeded"`
+	// Details about the current state of the report definition in Data Safe.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// The OCID of the parent report definition. In the case of seeded report definition, this is same as definition OCID.
 	ParentId pulumi.StringInput `pulumi:"parentId"`
 	// The time span for the records in the report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
@@ -25018,6 +25314,11 @@ func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) Id() pulumi.St
 // A boolean flag indicating to list seeded report definitions. Set this parameter to get list of seeded report definitions.
 func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) IsSeeded() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetReportDefinitionsReportDefinitionCollectionItem) bool { return v.IsSeeded }).(pulumi.BoolOutput)
+}
+
+// Details about the current state of the report definition in Data Safe.
+func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportDefinitionsReportDefinitionCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
 // The OCID of the parent report definition. In the case of seeded report definition, this is same as definition OCID.
@@ -25845,6 +26146,8 @@ type GetReportsReportCollectionItem struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the report.
 	Id string `pulumi:"id"`
+	// Details about the current state of the report in Data Safe.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Specifies the format of report to be .xls or .pdf or .json
 	MimeType string `pulumi:"mimeType"`
 	// The ID of the report definition to filter the list of reports
@@ -25884,6 +26187,8 @@ type GetReportsReportCollectionItemArgs struct {
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the report.
 	Id pulumi.StringInput `pulumi:"id"`
+	// Details about the current state of the report in Data Safe.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// Specifies the format of report to be .xls or .pdf or .json
 	MimeType pulumi.StringInput `pulumi:"mimeType"`
 	// The ID of the report definition to filter the list of reports
@@ -25978,6 +26283,11 @@ func (o GetReportsReportCollectionItemOutput) FreeformTags() pulumi.MapOutput {
 // The OCID of the report.
 func (o GetReportsReportCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReportsReportCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Details about the current state of the report in Data Safe.
+func (o GetReportsReportCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReportsReportCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
 // Specifies the format of report to be .xls or .pdf or .json
@@ -45191,8 +45501,10 @@ type GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem 
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the target-alert policy association.
 	Id string `pulumi:"id"`
-	// Indicates if the target-alert policy association is enabled or disabled.
+	// Indicates if the target-alert policy association is enabled or disabled by user.
 	IsEnabled bool `pulumi:"isEnabled"`
+	// Details about the current state of the target-alert policy association.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The OCID of the alert policy.
 	PolicyId string `pulumi:"policyId"`
 	// An optional filter to return only alert policies that have the given life-cycle state.
@@ -45231,8 +45543,10 @@ type GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemA
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the target-alert policy association.
 	Id pulumi.StringInput `pulumi:"id"`
-	// Indicates if the target-alert policy association is enabled or disabled.
+	// Indicates if the target-alert policy association is enabled or disabled by user.
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	// Details about the current state of the target-alert policy association.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// The OCID of the alert policy.
 	PolicyId pulumi.StringInput `pulumi:"policyId"`
 	// An optional filter to return only alert policies that have the given life-cycle state.
@@ -45338,11 +45652,18 @@ func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionIt
 	return o.ApplyT(func(v GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Indicates if the target-alert policy association is enabled or disabled.
+// Indicates if the target-alert policy association is enabled or disabled by user.
 func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem) bool {
 		return v.IsEnabled
 	}).(pulumi.BoolOutput)
+}
+
+// Details about the current state of the target-alert policy association.
+func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
 }
 
 // The OCID of the alert policy.
@@ -53232,6 +53553,8 @@ func (o GetUserAssessmentsUserAssessmentIgnoredTargetArrayOutput) Index(i pulumi
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AlertPolicyAlertPolicyRuleDetailInput)(nil)).Elem(), AlertPolicyAlertPolicyRuleDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlertPolicyAlertPolicyRuleDetailArrayInput)(nil)).Elem(), AlertPolicyAlertPolicyRuleDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AuditPolicyAuditConditionInput)(nil)).Elem(), AuditPolicyAuditConditionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AuditPolicyAuditConditionArrayInput)(nil)).Elem(), AuditPolicyAuditConditionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AuditPolicyAuditConditionEnableConditionInput)(nil)).Elem(), AuditPolicyAuditConditionEnableConditionArgs{})
@@ -53322,10 +53645,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertPoliciesAlertPolicyCollectionArrayInput)(nil)).Elem(), GetAlertPoliciesAlertPolicyCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertPoliciesAlertPolicyCollectionItemInput)(nil)).Elem(), GetAlertPoliciesAlertPolicyCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertPoliciesAlertPolicyCollectionItemArrayInput)(nil)).Elem(), GetAlertPoliciesAlertPolicyCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailInput)(nil)).Elem(), GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailArrayInput)(nil)).Elem(), GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertPoliciesFilterInput)(nil)).Elem(), GetAlertPoliciesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertPoliciesFilterArrayInput)(nil)).Elem(), GetAlertPoliciesFilterArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertPolicyRuleItemInput)(nil)).Elem(), GetAlertPolicyRuleItemArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertPolicyRuleItemArrayInput)(nil)).Elem(), GetAlertPolicyRuleItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertPolicyAlertPolicyRuleDetailInput)(nil)).Elem(), GetAlertPolicyAlertPolicyRuleDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertPolicyAlertPolicyRuleDetailArrayInput)(nil)).Elem(), GetAlertPolicyAlertPolicyRuleDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertPolicyRulesAlertPolicyRuleCollectionInput)(nil)).Elem(), GetAlertPolicyRulesAlertPolicyRuleCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertPolicyRulesAlertPolicyRuleCollectionArrayInput)(nil)).Elem(), GetAlertPolicyRulesAlertPolicyRuleCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertPolicyRulesAlertPolicyRuleCollectionItemInput)(nil)).Elem(), GetAlertPolicyRulesAlertPolicyRuleCollectionItemArgs{})
@@ -53940,6 +54265,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentsUserAssessmentArrayInput)(nil)).Elem(), GetUserAssessmentsUserAssessmentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentsUserAssessmentIgnoredTargetInput)(nil)).Elem(), GetUserAssessmentsUserAssessmentIgnoredTargetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentsUserAssessmentIgnoredTargetArrayInput)(nil)).Elem(), GetUserAssessmentsUserAssessmentIgnoredTargetArray{})
+	pulumi.RegisterOutputType(AlertPolicyAlertPolicyRuleDetailOutput{})
+	pulumi.RegisterOutputType(AlertPolicyAlertPolicyRuleDetailArrayOutput{})
 	pulumi.RegisterOutputType(AuditPolicyAuditConditionOutput{})
 	pulumi.RegisterOutputType(AuditPolicyAuditConditionArrayOutput{})
 	pulumi.RegisterOutputType(AuditPolicyAuditConditionEnableConditionOutput{})
@@ -54030,10 +54357,12 @@ func init() {
 	pulumi.RegisterOutputType(GetAlertPoliciesAlertPolicyCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetAlertPoliciesAlertPolicyCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetAlertPoliciesAlertPolicyCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailOutput{})
+	pulumi.RegisterOutputType(GetAlertPoliciesAlertPolicyCollectionItemAlertPolicyRuleDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetAlertPoliciesFilterOutput{})
 	pulumi.RegisterOutputType(GetAlertPoliciesFilterArrayOutput{})
-	pulumi.RegisterOutputType(GetAlertPolicyRuleItemOutput{})
-	pulumi.RegisterOutputType(GetAlertPolicyRuleItemArrayOutput{})
+	pulumi.RegisterOutputType(GetAlertPolicyAlertPolicyRuleDetailOutput{})
+	pulumi.RegisterOutputType(GetAlertPolicyAlertPolicyRuleDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetAlertPolicyRulesAlertPolicyRuleCollectionOutput{})
 	pulumi.RegisterOutputType(GetAlertPolicyRulesAlertPolicyRuleCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetAlertPolicyRulesAlertPolicyRuleCollectionItemOutput{})

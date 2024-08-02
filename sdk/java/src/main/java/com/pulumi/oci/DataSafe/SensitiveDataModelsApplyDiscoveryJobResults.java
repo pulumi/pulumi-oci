@@ -50,11 +50,18 @@ public class SensitiveDataModelsApplyDiscoveryJobResults extends com.pulumi.reso
      * @param options A bag of options that control this resource's behavior.
      */
     public SensitiveDataModelsApplyDiscoveryJobResults(String name, SensitiveDataModelsApplyDiscoveryJobResultsArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/sensitiveDataModelsApplyDiscoveryJobResults:SensitiveDataModelsApplyDiscoveryJobResults", name, args == null ? SensitiveDataModelsApplyDiscoveryJobResultsArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DataSafe/sensitiveDataModelsApplyDiscoveryJobResults:SensitiveDataModelsApplyDiscoveryJobResults", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private SensitiveDataModelsApplyDiscoveryJobResults(String name, Output<String> id, @Nullable SensitiveDataModelsApplyDiscoveryJobResultsState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DataSafe/sensitiveDataModelsApplyDiscoveryJobResults:SensitiveDataModelsApplyDiscoveryJobResults", name, state, makeResourceOptions(options, id));
+    }
+
+    private static SensitiveDataModelsApplyDiscoveryJobResultsArgs makeArgs(SensitiveDataModelsApplyDiscoveryJobResultsArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? SensitiveDataModelsApplyDiscoveryJobResultsArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

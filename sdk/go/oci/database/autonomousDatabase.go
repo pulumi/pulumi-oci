@@ -67,6 +67,8 @@ type AutonomousDatabase struct {
 	// * `FULL` - This option creates a new database that includes all source database data.
 	// * `METADATA` - This option creates a new database that includes the source database schema and select metadata, but not the source database data.
 	CloneType pulumi.StringOutput `pulumi:"cloneType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
+	ClusterPlacementGroupId pulumi.StringOutput `pulumi:"clusterPlacementGroupId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Database.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure. For an Autonomous Database Serverless instance, the 'ECPU' compute model requires a minimum value of one, for databases in the elastic resource pool and minimum value of two, otherwise. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value. Providing `computeModel` and `computeCount` is the preferred method for both OCPU and ECPU.
@@ -459,6 +461,8 @@ type autonomousDatabaseState struct {
 	// * `FULL` - This option creates a new database that includes all source database data.
 	// * `METADATA` - This option creates a new database that includes the source database schema and select metadata, but not the source database data.
 	CloneType *string `pulumi:"cloneType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
+	ClusterPlacementGroupId *string `pulumi:"clusterPlacementGroupId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Database.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure. For an Autonomous Database Serverless instance, the 'ECPU' compute model requires a minimum value of one, for databases in the elastic resource pool and minimum value of two, otherwise. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value. Providing `computeModel` and `computeCount` is the preferred method for both OCPU and ECPU.
@@ -809,6 +813,8 @@ type AutonomousDatabaseState struct {
 	// * `FULL` - This option creates a new database that includes all source database data.
 	// * `METADATA` - This option creates a new database that includes the source database schema and select metadata, but not the source database data.
 	CloneType pulumi.StringPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
+	ClusterPlacementGroupId pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Database.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure. For an Autonomous Database Serverless instance, the 'ECPU' compute model requires a minimum value of one, for databases in the elastic resource pool and minimum value of two, otherwise. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value. Providing `computeModel` and `computeCount` is the preferred method for both OCPU and ECPU.
@@ -1777,6 +1783,11 @@ func (o AutonomousDatabaseOutput) CharacterSet() pulumi.StringOutput {
 // * `METADATA` - This option creates a new database that includes the source database schema and select metadata, but not the source database data.
 func (o AutonomousDatabaseOutput) CloneType() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringOutput { return v.CloneType }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
+func (o AutonomousDatabaseOutput) ClusterPlacementGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringOutput { return v.ClusterPlacementGroupId }).(pulumi.StringOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Database.

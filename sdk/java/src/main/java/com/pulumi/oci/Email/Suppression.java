@@ -209,11 +209,18 @@ public class Suppression extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public Suppression(String name, SuppressionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Email/suppression:Suppression", name, args == null ? SuppressionArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Email/suppression:Suppression", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private Suppression(String name, Output<String> id, @Nullable SuppressionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Email/suppression:Suppression", name, state, makeResourceOptions(options, id));
+    }
+
+    private static SuppressionArgs makeArgs(SuppressionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? SuppressionArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

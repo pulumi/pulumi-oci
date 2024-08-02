@@ -239,11 +239,18 @@ public class ReplicationSchedule extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public ReplicationSchedule(String name, ReplicationScheduleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:CloudMigrations/replicationSchedule:ReplicationSchedule", name, args == null ? ReplicationScheduleArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:CloudMigrations/replicationSchedule:ReplicationSchedule", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private ReplicationSchedule(String name, Output<String> id, @Nullable ReplicationScheduleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:CloudMigrations/replicationSchedule:ReplicationSchedule", name, state, makeResourceOptions(options, id));
+    }
+
+    private static ReplicationScheduleArgs makeArgs(ReplicationScheduleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ReplicationScheduleArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

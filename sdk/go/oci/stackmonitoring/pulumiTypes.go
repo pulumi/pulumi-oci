@@ -3622,7 +3622,7 @@ func (o MonitoredResourcePropertyArrayOutput) Index(i pulumi.IntInput) Monitored
 type MonitoredResourceTaskTaskDetails struct {
 	// Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property 'availabilityProxyMetrics'.
 	AvailabilityProxyMetricCollectionInterval *int `pulumi:"availabilityProxyMetricCollectionInterval"`
-	// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
+	// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for the resource during the specified interval using the property 'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
 	AvailabilityProxyMetrics []string `pulumi:"availabilityProxyMetrics"`
 	// The console path prefix to use for providing service home url page navigation.  For example if the prefix provided is 'security/bastion/bastions', the URL used for navigation will be https://<cloudhostname>/security/bastion/bastions/<resourceOcid>. If not provided, service home page link  will not be shown in the stack monitoring home page.
 	ConsolePathPrefix *string `pulumi:"consolePathPrefix"`
@@ -3671,7 +3671,7 @@ type MonitoredResourceTaskTaskDetailsInput interface {
 type MonitoredResourceTaskTaskDetailsArgs struct {
 	// Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property 'availabilityProxyMetrics'.
 	AvailabilityProxyMetricCollectionInterval pulumi.IntPtrInput `pulumi:"availabilityProxyMetricCollectionInterval"`
-	// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
+	// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for the resource during the specified interval using the property 'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
 	AvailabilityProxyMetrics pulumi.StringArrayInput `pulumi:"availabilityProxyMetrics"`
 	// The console path prefix to use for providing service home url page navigation.  For example if the prefix provided is 'security/bastion/bastions', the URL used for navigation will be https://<cloudhostname>/security/bastion/bastions/<resourceOcid>. If not provided, service home page link  will not be shown in the stack monitoring home page.
 	ConsolePathPrefix pulumi.StringPtrInput `pulumi:"consolePathPrefix"`
@@ -3788,7 +3788,7 @@ func (o MonitoredResourceTaskTaskDetailsOutput) AvailabilityProxyMetricCollectio
 	return o.ApplyT(func(v MonitoredResourceTaskTaskDetails) *int { return v.AvailabilityProxyMetricCollectionInterval }).(pulumi.IntPtrOutput)
 }
 
-// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
+// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for the resource during the specified interval using the property 'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
 func (o MonitoredResourceTaskTaskDetailsOutput) AvailabilityProxyMetrics() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v MonitoredResourceTaskTaskDetails) []string { return v.AvailabilityProxyMetrics }).(pulumi.StringArrayOutput)
 }
@@ -3897,7 +3897,7 @@ func (o MonitoredResourceTaskTaskDetailsPtrOutput) AvailabilityProxyMetricCollec
 	}).(pulumi.IntPtrOutput)
 }
 
-// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
+// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for the resource during the specified interval using the property 'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
 func (o MonitoredResourceTaskTaskDetailsPtrOutput) AvailabilityProxyMetrics() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetails) []string {
 		if v == nil {
@@ -5975,7 +5975,7 @@ type GetBaselineableMetricsBaselineableMetricSummaryCollectionItem struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// OCID of the metric
 	Id string `pulumi:"id"`
-	// Is the metric created out of box, default false
+	// Is the baseline enabled metric defined out of box by Oracle or by end-user
 	IsOutOfBox bool `pulumi:"isOutOfBox"`
 	// last Updated user id
 	LastUpdatedBy string `pulumi:"lastUpdatedBy"`
@@ -5985,6 +5985,8 @@ type GetBaselineableMetricsBaselineableMetricSummaryCollectionItem struct {
 	Namespace string `pulumi:"namespace"`
 	// Resource Group
 	ResourceGroup string `pulumi:"resourceGroup"`
+	// Resource Type
+	ResourceType string `pulumi:"resourceType"`
 	// The current lifecycle state of the metric extension
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -6021,7 +6023,7 @@ type GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArgs struct {
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// OCID of the metric
 	Id pulumi.StringInput `pulumi:"id"`
-	// Is the metric created out of box, default false
+	// Is the baseline enabled metric defined out of box by Oracle or by end-user
 	IsOutOfBox pulumi.BoolInput `pulumi:"isOutOfBox"`
 	// last Updated user id
 	LastUpdatedBy pulumi.StringInput `pulumi:"lastUpdatedBy"`
@@ -6031,6 +6033,8 @@ type GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArgs struct {
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// Resource Group
 	ResourceGroup pulumi.StringInput `pulumi:"resourceGroup"`
+	// Resource Type
+	ResourceType pulumi.StringInput `pulumi:"resourceType"`
 	// The current lifecycle state of the metric extension
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -6128,7 +6132,7 @@ func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput) Id(
 	return o.ApplyT(func(v GetBaselineableMetricsBaselineableMetricSummaryCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Is the metric created out of box, default false
+// Is the baseline enabled metric defined out of box by Oracle or by end-user
 func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput) IsOutOfBox() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetBaselineableMetricsBaselineableMetricSummaryCollectionItem) bool { return v.IsOutOfBox }).(pulumi.BoolOutput)
 }
@@ -6151,6 +6155,11 @@ func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput) Nam
 // Resource Group
 func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput) ResourceGroup() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBaselineableMetricsBaselineableMetricSummaryCollectionItem) string { return v.ResourceGroup }).(pulumi.StringOutput)
+}
+
+// Resource Type
+func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput) ResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBaselineableMetricsBaselineableMetricSummaryCollectionItem) string { return v.ResourceType }).(pulumi.StringOutput)
 }
 
 // The current lifecycle state of the metric extension
@@ -12331,7 +12340,7 @@ func (o GetMonitoredResourcePropertyArrayOutput) Index(i pulumi.IntInput) GetMon
 type GetMonitoredResourceTaskTaskDetail struct {
 	// Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property 'availabilityProxyMetrics'.
 	AvailabilityProxyMetricCollectionInterval int `pulumi:"availabilityProxyMetricCollectionInterval"`
-	// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
+	// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for the resource during the specified interval using the property 'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
 	AvailabilityProxyMetrics []string `pulumi:"availabilityProxyMetrics"`
 	// The console path prefix to use for providing service home url page navigation.  For example if the prefix provided is 'security/bastion/bastions', the URL used for navigation will be https://<cloudhostname>/security/bastion/bastions/<resourceOcid>. If not provided, service home page link  will not be shown in the stack monitoring home page.
 	ConsolePathPrefix string `pulumi:"consolePathPrefix"`
@@ -12377,7 +12386,7 @@ type GetMonitoredResourceTaskTaskDetailInput interface {
 type GetMonitoredResourceTaskTaskDetailArgs struct {
 	// Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property 'availabilityProxyMetrics'.
 	AvailabilityProxyMetricCollectionInterval pulumi.IntInput `pulumi:"availabilityProxyMetricCollectionInterval"`
-	// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
+	// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for the resource during the specified interval using the property 'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
 	AvailabilityProxyMetrics pulumi.StringArrayInput `pulumi:"availabilityProxyMetrics"`
 	// The console path prefix to use for providing service home url page navigation.  For example if the prefix provided is 'security/bastion/bastions', the URL used for navigation will be https://<cloudhostname>/security/bastion/bastions/<resourceOcid>. If not provided, service home page link  will not be shown in the stack monitoring home page.
 	ConsolePathPrefix pulumi.StringInput `pulumi:"consolePathPrefix"`
@@ -12465,7 +12474,7 @@ func (o GetMonitoredResourceTaskTaskDetailOutput) AvailabilityProxyMetricCollect
 	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetail) int { return v.AvailabilityProxyMetricCollectionInterval }).(pulumi.IntOutput)
 }
 
-// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
+// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for the resource during the specified interval using the property 'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
 func (o GetMonitoredResourceTaskTaskDetailOutput) AvailabilityProxyMetrics() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetail) []string { return v.AvailabilityProxyMetrics }).(pulumi.StringArrayOutput)
 }
@@ -12971,7 +12980,7 @@ func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArrayOutput
 type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail struct {
 	// Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property 'availabilityProxyMetrics'.
 	AvailabilityProxyMetricCollectionInterval int `pulumi:"availabilityProxyMetricCollectionInterval"`
-	// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
+	// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for the resource during the specified interval using the property 'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
 	AvailabilityProxyMetrics []string `pulumi:"availabilityProxyMetrics"`
 	// The console path prefix to use for providing service home url page navigation.  For example if the prefix provided is 'security/bastion/bastions', the URL used for navigation will be https://<cloudhostname>/security/bastion/bastions/<resourceOcid>. If not provided, service home page link  will not be shown in the stack monitoring home page.
 	ConsolePathPrefix string `pulumi:"consolePathPrefix"`
@@ -13017,7 +13026,7 @@ type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailInpu
 type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArgs struct {
 	// Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property 'availabilityProxyMetrics'.
 	AvailabilityProxyMetricCollectionInterval pulumi.IntInput `pulumi:"availabilityProxyMetricCollectionInterval"`
-	// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
+	// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for the resource during the specified interval using the property 'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
 	AvailabilityProxyMetrics pulumi.StringArrayInput `pulumi:"availabilityProxyMetrics"`
 	// The console path prefix to use for providing service home url page navigation.  For example if the prefix provided is 'security/bastion/bastions', the URL used for navigation will be https://<cloudhostname>/security/bastion/bastions/<resourceOcid>. If not provided, service home page link  will not be shown in the stack monitoring home page.
 	ConsolePathPrefix pulumi.StringInput `pulumi:"consolePathPrefix"`
@@ -13107,7 +13116,7 @@ func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailO
 	}).(pulumi.IntOutput)
 }
 
-// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
+// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for the resource during the specified interval using the property 'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
 func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput) AvailabilityProxyMetrics() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail) []string {
 		return v.AvailabilityProxyMetrics

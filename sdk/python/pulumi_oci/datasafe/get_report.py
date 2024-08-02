@@ -21,7 +21,7 @@ class GetReportResult:
     """
     A collection of values returned by getReport.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, mime_type=None, report_definition_id=None, report_id=None, state=None, system_tags=None, time_generated=None, type=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, mime_type=None, report_definition_id=None, report_id=None, state=None, system_tags=None, time_generated=None, type=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -40,6 +40,9 @@ class GetReportResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if lifecycle_details and not isinstance(lifecycle_details, str):
+            raise TypeError("Expected argument 'lifecycle_details' to be a str")
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if mime_type and not isinstance(mime_type, str):
             raise TypeError("Expected argument 'mime_type' to be a str")
         pulumi.set(__self__, "mime_type", mime_type)
@@ -111,6 +114,14 @@ class GetReportResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Details about the current state of the report in Data Safe.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
     @pulumi.getter(name="mimeType")
     def mime_type(self) -> str:
         """
@@ -176,6 +187,7 @@ class AwaitableGetReportResult(GetReportResult):
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            lifecycle_details=self.lifecycle_details,
             mime_type=self.mime_type,
             report_definition_id=self.report_definition_id,
             report_id=self.report_id,
@@ -216,6 +228,7 @@ def get_report(report_id: Optional[str] = None,
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         mime_type=pulumi.get(__ret__, 'mime_type'),
         report_definition_id=pulumi.get(__ret__, 'report_definition_id'),
         report_id=pulumi.get(__ret__, 'report_id'),

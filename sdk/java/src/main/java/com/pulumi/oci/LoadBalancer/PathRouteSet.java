@@ -148,11 +148,18 @@ public class PathRouteSet extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public PathRouteSet(String name, PathRouteSetArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:LoadBalancer/pathRouteSet:PathRouteSet", name, args == null ? PathRouteSetArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:LoadBalancer/pathRouteSet:PathRouteSet", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private PathRouteSet(String name, Output<String> id, @Nullable PathRouteSetState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:LoadBalancer/pathRouteSet:PathRouteSet", name, state, makeResourceOptions(options, id));
+    }
+
+    private static PathRouteSetArgs makeArgs(PathRouteSetArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? PathRouteSetArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

@@ -123,11 +123,18 @@ public class OperationsInsightsWarehouseDownloadWarehouseWallet extends com.pulu
      * @param options A bag of options that control this resource's behavior.
      */
     public OperationsInsightsWarehouseDownloadWarehouseWallet(String name, OperationsInsightsWarehouseDownloadWarehouseWalletArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Opsi/operationsInsightsWarehouseDownloadWarehouseWallet:OperationsInsightsWarehouseDownloadWarehouseWallet", name, args == null ? OperationsInsightsWarehouseDownloadWarehouseWalletArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Opsi/operationsInsightsWarehouseDownloadWarehouseWallet:OperationsInsightsWarehouseDownloadWarehouseWallet", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private OperationsInsightsWarehouseDownloadWarehouseWallet(String name, Output<String> id, @Nullable OperationsInsightsWarehouseDownloadWarehouseWalletState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Opsi/operationsInsightsWarehouseDownloadWarehouseWallet:OperationsInsightsWarehouseDownloadWarehouseWallet", name, state, makeResourceOptions(options, id));
+    }
+
+    private static OperationsInsightsWarehouseDownloadWarehouseWalletArgs makeArgs(OperationsInsightsWarehouseDownloadWarehouseWalletArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? OperationsInsightsWarehouseDownloadWarehouseWalletArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

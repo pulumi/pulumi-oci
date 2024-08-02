@@ -164,11 +164,18 @@ public class AutonomousDatabaseInstanceWalletManagement extends com.pulumi.resou
      * @param options A bag of options that control this resource's behavior.
      */
     public AutonomousDatabaseInstanceWalletManagement(String name, AutonomousDatabaseInstanceWalletManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/autonomousDatabaseInstanceWalletManagement:AutonomousDatabaseInstanceWalletManagement", name, args == null ? AutonomousDatabaseInstanceWalletManagementArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Database/autonomousDatabaseInstanceWalletManagement:AutonomousDatabaseInstanceWalletManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private AutonomousDatabaseInstanceWalletManagement(String name, Output<String> id, @Nullable AutonomousDatabaseInstanceWalletManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Database/autonomousDatabaseInstanceWalletManagement:AutonomousDatabaseInstanceWalletManagement", name, state, makeResourceOptions(options, id));
+    }
+
+    private static AutonomousDatabaseInstanceWalletManagementArgs makeArgs(AutonomousDatabaseInstanceWalletManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? AutonomousDatabaseInstanceWalletManagementArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

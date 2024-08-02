@@ -123,11 +123,18 @@ public class CompareUserAssessment extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public CompareUserAssessment(String name, CompareUserAssessmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/compareUserAssessment:CompareUserAssessment", name, args == null ? CompareUserAssessmentArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DataSafe/compareUserAssessment:CompareUserAssessment", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private CompareUserAssessment(String name, Output<String> id, @Nullable CompareUserAssessmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DataSafe/compareUserAssessment:CompareUserAssessment", name, state, makeResourceOptions(options, id));
+    }
+
+    private static CompareUserAssessmentArgs makeArgs(CompareUserAssessmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? CompareUserAssessmentArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Identity.outputs.GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderJitProvAssignedGroup;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -33,6 +34,11 @@ public final class GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcse
      * 
      */
     private String authzUrl;
+    /**
+     * @return Whether social auto redirect is enabled. The IDP policy should be configured with only one Social IDP, and without username/password selected.
+     * 
+     */
+    private Boolean autoRedirectEnabled;
     /**
      * @return Whether the client credential is contained in payload
      * 
@@ -64,6 +70,16 @@ public final class GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcse
      */
     private String idAttribute;
     /**
+     * @return Lists the groups each social JIT-provisioned user is a member. Just-in-Time user-provisioning applies this static list when jitProvGroupStaticListEnabled:true.
+     * 
+     */
+    private List<GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderJitProvAssignedGroup> jitProvAssignedGroups;
+    /**
+     * @return Set to true to indicate Social JIT User Provisioning Groups should be assigned from a static list
+     * 
+     */
+    private Boolean jitProvGroupStaticListEnabled;
+    /**
      * @return Social IDP User profile URL
      * 
      */
@@ -88,6 +104,11 @@ public final class GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcse
      * 
      */
     private String serviceProviderName;
+    /**
+     * @return Whether Social JIT Provisioning is enabled
+     * 
+     */
+    private Boolean socialJitProvisioningEnabled;
     /**
      * @return Status
      * 
@@ -122,6 +143,13 @@ public final class GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcse
      */
     public String authzUrl() {
         return this.authzUrl;
+    }
+    /**
+     * @return Whether social auto redirect is enabled. The IDP policy should be configured with only one Social IDP, and without username/password selected.
+     * 
+     */
+    public Boolean autoRedirectEnabled() {
+        return this.autoRedirectEnabled;
     }
     /**
      * @return Whether the client credential is contained in payload
@@ -166,6 +194,20 @@ public final class GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcse
         return this.idAttribute;
     }
     /**
+     * @return Lists the groups each social JIT-provisioned user is a member. Just-in-Time user-provisioning applies this static list when jitProvGroupStaticListEnabled:true.
+     * 
+     */
+    public List<GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderJitProvAssignedGroup> jitProvAssignedGroups() {
+        return this.jitProvAssignedGroups;
+    }
+    /**
+     * @return Set to true to indicate Social JIT User Provisioning Groups should be assigned from a static list
+     * 
+     */
+    public Boolean jitProvGroupStaticListEnabled() {
+        return this.jitProvGroupStaticListEnabled;
+    }
+    /**
      * @return Social IDP User profile URL
      * 
      */
@@ -201,6 +243,13 @@ public final class GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcse
         return this.serviceProviderName;
     }
     /**
+     * @return Whether Social JIT Provisioning is enabled
+     * 
+     */
+    public Boolean socialJitProvisioningEnabled() {
+        return this.socialJitProvisioningEnabled;
+    }
+    /**
      * @return Status
      * 
      */
@@ -221,17 +270,21 @@ public final class GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcse
         private Boolean accountLinkingEnabled;
         private List<String> adminScopes;
         private String authzUrl;
+        private Boolean autoRedirectEnabled;
         private Boolean clientCredentialInPayload;
         private Integer clockSkewInSeconds;
         private String consumerKey;
         private String consumerSecret;
         private String discoveryUrl;
         private String idAttribute;
+        private List<GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderJitProvAssignedGroup> jitProvAssignedGroups;
+        private Boolean jitProvGroupStaticListEnabled;
         private String profileUrl;
         private String redirectUrl;
         private Boolean registrationEnabled;
         private List<String> scopes;
         private String serviceProviderName;
+        private Boolean socialJitProvisioningEnabled;
         private String status;
         public Builder() {}
         public Builder(GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider defaults) {
@@ -240,17 +293,21 @@ public final class GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcse
     	      this.accountLinkingEnabled = defaults.accountLinkingEnabled;
     	      this.adminScopes = defaults.adminScopes;
     	      this.authzUrl = defaults.authzUrl;
+    	      this.autoRedirectEnabled = defaults.autoRedirectEnabled;
     	      this.clientCredentialInPayload = defaults.clientCredentialInPayload;
     	      this.clockSkewInSeconds = defaults.clockSkewInSeconds;
     	      this.consumerKey = defaults.consumerKey;
     	      this.consumerSecret = defaults.consumerSecret;
     	      this.discoveryUrl = defaults.discoveryUrl;
     	      this.idAttribute = defaults.idAttribute;
+    	      this.jitProvAssignedGroups = defaults.jitProvAssignedGroups;
+    	      this.jitProvGroupStaticListEnabled = defaults.jitProvGroupStaticListEnabled;
     	      this.profileUrl = defaults.profileUrl;
     	      this.redirectUrl = defaults.redirectUrl;
     	      this.registrationEnabled = defaults.registrationEnabled;
     	      this.scopes = defaults.scopes;
     	      this.serviceProviderName = defaults.serviceProviderName;
+    	      this.socialJitProvisioningEnabled = defaults.socialJitProvisioningEnabled;
     	      this.status = defaults.status;
         }
 
@@ -287,6 +344,14 @@ public final class GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcse
               throw new MissingRequiredPropertyException("GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider", "authzUrl");
             }
             this.authzUrl = authzUrl;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder autoRedirectEnabled(Boolean autoRedirectEnabled) {
+            if (autoRedirectEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider", "autoRedirectEnabled");
+            }
+            this.autoRedirectEnabled = autoRedirectEnabled;
             return this;
         }
         @CustomType.Setter
@@ -338,6 +403,25 @@ public final class GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcse
             return this;
         }
         @CustomType.Setter
+        public Builder jitProvAssignedGroups(List<GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderJitProvAssignedGroup> jitProvAssignedGroups) {
+            if (jitProvAssignedGroups == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider", "jitProvAssignedGroups");
+            }
+            this.jitProvAssignedGroups = jitProvAssignedGroups;
+            return this;
+        }
+        public Builder jitProvAssignedGroups(GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderJitProvAssignedGroup... jitProvAssignedGroups) {
+            return jitProvAssignedGroups(List.of(jitProvAssignedGroups));
+        }
+        @CustomType.Setter
+        public Builder jitProvGroupStaticListEnabled(Boolean jitProvGroupStaticListEnabled) {
+            if (jitProvGroupStaticListEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider", "jitProvGroupStaticListEnabled");
+            }
+            this.jitProvGroupStaticListEnabled = jitProvGroupStaticListEnabled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder profileUrl(String profileUrl) {
             if (profileUrl == null) {
               throw new MissingRequiredPropertyException("GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider", "profileUrl");
@@ -381,6 +465,14 @@ public final class GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcse
             return this;
         }
         @CustomType.Setter
+        public Builder socialJitProvisioningEnabled(Boolean socialJitProvisioningEnabled) {
+            if (socialJitProvisioningEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider", "socialJitProvisioningEnabled");
+            }
+            this.socialJitProvisioningEnabled = socialJitProvisioningEnabled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder status(String status) {
             if (status == null) {
               throw new MissingRequiredPropertyException("GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider", "status");
@@ -394,17 +486,21 @@ public final class GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcse
             _resultValue.accountLinkingEnabled = accountLinkingEnabled;
             _resultValue.adminScopes = adminScopes;
             _resultValue.authzUrl = authzUrl;
+            _resultValue.autoRedirectEnabled = autoRedirectEnabled;
             _resultValue.clientCredentialInPayload = clientCredentialInPayload;
             _resultValue.clockSkewInSeconds = clockSkewInSeconds;
             _resultValue.consumerKey = consumerKey;
             _resultValue.consumerSecret = consumerSecret;
             _resultValue.discoveryUrl = discoveryUrl;
             _resultValue.idAttribute = idAttribute;
+            _resultValue.jitProvAssignedGroups = jitProvAssignedGroups;
+            _resultValue.jitProvGroupStaticListEnabled = jitProvGroupStaticListEnabled;
             _resultValue.profileUrl = profileUrl;
             _resultValue.redirectUrl = redirectUrl;
             _resultValue.registrationEnabled = registrationEnabled;
             _resultValue.scopes = scopes;
             _resultValue.serviceProviderName = serviceProviderName;
+            _resultValue.socialJitProvisioningEnabled = socialJitProvisioningEnabled;
             _resultValue.status = status;
             return _resultValue;
         }

@@ -107,11 +107,18 @@ public class RepositoryMirror extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public RepositoryMirror(String name, RepositoryMirrorArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DevOps/repositoryMirror:RepositoryMirror", name, args == null ? RepositoryMirrorArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:DevOps/repositoryMirror:RepositoryMirror", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private RepositoryMirror(String name, Output<String> id, @Nullable RepositoryMirrorState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DevOps/repositoryMirror:RepositoryMirror", name, state, makeResourceOptions(options, id));
+    }
+
+    private static RepositoryMirrorArgs makeArgs(RepositoryMirrorArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? RepositoryMirrorArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

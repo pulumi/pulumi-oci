@@ -11,10 +11,20 @@ import java.util.Objects;
 @CustomType
 public final class GetAlertPolicyRulesAlertPolicyRuleCollectionItem {
     /**
+     * @return The OCID of the alert policy.
+     * 
+     */
+    private String alertPolicyId;
+    /**
      * @return Describes the alert policy rule.
      * 
      */
     private String description;
+    /**
+     * @return The display name of the alert policy rule.
+     * 
+     */
+    private String displayName;
     /**
      * @return The conditional expression of the alert policy rule which evaluates to boolean value.
      * 
@@ -25,14 +35,38 @@ public final class GetAlertPolicyRulesAlertPolicyRuleCollectionItem {
      * 
      */
     private String key;
+    /**
+     * @return The current state of the alert policy rule.
+     * 
+     */
+    private String state;
+    /**
+     * @return Creation date and time of the alert policy rule, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * 
+     */
+    private String timeCreated;
 
     private GetAlertPolicyRulesAlertPolicyRuleCollectionItem() {}
+    /**
+     * @return The OCID of the alert policy.
+     * 
+     */
+    public String alertPolicyId() {
+        return this.alertPolicyId;
+    }
     /**
      * @return Describes the alert policy rule.
      * 
      */
     public String description() {
         return this.description;
+    }
+    /**
+     * @return The display name of the alert policy rule.
+     * 
+     */
+    public String displayName() {
+        return this.displayName;
     }
     /**
      * @return The conditional expression of the alert policy rule which evaluates to boolean value.
@@ -48,6 +82,20 @@ public final class GetAlertPolicyRulesAlertPolicyRuleCollectionItem {
     public String key() {
         return this.key;
     }
+    /**
+     * @return The current state of the alert policy rule.
+     * 
+     */
+    public String state() {
+        return this.state;
+    }
+    /**
+     * @return Creation date and time of the alert policy rule, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * 
+     */
+    public String timeCreated() {
+        return this.timeCreated;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -58,23 +106,47 @@ public final class GetAlertPolicyRulesAlertPolicyRuleCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String alertPolicyId;
         private String description;
+        private String displayName;
         private String expression;
         private String key;
+        private String state;
+        private String timeCreated;
         public Builder() {}
         public Builder(GetAlertPolicyRulesAlertPolicyRuleCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.alertPolicyId = defaults.alertPolicyId;
     	      this.description = defaults.description;
+    	      this.displayName = defaults.displayName;
     	      this.expression = defaults.expression;
     	      this.key = defaults.key;
+    	      this.state = defaults.state;
+    	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
+        public Builder alertPolicyId(String alertPolicyId) {
+            if (alertPolicyId == null) {
+              throw new MissingRequiredPropertyException("GetAlertPolicyRulesAlertPolicyRuleCollectionItem", "alertPolicyId");
+            }
+            this.alertPolicyId = alertPolicyId;
+            return this;
+        }
         @CustomType.Setter
         public Builder description(String description) {
             if (description == null) {
               throw new MissingRequiredPropertyException("GetAlertPolicyRulesAlertPolicyRuleCollectionItem", "description");
             }
             this.description = description;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder displayName(String displayName) {
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetAlertPolicyRulesAlertPolicyRuleCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
@@ -93,11 +165,31 @@ public final class GetAlertPolicyRulesAlertPolicyRuleCollectionItem {
             this.key = key;
             return this;
         }
+        @CustomType.Setter
+        public Builder state(String state) {
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetAlertPolicyRulesAlertPolicyRuleCollectionItem", "state");
+            }
+            this.state = state;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeCreated(String timeCreated) {
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetAlertPolicyRulesAlertPolicyRuleCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
+            return this;
+        }
         public GetAlertPolicyRulesAlertPolicyRuleCollectionItem build() {
             final var _resultValue = new GetAlertPolicyRulesAlertPolicyRuleCollectionItem();
+            _resultValue.alertPolicyId = alertPolicyId;
             _resultValue.description = description;
+            _resultValue.displayName = displayName;
             _resultValue.expression = expression;
             _resultValue.key = key;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
             return _resultValue;
         }
     }

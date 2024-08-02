@@ -388,11 +388,18 @@ public class AtCustomerCccInfrastructure extends com.pulumi.resources.CustomReso
      * @param options A bag of options that control this resource's behavior.
      */
     public AtCustomerCccInfrastructure(String name, AtCustomerCccInfrastructureArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:ComputeCloud/atCustomerCccInfrastructure:AtCustomerCccInfrastructure", name, args == null ? AtCustomerCccInfrastructureArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:ComputeCloud/atCustomerCccInfrastructure:AtCustomerCccInfrastructure", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private AtCustomerCccInfrastructure(String name, Output<String> id, @Nullable AtCustomerCccInfrastructureState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:ComputeCloud/atCustomerCccInfrastructure:AtCustomerCccInfrastructure", name, state, makeResourceOptions(options, id));
+    }
+
+    private static AtCustomerCccInfrastructureArgs makeArgs(AtCustomerCccInfrastructureArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? AtCustomerCccInfrastructureArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

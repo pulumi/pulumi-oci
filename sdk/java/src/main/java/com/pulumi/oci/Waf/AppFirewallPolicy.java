@@ -435,11 +435,18 @@ public class AppFirewallPolicy extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public AppFirewallPolicy(String name, AppFirewallPolicyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Waf/appFirewallPolicy:AppFirewallPolicy", name, args == null ? AppFirewallPolicyArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Waf/appFirewallPolicy:AppFirewallPolicy", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private AppFirewallPolicy(String name, Output<String> id, @Nullable AppFirewallPolicyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Waf/appFirewallPolicy:AppFirewallPolicy", name, state, makeResourceOptions(options, id));
+    }
+
+    private static AppFirewallPolicyArgs makeArgs(AppFirewallPolicyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? AppFirewallPolicyArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

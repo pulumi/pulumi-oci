@@ -294,11 +294,18 @@ public class Vlan extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public Vlan(String name, VlanArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/vlan:Vlan", name, args == null ? VlanArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Core/vlan:Vlan", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private Vlan(String name, Output<String> id, @Nullable VlanState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Core/vlan:Vlan", name, state, makeResourceOptions(options, id));
+    }
+
+    private static VlanArgs makeArgs(VlanArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? VlanArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

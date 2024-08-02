@@ -76,15 +76,17 @@ type GetModelsArgs struct {
 type GetModelsResult struct {
 	Capabilities []string `pulumi:"capabilities"`
 	// The compartment OCID for fine-tuned models. For pretrained models, this value is null.
-	CompartmentId string            `pulumi:"compartmentId"`
-	DisplayName   *string           `pulumi:"displayName"`
-	Filters       []GetModelsFilter `pulumi:"filters"`
+	CompartmentId string `pulumi:"compartmentId"`
+	// A user-friendly name.
+	DisplayName *string           `pulumi:"displayName"`
+	Filters     []GetModelsFilter `pulumi:"filters"`
 	// An ID that uniquely identifies a pretrained or fine-tuned model.
 	Id *string `pulumi:"id"`
 	// The list of model_collection.
 	ModelCollections []GetModelsModelCollection `pulumi:"modelCollections"`
 	// The lifecycle state of the model.
-	State  *string `pulumi:"state"`
+	State *string `pulumi:"state"`
+	// The provider of the base model.
 	Vendor *string `pulumi:"vendor"`
 }
 
@@ -146,6 +148,7 @@ func (o GetModelsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// A user-friendly name.
 func (o GetModelsResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetModelsResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -169,6 +172,7 @@ func (o GetModelsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetModelsResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
+// The provider of the base model.
 func (o GetModelsResultOutput) Vendor() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetModelsResult) *string { return v.Vendor }).(pulumi.StringPtrOutput)
 }

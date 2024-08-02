@@ -10,21 +10,53 @@ import java.util.Objects;
 
 @CustomType
 public final class GetModelsModelCollectionItemFineTuneDetailTrainingDataset {
+    /**
+     * @return The Object Storage bucket name.
+     * 
+     */
     private String bucket;
+    /**
+     * @return The type of the data asset.
+     * 
+     */
     private String datasetType;
+    /**
+     * @return The Object Storage namespace.
+     * 
+     */
     private String namespace;
+    /**
+     * @return The Object Storage object name.
+     * 
+     */
     private String object;
 
     private GetModelsModelCollectionItemFineTuneDetailTrainingDataset() {}
+    /**
+     * @return The Object Storage bucket name.
+     * 
+     */
     public String bucket() {
         return this.bucket;
     }
+    /**
+     * @return The type of the data asset.
+     * 
+     */
     public String datasetType() {
         return this.datasetType;
     }
+    /**
+     * @return The Object Storage namespace.
+     * 
+     */
     public String namespace() {
         return this.namespace;
     }
+    /**
+     * @return The Object Storage object name.
+     * 
+     */
     public String object() {
         return this.object;
     }

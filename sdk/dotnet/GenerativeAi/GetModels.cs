@@ -200,6 +200,9 @@ namespace Pulumi.Oci.GenerativeAi
         /// The compartment OCID for fine-tuned models. For pretrained models, this value is null.
         /// </summary>
         public readonly string CompartmentId;
+        /// <summary>
+        /// A user-friendly name.
+        /// </summary>
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetModelsFilterResult> Filters;
         /// <summary>
@@ -214,6 +217,9 @@ namespace Pulumi.Oci.GenerativeAi
         /// The lifecycle state of the model.
         /// </summary>
         public readonly string? State;
+        /// <summary>
+        /// The provider of the base model.
+        /// </summary>
         public readonly string? Vendor;
 
         [OutputConstructor]

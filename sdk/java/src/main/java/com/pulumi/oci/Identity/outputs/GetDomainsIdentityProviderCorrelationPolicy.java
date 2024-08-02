@@ -26,7 +26,7 @@ public final class GetDomainsIdentityProviderCorrelationPolicy {
      */
     private String type;
     /**
-     * @return Value of the tag.
+     * @return Group identifier
      * 
      */
     private String value;
@@ -54,7 +54,7 @@ public final class GetDomainsIdentityProviderCorrelationPolicy {
         return this.type;
     }
     /**
-     * @return Value of the tag.
+     * @return Group identifier
      * 
      */
     public String value() {

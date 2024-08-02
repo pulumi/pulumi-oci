@@ -200,11 +200,18 @@ public class AnalyticsInstanceVanityUrl extends com.pulumi.resources.CustomResou
      * @param options A bag of options that control this resource's behavior.
      */
     public AnalyticsInstanceVanityUrl(String name, AnalyticsInstanceVanityUrlArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Analytics/analyticsInstanceVanityUrl:AnalyticsInstanceVanityUrl", name, args == null ? AnalyticsInstanceVanityUrlArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:Analytics/analyticsInstanceVanityUrl:AnalyticsInstanceVanityUrl", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private AnalyticsInstanceVanityUrl(String name, Output<String> id, @Nullable AnalyticsInstanceVanityUrlState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Analytics/analyticsInstanceVanityUrl:AnalyticsInstanceVanityUrl", name, state, makeResourceOptions(options, id));
+    }
+
+    private static AnalyticsInstanceVanityUrlArgs makeArgs(AnalyticsInstanceVanityUrlArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? AnalyticsInstanceVanityUrlArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

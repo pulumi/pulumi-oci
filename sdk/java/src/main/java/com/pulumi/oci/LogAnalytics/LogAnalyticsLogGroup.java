@@ -212,11 +212,18 @@ public class LogAnalyticsLogGroup extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public LogAnalyticsLogGroup(String name, LogAnalyticsLogGroupArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:LogAnalytics/logAnalyticsLogGroup:LogAnalyticsLogGroup", name, args == null ? LogAnalyticsLogGroupArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:LogAnalytics/logAnalyticsLogGroup:LogAnalyticsLogGroup", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private LogAnalyticsLogGroup(String name, Output<String> id, @Nullable LogAnalyticsLogGroupState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:LogAnalytics/logAnalyticsLogGroup:LogAnalyticsLogGroup", name, state, makeResourceOptions(options, id));
+    }
+
+    private static LogAnalyticsLogGroupArgs makeArgs(LogAnalyticsLogGroupArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? LogAnalyticsLogGroupArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

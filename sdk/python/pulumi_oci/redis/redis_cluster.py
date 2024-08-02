@@ -39,7 +39,7 @@ class RedisClusterArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) OCIDs of the NSGs to control access in the customer network
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -158,7 +158,7 @@ class RedisClusterArgs:
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) OCIDs of the NSGs to control access in the customer network
+        (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
         """
         return pulumi.get(self, "nsg_ids")
 
@@ -199,7 +199,7 @@ class _RedisClusterState:
         :param pulumi.Input[Sequence[pulumi.Input['RedisClusterNodeCollectionArgs']]] node_collections: The collection of Redis cluster nodes.
         :param pulumi.Input[int] node_count: (Updatable) The number of nodes in the Redis cluster.
         :param pulumi.Input[float] node_memory_in_gbs: (Updatable) The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) OCIDs of the NSGs to control access in the customer network
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
         :param pulumi.Input[str] primary_endpoint_ip_address: The private IP address of the API endpoint for the Redis cluster's primary node.
         :param pulumi.Input[str] primary_fqdn: The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's primary node.
         :param pulumi.Input[str] replicas_endpoint_ip_address: The private IP address of the API endpoint for the Redis cluster's replica nodes.
@@ -354,7 +354,7 @@ class _RedisClusterState:
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) OCIDs of the NSGs to control access in the customer network
+        (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
         """
         return pulumi.get(self, "nsg_ids")
 
@@ -545,7 +545,7 @@ class RedisCluster(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[int] node_count: (Updatable) The number of nodes in the Redis cluster.
         :param pulumi.Input[float] node_memory_in_gbs: (Updatable) The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) OCIDs of the NSGs to control access in the customer network
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
         :param pulumi.Input[str] software_version: The Redis version that the cluster is running.
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster's subnet.
                
@@ -702,7 +702,7 @@ class RedisCluster(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['RedisClusterNodeCollectionArgs']]]] node_collections: The collection of Redis cluster nodes.
         :param pulumi.Input[int] node_count: (Updatable) The number of nodes in the Redis cluster.
         :param pulumi.Input[float] node_memory_in_gbs: (Updatable) The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) OCIDs of the NSGs to control access in the customer network
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
         :param pulumi.Input[str] primary_endpoint_ip_address: The private IP address of the API endpoint for the Redis cluster's primary node.
         :param pulumi.Input[str] primary_fqdn: The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's primary node.
         :param pulumi.Input[str] replicas_endpoint_ip_address: The private IP address of the API endpoint for the Redis cluster's replica nodes.
@@ -811,7 +811,7 @@ class RedisCluster(pulumi.CustomResource):
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> pulumi.Output[Sequence[str]]:
         """
-        (Updatable) OCIDs of the NSGs to control access in the customer network
+        (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
         """
         return pulumi.get(self, "nsg_ids")
 

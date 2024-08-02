@@ -31,18 +31,22 @@ type Job struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The OCID of the job
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	JobId pulumi.StringOutput `pulumi:"jobId"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The OCID of the Migration that this job belongs to.
 	MigrationId pulumi.StringOutput `pulumi:"migrationId"`
+	// A list of parameter file versions that can be viewed or edited for the current job.
+	ParameterFileVersions JobParameterFileVersionArrayOutput `pulumi:"parameterFileVersions"`
 	// Percent progress of job phase.
 	Progresses JobProgressArrayOutput `pulumi:"progresses"`
 	// The current state of the migration job.
 	State pulumi.StringOutput `pulumi:"state"`
+	// (Updatable) An optional property when incremented triggers Suspend. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	SuspendTrigger pulumi.IntPtrOutput `pulumi:"suspendTrigger"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time the Migration Job was created. An RFC3339 formatted datetime string
@@ -95,18 +99,22 @@ type jobState struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the job
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	JobId *string `pulumi:"jobId"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The OCID of the Migration that this job belongs to.
 	MigrationId *string `pulumi:"migrationId"`
+	// A list of parameter file versions that can be viewed or edited for the current job.
+	ParameterFileVersions []JobParameterFileVersion `pulumi:"parameterFileVersions"`
 	// Percent progress of job phase.
 	Progresses []JobProgress `pulumi:"progresses"`
 	// The current state of the migration job.
 	State *string `pulumi:"state"`
+	// (Updatable) An optional property when incremented triggers Suspend. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	SuspendTrigger *int `pulumi:"suspendTrigger"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the Migration Job was created. An RFC3339 formatted datetime string
@@ -127,18 +135,22 @@ type JobState struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
 	FreeformTags pulumi.MapInput
 	// The OCID of the job
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	JobId pulumi.StringPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput
 	// The OCID of the Migration that this job belongs to.
 	MigrationId pulumi.StringPtrInput
+	// A list of parameter file versions that can be viewed or edited for the current job.
+	ParameterFileVersions JobParameterFileVersionArrayInput
 	// Percent progress of job phase.
 	Progresses JobProgressArrayInput
 	// The current state of the migration job.
 	State pulumi.StringPtrInput
+	// (Updatable) An optional property when incremented triggers Suspend. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	SuspendTrigger pulumi.IntPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
 	// The time the Migration Job was created. An RFC3339 formatted datetime string
@@ -163,10 +175,12 @@ type jobArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the job
+	JobId string `pulumi:"jobId"`
+	// (Updatable) An optional property when incremented triggers Suspend. Could be set to any integer value.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	JobId string `pulumi:"jobId"`
+	SuspendTrigger *int `pulumi:"suspendTrigger"`
 }
 
 // The set of arguments for constructing a Job resource.
@@ -178,10 +192,12 @@ type JobArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
 	FreeformTags pulumi.MapInput
 	// The OCID of the job
+	JobId pulumi.StringInput
+	// (Updatable) An optional property when incremented triggers Suspend. Could be set to any integer value.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	JobId pulumi.StringInput
+	SuspendTrigger pulumi.IntPtrInput
 }
 
 func (JobArgs) ElementType() reflect.Type {
@@ -287,9 +303,6 @@ func (o JobOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the job
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o JobOutput) JobId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Job) pulumi.StringOutput { return v.JobId }).(pulumi.StringOutput)
 }
@@ -304,6 +317,11 @@ func (o JobOutput) MigrationId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Job) pulumi.StringOutput { return v.MigrationId }).(pulumi.StringOutput)
 }
 
+// A list of parameter file versions that can be viewed or edited for the current job.
+func (o JobOutput) ParameterFileVersions() JobParameterFileVersionArrayOutput {
+	return o.ApplyT(func(v *Job) JobParameterFileVersionArrayOutput { return v.ParameterFileVersions }).(JobParameterFileVersionArrayOutput)
+}
+
 // Percent progress of job phase.
 func (o JobOutput) Progresses() JobProgressArrayOutput {
 	return o.ApplyT(func(v *Job) JobProgressArrayOutput { return v.Progresses }).(JobProgressArrayOutput)
@@ -312,6 +330,14 @@ func (o JobOutput) Progresses() JobProgressArrayOutput {
 // The current state of the migration job.
 func (o JobOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *Job) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+}
+
+// (Updatable) An optional property when incremented triggers Suspend. Could be set to any integer value.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o JobOutput) SuspendTrigger() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *Job) pulumi.IntPtrOutput { return v.SuspendTrigger }).(pulumi.IntPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`

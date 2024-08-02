@@ -339,11 +339,18 @@ public class BackendSet extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public BackendSet(String name, BackendSetArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:LoadBalancer/backendSet:BackendSet", name, args == null ? BackendSetArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("oci:LoadBalancer/backendSet:BackendSet", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private BackendSet(String name, Output<String> id, @Nullable BackendSetState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:LoadBalancer/backendSet:BackendSet", name, state, makeResourceOptions(options, id));
+    }
+
+    private static BackendSetArgs makeArgs(BackendSetArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? BackendSetArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

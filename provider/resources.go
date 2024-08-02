@@ -87,6 +87,7 @@ const (
 	emailMod                        = "Email"                        // Email
 	eventsMod                       = "Events"                       // Events
 	fileStorageMod                  = "FileStorage"                  // File Storage
+	fleetSoftwareUpdateMod          = "FleetSoftwareUpdate"          // Fleet Software Update
 	functionsMod                    = "Functions"                    // Functions
 	fusionAppsMod                   = "FusionApps"                   // Fusion Apps
 	genericArtifactsContentMod      = "GenericArtifactsContent"      // Generic Artifacts Content
@@ -206,6 +207,7 @@ var mappedMods = map[string]string{
 	"email":                          emailMod,
 	"events":                         eventsMod,
 	"file_storage":                   fileStorageMod,
+	"fleet_software_update":          fleetSoftwareUpdateMod,
 	"functions":                      functionsMod,
 	"fusion_apps":                    fusionAppsMod,
 	"generative_ai":                  "GenerativeAi",
@@ -1729,6 +1731,8 @@ func Provider() tfbridge.ProviderInfo {
 		"oci_data_safe_sql_firewall_policy_management",
 		"oci_integration_private_endpoint_outbound_connection",
 		"oci_bds_bds_instance_os_patch_action",
+		"oci_fleet_software_update_fsu_collection",
+		"oci_fleet_software_update_fsu_cycle",
 	}
 	for _, r := range resourcesMissingDocs {
 		_, ok := prov.Resources[r]
@@ -1747,6 +1751,10 @@ func Provider() tfbridge.ProviderInfo {
 		"oci_network_load_balancer_backend_set_health",
 		"oci_objectstorage_namespace_metadata",
 		"oci_data_safe_security_assessment_finding",
+		"oci_fleet_software_update_fsu_collection",
+		"oci_fleet_software_update_fsu_collections",
+		"oci_fleet_software_update_fsu_cycle",
+		"oci_fleet_software_update_fsu_cycles",
 	}
 	for _, d := range datasourcesMissingDocs {
 		_, ok := prov.DataSources[d]

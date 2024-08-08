@@ -29,6 +29,13 @@ namespace Pulumi.Oci.BigDataService
     ///         BdsInstanceId = testBdsInstance.Id,
     ///         ClusterAdminPassword = bdsInstancePatchActionClusterAdminPassword,
     ///         Version = bdsInstancePatchActionVersion,
+    ///         PatchingConfig = new Oci.BigDataService.Inputs.BdsInstancePatchActionPatchingConfigArgs
+    ///         {
+    ///             PatchingConfigStrategy = bdsInstancePatchActionPatchingConfigPatchingConfigStrategy,
+    ///             BatchSize = bdsInstancePatchActionPatchingConfigBatchSize,
+    ///             WaitTimeBetweenBatchInSeconds = bdsInstancePatchActionPatchingConfigWaitTimeBetweenBatchInSeconds,
+    ///             WaitTimeBetweenDomainInSeconds = bdsInstancePatchActionPatchingConfigWaitTimeBetweenDomainInSeconds,
+    ///         },
     ///     });
     /// 
     /// });
@@ -52,6 +59,12 @@ namespace Pulumi.Oci.BigDataService
         /// </summary>
         [Output("clusterAdminPassword")]
         public Output<string> ClusterAdminPassword { get; private set; } = null!;
+
+        /// <summary>
+        /// Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
+        /// </summary>
+        [Output("patchingConfig")]
+        public Output<Outputs.BdsInstancePatchActionPatchingConfig> PatchingConfig { get; private set; } = null!;
 
         /// <summary>
         /// The version of the patch to be installed.
@@ -136,6 +149,12 @@ namespace Pulumi.Oci.BigDataService
         }
 
         /// <summary>
+        /// Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
+        /// </summary>
+        [Input("patchingConfig")]
+        public Input<Inputs.BdsInstancePatchActionPatchingConfigArgs>? PatchingConfig { get; set; }
+
+        /// <summary>
         /// The version of the patch to be installed.
         /// 
         /// 
@@ -174,6 +193,12 @@ namespace Pulumi.Oci.BigDataService
                 _clusterAdminPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
             }
         }
+
+        /// <summary>
+        /// Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
+        /// </summary>
+        [Input("patchingConfig")]
+        public Input<Inputs.BdsInstancePatchActionPatchingConfigGetArgs>? PatchingConfig { get; set; }
 
         /// <summary>
         /// The version of the patch to be installed.

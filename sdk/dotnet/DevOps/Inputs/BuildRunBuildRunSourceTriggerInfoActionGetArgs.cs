@@ -20,10 +20,6 @@ namespace Pulumi.Oci.DevOps.Inputs
 
         [Input("filters")]
         private InputList<Inputs.BuildRunBuildRunSourceTriggerInfoActionFilterGetArgs>? _filters;
-
-        /// <summary>
-        /// The filters for the trigger.
-        /// </summary>
         public InputList<Inputs.BuildRunBuildRunSourceTriggerInfoActionFilterGetArgs> Filters
         {
             get => _filters ?? (_filters = new InputList<Inputs.BuildRunBuildRunSourceTriggerInfoActionFilterGetArgs>());

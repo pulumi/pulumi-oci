@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DevOps.Outputs
     public sealed class TriggerActionFilterIncludeFileFilter
     {
         /// <summary>
-        /// (Updatable) The file paths/glob pattern for files.
+        /// The file paths/glob pattern for files.
         /// </summary>
         public readonly ImmutableArray<string> FilePaths;
 

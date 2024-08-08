@@ -23,11 +23,12 @@ class RepositoryArgs:
                  description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  mirror_repository_config: Optional[pulumi.Input['RepositoryMirrorRepositoryConfigArgs']] = None,
-                 name: Optional[pulumi.Input[str]] = None):
+                 name: Optional[pulumi.Input[str]] = None,
+                 parent_repository_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Repository resource.
         :param pulumi.Input[str] project_id: The OCID of the DevOps project containing the repository.
-        :param pulumi.Input[str] repository_type: (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` 
+        :param pulumi.Input[str] repository_type: (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED` 
                
                
                ** IMPORTANT **
@@ -37,7 +38,8 @@ class RepositoryArgs:
         :param pulumi.Input[str] description: (Updatable) Details of the repository. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input['RepositoryMirrorRepositoryConfigArgs'] mirror_repository_config: (Updatable) Configuration information for mirroring the repository.
-        :param pulumi.Input[str] name: (Updatable) Unique name of a repository.
+        :param pulumi.Input[str] name: (Updatable) Name of the repository. Should be unique within the project.
+        :param pulumi.Input[str] parent_repository_id: The OCID of the parent repository.
         """
         pulumi.set(__self__, "project_id", project_id)
         pulumi.set(__self__, "repository_type", repository_type)
@@ -53,6 +55,8 @@ class RepositoryArgs:
             pulumi.set(__self__, "mirror_repository_config", mirror_repository_config)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if parent_repository_id is not None:
+            pulumi.set(__self__, "parent_repository_id", parent_repository_id)
 
     @property
     @pulumi.getter(name="projectId")
@@ -70,7 +74,7 @@ class RepositoryArgs:
     @pulumi.getter(name="repositoryType")
     def repository_type(self) -> pulumi.Input[str]:
         """
-        (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` 
+        (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED` 
 
 
         ** IMPORTANT **
@@ -146,13 +150,25 @@ class RepositoryArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Unique name of a repository.
+        (Updatable) Name of the repository. Should be unique within the project.
         """
         return pulumi.get(self, "name")
 
     @name.setter
     def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="parentRepositoryId")
+    def parent_repository_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the parent repository.
+        """
+        return pulumi.get(self, "parent_repository_id")
+
+    @parent_repository_id.setter
+    def parent_repository_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "parent_repository_id", value)
 
 
 @pulumi.input_type
@@ -170,6 +186,7 @@ class _RepositoryState:
                  mirror_repository_config: Optional[pulumi.Input['RepositoryMirrorRepositoryConfigArgs']] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
+                 parent_repository_id: Optional[pulumi.Input[str]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
                  project_name: Optional[pulumi.Input[str]] = None,
                  repository_type: Optional[pulumi.Input[str]] = None,
@@ -192,11 +209,12 @@ class _RepositoryState:
         :param pulumi.Input[str] http_url: HTTP URL that you use to git clone, pull and push.
         :param pulumi.Input[str] lifecyle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input['RepositoryMirrorRepositoryConfigArgs'] mirror_repository_config: (Updatable) Configuration information for mirroring the repository.
-        :param pulumi.Input[str] name: (Updatable) Unique name of a repository.
+        :param pulumi.Input[str] name: (Updatable) Name of the repository. Should be unique within the project.
         :param pulumi.Input[str] namespace: Tenancy unique namespace.
+        :param pulumi.Input[str] parent_repository_id: The OCID of the parent repository.
         :param pulumi.Input[str] project_id: The OCID of the DevOps project containing the repository.
         :param pulumi.Input[str] project_name: Unique project name in a namespace.
-        :param pulumi.Input[str] repository_type: (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` 
+        :param pulumi.Input[str] repository_type: (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED` 
                
                
                ** IMPORTANT **
@@ -207,7 +225,7 @@ class _RepositoryState:
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time the repository was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param pulumi.Input[str] time_updated: The time the repository was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] trigger_build_events: Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] trigger_build_events: Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the repository. PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an open pull request. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
         """
         if branch_count is not None:
             pulumi.set(__self__, "branch_count", branch_count)
@@ -233,6 +251,8 @@ class _RepositoryState:
             pulumi.set(__self__, "name", name)
         if namespace is not None:
             pulumi.set(__self__, "namespace", namespace)
+        if parent_repository_id is not None:
+            pulumi.set(__self__, "parent_repository_id", parent_repository_id)
         if project_id is not None:
             pulumi.set(__self__, "project_id", project_id)
         if project_name is not None:
@@ -378,7 +398,7 @@ class _RepositoryState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Unique name of a repository.
+        (Updatable) Name of the repository. Should be unique within the project.
         """
         return pulumi.get(self, "name")
 
@@ -397,6 +417,18 @@ class _RepositoryState:
     @namespace.setter
     def namespace(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "namespace", value)
+
+    @property
+    @pulumi.getter(name="parentRepositoryId")
+    def parent_repository_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the parent repository.
+        """
+        return pulumi.get(self, "parent_repository_id")
+
+    @parent_repository_id.setter
+    def parent_repository_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "parent_repository_id", value)
 
     @property
     @pulumi.getter(name="projectId")
@@ -426,7 +458,7 @@ class _RepositoryState:
     @pulumi.getter(name="repositoryType")
     def repository_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` 
+        (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED` 
 
 
         ** IMPORTANT **
@@ -514,7 +546,7 @@ class _RepositoryState:
     @pulumi.getter(name="triggerBuildEvents")
     def trigger_build_events(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
+        Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the repository. PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an open pull request. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
         """
         return pulumi.get(self, "trigger_build_events")
 
@@ -534,6 +566,7 @@ class Repository(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  mirror_repository_config: Optional[pulumi.Input[pulumi.InputType['RepositoryMirrorRepositoryConfigArgs']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
+                 parent_repository_id: Optional[pulumi.Input[str]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
                  repository_type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -541,34 +574,6 @@ class Repository(pulumi.CustomResource):
         This resource provides the Repository resource in Oracle Cloud Infrastructure Devops service.
 
         Creates a new repository.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_repository = oci.dev_ops.Repository("test_repository",
-            name=repository_name,
-            project_id=test_project["id"],
-            repository_type=repository_repository_type,
-            default_branch=repository_default_branch,
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=repository_description,
-            freeform_tags={
-                "bar-key": "value",
-            },
-            mirror_repository_config=oci.dev_ops.RepositoryMirrorRepositoryConfigArgs(
-                connector_id=test_connector["id"],
-                repository_url=repository_mirror_repository_config_repository_url,
-                trigger_schedule=oci.dev_ops.RepositoryMirrorRepositoryConfigTriggerScheduleArgs(
-                    schedule_type=repository_mirror_repository_config_trigger_schedule_schedule_type,
-                    custom_schedule=repository_mirror_repository_config_trigger_schedule_custom_schedule,
-                ),
-            ))
-        ```
 
         ## Import
 
@@ -585,9 +590,10 @@ class Repository(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) Details of the repository. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input[pulumi.InputType['RepositoryMirrorRepositoryConfigArgs']] mirror_repository_config: (Updatable) Configuration information for mirroring the repository.
-        :param pulumi.Input[str] name: (Updatable) Unique name of a repository.
+        :param pulumi.Input[str] name: (Updatable) Name of the repository. Should be unique within the project.
+        :param pulumi.Input[str] parent_repository_id: The OCID of the parent repository.
         :param pulumi.Input[str] project_id: The OCID of the DevOps project containing the repository.
-        :param pulumi.Input[str] repository_type: (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` 
+        :param pulumi.Input[str] repository_type: (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED` 
                
                
                ** IMPORTANT **
@@ -603,34 +609,6 @@ class Repository(pulumi.CustomResource):
         This resource provides the Repository resource in Oracle Cloud Infrastructure Devops service.
 
         Creates a new repository.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_repository = oci.dev_ops.Repository("test_repository",
-            name=repository_name,
-            project_id=test_project["id"],
-            repository_type=repository_repository_type,
-            default_branch=repository_default_branch,
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=repository_description,
-            freeform_tags={
-                "bar-key": "value",
-            },
-            mirror_repository_config=oci.dev_ops.RepositoryMirrorRepositoryConfigArgs(
-                connector_id=test_connector["id"],
-                repository_url=repository_mirror_repository_config_repository_url,
-                trigger_schedule=oci.dev_ops.RepositoryMirrorRepositoryConfigTriggerScheduleArgs(
-                    schedule_type=repository_mirror_repository_config_trigger_schedule_schedule_type,
-                    custom_schedule=repository_mirror_repository_config_trigger_schedule_custom_schedule,
-                ),
-            ))
-        ```
 
         ## Import
 
@@ -661,6 +639,7 @@ class Repository(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  mirror_repository_config: Optional[pulumi.Input[pulumi.InputType['RepositoryMirrorRepositoryConfigArgs']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
+                 parent_repository_id: Optional[pulumi.Input[str]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
                  repository_type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -678,6 +657,7 @@ class Repository(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["mirror_repository_config"] = mirror_repository_config
             __props__.__dict__["name"] = name
+            __props__.__dict__["parent_repository_id"] = parent_repository_id
             if project_id is None and not opts.urn:
                 raise TypeError("Missing required property 'project_id'")
             __props__.__dict__["project_id"] = project_id
@@ -720,6 +700,7 @@ class Repository(pulumi.CustomResource):
             mirror_repository_config: Optional[pulumi.Input[pulumi.InputType['RepositoryMirrorRepositoryConfigArgs']]] = None,
             name: Optional[pulumi.Input[str]] = None,
             namespace: Optional[pulumi.Input[str]] = None,
+            parent_repository_id: Optional[pulumi.Input[str]] = None,
             project_id: Optional[pulumi.Input[str]] = None,
             project_name: Optional[pulumi.Input[str]] = None,
             repository_type: Optional[pulumi.Input[str]] = None,
@@ -747,11 +728,12 @@ class Repository(pulumi.CustomResource):
         :param pulumi.Input[str] http_url: HTTP URL that you use to git clone, pull and push.
         :param pulumi.Input[str] lifecyle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[pulumi.InputType['RepositoryMirrorRepositoryConfigArgs']] mirror_repository_config: (Updatable) Configuration information for mirroring the repository.
-        :param pulumi.Input[str] name: (Updatable) Unique name of a repository.
+        :param pulumi.Input[str] name: (Updatable) Name of the repository. Should be unique within the project.
         :param pulumi.Input[str] namespace: Tenancy unique namespace.
+        :param pulumi.Input[str] parent_repository_id: The OCID of the parent repository.
         :param pulumi.Input[str] project_id: The OCID of the DevOps project containing the repository.
         :param pulumi.Input[str] project_name: Unique project name in a namespace.
-        :param pulumi.Input[str] repository_type: (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` 
+        :param pulumi.Input[str] repository_type: (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED` 
                
                
                ** IMPORTANT **
@@ -762,7 +744,7 @@ class Repository(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time the repository was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param pulumi.Input[str] time_updated: The time the repository was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] trigger_build_events: Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] trigger_build_events: Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the repository. PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an open pull request. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -780,6 +762,7 @@ class Repository(pulumi.CustomResource):
         __props__.__dict__["mirror_repository_config"] = mirror_repository_config
         __props__.__dict__["name"] = name
         __props__.__dict__["namespace"] = namespace
+        __props__.__dict__["parent_repository_id"] = parent_repository_id
         __props__.__dict__["project_id"] = project_id
         __props__.__dict__["project_name"] = project_name
         __props__.__dict__["repository_type"] = repository_type
@@ -876,7 +859,7 @@ class Repository(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         """
-        (Updatable) Unique name of a repository.
+        (Updatable) Name of the repository. Should be unique within the project.
         """
         return pulumi.get(self, "name")
 
@@ -887,6 +870,14 @@ class Repository(pulumi.CustomResource):
         Tenancy unique namespace.
         """
         return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter(name="parentRepositoryId")
+    def parent_repository_id(self) -> pulumi.Output[str]:
+        """
+        The OCID of the parent repository.
+        """
+        return pulumi.get(self, "parent_repository_id")
 
     @property
     @pulumi.getter(name="projectId")
@@ -908,7 +899,7 @@ class Repository(pulumi.CustomResource):
     @pulumi.getter(name="repositoryType")
     def repository_type(self) -> pulumi.Output[str]:
         """
-        (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` 
+        (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED` 
 
 
         ** IMPORTANT **
@@ -968,7 +959,7 @@ class Repository(pulumi.CustomResource):
     @pulumi.getter(name="triggerBuildEvents")
     def trigger_build_events(self) -> pulumi.Output[Sequence[str]]:
         """
-        Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
+        Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the repository. PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an open pull request. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
         """
         return pulumi.get(self, "trigger_build_events")
 

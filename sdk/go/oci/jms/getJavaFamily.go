@@ -74,6 +74,8 @@ type GetJavaFamilyResult struct {
 	LatestReleaseArtifacts []GetJavaFamilyLatestReleaseArtifact `pulumi:"latestReleaseArtifacts"`
 	// Latest Java release version in the family.
 	LatestReleaseVersion string `pulumi:"latestReleaseVersion"`
+	// The date on which the Java release family was first made available (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	ReleaseDate string `pulumi:"releaseDate"`
 	// This indicates the support category for the Java release family.
 	SupportType string `pulumi:"supportType"`
 }
@@ -154,6 +156,11 @@ func (o GetJavaFamilyResultOutput) LatestReleaseArtifacts() GetJavaFamilyLatestR
 // Latest Java release version in the family.
 func (o GetJavaFamilyResultOutput) LatestReleaseVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJavaFamilyResult) string { return v.LatestReleaseVersion }).(pulumi.StringOutput)
+}
+
+// The date on which the Java release family was first made available (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+func (o GetJavaFamilyResultOutput) ReleaseDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaFamilyResult) string { return v.ReleaseDate }).(pulumi.StringOutput)
 }
 
 // This indicates the support category for the Java release family.

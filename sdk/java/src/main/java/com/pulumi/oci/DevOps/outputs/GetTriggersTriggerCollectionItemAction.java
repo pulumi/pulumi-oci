@@ -17,10 +17,6 @@ public final class GetTriggersTriggerCollectionItemAction {
      * 
      */
     private String buildPipelineId;
-    /**
-     * @return The filters for the trigger.
-     * 
-     */
     private List<GetTriggersTriggerCollectionItemActionFilter> filters;
     /**
      * @return The type of action that will be taken. Allowed value is TRIGGER_BUILD_PIPELINE.
@@ -36,10 +32,6 @@ public final class GetTriggersTriggerCollectionItemAction {
     public String buildPipelineId() {
         return this.buildPipelineId;
     }
-    /**
-     * @return The filters for the trigger.
-     * 
-     */
     public List<GetTriggersTriggerCollectionItemActionFilter> filters() {
         return this.filters;
     }

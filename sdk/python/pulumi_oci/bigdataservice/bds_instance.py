@@ -26,12 +26,14 @@ class BdsInstanceArgs:
                  master_node: pulumi.Input['BdsInstanceMasterNodeArgs'],
                  util_node: pulumi.Input['BdsInstanceUtilNodeArgs'],
                  worker_node: pulumi.Input['BdsInstanceWorkerNodeArgs'],
+                 add_kafka_trigger: Optional[pulumi.Input[int]] = None,
                  bootstrap_script_url: Optional[pulumi.Input[str]] = None,
                  cloud_sql_details: Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceCloudSqlDetailArgs']]]] = None,
                  cluster_profile: Optional[pulumi.Input[str]] = None,
                  compute_only_worker_node: Optional[pulumi.Input['BdsInstanceComputeOnlyWorkerNodeArgs']] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  edge_node: Optional[pulumi.Input['BdsInstanceEdgeNodeArgs']] = None,
+                 execute_bootstrap_script_trigger: Optional[pulumi.Input[int]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  ignore_existing_nodes_shapes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  is_cloud_sql_configured: Optional[pulumi.Input[bool]] = None,
@@ -42,6 +44,7 @@ class BdsInstanceArgs:
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  network_config: Optional[pulumi.Input['BdsInstanceNetworkConfigArgs']] = None,
                  os_patch_version: Optional[pulumi.Input[str]] = None,
+                 remove_kafka_trigger: Optional[pulumi.Input[int]] = None,
                  state: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a BdsInstance resource.
@@ -58,6 +61,7 @@ class BdsInstanceArgs:
         :param pulumi.Input[Sequence[pulumi.Input['BdsInstanceCloudSqlDetailArgs']]] cloud_sql_details: The information about added Cloud SQL capability
         :param pulumi.Input[str] cluster_profile: Profile of the Big Data Service cluster.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[int] execute_bootstrap_script_trigger: (Updatable) An optional property when incremented triggers Execute Bootstrap Script. Could be set to any integer value.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ignore_existing_nodes_shapes: Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafka_broker nodes, in a list format, when new nodes are added with a different shape.
         :param pulumi.Input[bool] is_cloud_sql_configured: (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
@@ -68,6 +72,7 @@ class BdsInstanceArgs:
         :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Key Management master encryption key.
         :param pulumi.Input['BdsInstanceNetworkConfigArgs'] network_config: Additional configuration of the user's network.
         :param pulumi.Input[str] os_patch_version: (Updatable) The version of the patch to be upated.
+        :param pulumi.Input[int] remove_kafka_trigger: (Updatable) An optional property when incremented triggers Remove Kafka. Could be set to any integer value.
         :param pulumi.Input[str] state: (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
         """
         pulumi.set(__self__, "cluster_admin_password", cluster_admin_password)
@@ -80,6 +85,8 @@ class BdsInstanceArgs:
         pulumi.set(__self__, "master_node", master_node)
         pulumi.set(__self__, "util_node", util_node)
         pulumi.set(__self__, "worker_node", worker_node)
+        if add_kafka_trigger is not None:
+            pulumi.set(__self__, "add_kafka_trigger", add_kafka_trigger)
         if bootstrap_script_url is not None:
             pulumi.set(__self__, "bootstrap_script_url", bootstrap_script_url)
         if cloud_sql_details is not None:
@@ -92,6 +99,8 @@ class BdsInstanceArgs:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if edge_node is not None:
             pulumi.set(__self__, "edge_node", edge_node)
+        if execute_bootstrap_script_trigger is not None:
+            pulumi.set(__self__, "execute_bootstrap_script_trigger", execute_bootstrap_script_trigger)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if ignore_existing_nodes_shapes is not None:
@@ -112,6 +121,8 @@ class BdsInstanceArgs:
             pulumi.set(__self__, "network_config", network_config)
         if os_patch_version is not None:
             pulumi.set(__self__, "os_patch_version", os_patch_version)
+        if remove_kafka_trigger is not None:
+            pulumi.set(__self__, "remove_kafka_trigger", remove_kafka_trigger)
         if state is not None:
             pulumi.set(__self__, "state", state)
 
@@ -233,6 +244,15 @@ class BdsInstanceArgs:
         pulumi.set(self, "worker_node", value)
 
     @property
+    @pulumi.getter(name="addKafkaTrigger")
+    def add_kafka_trigger(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "add_kafka_trigger")
+
+    @add_kafka_trigger.setter
+    def add_kafka_trigger(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "add_kafka_trigger", value)
+
+    @property
     @pulumi.getter(name="bootstrapScriptUrl")
     def bootstrap_script_url(self) -> Optional[pulumi.Input[str]]:
         """
@@ -297,6 +317,18 @@ class BdsInstanceArgs:
     @edge_node.setter
     def edge_node(self, value: Optional[pulumi.Input['BdsInstanceEdgeNodeArgs']]):
         pulumi.set(self, "edge_node", value)
+
+    @property
+    @pulumi.getter(name="executeBootstrapScriptTrigger")
+    def execute_bootstrap_script_trigger(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Execute Bootstrap Script. Could be set to any integer value.
+        """
+        return pulumi.get(self, "execute_bootstrap_script_trigger")
+
+    @execute_bootstrap_script_trigger.setter
+    def execute_bootstrap_script_trigger(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "execute_bootstrap_script_trigger", value)
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -419,6 +451,18 @@ class BdsInstanceArgs:
         pulumi.set(self, "os_patch_version", value)
 
     @property
+    @pulumi.getter(name="removeKafkaTrigger")
+    def remove_kafka_trigger(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Remove Kafka. Could be set to any integer value.
+        """
+        return pulumi.get(self, "remove_kafka_trigger")
+
+    @remove_kafka_trigger.setter
+    def remove_kafka_trigger(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "remove_kafka_trigger", value)
+
+    @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
@@ -434,6 +478,7 @@ class BdsInstanceArgs:
 @pulumi.input_type
 class _BdsInstanceState:
     def __init__(__self__, *,
+                 add_kafka_trigger: Optional[pulumi.Input[int]] = None,
                  bootstrap_script_url: Optional[pulumi.Input[str]] = None,
                  cloud_sql_details: Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceCloudSqlDetailArgs']]]] = None,
                  cluster_admin_password: Optional[pulumi.Input[str]] = None,
@@ -447,6 +492,7 @@ class _BdsInstanceState:
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  edge_node: Optional[pulumi.Input['BdsInstanceEdgeNodeArgs']] = None,
+                 execute_bootstrap_script_trigger: Optional[pulumi.Input[int]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  ignore_existing_nodes_shapes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  is_cloud_sql_configured: Optional[pulumi.Input[bool]] = None,
@@ -463,6 +509,7 @@ class _BdsInstanceState:
                  number_of_nodes: Optional[pulumi.Input[int]] = None,
                  number_of_nodes_requiring_maintenance_reboot: Optional[pulumi.Input[int]] = None,
                  os_patch_version: Optional[pulumi.Input[str]] = None,
+                 remove_kafka_trigger: Optional[pulumi.Input[int]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
@@ -481,6 +528,7 @@ class _BdsInstanceState:
         :param pulumi.Input[str] created_by: The user who created the cluster.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Name of the BDS instance
+        :param pulumi.Input[int] execute_bootstrap_script_trigger: (Updatable) An optional property when incremented triggers Execute Bootstrap Script. Could be set to any integer value.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ignore_existing_nodes_shapes: Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafka_broker nodes, in a list format, when new nodes are added with a different shape.
         :param pulumi.Input[bool] is_cloud_sql_configured: (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
@@ -497,11 +545,14 @@ class _BdsInstanceState:
         :param pulumi.Input[int] number_of_nodes: Number of nodes that forming the cluster
         :param pulumi.Input[int] number_of_nodes_requiring_maintenance_reboot: Number of nodes that require a maintenance reboot
         :param pulumi.Input[str] os_patch_version: (Updatable) The version of the patch to be upated.
+        :param pulumi.Input[int] remove_kafka_trigger: (Updatable) An optional property when incremented triggers Remove Kafka. Could be set to any integer value.
         :param pulumi.Input[str] state: (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
         :param pulumi.Input[str] time_created: The time the BDS instance was created. An RFC3339 formatted datetime string
         :param pulumi.Input[str] time_updated: The time the BDS instance was updated. An RFC3339 formatted datetime string
         :param pulumi.Input['BdsInstanceUtilNodeArgs'] util_node: The utility node in the BDS instance
         """
+        if add_kafka_trigger is not None:
+            pulumi.set(__self__, "add_kafka_trigger", add_kafka_trigger)
         if bootstrap_script_url is not None:
             pulumi.set(__self__, "bootstrap_script_url", bootstrap_script_url)
         if cloud_sql_details is not None:
@@ -528,6 +579,8 @@ class _BdsInstanceState:
             pulumi.set(__self__, "display_name", display_name)
         if edge_node is not None:
             pulumi.set(__self__, "edge_node", edge_node)
+        if execute_bootstrap_script_trigger is not None:
+            pulumi.set(__self__, "execute_bootstrap_script_trigger", execute_bootstrap_script_trigger)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if ignore_existing_nodes_shapes is not None:
@@ -560,6 +613,8 @@ class _BdsInstanceState:
             pulumi.set(__self__, "number_of_nodes_requiring_maintenance_reboot", number_of_nodes_requiring_maintenance_reboot)
         if os_patch_version is not None:
             pulumi.set(__self__, "os_patch_version", os_patch_version)
+        if remove_kafka_trigger is not None:
+            pulumi.set(__self__, "remove_kafka_trigger", remove_kafka_trigger)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if time_created is not None:
@@ -570,6 +625,15 @@ class _BdsInstanceState:
             pulumi.set(__self__, "util_node", util_node)
         if worker_node is not None:
             pulumi.set(__self__, "worker_node", worker_node)
+
+    @property
+    @pulumi.getter(name="addKafkaTrigger")
+    def add_kafka_trigger(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "add_kafka_trigger")
+
+    @add_kafka_trigger.setter
+    def add_kafka_trigger(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "add_kafka_trigger", value)
 
     @property
     @pulumi.getter(name="bootstrapScriptUrl")
@@ -720,6 +784,18 @@ class _BdsInstanceState:
     @edge_node.setter
     def edge_node(self, value: Optional[pulumi.Input['BdsInstanceEdgeNodeArgs']]):
         pulumi.set(self, "edge_node", value)
+
+    @property
+    @pulumi.getter(name="executeBootstrapScriptTrigger")
+    def execute_bootstrap_script_trigger(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Execute Bootstrap Script. Could be set to any integer value.
+        """
+        return pulumi.get(self, "execute_bootstrap_script_trigger")
+
+    @execute_bootstrap_script_trigger.setter
+    def execute_bootstrap_script_trigger(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "execute_bootstrap_script_trigger", value)
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -914,6 +990,18 @@ class _BdsInstanceState:
         pulumi.set(self, "os_patch_version", value)
 
     @property
+    @pulumi.getter(name="removeKafkaTrigger")
+    def remove_kafka_trigger(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Remove Kafka. Could be set to any integer value.
+        """
+        return pulumi.get(self, "remove_kafka_trigger")
+
+    @remove_kafka_trigger.setter
+    def remove_kafka_trigger(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "remove_kafka_trigger", value)
+
+    @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
@@ -976,6 +1064,7 @@ class BdsInstance(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 add_kafka_trigger: Optional[pulumi.Input[int]] = None,
                  bootstrap_script_url: Optional[pulumi.Input[str]] = None,
                  cloud_sql_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BdsInstanceCloudSqlDetailArgs']]]]] = None,
                  cluster_admin_password: Optional[pulumi.Input[str]] = None,
@@ -987,6 +1076,7 @@ class BdsInstance(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  edge_node: Optional[pulumi.Input[pulumi.InputType['BdsInstanceEdgeNodeArgs']]] = None,
+                 execute_bootstrap_script_trigger: Optional[pulumi.Input[int]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  ignore_existing_nodes_shapes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  is_cloud_sql_configured: Optional[pulumi.Input[bool]] = None,
@@ -1000,6 +1090,7 @@ class BdsInstance(pulumi.CustomResource):
                  master_node: Optional[pulumi.Input[pulumi.InputType['BdsInstanceMasterNodeArgs']]] = None,
                  network_config: Optional[pulumi.Input[pulumi.InputType['BdsInstanceNetworkConfigArgs']]] = None,
                  os_patch_version: Optional[pulumi.Input[str]] = None,
+                 remove_kafka_trigger: Optional[pulumi.Input[int]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  util_node: Optional[pulumi.Input[pulumi.InputType['BdsInstanceUtilNodeArgs']]] = None,
                  worker_node: Optional[pulumi.Input[pulumi.InputType['BdsInstanceWorkerNodeArgs']]] = None,
@@ -1028,6 +1119,7 @@ class BdsInstance(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Name of the BDS instance
+        :param pulumi.Input[int] execute_bootstrap_script_trigger: (Updatable) An optional property when incremented triggers Execute Bootstrap Script. Could be set to any integer value.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ignore_existing_nodes_shapes: Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafka_broker nodes, in a list format, when new nodes are added with a different shape.
         :param pulumi.Input[bool] is_cloud_sql_configured: (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
@@ -1041,6 +1133,7 @@ class BdsInstance(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['BdsInstanceMasterNodeArgs']] master_node: The master node in the BDS instance
         :param pulumi.Input[pulumi.InputType['BdsInstanceNetworkConfigArgs']] network_config: Additional configuration of the user's network.
         :param pulumi.Input[str] os_patch_version: (Updatable) The version of the patch to be upated.
+        :param pulumi.Input[int] remove_kafka_trigger: (Updatable) An optional property when incremented triggers Remove Kafka. Could be set to any integer value.
         :param pulumi.Input[str] state: (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
         :param pulumi.Input[pulumi.InputType['BdsInstanceUtilNodeArgs']] util_node: The utility node in the BDS instance
         """
@@ -1078,6 +1171,7 @@ class BdsInstance(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 add_kafka_trigger: Optional[pulumi.Input[int]] = None,
                  bootstrap_script_url: Optional[pulumi.Input[str]] = None,
                  cloud_sql_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BdsInstanceCloudSqlDetailArgs']]]]] = None,
                  cluster_admin_password: Optional[pulumi.Input[str]] = None,
@@ -1089,6 +1183,7 @@ class BdsInstance(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  edge_node: Optional[pulumi.Input[pulumi.InputType['BdsInstanceEdgeNodeArgs']]] = None,
+                 execute_bootstrap_script_trigger: Optional[pulumi.Input[int]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  ignore_existing_nodes_shapes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  is_cloud_sql_configured: Optional[pulumi.Input[bool]] = None,
@@ -1102,6 +1197,7 @@ class BdsInstance(pulumi.CustomResource):
                  master_node: Optional[pulumi.Input[pulumi.InputType['BdsInstanceMasterNodeArgs']]] = None,
                  network_config: Optional[pulumi.Input[pulumi.InputType['BdsInstanceNetworkConfigArgs']]] = None,
                  os_patch_version: Optional[pulumi.Input[str]] = None,
+                 remove_kafka_trigger: Optional[pulumi.Input[int]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  util_node: Optional[pulumi.Input[pulumi.InputType['BdsInstanceUtilNodeArgs']]] = None,
                  worker_node: Optional[pulumi.Input[pulumi.InputType['BdsInstanceWorkerNodeArgs']]] = None,
@@ -1114,6 +1210,7 @@ class BdsInstance(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = BdsInstanceArgs.__new__(BdsInstanceArgs)
 
+            __props__.__dict__["add_kafka_trigger"] = add_kafka_trigger
             __props__.__dict__["bootstrap_script_url"] = bootstrap_script_url
             __props__.__dict__["cloud_sql_details"] = cloud_sql_details
             if cluster_admin_password is None and not opts.urn:
@@ -1135,6 +1232,7 @@ class BdsInstance(pulumi.CustomResource):
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["edge_node"] = edge_node
+            __props__.__dict__["execute_bootstrap_script_trigger"] = execute_bootstrap_script_trigger
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["ignore_existing_nodes_shapes"] = ignore_existing_nodes_shapes
             __props__.__dict__["is_cloud_sql_configured"] = is_cloud_sql_configured
@@ -1154,6 +1252,7 @@ class BdsInstance(pulumi.CustomResource):
             __props__.__dict__["master_node"] = master_node
             __props__.__dict__["network_config"] = network_config
             __props__.__dict__["os_patch_version"] = os_patch_version
+            __props__.__dict__["remove_kafka_trigger"] = remove_kafka_trigger
             __props__.__dict__["state"] = state
             if util_node is None and not opts.urn:
                 raise TypeError("Missing required property 'util_node'")
@@ -1180,6 +1279,7 @@ class BdsInstance(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            add_kafka_trigger: Optional[pulumi.Input[int]] = None,
             bootstrap_script_url: Optional[pulumi.Input[str]] = None,
             cloud_sql_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BdsInstanceCloudSqlDetailArgs']]]]] = None,
             cluster_admin_password: Optional[pulumi.Input[str]] = None,
@@ -1193,6 +1293,7 @@ class BdsInstance(pulumi.CustomResource):
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             edge_node: Optional[pulumi.Input[pulumi.InputType['BdsInstanceEdgeNodeArgs']]] = None,
+            execute_bootstrap_script_trigger: Optional[pulumi.Input[int]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             ignore_existing_nodes_shapes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             is_cloud_sql_configured: Optional[pulumi.Input[bool]] = None,
@@ -1209,6 +1310,7 @@ class BdsInstance(pulumi.CustomResource):
             number_of_nodes: Optional[pulumi.Input[int]] = None,
             number_of_nodes_requiring_maintenance_reboot: Optional[pulumi.Input[int]] = None,
             os_patch_version: Optional[pulumi.Input[str]] = None,
+            remove_kafka_trigger: Optional[pulumi.Input[int]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
@@ -1232,6 +1334,7 @@ class BdsInstance(pulumi.CustomResource):
         :param pulumi.Input[str] created_by: The user who created the cluster.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Name of the BDS instance
+        :param pulumi.Input[int] execute_bootstrap_script_trigger: (Updatable) An optional property when incremented triggers Execute Bootstrap Script. Could be set to any integer value.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ignore_existing_nodes_shapes: Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafka_broker nodes, in a list format, when new nodes are added with a different shape.
         :param pulumi.Input[bool] is_cloud_sql_configured: (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
@@ -1248,6 +1351,7 @@ class BdsInstance(pulumi.CustomResource):
         :param pulumi.Input[int] number_of_nodes: Number of nodes that forming the cluster
         :param pulumi.Input[int] number_of_nodes_requiring_maintenance_reboot: Number of nodes that require a maintenance reboot
         :param pulumi.Input[str] os_patch_version: (Updatable) The version of the patch to be upated.
+        :param pulumi.Input[int] remove_kafka_trigger: (Updatable) An optional property when incremented triggers Remove Kafka. Could be set to any integer value.
         :param pulumi.Input[str] state: (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
         :param pulumi.Input[str] time_created: The time the BDS instance was created. An RFC3339 formatted datetime string
         :param pulumi.Input[str] time_updated: The time the BDS instance was updated. An RFC3339 formatted datetime string
@@ -1257,6 +1361,7 @@ class BdsInstance(pulumi.CustomResource):
 
         __props__ = _BdsInstanceState.__new__(_BdsInstanceState)
 
+        __props__.__dict__["add_kafka_trigger"] = add_kafka_trigger
         __props__.__dict__["bootstrap_script_url"] = bootstrap_script_url
         __props__.__dict__["cloud_sql_details"] = cloud_sql_details
         __props__.__dict__["cluster_admin_password"] = cluster_admin_password
@@ -1270,6 +1375,7 @@ class BdsInstance(pulumi.CustomResource):
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["edge_node"] = edge_node
+        __props__.__dict__["execute_bootstrap_script_trigger"] = execute_bootstrap_script_trigger
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["ignore_existing_nodes_shapes"] = ignore_existing_nodes_shapes
         __props__.__dict__["is_cloud_sql_configured"] = is_cloud_sql_configured
@@ -1286,12 +1392,18 @@ class BdsInstance(pulumi.CustomResource):
         __props__.__dict__["number_of_nodes"] = number_of_nodes
         __props__.__dict__["number_of_nodes_requiring_maintenance_reboot"] = number_of_nodes_requiring_maintenance_reboot
         __props__.__dict__["os_patch_version"] = os_patch_version
+        __props__.__dict__["remove_kafka_trigger"] = remove_kafka_trigger
         __props__.__dict__["state"] = state
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
         __props__.__dict__["util_node"] = util_node
         __props__.__dict__["worker_node"] = worker_node
         return BdsInstance(resource_name, opts=opts, __props__=__props__)
+
+    @property
+    @pulumi.getter(name="addKafkaTrigger")
+    def add_kafka_trigger(self) -> pulumi.Output[Optional[int]]:
+        return pulumi.get(self, "add_kafka_trigger")
 
     @property
     @pulumi.getter(name="bootstrapScriptUrl")
@@ -1390,6 +1502,14 @@ class BdsInstance(pulumi.CustomResource):
     @pulumi.getter(name="edgeNode")
     def edge_node(self) -> pulumi.Output[Optional['outputs.BdsInstanceEdgeNode']]:
         return pulumi.get(self, "edge_node")
+
+    @property
+    @pulumi.getter(name="executeBootstrapScriptTrigger")
+    def execute_bootstrap_script_trigger(self) -> pulumi.Output[Optional[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Execute Bootstrap Script. Could be set to any integer value.
+        """
+        return pulumi.get(self, "execute_bootstrap_script_trigger")
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -1518,6 +1638,14 @@ class BdsInstance(pulumi.CustomResource):
         (Updatable) The version of the patch to be upated.
         """
         return pulumi.get(self, "os_patch_version")
+
+    @property
+    @pulumi.getter(name="removeKafkaTrigger")
+    def remove_kafka_trigger(self) -> pulumi.Output[Optional[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Remove Kafka. Could be set to any integer value.
+        """
+        return pulumi.get(self, "remove_kafka_trigger")
 
     @property
     @pulumi.getter

@@ -33,6 +33,7 @@ from .get_deploy_stages import *
 from .get_deployment import *
 from .get_deployments import *
 from .get_project import *
+from .get_project_repository_setting import *
 from .get_projects import *
 from .get_repo_file_line import *
 from .get_repositories import *
@@ -52,14 +53,19 @@ from .get_repository_object import *
 from .get_repository_object_content import *
 from .get_repository_path import *
 from .get_repository_paths import *
+from .get_repository_protected_branches import *
 from .get_repository_ref import *
 from .get_repository_refs import *
+from .get_repository_setting import *
 from .get_trigger import *
 from .get_triggers import *
 from .project import *
+from .project_repository_setting import *
 from .repository import *
 from .repository_mirror import *
+from .repository_protected_branch_management import *
 from .repository_ref import *
+from .repository_setting import *
 from .trigger import *
 from ._inputs import *
 from . import outputs

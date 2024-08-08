@@ -25,6 +25,7 @@ import java.util.Objects;
 
 @CustomType
 public final class GetBdsInstancesBdsInstance {
+    private Integer addKafkaTrigger;
     /**
      * @return pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
      * 
@@ -74,6 +75,7 @@ public final class GetBdsInstancesBdsInstance {
      */
     private String displayName;
     private List<GetBdsInstancesBdsInstanceEdgeNode> edgeNodes;
+    private Integer executeBootstrapScriptTrigger;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
@@ -135,6 +137,7 @@ public final class GetBdsInstancesBdsInstance {
      */
     private Integer numberOfNodesRequiringMaintenanceReboot;
     private String osPatchVersion;
+    private Integer removeKafkaTrigger;
     /**
      * @return The state of the cluster.
      * 
@@ -154,6 +157,9 @@ public final class GetBdsInstancesBdsInstance {
     private List<GetBdsInstancesBdsInstanceWorkerNode> workerNodes;
 
     private GetBdsInstancesBdsInstance() {}
+    public Integer addKafkaTrigger() {
+        return this.addKafkaTrigger;
+    }
     /**
      * @return pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
      * 
@@ -228,6 +234,9 @@ public final class GetBdsInstancesBdsInstance {
     }
     public List<GetBdsInstancesBdsInstanceEdgeNode> edgeNodes() {
         return this.edgeNodes;
+    }
+    public Integer executeBootstrapScriptTrigger() {
+        return this.executeBootstrapScriptTrigger;
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{&#34;bar-key&#34;: &#34;value&#34;}`
@@ -324,6 +333,9 @@ public final class GetBdsInstancesBdsInstance {
     public String osPatchVersion() {
         return this.osPatchVersion;
     }
+    public Integer removeKafkaTrigger() {
+        return this.removeKafkaTrigger;
+    }
     /**
      * @return The state of the cluster.
      * 
@@ -361,6 +373,7 @@ public final class GetBdsInstancesBdsInstance {
     }
     @CustomType.Builder
     public static final class Builder {
+        private Integer addKafkaTrigger;
         private String bootstrapScriptUrl;
         private List<GetBdsInstancesBdsInstanceCloudSqlDetail> cloudSqlDetails;
         private String clusterAdminPassword;
@@ -374,6 +387,7 @@ public final class GetBdsInstancesBdsInstance {
         private Map<String,Object> definedTags;
         private String displayName;
         private List<GetBdsInstancesBdsInstanceEdgeNode> edgeNodes;
+        private Integer executeBootstrapScriptTrigger;
         private Map<String,Object> freeformTags;
         private String id;
         private List<String> ignoreExistingNodesShapes;
@@ -391,6 +405,7 @@ public final class GetBdsInstancesBdsInstance {
         private Integer numberOfNodes;
         private Integer numberOfNodesRequiringMaintenanceReboot;
         private String osPatchVersion;
+        private Integer removeKafkaTrigger;
         private String state;
         private String timeCreated;
         private String timeUpdated;
@@ -399,6 +414,7 @@ public final class GetBdsInstancesBdsInstance {
         public Builder() {}
         public Builder(GetBdsInstancesBdsInstance defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.addKafkaTrigger = defaults.addKafkaTrigger;
     	      this.bootstrapScriptUrl = defaults.bootstrapScriptUrl;
     	      this.cloudSqlDetails = defaults.cloudSqlDetails;
     	      this.clusterAdminPassword = defaults.clusterAdminPassword;
@@ -412,6 +428,7 @@ public final class GetBdsInstancesBdsInstance {
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.edgeNodes = defaults.edgeNodes;
+    	      this.executeBootstrapScriptTrigger = defaults.executeBootstrapScriptTrigger;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.ignoreExistingNodesShapes = defaults.ignoreExistingNodesShapes;
@@ -429,6 +446,7 @@ public final class GetBdsInstancesBdsInstance {
     	      this.numberOfNodes = defaults.numberOfNodes;
     	      this.numberOfNodesRequiringMaintenanceReboot = defaults.numberOfNodesRequiringMaintenanceReboot;
     	      this.osPatchVersion = defaults.osPatchVersion;
+    	      this.removeKafkaTrigger = defaults.removeKafkaTrigger;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
@@ -436,6 +454,14 @@ public final class GetBdsInstancesBdsInstance {
     	      this.workerNodes = defaults.workerNodes;
         }
 
+        @CustomType.Setter
+        public Builder addKafkaTrigger(Integer addKafkaTrigger) {
+            if (addKafkaTrigger == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "addKafkaTrigger");
+            }
+            this.addKafkaTrigger = addKafkaTrigger;
+            return this;
+        }
         @CustomType.Setter
         public Builder bootstrapScriptUrl(String bootstrapScriptUrl) {
             if (bootstrapScriptUrl == null) {
@@ -551,6 +577,14 @@ public final class GetBdsInstancesBdsInstance {
         }
         public Builder edgeNodes(GetBdsInstancesBdsInstanceEdgeNode... edgeNodes) {
             return edgeNodes(List.of(edgeNodes));
+        }
+        @CustomType.Setter
+        public Builder executeBootstrapScriptTrigger(Integer executeBootstrapScriptTrigger) {
+            if (executeBootstrapScriptTrigger == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "executeBootstrapScriptTrigger");
+            }
+            this.executeBootstrapScriptTrigger = executeBootstrapScriptTrigger;
+            return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
@@ -704,6 +738,14 @@ public final class GetBdsInstancesBdsInstance {
             return this;
         }
         @CustomType.Setter
+        public Builder removeKafkaTrigger(Integer removeKafkaTrigger) {
+            if (removeKafkaTrigger == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "removeKafkaTrigger");
+            }
+            this.removeKafkaTrigger = removeKafkaTrigger;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "state");
@@ -751,6 +793,7 @@ public final class GetBdsInstancesBdsInstance {
         }
         public GetBdsInstancesBdsInstance build() {
             final var _resultValue = new GetBdsInstancesBdsInstance();
+            _resultValue.addKafkaTrigger = addKafkaTrigger;
             _resultValue.bootstrapScriptUrl = bootstrapScriptUrl;
             _resultValue.cloudSqlDetails = cloudSqlDetails;
             _resultValue.clusterAdminPassword = clusterAdminPassword;
@@ -764,6 +807,7 @@ public final class GetBdsInstancesBdsInstance {
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
             _resultValue.edgeNodes = edgeNodes;
+            _resultValue.executeBootstrapScriptTrigger = executeBootstrapScriptTrigger;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.ignoreExistingNodesShapes = ignoreExistingNodesShapes;
@@ -781,6 +825,7 @@ public final class GetBdsInstancesBdsInstance {
             _resultValue.numberOfNodes = numberOfNodes;
             _resultValue.numberOfNodesRequiringMaintenanceReboot = numberOfNodesRequiringMaintenanceReboot;
             _resultValue.osPatchVersion = osPatchVersion;
+            _resultValue.removeKafkaTrigger = removeKafkaTrigger;
             _resultValue.state = state;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;

@@ -26,6 +26,7 @@ class SoftwareSourceArgs:
                  is_auto_resolve_dependencies: Optional[pulumi.Input[bool]] = None,
                  is_automatically_updated: Optional[pulumi.Input[bool]] = None,
                  is_created_from_package_list: Optional[pulumi.Input[bool]] = None,
+                 is_latest_content_only: Optional[pulumi.Input[bool]] = None,
                  origin_software_source_id: Optional[pulumi.Input[str]] = None,
                  packages: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  software_source_version: Optional[pulumi.Input[str]] = None,
@@ -42,6 +43,12 @@ class SoftwareSourceArgs:
         :param pulumi.Input[bool] is_auto_resolve_dependencies: (Updatable) Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
         :param pulumi.Input[bool] is_automatically_updated: (Updatable) Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
         :param pulumi.Input[bool] is_created_from_package_list: Indicates whether the service should create the software source from a list of packages provided by the user.
+        :param pulumi.Input[bool] is_latest_content_only: (Updatable) Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
+               * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
+               * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
+               * For a package filter that does not specify a version, this will include only the latest available version of the package.
+               * For a package filter that does specify a version, this will include only the specified version of the package (the isLatestContentOnly attribute is ignored).
+               * For a package list, this will include only the specified version of packages and modules in the list (the isLatestContentOnly attribute is ignored).
         :param pulumi.Input[str] origin_software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] packages: A property used for compatibility only. It doesn't provide a complete list of packages. See [AddPackagesToSoftwareSourceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/osmh/latest/datatypes/AddPackagesToSoftwareSourceDetails) for providing the list of packages used to create the software source when isCreatedFromPackageList is set to true.
         :param pulumi.Input[str] software_source_version: The version to assign to this custom software source.
@@ -65,6 +72,8 @@ class SoftwareSourceArgs:
             pulumi.set(__self__, "is_automatically_updated", is_automatically_updated)
         if is_created_from_package_list is not None:
             pulumi.set(__self__, "is_created_from_package_list", is_created_from_package_list)
+        if is_latest_content_only is not None:
+            pulumi.set(__self__, "is_latest_content_only", is_latest_content_only)
         if origin_software_source_id is not None:
             pulumi.set(__self__, "origin_software_source_id", origin_software_source_id)
         if packages is not None:
@@ -195,6 +204,23 @@ class SoftwareSourceArgs:
         pulumi.set(self, "is_created_from_package_list", value)
 
     @property
+    @pulumi.getter(name="isLatestContentOnly")
+    def is_latest_content_only(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
+        * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
+        * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
+        * For a package filter that does not specify a version, this will include only the latest available version of the package.
+        * For a package filter that does specify a version, this will include only the specified version of the package (the isLatestContentOnly attribute is ignored).
+        * For a package list, this will include only the specified version of packages and modules in the list (the isLatestContentOnly attribute is ignored).
+        """
+        return pulumi.get(self, "is_latest_content_only")
+
+    @is_latest_content_only.setter
+    def is_latest_content_only(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_latest_content_only", value)
+
+    @property
     @pulumi.getter(name="originSoftwareSourceId")
     def origin_software_source_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -262,6 +288,7 @@ class _SoftwareSourceState:
                  is_auto_resolve_dependencies: Optional[pulumi.Input[bool]] = None,
                  is_automatically_updated: Optional[pulumi.Input[bool]] = None,
                  is_created_from_package_list: Optional[pulumi.Input[bool]] = None,
+                 is_latest_content_only: Optional[pulumi.Input[bool]] = None,
                  is_mandatory_for_autonomous_linux: Optional[pulumi.Input[bool]] = None,
                  origin_software_source_id: Optional[pulumi.Input[str]] = None,
                  os_family: Optional[pulumi.Input[str]] = None,
@@ -295,6 +322,12 @@ class _SoftwareSourceState:
         :param pulumi.Input[bool] is_auto_resolve_dependencies: (Updatable) Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
         :param pulumi.Input[bool] is_automatically_updated: (Updatable) Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
         :param pulumi.Input[bool] is_created_from_package_list: Indicates whether the service should create the software source from a list of packages provided by the user.
+        :param pulumi.Input[bool] is_latest_content_only: (Updatable) Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
+               * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
+               * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
+               * For a package filter that does not specify a version, this will include only the latest available version of the package.
+               * For a package filter that does specify a version, this will include only the specified version of the package (the isLatestContentOnly attribute is ignored).
+               * For a package list, this will include only the specified version of packages and modules in the list (the isLatestContentOnly attribute is ignored).
         :param pulumi.Input[bool] is_mandatory_for_autonomous_linux: Indicates whether the software source is required for the Autonomous Linux service.
         :param pulumi.Input[str] origin_software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
         :param pulumi.Input[str] os_family: The OS family the software source belongs to.
@@ -343,6 +376,8 @@ class _SoftwareSourceState:
             pulumi.set(__self__, "is_automatically_updated", is_automatically_updated)
         if is_created_from_package_list is not None:
             pulumi.set(__self__, "is_created_from_package_list", is_created_from_package_list)
+        if is_latest_content_only is not None:
+            pulumi.set(__self__, "is_latest_content_only", is_latest_content_only)
         if is_mandatory_for_autonomous_linux is not None:
             pulumi.set(__self__, "is_mandatory_for_autonomous_linux", is_mandatory_for_autonomous_linux)
         if origin_software_source_id is not None:
@@ -567,6 +602,23 @@ class _SoftwareSourceState:
         pulumi.set(self, "is_created_from_package_list", value)
 
     @property
+    @pulumi.getter(name="isLatestContentOnly")
+    def is_latest_content_only(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
+        * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
+        * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
+        * For a package filter that does not specify a version, this will include only the latest available version of the package.
+        * For a package filter that does specify a version, this will include only the specified version of the package (the isLatestContentOnly attribute is ignored).
+        * For a package list, this will include only the specified version of packages and modules in the list (the isLatestContentOnly attribute is ignored).
+        """
+        return pulumi.get(self, "is_latest_content_only")
+
+    @is_latest_content_only.setter
+    def is_latest_content_only(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_latest_content_only", value)
+
+    @property
     @pulumi.getter(name="isMandatoryForAutonomousLinux")
     def is_mandatory_for_autonomous_linux(self) -> Optional[pulumi.Input[bool]]:
         """
@@ -761,6 +813,7 @@ class SoftwareSource(pulumi.CustomResource):
                  is_auto_resolve_dependencies: Optional[pulumi.Input[bool]] = None,
                  is_automatically_updated: Optional[pulumi.Input[bool]] = None,
                  is_created_from_package_list: Optional[pulumi.Input[bool]] = None,
+                 is_latest_content_only: Optional[pulumi.Input[bool]] = None,
                  origin_software_source_id: Optional[pulumi.Input[str]] = None,
                  packages: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  software_source_type: Optional[pulumi.Input[str]] = None,
@@ -791,6 +844,12 @@ class SoftwareSource(pulumi.CustomResource):
         :param pulumi.Input[bool] is_auto_resolve_dependencies: (Updatable) Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
         :param pulumi.Input[bool] is_automatically_updated: (Updatable) Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
         :param pulumi.Input[bool] is_created_from_package_list: Indicates whether the service should create the software source from a list of packages provided by the user.
+        :param pulumi.Input[bool] is_latest_content_only: (Updatable) Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
+               * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
+               * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
+               * For a package filter that does not specify a version, this will include only the latest available version of the package.
+               * For a package filter that does specify a version, this will include only the specified version of the package (the isLatestContentOnly attribute is ignored).
+               * For a package list, this will include only the specified version of packages and modules in the list (the isLatestContentOnly attribute is ignored).
         :param pulumi.Input[str] origin_software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] packages: A property used for compatibility only. It doesn't provide a complete list of packages. See [AddPackagesToSoftwareSourceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/osmh/latest/datatypes/AddPackagesToSoftwareSourceDetails) for providing the list of packages used to create the software source when isCreatedFromPackageList is set to true.
         :param pulumi.Input[str] software_source_type: (Updatable) Type of software source.
@@ -840,6 +899,7 @@ class SoftwareSource(pulumi.CustomResource):
                  is_auto_resolve_dependencies: Optional[pulumi.Input[bool]] = None,
                  is_automatically_updated: Optional[pulumi.Input[bool]] = None,
                  is_created_from_package_list: Optional[pulumi.Input[bool]] = None,
+                 is_latest_content_only: Optional[pulumi.Input[bool]] = None,
                  origin_software_source_id: Optional[pulumi.Input[str]] = None,
                  packages: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  software_source_type: Optional[pulumi.Input[str]] = None,
@@ -865,6 +925,7 @@ class SoftwareSource(pulumi.CustomResource):
             __props__.__dict__["is_auto_resolve_dependencies"] = is_auto_resolve_dependencies
             __props__.__dict__["is_automatically_updated"] = is_automatically_updated
             __props__.__dict__["is_created_from_package_list"] = is_created_from_package_list
+            __props__.__dict__["is_latest_content_only"] = is_latest_content_only
             __props__.__dict__["origin_software_source_id"] = origin_software_source_id
             __props__.__dict__["packages"] = packages
             if software_source_type is None and not opts.urn:
@@ -915,6 +976,7 @@ class SoftwareSource(pulumi.CustomResource):
             is_auto_resolve_dependencies: Optional[pulumi.Input[bool]] = None,
             is_automatically_updated: Optional[pulumi.Input[bool]] = None,
             is_created_from_package_list: Optional[pulumi.Input[bool]] = None,
+            is_latest_content_only: Optional[pulumi.Input[bool]] = None,
             is_mandatory_for_autonomous_linux: Optional[pulumi.Input[bool]] = None,
             origin_software_source_id: Optional[pulumi.Input[str]] = None,
             os_family: Optional[pulumi.Input[str]] = None,
@@ -953,6 +1015,12 @@ class SoftwareSource(pulumi.CustomResource):
         :param pulumi.Input[bool] is_auto_resolve_dependencies: (Updatable) Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
         :param pulumi.Input[bool] is_automatically_updated: (Updatable) Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
         :param pulumi.Input[bool] is_created_from_package_list: Indicates whether the service should create the software source from a list of packages provided by the user.
+        :param pulumi.Input[bool] is_latest_content_only: (Updatable) Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
+               * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
+               * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
+               * For a package filter that does not specify a version, this will include only the latest available version of the package.
+               * For a package filter that does specify a version, this will include only the specified version of the package (the isLatestContentOnly attribute is ignored).
+               * For a package list, this will include only the specified version of packages and modules in the list (the isLatestContentOnly attribute is ignored).
         :param pulumi.Input[bool] is_mandatory_for_autonomous_linux: Indicates whether the software source is required for the Autonomous Linux service.
         :param pulumi.Input[str] origin_software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
         :param pulumi.Input[str] os_family: The OS family the software source belongs to.
@@ -989,6 +1057,7 @@ class SoftwareSource(pulumi.CustomResource):
         __props__.__dict__["is_auto_resolve_dependencies"] = is_auto_resolve_dependencies
         __props__.__dict__["is_automatically_updated"] = is_automatically_updated
         __props__.__dict__["is_created_from_package_list"] = is_created_from_package_list
+        __props__.__dict__["is_latest_content_only"] = is_latest_content_only
         __props__.__dict__["is_mandatory_for_autonomous_linux"] = is_mandatory_for_autonomous_linux
         __props__.__dict__["origin_software_source_id"] = origin_software_source_id
         __props__.__dict__["os_family"] = os_family
@@ -1133,6 +1202,19 @@ class SoftwareSource(pulumi.CustomResource):
         Indicates whether the service should create the software source from a list of packages provided by the user.
         """
         return pulumi.get(self, "is_created_from_package_list")
+
+    @property
+    @pulumi.getter(name="isLatestContentOnly")
+    def is_latest_content_only(self) -> pulumi.Output[bool]:
+        """
+        (Updatable) Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
+        * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
+        * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
+        * For a package filter that does not specify a version, this will include only the latest available version of the package.
+        * For a package filter that does specify a version, this will include only the specified version of the package (the isLatestContentOnly attribute is ignored).
+        * For a package list, this will include only the specified version of packages and modules in the list (the isLatestContentOnly attribute is ignored).
+        """
+        return pulumi.get(self, "is_latest_content_only")
 
     @property
     @pulumi.getter(name="isMandatoryForAutonomousLinux")

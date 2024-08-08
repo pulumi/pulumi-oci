@@ -31,8 +31,9 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Jms.GetFleetPerformanceTuningAnalysisResults(ctx, &jms.GetFleetPerformanceTuningAnalysisResultsArgs{
 //				FleetId:           testFleet.Id,
-//				ApplicationId:     pulumi.StringRef(testApplication.Id),
-//				ManagedInstanceId: pulumi.StringRef(testManagedInstance.Id),
+//				ApplicationId:     pulumi.StringRef(fleetPerformanceTuningAnalysisResultApplicationId),
+//				HostName:          pulumi.StringRef(fleetPerformanceTuningAnalysisResultHostName),
+//				ManagedInstanceId: pulumi.StringRef(fleetPerformanceTuningAnalysisResultManagedInstanceId),
 //				TimeEnd:           pulumi.StringRef(fleetPerformanceTuningAnalysisResultTimeEnd),
 //				TimeStart:         pulumi.StringRef(fleetPerformanceTuningAnalysisResultTimeStart),
 //			}, nil)
@@ -61,6 +62,8 @@ type GetFleetPerformanceTuningAnalysisResultsArgs struct {
 	Filters       []GetFleetPerformanceTuningAnalysisResultsFilter `pulumi:"filters"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
 	FleetId string `pulumi:"fleetId"`
+	// The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
+	HostName *string `pulumi:"hostName"`
 	// The Fleet-unique identifier of the related managed instance.
 	ManagedInstanceId *string `pulumi:"managedInstanceId"`
 	// The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -76,6 +79,8 @@ type GetFleetPerformanceTuningAnalysisResultsResult struct {
 	Filters       []GetFleetPerformanceTuningAnalysisResultsFilter `pulumi:"filters"`
 	// The fleet OCID.
 	FleetId string `pulumi:"fleetId"`
+	// The hostname of the managed instance.
+	HostName *string `pulumi:"hostName"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// The managed instance OCID.
@@ -106,6 +111,8 @@ type GetFleetPerformanceTuningAnalysisResultsOutputArgs struct {
 	Filters       GetFleetPerformanceTuningAnalysisResultsFilterArrayInput `pulumi:"filters"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
 	FleetId pulumi.StringInput `pulumi:"fleetId"`
+	// The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
+	HostName pulumi.StringPtrInput `pulumi:"hostName"`
 	// The Fleet-unique identifier of the related managed instance.
 	ManagedInstanceId pulumi.StringPtrInput `pulumi:"managedInstanceId"`
 	// The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -147,6 +154,11 @@ func (o GetFleetPerformanceTuningAnalysisResultsResultOutput) Filters() GetFleet
 // The fleet OCID.
 func (o GetFleetPerformanceTuningAnalysisResultsResultOutput) FleetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsResult) string { return v.FleetId }).(pulumi.StringOutput)
+}
+
+// The hostname of the managed instance.
+func (o GetFleetPerformanceTuningAnalysisResultsResultOutput) HostName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsResult) *string { return v.HostName }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.

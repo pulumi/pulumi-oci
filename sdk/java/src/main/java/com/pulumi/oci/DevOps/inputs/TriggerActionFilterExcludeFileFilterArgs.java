@@ -17,14 +17,14 @@ public final class TriggerActionFilterExcludeFileFilterArgs extends com.pulumi.r
     public static final TriggerActionFilterExcludeFileFilterArgs Empty = new TriggerActionFilterExcludeFileFilterArgs();
 
     /**
-     * (Updatable) The file paths/glob pattern for files.
+     * The file paths/glob pattern for files.
      * 
      */
     @Import(name="filePaths")
     private @Nullable Output<List<String>> filePaths;
 
     /**
-     * @return (Updatable) The file paths/glob pattern for files.
+     * @return The file paths/glob pattern for files.
      * 
      */
     public Optional<Output<List<String>>> filePaths() {
@@ -56,7 +56,7 @@ public final class TriggerActionFilterExcludeFileFilterArgs extends com.pulumi.r
         }
 
         /**
-         * @param filePaths (Updatable) The file paths/glob pattern for files.
+         * @param filePaths The file paths/glob pattern for files.
          * 
          * @return builder
          * 
@@ -67,7 +67,7 @@ public final class TriggerActionFilterExcludeFileFilterArgs extends com.pulumi.r
         }
 
         /**
-         * @param filePaths (Updatable) The file paths/glob pattern for files.
+         * @param filePaths The file paths/glob pattern for files.
          * 
          * @return builder
          * 
@@ -77,7 +77,7 @@ public final class TriggerActionFilterExcludeFileFilterArgs extends com.pulumi.r
         }
 
         /**
-         * @param filePaths (Updatable) The file paths/glob pattern for files.
+         * @param filePaths The file paths/glob pattern for files.
          * 
          * @return builder
          * 

@@ -16,9 +16,17 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilte
 
     public static final BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArgs Empty = new BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArgs();
 
+    /**
+     * The file paths/glob pattern for files.
+     * 
+     */
     @Import(name="filePaths")
     private @Nullable Output<List<String>> filePaths;
 
+    /**
+     * @return The file paths/glob pattern for files.
+     * 
+     */
     public Optional<Output<List<String>>> filePaths() {
         return Optional.ofNullable(this.filePaths);
     }
@@ -47,15 +55,33 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilte
             $ = new BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param filePaths The file paths/glob pattern for files.
+         * 
+         * @return builder
+         * 
+         */
         public Builder filePaths(@Nullable Output<List<String>> filePaths) {
             $.filePaths = filePaths;
             return this;
         }
 
+        /**
+         * @param filePaths The file paths/glob pattern for files.
+         * 
+         * @return builder
+         * 
+         */
         public Builder filePaths(List<String> filePaths) {
             return filePaths(Output.of(filePaths));
         }
 
+        /**
+         * @param filePaths The file paths/glob pattern for files.
+         * 
+         * @return builder
+         * 
+         */
         public Builder filePaths(String... filePaths) {
             return filePaths(List.of(filePaths));
         }

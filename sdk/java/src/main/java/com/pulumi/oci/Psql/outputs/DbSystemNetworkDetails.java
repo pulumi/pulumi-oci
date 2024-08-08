@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DbSystemNetworkDetails {
     /**
-     * @return List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
+     * @return (Updatable) List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
      * 
      */
     private @Nullable List<String> nsgIds;
@@ -31,7 +31,7 @@ public final class DbSystemNetworkDetails {
 
     private DbSystemNetworkDetails() {}
     /**
-     * @return List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
+     * @return (Updatable) List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
      * 
      */
     public List<String> nsgIds() {

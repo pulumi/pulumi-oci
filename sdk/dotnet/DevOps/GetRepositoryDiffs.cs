@@ -33,6 +33,7 @@ namespace Pulumi.Oci.DevOps
         ///         RepositoryId = testRepository.Id,
         ///         TargetVersion = repositoryDiffTargetVersion,
         ///         IsComparisonFromMergeBase = repositoryDiffIsComparisonFromMergeBase,
+        ///         TargetRepositoryId = testRepository.Id,
         ///     });
         /// 
         /// });
@@ -63,6 +64,7 @@ namespace Pulumi.Oci.DevOps
         ///         RepositoryId = testRepository.Id,
         ///         TargetVersion = repositoryDiffTargetVersion,
         ///         IsComparisonFromMergeBase = repositoryDiffIsComparisonFromMergeBase,
+        ///         TargetRepositoryId = testRepository.Id,
         ///     });
         /// 
         /// });
@@ -100,6 +102,12 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         [Input("repositoryId", required: true)]
         public string RepositoryId { get; set; } = null!;
+
+        /// <summary>
+        /// The target repository identifier
+        /// </summary>
+        [Input("targetRepositoryId")]
+        public string? TargetRepositoryId { get; set; }
 
         /// <summary>
         /// The commit or reference name where changes are coming from.
@@ -142,6 +150,12 @@ namespace Pulumi.Oci.DevOps
         public Input<string> RepositoryId { get; set; } = null!;
 
         /// <summary>
+        /// The target repository identifier
+        /// </summary>
+        [Input("targetRepositoryId")]
+        public Input<string>? TargetRepositoryId { get; set; }
+
+        /// <summary>
         /// The commit or reference name where changes are coming from.
         /// </summary>
         [Input("targetVersion", required: true)]
@@ -169,6 +183,7 @@ namespace Pulumi.Oci.DevOps
         public readonly string Id;
         public readonly bool? IsComparisonFromMergeBase;
         public readonly string RepositoryId;
+        public readonly string? TargetRepositoryId;
         public readonly string TargetVersion;
 
         [OutputConstructor]
@@ -185,6 +200,8 @@ namespace Pulumi.Oci.DevOps
 
             string repositoryId,
 
+            string? targetRepositoryId,
+
             string targetVersion)
         {
             BaseVersion = baseVersion;
@@ -193,6 +210,7 @@ namespace Pulumi.Oci.DevOps
             Id = id;
             IsComparisonFromMergeBase = isComparisonFromMergeBase;
             RepositoryId = repositoryId;
+            TargetRepositoryId = targetRepositoryId;
             TargetVersion = targetVersion;
         }
     }

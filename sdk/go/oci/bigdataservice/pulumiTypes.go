@@ -696,7 +696,7 @@ func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput) OcpuStepS
 }
 
 type AutoScalingConfigurationPolicyDetailsScaleDownConfigMetric struct {
-	// (Updatable) Allowed value is CPU_UTILIZATION.
+	// (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
 	MetricType *string `pulumi:"metricType"`
 	// (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
 	Threshold *AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThreshold `pulumi:"threshold"`
@@ -714,7 +714,7 @@ type AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricInput interface {
 }
 
 type AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs struct {
-	// (Updatable) Allowed value is CPU_UTILIZATION.
+	// (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
 	MetricType pulumi.StringPtrInput `pulumi:"metricType"`
 	// (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
 	Threshold AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrInput `pulumi:"threshold"`
@@ -797,7 +797,7 @@ func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricOutput) ToAuto
 	}).(AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutput)
 }
 
-// (Updatable) Allowed value is CPU_UTILIZATION.
+// (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
 func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricOutput) MetricType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScaleDownConfigMetric) *string { return v.MetricType }).(pulumi.StringPtrOutput)
 }
@@ -833,7 +833,7 @@ func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutput) Ele
 	}).(AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricOutput)
 }
 
-// (Updatable) Allowed value is CPU_UTILIZATION.
+// (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
 func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutput) MetricType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleDownConfigMetric) *string {
 		if v == nil {
@@ -1208,7 +1208,7 @@ func (o AutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutput) StepSize() 
 }
 
 type AutoScalingConfigurationPolicyDetailsScaleInConfigMetric struct {
-	// (Updatable) Allowed value is CPU_UTILIZATION.
+	// (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
 	MetricType *string `pulumi:"metricType"`
 	// (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
 	Threshold *AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThreshold `pulumi:"threshold"`
@@ -1226,7 +1226,7 @@ type AutoScalingConfigurationPolicyDetailsScaleInConfigMetricInput interface {
 }
 
 type AutoScalingConfigurationPolicyDetailsScaleInConfigMetricArgs struct {
-	// (Updatable) Allowed value is CPU_UTILIZATION.
+	// (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
 	MetricType pulumi.StringPtrInput `pulumi:"metricType"`
 	// (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
 	Threshold AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrInput `pulumi:"threshold"`
@@ -1309,7 +1309,7 @@ func (o AutoScalingConfigurationPolicyDetailsScaleInConfigMetricOutput) ToAutoSc
 	}).(AutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutput)
 }
 
-// (Updatable) Allowed value is CPU_UTILIZATION.
+// (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
 func (o AutoScalingConfigurationPolicyDetailsScaleInConfigMetricOutput) MetricType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScaleInConfigMetric) *string { return v.MetricType }).(pulumi.StringPtrOutput)
 }
@@ -1345,7 +1345,7 @@ func (o AutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutput) Elem(
 	}).(AutoScalingConfigurationPolicyDetailsScaleInConfigMetricOutput)
 }
 
-// (Updatable) Allowed value is CPU_UTILIZATION.
+// (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
 func (o AutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutput) MetricType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleInConfigMetric) *string {
 		if v == nil {
@@ -1720,7 +1720,7 @@ func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutput) StepSize()
 }
 
 type AutoScalingConfigurationPolicyDetailsScaleOutConfigMetric struct {
-	// (Updatable) Allowed value is CPU_UTILIZATION.
+	// (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
 	MetricType *string `pulumi:"metricType"`
 	// (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
 	Threshold *AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThreshold `pulumi:"threshold"`
@@ -1738,7 +1738,7 @@ type AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricInput interface {
 }
 
 type AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricArgs struct {
-	// (Updatable) Allowed value is CPU_UTILIZATION.
+	// (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
 	MetricType pulumi.StringPtrInput `pulumi:"metricType"`
 	// (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
 	Threshold AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrInput `pulumi:"threshold"`
@@ -1821,7 +1821,7 @@ func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricOutput) ToAutoS
 	}).(AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutput)
 }
 
-// (Updatable) Allowed value is CPU_UTILIZATION.
+// (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
 func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricOutput) MetricType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScaleOutConfigMetric) *string { return v.MetricType }).(pulumi.StringPtrOutput)
 }
@@ -1857,7 +1857,7 @@ func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutput) Elem
 	}).(AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricOutput)
 }
 
-// (Updatable) Allowed value is CPU_UTILIZATION.
+// (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
 func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutput) MetricType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleOutConfigMetric) *string {
 		if v == nil {
@@ -2270,7 +2270,7 @@ func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutput) OcpuStepSiz
 }
 
 type AutoScalingConfigurationPolicyDetailsScaleUpConfigMetric struct {
-	// (Updatable) Allowed value is CPU_UTILIZATION.
+	// (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
 	MetricType *string `pulumi:"metricType"`
 	// (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
 	Threshold *AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold `pulumi:"threshold"`
@@ -2288,7 +2288,7 @@ type AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricInput interface {
 }
 
 type AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs struct {
-	// (Updatable) Allowed value is CPU_UTILIZATION.
+	// (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
 	MetricType pulumi.StringPtrInput `pulumi:"metricType"`
 	// (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
 	Threshold AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrInput `pulumi:"threshold"`
@@ -2371,7 +2371,7 @@ func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricOutput) ToAutoSc
 	}).(AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutput)
 }
 
-// (Updatable) Allowed value is CPU_UTILIZATION.
+// (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
 func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricOutput) MetricType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScaleUpConfigMetric) *string { return v.MetricType }).(pulumi.StringPtrOutput)
 }
@@ -2407,7 +2407,7 @@ func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutput) Elem(
 	}).(AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricOutput)
 }
 
-// (Updatable) Allowed value is CPU_UTILIZATION.
+// (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
 func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutput) MetricType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleUpConfigMetric) *string {
 		if v == nil {
@@ -3072,7 +3072,7 @@ func (o AutoScalingConfigurationPolicyRuleArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type AutoScalingConfigurationPolicyRuleMetric struct {
-	// (Updatable) Allowed value is CPU_UTILIZATION.
+	// (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
 	MetricType string `pulumi:"metricType"`
 	// (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
 	Threshold AutoScalingConfigurationPolicyRuleMetricThreshold `pulumi:"threshold"`
@@ -3090,7 +3090,7 @@ type AutoScalingConfigurationPolicyRuleMetricInput interface {
 }
 
 type AutoScalingConfigurationPolicyRuleMetricArgs struct {
-	// (Updatable) Allowed value is CPU_UTILIZATION.
+	// (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
 	MetricType pulumi.StringInput `pulumi:"metricType"`
 	// (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
 	Threshold AutoScalingConfigurationPolicyRuleMetricThresholdInput `pulumi:"threshold"`
@@ -3122,7 +3122,7 @@ func (o AutoScalingConfigurationPolicyRuleMetricOutput) ToAutoScalingConfigurati
 	return o
 }
 
-// (Updatable) Allowed value is CPU_UTILIZATION.
+// (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
 func (o AutoScalingConfigurationPolicyRuleMetricOutput) MetricType() pulumi.StringOutput {
 	return o.ApplyT(func(v AutoScalingConfigurationPolicyRuleMetric) string { return v.MetricType }).(pulumi.StringOutput)
 }
@@ -3219,8 +3219,14 @@ type BdsInstanceCloudSqlDetail struct {
 	Nvmes *int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus *int `pulumi:"ocpus"`
+	// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+	OdhVersion *string `pulumi:"odhVersion"`
+	// BDS-assigned Operating System version for the node.
+	OsVersion *string `pulumi:"osVersion"`
 	// Shape of the node
 	Shape string `pulumi:"shape"`
+	// The fingerprint of the SSH key used for node access
+	SshFingerprint *string `pulumi:"sshFingerprint"`
 }
 
 // BdsInstanceCloudSqlDetailInput is an input type that accepts BdsInstanceCloudSqlDetailArgs and BdsInstanceCloudSqlDetailOutput values.
@@ -3249,8 +3255,14 @@ type BdsInstanceCloudSqlDetailArgs struct {
 	Nvmes pulumi.IntPtrInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus pulumi.IntPtrInput `pulumi:"ocpus"`
+	// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+	OdhVersion pulumi.StringPtrInput `pulumi:"odhVersion"`
+	// BDS-assigned Operating System version for the node.
+	OsVersion pulumi.StringPtrInput `pulumi:"osVersion"`
 	// Shape of the node
 	Shape pulumi.StringInput `pulumi:"shape"`
+	// The fingerprint of the SSH key used for node access
+	SshFingerprint pulumi.StringPtrInput `pulumi:"sshFingerprint"`
 }
 
 func (BdsInstanceCloudSqlDetailArgs) ElementType() reflect.Type {
@@ -3339,9 +3351,24 @@ func (o BdsInstanceCloudSqlDetailOutput) Ocpus() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v BdsInstanceCloudSqlDetail) *int { return v.Ocpus }).(pulumi.IntPtrOutput)
 }
 
+// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+func (o BdsInstanceCloudSqlDetailOutput) OdhVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceCloudSqlDetail) *string { return v.OdhVersion }).(pulumi.StringPtrOutput)
+}
+
+// BDS-assigned Operating System version for the node.
+func (o BdsInstanceCloudSqlDetailOutput) OsVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceCloudSqlDetail) *string { return v.OsVersion }).(pulumi.StringPtrOutput)
+}
+
 // Shape of the node
 func (o BdsInstanceCloudSqlDetailOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v BdsInstanceCloudSqlDetail) string { return v.Shape }).(pulumi.StringOutput)
+}
+
+// The fingerprint of the SSH key used for node access
+func (o BdsInstanceCloudSqlDetailOutput) SshFingerprint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceCloudSqlDetail) *string { return v.SshFingerprint }).(pulumi.StringPtrOutput)
 }
 
 type BdsInstanceCloudSqlDetailArrayOutput struct{ *pulumi.OutputState }
@@ -3493,7 +3520,7 @@ type BdsInstanceClusterDetail struct {
 	HueServerUrl *string `pulumi:"hueServerUrl"`
 	// The URL of the Jupyterhub.
 	JupyterHubUrl *string `pulumi:"jupyterHubUrl"`
-	// Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
+	// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
 	OdhVersion *string `pulumi:"odhVersion"`
 	// BDS-assigned Operating System version for the node.
 	OsVersion *string `pulumi:"osVersion"`
@@ -3537,7 +3564,7 @@ type BdsInstanceClusterDetailArgs struct {
 	HueServerUrl pulumi.StringPtrInput `pulumi:"hueServerUrl"`
 	// The URL of the Jupyterhub.
 	JupyterHubUrl pulumi.StringPtrInput `pulumi:"jupyterHubUrl"`
-	// Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
+	// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
 	OdhVersion pulumi.StringPtrInput `pulumi:"odhVersion"`
 	// BDS-assigned Operating System version for the node.
 	OsVersion pulumi.StringPtrInput `pulumi:"osVersion"`
@@ -3653,7 +3680,7 @@ func (o BdsInstanceClusterDetailOutput) JupyterHubUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceClusterDetail) *string { return v.JupyterHubUrl }).(pulumi.StringPtrOutput)
 }
 
-// Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
+// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
 func (o BdsInstanceClusterDetailOutput) OdhVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceClusterDetail) *string { return v.OdhVersion }).(pulumi.StringPtrOutput)
 }
@@ -5894,10 +5921,12 @@ func (o BdsInstanceOperationCertificateManagementsManagementHostCertDetailArrayO
 }
 
 type BdsInstanceOsPatchActionPatchingConfig struct {
-	BatchSize                     *int   `pulumi:"batchSize"`
-	PatchingConfigStrategy        string `pulumi:"patchingConfigStrategy"`
-	ToleranceThresholdPerBatch    *int   `pulumi:"toleranceThresholdPerBatch"`
-	WaitTimeBetweenBatchInSeconds *int   `pulumi:"waitTimeBetweenBatchInSeconds"`
+	BatchSize                      *int   `pulumi:"batchSize"`
+	PatchingConfigStrategy         string `pulumi:"patchingConfigStrategy"`
+	ToleranceThresholdPerBatch     *int   `pulumi:"toleranceThresholdPerBatch"`
+	ToleranceThresholdPerDomain    *int   `pulumi:"toleranceThresholdPerDomain"`
+	WaitTimeBetweenBatchInSeconds  *int   `pulumi:"waitTimeBetweenBatchInSeconds"`
+	WaitTimeBetweenDomainInSeconds *int   `pulumi:"waitTimeBetweenDomainInSeconds"`
 }
 
 // BdsInstanceOsPatchActionPatchingConfigInput is an input type that accepts BdsInstanceOsPatchActionPatchingConfigArgs and BdsInstanceOsPatchActionPatchingConfigOutput values.
@@ -5912,10 +5941,12 @@ type BdsInstanceOsPatchActionPatchingConfigInput interface {
 }
 
 type BdsInstanceOsPatchActionPatchingConfigArgs struct {
-	BatchSize                     pulumi.IntPtrInput `pulumi:"batchSize"`
-	PatchingConfigStrategy        pulumi.StringInput `pulumi:"patchingConfigStrategy"`
-	ToleranceThresholdPerBatch    pulumi.IntPtrInput `pulumi:"toleranceThresholdPerBatch"`
-	WaitTimeBetweenBatchInSeconds pulumi.IntPtrInput `pulumi:"waitTimeBetweenBatchInSeconds"`
+	BatchSize                      pulumi.IntPtrInput `pulumi:"batchSize"`
+	PatchingConfigStrategy         pulumi.StringInput `pulumi:"patchingConfigStrategy"`
+	ToleranceThresholdPerBatch     pulumi.IntPtrInput `pulumi:"toleranceThresholdPerBatch"`
+	ToleranceThresholdPerDomain    pulumi.IntPtrInput `pulumi:"toleranceThresholdPerDomain"`
+	WaitTimeBetweenBatchInSeconds  pulumi.IntPtrInput `pulumi:"waitTimeBetweenBatchInSeconds"`
+	WaitTimeBetweenDomainInSeconds pulumi.IntPtrInput `pulumi:"waitTimeBetweenDomainInSeconds"`
 }
 
 func (BdsInstanceOsPatchActionPatchingConfigArgs) ElementType() reflect.Type {
@@ -5981,8 +6012,16 @@ func (o BdsInstanceOsPatchActionPatchingConfigOutput) ToleranceThresholdPerBatch
 	return o.ApplyT(func(v BdsInstanceOsPatchActionPatchingConfig) *int { return v.ToleranceThresholdPerBatch }).(pulumi.IntPtrOutput)
 }
 
+func (o BdsInstanceOsPatchActionPatchingConfigOutput) ToleranceThresholdPerDomain() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BdsInstanceOsPatchActionPatchingConfig) *int { return v.ToleranceThresholdPerDomain }).(pulumi.IntPtrOutput)
+}
+
 func (o BdsInstanceOsPatchActionPatchingConfigOutput) WaitTimeBetweenBatchInSeconds() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v BdsInstanceOsPatchActionPatchingConfig) *int { return v.WaitTimeBetweenBatchInSeconds }).(pulumi.IntPtrOutput)
+}
+
+func (o BdsInstanceOsPatchActionPatchingConfigOutput) WaitTimeBetweenDomainInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BdsInstanceOsPatchActionPatchingConfig) *int { return v.WaitTimeBetweenDomainInSeconds }).(pulumi.IntPtrOutput)
 }
 
 type BdsInstanceOsPatchActionPatchingConfigArrayOutput struct{ *pulumi.OutputState }
@@ -6003,6 +6042,200 @@ func (o BdsInstanceOsPatchActionPatchingConfigArrayOutput) Index(i pulumi.IntInp
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) BdsInstanceOsPatchActionPatchingConfig {
 		return vs[0].([]BdsInstanceOsPatchActionPatchingConfig)[vs[1].(int)]
 	}).(BdsInstanceOsPatchActionPatchingConfigOutput)
+}
+
+type BdsInstancePatchActionPatchingConfig struct {
+	// How many nodes to be patched in each iteration.
+	BatchSize *int `pulumi:"batchSize"`
+	// Type of strategy used for detailed patching configuration
+	PatchingConfigStrategy string `pulumi:"patchingConfigStrategy"`
+	// The wait time between batches in seconds.
+	WaitTimeBetweenBatchInSeconds *int `pulumi:"waitTimeBetweenBatchInSeconds"`
+	// The wait time between AD/FD in seconds.
+	WaitTimeBetweenDomainInSeconds *int `pulumi:"waitTimeBetweenDomainInSeconds"`
+}
+
+// BdsInstancePatchActionPatchingConfigInput is an input type that accepts BdsInstancePatchActionPatchingConfigArgs and BdsInstancePatchActionPatchingConfigOutput values.
+// You can construct a concrete instance of `BdsInstancePatchActionPatchingConfigInput` via:
+//
+//	BdsInstancePatchActionPatchingConfigArgs{...}
+type BdsInstancePatchActionPatchingConfigInput interface {
+	pulumi.Input
+
+	ToBdsInstancePatchActionPatchingConfigOutput() BdsInstancePatchActionPatchingConfigOutput
+	ToBdsInstancePatchActionPatchingConfigOutputWithContext(context.Context) BdsInstancePatchActionPatchingConfigOutput
+}
+
+type BdsInstancePatchActionPatchingConfigArgs struct {
+	// How many nodes to be patched in each iteration.
+	BatchSize pulumi.IntPtrInput `pulumi:"batchSize"`
+	// Type of strategy used for detailed patching configuration
+	PatchingConfigStrategy pulumi.StringInput `pulumi:"patchingConfigStrategy"`
+	// The wait time between batches in seconds.
+	WaitTimeBetweenBatchInSeconds pulumi.IntPtrInput `pulumi:"waitTimeBetweenBatchInSeconds"`
+	// The wait time between AD/FD in seconds.
+	WaitTimeBetweenDomainInSeconds pulumi.IntPtrInput `pulumi:"waitTimeBetweenDomainInSeconds"`
+}
+
+func (BdsInstancePatchActionPatchingConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstancePatchActionPatchingConfig)(nil)).Elem()
+}
+
+func (i BdsInstancePatchActionPatchingConfigArgs) ToBdsInstancePatchActionPatchingConfigOutput() BdsInstancePatchActionPatchingConfigOutput {
+	return i.ToBdsInstancePatchActionPatchingConfigOutputWithContext(context.Background())
+}
+
+func (i BdsInstancePatchActionPatchingConfigArgs) ToBdsInstancePatchActionPatchingConfigOutputWithContext(ctx context.Context) BdsInstancePatchActionPatchingConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstancePatchActionPatchingConfigOutput)
+}
+
+func (i BdsInstancePatchActionPatchingConfigArgs) ToBdsInstancePatchActionPatchingConfigPtrOutput() BdsInstancePatchActionPatchingConfigPtrOutput {
+	return i.ToBdsInstancePatchActionPatchingConfigPtrOutputWithContext(context.Background())
+}
+
+func (i BdsInstancePatchActionPatchingConfigArgs) ToBdsInstancePatchActionPatchingConfigPtrOutputWithContext(ctx context.Context) BdsInstancePatchActionPatchingConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstancePatchActionPatchingConfigOutput).ToBdsInstancePatchActionPatchingConfigPtrOutputWithContext(ctx)
+}
+
+// BdsInstancePatchActionPatchingConfigPtrInput is an input type that accepts BdsInstancePatchActionPatchingConfigArgs, BdsInstancePatchActionPatchingConfigPtr and BdsInstancePatchActionPatchingConfigPtrOutput values.
+// You can construct a concrete instance of `BdsInstancePatchActionPatchingConfigPtrInput` via:
+//
+//	        BdsInstancePatchActionPatchingConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type BdsInstancePatchActionPatchingConfigPtrInput interface {
+	pulumi.Input
+
+	ToBdsInstancePatchActionPatchingConfigPtrOutput() BdsInstancePatchActionPatchingConfigPtrOutput
+	ToBdsInstancePatchActionPatchingConfigPtrOutputWithContext(context.Context) BdsInstancePatchActionPatchingConfigPtrOutput
+}
+
+type bdsInstancePatchActionPatchingConfigPtrType BdsInstancePatchActionPatchingConfigArgs
+
+func BdsInstancePatchActionPatchingConfigPtr(v *BdsInstancePatchActionPatchingConfigArgs) BdsInstancePatchActionPatchingConfigPtrInput {
+	return (*bdsInstancePatchActionPatchingConfigPtrType)(v)
+}
+
+func (*bdsInstancePatchActionPatchingConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**BdsInstancePatchActionPatchingConfig)(nil)).Elem()
+}
+
+func (i *bdsInstancePatchActionPatchingConfigPtrType) ToBdsInstancePatchActionPatchingConfigPtrOutput() BdsInstancePatchActionPatchingConfigPtrOutput {
+	return i.ToBdsInstancePatchActionPatchingConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *bdsInstancePatchActionPatchingConfigPtrType) ToBdsInstancePatchActionPatchingConfigPtrOutputWithContext(ctx context.Context) BdsInstancePatchActionPatchingConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstancePatchActionPatchingConfigPtrOutput)
+}
+
+type BdsInstancePatchActionPatchingConfigOutput struct{ *pulumi.OutputState }
+
+func (BdsInstancePatchActionPatchingConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstancePatchActionPatchingConfig)(nil)).Elem()
+}
+
+func (o BdsInstancePatchActionPatchingConfigOutput) ToBdsInstancePatchActionPatchingConfigOutput() BdsInstancePatchActionPatchingConfigOutput {
+	return o
+}
+
+func (o BdsInstancePatchActionPatchingConfigOutput) ToBdsInstancePatchActionPatchingConfigOutputWithContext(ctx context.Context) BdsInstancePatchActionPatchingConfigOutput {
+	return o
+}
+
+func (o BdsInstancePatchActionPatchingConfigOutput) ToBdsInstancePatchActionPatchingConfigPtrOutput() BdsInstancePatchActionPatchingConfigPtrOutput {
+	return o.ToBdsInstancePatchActionPatchingConfigPtrOutputWithContext(context.Background())
+}
+
+func (o BdsInstancePatchActionPatchingConfigOutput) ToBdsInstancePatchActionPatchingConfigPtrOutputWithContext(ctx context.Context) BdsInstancePatchActionPatchingConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v BdsInstancePatchActionPatchingConfig) *BdsInstancePatchActionPatchingConfig {
+		return &v
+	}).(BdsInstancePatchActionPatchingConfigPtrOutput)
+}
+
+// How many nodes to be patched in each iteration.
+func (o BdsInstancePatchActionPatchingConfigOutput) BatchSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BdsInstancePatchActionPatchingConfig) *int { return v.BatchSize }).(pulumi.IntPtrOutput)
+}
+
+// Type of strategy used for detailed patching configuration
+func (o BdsInstancePatchActionPatchingConfigOutput) PatchingConfigStrategy() pulumi.StringOutput {
+	return o.ApplyT(func(v BdsInstancePatchActionPatchingConfig) string { return v.PatchingConfigStrategy }).(pulumi.StringOutput)
+}
+
+// The wait time between batches in seconds.
+func (o BdsInstancePatchActionPatchingConfigOutput) WaitTimeBetweenBatchInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BdsInstancePatchActionPatchingConfig) *int { return v.WaitTimeBetweenBatchInSeconds }).(pulumi.IntPtrOutput)
+}
+
+// The wait time between AD/FD in seconds.
+func (o BdsInstancePatchActionPatchingConfigOutput) WaitTimeBetweenDomainInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BdsInstancePatchActionPatchingConfig) *int { return v.WaitTimeBetweenDomainInSeconds }).(pulumi.IntPtrOutput)
+}
+
+type BdsInstancePatchActionPatchingConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (BdsInstancePatchActionPatchingConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**BdsInstancePatchActionPatchingConfig)(nil)).Elem()
+}
+
+func (o BdsInstancePatchActionPatchingConfigPtrOutput) ToBdsInstancePatchActionPatchingConfigPtrOutput() BdsInstancePatchActionPatchingConfigPtrOutput {
+	return o
+}
+
+func (o BdsInstancePatchActionPatchingConfigPtrOutput) ToBdsInstancePatchActionPatchingConfigPtrOutputWithContext(ctx context.Context) BdsInstancePatchActionPatchingConfigPtrOutput {
+	return o
+}
+
+func (o BdsInstancePatchActionPatchingConfigPtrOutput) Elem() BdsInstancePatchActionPatchingConfigOutput {
+	return o.ApplyT(func(v *BdsInstancePatchActionPatchingConfig) BdsInstancePatchActionPatchingConfig {
+		if v != nil {
+			return *v
+		}
+		var ret BdsInstancePatchActionPatchingConfig
+		return ret
+	}).(BdsInstancePatchActionPatchingConfigOutput)
+}
+
+// How many nodes to be patched in each iteration.
+func (o BdsInstancePatchActionPatchingConfigPtrOutput) BatchSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BdsInstancePatchActionPatchingConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.BatchSize
+	}).(pulumi.IntPtrOutput)
+}
+
+// Type of strategy used for detailed patching configuration
+func (o BdsInstancePatchActionPatchingConfigPtrOutput) PatchingConfigStrategy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BdsInstancePatchActionPatchingConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.PatchingConfigStrategy
+	}).(pulumi.StringPtrOutput)
+}
+
+// The wait time between batches in seconds.
+func (o BdsInstancePatchActionPatchingConfigPtrOutput) WaitTimeBetweenBatchInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BdsInstancePatchActionPatchingConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.WaitTimeBetweenBatchInSeconds
+	}).(pulumi.IntPtrOutput)
+}
+
+// The wait time between AD/FD in seconds.
+func (o BdsInstancePatchActionPatchingConfigPtrOutput) WaitTimeBetweenDomainInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BdsInstancePatchActionPatchingConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.WaitTimeBetweenDomainInSeconds
+	}).(pulumi.IntPtrOutput)
 }
 
 type BdsInstanceUtilNode struct {
@@ -7198,7 +7431,7 @@ func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput) Index
 }
 
 type GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetric struct {
-	// Allowed value is CPU_UTILIZATION.
+	// Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
 	MetricType string `pulumi:"metricType"`
 	// An autoscale action is triggered when a performance metric exceeds a threshold.
 	Thresholds []GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold `pulumi:"thresholds"`
@@ -7216,7 +7449,7 @@ type GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricInput interface
 }
 
 type GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArgs struct {
-	// Allowed value is CPU_UTILIZATION.
+	// Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
 	MetricType pulumi.StringInput `pulumi:"metricType"`
 	// An autoscale action is triggered when a performance metric exceeds a threshold.
 	Thresholds GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayInput `pulumi:"thresholds"`
@@ -7273,7 +7506,7 @@ func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput) ToGe
 	return o
 }
 
-// Allowed value is CPU_UTILIZATION.
+// Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
 func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput) MetricType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetric) string { return v.MetricType }).(pulumi.StringOutput)
 }
@@ -7542,7 +7775,7 @@ func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput) Index(i
 }
 
 type GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric struct {
-	// Allowed value is CPU_UTILIZATION.
+	// Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
 	MetricType string `pulumi:"metricType"`
 	// An autoscale action is triggered when a performance metric exceeds a threshold.
 	Thresholds []GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold `pulumi:"thresholds"`
@@ -7560,7 +7793,7 @@ type GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricInput interface {
 }
 
 type GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArgs struct {
-	// Allowed value is CPU_UTILIZATION.
+	// Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
 	MetricType pulumi.StringInput `pulumi:"metricType"`
 	// An autoscale action is triggered when a performance metric exceeds a threshold.
 	Thresholds GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayInput `pulumi:"thresholds"`
@@ -7617,7 +7850,7 @@ func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput) ToGetA
 	return o
 }
 
-// Allowed value is CPU_UTILIZATION.
+// Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
 func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput) MetricType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric) string { return v.MetricType }).(pulumi.StringOutput)
 }
@@ -7884,7 +8117,7 @@ func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput) Index(
 }
 
 type GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetric struct {
-	// Allowed value is CPU_UTILIZATION.
+	// Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
 	MetricType string `pulumi:"metricType"`
 	// An autoscale action is triggered when a performance metric exceeds a threshold.
 	Thresholds []GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold `pulumi:"thresholds"`
@@ -7902,7 +8135,7 @@ type GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricInput interface 
 }
 
 type GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArgs struct {
-	// Allowed value is CPU_UTILIZATION.
+	// Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
 	MetricType pulumi.StringInput `pulumi:"metricType"`
 	// An autoscale action is triggered when a performance metric exceeds a threshold.
 	Thresholds GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayInput `pulumi:"thresholds"`
@@ -7959,7 +8192,7 @@ func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput) ToGet
 	return o
 }
 
-// Allowed value is CPU_UTILIZATION.
+// Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
 func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput) MetricType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetric) string { return v.MetricType }).(pulumi.StringOutput)
 }
@@ -8244,7 +8477,7 @@ func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput) Index(i
 }
 
 type GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetric struct {
-	// Allowed value is CPU_UTILIZATION.
+	// Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
 	MetricType string `pulumi:"metricType"`
 	// An autoscale action is triggered when a performance metric exceeds a threshold.
 	Thresholds []GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold `pulumi:"thresholds"`
@@ -8262,7 +8495,7 @@ type GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricInput interface {
 }
 
 type GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArgs struct {
-	// Allowed value is CPU_UTILIZATION.
+	// Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
 	MetricType pulumi.StringInput `pulumi:"metricType"`
 	// An autoscale action is triggered when a performance metric exceeds a threshold.
 	Thresholds GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayInput `pulumi:"thresholds"`
@@ -8319,7 +8552,7 @@ func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput) ToGetA
 	return o
 }
 
-// Allowed value is CPU_UTILIZATION.
+// Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
 func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput) MetricType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetric) string { return v.MetricType }).(pulumi.StringOutput)
 }
@@ -8938,7 +9171,7 @@ func (o GetAutoScalingConfigurationPolicyRuleArrayOutput) Index(i pulumi.IntInpu
 }
 
 type GetAutoScalingConfigurationPolicyRuleMetric struct {
-	// Allowed value is CPU_UTILIZATION.
+	// Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
 	MetricType string `pulumi:"metricType"`
 	// An autoscale action is triggered when a performance metric exceeds a threshold.
 	Thresholds []GetAutoScalingConfigurationPolicyRuleMetricThreshold `pulumi:"thresholds"`
@@ -8956,7 +9189,7 @@ type GetAutoScalingConfigurationPolicyRuleMetricInput interface {
 }
 
 type GetAutoScalingConfigurationPolicyRuleMetricArgs struct {
-	// Allowed value is CPU_UTILIZATION.
+	// Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
 	MetricType pulumi.StringInput `pulumi:"metricType"`
 	// An autoscale action is triggered when a performance metric exceeds a threshold.
 	Thresholds GetAutoScalingConfigurationPolicyRuleMetricThresholdArrayInput `pulumi:"thresholds"`
@@ -9013,7 +9246,7 @@ func (o GetAutoScalingConfigurationPolicyRuleMetricOutput) ToGetAutoScalingConfi
 	return o
 }
 
-// Allowed value is CPU_UTILIZATION.
+// Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
 func (o GetAutoScalingConfigurationPolicyRuleMetricOutput) MetricType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyRuleMetric) string { return v.MetricType }).(pulumi.StringOutput)
 }
@@ -11981,8 +12214,14 @@ type GetBdsInstanceCloudSqlDetail struct {
 	Nvmes int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus int `pulumi:"ocpus"`
+	// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+	OdhVersion string `pulumi:"odhVersion"`
+	// BDS-assigned Operating System version for the node.
+	OsVersion string `pulumi:"osVersion"`
 	// Shape of the node.
 	Shape string `pulumi:"shape"`
+	// The fingerprint of the SSH key used for node access.
+	SshFingerprint string `pulumi:"sshFingerprint"`
 }
 
 // GetBdsInstanceCloudSqlDetailInput is an input type that accepts GetBdsInstanceCloudSqlDetailArgs and GetBdsInstanceCloudSqlDetailOutput values.
@@ -12011,8 +12250,14 @@ type GetBdsInstanceCloudSqlDetailArgs struct {
 	Nvmes pulumi.IntInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus pulumi.IntInput `pulumi:"ocpus"`
+	// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+	OdhVersion pulumi.StringInput `pulumi:"odhVersion"`
+	// BDS-assigned Operating System version for the node.
+	OsVersion pulumi.StringInput `pulumi:"osVersion"`
 	// Shape of the node.
 	Shape pulumi.StringInput `pulumi:"shape"`
+	// The fingerprint of the SSH key used for node access.
+	SshFingerprint pulumi.StringInput `pulumi:"sshFingerprint"`
 }
 
 func (GetBdsInstanceCloudSqlDetailArgs) ElementType() reflect.Type {
@@ -12103,9 +12348,24 @@ func (o GetBdsInstanceCloudSqlDetailOutput) Ocpus() pulumi.IntOutput {
 	return o.ApplyT(func(v GetBdsInstanceCloudSqlDetail) int { return v.Ocpus }).(pulumi.IntOutput)
 }
 
+// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+func (o GetBdsInstanceCloudSqlDetailOutput) OdhVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceCloudSqlDetail) string { return v.OdhVersion }).(pulumi.StringOutput)
+}
+
+// BDS-assigned Operating System version for the node.
+func (o GetBdsInstanceCloudSqlDetailOutput) OsVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceCloudSqlDetail) string { return v.OsVersion }).(pulumi.StringOutput)
+}
+
 // Shape of the node.
 func (o GetBdsInstanceCloudSqlDetailOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstanceCloudSqlDetail) string { return v.Shape }).(pulumi.StringOutput)
+}
+
+// The fingerprint of the SSH key used for node access.
+func (o GetBdsInstanceCloudSqlDetailOutput) SshFingerprint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceCloudSqlDetail) string { return v.SshFingerprint }).(pulumi.StringOutput)
 }
 
 type GetBdsInstanceCloudSqlDetailArrayOutput struct{ *pulumi.OutputState }
@@ -12257,7 +12517,7 @@ type GetBdsInstanceClusterDetail struct {
 	HueServerUrl string `pulumi:"hueServerUrl"`
 	// The URL of the Jupyterhub.
 	JupyterHubUrl string `pulumi:"jupyterHubUrl"`
-	// Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
+	// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
 	OdhVersion string `pulumi:"odhVersion"`
 	// BDS-assigned Operating System version for the node.
 	OsVersion string `pulumi:"osVersion"`
@@ -12301,7 +12561,7 @@ type GetBdsInstanceClusterDetailArgs struct {
 	HueServerUrl pulumi.StringInput `pulumi:"hueServerUrl"`
 	// The URL of the Jupyterhub.
 	JupyterHubUrl pulumi.StringInput `pulumi:"jupyterHubUrl"`
-	// Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
+	// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
 	OdhVersion pulumi.StringInput `pulumi:"odhVersion"`
 	// BDS-assigned Operating System version for the node.
 	OsVersion pulumi.StringInput `pulumi:"osVersion"`
@@ -12417,7 +12677,7 @@ func (o GetBdsInstanceClusterDetailOutput) JupyterHubUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstanceClusterDetail) string { return v.JupyterHubUrl }).(pulumi.StringOutput)
 }
 
-// Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
+// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
 func (o GetBdsInstanceClusterDetailOutput) OdhVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstanceClusterDetail) string { return v.OdhVersion }).(pulumi.StringOutput)
 }
@@ -15604,6 +15864,7 @@ func (o GetBdsInstanceWorkerNodeShapeConfigArrayOutput) Index(i pulumi.IntInput)
 }
 
 type GetBdsInstancesBdsInstance struct {
+	AddKafkaTrigger int `pulumi:"addKafkaTrigger"`
 	// pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
 	BootstrapScriptUrl string `pulumi:"bootstrapScriptUrl"`
 	// The information about added Cloud SQL capability
@@ -15624,8 +15885,9 @@ type GetBdsInstancesBdsInstance struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{"foo-namespace": {"bar-key": "value"}}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName string                               `pulumi:"displayName"`
-	EdgeNodes   []GetBdsInstancesBdsInstanceEdgeNode `pulumi:"edgeNodes"`
+	DisplayName                   string                               `pulumi:"displayName"`
+	EdgeNodes                     []GetBdsInstancesBdsInstanceEdgeNode `pulumi:"edgeNodes"`
+	ExecuteBootstrapScriptTrigger int                                  `pulumi:"executeBootstrapScriptTrigger"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the Big Data Service resource.
@@ -15654,6 +15916,7 @@ type GetBdsInstancesBdsInstance struct {
 	// Number of nodes that require a maintenance reboot
 	NumberOfNodesRequiringMaintenanceReboot int    `pulumi:"numberOfNodesRequiringMaintenanceReboot"`
 	OsPatchVersion                          string `pulumi:"osPatchVersion"`
+	RemoveKafkaTrigger                      int    `pulumi:"removeKafkaTrigger"`
 	// The state of the cluster.
 	State string `pulumi:"state"`
 	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
@@ -15676,6 +15939,7 @@ type GetBdsInstancesBdsInstanceInput interface {
 }
 
 type GetBdsInstancesBdsInstanceArgs struct {
+	AddKafkaTrigger pulumi.IntInput `pulumi:"addKafkaTrigger"`
 	// pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
 	BootstrapScriptUrl pulumi.StringInput `pulumi:"bootstrapScriptUrl"`
 	// The information about added Cloud SQL capability
@@ -15696,8 +15960,9 @@ type GetBdsInstancesBdsInstanceArgs struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{"foo-namespace": {"bar-key": "value"}}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName pulumi.StringInput                           `pulumi:"displayName"`
-	EdgeNodes   GetBdsInstancesBdsInstanceEdgeNodeArrayInput `pulumi:"edgeNodes"`
+	DisplayName                   pulumi.StringInput                           `pulumi:"displayName"`
+	EdgeNodes                     GetBdsInstancesBdsInstanceEdgeNodeArrayInput `pulumi:"edgeNodes"`
+	ExecuteBootstrapScriptTrigger pulumi.IntInput                              `pulumi:"executeBootstrapScriptTrigger"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the Big Data Service resource.
@@ -15726,6 +15991,7 @@ type GetBdsInstancesBdsInstanceArgs struct {
 	// Number of nodes that require a maintenance reboot
 	NumberOfNodesRequiringMaintenanceReboot pulumi.IntInput    `pulumi:"numberOfNodesRequiringMaintenanceReboot"`
 	OsPatchVersion                          pulumi.StringInput `pulumi:"osPatchVersion"`
+	RemoveKafkaTrigger                      pulumi.IntInput    `pulumi:"removeKafkaTrigger"`
 	// The state of the cluster.
 	State pulumi.StringInput `pulumi:"state"`
 	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
@@ -15785,6 +16051,10 @@ func (o GetBdsInstancesBdsInstanceOutput) ToGetBdsInstancesBdsInstanceOutput() G
 
 func (o GetBdsInstancesBdsInstanceOutput) ToGetBdsInstancesBdsInstanceOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceOutput {
 	return o
+}
+
+func (o GetBdsInstancesBdsInstanceOutput) AddKafkaTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstance) int { return v.AddKafkaTrigger }).(pulumi.IntOutput)
 }
 
 // pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
@@ -15850,6 +16120,10 @@ func (o GetBdsInstancesBdsInstanceOutput) DisplayName() pulumi.StringOutput {
 
 func (o GetBdsInstancesBdsInstanceOutput) EdgeNodes() GetBdsInstancesBdsInstanceEdgeNodeArrayOutput {
 	return o.ApplyT(func(v GetBdsInstancesBdsInstance) []GetBdsInstancesBdsInstanceEdgeNode { return v.EdgeNodes }).(GetBdsInstancesBdsInstanceEdgeNodeArrayOutput)
+}
+
+func (o GetBdsInstancesBdsInstanceOutput) ExecuteBootstrapScriptTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstance) int { return v.ExecuteBootstrapScriptTrigger }).(pulumi.IntOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
@@ -15933,6 +16207,10 @@ func (o GetBdsInstancesBdsInstanceOutput) OsPatchVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstancesBdsInstance) string { return v.OsPatchVersion }).(pulumi.StringOutput)
 }
 
+func (o GetBdsInstancesBdsInstanceOutput) RemoveKafkaTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstance) int { return v.RemoveKafkaTrigger }).(pulumi.IntOutput)
+}
+
 // The state of the cluster.
 func (o GetBdsInstancesBdsInstanceOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstancesBdsInstance) string { return v.State }).(pulumi.StringOutput)
@@ -15991,8 +16269,14 @@ type GetBdsInstancesBdsInstanceCloudSqlDetail struct {
 	Nvmes int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus int `pulumi:"ocpus"`
+	// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+	OdhVersion string `pulumi:"odhVersion"`
+	// BDS-assigned Operating System version for the node.
+	OsVersion string `pulumi:"osVersion"`
 	// Shape of the node.
 	Shape string `pulumi:"shape"`
+	// The fingerprint of the SSH key used for node access.
+	SshFingerprint string `pulumi:"sshFingerprint"`
 }
 
 // GetBdsInstancesBdsInstanceCloudSqlDetailInput is an input type that accepts GetBdsInstancesBdsInstanceCloudSqlDetailArgs and GetBdsInstancesBdsInstanceCloudSqlDetailOutput values.
@@ -16021,8 +16305,14 @@ type GetBdsInstancesBdsInstanceCloudSqlDetailArgs struct {
 	Nvmes pulumi.IntInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus pulumi.IntInput `pulumi:"ocpus"`
+	// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+	OdhVersion pulumi.StringInput `pulumi:"odhVersion"`
+	// BDS-assigned Operating System version for the node.
+	OsVersion pulumi.StringInput `pulumi:"osVersion"`
 	// Shape of the node.
 	Shape pulumi.StringInput `pulumi:"shape"`
+	// The fingerprint of the SSH key used for node access.
+	SshFingerprint pulumi.StringInput `pulumi:"sshFingerprint"`
 }
 
 func (GetBdsInstancesBdsInstanceCloudSqlDetailArgs) ElementType() reflect.Type {
@@ -16113,9 +16403,24 @@ func (o GetBdsInstancesBdsInstanceCloudSqlDetailOutput) Ocpus() pulumi.IntOutput
 	return o.ApplyT(func(v GetBdsInstancesBdsInstanceCloudSqlDetail) int { return v.Ocpus }).(pulumi.IntOutput)
 }
 
+// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+func (o GetBdsInstancesBdsInstanceCloudSqlDetailOutput) OdhVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceCloudSqlDetail) string { return v.OdhVersion }).(pulumi.StringOutput)
+}
+
+// BDS-assigned Operating System version for the node.
+func (o GetBdsInstancesBdsInstanceCloudSqlDetailOutput) OsVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceCloudSqlDetail) string { return v.OsVersion }).(pulumi.StringOutput)
+}
+
 // Shape of the node.
 func (o GetBdsInstancesBdsInstanceCloudSqlDetailOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstancesBdsInstanceCloudSqlDetail) string { return v.Shape }).(pulumi.StringOutput)
+}
+
+// The fingerprint of the SSH key used for node access.
+func (o GetBdsInstancesBdsInstanceCloudSqlDetailOutput) SshFingerprint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceCloudSqlDetail) string { return v.SshFingerprint }).(pulumi.StringOutput)
 }
 
 type GetBdsInstancesBdsInstanceCloudSqlDetailArrayOutput struct{ *pulumi.OutputState }
@@ -16267,7 +16572,7 @@ type GetBdsInstancesBdsInstanceClusterDetail struct {
 	HueServerUrl string `pulumi:"hueServerUrl"`
 	// The URL of the Jupyterhub.
 	JupyterHubUrl string `pulumi:"jupyterHubUrl"`
-	// Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
+	// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
 	OdhVersion string `pulumi:"odhVersion"`
 	// BDS-assigned Operating System version for the node.
 	OsVersion string `pulumi:"osVersion"`
@@ -16311,7 +16616,7 @@ type GetBdsInstancesBdsInstanceClusterDetailArgs struct {
 	HueServerUrl pulumi.StringInput `pulumi:"hueServerUrl"`
 	// The URL of the Jupyterhub.
 	JupyterHubUrl pulumi.StringInput `pulumi:"jupyterHubUrl"`
-	// Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
+	// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
 	OdhVersion pulumi.StringInput `pulumi:"odhVersion"`
 	// BDS-assigned Operating System version for the node.
 	OsVersion pulumi.StringInput `pulumi:"osVersion"`
@@ -16427,7 +16732,7 @@ func (o GetBdsInstancesBdsInstanceClusterDetailOutput) JupyterHubUrl() pulumi.St
 	return o.ApplyT(func(v GetBdsInstancesBdsInstanceClusterDetail) string { return v.JupyterHubUrl }).(pulumi.StringOutput)
 }
 
-// Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
+// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
 func (o GetBdsInstancesBdsInstanceClusterDetailOutput) OdhVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstancesBdsInstanceClusterDetail) string { return v.OdhVersion }).(pulumi.StringOutput)
 }
@@ -18614,6 +18919,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceOperationCertificateManagementsManagementHostCertDetailArrayInput)(nil)).Elem(), BdsInstanceOperationCertificateManagementsManagementHostCertDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceOsPatchActionPatchingConfigInput)(nil)).Elem(), BdsInstanceOsPatchActionPatchingConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceOsPatchActionPatchingConfigArrayInput)(nil)).Elem(), BdsInstanceOsPatchActionPatchingConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstancePatchActionPatchingConfigInput)(nil)).Elem(), BdsInstancePatchActionPatchingConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstancePatchActionPatchingConfigPtrInput)(nil)).Elem(), BdsInstancePatchActionPatchingConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceUtilNodeInput)(nil)).Elem(), BdsInstanceUtilNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceUtilNodePtrInput)(nil)).Elem(), BdsInstanceUtilNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceUtilNodeShapeConfigInput)(nil)).Elem(), BdsInstanceUtilNodeShapeConfigArgs{})
@@ -18876,6 +19183,8 @@ func init() {
 	pulumi.RegisterOutputType(BdsInstanceOperationCertificateManagementsManagementHostCertDetailArrayOutput{})
 	pulumi.RegisterOutputType(BdsInstanceOsPatchActionPatchingConfigOutput{})
 	pulumi.RegisterOutputType(BdsInstanceOsPatchActionPatchingConfigArrayOutput{})
+	pulumi.RegisterOutputType(BdsInstancePatchActionPatchingConfigOutput{})
+	pulumi.RegisterOutputType(BdsInstancePatchActionPatchingConfigPtrOutput{})
 	pulumi.RegisterOutputType(BdsInstanceUtilNodeOutput{})
 	pulumi.RegisterOutputType(BdsInstanceUtilNodePtrOutput{})
 	pulumi.RegisterOutputType(BdsInstanceUtilNodeShapeConfigOutput{})

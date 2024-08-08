@@ -14,19 +14,23 @@ namespace Pulumi.Oci.DevOps.Outputs
     public sealed class TriggerActionFilter
     {
         /// <summary>
-        /// (Updatable) The events, for example, PUSH, PULL_REQUEST_MERGE.
+        /// The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
         /// </summary>
         public readonly ImmutableArray<string> Events;
         /// <summary>
-        /// (Updatable) Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
+        /// Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
         /// </summary>
         public readonly Outputs.TriggerActionFilterExclude? Exclude;
         /// <summary>
-        /// (Updatable) Attributes to filter GitLab self-hosted server events.
+        /// Attributes to filter GitLab self-hosted server events.
         /// </summary>
         public readonly Outputs.TriggerActionFilterInclude? Include;
         /// <summary>
         /// (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly string TriggerSource;
 

@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Psql.Inputs
         private InputList<string>? _nsgIds;
 
         /// <summary>
-        /// List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
+        /// (Updatable) List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
         /// </summary>
         public InputList<string> NsgIds
         {

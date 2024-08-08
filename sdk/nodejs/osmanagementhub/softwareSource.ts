@@ -112,6 +112,15 @@ export class SoftwareSource extends pulumi.CustomResource {
      */
     public readonly isCreatedFromPackageList!: pulumi.Output<boolean>;
     /**
+     * (Updatable) Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
+     * * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
+     * * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
+     * * For a package filter that does not specify a version, this will include only the latest available version of the package.
+     * * For a package filter that does specify a version, this will include only the specified version of the package (the isLatestContentOnly attribute is ignored).
+     * * For a package list, this will include only the specified version of packages and modules in the list (the isLatestContentOnly attribute is ignored).
+     */
+    public readonly isLatestContentOnly!: pulumi.Output<boolean>;
+    /**
      * Indicates whether the software source is required for the Autonomous Linux service.
      */
     public /*out*/ readonly isMandatoryForAutonomousLinux!: pulumi.Output<boolean>;
@@ -201,6 +210,7 @@ export class SoftwareSource extends pulumi.CustomResource {
             resourceInputs["isAutoResolveDependencies"] = state ? state.isAutoResolveDependencies : undefined;
             resourceInputs["isAutomaticallyUpdated"] = state ? state.isAutomaticallyUpdated : undefined;
             resourceInputs["isCreatedFromPackageList"] = state ? state.isCreatedFromPackageList : undefined;
+            resourceInputs["isLatestContentOnly"] = state ? state.isLatestContentOnly : undefined;
             resourceInputs["isMandatoryForAutonomousLinux"] = state ? state.isMandatoryForAutonomousLinux : undefined;
             resourceInputs["originSoftwareSourceId"] = state ? state.originSoftwareSourceId : undefined;
             resourceInputs["osFamily"] = state ? state.osFamily : undefined;
@@ -233,6 +243,7 @@ export class SoftwareSource extends pulumi.CustomResource {
             resourceInputs["isAutoResolveDependencies"] = args ? args.isAutoResolveDependencies : undefined;
             resourceInputs["isAutomaticallyUpdated"] = args ? args.isAutomaticallyUpdated : undefined;
             resourceInputs["isCreatedFromPackageList"] = args ? args.isCreatedFromPackageList : undefined;
+            resourceInputs["isLatestContentOnly"] = args ? args.isLatestContentOnly : undefined;
             resourceInputs["originSoftwareSourceId"] = args ? args.originSoftwareSourceId : undefined;
             resourceInputs["packages"] = args ? args.packages : undefined;
             resourceInputs["softwareSourceType"] = args ? args.softwareSourceType : undefined;
@@ -329,6 +340,15 @@ export interface SoftwareSourceState {
      * Indicates whether the service should create the software source from a list of packages provided by the user.
      */
     isCreatedFromPackageList?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
+     * * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
+     * * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
+     * * For a package filter that does not specify a version, this will include only the latest available version of the package.
+     * * For a package filter that does specify a version, this will include only the specified version of the package (the isLatestContentOnly attribute is ignored).
+     * * For a package list, this will include only the specified version of packages and modules in the list (the isLatestContentOnly attribute is ignored).
+     */
+    isLatestContentOnly?: pulumi.Input<boolean>;
     /**
      * Indicates whether the software source is required for the Autonomous Linux service.
      */
@@ -431,6 +451,15 @@ export interface SoftwareSourceArgs {
      * Indicates whether the service should create the software source from a list of packages provided by the user.
      */
     isCreatedFromPackageList?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
+     * * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
+     * * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
+     * * For a package filter that does not specify a version, this will include only the latest available version of the package.
+     * * For a package filter that does specify a version, this will include only the specified version of the package (the isLatestContentOnly attribute is ignored).
+     * * For a package list, this will include only the specified version of packages and modules in the list (the isLatestContentOnly attribute is ignored).
+     */
+    isLatestContentOnly?: pulumi.Input<boolean>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
      */

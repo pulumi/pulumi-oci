@@ -114,7 +114,7 @@ namespace Pulumi.Oci.Jms
         public string? Id { get; set; }
 
         /// <summary>
-        /// A filter to return only resources that match the user principal detail.  The search string can be any of the property values from the [Principal](https://docs.cloud.oracle.com/iaas/api/#/en/jms/latest/datatypes/Principal) object. This object is used as response datatype for the `createdBy` and `lastUpdatedBy` fields in applicable resource.
+        /// A filter to return only resources that match the user principal detail.  The search string can be any of the property values from the [Principal](https://docs.cloud.oracle.com/iaas/api/#/en/jms/latest/datatypes/Principal) object. This object is used as a response datatype for the `createdBy` and `lastUpdatedBy` fields in applicable resource.
         /// </summary>
         [Input("searchByUser")]
         public string? SearchByUser { get; set; }
@@ -172,7 +172,7 @@ namespace Pulumi.Oci.Jms
         public Input<string>? Id { get; set; }
 
         /// <summary>
-        /// A filter to return only resources that match the user principal detail.  The search string can be any of the property values from the [Principal](https://docs.cloud.oracle.com/iaas/api/#/en/jms/latest/datatypes/Principal) object. This object is used as response datatype for the `createdBy` and `lastUpdatedBy` fields in applicable resource.
+        /// A filter to return only resources that match the user principal detail.  The search string can be any of the property values from the [Principal](https://docs.cloud.oracle.com/iaas/api/#/en/jms/latest/datatypes/Principal) object. This object is used as a response datatype for the `createdBy` and `lastUpdatedBy` fields in applicable resource.
         /// </summary>
         [Input("searchByUser")]
         public Input<string>? SearchByUser { get; set; }

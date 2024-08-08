@@ -42,6 +42,10 @@ namespace Pulumi.Oci.Jms.Outputs
         /// </summary>
         public readonly string LatestReleaseVersion;
         /// <summary>
+        /// The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        /// </summary>
+        public readonly string ReleaseDate;
+        /// <summary>
         /// This indicates the support category for the Java release family.
         /// </summary>
         public readonly string SupportType;
@@ -62,6 +66,8 @@ namespace Pulumi.Oci.Jms.Outputs
 
             string latestReleaseVersion,
 
+            string releaseDate,
+
             string supportType)
         {
             DisplayName = displayName;
@@ -71,6 +77,7 @@ namespace Pulumi.Oci.Jms.Outputs
             IsSupportedVersion = isSupportedVersion;
             LatestReleaseArtifacts = latestReleaseArtifacts;
             LatestReleaseVersion = latestReleaseVersion;
+            ReleaseDate = releaseDate;
             SupportType = supportType;
         }
     }

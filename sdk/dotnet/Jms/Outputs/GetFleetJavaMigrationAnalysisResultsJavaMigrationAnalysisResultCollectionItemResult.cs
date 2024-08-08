@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Jms.Outputs
         /// </summary>
         public readonly string ApplicationKey;
         /// <summary>
-        /// The name of the application for which the Java migration analysis was performed.
+        /// The name of the application.
         /// </summary>
         public readonly string ApplicationName;
         /// <summary>
@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Jms.Outputs
         /// </summary>
         public readonly string FleetId;
         /// <summary>
-        /// The hostname of the managed instance that hosts the application for which the Java migration analysis was performed.
+        /// The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
         /// </summary>
         public readonly string HostName;
         /// <summary>

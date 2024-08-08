@@ -45,6 +45,8 @@ import com.pulumi.oci.DevOps.inputs.GetDeploymentsArgs;
 import com.pulumi.oci.DevOps.inputs.GetDeploymentsPlainArgs;
 import com.pulumi.oci.DevOps.inputs.GetProjectArgs;
 import com.pulumi.oci.DevOps.inputs.GetProjectPlainArgs;
+import com.pulumi.oci.DevOps.inputs.GetProjectRepositorySettingArgs;
+import com.pulumi.oci.DevOps.inputs.GetProjectRepositorySettingPlainArgs;
 import com.pulumi.oci.DevOps.inputs.GetProjectsArgs;
 import com.pulumi.oci.DevOps.inputs.GetProjectsPlainArgs;
 import com.pulumi.oci.DevOps.inputs.GetRepoFileLineArgs;
@@ -83,10 +85,14 @@ import com.pulumi.oci.DevOps.inputs.GetRepositoryPathPlainArgs;
 import com.pulumi.oci.DevOps.inputs.GetRepositoryPathsArgs;
 import com.pulumi.oci.DevOps.inputs.GetRepositoryPathsPlainArgs;
 import com.pulumi.oci.DevOps.inputs.GetRepositoryPlainArgs;
+import com.pulumi.oci.DevOps.inputs.GetRepositoryProtectedBranchesArgs;
+import com.pulumi.oci.DevOps.inputs.GetRepositoryProtectedBranchesPlainArgs;
 import com.pulumi.oci.DevOps.inputs.GetRepositoryRefArgs;
 import com.pulumi.oci.DevOps.inputs.GetRepositoryRefPlainArgs;
 import com.pulumi.oci.DevOps.inputs.GetRepositoryRefsArgs;
 import com.pulumi.oci.DevOps.inputs.GetRepositoryRefsPlainArgs;
+import com.pulumi.oci.DevOps.inputs.GetRepositorySettingArgs;
+import com.pulumi.oci.DevOps.inputs.GetRepositorySettingPlainArgs;
 import com.pulumi.oci.DevOps.inputs.GetTriggerArgs;
 import com.pulumi.oci.DevOps.inputs.GetTriggerPlainArgs;
 import com.pulumi.oci.DevOps.inputs.GetTriggersArgs;
@@ -109,6 +115,7 @@ import com.pulumi.oci.DevOps.outputs.GetDeployStageResult;
 import com.pulumi.oci.DevOps.outputs.GetDeployStagesResult;
 import com.pulumi.oci.DevOps.outputs.GetDeploymentResult;
 import com.pulumi.oci.DevOps.outputs.GetDeploymentsResult;
+import com.pulumi.oci.DevOps.outputs.GetProjectRepositorySettingResult;
 import com.pulumi.oci.DevOps.outputs.GetProjectResult;
 import com.pulumi.oci.DevOps.outputs.GetProjectsResult;
 import com.pulumi.oci.DevOps.outputs.GetRepoFileLineResult;
@@ -128,9 +135,11 @@ import com.pulumi.oci.DevOps.outputs.GetRepositoryObjectContentResult;
 import com.pulumi.oci.DevOps.outputs.GetRepositoryObjectResult;
 import com.pulumi.oci.DevOps.outputs.GetRepositoryPathResult;
 import com.pulumi.oci.DevOps.outputs.GetRepositoryPathsResult;
+import com.pulumi.oci.DevOps.outputs.GetRepositoryProtectedBranchesResult;
 import com.pulumi.oci.DevOps.outputs.GetRepositoryRefResult;
 import com.pulumi.oci.DevOps.outputs.GetRepositoryRefsResult;
 import com.pulumi.oci.DevOps.outputs.GetRepositoryResult;
+import com.pulumi.oci.DevOps.outputs.GetRepositorySettingResult;
 import com.pulumi.oci.DevOps.outputs.GetTriggerResult;
 import com.pulumi.oci.DevOps.outputs.GetTriggersResult;
 import com.pulumi.oci.Utilities;
@@ -4520,6 +4529,182 @@ public final class DevOpsFunctions {
         return Deployment.getInstance().invokeAsync("oci:DevOps/getProject:getProject", TypeShape.of(GetProjectResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides details about a specific Project Repository Setting resource in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Retrieves a project&#39;s repository settings details.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetProjectRepositorySettingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProjectRepositorySetting = DevOpsFunctions.getProjectRepositorySetting(GetProjectRepositorySettingArgs.builder()
+     *             .projectId(testProject.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetProjectRepositorySettingResult> getProjectRepositorySetting(GetProjectRepositorySettingArgs args) {
+        return getProjectRepositorySetting(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Project Repository Setting resource in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Retrieves a project&#39;s repository settings details.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetProjectRepositorySettingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProjectRepositorySetting = DevOpsFunctions.getProjectRepositorySetting(GetProjectRepositorySettingArgs.builder()
+     *             .projectId(testProject.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetProjectRepositorySettingResult> getProjectRepositorySettingPlain(GetProjectRepositorySettingPlainArgs args) {
+        return getProjectRepositorySettingPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Project Repository Setting resource in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Retrieves a project&#39;s repository settings details.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetProjectRepositorySettingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProjectRepositorySetting = DevOpsFunctions.getProjectRepositorySetting(GetProjectRepositorySettingArgs.builder()
+     *             .projectId(testProject.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetProjectRepositorySettingResult> getProjectRepositorySetting(GetProjectRepositorySettingArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getProjectRepositorySetting:getProjectRepositorySetting", TypeShape.of(GetProjectRepositorySettingResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Project Repository Setting resource in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Retrieves a project&#39;s repository settings details.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetProjectRepositorySettingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProjectRepositorySetting = DevOpsFunctions.getProjectRepositorySetting(GetProjectRepositorySettingArgs.builder()
+     *             .projectId(testProject.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetProjectRepositorySettingResult> getProjectRepositorySettingPlain(GetProjectRepositorySettingPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DevOps/getProjectRepositorySetting:getProjectRepositorySetting", TypeShape.of(GetProjectRepositorySettingResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides the list of Projects in Oracle Cloud Infrastructure Devops service.
      * 
      * Returns a list of projects.
@@ -6518,6 +6703,7 @@ public final class DevOpsFunctions {
      *             .repositoryId(testRepository.id())
      *             .targetVersion(repositoryDiffTargetVersion)
      *             .isComparisonFromMergeBase(repositoryDiffIsComparisonFromMergeBase)
+     *             .targetRepositoryId(testRepository.id())
      *             .build());
      * 
      *     }
@@ -6565,6 +6751,7 @@ public final class DevOpsFunctions {
      *             .repositoryId(testRepository.id())
      *             .targetVersion(repositoryDiffTargetVersion)
      *             .isComparisonFromMergeBase(repositoryDiffIsComparisonFromMergeBase)
+     *             .targetRepositoryId(testRepository.id())
      *             .build());
      * 
      *     }
@@ -6612,6 +6799,7 @@ public final class DevOpsFunctions {
      *             .repositoryId(testRepository.id())
      *             .targetVersion(repositoryDiffTargetVersion)
      *             .isComparisonFromMergeBase(repositoryDiffIsComparisonFromMergeBase)
+     *             .targetRepositoryId(testRepository.id())
      *             .build());
      * 
      *     }
@@ -6659,6 +6847,7 @@ public final class DevOpsFunctions {
      *             .repositoryId(testRepository.id())
      *             .targetVersion(repositoryDiffTargetVersion)
      *             .isComparisonFromMergeBase(repositoryDiffIsComparisonFromMergeBase)
+     *             .targetRepositoryId(testRepository.id())
      *             .build());
      * 
      *     }
@@ -8160,9 +8349,189 @@ public final class DevOpsFunctions {
         return Deployment.getInstance().invokeAsync("oci:DevOps/getRepositoryPaths:getRepositoryPaths", TypeShape.of(GetRepositoryPathsResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Repository Protected Branches in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Returns a list of Protected Branches.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryProtectedBranchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryProtectedBranches = DevOpsFunctions.getRepositoryProtectedBranches(GetRepositoryProtectedBranchesArgs.builder()
+     *             .repositoryId(testRepository.id())
+     *             .name(repositoryProtectedBranchName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetRepositoryProtectedBranchesResult> getRepositoryProtectedBranches(GetRepositoryProtectedBranchesArgs args) {
+        return getRepositoryProtectedBranches(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Repository Protected Branches in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Returns a list of Protected Branches.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryProtectedBranchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryProtectedBranches = DevOpsFunctions.getRepositoryProtectedBranches(GetRepositoryProtectedBranchesArgs.builder()
+     *             .repositoryId(testRepository.id())
+     *             .name(repositoryProtectedBranchName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetRepositoryProtectedBranchesResult> getRepositoryProtectedBranchesPlain(GetRepositoryProtectedBranchesPlainArgs args) {
+        return getRepositoryProtectedBranchesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Repository Protected Branches in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Returns a list of Protected Branches.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryProtectedBranchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryProtectedBranches = DevOpsFunctions.getRepositoryProtectedBranches(GetRepositoryProtectedBranchesArgs.builder()
+     *             .repositoryId(testRepository.id())
+     *             .name(repositoryProtectedBranchName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetRepositoryProtectedBranchesResult> getRepositoryProtectedBranches(GetRepositoryProtectedBranchesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getRepositoryProtectedBranches:getRepositoryProtectedBranches", TypeShape.of(GetRepositoryProtectedBranchesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Repository Protected Branches in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Returns a list of Protected Branches.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryProtectedBranchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryProtectedBranches = DevOpsFunctions.getRepositoryProtectedBranches(GetRepositoryProtectedBranchesArgs.builder()
+     *             .repositoryId(testRepository.id())
+     *             .name(repositoryProtectedBranchName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetRepositoryProtectedBranchesResult> getRepositoryProtectedBranchesPlain(GetRepositoryProtectedBranchesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DevOps/getRepositoryProtectedBranches:getRepositoryProtectedBranches", TypeShape.of(GetRepositoryProtectedBranchesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides details about a specific Repository Ref resource in Oracle Cloud Infrastructure Devops service.
      * 
-     * Retrieves a repository&#39;s reference by its name with preference for branches over tags if the name is ambiguous. This can be disambiguated by using full names like &#34;heads/&lt;name&gt;&#34; or &#34;tags/&lt;name&gt;&#34;.
+     * This API will be deprecated on Wed, 12 June 2024 01:00:00 GMT as it does not get recognized when refName has &#39;/&#39;. This will be replaced by &#34;/repositories/{repositoryId}/refs&#34;. Retrieves a repository&#39;s reference by its name with preference for branches over tags if the name is ambiguous. This can be disambiguated by using full names like &#34;heads/&lt;name&gt;&#34; or &#34;tags/&lt;name&gt;&#34;.
      * 
      * ## Example Usage
      * 
@@ -8207,7 +8576,7 @@ public final class DevOpsFunctions {
     /**
      * This data source provides details about a specific Repository Ref resource in Oracle Cloud Infrastructure Devops service.
      * 
-     * Retrieves a repository&#39;s reference by its name with preference for branches over tags if the name is ambiguous. This can be disambiguated by using full names like &#34;heads/&lt;name&gt;&#34; or &#34;tags/&lt;name&gt;&#34;.
+     * This API will be deprecated on Wed, 12 June 2024 01:00:00 GMT as it does not get recognized when refName has &#39;/&#39;. This will be replaced by &#34;/repositories/{repositoryId}/refs&#34;. Retrieves a repository&#39;s reference by its name with preference for branches over tags if the name is ambiguous. This can be disambiguated by using full names like &#34;heads/&lt;name&gt;&#34; or &#34;tags/&lt;name&gt;&#34;.
      * 
      * ## Example Usage
      * 
@@ -8252,7 +8621,7 @@ public final class DevOpsFunctions {
     /**
      * This data source provides details about a specific Repository Ref resource in Oracle Cloud Infrastructure Devops service.
      * 
-     * Retrieves a repository&#39;s reference by its name with preference for branches over tags if the name is ambiguous. This can be disambiguated by using full names like &#34;heads/&lt;name&gt;&#34; or &#34;tags/&lt;name&gt;&#34;.
+     * This API will be deprecated on Wed, 12 June 2024 01:00:00 GMT as it does not get recognized when refName has &#39;/&#39;. This will be replaced by &#34;/repositories/{repositoryId}/refs&#34;. Retrieves a repository&#39;s reference by its name with preference for branches over tags if the name is ambiguous. This can be disambiguated by using full names like &#34;heads/&lt;name&gt;&#34; or &#34;tags/&lt;name&gt;&#34;.
      * 
      * ## Example Usage
      * 
@@ -8297,7 +8666,7 @@ public final class DevOpsFunctions {
     /**
      * This data source provides details about a specific Repository Ref resource in Oracle Cloud Infrastructure Devops service.
      * 
-     * Retrieves a repository&#39;s reference by its name with preference for branches over tags if the name is ambiguous. This can be disambiguated by using full names like &#34;heads/&lt;name&gt;&#34; or &#34;tags/&lt;name&gt;&#34;.
+     * This API will be deprecated on Wed, 12 June 2024 01:00:00 GMT as it does not get recognized when refName has &#39;/&#39;. This will be replaced by &#34;/repositories/{repositoryId}/refs&#34;. Retrieves a repository&#39;s reference by its name with preference for branches over tags if the name is ambiguous. This can be disambiguated by using full names like &#34;heads/&lt;name&gt;&#34; or &#34;tags/&lt;name&gt;&#34;.
      * 
      * ## Example Usage
      * 
@@ -8526,6 +8895,182 @@ public final class DevOpsFunctions {
      */
     public static CompletableFuture<GetRepositoryRefsResult> getRepositoryRefsPlain(GetRepositoryRefsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DevOps/getRepositoryRefs:getRepositoryRefs", TypeShape.of(GetRepositoryRefsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Repository Setting resource in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Retrieves a repository&#39;s settings details.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositorySettingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositorySetting = DevOpsFunctions.getRepositorySetting(GetRepositorySettingArgs.builder()
+     *             .repositoryId(testRepository.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetRepositorySettingResult> getRepositorySetting(GetRepositorySettingArgs args) {
+        return getRepositorySetting(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Repository Setting resource in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Retrieves a repository&#39;s settings details.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositorySettingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositorySetting = DevOpsFunctions.getRepositorySetting(GetRepositorySettingArgs.builder()
+     *             .repositoryId(testRepository.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetRepositorySettingResult> getRepositorySettingPlain(GetRepositorySettingPlainArgs args) {
+        return getRepositorySettingPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Repository Setting resource in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Retrieves a repository&#39;s settings details.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositorySettingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositorySetting = DevOpsFunctions.getRepositorySetting(GetRepositorySettingArgs.builder()
+     *             .repositoryId(testRepository.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetRepositorySettingResult> getRepositorySetting(GetRepositorySettingArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getRepositorySetting:getRepositorySetting", TypeShape.of(GetRepositorySettingResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Repository Setting resource in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Retrieves a repository&#39;s settings details.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositorySettingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositorySetting = DevOpsFunctions.getRepositorySetting(GetRepositorySettingArgs.builder()
+     *             .repositoryId(testRepository.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetRepositorySettingResult> getRepositorySettingPlain(GetRepositorySettingPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DevOps/getRepositorySetting:getRepositorySetting", TypeShape.of(GetRepositorySettingResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Trigger resource in Oracle Cloud Infrastructure Devops service.

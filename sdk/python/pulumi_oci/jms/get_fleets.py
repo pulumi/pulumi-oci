@@ -142,7 +142,7 @@ def get_fleets(compartment_id: Optional[str] = None,
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
     :param str display_name: The display name.
     :param str display_name_contains: Filter the list with displayName contains the given value.
-    :param str id: The ID of the Fleet.
+    :param str id: The ID.
     :param str state: The state of the lifecycle.
     """
     __args__ = dict()
@@ -196,7 +196,7 @@ def get_fleets_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = No
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
     :param str display_name: The display name.
     :param str display_name_contains: Filter the list with displayName contains the given value.
-    :param str id: The ID of the Fleet.
+    :param str id: The ID.
     :param str state: The state of the lifecycle.
     """
     ...

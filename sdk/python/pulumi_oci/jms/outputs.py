@@ -31,6 +31,9 @@ __all__ = [
     'JavaDownloadsJavaDownloadTokenLastUpdatedBy',
     'JavaDownloadsJavaLicenseAcceptanceRecordCreatedBy',
     'JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedBy',
+    'GetAgentInstallersAgentInstallerCollectionResult',
+    'GetAgentInstallersAgentInstallerCollectionItemResult',
+    'GetAgentInstallersFilterResult',
     'GetAnnouncementsAnnouncementCollectionResult',
     'GetAnnouncementsAnnouncementCollectionItemResult',
     'GetAnnouncementsFilterResult',
@@ -126,6 +129,9 @@ __all__ = [
     'GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactResult',
     'GetJavaReleasesJavaReleaseCollectionItemLicenseDetailResult',
     'GetJavaReleasesJavaReleaseCollectionItemMosPatchResult',
+    'GetJmsPluginsFilterResult',
+    'GetJmsPluginsJmsPluginCollectionResult',
+    'GetJmsPluginsJmsPluginCollectionItemResult',
     'GetListJreUsageItemResult',
     'GetListJreUsageItemOperatingSystemResult',
 ]
@@ -1292,6 +1298,168 @@ class JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedBy(dict):
 
 
 @pulumi.output_type
+class GetAgentInstallersAgentInstallerCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetAgentInstallersAgentInstallerCollectionItemResult']):
+        """
+        :param Sequence['GetAgentInstallersAgentInstallerCollectionItemArgs'] items: A list of the agent installer summaries.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetAgentInstallersAgentInstallerCollectionItemResult']:
+        """
+        A list of the agent installer summaries.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetAgentInstallersAgentInstallerCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 agent_installer_description: str,
+                 agent_installer_id: str,
+                 agent_installer_version: str,
+                 agent_version: str,
+                 approximate_file_size_in_bytes: str,
+                 java_version: str,
+                 os_family: str,
+                 package_type: str,
+                 platform_architecture: str,
+                 sha256: str):
+        """
+        :param str agent_installer_description: Description of the agent installer artifact. The description typically includes the OS, architecture, and agent installer type.
+        :param str agent_installer_id: Unique identifier for the agent installer.
+        :param str agent_installer_version: Agent installer version.
+        :param str agent_version: Agent image version.
+        :param str approximate_file_size_in_bytes: Approximate compressed file size in bytes.
+        :param str java_version: Java version.
+        :param str os_family: The OS family for the agent installer.
+        :param str package_type: The package type (typically the file extension) of the agent software included in the installer.
+        :param str platform_architecture: The platform architecture for the agent installer.
+        :param str sha256: SHA256 checksum of the agent installer.
+        """
+        pulumi.set(__self__, "agent_installer_description", agent_installer_description)
+        pulumi.set(__self__, "agent_installer_id", agent_installer_id)
+        pulumi.set(__self__, "agent_installer_version", agent_installer_version)
+        pulumi.set(__self__, "agent_version", agent_version)
+        pulumi.set(__self__, "approximate_file_size_in_bytes", approximate_file_size_in_bytes)
+        pulumi.set(__self__, "java_version", java_version)
+        pulumi.set(__self__, "os_family", os_family)
+        pulumi.set(__self__, "package_type", package_type)
+        pulumi.set(__self__, "platform_architecture", platform_architecture)
+        pulumi.set(__self__, "sha256", sha256)
+
+    @property
+    @pulumi.getter(name="agentInstallerDescription")
+    def agent_installer_description(self) -> str:
+        """
+        Description of the agent installer artifact. The description typically includes the OS, architecture, and agent installer type.
+        """
+        return pulumi.get(self, "agent_installer_description")
+
+    @property
+    @pulumi.getter(name="agentInstallerId")
+    def agent_installer_id(self) -> str:
+        """
+        Unique identifier for the agent installer.
+        """
+        return pulumi.get(self, "agent_installer_id")
+
+    @property
+    @pulumi.getter(name="agentInstallerVersion")
+    def agent_installer_version(self) -> str:
+        """
+        Agent installer version.
+        """
+        return pulumi.get(self, "agent_installer_version")
+
+    @property
+    @pulumi.getter(name="agentVersion")
+    def agent_version(self) -> str:
+        """
+        Agent image version.
+        """
+        return pulumi.get(self, "agent_version")
+
+    @property
+    @pulumi.getter(name="approximateFileSizeInBytes")
+    def approximate_file_size_in_bytes(self) -> str:
+        """
+        Approximate compressed file size in bytes.
+        """
+        return pulumi.get(self, "approximate_file_size_in_bytes")
+
+    @property
+    @pulumi.getter(name="javaVersion")
+    def java_version(self) -> str:
+        """
+        Java version.
+        """
+        return pulumi.get(self, "java_version")
+
+    @property
+    @pulumi.getter(name="osFamily")
+    def os_family(self) -> str:
+        """
+        The OS family for the agent installer.
+        """
+        return pulumi.get(self, "os_family")
+
+    @property
+    @pulumi.getter(name="packageType")
+    def package_type(self) -> str:
+        """
+        The package type (typically the file extension) of the agent software included in the installer.
+        """
+        return pulumi.get(self, "package_type")
+
+    @property
+    @pulumi.getter(name="platformArchitecture")
+    def platform_architecture(self) -> str:
+        """
+        The platform architecture for the agent installer.
+        """
+        return pulumi.get(self, "platform_architecture")
+
+    @property
+    @pulumi.getter
+    def sha256(self) -> str:
+        """
+        SHA256 checksum of the agent installer.
+        """
+        return pulumi.get(self, "sha256")
+
+
+@pulumi.output_type
+class GetAgentInstallersFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
 class GetAnnouncementsAnnouncementCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetAnnouncementsAnnouncementCollectionItemResult']):
@@ -2016,26 +2184,30 @@ class GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemResult(dict
                  object: str,
                  summarized_event_count: int,
                  time_created: str,
+                 time_finished: str,
                  time_first_event: str,
                  time_last_event: str,
+                 time_started: str,
                  total_event_count: int,
                  work_request_id: str):
         """
         :param str aggregation_mode: The aggregation mode of the crypto event analysis result.
         :param str bucket: The Object Storage bucket name of this analysis result.
         :param str crypto_roadmap_version: The Crypto Roadmap version used to perform the analysis.
-        :param int finding_count: Total number of findings with the analysis.
+        :param int finding_count: FindingCount of CryptoAnalysis Report.
         :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-        :param str host_name: The hostname of the managed instance.
+        :param str host_name: The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
         :param str id: The OCID to identify this analysis results.
         :param str managed_instance_id: The Fleet-unique identifier of the related managed instance.
         :param str namespace: The Object Storage namespace of this analysis result.
-        :param int non_compliant_finding_count: Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the Crypto Roadmap version used by the analysis.
+        :param int non_compliant_finding_count: Non Compliant Finding Count of CryptoAnalysis Report.
         :param str object: The Object Storage object name of this analysis result.
         :param int summarized_event_count: Total number of summarized events. Summarized events are deduplicated events of interest.
         :param str time_created: The time the result is compiled.
+        :param str time_finished: The time the JFR recording has finished.
         :param str time_first_event: Time of the first event in the analysis.
         :param str time_last_event: Time of the last event in the analysis.
+        :param str time_started: The time the JFR recording has started.
         :param int total_event_count: Total number of events in the analysis.
         :param str work_request_id: The OCID of the work request to start the analysis.
         """
@@ -2052,8 +2224,10 @@ class GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemResult(dict
         pulumi.set(__self__, "object", object)
         pulumi.set(__self__, "summarized_event_count", summarized_event_count)
         pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_finished", time_finished)
         pulumi.set(__self__, "time_first_event", time_first_event)
         pulumi.set(__self__, "time_last_event", time_last_event)
+        pulumi.set(__self__, "time_started", time_started)
         pulumi.set(__self__, "total_event_count", total_event_count)
         pulumi.set(__self__, "work_request_id", work_request_id)
 
@@ -2085,7 +2259,7 @@ class GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemResult(dict
     @pulumi.getter(name="findingCount")
     def finding_count(self) -> int:
         """
-        Total number of findings with the analysis.
+        FindingCount of CryptoAnalysis Report.
         """
         return pulumi.get(self, "finding_count")
 
@@ -2101,7 +2275,7 @@ class GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemResult(dict
     @pulumi.getter(name="hostName")
     def host_name(self) -> str:
         """
-        The hostname of the managed instance.
+        The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
         """
         return pulumi.get(self, "host_name")
 
@@ -2133,7 +2307,7 @@ class GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemResult(dict
     @pulumi.getter(name="nonCompliantFindingCount")
     def non_compliant_finding_count(self) -> int:
         """
-        Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the Crypto Roadmap version used by the analysis.
+        Non Compliant Finding Count of CryptoAnalysis Report.
         """
         return pulumi.get(self, "non_compliant_finding_count")
 
@@ -2162,6 +2336,14 @@ class GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemResult(dict
         return pulumi.get(self, "time_created")
 
     @property
+    @pulumi.getter(name="timeFinished")
+    def time_finished(self) -> str:
+        """
+        The time the JFR recording has finished.
+        """
+        return pulumi.get(self, "time_finished")
+
+    @property
     @pulumi.getter(name="timeFirstEvent")
     def time_first_event(self) -> str:
         """
@@ -2176,6 +2358,14 @@ class GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemResult(dict
         Time of the last event in the analysis.
         """
         return pulumi.get(self, "time_last_event")
+
+    @property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> str:
+        """
+        The time the JFR recording has started.
+        """
+        return pulumi.get(self, "time_started")
 
     @property
     @pulumi.getter(name="totalEventCount")
@@ -2542,11 +2732,11 @@ class GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionI
         """
         :param str application_execution_type: Execution type of the application for an application type, such as WAR and EAR, that is deployed or installed.
         :param str application_key: The unique key that identifies the application.
-        :param str application_name: The name of the application for which the Java migration analysis was performed.
+        :param str application_name: The name of the application.
         :param str application_path: The installation path of the application for which the Java migration analysis was performed.
         :param str bucket: The name of the object storage bucket that contains the results of the migration analysis.
         :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-        :param str host_name: The hostname of the managed instance that hosts the application for which the Java migration analysis was performed.
+        :param str host_name: The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
         :param str id: The OCID of the migration analysis report.
         :param str managed_instance_id: The Fleet-unique identifier of the related managed instance.
         :param str metadata: Additional info reserved for future use.
@@ -2596,7 +2786,7 @@ class GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionI
     @pulumi.getter(name="applicationName")
     def application_name(self) -> str:
         """
-        The name of the application for which the Java migration analysis was performed.
+        The name of the application.
         """
         return pulumi.get(self, "application_name")
 
@@ -2628,7 +2818,7 @@ class GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionI
     @pulumi.getter(name="hostName")
     def host_name(self) -> str:
         """
-        The hostname of the managed instance that hosts the application for which the Java migration analysis was performed.
+        The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
         """
         return pulumi.get(self, "host_name")
 
@@ -2808,15 +2998,15 @@ class GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCol
         :param str application_name: The name of the application for which the report has been generated.
         :param str bucket: The Object Storage bucket name of this analysis result.
         :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-        :param str host_name: The hostname of the managed instance.
+        :param str host_name: The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
         :param str id: The OCID to identify this analysis results.
         :param str managed_instance_id: The Fleet-unique identifier of the related managed instance.
         :param str namespace: The Object Storage namespace of this analysis result.
         :param str object: The Object Storage object name of this analysis result.
         :param str result: Result of the analysis based on whether warnings have been found or not.
         :param str time_created: The time the result is compiled.
-        :param str time_finished: The time the JFR capture finished.
-        :param str time_started: The time the JFR capture started.
+        :param str time_finished: The time the JFR recording has finished.
+        :param str time_started: The time the JFR recording has started.
         :param int warning_count: Total number of warnings reported by the analysis.
         :param str work_request_id: The OCID of the work request to start the analysis.
         """
@@ -2890,7 +3080,7 @@ class GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCol
     @pulumi.getter(name="hostName")
     def host_name(self) -> str:
         """
-        The hostname of the managed instance.
+        The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
         """
         return pulumi.get(self, "host_name")
 
@@ -2946,7 +3136,7 @@ class GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCol
     @pulumi.getter(name="timeFinished")
     def time_finished(self) -> str:
         """
-        The time the JFR capture finished.
+        The time the JFR recording has finished.
         """
         return pulumi.get(self, "time_finished")
 
@@ -2954,7 +3144,7 @@ class GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCol
     @pulumi.getter(name="timeStarted")
     def time_started(self) -> str:
         """
-        The time the JFR capture started.
+        The time the JFR recording has started.
         """
         return pulumi.get(self, "time_started")
 
@@ -3046,7 +3236,7 @@ class GetFleetsFleetCollectionItemResult(dict):
         :param str description: The Fleet's description.
         :param str display_name: The display name.
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
-        :param str id: The ID of the Fleet.
+        :param str id: The ID.
         :param Sequence['GetFleetsFleetCollectionItemInventoryLogArgs'] inventory_logs: Custom Log for inventory or operation log.
         :param bool is_advanced_features_enabled: Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
         :param bool is_export_setting_enabled: Whether or not export setting is enabled in this Fleet.
@@ -3158,7 +3348,7 @@ class GetFleetsFleetCollectionItemResult(dict):
     @pulumi.getter
     def id(self) -> str:
         """
-        The ID of the Fleet.
+        The ID.
         """
         return pulumi.get(self, "id")
 
@@ -3812,7 +4002,7 @@ class GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemResul
                  version: str):
         """
         :param str architecture: The architecture of the operating system as provided by the Java system property os.arch.
-        :param str family: The operating system type, such as Windows or Linux
+        :param str family: The operating system type, such as Windows, Linux or macOS
         :param int managed_instance_count: Number of instances running the operating system.
         :param str name: The name of the operating system as provided by the Java system property os.name.
         :param str version: The version of the operating system as provided by the Java system property os.version.
@@ -3835,7 +4025,7 @@ class GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemResul
     @pulumi.getter
     def family(self) -> str:
         """
-        The operating system type, such as Windows or Linux
+        The operating system type, such as Windows, Linux or macOS
         """
         return pulumi.get(self, "family")
 
@@ -5212,6 +5402,7 @@ class GetJavaFamiliesJavaFamilyCollectionItemResult(dict):
                  is_supported_version: bool,
                  latest_release_artifacts: Sequence['outputs.GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactResult'],
                  latest_release_version: str,
+                 release_date: str,
                  support_type: str):
         """
         :param str display_name: The display name for the Java family.
@@ -5221,6 +5412,7 @@ class GetJavaFamiliesJavaFamilyCollectionItemResult(dict):
         :param bool is_supported_version: Filter the Java Release Family versions by support status.
         :param Sequence['GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArgs'] latest_release_artifacts: List of artifacts for the latest Java release version in this family. The script URLs in the response can be used from a command line, or in scripts and dockerfiles to always get the artifacts corresponding to the latest update release version.
         :param str latest_release_version: Latest Java release version in the family.
+        :param str release_date: The date on which the Java release family was first made available (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         :param str support_type: This indicates the support category for the Java release family.
         """
         pulumi.set(__self__, "display_name", display_name)
@@ -5230,6 +5422,7 @@ class GetJavaFamiliesJavaFamilyCollectionItemResult(dict):
         pulumi.set(__self__, "is_supported_version", is_supported_version)
         pulumi.set(__self__, "latest_release_artifacts", latest_release_artifacts)
         pulumi.set(__self__, "latest_release_version", latest_release_version)
+        pulumi.set(__self__, "release_date", release_date)
         pulumi.set(__self__, "support_type", support_type)
 
     @property
@@ -5289,6 +5482,14 @@ class GetJavaFamiliesJavaFamilyCollectionItemResult(dict):
         return pulumi.get(self, "latest_release_version")
 
     @property
+    @pulumi.getter(name="releaseDate")
+    def release_date(self) -> str:
+        """
+        The date on which the Java release family was first made available (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        """
+        return pulumi.get(self, "release_date")
+
+    @property
     @pulumi.getter(name="supportType")
     def support_type(self) -> str:
         """
@@ -5320,7 +5521,7 @@ class GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactResult(dict):
         :param str artifact_description: Description of the binary artifact. Typically includes the OS, architecture, and installer type.
         :param str artifact_file_name: The file name of the artifact.
         :param str artifact_id: Unique identifier for the artifact.
-        :param str download_url: The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+        :param str download_url: The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl) for more details.
         :param str os_family: The target Operating System family for the artifact.
         :param str package_type: The package type(typically the file extension) of the artifact.
         :param str package_type_detail: Additional information about the package type.
@@ -5394,7 +5595,7 @@ class GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactResult(dict):
     @pulumi.getter(name="downloadUrl")
     def download_url(self) -> str:
         """
-        The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+        The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl) for more details.
         """
         return pulumi.get(self, "download_url")
 
@@ -5470,7 +5671,7 @@ class GetJavaFamilyLatestReleaseArtifactResult(dict):
         :param str artifact_description: Description of the binary artifact. Typically includes the OS, architecture, and installer type.
         :param str artifact_file_name: The file name of the artifact.
         :param str artifact_id: Unique identifier for the artifact.
-        :param str download_url: The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+        :param str download_url: The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl) for more details.
         :param str os_family: The target Operating System family for the artifact.
         :param str package_type: The package type(typically the file extension) of the artifact.
         :param str package_type_detail: Additional information about the package type.
@@ -5544,7 +5745,7 @@ class GetJavaFamilyLatestReleaseArtifactResult(dict):
     @pulumi.getter(name="downloadUrl")
     def download_url(self) -> str:
         """
-        The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+        The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl) for more details.
         """
         return pulumi.get(self, "download_url")
 
@@ -5620,7 +5821,7 @@ class GetJavaReleaseArtifactResult(dict):
         :param str artifact_description: Description of the binary artifact. Typically includes the OS, architecture, and installer type.
         :param str artifact_file_name: The file name of the artifact.
         :param str artifact_id: Unique identifier for the artifact.
-        :param str download_url: The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+        :param str download_url: The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl) for more details.
         :param str os_family: The target Operating System family for the artifact.
         :param str package_type: The package type(typically the file extension) of the artifact.
         :param str package_type_detail: Additional information about the package type.
@@ -5694,7 +5895,7 @@ class GetJavaReleaseArtifactResult(dict):
     @pulumi.getter(name="downloadUrl")
     def download_url(self) -> str:
         """
-        The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+        The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl) for more details.
         """
         return pulumi.get(self, "download_url")
 
@@ -5757,6 +5958,7 @@ class GetJavaReleaseFamilyDetailResult(dict):
                  is_supported_version: bool,
                  latest_release_artifacts: Sequence['outputs.GetJavaReleaseFamilyDetailLatestReleaseArtifactResult'],
                  latest_release_version: str,
+                 release_date: str,
                  support_type: str):
         """
         :param str display_name: Commonly used name for the MoS release.
@@ -5766,6 +5968,7 @@ class GetJavaReleaseFamilyDetailResult(dict):
         :param bool is_supported_version: Whether or not this Java release family is under active support. Refer [Java Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html) for more details.
         :param Sequence['GetJavaReleaseFamilyDetailLatestReleaseArtifactArgs'] latest_release_artifacts: List of artifacts for the latest Java release version in this family. The script URLs in the response can be used from a command line, or in scripts and dockerfiles to always get the artifacts corresponding to the latest update release version.
         :param str latest_release_version: Latest Java release version in the family.
+        :param str release_date: The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         :param str support_type: This indicates the support category for the Java release family.
         """
         pulumi.set(__self__, "display_name", display_name)
@@ -5775,6 +5978,7 @@ class GetJavaReleaseFamilyDetailResult(dict):
         pulumi.set(__self__, "is_supported_version", is_supported_version)
         pulumi.set(__self__, "latest_release_artifacts", latest_release_artifacts)
         pulumi.set(__self__, "latest_release_version", latest_release_version)
+        pulumi.set(__self__, "release_date", release_date)
         pulumi.set(__self__, "support_type", support_type)
 
     @property
@@ -5834,6 +6038,14 @@ class GetJavaReleaseFamilyDetailResult(dict):
         return pulumi.get(self, "latest_release_version")
 
     @property
+    @pulumi.getter(name="releaseDate")
+    def release_date(self) -> str:
+        """
+        The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        """
+        return pulumi.get(self, "release_date")
+
+    @property
     @pulumi.getter(name="supportType")
     def support_type(self) -> str:
         """
@@ -5865,7 +6077,7 @@ class GetJavaReleaseFamilyDetailLatestReleaseArtifactResult(dict):
         :param str artifact_description: Description of the binary artifact. Typically includes the OS, architecture, and installer type.
         :param str artifact_file_name: The file name of the artifact.
         :param str artifact_id: Unique identifier for the artifact.
-        :param str download_url: The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+        :param str download_url: The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl) for more details.
         :param str os_family: The target Operating System family for the artifact.
         :param str package_type: The package type(typically the file extension) of the artifact.
         :param str package_type_detail: Additional information about the package type.
@@ -5939,7 +6151,7 @@ class GetJavaReleaseFamilyDetailLatestReleaseArtifactResult(dict):
     @pulumi.getter(name="downloadUrl")
     def download_url(self) -> str:
         """
-        The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+        The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl) for more details.
         """
         return pulumi.get(self, "download_url")
 
@@ -6284,7 +6496,7 @@ class GetJavaReleasesJavaReleaseCollectionItemArtifactResult(dict):
         :param str artifact_description: Description of the binary artifact. Typically includes the OS, architecture, and installer type.
         :param str artifact_file_name: The file name of the artifact.
         :param str artifact_id: Unique identifier for the artifact.
-        :param str download_url: The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+        :param str download_url: The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl) for more details.
         :param str os_family: The target Operating System family for the artifact.
         :param str package_type: The package type(typically the file extension) of the artifact.
         :param str package_type_detail: Additional information about the package type.
@@ -6358,7 +6570,7 @@ class GetJavaReleasesJavaReleaseCollectionItemArtifactResult(dict):
     @pulumi.getter(name="downloadUrl")
     def download_url(self) -> str:
         """
-        The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+        The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl) for more details.
         """
         return pulumi.get(self, "download_url")
 
@@ -6421,6 +6633,7 @@ class GetJavaReleasesJavaReleaseCollectionItemFamilyDetailResult(dict):
                  is_supported_version: bool,
                  latest_release_artifacts: Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactResult'],
                  latest_release_version: str,
+                 release_date: str,
                  support_type: str):
         """
         :param str display_name: Commonly used name for the MoS release.
@@ -6430,6 +6643,7 @@ class GetJavaReleasesJavaReleaseCollectionItemFamilyDetailResult(dict):
         :param bool is_supported_version: Whether or not this Java release family is under active support. Refer [Java Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html) for more details.
         :param Sequence['GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArgs'] latest_release_artifacts: List of artifacts for the latest Java release version in this family. The script URLs in the response can be used from a command line, or in scripts and dockerfiles to always get the artifacts corresponding to the latest update release version.
         :param str latest_release_version: Latest Java release version in the family.
+        :param str release_date: The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         :param str support_type: This indicates the support category for the Java release family.
         """
         pulumi.set(__self__, "display_name", display_name)
@@ -6439,6 +6653,7 @@ class GetJavaReleasesJavaReleaseCollectionItemFamilyDetailResult(dict):
         pulumi.set(__self__, "is_supported_version", is_supported_version)
         pulumi.set(__self__, "latest_release_artifacts", latest_release_artifacts)
         pulumi.set(__self__, "latest_release_version", latest_release_version)
+        pulumi.set(__self__, "release_date", release_date)
         pulumi.set(__self__, "support_type", support_type)
 
     @property
@@ -6498,6 +6713,14 @@ class GetJavaReleasesJavaReleaseCollectionItemFamilyDetailResult(dict):
         return pulumi.get(self, "latest_release_version")
 
     @property
+    @pulumi.getter(name="releaseDate")
+    def release_date(self) -> str:
+        """
+        The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        """
+        return pulumi.get(self, "release_date")
+
+    @property
     @pulumi.getter(name="supportType")
     def support_type(self) -> str:
         """
@@ -6529,7 +6752,7 @@ class GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactR
         :param str artifact_description: Description of the binary artifact. Typically includes the OS, architecture, and installer type.
         :param str artifact_file_name: The file name of the artifact.
         :param str artifact_id: Unique identifier for the artifact.
-        :param str download_url: The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+        :param str download_url: The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl) for more details.
         :param str os_family: The target Operating System family for the artifact.
         :param str package_type: The package type(typically the file extension) of the artifact.
         :param str package_type_detail: Additional information about the package type.
@@ -6603,7 +6826,7 @@ class GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactR
     @pulumi.getter(name="downloadUrl")
     def download_url(self) -> str:
         """
-        The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+        The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl) for more details.
         """
         return pulumi.get(self, "download_url")
 
@@ -6723,6 +6946,239 @@ class GetJavaReleasesJavaReleaseCollectionItemMosPatchResult(dict):
         MoS URL to access the artifacts for the Java release.
         """
         return pulumi.get(self, "patch_url")
+
+
+@pulumi.output_type
+class GetJmsPluginsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetJmsPluginsJmsPluginCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetJmsPluginsJmsPluginCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetJmsPluginsJmsPluginCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetJmsPluginsJmsPluginCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 agent_id: str,
+                 agent_type: str,
+                 availability_status: str,
+                 compartment_id: str,
+                 defined_tags: Mapping[str, Any],
+                 fleet_id: str,
+                 freeform_tags: Mapping[str, Any],
+                 hostname: str,
+                 id: str,
+                 os_architecture: str,
+                 os_distribution: str,
+                 os_family: str,
+                 plugin_version: str,
+                 state: str,
+                 system_tags: Mapping[str, Any],
+                 time_last_seen: str,
+                 time_registered: str):
+        """
+        :param str agent_id: The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies the Agent.
+        :param str agent_type: The agent type.
+        :param str availability_status: Filter JmsPlugin with its availability status.
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+        :param str fleet_id: The ID of the Fleet.
+        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+        :param str hostname: The hostname of the agent.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the JmsPlugin.
+        :param str os_architecture: The architecture of the operating system of the plugin.
+        :param str os_distribution: The distribution of the operating system of the plugin.
+        :param str os_family: The operating system family for the plugin.
+        :param str plugin_version: The version of the plugin.
+        :param str state: Filter JmsPlugin with its lifecycle state.
+        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str time_last_seen: The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
+        :param str time_registered: The date and time the plugin was registered.
+        """
+        pulumi.set(__self__, "agent_id", agent_id)
+        pulumi.set(__self__, "agent_type", agent_type)
+        pulumi.set(__self__, "availability_status", availability_status)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "fleet_id", fleet_id)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "hostname", hostname)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "os_architecture", os_architecture)
+        pulumi.set(__self__, "os_distribution", os_distribution)
+        pulumi.set(__self__, "os_family", os_family)
+        pulumi.set(__self__, "plugin_version", plugin_version)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_last_seen", time_last_seen)
+        pulumi.set(__self__, "time_registered", time_registered)
+
+    @property
+    @pulumi.getter(name="agentId")
+    def agent_id(self) -> str:
+        """
+        The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies the Agent.
+        """
+        return pulumi.get(self, "agent_id")
+
+    @property
+    @pulumi.getter(name="agentType")
+    def agent_type(self) -> str:
+        """
+        The agent type.
+        """
+        return pulumi.get(self, "agent_type")
+
+    @property
+    @pulumi.getter(name="availabilityStatus")
+    def availability_status(self) -> str:
+        """
+        Filter JmsPlugin with its availability status.
+        """
+        return pulumi.get(self, "availability_status")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="fleetId")
+    def fleet_id(self) -> str:
+        """
+        The ID of the Fleet.
+        """
+        return pulumi.get(self, "fleet_id")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def hostname(self) -> str:
+        """
+        The hostname of the agent.
+        """
+        return pulumi.get(self, "hostname")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the JmsPlugin.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="osArchitecture")
+    def os_architecture(self) -> str:
+        """
+        The architecture of the operating system of the plugin.
+        """
+        return pulumi.get(self, "os_architecture")
+
+    @property
+    @pulumi.getter(name="osDistribution")
+    def os_distribution(self) -> str:
+        """
+        The distribution of the operating system of the plugin.
+        """
+        return pulumi.get(self, "os_distribution")
+
+    @property
+    @pulumi.getter(name="osFamily")
+    def os_family(self) -> str:
+        """
+        The operating system family for the plugin.
+        """
+        return pulumi.get(self, "os_family")
+
+    @property
+    @pulumi.getter(name="pluginVersion")
+    def plugin_version(self) -> str:
+        """
+        The version of the plugin.
+        """
+        return pulumi.get(self, "plugin_version")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        Filter JmsPlugin with its lifecycle state.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeLastSeen")
+    def time_last_seen(self) -> str:
+        """
+        The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
+        """
+        return pulumi.get(self, "time_last_seen")
+
+    @property
+    @pulumi.getter(name="timeRegistered")
+    def time_registered(self) -> str:
+        """
+        The date and time the plugin was registered.
+        """
+        return pulumi.get(self, "time_registered")
 
 
 @pulumi.output_type

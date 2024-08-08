@@ -151,7 +151,7 @@ def get_default_configurations(configuration_id: Optional[str] = None,
 
 
     :param str configuration_id: A unique identifier for the configuration.
-    :param str db_version: Verison of the PostgreSQL database, such as 14.9.
+    :param str db_version: Version of the PostgreSQL database, such as 14.9.
     :param str display_name: A filter to return only resources that match the entire display name given.
     :param str shape: The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
     :param str state: A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
@@ -205,7 +205,7 @@ def get_default_configurations_output(configuration_id: Optional[pulumi.Input[Op
 
 
     :param str configuration_id: A unique identifier for the configuration.
-    :param str db_version: Verison of the PostgreSQL database, such as 14.9.
+    :param str db_version: Version of the PostgreSQL database, such as 14.9.
     :param str display_name: A filter to return only resources that match the entire display name given.
     :param str shape: The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
     :param str state: A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.

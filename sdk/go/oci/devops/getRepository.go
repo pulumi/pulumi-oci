@@ -84,16 +84,18 @@ type LookupRepositoryResult struct {
 	LifecyleDetails string `pulumi:"lifecyleDetails"`
 	// Configuration information for mirroring the repository.
 	MirrorRepositoryConfigs []GetRepositoryMirrorRepositoryConfig `pulumi:"mirrorRepositoryConfigs"`
-	// Unique name of a repository. This value is mutable.
+	// Name of the repository. Should be unique within the project. This value is mutable.
 	Name string `pulumi:"name"`
 	// Tenancy unique namespace.
 	Namespace string `pulumi:"namespace"`
+	// The OCID of the parent repository.
+	ParentRepositoryId string `pulumi:"parentRepositoryId"`
 	// The OCID of the DevOps project containing the repository.
 	ProjectId string `pulumi:"projectId"`
 	// Unique project name in a namespace.
 	ProjectName  string `pulumi:"projectName"`
 	RepositoryId string `pulumi:"repositoryId"`
-	// Type of repository: MIRRORED - Repository created by mirroring an existing repository. HOSTED - Repository created and hosted using Oracle Cloud Infrastructure DevOps code repository.
+	// Type of repository: MIRRORED - Repository created by mirroring an existing repository. HOSTED - Repository created and hosted using Oracle Cloud Infrastructure DevOps code repository. FORKED - Repository created by forking an existing repository.
 	RepositoryType string `pulumi:"repositoryType"`
 	// The size of the repository in bytes.
 	SizeInBytes string `pulumi:"sizeInBytes"`
@@ -107,7 +109,7 @@ type LookupRepositoryResult struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the repository was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
+	// Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the repository. PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an open pull request. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
 	TriggerBuildEvents []string `pulumi:"triggerBuildEvents"`
 }
 
@@ -210,7 +212,7 @@ func (o LookupRepositoryResultOutput) MirrorRepositoryConfigs() GetRepositoryMir
 	return o.ApplyT(func(v LookupRepositoryResult) []GetRepositoryMirrorRepositoryConfig { return v.MirrorRepositoryConfigs }).(GetRepositoryMirrorRepositoryConfigArrayOutput)
 }
 
-// Unique name of a repository. This value is mutable.
+// Name of the repository. Should be unique within the project. This value is mutable.
 func (o LookupRepositoryResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRepositoryResult) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -218,6 +220,11 @@ func (o LookupRepositoryResultOutput) Name() pulumi.StringOutput {
 // Tenancy unique namespace.
 func (o LookupRepositoryResultOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRepositoryResult) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// The OCID of the parent repository.
+func (o LookupRepositoryResultOutput) ParentRepositoryId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupRepositoryResult) string { return v.ParentRepositoryId }).(pulumi.StringOutput)
 }
 
 // The OCID of the DevOps project containing the repository.
@@ -234,7 +241,7 @@ func (o LookupRepositoryResultOutput) RepositoryId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRepositoryResult) string { return v.RepositoryId }).(pulumi.StringOutput)
 }
 
-// Type of repository: MIRRORED - Repository created by mirroring an existing repository. HOSTED - Repository created and hosted using Oracle Cloud Infrastructure DevOps code repository.
+// Type of repository: MIRRORED - Repository created by mirroring an existing repository. HOSTED - Repository created and hosted using Oracle Cloud Infrastructure DevOps code repository. FORKED - Repository created by forking an existing repository.
 func (o LookupRepositoryResultOutput) RepositoryType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRepositoryResult) string { return v.RepositoryType }).(pulumi.StringOutput)
 }
@@ -269,7 +276,7 @@ func (o LookupRepositoryResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRepositoryResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
+// Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the repository. PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an open pull request. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
 func (o LookupRepositoryResultOutput) TriggerBuildEvents() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupRepositoryResult) []string { return v.TriggerBuildEvents }).(pulumi.StringArrayOutput)
 }

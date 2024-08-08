@@ -3040,6 +3040,389 @@ func (o JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutput) Index(
 	}).(JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput)
 }
 
+type GetAgentInstallersAgentInstallerCollection struct {
+	// A list of the agent installer summaries.
+	Items []GetAgentInstallersAgentInstallerCollectionItem `pulumi:"items"`
+}
+
+// GetAgentInstallersAgentInstallerCollectionInput is an input type that accepts GetAgentInstallersAgentInstallerCollectionArgs and GetAgentInstallersAgentInstallerCollectionOutput values.
+// You can construct a concrete instance of `GetAgentInstallersAgentInstallerCollectionInput` via:
+//
+//	GetAgentInstallersAgentInstallerCollectionArgs{...}
+type GetAgentInstallersAgentInstallerCollectionInput interface {
+	pulumi.Input
+
+	ToGetAgentInstallersAgentInstallerCollectionOutput() GetAgentInstallersAgentInstallerCollectionOutput
+	ToGetAgentInstallersAgentInstallerCollectionOutputWithContext(context.Context) GetAgentInstallersAgentInstallerCollectionOutput
+}
+
+type GetAgentInstallersAgentInstallerCollectionArgs struct {
+	// A list of the agent installer summaries.
+	Items GetAgentInstallersAgentInstallerCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetAgentInstallersAgentInstallerCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentInstallersAgentInstallerCollection)(nil)).Elem()
+}
+
+func (i GetAgentInstallersAgentInstallerCollectionArgs) ToGetAgentInstallersAgentInstallerCollectionOutput() GetAgentInstallersAgentInstallerCollectionOutput {
+	return i.ToGetAgentInstallersAgentInstallerCollectionOutputWithContext(context.Background())
+}
+
+func (i GetAgentInstallersAgentInstallerCollectionArgs) ToGetAgentInstallersAgentInstallerCollectionOutputWithContext(ctx context.Context) GetAgentInstallersAgentInstallerCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentInstallersAgentInstallerCollectionOutput)
+}
+
+// GetAgentInstallersAgentInstallerCollectionArrayInput is an input type that accepts GetAgentInstallersAgentInstallerCollectionArray and GetAgentInstallersAgentInstallerCollectionArrayOutput values.
+// You can construct a concrete instance of `GetAgentInstallersAgentInstallerCollectionArrayInput` via:
+//
+//	GetAgentInstallersAgentInstallerCollectionArray{ GetAgentInstallersAgentInstallerCollectionArgs{...} }
+type GetAgentInstallersAgentInstallerCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentInstallersAgentInstallerCollectionArrayOutput() GetAgentInstallersAgentInstallerCollectionArrayOutput
+	ToGetAgentInstallersAgentInstallerCollectionArrayOutputWithContext(context.Context) GetAgentInstallersAgentInstallerCollectionArrayOutput
+}
+
+type GetAgentInstallersAgentInstallerCollectionArray []GetAgentInstallersAgentInstallerCollectionInput
+
+func (GetAgentInstallersAgentInstallerCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentInstallersAgentInstallerCollection)(nil)).Elem()
+}
+
+func (i GetAgentInstallersAgentInstallerCollectionArray) ToGetAgentInstallersAgentInstallerCollectionArrayOutput() GetAgentInstallersAgentInstallerCollectionArrayOutput {
+	return i.ToGetAgentInstallersAgentInstallerCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentInstallersAgentInstallerCollectionArray) ToGetAgentInstallersAgentInstallerCollectionArrayOutputWithContext(ctx context.Context) GetAgentInstallersAgentInstallerCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentInstallersAgentInstallerCollectionArrayOutput)
+}
+
+type GetAgentInstallersAgentInstallerCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetAgentInstallersAgentInstallerCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentInstallersAgentInstallerCollection)(nil)).Elem()
+}
+
+func (o GetAgentInstallersAgentInstallerCollectionOutput) ToGetAgentInstallersAgentInstallerCollectionOutput() GetAgentInstallersAgentInstallerCollectionOutput {
+	return o
+}
+
+func (o GetAgentInstallersAgentInstallerCollectionOutput) ToGetAgentInstallersAgentInstallerCollectionOutputWithContext(ctx context.Context) GetAgentInstallersAgentInstallerCollectionOutput {
+	return o
+}
+
+// A list of the agent installer summaries.
+func (o GetAgentInstallersAgentInstallerCollectionOutput) Items() GetAgentInstallersAgentInstallerCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetAgentInstallersAgentInstallerCollection) []GetAgentInstallersAgentInstallerCollectionItem {
+		return v.Items
+	}).(GetAgentInstallersAgentInstallerCollectionItemArrayOutput)
+}
+
+type GetAgentInstallersAgentInstallerCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentInstallersAgentInstallerCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentInstallersAgentInstallerCollection)(nil)).Elem()
+}
+
+func (o GetAgentInstallersAgentInstallerCollectionArrayOutput) ToGetAgentInstallersAgentInstallerCollectionArrayOutput() GetAgentInstallersAgentInstallerCollectionArrayOutput {
+	return o
+}
+
+func (o GetAgentInstallersAgentInstallerCollectionArrayOutput) ToGetAgentInstallersAgentInstallerCollectionArrayOutputWithContext(ctx context.Context) GetAgentInstallersAgentInstallerCollectionArrayOutput {
+	return o
+}
+
+func (o GetAgentInstallersAgentInstallerCollectionArrayOutput) Index(i pulumi.IntInput) GetAgentInstallersAgentInstallerCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentInstallersAgentInstallerCollection {
+		return vs[0].([]GetAgentInstallersAgentInstallerCollection)[vs[1].(int)]
+	}).(GetAgentInstallersAgentInstallerCollectionOutput)
+}
+
+type GetAgentInstallersAgentInstallerCollectionItem struct {
+	// Description of the agent installer artifact. The description typically includes the OS, architecture, and agent installer type.
+	AgentInstallerDescription string `pulumi:"agentInstallerDescription"`
+	// Unique identifier for the agent installer.
+	AgentInstallerId string `pulumi:"agentInstallerId"`
+	// Agent installer version.
+	AgentInstallerVersion string `pulumi:"agentInstallerVersion"`
+	// Agent image version.
+	AgentVersion string `pulumi:"agentVersion"`
+	// Approximate compressed file size in bytes.
+	ApproximateFileSizeInBytes string `pulumi:"approximateFileSizeInBytes"`
+	// Java version.
+	JavaVersion string `pulumi:"javaVersion"`
+	// The OS family for the agent installer.
+	OsFamily string `pulumi:"osFamily"`
+	// The package type (typically the file extension) of the agent software included in the installer.
+	PackageType string `pulumi:"packageType"`
+	// The platform architecture for the agent installer.
+	PlatformArchitecture string `pulumi:"platformArchitecture"`
+	// SHA256 checksum of the agent installer.
+	Sha256 string `pulumi:"sha256"`
+}
+
+// GetAgentInstallersAgentInstallerCollectionItemInput is an input type that accepts GetAgentInstallersAgentInstallerCollectionItemArgs and GetAgentInstallersAgentInstallerCollectionItemOutput values.
+// You can construct a concrete instance of `GetAgentInstallersAgentInstallerCollectionItemInput` via:
+//
+//	GetAgentInstallersAgentInstallerCollectionItemArgs{...}
+type GetAgentInstallersAgentInstallerCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetAgentInstallersAgentInstallerCollectionItemOutput() GetAgentInstallersAgentInstallerCollectionItemOutput
+	ToGetAgentInstallersAgentInstallerCollectionItemOutputWithContext(context.Context) GetAgentInstallersAgentInstallerCollectionItemOutput
+}
+
+type GetAgentInstallersAgentInstallerCollectionItemArgs struct {
+	// Description of the agent installer artifact. The description typically includes the OS, architecture, and agent installer type.
+	AgentInstallerDescription pulumi.StringInput `pulumi:"agentInstallerDescription"`
+	// Unique identifier for the agent installer.
+	AgentInstallerId pulumi.StringInput `pulumi:"agentInstallerId"`
+	// Agent installer version.
+	AgentInstallerVersion pulumi.StringInput `pulumi:"agentInstallerVersion"`
+	// Agent image version.
+	AgentVersion pulumi.StringInput `pulumi:"agentVersion"`
+	// Approximate compressed file size in bytes.
+	ApproximateFileSizeInBytes pulumi.StringInput `pulumi:"approximateFileSizeInBytes"`
+	// Java version.
+	JavaVersion pulumi.StringInput `pulumi:"javaVersion"`
+	// The OS family for the agent installer.
+	OsFamily pulumi.StringInput `pulumi:"osFamily"`
+	// The package type (typically the file extension) of the agent software included in the installer.
+	PackageType pulumi.StringInput `pulumi:"packageType"`
+	// The platform architecture for the agent installer.
+	PlatformArchitecture pulumi.StringInput `pulumi:"platformArchitecture"`
+	// SHA256 checksum of the agent installer.
+	Sha256 pulumi.StringInput `pulumi:"sha256"`
+}
+
+func (GetAgentInstallersAgentInstallerCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentInstallersAgentInstallerCollectionItem)(nil)).Elem()
+}
+
+func (i GetAgentInstallersAgentInstallerCollectionItemArgs) ToGetAgentInstallersAgentInstallerCollectionItemOutput() GetAgentInstallersAgentInstallerCollectionItemOutput {
+	return i.ToGetAgentInstallersAgentInstallerCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetAgentInstallersAgentInstallerCollectionItemArgs) ToGetAgentInstallersAgentInstallerCollectionItemOutputWithContext(ctx context.Context) GetAgentInstallersAgentInstallerCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentInstallersAgentInstallerCollectionItemOutput)
+}
+
+// GetAgentInstallersAgentInstallerCollectionItemArrayInput is an input type that accepts GetAgentInstallersAgentInstallerCollectionItemArray and GetAgentInstallersAgentInstallerCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetAgentInstallersAgentInstallerCollectionItemArrayInput` via:
+//
+//	GetAgentInstallersAgentInstallerCollectionItemArray{ GetAgentInstallersAgentInstallerCollectionItemArgs{...} }
+type GetAgentInstallersAgentInstallerCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentInstallersAgentInstallerCollectionItemArrayOutput() GetAgentInstallersAgentInstallerCollectionItemArrayOutput
+	ToGetAgentInstallersAgentInstallerCollectionItemArrayOutputWithContext(context.Context) GetAgentInstallersAgentInstallerCollectionItemArrayOutput
+}
+
+type GetAgentInstallersAgentInstallerCollectionItemArray []GetAgentInstallersAgentInstallerCollectionItemInput
+
+func (GetAgentInstallersAgentInstallerCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentInstallersAgentInstallerCollectionItem)(nil)).Elem()
+}
+
+func (i GetAgentInstallersAgentInstallerCollectionItemArray) ToGetAgentInstallersAgentInstallerCollectionItemArrayOutput() GetAgentInstallersAgentInstallerCollectionItemArrayOutput {
+	return i.ToGetAgentInstallersAgentInstallerCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentInstallersAgentInstallerCollectionItemArray) ToGetAgentInstallersAgentInstallerCollectionItemArrayOutputWithContext(ctx context.Context) GetAgentInstallersAgentInstallerCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentInstallersAgentInstallerCollectionItemArrayOutput)
+}
+
+type GetAgentInstallersAgentInstallerCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetAgentInstallersAgentInstallerCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentInstallersAgentInstallerCollectionItem)(nil)).Elem()
+}
+
+func (o GetAgentInstallersAgentInstallerCollectionItemOutput) ToGetAgentInstallersAgentInstallerCollectionItemOutput() GetAgentInstallersAgentInstallerCollectionItemOutput {
+	return o
+}
+
+func (o GetAgentInstallersAgentInstallerCollectionItemOutput) ToGetAgentInstallersAgentInstallerCollectionItemOutputWithContext(ctx context.Context) GetAgentInstallersAgentInstallerCollectionItemOutput {
+	return o
+}
+
+// Description of the agent installer artifact. The description typically includes the OS, architecture, and agent installer type.
+func (o GetAgentInstallersAgentInstallerCollectionItemOutput) AgentInstallerDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentInstallersAgentInstallerCollectionItem) string { return v.AgentInstallerDescription }).(pulumi.StringOutput)
+}
+
+// Unique identifier for the agent installer.
+func (o GetAgentInstallersAgentInstallerCollectionItemOutput) AgentInstallerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentInstallersAgentInstallerCollectionItem) string { return v.AgentInstallerId }).(pulumi.StringOutput)
+}
+
+// Agent installer version.
+func (o GetAgentInstallersAgentInstallerCollectionItemOutput) AgentInstallerVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentInstallersAgentInstallerCollectionItem) string { return v.AgentInstallerVersion }).(pulumi.StringOutput)
+}
+
+// Agent image version.
+func (o GetAgentInstallersAgentInstallerCollectionItemOutput) AgentVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentInstallersAgentInstallerCollectionItem) string { return v.AgentVersion }).(pulumi.StringOutput)
+}
+
+// Approximate compressed file size in bytes.
+func (o GetAgentInstallersAgentInstallerCollectionItemOutput) ApproximateFileSizeInBytes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentInstallersAgentInstallerCollectionItem) string { return v.ApproximateFileSizeInBytes }).(pulumi.StringOutput)
+}
+
+// Java version.
+func (o GetAgentInstallersAgentInstallerCollectionItemOutput) JavaVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentInstallersAgentInstallerCollectionItem) string { return v.JavaVersion }).(pulumi.StringOutput)
+}
+
+// The OS family for the agent installer.
+func (o GetAgentInstallersAgentInstallerCollectionItemOutput) OsFamily() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentInstallersAgentInstallerCollectionItem) string { return v.OsFamily }).(pulumi.StringOutput)
+}
+
+// The package type (typically the file extension) of the agent software included in the installer.
+func (o GetAgentInstallersAgentInstallerCollectionItemOutput) PackageType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentInstallersAgentInstallerCollectionItem) string { return v.PackageType }).(pulumi.StringOutput)
+}
+
+// The platform architecture for the agent installer.
+func (o GetAgentInstallersAgentInstallerCollectionItemOutput) PlatformArchitecture() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentInstallersAgentInstallerCollectionItem) string { return v.PlatformArchitecture }).(pulumi.StringOutput)
+}
+
+// SHA256 checksum of the agent installer.
+func (o GetAgentInstallersAgentInstallerCollectionItemOutput) Sha256() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentInstallersAgentInstallerCollectionItem) string { return v.Sha256 }).(pulumi.StringOutput)
+}
+
+type GetAgentInstallersAgentInstallerCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentInstallersAgentInstallerCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentInstallersAgentInstallerCollectionItem)(nil)).Elem()
+}
+
+func (o GetAgentInstallersAgentInstallerCollectionItemArrayOutput) ToGetAgentInstallersAgentInstallerCollectionItemArrayOutput() GetAgentInstallersAgentInstallerCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetAgentInstallersAgentInstallerCollectionItemArrayOutput) ToGetAgentInstallersAgentInstallerCollectionItemArrayOutputWithContext(ctx context.Context) GetAgentInstallersAgentInstallerCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetAgentInstallersAgentInstallerCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAgentInstallersAgentInstallerCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentInstallersAgentInstallerCollectionItem {
+		return vs[0].([]GetAgentInstallersAgentInstallerCollectionItem)[vs[1].(int)]
+	}).(GetAgentInstallersAgentInstallerCollectionItemOutput)
+}
+
+type GetAgentInstallersFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetAgentInstallersFilterInput is an input type that accepts GetAgentInstallersFilterArgs and GetAgentInstallersFilterOutput values.
+// You can construct a concrete instance of `GetAgentInstallersFilterInput` via:
+//
+//	GetAgentInstallersFilterArgs{...}
+type GetAgentInstallersFilterInput interface {
+	pulumi.Input
+
+	ToGetAgentInstallersFilterOutput() GetAgentInstallersFilterOutput
+	ToGetAgentInstallersFilterOutputWithContext(context.Context) GetAgentInstallersFilterOutput
+}
+
+type GetAgentInstallersFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetAgentInstallersFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentInstallersFilter)(nil)).Elem()
+}
+
+func (i GetAgentInstallersFilterArgs) ToGetAgentInstallersFilterOutput() GetAgentInstallersFilterOutput {
+	return i.ToGetAgentInstallersFilterOutputWithContext(context.Background())
+}
+
+func (i GetAgentInstallersFilterArgs) ToGetAgentInstallersFilterOutputWithContext(ctx context.Context) GetAgentInstallersFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentInstallersFilterOutput)
+}
+
+// GetAgentInstallersFilterArrayInput is an input type that accepts GetAgentInstallersFilterArray and GetAgentInstallersFilterArrayOutput values.
+// You can construct a concrete instance of `GetAgentInstallersFilterArrayInput` via:
+//
+//	GetAgentInstallersFilterArray{ GetAgentInstallersFilterArgs{...} }
+type GetAgentInstallersFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentInstallersFilterArrayOutput() GetAgentInstallersFilterArrayOutput
+	ToGetAgentInstallersFilterArrayOutputWithContext(context.Context) GetAgentInstallersFilterArrayOutput
+}
+
+type GetAgentInstallersFilterArray []GetAgentInstallersFilterInput
+
+func (GetAgentInstallersFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentInstallersFilter)(nil)).Elem()
+}
+
+func (i GetAgentInstallersFilterArray) ToGetAgentInstallersFilterArrayOutput() GetAgentInstallersFilterArrayOutput {
+	return i.ToGetAgentInstallersFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentInstallersFilterArray) ToGetAgentInstallersFilterArrayOutputWithContext(ctx context.Context) GetAgentInstallersFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentInstallersFilterArrayOutput)
+}
+
+type GetAgentInstallersFilterOutput struct{ *pulumi.OutputState }
+
+func (GetAgentInstallersFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentInstallersFilter)(nil)).Elem()
+}
+
+func (o GetAgentInstallersFilterOutput) ToGetAgentInstallersFilterOutput() GetAgentInstallersFilterOutput {
+	return o
+}
+
+func (o GetAgentInstallersFilterOutput) ToGetAgentInstallersFilterOutputWithContext(ctx context.Context) GetAgentInstallersFilterOutput {
+	return o
+}
+
+func (o GetAgentInstallersFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentInstallersFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetAgentInstallersFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAgentInstallersFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetAgentInstallersFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAgentInstallersFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetAgentInstallersFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentInstallersFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentInstallersFilter)(nil)).Elem()
+}
+
+func (o GetAgentInstallersFilterArrayOutput) ToGetAgentInstallersFilterArrayOutput() GetAgentInstallersFilterArrayOutput {
+	return o
+}
+
+func (o GetAgentInstallersFilterArrayOutput) ToGetAgentInstallersFilterArrayOutputWithContext(ctx context.Context) GetAgentInstallersFilterArrayOutput {
+	return o
+}
+
+func (o GetAgentInstallersFilterArrayOutput) Index(i pulumi.IntInput) GetAgentInstallersFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentInstallersFilter {
+		return vs[0].([]GetAgentInstallersFilter)[vs[1].(int)]
+	}).(GetAgentInstallersFilterOutput)
+}
+
 type GetAnnouncementsAnnouncementCollection struct {
 	// List of AnnouncementSummary items
 	Items []GetAnnouncementsAnnouncementCollectionItem `pulumi:"items"`
@@ -5344,11 +5727,11 @@ type GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem struct {
 	Bucket string `pulumi:"bucket"`
 	// The Crypto Roadmap version used to perform the analysis.
 	CryptoRoadmapVersion string `pulumi:"cryptoRoadmapVersion"`
-	// Total number of findings with the analysis.
+	// FindingCount of CryptoAnalysis Report.
 	FindingCount int `pulumi:"findingCount"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
 	FleetId string `pulumi:"fleetId"`
-	// The hostname of the managed instance.
+	// The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
 	HostName string `pulumi:"hostName"`
 	// The OCID to identify this analysis results.
 	Id string `pulumi:"id"`
@@ -5356,7 +5739,7 @@ type GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem struct {
 	ManagedInstanceId string `pulumi:"managedInstanceId"`
 	// The Object Storage namespace of this analysis result.
 	Namespace string `pulumi:"namespace"`
-	// Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the Crypto Roadmap version used by the analysis.
+	// Non Compliant Finding Count of CryptoAnalysis Report.
 	NonCompliantFindingCount int `pulumi:"nonCompliantFindingCount"`
 	// The Object Storage object name of this analysis result.
 	Object string `pulumi:"object"`
@@ -5364,10 +5747,14 @@ type GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem struct {
 	SummarizedEventCount int `pulumi:"summarizedEventCount"`
 	// The time the result is compiled.
 	TimeCreated string `pulumi:"timeCreated"`
+	// The time the JFR recording has finished.
+	TimeFinished string `pulumi:"timeFinished"`
 	// Time of the first event in the analysis.
 	TimeFirstEvent string `pulumi:"timeFirstEvent"`
 	// Time of the last event in the analysis.
 	TimeLastEvent string `pulumi:"timeLastEvent"`
+	// The time the JFR recording has started.
+	TimeStarted string `pulumi:"timeStarted"`
 	// Total number of events in the analysis.
 	TotalEventCount int `pulumi:"totalEventCount"`
 	// The OCID of the work request to start the analysis.
@@ -5392,11 +5779,11 @@ type GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArgs struct 
 	Bucket pulumi.StringInput `pulumi:"bucket"`
 	// The Crypto Roadmap version used to perform the analysis.
 	CryptoRoadmapVersion pulumi.StringInput `pulumi:"cryptoRoadmapVersion"`
-	// Total number of findings with the analysis.
+	// FindingCount of CryptoAnalysis Report.
 	FindingCount pulumi.IntInput `pulumi:"findingCount"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
 	FleetId pulumi.StringInput `pulumi:"fleetId"`
-	// The hostname of the managed instance.
+	// The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
 	HostName pulumi.StringInput `pulumi:"hostName"`
 	// The OCID to identify this analysis results.
 	Id pulumi.StringInput `pulumi:"id"`
@@ -5404,7 +5791,7 @@ type GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArgs struct 
 	ManagedInstanceId pulumi.StringInput `pulumi:"managedInstanceId"`
 	// The Object Storage namespace of this analysis result.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
-	// Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the Crypto Roadmap version used by the analysis.
+	// Non Compliant Finding Count of CryptoAnalysis Report.
 	NonCompliantFindingCount pulumi.IntInput `pulumi:"nonCompliantFindingCount"`
 	// The Object Storage object name of this analysis result.
 	Object pulumi.StringInput `pulumi:"object"`
@@ -5412,10 +5799,14 @@ type GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArgs struct 
 	SummarizedEventCount pulumi.IntInput `pulumi:"summarizedEventCount"`
 	// The time the result is compiled.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time the JFR recording has finished.
+	TimeFinished pulumi.StringInput `pulumi:"timeFinished"`
 	// Time of the first event in the analysis.
 	TimeFirstEvent pulumi.StringInput `pulumi:"timeFirstEvent"`
 	// Time of the last event in the analysis.
 	TimeLastEvent pulumi.StringInput `pulumi:"timeLastEvent"`
+	// The time the JFR recording has started.
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
 	// Total number of events in the analysis.
 	TotalEventCount pulumi.IntInput `pulumi:"totalEventCount"`
 	// The OCID of the work request to start the analysis.
@@ -5492,7 +5883,7 @@ func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) C
 	}).(pulumi.StringOutput)
 }
 
-// Total number of findings with the analysis.
+// FindingCount of CryptoAnalysis Report.
 func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) FindingCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) int { return v.FindingCount }).(pulumi.IntOutput)
 }
@@ -5502,7 +5893,7 @@ func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) F
 	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) string { return v.FleetId }).(pulumi.StringOutput)
 }
 
-// The hostname of the managed instance.
+// The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
 func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) HostName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) string { return v.HostName }).(pulumi.StringOutput)
 }
@@ -5524,7 +5915,7 @@ func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) N
 	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) string { return v.Namespace }).(pulumi.StringOutput)
 }
 
-// Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the Crypto Roadmap version used by the analysis.
+// Non Compliant Finding Count of CryptoAnalysis Report.
 func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) NonCompliantFindingCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) int {
 		return v.NonCompliantFindingCount
@@ -5548,6 +5939,11 @@ func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) T
 	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
+// The time the JFR recording has finished.
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) TimeFinished() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) string { return v.TimeFinished }).(pulumi.StringOutput)
+}
+
 // Time of the first event in the analysis.
 func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) TimeFirstEvent() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) string {
@@ -5558,6 +5954,11 @@ func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) T
 // Time of the last event in the analysis.
 func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) TimeLastEvent() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) string { return v.TimeLastEvent }).(pulumi.StringOutput)
+}
+
+// The time the JFR recording has started.
+func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem) string { return v.TimeStarted }).(pulumi.StringOutput)
 }
 
 // Total number of events in the analysis.
@@ -6698,7 +7099,7 @@ type GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionIt
 	ApplicationExecutionType string `pulumi:"applicationExecutionType"`
 	// The unique key that identifies the application.
 	ApplicationKey string `pulumi:"applicationKey"`
-	// The name of the application for which the Java migration analysis was performed.
+	// The name of the application.
 	ApplicationName string `pulumi:"applicationName"`
 	// The installation path of the application for which the Java migration analysis was performed.
 	ApplicationPath string `pulumi:"applicationPath"`
@@ -6706,7 +7107,7 @@ type GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionIt
 	Bucket string `pulumi:"bucket"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
 	FleetId string `pulumi:"fleetId"`
-	// The hostname of the managed instance that hosts the application for which the Java migration analysis was performed.
+	// The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
 	HostName string `pulumi:"hostName"`
 	// The OCID of the migration analysis report.
 	Id string `pulumi:"id"`
@@ -6746,7 +7147,7 @@ type GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionIt
 	ApplicationExecutionType pulumi.StringInput `pulumi:"applicationExecutionType"`
 	// The unique key that identifies the application.
 	ApplicationKey pulumi.StringInput `pulumi:"applicationKey"`
-	// The name of the application for which the Java migration analysis was performed.
+	// The name of the application.
 	ApplicationName pulumi.StringInput `pulumi:"applicationName"`
 	// The installation path of the application for which the Java migration analysis was performed.
 	ApplicationPath pulumi.StringInput `pulumi:"applicationPath"`
@@ -6754,7 +7155,7 @@ type GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionIt
 	Bucket pulumi.StringInput `pulumi:"bucket"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
 	FleetId pulumi.StringInput `pulumi:"fleetId"`
-	// The hostname of the managed instance that hosts the application for which the Java migration analysis was performed.
+	// The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
 	HostName pulumi.StringInput `pulumi:"hostName"`
 	// The OCID of the migration analysis report.
 	Id pulumi.StringInput `pulumi:"id"`
@@ -6843,7 +7244,7 @@ func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectio
 	}).(pulumi.StringOutput)
 }
 
-// The name of the application for which the Java migration analysis was performed.
+// The name of the application.
 func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) ApplicationName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) string {
 		return v.ApplicationName
@@ -6871,7 +7272,7 @@ func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectio
 	}).(pulumi.StringOutput)
 }
 
-// The hostname of the managed instance that hosts the application for which the Java migration analysis was performed.
+// The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
 func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) HostName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) string {
 		return v.HostName
@@ -7289,7 +7690,7 @@ type GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultColl
 	Bucket string `pulumi:"bucket"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
 	FleetId string `pulumi:"fleetId"`
-	// The hostname of the managed instance.
+	// The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
 	HostName string `pulumi:"hostName"`
 	// The OCID to identify this analysis results.
 	Id string `pulumi:"id"`
@@ -7303,9 +7704,9 @@ type GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultColl
 	Result string `pulumi:"result"`
 	// The time the result is compiled.
 	TimeCreated string `pulumi:"timeCreated"`
-	// The time the JFR capture finished.
+	// The time the JFR recording has finished.
 	TimeFinished string `pulumi:"timeFinished"`
-	// The time the JFR capture started.
+	// The time the JFR recording has started.
 	TimeStarted string `pulumi:"timeStarted"`
 	// Total number of warnings reported by the analysis.
 	WarningCount int `pulumi:"warningCount"`
@@ -7337,7 +7738,7 @@ type GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultColl
 	Bucket pulumi.StringInput `pulumi:"bucket"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
 	FleetId pulumi.StringInput `pulumi:"fleetId"`
-	// The hostname of the managed instance.
+	// The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
 	HostName pulumi.StringInput `pulumi:"hostName"`
 	// The OCID to identify this analysis results.
 	Id pulumi.StringInput `pulumi:"id"`
@@ -7351,9 +7752,9 @@ type GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultColl
 	Result pulumi.StringInput `pulumi:"result"`
 	// The time the result is compiled.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The time the JFR capture finished.
+	// The time the JFR recording has finished.
 	TimeFinished pulumi.StringInput `pulumi:"timeFinished"`
-	// The time the JFR capture started.
+	// The time the JFR recording has started.
 	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
 	// Total number of warnings reported by the analysis.
 	WarningCount pulumi.IntInput `pulumi:"warningCount"`
@@ -7454,7 +7855,7 @@ func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultC
 	}).(pulumi.StringOutput)
 }
 
-// The hostname of the managed instance.
+// The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
 func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) HostName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) string {
 		return v.HostName
@@ -7503,14 +7904,14 @@ func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultC
 	}).(pulumi.StringOutput)
 }
 
-// The time the JFR capture finished.
+// The time the JFR recording has finished.
 func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) TimeFinished() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) string {
 		return v.TimeFinished
 	}).(pulumi.StringOutput)
 }
 
-// The time the JFR capture started.
+// The time the JFR recording has started.
 func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) TimeStarted() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem) string {
 		return v.TimeStarted
@@ -7772,7 +8173,7 @@ type GetFleetsFleetCollectionItem struct {
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The ID of the Fleet.
+	// The ID.
 	Id string `pulumi:"id"`
 	// Custom Log for inventory or operation log.
 	InventoryLogs []GetFleetsFleetCollectionItemInventoryLog `pulumi:"inventoryLogs"`
@@ -7822,7 +8223,7 @@ type GetFleetsFleetCollectionItemArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
-	// The ID of the Fleet.
+	// The ID.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Custom Log for inventory or operation log.
 	InventoryLogs GetFleetsFleetCollectionItemInventoryLogArrayInput `pulumi:"inventoryLogs"`
@@ -7941,7 +8342,7 @@ func (o GetFleetsFleetCollectionItemOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetFleetsFleetCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// The ID of the Fleet.
+// The ID.
 func (o GetFleetsFleetCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFleetsFleetCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -9484,7 +9885,7 @@ func (o GetInstallationSitesInstallationSiteCollectionItemItemJreArrayOutput) In
 type GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem struct {
 	// The architecture of the operating system as provided by the Java system property os.arch.
 	Architecture string `pulumi:"architecture"`
-	// The operating system type, such as Windows or Linux
+	// The operating system type, such as Windows, Linux or macOS
 	Family string `pulumi:"family"`
 	// Number of instances running the operating system.
 	ManagedInstanceCount int `pulumi:"managedInstanceCount"`
@@ -9508,7 +9909,7 @@ type GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemInput 
 type GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArgs struct {
 	// The architecture of the operating system as provided by the Java system property os.arch.
 	Architecture pulumi.StringInput `pulumi:"architecture"`
-	// The operating system type, such as Windows or Linux
+	// The operating system type, such as Windows, Linux or macOS
 	Family pulumi.StringInput `pulumi:"family"`
 	// Number of instances running the operating system.
 	ManagedInstanceCount pulumi.IntInput `pulumi:"managedInstanceCount"`
@@ -9576,7 +9977,7 @@ func (o GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOut
 	}).(pulumi.StringOutput)
 }
 
-// The operating system type, such as Windows or Linux
+// The operating system type, such as Windows, Linux or macOS
 func (o GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput) Family() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem) string { return v.Family }).(pulumi.StringOutput)
 }
@@ -13087,6 +13488,8 @@ type GetJavaFamiliesJavaFamilyCollectionItem struct {
 	LatestReleaseArtifacts []GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifact `pulumi:"latestReleaseArtifacts"`
 	// Latest Java release version in the family.
 	LatestReleaseVersion string `pulumi:"latestReleaseVersion"`
+	// The date on which the Java release family was first made available (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	ReleaseDate string `pulumi:"releaseDate"`
 	// This indicates the support category for the Java release family.
 	SupportType string `pulumi:"supportType"`
 }
@@ -13117,6 +13520,8 @@ type GetJavaFamiliesJavaFamilyCollectionItemArgs struct {
 	LatestReleaseArtifacts GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArrayInput `pulumi:"latestReleaseArtifacts"`
 	// Latest Java release version in the family.
 	LatestReleaseVersion pulumi.StringInput `pulumi:"latestReleaseVersion"`
+	// The date on which the Java release family was first made available (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	ReleaseDate pulumi.StringInput `pulumi:"releaseDate"`
 	// This indicates the support category for the Java release family.
 	SupportType pulumi.StringInput `pulumi:"supportType"`
 }
@@ -13209,6 +13614,11 @@ func (o GetJavaFamiliesJavaFamilyCollectionItemOutput) LatestReleaseVersion() pu
 	return o.ApplyT(func(v GetJavaFamiliesJavaFamilyCollectionItem) string { return v.LatestReleaseVersion }).(pulumi.StringOutput)
 }
 
+// The date on which the Java release family was first made available (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+func (o GetJavaFamiliesJavaFamilyCollectionItemOutput) ReleaseDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaFamiliesJavaFamilyCollectionItem) string { return v.ReleaseDate }).(pulumi.StringOutput)
+}
+
 // This indicates the support category for the Java release family.
 func (o GetJavaFamiliesJavaFamilyCollectionItemOutput) SupportType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJavaFamiliesJavaFamilyCollectionItem) string { return v.SupportType }).(pulumi.StringOutput)
@@ -13247,7 +13657,7 @@ type GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifact struct {
 	ArtifactFileName string `pulumi:"artifactFileName"`
 	// Unique identifier for the artifact.
 	ArtifactId string `pulumi:"artifactId"`
-	// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+	// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl) for more details.
 	DownloadUrl string `pulumi:"downloadUrl"`
 	// The target Operating System family for the artifact.
 	OsFamily string `pulumi:"osFamily"`
@@ -13287,7 +13697,7 @@ type GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArgs struct {
 	ArtifactFileName pulumi.StringInput `pulumi:"artifactFileName"`
 	// Unique identifier for the artifact.
 	ArtifactId pulumi.StringInput `pulumi:"artifactId"`
-	// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+	// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl) for more details.
 	DownloadUrl pulumi.StringInput `pulumi:"downloadUrl"`
 	// The target Operating System family for the artifact.
 	OsFamily pulumi.StringInput `pulumi:"osFamily"`
@@ -13390,7 +13800,7 @@ func (o GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactOutput) Arti
 	return o.ApplyT(func(v GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifact) string { return v.ArtifactId }).(pulumi.StringOutput)
 }
 
-// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl) for more details.
 func (o GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactOutput) DownloadUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifact) string { return v.DownloadUrl }).(pulumi.StringOutput)
 }
@@ -13464,7 +13874,7 @@ type GetJavaFamilyLatestReleaseArtifact struct {
 	ArtifactFileName string `pulumi:"artifactFileName"`
 	// Unique identifier for the artifact.
 	ArtifactId string `pulumi:"artifactId"`
-	// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+	// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl) for more details.
 	DownloadUrl string `pulumi:"downloadUrl"`
 	// The target Operating System family for the artifact.
 	OsFamily string `pulumi:"osFamily"`
@@ -13504,7 +13914,7 @@ type GetJavaFamilyLatestReleaseArtifactArgs struct {
 	ArtifactFileName pulumi.StringInput `pulumi:"artifactFileName"`
 	// Unique identifier for the artifact.
 	ArtifactId pulumi.StringInput `pulumi:"artifactId"`
-	// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+	// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl) for more details.
 	DownloadUrl pulumi.StringInput `pulumi:"downloadUrl"`
 	// The target Operating System family for the artifact.
 	OsFamily pulumi.StringInput `pulumi:"osFamily"`
@@ -13601,7 +14011,7 @@ func (o GetJavaFamilyLatestReleaseArtifactOutput) ArtifactId() pulumi.StringOutp
 	return o.ApplyT(func(v GetJavaFamilyLatestReleaseArtifact) string { return v.ArtifactId }).(pulumi.StringOutput)
 }
 
-// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl) for more details.
 func (o GetJavaFamilyLatestReleaseArtifactOutput) DownloadUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJavaFamilyLatestReleaseArtifact) string { return v.DownloadUrl }).(pulumi.StringOutput)
 }
@@ -13669,7 +14079,7 @@ type GetJavaReleaseArtifact struct {
 	ArtifactFileName string `pulumi:"artifactFileName"`
 	// Unique identifier for the artifact.
 	ArtifactId string `pulumi:"artifactId"`
-	// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+	// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl) for more details.
 	DownloadUrl string `pulumi:"downloadUrl"`
 	// The target Operating System family for the artifact.
 	OsFamily string `pulumi:"osFamily"`
@@ -13709,7 +14119,7 @@ type GetJavaReleaseArtifactArgs struct {
 	ArtifactFileName pulumi.StringInput `pulumi:"artifactFileName"`
 	// Unique identifier for the artifact.
 	ArtifactId pulumi.StringInput `pulumi:"artifactId"`
-	// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+	// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl) for more details.
 	DownloadUrl pulumi.StringInput `pulumi:"downloadUrl"`
 	// The target Operating System family for the artifact.
 	OsFamily pulumi.StringInput `pulumi:"osFamily"`
@@ -13806,7 +14216,7 @@ func (o GetJavaReleaseArtifactOutput) ArtifactId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJavaReleaseArtifact) string { return v.ArtifactId }).(pulumi.StringOutput)
 }
 
-// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl) for more details.
 func (o GetJavaReleaseArtifactOutput) DownloadUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJavaReleaseArtifact) string { return v.DownloadUrl }).(pulumi.StringOutput)
 }
@@ -13876,6 +14286,8 @@ type GetJavaReleaseFamilyDetail struct {
 	LatestReleaseArtifacts []GetJavaReleaseFamilyDetailLatestReleaseArtifact `pulumi:"latestReleaseArtifacts"`
 	// Latest Java release version in the family.
 	LatestReleaseVersion string `pulumi:"latestReleaseVersion"`
+	// The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	ReleaseDate string `pulumi:"releaseDate"`
 	// This indicates the support category for the Java release family.
 	SupportType string `pulumi:"supportType"`
 }
@@ -13906,6 +14318,8 @@ type GetJavaReleaseFamilyDetailArgs struct {
 	LatestReleaseArtifacts GetJavaReleaseFamilyDetailLatestReleaseArtifactArrayInput `pulumi:"latestReleaseArtifacts"`
 	// Latest Java release version in the family.
 	LatestReleaseVersion pulumi.StringInput `pulumi:"latestReleaseVersion"`
+	// The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	ReleaseDate pulumi.StringInput `pulumi:"releaseDate"`
 	// This indicates the support category for the Java release family.
 	SupportType pulumi.StringInput `pulumi:"supportType"`
 }
@@ -13998,6 +14412,11 @@ func (o GetJavaReleaseFamilyDetailOutput) LatestReleaseVersion() pulumi.StringOu
 	return o.ApplyT(func(v GetJavaReleaseFamilyDetail) string { return v.LatestReleaseVersion }).(pulumi.StringOutput)
 }
 
+// The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+func (o GetJavaReleaseFamilyDetailOutput) ReleaseDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleaseFamilyDetail) string { return v.ReleaseDate }).(pulumi.StringOutput)
+}
+
 // This indicates the support category for the Java release family.
 func (o GetJavaReleaseFamilyDetailOutput) SupportType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJavaReleaseFamilyDetail) string { return v.SupportType }).(pulumi.StringOutput)
@@ -14036,7 +14455,7 @@ type GetJavaReleaseFamilyDetailLatestReleaseArtifact struct {
 	ArtifactFileName string `pulumi:"artifactFileName"`
 	// Unique identifier for the artifact.
 	ArtifactId string `pulumi:"artifactId"`
-	// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+	// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl) for more details.
 	DownloadUrl string `pulumi:"downloadUrl"`
 	// The target Operating System family for the artifact.
 	OsFamily string `pulumi:"osFamily"`
@@ -14076,7 +14495,7 @@ type GetJavaReleaseFamilyDetailLatestReleaseArtifactArgs struct {
 	ArtifactFileName pulumi.StringInput `pulumi:"artifactFileName"`
 	// Unique identifier for the artifact.
 	ArtifactId pulumi.StringInput `pulumi:"artifactId"`
-	// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+	// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl) for more details.
 	DownloadUrl pulumi.StringInput `pulumi:"downloadUrl"`
 	// The target Operating System family for the artifact.
 	OsFamily pulumi.StringInput `pulumi:"osFamily"`
@@ -14173,7 +14592,7 @@ func (o GetJavaReleaseFamilyDetailLatestReleaseArtifactOutput) ArtifactId() pulu
 	return o.ApplyT(func(v GetJavaReleaseFamilyDetailLatestReleaseArtifact) string { return v.ArtifactId }).(pulumi.StringOutput)
 }
 
-// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl) for more details.
 func (o GetJavaReleaseFamilyDetailLatestReleaseArtifactOutput) DownloadUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJavaReleaseFamilyDetailLatestReleaseArtifact) string { return v.DownloadUrl }).(pulumi.StringOutput)
 }
@@ -14886,7 +15305,7 @@ type GetJavaReleasesJavaReleaseCollectionItemArtifact struct {
 	ArtifactFileName string `pulumi:"artifactFileName"`
 	// Unique identifier for the artifact.
 	ArtifactId string `pulumi:"artifactId"`
-	// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+	// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl) for more details.
 	DownloadUrl string `pulumi:"downloadUrl"`
 	// The target Operating System family for the artifact.
 	OsFamily string `pulumi:"osFamily"`
@@ -14926,7 +15345,7 @@ type GetJavaReleasesJavaReleaseCollectionItemArtifactArgs struct {
 	ArtifactFileName pulumi.StringInput `pulumi:"artifactFileName"`
 	// Unique identifier for the artifact.
 	ArtifactId pulumi.StringInput `pulumi:"artifactId"`
-	// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+	// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl) for more details.
 	DownloadUrl pulumi.StringInput `pulumi:"downloadUrl"`
 	// The target Operating System family for the artifact.
 	OsFamily pulumi.StringInput `pulumi:"osFamily"`
@@ -15023,7 +15442,7 @@ func (o GetJavaReleasesJavaReleaseCollectionItemArtifactOutput) ArtifactId() pul
 	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemArtifact) string { return v.ArtifactId }).(pulumi.StringOutput)
 }
 
-// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl) for more details.
 func (o GetJavaReleasesJavaReleaseCollectionItemArtifactOutput) DownloadUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemArtifact) string { return v.DownloadUrl }).(pulumi.StringOutput)
 }
@@ -15093,6 +15512,8 @@ type GetJavaReleasesJavaReleaseCollectionItemFamilyDetail struct {
 	LatestReleaseArtifacts []GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifact `pulumi:"latestReleaseArtifacts"`
 	// Latest Java release version in the family.
 	LatestReleaseVersion string `pulumi:"latestReleaseVersion"`
+	// The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	ReleaseDate string `pulumi:"releaseDate"`
 	// This indicates the support category for the Java release family.
 	SupportType string `pulumi:"supportType"`
 }
@@ -15123,6 +15544,8 @@ type GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArgs struct {
 	LatestReleaseArtifacts GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArrayInput `pulumi:"latestReleaseArtifacts"`
 	// Latest Java release version in the family.
 	LatestReleaseVersion pulumi.StringInput `pulumi:"latestReleaseVersion"`
+	// The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	ReleaseDate pulumi.StringInput `pulumi:"releaseDate"`
 	// This indicates the support category for the Java release family.
 	SupportType pulumi.StringInput `pulumi:"supportType"`
 }
@@ -15215,6 +15638,11 @@ func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput) LatestReleas
 	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemFamilyDetail) string { return v.LatestReleaseVersion }).(pulumi.StringOutput)
 }
 
+// The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput) ReleaseDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemFamilyDetail) string { return v.ReleaseDate }).(pulumi.StringOutput)
+}
+
 // This indicates the support category for the Java release family.
 func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput) SupportType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemFamilyDetail) string { return v.SupportType }).(pulumi.StringOutput)
@@ -15253,7 +15681,7 @@ type GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifact s
 	ArtifactFileName string `pulumi:"artifactFileName"`
 	// Unique identifier for the artifact.
 	ArtifactId string `pulumi:"artifactId"`
-	// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+	// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl) for more details.
 	DownloadUrl string `pulumi:"downloadUrl"`
 	// The target Operating System family for the artifact.
 	OsFamily string `pulumi:"osFamily"`
@@ -15293,7 +15721,7 @@ type GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactAr
 	ArtifactFileName pulumi.StringInput `pulumi:"artifactFileName"`
 	// Unique identifier for the artifact.
 	ArtifactId pulumi.StringInput `pulumi:"artifactId"`
-	// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+	// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl) for more details.
 	DownloadUrl pulumi.StringInput `pulumi:"downloadUrl"`
 	// The target Operating System family for the artifact.
 	OsFamily pulumi.StringInput `pulumi:"osFamily"`
@@ -15402,7 +15830,7 @@ func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifac
 	}).(pulumi.StringOutput)
 }
 
-// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl) for more details.
 func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactOutput) DownloadUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifact) string {
 		return v.DownloadUrl
@@ -15690,6 +16118,447 @@ func (o GetJavaReleasesJavaReleaseCollectionItemMosPatchArrayOutput) Index(i pul
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaReleasesJavaReleaseCollectionItemMosPatch {
 		return vs[0].([]GetJavaReleasesJavaReleaseCollectionItemMosPatch)[vs[1].(int)]
 	}).(GetJavaReleasesJavaReleaseCollectionItemMosPatchOutput)
+}
+
+type GetJmsPluginsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetJmsPluginsFilterInput is an input type that accepts GetJmsPluginsFilterArgs and GetJmsPluginsFilterOutput values.
+// You can construct a concrete instance of `GetJmsPluginsFilterInput` via:
+//
+//	GetJmsPluginsFilterArgs{...}
+type GetJmsPluginsFilterInput interface {
+	pulumi.Input
+
+	ToGetJmsPluginsFilterOutput() GetJmsPluginsFilterOutput
+	ToGetJmsPluginsFilterOutputWithContext(context.Context) GetJmsPluginsFilterOutput
+}
+
+type GetJmsPluginsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetJmsPluginsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJmsPluginsFilter)(nil)).Elem()
+}
+
+func (i GetJmsPluginsFilterArgs) ToGetJmsPluginsFilterOutput() GetJmsPluginsFilterOutput {
+	return i.ToGetJmsPluginsFilterOutputWithContext(context.Background())
+}
+
+func (i GetJmsPluginsFilterArgs) ToGetJmsPluginsFilterOutputWithContext(ctx context.Context) GetJmsPluginsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJmsPluginsFilterOutput)
+}
+
+// GetJmsPluginsFilterArrayInput is an input type that accepts GetJmsPluginsFilterArray and GetJmsPluginsFilterArrayOutput values.
+// You can construct a concrete instance of `GetJmsPluginsFilterArrayInput` via:
+//
+//	GetJmsPluginsFilterArray{ GetJmsPluginsFilterArgs{...} }
+type GetJmsPluginsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetJmsPluginsFilterArrayOutput() GetJmsPluginsFilterArrayOutput
+	ToGetJmsPluginsFilterArrayOutputWithContext(context.Context) GetJmsPluginsFilterArrayOutput
+}
+
+type GetJmsPluginsFilterArray []GetJmsPluginsFilterInput
+
+func (GetJmsPluginsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJmsPluginsFilter)(nil)).Elem()
+}
+
+func (i GetJmsPluginsFilterArray) ToGetJmsPluginsFilterArrayOutput() GetJmsPluginsFilterArrayOutput {
+	return i.ToGetJmsPluginsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetJmsPluginsFilterArray) ToGetJmsPluginsFilterArrayOutputWithContext(ctx context.Context) GetJmsPluginsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJmsPluginsFilterArrayOutput)
+}
+
+type GetJmsPluginsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetJmsPluginsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJmsPluginsFilter)(nil)).Elem()
+}
+
+func (o GetJmsPluginsFilterOutput) ToGetJmsPluginsFilterOutput() GetJmsPluginsFilterOutput {
+	return o
+}
+
+func (o GetJmsPluginsFilterOutput) ToGetJmsPluginsFilterOutputWithContext(ctx context.Context) GetJmsPluginsFilterOutput {
+	return o
+}
+
+func (o GetJmsPluginsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJmsPluginsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetJmsPluginsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetJmsPluginsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetJmsPluginsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetJmsPluginsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetJmsPluginsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJmsPluginsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJmsPluginsFilter)(nil)).Elem()
+}
+
+func (o GetJmsPluginsFilterArrayOutput) ToGetJmsPluginsFilterArrayOutput() GetJmsPluginsFilterArrayOutput {
+	return o
+}
+
+func (o GetJmsPluginsFilterArrayOutput) ToGetJmsPluginsFilterArrayOutputWithContext(ctx context.Context) GetJmsPluginsFilterArrayOutput {
+	return o
+}
+
+func (o GetJmsPluginsFilterArrayOutput) Index(i pulumi.IntInput) GetJmsPluginsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJmsPluginsFilter {
+		return vs[0].([]GetJmsPluginsFilter)[vs[1].(int)]
+	}).(GetJmsPluginsFilterOutput)
+}
+
+type GetJmsPluginsJmsPluginCollection struct {
+	Items []GetJmsPluginsJmsPluginCollectionItem `pulumi:"items"`
+}
+
+// GetJmsPluginsJmsPluginCollectionInput is an input type that accepts GetJmsPluginsJmsPluginCollectionArgs and GetJmsPluginsJmsPluginCollectionOutput values.
+// You can construct a concrete instance of `GetJmsPluginsJmsPluginCollectionInput` via:
+//
+//	GetJmsPluginsJmsPluginCollectionArgs{...}
+type GetJmsPluginsJmsPluginCollectionInput interface {
+	pulumi.Input
+
+	ToGetJmsPluginsJmsPluginCollectionOutput() GetJmsPluginsJmsPluginCollectionOutput
+	ToGetJmsPluginsJmsPluginCollectionOutputWithContext(context.Context) GetJmsPluginsJmsPluginCollectionOutput
+}
+
+type GetJmsPluginsJmsPluginCollectionArgs struct {
+	Items GetJmsPluginsJmsPluginCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetJmsPluginsJmsPluginCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJmsPluginsJmsPluginCollection)(nil)).Elem()
+}
+
+func (i GetJmsPluginsJmsPluginCollectionArgs) ToGetJmsPluginsJmsPluginCollectionOutput() GetJmsPluginsJmsPluginCollectionOutput {
+	return i.ToGetJmsPluginsJmsPluginCollectionOutputWithContext(context.Background())
+}
+
+func (i GetJmsPluginsJmsPluginCollectionArgs) ToGetJmsPluginsJmsPluginCollectionOutputWithContext(ctx context.Context) GetJmsPluginsJmsPluginCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJmsPluginsJmsPluginCollectionOutput)
+}
+
+// GetJmsPluginsJmsPluginCollectionArrayInput is an input type that accepts GetJmsPluginsJmsPluginCollectionArray and GetJmsPluginsJmsPluginCollectionArrayOutput values.
+// You can construct a concrete instance of `GetJmsPluginsJmsPluginCollectionArrayInput` via:
+//
+//	GetJmsPluginsJmsPluginCollectionArray{ GetJmsPluginsJmsPluginCollectionArgs{...} }
+type GetJmsPluginsJmsPluginCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetJmsPluginsJmsPluginCollectionArrayOutput() GetJmsPluginsJmsPluginCollectionArrayOutput
+	ToGetJmsPluginsJmsPluginCollectionArrayOutputWithContext(context.Context) GetJmsPluginsJmsPluginCollectionArrayOutput
+}
+
+type GetJmsPluginsJmsPluginCollectionArray []GetJmsPluginsJmsPluginCollectionInput
+
+func (GetJmsPluginsJmsPluginCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJmsPluginsJmsPluginCollection)(nil)).Elem()
+}
+
+func (i GetJmsPluginsJmsPluginCollectionArray) ToGetJmsPluginsJmsPluginCollectionArrayOutput() GetJmsPluginsJmsPluginCollectionArrayOutput {
+	return i.ToGetJmsPluginsJmsPluginCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetJmsPluginsJmsPluginCollectionArray) ToGetJmsPluginsJmsPluginCollectionArrayOutputWithContext(ctx context.Context) GetJmsPluginsJmsPluginCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJmsPluginsJmsPluginCollectionArrayOutput)
+}
+
+type GetJmsPluginsJmsPluginCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetJmsPluginsJmsPluginCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJmsPluginsJmsPluginCollection)(nil)).Elem()
+}
+
+func (o GetJmsPluginsJmsPluginCollectionOutput) ToGetJmsPluginsJmsPluginCollectionOutput() GetJmsPluginsJmsPluginCollectionOutput {
+	return o
+}
+
+func (o GetJmsPluginsJmsPluginCollectionOutput) ToGetJmsPluginsJmsPluginCollectionOutputWithContext(ctx context.Context) GetJmsPluginsJmsPluginCollectionOutput {
+	return o
+}
+
+func (o GetJmsPluginsJmsPluginCollectionOutput) Items() GetJmsPluginsJmsPluginCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetJmsPluginsJmsPluginCollection) []GetJmsPluginsJmsPluginCollectionItem { return v.Items }).(GetJmsPluginsJmsPluginCollectionItemArrayOutput)
+}
+
+type GetJmsPluginsJmsPluginCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJmsPluginsJmsPluginCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJmsPluginsJmsPluginCollection)(nil)).Elem()
+}
+
+func (o GetJmsPluginsJmsPluginCollectionArrayOutput) ToGetJmsPluginsJmsPluginCollectionArrayOutput() GetJmsPluginsJmsPluginCollectionArrayOutput {
+	return o
+}
+
+func (o GetJmsPluginsJmsPluginCollectionArrayOutput) ToGetJmsPluginsJmsPluginCollectionArrayOutputWithContext(ctx context.Context) GetJmsPluginsJmsPluginCollectionArrayOutput {
+	return o
+}
+
+func (o GetJmsPluginsJmsPluginCollectionArrayOutput) Index(i pulumi.IntInput) GetJmsPluginsJmsPluginCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJmsPluginsJmsPluginCollection {
+		return vs[0].([]GetJmsPluginsJmsPluginCollection)[vs[1].(int)]
+	}).(GetJmsPluginsJmsPluginCollectionOutput)
+}
+
+type GetJmsPluginsJmsPluginCollectionItem struct {
+	// The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies the Agent.
+	AgentId string `pulumi:"agentId"`
+	// The agent type.
+	AgentType string `pulumi:"agentType"`
+	// Filter JmsPlugin with its availability status.
+	AvailabilityStatus string `pulumi:"availabilityStatus"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// The ID of the Fleet.
+	FleetId string `pulumi:"fleetId"`
+	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The hostname of the agent.
+	Hostname string `pulumi:"hostname"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the JmsPlugin.
+	Id string `pulumi:"id"`
+	// The architecture of the operating system of the plugin.
+	OsArchitecture string `pulumi:"osArchitecture"`
+	// The distribution of the operating system of the plugin.
+	OsDistribution string `pulumi:"osDistribution"`
+	// The operating system family for the plugin.
+	OsFamily string `pulumi:"osFamily"`
+	// The version of the plugin.
+	PluginVersion string `pulumi:"pluginVersion"`
+	// Filter JmsPlugin with its lifecycle state.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
+	TimeLastSeen string `pulumi:"timeLastSeen"`
+	// The date and time the plugin was registered.
+	TimeRegistered string `pulumi:"timeRegistered"`
+}
+
+// GetJmsPluginsJmsPluginCollectionItemInput is an input type that accepts GetJmsPluginsJmsPluginCollectionItemArgs and GetJmsPluginsJmsPluginCollectionItemOutput values.
+// You can construct a concrete instance of `GetJmsPluginsJmsPluginCollectionItemInput` via:
+//
+//	GetJmsPluginsJmsPluginCollectionItemArgs{...}
+type GetJmsPluginsJmsPluginCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetJmsPluginsJmsPluginCollectionItemOutput() GetJmsPluginsJmsPluginCollectionItemOutput
+	ToGetJmsPluginsJmsPluginCollectionItemOutputWithContext(context.Context) GetJmsPluginsJmsPluginCollectionItemOutput
+}
+
+type GetJmsPluginsJmsPluginCollectionItemArgs struct {
+	// The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies the Agent.
+	AgentId pulumi.StringInput `pulumi:"agentId"`
+	// The agent type.
+	AgentType pulumi.StringInput `pulumi:"agentType"`
+	// Filter JmsPlugin with its availability status.
+	AvailabilityStatus pulumi.StringInput `pulumi:"availabilityStatus"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// The ID of the Fleet.
+	FleetId pulumi.StringInput `pulumi:"fleetId"`
+	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The hostname of the agent.
+	Hostname pulumi.StringInput `pulumi:"hostname"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the JmsPlugin.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The architecture of the operating system of the plugin.
+	OsArchitecture pulumi.StringInput `pulumi:"osArchitecture"`
+	// The distribution of the operating system of the plugin.
+	OsDistribution pulumi.StringInput `pulumi:"osDistribution"`
+	// The operating system family for the plugin.
+	OsFamily pulumi.StringInput `pulumi:"osFamily"`
+	// The version of the plugin.
+	PluginVersion pulumi.StringInput `pulumi:"pluginVersion"`
+	// Filter JmsPlugin with its lifecycle state.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
+	TimeLastSeen pulumi.StringInput `pulumi:"timeLastSeen"`
+	// The date and time the plugin was registered.
+	TimeRegistered pulumi.StringInput `pulumi:"timeRegistered"`
+}
+
+func (GetJmsPluginsJmsPluginCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJmsPluginsJmsPluginCollectionItem)(nil)).Elem()
+}
+
+func (i GetJmsPluginsJmsPluginCollectionItemArgs) ToGetJmsPluginsJmsPluginCollectionItemOutput() GetJmsPluginsJmsPluginCollectionItemOutput {
+	return i.ToGetJmsPluginsJmsPluginCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetJmsPluginsJmsPluginCollectionItemArgs) ToGetJmsPluginsJmsPluginCollectionItemOutputWithContext(ctx context.Context) GetJmsPluginsJmsPluginCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJmsPluginsJmsPluginCollectionItemOutput)
+}
+
+// GetJmsPluginsJmsPluginCollectionItemArrayInput is an input type that accepts GetJmsPluginsJmsPluginCollectionItemArray and GetJmsPluginsJmsPluginCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetJmsPluginsJmsPluginCollectionItemArrayInput` via:
+//
+//	GetJmsPluginsJmsPluginCollectionItemArray{ GetJmsPluginsJmsPluginCollectionItemArgs{...} }
+type GetJmsPluginsJmsPluginCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetJmsPluginsJmsPluginCollectionItemArrayOutput() GetJmsPluginsJmsPluginCollectionItemArrayOutput
+	ToGetJmsPluginsJmsPluginCollectionItemArrayOutputWithContext(context.Context) GetJmsPluginsJmsPluginCollectionItemArrayOutput
+}
+
+type GetJmsPluginsJmsPluginCollectionItemArray []GetJmsPluginsJmsPluginCollectionItemInput
+
+func (GetJmsPluginsJmsPluginCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJmsPluginsJmsPluginCollectionItem)(nil)).Elem()
+}
+
+func (i GetJmsPluginsJmsPluginCollectionItemArray) ToGetJmsPluginsJmsPluginCollectionItemArrayOutput() GetJmsPluginsJmsPluginCollectionItemArrayOutput {
+	return i.ToGetJmsPluginsJmsPluginCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetJmsPluginsJmsPluginCollectionItemArray) ToGetJmsPluginsJmsPluginCollectionItemArrayOutputWithContext(ctx context.Context) GetJmsPluginsJmsPluginCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJmsPluginsJmsPluginCollectionItemArrayOutput)
+}
+
+type GetJmsPluginsJmsPluginCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetJmsPluginsJmsPluginCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJmsPluginsJmsPluginCollectionItem)(nil)).Elem()
+}
+
+func (o GetJmsPluginsJmsPluginCollectionItemOutput) ToGetJmsPluginsJmsPluginCollectionItemOutput() GetJmsPluginsJmsPluginCollectionItemOutput {
+	return o
+}
+
+func (o GetJmsPluginsJmsPluginCollectionItemOutput) ToGetJmsPluginsJmsPluginCollectionItemOutputWithContext(ctx context.Context) GetJmsPluginsJmsPluginCollectionItemOutput {
+	return o
+}
+
+// The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies the Agent.
+func (o GetJmsPluginsJmsPluginCollectionItemOutput) AgentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJmsPluginsJmsPluginCollectionItem) string { return v.AgentId }).(pulumi.StringOutput)
+}
+
+// The agent type.
+func (o GetJmsPluginsJmsPluginCollectionItemOutput) AgentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJmsPluginsJmsPluginCollectionItem) string { return v.AgentType }).(pulumi.StringOutput)
+}
+
+// Filter JmsPlugin with its availability status.
+func (o GetJmsPluginsJmsPluginCollectionItemOutput) AvailabilityStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJmsPluginsJmsPluginCollectionItem) string { return v.AvailabilityStatus }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetJmsPluginsJmsPluginCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJmsPluginsJmsPluginCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+func (o GetJmsPluginsJmsPluginCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetJmsPluginsJmsPluginCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// The ID of the Fleet.
+func (o GetJmsPluginsJmsPluginCollectionItemOutput) FleetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJmsPluginsJmsPluginCollectionItem) string { return v.FleetId }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+func (o GetJmsPluginsJmsPluginCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetJmsPluginsJmsPluginCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The hostname of the agent.
+func (o GetJmsPluginsJmsPluginCollectionItemOutput) Hostname() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJmsPluginsJmsPluginCollectionItem) string { return v.Hostname }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the JmsPlugin.
+func (o GetJmsPluginsJmsPluginCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJmsPluginsJmsPluginCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The architecture of the operating system of the plugin.
+func (o GetJmsPluginsJmsPluginCollectionItemOutput) OsArchitecture() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJmsPluginsJmsPluginCollectionItem) string { return v.OsArchitecture }).(pulumi.StringOutput)
+}
+
+// The distribution of the operating system of the plugin.
+func (o GetJmsPluginsJmsPluginCollectionItemOutput) OsDistribution() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJmsPluginsJmsPluginCollectionItem) string { return v.OsDistribution }).(pulumi.StringOutput)
+}
+
+// The operating system family for the plugin.
+func (o GetJmsPluginsJmsPluginCollectionItemOutput) OsFamily() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJmsPluginsJmsPluginCollectionItem) string { return v.OsFamily }).(pulumi.StringOutput)
+}
+
+// The version of the plugin.
+func (o GetJmsPluginsJmsPluginCollectionItemOutput) PluginVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJmsPluginsJmsPluginCollectionItem) string { return v.PluginVersion }).(pulumi.StringOutput)
+}
+
+// Filter JmsPlugin with its lifecycle state.
+func (o GetJmsPluginsJmsPluginCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJmsPluginsJmsPluginCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetJmsPluginsJmsPluginCollectionItemOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetJmsPluginsJmsPluginCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+}
+
+// The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
+func (o GetJmsPluginsJmsPluginCollectionItemOutput) TimeLastSeen() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJmsPluginsJmsPluginCollectionItem) string { return v.TimeLastSeen }).(pulumi.StringOutput)
+}
+
+// The date and time the plugin was registered.
+func (o GetJmsPluginsJmsPluginCollectionItemOutput) TimeRegistered() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJmsPluginsJmsPluginCollectionItem) string { return v.TimeRegistered }).(pulumi.StringOutput)
+}
+
+type GetJmsPluginsJmsPluginCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJmsPluginsJmsPluginCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJmsPluginsJmsPluginCollectionItem)(nil)).Elem()
+}
+
+func (o GetJmsPluginsJmsPluginCollectionItemArrayOutput) ToGetJmsPluginsJmsPluginCollectionItemArrayOutput() GetJmsPluginsJmsPluginCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetJmsPluginsJmsPluginCollectionItemArrayOutput) ToGetJmsPluginsJmsPluginCollectionItemArrayOutputWithContext(ctx context.Context) GetJmsPluginsJmsPluginCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetJmsPluginsJmsPluginCollectionItemArrayOutput) Index(i pulumi.IntInput) GetJmsPluginsJmsPluginCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJmsPluginsJmsPluginCollectionItem {
+		return vs[0].([]GetJmsPluginsJmsPluginCollectionItem)[vs[1].(int)]
+	}).(GetJmsPluginsJmsPluginCollectionItemOutput)
 }
 
 type GetListJreUsageItem struct {
@@ -16125,6 +16994,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayInput)(nil)).Elem(), JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByInput)(nil)).Elem(), JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayInput)(nil)).Elem(), JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentInstallersAgentInstallerCollectionInput)(nil)).Elem(), GetAgentInstallersAgentInstallerCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentInstallersAgentInstallerCollectionArrayInput)(nil)).Elem(), GetAgentInstallersAgentInstallerCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentInstallersAgentInstallerCollectionItemInput)(nil)).Elem(), GetAgentInstallersAgentInstallerCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentInstallersAgentInstallerCollectionItemArrayInput)(nil)).Elem(), GetAgentInstallersAgentInstallerCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentInstallersFilterInput)(nil)).Elem(), GetAgentInstallersFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentInstallersFilterArrayInput)(nil)).Elem(), GetAgentInstallersFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAnnouncementsAnnouncementCollectionInput)(nil)).Elem(), GetAnnouncementsAnnouncementCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAnnouncementsAnnouncementCollectionArrayInput)(nil)).Elem(), GetAnnouncementsAnnouncementCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAnnouncementsAnnouncementCollectionItemInput)(nil)).Elem(), GetAnnouncementsAnnouncementCollectionItemArgs{})
@@ -16315,6 +17190,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayInput)(nil)).Elem(), GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaReleasesJavaReleaseCollectionItemMosPatchInput)(nil)).Elem(), GetJavaReleasesJavaReleaseCollectionItemMosPatchArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaReleasesJavaReleaseCollectionItemMosPatchArrayInput)(nil)).Elem(), GetJavaReleasesJavaReleaseCollectionItemMosPatchArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJmsPluginsFilterInput)(nil)).Elem(), GetJmsPluginsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJmsPluginsFilterArrayInput)(nil)).Elem(), GetJmsPluginsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJmsPluginsJmsPluginCollectionInput)(nil)).Elem(), GetJmsPluginsJmsPluginCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJmsPluginsJmsPluginCollectionArrayInput)(nil)).Elem(), GetJmsPluginsJmsPluginCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJmsPluginsJmsPluginCollectionItemInput)(nil)).Elem(), GetJmsPluginsJmsPluginCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJmsPluginsJmsPluginCollectionItemArrayInput)(nil)).Elem(), GetJmsPluginsJmsPluginCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListJreUsageItemInput)(nil)).Elem(), GetListJreUsageItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListJreUsageItemArrayInput)(nil)).Elem(), GetListJreUsageItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListJreUsageItemOperatingSystemInput)(nil)).Elem(), GetListJreUsageItemOperatingSystemArgs{})
@@ -16359,6 +17240,12 @@ func init() {
 	pulumi.RegisterOutputType(JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutput{})
 	pulumi.RegisterOutputType(JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput{})
 	pulumi.RegisterOutputType(JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentInstallersAgentInstallerCollectionOutput{})
+	pulumi.RegisterOutputType(GetAgentInstallersAgentInstallerCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentInstallersAgentInstallerCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetAgentInstallersAgentInstallerCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentInstallersFilterOutput{})
+	pulumi.RegisterOutputType(GetAgentInstallersFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetAnnouncementsAnnouncementCollectionOutput{})
 	pulumi.RegisterOutputType(GetAnnouncementsAnnouncementCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetAnnouncementsAnnouncementCollectionItemOutput{})
@@ -16549,6 +17436,12 @@ func init() {
 	pulumi.RegisterOutputType(GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetJavaReleasesJavaReleaseCollectionItemMosPatchOutput{})
 	pulumi.RegisterOutputType(GetJavaReleasesJavaReleaseCollectionItemMosPatchArrayOutput{})
+	pulumi.RegisterOutputType(GetJmsPluginsFilterOutput{})
+	pulumi.RegisterOutputType(GetJmsPluginsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetJmsPluginsJmsPluginCollectionOutput{})
+	pulumi.RegisterOutputType(GetJmsPluginsJmsPluginCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetJmsPluginsJmsPluginCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetJmsPluginsJmsPluginCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetListJreUsageItemOutput{})
 	pulumi.RegisterOutputType(GetListJreUsageItemArrayOutput{})
 	pulumi.RegisterOutputType(GetListJreUsageItemOperatingSystemOutput{})

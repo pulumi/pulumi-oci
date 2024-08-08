@@ -27,8 +27,6 @@ import * as utilities from "../utilities";
  *     },
  *     dbVersion: configurationDbVersion,
  *     displayName: configurationDisplayName,
- *     instanceMemorySizeInGbs: configurationInstanceMemorySizeInGbs,
- *     instanceOcpuCount: configurationInstanceOcpuCount,
  *     shape: configurationShape,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
@@ -37,6 +35,9 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
+ *     instanceMemorySizeInGbs: configurationInstanceMemorySizeInGbs,
+ *     instanceOcpuCount: configurationInstanceOcpuCount,
+ *     isFlexible: configurationIsFlexible,
  *     systemTags: configurationSystemTags,
  * });
  * ```
@@ -82,6 +83,10 @@ export class Configuration extends pulumi.CustomResource {
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
+     * The type of configuration. Either user-created or a default configuration.
+     */
+    public /*out*/ readonly configType!: pulumi.Output<string>;
+    /**
      * List of configuration details.
      */
     public /*out*/ readonly configurationDetails!: pulumi.Output<outputs.Psql.ConfigurationConfigurationDetail[]>;
@@ -111,12 +116,20 @@ export class Configuration extends pulumi.CustomResource {
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
      * Memory size in gigabytes with 1GB increment.
+     *
+     * Skip or set it's value to 0 if configuration is for a flexible shape.
      */
     public readonly instanceMemorySizeInGbs!: pulumi.Output<number>;
     /**
      * CPU core count.
+     *
+     * Skip or set it's value to 0 if configuration is for a flexible shape.
      */
     public readonly instanceOcpuCount!: pulumi.Output<number>;
+    /**
+     * Whether the configuration supports flexible shapes.
+     */
+    public readonly isFlexible!: pulumi.Output<boolean>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
@@ -156,6 +169,7 @@ export class Configuration extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as ConfigurationState | undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
+            resourceInputs["configType"] = state ? state.configType : undefined;
             resourceInputs["configurationDetails"] = state ? state.configurationDetails : undefined;
             resourceInputs["dbConfigurationOverrides"] = state ? state.dbConfigurationOverrides : undefined;
             resourceInputs["dbVersion"] = state ? state.dbVersion : undefined;
@@ -165,6 +179,7 @@ export class Configuration extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["instanceMemorySizeInGbs"] = state ? state.instanceMemorySizeInGbs : undefined;
             resourceInputs["instanceOcpuCount"] = state ? state.instanceOcpuCount : undefined;
+            resourceInputs["isFlexible"] = state ? state.isFlexible : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["shape"] = state ? state.shape : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
@@ -184,12 +199,6 @@ export class Configuration extends pulumi.CustomResource {
             if ((!args || args.displayName === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.instanceMemorySizeInGbs === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'instanceMemorySizeInGbs'");
-            }
-            if ((!args || args.instanceOcpuCount === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'instanceOcpuCount'");
-            }
             if ((!args || args.shape === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'shape'");
             }
@@ -202,8 +211,10 @@ export class Configuration extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["instanceMemorySizeInGbs"] = args ? args.instanceMemorySizeInGbs : undefined;
             resourceInputs["instanceOcpuCount"] = args ? args.instanceOcpuCount : undefined;
+            resourceInputs["isFlexible"] = args ? args.isFlexible : undefined;
             resourceInputs["shape"] = args ? args.shape : undefined;
             resourceInputs["systemTags"] = args ? args.systemTags : undefined;
+            resourceInputs["configType"] = undefined /*out*/;
             resourceInputs["configurationDetails"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
@@ -222,6 +233,10 @@ export interface ConfigurationState {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
      */
     compartmentId?: pulumi.Input<string>;
+    /**
+     * The type of configuration. Either user-created or a default configuration.
+     */
+    configType?: pulumi.Input<string>;
     /**
      * List of configuration details.
      */
@@ -252,12 +267,20 @@ export interface ConfigurationState {
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * Memory size in gigabytes with 1GB increment.
+     *
+     * Skip or set it's value to 0 if configuration is for a flexible shape.
      */
     instanceMemorySizeInGbs?: pulumi.Input<number>;
     /**
      * CPU core count.
+     *
+     * Skip or set it's value to 0 if configuration is for a flexible shape.
      */
     instanceOcpuCount?: pulumi.Input<number>;
+    /**
+     * Whether the configuration supports flexible shapes.
+     */
+    isFlexible?: pulumi.Input<boolean>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
@@ -318,12 +341,20 @@ export interface ConfigurationArgs {
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * Memory size in gigabytes with 1GB increment.
+     *
+     * Skip or set it's value to 0 if configuration is for a flexible shape.
      */
-    instanceMemorySizeInGbs: pulumi.Input<number>;
+    instanceMemorySizeInGbs?: pulumi.Input<number>;
     /**
      * CPU core count.
+     *
+     * Skip or set it's value to 0 if configuration is for a flexible shape.
      */
-    instanceOcpuCount: pulumi.Input<number>;
+    instanceOcpuCount?: pulumi.Input<number>;
+    /**
+     * Whether the configuration supports flexible shapes.
+     */
+    isFlexible?: pulumi.Input<boolean>;
     /**
      * The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
      */

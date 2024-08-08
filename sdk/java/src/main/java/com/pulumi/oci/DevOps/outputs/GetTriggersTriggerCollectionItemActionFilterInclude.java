@@ -17,6 +17,10 @@ public final class GetTriggersTriggerCollectionItemActionFilterInclude {
      * 
      */
     private String baseRef;
+    /**
+     * @return Attributes to support include/exclude files for triggering build runs.
+     * 
+     */
     private List<GetTriggersTriggerCollectionItemActionFilterIncludeFileFilter> fileFilters;
     /**
      * @return Branch for push event; source branch for pull requests.
@@ -37,6 +41,10 @@ public final class GetTriggersTriggerCollectionItemActionFilterInclude {
     public String baseRef() {
         return this.baseRef;
     }
+    /**
+     * @return Attributes to support include/exclude files for triggering build runs.
+     * 
+     */
     public List<GetTriggersTriggerCollectionItemActionFilterIncludeFileFilter> fileFilters() {
         return this.fileFilters;
     }

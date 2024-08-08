@@ -11,9 +11,17 @@ import java.util.Objects;
 
 @CustomType
 public final class GetTriggerActionFilterExcludeFileFilter {
+    /**
+     * @return The file paths/glob pattern for files.
+     * 
+     */
     private List<String> filePaths;
 
     private GetTriggerActionFilterExcludeFileFilter() {}
+    /**
+     * @return The file paths/glob pattern for files.
+     * 
+     */
     public List<String> filePaths() {
         return this.filePaths;
     }

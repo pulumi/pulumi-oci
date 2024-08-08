@@ -60,6 +60,8 @@ type LookupConfigurationArgs struct {
 type LookupConfigurationResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
 	CompartmentId string `pulumi:"compartmentId"`
+	// The type of configuration. Either user-created or a default configuration.
+	ConfigType string `pulumi:"configType"`
 	// List of configuration details.
 	ConfigurationDetails     []GetConfigurationConfigurationDetail     `pulumi:"configurationDetails"`
 	ConfigurationId          string                                    `pulumi:"configurationId"`
@@ -80,6 +82,8 @@ type LookupConfigurationResult struct {
 	InstanceMemorySizeInGbs int `pulumi:"instanceMemorySizeInGbs"`
 	// CPU core count.
 	InstanceOcpuCount int `pulumi:"instanceOcpuCount"`
+	// Whether the configuration supports flexible shapes.
+	IsFlexible bool `pulumi:"isFlexible"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
@@ -135,6 +139,11 @@ func (o LookupConfigurationResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConfigurationResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// The type of configuration. Either user-created or a default configuration.
+func (o LookupConfigurationResultOutput) ConfigType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConfigurationResult) string { return v.ConfigType }).(pulumi.StringOutput)
+}
+
 // List of configuration details.
 func (o LookupConfigurationResultOutput) ConfigurationDetails() GetConfigurationConfigurationDetailArrayOutput {
 	return o.ApplyT(func(v LookupConfigurationResult) []GetConfigurationConfigurationDetail { return v.ConfigurationDetails }).(GetConfigurationConfigurationDetailArrayOutput)
@@ -188,6 +197,11 @@ func (o LookupConfigurationResultOutput) InstanceMemorySizeInGbs() pulumi.IntOut
 // CPU core count.
 func (o LookupConfigurationResultOutput) InstanceOcpuCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupConfigurationResult) int { return v.InstanceOcpuCount }).(pulumi.IntOutput)
+}
+
+// Whether the configuration supports flexible shapes.
+func (o LookupConfigurationResultOutput) IsFlexible() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupConfigurationResult) bool { return v.IsFlexible }).(pulumi.BoolOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.

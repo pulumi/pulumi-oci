@@ -70,9 +70,13 @@ export interface GetDefaultConfigurationResult {
      */
     readonly instanceMemorySizeInGbs: number;
     /**
-     * CPU core count. Minimum value is 1.
+     * CPU core count.
      */
     readonly instanceOcpuCount: number;
+    /**
+     * True if the configuration supports flexible shapes, false otherwise.
+     */
+    readonly isFlexible: boolean;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */

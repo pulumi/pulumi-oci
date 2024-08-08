@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Jms
         ///     var testFleetPerformanceTuningAnalysisResult = Oci.Jms.GetFleetPerformanceTuningAnalysisResult.Invoke(new()
         ///     {
         ///         FleetId = testFleet.Id,
-        ///         PerformanceTuningAnalysisResultId = testResult.Id,
+        ///         PerformanceTuningAnalysisResultId = fleetPerformanceTuningAnalysisResultId,
         ///     });
         /// 
         /// });
@@ -56,7 +56,7 @@ namespace Pulumi.Oci.Jms
         ///     var testFleetPerformanceTuningAnalysisResult = Oci.Jms.GetFleetPerformanceTuningAnalysisResult.Invoke(new()
         ///     {
         ///         FleetId = testFleet.Id,
-        ///         PerformanceTuningAnalysisResultId = testResult.Id,
+        ///         PerformanceTuningAnalysisResultId = fleetPerformanceTuningAnalysisResultId,
         ///     });
         /// 
         /// });
@@ -165,11 +165,11 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The time the JFR capture finished.
+        /// The time the JFR recording has finished.
         /// </summary>
         public readonly string TimeFinished;
         /// <summary>
-        /// The time the JFR capture started.
+        /// The time the JFR recording has started.
         /// </summary>
         public readonly string TimeStarted;
         /// <summary>

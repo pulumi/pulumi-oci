@@ -65,9 +65,6 @@ class GetTriggersResult:
     @property
     @pulumi.getter
     def filters(self) -> Optional[Sequence['outputs.GetTriggersFilterResult']]:
-        """
-        The filters for the trigger.
-        """
         return pulumi.get(self, "filters")
 
     @property
@@ -146,7 +143,6 @@ def get_triggers(compartment_id: Optional[str] = None,
 
     :param str compartment_id: The OCID of the compartment in which to list resources.
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param Sequence[pulumi.InputType['GetTriggersFilterArgs']] filters: The filters for the trigger.
     :param str id: Unique trigger identifier.
     :param str project_id: unique project identifier
     :param str state: A filter to return only triggers that matches the given lifecycle state.
@@ -200,7 +196,6 @@ def get_triggers_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = 
 
     :param str compartment_id: The OCID of the compartment in which to list resources.
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param Sequence[pulumi.InputType['GetTriggersFilterArgs']] filters: The filters for the trigger.
     :param str id: Unique trigger identifier.
     :param str project_id: unique project identifier
     :param str state: A filter to return only triggers that matches the given lifecycle state.

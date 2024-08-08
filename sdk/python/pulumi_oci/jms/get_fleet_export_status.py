@@ -97,7 +97,7 @@ def get_fleet_export_status(fleet_id: Optional[str] = None,
     """
     This data source provides details about a specific Fleet Export Status resource in Oracle Cloud Infrastructure Jms service.
 
-    Returns last export status for the specified Fleet.
+    Returns last export status for the specified fleet.
 
     ## Example Usage
 
@@ -130,7 +130,7 @@ def get_fleet_export_status_output(fleet_id: Optional[pulumi.Input[str]] = None,
     """
     This data source provides details about a specific Fleet Export Status resource in Oracle Cloud Infrastructure Jms service.
 
-    Returns last export status for the specified Fleet.
+    Returns last export status for the specified fleet.
 
     ## Example Usage
 

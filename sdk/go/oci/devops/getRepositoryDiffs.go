@@ -34,6 +34,7 @@ import (
 //				RepositoryId:              testRepository.Id,
 //				TargetVersion:             repositoryDiffTargetVersion,
 //				IsComparisonFromMergeBase: pulumi.BoolRef(repositoryDiffIsComparisonFromMergeBase),
+//				TargetRepositoryId:        pulumi.StringRef(testRepository.Id),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -62,6 +63,8 @@ type GetRepositoryDiffsArgs struct {
 	IsComparisonFromMergeBase *bool `pulumi:"isComparisonFromMergeBase"`
 	// Unique repository identifier.
 	RepositoryId string `pulumi:"repositoryId"`
+	// The target repository identifier
+	TargetRepositoryId *string `pulumi:"targetRepositoryId"`
 	// The commit or reference name where changes are coming from.
 	TargetVersion string `pulumi:"targetVersion"`
 }
@@ -73,10 +76,11 @@ type GetRepositoryDiffsResult struct {
 	DiffCollections []GetRepositoryDiffsDiffCollection `pulumi:"diffCollections"`
 	Filters         []GetRepositoryDiffsFilter         `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                        string `pulumi:"id"`
-	IsComparisonFromMergeBase *bool  `pulumi:"isComparisonFromMergeBase"`
-	RepositoryId              string `pulumi:"repositoryId"`
-	TargetVersion             string `pulumi:"targetVersion"`
+	Id                        string  `pulumi:"id"`
+	IsComparisonFromMergeBase *bool   `pulumi:"isComparisonFromMergeBase"`
+	RepositoryId              string  `pulumi:"repositoryId"`
+	TargetRepositoryId        *string `pulumi:"targetRepositoryId"`
+	TargetVersion             string  `pulumi:"targetVersion"`
 }
 
 func GetRepositoryDiffsOutput(ctx *pulumi.Context, args GetRepositoryDiffsOutputArgs, opts ...pulumi.InvokeOption) GetRepositoryDiffsResultOutput {
@@ -101,6 +105,8 @@ type GetRepositoryDiffsOutputArgs struct {
 	IsComparisonFromMergeBase pulumi.BoolPtrInput `pulumi:"isComparisonFromMergeBase"`
 	// Unique repository identifier.
 	RepositoryId pulumi.StringInput `pulumi:"repositoryId"`
+	// The target repository identifier
+	TargetRepositoryId pulumi.StringPtrInput `pulumi:"targetRepositoryId"`
 	// The commit or reference name where changes are coming from.
 	TargetVersion pulumi.StringInput `pulumi:"targetVersion"`
 }
@@ -148,6 +154,10 @@ func (o GetRepositoryDiffsResultOutput) IsComparisonFromMergeBase() pulumi.BoolP
 
 func (o GetRepositoryDiffsResultOutput) RepositoryId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRepositoryDiffsResult) string { return v.RepositoryId }).(pulumi.StringOutput)
+}
+
+func (o GetRepositoryDiffsResultOutput) TargetRepositoryId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRepositoryDiffsResult) *string { return v.TargetRepositoryId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetRepositoryDiffsResultOutput) TargetVersion() pulumi.StringOutput {

@@ -32,14 +32,18 @@ public final class DbSystemManagementPolicyArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * (Updatable) The start of the maintenance window.
+     * (Updatable) The start of the maintenance window in UTC.
+     * 
+     * This string is of the format: &#34;{day-of-week} {time-of-day}&#34;. &#34;{day-of-week}&#34; is a case-insensitive string like &#34;mon&#34;, &#34;tue&#34;, &amp;c. &#34;{time-of-day}&#34; is the &#34;Time&#34; portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
      * 
      */
     @Import(name="maintenanceWindowStart")
     private @Nullable Output<String> maintenanceWindowStart;
 
     /**
-     * @return (Updatable) The start of the maintenance window.
+     * @return (Updatable) The start of the maintenance window in UTC.
+     * 
+     * This string is of the format: &#34;{day-of-week} {time-of-day}&#34;. &#34;{day-of-week}&#34; is a case-insensitive string like &#34;mon&#34;, &#34;tue&#34;, &amp;c. &#34;{time-of-day}&#34; is the &#34;Time&#34; portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
      * 
      */
     public Optional<Output<String>> maintenanceWindowStart() {
@@ -93,7 +97,9 @@ public final class DbSystemManagementPolicyArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param maintenanceWindowStart (Updatable) The start of the maintenance window.
+         * @param maintenanceWindowStart (Updatable) The start of the maintenance window in UTC.
+         * 
+         * This string is of the format: &#34;{day-of-week} {time-of-day}&#34;. &#34;{day-of-week}&#34; is a case-insensitive string like &#34;mon&#34;, &#34;tue&#34;, &amp;c. &#34;{time-of-day}&#34; is the &#34;Time&#34; portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
          * 
          * @return builder
          * 
@@ -104,7 +110,9 @@ public final class DbSystemManagementPolicyArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param maintenanceWindowStart (Updatable) The start of the maintenance window.
+         * @param maintenanceWindowStart (Updatable) The start of the maintenance window in UTC.
+         * 
+         * This string is of the format: &#34;{day-of-week} {time-of-day}&#34;. &#34;{day-of-week}&#34; is a case-insensitive string like &#34;mon&#34;, &#34;tue&#34;, &amp;c. &#34;{time-of-day}&#34; is the &#34;Time&#34; portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
          * 
          * @return builder
          * 

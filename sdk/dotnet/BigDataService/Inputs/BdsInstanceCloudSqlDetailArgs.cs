@@ -61,10 +61,28 @@ namespace Pulumi.Oci.BigDataService.Inputs
         public Input<int>? Ocpus { get; set; }
 
         /// <summary>
+        /// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+        /// </summary>
+        [Input("odhVersion")]
+        public Input<string>? OdhVersion { get; set; }
+
+        /// <summary>
+        /// BDS-assigned Operating System version for the node.
+        /// </summary>
+        [Input("osVersion")]
+        public Input<string>? OsVersion { get; set; }
+
+        /// <summary>
         /// Shape of the node
         /// </summary>
         [Input("shape", required: true)]
         public Input<string> Shape { get; set; } = null!;
+
+        /// <summary>
+        /// The fingerprint of the SSH key used for node access
+        /// </summary>
+        [Input("sshFingerprint")]
+        public Input<string>? SshFingerprint { get; set; }
 
         public BdsInstanceCloudSqlDetailArgs()
         {

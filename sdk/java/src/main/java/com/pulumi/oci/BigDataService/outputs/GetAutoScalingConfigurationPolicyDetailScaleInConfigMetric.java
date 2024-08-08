@@ -13,7 +13,7 @@ import java.util.Objects;
 @CustomType
 public final class GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric {
     /**
-     * @return Allowed value is CPU_UTILIZATION.
+     * @return Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
      * 
      */
     private String metricType;
@@ -25,7 +25,7 @@ public final class GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric {
 
     private GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric() {}
     /**
-     * @return Allowed value is CPU_UTILIZATION.
+     * @return Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
      * 
      */
     public String metricType() {

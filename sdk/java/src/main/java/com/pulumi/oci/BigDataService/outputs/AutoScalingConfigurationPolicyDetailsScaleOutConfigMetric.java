@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class AutoScalingConfigurationPolicyDetailsScaleOutConfigMetric {
     /**
-     * @return (Updatable) Allowed value is CPU_UTILIZATION.
+     * @return (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
      * 
      */
     private @Nullable String metricType;
@@ -25,7 +25,7 @@ public final class AutoScalingConfigurationPolicyDetailsScaleOutConfigMetric {
 
     private AutoScalingConfigurationPolicyDetailsScaleOutConfigMetric() {}
     /**
-     * @return (Updatable) Allowed value is CPU_UTILIZATION.
+     * @return (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
      * 
      */
     public Optional<String> metricType() {

@@ -6,6 +6,7 @@ package com.pulumi.oci.Psql.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Psql.outputs.GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetail;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -19,7 +20,7 @@ public final class GetDefaultConfigurationsDefaultConfigurationCollectionItem {
      */
     private List<GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetail> configurationDetails;
     /**
-     * @return Verison of the PostgreSQL database, such as 14.9.
+     * @return Version of the PostgreSQL database, such as 14.9.
      * 
      */
     private String dbVersion;
@@ -44,10 +45,15 @@ public final class GetDefaultConfigurationsDefaultConfigurationCollectionItem {
      */
     private Integer instanceMemorySizeInGbs;
     /**
-     * @return CPU core count. Minimum value is 1.
+     * @return CPU core count.
      * 
      */
     private Integer instanceOcpuCount;
+    /**
+     * @return True if the configuration supports flexible shapes, false otherwise.
+     * 
+     */
+    private Boolean isFlexible;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
@@ -78,7 +84,7 @@ public final class GetDefaultConfigurationsDefaultConfigurationCollectionItem {
         return this.configurationDetails;
     }
     /**
-     * @return Verison of the PostgreSQL database, such as 14.9.
+     * @return Version of the PostgreSQL database, such as 14.9.
      * 
      */
     public String dbVersion() {
@@ -113,11 +119,18 @@ public final class GetDefaultConfigurationsDefaultConfigurationCollectionItem {
         return this.instanceMemorySizeInGbs;
     }
     /**
-     * @return CPU core count. Minimum value is 1.
+     * @return CPU core count.
      * 
      */
     public Integer instanceOcpuCount() {
         return this.instanceOcpuCount;
+    }
+    /**
+     * @return True if the configuration supports flexible shapes, false otherwise.
+     * 
+     */
+    public Boolean isFlexible() {
+        return this.isFlexible;
     }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -164,6 +177,7 @@ public final class GetDefaultConfigurationsDefaultConfigurationCollectionItem {
         private String id;
         private Integer instanceMemorySizeInGbs;
         private Integer instanceOcpuCount;
+        private Boolean isFlexible;
         private String lifecycleDetails;
         private String shape;
         private String state;
@@ -178,6 +192,7 @@ public final class GetDefaultConfigurationsDefaultConfigurationCollectionItem {
     	      this.id = defaults.id;
     	      this.instanceMemorySizeInGbs = defaults.instanceMemorySizeInGbs;
     	      this.instanceOcpuCount = defaults.instanceOcpuCount;
+    	      this.isFlexible = defaults.isFlexible;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.shape = defaults.shape;
     	      this.state = defaults.state;
@@ -244,6 +259,14 @@ public final class GetDefaultConfigurationsDefaultConfigurationCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder isFlexible(Boolean isFlexible) {
+            if (isFlexible == null) {
+              throw new MissingRequiredPropertyException("GetDefaultConfigurationsDefaultConfigurationCollectionItem", "isFlexible");
+            }
+            this.isFlexible = isFlexible;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             if (lifecycleDetails == null) {
               throw new MissingRequiredPropertyException("GetDefaultConfigurationsDefaultConfigurationCollectionItem", "lifecycleDetails");
@@ -284,6 +307,7 @@ public final class GetDefaultConfigurationsDefaultConfigurationCollectionItem {
             _resultValue.id = id;
             _resultValue.instanceMemorySizeInGbs = instanceMemorySizeInGbs;
             _resultValue.instanceOcpuCount = instanceOcpuCount;
+            _resultValue.isFlexible = isFlexible;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.shape = shape;
             _resultValue.state = state;

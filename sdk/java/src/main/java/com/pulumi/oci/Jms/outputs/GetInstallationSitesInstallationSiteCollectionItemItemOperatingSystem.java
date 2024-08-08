@@ -17,7 +17,7 @@ public final class GetInstallationSitesInstallationSiteCollectionItemItemOperati
      */
     private String architecture;
     /**
-     * @return The operating system type, such as Windows or Linux
+     * @return The operating system type, such as Windows, Linux or macOS
      * 
      */
     private String family;
@@ -46,7 +46,7 @@ public final class GetInstallationSitesInstallationSiteCollectionItemItemOperati
         return this.architecture;
     }
     /**
-     * @return The operating system type, such as Windows or Linux
+     * @return The operating system type, such as Windows, Linux or macOS
      * 
      */
     public String family() {

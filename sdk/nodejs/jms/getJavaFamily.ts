@@ -77,6 +77,10 @@ export interface GetJavaFamilyResult {
      */
     readonly latestReleaseVersion: string;
     /**
+     * The date on which the Java release family was first made available (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     */
+    readonly releaseDate: string;
+    /**
      * This indicates the support category for the Java release family.
      */
     readonly supportType: string;

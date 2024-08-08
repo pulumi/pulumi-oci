@@ -15,10 +15,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class BuildRunBuildRunSourceTriggerInfoActionFilter {
     /**
-     * @return The events, for example, PUSH, PULL_REQUEST_MERGE.
+     * @return The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
      * 
      */
     private @Nullable List<String> events;
+    /**
+     * @return Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
+     * 
+     */
     private @Nullable List<BuildRunBuildRunSourceTriggerInfoActionFilterExclude> excludes;
     /**
      * @return Attributes to filter GitLab self-hosted server events.
@@ -33,12 +37,16 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilter {
 
     private BuildRunBuildRunSourceTriggerInfoActionFilter() {}
     /**
-     * @return The events, for example, PUSH, PULL_REQUEST_MERGE.
+     * @return The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
      * 
      */
     public List<String> events() {
         return this.events == null ? List.of() : this.events;
     }
+    /**
+     * @return Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
+     * 
+     */
     public List<BuildRunBuildRunSourceTriggerInfoActionFilterExclude> excludes() {
         return this.excludes == null ? List.of() : this.excludes;
     }

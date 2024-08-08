@@ -30,7 +30,12 @@ namespace Pulumi.Oci.Jms
         ///     {
         ///         FleetId = testFleet.Id,
         ///         AggregationMode = fleetCryptoAnalysisResultAggregationMode,
-        ///         ManagedInstanceId = testManagedInstance.Id,
+        ///         FindingCount = fleetCryptoAnalysisResultFindingCount,
+        ///         FindingCountGreaterThan = fleetCryptoAnalysisResultFindingCountGreaterThan,
+        ///         HostName = fleetCryptoAnalysisResultHostName,
+        ///         ManagedInstanceId = fleetCryptoAnalysisResultManagedInstanceOcid,
+        ///         NonCompliantFindingCount = fleetCryptoAnalysisResultNonCompliantFindingCount,
+        ///         NonCompliantFindingCountGreaterThan = fleetCryptoAnalysisResultNonCompliantFindingCountGreaterThan,
         ///         TimeEnd = fleetCryptoAnalysisResultTimeEnd,
         ///         TimeStart = fleetCryptoAnalysisResultTimeStart,
         ///     });
@@ -60,7 +65,12 @@ namespace Pulumi.Oci.Jms
         ///     {
         ///         FleetId = testFleet.Id,
         ///         AggregationMode = fleetCryptoAnalysisResultAggregationMode,
-        ///         ManagedInstanceId = testManagedInstance.Id,
+        ///         FindingCount = fleetCryptoAnalysisResultFindingCount,
+        ///         FindingCountGreaterThan = fleetCryptoAnalysisResultFindingCountGreaterThan,
+        ///         HostName = fleetCryptoAnalysisResultHostName,
+        ///         ManagedInstanceId = fleetCryptoAnalysisResultManagedInstanceOcid,
+        ///         NonCompliantFindingCount = fleetCryptoAnalysisResultNonCompliantFindingCount,
+        ///         NonCompliantFindingCountGreaterThan = fleetCryptoAnalysisResultNonCompliantFindingCountGreaterThan,
         ///         TimeEnd = fleetCryptoAnalysisResultTimeEnd,
         ///         TimeStart = fleetCryptoAnalysisResultTimeStart,
         ///     });
@@ -90,16 +100,46 @@ namespace Pulumi.Oci.Jms
         }
 
         /// <summary>
+        /// FindingCount of CryptoAnalysis Report.
+        /// </summary>
+        [Input("findingCount")]
+        public int? FindingCount { get; set; }
+
+        /// <summary>
+        /// FindingCount of CryptoAnalysis Report.
+        /// </summary>
+        [Input("findingCountGreaterThan")]
+        public int? FindingCountGreaterThan { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
         /// </summary>
         [Input("fleetId", required: true)]
         public string FleetId { get; set; } = null!;
 
         /// <summary>
+        /// The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
+        /// </summary>
+        [Input("hostName")]
+        public string? HostName { get; set; }
+
+        /// <summary>
         /// The Fleet-unique identifier of the related managed instance.
         /// </summary>
         [Input("managedInstanceId")]
         public string? ManagedInstanceId { get; set; }
+
+        /// <summary>
+        /// Non Compliant Finding Count of CryptoAnalysis Report.
+        /// </summary>
+        [Input("nonCompliantFindingCount")]
+        public int? NonCompliantFindingCount { get; set; }
+
+        /// <summary>
+        /// Non Compliant Finding Count of CryptoAnalysis Report.
+        /// </summary>
+        [Input("nonCompliantFindingCountGreaterThan")]
+        public int? NonCompliantFindingCountGreaterThan { get; set; }
 
         /// <summary>
         /// The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -136,16 +176,46 @@ namespace Pulumi.Oci.Jms
         }
 
         /// <summary>
+        /// FindingCount of CryptoAnalysis Report.
+        /// </summary>
+        [Input("findingCount")]
+        public Input<int>? FindingCount { get; set; }
+
+        /// <summary>
+        /// FindingCount of CryptoAnalysis Report.
+        /// </summary>
+        [Input("findingCountGreaterThan")]
+        public Input<int>? FindingCountGreaterThan { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
         /// </summary>
         [Input("fleetId", required: true)]
         public Input<string> FleetId { get; set; } = null!;
 
         /// <summary>
+        /// The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
+        /// </summary>
+        [Input("hostName")]
+        public Input<string>? HostName { get; set; }
+
+        /// <summary>
         /// The Fleet-unique identifier of the related managed instance.
         /// </summary>
         [Input("managedInstanceId")]
         public Input<string>? ManagedInstanceId { get; set; }
+
+        /// <summary>
+        /// Non Compliant Finding Count of CryptoAnalysis Report.
+        /// </summary>
+        [Input("nonCompliantFindingCount")]
+        public Input<int>? NonCompliantFindingCount { get; set; }
+
+        /// <summary>
+        /// Non Compliant Finding Count of CryptoAnalysis Report.
+        /// </summary>
+        [Input("nonCompliantFindingCountGreaterThan")]
+        public Input<int>? NonCompliantFindingCountGreaterThan { get; set; }
 
         /// <summary>
         /// The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -179,9 +249,18 @@ namespace Pulumi.Oci.Jms
         public readonly ImmutableArray<Outputs.GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionResult> CryptoAnalysisResultCollections;
         public readonly ImmutableArray<Outputs.GetFleetCryptoAnalysisResultsFilterResult> Filters;
         /// <summary>
+        /// Total number of findings with the analysis.
+        /// </summary>
+        public readonly int? FindingCount;
+        public readonly int? FindingCountGreaterThan;
+        /// <summary>
         /// The fleet OCID.
         /// </summary>
         public readonly string FleetId;
+        /// <summary>
+        /// The hostname of the managed instance.
+        /// </summary>
+        public readonly string? HostName;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
@@ -190,6 +269,11 @@ namespace Pulumi.Oci.Jms
         /// The managed instance OCID.
         /// </summary>
         public readonly string? ManagedInstanceId;
+        /// <summary>
+        /// Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the Crypto Roadmap version used by the analysis.
+        /// </summary>
+        public readonly int? NonCompliantFindingCount;
+        public readonly int? NonCompliantFindingCountGreaterThan;
         public readonly string? TimeEnd;
         public readonly string? TimeStart;
 
@@ -201,11 +285,21 @@ namespace Pulumi.Oci.Jms
 
             ImmutableArray<Outputs.GetFleetCryptoAnalysisResultsFilterResult> filters,
 
+            int? findingCount,
+
+            int? findingCountGreaterThan,
+
             string fleetId,
+
+            string? hostName,
 
             string id,
 
             string? managedInstanceId,
+
+            int? nonCompliantFindingCount,
+
+            int? nonCompliantFindingCountGreaterThan,
 
             string? timeEnd,
 
@@ -214,9 +308,14 @@ namespace Pulumi.Oci.Jms
             AggregationMode = aggregationMode;
             CryptoAnalysisResultCollections = cryptoAnalysisResultCollections;
             Filters = filters;
+            FindingCount = findingCount;
+            FindingCountGreaterThan = findingCountGreaterThan;
             FleetId = fleetId;
+            HostName = hostName;
             Id = id;
             ManagedInstanceId = managedInstanceId;
+            NonCompliantFindingCount = nonCompliantFindingCount;
+            NonCompliantFindingCountGreaterThan = nonCompliantFindingCountGreaterThan;
             TimeEnd = timeEnd;
             TimeStart = timeStart;
         }

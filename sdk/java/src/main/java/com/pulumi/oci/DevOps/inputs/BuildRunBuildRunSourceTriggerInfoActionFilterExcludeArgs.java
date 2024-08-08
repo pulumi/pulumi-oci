@@ -16,9 +16,17 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgs exte
 
     public static final BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgs Empty = new BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgs();
 
+    /**
+     * Attributes to support include/exclude files for triggering build runs.
+     * 
+     */
     @Import(name="fileFilters")
     private @Nullable Output<List<BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArgs>> fileFilters;
 
+    /**
+     * @return Attributes to support include/exclude files for triggering build runs.
+     * 
+     */
     public Optional<Output<List<BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArgs>>> fileFilters() {
         return Optional.ofNullable(this.fileFilters);
     }
@@ -47,15 +55,33 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgs exte
             $ = new BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param fileFilters Attributes to support include/exclude files for triggering build runs.
+         * 
+         * @return builder
+         * 
+         */
         public Builder fileFilters(@Nullable Output<List<BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArgs>> fileFilters) {
             $.fileFilters = fileFilters;
             return this;
         }
 
+        /**
+         * @param fileFilters Attributes to support include/exclude files for triggering build runs.
+         * 
+         * @return builder
+         * 
+         */
         public Builder fileFilters(List<BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArgs> fileFilters) {
             return fileFilters(Output.of(fileFilters));
         }
 
+        /**
+         * @param fileFilters Attributes to support include/exclude files for triggering build runs.
+         * 
+         * @return builder
+         * 
+         */
         public Builder fileFilters(BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArgs... fileFilters) {
             return fileFilters(List.of(fileFilters));
         }

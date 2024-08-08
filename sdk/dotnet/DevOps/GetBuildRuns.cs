@@ -99,10 +99,6 @@ namespace Pulumi.Oci.DevOps
 
         [Input("filters")]
         private List<Inputs.GetBuildRunsFilterArgs>? _filters;
-
-        /// <summary>
-        /// The filters for the trigger.
-        /// </summary>
         public List<Inputs.GetBuildRunsFilterArgs> Filters
         {
             get => _filters ?? (_filters = new List<Inputs.GetBuildRunsFilterArgs>());
@@ -155,10 +151,6 @@ namespace Pulumi.Oci.DevOps
 
         [Input("filters")]
         private InputList<Inputs.GetBuildRunsFilterInputArgs>? _filters;
-
-        /// <summary>
-        /// The filters for the trigger.
-        /// </summary>
         public InputList<Inputs.GetBuildRunsFilterInputArgs> Filters
         {
             get => _filters ?? (_filters = new InputList<Inputs.GetBuildRunsFilterInputArgs>());
@@ -209,9 +201,6 @@ namespace Pulumi.Oci.DevOps
         /// Build run display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
         /// </summary>
         public readonly string? DisplayName;
-        /// <summary>
-        /// The filters for the trigger.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetBuildRunsFilterResult> Filters;
         /// <summary>
         /// Unique identifier that is immutable on creation.

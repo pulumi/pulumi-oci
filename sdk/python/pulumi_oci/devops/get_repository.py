@@ -22,7 +22,7 @@ class GetRepositoryResult:
     """
     A collection of values returned by getRepository.
     """
-    def __init__(__self__, branch_count=None, commit_count=None, compartment_id=None, default_branch=None, defined_tags=None, description=None, fields=None, freeform_tags=None, http_url=None, id=None, lifecyle_details=None, mirror_repository_configs=None, name=None, namespace=None, project_id=None, project_name=None, repository_id=None, repository_type=None, size_in_bytes=None, ssh_url=None, state=None, system_tags=None, time_created=None, time_updated=None, trigger_build_events=None):
+    def __init__(__self__, branch_count=None, commit_count=None, compartment_id=None, default_branch=None, defined_tags=None, description=None, fields=None, freeform_tags=None, http_url=None, id=None, lifecyle_details=None, mirror_repository_configs=None, name=None, namespace=None, parent_repository_id=None, project_id=None, project_name=None, repository_id=None, repository_type=None, size_in_bytes=None, ssh_url=None, state=None, system_tags=None, time_created=None, time_updated=None, trigger_build_events=None):
         if branch_count and not isinstance(branch_count, int):
             raise TypeError("Expected argument 'branch_count' to be a int")
         pulumi.set(__self__, "branch_count", branch_count)
@@ -65,6 +65,9 @@ class GetRepositoryResult:
         if namespace and not isinstance(namespace, str):
             raise TypeError("Expected argument 'namespace' to be a str")
         pulumi.set(__self__, "namespace", namespace)
+        if parent_repository_id and not isinstance(parent_repository_id, str):
+            raise TypeError("Expected argument 'parent_repository_id' to be a str")
+        pulumi.set(__self__, "parent_repository_id", parent_repository_id)
         if project_id and not isinstance(project_id, str):
             raise TypeError("Expected argument 'project_id' to be a str")
         pulumi.set(__self__, "project_id", project_id)
@@ -196,7 +199,7 @@ class GetRepositoryResult:
     @pulumi.getter
     def name(self) -> str:
         """
-        Unique name of a repository. This value is mutable.
+        Name of the repository. Should be unique within the project. This value is mutable.
         """
         return pulumi.get(self, "name")
 
@@ -207,6 +210,14 @@ class GetRepositoryResult:
         Tenancy unique namespace.
         """
         return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter(name="parentRepositoryId")
+    def parent_repository_id(self) -> str:
+        """
+        The OCID of the parent repository.
+        """
+        return pulumi.get(self, "parent_repository_id")
 
     @property
     @pulumi.getter(name="projectId")
@@ -233,7 +244,7 @@ class GetRepositoryResult:
     @pulumi.getter(name="repositoryType")
     def repository_type(self) -> str:
         """
-        Type of repository: MIRRORED - Repository created by mirroring an existing repository. HOSTED - Repository created and hosted using Oracle Cloud Infrastructure DevOps code repository.
+        Type of repository: MIRRORED - Repository created by mirroring an existing repository. HOSTED - Repository created and hosted using Oracle Cloud Infrastructure DevOps code repository. FORKED - Repository created by forking an existing repository.
         """
         return pulumi.get(self, "repository_type")
 
@@ -289,7 +300,7 @@ class GetRepositoryResult:
     @pulumi.getter(name="triggerBuildEvents")
     def trigger_build_events(self) -> Sequence[str]:
         """
-        Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
+        Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the repository. PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an open pull request. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
         """
         return pulumi.get(self, "trigger_build_events")
 
@@ -314,6 +325,7 @@ class AwaitableGetRepositoryResult(GetRepositoryResult):
             mirror_repository_configs=self.mirror_repository_configs,
             name=self.name,
             namespace=self.namespace,
+            parent_repository_id=self.parent_repository_id,
             project_id=self.project_id,
             project_name=self.project_name,
             repository_id=self.repository_id,
@@ -370,6 +382,7 @@ def get_repository(fields: Optional[Sequence[str]] = None,
         mirror_repository_configs=pulumi.get(__ret__, 'mirror_repository_configs'),
         name=pulumi.get(__ret__, 'name'),
         namespace=pulumi.get(__ret__, 'namespace'),
+        parent_repository_id=pulumi.get(__ret__, 'parent_repository_id'),
         project_id=pulumi.get(__ret__, 'project_id'),
         project_name=pulumi.get(__ret__, 'project_name'),
         repository_id=pulumi.get(__ret__, 'repository_id'),

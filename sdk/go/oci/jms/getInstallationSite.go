@@ -31,13 +31,13 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Jms.GetInstallationSite(ctx, &jms.GetInstallationSiteArgs{
 //				FleetId:           testFleet.Id,
-//				ApplicationId:     pulumi.StringRef(testApplication.Id),
+//				ApplicationId:     pulumi.StringRef(fleetInstallationSiteApplicationId),
 //				InstallationPath:  pulumi.StringRef(fleetInstallationSiteInstallationPath),
 //				JreDistribution:   pulumi.StringRef(fleetInstallationSiteJreDistribution),
 //				JreSecurityStatus: pulumi.StringRef(fleetInstallationSiteJreSecurityStatus),
 //				JreVendor:         pulumi.StringRef(fleetInstallationSiteJreVendor),
 //				JreVersion:        pulumi.StringRef(fleetInstallationSiteJreVersion),
-//				ManagedInstanceId: pulumi.StringRef(testManagedInstance.Id),
+//				ManagedInstanceId: pulumi.StringRef(fleetInstallationSiteManagedInstanceId),
 //				OsFamilies:        fleetInstallationSiteOsFamily,
 //				PathContains:      pulumi.StringRef(fleetInstallationSitePathContains),
 //				TimeEnd:           pulumi.StringRef(fleetInstallationSiteTimeEnd),

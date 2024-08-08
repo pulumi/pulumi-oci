@@ -20,12 +20,13 @@ class ConfigurationArgs:
                  db_configuration_overrides: pulumi.Input['ConfigurationDbConfigurationOverridesArgs'],
                  db_version: pulumi.Input[str],
                  display_name: pulumi.Input[str],
-                 instance_memory_size_in_gbs: pulumi.Input[int],
-                 instance_ocpu_count: pulumi.Input[int],
                  shape: pulumi.Input[str],
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 instance_memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
+                 instance_ocpu_count: Optional[pulumi.Input[int]] = None,
+                 is_flexible: Optional[pulumi.Input[bool]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a Configuration resource.
@@ -33,12 +34,17 @@ class ConfigurationArgs:
         :param pulumi.Input['ConfigurationDbConfigurationOverridesArgs'] db_configuration_overrides: Configuration overrides for a PostgreSQL instance.
         :param pulumi.Input[str] db_version: Version of the PostgreSQL database.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the configuration. Avoid entering confidential information.
-        :param pulumi.Input[int] instance_memory_size_in_gbs: Memory size in gigabytes with 1GB increment.
-        :param pulumi.Input[int] instance_ocpu_count: CPU core count.
         :param pulumi.Input[str] shape: The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Details about the configuration set.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[int] instance_memory_size_in_gbs: Memory size in gigabytes with 1GB increment.
+               
+               Skip or set it's value to 0 if configuration is for a flexible shape.
+        :param pulumi.Input[int] instance_ocpu_count: CPU core count.
+               
+               Skip or set it's value to 0 if configuration is for a flexible shape.
+        :param pulumi.Input[bool] is_flexible: Whether the configuration supports flexible shapes.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
                
                
@@ -49,8 +55,6 @@ class ConfigurationArgs:
         pulumi.set(__self__, "db_configuration_overrides", db_configuration_overrides)
         pulumi.set(__self__, "db_version", db_version)
         pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "instance_memory_size_in_gbs", instance_memory_size_in_gbs)
-        pulumi.set(__self__, "instance_ocpu_count", instance_ocpu_count)
         pulumi.set(__self__, "shape", shape)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
@@ -58,6 +62,12 @@ class ConfigurationArgs:
             pulumi.set(__self__, "description", description)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if instance_memory_size_in_gbs is not None:
+            pulumi.set(__self__, "instance_memory_size_in_gbs", instance_memory_size_in_gbs)
+        if instance_ocpu_count is not None:
+            pulumi.set(__self__, "instance_ocpu_count", instance_ocpu_count)
+        if is_flexible is not None:
+            pulumi.set(__self__, "is_flexible", is_flexible)
         if system_tags is not None:
             pulumi.set(__self__, "system_tags", system_tags)
 
@@ -110,30 +120,6 @@ class ConfigurationArgs:
         pulumi.set(self, "display_name", value)
 
     @property
-    @pulumi.getter(name="instanceMemorySizeInGbs")
-    def instance_memory_size_in_gbs(self) -> pulumi.Input[int]:
-        """
-        Memory size in gigabytes with 1GB increment.
-        """
-        return pulumi.get(self, "instance_memory_size_in_gbs")
-
-    @instance_memory_size_in_gbs.setter
-    def instance_memory_size_in_gbs(self, value: pulumi.Input[int]):
-        pulumi.set(self, "instance_memory_size_in_gbs", value)
-
-    @property
-    @pulumi.getter(name="instanceOcpuCount")
-    def instance_ocpu_count(self) -> pulumi.Input[int]:
-        """
-        CPU core count.
-        """
-        return pulumi.get(self, "instance_ocpu_count")
-
-    @instance_ocpu_count.setter
-    def instance_ocpu_count(self, value: pulumi.Input[int]):
-        pulumi.set(self, "instance_ocpu_count", value)
-
-    @property
     @pulumi.getter
     def shape(self) -> pulumi.Input[str]:
         """
@@ -182,6 +168,46 @@ class ConfigurationArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter(name="instanceMemorySizeInGbs")
+    def instance_memory_size_in_gbs(self) -> Optional[pulumi.Input[int]]:
+        """
+        Memory size in gigabytes with 1GB increment.
+
+        Skip or set it's value to 0 if configuration is for a flexible shape.
+        """
+        return pulumi.get(self, "instance_memory_size_in_gbs")
+
+    @instance_memory_size_in_gbs.setter
+    def instance_memory_size_in_gbs(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "instance_memory_size_in_gbs", value)
+
+    @property
+    @pulumi.getter(name="instanceOcpuCount")
+    def instance_ocpu_count(self) -> Optional[pulumi.Input[int]]:
+        """
+        CPU core count.
+
+        Skip or set it's value to 0 if configuration is for a flexible shape.
+        """
+        return pulumi.get(self, "instance_ocpu_count")
+
+    @instance_ocpu_count.setter
+    def instance_ocpu_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "instance_ocpu_count", value)
+
+    @property
+    @pulumi.getter(name="isFlexible")
+    def is_flexible(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether the configuration supports flexible shapes.
+        """
+        return pulumi.get(self, "is_flexible")
+
+    @is_flexible.setter
+    def is_flexible(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_flexible", value)
+
+    @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
@@ -202,6 +228,7 @@ class ConfigurationArgs:
 class _ConfigurationState:
     def __init__(__self__, *,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 config_type: Optional[pulumi.Input[str]] = None,
                  configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigurationConfigurationDetailArgs']]]] = None,
                  db_configuration_overrides: Optional[pulumi.Input['ConfigurationDbConfigurationOverridesArgs']] = None,
                  db_version: Optional[pulumi.Input[str]] = None,
@@ -211,6 +238,7 @@ class _ConfigurationState:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  instance_memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
                  instance_ocpu_count: Optional[pulumi.Input[int]] = None,
+                 is_flexible: Optional[pulumi.Input[bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
@@ -219,6 +247,7 @@ class _ConfigurationState:
         """
         Input properties used for looking up and filtering Configuration resources.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
+        :param pulumi.Input[str] config_type: The type of configuration. Either user-created or a default configuration.
         :param pulumi.Input[Sequence[pulumi.Input['ConfigurationConfigurationDetailArgs']]] configuration_details: List of configuration details.
         :param pulumi.Input['ConfigurationDbConfigurationOverridesArgs'] db_configuration_overrides: Configuration overrides for a PostgreSQL instance.
         :param pulumi.Input[str] db_version: Version of the PostgreSQL database.
@@ -227,7 +256,12 @@ class _ConfigurationState:
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the configuration. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[int] instance_memory_size_in_gbs: Memory size in gigabytes with 1GB increment.
+               
+               Skip or set it's value to 0 if configuration is for a flexible shape.
         :param pulumi.Input[int] instance_ocpu_count: CPU core count.
+               
+               Skip or set it's value to 0 if configuration is for a flexible shape.
+        :param pulumi.Input[bool] is_flexible: Whether the configuration supports flexible shapes.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] shape: The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
         :param pulumi.Input[str] state: The current state of the configuration.
@@ -240,6 +274,8 @@ class _ConfigurationState:
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if config_type is not None:
+            pulumi.set(__self__, "config_type", config_type)
         if configuration_details is not None:
             pulumi.set(__self__, "configuration_details", configuration_details)
         if db_configuration_overrides is not None:
@@ -258,6 +294,8 @@ class _ConfigurationState:
             pulumi.set(__self__, "instance_memory_size_in_gbs", instance_memory_size_in_gbs)
         if instance_ocpu_count is not None:
             pulumi.set(__self__, "instance_ocpu_count", instance_ocpu_count)
+        if is_flexible is not None:
+            pulumi.set(__self__, "is_flexible", is_flexible)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if shape is not None:
@@ -280,6 +318,18 @@ class _ConfigurationState:
     @compartment_id.setter
     def compartment_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter(name="configType")
+    def config_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of configuration. Either user-created or a default configuration.
+        """
+        return pulumi.get(self, "config_type")
+
+    @config_type.setter
+    def config_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "config_type", value)
 
     @property
     @pulumi.getter(name="configurationDetails")
@@ -370,6 +420,8 @@ class _ConfigurationState:
     def instance_memory_size_in_gbs(self) -> Optional[pulumi.Input[int]]:
         """
         Memory size in gigabytes with 1GB increment.
+
+        Skip or set it's value to 0 if configuration is for a flexible shape.
         """
         return pulumi.get(self, "instance_memory_size_in_gbs")
 
@@ -382,12 +434,26 @@ class _ConfigurationState:
     def instance_ocpu_count(self) -> Optional[pulumi.Input[int]]:
         """
         CPU core count.
+
+        Skip or set it's value to 0 if configuration is for a flexible shape.
         """
         return pulumi.get(self, "instance_ocpu_count")
 
     @instance_ocpu_count.setter
     def instance_ocpu_count(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "instance_ocpu_count", value)
+
+    @property
+    @pulumi.getter(name="isFlexible")
+    def is_flexible(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether the configuration supports flexible shapes.
+        """
+        return pulumi.get(self, "is_flexible")
+
+    @is_flexible.setter
+    def is_flexible(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_flexible", value)
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -468,6 +534,7 @@ class Configuration(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  instance_memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
                  instance_ocpu_count: Optional[pulumi.Input[int]] = None,
+                 is_flexible: Optional[pulumi.Input[bool]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  __props__=None):
@@ -492,8 +559,6 @@ class Configuration(pulumi.CustomResource):
             ),
             db_version=configuration_db_version,
             display_name=configuration_display_name,
-            instance_memory_size_in_gbs=configuration_instance_memory_size_in_gbs,
-            instance_ocpu_count=configuration_instance_ocpu_count,
             shape=configuration_shape,
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -502,6 +567,9 @@ class Configuration(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
+            instance_memory_size_in_gbs=configuration_instance_memory_size_in_gbs,
+            instance_ocpu_count=configuration_instance_ocpu_count,
+            is_flexible=configuration_is_flexible,
             system_tags=configuration_system_tags)
         ```
 
@@ -523,7 +591,12 @@ class Configuration(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the configuration. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[int] instance_memory_size_in_gbs: Memory size in gigabytes with 1GB increment.
+               
+               Skip or set it's value to 0 if configuration is for a flexible shape.
         :param pulumi.Input[int] instance_ocpu_count: CPU core count.
+               
+               Skip or set it's value to 0 if configuration is for a flexible shape.
+        :param pulumi.Input[bool] is_flexible: Whether the configuration supports flexible shapes.
         :param pulumi.Input[str] shape: The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
                
@@ -558,8 +631,6 @@ class Configuration(pulumi.CustomResource):
             ),
             db_version=configuration_db_version,
             display_name=configuration_display_name,
-            instance_memory_size_in_gbs=configuration_instance_memory_size_in_gbs,
-            instance_ocpu_count=configuration_instance_ocpu_count,
             shape=configuration_shape,
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -568,6 +639,9 @@ class Configuration(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
+            instance_memory_size_in_gbs=configuration_instance_memory_size_in_gbs,
+            instance_ocpu_count=configuration_instance_ocpu_count,
+            is_flexible=configuration_is_flexible,
             system_tags=configuration_system_tags)
         ```
 
@@ -603,6 +677,7 @@ class Configuration(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  instance_memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
                  instance_ocpu_count: Optional[pulumi.Input[int]] = None,
+                 is_flexible: Optional[pulumi.Input[bool]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  __props__=None):
@@ -629,16 +704,14 @@ class Configuration(pulumi.CustomResource):
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
-            if instance_memory_size_in_gbs is None and not opts.urn:
-                raise TypeError("Missing required property 'instance_memory_size_in_gbs'")
             __props__.__dict__["instance_memory_size_in_gbs"] = instance_memory_size_in_gbs
-            if instance_ocpu_count is None and not opts.urn:
-                raise TypeError("Missing required property 'instance_ocpu_count'")
             __props__.__dict__["instance_ocpu_count"] = instance_ocpu_count
+            __props__.__dict__["is_flexible"] = is_flexible
             if shape is None and not opts.urn:
                 raise TypeError("Missing required property 'shape'")
             __props__.__dict__["shape"] = shape
             __props__.__dict__["system_tags"] = system_tags
+            __props__.__dict__["config_type"] = None
             __props__.__dict__["configuration_details"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["state"] = None
@@ -654,6 +727,7 @@ class Configuration(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
+            config_type: Optional[pulumi.Input[str]] = None,
             configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConfigurationConfigurationDetailArgs']]]]] = None,
             db_configuration_overrides: Optional[pulumi.Input[pulumi.InputType['ConfigurationDbConfigurationOverridesArgs']]] = None,
             db_version: Optional[pulumi.Input[str]] = None,
@@ -663,6 +737,7 @@ class Configuration(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             instance_memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
             instance_ocpu_count: Optional[pulumi.Input[int]] = None,
+            is_flexible: Optional[pulumi.Input[bool]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             shape: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -676,6 +751,7 @@ class Configuration(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
+        :param pulumi.Input[str] config_type: The type of configuration. Either user-created or a default configuration.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConfigurationConfigurationDetailArgs']]]] configuration_details: List of configuration details.
         :param pulumi.Input[pulumi.InputType['ConfigurationDbConfigurationOverridesArgs']] db_configuration_overrides: Configuration overrides for a PostgreSQL instance.
         :param pulumi.Input[str] db_version: Version of the PostgreSQL database.
@@ -684,7 +760,12 @@ class Configuration(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the configuration. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[int] instance_memory_size_in_gbs: Memory size in gigabytes with 1GB increment.
+               
+               Skip or set it's value to 0 if configuration is for a flexible shape.
         :param pulumi.Input[int] instance_ocpu_count: CPU core count.
+               
+               Skip or set it's value to 0 if configuration is for a flexible shape.
+        :param pulumi.Input[bool] is_flexible: Whether the configuration supports flexible shapes.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] shape: The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
         :param pulumi.Input[str] state: The current state of the configuration.
@@ -700,6 +781,7 @@ class Configuration(pulumi.CustomResource):
         __props__ = _ConfigurationState.__new__(_ConfigurationState)
 
         __props__.__dict__["compartment_id"] = compartment_id
+        __props__.__dict__["config_type"] = config_type
         __props__.__dict__["configuration_details"] = configuration_details
         __props__.__dict__["db_configuration_overrides"] = db_configuration_overrides
         __props__.__dict__["db_version"] = db_version
@@ -709,6 +791,7 @@ class Configuration(pulumi.CustomResource):
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["instance_memory_size_in_gbs"] = instance_memory_size_in_gbs
         __props__.__dict__["instance_ocpu_count"] = instance_ocpu_count
+        __props__.__dict__["is_flexible"] = is_flexible
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["shape"] = shape
         __props__.__dict__["state"] = state
@@ -723,6 +806,14 @@ class Configuration(pulumi.CustomResource):
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="configType")
+    def config_type(self) -> pulumi.Output[str]:
+        """
+        The type of configuration. Either user-created or a default configuration.
+        """
+        return pulumi.get(self, "config_type")
 
     @property
     @pulumi.getter(name="configurationDetails")
@@ -785,6 +876,8 @@ class Configuration(pulumi.CustomResource):
     def instance_memory_size_in_gbs(self) -> pulumi.Output[int]:
         """
         Memory size in gigabytes with 1GB increment.
+
+        Skip or set it's value to 0 if configuration is for a flexible shape.
         """
         return pulumi.get(self, "instance_memory_size_in_gbs")
 
@@ -793,8 +886,18 @@ class Configuration(pulumi.CustomResource):
     def instance_ocpu_count(self) -> pulumi.Output[int]:
         """
         CPU core count.
+
+        Skip or set it's value to 0 if configuration is for a flexible shape.
         """
         return pulumi.get(self, "instance_ocpu_count")
+
+    @property
+    @pulumi.getter(name="isFlexible")
+    def is_flexible(self) -> pulumi.Output[bool]:
+        """
+        Whether the configuration supports flexible shapes.
+        """
+        return pulumi.get(self, "is_flexible")
 
     @property
     @pulumi.getter(name="lifecycleDetails")

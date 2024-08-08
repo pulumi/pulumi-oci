@@ -16,7 +16,9 @@ namespace Pulumi.Oci.BigDataService.Outputs
         public readonly int? BatchSize;
         public readonly string PatchingConfigStrategy;
         public readonly int? ToleranceThresholdPerBatch;
+        public readonly int? ToleranceThresholdPerDomain;
         public readonly int? WaitTimeBetweenBatchInSeconds;
+        public readonly int? WaitTimeBetweenDomainInSeconds;
 
         [OutputConstructor]
         private BdsInstanceOsPatchActionPatchingConfig(
@@ -26,12 +28,18 @@ namespace Pulumi.Oci.BigDataService.Outputs
 
             int? toleranceThresholdPerBatch,
 
-            int? waitTimeBetweenBatchInSeconds)
+            int? toleranceThresholdPerDomain,
+
+            int? waitTimeBetweenBatchInSeconds,
+
+            int? waitTimeBetweenDomainInSeconds)
         {
             BatchSize = batchSize;
             PatchingConfigStrategy = patchingConfigStrategy;
             ToleranceThresholdPerBatch = toleranceThresholdPerBatch;
+            ToleranceThresholdPerDomain = toleranceThresholdPerDomain;
             WaitTimeBetweenBatchInSeconds = waitTimeBetweenBatchInSeconds;
+            WaitTimeBetweenDomainInSeconds = waitTimeBetweenDomainInSeconds;
         }
     }
 }

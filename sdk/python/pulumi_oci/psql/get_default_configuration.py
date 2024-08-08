@@ -22,7 +22,7 @@ class GetDefaultConfigurationResult:
     """
     A collection of values returned by getDefaultConfiguration.
     """
-    def __init__(__self__, configuration_details=None, db_version=None, default_configuration_id=None, description=None, display_name=None, id=None, instance_memory_size_in_gbs=None, instance_ocpu_count=None, lifecycle_details=None, shape=None, state=None, time_created=None):
+    def __init__(__self__, configuration_details=None, db_version=None, default_configuration_id=None, description=None, display_name=None, id=None, instance_memory_size_in_gbs=None, instance_ocpu_count=None, is_flexible=None, lifecycle_details=None, shape=None, state=None, time_created=None):
         if configuration_details and not isinstance(configuration_details, list):
             raise TypeError("Expected argument 'configuration_details' to be a list")
         pulumi.set(__self__, "configuration_details", configuration_details)
@@ -47,6 +47,9 @@ class GetDefaultConfigurationResult:
         if instance_ocpu_count and not isinstance(instance_ocpu_count, int):
             raise TypeError("Expected argument 'instance_ocpu_count' to be a int")
         pulumi.set(__self__, "instance_ocpu_count", instance_ocpu_count)
+        if is_flexible and not isinstance(is_flexible, bool):
+            raise TypeError("Expected argument 'is_flexible' to be a bool")
+        pulumi.set(__self__, "is_flexible", is_flexible)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -117,9 +120,17 @@ class GetDefaultConfigurationResult:
     @pulumi.getter(name="instanceOcpuCount")
     def instance_ocpu_count(self) -> int:
         """
-        CPU core count. Minimum value is 1.
+        CPU core count.
         """
         return pulumi.get(self, "instance_ocpu_count")
+
+    @property
+    @pulumi.getter(name="isFlexible")
+    def is_flexible(self) -> bool:
+        """
+        True if the configuration supports flexible shapes, false otherwise.
+        """
+        return pulumi.get(self, "is_flexible")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -168,6 +179,7 @@ class AwaitableGetDefaultConfigurationResult(GetDefaultConfigurationResult):
             id=self.id,
             instance_memory_size_in_gbs=self.instance_memory_size_in_gbs,
             instance_ocpu_count=self.instance_ocpu_count,
+            is_flexible=self.is_flexible,
             lifecycle_details=self.lifecycle_details,
             shape=self.shape,
             state=self.state,
@@ -207,6 +219,7 @@ def get_default_configuration(default_configuration_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         instance_memory_size_in_gbs=pulumi.get(__ret__, 'instance_memory_size_in_gbs'),
         instance_ocpu_count=pulumi.get(__ret__, 'instance_ocpu_count'),
+        is_flexible=pulumi.get(__ret__, 'is_flexible'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         shape=pulumi.get(__ret__, 'shape'),
         state=pulumi.get(__ret__, 'state'),

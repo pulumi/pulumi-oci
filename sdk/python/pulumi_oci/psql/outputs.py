@@ -78,6 +78,8 @@ __all__ = [
     'GetShapesFilterResult',
     'GetShapesShapeCollectionResult',
     'GetShapesShapeCollectionItemResult',
+    'GetShapesShapeCollectionItemShapeMemoryOptionResult',
+    'GetShapesShapeCollectionItemShapeOcpuOptionResult',
 ]
 
 @pulumi.output_type
@@ -684,7 +686,9 @@ class DbSystemManagementPolicy(dict):
                  maintenance_window_start: Optional[str] = None):
         """
         :param 'DbSystemManagementPolicyBackupPolicyArgs' backup_policy: (Updatable) PostgreSQL database system backup policy.
-        :param str maintenance_window_start: (Updatable) The start of the maintenance window.
+        :param str maintenance_window_start: (Updatable) The start of the maintenance window in UTC.
+               
+               This string is of the format: "{day-of-week} {time-of-day}". "{day-of-week}" is a case-insensitive string like "mon", "tue", &c. "{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
         """
         if backup_policy is not None:
             pulumi.set(__self__, "backup_policy", backup_policy)
@@ -703,7 +707,9 @@ class DbSystemManagementPolicy(dict):
     @pulumi.getter(name="maintenanceWindowStart")
     def maintenance_window_start(self) -> Optional[str]:
         """
-        (Updatable) The start of the maintenance window.
+        (Updatable) The start of the maintenance window in UTC.
+
+        This string is of the format: "{day-of-week} {time-of-day}". "{day-of-week}" is a case-insensitive string like "mon", "tue", &c. "{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
         """
         return pulumi.get(self, "maintenance_window_start")
 
@@ -827,7 +833,7 @@ class DbSystemNetworkDetails(dict):
                  primary_db_endpoint_private_ip: Optional[str] = None):
         """
         :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer subnet associated with the database system.
-        :param Sequence[str] nsg_ids: List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
+        :param Sequence[str] nsg_ids: (Updatable) List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
         :param str primary_db_endpoint_private_ip: Private IP in customer subnet. The value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses from the specified subnet.
         """
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -848,7 +854,7 @@ class DbSystemNetworkDetails(dict):
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[Sequence[str]]:
         """
-        List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
+        (Updatable) List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
         """
         return pulumi.get(self, "nsg_ids")
 
@@ -1161,7 +1167,7 @@ class GetBackupsBackupCollectionItemResult(dict):
         :param str source_type: Specifies whether the backup was created manually, or by a management policy.
         :param str state: A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The date and time the backup was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        :param str time_created: The date and time the backup request was received, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         :param str time_updated: The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         pulumi.set(__self__, "backup_size", backup_size)
@@ -1315,7 +1321,7 @@ class GetBackupsBackupCollectionItemResult(dict):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The date and time the backup was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        The date and time the backup request was received, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
@@ -1566,6 +1572,7 @@ class GetConfigurationsConfigurationCollectionResult(dict):
 class GetConfigurationsConfigurationCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
+                 config_type: str,
                  configuration_details: Sequence['outputs.GetConfigurationsConfigurationCollectionItemConfigurationDetailResult'],
                  db_configuration_overrides: Sequence['outputs.GetConfigurationsConfigurationCollectionItemDbConfigurationOverrideResult'],
                  db_version: str,
@@ -1576,6 +1583,7 @@ class GetConfigurationsConfigurationCollectionItemResult(dict):
                  id: str,
                  instance_memory_size_in_gbs: int,
                  instance_ocpu_count: int,
+                 is_flexible: bool,
                  lifecycle_details: str,
                  shape: str,
                  state: str,
@@ -1583,8 +1591,9 @@ class GetConfigurationsConfigurationCollectionItemResult(dict):
                  time_created: str):
         """
         :param str compartment_id: The ID of the compartment in which to list resources.
+        :param str config_type: The type of configuration. Either user-created or a default configuration.
         :param Sequence['GetConfigurationsConfigurationCollectionItemConfigurationDetailArgs'] configuration_details: List of configuration details.
-        :param str db_version: Verison of the PostgreSQL database, such as 14.9.
+        :param str db_version: Version of the PostgreSQL database, such as 14.9.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: A description for the configuration.
         :param str display_name: A filter to return only resources that match the entire display name given.
@@ -1592,6 +1601,7 @@ class GetConfigurationsConfigurationCollectionItemResult(dict):
         :param str id: A unique identifier for the configuration. Immutable on creation.
         :param int instance_memory_size_in_gbs: Memory size in gigabytes with 1GB increment.
         :param int instance_ocpu_count: CPU core count.
+        :param bool is_flexible: Whether the configuration supports flexible shapes.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param str shape: The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
         :param str state: A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
@@ -1599,6 +1609,7 @@ class GetConfigurationsConfigurationCollectionItemResult(dict):
         :param str time_created: The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "config_type", config_type)
         pulumi.set(__self__, "configuration_details", configuration_details)
         pulumi.set(__self__, "db_configuration_overrides", db_configuration_overrides)
         pulumi.set(__self__, "db_version", db_version)
@@ -1609,6 +1620,7 @@ class GetConfigurationsConfigurationCollectionItemResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "instance_memory_size_in_gbs", instance_memory_size_in_gbs)
         pulumi.set(__self__, "instance_ocpu_count", instance_ocpu_count)
+        pulumi.set(__self__, "is_flexible", is_flexible)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "state", state)
@@ -1622,6 +1634,14 @@ class GetConfigurationsConfigurationCollectionItemResult(dict):
         The ID of the compartment in which to list resources.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="configType")
+    def config_type(self) -> str:
+        """
+        The type of configuration. Either user-created or a default configuration.
+        """
+        return pulumi.get(self, "config_type")
 
     @property
     @pulumi.getter(name="configurationDetails")
@@ -1640,7 +1660,7 @@ class GetConfigurationsConfigurationCollectionItemResult(dict):
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> str:
         """
-        Verison of the PostgreSQL database, such as 14.9.
+        Version of the PostgreSQL database, such as 14.9.
         """
         return pulumi.get(self, "db_version")
 
@@ -1699,6 +1719,14 @@ class GetConfigurationsConfigurationCollectionItemResult(dict):
         CPU core count.
         """
         return pulumi.get(self, "instance_ocpu_count")
+
+    @property
+    @pulumi.getter(name="isFlexible")
+    def is_flexible(self) -> bool:
+        """
+        Whether the configuration supports flexible shapes.
+        """
+        return pulumi.get(self, "is_flexible")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -3409,18 +3437,20 @@ class GetDefaultConfigurationsDefaultConfigurationCollectionItemResult(dict):
                  id: str,
                  instance_memory_size_in_gbs: int,
                  instance_ocpu_count: int,
+                 is_flexible: bool,
                  lifecycle_details: str,
                  shape: str,
                  state: str,
                  time_created: str):
         """
         :param Sequence['GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetailArgs'] configuration_details: List of default configuration values for databases.
-        :param str db_version: Verison of the PostgreSQL database, such as 14.9.
+        :param str db_version: Version of the PostgreSQL database, such as 14.9.
         :param str description: A description for the configuration.
         :param str display_name: A filter to return only resources that match the entire display name given.
         :param str id: A unique identifier for the configuration.
         :param int instance_memory_size_in_gbs: Memory size in gigabytes with 1GB increment.
-        :param int instance_ocpu_count: CPU core count. Minimum value is 1.
+        :param int instance_ocpu_count: CPU core count.
+        :param bool is_flexible: True if the configuration supports flexible shapes, false otherwise.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param str shape: The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
         :param str state: A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
@@ -3433,6 +3463,7 @@ class GetDefaultConfigurationsDefaultConfigurationCollectionItemResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "instance_memory_size_in_gbs", instance_memory_size_in_gbs)
         pulumi.set(__self__, "instance_ocpu_count", instance_ocpu_count)
+        pulumi.set(__self__, "is_flexible", is_flexible)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "state", state)
@@ -3450,7 +3481,7 @@ class GetDefaultConfigurationsDefaultConfigurationCollectionItemResult(dict):
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> str:
         """
-        Verison of the PostgreSQL database, such as 14.9.
+        Version of the PostgreSQL database, such as 14.9.
         """
         return pulumi.get(self, "db_version")
 
@@ -3490,9 +3521,17 @@ class GetDefaultConfigurationsDefaultConfigurationCollectionItemResult(dict):
     @pulumi.getter(name="instanceOcpuCount")
     def instance_ocpu_count(self) -> int:
         """
-        CPU core count. Minimum value is 1.
+        CPU core count.
         """
         return pulumi.get(self, "instance_ocpu_count")
+
+    @property
+    @pulumi.getter(name="isFlexible")
+    def is_flexible(self) -> bool:
+        """
+        True if the configuration supports flexible shapes, false otherwise.
+        """
+        return pulumi.get(self, "is_flexible")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -3705,19 +3744,28 @@ class GetShapesShapeCollectionResult(dict):
 class GetShapesShapeCollectionItemResult(dict):
     def __init__(__self__, *,
                  id: str,
+                 is_flexible: bool,
                  memory_size_in_gbs: int,
                  ocpu_count: int,
-                 shape: str):
+                 shape: str,
+                 shape_memory_options: Sequence['outputs.GetShapesShapeCollectionItemShapeMemoryOptionResult'],
+                 shape_ocpu_options: Sequence['outputs.GetShapesShapeCollectionItemShapeOcpuOptionResult']):
         """
         :param str id: A filter to return the feature by the shape name.
+        :param bool is_flexible: Indicates if the shape is a flex shape.
         :param int memory_size_in_gbs: The amount of memory in gigabytes.
         :param int ocpu_count: The number of OCPUs.
         :param str shape: The name of the Compute VM shape. Example: `VM.Standard.E4.Flex`
+        :param Sequence['GetShapesShapeCollectionItemShapeMemoryOptionArgs'] shape_memory_options: Options for the the shape memory
+        :param Sequence['GetShapesShapeCollectionItemShapeOcpuOptionArgs'] shape_ocpu_options: Options for the the shape OCPU
         """
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_flexible", is_flexible)
         pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
         pulumi.set(__self__, "ocpu_count", ocpu_count)
         pulumi.set(__self__, "shape", shape)
+        pulumi.set(__self__, "shape_memory_options", shape_memory_options)
+        pulumi.set(__self__, "shape_ocpu_options", shape_ocpu_options)
 
     @property
     @pulumi.getter
@@ -3726,6 +3774,14 @@ class GetShapesShapeCollectionItemResult(dict):
         A filter to return the feature by the shape name.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isFlexible")
+    def is_flexible(self) -> bool:
+        """
+        Indicates if the shape is a flex shape.
+        """
+        return pulumi.get(self, "is_flexible")
 
     @property
     @pulumi.getter(name="memorySizeInGbs")
@@ -3750,5 +3806,112 @@ class GetShapesShapeCollectionItemResult(dict):
         The name of the Compute VM shape. Example: `VM.Standard.E4.Flex`
         """
         return pulumi.get(self, "shape")
+
+    @property
+    @pulumi.getter(name="shapeMemoryOptions")
+    def shape_memory_options(self) -> Sequence['outputs.GetShapesShapeCollectionItemShapeMemoryOptionResult']:
+        """
+        Options for the the shape memory
+        """
+        return pulumi.get(self, "shape_memory_options")
+
+    @property
+    @pulumi.getter(name="shapeOcpuOptions")
+    def shape_ocpu_options(self) -> Sequence['outputs.GetShapesShapeCollectionItemShapeOcpuOptionResult']:
+        """
+        Options for the the shape OCPU
+        """
+        return pulumi.get(self, "shape_ocpu_options")
+
+
+@pulumi.output_type
+class GetShapesShapeCollectionItemShapeMemoryOptionResult(dict):
+    def __init__(__self__, *,
+                 default_per_ocpu_in_gbs: int,
+                 max_in_gbs: int,
+                 max_per_ocpu_in_gbs: int,
+                 min_in_gbs: int,
+                 min_per_ocpu_in_gbs: int):
+        """
+        :param int default_per_ocpu_in_gbs: Default per OCPU configuration in GBs
+        :param int max_in_gbs: Maximum Memory configuration in GBs
+        :param int max_per_ocpu_in_gbs: Maximum Memory configuration per OCPU in GBs
+        :param int min_in_gbs: Minimum Memory configuration in GBs
+        :param int min_per_ocpu_in_gbs: Minimum Memory configuration per OCPU in GBs
+        """
+        pulumi.set(__self__, "default_per_ocpu_in_gbs", default_per_ocpu_in_gbs)
+        pulumi.set(__self__, "max_in_gbs", max_in_gbs)
+        pulumi.set(__self__, "max_per_ocpu_in_gbs", max_per_ocpu_in_gbs)
+        pulumi.set(__self__, "min_in_gbs", min_in_gbs)
+        pulumi.set(__self__, "min_per_ocpu_in_gbs", min_per_ocpu_in_gbs)
+
+    @property
+    @pulumi.getter(name="defaultPerOcpuInGbs")
+    def default_per_ocpu_in_gbs(self) -> int:
+        """
+        Default per OCPU configuration in GBs
+        """
+        return pulumi.get(self, "default_per_ocpu_in_gbs")
+
+    @property
+    @pulumi.getter(name="maxInGbs")
+    def max_in_gbs(self) -> int:
+        """
+        Maximum Memory configuration in GBs
+        """
+        return pulumi.get(self, "max_in_gbs")
+
+    @property
+    @pulumi.getter(name="maxPerOcpuInGbs")
+    def max_per_ocpu_in_gbs(self) -> int:
+        """
+        Maximum Memory configuration per OCPU in GBs
+        """
+        return pulumi.get(self, "max_per_ocpu_in_gbs")
+
+    @property
+    @pulumi.getter(name="minInGbs")
+    def min_in_gbs(self) -> int:
+        """
+        Minimum Memory configuration in GBs
+        """
+        return pulumi.get(self, "min_in_gbs")
+
+    @property
+    @pulumi.getter(name="minPerOcpuInGbs")
+    def min_per_ocpu_in_gbs(self) -> int:
+        """
+        Minimum Memory configuration per OCPU in GBs
+        """
+        return pulumi.get(self, "min_per_ocpu_in_gbs")
+
+
+@pulumi.output_type
+class GetShapesShapeCollectionItemShapeOcpuOptionResult(dict):
+    def __init__(__self__, *,
+                 max: int,
+                 min: int):
+        """
+        :param int max: Maximum OCPU configuration
+        :param int min: Minimum OCPU configuration
+        """
+        pulumi.set(__self__, "max", max)
+        pulumi.set(__self__, "min", min)
+
+    @property
+    @pulumi.getter
+    def max(self) -> int:
+        """
+        Maximum OCPU configuration
+        """
+        return pulumi.get(self, "max")
+
+    @property
+    @pulumi.getter
+    def min(self) -> int:
+        """
+        Minimum OCPU configuration
+        """
+        return pulumi.get(self, "min")
 
 

@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Jms.Outputs
         /// </summary>
         public readonly string Architecture;
         /// <summary>
-        /// The operating system type, such as Windows or Linux
+        /// The operating system type, such as Windows, Linux or macOS
         /// </summary>
         public readonly string Family;
         /// <summary>

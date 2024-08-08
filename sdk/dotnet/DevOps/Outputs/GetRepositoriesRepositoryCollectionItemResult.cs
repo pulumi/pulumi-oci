@@ -63,6 +63,10 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// </summary>
         public readonly string Namespace;
         /// <summary>
+        /// The OCID of the parent repository.
+        /// </summary>
+        public readonly string ParentRepositoryId;
+        /// <summary>
         /// unique project identifier
         /// </summary>
         public readonly string ProjectId;
@@ -71,7 +75,7 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// </summary>
         public readonly string ProjectName;
         /// <summary>
-        /// Type of repository: MIRRORED - Repository created by mirroring an existing repository. HOSTED - Repository created and hosted using Oracle Cloud Infrastructure DevOps code repository.
+        /// Type of repository: MIRRORED - Repository created by mirroring an existing repository. HOSTED - Repository created and hosted using Oracle Cloud Infrastructure DevOps code repository. FORKED - Repository created by forking an existing repository.
         /// </summary>
         public readonly string RepositoryType;
         /// <summary>
@@ -99,7 +103,7 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
-        /// Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
+        /// Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the repository. PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an open pull request. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
         /// </summary>
         public readonly ImmutableArray<string> TriggerBuildEvents;
 
@@ -130,6 +134,8 @@ namespace Pulumi.Oci.DevOps.Outputs
             string name,
 
             string @namespace,
+
+            string parentRepositoryId,
 
             string projectId,
 
@@ -164,6 +170,7 @@ namespace Pulumi.Oci.DevOps.Outputs
             MirrorRepositoryConfig = mirrorRepositoryConfig;
             Name = name;
             Namespace = @namespace;
+            ParentRepositoryId = parentRepositoryId;
             ProjectId = projectId;
             ProjectName = projectName;
             RepositoryType = repositoryType;

@@ -8,6 +8,8 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['BdsInstancePatchActionArgs', 'BdsInstancePatchAction']
 
@@ -16,7 +18,8 @@ class BdsInstancePatchActionArgs:
     def __init__(__self__, *,
                  bds_instance_id: pulumi.Input[str],
                  cluster_admin_password: pulumi.Input[str],
-                 version: pulumi.Input[str]):
+                 version: pulumi.Input[str],
+                 patching_config: Optional[pulumi.Input['BdsInstancePatchActionPatchingConfigArgs']] = None):
         """
         The set of arguments for constructing a BdsInstancePatchAction resource.
         :param pulumi.Input[str] bds_instance_id: The OCID of the cluster.
@@ -26,10 +29,13 @@ class BdsInstancePatchActionArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input['BdsInstancePatchActionPatchingConfigArgs'] patching_config: Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
         """
         pulumi.set(__self__, "bds_instance_id", bds_instance_id)
         pulumi.set(__self__, "cluster_admin_password", cluster_admin_password)
         pulumi.set(__self__, "version", version)
+        if patching_config is not None:
+            pulumi.set(__self__, "patching_config", patching_config)
 
     @property
     @pulumi.getter(name="bdsInstanceId")
@@ -71,17 +77,31 @@ class BdsInstancePatchActionArgs:
     def version(self, value: pulumi.Input[str]):
         pulumi.set(self, "version", value)
 
+    @property
+    @pulumi.getter(name="patchingConfig")
+    def patching_config(self) -> Optional[pulumi.Input['BdsInstancePatchActionPatchingConfigArgs']]:
+        """
+        Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
+        """
+        return pulumi.get(self, "patching_config")
+
+    @patching_config.setter
+    def patching_config(self, value: Optional[pulumi.Input['BdsInstancePatchActionPatchingConfigArgs']]):
+        pulumi.set(self, "patching_config", value)
+
 
 @pulumi.input_type
 class _BdsInstancePatchActionState:
     def __init__(__self__, *,
                  bds_instance_id: Optional[pulumi.Input[str]] = None,
                  cluster_admin_password: Optional[pulumi.Input[str]] = None,
+                 patching_config: Optional[pulumi.Input['BdsInstancePatchActionPatchingConfigArgs']] = None,
                  version: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering BdsInstancePatchAction resources.
         :param pulumi.Input[str] bds_instance_id: The OCID of the cluster.
         :param pulumi.Input[str] cluster_admin_password: Base-64 encoded password for the cluster admin user.
+        :param pulumi.Input['BdsInstancePatchActionPatchingConfigArgs'] patching_config: Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
         :param pulumi.Input[str] version: The version of the patch to be installed.
                
                
@@ -92,6 +112,8 @@ class _BdsInstancePatchActionState:
             pulumi.set(__self__, "bds_instance_id", bds_instance_id)
         if cluster_admin_password is not None:
             pulumi.set(__self__, "cluster_admin_password", cluster_admin_password)
+        if patching_config is not None:
+            pulumi.set(__self__, "patching_config", patching_config)
         if version is not None:
             pulumi.set(__self__, "version", version)
 
@@ -120,6 +142,18 @@ class _BdsInstancePatchActionState:
         pulumi.set(self, "cluster_admin_password", value)
 
     @property
+    @pulumi.getter(name="patchingConfig")
+    def patching_config(self) -> Optional[pulumi.Input['BdsInstancePatchActionPatchingConfigArgs']]:
+        """
+        Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
+        """
+        return pulumi.get(self, "patching_config")
+
+    @patching_config.setter
+    def patching_config(self, value: Optional[pulumi.Input['BdsInstancePatchActionPatchingConfigArgs']]):
+        pulumi.set(self, "patching_config", value)
+
+    @property
     @pulumi.getter
     def version(self) -> Optional[pulumi.Input[str]]:
         """
@@ -143,6 +177,7 @@ class BdsInstancePatchAction(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  bds_instance_id: Optional[pulumi.Input[str]] = None,
                  cluster_admin_password: Optional[pulumi.Input[str]] = None,
+                 patching_config: Optional[pulumi.Input[pulumi.InputType['BdsInstancePatchActionPatchingConfigArgs']]] = None,
                  version: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -159,7 +194,13 @@ class BdsInstancePatchAction(pulumi.CustomResource):
         test_bds_instance_patch_action = oci.big_data_service.BdsInstancePatchAction("test_bds_instance_patch_action",
             bds_instance_id=test_bds_instance["id"],
             cluster_admin_password=bds_instance_patch_action_cluster_admin_password,
-            version=bds_instance_patch_action_version)
+            version=bds_instance_patch_action_version,
+            patching_config=oci.big_data_service.BdsInstancePatchActionPatchingConfigArgs(
+                patching_config_strategy=bds_instance_patch_action_patching_config_patching_config_strategy,
+                batch_size=bds_instance_patch_action_patching_config_batch_size,
+                wait_time_between_batch_in_seconds=bds_instance_patch_action_patching_config_wait_time_between_batch_in_seconds,
+                wait_time_between_domain_in_seconds=bds_instance_patch_action_patching_config_wait_time_between_domain_in_seconds,
+            ))
         ```
 
         ## Import
@@ -170,6 +211,7 @@ class BdsInstancePatchAction(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] bds_instance_id: The OCID of the cluster.
         :param pulumi.Input[str] cluster_admin_password: Base-64 encoded password for the cluster admin user.
+        :param pulumi.Input[pulumi.InputType['BdsInstancePatchActionPatchingConfigArgs']] patching_config: Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
         :param pulumi.Input[str] version: The version of the patch to be installed.
                
                
@@ -196,7 +238,13 @@ class BdsInstancePatchAction(pulumi.CustomResource):
         test_bds_instance_patch_action = oci.big_data_service.BdsInstancePatchAction("test_bds_instance_patch_action",
             bds_instance_id=test_bds_instance["id"],
             cluster_admin_password=bds_instance_patch_action_cluster_admin_password,
-            version=bds_instance_patch_action_version)
+            version=bds_instance_patch_action_version,
+            patching_config=oci.big_data_service.BdsInstancePatchActionPatchingConfigArgs(
+                patching_config_strategy=bds_instance_patch_action_patching_config_patching_config_strategy,
+                batch_size=bds_instance_patch_action_patching_config_batch_size,
+                wait_time_between_batch_in_seconds=bds_instance_patch_action_patching_config_wait_time_between_batch_in_seconds,
+                wait_time_between_domain_in_seconds=bds_instance_patch_action_patching_config_wait_time_between_domain_in_seconds,
+            ))
         ```
 
         ## Import
@@ -220,6 +268,7 @@ class BdsInstancePatchAction(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  bds_instance_id: Optional[pulumi.Input[str]] = None,
                  cluster_admin_password: Optional[pulumi.Input[str]] = None,
+                 patching_config: Optional[pulumi.Input[pulumi.InputType['BdsInstancePatchActionPatchingConfigArgs']]] = None,
                  version: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -236,6 +285,7 @@ class BdsInstancePatchAction(pulumi.CustomResource):
             if cluster_admin_password is None and not opts.urn:
                 raise TypeError("Missing required property 'cluster_admin_password'")
             __props__.__dict__["cluster_admin_password"] = None if cluster_admin_password is None else pulumi.Output.secret(cluster_admin_password)
+            __props__.__dict__["patching_config"] = patching_config
             if version is None and not opts.urn:
                 raise TypeError("Missing required property 'version'")
             __props__.__dict__["version"] = version
@@ -253,6 +303,7 @@ class BdsInstancePatchAction(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             bds_instance_id: Optional[pulumi.Input[str]] = None,
             cluster_admin_password: Optional[pulumi.Input[str]] = None,
+            patching_config: Optional[pulumi.Input[pulumi.InputType['BdsInstancePatchActionPatchingConfigArgs']]] = None,
             version: Optional[pulumi.Input[str]] = None) -> 'BdsInstancePatchAction':
         """
         Get an existing BdsInstancePatchAction resource's state with the given name, id, and optional extra
@@ -263,6 +314,7 @@ class BdsInstancePatchAction(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] bds_instance_id: The OCID of the cluster.
         :param pulumi.Input[str] cluster_admin_password: Base-64 encoded password for the cluster admin user.
+        :param pulumi.Input[pulumi.InputType['BdsInstancePatchActionPatchingConfigArgs']] patching_config: Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
         :param pulumi.Input[str] version: The version of the patch to be installed.
                
                
@@ -275,6 +327,7 @@ class BdsInstancePatchAction(pulumi.CustomResource):
 
         __props__.__dict__["bds_instance_id"] = bds_instance_id
         __props__.__dict__["cluster_admin_password"] = cluster_admin_password
+        __props__.__dict__["patching_config"] = patching_config
         __props__.__dict__["version"] = version
         return BdsInstancePatchAction(resource_name, opts=opts, __props__=__props__)
 
@@ -293,6 +346,14 @@ class BdsInstancePatchAction(pulumi.CustomResource):
         Base-64 encoded password for the cluster admin user.
         """
         return pulumi.get(self, "cluster_admin_password")
+
+    @property
+    @pulumi.getter(name="patchingConfig")
+    def patching_config(self) -> pulumi.Output['outputs.BdsInstancePatchActionPatchingConfig']:
+        """
+        Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
+        """
+        return pulumi.get(self, "patching_config")
 
     @property
     @pulumi.getter

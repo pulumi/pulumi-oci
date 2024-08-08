@@ -20,7 +20,12 @@ import * as utilities from "../utilities";
  * const testFleetCryptoAnalysisResults = oci.Jms.getFleetCryptoAnalysisResults({
  *     fleetId: testFleet.id,
  *     aggregationMode: fleetCryptoAnalysisResultAggregationMode,
- *     managedInstanceId: testManagedInstance.id,
+ *     findingCount: fleetCryptoAnalysisResultFindingCount,
+ *     findingCountGreaterThan: fleetCryptoAnalysisResultFindingCountGreaterThan,
+ *     hostName: fleetCryptoAnalysisResultHostName,
+ *     managedInstanceId: fleetCryptoAnalysisResultManagedInstanceOcid,
+ *     nonCompliantFindingCount: fleetCryptoAnalysisResultNonCompliantFindingCount,
+ *     nonCompliantFindingCountGreaterThan: fleetCryptoAnalysisResultNonCompliantFindingCountGreaterThan,
  *     timeEnd: fleetCryptoAnalysisResultTimeEnd,
  *     timeStart: fleetCryptoAnalysisResultTimeStart,
  * });
@@ -32,8 +37,13 @@ export function getFleetCryptoAnalysisResults(args: GetFleetCryptoAnalysisResult
     return pulumi.runtime.invoke("oci:Jms/getFleetCryptoAnalysisResults:getFleetCryptoAnalysisResults", {
         "aggregationMode": args.aggregationMode,
         "filters": args.filters,
+        "findingCount": args.findingCount,
+        "findingCountGreaterThan": args.findingCountGreaterThan,
         "fleetId": args.fleetId,
+        "hostName": args.hostName,
         "managedInstanceId": args.managedInstanceId,
+        "nonCompliantFindingCount": args.nonCompliantFindingCount,
+        "nonCompliantFindingCountGreaterThan": args.nonCompliantFindingCountGreaterThan,
         "timeEnd": args.timeEnd,
         "timeStart": args.timeStart,
     }, opts);
@@ -49,13 +59,33 @@ export interface GetFleetCryptoAnalysisResultsArgs {
     aggregationMode?: string;
     filters?: inputs.Jms.GetFleetCryptoAnalysisResultsFilter[];
     /**
+     * FindingCount of CryptoAnalysis Report.
+     */
+    findingCount?: number;
+    /**
+     * FindingCount of CryptoAnalysis Report.
+     */
+    findingCountGreaterThan?: number;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      */
     fleetId: string;
     /**
+     * The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
+     */
+    hostName?: string;
+    /**
      * The Fleet-unique identifier of the related managed instance.
      */
     managedInstanceId?: string;
+    /**
+     * Non Compliant Finding Count of CryptoAnalysis Report.
+     */
+    nonCompliantFindingCount?: number;
+    /**
+     * Non Compliant Finding Count of CryptoAnalysis Report.
+     */
+    nonCompliantFindingCountGreaterThan?: number;
     /**
      * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
@@ -80,9 +110,18 @@ export interface GetFleetCryptoAnalysisResultsResult {
     readonly cryptoAnalysisResultCollections: outputs.Jms.GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection[];
     readonly filters?: outputs.Jms.GetFleetCryptoAnalysisResultsFilter[];
     /**
+     * Total number of findings with the analysis.
+     */
+    readonly findingCount?: number;
+    readonly findingCountGreaterThan?: number;
+    /**
      * The fleet OCID.
      */
     readonly fleetId: string;
+    /**
+     * The hostname of the managed instance.
+     */
+    readonly hostName?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
@@ -91,6 +130,11 @@ export interface GetFleetCryptoAnalysisResultsResult {
      * The managed instance OCID.
      */
     readonly managedInstanceId?: string;
+    /**
+     * Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the Crypto Roadmap version used by the analysis.
+     */
+    readonly nonCompliantFindingCount?: number;
+    readonly nonCompliantFindingCountGreaterThan?: number;
     readonly timeEnd?: string;
     readonly timeStart?: string;
 }
@@ -108,7 +152,12 @@ export interface GetFleetCryptoAnalysisResultsResult {
  * const testFleetCryptoAnalysisResults = oci.Jms.getFleetCryptoAnalysisResults({
  *     fleetId: testFleet.id,
  *     aggregationMode: fleetCryptoAnalysisResultAggregationMode,
- *     managedInstanceId: testManagedInstance.id,
+ *     findingCount: fleetCryptoAnalysisResultFindingCount,
+ *     findingCountGreaterThan: fleetCryptoAnalysisResultFindingCountGreaterThan,
+ *     hostName: fleetCryptoAnalysisResultHostName,
+ *     managedInstanceId: fleetCryptoAnalysisResultManagedInstanceOcid,
+ *     nonCompliantFindingCount: fleetCryptoAnalysisResultNonCompliantFindingCount,
+ *     nonCompliantFindingCountGreaterThan: fleetCryptoAnalysisResultNonCompliantFindingCountGreaterThan,
  *     timeEnd: fleetCryptoAnalysisResultTimeEnd,
  *     timeStart: fleetCryptoAnalysisResultTimeStart,
  * });
@@ -128,13 +177,33 @@ export interface GetFleetCryptoAnalysisResultsOutputArgs {
     aggregationMode?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetFleetCryptoAnalysisResultsFilterArgs>[]>;
     /**
+     * FindingCount of CryptoAnalysis Report.
+     */
+    findingCount?: pulumi.Input<number>;
+    /**
+     * FindingCount of CryptoAnalysis Report.
+     */
+    findingCountGreaterThan?: pulumi.Input<number>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      */
     fleetId: pulumi.Input<string>;
     /**
+     * The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
+     */
+    hostName?: pulumi.Input<string>;
+    /**
      * The Fleet-unique identifier of the related managed instance.
      */
     managedInstanceId?: pulumi.Input<string>;
+    /**
+     * Non Compliant Finding Count of CryptoAnalysis Report.
+     */
+    nonCompliantFindingCount?: pulumi.Input<number>;
+    /**
+     * Non Compliant Finding Count of CryptoAnalysis Report.
+     */
+    nonCompliantFindingCountGreaterThan?: pulumi.Input<number>;
     /**
      * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */

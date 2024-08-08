@@ -42,7 +42,7 @@ public final class GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnal
      */
     private String fleetId;
     /**
-     * @return The hostname of the managed instance.
+     * @return The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
      * 
      */
     private String hostName;
@@ -77,12 +77,12 @@ public final class GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnal
      */
     private String timeCreated;
     /**
-     * @return The time the JFR capture finished.
+     * @return The time the JFR recording has finished.
      * 
      */
     private String timeFinished;
     /**
-     * @return The time the JFR capture started.
+     * @return The time the JFR recording has started.
      * 
      */
     private String timeStarted;
@@ -141,7 +141,7 @@ public final class GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnal
         return this.fleetId;
     }
     /**
-     * @return The hostname of the managed instance.
+     * @return The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
      * 
      */
     public String hostName() {
@@ -190,14 +190,14 @@ public final class GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnal
         return this.timeCreated;
     }
     /**
-     * @return The time the JFR capture finished.
+     * @return The time the JFR recording has finished.
      * 
      */
     public String timeFinished() {
         return this.timeFinished;
     }
     /**
-     * @return The time the JFR capture started.
+     * @return The time the JFR recording has started.
      * 
      */
     public String timeStarted() {

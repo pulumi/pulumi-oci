@@ -52,9 +52,6 @@ export interface GetTriggersArgs {
      * A filter to return only resources that match the entire display name given.
      */
     displayName?: string;
-    /**
-     * The filters for the trigger.
-     */
     filters?: inputs.DevOps.GetTriggersFilter[];
     /**
      * Unique trigger identifier.
@@ -82,9 +79,6 @@ export interface GetTriggersResult {
      * Trigger display name. Avoid entering confidential information.
      */
     readonly displayName?: string;
-    /**
-     * The filters for the trigger.
-     */
     readonly filters?: outputs.DevOps.GetTriggersFilter[];
     /**
      * Unique identifier that is immutable on creation.
@@ -139,9 +133,6 @@ export interface GetTriggersOutputArgs {
      * A filter to return only resources that match the entire display name given.
      */
     displayName?: pulumi.Input<string>;
-    /**
-     * The filters for the trigger.
-     */
     filters?: pulumi.Input<pulumi.Input<inputs.DevOps.GetTriggersFilterArgs>[]>;
     /**
      * Unique trigger identifier.

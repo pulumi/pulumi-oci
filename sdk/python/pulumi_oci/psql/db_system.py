@@ -41,8 +41,8 @@ class DbSystemArgs:
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
         :param pulumi.Input[str] db_version: Version of database system software.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
-        :param pulumi.Input['DbSystemNetworkDetailsArgs'] network_details: Network details for the database system.
-        :param pulumi.Input[str] shape: The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
+        :param pulumi.Input['DbSystemNetworkDetailsArgs'] network_details: (Updatable) Network details for the database system.
+        :param pulumi.Input[str] shape: (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
         :param pulumi.Input['DbSystemStorageDetailsArgs'] storage_details: (Updatable) Storage details of the database system.
         :param pulumi.Input[str] apply_config: Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
         :param pulumi.Input[str] config_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
@@ -50,9 +50,9 @@ class DbSystemArgs:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) A user-provided description of a database system.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[int] instance_count: (Updatable when patch_operations are specified) Count of database instances nodes to be created in the database system.
-        :param pulumi.Input[int] instance_memory_size_in_gbs: The total amount of memory available to each database instance node, in gigabytes.
-        :param pulumi.Input[int] instance_ocpu_count: The total number of OCPUs available to each database instance node.
+        :param pulumi.Input[int] instance_count: Count of database instances nodes to be created in the database system.
+        :param pulumi.Input[int] instance_memory_size_in_gbs: (Updatable) The total amount of memory available to each database instance node, in gigabytes.
+        :param pulumi.Input[int] instance_ocpu_count: (Updatable) The total number of OCPUs available to each database instance node.
         :param pulumi.Input[Sequence[pulumi.Input['DbSystemInstancesDetailArgs']]] instances_details: Details of database instances nodes to be created. This parameter is optional. If specified, its size must match `instanceCount`.
         :param pulumi.Input['DbSystemManagementPolicyArgs'] management_policy: (Updatable) PostgreSQL database system management policy update details.
         :param pulumi.Input[Sequence[pulumi.Input['DbSystemPatchOperationArgs']]] patch_operations: (Updatable) For adding and removing from read replica database instances. Please remove the patch_operations after it is applied. Update the instance_count arrodrandly. Cannot be specified when creating the resource.
@@ -138,7 +138,7 @@ class DbSystemArgs:
     @pulumi.getter(name="networkDetails")
     def network_details(self) -> pulumi.Input['DbSystemNetworkDetailsArgs']:
         """
-        Network details for the database system.
+        (Updatable) Network details for the database system.
         """
         return pulumi.get(self, "network_details")
 
@@ -150,7 +150,7 @@ class DbSystemArgs:
     @pulumi.getter
     def shape(self) -> pulumi.Input[str]:
         """
-        The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
+        (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
         """
         return pulumi.get(self, "shape")
 
@@ -246,7 +246,7 @@ class DbSystemArgs:
     @pulumi.getter(name="instanceCount")
     def instance_count(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable when patch_operations are specified) Count of database instances nodes to be created in the database system.
+        Count of database instances nodes to be created in the database system.
         """
         return pulumi.get(self, "instance_count")
 
@@ -258,7 +258,7 @@ class DbSystemArgs:
     @pulumi.getter(name="instanceMemorySizeInGbs")
     def instance_memory_size_in_gbs(self) -> Optional[pulumi.Input[int]]:
         """
-        The total amount of memory available to each database instance node, in gigabytes.
+        (Updatable) The total amount of memory available to each database instance node, in gigabytes.
         """
         return pulumi.get(self, "instance_memory_size_in_gbs")
 
@@ -270,7 +270,7 @@ class DbSystemArgs:
     @pulumi.getter(name="instanceOcpuCount")
     def instance_ocpu_count(self) -> Optional[pulumi.Input[int]]:
         """
-        The total number of OCPUs available to each database instance node.
+        (Updatable) The total number of OCPUs available to each database instance node.
         """
         return pulumi.get(self, "instance_ocpu_count")
 
@@ -385,16 +385,16 @@ class _DbSystemState:
         :param pulumi.Input[str] description: (Updatable) A user-provided description of a database system.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[int] instance_count: (Updatable when patch_operations are specified) Count of database instances nodes to be created in the database system.
-        :param pulumi.Input[int] instance_memory_size_in_gbs: The total amount of memory available to each database instance node, in gigabytes.
-        :param pulumi.Input[int] instance_ocpu_count: The total number of OCPUs available to each database instance node.
+        :param pulumi.Input[int] instance_count: Count of database instances nodes to be created in the database system.
+        :param pulumi.Input[int] instance_memory_size_in_gbs: (Updatable) The total amount of memory available to each database instance node, in gigabytes.
+        :param pulumi.Input[int] instance_ocpu_count: (Updatable) The total number of OCPUs available to each database instance node.
         :param pulumi.Input[Sequence[pulumi.Input['DbSystemInstanceArgs']]] instances: The list of instances, or nodes, in the database system.
         :param pulumi.Input[Sequence[pulumi.Input['DbSystemInstancesDetailArgs']]] instances_details: Details of database instances nodes to be created. This parameter is optional. If specified, its size must match `instanceCount`.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input['DbSystemManagementPolicyArgs'] management_policy: (Updatable) PostgreSQL database system management policy update details.
-        :param pulumi.Input['DbSystemNetworkDetailsArgs'] network_details: Network details for the database system.
+        :param pulumi.Input['DbSystemNetworkDetailsArgs'] network_details: (Updatable) Network details for the database system.
         :param pulumi.Input[Sequence[pulumi.Input['DbSystemPatchOperationArgs']]] patch_operations: (Updatable) For adding and removing from read replica database instances. Please remove the patch_operations after it is applied. Update the instance_count arrodrandly. Cannot be specified when creating the resource.
-        :param pulumi.Input[str] shape: The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
+        :param pulumi.Input[str] shape: (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
         :param pulumi.Input['DbSystemSourceArgs'] source: The source used to restore the database system.
         :param pulumi.Input[str] state: The current state of the database system.
         :param pulumi.Input['DbSystemStorageDetailsArgs'] storage_details: (Updatable) Storage details of the database system.
@@ -586,7 +586,7 @@ class _DbSystemState:
     @pulumi.getter(name="instanceCount")
     def instance_count(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable when patch_operations are specified) Count of database instances nodes to be created in the database system.
+        Count of database instances nodes to be created in the database system.
         """
         return pulumi.get(self, "instance_count")
 
@@ -598,7 +598,7 @@ class _DbSystemState:
     @pulumi.getter(name="instanceMemorySizeInGbs")
     def instance_memory_size_in_gbs(self) -> Optional[pulumi.Input[int]]:
         """
-        The total amount of memory available to each database instance node, in gigabytes.
+        (Updatable) The total amount of memory available to each database instance node, in gigabytes.
         """
         return pulumi.get(self, "instance_memory_size_in_gbs")
 
@@ -610,7 +610,7 @@ class _DbSystemState:
     @pulumi.getter(name="instanceOcpuCount")
     def instance_ocpu_count(self) -> Optional[pulumi.Input[int]]:
         """
-        The total number of OCPUs available to each database instance node.
+        (Updatable) The total number of OCPUs available to each database instance node.
         """
         return pulumi.get(self, "instance_ocpu_count")
 
@@ -670,7 +670,7 @@ class _DbSystemState:
     @pulumi.getter(name="networkDetails")
     def network_details(self) -> Optional[pulumi.Input['DbSystemNetworkDetailsArgs']]:
         """
-        Network details for the database system.
+        (Updatable) Network details for the database system.
         """
         return pulumi.get(self, "network_details")
 
@@ -694,7 +694,7 @@ class _DbSystemState:
     @pulumi.getter
     def shape(self) -> Optional[pulumi.Input[str]]:
         """
-        The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
+        (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
         """
         return pulumi.get(self, "shape")
 
@@ -830,6 +830,15 @@ class DbSystem(pulumi.CustomResource):
 
         test_db_system = oci.psql.DbSystem("test_db_system",
             compartment_id=compartment_id,
+            credentials=oci.psql.DbSystemCredentialsArgs(
+                password_details=oci.psql.DbSystemCredentialsPasswordDetailsArgs(
+                    password_type=db_system_credentials_password_details_password_type,
+                    password=db_system_credentials_password_details_password,
+                    secret_id=test_secret["id"],
+                    secret_version=db_system_credentials_password_details_secret_version,
+                ),
+                username=db_system_credentials_username,
+            ),
             db_version=db_system_db_version,
             display_name=db_system_display_name,
             network_details=oci.psql.DbSystemNetworkDetailsArgs(
@@ -845,16 +854,6 @@ class DbSystem(pulumi.CustomResource):
                 iops=db_system_storage_details_iops,
             ),
             config_id=test_config["id"],
-            apply_config=db_system_apply_config_type,
-            credentials=oci.psql.DbSystemCredentialsArgs(
-                password_details=oci.psql.DbSystemCredentialsPasswordDetailsArgs(
-                    password_type=db_system_credentials_password_details_password_type,
-                    password=db_system_credentials_password_details_password,
-                    secret_id=test_secret["id"],
-                    secret_version=db_system_credentials_password_details_secret_version,
-                ),
-                username=db_system_credentials_username,
-            ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -912,14 +911,14 @@ class DbSystem(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) A user-provided description of a database system.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[int] instance_count: (Updatable when patch_operations are specified) Count of database instances nodes to be created in the database system.
-        :param pulumi.Input[int] instance_memory_size_in_gbs: The total amount of memory available to each database instance node, in gigabytes.
-        :param pulumi.Input[int] instance_ocpu_count: The total number of OCPUs available to each database instance node.
+        :param pulumi.Input[int] instance_count: Count of database instances nodes to be created in the database system.
+        :param pulumi.Input[int] instance_memory_size_in_gbs: (Updatable) The total amount of memory available to each database instance node, in gigabytes.
+        :param pulumi.Input[int] instance_ocpu_count: (Updatable) The total number of OCPUs available to each database instance node.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemInstancesDetailArgs']]]] instances_details: Details of database instances nodes to be created. This parameter is optional. If specified, its size must match `instanceCount`.
         :param pulumi.Input[pulumi.InputType['DbSystemManagementPolicyArgs']] management_policy: (Updatable) PostgreSQL database system management policy update details.
-        :param pulumi.Input[pulumi.InputType['DbSystemNetworkDetailsArgs']] network_details: Network details for the database system.
+        :param pulumi.Input[pulumi.InputType['DbSystemNetworkDetailsArgs']] network_details: (Updatable) Network details for the database system.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemPatchOperationArgs']]]] patch_operations: (Updatable) For adding and removing from read replica database instances. Please remove the patch_operations after it is applied. Update the instance_count arrodrandly. Cannot be specified when creating the resource.
-        :param pulumi.Input[str] shape: The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
+        :param pulumi.Input[str] shape: (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
         :param pulumi.Input[pulumi.InputType['DbSystemSourceArgs']] source: The source used to restore the database system.
         :param pulumi.Input[pulumi.InputType['DbSystemStorageDetailsArgs']] storage_details: (Updatable) Storage details of the database system.
         :param pulumi.Input[str] system_type: Type of the database system.
@@ -947,6 +946,15 @@ class DbSystem(pulumi.CustomResource):
 
         test_db_system = oci.psql.DbSystem("test_db_system",
             compartment_id=compartment_id,
+            credentials=oci.psql.DbSystemCredentialsArgs(
+                password_details=oci.psql.DbSystemCredentialsPasswordDetailsArgs(
+                    password_type=db_system_credentials_password_details_password_type,
+                    password=db_system_credentials_password_details_password,
+                    secret_id=test_secret["id"],
+                    secret_version=db_system_credentials_password_details_secret_version,
+                ),
+                username=db_system_credentials_username,
+            ),
             db_version=db_system_db_version,
             display_name=db_system_display_name,
             network_details=oci.psql.DbSystemNetworkDetailsArgs(
@@ -962,16 +970,6 @@ class DbSystem(pulumi.CustomResource):
                 iops=db_system_storage_details_iops,
             ),
             config_id=test_config["id"],
-            apply_config=db_system_apply_config_type,
-            credentials=oci.psql.DbSystemCredentialsArgs(
-                password_details=oci.psql.DbSystemCredentialsPasswordDetailsArgs(
-                    password_type=db_system_credentials_password_details_password_type,
-                    password=db_system_credentials_password_details_password,
-                    secret_id=test_secret["id"],
-                    secret_version=db_system_credentials_password_details_secret_version,
-                ),
-                username=db_system_credentials_username,
-            ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -1155,16 +1153,16 @@ class DbSystem(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) A user-provided description of a database system.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[int] instance_count: (Updatable when patch_operations are specified) Count of database instances nodes to be created in the database system.
-        :param pulumi.Input[int] instance_memory_size_in_gbs: The total amount of memory available to each database instance node, in gigabytes.
-        :param pulumi.Input[int] instance_ocpu_count: The total number of OCPUs available to each database instance node.
+        :param pulumi.Input[int] instance_count: Count of database instances nodes to be created in the database system.
+        :param pulumi.Input[int] instance_memory_size_in_gbs: (Updatable) The total amount of memory available to each database instance node, in gigabytes.
+        :param pulumi.Input[int] instance_ocpu_count: (Updatable) The total number of OCPUs available to each database instance node.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemInstanceArgs']]]] instances: The list of instances, or nodes, in the database system.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemInstancesDetailArgs']]]] instances_details: Details of database instances nodes to be created. This parameter is optional. If specified, its size must match `instanceCount`.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[pulumi.InputType['DbSystemManagementPolicyArgs']] management_policy: (Updatable) PostgreSQL database system management policy update details.
-        :param pulumi.Input[pulumi.InputType['DbSystemNetworkDetailsArgs']] network_details: Network details for the database system.
+        :param pulumi.Input[pulumi.InputType['DbSystemNetworkDetailsArgs']] network_details: (Updatable) Network details for the database system.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemPatchOperationArgs']]]] patch_operations: (Updatable) For adding and removing from read replica database instances. Please remove the patch_operations after it is applied. Update the instance_count arrodrandly. Cannot be specified when creating the resource.
-        :param pulumi.Input[str] shape: The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
+        :param pulumi.Input[str] shape: (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
         :param pulumi.Input[pulumi.InputType['DbSystemSourceArgs']] source: The source used to restore the database system.
         :param pulumi.Input[str] state: The current state of the database system.
         :param pulumi.Input[pulumi.InputType['DbSystemStorageDetailsArgs']] storage_details: (Updatable) Storage details of the database system.
@@ -1294,7 +1292,7 @@ class DbSystem(pulumi.CustomResource):
     @pulumi.getter(name="instanceCount")
     def instance_count(self) -> pulumi.Output[int]:
         """
-        (Updatable when patch_operations are specified) Count of database instances nodes to be created in the database system.
+        Count of database instances nodes to be created in the database system.
         """
         return pulumi.get(self, "instance_count")
 
@@ -1302,7 +1300,7 @@ class DbSystem(pulumi.CustomResource):
     @pulumi.getter(name="instanceMemorySizeInGbs")
     def instance_memory_size_in_gbs(self) -> pulumi.Output[int]:
         """
-        The total amount of memory available to each database instance node, in gigabytes.
+        (Updatable) The total amount of memory available to each database instance node, in gigabytes.
         """
         return pulumi.get(self, "instance_memory_size_in_gbs")
 
@@ -1310,7 +1308,7 @@ class DbSystem(pulumi.CustomResource):
     @pulumi.getter(name="instanceOcpuCount")
     def instance_ocpu_count(self) -> pulumi.Output[int]:
         """
-        The total number of OCPUs available to each database instance node.
+        (Updatable) The total number of OCPUs available to each database instance node.
         """
         return pulumi.get(self, "instance_ocpu_count")
 
@@ -1350,7 +1348,7 @@ class DbSystem(pulumi.CustomResource):
     @pulumi.getter(name="networkDetails")
     def network_details(self) -> pulumi.Output['outputs.DbSystemNetworkDetails']:
         """
-        Network details for the database system.
+        (Updatable) Network details for the database system.
         """
         return pulumi.get(self, "network_details")
 
@@ -1366,7 +1364,7 @@ class DbSystem(pulumi.CustomResource):
     @pulumi.getter
     def shape(self) -> pulumi.Output[str]:
         """
-        The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
+        (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
         """
         return pulumi.get(self, "shape")
 

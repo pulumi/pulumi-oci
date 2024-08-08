@@ -29,13 +29,13 @@ namespace Pulumi.Oci.Jms
         ///     var testFleetInstallationSites = Oci.Jms.GetInstallationSites.Invoke(new()
         ///     {
         ///         FleetId = testFleet.Id,
-        ///         ApplicationId = testApplication.Id,
+        ///         ApplicationId = fleetInstallationSiteApplicationId,
         ///         InstallationPath = fleetInstallationSiteInstallationPath,
         ///         JreDistribution = fleetInstallationSiteJreDistribution,
         ///         JreSecurityStatus = fleetInstallationSiteJreSecurityStatus,
         ///         JreVendor = fleetInstallationSiteJreVendor,
         ///         JreVersion = fleetInstallationSiteJreVersion,
-        ///         ManagedInstanceId = testManagedInstance.Id,
+        ///         ManagedInstanceId = fleetInstallationSiteManagedInstanceId,
         ///         OsFamilies = fleetInstallationSiteOsFamily,
         ///         PathContains = fleetInstallationSitePathContains,
         ///         TimeEnd = fleetInstallationSiteTimeEnd,
@@ -66,13 +66,13 @@ namespace Pulumi.Oci.Jms
         ///     var testFleetInstallationSites = Oci.Jms.GetInstallationSites.Invoke(new()
         ///     {
         ///         FleetId = testFleet.Id,
-        ///         ApplicationId = testApplication.Id,
+        ///         ApplicationId = fleetInstallationSiteApplicationId,
         ///         InstallationPath = fleetInstallationSiteInstallationPath,
         ///         JreDistribution = fleetInstallationSiteJreDistribution,
         ///         JreSecurityStatus = fleetInstallationSiteJreSecurityStatus,
         ///         JreVendor = fleetInstallationSiteJreVendor,
         ///         JreVersion = fleetInstallationSiteJreVersion,
-        ///         ManagedInstanceId = testManagedInstance.Id,
+        ///         ManagedInstanceId = fleetInstallationSiteManagedInstanceId,
         ///         OsFamilies = fleetInstallationSiteOsFamily,
         ///         PathContains = fleetInstallationSitePathContains,
         ///         TimeEnd = fleetInstallationSiteTimeEnd,

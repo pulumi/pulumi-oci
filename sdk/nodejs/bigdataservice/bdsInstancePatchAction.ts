@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -19,6 +21,12 @@ import * as utilities from "../utilities";
  *     bdsInstanceId: testBdsInstance.id,
  *     clusterAdminPassword: bdsInstancePatchActionClusterAdminPassword,
  *     version: bdsInstancePatchActionVersion,
+ *     patchingConfig: {
+ *         patchingConfigStrategy: bdsInstancePatchActionPatchingConfigPatchingConfigStrategy,
+ *         batchSize: bdsInstancePatchActionPatchingConfigBatchSize,
+ *         waitTimeBetweenBatchInSeconds: bdsInstancePatchActionPatchingConfigWaitTimeBetweenBatchInSeconds,
+ *         waitTimeBetweenDomainInSeconds: bdsInstancePatchActionPatchingConfigWaitTimeBetweenDomainInSeconds,
+ *     },
  * });
  * ```
  *
@@ -63,6 +71,10 @@ export class BdsInstancePatchAction extends pulumi.CustomResource {
      */
     public readonly clusterAdminPassword!: pulumi.Output<string>;
     /**
+     * Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
+     */
+    public readonly patchingConfig!: pulumi.Output<outputs.BigDataService.BdsInstancePatchActionPatchingConfig>;
+    /**
      * The version of the patch to be installed.
      *
      *
@@ -86,6 +98,7 @@ export class BdsInstancePatchAction extends pulumi.CustomResource {
             const state = argsOrState as BdsInstancePatchActionState | undefined;
             resourceInputs["bdsInstanceId"] = state ? state.bdsInstanceId : undefined;
             resourceInputs["clusterAdminPassword"] = state ? state.clusterAdminPassword : undefined;
+            resourceInputs["patchingConfig"] = state ? state.patchingConfig : undefined;
             resourceInputs["version"] = state ? state.version : undefined;
         } else {
             const args = argsOrState as BdsInstancePatchActionArgs | undefined;
@@ -100,6 +113,7 @@ export class BdsInstancePatchAction extends pulumi.CustomResource {
             }
             resourceInputs["bdsInstanceId"] = args ? args.bdsInstanceId : undefined;
             resourceInputs["clusterAdminPassword"] = args?.clusterAdminPassword ? pulumi.secret(args.clusterAdminPassword) : undefined;
+            resourceInputs["patchingConfig"] = args ? args.patchingConfig : undefined;
             resourceInputs["version"] = args ? args.version : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -122,6 +136,10 @@ export interface BdsInstancePatchActionState {
      */
     clusterAdminPassword?: pulumi.Input<string>;
     /**
+     * Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
+     */
+    patchingConfig?: pulumi.Input<inputs.BigDataService.BdsInstancePatchActionPatchingConfig>;
+    /**
      * The version of the patch to be installed.
      *
      *
@@ -143,6 +161,10 @@ export interface BdsInstancePatchActionArgs {
      * Base-64 encoded password for the cluster admin user.
      */
     clusterAdminPassword: pulumi.Input<string>;
+    /**
+     * Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
+     */
+    patchingConfig?: pulumi.Input<inputs.BigDataService.BdsInstancePatchActionPatchingConfig>;
     /**
      * The version of the patch to be installed.
      *

@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testFleetBlocklists = oci.Jms.getFleetBlocklists({
  *     fleetId: testFleet.id,
- *     managedInstanceId: testManagedInstance.id,
+ *     managedInstanceId: fleetBlocklistManagedInstanceId,
  *     operation: fleetBlocklistOperation,
  * });
  * ```
@@ -93,7 +93,7 @@ export interface GetFleetBlocklistsResult {
  *
  * const testFleetBlocklists = oci.Jms.getFleetBlocklists({
  *     fleetId: testFleet.id,
- *     managedInstanceId: testManagedInstance.id,
+ *     managedInstanceId: fleetBlocklistManagedInstanceId,
  *     operation: fleetBlocklistOperation,
  * });
  * ```

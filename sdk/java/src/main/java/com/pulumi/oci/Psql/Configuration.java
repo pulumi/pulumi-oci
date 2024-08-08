@@ -12,6 +12,7 @@ import com.pulumi.oci.Psql.inputs.ConfigurationState;
 import com.pulumi.oci.Psql.outputs.ConfigurationConfigurationDetail;
 import com.pulumi.oci.Psql.outputs.ConfigurationDbConfigurationOverrides;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -60,12 +61,13 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .dbVersion(configurationDbVersion)
  *             .displayName(configurationDisplayName)
- *             .instanceMemorySizeInGbs(configurationInstanceMemorySizeInGbs)
- *             .instanceOcpuCount(configurationInstanceOcpuCount)
  *             .shape(configurationShape)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(configurationDescription)
  *             .freeformTags(Map.of("bar-key", "value"))
+ *             .instanceMemorySizeInGbs(configurationInstanceMemorySizeInGbs)
+ *             .instanceOcpuCount(configurationInstanceOcpuCount)
+ *             .isFlexible(configurationIsFlexible)
  *             .systemTags(configurationSystemTags)
  *             .build());
  * 
@@ -99,6 +101,20 @@ public class Configuration extends com.pulumi.resources.CustomResource {
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * The type of configuration. Either user-created or a default configuration.
+     * 
+     */
+    @Export(name="configType", refs={String.class}, tree="[0]")
+    private Output<String> configType;
+
+    /**
+     * @return The type of configuration. Either user-created or a default configuration.
+     * 
+     */
+    public Output<String> configType() {
+        return this.configType;
     }
     /**
      * List of configuration details.
@@ -201,12 +217,16 @@ public class Configuration extends com.pulumi.resources.CustomResource {
     /**
      * Memory size in gigabytes with 1GB increment.
      * 
+     * Skip or set it&#39;s value to 0 if configuration is for a flexible shape.
+     * 
      */
     @Export(name="instanceMemorySizeInGbs", refs={Integer.class}, tree="[0]")
     private Output<Integer> instanceMemorySizeInGbs;
 
     /**
      * @return Memory size in gigabytes with 1GB increment.
+     * 
+     * Skip or set it&#39;s value to 0 if configuration is for a flexible shape.
      * 
      */
     public Output<Integer> instanceMemorySizeInGbs() {
@@ -215,6 +235,8 @@ public class Configuration extends com.pulumi.resources.CustomResource {
     /**
      * CPU core count.
      * 
+     * Skip or set it&#39;s value to 0 if configuration is for a flexible shape.
+     * 
      */
     @Export(name="instanceOcpuCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> instanceOcpuCount;
@@ -222,9 +244,25 @@ public class Configuration extends com.pulumi.resources.CustomResource {
     /**
      * @return CPU core count.
      * 
+     * Skip or set it&#39;s value to 0 if configuration is for a flexible shape.
+     * 
      */
     public Output<Integer> instanceOcpuCount() {
         return this.instanceOcpuCount;
+    }
+    /**
+     * Whether the configuration supports flexible shapes.
+     * 
+     */
+    @Export(name="isFlexible", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isFlexible;
+
+    /**
+     * @return Whether the configuration supports flexible shapes.
+     * 
+     */
+    public Output<Boolean> isFlexible() {
+        return this.isFlexible;
     }
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.

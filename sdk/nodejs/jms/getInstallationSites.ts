@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  *
  * const testFleetInstallationSites = oci.Jms.getInstallationSites({
  *     fleetId: testFleet.id,
- *     applicationId: testApplication.id,
+ *     applicationId: fleetInstallationSiteApplicationId,
  *     installationPath: fleetInstallationSiteInstallationPath,
  *     jreDistribution: fleetInstallationSiteJreDistribution,
  *     jreSecurityStatus: fleetInstallationSiteJreSecurityStatus,
  *     jreVendor: fleetInstallationSiteJreVendor,
  *     jreVersion: fleetInstallationSiteJreVersion,
- *     managedInstanceId: testManagedInstance.id,
+ *     managedInstanceId: fleetInstallationSiteManagedInstanceId,
  *     osFamilies: fleetInstallationSiteOsFamily,
  *     pathContains: fleetInstallationSitePathContains,
  *     timeEnd: fleetInstallationSiteTimeEnd,
@@ -150,13 +150,13 @@ export interface GetInstallationSitesResult {
  *
  * const testFleetInstallationSites = oci.Jms.getInstallationSites({
  *     fleetId: testFleet.id,
- *     applicationId: testApplication.id,
+ *     applicationId: fleetInstallationSiteApplicationId,
  *     installationPath: fleetInstallationSiteInstallationPath,
  *     jreDistribution: fleetInstallationSiteJreDistribution,
  *     jreSecurityStatus: fleetInstallationSiteJreSecurityStatus,
  *     jreVendor: fleetInstallationSiteJreVendor,
  *     jreVersion: fleetInstallationSiteJreVersion,
- *     managedInstanceId: testManagedInstance.id,
+ *     managedInstanceId: fleetInstallationSiteManagedInstanceId,
  *     osFamilies: fleetInstallationSiteOsFamily,
  *     pathContains: fleetInstallationSitePathContains,
  *     timeEnd: fleetInstallationSiteTimeEnd,

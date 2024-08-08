@@ -592,7 +592,9 @@ class DbSystemManagementPolicyArgs:
                  maintenance_window_start: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input['DbSystemManagementPolicyBackupPolicyArgs'] backup_policy: (Updatable) PostgreSQL database system backup policy.
-        :param pulumi.Input[str] maintenance_window_start: (Updatable) The start of the maintenance window.
+        :param pulumi.Input[str] maintenance_window_start: (Updatable) The start of the maintenance window in UTC.
+               
+               This string is of the format: "{day-of-week} {time-of-day}". "{day-of-week}" is a case-insensitive string like "mon", "tue", &c. "{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
         """
         if backup_policy is not None:
             pulumi.set(__self__, "backup_policy", backup_policy)
@@ -615,7 +617,9 @@ class DbSystemManagementPolicyArgs:
     @pulumi.getter(name="maintenanceWindowStart")
     def maintenance_window_start(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The start of the maintenance window.
+        (Updatable) The start of the maintenance window in UTC.
+
+        This string is of the format: "{day-of-week} {time-of-day}". "{day-of-week}" is a case-insensitive string like "mon", "tue", &c. "{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
         """
         return pulumi.get(self, "maintenance_window_start")
 
@@ -719,7 +723,7 @@ class DbSystemNetworkDetailsArgs:
                  primary_db_endpoint_private_ip: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer subnet associated with the database system.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
         :param pulumi.Input[str] primary_db_endpoint_private_ip: Private IP in customer subnet. The value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses from the specified subnet.
         """
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -744,7 +748,7 @@ class DbSystemNetworkDetailsArgs:
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
+        (Updatable) List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
         """
         return pulumi.get(self, "nsg_ids")
 

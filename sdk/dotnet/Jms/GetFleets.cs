@@ -106,7 +106,7 @@ namespace Pulumi.Oci.Jms
         }
 
         /// <summary>
-        /// The ID of the Fleet.
+        /// The ID.
         /// </summary>
         [Input("id")]
         public string? Id { get; set; }
@@ -152,7 +152,7 @@ namespace Pulumi.Oci.Jms
         }
 
         /// <summary>
-        /// The ID of the Fleet.
+        /// The ID.
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }

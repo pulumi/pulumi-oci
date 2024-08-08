@@ -63,7 +63,7 @@ type GetJavaDownloadsJavaLicenseAcceptanceRecordsArgs struct {
 	Id *string `pulumi:"id"`
 	// Unique Java license type.
 	LicenseType *string `pulumi:"licenseType"`
-	// A filter to return only resources that match the user principal detail.  The search string can be any of the property values from the [Principal](https://docs.cloud.oracle.com/iaas/api/#/en/jms/latest/datatypes/Principal) object. This object is used as response datatype for the `createdBy` and `lastUpdatedBy` fields in applicable resource.
+	// A filter to return only resources that match the user principal detail.  The search string can be any of the property values from the [Principal](https://docs.cloud.oracle.com/iaas/api/#/en/jms/latest/datatypes/Principal) object. This object is used as a response datatype for the `createdBy` and `lastUpdatedBy` fields in applicable resource.
 	SearchByUser *string `pulumi:"searchByUser"`
 	// The status of license acceptance.
 	Status *string `pulumi:"status"`
@@ -106,7 +106,7 @@ type GetJavaDownloadsJavaLicenseAcceptanceRecordsOutputArgs struct {
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Unique Java license type.
 	LicenseType pulumi.StringPtrInput `pulumi:"licenseType"`
-	// A filter to return only resources that match the user principal detail.  The search string can be any of the property values from the [Principal](https://docs.cloud.oracle.com/iaas/api/#/en/jms/latest/datatypes/Principal) object. This object is used as response datatype for the `createdBy` and `lastUpdatedBy` fields in applicable resource.
+	// A filter to return only resources that match the user principal detail.  The search string can be any of the property values from the [Principal](https://docs.cloud.oracle.com/iaas/api/#/en/jms/latest/datatypes/Principal) object. This object is used as a response datatype for the `createdBy` and `lastUpdatedBy` fields in applicable resource.
 	SearchByUser pulumi.StringPtrInput `pulumi:"searchByUser"`
 	// The status of license acceptance.
 	Status pulumi.StringPtrInput `pulumi:"status"`

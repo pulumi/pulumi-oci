@@ -16,14 +16,14 @@ public final class TriggerActionFilterExcludeArgs extends com.pulumi.resources.R
     public static final TriggerActionFilterExcludeArgs Empty = new TriggerActionFilterExcludeArgs();
 
     /**
-     * (Updatable) Attributes to support include/exclude files for triggering build runs.
+     * Attributes to support include/exclude files for triggering build runs.
      * 
      */
     @Import(name="fileFilter")
     private @Nullable Output<TriggerActionFilterExcludeFileFilterArgs> fileFilter;
 
     /**
-     * @return (Updatable) Attributes to support include/exclude files for triggering build runs.
+     * @return Attributes to support include/exclude files for triggering build runs.
      * 
      */
     public Optional<Output<TriggerActionFilterExcludeFileFilterArgs>> fileFilter() {
@@ -55,7 +55,7 @@ public final class TriggerActionFilterExcludeArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param fileFilter (Updatable) Attributes to support include/exclude files for triggering build runs.
+         * @param fileFilter Attributes to support include/exclude files for triggering build runs.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class TriggerActionFilterExcludeArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param fileFilter (Updatable) Attributes to support include/exclude files for triggering build runs.
+         * @param fileFilter Attributes to support include/exclude files for triggering build runs.
          * 
          * @return builder
          * 

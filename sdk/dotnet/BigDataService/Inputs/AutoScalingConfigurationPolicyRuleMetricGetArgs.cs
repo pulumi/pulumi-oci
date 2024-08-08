@@ -13,7 +13,7 @@ namespace Pulumi.Oci.BigDataService.Inputs
     public sealed class AutoScalingConfigurationPolicyRuleMetricGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Allowed value is CPU_UTILIZATION.
+        /// (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
         /// </summary>
         [Input("metricType", required: true)]
         public Input<string> MetricType { get; set; } = null!;

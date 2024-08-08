@@ -84,7 +84,7 @@ namespace Pulumi.Oci.Psql
         public string? ConfigurationId { get; set; }
 
         /// <summary>
-        /// Verison of the PostgreSQL database, such as 14.9.
+        /// Version of the PostgreSQL database, such as 14.9.
         /// </summary>
         [Input("dbVersion")]
         public string? DbVersion { get; set; }
@@ -130,7 +130,7 @@ namespace Pulumi.Oci.Psql
         public Input<string>? ConfigurationId { get; set; }
 
         /// <summary>
-        /// Verison of the PostgreSQL database, such as 14.9.
+        /// Version of the PostgreSQL database, such as 14.9.
         /// </summary>
         [Input("dbVersion")]
         public Input<string>? DbVersion { get; set; }

@@ -23,7 +23,7 @@ class GetFleetPerformanceTuningAnalysisResultsResult:
     """
     A collection of values returned by getFleetPerformanceTuningAnalysisResults.
     """
-    def __init__(__self__, application_id=None, filters=None, fleet_id=None, id=None, managed_instance_id=None, performance_tuning_analysis_result_collections=None, time_end=None, time_start=None):
+    def __init__(__self__, application_id=None, filters=None, fleet_id=None, host_name=None, id=None, managed_instance_id=None, performance_tuning_analysis_result_collections=None, time_end=None, time_start=None):
         if application_id and not isinstance(application_id, str):
             raise TypeError("Expected argument 'application_id' to be a str")
         pulumi.set(__self__, "application_id", application_id)
@@ -33,6 +33,9 @@ class GetFleetPerformanceTuningAnalysisResultsResult:
         if fleet_id and not isinstance(fleet_id, str):
             raise TypeError("Expected argument 'fleet_id' to be a str")
         pulumi.set(__self__, "fleet_id", fleet_id)
+        if host_name and not isinstance(host_name, str):
+            raise TypeError("Expected argument 'host_name' to be a str")
+        pulumi.set(__self__, "host_name", host_name)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -69,6 +72,14 @@ class GetFleetPerformanceTuningAnalysisResultsResult:
         The fleet OCID.
         """
         return pulumi.get(self, "fleet_id")
+
+    @property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> Optional[str]:
+        """
+        The hostname of the managed instance.
+        """
+        return pulumi.get(self, "host_name")
 
     @property
     @pulumi.getter
@@ -114,6 +125,7 @@ class AwaitableGetFleetPerformanceTuningAnalysisResultsResult(GetFleetPerformanc
             application_id=self.application_id,
             filters=self.filters,
             fleet_id=self.fleet_id,
+            host_name=self.host_name,
             id=self.id,
             managed_instance_id=self.managed_instance_id,
             performance_tuning_analysis_result_collections=self.performance_tuning_analysis_result_collections,
@@ -124,6 +136,7 @@ class AwaitableGetFleetPerformanceTuningAnalysisResultsResult(GetFleetPerformanc
 def get_fleet_performance_tuning_analysis_results(application_id: Optional[str] = None,
                                                   filters: Optional[Sequence[pulumi.InputType['GetFleetPerformanceTuningAnalysisResultsFilterArgs']]] = None,
                                                   fleet_id: Optional[str] = None,
+                                                  host_name: Optional[str] = None,
                                                   managed_instance_id: Optional[str] = None,
                                                   time_end: Optional[str] = None,
                                                   time_start: Optional[str] = None,
@@ -140,8 +153,9 @@ def get_fleet_performance_tuning_analysis_results(application_id: Optional[str] 
     import pulumi_oci as oci
 
     test_fleet_performance_tuning_analysis_results = oci.Jms.get_fleet_performance_tuning_analysis_results(fleet_id=test_fleet["id"],
-        application_id=test_application["id"],
-        managed_instance_id=test_managed_instance["id"],
+        application_id=fleet_performance_tuning_analysis_result_application_id,
+        host_name=fleet_performance_tuning_analysis_result_host_name,
+        managed_instance_id=fleet_performance_tuning_analysis_result_managed_instance_id,
         time_end=fleet_performance_tuning_analysis_result_time_end,
         time_start=fleet_performance_tuning_analysis_result_time_start)
     ```
@@ -149,6 +163,7 @@ def get_fleet_performance_tuning_analysis_results(application_id: Optional[str] 
 
     :param str application_id: The Fleet-unique identifier of the related application.
     :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
+    :param str host_name: The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
     :param str managed_instance_id: The Fleet-unique identifier of the related managed instance.
     :param str time_end: The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
     :param str time_start: The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -157,6 +172,7 @@ def get_fleet_performance_tuning_analysis_results(application_id: Optional[str] 
     __args__['applicationId'] = application_id
     __args__['filters'] = filters
     __args__['fleetId'] = fleet_id
+    __args__['hostName'] = host_name
     __args__['managedInstanceId'] = managed_instance_id
     __args__['timeEnd'] = time_end
     __args__['timeStart'] = time_start
@@ -167,6 +183,7 @@ def get_fleet_performance_tuning_analysis_results(application_id: Optional[str] 
         application_id=pulumi.get(__ret__, 'application_id'),
         filters=pulumi.get(__ret__, 'filters'),
         fleet_id=pulumi.get(__ret__, 'fleet_id'),
+        host_name=pulumi.get(__ret__, 'host_name'),
         id=pulumi.get(__ret__, 'id'),
         managed_instance_id=pulumi.get(__ret__, 'managed_instance_id'),
         performance_tuning_analysis_result_collections=pulumi.get(__ret__, 'performance_tuning_analysis_result_collections'),
@@ -178,6 +195,7 @@ def get_fleet_performance_tuning_analysis_results(application_id: Optional[str] 
 def get_fleet_performance_tuning_analysis_results_output(application_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                          filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetFleetPerformanceTuningAnalysisResultsFilterArgs']]]]] = None,
                                                          fleet_id: Optional[pulumi.Input[str]] = None,
+                                                         host_name: Optional[pulumi.Input[Optional[str]]] = None,
                                                          managed_instance_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                          time_end: Optional[pulumi.Input[Optional[str]]] = None,
                                                          time_start: Optional[pulumi.Input[Optional[str]]] = None,
@@ -194,8 +212,9 @@ def get_fleet_performance_tuning_analysis_results_output(application_id: Optiona
     import pulumi_oci as oci
 
     test_fleet_performance_tuning_analysis_results = oci.Jms.get_fleet_performance_tuning_analysis_results(fleet_id=test_fleet["id"],
-        application_id=test_application["id"],
-        managed_instance_id=test_managed_instance["id"],
+        application_id=fleet_performance_tuning_analysis_result_application_id,
+        host_name=fleet_performance_tuning_analysis_result_host_name,
+        managed_instance_id=fleet_performance_tuning_analysis_result_managed_instance_id,
         time_end=fleet_performance_tuning_analysis_result_time_end,
         time_start=fleet_performance_tuning_analysis_result_time_start)
     ```
@@ -203,6 +222,7 @@ def get_fleet_performance_tuning_analysis_results_output(application_id: Optiona
 
     :param str application_id: The Fleet-unique identifier of the related application.
     :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
+    :param str host_name: The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
     :param str managed_instance_id: The Fleet-unique identifier of the related managed instance.
     :param str time_end: The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
     :param str time_start: The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).

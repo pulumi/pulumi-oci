@@ -12,7 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class AutoScalingConfigurationPolicyRuleMetric {
     /**
-     * @return (Updatable) Allowed value is CPU_UTILIZATION.
+     * @return (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
      * 
      */
     private String metricType;
@@ -24,7 +24,7 @@ public final class AutoScalingConfigurationPolicyRuleMetric {
 
     private AutoScalingConfigurationPolicyRuleMetric() {}
     /**
-     * @return (Updatable) Allowed value is CPU_UTILIZATION.
+     * @return (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
      * 
      */
     public String metricType() {

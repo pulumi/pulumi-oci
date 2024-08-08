@@ -62,9 +62,8 @@ type GetBuildRunsArgs struct {
 	// The OCID of the compartment in which to list resources.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName *string `pulumi:"displayName"`
-	// The filters for the trigger.
-	Filters []GetBuildRunsFilter `pulumi:"filters"`
+	DisplayName *string              `pulumi:"displayName"`
+	Filters     []GetBuildRunsFilter `pulumi:"filters"`
 	// Unique identifier or OCID for listing a single resource by ID.
 	Id *string `pulumi:"id"`
 	// unique project identifier
@@ -82,9 +81,8 @@ type GetBuildRunsResult struct {
 	// The OCID of the compartment where the build is running.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// Build run display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
-	DisplayName *string `pulumi:"displayName"`
-	// The filters for the trigger.
-	Filters []GetBuildRunsFilter `pulumi:"filters"`
+	DisplayName *string              `pulumi:"displayName"`
+	Filters     []GetBuildRunsFilter `pulumi:"filters"`
 	// Unique identifier that is immutable on creation.
 	Id *string `pulumi:"id"`
 	// The OCID of the DevOps project.
@@ -113,9 +111,8 @@ type GetBuildRunsOutputArgs struct {
 	// The OCID of the compartment in which to list resources.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
-	// The filters for the trigger.
-	Filters GetBuildRunsFilterArrayInput `pulumi:"filters"`
+	DisplayName pulumi.StringPtrInput        `pulumi:"displayName"`
+	Filters     GetBuildRunsFilterArrayInput `pulumi:"filters"`
 	// Unique identifier or OCID for listing a single resource by ID.
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// unique project identifier
@@ -165,7 +162,6 @@ func (o GetBuildRunsResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetBuildRunsResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
-// The filters for the trigger.
 func (o GetBuildRunsResultOutput) Filters() GetBuildRunsFilterArrayOutput {
 	return o.ApplyT(func(v GetBuildRunsResult) []GetBuildRunsFilter { return v.Filters }).(GetBuildRunsFilterArrayOutput)
 }

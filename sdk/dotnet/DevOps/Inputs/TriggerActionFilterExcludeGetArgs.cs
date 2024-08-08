@@ -13,7 +13,7 @@ namespace Pulumi.Oci.DevOps.Inputs
     public sealed class TriggerActionFilterExcludeGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Attributes to support include/exclude files for triggering build runs.
+        /// Attributes to support include/exclude files for triggering build runs.
         /// </summary>
         [Input("fileFilter")]
         public Input<Inputs.TriggerActionFilterExcludeFileFilterGetArgs>? FileFilter { get; set; }

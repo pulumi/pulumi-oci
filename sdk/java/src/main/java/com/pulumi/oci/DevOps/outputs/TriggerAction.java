@@ -18,10 +18,6 @@ public final class TriggerAction {
      * 
      */
     private String buildPipelineId;
-    /**
-     * @return (Updatable) The filters for the trigger.
-     * 
-     */
     private @Nullable TriggerActionFilter filter;
     /**
      * @return (Updatable) The type of action that will be taken. Allowed value is TRIGGER_BUILD_PIPELINE.
@@ -37,10 +33,6 @@ public final class TriggerAction {
     public String buildPipelineId() {
         return this.buildPipelineId;
     }
-    /**
-     * @return (Updatable) The filters for the trigger.
-     * 
-     */
     public Optional<TriggerActionFilter> filter() {
         return Optional.ofNullable(this.filter);
     }

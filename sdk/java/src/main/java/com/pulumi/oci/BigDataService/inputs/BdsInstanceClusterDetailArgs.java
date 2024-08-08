@@ -181,14 +181,14 @@ public final class BdsInstanceClusterDetailArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
+     * Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
      * 
      */
     @Import(name="odhVersion")
     private @Nullable Output<String> odhVersion;
 
     /**
-     * @return Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
+     * @return Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
      * 
      */
     public Optional<Output<String>> odhVersion() {
@@ -510,7 +510,7 @@ public final class BdsInstanceClusterDetailArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param odhVersion Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
+         * @param odhVersion Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
          * 
          * @return builder
          * 
@@ -521,7 +521,7 @@ public final class BdsInstanceClusterDetailArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param odhVersion Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
+         * @param odhVersion Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
          * 
          * @return builder
          * 

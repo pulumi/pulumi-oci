@@ -91,7 +91,7 @@ type LookupBackupResult struct {
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The date and time the backup was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+	// The date and time the backup request was received, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated string `pulumi:"timeUpdated"`
@@ -219,7 +219,7 @@ func (o LookupBackupResultOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupBackupResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// The date and time the backup was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+// The date and time the backup request was received, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 func (o LookupBackupResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBackupResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }

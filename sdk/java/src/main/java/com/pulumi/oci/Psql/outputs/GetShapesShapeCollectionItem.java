@@ -5,8 +5,12 @@ package com.pulumi.oci.Psql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Psql.outputs.GetShapesShapeCollectionItemShapeMemoryOption;
+import com.pulumi.oci.Psql.outputs.GetShapesShapeCollectionItemShapeOcpuOption;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
@@ -16,6 +20,11 @@ public final class GetShapesShapeCollectionItem {
      * 
      */
     private String id;
+    /**
+     * @return Indicates if the shape is a flex shape.
+     * 
+     */
+    private Boolean isFlexible;
     /**
      * @return The amount of memory in gigabytes.
      * 
@@ -31,6 +40,16 @@ public final class GetShapesShapeCollectionItem {
      * 
      */
     private String shape;
+    /**
+     * @return Options for the the shape memory
+     * 
+     */
+    private List<GetShapesShapeCollectionItemShapeMemoryOption> shapeMemoryOptions;
+    /**
+     * @return Options for the the shape OCPU
+     * 
+     */
+    private List<GetShapesShapeCollectionItemShapeOcpuOption> shapeOcpuOptions;
 
     private GetShapesShapeCollectionItem() {}
     /**
@@ -39,6 +58,13 @@ public final class GetShapesShapeCollectionItem {
      */
     public String id() {
         return this.id;
+    }
+    /**
+     * @return Indicates if the shape is a flex shape.
+     * 
+     */
+    public Boolean isFlexible() {
+        return this.isFlexible;
     }
     /**
      * @return The amount of memory in gigabytes.
@@ -61,6 +87,20 @@ public final class GetShapesShapeCollectionItem {
     public String shape() {
         return this.shape;
     }
+    /**
+     * @return Options for the the shape memory
+     * 
+     */
+    public List<GetShapesShapeCollectionItemShapeMemoryOption> shapeMemoryOptions() {
+        return this.shapeMemoryOptions;
+    }
+    /**
+     * @return Options for the the shape OCPU
+     * 
+     */
+    public List<GetShapesShapeCollectionItemShapeOcpuOption> shapeOcpuOptions() {
+        return this.shapeOcpuOptions;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -72,16 +112,22 @@ public final class GetShapesShapeCollectionItem {
     @CustomType.Builder
     public static final class Builder {
         private String id;
+        private Boolean isFlexible;
         private Integer memorySizeInGbs;
         private Integer ocpuCount;
         private String shape;
+        private List<GetShapesShapeCollectionItemShapeMemoryOption> shapeMemoryOptions;
+        private List<GetShapesShapeCollectionItemShapeOcpuOption> shapeOcpuOptions;
         public Builder() {}
         public Builder(GetShapesShapeCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
+    	      this.isFlexible = defaults.isFlexible;
     	      this.memorySizeInGbs = defaults.memorySizeInGbs;
     	      this.ocpuCount = defaults.ocpuCount;
     	      this.shape = defaults.shape;
+    	      this.shapeMemoryOptions = defaults.shapeMemoryOptions;
+    	      this.shapeOcpuOptions = defaults.shapeOcpuOptions;
         }
 
         @CustomType.Setter
@@ -90,6 +136,14 @@ public final class GetShapesShapeCollectionItem {
               throw new MissingRequiredPropertyException("GetShapesShapeCollectionItem", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isFlexible(Boolean isFlexible) {
+            if (isFlexible == null) {
+              throw new MissingRequiredPropertyException("GetShapesShapeCollectionItem", "isFlexible");
+            }
+            this.isFlexible = isFlexible;
             return this;
         }
         @CustomType.Setter
@@ -116,12 +170,37 @@ public final class GetShapesShapeCollectionItem {
             this.shape = shape;
             return this;
         }
+        @CustomType.Setter
+        public Builder shapeMemoryOptions(List<GetShapesShapeCollectionItemShapeMemoryOption> shapeMemoryOptions) {
+            if (shapeMemoryOptions == null) {
+              throw new MissingRequiredPropertyException("GetShapesShapeCollectionItem", "shapeMemoryOptions");
+            }
+            this.shapeMemoryOptions = shapeMemoryOptions;
+            return this;
+        }
+        public Builder shapeMemoryOptions(GetShapesShapeCollectionItemShapeMemoryOption... shapeMemoryOptions) {
+            return shapeMemoryOptions(List.of(shapeMemoryOptions));
+        }
+        @CustomType.Setter
+        public Builder shapeOcpuOptions(List<GetShapesShapeCollectionItemShapeOcpuOption> shapeOcpuOptions) {
+            if (shapeOcpuOptions == null) {
+              throw new MissingRequiredPropertyException("GetShapesShapeCollectionItem", "shapeOcpuOptions");
+            }
+            this.shapeOcpuOptions = shapeOcpuOptions;
+            return this;
+        }
+        public Builder shapeOcpuOptions(GetShapesShapeCollectionItemShapeOcpuOption... shapeOcpuOptions) {
+            return shapeOcpuOptions(List.of(shapeOcpuOptions));
+        }
         public GetShapesShapeCollectionItem build() {
             final var _resultValue = new GetShapesShapeCollectionItem();
             _resultValue.id = id;
+            _resultValue.isFlexible = isFlexible;
             _resultValue.memorySizeInGbs = memorySizeInGbs;
             _resultValue.ocpuCount = ocpuCount;
             _resultValue.shape = shape;
+            _resultValue.shapeMemoryOptions = shapeMemoryOptions;
+            _resultValue.shapeOcpuOptions = shapeOcpuOptions;
             return _resultValue;
         }
     }

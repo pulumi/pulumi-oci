@@ -27,7 +27,7 @@ public final class GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionIt
      */
     private String cryptoRoadmapVersion;
     /**
-     * @return Total number of findings with the analysis.
+     * @return FindingCount of CryptoAnalysis Report.
      * 
      */
     private Integer findingCount;
@@ -37,7 +37,7 @@ public final class GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionIt
      */
     private String fleetId;
     /**
-     * @return The hostname of the managed instance.
+     * @return The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
      * 
      */
     private String hostName;
@@ -57,7 +57,7 @@ public final class GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionIt
      */
     private String namespace;
     /**
-     * @return Total number of non-compliant findings with the analysis. A non-compliant finding means the application won&#39;t work properly with the changes introduced by the Crypto Roadmap version used by the analysis.
+     * @return Non Compliant Finding Count of CryptoAnalysis Report.
      * 
      */
     private Integer nonCompliantFindingCount;
@@ -77,6 +77,11 @@ public final class GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionIt
      */
     private String timeCreated;
     /**
+     * @return The time the JFR recording has finished.
+     * 
+     */
+    private String timeFinished;
+    /**
      * @return Time of the first event in the analysis.
      * 
      */
@@ -86,6 +91,11 @@ public final class GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionIt
      * 
      */
     private String timeLastEvent;
+    /**
+     * @return The time the JFR recording has started.
+     * 
+     */
+    private String timeStarted;
     /**
      * @return Total number of events in the analysis.
      * 
@@ -120,7 +130,7 @@ public final class GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionIt
         return this.cryptoRoadmapVersion;
     }
     /**
-     * @return Total number of findings with the analysis.
+     * @return FindingCount of CryptoAnalysis Report.
      * 
      */
     public Integer findingCount() {
@@ -134,7 +144,7 @@ public final class GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionIt
         return this.fleetId;
     }
     /**
-     * @return The hostname of the managed instance.
+     * @return The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
      * 
      */
     public String hostName() {
@@ -162,7 +172,7 @@ public final class GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionIt
         return this.namespace;
     }
     /**
-     * @return Total number of non-compliant findings with the analysis. A non-compliant finding means the application won&#39;t work properly with the changes introduced by the Crypto Roadmap version used by the analysis.
+     * @return Non Compliant Finding Count of CryptoAnalysis Report.
      * 
      */
     public Integer nonCompliantFindingCount() {
@@ -190,6 +200,13 @@ public final class GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionIt
         return this.timeCreated;
     }
     /**
+     * @return The time the JFR recording has finished.
+     * 
+     */
+    public String timeFinished() {
+        return this.timeFinished;
+    }
+    /**
      * @return Time of the first event in the analysis.
      * 
      */
@@ -202,6 +219,13 @@ public final class GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionIt
      */
     public String timeLastEvent() {
         return this.timeLastEvent;
+    }
+    /**
+     * @return The time the JFR recording has started.
+     * 
+     */
+    public String timeStarted() {
+        return this.timeStarted;
     }
     /**
      * @return Total number of events in the analysis.
@@ -240,8 +264,10 @@ public final class GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionIt
         private String object;
         private Integer summarizedEventCount;
         private String timeCreated;
+        private String timeFinished;
         private String timeFirstEvent;
         private String timeLastEvent;
+        private String timeStarted;
         private Integer totalEventCount;
         private String workRequestId;
         public Builder() {}
@@ -260,8 +286,10 @@ public final class GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionIt
     	      this.object = defaults.object;
     	      this.summarizedEventCount = defaults.summarizedEventCount;
     	      this.timeCreated = defaults.timeCreated;
+    	      this.timeFinished = defaults.timeFinished;
     	      this.timeFirstEvent = defaults.timeFirstEvent;
     	      this.timeLastEvent = defaults.timeLastEvent;
+    	      this.timeStarted = defaults.timeStarted;
     	      this.totalEventCount = defaults.totalEventCount;
     	      this.workRequestId = defaults.workRequestId;
         }
@@ -371,6 +399,14 @@ public final class GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionIt
             return this;
         }
         @CustomType.Setter
+        public Builder timeFinished(String timeFinished) {
+            if (timeFinished == null) {
+              throw new MissingRequiredPropertyException("GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem", "timeFinished");
+            }
+            this.timeFinished = timeFinished;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeFirstEvent(String timeFirstEvent) {
             if (timeFirstEvent == null) {
               throw new MissingRequiredPropertyException("GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem", "timeFirstEvent");
@@ -384,6 +420,14 @@ public final class GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionIt
               throw new MissingRequiredPropertyException("GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem", "timeLastEvent");
             }
             this.timeLastEvent = timeLastEvent;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeStarted(String timeStarted) {
+            if (timeStarted == null) {
+              throw new MissingRequiredPropertyException("GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem", "timeStarted");
+            }
+            this.timeStarted = timeStarted;
             return this;
         }
         @CustomType.Setter
@@ -417,8 +461,10 @@ public final class GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionIt
             _resultValue.object = object;
             _resultValue.summarizedEventCount = summarizedEventCount;
             _resultValue.timeCreated = timeCreated;
+            _resultValue.timeFinished = timeFinished;
             _resultValue.timeFirstEvent = timeFirstEvent;
             _resultValue.timeLastEvent = timeLastEvent;
+            _resultValue.timeStarted = timeStarted;
             _resultValue.totalEventCount = totalEventCount;
             _resultValue.workRequestId = workRequestId;
             return _resultValue;

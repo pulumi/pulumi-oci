@@ -40,8 +40,6 @@ namespace Pulumi.Oci.Psql
     ///         },
     ///         DbVersion = configurationDbVersion,
     ///         DisplayName = configurationDisplayName,
-    ///         InstanceMemorySizeInGbs = configurationInstanceMemorySizeInGbs,
-    ///         InstanceOcpuCount = configurationInstanceOcpuCount,
     ///         Shape = configurationShape,
     ///         DefinedTags = 
     ///         {
@@ -52,6 +50,9 @@ namespace Pulumi.Oci.Psql
     ///         {
     ///             { "bar-key", "value" },
     ///         },
+    ///         InstanceMemorySizeInGbs = configurationInstanceMemorySizeInGbs,
+    ///         InstanceOcpuCount = configurationInstanceOcpuCount,
+    ///         IsFlexible = configurationIsFlexible,
     ///         SystemTags = configurationSystemTags,
     ///     });
     /// 
@@ -74,6 +75,12 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
+
+        /// <summary>
+        /// The type of configuration. Either user-created or a default configuration.
+        /// </summary>
+        [Output("configType")]
+        public Output<string> ConfigType { get; private set; } = null!;
 
         /// <summary>
         /// List of configuration details.
@@ -119,15 +126,25 @@ namespace Pulumi.Oci.Psql
 
         /// <summary>
         /// Memory size in gigabytes with 1GB increment.
+        /// 
+        /// Skip or set it's value to 0 if configuration is for a flexible shape.
         /// </summary>
         [Output("instanceMemorySizeInGbs")]
         public Output<int> InstanceMemorySizeInGbs { get; private set; } = null!;
 
         /// <summary>
         /// CPU core count.
+        /// 
+        /// Skip or set it's value to 0 if configuration is for a flexible shape.
         /// </summary>
         [Output("instanceOcpuCount")]
         public Output<int> InstanceOcpuCount { get; private set; } = null!;
+
+        /// <summary>
+        /// Whether the configuration supports flexible shapes.
+        /// </summary>
+        [Output("isFlexible")]
+        public Output<bool> IsFlexible { get; private set; } = null!;
 
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -265,15 +282,25 @@ namespace Pulumi.Oci.Psql
 
         /// <summary>
         /// Memory size in gigabytes with 1GB increment.
+        /// 
+        /// Skip or set it's value to 0 if configuration is for a flexible shape.
         /// </summary>
-        [Input("instanceMemorySizeInGbs", required: true)]
-        public Input<int> InstanceMemorySizeInGbs { get; set; } = null!;
+        [Input("instanceMemorySizeInGbs")]
+        public Input<int>? InstanceMemorySizeInGbs { get; set; }
 
         /// <summary>
         /// CPU core count.
+        /// 
+        /// Skip or set it's value to 0 if configuration is for a flexible shape.
         /// </summary>
-        [Input("instanceOcpuCount", required: true)]
-        public Input<int> InstanceOcpuCount { get; set; } = null!;
+        [Input("instanceOcpuCount")]
+        public Input<int>? InstanceOcpuCount { get; set; }
+
+        /// <summary>
+        /// Whether the configuration supports flexible shapes.
+        /// </summary>
+        [Input("isFlexible")]
+        public Input<bool>? IsFlexible { get; set; }
 
         /// <summary>
         /// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
@@ -310,6 +337,12 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
+
+        /// <summary>
+        /// The type of configuration. Either user-created or a default configuration.
+        /// </summary>
+        [Input("configType")]
+        public Input<string>? ConfigType { get; set; }
 
         [Input("configurationDetails")]
         private InputList<Inputs.ConfigurationConfigurationDetailGetArgs>? _configurationDetails;
@@ -373,15 +406,25 @@ namespace Pulumi.Oci.Psql
 
         /// <summary>
         /// Memory size in gigabytes with 1GB increment.
+        /// 
+        /// Skip or set it's value to 0 if configuration is for a flexible shape.
         /// </summary>
         [Input("instanceMemorySizeInGbs")]
         public Input<int>? InstanceMemorySizeInGbs { get; set; }
 
         /// <summary>
         /// CPU core count.
+        /// 
+        /// Skip or set it's value to 0 if configuration is for a flexible shape.
         /// </summary>
         [Input("instanceOcpuCount")]
         public Input<int>? InstanceOcpuCount { get; set; }
+
+        /// <summary>
+        /// Whether the configuration supports flexible shapes.
+        /// </summary>
+        [Input("isFlexible")]
+        public Input<bool>? IsFlexible { get; set; }
 
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.

@@ -54,7 +54,7 @@ namespace Pulumi.Oci.Jms.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// The ID of the Fleet.
+        /// The ID.
         /// </summary>
         public readonly string Id;
         /// <summary>

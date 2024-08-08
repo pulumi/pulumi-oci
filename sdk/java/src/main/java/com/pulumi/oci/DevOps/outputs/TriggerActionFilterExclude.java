@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class TriggerActionFilterExclude {
     /**
-     * @return (Updatable) Attributes to support include/exclude files for triggering build runs.
+     * @return Attributes to support include/exclude files for triggering build runs.
      * 
      */
     private @Nullable TriggerActionFilterExcludeFileFilter fileFilter;
 
     private TriggerActionFilterExclude() {}
     /**
-     * @return (Updatable) Attributes to support include/exclude files for triggering build runs.
+     * @return Attributes to support include/exclude files for triggering build runs.
      * 
      */
     public Optional<TriggerActionFilterExcludeFileFilter> fileFilter() {

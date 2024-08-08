@@ -58,9 +58,6 @@ export interface GetBuildRunsArgs {
      * A filter to return only resources that match the entire display name given.
      */
     displayName?: string;
-    /**
-     * The filters for the trigger.
-     */
     filters?: inputs.DevOps.GetBuildRunsFilter[];
     /**
      * Unique identifier or OCID for listing a single resource by ID.
@@ -96,9 +93,6 @@ export interface GetBuildRunsResult {
      * Build run display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      */
     readonly displayName?: string;
-    /**
-     * The filters for the trigger.
-     */
     readonly filters?: outputs.DevOps.GetBuildRunsFilter[];
     /**
      * Unique identifier that is immutable on creation.
@@ -154,9 +148,6 @@ export interface GetBuildRunsOutputArgs {
      * A filter to return only resources that match the entire display name given.
      */
     displayName?: pulumi.Input<string>;
-    /**
-     * The filters for the trigger.
-     */
     filters?: pulumi.Input<pulumi.Input<inputs.DevOps.GetBuildRunsFilterArgs>[]>;
     /**
      * Unique identifier or OCID for listing a single resource by ID.

@@ -3223,6 +3223,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DevOps/projectRepositorySetting",
+  "fqn": "pulumi_oci.devops",
+  "classes": {
+   "oci:DevOps/projectRepositorySetting:ProjectRepositorySetting": "ProjectRepositorySetting"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DevOps/repository",
   "fqn": "pulumi_oci.devops",
   "classes": {
@@ -3239,10 +3247,26 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DevOps/repositoryProtectedBranchManagement",
+  "fqn": "pulumi_oci.devops",
+  "classes": {
+   "oci:DevOps/repositoryProtectedBranchManagement:RepositoryProtectedBranchManagement": "RepositoryProtectedBranchManagement"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DevOps/repositoryRef",
   "fqn": "pulumi_oci.devops",
   "classes": {
    "oci:DevOps/repositoryRef:RepositoryRef": "RepositoryRef"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DevOps/repositorySetting",
+  "fqn": "pulumi_oci.devops",
+  "classes": {
+   "oci:DevOps/repositorySetting:RepositorySetting": "RepositorySetting"
   }
  },
  {
@@ -4291,6 +4315,14 @@ _utilities.register(
   "fqn": "pulumi_oci.jms",
   "classes": {
    "oci:Jms/javaDownloadsJavaLicenseAcceptanceRecord:JavaDownloadsJavaLicenseAcceptanceRecord": "JavaDownloadsJavaLicenseAcceptanceRecord"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Jms/jmsPlugin",
+  "fqn": "pulumi_oci.jms",
+  "classes": {
+   "oci:Jms/jmsPlugin:JmsPlugin": "JmsPlugin"
   }
  },
  {

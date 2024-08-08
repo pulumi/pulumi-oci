@@ -19,8 +19,9 @@ import * as utilities from "../utilities";
  *
  * const testFleetPerformanceTuningAnalysisResults = oci.Jms.getFleetPerformanceTuningAnalysisResults({
  *     fleetId: testFleet.id,
- *     applicationId: testApplication.id,
- *     managedInstanceId: testManagedInstance.id,
+ *     applicationId: fleetPerformanceTuningAnalysisResultApplicationId,
+ *     hostName: fleetPerformanceTuningAnalysisResultHostName,
+ *     managedInstanceId: fleetPerformanceTuningAnalysisResultManagedInstanceId,
  *     timeEnd: fleetPerformanceTuningAnalysisResultTimeEnd,
  *     timeStart: fleetPerformanceTuningAnalysisResultTimeStart,
  * });
@@ -33,6 +34,7 @@ export function getFleetPerformanceTuningAnalysisResults(args: GetFleetPerforman
         "applicationId": args.applicationId,
         "filters": args.filters,
         "fleetId": args.fleetId,
+        "hostName": args.hostName,
         "managedInstanceId": args.managedInstanceId,
         "timeEnd": args.timeEnd,
         "timeStart": args.timeStart,
@@ -52,6 +54,10 @@ export interface GetFleetPerformanceTuningAnalysisResultsArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      */
     fleetId: string;
+    /**
+     * The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
+     */
+    hostName?: string;
     /**
      * The Fleet-unique identifier of the related managed instance.
      */
@@ -80,6 +86,10 @@ export interface GetFleetPerformanceTuningAnalysisResultsResult {
      */
     readonly fleetId: string;
     /**
+     * The hostname of the managed instance.
+     */
+    readonly hostName?: string;
+    /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
@@ -107,8 +117,9 @@ export interface GetFleetPerformanceTuningAnalysisResultsResult {
  *
  * const testFleetPerformanceTuningAnalysisResults = oci.Jms.getFleetPerformanceTuningAnalysisResults({
  *     fleetId: testFleet.id,
- *     applicationId: testApplication.id,
- *     managedInstanceId: testManagedInstance.id,
+ *     applicationId: fleetPerformanceTuningAnalysisResultApplicationId,
+ *     hostName: fleetPerformanceTuningAnalysisResultHostName,
+ *     managedInstanceId: fleetPerformanceTuningAnalysisResultManagedInstanceId,
  *     timeEnd: fleetPerformanceTuningAnalysisResultTimeEnd,
  *     timeStart: fleetPerformanceTuningAnalysisResultTimeStart,
  * });
@@ -131,6 +142,10 @@ export interface GetFleetPerformanceTuningAnalysisResultsOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      */
     fleetId: pulumi.Input<string>;
+    /**
+     * The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
+     */
+    hostName?: pulumi.Input<string>;
     /**
      * The Fleet-unique identifier of the related managed instance.
      */

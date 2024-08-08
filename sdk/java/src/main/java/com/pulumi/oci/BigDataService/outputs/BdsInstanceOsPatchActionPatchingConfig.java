@@ -16,7 +16,9 @@ public final class BdsInstanceOsPatchActionPatchingConfig {
     private @Nullable Integer batchSize;
     private String patchingConfigStrategy;
     private @Nullable Integer toleranceThresholdPerBatch;
+    private @Nullable Integer toleranceThresholdPerDomain;
     private @Nullable Integer waitTimeBetweenBatchInSeconds;
+    private @Nullable Integer waitTimeBetweenDomainInSeconds;
 
     private BdsInstanceOsPatchActionPatchingConfig() {}
     public Optional<Integer> batchSize() {
@@ -28,8 +30,14 @@ public final class BdsInstanceOsPatchActionPatchingConfig {
     public Optional<Integer> toleranceThresholdPerBatch() {
         return Optional.ofNullable(this.toleranceThresholdPerBatch);
     }
+    public Optional<Integer> toleranceThresholdPerDomain() {
+        return Optional.ofNullable(this.toleranceThresholdPerDomain);
+    }
     public Optional<Integer> waitTimeBetweenBatchInSeconds() {
         return Optional.ofNullable(this.waitTimeBetweenBatchInSeconds);
+    }
+    public Optional<Integer> waitTimeBetweenDomainInSeconds() {
+        return Optional.ofNullable(this.waitTimeBetweenDomainInSeconds);
     }
 
     public static Builder builder() {
@@ -44,14 +52,18 @@ public final class BdsInstanceOsPatchActionPatchingConfig {
         private @Nullable Integer batchSize;
         private String patchingConfigStrategy;
         private @Nullable Integer toleranceThresholdPerBatch;
+        private @Nullable Integer toleranceThresholdPerDomain;
         private @Nullable Integer waitTimeBetweenBatchInSeconds;
+        private @Nullable Integer waitTimeBetweenDomainInSeconds;
         public Builder() {}
         public Builder(BdsInstanceOsPatchActionPatchingConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.batchSize = defaults.batchSize;
     	      this.patchingConfigStrategy = defaults.patchingConfigStrategy;
     	      this.toleranceThresholdPerBatch = defaults.toleranceThresholdPerBatch;
+    	      this.toleranceThresholdPerDomain = defaults.toleranceThresholdPerDomain;
     	      this.waitTimeBetweenBatchInSeconds = defaults.waitTimeBetweenBatchInSeconds;
+    	      this.waitTimeBetweenDomainInSeconds = defaults.waitTimeBetweenDomainInSeconds;
         }
 
         @CustomType.Setter
@@ -75,9 +87,21 @@ public final class BdsInstanceOsPatchActionPatchingConfig {
             return this;
         }
         @CustomType.Setter
+        public Builder toleranceThresholdPerDomain(@Nullable Integer toleranceThresholdPerDomain) {
+
+            this.toleranceThresholdPerDomain = toleranceThresholdPerDomain;
+            return this;
+        }
+        @CustomType.Setter
         public Builder waitTimeBetweenBatchInSeconds(@Nullable Integer waitTimeBetweenBatchInSeconds) {
 
             this.waitTimeBetweenBatchInSeconds = waitTimeBetweenBatchInSeconds;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder waitTimeBetweenDomainInSeconds(@Nullable Integer waitTimeBetweenDomainInSeconds) {
+
+            this.waitTimeBetweenDomainInSeconds = waitTimeBetweenDomainInSeconds;
             return this;
         }
         public BdsInstanceOsPatchActionPatchingConfig build() {
@@ -85,7 +109,9 @@ public final class BdsInstanceOsPatchActionPatchingConfig {
             _resultValue.batchSize = batchSize;
             _resultValue.patchingConfigStrategy = patchingConfigStrategy;
             _resultValue.toleranceThresholdPerBatch = toleranceThresholdPerBatch;
+            _resultValue.toleranceThresholdPerDomain = toleranceThresholdPerDomain;
             _resultValue.waitTimeBetweenBatchInSeconds = waitTimeBetweenBatchInSeconds;
+            _resultValue.waitTimeBetweenDomainInSeconds = waitTimeBetweenDomainInSeconds;
             return _resultValue;
         }
     }

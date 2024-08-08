@@ -13,7 +13,7 @@ namespace Pulumi.Oci.DevOps.Inputs
     public sealed class RepositoryMirrorRepositoryConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Upstream git repository connection identifer.
+        /// (Updatable) Upstream git repository connection identifier.
         /// </summary>
         [Input("connectorId")]
         public Input<string>? ConnectorId { get; set; }

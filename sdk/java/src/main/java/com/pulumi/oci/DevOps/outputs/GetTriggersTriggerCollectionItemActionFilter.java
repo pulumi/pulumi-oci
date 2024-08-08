@@ -14,10 +14,14 @@ import java.util.Objects;
 @CustomType
 public final class GetTriggersTriggerCollectionItemActionFilter {
     /**
-     * @return The events, for example, PUSH, PULL_REQUEST_MERGE.
+     * @return The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
      * 
      */
     private List<String> events;
+    /**
+     * @return Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
+     * 
+     */
     private List<GetTriggersTriggerCollectionItemActionFilterExclude> excludes;
     /**
      * @return Attributes to filter GitLab self-hosted server events.
@@ -32,12 +36,16 @@ public final class GetTriggersTriggerCollectionItemActionFilter {
 
     private GetTriggersTriggerCollectionItemActionFilter() {}
     /**
-     * @return The events, for example, PUSH, PULL_REQUEST_MERGE.
+     * @return The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
      * 
      */
     public List<String> events() {
         return this.events;
     }
+    /**
+     * @return Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
+     * 
+     */
     public List<GetTriggersTriggerCollectionItemActionFilterExclude> excludes() {
         return this.excludes;
     }

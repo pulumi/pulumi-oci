@@ -22,7 +22,7 @@ class GetSoftwareSourceResult:
     """
     A collection of values returned by getSoftwareSource.
     """
-    def __init__(__self__, arch_type=None, availability=None, availability_at_oci=None, checksum_type=None, compartment_id=None, custom_software_source_filters=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, gpg_key_fingerprint=None, gpg_key_id=None, gpg_key_url=None, id=None, is_auto_resolve_dependencies=None, is_automatically_updated=None, is_created_from_package_list=None, is_mandatory_for_autonomous_linux=None, origin_software_source_id=None, os_family=None, package_count=None, packages=None, repo_id=None, size=None, software_source_id=None, software_source_type=None, software_source_version=None, state=None, system_tags=None, time_created=None, url=None, vendor_name=None, vendor_software_sources=None):
+    def __init__(__self__, arch_type=None, availability=None, availability_at_oci=None, checksum_type=None, compartment_id=None, custom_software_source_filters=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, gpg_key_fingerprint=None, gpg_key_id=None, gpg_key_url=None, id=None, is_auto_resolve_dependencies=None, is_automatically_updated=None, is_created_from_package_list=None, is_latest_content_only=None, is_mandatory_for_autonomous_linux=None, origin_software_source_id=None, os_family=None, package_count=None, packages=None, repo_id=None, size=None, software_source_id=None, software_source_type=None, software_source_version=None, state=None, system_tags=None, time_created=None, url=None, vendor_name=None, vendor_software_sources=None):
         if arch_type and not isinstance(arch_type, str):
             raise TypeError("Expected argument 'arch_type' to be a str")
         pulumi.set(__self__, "arch_type", arch_type)
@@ -74,6 +74,9 @@ class GetSoftwareSourceResult:
         if is_created_from_package_list and not isinstance(is_created_from_package_list, bool):
             raise TypeError("Expected argument 'is_created_from_package_list' to be a bool")
         pulumi.set(__self__, "is_created_from_package_list", is_created_from_package_list)
+        if is_latest_content_only and not isinstance(is_latest_content_only, bool):
+            raise TypeError("Expected argument 'is_latest_content_only' to be a bool")
+        pulumi.set(__self__, "is_latest_content_only", is_latest_content_only)
         if is_mandatory_for_autonomous_linux and not isinstance(is_mandatory_for_autonomous_linux, bool):
             raise TypeError("Expected argument 'is_mandatory_for_autonomous_linux' to be a bool")
         pulumi.set(__self__, "is_mandatory_for_autonomous_linux", is_mandatory_for_autonomous_linux)
@@ -260,6 +263,19 @@ class GetSoftwareSourceResult:
         return pulumi.get(self, "is_created_from_package_list")
 
     @property
+    @pulumi.getter(name="isLatestContentOnly")
+    def is_latest_content_only(self) -> bool:
+        """
+        Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
+        * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
+        * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
+        * For a package filter that does not specify a version, this will include only the latest available version of the package.
+        * For a package filter that does specify a version, this will include only the specified version of the package (the isLatestContentOnly attribute is ignored).
+        * For a package list, this will include only the specified version of packages and modules in the list (the isLatestContentOnly attribute is ignored).
+        """
+        return pulumi.get(self, "is_latest_content_only")
+
+    @property
     @pulumi.getter(name="isMandatoryForAutonomousLinux")
     def is_mandatory_for_autonomous_linux(self) -> bool:
         """
@@ -408,6 +424,7 @@ class AwaitableGetSoftwareSourceResult(GetSoftwareSourceResult):
             is_auto_resolve_dependencies=self.is_auto_resolve_dependencies,
             is_automatically_updated=self.is_automatically_updated,
             is_created_from_package_list=self.is_created_from_package_list,
+            is_latest_content_only=self.is_latest_content_only,
             is_mandatory_for_autonomous_linux=self.is_mandatory_for_autonomous_linux,
             origin_software_source_id=self.origin_software_source_id,
             os_family=self.os_family,
@@ -468,6 +485,7 @@ def get_software_source(software_source_id: Optional[str] = None,
         is_auto_resolve_dependencies=pulumi.get(__ret__, 'is_auto_resolve_dependencies'),
         is_automatically_updated=pulumi.get(__ret__, 'is_automatically_updated'),
         is_created_from_package_list=pulumi.get(__ret__, 'is_created_from_package_list'),
+        is_latest_content_only=pulumi.get(__ret__, 'is_latest_content_only'),
         is_mandatory_for_autonomous_linux=pulumi.get(__ret__, 'is_mandatory_for_autonomous_linux'),
         origin_software_source_id=pulumi.get(__ret__, 'origin_software_source_id'),
         os_family=pulumi.get(__ret__, 'os_family'),

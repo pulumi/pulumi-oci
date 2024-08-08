@@ -91,10 +91,6 @@ namespace Pulumi.Oci.DevOps
 
         [Input("filters")]
         private List<Inputs.GetTriggersFilterArgs>? _filters;
-
-        /// <summary>
-        /// The filters for the trigger.
-        /// </summary>
         public List<Inputs.GetTriggersFilterArgs> Filters
         {
             get => _filters ?? (_filters = new List<Inputs.GetTriggersFilterArgs>());
@@ -141,10 +137,6 @@ namespace Pulumi.Oci.DevOps
 
         [Input("filters")]
         private InputList<Inputs.GetTriggersFilterInputArgs>? _filters;
-
-        /// <summary>
-        /// The filters for the trigger.
-        /// </summary>
         public InputList<Inputs.GetTriggersFilterInputArgs> Filters
         {
             get => _filters ?? (_filters = new InputList<Inputs.GetTriggersFilterInputArgs>());
@@ -187,9 +179,6 @@ namespace Pulumi.Oci.DevOps
         /// Trigger display name. Avoid entering confidential information.
         /// </summary>
         public readonly string? DisplayName;
-        /// <summary>
-        /// The filters for the trigger.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetTriggersFilterResult> Filters;
         /// <summary>
         /// Unique identifier that is immutable on creation.

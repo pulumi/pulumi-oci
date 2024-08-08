@@ -11,9 +11,17 @@ import java.util.Objects;
 
 @CustomType
 public final class GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter {
+    /**
+     * @return The file paths/glob pattern for files.
+     * 
+     */
     private List<String> filePaths;
 
     private GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter() {}
+    /**
+     * @return The file paths/glob pattern for files.
+     * 
+     */
     public List<String> filePaths() {
         return this.filePaths;
     }

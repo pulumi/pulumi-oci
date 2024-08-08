@@ -4843,7 +4843,7 @@ export namespace BigDataService {
 
     export interface AutoScalingConfigurationPolicyDetailsScaleDownConfigMetric {
         /**
-         * (Updatable) Allowed value is CPU_UTILIZATION.
+         * (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
          */
         metricType?: pulumi.Input<string>;
         /**
@@ -4884,7 +4884,7 @@ export namespace BigDataService {
 
     export interface AutoScalingConfigurationPolicyDetailsScaleInConfigMetric {
         /**
-         * (Updatable) Allowed value is CPU_UTILIZATION.
+         * (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
          */
         metricType?: pulumi.Input<string>;
         /**
@@ -4925,7 +4925,7 @@ export namespace BigDataService {
 
     export interface AutoScalingConfigurationPolicyDetailsScaleOutConfigMetric {
         /**
-         * (Updatable) Allowed value is CPU_UTILIZATION.
+         * (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
          */
         metricType?: pulumi.Input<string>;
         /**
@@ -4974,7 +4974,7 @@ export namespace BigDataService {
 
     export interface AutoScalingConfigurationPolicyDetailsScaleUpConfigMetric {
         /**
-         * (Updatable) Allowed value is CPU_UTILIZATION.
+         * (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
          */
         metricType?: pulumi.Input<string>;
         /**
@@ -5056,7 +5056,7 @@ export namespace BigDataService {
 
     export interface AutoScalingConfigurationPolicyRuleMetric {
         /**
-         * (Updatable) Allowed value is CPU_UTILIZATION.
+         * (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
          */
         metricType: pulumi.Input<string>;
         /**
@@ -5110,9 +5110,21 @@ export namespace BigDataService {
          */
         ocpus?: pulumi.Input<number>;
         /**
+         * Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+         */
+        odhVersion?: pulumi.Input<string>;
+        /**
+         * BDS-assigned Operating System version for the node.
+         */
+        osVersion?: pulumi.Input<string>;
+        /**
          * Shape of the node
          */
         shape: pulumi.Input<string>;
+        /**
+         * The fingerprint of the SSH key used for node access
+         */
+        sshFingerprint?: pulumi.Input<string>;
     }
 
     export interface BdsInstanceCloudSqlDetailKerberosDetail {
@@ -5172,7 +5184,7 @@ export namespace BigDataService {
          */
         jupyterHubUrl?: pulumi.Input<string>;
         /**
-         * Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
+         * Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
          */
         odhVersion?: pulumi.Input<string>;
         /**
@@ -5460,7 +5472,28 @@ export namespace BigDataService {
         batchSize?: pulumi.Input<number>;
         patchingConfigStrategy: pulumi.Input<string>;
         toleranceThresholdPerBatch?: pulumi.Input<number>;
+        toleranceThresholdPerDomain?: pulumi.Input<number>;
         waitTimeBetweenBatchInSeconds?: pulumi.Input<number>;
+        waitTimeBetweenDomainInSeconds?: pulumi.Input<number>;
+    }
+
+    export interface BdsInstancePatchActionPatchingConfig {
+        /**
+         * How many nodes to be patched in each iteration.
+         */
+        batchSize?: pulumi.Input<number>;
+        /**
+         * Type of strategy used for detailed patching configuration
+         */
+        patchingConfigStrategy: pulumi.Input<string>;
+        /**
+         * The wait time between batches in seconds.
+         */
+        waitTimeBetweenBatchInSeconds?: pulumi.Input<number>;
+        /**
+         * The wait time between AD/FD in seconds.
+         */
+        waitTimeBetweenDomainInSeconds?: pulumi.Input<number>;
     }
 
     export interface BdsInstanceUtilNode {
@@ -31227,9 +31260,6 @@ export namespace DevOps {
          * The OCID of the build pipeline.
          */
         buildPipelineId?: pulumi.Input<string>;
-        /**
-         * The filters for the trigger.
-         */
         filters?: pulumi.Input<pulumi.Input<inputs.DevOps.BuildRunBuildRunSourceTriggerInfoActionFilter>[]>;
         /**
          * The type of action that will be taken. Allowed value is TRIGGER_BUILD_PIPELINE.
@@ -31239,9 +31269,12 @@ export namespace DevOps {
 
     export interface BuildRunBuildRunSourceTriggerInfoActionFilter {
         /**
-         * The events, for example, PUSH, PULL_REQUEST_MERGE.
+         * The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
          */
         events?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
+         */
         excludes?: pulumi.Input<pulumi.Input<inputs.DevOps.BuildRunBuildRunSourceTriggerInfoActionFilterExclude>[]>;
         /**
          * Attributes to filter GitLab self-hosted server events.
@@ -31254,10 +31287,16 @@ export namespace DevOps {
     }
 
     export interface BuildRunBuildRunSourceTriggerInfoActionFilterExclude {
+        /**
+         * Attributes to support include/exclude files for triggering build runs.
+         */
         fileFilters?: pulumi.Input<pulumi.Input<inputs.DevOps.BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter>[]>;
     }
 
     export interface BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter {
+        /**
+         * The file paths/glob pattern for files.
+         */
         filePaths?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
@@ -31266,6 +31305,9 @@ export namespace DevOps {
          * The target branch for pull requests; not applicable for push requests.
          */
         baseRef?: pulumi.Input<string>;
+        /**
+         * Attributes to support include/exclude files for triggering build runs.
+         */
         fileFilters?: pulumi.Input<pulumi.Input<inputs.DevOps.BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter>[]>;
         /**
          * Branch for push event; source branch for pull requests.
@@ -31278,6 +31320,9 @@ export namespace DevOps {
     }
 
     export interface BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter {
+        /**
+         * The file paths/glob pattern for files.
+         */
         filePaths?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
@@ -32210,6 +32255,24 @@ export namespace DevOps {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetRepositoryProtectedBranchesFilter {
+        /**
+         * A filter to return only resources that match the given branch name.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetRepositoryProtectedBranchesFilterArgs {
+        /**
+         * A filter to return only resources that match the given branch name.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetRepositoryRefsFilter {
         name: string;
         regex?: boolean;
@@ -32245,9 +32308,65 @@ export namespace DevOps {
         topicId: pulumi.Input<string>;
     }
 
+    export interface ProjectRepositorySettingApprovalRules {
+        /**
+         * (Updatable) List of approval rules.
+         */
+        items: pulumi.Input<pulumi.Input<inputs.DevOps.ProjectRepositorySettingApprovalRulesItem>[]>;
+    }
+
+    export interface ProjectRepositorySettingApprovalRulesItem {
+        /**
+         * (Updatable) Branch name where pull requests targeting the branch must satisfy the approval rule. This value being null means the rule applies to all pull requests
+         */
+        destinationBranch?: pulumi.Input<string>;
+        /**
+         * (Updatable) Minimum number of approvals which must be provided by the reviewers specified in the list before the rule can be satisfied
+         */
+        minApprovalsCount: pulumi.Input<number>;
+        /**
+         * (Updatable) Name which is used to uniquely identify an approval rule.
+         */
+        name: pulumi.Input<string>;
+        /**
+         * (Updatable) List of users who must provide approvals up to the minApprovalsCount specified in the rule. An empty list means the approvals can come from any user.
+         */
+        reviewers?: pulumi.Input<pulumi.Input<inputs.DevOps.ProjectRepositorySettingApprovalRulesItemReviewer>[]>;
+    }
+
+    export interface ProjectRepositorySettingApprovalRulesItemReviewer {
+        /**
+         * (Updatable) Pull Request reviewer id
+         */
+        principalId: pulumi.Input<string>;
+        /**
+         * the name of the principal
+         */
+        principalName?: pulumi.Input<string>;
+        /**
+         * The state of the principal, it can be active or inactive or suppressed for emails
+         */
+        principalState?: pulumi.Input<string>;
+        /**
+         * the type of principal
+         */
+        principalType?: pulumi.Input<string>;
+    }
+
+    export interface ProjectRepositorySettingMergeSettings {
+        /**
+         * (Updatable) List of merge strategies which are allowed for a Project or Repository.
+         */
+        allowedMergeStrategies: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Default type of merge strategy associated with the a Project or Repository.
+         */
+        defaultMergeStrategy: pulumi.Input<string>;
+    }
+
     export interface RepositoryMirrorRepositoryConfig {
         /**
-         * (Updatable) Upstream git repository connection identifer.
+         * (Updatable) Upstream git repository connection identifier.
          */
         connectorId?: pulumi.Input<string>;
         /**
@@ -32271,14 +32390,74 @@ export namespace DevOps {
         scheduleType: pulumi.Input<string>;
     }
 
+    export interface RepositorySettingApprovalRules {
+        /**
+         * (Updatable) List of approval rules.
+         */
+        items: pulumi.Input<pulumi.Input<inputs.DevOps.RepositorySettingApprovalRulesItem>[]>;
+    }
+
+    export interface RepositorySettingApprovalRulesItem {
+        /**
+         * (Updatable) Branch name where pull requests targeting the branch must satisfy the approval rule. This value being null means the rule applies to all pull requests
+         */
+        destinationBranch?: pulumi.Input<string>;
+        /**
+         * (Updatable) Minimum number of approvals which must be provided by the reviewers specified in the list before the rule can be satisfied
+         */
+        minApprovalsCount: pulumi.Input<number>;
+        /**
+         * (Updatable) Name which is used to uniquely identify an approval rule.
+         */
+        name: pulumi.Input<string>;
+        /**
+         * (Updatable) List of users who must provide approvals up to the minApprovalsCount specified in the rule. An empty list means the approvals can come from any user.
+         */
+        reviewers?: pulumi.Input<pulumi.Input<inputs.DevOps.RepositorySettingApprovalRulesItemReviewer>[]>;
+    }
+
+    export interface RepositorySettingApprovalRulesItemReviewer {
+        /**
+         * (Updatable) Pull Request reviewer id
+         */
+        principalId: pulumi.Input<string>;
+        /**
+         * the name of the principal
+         */
+        principalName?: pulumi.Input<string>;
+        /**
+         * The state of the principal, it can be active or inactive or suppressed for emails
+         */
+        principalState?: pulumi.Input<string>;
+        /**
+         * the type of principal
+         */
+        principalType?: pulumi.Input<string>;
+    }
+
+    export interface RepositorySettingMergeChecks {
+        /**
+         * (Updatable) Indicates whether or not a pull request must have a successful build run and no queued builds before it can be merged
+         */
+        lastBuildSucceeded: pulumi.Input<string>;
+    }
+
+    export interface RepositorySettingMergeSettings {
+        /**
+         * (Updatable) List of merge strategies which are allowed for a Project or Repository.
+         */
+        allowedMergeStrategies: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Default type of merge strategy associated with the a Project or Repository.
+         */
+        defaultMergeStrategy: pulumi.Input<string>;
+    }
+
     export interface TriggerAction {
         /**
          * (Updatable) The OCID of the build pipeline to be triggered.
          */
         buildPipelineId: pulumi.Input<string>;
-        /**
-         * (Updatable) The filters for the trigger.
-         */
         filter?: pulumi.Input<inputs.DevOps.TriggerActionFilter>;
         /**
          * (Updatable) The type of action that will be taken. Allowed value is TRIGGER_BUILD_PIPELINE.
@@ -32288,59 +32467,63 @@ export namespace DevOps {
 
     export interface TriggerActionFilter {
         /**
-         * (Updatable) The events, for example, PUSH, PULL_REQUEST_MERGE.
+         * The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
          */
         events?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * (Updatable) Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
+         * Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
          */
         exclude?: pulumi.Input<inputs.DevOps.TriggerActionFilterExclude>;
         /**
-         * (Updatable) Attributes to filter GitLab self-hosted server events.
+         * Attributes to filter GitLab self-hosted server events.
          */
         include?: pulumi.Input<inputs.DevOps.TriggerActionFilterInclude>;
         /**
          * (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         triggerSource: pulumi.Input<string>;
     }
 
     export interface TriggerActionFilterExclude {
         /**
-         * (Updatable) Attributes to support include/exclude files for triggering build runs.
+         * Attributes to support include/exclude files for triggering build runs.
          */
         fileFilter?: pulumi.Input<inputs.DevOps.TriggerActionFilterExcludeFileFilter>;
     }
 
     export interface TriggerActionFilterExcludeFileFilter {
         /**
-         * (Updatable) The file paths/glob pattern for files.
+         * The file paths/glob pattern for files.
          */
         filePaths?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface TriggerActionFilterInclude {
         /**
-         * (Updatable) The target branch for pull requests; not applicable for push requests.
+         * The target branch for pull requests; not applicable for push requests.
          */
         baseRef?: pulumi.Input<string>;
         /**
-         * (Updatable) Attributes to support include/exclude files for triggering build runs.
+         * Attributes to support include/exclude files for triggering build runs.
          */
         fileFilter?: pulumi.Input<inputs.DevOps.TriggerActionFilterIncludeFileFilter>;
         /**
-         * (Updatable) Branch for push event; source branch for pull requests.
+         * Branch for push event; source branch for pull requests.
          */
         headRef?: pulumi.Input<string>;
         /**
-         * (Updatable) The repository name for trigger events.
+         * The repository name for trigger events.
          */
         repositoryName?: pulumi.Input<string>;
     }
 
     export interface TriggerActionFilterIncludeFileFilter {
         /**
-         * (Updatable) The file paths/glob pattern for files.
+         * The file paths/glob pattern for files.
          */
         filePaths?: pulumi.Input<pulumi.Input<string>[]>;
     }
@@ -63138,6 +63321,18 @@ export namespace Jms {
         logId: pulumi.Input<string>;
     }
 
+    export interface GetAgentInstallersFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAgentInstallersFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetAnnouncementsFilter {
         name: string;
         regex?: boolean;
@@ -63331,6 +63526,18 @@ export namespace Jms {
     }
 
     export interface GetJavaReleasesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetJmsPluginsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetJmsPluginsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -74599,7 +74806,9 @@ export namespace Psql {
          */
         backupPolicy?: pulumi.Input<inputs.Psql.DbSystemManagementPolicyBackupPolicy>;
         /**
-         * (Updatable) The start of the maintenance window.
+         * (Updatable) The start of the maintenance window in UTC.
+         *
+         * This string is of the format: "{day-of-week} {time-of-day}". "{day-of-week}" is a case-insensitive string like "mon", "tue", &c. "{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
          */
         maintenanceWindowStart?: pulumi.Input<string>;
     }
@@ -74629,7 +74838,7 @@ export namespace Psql {
 
     export interface DbSystemNetworkDetails {
         /**
-         * List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
+         * (Updatable) List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
          */
         nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
         /**

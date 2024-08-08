@@ -25,6 +25,10 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
+        /// <summary>
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> SystemTags;
 
         [OutputConstructor]
         private GetRepositoryAuthorsRepositoryAuthorCollectionItemResult(
@@ -32,11 +36,14 @@ namespace Pulumi.Oci.DevOps.Outputs
 
             ImmutableDictionary<string, object> definedTags,
 
-            ImmutableDictionary<string, object> freeformTags)
+            ImmutableDictionary<string, object> freeformTags,
+
+            ImmutableDictionary<string, object> systemTags)
         {
             AuthorName = authorName;
             DefinedTags = definedTags;
             FreeformTags = freeformTags;
+            SystemTags = systemTags;
         }
     }
 }

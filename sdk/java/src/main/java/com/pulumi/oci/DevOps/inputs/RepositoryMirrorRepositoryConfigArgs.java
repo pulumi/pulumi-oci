@@ -17,14 +17,14 @@ public final class RepositoryMirrorRepositoryConfigArgs extends com.pulumi.resou
     public static final RepositoryMirrorRepositoryConfigArgs Empty = new RepositoryMirrorRepositoryConfigArgs();
 
     /**
-     * (Updatable) Upstream git repository connection identifer.
+     * (Updatable) Upstream git repository connection identifier.
      * 
      */
     @Import(name="connectorId")
     private @Nullable Output<String> connectorId;
 
     /**
-     * @return (Updatable) Upstream git repository connection identifer.
+     * @return (Updatable) Upstream git repository connection identifier.
      * 
      */
     public Optional<Output<String>> connectorId() {
@@ -88,7 +88,7 @@ public final class RepositoryMirrorRepositoryConfigArgs extends com.pulumi.resou
         }
 
         /**
-         * @param connectorId (Updatable) Upstream git repository connection identifer.
+         * @param connectorId (Updatable) Upstream git repository connection identifier.
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class RepositoryMirrorRepositoryConfigArgs extends com.pulumi.resou
         }
 
         /**
-         * @param connectorId (Updatable) Upstream git repository connection identifer.
+         * @param connectorId (Updatable) Upstream git repository connection identifier.
          * 
          * @return builder
          * 

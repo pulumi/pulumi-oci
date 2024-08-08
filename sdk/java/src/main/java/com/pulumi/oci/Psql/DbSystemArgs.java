@@ -163,14 +163,14 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable when patch_operations are specified) Count of database instances nodes to be created in the database system.
+     * Count of database instances nodes to be created in the database system.
      * 
      */
     @Import(name="instanceCount")
     private @Nullable Output<Integer> instanceCount;
 
     /**
-     * @return (Updatable when patch_operations are specified) Count of database instances nodes to be created in the database system.
+     * @return Count of database instances nodes to be created in the database system.
      * 
      */
     public Optional<Output<Integer>> instanceCount() {
@@ -178,14 +178,14 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The total amount of memory available to each database instance node, in gigabytes.
+     * (Updatable) The total amount of memory available to each database instance node, in gigabytes.
      * 
      */
     @Import(name="instanceMemorySizeInGbs")
     private @Nullable Output<Integer> instanceMemorySizeInGbs;
 
     /**
-     * @return The total amount of memory available to each database instance node, in gigabytes.
+     * @return (Updatable) The total amount of memory available to each database instance node, in gigabytes.
      * 
      */
     public Optional<Output<Integer>> instanceMemorySizeInGbs() {
@@ -193,14 +193,14 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The total number of OCPUs available to each database instance node.
+     * (Updatable) The total number of OCPUs available to each database instance node.
      * 
      */
     @Import(name="instanceOcpuCount")
     private @Nullable Output<Integer> instanceOcpuCount;
 
     /**
-     * @return The total number of OCPUs available to each database instance node.
+     * @return (Updatable) The total number of OCPUs available to each database instance node.
      * 
      */
     public Optional<Output<Integer>> instanceOcpuCount() {
@@ -238,14 +238,14 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Network details for the database system.
+     * (Updatable) Network details for the database system.
      * 
      */
     @Import(name="networkDetails", required=true)
     private Output<DbSystemNetworkDetailsArgs> networkDetails;
 
     /**
-     * @return Network details for the database system.
+     * @return (Updatable) Network details for the database system.
      * 
      */
     public Output<DbSystemNetworkDetailsArgs> networkDetails() {
@@ -268,14 +268,14 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
+     * (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
      * 
      */
     @Import(name="shape", required=true)
     private Output<String> shape;
 
     /**
-     * @return The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
+     * @return (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
      * 
      */
     public Output<String> shape() {
@@ -566,7 +566,7 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceCount (Updatable when patch_operations are specified) Count of database instances nodes to be created in the database system.
+         * @param instanceCount Count of database instances nodes to be created in the database system.
          * 
          * @return builder
          * 
@@ -577,7 +577,7 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceCount (Updatable when patch_operations are specified) Count of database instances nodes to be created in the database system.
+         * @param instanceCount Count of database instances nodes to be created in the database system.
          * 
          * @return builder
          * 
@@ -587,7 +587,7 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceMemorySizeInGbs The total amount of memory available to each database instance node, in gigabytes.
+         * @param instanceMemorySizeInGbs (Updatable) The total amount of memory available to each database instance node, in gigabytes.
          * 
          * @return builder
          * 
@@ -598,7 +598,7 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceMemorySizeInGbs The total amount of memory available to each database instance node, in gigabytes.
+         * @param instanceMemorySizeInGbs (Updatable) The total amount of memory available to each database instance node, in gigabytes.
          * 
          * @return builder
          * 
@@ -608,7 +608,7 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceOcpuCount The total number of OCPUs available to each database instance node.
+         * @param instanceOcpuCount (Updatable) The total number of OCPUs available to each database instance node.
          * 
          * @return builder
          * 
@@ -619,7 +619,7 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceOcpuCount The total number of OCPUs available to each database instance node.
+         * @param instanceOcpuCount (Updatable) The total number of OCPUs available to each database instance node.
          * 
          * @return builder
          * 
@@ -681,7 +681,7 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param networkDetails Network details for the database system.
+         * @param networkDetails (Updatable) Network details for the database system.
          * 
          * @return builder
          * 
@@ -692,7 +692,7 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param networkDetails Network details for the database system.
+         * @param networkDetails (Updatable) Network details for the database system.
          * 
          * @return builder
          * 
@@ -733,7 +733,7 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param shape The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
+         * @param shape (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
          * 
          * @return builder
          * 
@@ -744,7 +744,7 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param shape The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
+         * @param shape (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
          * 
          * @return builder
          * 

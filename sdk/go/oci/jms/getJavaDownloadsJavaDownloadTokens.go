@@ -67,7 +67,7 @@ type GetJavaDownloadsJavaDownloadTokensArgs struct {
 	Filters       []GetJavaDownloadsJavaDownloadTokensFilter `pulumi:"filters"`
 	// Unique JavaDownloadToken identifier.
 	Id *string `pulumi:"id"`
-	// A filter to return only resources that match the user principal detail.  The search string can be any of the property values from the [Principal](https://docs.cloud.oracle.com/iaas/api/#/en/jms/latest/datatypes/Principal) object. This object is used as response datatype for the `createdBy` and `lastUpdatedBy` fields in applicable resource.
+	// A filter to return only resources that match the user principal detail.  The search string can be any of the property values from the [Principal](https://docs.cloud.oracle.com/iaas/api/#/en/jms/latest/datatypes/Principal) object. This object is used as a response datatype for the `createdBy` and `lastUpdatedBy` fields in applicable resource.
 	SearchByUser *string `pulumi:"searchByUser"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
 	State *string `pulumi:"state"`
@@ -118,7 +118,7 @@ type GetJavaDownloadsJavaDownloadTokensOutputArgs struct {
 	Filters       GetJavaDownloadsJavaDownloadTokensFilterArrayInput `pulumi:"filters"`
 	// Unique JavaDownloadToken identifier.
 	Id pulumi.StringPtrInput `pulumi:"id"`
-	// A filter to return only resources that match the user principal detail.  The search string can be any of the property values from the [Principal](https://docs.cloud.oracle.com/iaas/api/#/en/jms/latest/datatypes/Principal) object. This object is used as response datatype for the `createdBy` and `lastUpdatedBy` fields in applicable resource.
+	// A filter to return only resources that match the user principal detail.  The search string can be any of the property values from the [Principal](https://docs.cloud.oracle.com/iaas/api/#/en/jms/latest/datatypes/Principal) object. This object is used as a response datatype for the `createdBy` and `lastUpdatedBy` fields in applicable resource.
 	SearchByUser pulumi.StringPtrInput `pulumi:"searchByUser"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
 	State pulumi.StringPtrInput `pulumi:"state"`

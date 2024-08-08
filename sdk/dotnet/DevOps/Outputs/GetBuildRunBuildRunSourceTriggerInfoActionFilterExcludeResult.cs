@@ -13,6 +13,9 @@ namespace Pulumi.Oci.DevOps.Outputs
     [OutputType]
     public sealed class GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeResult
     {
+        /// <summary>
+        /// Attributes to support include/exclude files for triggering build runs.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterResult> FileFilters;
 
         [OutputConstructor]

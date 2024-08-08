@@ -13,7 +13,7 @@ import java.util.Objects;
 @CustomType
 public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilter {
     /**
-     * @return The events, for example, PUSH, PULL_REQUEST_MERGE.
+     * @return The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
      * 
      */
     private List<String> events;
@@ -30,7 +30,7 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTrigge
 
     private GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilter() {}
     /**
-     * @return The events, for example, PUSH, PULL_REQUEST_MERGE.
+     * @return The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
      * 
      */
     public List<String> events() {

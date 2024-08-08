@@ -30,6 +30,7 @@ public final class GetRepositoryDiffsResult {
     private String id;
     private @Nullable Boolean isComparisonFromMergeBase;
     private String repositoryId;
+    private @Nullable String targetRepositoryId;
     private String targetVersion;
 
     private GetRepositoryDiffsResult() {}
@@ -59,6 +60,9 @@ public final class GetRepositoryDiffsResult {
     public String repositoryId() {
         return this.repositoryId;
     }
+    public Optional<String> targetRepositoryId() {
+        return Optional.ofNullable(this.targetRepositoryId);
+    }
     public String targetVersion() {
         return this.targetVersion;
     }
@@ -78,6 +82,7 @@ public final class GetRepositoryDiffsResult {
         private String id;
         private @Nullable Boolean isComparisonFromMergeBase;
         private String repositoryId;
+        private @Nullable String targetRepositoryId;
         private String targetVersion;
         public Builder() {}
         public Builder(GetRepositoryDiffsResult defaults) {
@@ -88,6 +93,7 @@ public final class GetRepositoryDiffsResult {
     	      this.id = defaults.id;
     	      this.isComparisonFromMergeBase = defaults.isComparisonFromMergeBase;
     	      this.repositoryId = defaults.repositoryId;
+    	      this.targetRepositoryId = defaults.targetRepositoryId;
     	      this.targetVersion = defaults.targetVersion;
         }
 
@@ -142,6 +148,12 @@ public final class GetRepositoryDiffsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder targetRepositoryId(@Nullable String targetRepositoryId) {
+
+            this.targetRepositoryId = targetRepositoryId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder targetVersion(String targetVersion) {
             if (targetVersion == null) {
               throw new MissingRequiredPropertyException("GetRepositoryDiffsResult", "targetVersion");
@@ -157,6 +169,7 @@ public final class GetRepositoryDiffsResult {
             _resultValue.id = id;
             _resultValue.isComparisonFromMergeBase = isComparisonFromMergeBase;
             _resultValue.repositoryId = repositoryId;
+            _resultValue.targetRepositoryId = targetRepositoryId;
             _resultValue.targetVersion = targetVersion;
             return _resultValue;
         }

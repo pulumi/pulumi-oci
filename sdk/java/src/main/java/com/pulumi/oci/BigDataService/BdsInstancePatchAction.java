@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.BigDataService.BdsInstancePatchActionArgs;
 import com.pulumi.oci.BigDataService.inputs.BdsInstancePatchActionState;
+import com.pulumi.oci.BigDataService.outputs.BdsInstancePatchActionPatchingConfig;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
 import java.util.List;
@@ -31,6 +32,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.BigDataService.BdsInstancePatchAction;
  * import com.pulumi.oci.BigDataService.BdsInstancePatchActionArgs;
+ * import com.pulumi.oci.BigDataService.inputs.BdsInstancePatchActionPatchingConfigArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -48,6 +50,12 @@ import javax.annotation.Nullable;
  *             .bdsInstanceId(testBdsInstance.id())
  *             .clusterAdminPassword(bdsInstancePatchActionClusterAdminPassword)
  *             .version(bdsInstancePatchActionVersion)
+ *             .patchingConfig(BdsInstancePatchActionPatchingConfigArgs.builder()
+ *                 .patchingConfigStrategy(bdsInstancePatchActionPatchingConfigPatchingConfigStrategy)
+ *                 .batchSize(bdsInstancePatchActionPatchingConfigBatchSize)
+ *                 .waitTimeBetweenBatchInSeconds(bdsInstancePatchActionPatchingConfigWaitTimeBetweenBatchInSeconds)
+ *                 .waitTimeBetweenDomainInSeconds(bdsInstancePatchActionPatchingConfigWaitTimeBetweenDomainInSeconds)
+ *                 .build())
  *             .build());
  * 
  *     }
@@ -90,6 +98,20 @@ public class BdsInstancePatchAction extends com.pulumi.resources.CustomResource 
      */
     public Output<String> clusterAdminPassword() {
         return this.clusterAdminPassword;
+    }
+    /**
+     * Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
+     * 
+     */
+    @Export(name="patchingConfig", refs={BdsInstancePatchActionPatchingConfig.class}, tree="[0]")
+    private Output<BdsInstancePatchActionPatchingConfig> patchingConfig;
+
+    /**
+     * @return Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
+     * 
+     */
+    public Output<BdsInstancePatchActionPatchingConfig> patchingConfig() {
+        return this.patchingConfig;
     }
     /**
      * The version of the patch to be installed.

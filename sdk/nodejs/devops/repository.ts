@@ -11,35 +11,6 @@ import * as utilities from "../utilities";
  *
  * Creates a new repository.
  *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testRepository = new oci.devops.Repository("test_repository", {
- *     name: repositoryName,
- *     projectId: testProject.id,
- *     repositoryType: repositoryRepositoryType,
- *     defaultBranch: repositoryDefaultBranch,
- *     definedTags: {
- *         "foo-namespace.bar-key": "value",
- *     },
- *     description: repositoryDescription,
- *     freeformTags: {
- *         "bar-key": "value",
- *     },
- *     mirrorRepositoryConfig: {
- *         connectorId: testConnector.id,
- *         repositoryUrl: repositoryMirrorRepositoryConfigRepositoryUrl,
- *         triggerSchedule: {
- *             scheduleType: repositoryMirrorRepositoryConfigTriggerScheduleScheduleType,
- *             customSchedule: repositoryMirrorRepositoryConfigTriggerScheduleCustomSchedule,
- *         },
- *     },
- * });
- * ```
- *
  * ## Import
  *
  * Repositories can be imported using the `id`, e.g.
@@ -117,13 +88,17 @@ export class Repository extends pulumi.CustomResource {
      */
     public readonly mirrorRepositoryConfig!: pulumi.Output<outputs.DevOps.RepositoryMirrorRepositoryConfig>;
     /**
-     * (Updatable) Unique name of a repository.
+     * (Updatable) Name of the repository. Should be unique within the project.
      */
     public readonly name!: pulumi.Output<string>;
     /**
      * Tenancy unique namespace.
      */
     public /*out*/ readonly namespace!: pulumi.Output<string>;
+    /**
+     * The OCID of the parent repository.
+     */
+    public readonly parentRepositoryId!: pulumi.Output<string>;
     /**
      * The OCID of the DevOps project containing the repository.
      */
@@ -133,7 +108,7 @@ export class Repository extends pulumi.CustomResource {
      */
     public /*out*/ readonly projectName!: pulumi.Output<string>;
     /**
-     * (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` 
+     * (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED` 
      *
      *
      * ** IMPORTANT **
@@ -165,7 +140,7 @@ export class Repository extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
     /**
-     * Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
+     * Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the repository. PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an open pull request. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
      */
     public /*out*/ readonly triggerBuildEvents!: pulumi.Output<string[]>;
 
@@ -194,6 +169,7 @@ export class Repository extends pulumi.CustomResource {
             resourceInputs["mirrorRepositoryConfig"] = state ? state.mirrorRepositoryConfig : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["namespace"] = state ? state.namespace : undefined;
+            resourceInputs["parentRepositoryId"] = state ? state.parentRepositoryId : undefined;
             resourceInputs["projectId"] = state ? state.projectId : undefined;
             resourceInputs["projectName"] = state ? state.projectName : undefined;
             resourceInputs["repositoryType"] = state ? state.repositoryType : undefined;
@@ -218,6 +194,7 @@ export class Repository extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["mirrorRepositoryConfig"] = args ? args.mirrorRepositoryConfig : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["parentRepositoryId"] = args ? args.parentRepositoryId : undefined;
             resourceInputs["projectId"] = args ? args.projectId : undefined;
             resourceInputs["repositoryType"] = args ? args.repositoryType : undefined;
             resourceInputs["branchCount"] = undefined /*out*/;
@@ -285,13 +262,17 @@ export interface RepositoryState {
      */
     mirrorRepositoryConfig?: pulumi.Input<inputs.DevOps.RepositoryMirrorRepositoryConfig>;
     /**
-     * (Updatable) Unique name of a repository.
+     * (Updatable) Name of the repository. Should be unique within the project.
      */
     name?: pulumi.Input<string>;
     /**
      * Tenancy unique namespace.
      */
     namespace?: pulumi.Input<string>;
+    /**
+     * The OCID of the parent repository.
+     */
+    parentRepositoryId?: pulumi.Input<string>;
     /**
      * The OCID of the DevOps project containing the repository.
      */
@@ -301,7 +282,7 @@ export interface RepositoryState {
      */
     projectName?: pulumi.Input<string>;
     /**
-     * (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` 
+     * (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED` 
      *
      *
      * ** IMPORTANT **
@@ -333,7 +314,7 @@ export interface RepositoryState {
      */
     timeUpdated?: pulumi.Input<string>;
     /**
-     * Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
+     * Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the repository. PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an open pull request. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
      */
     triggerBuildEvents?: pulumi.Input<pulumi.Input<string>[]>;
 }
@@ -363,15 +344,19 @@ export interface RepositoryArgs {
      */
     mirrorRepositoryConfig?: pulumi.Input<inputs.DevOps.RepositoryMirrorRepositoryConfig>;
     /**
-     * (Updatable) Unique name of a repository.
+     * (Updatable) Name of the repository. Should be unique within the project.
      */
     name?: pulumi.Input<string>;
+    /**
+     * The OCID of the parent repository.
+     */
+    parentRepositoryId?: pulumi.Input<string>;
     /**
      * The OCID of the DevOps project containing the repository.
      */
     projectId: pulumi.Input<string>;
     /**
-     * (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` 
+     * (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED` 
      *
      *
      * ** IMPORTANT **

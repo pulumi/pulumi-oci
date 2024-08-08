@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Psql.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// Indicates if the shape is a flex shape.
+        /// </summary>
+        public readonly bool IsFlexible;
+        /// <summary>
         /// The amount of memory in gigabytes.
         /// </summary>
         public readonly int MemorySizeInGbs;
@@ -29,21 +33,38 @@ namespace Pulumi.Oci.Psql.Outputs
         /// The name of the Compute VM shape. Example: `VM.Standard.E4.Flex`
         /// </summary>
         public readonly string Shape;
+        /// <summary>
+        /// Options for the the shape memory
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetShapesShapeCollectionItemShapeMemoryOptionResult> ShapeMemoryOptions;
+        /// <summary>
+        /// Options for the the shape OCPU
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetShapesShapeCollectionItemShapeOcpuOptionResult> ShapeOcpuOptions;
 
         [OutputConstructor]
         private GetShapesShapeCollectionItemResult(
             string id,
 
+            bool isFlexible,
+
             int memorySizeInGbs,
 
             int ocpuCount,
 
-            string shape)
+            string shape,
+
+            ImmutableArray<Outputs.GetShapesShapeCollectionItemShapeMemoryOptionResult> shapeMemoryOptions,
+
+            ImmutableArray<Outputs.GetShapesShapeCollectionItemShapeOcpuOptionResult> shapeOcpuOptions)
         {
             Id = id;
+            IsFlexible = isFlexible;
             MemorySizeInGbs = memorySizeInGbs;
             OcpuCount = ocpuCount;
             Shape = shape;
+            ShapeMemoryOptions = shapeMemoryOptions;
+            ShapeOcpuOptions = shapeOcpuOptions;
         }
     }
 }

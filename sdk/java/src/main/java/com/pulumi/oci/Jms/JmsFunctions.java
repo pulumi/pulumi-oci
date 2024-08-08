@@ -7,6 +7,8 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.oci.Jms.inputs.GetAgentInstallersArgs;
+import com.pulumi.oci.Jms.inputs.GetAgentInstallersPlainArgs;
 import com.pulumi.oci.Jms.inputs.GetAnnouncementsArgs;
 import com.pulumi.oci.Jms.inputs.GetAnnouncementsPlainArgs;
 import com.pulumi.oci.Jms.inputs.GetFleetAdvancedFeatureConfigurationArgs;
@@ -71,10 +73,15 @@ import com.pulumi.oci.Jms.inputs.GetJavaReleaseArgs;
 import com.pulumi.oci.Jms.inputs.GetJavaReleasePlainArgs;
 import com.pulumi.oci.Jms.inputs.GetJavaReleasesArgs;
 import com.pulumi.oci.Jms.inputs.GetJavaReleasesPlainArgs;
+import com.pulumi.oci.Jms.inputs.GetJmsPluginArgs;
+import com.pulumi.oci.Jms.inputs.GetJmsPluginPlainArgs;
+import com.pulumi.oci.Jms.inputs.GetJmsPluginsArgs;
+import com.pulumi.oci.Jms.inputs.GetJmsPluginsPlainArgs;
 import com.pulumi.oci.Jms.inputs.GetListJreUsageArgs;
 import com.pulumi.oci.Jms.inputs.GetListJreUsagePlainArgs;
 import com.pulumi.oci.Jms.inputs.GetSummarizeResourceInventoryArgs;
 import com.pulumi.oci.Jms.inputs.GetSummarizeResourceInventoryPlainArgs;
+import com.pulumi.oci.Jms.outputs.GetAgentInstallersResult;
 import com.pulumi.oci.Jms.outputs.GetAnnouncementsResult;
 import com.pulumi.oci.Jms.outputs.GetFleetAdvancedFeatureConfigurationResult;
 import com.pulumi.oci.Jms.outputs.GetFleetBlocklistsResult;
@@ -107,12 +114,296 @@ import com.pulumi.oci.Jms.outputs.GetJavaFamiliesResult;
 import com.pulumi.oci.Jms.outputs.GetJavaFamilyResult;
 import com.pulumi.oci.Jms.outputs.GetJavaReleaseResult;
 import com.pulumi.oci.Jms.outputs.GetJavaReleasesResult;
+import com.pulumi.oci.Jms.outputs.GetJmsPluginResult;
+import com.pulumi.oci.Jms.outputs.GetJmsPluginsResult;
 import com.pulumi.oci.Jms.outputs.GetListJreUsageResult;
 import com.pulumi.oci.Jms.outputs.GetSummarizeResourceInventoryResult;
 import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
 public final class JmsFunctions {
+    /**
+     * This data source provides the list of Agent Installers in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a list of the agent installer information.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetAgentInstallersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAgentInstallers = JmsFunctions.getAgentInstallers(GetAgentInstallersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .fleetId(testFleet.id())
+     *             .osFamily(agentInstallerOsFamily)
+     *             .platformArchitecture(agentInstallerPlatformArchitecture)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAgentInstallersResult> getAgentInstallers() {
+        return getAgentInstallers(GetAgentInstallersArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Agent Installers in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a list of the agent installer information.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetAgentInstallersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAgentInstallers = JmsFunctions.getAgentInstallers(GetAgentInstallersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .fleetId(testFleet.id())
+     *             .osFamily(agentInstallerOsFamily)
+     *             .platformArchitecture(agentInstallerPlatformArchitecture)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAgentInstallersResult> getAgentInstallersPlain() {
+        return getAgentInstallersPlain(GetAgentInstallersPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Agent Installers in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a list of the agent installer information.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetAgentInstallersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAgentInstallers = JmsFunctions.getAgentInstallers(GetAgentInstallersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .fleetId(testFleet.id())
+     *             .osFamily(agentInstallerOsFamily)
+     *             .platformArchitecture(agentInstallerPlatformArchitecture)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAgentInstallersResult> getAgentInstallers(GetAgentInstallersArgs args) {
+        return getAgentInstallers(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Agent Installers in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a list of the agent installer information.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetAgentInstallersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAgentInstallers = JmsFunctions.getAgentInstallers(GetAgentInstallersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .fleetId(testFleet.id())
+     *             .osFamily(agentInstallerOsFamily)
+     *             .platformArchitecture(agentInstallerPlatformArchitecture)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAgentInstallersResult> getAgentInstallersPlain(GetAgentInstallersPlainArgs args) {
+        return getAgentInstallersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Agent Installers in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a list of the agent installer information.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetAgentInstallersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAgentInstallers = JmsFunctions.getAgentInstallers(GetAgentInstallersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .fleetId(testFleet.id())
+     *             .osFamily(agentInstallerOsFamily)
+     *             .platformArchitecture(agentInstallerPlatformArchitecture)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAgentInstallersResult> getAgentInstallers(GetAgentInstallersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getAgentInstallers:getAgentInstallers", TypeShape.of(GetAgentInstallersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Agent Installers in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a list of the agent installer information.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetAgentInstallersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAgentInstallers = JmsFunctions.getAgentInstallers(GetAgentInstallersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .fleetId(testFleet.id())
+     *             .osFamily(agentInstallerOsFamily)
+     *             .platformArchitecture(agentInstallerPlatformArchitecture)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAgentInstallersResult> getAgentInstallersPlain(GetAgentInstallersPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Jms/getAgentInstallers:getAgentInstallers", TypeShape.of(GetAgentInstallersResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * This data source provides the list of Announcements in Oracle Cloud Infrastructure Jms service.
      * 
@@ -773,7 +1064,7 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testFleetBlocklists = JmsFunctions.getFleetBlocklists(GetFleetBlocklistsArgs.builder()
      *             .fleetId(testFleet.id())
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(fleetBlocklistManagedInstanceId)
      *             .operation(fleetBlocklistOperation)
      *             .build());
      * 
@@ -819,7 +1110,7 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testFleetBlocklists = JmsFunctions.getFleetBlocklists(GetFleetBlocklistsArgs.builder()
      *             .fleetId(testFleet.id())
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(fleetBlocklistManagedInstanceId)
      *             .operation(fleetBlocklistOperation)
      *             .build());
      * 
@@ -865,7 +1156,7 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testFleetBlocklists = JmsFunctions.getFleetBlocklists(GetFleetBlocklistsArgs.builder()
      *             .fleetId(testFleet.id())
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(fleetBlocklistManagedInstanceId)
      *             .operation(fleetBlocklistOperation)
      *             .build());
      * 
@@ -911,7 +1202,7 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testFleetBlocklists = JmsFunctions.getFleetBlocklists(GetFleetBlocklistsArgs.builder()
      *             .fleetId(testFleet.id())
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(fleetBlocklistManagedInstanceId)
      *             .operation(fleetBlocklistOperation)
      *             .build());
      * 
@@ -956,7 +1247,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetCryptoAnalysisResult = JmsFunctions.getFleetCryptoAnalysisResult(GetFleetCryptoAnalysisResultArgs.builder()
-     *             .cryptoAnalysisResultId(testResult.id())
+     *             .cryptoAnalysisResultId(fleetCryptoAnalysisResultId)
      *             .fleetId(testFleet.id())
      *             .build());
      * 
@@ -1001,7 +1292,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetCryptoAnalysisResult = JmsFunctions.getFleetCryptoAnalysisResult(GetFleetCryptoAnalysisResultArgs.builder()
-     *             .cryptoAnalysisResultId(testResult.id())
+     *             .cryptoAnalysisResultId(fleetCryptoAnalysisResultId)
      *             .fleetId(testFleet.id())
      *             .build());
      * 
@@ -1046,7 +1337,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetCryptoAnalysisResult = JmsFunctions.getFleetCryptoAnalysisResult(GetFleetCryptoAnalysisResultArgs.builder()
-     *             .cryptoAnalysisResultId(testResult.id())
+     *             .cryptoAnalysisResultId(fleetCryptoAnalysisResultId)
      *             .fleetId(testFleet.id())
      *             .build());
      * 
@@ -1091,7 +1382,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetCryptoAnalysisResult = JmsFunctions.getFleetCryptoAnalysisResult(GetFleetCryptoAnalysisResultArgs.builder()
-     *             .cryptoAnalysisResultId(testResult.id())
+     *             .cryptoAnalysisResultId(fleetCryptoAnalysisResultId)
      *             .fleetId(testFleet.id())
      *             .build());
      * 
@@ -1138,7 +1429,12 @@ public final class JmsFunctions {
      *         final var testFleetCryptoAnalysisResults = JmsFunctions.getFleetCryptoAnalysisResults(GetFleetCryptoAnalysisResultsArgs.builder()
      *             .fleetId(testFleet.id())
      *             .aggregationMode(fleetCryptoAnalysisResultAggregationMode)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .findingCount(fleetCryptoAnalysisResultFindingCount)
+     *             .findingCountGreaterThan(fleetCryptoAnalysisResultFindingCountGreaterThan)
+     *             .hostName(fleetCryptoAnalysisResultHostName)
+     *             .managedInstanceId(fleetCryptoAnalysisResultManagedInstanceOcid)
+     *             .nonCompliantFindingCount(fleetCryptoAnalysisResultNonCompliantFindingCount)
+     *             .nonCompliantFindingCountGreaterThan(fleetCryptoAnalysisResultNonCompliantFindingCountGreaterThan)
      *             .timeEnd(fleetCryptoAnalysisResultTimeEnd)
      *             .timeStart(fleetCryptoAnalysisResultTimeStart)
      *             .build());
@@ -1186,7 +1482,12 @@ public final class JmsFunctions {
      *         final var testFleetCryptoAnalysisResults = JmsFunctions.getFleetCryptoAnalysisResults(GetFleetCryptoAnalysisResultsArgs.builder()
      *             .fleetId(testFleet.id())
      *             .aggregationMode(fleetCryptoAnalysisResultAggregationMode)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .findingCount(fleetCryptoAnalysisResultFindingCount)
+     *             .findingCountGreaterThan(fleetCryptoAnalysisResultFindingCountGreaterThan)
+     *             .hostName(fleetCryptoAnalysisResultHostName)
+     *             .managedInstanceId(fleetCryptoAnalysisResultManagedInstanceOcid)
+     *             .nonCompliantFindingCount(fleetCryptoAnalysisResultNonCompliantFindingCount)
+     *             .nonCompliantFindingCountGreaterThan(fleetCryptoAnalysisResultNonCompliantFindingCountGreaterThan)
      *             .timeEnd(fleetCryptoAnalysisResultTimeEnd)
      *             .timeStart(fleetCryptoAnalysisResultTimeStart)
      *             .build());
@@ -1234,7 +1535,12 @@ public final class JmsFunctions {
      *         final var testFleetCryptoAnalysisResults = JmsFunctions.getFleetCryptoAnalysisResults(GetFleetCryptoAnalysisResultsArgs.builder()
      *             .fleetId(testFleet.id())
      *             .aggregationMode(fleetCryptoAnalysisResultAggregationMode)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .findingCount(fleetCryptoAnalysisResultFindingCount)
+     *             .findingCountGreaterThan(fleetCryptoAnalysisResultFindingCountGreaterThan)
+     *             .hostName(fleetCryptoAnalysisResultHostName)
+     *             .managedInstanceId(fleetCryptoAnalysisResultManagedInstanceOcid)
+     *             .nonCompliantFindingCount(fleetCryptoAnalysisResultNonCompliantFindingCount)
+     *             .nonCompliantFindingCountGreaterThan(fleetCryptoAnalysisResultNonCompliantFindingCountGreaterThan)
      *             .timeEnd(fleetCryptoAnalysisResultTimeEnd)
      *             .timeStart(fleetCryptoAnalysisResultTimeStart)
      *             .build());
@@ -1282,7 +1588,12 @@ public final class JmsFunctions {
      *         final var testFleetCryptoAnalysisResults = JmsFunctions.getFleetCryptoAnalysisResults(GetFleetCryptoAnalysisResultsArgs.builder()
      *             .fleetId(testFleet.id())
      *             .aggregationMode(fleetCryptoAnalysisResultAggregationMode)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .findingCount(fleetCryptoAnalysisResultFindingCount)
+     *             .findingCountGreaterThan(fleetCryptoAnalysisResultFindingCountGreaterThan)
+     *             .hostName(fleetCryptoAnalysisResultHostName)
+     *             .managedInstanceId(fleetCryptoAnalysisResultManagedInstanceOcid)
+     *             .nonCompliantFindingCount(fleetCryptoAnalysisResultNonCompliantFindingCount)
+     *             .nonCompliantFindingCountGreaterThan(fleetCryptoAnalysisResultNonCompliantFindingCountGreaterThan)
      *             .timeEnd(fleetCryptoAnalysisResultTimeEnd)
      *             .timeStart(fleetCryptoAnalysisResultTimeStart)
      *             .build());
@@ -1832,7 +2143,7 @@ public final class JmsFunctions {
     /**
      * This data source provides details about a specific Fleet Export Setting resource in Oracle Cloud Infrastructure Jms service.
      * 
-     * Returns export setting for the specified Fleet.
+     * Returns export setting for the specified fleet.
      * 
      * ## Example Usage
      * 
@@ -1876,7 +2187,7 @@ public final class JmsFunctions {
     /**
      * This data source provides details about a specific Fleet Export Setting resource in Oracle Cloud Infrastructure Jms service.
      * 
-     * Returns export setting for the specified Fleet.
+     * Returns export setting for the specified fleet.
      * 
      * ## Example Usage
      * 
@@ -1920,7 +2231,7 @@ public final class JmsFunctions {
     /**
      * This data source provides details about a specific Fleet Export Setting resource in Oracle Cloud Infrastructure Jms service.
      * 
-     * Returns export setting for the specified Fleet.
+     * Returns export setting for the specified fleet.
      * 
      * ## Example Usage
      * 
@@ -1964,7 +2275,7 @@ public final class JmsFunctions {
     /**
      * This data source provides details about a specific Fleet Export Setting resource in Oracle Cloud Infrastructure Jms service.
      * 
-     * Returns export setting for the specified Fleet.
+     * Returns export setting for the specified fleet.
      * 
      * ## Example Usage
      * 
@@ -2008,7 +2319,7 @@ public final class JmsFunctions {
     /**
      * This data source provides details about a specific Fleet Export Status resource in Oracle Cloud Infrastructure Jms service.
      * 
-     * Returns last export status for the specified Fleet.
+     * Returns last export status for the specified fleet.
      * 
      * ## Example Usage
      * 
@@ -2052,7 +2363,7 @@ public final class JmsFunctions {
     /**
      * This data source provides details about a specific Fleet Export Status resource in Oracle Cloud Infrastructure Jms service.
      * 
-     * Returns last export status for the specified Fleet.
+     * Returns last export status for the specified fleet.
      * 
      * ## Example Usage
      * 
@@ -2096,7 +2407,7 @@ public final class JmsFunctions {
     /**
      * This data source provides details about a specific Fleet Export Status resource in Oracle Cloud Infrastructure Jms service.
      * 
-     * Returns last export status for the specified Fleet.
+     * Returns last export status for the specified fleet.
      * 
      * ## Example Usage
      * 
@@ -2140,7 +2451,7 @@ public final class JmsFunctions {
     /**
      * This data source provides details about a specific Fleet Export Status resource in Oracle Cloud Infrastructure Jms service.
      * 
-     * Returns last export status for the specified Fleet.
+     * Returns last export status for the specified fleet.
      * 
      * ## Example Usage
      * 
@@ -2213,7 +2524,7 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testFleetJavaMigrationAnalysisResult = JmsFunctions.getFleetJavaMigrationAnalysisResult(GetFleetJavaMigrationAnalysisResultArgs.builder()
      *             .fleetId(testFleet.id())
-     *             .javaMigrationAnalysisResultId(testResult.id())
+     *             .javaMigrationAnalysisResultId(fleetJavaMigrationAnalysisResultId)
      *             .build());
      * 
      *     }
@@ -2258,7 +2569,7 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testFleetJavaMigrationAnalysisResult = JmsFunctions.getFleetJavaMigrationAnalysisResult(GetFleetJavaMigrationAnalysisResultArgs.builder()
      *             .fleetId(testFleet.id())
-     *             .javaMigrationAnalysisResultId(testResult.id())
+     *             .javaMigrationAnalysisResultId(fleetJavaMigrationAnalysisResultId)
      *             .build());
      * 
      *     }
@@ -2303,7 +2614,7 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testFleetJavaMigrationAnalysisResult = JmsFunctions.getFleetJavaMigrationAnalysisResult(GetFleetJavaMigrationAnalysisResultArgs.builder()
      *             .fleetId(testFleet.id())
-     *             .javaMigrationAnalysisResultId(testResult.id())
+     *             .javaMigrationAnalysisResultId(fleetJavaMigrationAnalysisResultId)
      *             .build());
      * 
      *     }
@@ -2348,7 +2659,7 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testFleetJavaMigrationAnalysisResult = JmsFunctions.getFleetJavaMigrationAnalysisResult(GetFleetJavaMigrationAnalysisResultArgs.builder()
      *             .fleetId(testFleet.id())
-     *             .javaMigrationAnalysisResultId(testResult.id())
+     *             .javaMigrationAnalysisResultId(fleetJavaMigrationAnalysisResultId)
      *             .build());
      * 
      *     }
@@ -2393,7 +2704,9 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testFleetJavaMigrationAnalysisResults = JmsFunctions.getFleetJavaMigrationAnalysisResults(GetFleetJavaMigrationAnalysisResultsArgs.builder()
      *             .fleetId(testFleet.id())
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .applicationName(fleetJavaMigrationAnalysisResultApplicationName)
+     *             .hostName(fleetJavaMigrationAnalysisResultHostName)
+     *             .managedInstanceId(fleetJavaMigrationAnalysisResultManagedInstanceId)
      *             .timeEnd(fleetJavaMigrationAnalysisResultTimeEnd)
      *             .timeStart(fleetJavaMigrationAnalysisResultTimeStart)
      *             .build());
@@ -2440,7 +2753,9 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testFleetJavaMigrationAnalysisResults = JmsFunctions.getFleetJavaMigrationAnalysisResults(GetFleetJavaMigrationAnalysisResultsArgs.builder()
      *             .fleetId(testFleet.id())
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .applicationName(fleetJavaMigrationAnalysisResultApplicationName)
+     *             .hostName(fleetJavaMigrationAnalysisResultHostName)
+     *             .managedInstanceId(fleetJavaMigrationAnalysisResultManagedInstanceId)
      *             .timeEnd(fleetJavaMigrationAnalysisResultTimeEnd)
      *             .timeStart(fleetJavaMigrationAnalysisResultTimeStart)
      *             .build());
@@ -2487,7 +2802,9 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testFleetJavaMigrationAnalysisResults = JmsFunctions.getFleetJavaMigrationAnalysisResults(GetFleetJavaMigrationAnalysisResultsArgs.builder()
      *             .fleetId(testFleet.id())
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .applicationName(fleetJavaMigrationAnalysisResultApplicationName)
+     *             .hostName(fleetJavaMigrationAnalysisResultHostName)
+     *             .managedInstanceId(fleetJavaMigrationAnalysisResultManagedInstanceId)
      *             .timeEnd(fleetJavaMigrationAnalysisResultTimeEnd)
      *             .timeStart(fleetJavaMigrationAnalysisResultTimeStart)
      *             .build());
@@ -2534,7 +2851,9 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testFleetJavaMigrationAnalysisResults = JmsFunctions.getFleetJavaMigrationAnalysisResults(GetFleetJavaMigrationAnalysisResultsArgs.builder()
      *             .fleetId(testFleet.id())
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .applicationName(fleetJavaMigrationAnalysisResultApplicationName)
+     *             .hostName(fleetJavaMigrationAnalysisResultHostName)
+     *             .managedInstanceId(fleetJavaMigrationAnalysisResultManagedInstanceId)
      *             .timeEnd(fleetJavaMigrationAnalysisResultTimeEnd)
      *             .timeStart(fleetJavaMigrationAnalysisResultTimeStart)
      *             .build());
@@ -2581,7 +2900,7 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testFleetPerformanceTuningAnalysisResult = JmsFunctions.getFleetPerformanceTuningAnalysisResult(GetFleetPerformanceTuningAnalysisResultArgs.builder()
      *             .fleetId(testFleet.id())
-     *             .performanceTuningAnalysisResultId(testResult.id())
+     *             .performanceTuningAnalysisResultId(fleetPerformanceTuningAnalysisResultId)
      *             .build());
      * 
      *     }
@@ -2626,7 +2945,7 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testFleetPerformanceTuningAnalysisResult = JmsFunctions.getFleetPerformanceTuningAnalysisResult(GetFleetPerformanceTuningAnalysisResultArgs.builder()
      *             .fleetId(testFleet.id())
-     *             .performanceTuningAnalysisResultId(testResult.id())
+     *             .performanceTuningAnalysisResultId(fleetPerformanceTuningAnalysisResultId)
      *             .build());
      * 
      *     }
@@ -2671,7 +2990,7 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testFleetPerformanceTuningAnalysisResult = JmsFunctions.getFleetPerformanceTuningAnalysisResult(GetFleetPerformanceTuningAnalysisResultArgs.builder()
      *             .fleetId(testFleet.id())
-     *             .performanceTuningAnalysisResultId(testResult.id())
+     *             .performanceTuningAnalysisResultId(fleetPerformanceTuningAnalysisResultId)
      *             .build());
      * 
      *     }
@@ -2716,7 +3035,7 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testFleetPerformanceTuningAnalysisResult = JmsFunctions.getFleetPerformanceTuningAnalysisResult(GetFleetPerformanceTuningAnalysisResultArgs.builder()
      *             .fleetId(testFleet.id())
-     *             .performanceTuningAnalysisResultId(testResult.id())
+     *             .performanceTuningAnalysisResultId(fleetPerformanceTuningAnalysisResultId)
      *             .build());
      * 
      *     }
@@ -2761,8 +3080,9 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testFleetPerformanceTuningAnalysisResults = JmsFunctions.getFleetPerformanceTuningAnalysisResults(GetFleetPerformanceTuningAnalysisResultsArgs.builder()
      *             .fleetId(testFleet.id())
-     *             .applicationId(testApplication.id())
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .applicationId(fleetPerformanceTuningAnalysisResultApplicationId)
+     *             .hostName(fleetPerformanceTuningAnalysisResultHostName)
+     *             .managedInstanceId(fleetPerformanceTuningAnalysisResultManagedInstanceId)
      *             .timeEnd(fleetPerformanceTuningAnalysisResultTimeEnd)
      *             .timeStart(fleetPerformanceTuningAnalysisResultTimeStart)
      *             .build());
@@ -2809,8 +3129,9 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testFleetPerformanceTuningAnalysisResults = JmsFunctions.getFleetPerformanceTuningAnalysisResults(GetFleetPerformanceTuningAnalysisResultsArgs.builder()
      *             .fleetId(testFleet.id())
-     *             .applicationId(testApplication.id())
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .applicationId(fleetPerformanceTuningAnalysisResultApplicationId)
+     *             .hostName(fleetPerformanceTuningAnalysisResultHostName)
+     *             .managedInstanceId(fleetPerformanceTuningAnalysisResultManagedInstanceId)
      *             .timeEnd(fleetPerformanceTuningAnalysisResultTimeEnd)
      *             .timeStart(fleetPerformanceTuningAnalysisResultTimeStart)
      *             .build());
@@ -2857,8 +3178,9 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testFleetPerformanceTuningAnalysisResults = JmsFunctions.getFleetPerformanceTuningAnalysisResults(GetFleetPerformanceTuningAnalysisResultsArgs.builder()
      *             .fleetId(testFleet.id())
-     *             .applicationId(testApplication.id())
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .applicationId(fleetPerformanceTuningAnalysisResultApplicationId)
+     *             .hostName(fleetPerformanceTuningAnalysisResultHostName)
+     *             .managedInstanceId(fleetPerformanceTuningAnalysisResultManagedInstanceId)
      *             .timeEnd(fleetPerformanceTuningAnalysisResultTimeEnd)
      *             .timeStart(fleetPerformanceTuningAnalysisResultTimeStart)
      *             .build());
@@ -2905,8 +3227,9 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testFleetPerformanceTuningAnalysisResults = JmsFunctions.getFleetPerformanceTuningAnalysisResults(GetFleetPerformanceTuningAnalysisResultsArgs.builder()
      *             .fleetId(testFleet.id())
-     *             .applicationId(testApplication.id())
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .applicationId(fleetPerformanceTuningAnalysisResultApplicationId)
+     *             .hostName(fleetPerformanceTuningAnalysisResultHostName)
+     *             .managedInstanceId(fleetPerformanceTuningAnalysisResultManagedInstanceId)
      *             .timeEnd(fleetPerformanceTuningAnalysisResultTimeEnd)
      *             .timeStart(fleetPerformanceTuningAnalysisResultTimeStart)
      *             .build());
@@ -3247,13 +3570,13 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testFleetInstallationSite = JmsFunctions.getInstallationSite(GetInstallationSiteArgs.builder()
      *             .fleetId(testFleet.id())
-     *             .applicationId(testApplication.id())
+     *             .applicationId(fleetInstallationSiteApplicationId)
      *             .installationPath(fleetInstallationSiteInstallationPath)
      *             .jreDistribution(fleetInstallationSiteJreDistribution)
      *             .jreSecurityStatus(fleetInstallationSiteJreSecurityStatus)
      *             .jreVendor(fleetInstallationSiteJreVendor)
      *             .jreVersion(fleetInstallationSiteJreVersion)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(fleetInstallationSiteManagedInstanceId)
      *             .osFamilies(fleetInstallationSiteOsFamily)
      *             .pathContains(fleetInstallationSitePathContains)
      *             .timeEnd(fleetInstallationSiteTimeEnd)
@@ -3302,13 +3625,13 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testFleetInstallationSite = JmsFunctions.getInstallationSite(GetInstallationSiteArgs.builder()
      *             .fleetId(testFleet.id())
-     *             .applicationId(testApplication.id())
+     *             .applicationId(fleetInstallationSiteApplicationId)
      *             .installationPath(fleetInstallationSiteInstallationPath)
      *             .jreDistribution(fleetInstallationSiteJreDistribution)
      *             .jreSecurityStatus(fleetInstallationSiteJreSecurityStatus)
      *             .jreVendor(fleetInstallationSiteJreVendor)
      *             .jreVersion(fleetInstallationSiteJreVersion)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(fleetInstallationSiteManagedInstanceId)
      *             .osFamilies(fleetInstallationSiteOsFamily)
      *             .pathContains(fleetInstallationSitePathContains)
      *             .timeEnd(fleetInstallationSiteTimeEnd)
@@ -3357,13 +3680,13 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testFleetInstallationSite = JmsFunctions.getInstallationSite(GetInstallationSiteArgs.builder()
      *             .fleetId(testFleet.id())
-     *             .applicationId(testApplication.id())
+     *             .applicationId(fleetInstallationSiteApplicationId)
      *             .installationPath(fleetInstallationSiteInstallationPath)
      *             .jreDistribution(fleetInstallationSiteJreDistribution)
      *             .jreSecurityStatus(fleetInstallationSiteJreSecurityStatus)
      *             .jreVendor(fleetInstallationSiteJreVendor)
      *             .jreVersion(fleetInstallationSiteJreVersion)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(fleetInstallationSiteManagedInstanceId)
      *             .osFamilies(fleetInstallationSiteOsFamily)
      *             .pathContains(fleetInstallationSitePathContains)
      *             .timeEnd(fleetInstallationSiteTimeEnd)
@@ -3412,13 +3735,13 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testFleetInstallationSite = JmsFunctions.getInstallationSite(GetInstallationSiteArgs.builder()
      *             .fleetId(testFleet.id())
-     *             .applicationId(testApplication.id())
+     *             .applicationId(fleetInstallationSiteApplicationId)
      *             .installationPath(fleetInstallationSiteInstallationPath)
      *             .jreDistribution(fleetInstallationSiteJreDistribution)
      *             .jreSecurityStatus(fleetInstallationSiteJreSecurityStatus)
      *             .jreVendor(fleetInstallationSiteJreVendor)
      *             .jreVersion(fleetInstallationSiteJreVersion)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(fleetInstallationSiteManagedInstanceId)
      *             .osFamilies(fleetInstallationSiteOsFamily)
      *             .pathContains(fleetInstallationSitePathContains)
      *             .timeEnd(fleetInstallationSiteTimeEnd)
@@ -3467,13 +3790,13 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testFleetInstallationSites = JmsFunctions.getInstallationSites(GetInstallationSitesArgs.builder()
      *             .fleetId(testFleet.id())
-     *             .applicationId(testApplication.id())
+     *             .applicationId(fleetInstallationSiteApplicationId)
      *             .installationPath(fleetInstallationSiteInstallationPath)
      *             .jreDistribution(fleetInstallationSiteJreDistribution)
      *             .jreSecurityStatus(fleetInstallationSiteJreSecurityStatus)
      *             .jreVendor(fleetInstallationSiteJreVendor)
      *             .jreVersion(fleetInstallationSiteJreVersion)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(fleetInstallationSiteManagedInstanceId)
      *             .osFamilies(fleetInstallationSiteOsFamily)
      *             .pathContains(fleetInstallationSitePathContains)
      *             .timeEnd(fleetInstallationSiteTimeEnd)
@@ -3522,13 +3845,13 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testFleetInstallationSites = JmsFunctions.getInstallationSites(GetInstallationSitesArgs.builder()
      *             .fleetId(testFleet.id())
-     *             .applicationId(testApplication.id())
+     *             .applicationId(fleetInstallationSiteApplicationId)
      *             .installationPath(fleetInstallationSiteInstallationPath)
      *             .jreDistribution(fleetInstallationSiteJreDistribution)
      *             .jreSecurityStatus(fleetInstallationSiteJreSecurityStatus)
      *             .jreVendor(fleetInstallationSiteJreVendor)
      *             .jreVersion(fleetInstallationSiteJreVersion)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(fleetInstallationSiteManagedInstanceId)
      *             .osFamilies(fleetInstallationSiteOsFamily)
      *             .pathContains(fleetInstallationSitePathContains)
      *             .timeEnd(fleetInstallationSiteTimeEnd)
@@ -3577,13 +3900,13 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testFleetInstallationSites = JmsFunctions.getInstallationSites(GetInstallationSitesArgs.builder()
      *             .fleetId(testFleet.id())
-     *             .applicationId(testApplication.id())
+     *             .applicationId(fleetInstallationSiteApplicationId)
      *             .installationPath(fleetInstallationSiteInstallationPath)
      *             .jreDistribution(fleetInstallationSiteJreDistribution)
      *             .jreSecurityStatus(fleetInstallationSiteJreSecurityStatus)
      *             .jreVendor(fleetInstallationSiteJreVendor)
      *             .jreVersion(fleetInstallationSiteJreVersion)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(fleetInstallationSiteManagedInstanceId)
      *             .osFamilies(fleetInstallationSiteOsFamily)
      *             .pathContains(fleetInstallationSitePathContains)
      *             .timeEnd(fleetInstallationSiteTimeEnd)
@@ -3632,13 +3955,13 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testFleetInstallationSites = JmsFunctions.getInstallationSites(GetInstallationSitesArgs.builder()
      *             .fleetId(testFleet.id())
-     *             .applicationId(testApplication.id())
+     *             .applicationId(fleetInstallationSiteApplicationId)
      *             .installationPath(fleetInstallationSiteInstallationPath)
      *             .jreDistribution(fleetInstallationSiteJreDistribution)
      *             .jreSecurityStatus(fleetInstallationSiteJreSecurityStatus)
      *             .jreVendor(fleetInstallationSiteJreVendor)
      *             .jreVersion(fleetInstallationSiteJreVersion)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(fleetInstallationSiteManagedInstanceId)
      *             .osFamilies(fleetInstallationSiteOsFamily)
      *             .pathContains(fleetInstallationSitePathContains)
      *             .timeEnd(fleetInstallationSiteTimeEnd)
@@ -6518,6 +6841,500 @@ public final class JmsFunctions {
      */
     public static CompletableFuture<GetJavaReleasesResult> getJavaReleasesPlain(GetJavaReleasesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Jms/getJavaReleases:getJavaReleases", TypeShape.of(GetJavaReleasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Jms Plugin resource in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns the JmsPlugin.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJmsPluginArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJmsPlugin = JmsFunctions.getJmsPlugin(GetJmsPluginArgs.builder()
+     *             .jmsPluginId(testJmsPluginOciJmsJmsPlugin.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetJmsPluginResult> getJmsPlugin(GetJmsPluginArgs args) {
+        return getJmsPlugin(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Jms Plugin resource in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns the JmsPlugin.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJmsPluginArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJmsPlugin = JmsFunctions.getJmsPlugin(GetJmsPluginArgs.builder()
+     *             .jmsPluginId(testJmsPluginOciJmsJmsPlugin.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetJmsPluginResult> getJmsPluginPlain(GetJmsPluginPlainArgs args) {
+        return getJmsPluginPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Jms Plugin resource in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns the JmsPlugin.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJmsPluginArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJmsPlugin = JmsFunctions.getJmsPlugin(GetJmsPluginArgs.builder()
+     *             .jmsPluginId(testJmsPluginOciJmsJmsPlugin.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetJmsPluginResult> getJmsPlugin(GetJmsPluginArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getJmsPlugin:getJmsPlugin", TypeShape.of(GetJmsPluginResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Jms Plugin resource in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns the JmsPlugin.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJmsPluginArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJmsPlugin = JmsFunctions.getJmsPlugin(GetJmsPluginArgs.builder()
+     *             .jmsPluginId(testJmsPluginOciJmsJmsPlugin.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetJmsPluginResult> getJmsPluginPlain(GetJmsPluginPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Jms/getJmsPlugin:getJmsPlugin", TypeShape.of(GetJmsPluginResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Jms Plugins in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Lists the JmsPlugins.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJmsPluginsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJmsPlugins = JmsFunctions.getJmsPlugins(GetJmsPluginsArgs.builder()
+     *             .agentId(jmsPluginAgentId)
+     *             .availabilityStatus(jmsPluginAvailabilityStatus)
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(jmsPluginCompartmentIdInSubtree)
+     *             .fleetId(testFleet.id())
+     *             .hostnameContains(jmsPluginHostnameContains)
+     *             .id(jmsPluginId)
+     *             .state(jmsPluginState)
+     *             .timeLastSeenLessThanOrEqualTo(jmsPluginTimeLastSeenLessThanOrEqualTo)
+     *             .timeRegisteredLessThanOrEqualTo(jmsPluginTimeRegisteredLessThanOrEqualTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetJmsPluginsResult> getJmsPlugins() {
+        return getJmsPlugins(GetJmsPluginsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Jms Plugins in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Lists the JmsPlugins.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJmsPluginsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJmsPlugins = JmsFunctions.getJmsPlugins(GetJmsPluginsArgs.builder()
+     *             .agentId(jmsPluginAgentId)
+     *             .availabilityStatus(jmsPluginAvailabilityStatus)
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(jmsPluginCompartmentIdInSubtree)
+     *             .fleetId(testFleet.id())
+     *             .hostnameContains(jmsPluginHostnameContains)
+     *             .id(jmsPluginId)
+     *             .state(jmsPluginState)
+     *             .timeLastSeenLessThanOrEqualTo(jmsPluginTimeLastSeenLessThanOrEqualTo)
+     *             .timeRegisteredLessThanOrEqualTo(jmsPluginTimeRegisteredLessThanOrEqualTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetJmsPluginsResult> getJmsPluginsPlain() {
+        return getJmsPluginsPlain(GetJmsPluginsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Jms Plugins in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Lists the JmsPlugins.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJmsPluginsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJmsPlugins = JmsFunctions.getJmsPlugins(GetJmsPluginsArgs.builder()
+     *             .agentId(jmsPluginAgentId)
+     *             .availabilityStatus(jmsPluginAvailabilityStatus)
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(jmsPluginCompartmentIdInSubtree)
+     *             .fleetId(testFleet.id())
+     *             .hostnameContains(jmsPluginHostnameContains)
+     *             .id(jmsPluginId)
+     *             .state(jmsPluginState)
+     *             .timeLastSeenLessThanOrEqualTo(jmsPluginTimeLastSeenLessThanOrEqualTo)
+     *             .timeRegisteredLessThanOrEqualTo(jmsPluginTimeRegisteredLessThanOrEqualTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetJmsPluginsResult> getJmsPlugins(GetJmsPluginsArgs args) {
+        return getJmsPlugins(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Jms Plugins in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Lists the JmsPlugins.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJmsPluginsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJmsPlugins = JmsFunctions.getJmsPlugins(GetJmsPluginsArgs.builder()
+     *             .agentId(jmsPluginAgentId)
+     *             .availabilityStatus(jmsPluginAvailabilityStatus)
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(jmsPluginCompartmentIdInSubtree)
+     *             .fleetId(testFleet.id())
+     *             .hostnameContains(jmsPluginHostnameContains)
+     *             .id(jmsPluginId)
+     *             .state(jmsPluginState)
+     *             .timeLastSeenLessThanOrEqualTo(jmsPluginTimeLastSeenLessThanOrEqualTo)
+     *             .timeRegisteredLessThanOrEqualTo(jmsPluginTimeRegisteredLessThanOrEqualTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetJmsPluginsResult> getJmsPluginsPlain(GetJmsPluginsPlainArgs args) {
+        return getJmsPluginsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Jms Plugins in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Lists the JmsPlugins.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJmsPluginsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJmsPlugins = JmsFunctions.getJmsPlugins(GetJmsPluginsArgs.builder()
+     *             .agentId(jmsPluginAgentId)
+     *             .availabilityStatus(jmsPluginAvailabilityStatus)
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(jmsPluginCompartmentIdInSubtree)
+     *             .fleetId(testFleet.id())
+     *             .hostnameContains(jmsPluginHostnameContains)
+     *             .id(jmsPluginId)
+     *             .state(jmsPluginState)
+     *             .timeLastSeenLessThanOrEqualTo(jmsPluginTimeLastSeenLessThanOrEqualTo)
+     *             .timeRegisteredLessThanOrEqualTo(jmsPluginTimeRegisteredLessThanOrEqualTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetJmsPluginsResult> getJmsPlugins(GetJmsPluginsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getJmsPlugins:getJmsPlugins", TypeShape.of(GetJmsPluginsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Jms Plugins in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Lists the JmsPlugins.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJmsPluginsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJmsPlugins = JmsFunctions.getJmsPlugins(GetJmsPluginsArgs.builder()
+     *             .agentId(jmsPluginAgentId)
+     *             .availabilityStatus(jmsPluginAvailabilityStatus)
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(jmsPluginCompartmentIdInSubtree)
+     *             .fleetId(testFleet.id())
+     *             .hostnameContains(jmsPluginHostnameContains)
+     *             .id(jmsPluginId)
+     *             .state(jmsPluginState)
+     *             .timeLastSeenLessThanOrEqualTo(jmsPluginTimeLastSeenLessThanOrEqualTo)
+     *             .timeRegisteredLessThanOrEqualTo(jmsPluginTimeRegisteredLessThanOrEqualTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetJmsPluginsResult> getJmsPluginsPlain(GetJmsPluginsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Jms/getJmsPlugins:getJmsPlugins", TypeShape.of(GetJmsPluginsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific List Jre Usage resource in Oracle Cloud Infrastructure Jms service.

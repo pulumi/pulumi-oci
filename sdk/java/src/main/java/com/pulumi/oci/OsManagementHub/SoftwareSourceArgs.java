@@ -158,6 +158,31 @@ public final class SoftwareSourceArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
+     * (Updatable) Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
+     * * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
+     * * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
+     * * For a package filter that does not specify a version, this will include only the latest available version of the package.
+     * * For a package filter that does specify a version, this will include only the specified version of the package (the isLatestContentOnly attribute is ignored).
+     * * For a package list, this will include only the specified version of packages and modules in the list (the isLatestContentOnly attribute is ignored).
+     * 
+     */
+    @Import(name="isLatestContentOnly")
+    private @Nullable Output<Boolean> isLatestContentOnly;
+
+    /**
+     * @return (Updatable) Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
+     * * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
+     * * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
+     * * For a package filter that does not specify a version, this will include only the latest available version of the package.
+     * * For a package filter that does specify a version, this will include only the specified version of the package (the isLatestContentOnly attribute is ignored).
+     * * For a package list, this will include only the specified version of packages and modules in the list (the isLatestContentOnly attribute is ignored).
+     * 
+     */
+    public Optional<Output<Boolean>> isLatestContentOnly() {
+        return Optional.ofNullable(this.isLatestContentOnly);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
      * 
      */
@@ -244,6 +269,7 @@ public final class SoftwareSourceArgs extends com.pulumi.resources.ResourceArgs 
         this.isAutoResolveDependencies = $.isAutoResolveDependencies;
         this.isAutomaticallyUpdated = $.isAutomaticallyUpdated;
         this.isCreatedFromPackageList = $.isCreatedFromPackageList;
+        this.isLatestContentOnly = $.isLatestContentOnly;
         this.originSoftwareSourceId = $.originSoftwareSourceId;
         this.packages = $.packages;
         this.softwareSourceType = $.softwareSourceType;
@@ -456,6 +482,37 @@ public final class SoftwareSourceArgs extends com.pulumi.resources.ResourceArgs 
          */
         public Builder isCreatedFromPackageList(Boolean isCreatedFromPackageList) {
             return isCreatedFromPackageList(Output.of(isCreatedFromPackageList));
+        }
+
+        /**
+         * @param isLatestContentOnly (Updatable) Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
+         * * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
+         * * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
+         * * For a package filter that does not specify a version, this will include only the latest available version of the package.
+         * * For a package filter that does specify a version, this will include only the specified version of the package (the isLatestContentOnly attribute is ignored).
+         * * For a package list, this will include only the specified version of packages and modules in the list (the isLatestContentOnly attribute is ignored).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isLatestContentOnly(@Nullable Output<Boolean> isLatestContentOnly) {
+            $.isLatestContentOnly = isLatestContentOnly;
+            return this;
+        }
+
+        /**
+         * @param isLatestContentOnly (Updatable) Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
+         * * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
+         * * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
+         * * For a package filter that does not specify a version, this will include only the latest available version of the package.
+         * * For a package filter that does specify a version, this will include only the specified version of the package (the isLatestContentOnly attribute is ignored).
+         * * For a package list, this will include only the specified version of packages and modules in the list (the isLatestContentOnly attribute is ignored).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isLatestContentOnly(Boolean isLatestContentOnly) {
+            return isLatestContentOnly(Output.of(isLatestContentOnly));
         }
 
         /**

@@ -22,7 +22,7 @@ public final class GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResu
      */
     private String applicationKey;
     /**
-     * @return The name of the application for which the Java migration analysis was performed.
+     * @return The name of the application.
      * 
      */
     private String applicationName;
@@ -42,7 +42,7 @@ public final class GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResu
      */
     private String fleetId;
     /**
-     * @return The hostname of the managed instance that hosts the application for which the Java migration analysis was performed.
+     * @return The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
      * 
      */
     private String hostName;
@@ -113,7 +113,7 @@ public final class GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResu
         return this.applicationKey;
     }
     /**
-     * @return The name of the application for which the Java migration analysis was performed.
+     * @return The name of the application.
      * 
      */
     public String applicationName() {
@@ -141,7 +141,7 @@ public final class GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResu
         return this.fleetId;
     }
     /**
-     * @return The hostname of the managed instance that hosts the application for which the Java migration analysis was performed.
+     * @return The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
      * 
      */
     public String hostName() {

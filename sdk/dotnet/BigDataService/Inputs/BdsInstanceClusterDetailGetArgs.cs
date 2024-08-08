@@ -79,7 +79,7 @@ namespace Pulumi.Oci.BigDataService.Inputs
         public Input<string>? JupyterHubUrl { get; set; }
 
         /// <summary>
-        /// Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
+        /// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
         /// </summary>
         [Input("odhVersion")]
         public Input<string>? OdhVersion { get; set; }

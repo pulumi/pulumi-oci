@@ -66,7 +66,7 @@ public final class GetBdsInstancesBdsInstanceClusterDetail {
      */
     private String jupyterHubUrl;
     /**
-     * @return Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
+     * @return Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
      * 
      */
     private String odhVersion;
@@ -165,7 +165,7 @@ public final class GetBdsInstancesBdsInstanceClusterDetail {
         return this.jupyterHubUrl;
     }
     /**
-     * @return Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
+     * @return Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
      * 
      */
     public String odhVersion() {

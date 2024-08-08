@@ -58,6 +58,13 @@ type SoftwareSource struct {
 	IsAutomaticallyUpdated pulumi.BoolOutput `pulumi:"isAutomaticallyUpdated"`
 	// Indicates whether the service should create the software source from a list of packages provided by the user.
 	IsCreatedFromPackageList pulumi.BoolOutput `pulumi:"isCreatedFromPackageList"`
+	// (Updatable) Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
+	// * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
+	// * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
+	// * For a package filter that does not specify a version, this will include only the latest available version of the package.
+	// * For a package filter that does specify a version, this will include only the specified version of the package (the isLatestContentOnly attribute is ignored).
+	// * For a package list, this will include only the specified version of packages and modules in the list (the isLatestContentOnly attribute is ignored).
+	IsLatestContentOnly pulumi.BoolOutput `pulumi:"isLatestContentOnly"`
 	// Indicates whether the software source is required for the Autonomous Linux service.
 	IsMandatoryForAutonomousLinux pulumi.BoolOutput `pulumi:"isMandatoryForAutonomousLinux"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
@@ -158,6 +165,13 @@ type softwareSourceState struct {
 	IsAutomaticallyUpdated *bool `pulumi:"isAutomaticallyUpdated"`
 	// Indicates whether the service should create the software source from a list of packages provided by the user.
 	IsCreatedFromPackageList *bool `pulumi:"isCreatedFromPackageList"`
+	// (Updatable) Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
+	// * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
+	// * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
+	// * For a package filter that does not specify a version, this will include only the latest available version of the package.
+	// * For a package filter that does specify a version, this will include only the specified version of the package (the isLatestContentOnly attribute is ignored).
+	// * For a package list, this will include only the specified version of packages and modules in the list (the isLatestContentOnly attribute is ignored).
+	IsLatestContentOnly *bool `pulumi:"isLatestContentOnly"`
 	// Indicates whether the software source is required for the Autonomous Linux service.
 	IsMandatoryForAutonomousLinux *bool `pulumi:"isMandatoryForAutonomousLinux"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
@@ -223,6 +237,13 @@ type SoftwareSourceState struct {
 	IsAutomaticallyUpdated pulumi.BoolPtrInput
 	// Indicates whether the service should create the software source from a list of packages provided by the user.
 	IsCreatedFromPackageList pulumi.BoolPtrInput
+	// (Updatable) Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
+	// * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
+	// * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
+	// * For a package filter that does not specify a version, this will include only the latest available version of the package.
+	// * For a package filter that does specify a version, this will include only the specified version of the package (the isLatestContentOnly attribute is ignored).
+	// * For a package list, this will include only the specified version of packages and modules in the list (the isLatestContentOnly attribute is ignored).
+	IsLatestContentOnly pulumi.BoolPtrInput
 	// Indicates whether the software source is required for the Autonomous Linux service.
 	IsMandatoryForAutonomousLinux pulumi.BoolPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
@@ -278,6 +299,13 @@ type softwareSourceArgs struct {
 	IsAutomaticallyUpdated *bool `pulumi:"isAutomaticallyUpdated"`
 	// Indicates whether the service should create the software source from a list of packages provided by the user.
 	IsCreatedFromPackageList *bool `pulumi:"isCreatedFromPackageList"`
+	// (Updatable) Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
+	// * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
+	// * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
+	// * For a package filter that does not specify a version, this will include only the latest available version of the package.
+	// * For a package filter that does specify a version, this will include only the specified version of the package (the isLatestContentOnly attribute is ignored).
+	// * For a package list, this will include only the specified version of packages and modules in the list (the isLatestContentOnly attribute is ignored).
+	IsLatestContentOnly *bool `pulumi:"isLatestContentOnly"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
 	OriginSoftwareSourceId *string `pulumi:"originSoftwareSourceId"`
 	// A property used for compatibility only. It doesn't provide a complete list of packages. See [AddPackagesToSoftwareSourceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/osmh/latest/datatypes/AddPackagesToSoftwareSourceDetails) for providing the list of packages used to create the software source when isCreatedFromPackageList is set to true.
@@ -310,6 +338,13 @@ type SoftwareSourceArgs struct {
 	IsAutomaticallyUpdated pulumi.BoolPtrInput
 	// Indicates whether the service should create the software source from a list of packages provided by the user.
 	IsCreatedFromPackageList pulumi.BoolPtrInput
+	// (Updatable) Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
+	// * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
+	// * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
+	// * For a package filter that does not specify a version, this will include only the latest available version of the package.
+	// * For a package filter that does specify a version, this will include only the specified version of the package (the isLatestContentOnly attribute is ignored).
+	// * For a package list, this will include only the specified version of packages and modules in the list (the isLatestContentOnly attribute is ignored).
+	IsLatestContentOnly pulumi.BoolPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
 	OriginSoftwareSourceId pulumi.StringPtrInput
 	// A property used for compatibility only. It doesn't provide a complete list of packages. See [AddPackagesToSoftwareSourceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/osmh/latest/datatypes/AddPackagesToSoftwareSourceDetails) for providing the list of packages used to create the software source when isCreatedFromPackageList is set to true.
@@ -489,6 +524,16 @@ func (o SoftwareSourceOutput) IsAutomaticallyUpdated() pulumi.BoolOutput {
 // Indicates whether the service should create the software source from a list of packages provided by the user.
 func (o SoftwareSourceOutput) IsCreatedFromPackageList() pulumi.BoolOutput {
 	return o.ApplyT(func(v *SoftwareSource) pulumi.BoolOutput { return v.IsCreatedFromPackageList }).(pulumi.BoolOutput)
+}
+
+// (Updatable) Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
+// * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
+// * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
+// * For a package filter that does not specify a version, this will include only the latest available version of the package.
+// * For a package filter that does specify a version, this will include only the specified version of the package (the isLatestContentOnly attribute is ignored).
+// * For a package list, this will include only the specified version of packages and modules in the list (the isLatestContentOnly attribute is ignored).
+func (o SoftwareSourceOutput) IsLatestContentOnly() pulumi.BoolOutput {
+	return o.ApplyT(func(v *SoftwareSource) pulumi.BoolOutput { return v.IsLatestContentOnly }).(pulumi.BoolOutput)
 }
 
 // Indicates whether the software source is required for the Autonomous Linux service.

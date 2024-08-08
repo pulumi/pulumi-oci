@@ -103,6 +103,16 @@ public final class GetSoftwareSourceResult {
      */
     private Boolean isCreatedFromPackageList;
     /**
+     * @return Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
+     * * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
+     * * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
+     * * For a package filter that does not specify a version, this will include only the latest available version of the package.
+     * * For a package filter that does specify a version, this will include only the specified version of the package (the isLatestContentOnly attribute is ignored).
+     * * For a package list, this will include only the specified version of packages and modules in the list (the isLatestContentOnly attribute is ignored).
+     * 
+     */
+    private Boolean isLatestContentOnly;
+    /**
      * @return Indicates whether the software source is required for the Autonomous Linux service.
      * 
      */
@@ -300,6 +310,18 @@ public final class GetSoftwareSourceResult {
         return this.isCreatedFromPackageList;
     }
     /**
+     * @return Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
+     * * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
+     * * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
+     * * For a package filter that does not specify a version, this will include only the latest available version of the package.
+     * * For a package filter that does specify a version, this will include only the specified version of the package (the isLatestContentOnly attribute is ignored).
+     * * For a package list, this will include only the specified version of packages and modules in the list (the isLatestContentOnly attribute is ignored).
+     * 
+     */
+    public Boolean isLatestContentOnly() {
+        return this.isLatestContentOnly;
+    }
+    /**
      * @return Indicates whether the software source is required for the Autonomous Linux service.
      * 
      */
@@ -434,6 +456,7 @@ public final class GetSoftwareSourceResult {
         private Boolean isAutoResolveDependencies;
         private Boolean isAutomaticallyUpdated;
         private Boolean isCreatedFromPackageList;
+        private Boolean isLatestContentOnly;
         private Boolean isMandatoryForAutonomousLinux;
         private String originSoftwareSourceId;
         private String osFamily;
@@ -470,6 +493,7 @@ public final class GetSoftwareSourceResult {
     	      this.isAutoResolveDependencies = defaults.isAutoResolveDependencies;
     	      this.isAutomaticallyUpdated = defaults.isAutomaticallyUpdated;
     	      this.isCreatedFromPackageList = defaults.isCreatedFromPackageList;
+    	      this.isLatestContentOnly = defaults.isLatestContentOnly;
     	      this.isMandatoryForAutonomousLinux = defaults.isMandatoryForAutonomousLinux;
     	      this.originSoftwareSourceId = defaults.originSoftwareSourceId;
     	      this.osFamily = defaults.osFamily;
@@ -628,6 +652,14 @@ public final class GetSoftwareSourceResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isLatestContentOnly(Boolean isLatestContentOnly) {
+            if (isLatestContentOnly == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceResult", "isLatestContentOnly");
+            }
+            this.isLatestContentOnly = isLatestContentOnly;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isMandatoryForAutonomousLinux(Boolean isMandatoryForAutonomousLinux) {
             if (isMandatoryForAutonomousLinux == null) {
               throw new MissingRequiredPropertyException("GetSoftwareSourceResult", "isMandatoryForAutonomousLinux");
@@ -780,6 +812,7 @@ public final class GetSoftwareSourceResult {
             _resultValue.isAutoResolveDependencies = isAutoResolveDependencies;
             _resultValue.isAutomaticallyUpdated = isAutomaticallyUpdated;
             _resultValue.isCreatedFromPackageList = isCreatedFromPackageList;
+            _resultValue.isLatestContentOnly = isLatestContentOnly;
             _resultValue.isMandatoryForAutonomousLinux = isMandatoryForAutonomousLinux;
             _resultValue.originSoftwareSourceId = originSoftwareSourceId;
             _resultValue.osFamily = osFamily;

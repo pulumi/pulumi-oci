@@ -96,8 +96,17 @@ __all__ = [
     'DeploymentDeploymentArgumentsItemArgs',
     'DeploymentDeploymentExecutionProgressArgs',
     'ProjectNotificationConfigArgs',
+    'ProjectRepositorySettingApprovalRulesArgs',
+    'ProjectRepositorySettingApprovalRulesItemArgs',
+    'ProjectRepositorySettingApprovalRulesItemReviewerArgs',
+    'ProjectRepositorySettingMergeSettingsArgs',
     'RepositoryMirrorRepositoryConfigArgs',
     'RepositoryMirrorRepositoryConfigTriggerScheduleArgs',
+    'RepositorySettingApprovalRulesArgs',
+    'RepositorySettingApprovalRulesItemArgs',
+    'RepositorySettingApprovalRulesItemReviewerArgs',
+    'RepositorySettingMergeChecksArgs',
+    'RepositorySettingMergeSettingsArgs',
     'TriggerActionArgs',
     'TriggerActionFilterArgs',
     'TriggerActionFilterExcludeArgs',
@@ -120,6 +129,7 @@ __all__ = [
     'GetRepositoryDiffsFilterArgs',
     'GetRepositoryMirrorRecordsFilterArgs',
     'GetRepositoryPathsFilterArgs',
+    'GetRepositoryProtectedBranchesFilterArgs',
     'GetRepositoryRefsFilterArgs',
     'GetTriggersFilterArgs',
 ]
@@ -1277,7 +1287,6 @@ class BuildRunBuildRunSourceTriggerInfoActionArgs:
                  type: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] build_pipeline_id: The OCID of the build pipeline.
-        :param pulumi.Input[Sequence[pulumi.Input['BuildRunBuildRunSourceTriggerInfoActionFilterArgs']]] filters: The filters for the trigger.
         :param pulumi.Input[str] type: The type of action that will be taken. Allowed value is TRIGGER_BUILD_PIPELINE.
         """
         if build_pipeline_id is not None:
@@ -1302,9 +1311,6 @@ class BuildRunBuildRunSourceTriggerInfoActionArgs:
     @property
     @pulumi.getter
     def filters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildRunSourceTriggerInfoActionFilterArgs']]]]:
-        """
-        The filters for the trigger.
-        """
         return pulumi.get(self, "filters")
 
     @filters.setter
@@ -1332,7 +1338,8 @@ class BuildRunBuildRunSourceTriggerInfoActionFilterArgs:
                  includes: Optional[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs']]]] = None,
                  trigger_source: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] events: The events, for example, PUSH, PULL_REQUEST_MERGE.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] events: The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
+        :param pulumi.Input[Sequence[pulumi.Input['BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgs']]] excludes: Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
         :param pulumi.Input[Sequence[pulumi.Input['BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs']]] includes: Attributes to filter GitLab self-hosted server events.
         :param pulumi.Input[str] trigger_source: Source of the trigger. Allowed values are, GITHUB and GITLAB.
         """
@@ -1349,7 +1356,7 @@ class BuildRunBuildRunSourceTriggerInfoActionFilterArgs:
     @pulumi.getter
     def events(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        The events, for example, PUSH, PULL_REQUEST_MERGE.
+        The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
         """
         return pulumi.get(self, "events")
 
@@ -1360,6 +1367,9 @@ class BuildRunBuildRunSourceTriggerInfoActionFilterArgs:
     @property
     @pulumi.getter
     def excludes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgs']]]]:
+        """
+        Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
+        """
         return pulumi.get(self, "excludes")
 
     @excludes.setter
@@ -1395,12 +1405,18 @@ class BuildRunBuildRunSourceTriggerInfoActionFilterArgs:
 class BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgs:
     def __init__(__self__, *,
                  file_filters: Optional[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArgs']]] file_filters: Attributes to support include/exclude files for triggering build runs.
+        """
         if file_filters is not None:
             pulumi.set(__self__, "file_filters", file_filters)
 
     @property
     @pulumi.getter(name="fileFilters")
     def file_filters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArgs']]]]:
+        """
+        Attributes to support include/exclude files for triggering build runs.
+        """
         return pulumi.get(self, "file_filters")
 
     @file_filters.setter
@@ -1412,12 +1428,18 @@ class BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgs:
 class BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArgs:
     def __init__(__self__, *,
                  file_paths: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] file_paths: The file paths/glob pattern for files.
+        """
         if file_paths is not None:
             pulumi.set(__self__, "file_paths", file_paths)
 
     @property
     @pulumi.getter(name="filePaths")
     def file_paths(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        The file paths/glob pattern for files.
+        """
         return pulumi.get(self, "file_paths")
 
     @file_paths.setter
@@ -1434,6 +1456,7 @@ class BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs:
                  repository_name: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] base_ref: The target branch for pull requests; not applicable for push requests.
+        :param pulumi.Input[Sequence[pulumi.Input['BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArgs']]] file_filters: Attributes to support include/exclude files for triggering build runs.
         :param pulumi.Input[str] head_ref: Branch for push event; source branch for pull requests.
         :param pulumi.Input[str] repository_name: The repository name for trigger events.
         """
@@ -1461,6 +1484,9 @@ class BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs:
     @property
     @pulumi.getter(name="fileFilters")
     def file_filters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArgs']]]]:
+        """
+        Attributes to support include/exclude files for triggering build runs.
+        """
         return pulumi.get(self, "file_filters")
 
     @file_filters.setter
@@ -1496,12 +1522,18 @@ class BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs:
 class BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArgs:
     def __init__(__self__, *,
                  file_paths: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] file_paths: The file paths/glob pattern for files.
+        """
         if file_paths is not None:
             pulumi.set(__self__, "file_paths", file_paths)
 
     @property
     @pulumi.getter(name="filePaths")
     def file_paths(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        The file paths/glob pattern for files.
+        """
         return pulumi.get(self, "file_paths")
 
     @file_paths.setter
@@ -3959,13 +3991,211 @@ class ProjectNotificationConfigArgs:
 
 
 @pulumi.input_type
+class ProjectRepositorySettingApprovalRulesArgs:
+    def __init__(__self__, *,
+                 items: pulumi.Input[Sequence[pulumi.Input['ProjectRepositorySettingApprovalRulesItemArgs']]]):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['ProjectRepositorySettingApprovalRulesItemArgs']]] items: (Updatable) List of approval rules.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> pulumi.Input[Sequence[pulumi.Input['ProjectRepositorySettingApprovalRulesItemArgs']]]:
+        """
+        (Updatable) List of approval rules.
+        """
+        return pulumi.get(self, "items")
+
+    @items.setter
+    def items(self, value: pulumi.Input[Sequence[pulumi.Input['ProjectRepositorySettingApprovalRulesItemArgs']]]):
+        pulumi.set(self, "items", value)
+
+
+@pulumi.input_type
+class ProjectRepositorySettingApprovalRulesItemArgs:
+    def __init__(__self__, *,
+                 min_approvals_count: pulumi.Input[int],
+                 name: pulumi.Input[str],
+                 destination_branch: Optional[pulumi.Input[str]] = None,
+                 reviewers: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectRepositorySettingApprovalRulesItemReviewerArgs']]]] = None):
+        """
+        :param pulumi.Input[int] min_approvals_count: (Updatable) Minimum number of approvals which must be provided by the reviewers specified in the list before the rule can be satisfied
+        :param pulumi.Input[str] name: (Updatable) Name which is used to uniquely identify an approval rule.
+        :param pulumi.Input[str] destination_branch: (Updatable) Branch name where pull requests targeting the branch must satisfy the approval rule. This value being null means the rule applies to all pull requests
+        :param pulumi.Input[Sequence[pulumi.Input['ProjectRepositorySettingApprovalRulesItemReviewerArgs']]] reviewers: (Updatable) List of users who must provide approvals up to the minApprovalsCount specified in the rule. An empty list means the approvals can come from any user.
+        """
+        pulumi.set(__self__, "min_approvals_count", min_approvals_count)
+        pulumi.set(__self__, "name", name)
+        if destination_branch is not None:
+            pulumi.set(__self__, "destination_branch", destination_branch)
+        if reviewers is not None:
+            pulumi.set(__self__, "reviewers", reviewers)
+
+    @property
+    @pulumi.getter(name="minApprovalsCount")
+    def min_approvals_count(self) -> pulumi.Input[int]:
+        """
+        (Updatable) Minimum number of approvals which must be provided by the reviewers specified in the list before the rule can be satisfied
+        """
+        return pulumi.get(self, "min_approvals_count")
+
+    @min_approvals_count.setter
+    def min_approvals_count(self, value: pulumi.Input[int]):
+        pulumi.set(self, "min_approvals_count", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Name which is used to uniquely identify an approval rule.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="destinationBranch")
+    def destination_branch(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Branch name where pull requests targeting the branch must satisfy the approval rule. This value being null means the rule applies to all pull requests
+        """
+        return pulumi.get(self, "destination_branch")
+
+    @destination_branch.setter
+    def destination_branch(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "destination_branch", value)
+
+    @property
+    @pulumi.getter
+    def reviewers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProjectRepositorySettingApprovalRulesItemReviewerArgs']]]]:
+        """
+        (Updatable) List of users who must provide approvals up to the minApprovalsCount specified in the rule. An empty list means the approvals can come from any user.
+        """
+        return pulumi.get(self, "reviewers")
+
+    @reviewers.setter
+    def reviewers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectRepositorySettingApprovalRulesItemReviewerArgs']]]]):
+        pulumi.set(self, "reviewers", value)
+
+
+@pulumi.input_type
+class ProjectRepositorySettingApprovalRulesItemReviewerArgs:
+    def __init__(__self__, *,
+                 principal_id: pulumi.Input[str],
+                 principal_name: Optional[pulumi.Input[str]] = None,
+                 principal_state: Optional[pulumi.Input[str]] = None,
+                 principal_type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] principal_id: (Updatable) Pull Request reviewer id
+        :param pulumi.Input[str] principal_name: the name of the principal
+        :param pulumi.Input[str] principal_state: The state of the principal, it can be active or inactive or suppressed for emails
+        :param pulumi.Input[str] principal_type: the type of principal
+        """
+        pulumi.set(__self__, "principal_id", principal_id)
+        if principal_name is not None:
+            pulumi.set(__self__, "principal_name", principal_name)
+        if principal_state is not None:
+            pulumi.set(__self__, "principal_state", principal_state)
+        if principal_type is not None:
+            pulumi.set(__self__, "principal_type", principal_type)
+
+    @property
+    @pulumi.getter(name="principalId")
+    def principal_id(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Pull Request reviewer id
+        """
+        return pulumi.get(self, "principal_id")
+
+    @principal_id.setter
+    def principal_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "principal_id", value)
+
+    @property
+    @pulumi.getter(name="principalName")
+    def principal_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        the name of the principal
+        """
+        return pulumi.get(self, "principal_name")
+
+    @principal_name.setter
+    def principal_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "principal_name", value)
+
+    @property
+    @pulumi.getter(name="principalState")
+    def principal_state(self) -> Optional[pulumi.Input[str]]:
+        """
+        The state of the principal, it can be active or inactive or suppressed for emails
+        """
+        return pulumi.get(self, "principal_state")
+
+    @principal_state.setter
+    def principal_state(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "principal_state", value)
+
+    @property
+    @pulumi.getter(name="principalType")
+    def principal_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        the type of principal
+        """
+        return pulumi.get(self, "principal_type")
+
+    @principal_type.setter
+    def principal_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "principal_type", value)
+
+
+@pulumi.input_type
+class ProjectRepositorySettingMergeSettingsArgs:
+    def __init__(__self__, *,
+                 allowed_merge_strategies: pulumi.Input[Sequence[pulumi.Input[str]]],
+                 default_merge_strategy: pulumi.Input[str]):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] allowed_merge_strategies: (Updatable) List of merge strategies which are allowed for a Project or Repository.
+        :param pulumi.Input[str] default_merge_strategy: (Updatable) Default type of merge strategy associated with the a Project or Repository.
+        """
+        pulumi.set(__self__, "allowed_merge_strategies", allowed_merge_strategies)
+        pulumi.set(__self__, "default_merge_strategy", default_merge_strategy)
+
+    @property
+    @pulumi.getter(name="allowedMergeStrategies")
+    def allowed_merge_strategies(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
+        """
+        (Updatable) List of merge strategies which are allowed for a Project or Repository.
+        """
+        return pulumi.get(self, "allowed_merge_strategies")
+
+    @allowed_merge_strategies.setter
+    def allowed_merge_strategies(self, value: pulumi.Input[Sequence[pulumi.Input[str]]]):
+        pulumi.set(self, "allowed_merge_strategies", value)
+
+    @property
+    @pulumi.getter(name="defaultMergeStrategy")
+    def default_merge_strategy(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Default type of merge strategy associated with the a Project or Repository.
+        """
+        return pulumi.get(self, "default_merge_strategy")
+
+    @default_merge_strategy.setter
+    def default_merge_strategy(self, value: pulumi.Input[str]):
+        pulumi.set(self, "default_merge_strategy", value)
+
+
+@pulumi.input_type
 class RepositoryMirrorRepositoryConfigArgs:
     def __init__(__self__, *,
                  connector_id: Optional[pulumi.Input[str]] = None,
                  repository_url: Optional[pulumi.Input[str]] = None,
                  trigger_schedule: Optional[pulumi.Input['RepositoryMirrorRepositoryConfigTriggerScheduleArgs']] = None):
         """
-        :param pulumi.Input[str] connector_id: (Updatable) Upstream git repository connection identifer.
+        :param pulumi.Input[str] connector_id: (Updatable) Upstream git repository connection identifier.
         :param pulumi.Input[str] repository_url: (Updatable) URL of external repository you want to mirror.
         :param pulumi.Input['RepositoryMirrorRepositoryConfigTriggerScheduleArgs'] trigger_schedule: (Updatable) Specifies a trigger schedule. Timing information for when to initiate automated syncs.
         """
@@ -3980,7 +4210,7 @@ class RepositoryMirrorRepositoryConfigArgs:
     @pulumi.getter(name="connectorId")
     def connector_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Upstream git repository connection identifer.
+        (Updatable) Upstream git repository connection identifier.
         """
         return pulumi.get(self, "connector_id")
 
@@ -4052,6 +4282,226 @@ class RepositoryMirrorRepositoryConfigTriggerScheduleArgs:
 
 
 @pulumi.input_type
+class RepositorySettingApprovalRulesArgs:
+    def __init__(__self__, *,
+                 items: pulumi.Input[Sequence[pulumi.Input['RepositorySettingApprovalRulesItemArgs']]]):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['RepositorySettingApprovalRulesItemArgs']]] items: (Updatable) List of approval rules.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> pulumi.Input[Sequence[pulumi.Input['RepositorySettingApprovalRulesItemArgs']]]:
+        """
+        (Updatable) List of approval rules.
+        """
+        return pulumi.get(self, "items")
+
+    @items.setter
+    def items(self, value: pulumi.Input[Sequence[pulumi.Input['RepositorySettingApprovalRulesItemArgs']]]):
+        pulumi.set(self, "items", value)
+
+
+@pulumi.input_type
+class RepositorySettingApprovalRulesItemArgs:
+    def __init__(__self__, *,
+                 min_approvals_count: pulumi.Input[int],
+                 name: pulumi.Input[str],
+                 destination_branch: Optional[pulumi.Input[str]] = None,
+                 reviewers: Optional[pulumi.Input[Sequence[pulumi.Input['RepositorySettingApprovalRulesItemReviewerArgs']]]] = None):
+        """
+        :param pulumi.Input[int] min_approvals_count: (Updatable) Minimum number of approvals which must be provided by the reviewers specified in the list before the rule can be satisfied
+        :param pulumi.Input[str] name: (Updatable) Name which is used to uniquely identify an approval rule.
+        :param pulumi.Input[str] destination_branch: (Updatable) Branch name where pull requests targeting the branch must satisfy the approval rule. This value being null means the rule applies to all pull requests
+        :param pulumi.Input[Sequence[pulumi.Input['RepositorySettingApprovalRulesItemReviewerArgs']]] reviewers: (Updatable) List of users who must provide approvals up to the minApprovalsCount specified in the rule. An empty list means the approvals can come from any user.
+        """
+        pulumi.set(__self__, "min_approvals_count", min_approvals_count)
+        pulumi.set(__self__, "name", name)
+        if destination_branch is not None:
+            pulumi.set(__self__, "destination_branch", destination_branch)
+        if reviewers is not None:
+            pulumi.set(__self__, "reviewers", reviewers)
+
+    @property
+    @pulumi.getter(name="minApprovalsCount")
+    def min_approvals_count(self) -> pulumi.Input[int]:
+        """
+        (Updatable) Minimum number of approvals which must be provided by the reviewers specified in the list before the rule can be satisfied
+        """
+        return pulumi.get(self, "min_approvals_count")
+
+    @min_approvals_count.setter
+    def min_approvals_count(self, value: pulumi.Input[int]):
+        pulumi.set(self, "min_approvals_count", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Name which is used to uniquely identify an approval rule.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="destinationBranch")
+    def destination_branch(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Branch name where pull requests targeting the branch must satisfy the approval rule. This value being null means the rule applies to all pull requests
+        """
+        return pulumi.get(self, "destination_branch")
+
+    @destination_branch.setter
+    def destination_branch(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "destination_branch", value)
+
+    @property
+    @pulumi.getter
+    def reviewers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RepositorySettingApprovalRulesItemReviewerArgs']]]]:
+        """
+        (Updatable) List of users who must provide approvals up to the minApprovalsCount specified in the rule. An empty list means the approvals can come from any user.
+        """
+        return pulumi.get(self, "reviewers")
+
+    @reviewers.setter
+    def reviewers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['RepositorySettingApprovalRulesItemReviewerArgs']]]]):
+        pulumi.set(self, "reviewers", value)
+
+
+@pulumi.input_type
+class RepositorySettingApprovalRulesItemReviewerArgs:
+    def __init__(__self__, *,
+                 principal_id: pulumi.Input[str],
+                 principal_name: Optional[pulumi.Input[str]] = None,
+                 principal_state: Optional[pulumi.Input[str]] = None,
+                 principal_type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] principal_id: (Updatable) Pull Request reviewer id
+        :param pulumi.Input[str] principal_name: the name of the principal
+        :param pulumi.Input[str] principal_state: The state of the principal, it can be active or inactive or suppressed for emails
+        :param pulumi.Input[str] principal_type: the type of principal
+        """
+        pulumi.set(__self__, "principal_id", principal_id)
+        if principal_name is not None:
+            pulumi.set(__self__, "principal_name", principal_name)
+        if principal_state is not None:
+            pulumi.set(__self__, "principal_state", principal_state)
+        if principal_type is not None:
+            pulumi.set(__self__, "principal_type", principal_type)
+
+    @property
+    @pulumi.getter(name="principalId")
+    def principal_id(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Pull Request reviewer id
+        """
+        return pulumi.get(self, "principal_id")
+
+    @principal_id.setter
+    def principal_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "principal_id", value)
+
+    @property
+    @pulumi.getter(name="principalName")
+    def principal_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        the name of the principal
+        """
+        return pulumi.get(self, "principal_name")
+
+    @principal_name.setter
+    def principal_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "principal_name", value)
+
+    @property
+    @pulumi.getter(name="principalState")
+    def principal_state(self) -> Optional[pulumi.Input[str]]:
+        """
+        The state of the principal, it can be active or inactive or suppressed for emails
+        """
+        return pulumi.get(self, "principal_state")
+
+    @principal_state.setter
+    def principal_state(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "principal_state", value)
+
+    @property
+    @pulumi.getter(name="principalType")
+    def principal_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        the type of principal
+        """
+        return pulumi.get(self, "principal_type")
+
+    @principal_type.setter
+    def principal_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "principal_type", value)
+
+
+@pulumi.input_type
+class RepositorySettingMergeChecksArgs:
+    def __init__(__self__, *,
+                 last_build_succeeded: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] last_build_succeeded: (Updatable) Indicates whether or not a pull request must have a successful build run and no queued builds before it can be merged
+        """
+        pulumi.set(__self__, "last_build_succeeded", last_build_succeeded)
+
+    @property
+    @pulumi.getter(name="lastBuildSucceeded")
+    def last_build_succeeded(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Indicates whether or not a pull request must have a successful build run and no queued builds before it can be merged
+        """
+        return pulumi.get(self, "last_build_succeeded")
+
+    @last_build_succeeded.setter
+    def last_build_succeeded(self, value: pulumi.Input[str]):
+        pulumi.set(self, "last_build_succeeded", value)
+
+
+@pulumi.input_type
+class RepositorySettingMergeSettingsArgs:
+    def __init__(__self__, *,
+                 allowed_merge_strategies: pulumi.Input[Sequence[pulumi.Input[str]]],
+                 default_merge_strategy: pulumi.Input[str]):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] allowed_merge_strategies: (Updatable) List of merge strategies which are allowed for a Project or Repository.
+        :param pulumi.Input[str] default_merge_strategy: (Updatable) Default type of merge strategy associated with the a Project or Repository.
+        """
+        pulumi.set(__self__, "allowed_merge_strategies", allowed_merge_strategies)
+        pulumi.set(__self__, "default_merge_strategy", default_merge_strategy)
+
+    @property
+    @pulumi.getter(name="allowedMergeStrategies")
+    def allowed_merge_strategies(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
+        """
+        (Updatable) List of merge strategies which are allowed for a Project or Repository.
+        """
+        return pulumi.get(self, "allowed_merge_strategies")
+
+    @allowed_merge_strategies.setter
+    def allowed_merge_strategies(self, value: pulumi.Input[Sequence[pulumi.Input[str]]]):
+        pulumi.set(self, "allowed_merge_strategies", value)
+
+    @property
+    @pulumi.getter(name="defaultMergeStrategy")
+    def default_merge_strategy(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Default type of merge strategy associated with the a Project or Repository.
+        """
+        return pulumi.get(self, "default_merge_strategy")
+
+    @default_merge_strategy.setter
+    def default_merge_strategy(self, value: pulumi.Input[str]):
+        pulumi.set(self, "default_merge_strategy", value)
+
+
+@pulumi.input_type
 class TriggerActionArgs:
     def __init__(__self__, *,
                  build_pipeline_id: pulumi.Input[str],
@@ -4060,7 +4510,6 @@ class TriggerActionArgs:
         """
         :param pulumi.Input[str] build_pipeline_id: (Updatable) The OCID of the build pipeline to be triggered.
         :param pulumi.Input[str] type: (Updatable) The type of action that will be taken. Allowed value is TRIGGER_BUILD_PIPELINE.
-        :param pulumi.Input['TriggerActionFilterArgs'] filter: (Updatable) The filters for the trigger.
         """
         pulumi.set(__self__, "build_pipeline_id", build_pipeline_id)
         pulumi.set(__self__, "type", type)
@@ -4094,9 +4543,6 @@ class TriggerActionArgs:
     @property
     @pulumi.getter
     def filter(self) -> Optional[pulumi.Input['TriggerActionFilterArgs']]:
-        """
-        (Updatable) The filters for the trigger.
-        """
         return pulumi.get(self, "filter")
 
     @filter.setter
@@ -4113,9 +4559,13 @@ class TriggerActionFilterArgs:
                  include: Optional[pulumi.Input['TriggerActionFilterIncludeArgs']] = None):
         """
         :param pulumi.Input[str] trigger_source: (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] events: (Updatable) The events, for example, PUSH, PULL_REQUEST_MERGE.
-        :param pulumi.Input['TriggerActionFilterExcludeArgs'] exclude: (Updatable) Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
-        :param pulumi.Input['TriggerActionFilterIncludeArgs'] include: (Updatable) Attributes to filter GitLab self-hosted server events.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] events: The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
+        :param pulumi.Input['TriggerActionFilterExcludeArgs'] exclude: Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
+        :param pulumi.Input['TriggerActionFilterIncludeArgs'] include: Attributes to filter GitLab self-hosted server events.
         """
         pulumi.set(__self__, "trigger_source", trigger_source)
         if events is not None:
@@ -4130,6 +4580,10 @@ class TriggerActionFilterArgs:
     def trigger_source(self) -> pulumi.Input[str]:
         """
         (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "trigger_source")
 
@@ -4141,7 +4595,7 @@ class TriggerActionFilterArgs:
     @pulumi.getter
     def events(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) The events, for example, PUSH, PULL_REQUEST_MERGE.
+        The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
         """
         return pulumi.get(self, "events")
 
@@ -4153,7 +4607,7 @@ class TriggerActionFilterArgs:
     @pulumi.getter
     def exclude(self) -> Optional[pulumi.Input['TriggerActionFilterExcludeArgs']]:
         """
-        (Updatable) Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
+        Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
         """
         return pulumi.get(self, "exclude")
 
@@ -4165,7 +4619,7 @@ class TriggerActionFilterArgs:
     @pulumi.getter
     def include(self) -> Optional[pulumi.Input['TriggerActionFilterIncludeArgs']]:
         """
-        (Updatable) Attributes to filter GitLab self-hosted server events.
+        Attributes to filter GitLab self-hosted server events.
         """
         return pulumi.get(self, "include")
 
@@ -4179,7 +4633,7 @@ class TriggerActionFilterExcludeArgs:
     def __init__(__self__, *,
                  file_filter: Optional[pulumi.Input['TriggerActionFilterExcludeFileFilterArgs']] = None):
         """
-        :param pulumi.Input['TriggerActionFilterExcludeFileFilterArgs'] file_filter: (Updatable) Attributes to support include/exclude files for triggering build runs.
+        :param pulumi.Input['TriggerActionFilterExcludeFileFilterArgs'] file_filter: Attributes to support include/exclude files for triggering build runs.
         """
         if file_filter is not None:
             pulumi.set(__self__, "file_filter", file_filter)
@@ -4188,7 +4642,7 @@ class TriggerActionFilterExcludeArgs:
     @pulumi.getter(name="fileFilter")
     def file_filter(self) -> Optional[pulumi.Input['TriggerActionFilterExcludeFileFilterArgs']]:
         """
-        (Updatable) Attributes to support include/exclude files for triggering build runs.
+        Attributes to support include/exclude files for triggering build runs.
         """
         return pulumi.get(self, "file_filter")
 
@@ -4202,7 +4656,7 @@ class TriggerActionFilterExcludeFileFilterArgs:
     def __init__(__self__, *,
                  file_paths: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] file_paths: (Updatable) The file paths/glob pattern for files.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] file_paths: The file paths/glob pattern for files.
         """
         if file_paths is not None:
             pulumi.set(__self__, "file_paths", file_paths)
@@ -4211,7 +4665,7 @@ class TriggerActionFilterExcludeFileFilterArgs:
     @pulumi.getter(name="filePaths")
     def file_paths(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) The file paths/glob pattern for files.
+        The file paths/glob pattern for files.
         """
         return pulumi.get(self, "file_paths")
 
@@ -4228,10 +4682,10 @@ class TriggerActionFilterIncludeArgs:
                  head_ref: Optional[pulumi.Input[str]] = None,
                  repository_name: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] base_ref: (Updatable) The target branch for pull requests; not applicable for push requests.
-        :param pulumi.Input['TriggerActionFilterIncludeFileFilterArgs'] file_filter: (Updatable) Attributes to support include/exclude files for triggering build runs.
-        :param pulumi.Input[str] head_ref: (Updatable) Branch for push event; source branch for pull requests.
-        :param pulumi.Input[str] repository_name: (Updatable) The repository name for trigger events.
+        :param pulumi.Input[str] base_ref: The target branch for pull requests; not applicable for push requests.
+        :param pulumi.Input['TriggerActionFilterIncludeFileFilterArgs'] file_filter: Attributes to support include/exclude files for triggering build runs.
+        :param pulumi.Input[str] head_ref: Branch for push event; source branch for pull requests.
+        :param pulumi.Input[str] repository_name: The repository name for trigger events.
         """
         if base_ref is not None:
             pulumi.set(__self__, "base_ref", base_ref)
@@ -4246,7 +4700,7 @@ class TriggerActionFilterIncludeArgs:
     @pulumi.getter(name="baseRef")
     def base_ref(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The target branch for pull requests; not applicable for push requests.
+        The target branch for pull requests; not applicable for push requests.
         """
         return pulumi.get(self, "base_ref")
 
@@ -4258,7 +4712,7 @@ class TriggerActionFilterIncludeArgs:
     @pulumi.getter(name="fileFilter")
     def file_filter(self) -> Optional[pulumi.Input['TriggerActionFilterIncludeFileFilterArgs']]:
         """
-        (Updatable) Attributes to support include/exclude files for triggering build runs.
+        Attributes to support include/exclude files for triggering build runs.
         """
         return pulumi.get(self, "file_filter")
 
@@ -4270,7 +4724,7 @@ class TriggerActionFilterIncludeArgs:
     @pulumi.getter(name="headRef")
     def head_ref(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Branch for push event; source branch for pull requests.
+        Branch for push event; source branch for pull requests.
         """
         return pulumi.get(self, "head_ref")
 
@@ -4282,7 +4736,7 @@ class TriggerActionFilterIncludeArgs:
     @pulumi.getter(name="repositoryName")
     def repository_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The repository name for trigger events.
+        The repository name for trigger events.
         """
         return pulumi.get(self, "repository_name")
 
@@ -4296,7 +4750,7 @@ class TriggerActionFilterIncludeFileFilterArgs:
     def __init__(__self__, *,
                  file_paths: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] file_paths: (Updatable) The file paths/glob pattern for files.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] file_paths: The file paths/glob pattern for files.
         """
         if file_paths is not None:
             pulumi.set(__self__, "file_paths", file_paths)
@@ -4305,7 +4759,7 @@ class TriggerActionFilterIncludeFileFilterArgs:
     @pulumi.getter(name="filePaths")
     def file_paths(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) The file paths/glob pattern for files.
+        The file paths/glob pattern for files.
         """
         return pulumi.get(self, "file_paths")
 
@@ -4966,6 +5420,51 @@ class GetRepositoryPathsFilterArgs:
     def name(self) -> str:
         """
         Name of file or directory.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetRepositoryProtectedBranchesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: A filter to return only resources that match the given branch name.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        A filter to return only resources that match the given branch name.
         """
         return pulumi.get(self, "name")
 

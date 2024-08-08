@@ -27,6 +27,17 @@ namespace Pulumi.Oci.Psql
     ///     var testDbSystem = new Oci.Psql.DbSystem("test_db_system", new()
     ///     {
     ///         CompartmentId = compartmentId,
+    ///         Credentials = new Oci.Psql.Inputs.DbSystemCredentialsArgs
+    ///         {
+    ///             PasswordDetails = new Oci.Psql.Inputs.DbSystemCredentialsPasswordDetailsArgs
+    ///             {
+    ///                 PasswordType = dbSystemCredentialsPasswordDetailsPasswordType,
+    ///                 Password = dbSystemCredentialsPasswordDetailsPassword,
+    ///                 SecretId = testSecret.Id,
+    ///                 SecretVersion = dbSystemCredentialsPasswordDetailsSecretVersion,
+    ///             },
+    ///             Username = dbSystemCredentialsUsername,
+    ///         },
     ///         DbVersion = dbSystemDbVersion,
     ///         DisplayName = dbSystemDisplayName,
     ///         NetworkDetails = new Oci.Psql.Inputs.DbSystemNetworkDetailsArgs
@@ -44,18 +55,6 @@ namespace Pulumi.Oci.Psql
     ///             Iops = dbSystemStorageDetailsIops,
     ///         },
     ///         ConfigId = testConfig.Id,
-    ///         ApplyConfig = dbSystemApplyConfigType,
-    ///         Credentials = new Oci.Psql.Inputs.DbSystemCredentialsArgs
-    ///         {
-    ///             PasswordDetails = new Oci.Psql.Inputs.DbSystemCredentialsPasswordDetailsArgs
-    ///             {
-    ///                 PasswordType = dbSystemCredentialsPasswordDetailsPasswordType,
-    ///                 Password = dbSystemCredentialsPasswordDetailsPassword,
-    ///                 SecretId = testSecret.Id,
-    ///                 SecretVersion = dbSystemCredentialsPasswordDetailsSecretVersion,
-    ///             },
-    ///             Username = dbSystemCredentialsUsername,
-    ///         },
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
@@ -182,19 +181,19 @@ namespace Pulumi.Oci.Psql
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable when patch_operations are specified) Count of database instances nodes to be created in the database system.
+        /// Count of database instances nodes to be created in the database system.
         /// </summary>
         [Output("instanceCount")]
         public Output<int> InstanceCount { get; private set; } = null!;
 
         /// <summary>
-        /// The total amount of memory available to each database instance node, in gigabytes.
+        /// (Updatable) The total amount of memory available to each database instance node, in gigabytes.
         /// </summary>
         [Output("instanceMemorySizeInGbs")]
         public Output<int> InstanceMemorySizeInGbs { get; private set; } = null!;
 
         /// <summary>
-        /// The total number of OCPUs available to each database instance node.
+        /// (Updatable) The total number of OCPUs available to each database instance node.
         /// </summary>
         [Output("instanceOcpuCount")]
         public Output<int> InstanceOcpuCount { get; private set; } = null!;
@@ -224,7 +223,7 @@ namespace Pulumi.Oci.Psql
         public Output<Outputs.DbSystemManagementPolicy> ManagementPolicy { get; private set; } = null!;
 
         /// <summary>
-        /// Network details for the database system.
+        /// (Updatable) Network details for the database system.
         /// </summary>
         [Output("networkDetails")]
         public Output<Outputs.DbSystemNetworkDetails> NetworkDetails { get; private set; } = null!;
@@ -236,7 +235,7 @@ namespace Pulumi.Oci.Psql
         public Output<ImmutableArray<Outputs.DbSystemPatchOperation>> PatchOperations { get; private set; } = null!;
 
         /// <summary>
-        /// The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
+        /// (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
         /// </summary>
         [Output("shape")]
         public Output<string> Shape { get; private set; } = null!;
@@ -400,19 +399,19 @@ namespace Pulumi.Oci.Psql
         }
 
         /// <summary>
-        /// (Updatable when patch_operations are specified) Count of database instances nodes to be created in the database system.
+        /// Count of database instances nodes to be created in the database system.
         /// </summary>
         [Input("instanceCount")]
         public Input<int>? InstanceCount { get; set; }
 
         /// <summary>
-        /// The total amount of memory available to each database instance node, in gigabytes.
+        /// (Updatable) The total amount of memory available to each database instance node, in gigabytes.
         /// </summary>
         [Input("instanceMemorySizeInGbs")]
         public Input<int>? InstanceMemorySizeInGbs { get; set; }
 
         /// <summary>
-        /// The total number of OCPUs available to each database instance node.
+        /// (Updatable) The total number of OCPUs available to each database instance node.
         /// </summary>
         [Input("instanceOcpuCount")]
         public Input<int>? InstanceOcpuCount { get; set; }
@@ -436,7 +435,7 @@ namespace Pulumi.Oci.Psql
         public Input<Inputs.DbSystemManagementPolicyArgs>? ManagementPolicy { get; set; }
 
         /// <summary>
-        /// Network details for the database system.
+        /// (Updatable) Network details for the database system.
         /// </summary>
         [Input("networkDetails", required: true)]
         public Input<Inputs.DbSystemNetworkDetailsArgs> NetworkDetails { get; set; } = null!;
@@ -454,7 +453,7 @@ namespace Pulumi.Oci.Psql
         }
 
         /// <summary>
-        /// The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
+        /// (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
         /// </summary>
         [Input("shape", required: true)]
         public Input<string> Shape { get; set; } = null!;
@@ -562,19 +561,19 @@ namespace Pulumi.Oci.Psql
         }
 
         /// <summary>
-        /// (Updatable when patch_operations are specified) Count of database instances nodes to be created in the database system.
+        /// Count of database instances nodes to be created in the database system.
         /// </summary>
         [Input("instanceCount")]
         public Input<int>? InstanceCount { get; set; }
 
         /// <summary>
-        /// The total amount of memory available to each database instance node, in gigabytes.
+        /// (Updatable) The total amount of memory available to each database instance node, in gigabytes.
         /// </summary>
         [Input("instanceMemorySizeInGbs")]
         public Input<int>? InstanceMemorySizeInGbs { get; set; }
 
         /// <summary>
-        /// The total number of OCPUs available to each database instance node.
+        /// (Updatable) The total number of OCPUs available to each database instance node.
         /// </summary>
         [Input("instanceOcpuCount")]
         public Input<int>? InstanceOcpuCount { get; set; }
@@ -616,7 +615,7 @@ namespace Pulumi.Oci.Psql
         public Input<Inputs.DbSystemManagementPolicyGetArgs>? ManagementPolicy { get; set; }
 
         /// <summary>
-        /// Network details for the database system.
+        /// (Updatable) Network details for the database system.
         /// </summary>
         [Input("networkDetails")]
         public Input<Inputs.DbSystemNetworkDetailsGetArgs>? NetworkDetails { get; set; }
@@ -634,7 +633,7 @@ namespace Pulumi.Oci.Psql
         }
 
         /// <summary>
-        /// The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
+        /// (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
         /// </summary>
         [Input("shape")]
         public Input<string>? Shape { get; set; }

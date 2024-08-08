@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Psql.Outputs
     public sealed class DbSystemNetworkDetails
     {
         /// <summary>
-        /// List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
+        /// (Updatable) List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
         /// </summary>
         public readonly ImmutableArray<string> NsgIds;
         /// <summary>

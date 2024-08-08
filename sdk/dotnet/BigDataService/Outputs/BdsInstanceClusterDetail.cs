@@ -58,7 +58,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// </summary>
         public readonly string? JupyterHubUrl;
         /// <summary>
-        /// Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
+        /// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
         /// </summary>
         public readonly string? OdhVersion;
         /// <summary>

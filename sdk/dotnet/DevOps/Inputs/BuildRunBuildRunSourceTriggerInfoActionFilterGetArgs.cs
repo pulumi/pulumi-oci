@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DevOps.Inputs
         private InputList<string>? _events;
 
         /// <summary>
-        /// The events, for example, PUSH, PULL_REQUEST_MERGE.
+        /// The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
         /// </summary>
         public InputList<string> Events
         {
@@ -26,6 +26,10 @@ namespace Pulumi.Oci.DevOps.Inputs
 
         [Input("excludes")]
         private InputList<Inputs.BuildRunBuildRunSourceTriggerInfoActionFilterExcludeGetArgs>? _excludes;
+
+        /// <summary>
+        /// Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
+        /// </summary>
         public InputList<Inputs.BuildRunBuildRunSourceTriggerInfoActionFilterExcludeGetArgs> Excludes
         {
             get => _excludes ?? (_excludes = new InputList<Inputs.BuildRunBuildRunSourceTriggerInfoActionFilterExcludeGetArgs>());

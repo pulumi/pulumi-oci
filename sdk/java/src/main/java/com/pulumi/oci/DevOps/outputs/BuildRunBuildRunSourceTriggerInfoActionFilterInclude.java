@@ -18,6 +18,10 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilterInclude {
      * 
      */
     private @Nullable String baseRef;
+    /**
+     * @return Attributes to support include/exclude files for triggering build runs.
+     * 
+     */
     private @Nullable List<BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter> fileFilters;
     /**
      * @return Branch for push event; source branch for pull requests.
@@ -38,6 +42,10 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilterInclude {
     public Optional<String> baseRef() {
         return Optional.ofNullable(this.baseRef);
     }
+    /**
+     * @return Attributes to support include/exclude files for triggering build runs.
+     * 
+     */
     public List<BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter> fileFilters() {
         return this.fileFilters == null ? List.of() : this.fileFilters;
     }

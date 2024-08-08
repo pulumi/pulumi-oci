@@ -22,6 +22,7 @@ import * as utilities from "../utilities";
  *     repositoryId: testRepository.id,
  *     targetVersion: repositoryDiffTargetVersion,
  *     isComparisonFromMergeBase: repositoryDiffIsComparisonFromMergeBase,
+ *     targetRepositoryId: testRepository.id,
  * });
  * ```
  */
@@ -33,6 +34,7 @@ export function getRepositoryDiffs(args: GetRepositoryDiffsArgs, opts?: pulumi.I
         "filters": args.filters,
         "isComparisonFromMergeBase": args.isComparisonFromMergeBase,
         "repositoryId": args.repositoryId,
+        "targetRepositoryId": args.targetRepositoryId,
         "targetVersion": args.targetVersion,
     }, opts);
 }
@@ -55,6 +57,10 @@ export interface GetRepositoryDiffsArgs {
      */
     repositoryId: string;
     /**
+     * The target repository identifier
+     */
+    targetRepositoryId?: string;
+    /**
      * The commit or reference name where changes are coming from.
      */
     targetVersion: string;
@@ -76,6 +82,7 @@ export interface GetRepositoryDiffsResult {
     readonly id: string;
     readonly isComparisonFromMergeBase?: boolean;
     readonly repositoryId: string;
+    readonly targetRepositoryId?: string;
     readonly targetVersion: string;
 }
 /**
@@ -94,6 +101,7 @@ export interface GetRepositoryDiffsResult {
  *     repositoryId: testRepository.id,
  *     targetVersion: repositoryDiffTargetVersion,
  *     isComparisonFromMergeBase: repositoryDiffIsComparisonFromMergeBase,
+ *     targetRepositoryId: testRepository.id,
  * });
  * ```
  */
@@ -118,6 +126,10 @@ export interface GetRepositoryDiffsOutputArgs {
      * Unique repository identifier.
      */
     repositoryId: pulumi.Input<string>;
+    /**
+     * The target repository identifier
+     */
+    targetRepositoryId?: pulumi.Input<string>;
     /**
      * The commit or reference name where changes are coming from.
      */

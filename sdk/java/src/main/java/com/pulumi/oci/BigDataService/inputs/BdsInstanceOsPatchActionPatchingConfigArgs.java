@@ -38,11 +38,25 @@ public final class BdsInstanceOsPatchActionPatchingConfigArgs extends com.pulumi
         return Optional.ofNullable(this.toleranceThresholdPerBatch);
     }
 
+    @Import(name="toleranceThresholdPerDomain")
+    private @Nullable Output<Integer> toleranceThresholdPerDomain;
+
+    public Optional<Output<Integer>> toleranceThresholdPerDomain() {
+        return Optional.ofNullable(this.toleranceThresholdPerDomain);
+    }
+
     @Import(name="waitTimeBetweenBatchInSeconds")
     private @Nullable Output<Integer> waitTimeBetweenBatchInSeconds;
 
     public Optional<Output<Integer>> waitTimeBetweenBatchInSeconds() {
         return Optional.ofNullable(this.waitTimeBetweenBatchInSeconds);
+    }
+
+    @Import(name="waitTimeBetweenDomainInSeconds")
+    private @Nullable Output<Integer> waitTimeBetweenDomainInSeconds;
+
+    public Optional<Output<Integer>> waitTimeBetweenDomainInSeconds() {
+        return Optional.ofNullable(this.waitTimeBetweenDomainInSeconds);
     }
 
     private BdsInstanceOsPatchActionPatchingConfigArgs() {}
@@ -51,7 +65,9 @@ public final class BdsInstanceOsPatchActionPatchingConfigArgs extends com.pulumi
         this.batchSize = $.batchSize;
         this.patchingConfigStrategy = $.patchingConfigStrategy;
         this.toleranceThresholdPerBatch = $.toleranceThresholdPerBatch;
+        this.toleranceThresholdPerDomain = $.toleranceThresholdPerDomain;
         this.waitTimeBetweenBatchInSeconds = $.waitTimeBetweenBatchInSeconds;
+        this.waitTimeBetweenDomainInSeconds = $.waitTimeBetweenDomainInSeconds;
     }
 
     public static Builder builder() {
@@ -99,6 +115,15 @@ public final class BdsInstanceOsPatchActionPatchingConfigArgs extends com.pulumi
             return toleranceThresholdPerBatch(Output.of(toleranceThresholdPerBatch));
         }
 
+        public Builder toleranceThresholdPerDomain(@Nullable Output<Integer> toleranceThresholdPerDomain) {
+            $.toleranceThresholdPerDomain = toleranceThresholdPerDomain;
+            return this;
+        }
+
+        public Builder toleranceThresholdPerDomain(Integer toleranceThresholdPerDomain) {
+            return toleranceThresholdPerDomain(Output.of(toleranceThresholdPerDomain));
+        }
+
         public Builder waitTimeBetweenBatchInSeconds(@Nullable Output<Integer> waitTimeBetweenBatchInSeconds) {
             $.waitTimeBetweenBatchInSeconds = waitTimeBetweenBatchInSeconds;
             return this;
@@ -106,6 +131,15 @@ public final class BdsInstanceOsPatchActionPatchingConfigArgs extends com.pulumi
 
         public Builder waitTimeBetweenBatchInSeconds(Integer waitTimeBetweenBatchInSeconds) {
             return waitTimeBetweenBatchInSeconds(Output.of(waitTimeBetweenBatchInSeconds));
+        }
+
+        public Builder waitTimeBetweenDomainInSeconds(@Nullable Output<Integer> waitTimeBetweenDomainInSeconds) {
+            $.waitTimeBetweenDomainInSeconds = waitTimeBetweenDomainInSeconds;
+            return this;
+        }
+
+        public Builder waitTimeBetweenDomainInSeconds(Integer waitTimeBetweenDomainInSeconds) {
+            return waitTimeBetweenDomainInSeconds(Output.of(waitTimeBetweenDomainInSeconds));
         }
 
         public BdsInstanceOsPatchActionPatchingConfigArgs build() {

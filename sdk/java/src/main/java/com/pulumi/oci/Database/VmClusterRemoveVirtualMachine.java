@@ -466,7 +466,7 @@ public class VmClusterRemoveVirtualMachine extends com.pulumi.resources.CustomRe
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public VmClusterRemoveVirtualMachine(String name) {
+    public VmClusterRemoveVirtualMachine(java.lang.String name) {
         this(name, VmClusterRemoveVirtualMachineArgs.Empty);
     }
     /**
@@ -474,7 +474,7 @@ public class VmClusterRemoveVirtualMachine extends com.pulumi.resources.CustomRe
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public VmClusterRemoveVirtualMachine(String name, VmClusterRemoveVirtualMachineArgs args) {
+    public VmClusterRemoveVirtualMachine(java.lang.String name, VmClusterRemoveVirtualMachineArgs args) {
         this(name, args, null);
     }
     /**
@@ -483,12 +483,12 @@ public class VmClusterRemoveVirtualMachine extends com.pulumi.resources.CustomRe
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public VmClusterRemoveVirtualMachine(String name, VmClusterRemoveVirtualMachineArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/vmClusterRemoveVirtualMachine:VmClusterRemoveVirtualMachine", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public VmClusterRemoveVirtualMachine(java.lang.String name, VmClusterRemoveVirtualMachineArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/vmClusterRemoveVirtualMachine:VmClusterRemoveVirtualMachine", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private VmClusterRemoveVirtualMachine(String name, Output<String> id, @Nullable VmClusterRemoveVirtualMachineState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/vmClusterRemoveVirtualMachine:VmClusterRemoveVirtualMachine", name, state, makeResourceOptions(options, id));
+    private VmClusterRemoveVirtualMachine(java.lang.String name, Output<java.lang.String> id, @Nullable VmClusterRemoveVirtualMachineState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/vmClusterRemoveVirtualMachine:VmClusterRemoveVirtualMachine", name, state, makeResourceOptions(options, id), false);
     }
 
     private static VmClusterRemoveVirtualMachineArgs makeArgs(VmClusterRemoveVirtualMachineArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -498,7 +498,7 @@ public class VmClusterRemoveVirtualMachine extends com.pulumi.resources.CustomRe
         return args == null ? VmClusterRemoveVirtualMachineArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -514,7 +514,7 @@ public class VmClusterRemoveVirtualMachine extends com.pulumi.resources.CustomRe
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static VmClusterRemoveVirtualMachine get(String name, Output<String> id, @Nullable VmClusterRemoveVirtualMachineState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static VmClusterRemoveVirtualMachine get(java.lang.String name, Output<java.lang.String> id, @Nullable VmClusterRemoveVirtualMachineState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new VmClusterRemoveVirtualMachine(name, id, state, options);
     }
 }

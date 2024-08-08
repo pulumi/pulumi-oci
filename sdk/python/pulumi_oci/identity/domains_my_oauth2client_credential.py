@@ -1174,10 +1174,10 @@ class DomainsMyOauth2clientCredential(pulumi.CustomResource):
                  ocid: Optional[pulumi.Input[str]] = None,
                  resource_type_schema_version: Optional[pulumi.Input[str]] = None,
                  schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 scopes: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMyOauth2clientCredentialScopeArgs']]]]] = None,
+                 scopes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyOauth2clientCredentialScopeArgs', 'DomainsMyOauth2clientCredentialScopeArgsDict']]]]] = None,
                  status: Optional[pulumi.Input[str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMyOauth2clientCredentialTagArgs']]]]] = None,
-                 user: Optional[pulumi.Input[pulumi.InputType['DomainsMyOauth2clientCredentialUserArgs']]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyOauth2clientCredentialTagArgs', 'DomainsMyOauth2clientCredentialTagArgsDict']]]]] = None,
+                 user: Optional[pulumi.Input[Union['DomainsMyOauth2clientCredentialUserArgs', 'DomainsMyOauth2clientCredentialUserArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the My O Auth2 Client Credential resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -1263,7 +1263,7 @@ class DomainsMyOauth2clientCredential(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMyOauth2clientCredentialScopeArgs']]]] scopes: Scopes
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyOauth2clientCredentialScopeArgs', 'DomainsMyOauth2clientCredentialScopeArgsDict']]]] scopes: Scopes
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1286,7 +1286,7 @@ class DomainsMyOauth2clientCredential(pulumi.CustomResource):
                * returned: never
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMyOauth2clientCredentialTagArgs']]]] tags: A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyOauth2clientCredentialTagArgs', 'DomainsMyOauth2clientCredentialTagArgsDict']]]] tags: A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -1297,7 +1297,7 @@ class DomainsMyOauth2clientCredential(pulumi.CustomResource):
                * returned: request
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsMyOauth2clientCredentialUserArgs']] user: The user linked to the OAuth2 client credential.
+        :param pulumi.Input[Union['DomainsMyOauth2clientCredentialUserArgs', 'DomainsMyOauth2clientCredentialUserArgsDict']] user: The user linked to the OAuth2 client credential.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1352,10 +1352,10 @@ class DomainsMyOauth2clientCredential(pulumi.CustomResource):
                  ocid: Optional[pulumi.Input[str]] = None,
                  resource_type_schema_version: Optional[pulumi.Input[str]] = None,
                  schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 scopes: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMyOauth2clientCredentialScopeArgs']]]]] = None,
+                 scopes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyOauth2clientCredentialScopeArgs', 'DomainsMyOauth2clientCredentialScopeArgsDict']]]]] = None,
                  status: Optional[pulumi.Input[str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMyOauth2clientCredentialTagArgs']]]]] = None,
-                 user: Optional[pulumi.Input[pulumi.InputType['DomainsMyOauth2clientCredentialUserArgs']]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyOauth2clientCredentialTagArgs', 'DomainsMyOauth2clientCredentialTagArgsDict']]]]] = None,
+                 user: Optional[pulumi.Input[Union['DomainsMyOauth2clientCredentialUserArgs', 'DomainsMyOauth2clientCredentialUserArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1409,22 +1409,22 @@ class DomainsMyOauth2clientCredential(pulumi.CustomResource):
             description: Optional[pulumi.Input[str]] = None,
             domain_ocid: Optional[pulumi.Input[str]] = None,
             expires_on: Optional[pulumi.Input[str]] = None,
-            idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMyOauth2clientCredentialIdcsCreatedByArgs']]]]] = None,
+            idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyOauth2clientCredentialIdcsCreatedByArgs', 'DomainsMyOauth2clientCredentialIdcsCreatedByArgsDict']]]]] = None,
             idcs_endpoint: Optional[pulumi.Input[str]] = None,
-            idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMyOauth2clientCredentialIdcsLastModifiedByArgs']]]]] = None,
+            idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyOauth2clientCredentialIdcsLastModifiedByArgs', 'DomainsMyOauth2clientCredentialIdcsLastModifiedByArgsDict']]]]] = None,
             idcs_last_upgraded_in_release: Optional[pulumi.Input[str]] = None,
             idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             is_reset_secret: Optional[pulumi.Input[bool]] = None,
-            metas: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMyOauth2clientCredentialMetaArgs']]]]] = None,
+            metas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyOauth2clientCredentialMetaArgs', 'DomainsMyOauth2clientCredentialMetaArgsDict']]]]] = None,
             name: Optional[pulumi.Input[str]] = None,
             ocid: Optional[pulumi.Input[str]] = None,
             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            scopes: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMyOauth2clientCredentialScopeArgs']]]]] = None,
+            scopes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyOauth2clientCredentialScopeArgs', 'DomainsMyOauth2clientCredentialScopeArgsDict']]]]] = None,
             status: Optional[pulumi.Input[str]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMyOauth2clientCredentialTagArgs']]]]] = None,
+            tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyOauth2clientCredentialTagArgs', 'DomainsMyOauth2clientCredentialTagArgsDict']]]]] = None,
             tenancy_ocid: Optional[pulumi.Input[str]] = None,
-            user: Optional[pulumi.Input[pulumi.InputType['DomainsMyOauth2clientCredentialUserArgs']]] = None) -> 'DomainsMyOauth2clientCredential':
+            user: Optional[pulumi.Input[Union['DomainsMyOauth2clientCredentialUserArgs', 'DomainsMyOauth2clientCredentialUserArgsDict']]] = None) -> 'DomainsMyOauth2clientCredential':
         """
         Get an existing DomainsMyOauth2clientCredential resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -1489,7 +1489,7 @@ class DomainsMyOauth2clientCredential(pulumi.CustomResource):
                * returned: default
                * type: dateTime
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMyOauth2clientCredentialIdcsCreatedByArgs']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyOauth2clientCredentialIdcsCreatedByArgs', 'DomainsMyOauth2clientCredentialIdcsCreatedByArgsDict']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1499,7 +1499,7 @@ class DomainsMyOauth2clientCredential(pulumi.CustomResource):
                * returned: default
                * type: complex
         :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMyOauth2clientCredentialIdcsLastModifiedByArgs']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyOauth2clientCredentialIdcsLastModifiedByArgs', 'DomainsMyOauth2clientCredentialIdcsLastModifiedByArgsDict']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1542,7 +1542,7 @@ class DomainsMyOauth2clientCredential(pulumi.CustomResource):
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMyOauth2clientCredentialMetaArgs']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyOauth2clientCredentialMetaArgs', 'DomainsMyOauth2clientCredentialMetaArgsDict']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1584,7 +1584,7 @@ class DomainsMyOauth2clientCredential(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMyOauth2clientCredentialScopeArgs']]]] scopes: Scopes
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyOauth2clientCredentialScopeArgs', 'DomainsMyOauth2clientCredentialScopeArgsDict']]]] scopes: Scopes
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1607,7 +1607,7 @@ class DomainsMyOauth2clientCredential(pulumi.CustomResource):
                * returned: never
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMyOauth2clientCredentialTagArgs']]]] tags: A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyOauth2clientCredentialTagArgs', 'DomainsMyOauth2clientCredentialTagArgsDict']]]] tags: A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -1629,7 +1629,7 @@ class DomainsMyOauth2clientCredential(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsMyOauth2clientCredentialUserArgs']] user: The user linked to the OAuth2 client credential.
+        :param pulumi.Input[Union['DomainsMyOauth2clientCredentialUserArgs', 'DomainsMyOauth2clientCredentialUserArgsDict']] user: The user linked to the OAuth2 client credential.
                
                **SCIM++ Properties:**
                * caseExact: false

@@ -156,7 +156,7 @@ class AwaitableGetImagesResult(GetImagesResult):
 
 def get_images(compartment_id: Optional[str] = None,
                display_name: Optional[str] = None,
-               filters: Optional[Sequence[pulumi.InputType['GetImagesFilterArgs']]] = None,
+               filters: Optional[Sequence[Union['GetImagesFilterArgs', 'GetImagesFilterArgsDict']]] = None,
                operating_system: Optional[str] = None,
                operating_system_version: Optional[str] = None,
                shape: Optional[str] = None,
@@ -235,7 +235,7 @@ def get_images(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_images)
 def get_images_output(compartment_id: Optional[pulumi.Input[str]] = None,
                       display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                      filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetImagesFilterArgs']]]]] = None,
+                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetImagesFilterArgs', 'GetImagesFilterArgsDict']]]]] = None,
                       operating_system: Optional[pulumi.Input[Optional[str]]] = None,
                       operating_system_version: Optional[pulumi.Input[Optional[str]]] = None,
                       shape: Optional[pulumi.Input[Optional[str]]] = None,

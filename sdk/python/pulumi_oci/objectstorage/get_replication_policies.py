@@ -86,7 +86,7 @@ class AwaitableGetReplicationPoliciesResult(GetReplicationPoliciesResult):
 
 
 def get_replication_policies(bucket: Optional[str] = None,
-                             filters: Optional[Sequence[pulumi.InputType['GetReplicationPoliciesFilterArgs']]] = None,
+                             filters: Optional[Sequence[Union['GetReplicationPoliciesFilterArgs', 'GetReplicationPoliciesFilterArgsDict']]] = None,
                              namespace: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetReplicationPoliciesResult:
     """
@@ -125,7 +125,7 @@ def get_replication_policies(bucket: Optional[str] = None,
 
 @_utilities.lift_output_func(get_replication_policies)
 def get_replication_policies_output(bucket: Optional[pulumi.Input[str]] = None,
-                                    filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetReplicationPoliciesFilterArgs']]]]] = None,
+                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetReplicationPoliciesFilterArgs', 'GetReplicationPoliciesFilterArgsDict']]]]] = None,
                                     namespace: Optional[pulumi.Input[str]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetReplicationPoliciesResult]:
     """

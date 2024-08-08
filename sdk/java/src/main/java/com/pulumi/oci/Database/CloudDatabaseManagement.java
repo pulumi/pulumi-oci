@@ -229,7 +229,7 @@ public class CloudDatabaseManagement extends com.pulumi.resources.CustomResource
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public CloudDatabaseManagement(String name) {
+    public CloudDatabaseManagement(java.lang.String name) {
         this(name, CloudDatabaseManagementArgs.Empty);
     }
     /**
@@ -237,7 +237,7 @@ public class CloudDatabaseManagement extends com.pulumi.resources.CustomResource
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public CloudDatabaseManagement(String name, CloudDatabaseManagementArgs args) {
+    public CloudDatabaseManagement(java.lang.String name, CloudDatabaseManagementArgs args) {
         this(name, args, null);
     }
     /**
@@ -246,12 +246,12 @@ public class CloudDatabaseManagement extends com.pulumi.resources.CustomResource
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public CloudDatabaseManagement(String name, CloudDatabaseManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/cloudDatabaseManagement:CloudDatabaseManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public CloudDatabaseManagement(java.lang.String name, CloudDatabaseManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/cloudDatabaseManagement:CloudDatabaseManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private CloudDatabaseManagement(String name, Output<String> id, @Nullable CloudDatabaseManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/cloudDatabaseManagement:CloudDatabaseManagement", name, state, makeResourceOptions(options, id));
+    private CloudDatabaseManagement(java.lang.String name, Output<java.lang.String> id, @Nullable CloudDatabaseManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/cloudDatabaseManagement:CloudDatabaseManagement", name, state, makeResourceOptions(options, id), false);
     }
 
     private static CloudDatabaseManagementArgs makeArgs(CloudDatabaseManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -261,7 +261,7 @@ public class CloudDatabaseManagement extends com.pulumi.resources.CustomResource
         return args == null ? CloudDatabaseManagementArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -277,7 +277,7 @@ public class CloudDatabaseManagement extends com.pulumi.resources.CustomResource
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static CloudDatabaseManagement get(String name, Output<String> id, @Nullable CloudDatabaseManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static CloudDatabaseManagement get(java.lang.String name, Output<java.lang.String> id, @Nullable CloudDatabaseManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new CloudDatabaseManagement(name, id, state, options);
     }
 }

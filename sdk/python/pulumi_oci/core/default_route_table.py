@@ -206,7 +206,7 @@ class DefaultRouteTable(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  manage_default_resource_id: Optional[pulumi.Input[str]] = None,
-                 route_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DefaultRouteTableRouteRuleArgs']]]]] = None,
+                 route_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DefaultRouteTableRouteRuleArgs', 'DefaultRouteTableRouteRuleArgsDict']]]]] = None,
                  __props__=None):
         """
         Create a DefaultRouteTable resource with the given unique name, props, and options.
@@ -241,7 +241,7 @@ class DefaultRouteTable(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  manage_default_resource_id: Optional[pulumi.Input[str]] = None,
-                 route_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DefaultRouteTableRouteRuleArgs']]]]] = None,
+                 route_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DefaultRouteTableRouteRuleArgs', 'DefaultRouteTableRouteRuleArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -276,7 +276,7 @@ class DefaultRouteTable(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             manage_default_resource_id: Optional[pulumi.Input[str]] = None,
-            route_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DefaultRouteTableRouteRuleArgs']]]]] = None,
+            route_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DefaultRouteTableRouteRuleArgs', 'DefaultRouteTableRouteRuleArgsDict']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None) -> 'DefaultRouteTable':
         """

@@ -95,7 +95,7 @@ class AwaitableGetAutonomousCharacterSetsResult(GetAutonomousCharacterSetsResult
 
 
 def get_autonomous_character_sets(character_set_type: Optional[str] = None,
-                                  filters: Optional[Sequence[pulumi.InputType['GetAutonomousCharacterSetsFilterArgs']]] = None,
+                                  filters: Optional[Sequence[Union['GetAutonomousCharacterSetsFilterArgs', 'GetAutonomousCharacterSetsFilterArgsDict']]] = None,
                                   is_dedicated: Optional[bool] = None,
                                   is_shared: Optional[bool] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousCharacterSetsResult:
@@ -141,7 +141,7 @@ def get_autonomous_character_sets(character_set_type: Optional[str] = None,
 
 @_utilities.lift_output_func(get_autonomous_character_sets)
 def get_autonomous_character_sets_output(character_set_type: Optional[pulumi.Input[Optional[str]]] = None,
-                                         filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAutonomousCharacterSetsFilterArgs']]]]] = None,
+                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutonomousCharacterSetsFilterArgs', 'GetAutonomousCharacterSetsFilterArgsDict']]]]] = None,
                                          is_dedicated: Optional[pulumi.Input[Optional[bool]]] = None,
                                          is_shared: Optional[pulumi.Input[Optional[bool]]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousCharacterSetsResult]:

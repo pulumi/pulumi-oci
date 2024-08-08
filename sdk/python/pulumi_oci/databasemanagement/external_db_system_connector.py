@@ -417,7 +417,7 @@ class ExternalDbSystemConnector(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  agent_id: Optional[pulumi.Input[str]] = None,
-                 connection_infos: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalDbSystemConnectorConnectionInfoArgs']]]]] = None,
+                 connection_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExternalDbSystemConnectorConnectionInfoArgs', 'ExternalDbSystemConnectorConnectionInfoArgsDict']]]]] = None,
                  connector_type: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -452,7 +452,7 @@ class ExternalDbSystemConnector(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system connector.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalDbSystemConnectorConnectionInfoArgs']]]] connection_infos: The connection details required to connect to an external DB system component.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExternalDbSystemConnectorConnectionInfoArgs', 'ExternalDbSystemConnectorConnectionInfoArgsDict']]]] connection_infos: The connection details required to connect to an external DB system component.
         :param pulumi.Input[str] connector_type: (Updatable) The type of connector.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: The user-friendly name for the external connector. The name does not have to be unique.
@@ -510,7 +510,7 @@ class ExternalDbSystemConnector(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  agent_id: Optional[pulumi.Input[str]] = None,
-                 connection_infos: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalDbSystemConnectorConnectionInfoArgs']]]]] = None,
+                 connection_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExternalDbSystemConnectorConnectionInfoArgs', 'ExternalDbSystemConnectorConnectionInfoArgsDict']]]]] = None,
                  connector_type: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -558,7 +558,7 @@ class ExternalDbSystemConnector(pulumi.CustomResource):
             agent_id: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             connection_failure_message: Optional[pulumi.Input[str]] = None,
-            connection_infos: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalDbSystemConnectorConnectionInfoArgs']]]]] = None,
+            connection_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExternalDbSystemConnectorConnectionInfoArgs', 'ExternalDbSystemConnectorConnectionInfoArgsDict']]]]] = None,
             connection_status: Optional[pulumi.Input[str]] = None,
             connector_type: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -581,7 +581,7 @@ class ExternalDbSystemConnector(pulumi.CustomResource):
         :param pulumi.Input[str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system connector.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[str] connection_failure_message: The error message indicating the reason for connection failure or `null` if the connection was successful.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalDbSystemConnectorConnectionInfoArgs']]]] connection_infos: The connection details required to connect to an external DB system component.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExternalDbSystemConnectorConnectionInfoArgs', 'ExternalDbSystemConnectorConnectionInfoArgsDict']]]] connection_infos: The connection details required to connect to an external DB system component.
         :param pulumi.Input[str] connection_status: The status of connectivity to the external DB system component.
         :param pulumi.Input[str] connector_type: (Updatable) The type of connector.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`

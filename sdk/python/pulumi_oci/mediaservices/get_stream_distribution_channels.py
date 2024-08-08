@@ -105,7 +105,7 @@ class AwaitableGetStreamDistributionChannelsResult(GetStreamDistributionChannels
 
 def get_stream_distribution_channels(compartment_id: Optional[str] = None,
                                      display_name: Optional[str] = None,
-                                     filters: Optional[Sequence[pulumi.InputType['GetStreamDistributionChannelsFilterArgs']]] = None,
+                                     filters: Optional[Sequence[Union['GetStreamDistributionChannelsFilterArgs', 'GetStreamDistributionChannelsFilterArgsDict']]] = None,
                                      id: Optional[str] = None,
                                      state: Optional[str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetStreamDistributionChannelsResult:
@@ -153,7 +153,7 @@ def get_stream_distribution_channels(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_stream_distribution_channels)
 def get_stream_distribution_channels_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                             display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                            filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetStreamDistributionChannelsFilterArgs']]]]] = None,
+                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetStreamDistributionChannelsFilterArgs', 'GetStreamDistributionChannelsFilterArgsDict']]]]] = None,
                                             id: Optional[pulumi.Input[Optional[str]]] = None,
                                             state: Optional[pulumi.Input[Optional[str]]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetStreamDistributionChannelsResult]:

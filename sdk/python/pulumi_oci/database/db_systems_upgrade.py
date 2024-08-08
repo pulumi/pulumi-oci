@@ -1118,7 +1118,7 @@ class DbSystemsUpgrade(pulumi.CustomResource):
             data_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
             database_edition: Optional[pulumi.Input[str]] = None,
             db_system_id: Optional[pulumi.Input[str]] = None,
-            db_system_options: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemsUpgradeDbSystemOptionArgs']]]]] = None,
+            db_system_options: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DbSystemsUpgradeDbSystemOptionArgs', 'DbSystemsUpgradeDbSystemOptionArgsDict']]]]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             disk_redundancy: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
@@ -1126,7 +1126,7 @@ class DbSystemsUpgrade(pulumi.CustomResource):
             fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             hostname: Optional[pulumi.Input[str]] = None,
-            iorm_config_caches: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemsUpgradeIormConfigCachArgs']]]]] = None,
+            iorm_config_caches: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DbSystemsUpgradeIormConfigCachArgs', 'DbSystemsUpgradeIormConfigCachArgsDict']]]]] = None,
             is_snapshot_retention_days_force_updated: Optional[pulumi.Input[bool]] = None,
             kms_key_id: Optional[pulumi.Input[str]] = None,
             last_maintenance_run_id: Optional[pulumi.Input[str]] = None,
@@ -1134,7 +1134,7 @@ class DbSystemsUpgrade(pulumi.CustomResource):
             license_model: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             listener_port: Optional[pulumi.Input[int]] = None,
-            maintenance_windows: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemsUpgradeMaintenanceWindowArgs']]]]] = None,
+            maintenance_windows: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DbSystemsUpgradeMaintenanceWindowArgs', 'DbSystemsUpgradeMaintenanceWindowArgsDict']]]]] = None,
             new_gi_version: Optional[pulumi.Input[str]] = None,
             new_os_version: Optional[pulumi.Input[str]] = None,
             next_maintenance_run_id: Optional[pulumi.Input[str]] = None,
@@ -1175,7 +1175,7 @@ class DbSystemsUpgrade(pulumi.CustomResource):
         :param pulumi.Input[int] data_storage_size_in_gb: The data storage size, in gigabytes, that is currently available to the DB system. Applies only for virtual machine DB systems.
         :param pulumi.Input[str] database_edition: The Oracle Database edition that applies to all the databases on the DB system.
         :param pulumi.Input[str] db_system_id: The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemsUpgradeDbSystemOptionArgs']]]] db_system_options: The DB system options.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DbSystemsUpgradeDbSystemOptionArgs', 'DbSystemsUpgradeDbSystemOptionArgsDict']]]] db_system_options: The DB system options.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] disk_redundancy: The type of redundancy configured for the DB system. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
         :param pulumi.Input[str] display_name: The user-friendly name for the DB system. The name does not have to be unique.
@@ -1183,7 +1183,7 @@ class DbSystemsUpgrade(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] fault_domains: List of the Fault Domains in which this DB system is provisioned.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] hostname: The hostname for the DB system.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemsUpgradeIormConfigCachArgs']]]] iorm_config_caches: The IORM settings of the Exadata DB system.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DbSystemsUpgradeIormConfigCachArgs', 'DbSystemsUpgradeIormConfigCachArgsDict']]]] iorm_config_caches: The IORM settings of the Exadata DB system.
         :param pulumi.Input[bool] is_snapshot_retention_days_force_updated: If true, rollback time is updated even if operating system upgrade history contains errors.
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[str] last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
@@ -1191,7 +1191,7 @@ class DbSystemsUpgrade(pulumi.CustomResource):
         :param pulumi.Input[str] license_model: The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[int] listener_port: The port number configured for the listener on the DB system.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemsUpgradeMaintenanceWindowArgs']]]] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DbSystemsUpgradeMaintenanceWindowArgs', 'DbSystemsUpgradeMaintenanceWindowArgsDict']]]] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[str] new_gi_version: A valid Oracle Grid Infrastructure (GI) software version.
         :param pulumi.Input[str] next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param pulumi.Input[int] node_count: The number of nodes in the DB system. For RAC DB systems, the value is greater than 1.

@@ -307,7 +307,7 @@ public class JmsPlugin extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public JmsPlugin(String name) {
+    public JmsPlugin(java.lang.String name) {
         this(name, JmsPluginArgs.Empty);
     }
     /**
@@ -315,7 +315,7 @@ public class JmsPlugin extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public JmsPlugin(String name, JmsPluginArgs args) {
+    public JmsPlugin(java.lang.String name, JmsPluginArgs args) {
         this(name, args, null);
     }
     /**
@@ -324,12 +324,12 @@ public class JmsPlugin extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public JmsPlugin(String name, JmsPluginArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Jms/jmsPlugin:JmsPlugin", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public JmsPlugin(java.lang.String name, JmsPluginArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Jms/jmsPlugin:JmsPlugin", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private JmsPlugin(String name, Output<String> id, @Nullable JmsPluginState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Jms/jmsPlugin:JmsPlugin", name, state, makeResourceOptions(options, id));
+    private JmsPlugin(java.lang.String name, Output<java.lang.String> id, @Nullable JmsPluginState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Jms/jmsPlugin:JmsPlugin", name, state, makeResourceOptions(options, id), false);
     }
 
     private static JmsPluginArgs makeArgs(JmsPluginArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -339,7 +339,7 @@ public class JmsPlugin extends com.pulumi.resources.CustomResource {
         return args == null ? JmsPluginArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -355,7 +355,7 @@ public class JmsPlugin extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static JmsPlugin get(String name, Output<String> id, @Nullable JmsPluginState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static JmsPlugin get(java.lang.String name, Output<java.lang.String> id, @Nullable JmsPluginState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new JmsPlugin(name, id, state, options);
     }
 }

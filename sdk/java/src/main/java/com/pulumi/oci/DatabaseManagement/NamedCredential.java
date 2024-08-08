@@ -290,7 +290,7 @@ public class NamedCredential extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public NamedCredential(String name) {
+    public NamedCredential(java.lang.String name) {
         this(name, NamedCredentialArgs.Empty);
     }
     /**
@@ -298,7 +298,7 @@ public class NamedCredential extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public NamedCredential(String name, NamedCredentialArgs args) {
+    public NamedCredential(java.lang.String name, NamedCredentialArgs args) {
         this(name, args, null);
     }
     /**
@@ -307,12 +307,12 @@ public class NamedCredential extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public NamedCredential(String name, NamedCredentialArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseManagement/namedCredential:NamedCredential", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public NamedCredential(java.lang.String name, NamedCredentialArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DatabaseManagement/namedCredential:NamedCredential", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private NamedCredential(String name, Output<String> id, @Nullable NamedCredentialState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseManagement/namedCredential:NamedCredential", name, state, makeResourceOptions(options, id));
+    private NamedCredential(java.lang.String name, Output<java.lang.String> id, @Nullable NamedCredentialState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DatabaseManagement/namedCredential:NamedCredential", name, state, makeResourceOptions(options, id), false);
     }
 
     private static NamedCredentialArgs makeArgs(NamedCredentialArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -322,7 +322,7 @@ public class NamedCredential extends com.pulumi.resources.CustomResource {
         return args == null ? NamedCredentialArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -338,7 +338,7 @@ public class NamedCredential extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static NamedCredential get(String name, Output<String> id, @Nullable NamedCredentialState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static NamedCredential get(java.lang.String name, Output<java.lang.String> id, @Nullable NamedCredentialState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new NamedCredential(name, id, state, options);
     }
 }

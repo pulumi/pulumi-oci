@@ -276,7 +276,7 @@ class RouteTable(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 route_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['RouteTableRouteRuleArgs']]]]] = None,
+                 route_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RouteTableRouteRuleArgs', 'RouteTableRouteRuleArgsDict']]]]] = None,
                  vcn_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -316,13 +316,13 @@ class RouteTable(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            route_rules=[oci.core.RouteTableRouteRuleArgs(
-                network_entity_id=test_internet_gateway["id"],
-                cidr_block=route_table_route_rules_cidr_block,
-                description=route_table_route_rules_description,
-                destination=route_table_route_rules_destination,
-                destination_type=route_table_route_rules_destination_type,
-            )])
+            route_rules=[{
+                "network_entity_id": test_internet_gateway["id"],
+                "cidr_block": route_table_route_rules_cidr_block,
+                "description": route_table_route_rules_description,
+                "destination": route_table_route_rules_destination,
+                "destination_type": route_table_route_rules_destination_type,
+            }])
         ```
 
         ## Import
@@ -339,7 +339,7 @@ class RouteTable(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['RouteTableRouteRuleArgs']]]] route_rules: (Updatable) The collection of rules used for routing destination IPs to network devices.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RouteTableRouteRuleArgs', 'RouteTableRouteRuleArgsDict']]]] route_rules: (Updatable) The collection of rules used for routing destination IPs to network devices.
         :param pulumi.Input[str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the route table belongs to.
                
                
@@ -389,13 +389,13 @@ class RouteTable(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            route_rules=[oci.core.RouteTableRouteRuleArgs(
-                network_entity_id=test_internet_gateway["id"],
-                cidr_block=route_table_route_rules_cidr_block,
-                description=route_table_route_rules_description,
-                destination=route_table_route_rules_destination,
-                destination_type=route_table_route_rules_destination_type,
-            )])
+            route_rules=[{
+                "network_entity_id": test_internet_gateway["id"],
+                "cidr_block": route_table_route_rules_cidr_block,
+                "description": route_table_route_rules_description,
+                "destination": route_table_route_rules_destination,
+                "destination_type": route_table_route_rules_destination_type,
+            }])
         ```
 
         ## Import
@@ -425,7 +425,7 @@ class RouteTable(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 route_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['RouteTableRouteRuleArgs']]]]] = None,
+                 route_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RouteTableRouteRuleArgs', 'RouteTableRouteRuleArgsDict']]]]] = None,
                  vcn_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -462,7 +462,7 @@ class RouteTable(pulumi.CustomResource):
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            route_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['RouteTableRouteRuleArgs']]]]] = None,
+            route_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RouteTableRouteRuleArgs', 'RouteTableRouteRuleArgsDict']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             vcn_id: Optional[pulumi.Input[str]] = None) -> 'RouteTable':
@@ -477,7 +477,7 @@ class RouteTable(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['RouteTableRouteRuleArgs']]]] route_rules: (Updatable) The collection of rules used for routing destination IPs to network devices.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RouteTableRouteRuleArgs', 'RouteTableRouteRuleArgsDict']]]] route_rules: (Updatable) The collection of rules used for routing destination IPs to network devices.
         :param pulumi.Input[str] state: The route table's current state.
         :param pulumi.Input[str] time_created: The date and time the route table was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the route table belongs to.

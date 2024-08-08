@@ -130,7 +130,7 @@ class BdsInstanceOsPatchAction(pulumi.CustomResource):
                  bds_instance_id: Optional[pulumi.Input[str]] = None,
                  cluster_admin_password: Optional[pulumi.Input[str]] = None,
                  os_patch_version: Optional[pulumi.Input[str]] = None,
-                 patching_configs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BdsInstanceOsPatchActionPatchingConfigArgs']]]]] = None,
+                 patching_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BdsInstanceOsPatchActionPatchingConfigArgs', 'BdsInstanceOsPatchActionPatchingConfigArgsDict']]]]] = None,
                  __props__=None):
         """
         Create a BdsInstanceOsPatchAction resource with the given unique name, props, and options.
@@ -163,7 +163,7 @@ class BdsInstanceOsPatchAction(pulumi.CustomResource):
                  bds_instance_id: Optional[pulumi.Input[str]] = None,
                  cluster_admin_password: Optional[pulumi.Input[str]] = None,
                  os_patch_version: Optional[pulumi.Input[str]] = None,
-                 patching_configs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BdsInstanceOsPatchActionPatchingConfigArgs']]]]] = None,
+                 patching_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BdsInstanceOsPatchActionPatchingConfigArgs', 'BdsInstanceOsPatchActionPatchingConfigArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -198,7 +198,7 @@ class BdsInstanceOsPatchAction(pulumi.CustomResource):
             bds_instance_id: Optional[pulumi.Input[str]] = None,
             cluster_admin_password: Optional[pulumi.Input[str]] = None,
             os_patch_version: Optional[pulumi.Input[str]] = None,
-            patching_configs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BdsInstanceOsPatchActionPatchingConfigArgs']]]]] = None) -> 'BdsInstanceOsPatchAction':
+            patching_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BdsInstanceOsPatchActionPatchingConfigArgs', 'BdsInstanceOsPatchActionPatchingConfigArgsDict']]]]] = None) -> 'BdsInstanceOsPatchAction':
         """
         Get an existing BdsInstanceOsPatchAction resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

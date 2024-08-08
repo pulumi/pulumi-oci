@@ -88,7 +88,7 @@ class AwaitableGetManagementAgentDataSourcesResult(GetManagementAgentDataSources
             name=self.name)
 
 
-def get_management_agent_data_sources(filters: Optional[Sequence[pulumi.InputType['GetManagementAgentDataSourcesFilterArgs']]] = None,
+def get_management_agent_data_sources(filters: Optional[Sequence[Union['GetManagementAgentDataSourcesFilterArgs', 'GetManagementAgentDataSourcesFilterArgsDict']]] = None,
                                       management_agent_id: Optional[str] = None,
                                       name: Optional[str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagementAgentDataSourcesResult:
@@ -127,7 +127,7 @@ def get_management_agent_data_sources(filters: Optional[Sequence[pulumi.InputTyp
 
 
 @_utilities.lift_output_func(get_management_agent_data_sources)
-def get_management_agent_data_sources_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetManagementAgentDataSourcesFilterArgs']]]]] = None,
+def get_management_agent_data_sources_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagementAgentDataSourcesFilterArgs', 'GetManagementAgentDataSourcesFilterArgsDict']]]]] = None,
                                              management_agent_id: Optional[pulumi.Input[str]] = None,
                                              name: Optional[pulumi.Input[Optional[str]]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagementAgentDataSourcesResult]:

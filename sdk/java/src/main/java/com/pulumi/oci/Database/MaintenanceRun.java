@@ -497,7 +497,7 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public MaintenanceRun(String name) {
+    public MaintenanceRun(java.lang.String name) {
         this(name, MaintenanceRunArgs.Empty);
     }
     /**
@@ -505,7 +505,7 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public MaintenanceRun(String name, MaintenanceRunArgs args) {
+    public MaintenanceRun(java.lang.String name, MaintenanceRunArgs args) {
         this(name, args, null);
     }
     /**
@@ -514,12 +514,12 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public MaintenanceRun(String name, MaintenanceRunArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/maintenanceRun:MaintenanceRun", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public MaintenanceRun(java.lang.String name, MaintenanceRunArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/maintenanceRun:MaintenanceRun", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private MaintenanceRun(String name, Output<String> id, @Nullable MaintenanceRunState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/maintenanceRun:MaintenanceRun", name, state, makeResourceOptions(options, id));
+    private MaintenanceRun(java.lang.String name, Output<java.lang.String> id, @Nullable MaintenanceRunState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/maintenanceRun:MaintenanceRun", name, state, makeResourceOptions(options, id), false);
     }
 
     private static MaintenanceRunArgs makeArgs(MaintenanceRunArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -529,7 +529,7 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
         return args == null ? MaintenanceRunArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -545,7 +545,7 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static MaintenanceRun get(String name, Output<String> id, @Nullable MaintenanceRunState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static MaintenanceRun get(java.lang.String name, Output<java.lang.String> id, @Nullable MaintenanceRunState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new MaintenanceRun(name, id, state, options);
     }
 }

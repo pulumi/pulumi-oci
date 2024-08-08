@@ -306,7 +306,7 @@ public class DiscoveryJob extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DiscoveryJob(String name) {
+    public DiscoveryJob(java.lang.String name) {
         this(name, DiscoveryJobArgs.Empty);
     }
     /**
@@ -314,7 +314,7 @@ public class DiscoveryJob extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DiscoveryJob(String name, DiscoveryJobArgs args) {
+    public DiscoveryJob(java.lang.String name, DiscoveryJobArgs args) {
         this(name, args, null);
     }
     /**
@@ -323,12 +323,12 @@ public class DiscoveryJob extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DiscoveryJob(String name, DiscoveryJobArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:StackMonitoring/discoveryJob:DiscoveryJob", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DiscoveryJob(java.lang.String name, DiscoveryJobArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:StackMonitoring/discoveryJob:DiscoveryJob", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DiscoveryJob(String name, Output<String> id, @Nullable DiscoveryJobState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:StackMonitoring/discoveryJob:DiscoveryJob", name, state, makeResourceOptions(options, id));
+    private DiscoveryJob(java.lang.String name, Output<java.lang.String> id, @Nullable DiscoveryJobState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:StackMonitoring/discoveryJob:DiscoveryJob", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DiscoveryJobArgs makeArgs(DiscoveryJobArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -338,7 +338,7 @@ public class DiscoveryJob extends com.pulumi.resources.CustomResource {
         return args == null ? DiscoveryJobArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -354,7 +354,7 @@ public class DiscoveryJob extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DiscoveryJob get(String name, Output<String> id, @Nullable DiscoveryJobState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DiscoveryJob get(java.lang.String name, Output<java.lang.String> id, @Nullable DiscoveryJobState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DiscoveryJob(name, id, state, options);
     }
 }

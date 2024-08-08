@@ -196,7 +196,7 @@ public class DrgRouteDistribution extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DrgRouteDistribution(String name) {
+    public DrgRouteDistribution(java.lang.String name) {
         this(name, DrgRouteDistributionArgs.Empty);
     }
     /**
@@ -204,7 +204,7 @@ public class DrgRouteDistribution extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DrgRouteDistribution(String name, DrgRouteDistributionArgs args) {
+    public DrgRouteDistribution(java.lang.String name, DrgRouteDistributionArgs args) {
         this(name, args, null);
     }
     /**
@@ -213,12 +213,12 @@ public class DrgRouteDistribution extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DrgRouteDistribution(String name, DrgRouteDistributionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/drgRouteDistribution:DrgRouteDistribution", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DrgRouteDistribution(java.lang.String name, DrgRouteDistributionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Core/drgRouteDistribution:DrgRouteDistribution", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DrgRouteDistribution(String name, Output<String> id, @Nullable DrgRouteDistributionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/drgRouteDistribution:DrgRouteDistribution", name, state, makeResourceOptions(options, id));
+    private DrgRouteDistribution(java.lang.String name, Output<java.lang.String> id, @Nullable DrgRouteDistributionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Core/drgRouteDistribution:DrgRouteDistribution", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DrgRouteDistributionArgs makeArgs(DrgRouteDistributionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -228,7 +228,7 @@ public class DrgRouteDistribution extends com.pulumi.resources.CustomResource {
         return args == null ? DrgRouteDistributionArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -244,7 +244,7 @@ public class DrgRouteDistribution extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DrgRouteDistribution get(String name, Output<String> id, @Nullable DrgRouteDistributionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DrgRouteDistribution get(java.lang.String name, Output<java.lang.String> id, @Nullable DrgRouteDistributionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DrgRouteDistribution(name, id, state, options);
     }
 }

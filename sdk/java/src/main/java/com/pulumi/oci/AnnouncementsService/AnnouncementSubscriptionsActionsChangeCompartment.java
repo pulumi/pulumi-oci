@@ -106,7 +106,7 @@ public class AnnouncementSubscriptionsActionsChangeCompartment extends com.pulum
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public AnnouncementSubscriptionsActionsChangeCompartment(String name) {
+    public AnnouncementSubscriptionsActionsChangeCompartment(java.lang.String name) {
         this(name, AnnouncementSubscriptionsActionsChangeCompartmentArgs.Empty);
     }
     /**
@@ -114,7 +114,7 @@ public class AnnouncementSubscriptionsActionsChangeCompartment extends com.pulum
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public AnnouncementSubscriptionsActionsChangeCompartment(String name, AnnouncementSubscriptionsActionsChangeCompartmentArgs args) {
+    public AnnouncementSubscriptionsActionsChangeCompartment(java.lang.String name, AnnouncementSubscriptionsActionsChangeCompartmentArgs args) {
         this(name, args, null);
     }
     /**
@@ -123,12 +123,12 @@ public class AnnouncementSubscriptionsActionsChangeCompartment extends com.pulum
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public AnnouncementSubscriptionsActionsChangeCompartment(String name, AnnouncementSubscriptionsActionsChangeCompartmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:AnnouncementsService/announcementSubscriptionsActionsChangeCompartment:AnnouncementSubscriptionsActionsChangeCompartment", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public AnnouncementSubscriptionsActionsChangeCompartment(java.lang.String name, AnnouncementSubscriptionsActionsChangeCompartmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:AnnouncementsService/announcementSubscriptionsActionsChangeCompartment:AnnouncementSubscriptionsActionsChangeCompartment", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private AnnouncementSubscriptionsActionsChangeCompartment(String name, Output<String> id, @Nullable AnnouncementSubscriptionsActionsChangeCompartmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:AnnouncementsService/announcementSubscriptionsActionsChangeCompartment:AnnouncementSubscriptionsActionsChangeCompartment", name, state, makeResourceOptions(options, id));
+    private AnnouncementSubscriptionsActionsChangeCompartment(java.lang.String name, Output<java.lang.String> id, @Nullable AnnouncementSubscriptionsActionsChangeCompartmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:AnnouncementsService/announcementSubscriptionsActionsChangeCompartment:AnnouncementSubscriptionsActionsChangeCompartment", name, state, makeResourceOptions(options, id), false);
     }
 
     private static AnnouncementSubscriptionsActionsChangeCompartmentArgs makeArgs(AnnouncementSubscriptionsActionsChangeCompartmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -138,7 +138,7 @@ public class AnnouncementSubscriptionsActionsChangeCompartment extends com.pulum
         return args == null ? AnnouncementSubscriptionsActionsChangeCompartmentArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -154,7 +154,7 @@ public class AnnouncementSubscriptionsActionsChangeCompartment extends com.pulum
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static AnnouncementSubscriptionsActionsChangeCompartment get(String name, Output<String> id, @Nullable AnnouncementSubscriptionsActionsChangeCompartmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static AnnouncementSubscriptionsActionsChangeCompartment get(java.lang.String name, Output<java.lang.String> id, @Nullable AnnouncementSubscriptionsActionsChangeCompartmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new AnnouncementSubscriptionsActionsChangeCompartment(name, id, state, options);
     }
 }

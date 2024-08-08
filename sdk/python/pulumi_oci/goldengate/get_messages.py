@@ -77,7 +77,7 @@ class AwaitableGetMessagesResult(GetMessagesResult):
 
 
 def get_messages(deployment_id: Optional[str] = None,
-                 filters: Optional[Sequence[pulumi.InputType['GetMessagesFilterArgs']]] = None,
+                 filters: Optional[Sequence[Union['GetMessagesFilterArgs', 'GetMessagesFilterArgsDict']]] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMessagesResult:
     """
     This data source provides the list of Messages in Oracle Cloud Infrastructure Golden Gate service.
@@ -111,7 +111,7 @@ def get_messages(deployment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_messages)
 def get_messages_output(deployment_id: Optional[pulumi.Input[str]] = None,
-                        filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetMessagesFilterArgs']]]]] = None,
+                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMessagesFilterArgs', 'GetMessagesFilterArgsDict']]]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMessagesResult]:
     """
     This data source provides the list of Messages in Oracle Cloud Infrastructure Golden Gate service.

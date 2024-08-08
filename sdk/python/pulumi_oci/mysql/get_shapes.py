@@ -111,7 +111,7 @@ class AwaitableGetShapesResult(GetShapesResult):
 
 def get_shapes(availability_domain: Optional[str] = None,
                compartment_id: Optional[str] = None,
-               filters: Optional[Sequence[pulumi.InputType['GetShapesFilterArgs']]] = None,
+               filters: Optional[Sequence[Union['GetShapesFilterArgs', 'GetShapesFilterArgsDict']]] = None,
                is_supported_fors: Optional[Sequence[str]] = None,
                name: Optional[str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetShapesResult:
@@ -163,7 +163,7 @@ def get_shapes(availability_domain: Optional[str] = None,
 @_utilities.lift_output_func(get_shapes)
 def get_shapes_output(availability_domain: Optional[pulumi.Input[Optional[str]]] = None,
                       compartment_id: Optional[pulumi.Input[str]] = None,
-                      filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetShapesFilterArgs']]]]] = None,
+                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetShapesFilterArgs', 'GetShapesFilterArgsDict']]]]] = None,
                       is_supported_fors: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                       name: Optional[pulumi.Input[Optional[str]]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetShapesResult]:

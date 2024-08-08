@@ -245,7 +245,7 @@ public class GenericArtifact extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public GenericArtifact(String name) {
+    public GenericArtifact(java.lang.String name) {
         this(name, GenericArtifactArgs.Empty);
     }
     /**
@@ -253,7 +253,7 @@ public class GenericArtifact extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public GenericArtifact(String name, GenericArtifactArgs args) {
+    public GenericArtifact(java.lang.String name, GenericArtifactArgs args) {
         this(name, args, null);
     }
     /**
@@ -262,12 +262,12 @@ public class GenericArtifact extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public GenericArtifact(String name, GenericArtifactArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Artifacts/genericArtifact:GenericArtifact", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public GenericArtifact(java.lang.String name, GenericArtifactArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Artifacts/genericArtifact:GenericArtifact", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private GenericArtifact(String name, Output<String> id, @Nullable GenericArtifactState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Artifacts/genericArtifact:GenericArtifact", name, state, makeResourceOptions(options, id));
+    private GenericArtifact(java.lang.String name, Output<java.lang.String> id, @Nullable GenericArtifactState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Artifacts/genericArtifact:GenericArtifact", name, state, makeResourceOptions(options, id), false);
     }
 
     private static GenericArtifactArgs makeArgs(GenericArtifactArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -277,7 +277,7 @@ public class GenericArtifact extends com.pulumi.resources.CustomResource {
         return args == null ? GenericArtifactArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -293,7 +293,7 @@ public class GenericArtifact extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static GenericArtifact get(String name, Output<String> id, @Nullable GenericArtifactState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static GenericArtifact get(java.lang.String name, Output<java.lang.String> id, @Nullable GenericArtifactState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new GenericArtifact(name, id, state, options);
     }
 }

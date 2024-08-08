@@ -787,7 +787,7 @@ class MaintenanceRun(pulumi.CustomResource):
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             estimated_component_patching_start_time: Optional[pulumi.Input[str]] = None,
-            estimated_patching_times: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MaintenanceRunEstimatedPatchingTimeArgs']]]]] = None,
+            estimated_patching_times: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MaintenanceRunEstimatedPatchingTimeArgs', 'MaintenanceRunEstimatedPatchingTimeArgsDict']]]]] = None,
             is_custom_action_timeout_enabled: Optional[pulumi.Input[bool]] = None,
             is_dst_file_update_enabled: Optional[pulumi.Input[bool]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
@@ -823,7 +823,7 @@ class MaintenanceRun(pulumi.CustomResource):
         :param pulumi.Input[str] description: Description of the maintenance run.
         :param pulumi.Input[str] display_name: The user-friendly name for the maintenance run.
         :param pulumi.Input[str] estimated_component_patching_start_time: The estimated start time of the next infrastruture component patching operation.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MaintenanceRunEstimatedPatchingTimeArgs']]]] estimated_patching_times: The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MaintenanceRunEstimatedPatchingTimeArgs', 'MaintenanceRunEstimatedPatchingTimeArgsDict']]]] estimated_patching_times: The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
         :param pulumi.Input[bool] is_custom_action_timeout_enabled: If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
         :param pulumi.Input[bool] is_dst_file_update_enabled: Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.

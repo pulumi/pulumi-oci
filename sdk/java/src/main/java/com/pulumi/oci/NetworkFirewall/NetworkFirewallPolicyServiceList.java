@@ -149,7 +149,7 @@ public class NetworkFirewallPolicyServiceList extends com.pulumi.resources.Custo
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public NetworkFirewallPolicyServiceList(String name) {
+    public NetworkFirewallPolicyServiceList(java.lang.String name) {
         this(name, NetworkFirewallPolicyServiceListArgs.Empty);
     }
     /**
@@ -157,7 +157,7 @@ public class NetworkFirewallPolicyServiceList extends com.pulumi.resources.Custo
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public NetworkFirewallPolicyServiceList(String name, NetworkFirewallPolicyServiceListArgs args) {
+    public NetworkFirewallPolicyServiceList(java.lang.String name, NetworkFirewallPolicyServiceListArgs args) {
         this(name, args, null);
     }
     /**
@@ -166,12 +166,12 @@ public class NetworkFirewallPolicyServiceList extends com.pulumi.resources.Custo
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public NetworkFirewallPolicyServiceList(String name, NetworkFirewallPolicyServiceListArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:NetworkFirewall/networkFirewallPolicyServiceList:NetworkFirewallPolicyServiceList", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public NetworkFirewallPolicyServiceList(java.lang.String name, NetworkFirewallPolicyServiceListArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:NetworkFirewall/networkFirewallPolicyServiceList:NetworkFirewallPolicyServiceList", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private NetworkFirewallPolicyServiceList(String name, Output<String> id, @Nullable NetworkFirewallPolicyServiceListState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:NetworkFirewall/networkFirewallPolicyServiceList:NetworkFirewallPolicyServiceList", name, state, makeResourceOptions(options, id));
+    private NetworkFirewallPolicyServiceList(java.lang.String name, Output<java.lang.String> id, @Nullable NetworkFirewallPolicyServiceListState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:NetworkFirewall/networkFirewallPolicyServiceList:NetworkFirewallPolicyServiceList", name, state, makeResourceOptions(options, id), false);
     }
 
     private static NetworkFirewallPolicyServiceListArgs makeArgs(NetworkFirewallPolicyServiceListArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -181,7 +181,7 @@ public class NetworkFirewallPolicyServiceList extends com.pulumi.resources.Custo
         return args == null ? NetworkFirewallPolicyServiceListArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -197,7 +197,7 @@ public class NetworkFirewallPolicyServiceList extends com.pulumi.resources.Custo
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static NetworkFirewallPolicyServiceList get(String name, Output<String> id, @Nullable NetworkFirewallPolicyServiceListState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static NetworkFirewallPolicyServiceList get(java.lang.String name, Output<java.lang.String> id, @Nullable NetworkFirewallPolicyServiceListState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new NetworkFirewallPolicyServiceList(name, id, state, options);
     }
 }

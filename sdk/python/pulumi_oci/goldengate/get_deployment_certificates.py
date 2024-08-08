@@ -92,7 +92,7 @@ class AwaitableGetDeploymentCertificatesResult(GetDeploymentCertificatesResult):
 
 
 def get_deployment_certificates(deployment_id: Optional[str] = None,
-                                filters: Optional[Sequence[pulumi.InputType['GetDeploymentCertificatesFilterArgs']]] = None,
+                                filters: Optional[Sequence[Union['GetDeploymentCertificatesFilterArgs', 'GetDeploymentCertificatesFilterArgsDict']]] = None,
                                 state: Optional[str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDeploymentCertificatesResult:
     """
@@ -131,7 +131,7 @@ def get_deployment_certificates(deployment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_deployment_certificates)
 def get_deployment_certificates_output(deployment_id: Optional[pulumi.Input[str]] = None,
-                                       filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDeploymentCertificatesFilterArgs']]]]] = None,
+                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDeploymentCertificatesFilterArgs', 'GetDeploymentCertificatesFilterArgsDict']]]]] = None,
                                        state: Optional[pulumi.Input[Optional[str]]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDeploymentCertificatesResult]:
     """

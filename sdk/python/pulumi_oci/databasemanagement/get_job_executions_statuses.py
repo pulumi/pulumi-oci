@@ -120,7 +120,7 @@ class AwaitableGetJobExecutionsStatusesResult(GetJobExecutionsStatusesResult):
 
 def get_job_executions_statuses(compartment_id: Optional[str] = None,
                                 end_time: Optional[str] = None,
-                                filters: Optional[Sequence[pulumi.InputType['GetJobExecutionsStatusesFilterArgs']]] = None,
+                                filters: Optional[Sequence[Union['GetJobExecutionsStatusesFilterArgs', 'GetJobExecutionsStatusesFilterArgsDict']]] = None,
                                 id: Optional[str] = None,
                                 managed_database_group_id: Optional[str] = None,
                                 managed_database_id: Optional[str] = None,
@@ -183,7 +183,7 @@ def get_job_executions_statuses(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_job_executions_statuses)
 def get_job_executions_statuses_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                        end_time: Optional[pulumi.Input[str]] = None,
-                                       filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetJobExecutionsStatusesFilterArgs']]]]] = None,
+                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetJobExecutionsStatusesFilterArgs', 'GetJobExecutionsStatusesFilterArgsDict']]]]] = None,
                                        id: Optional[pulumi.Input[Optional[str]]] = None,
                                        managed_database_group_id: Optional[pulumi.Input[Optional[str]]] = None,
                                        managed_database_id: Optional[pulumi.Input[Optional[str]]] = None,

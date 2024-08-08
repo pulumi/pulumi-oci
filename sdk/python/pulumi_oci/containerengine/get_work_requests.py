@@ -120,7 +120,7 @@ class AwaitableGetWorkRequestsResult(GetWorkRequestsResult):
 
 def get_work_requests(cluster_id: Optional[str] = None,
                       compartment_id: Optional[str] = None,
-                      filters: Optional[Sequence[pulumi.InputType['GetWorkRequestsFilterArgs']]] = None,
+                      filters: Optional[Sequence[Union['GetWorkRequestsFilterArgs', 'GetWorkRequestsFilterArgsDict']]] = None,
                       resource_id: Optional[str] = None,
                       resource_type: Optional[str] = None,
                       statuses: Optional[Sequence[str]] = None,
@@ -174,7 +174,7 @@ def get_work_requests(cluster_id: Optional[str] = None,
 @_utilities.lift_output_func(get_work_requests)
 def get_work_requests_output(cluster_id: Optional[pulumi.Input[Optional[str]]] = None,
                              compartment_id: Optional[pulumi.Input[str]] = None,
-                             filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetWorkRequestsFilterArgs']]]]] = None,
+                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetWorkRequestsFilterArgs', 'GetWorkRequestsFilterArgsDict']]]]] = None,
                              resource_id: Optional[pulumi.Input[Optional[str]]] = None,
                              resource_type: Optional[pulumi.Input[Optional[str]]] = None,
                              statuses: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,

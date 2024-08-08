@@ -224,7 +224,7 @@ public class SecurityPolicyDeployment extends com.pulumi.resources.CustomResourc
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public SecurityPolicyDeployment(String name) {
+    public SecurityPolicyDeployment(java.lang.String name) {
         this(name, SecurityPolicyDeploymentArgs.Empty);
     }
     /**
@@ -232,7 +232,7 @@ public class SecurityPolicyDeployment extends com.pulumi.resources.CustomResourc
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public SecurityPolicyDeployment(String name, SecurityPolicyDeploymentArgs args) {
+    public SecurityPolicyDeployment(java.lang.String name, SecurityPolicyDeploymentArgs args) {
         this(name, args, null);
     }
     /**
@@ -241,12 +241,12 @@ public class SecurityPolicyDeployment extends com.pulumi.resources.CustomResourc
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public SecurityPolicyDeployment(String name, SecurityPolicyDeploymentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/securityPolicyDeployment:SecurityPolicyDeployment", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public SecurityPolicyDeployment(java.lang.String name, SecurityPolicyDeploymentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataSafe/securityPolicyDeployment:SecurityPolicyDeployment", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private SecurityPolicyDeployment(String name, Output<String> id, @Nullable SecurityPolicyDeploymentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/securityPolicyDeployment:SecurityPolicyDeployment", name, state, makeResourceOptions(options, id));
+    private SecurityPolicyDeployment(java.lang.String name, Output<java.lang.String> id, @Nullable SecurityPolicyDeploymentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataSafe/securityPolicyDeployment:SecurityPolicyDeployment", name, state, makeResourceOptions(options, id), false);
     }
 
     private static SecurityPolicyDeploymentArgs makeArgs(SecurityPolicyDeploymentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -256,7 +256,7 @@ public class SecurityPolicyDeployment extends com.pulumi.resources.CustomResourc
         return args == null ? SecurityPolicyDeploymentArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -272,7 +272,7 @@ public class SecurityPolicyDeployment extends com.pulumi.resources.CustomResourc
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static SecurityPolicyDeployment get(String name, Output<String> id, @Nullable SecurityPolicyDeploymentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static SecurityPolicyDeployment get(java.lang.String name, Output<java.lang.String> id, @Nullable SecurityPolicyDeploymentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new SecurityPolicyDeployment(name, id, state, options);
     }
 }

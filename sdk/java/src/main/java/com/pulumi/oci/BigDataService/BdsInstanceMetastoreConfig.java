@@ -237,7 +237,7 @@ public class BdsInstanceMetastoreConfig extends com.pulumi.resources.CustomResou
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public BdsInstanceMetastoreConfig(String name) {
+    public BdsInstanceMetastoreConfig(java.lang.String name) {
         this(name, BdsInstanceMetastoreConfigArgs.Empty);
     }
     /**
@@ -245,7 +245,7 @@ public class BdsInstanceMetastoreConfig extends com.pulumi.resources.CustomResou
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public BdsInstanceMetastoreConfig(String name, BdsInstanceMetastoreConfigArgs args) {
+    public BdsInstanceMetastoreConfig(java.lang.String name, BdsInstanceMetastoreConfigArgs args) {
         this(name, args, null);
     }
     /**
@@ -254,12 +254,12 @@ public class BdsInstanceMetastoreConfig extends com.pulumi.resources.CustomResou
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public BdsInstanceMetastoreConfig(String name, BdsInstanceMetastoreConfigArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:BigDataService/bdsInstanceMetastoreConfig:BdsInstanceMetastoreConfig", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public BdsInstanceMetastoreConfig(java.lang.String name, BdsInstanceMetastoreConfigArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:BigDataService/bdsInstanceMetastoreConfig:BdsInstanceMetastoreConfig", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private BdsInstanceMetastoreConfig(String name, Output<String> id, @Nullable BdsInstanceMetastoreConfigState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:BigDataService/bdsInstanceMetastoreConfig:BdsInstanceMetastoreConfig", name, state, makeResourceOptions(options, id));
+    private BdsInstanceMetastoreConfig(java.lang.String name, Output<java.lang.String> id, @Nullable BdsInstanceMetastoreConfigState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:BigDataService/bdsInstanceMetastoreConfig:BdsInstanceMetastoreConfig", name, state, makeResourceOptions(options, id), false);
     }
 
     private static BdsInstanceMetastoreConfigArgs makeArgs(BdsInstanceMetastoreConfigArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -269,7 +269,7 @@ public class BdsInstanceMetastoreConfig extends com.pulumi.resources.CustomResou
         return args == null ? BdsInstanceMetastoreConfigArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .additionalSecretOutputs(List.of(
@@ -289,7 +289,7 @@ public class BdsInstanceMetastoreConfig extends com.pulumi.resources.CustomResou
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static BdsInstanceMetastoreConfig get(String name, Output<String> id, @Nullable BdsInstanceMetastoreConfigState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static BdsInstanceMetastoreConfig get(java.lang.String name, Output<java.lang.String> id, @Nullable BdsInstanceMetastoreConfigState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new BdsInstanceMetastoreConfig(name, id, state, options);
     }
 }

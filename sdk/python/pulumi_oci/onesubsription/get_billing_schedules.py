@@ -98,7 +98,7 @@ class AwaitableGetBillingSchedulesResult(GetBillingSchedulesResult):
 
 
 def get_billing_schedules(compartment_id: Optional[str] = None,
-                          filters: Optional[Sequence[pulumi.InputType['GetBillingSchedulesFilterArgs']]] = None,
+                          filters: Optional[Sequence[Union['GetBillingSchedulesFilterArgs', 'GetBillingSchedulesFilterArgsDict']]] = None,
                           subscribed_service_id: Optional[str] = None,
                           subscription_id: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBillingSchedulesResult:
@@ -143,7 +143,7 @@ def get_billing_schedules(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_billing_schedules)
 def get_billing_schedules_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetBillingSchedulesFilterArgs']]]]] = None,
+                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBillingSchedulesFilterArgs', 'GetBillingSchedulesFilterArgsDict']]]]] = None,
                                  subscribed_service_id: Optional[pulumi.Input[Optional[str]]] = None,
                                  subscription_id: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBillingSchedulesResult]:

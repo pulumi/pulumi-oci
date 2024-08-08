@@ -517,7 +517,7 @@ public class OperatorControlAssignment extends com.pulumi.resources.CustomResour
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public OperatorControlAssignment(String name) {
+    public OperatorControlAssignment(java.lang.String name) {
         this(name, OperatorControlAssignmentArgs.Empty);
     }
     /**
@@ -525,7 +525,7 @@ public class OperatorControlAssignment extends com.pulumi.resources.CustomResour
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public OperatorControlAssignment(String name, OperatorControlAssignmentArgs args) {
+    public OperatorControlAssignment(java.lang.String name, OperatorControlAssignmentArgs args) {
         this(name, args, null);
     }
     /**
@@ -534,12 +534,12 @@ public class OperatorControlAssignment extends com.pulumi.resources.CustomResour
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public OperatorControlAssignment(String name, OperatorControlAssignmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:OperatorAccessControl/operatorControlAssignment:OperatorControlAssignment", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public OperatorControlAssignment(java.lang.String name, OperatorControlAssignmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:OperatorAccessControl/operatorControlAssignment:OperatorControlAssignment", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private OperatorControlAssignment(String name, Output<String> id, @Nullable OperatorControlAssignmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:OperatorAccessControl/operatorControlAssignment:OperatorControlAssignment", name, state, makeResourceOptions(options, id));
+    private OperatorControlAssignment(java.lang.String name, Output<java.lang.String> id, @Nullable OperatorControlAssignmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:OperatorAccessControl/operatorControlAssignment:OperatorControlAssignment", name, state, makeResourceOptions(options, id), false);
     }
 
     private static OperatorControlAssignmentArgs makeArgs(OperatorControlAssignmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -549,7 +549,7 @@ public class OperatorControlAssignment extends com.pulumi.resources.CustomResour
         return args == null ? OperatorControlAssignmentArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -565,7 +565,7 @@ public class OperatorControlAssignment extends com.pulumi.resources.CustomResour
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static OperatorControlAssignment get(String name, Output<String> id, @Nullable OperatorControlAssignmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static OperatorControlAssignment get(java.lang.String name, Output<java.lang.String> id, @Nullable OperatorControlAssignmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new OperatorControlAssignment(name, id, state, options);
     }
 }

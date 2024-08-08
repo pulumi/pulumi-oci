@@ -85,7 +85,7 @@ class AwaitableGetTunnelSecurityAssociationsResult(GetTunnelSecurityAssociations
             tunnel_security_associations=self.tunnel_security_associations)
 
 
-def get_tunnel_security_associations(filters: Optional[Sequence[pulumi.InputType['GetTunnelSecurityAssociationsFilterArgs']]] = None,
+def get_tunnel_security_associations(filters: Optional[Sequence[Union['GetTunnelSecurityAssociationsFilterArgs', 'GetTunnelSecurityAssociationsFilterArgsDict']]] = None,
                                      ipsec_id: Optional[str] = None,
                                      tunnel_id: Optional[str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetTunnelSecurityAssociationsResult:
@@ -124,7 +124,7 @@ def get_tunnel_security_associations(filters: Optional[Sequence[pulumi.InputType
 
 
 @_utilities.lift_output_func(get_tunnel_security_associations)
-def get_tunnel_security_associations_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetTunnelSecurityAssociationsFilterArgs']]]]] = None,
+def get_tunnel_security_associations_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetTunnelSecurityAssociationsFilterArgs', 'GetTunnelSecurityAssociationsFilterArgsDict']]]]] = None,
                                             ipsec_id: Optional[pulumi.Input[str]] = None,
                                             tunnel_id: Optional[pulumi.Input[str]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTunnelSecurityAssociationsResult]:

@@ -76,7 +76,7 @@ class AwaitableGetUserAssessmentUserAccessAnalyticsResult(GetUserAssessmentUserA
             user_assessment_id=self.user_assessment_id)
 
 
-def get_user_assessment_user_access_analytics(filters: Optional[Sequence[pulumi.InputType['GetUserAssessmentUserAccessAnalyticsFilterArgs']]] = None,
+def get_user_assessment_user_access_analytics(filters: Optional[Sequence[Union['GetUserAssessmentUserAccessAnalyticsFilterArgs', 'GetUserAssessmentUserAccessAnalyticsFilterArgsDict']]] = None,
                                               user_assessment_id: Optional[str] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetUserAssessmentUserAccessAnalyticsResult:
     """
@@ -110,7 +110,7 @@ def get_user_assessment_user_access_analytics(filters: Optional[Sequence[pulumi.
 
 
 @_utilities.lift_output_func(get_user_assessment_user_access_analytics)
-def get_user_assessment_user_access_analytics_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetUserAssessmentUserAccessAnalyticsFilterArgs']]]]] = None,
+def get_user_assessment_user_access_analytics_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetUserAssessmentUserAccessAnalyticsFilterArgs', 'GetUserAssessmentUserAccessAnalyticsFilterArgsDict']]]]] = None,
                                                      user_assessment_id: Optional[pulumi.Input[str]] = None,
                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUserAssessmentUserAccessAnalyticsResult]:
     """

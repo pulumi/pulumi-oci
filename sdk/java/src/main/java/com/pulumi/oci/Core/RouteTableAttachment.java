@@ -98,7 +98,7 @@ public class RouteTableAttachment extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public RouteTableAttachment(String name) {
+    public RouteTableAttachment(java.lang.String name) {
         this(name, RouteTableAttachmentArgs.Empty);
     }
     /**
@@ -106,7 +106,7 @@ public class RouteTableAttachment extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public RouteTableAttachment(String name, RouteTableAttachmentArgs args) {
+    public RouteTableAttachment(java.lang.String name, RouteTableAttachmentArgs args) {
         this(name, args, null);
     }
     /**
@@ -115,12 +115,12 @@ public class RouteTableAttachment extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public RouteTableAttachment(String name, RouteTableAttachmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/routeTableAttachment:RouteTableAttachment", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public RouteTableAttachment(java.lang.String name, RouteTableAttachmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Core/routeTableAttachment:RouteTableAttachment", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private RouteTableAttachment(String name, Output<String> id, @Nullable RouteTableAttachmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/routeTableAttachment:RouteTableAttachment", name, state, makeResourceOptions(options, id));
+    private RouteTableAttachment(java.lang.String name, Output<java.lang.String> id, @Nullable RouteTableAttachmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Core/routeTableAttachment:RouteTableAttachment", name, state, makeResourceOptions(options, id), false);
     }
 
     private static RouteTableAttachmentArgs makeArgs(RouteTableAttachmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -130,7 +130,7 @@ public class RouteTableAttachment extends com.pulumi.resources.CustomResource {
         return args == null ? RouteTableAttachmentArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -146,7 +146,7 @@ public class RouteTableAttachment extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static RouteTableAttachment get(String name, Output<String> id, @Nullable RouteTableAttachmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static RouteTableAttachment get(java.lang.String name, Output<java.lang.String> id, @Nullable RouteTableAttachmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new RouteTableAttachment(name, id, state, options);
     }
 }

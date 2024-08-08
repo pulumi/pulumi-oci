@@ -119,7 +119,7 @@ public class ManagedInstanceGroupUpdateAllPackagesManagement extends com.pulumi.
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ManagedInstanceGroupUpdateAllPackagesManagement(String name) {
+    public ManagedInstanceGroupUpdateAllPackagesManagement(java.lang.String name) {
         this(name, ManagedInstanceGroupUpdateAllPackagesManagementArgs.Empty);
     }
     /**
@@ -127,7 +127,7 @@ public class ManagedInstanceGroupUpdateAllPackagesManagement extends com.pulumi.
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ManagedInstanceGroupUpdateAllPackagesManagement(String name, ManagedInstanceGroupUpdateAllPackagesManagementArgs args) {
+    public ManagedInstanceGroupUpdateAllPackagesManagement(java.lang.String name, ManagedInstanceGroupUpdateAllPackagesManagementArgs args) {
         this(name, args, null);
     }
     /**
@@ -136,12 +136,12 @@ public class ManagedInstanceGroupUpdateAllPackagesManagement extends com.pulumi.
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ManagedInstanceGroupUpdateAllPackagesManagement(String name, ManagedInstanceGroupUpdateAllPackagesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:OsManagementHub/managedInstanceGroupUpdateAllPackagesManagement:ManagedInstanceGroupUpdateAllPackagesManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ManagedInstanceGroupUpdateAllPackagesManagement(java.lang.String name, ManagedInstanceGroupUpdateAllPackagesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:OsManagementHub/managedInstanceGroupUpdateAllPackagesManagement:ManagedInstanceGroupUpdateAllPackagesManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ManagedInstanceGroupUpdateAllPackagesManagement(String name, Output<String> id, @Nullable ManagedInstanceGroupUpdateAllPackagesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:OsManagementHub/managedInstanceGroupUpdateAllPackagesManagement:ManagedInstanceGroupUpdateAllPackagesManagement", name, state, makeResourceOptions(options, id));
+    private ManagedInstanceGroupUpdateAllPackagesManagement(java.lang.String name, Output<java.lang.String> id, @Nullable ManagedInstanceGroupUpdateAllPackagesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:OsManagementHub/managedInstanceGroupUpdateAllPackagesManagement:ManagedInstanceGroupUpdateAllPackagesManagement", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ManagedInstanceGroupUpdateAllPackagesManagementArgs makeArgs(ManagedInstanceGroupUpdateAllPackagesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -151,7 +151,7 @@ public class ManagedInstanceGroupUpdateAllPackagesManagement extends com.pulumi.
         return args == null ? ManagedInstanceGroupUpdateAllPackagesManagementArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -167,7 +167,7 @@ public class ManagedInstanceGroupUpdateAllPackagesManagement extends com.pulumi.
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ManagedInstanceGroupUpdateAllPackagesManagement get(String name, Output<String> id, @Nullable ManagedInstanceGroupUpdateAllPackagesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ManagedInstanceGroupUpdateAllPackagesManagement get(java.lang.String name, Output<java.lang.String> id, @Nullable ManagedInstanceGroupUpdateAllPackagesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ManagedInstanceGroupUpdateAllPackagesManagement(name, id, state, options);
     }
 }

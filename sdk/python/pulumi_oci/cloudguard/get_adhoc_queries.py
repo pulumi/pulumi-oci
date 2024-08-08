@@ -128,7 +128,7 @@ def get_adhoc_queries(access_level: Optional[str] = None,
                       adhoc_query_status: Optional[str] = None,
                       compartment_id: Optional[str] = None,
                       compartment_id_in_subtree: Optional[bool] = None,
-                      filters: Optional[Sequence[pulumi.InputType['GetAdhocQueriesFilterArgs']]] = None,
+                      filters: Optional[Sequence[Union['GetAdhocQueriesFilterArgs', 'GetAdhocQueriesFilterArgsDict']]] = None,
                       time_ended_filter_query_param: Optional[str] = None,
                       time_started_filter_query_param: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAdhocQueriesResult:
@@ -203,7 +203,7 @@ def get_adhoc_queries_output(access_level: Optional[pulumi.Input[Optional[str]]]
                              adhoc_query_status: Optional[pulumi.Input[Optional[str]]] = None,
                              compartment_id: Optional[pulumi.Input[str]] = None,
                              compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
-                             filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAdhocQueriesFilterArgs']]]]] = None,
+                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAdhocQueriesFilterArgs', 'GetAdhocQueriesFilterArgsDict']]]]] = None,
                              time_ended_filter_query_param: Optional[pulumi.Input[Optional[str]]] = None,
                              time_started_filter_query_param: Optional[pulumi.Input[Optional[str]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAdhocQueriesResult]:

@@ -113,7 +113,7 @@ class AwaitableGetFusionEnvironmentServiceAttachmentsResult(GetFusionEnvironment
 
 
 def get_fusion_environment_service_attachments(display_name: Optional[str] = None,
-                                               filters: Optional[Sequence[pulumi.InputType['GetFusionEnvironmentServiceAttachmentsFilterArgs']]] = None,
+                                               filters: Optional[Sequence[Union['GetFusionEnvironmentServiceAttachmentsFilterArgs', 'GetFusionEnvironmentServiceAttachmentsFilterArgsDict']]] = None,
                                                fusion_environment_id: Optional[str] = None,
                                                service_instance_type: Optional[str] = None,
                                                state: Optional[str] = None,
@@ -162,7 +162,7 @@ def get_fusion_environment_service_attachments(display_name: Optional[str] = Non
 
 @_utilities.lift_output_func(get_fusion_environment_service_attachments)
 def get_fusion_environment_service_attachments_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                                      filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetFusionEnvironmentServiceAttachmentsFilterArgs']]]]] = None,
+                                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFusionEnvironmentServiceAttachmentsFilterArgs', 'GetFusionEnvironmentServiceAttachmentsFilterArgsDict']]]]] = None,
                                                       fusion_environment_id: Optional[pulumi.Input[str]] = None,
                                                       service_instance_type: Optional[pulumi.Input[Optional[str]]] = None,
                                                       state: Optional[pulumi.Input[Optional[str]]] = None,

@@ -125,7 +125,7 @@ class AwaitableGetOccAvailabilityCatalogOccAvailabilitiesResult(GetOccAvailabili
 
 
 def get_occ_availability_catalog_occ_availabilities(date_expected_capacity_handover: Optional[str] = None,
-                                                    filters: Optional[Sequence[pulumi.InputType['GetOccAvailabilityCatalogOccAvailabilitiesFilterArgs']]] = None,
+                                                    filters: Optional[Sequence[Union['GetOccAvailabilityCatalogOccAvailabilitiesFilterArgs', 'GetOccAvailabilityCatalogOccAvailabilitiesFilterArgsDict']]] = None,
                                                     occ_availability_catalog_id: Optional[str] = None,
                                                     resource_name: Optional[str] = None,
                                                     resource_type: Optional[str] = None,
@@ -179,7 +179,7 @@ def get_occ_availability_catalog_occ_availabilities(date_expected_capacity_hando
 
 @_utilities.lift_output_func(get_occ_availability_catalog_occ_availabilities)
 def get_occ_availability_catalog_occ_availabilities_output(date_expected_capacity_handover: Optional[pulumi.Input[Optional[str]]] = None,
-                                                           filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetOccAvailabilityCatalogOccAvailabilitiesFilterArgs']]]]] = None,
+                                                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOccAvailabilityCatalogOccAvailabilitiesFilterArgs', 'GetOccAvailabilityCatalogOccAvailabilitiesFilterArgsDict']]]]] = None,
                                                            occ_availability_catalog_id: Optional[pulumi.Input[str]] = None,
                                                            resource_name: Optional[pulumi.Input[Optional[str]]] = None,
                                                            resource_type: Optional[pulumi.Input[Optional[str]]] = None,

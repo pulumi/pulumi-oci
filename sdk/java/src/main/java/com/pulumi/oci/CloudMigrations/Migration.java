@@ -237,7 +237,7 @@ public class Migration extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public Migration(String name) {
+    public Migration(java.lang.String name) {
         this(name, MigrationArgs.Empty);
     }
     /**
@@ -245,7 +245,7 @@ public class Migration extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public Migration(String name, MigrationArgs args) {
+    public Migration(java.lang.String name, MigrationArgs args) {
         this(name, args, null);
     }
     /**
@@ -254,12 +254,12 @@ public class Migration extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public Migration(String name, MigrationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:CloudMigrations/migration:Migration", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public Migration(java.lang.String name, MigrationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:CloudMigrations/migration:Migration", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private Migration(String name, Output<String> id, @Nullable MigrationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:CloudMigrations/migration:Migration", name, state, makeResourceOptions(options, id));
+    private Migration(java.lang.String name, Output<java.lang.String> id, @Nullable MigrationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:CloudMigrations/migration:Migration", name, state, makeResourceOptions(options, id), false);
     }
 
     private static MigrationArgs makeArgs(MigrationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -269,7 +269,7 @@ public class Migration extends com.pulumi.resources.CustomResource {
         return args == null ? MigrationArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -285,7 +285,7 @@ public class Migration extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static Migration get(String name, Output<String> id, @Nullable MigrationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static Migration get(java.lang.String name, Output<java.lang.String> id, @Nullable MigrationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new Migration(name, id, state, options);
     }
 }

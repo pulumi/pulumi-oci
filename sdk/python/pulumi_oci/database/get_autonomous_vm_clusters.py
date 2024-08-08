@@ -118,7 +118,7 @@ class AwaitableGetAutonomousVmClustersResult(GetAutonomousVmClustersResult):
 def get_autonomous_vm_clusters(compartment_id: Optional[str] = None,
                                display_name: Optional[str] = None,
                                exadata_infrastructure_id: Optional[str] = None,
-                               filters: Optional[Sequence[pulumi.InputType['GetAutonomousVmClustersFilterArgs']]] = None,
+                               filters: Optional[Sequence[Union['GetAutonomousVmClustersFilterArgs', 'GetAutonomousVmClustersFilterArgsDict']]] = None,
                                state: Optional[str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousVmClustersResult:
     """
@@ -167,7 +167,7 @@ def get_autonomous_vm_clusters(compartment_id: Optional[str] = None,
 def get_autonomous_vm_clusters_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                       display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                       exadata_infrastructure_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                      filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAutonomousVmClustersFilterArgs']]]]] = None,
+                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutonomousVmClustersFilterArgs', 'GetAutonomousVmClustersFilterArgsDict']]]]] = None,
                                       state: Optional[pulumi.Input[Optional[str]]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousVmClustersResult]:
     """

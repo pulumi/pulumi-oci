@@ -138,7 +138,7 @@ class AwaitableGetMetricExtensionsResult(GetMetricExtensionsResult):
 
 def get_metric_extensions(compartment_id: Optional[str] = None,
                           enabled_on_resource_id: Optional[str] = None,
-                          filters: Optional[Sequence[pulumi.InputType['GetMetricExtensionsFilterArgs']]] = None,
+                          filters: Optional[Sequence[Union['GetMetricExtensionsFilterArgs', 'GetMetricExtensionsFilterArgsDict']]] = None,
                           name: Optional[str] = None,
                           resource_type: Optional[str] = None,
                           state: Optional[str] = None,
@@ -197,7 +197,7 @@ def get_metric_extensions(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_metric_extensions)
 def get_metric_extensions_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                  enabled_on_resource_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetMetricExtensionsFilterArgs']]]]] = None,
+                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMetricExtensionsFilterArgs', 'GetMetricExtensionsFilterArgsDict']]]]] = None,
                                  name: Optional[pulumi.Input[Optional[str]]] = None,
                                  resource_type: Optional[pulumi.Input[Optional[str]]] = None,
                                  state: Optional[pulumi.Input[Optional[str]]] = None,

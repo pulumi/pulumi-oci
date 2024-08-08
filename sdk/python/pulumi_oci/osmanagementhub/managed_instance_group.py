@@ -590,7 +590,7 @@ class ManagedInstanceGroup(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  arch_type: Optional[pulumi.Input[str]] = None,
-                 autonomous_settings: Optional[pulumi.Input[pulumi.InputType['ManagedInstanceGroupAutonomousSettingsArgs']]] = None,
+                 autonomous_settings: Optional[pulumi.Input[Union['ManagedInstanceGroupAutonomousSettingsArgs', 'ManagedInstanceGroupAutonomousSettingsArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
@@ -621,9 +621,9 @@ class ManagedInstanceGroup(pulumi.CustomResource):
             display_name=managed_instance_group_display_name,
             os_family=managed_instance_group_os_family,
             vendor_name=managed_instance_group_vendor_name,
-            autonomous_settings=oci.os_management_hub.ManagedInstanceGroupAutonomousSettingsArgs(
-                is_data_collection_authorized=managed_instance_group_autonomous_settings_is_data_collection_authorized,
-            ),
+            autonomous_settings={
+                "is_data_collection_authorized": managed_instance_group_autonomous_settings_is_data_collection_authorized,
+            },
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -647,7 +647,7 @@ class ManagedInstanceGroup(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] arch_type: The CPU architecture type of the managed instances that will be attached to this group.
-        :param pulumi.Input[pulumi.InputType['ManagedInstanceGroupAutonomousSettingsArgs']] autonomous_settings: (Updatable) Updatable settings for the Autonomous Linux service.
+        :param pulumi.Input[Union['ManagedInstanceGroupAutonomousSettingsArgs', 'ManagedInstanceGroupAutonomousSettingsArgsDict']] autonomous_settings: (Updatable) Updatable settings for the Autonomous Linux service.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) User-specified description of the managed instance group. Avoid entering confidential information.
@@ -688,9 +688,9 @@ class ManagedInstanceGroup(pulumi.CustomResource):
             display_name=managed_instance_group_display_name,
             os_family=managed_instance_group_os_family,
             vendor_name=managed_instance_group_vendor_name,
-            autonomous_settings=oci.os_management_hub.ManagedInstanceGroupAutonomousSettingsArgs(
-                is_data_collection_authorized=managed_instance_group_autonomous_settings_is_data_collection_authorized,
-            ),
+            autonomous_settings={
+                "is_data_collection_authorized": managed_instance_group_autonomous_settings_is_data_collection_authorized,
+            },
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -727,7 +727,7 @@ class ManagedInstanceGroup(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  arch_type: Optional[pulumi.Input[str]] = None,
-                 autonomous_settings: Optional[pulumi.Input[pulumi.InputType['ManagedInstanceGroupAutonomousSettingsArgs']]] = None,
+                 autonomous_settings: Optional[pulumi.Input[Union['ManagedInstanceGroupAutonomousSettingsArgs', 'ManagedInstanceGroupAutonomousSettingsArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
@@ -790,7 +790,7 @@ class ManagedInstanceGroup(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             arch_type: Optional[pulumi.Input[str]] = None,
-            autonomous_settings: Optional[pulumi.Input[pulumi.InputType['ManagedInstanceGroupAutonomousSettingsArgs']]] = None,
+            autonomous_settings: Optional[pulumi.Input[Union['ManagedInstanceGroupAutonomousSettingsArgs', 'ManagedInstanceGroupAutonomousSettingsArgsDict']]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             description: Optional[pulumi.Input[str]] = None,
@@ -804,7 +804,7 @@ class ManagedInstanceGroup(pulumi.CustomResource):
             os_family: Optional[pulumi.Input[str]] = None,
             pending_job_count: Optional[pulumi.Input[int]] = None,
             software_source_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            software_sources: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceGroupSoftwareSourceArgs']]]]] = None,
+            software_sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceGroupSoftwareSourceArgs', 'ManagedInstanceGroupSoftwareSourceArgsDict']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
@@ -818,7 +818,7 @@ class ManagedInstanceGroup(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] arch_type: The CPU architecture type of the managed instances that will be attached to this group.
-        :param pulumi.Input[pulumi.InputType['ManagedInstanceGroupAutonomousSettingsArgs']] autonomous_settings: (Updatable) Updatable settings for the Autonomous Linux service.
+        :param pulumi.Input[Union['ManagedInstanceGroupAutonomousSettingsArgs', 'ManagedInstanceGroupAutonomousSettingsArgsDict']] autonomous_settings: (Updatable) Updatable settings for the Autonomous Linux service.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) User-specified description of the managed instance group. Avoid entering confidential information.
@@ -832,7 +832,7 @@ class ManagedInstanceGroup(pulumi.CustomResource):
         :param pulumi.Input[str] os_family: The operating system type of the managed instances that will be attached to this group.
         :param pulumi.Input[int] pending_job_count: The number of scheduled jobs pending against the managed instance group.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] software_source_ids: The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) available to the managed instances in the group.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceGroupSoftwareSourceArgs']]]] software_sources: The list of software sources that the managed instance group will use.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceGroupSoftwareSourceArgs', 'ManagedInstanceGroupSoftwareSourceArgsDict']]]] software_sources: The list of software sources that the managed instance group will use.
         :param pulumi.Input[str] state: The current state of the managed instance group.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time the managed instance group was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).

@@ -486,8 +486,8 @@ class Zone(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 external_downstreams: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ZoneExternalDownstreamArgs']]]]] = None,
-                 external_masters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ZoneExternalMasterArgs']]]]] = None,
+                 external_downstreams: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ZoneExternalDownstreamArgs', 'ZoneExternalDownstreamArgsDict']]]]] = None,
+                 external_masters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ZoneExternalMasterArgs', 'ZoneExternalMasterArgsDict']]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
@@ -514,16 +514,16 @@ class Zone(pulumi.CustomResource):
             name=zone_name,
             zone_type=zone_zone_type,
             defined_tags=zone_defined_tags,
-            external_downstreams=[oci.dns.ZoneExternalDownstreamArgs(
-                address=zone_external_downstreams_address,
-                port=zone_external_downstreams_port,
-                tsig_key_id=test_tsig_key["id"],
-            )],
-            external_masters=[oci.dns.ZoneExternalMasterArgs(
-                address=zone_external_masters_address,
-                port=zone_external_masters_port,
-                tsig_key_id=test_tsig_key["id"],
-            )],
+            external_downstreams=[{
+                "address": zone_external_downstreams_address,
+                "port": zone_external_downstreams_port,
+                "tsig_key_id": test_tsig_key["id"],
+            }],
+            external_masters=[{
+                "address": zone_external_masters_address,
+                "port": zone_external_masters_port,
+                "tsig_key_id": test_tsig_key["id"],
+            }],
             freeform_tags=zone_freeform_tags,
             scope=zone_scope,
             view_id=test_view["id"])
@@ -543,8 +543,8 @@ class Zone(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
                
                **Example:** `{"Operations": {"CostCenter": "42"}}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ZoneExternalDownstreamArgs']]]] external_downstreams: (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ZoneExternalMasterArgs']]]] external_masters: (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ZoneExternalDownstreamArgs', 'ZoneExternalDownstreamArgsDict']]]] external_downstreams: (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ZoneExternalMasterArgs', 'ZoneExternalMasterArgsDict']]]] external_masters: (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
                
                **Example:** `{"Department": "Finance"}`
@@ -584,16 +584,16 @@ class Zone(pulumi.CustomResource):
             name=zone_name,
             zone_type=zone_zone_type,
             defined_tags=zone_defined_tags,
-            external_downstreams=[oci.dns.ZoneExternalDownstreamArgs(
-                address=zone_external_downstreams_address,
-                port=zone_external_downstreams_port,
-                tsig_key_id=test_tsig_key["id"],
-            )],
-            external_masters=[oci.dns.ZoneExternalMasterArgs(
-                address=zone_external_masters_address,
-                port=zone_external_masters_port,
-                tsig_key_id=test_tsig_key["id"],
-            )],
+            external_downstreams=[{
+                "address": zone_external_downstreams_address,
+                "port": zone_external_downstreams_port,
+                "tsig_key_id": test_tsig_key["id"],
+            }],
+            external_masters=[{
+                "address": zone_external_masters_address,
+                "port": zone_external_masters_port,
+                "tsig_key_id": test_tsig_key["id"],
+            }],
             freeform_tags=zone_freeform_tags,
             scope=zone_scope,
             view_id=test_view["id"])
@@ -624,8 +624,8 @@ class Zone(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 external_downstreams: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ZoneExternalDownstreamArgs']]]]] = None,
-                 external_masters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ZoneExternalMasterArgs']]]]] = None,
+                 external_downstreams: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ZoneExternalDownstreamArgs', 'ZoneExternalDownstreamArgsDict']]]]] = None,
+                 external_masters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ZoneExternalMasterArgs', 'ZoneExternalMasterArgsDict']]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
@@ -673,12 +673,12 @@ class Zone(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            external_downstreams: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ZoneExternalDownstreamArgs']]]]] = None,
-            external_masters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ZoneExternalMasterArgs']]]]] = None,
+            external_downstreams: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ZoneExternalDownstreamArgs', 'ZoneExternalDownstreamArgsDict']]]]] = None,
+            external_masters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ZoneExternalMasterArgs', 'ZoneExternalMasterArgsDict']]]]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             is_protected: Optional[pulumi.Input[bool]] = None,
             name: Optional[pulumi.Input[str]] = None,
-            nameservers: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ZoneNameserverArgs']]]]] = None,
+            nameservers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ZoneNameserverArgs', 'ZoneNameserverArgsDict']]]]] = None,
             scope: Optional[pulumi.Input[str]] = None,
             self: Optional[pulumi.Input[str]] = None,
             serial: Optional[pulumi.Input[int]] = None,
@@ -686,7 +686,7 @@ class Zone(pulumi.CustomResource):
             time_created: Optional[pulumi.Input[str]] = None,
             version: Optional[pulumi.Input[str]] = None,
             view_id: Optional[pulumi.Input[str]] = None,
-            zone_transfer_servers: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ZoneZoneTransferServerArgs']]]]] = None,
+            zone_transfer_servers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ZoneZoneTransferServerArgs', 'ZoneZoneTransferServerArgsDict']]]]] = None,
             zone_type: Optional[pulumi.Input[str]] = None) -> 'Zone':
         """
         Get an existing Zone resource's state with the given name, id, and optional extra
@@ -699,14 +699,14 @@ class Zone(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
                
                **Example:** `{"Operations": {"CostCenter": "42"}}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ZoneExternalDownstreamArgs']]]] external_downstreams: (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ZoneExternalMasterArgs']]]] external_masters: (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ZoneExternalDownstreamArgs', 'ZoneExternalDownstreamArgsDict']]]] external_downstreams: (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ZoneExternalMasterArgs', 'ZoneExternalMasterArgsDict']]]] external_masters: (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
                
                **Example:** `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_protected: A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
         :param pulumi.Input[str] name: The name of the zone.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ZoneNameserverArgs']]]] nameservers: The authoritative nameservers for the zone.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ZoneNameserverArgs', 'ZoneNameserverArgsDict']]]] nameservers: The authoritative nameservers for the zone.
         :param pulumi.Input[str] scope: Specifies to operate only on resources that have a matching DNS scope. 
                This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
         :param pulumi.Input[str] self: The canonical absolute URL of the resource.
@@ -715,7 +715,7 @@ class Zone(pulumi.CustomResource):
         :param pulumi.Input[str] time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
         :param pulumi.Input[str] version: Version is the never-repeating, totally-orderable, version of the zone, from which the serial field of the zone's SOA record is derived.
         :param pulumi.Input[str] view_id: The OCID of the private view containing the zone. This value will be null for zones in the global DNS, which are publicly resolvable and not part of a private view.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ZoneZoneTransferServerArgs']]]] zone_transfer_servers: The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ZoneZoneTransferServerArgs', 'ZoneZoneTransferServerArgsDict']]]] zone_transfer_servers: The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
         :param pulumi.Input[str] zone_type: The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones. 
                
                

@@ -373,7 +373,7 @@ class Script(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 parameters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ScriptParameterArgs']]]]] = None,
+                 parameters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ScriptParameterArgs', 'ScriptParameterArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Script resource in Oracle Cloud Infrastructure Apm Synthetics service.
@@ -398,11 +398,11 @@ class Script(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            parameters=[oci.apm_synthetics.ScriptParameterArgs(
-                param_name=script_parameters_param_name,
-                is_secret=script_parameters_is_secret,
-                param_value=script_parameters_param_value,
-            )])
+            parameters=[{
+                "param_name": script_parameters_param_name,
+                "is_secret": script_parameters_is_secret,
+                "param_value": script_parameters_param_value,
+            }])
         ```
 
         ## Import
@@ -422,7 +422,7 @@ class Script(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Unique name that can be edited. The name should not contain any confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ScriptParameterArgs']]]] parameters: (Updatable) List of script parameters. Example: `[{"paramName": "userid", "paramValue":"testuser", "isSecret": false}]`
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ScriptParameterArgs', 'ScriptParameterArgsDict']]]] parameters: (Updatable) List of script parameters. Example: `[{"paramName": "userid", "paramValue":"testuser", "isSecret": false}]`
         """
         ...
     @overload
@@ -453,11 +453,11 @@ class Script(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            parameters=[oci.apm_synthetics.ScriptParameterArgs(
-                param_name=script_parameters_param_name,
-                is_secret=script_parameters_is_secret,
-                param_value=script_parameters_param_value,
-            )])
+            parameters=[{
+                "param_name": script_parameters_param_name,
+                "is_secret": script_parameters_is_secret,
+                "param_value": script_parameters_param_value,
+            }])
         ```
 
         ## Import
@@ -490,7 +490,7 @@ class Script(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 parameters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ScriptParameterArgs']]]]] = None,
+                 parameters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ScriptParameterArgs', 'ScriptParameterArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -539,8 +539,8 @@ class Script(pulumi.CustomResource):
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            monitor_status_count_maps: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ScriptMonitorStatusCountMapArgs']]]]] = None,
-            parameters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ScriptParameterArgs']]]]] = None,
+            monitor_status_count_maps: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ScriptMonitorStatusCountMapArgs', 'ScriptMonitorStatusCountMapArgsDict']]]]] = None,
+            parameters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ScriptParameterArgs', 'ScriptParameterArgsDict']]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
             time_uploaded: Optional[pulumi.Input[str]] = None) -> 'Script':
@@ -559,8 +559,8 @@ class Script(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Unique name that can be edited. The name should not contain any confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ScriptMonitorStatusCountMapArgs']]]] monitor_status_count_maps: Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ScriptParameterArgs']]]] parameters: (Updatable) List of script parameters. Example: `[{"paramName": "userid", "paramValue":"testuser", "isSecret": false}]`
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ScriptMonitorStatusCountMapArgs', 'ScriptMonitorStatusCountMapArgsDict']]]] monitor_status_count_maps: Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ScriptParameterArgs', 'ScriptParameterArgsDict']]]] parameters: (Updatable) List of script parameters. Example: `[{"paramName": "userid", "paramValue":"testuser", "isSecret": false}]`
         :param pulumi.Input[str] time_created: The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         :param pulumi.Input[str] time_updated: The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
         :param pulumi.Input[str] time_uploaded: The time the script was uploaded.

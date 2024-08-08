@@ -303,7 +303,7 @@ class Subscriber(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 clients: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SubscriberClientArgs']]]]] = None,
+                 clients: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SubscriberClientArgs', 'SubscriberClientArgsDict']]]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -322,10 +322,10 @@ class Subscriber(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_subscriber = oci.api_gateway.Subscriber("test_subscriber",
-            clients=[oci.api_gateway.SubscriberClientArgs(
-                name=subscriber_clients_name,
-                token=subscriber_clients_token,
-            )],
+            clients=[{
+                "name": subscriber_clients_name,
+                "token": subscriber_clients_token,
+            }],
             compartment_id=compartment_id,
             usage_plans=subscriber_usage_plans,
             defined_tags={
@@ -347,7 +347,7 @@ class Subscriber(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SubscriberClientArgs']]]] clients: (Updatable) The clients belonging to this subscriber.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SubscriberClientArgs', 'SubscriberClientArgsDict']]]] clients: (Updatable) The clients belonging to this subscriber.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
@@ -376,10 +376,10 @@ class Subscriber(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_subscriber = oci.api_gateway.Subscriber("test_subscriber",
-            clients=[oci.api_gateway.SubscriberClientArgs(
-                name=subscriber_clients_name,
-                token=subscriber_clients_token,
-            )],
+            clients=[{
+                "name": subscriber_clients_name,
+                "token": subscriber_clients_token,
+            }],
             compartment_id=compartment_id,
             usage_plans=subscriber_usage_plans,
             defined_tags={
@@ -414,7 +414,7 @@ class Subscriber(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 clients: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SubscriberClientArgs']]]]] = None,
+                 clients: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SubscriberClientArgs', 'SubscriberClientArgsDict']]]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -455,7 +455,7 @@ class Subscriber(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            clients: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SubscriberClientArgs']]]]] = None,
+            clients: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SubscriberClientArgs', 'SubscriberClientArgsDict']]]]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
@@ -472,7 +472,7 @@ class Subscriber(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SubscriberClientArgs']]]] clients: (Updatable) The clients belonging to this subscriber.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SubscriberClientArgs', 'SubscriberClientArgsDict']]]] clients: (Updatable) The clients belonging to this subscriber.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`

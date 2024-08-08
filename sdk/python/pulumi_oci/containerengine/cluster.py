@@ -511,16 +511,16 @@ class Cluster(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cluster_pod_network_options: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ClusterClusterPodNetworkOptionArgs']]]]] = None,
+                 cluster_pod_network_options: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterClusterPodNetworkOptionArgs', 'ClusterClusterPodNetworkOptionArgsDict']]]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 endpoint_config: Optional[pulumi.Input[pulumi.InputType['ClusterEndpointConfigArgs']]] = None,
+                 endpoint_config: Optional[pulumi.Input[Union['ClusterEndpointConfigArgs', 'ClusterEndpointConfigArgsDict']]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 image_policy_config: Optional[pulumi.Input[pulumi.InputType['ClusterImagePolicyConfigArgs']]] = None,
+                 image_policy_config: Optional[pulumi.Input[Union['ClusterImagePolicyConfigArgs', 'ClusterImagePolicyConfigArgsDict']]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  kubernetes_version: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 options: Optional[pulumi.Input[pulumi.InputType['ClusterOptionsArgs']]] = None,
+                 options: Optional[pulumi.Input[Union['ClusterOptionsArgs', 'ClusterOptionsArgsDict']]] = None,
                  type: Optional[pulumi.Input[str]] = None,
                  vcn_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -540,57 +540,57 @@ class Cluster(pulumi.CustomResource):
             kubernetes_version=cluster_kubernetes_version,
             name=cluster_name,
             vcn_id=test_vcn["id"],
-            cluster_pod_network_options=[oci.container_engine.ClusterClusterPodNetworkOptionArgs(
-                cni_type=cluster_cluster_pod_network_options_cni_type,
-            )],
+            cluster_pod_network_options=[{
+                "cni_type": cluster_cluster_pod_network_options_cni_type,
+            }],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            endpoint_config=oci.container_engine.ClusterEndpointConfigArgs(
-                is_public_ip_enabled=cluster_endpoint_config_is_public_ip_enabled,
-                nsg_ids=cluster_endpoint_config_nsg_ids,
-                subnet_id=test_subnet["id"],
-            ),
+            endpoint_config={
+                "is_public_ip_enabled": cluster_endpoint_config_is_public_ip_enabled,
+                "nsg_ids": cluster_endpoint_config_nsg_ids,
+                "subnet_id": test_subnet["id"],
+            },
             freeform_tags={
                 "Department": "Finance",
             },
-            image_policy_config=oci.container_engine.ClusterImagePolicyConfigArgs(
-                is_policy_enabled=cluster_image_policy_config_is_policy_enabled,
-                key_details=[oci.container_engine.ClusterImagePolicyConfigKeyDetailArgs(
-                    kms_key_id=test_key["id"],
-                )],
-            ),
+            image_policy_config={
+                "is_policy_enabled": cluster_image_policy_config_is_policy_enabled,
+                "key_details": [{
+                    "kms_key_id": test_key["id"],
+                }],
+            },
             kms_key_id=test_key["id"],
-            options=oci.container_engine.ClusterOptionsArgs(
-                add_ons=oci.container_engine.ClusterOptionsAddOnsArgs(
-                    is_kubernetes_dashboard_enabled=cluster_options_add_ons_is_kubernetes_dashboard_enabled,
-                    is_tiller_enabled=cluster_options_add_ons_is_tiller_enabled,
-                ),
-                admission_controller_options=oci.container_engine.ClusterOptionsAdmissionControllerOptionsArgs(
-                    is_pod_security_policy_enabled=cluster_options_admission_controller_options_is_pod_security_policy_enabled,
-                ),
-                kubernetes_network_config=oci.container_engine.ClusterOptionsKubernetesNetworkConfigArgs(
-                    pods_cidr=cluster_options_kubernetes_network_config_pods_cidr,
-                    services_cidr=cluster_options_kubernetes_network_config_services_cidr,
-                ),
-                persistent_volume_config=oci.container_engine.ClusterOptionsPersistentVolumeConfigArgs(
-                    defined_tags={
-                        "Operations.CostCenter": "42",
+            options={
+                "add_ons": {
+                    "is_kubernetes_dashboard_enabled": cluster_options_add_ons_is_kubernetes_dashboard_enabled,
+                    "is_tiller_enabled": cluster_options_add_ons_is_tiller_enabled,
+                },
+                "admission_controller_options": {
+                    "is_pod_security_policy_enabled": cluster_options_admission_controller_options_is_pod_security_policy_enabled,
+                },
+                "kubernetes_network_config": {
+                    "pods_cidr": cluster_options_kubernetes_network_config_pods_cidr,
+                    "services_cidr": cluster_options_kubernetes_network_config_services_cidr,
+                },
+                "persistent_volume_config": {
+                    "defined_tags": {
+                        "operations__cost_center": "42",
                     },
-                    freeform_tags={
-                        "Department": "Finance",
+                    "freeform_tags": {
+                        "department": "Finance",
                     },
-                ),
-                service_lb_config=oci.container_engine.ClusterOptionsServiceLbConfigArgs(
-                    defined_tags={
-                        "Operations.CostCenter": "42",
+                },
+                "service_lb_config": {
+                    "defined_tags": {
+                        "operations__cost_center": "42",
                     },
-                    freeform_tags={
-                        "Department": "Finance",
+                    "freeform_tags": {
+                        "department": "Finance",
                     },
-                ),
-                service_lb_subnet_ids=cluster_options_service_lb_subnet_ids,
-            ),
+                },
+                "service_lb_subnet_ids": cluster_options_service_lb_subnet_ids,
+            },
             type=cluster_type)
         ```
 
@@ -604,16 +604,16 @@ class Cluster(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ClusterClusterPodNetworkOptionArgs']]]] cluster_pod_network_options: Available CNIs and network options for existing and new node pools of the cluster
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterClusterPodNetworkOptionArgs', 'ClusterClusterPodNetworkOptionArgsDict']]]] cluster_pod_network_options: Available CNIs and network options for existing and new node pools of the cluster
         :param pulumi.Input[str] compartment_id: The OCID of the compartment in which to create the cluster.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[pulumi.InputType['ClusterEndpointConfigArgs']] endpoint_config: The network configuration for access to the Cluster control plane.
+        :param pulumi.Input[Union['ClusterEndpointConfigArgs', 'ClusterEndpointConfigArgsDict']] endpoint_config: The network configuration for access to the Cluster control plane.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[pulumi.InputType['ClusterImagePolicyConfigArgs']] image_policy_config: (Updatable) The image verification policy for signature validation. Once a policy is created and enabled with one or more kms keys, the policy will ensure all images deployed has been signed with the key(s) attached to the policy.
+        :param pulumi.Input[Union['ClusterImagePolicyConfigArgs', 'ClusterImagePolicyConfigArgsDict']] image_policy_config: (Updatable) The image verification policy for signature validation. Once a policy is created and enabled with one or more kms keys, the policy will ensure all images deployed has been signed with the key(s) attached to the policy.
         :param pulumi.Input[str] kms_key_id: The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
         :param pulumi.Input[str] kubernetes_version: (Updatable) The version of Kubernetes to install into the cluster masters.
         :param pulumi.Input[str] name: (Updatable) The name of the cluster. Avoid entering confidential information.
-        :param pulumi.Input[pulumi.InputType['ClusterOptionsArgs']] options: (Updatable) Optional attributes for the cluster.
+        :param pulumi.Input[Union['ClusterOptionsArgs', 'ClusterOptionsArgsDict']] options: (Updatable) Optional attributes for the cluster.
         :param pulumi.Input[str] type: (Updatable) Type of cluster
         :param pulumi.Input[str] vcn_id: The OCID of the virtual cloud network (VCN) in which to create the cluster.
                
@@ -643,57 +643,57 @@ class Cluster(pulumi.CustomResource):
             kubernetes_version=cluster_kubernetes_version,
             name=cluster_name,
             vcn_id=test_vcn["id"],
-            cluster_pod_network_options=[oci.container_engine.ClusterClusterPodNetworkOptionArgs(
-                cni_type=cluster_cluster_pod_network_options_cni_type,
-            )],
+            cluster_pod_network_options=[{
+                "cni_type": cluster_cluster_pod_network_options_cni_type,
+            }],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            endpoint_config=oci.container_engine.ClusterEndpointConfigArgs(
-                is_public_ip_enabled=cluster_endpoint_config_is_public_ip_enabled,
-                nsg_ids=cluster_endpoint_config_nsg_ids,
-                subnet_id=test_subnet["id"],
-            ),
+            endpoint_config={
+                "is_public_ip_enabled": cluster_endpoint_config_is_public_ip_enabled,
+                "nsg_ids": cluster_endpoint_config_nsg_ids,
+                "subnet_id": test_subnet["id"],
+            },
             freeform_tags={
                 "Department": "Finance",
             },
-            image_policy_config=oci.container_engine.ClusterImagePolicyConfigArgs(
-                is_policy_enabled=cluster_image_policy_config_is_policy_enabled,
-                key_details=[oci.container_engine.ClusterImagePolicyConfigKeyDetailArgs(
-                    kms_key_id=test_key["id"],
-                )],
-            ),
+            image_policy_config={
+                "is_policy_enabled": cluster_image_policy_config_is_policy_enabled,
+                "key_details": [{
+                    "kms_key_id": test_key["id"],
+                }],
+            },
             kms_key_id=test_key["id"],
-            options=oci.container_engine.ClusterOptionsArgs(
-                add_ons=oci.container_engine.ClusterOptionsAddOnsArgs(
-                    is_kubernetes_dashboard_enabled=cluster_options_add_ons_is_kubernetes_dashboard_enabled,
-                    is_tiller_enabled=cluster_options_add_ons_is_tiller_enabled,
-                ),
-                admission_controller_options=oci.container_engine.ClusterOptionsAdmissionControllerOptionsArgs(
-                    is_pod_security_policy_enabled=cluster_options_admission_controller_options_is_pod_security_policy_enabled,
-                ),
-                kubernetes_network_config=oci.container_engine.ClusterOptionsKubernetesNetworkConfigArgs(
-                    pods_cidr=cluster_options_kubernetes_network_config_pods_cidr,
-                    services_cidr=cluster_options_kubernetes_network_config_services_cidr,
-                ),
-                persistent_volume_config=oci.container_engine.ClusterOptionsPersistentVolumeConfigArgs(
-                    defined_tags={
-                        "Operations.CostCenter": "42",
+            options={
+                "add_ons": {
+                    "is_kubernetes_dashboard_enabled": cluster_options_add_ons_is_kubernetes_dashboard_enabled,
+                    "is_tiller_enabled": cluster_options_add_ons_is_tiller_enabled,
+                },
+                "admission_controller_options": {
+                    "is_pod_security_policy_enabled": cluster_options_admission_controller_options_is_pod_security_policy_enabled,
+                },
+                "kubernetes_network_config": {
+                    "pods_cidr": cluster_options_kubernetes_network_config_pods_cidr,
+                    "services_cidr": cluster_options_kubernetes_network_config_services_cidr,
+                },
+                "persistent_volume_config": {
+                    "defined_tags": {
+                        "operations__cost_center": "42",
                     },
-                    freeform_tags={
-                        "Department": "Finance",
+                    "freeform_tags": {
+                        "department": "Finance",
                     },
-                ),
-                service_lb_config=oci.container_engine.ClusterOptionsServiceLbConfigArgs(
-                    defined_tags={
-                        "Operations.CostCenter": "42",
+                },
+                "service_lb_config": {
+                    "defined_tags": {
+                        "operations__cost_center": "42",
                     },
-                    freeform_tags={
-                        "Department": "Finance",
+                    "freeform_tags": {
+                        "department": "Finance",
                     },
-                ),
-                service_lb_subnet_ids=cluster_options_service_lb_subnet_ids,
-            ),
+                },
+                "service_lb_subnet_ids": cluster_options_service_lb_subnet_ids,
+            },
             type=cluster_type)
         ```
 
@@ -720,16 +720,16 @@ class Cluster(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cluster_pod_network_options: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ClusterClusterPodNetworkOptionArgs']]]]] = None,
+                 cluster_pod_network_options: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterClusterPodNetworkOptionArgs', 'ClusterClusterPodNetworkOptionArgsDict']]]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 endpoint_config: Optional[pulumi.Input[pulumi.InputType['ClusterEndpointConfigArgs']]] = None,
+                 endpoint_config: Optional[pulumi.Input[Union['ClusterEndpointConfigArgs', 'ClusterEndpointConfigArgsDict']]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 image_policy_config: Optional[pulumi.Input[pulumi.InputType['ClusterImagePolicyConfigArgs']]] = None,
+                 image_policy_config: Optional[pulumi.Input[Union['ClusterImagePolicyConfigArgs', 'ClusterImagePolicyConfigArgsDict']]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  kubernetes_version: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 options: Optional[pulumi.Input[pulumi.InputType['ClusterOptionsArgs']]] = None,
+                 options: Optional[pulumi.Input[Union['ClusterOptionsArgs', 'ClusterOptionsArgsDict']]] = None,
                  type: Optional[pulumi.Input[str]] = None,
                  vcn_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -775,19 +775,19 @@ class Cluster(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             available_kubernetes_upgrades: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            cluster_pod_network_options: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ClusterClusterPodNetworkOptionArgs']]]]] = None,
+            cluster_pod_network_options: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterClusterPodNetworkOptionArgs', 'ClusterClusterPodNetworkOptionArgsDict']]]]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            endpoint_config: Optional[pulumi.Input[pulumi.InputType['ClusterEndpointConfigArgs']]] = None,
-            endpoints: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ClusterEndpointArgs']]]]] = None,
+            endpoint_config: Optional[pulumi.Input[Union['ClusterEndpointConfigArgs', 'ClusterEndpointConfigArgsDict']]] = None,
+            endpoints: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterEndpointArgs', 'ClusterEndpointArgsDict']]]]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            image_policy_config: Optional[pulumi.Input[pulumi.InputType['ClusterImagePolicyConfigArgs']]] = None,
+            image_policy_config: Optional[pulumi.Input[Union['ClusterImagePolicyConfigArgs', 'ClusterImagePolicyConfigArgsDict']]] = None,
             kms_key_id: Optional[pulumi.Input[str]] = None,
             kubernetes_version: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
-            metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ClusterMetadataArgs']]]]] = None,
+            metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterMetadataArgs', 'ClusterMetadataArgsDict']]]]] = None,
             name: Optional[pulumi.Input[str]] = None,
-            options: Optional[pulumi.Input[pulumi.InputType['ClusterOptionsArgs']]] = None,
+            options: Optional[pulumi.Input[Union['ClusterOptionsArgs', 'ClusterOptionsArgsDict']]] = None,
             state: Optional[pulumi.Input[str]] = None,
             type: Optional[pulumi.Input[str]] = None,
             vcn_id: Optional[pulumi.Input[str]] = None) -> 'Cluster':
@@ -799,19 +799,19 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] available_kubernetes_upgrades: Available Kubernetes versions to which the clusters masters may be upgraded.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ClusterClusterPodNetworkOptionArgs']]]] cluster_pod_network_options: Available CNIs and network options for existing and new node pools of the cluster
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterClusterPodNetworkOptionArgs', 'ClusterClusterPodNetworkOptionArgsDict']]]] cluster_pod_network_options: Available CNIs and network options for existing and new node pools of the cluster
         :param pulumi.Input[str] compartment_id: The OCID of the compartment in which to create the cluster.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[pulumi.InputType['ClusterEndpointConfigArgs']] endpoint_config: The network configuration for access to the Cluster control plane.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ClusterEndpointArgs']]]] endpoints: Endpoints served up by the cluster masters.
+        :param pulumi.Input[Union['ClusterEndpointConfigArgs', 'ClusterEndpointConfigArgsDict']] endpoint_config: The network configuration for access to the Cluster control plane.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterEndpointArgs', 'ClusterEndpointArgsDict']]]] endpoints: Endpoints served up by the cluster masters.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[pulumi.InputType['ClusterImagePolicyConfigArgs']] image_policy_config: (Updatable) The image verification policy for signature validation. Once a policy is created and enabled with one or more kms keys, the policy will ensure all images deployed has been signed with the key(s) attached to the policy.
+        :param pulumi.Input[Union['ClusterImagePolicyConfigArgs', 'ClusterImagePolicyConfigArgsDict']] image_policy_config: (Updatable) The image verification policy for signature validation. Once a policy is created and enabled with one or more kms keys, the policy will ensure all images deployed has been signed with the key(s) attached to the policy.
         :param pulumi.Input[str] kms_key_id: The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
         :param pulumi.Input[str] kubernetes_version: (Updatable) The version of Kubernetes to install into the cluster masters.
         :param pulumi.Input[str] lifecycle_details: Details about the state of the cluster masters.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ClusterMetadataArgs']]]] metadatas: Metadata about the cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterMetadataArgs', 'ClusterMetadataArgsDict']]]] metadatas: Metadata about the cluster.
         :param pulumi.Input[str] name: (Updatable) The name of the cluster. Avoid entering confidential information.
-        :param pulumi.Input[pulumi.InputType['ClusterOptionsArgs']] options: (Updatable) Optional attributes for the cluster.
+        :param pulumi.Input[Union['ClusterOptionsArgs', 'ClusterOptionsArgsDict']] options: (Updatable) Optional attributes for the cluster.
         :param pulumi.Input[str] state: The state of the cluster masters.
         :param pulumi.Input[str] type: (Updatable) Type of cluster
         :param pulumi.Input[str] vcn_id: The OCID of the virtual cloud network (VCN) in which to create the cluster.

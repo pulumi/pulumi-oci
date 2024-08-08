@@ -77,7 +77,7 @@ class AwaitableGetDbHomePatchesResult(GetDbHomePatchesResult):
 
 
 def get_db_home_patches(db_home_id: Optional[str] = None,
-                        filters: Optional[Sequence[pulumi.InputType['GetDbHomePatchesFilterArgs']]] = None,
+                        filters: Optional[Sequence[Union['GetDbHomePatchesFilterArgs', 'GetDbHomePatchesFilterArgsDict']]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbHomePatchesResult:
     """
     This data source provides the list of Db Home Patches in Oracle Cloud Infrastructure Database service.
@@ -111,7 +111,7 @@ def get_db_home_patches(db_home_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_db_home_patches)
 def get_db_home_patches_output(db_home_id: Optional[pulumi.Input[str]] = None,
-                               filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDbHomePatchesFilterArgs']]]]] = None,
+                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbHomePatchesFilterArgs', 'GetDbHomePatchesFilterArgsDict']]]]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbHomePatchesResult]:
     """
     This data source provides the list of Db Home Patches in Oracle Cloud Infrastructure Database service.

@@ -338,7 +338,7 @@ public class VolumeGroupBackup extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public VolumeGroupBackup(String name) {
+    public VolumeGroupBackup(java.lang.String name) {
         this(name, VolumeGroupBackupArgs.Empty);
     }
     /**
@@ -346,7 +346,7 @@ public class VolumeGroupBackup extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public VolumeGroupBackup(String name, @Nullable VolumeGroupBackupArgs args) {
+    public VolumeGroupBackup(java.lang.String name, @Nullable VolumeGroupBackupArgs args) {
         this(name, args, null);
     }
     /**
@@ -355,12 +355,12 @@ public class VolumeGroupBackup extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public VolumeGroupBackup(String name, @Nullable VolumeGroupBackupArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/volumeGroupBackup:VolumeGroupBackup", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public VolumeGroupBackup(java.lang.String name, @Nullable VolumeGroupBackupArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Core/volumeGroupBackup:VolumeGroupBackup", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private VolumeGroupBackup(String name, Output<String> id, @Nullable VolumeGroupBackupState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/volumeGroupBackup:VolumeGroupBackup", name, state, makeResourceOptions(options, id));
+    private VolumeGroupBackup(java.lang.String name, Output<java.lang.String> id, @Nullable VolumeGroupBackupState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Core/volumeGroupBackup:VolumeGroupBackup", name, state, makeResourceOptions(options, id), false);
     }
 
     private static VolumeGroupBackupArgs makeArgs(@Nullable VolumeGroupBackupArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -370,7 +370,7 @@ public class VolumeGroupBackup extends com.pulumi.resources.CustomResource {
         return args == null ? VolumeGroupBackupArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -386,7 +386,7 @@ public class VolumeGroupBackup extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static VolumeGroupBackup get(String name, Output<String> id, @Nullable VolumeGroupBackupState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static VolumeGroupBackup get(java.lang.String name, Output<java.lang.String> id, @Nullable VolumeGroupBackupState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new VolumeGroupBackup(name, id, state, options);
     }
 }

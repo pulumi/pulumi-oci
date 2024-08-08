@@ -134,7 +134,7 @@ class AwaitableGetFleetPerformanceTuningAnalysisResultsResult(GetFleetPerformanc
 
 
 def get_fleet_performance_tuning_analysis_results(application_id: Optional[str] = None,
-                                                  filters: Optional[Sequence[pulumi.InputType['GetFleetPerformanceTuningAnalysisResultsFilterArgs']]] = None,
+                                                  filters: Optional[Sequence[Union['GetFleetPerformanceTuningAnalysisResultsFilterArgs', 'GetFleetPerformanceTuningAnalysisResultsFilterArgsDict']]] = None,
                                                   fleet_id: Optional[str] = None,
                                                   host_name: Optional[str] = None,
                                                   managed_instance_id: Optional[str] = None,
@@ -193,7 +193,7 @@ def get_fleet_performance_tuning_analysis_results(application_id: Optional[str] 
 
 @_utilities.lift_output_func(get_fleet_performance_tuning_analysis_results)
 def get_fleet_performance_tuning_analysis_results_output(application_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                                         filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetFleetPerformanceTuningAnalysisResultsFilterArgs']]]]] = None,
+                                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFleetPerformanceTuningAnalysisResultsFilterArgs', 'GetFleetPerformanceTuningAnalysisResultsFilterArgsDict']]]]] = None,
                                                          fleet_id: Optional[pulumi.Input[str]] = None,
                                                          host_name: Optional[pulumi.Input[Optional[str]]] = None,
                                                          managed_instance_id: Optional[pulumi.Input[Optional[str]]] = None,

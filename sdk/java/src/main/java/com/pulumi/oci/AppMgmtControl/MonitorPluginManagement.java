@@ -117,7 +117,7 @@ public class MonitorPluginManagement extends com.pulumi.resources.CustomResource
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public MonitorPluginManagement(String name) {
+    public MonitorPluginManagement(java.lang.String name) {
         this(name, MonitorPluginManagementArgs.Empty);
     }
     /**
@@ -125,7 +125,7 @@ public class MonitorPluginManagement extends com.pulumi.resources.CustomResource
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public MonitorPluginManagement(String name, MonitorPluginManagementArgs args) {
+    public MonitorPluginManagement(java.lang.String name, MonitorPluginManagementArgs args) {
         this(name, args, null);
     }
     /**
@@ -134,12 +134,12 @@ public class MonitorPluginManagement extends com.pulumi.resources.CustomResource
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public MonitorPluginManagement(String name, MonitorPluginManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:AppMgmtControl/monitorPluginManagement:MonitorPluginManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public MonitorPluginManagement(java.lang.String name, MonitorPluginManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:AppMgmtControl/monitorPluginManagement:MonitorPluginManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private MonitorPluginManagement(String name, Output<String> id, @Nullable MonitorPluginManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:AppMgmtControl/monitorPluginManagement:MonitorPluginManagement", name, state, makeResourceOptions(options, id));
+    private MonitorPluginManagement(java.lang.String name, Output<java.lang.String> id, @Nullable MonitorPluginManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:AppMgmtControl/monitorPluginManagement:MonitorPluginManagement", name, state, makeResourceOptions(options, id), false);
     }
 
     private static MonitorPluginManagementArgs makeArgs(MonitorPluginManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -149,7 +149,7 @@ public class MonitorPluginManagement extends com.pulumi.resources.CustomResource
         return args == null ? MonitorPluginManagementArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -165,7 +165,7 @@ public class MonitorPluginManagement extends com.pulumi.resources.CustomResource
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static MonitorPluginManagement get(String name, Output<String> id, @Nullable MonitorPluginManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static MonitorPluginManagement get(java.lang.String name, Output<java.lang.String> id, @Nullable MonitorPluginManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new MonitorPluginManagement(name, id, state, options);
     }
 }

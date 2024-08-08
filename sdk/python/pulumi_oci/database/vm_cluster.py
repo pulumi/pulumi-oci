@@ -857,7 +857,7 @@ class VmCluster(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  cpu_core_count: Optional[pulumi.Input[int]] = None,
-                 data_collection_options: Optional[pulumi.Input[pulumi.InputType['VmClusterDataCollectionOptionsArgs']]] = None,
+                 data_collection_options: Optional[pulumi.Input[Union['VmClusterDataCollectionOptionsArgs', 'VmClusterDataCollectionOptionsArgsDict']]] = None,
                  data_storage_size_in_gb: Optional[pulumi.Input[float]] = None,
                  data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
                  db_node_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
@@ -865,7 +865,7 @@ class VmCluster(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
-                 file_system_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterFileSystemConfigurationDetailArgs']]]]] = None,
+                 file_system_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VmClusterFileSystemConfigurationDetailArgs', 'VmClusterFileSystemConfigurationDetailArgsDict']]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  gi_version: Optional[pulumi.Input[str]] = None,
                  is_local_backup_enabled: Optional[pulumi.Input[bool]] = None,
@@ -897,19 +897,19 @@ class VmCluster(pulumi.CustomResource):
             gi_version=vm_cluster_gi_version,
             ssh_public_keys=vm_cluster_ssh_public_keys,
             vm_cluster_network_id=test_vm_cluster_network["id"],
-            data_collection_options=oci.database.VmClusterDataCollectionOptionsArgs(
-                is_diagnostics_events_enabled=vm_cluster_data_collection_options_is_diagnostics_events_enabled,
-                is_health_monitoring_enabled=vm_cluster_data_collection_options_is_health_monitoring_enabled,
-                is_incident_logs_enabled=vm_cluster_data_collection_options_is_incident_logs_enabled,
-            ),
+            data_collection_options={
+                "is_diagnostics_events_enabled": vm_cluster_data_collection_options_is_diagnostics_events_enabled,
+                "is_health_monitoring_enabled": vm_cluster_data_collection_options_is_health_monitoring_enabled,
+                "is_incident_logs_enabled": vm_cluster_data_collection_options_is_incident_logs_enabled,
+            },
             data_storage_size_in_tbs=vm_cluster_data_storage_size_in_tbs,
             db_node_storage_size_in_gbs=vm_cluster_db_node_storage_size_in_gbs,
             db_servers=vm_cluster_db_servers,
             defined_tags=vm_cluster_defined_tags,
-            file_system_configuration_details=[oci.database.VmClusterFileSystemConfigurationDetailArgs(
-                file_system_size_gb=vm_cluster_file_system_configuration_details_file_system_size_gb,
-                mount_point=vm_cluster_file_system_configuration_details_mount_point,
-            )],
+            file_system_configuration_details=[{
+                "file_system_size_gb": vm_cluster_file_system_configuration_details_file_system_size_gb,
+                "mount_point": vm_cluster_file_system_configuration_details_mount_point,
+            }],
             freeform_tags={
                 "Department": "Finance",
             },
@@ -932,7 +932,7 @@ class VmCluster(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[pulumi.InputType['VmClusterDataCollectionOptionsArgs']] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+        :param pulumi.Input[Union['VmClusterDataCollectionOptionsArgs', 'VmClusterDataCollectionOptionsArgsDict']] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[float] data_storage_size_in_gb: (Updatable) The data disk group size to be allocated in GBs.
         :param pulumi.Input[float] data_storage_size_in_tbs: (Updatable) The data disk group size to be allocated in TBs.
         :param pulumi.Input[int] db_node_storage_size_in_gbs: (Updatable) The local node storage to be allocated in GBs.
@@ -940,7 +940,7 @@ class VmCluster(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: The user-friendly name for the VM cluster. The name does not need to be unique.
         :param pulumi.Input[str] exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterFileSystemConfigurationDetailArgs']]]] file_system_configuration_details: (Updatable) Details of the file system configuration of the VM cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmClusterFileSystemConfigurationDetailArgs', 'VmClusterFileSystemConfigurationDetailArgsDict']]]] file_system_configuration_details: (Updatable) Details of the file system configuration of the VM cluster.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] gi_version: The Oracle Grid Infrastructure software version for the VM cluster.
         :param pulumi.Input[bool] is_local_backup_enabled: If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
@@ -981,19 +981,19 @@ class VmCluster(pulumi.CustomResource):
             gi_version=vm_cluster_gi_version,
             ssh_public_keys=vm_cluster_ssh_public_keys,
             vm_cluster_network_id=test_vm_cluster_network["id"],
-            data_collection_options=oci.database.VmClusterDataCollectionOptionsArgs(
-                is_diagnostics_events_enabled=vm_cluster_data_collection_options_is_diagnostics_events_enabled,
-                is_health_monitoring_enabled=vm_cluster_data_collection_options_is_health_monitoring_enabled,
-                is_incident_logs_enabled=vm_cluster_data_collection_options_is_incident_logs_enabled,
-            ),
+            data_collection_options={
+                "is_diagnostics_events_enabled": vm_cluster_data_collection_options_is_diagnostics_events_enabled,
+                "is_health_monitoring_enabled": vm_cluster_data_collection_options_is_health_monitoring_enabled,
+                "is_incident_logs_enabled": vm_cluster_data_collection_options_is_incident_logs_enabled,
+            },
             data_storage_size_in_tbs=vm_cluster_data_storage_size_in_tbs,
             db_node_storage_size_in_gbs=vm_cluster_db_node_storage_size_in_gbs,
             db_servers=vm_cluster_db_servers,
             defined_tags=vm_cluster_defined_tags,
-            file_system_configuration_details=[oci.database.VmClusterFileSystemConfigurationDetailArgs(
-                file_system_size_gb=vm_cluster_file_system_configuration_details_file_system_size_gb,
-                mount_point=vm_cluster_file_system_configuration_details_mount_point,
-            )],
+            file_system_configuration_details=[{
+                "file_system_size_gb": vm_cluster_file_system_configuration_details_file_system_size_gb,
+                "mount_point": vm_cluster_file_system_configuration_details_mount_point,
+            }],
             freeform_tags={
                 "Department": "Finance",
             },
@@ -1030,7 +1030,7 @@ class VmCluster(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  cpu_core_count: Optional[pulumi.Input[int]] = None,
-                 data_collection_options: Optional[pulumi.Input[pulumi.InputType['VmClusterDataCollectionOptionsArgs']]] = None,
+                 data_collection_options: Optional[pulumi.Input[Union['VmClusterDataCollectionOptionsArgs', 'VmClusterDataCollectionOptionsArgsDict']]] = None,
                  data_storage_size_in_gb: Optional[pulumi.Input[float]] = None,
                  data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
                  db_node_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
@@ -1038,7 +1038,7 @@ class VmCluster(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
-                 file_system_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterFileSystemConfigurationDetailArgs']]]]] = None,
+                 file_system_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VmClusterFileSystemConfigurationDetailArgs', 'VmClusterFileSystemConfigurationDetailArgsDict']]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  gi_version: Optional[pulumi.Input[str]] = None,
                  is_local_backup_enabled: Optional[pulumi.Input[bool]] = None,
@@ -1117,7 +1117,7 @@ class VmCluster(pulumi.CustomResource):
             compartment_id: Optional[pulumi.Input[str]] = None,
             cpu_core_count: Optional[pulumi.Input[int]] = None,
             cpus_enabled: Optional[pulumi.Input[int]] = None,
-            data_collection_options: Optional[pulumi.Input[pulumi.InputType['VmClusterDataCollectionOptionsArgs']]] = None,
+            data_collection_options: Optional[pulumi.Input[Union['VmClusterDataCollectionOptionsArgs', 'VmClusterDataCollectionOptionsArgsDict']]] = None,
             data_storage_size_in_gb: Optional[pulumi.Input[float]] = None,
             data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
             db_node_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
@@ -1125,7 +1125,7 @@ class VmCluster(pulumi.CustomResource):
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
-            file_system_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterFileSystemConfigurationDetailArgs']]]]] = None,
+            file_system_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VmClusterFileSystemConfigurationDetailArgs', 'VmClusterFileSystemConfigurationDetailArgsDict']]]]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             gi_version: Optional[pulumi.Input[str]] = None,
             is_local_backup_enabled: Optional[pulumi.Input[bool]] = None,
@@ -1153,7 +1153,7 @@ class VmCluster(pulumi.CustomResource):
         :param pulumi.Input[str] availability_domain: The name of the availability domain that the VM cluster is located in.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[int] cpus_enabled: The number of enabled CPU cores.
-        :param pulumi.Input[pulumi.InputType['VmClusterDataCollectionOptionsArgs']] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+        :param pulumi.Input[Union['VmClusterDataCollectionOptionsArgs', 'VmClusterDataCollectionOptionsArgsDict']] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[float] data_storage_size_in_gb: (Updatable) The data disk group size to be allocated in GBs.
         :param pulumi.Input[float] data_storage_size_in_tbs: (Updatable) The data disk group size to be allocated in TBs.
         :param pulumi.Input[int] db_node_storage_size_in_gbs: (Updatable) The local node storage to be allocated in GBs.
@@ -1161,7 +1161,7 @@ class VmCluster(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: The user-friendly name for the VM cluster. The name does not need to be unique.
         :param pulumi.Input[str] exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterFileSystemConfigurationDetailArgs']]]] file_system_configuration_details: (Updatable) Details of the file system configuration of the VM cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmClusterFileSystemConfigurationDetailArgs', 'VmClusterFileSystemConfigurationDetailArgsDict']]]] file_system_configuration_details: (Updatable) Details of the file system configuration of the VM cluster.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] gi_version: The Oracle Grid Infrastructure software version for the VM cluster.
         :param pulumi.Input[bool] is_local_backup_enabled: If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.

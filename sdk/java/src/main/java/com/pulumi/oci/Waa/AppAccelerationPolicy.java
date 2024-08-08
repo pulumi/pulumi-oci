@@ -256,7 +256,7 @@ public class AppAccelerationPolicy extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public AppAccelerationPolicy(String name) {
+    public AppAccelerationPolicy(java.lang.String name) {
         this(name, AppAccelerationPolicyArgs.Empty);
     }
     /**
@@ -264,7 +264,7 @@ public class AppAccelerationPolicy extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public AppAccelerationPolicy(String name, AppAccelerationPolicyArgs args) {
+    public AppAccelerationPolicy(java.lang.String name, AppAccelerationPolicyArgs args) {
         this(name, args, null);
     }
     /**
@@ -273,12 +273,12 @@ public class AppAccelerationPolicy extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public AppAccelerationPolicy(String name, AppAccelerationPolicyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Waa/appAccelerationPolicy:AppAccelerationPolicy", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public AppAccelerationPolicy(java.lang.String name, AppAccelerationPolicyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Waa/appAccelerationPolicy:AppAccelerationPolicy", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private AppAccelerationPolicy(String name, Output<String> id, @Nullable AppAccelerationPolicyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Waa/appAccelerationPolicy:AppAccelerationPolicy", name, state, makeResourceOptions(options, id));
+    private AppAccelerationPolicy(java.lang.String name, Output<java.lang.String> id, @Nullable AppAccelerationPolicyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Waa/appAccelerationPolicy:AppAccelerationPolicy", name, state, makeResourceOptions(options, id), false);
     }
 
     private static AppAccelerationPolicyArgs makeArgs(AppAccelerationPolicyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -288,7 +288,7 @@ public class AppAccelerationPolicy extends com.pulumi.resources.CustomResource {
         return args == null ? AppAccelerationPolicyArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -304,7 +304,7 @@ public class AppAccelerationPolicy extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static AppAccelerationPolicy get(String name, Output<String> id, @Nullable AppAccelerationPolicyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static AppAccelerationPolicy get(java.lang.String name, Output<java.lang.String> id, @Nullable AppAccelerationPolicyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new AppAccelerationPolicy(name, id, state, options);
     }
 }

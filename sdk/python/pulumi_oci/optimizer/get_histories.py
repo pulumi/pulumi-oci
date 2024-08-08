@@ -171,7 +171,7 @@ class AwaitableGetHistoriesResult(GetHistoriesResult):
 
 def get_histories(compartment_id: Optional[str] = None,
                   compartment_id_in_subtree: Optional[bool] = None,
-                  filters: Optional[Sequence[pulumi.InputType['GetHistoriesFilterArgs']]] = None,
+                  filters: Optional[Sequence[Union['GetHistoriesFilterArgs', 'GetHistoriesFilterArgsDict']]] = None,
                   include_resource_metadata: Optional[bool] = None,
                   name: Optional[str] = None,
                   recommendation_id: Optional[str] = None,
@@ -248,7 +248,7 @@ def get_histories(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_histories)
 def get_histories_output(compartment_id: Optional[pulumi.Input[str]] = None,
                          compartment_id_in_subtree: Optional[pulumi.Input[bool]] = None,
-                         filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetHistoriesFilterArgs']]]]] = None,
+                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetHistoriesFilterArgs', 'GetHistoriesFilterArgsDict']]]]] = None,
                          include_resource_metadata: Optional[pulumi.Input[Optional[bool]]] = None,
                          name: Optional[pulumi.Input[Optional[str]]] = None,
                          recommendation_id: Optional[pulumi.Input[Optional[str]]] = None,

@@ -1043,7 +1043,7 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
             fields: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             host_name: Optional[pulumi.Input[str]] = None,
             host_name_contains: Optional[pulumi.Input[str]] = None,
-            items: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MonitoredResourcesSearchItemArgs']]]]] = None,
+            items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourcesSearchItemArgs', 'MonitoredResourcesSearchItemArgsDict']]]]] = None,
             license: Optional[pulumi.Input[str]] = None,
             lifecycle_states: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             management_agent_id: Optional[pulumi.Input[str]] = None,
@@ -1073,7 +1073,7 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] fields: Partial response refers to an optimization technique offered by the RESTful web APIs, to return only the information (fields) required by the client. In this mechanism, the client sends the required field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to return and should be a query string parameter called "fields" of an array type, provide the values as enums, and use collectionFormat.
         :param pulumi.Input[str] host_name: A filter to return resources with host name match.
         :param pulumi.Input[str] host_name_contains: A filter to return resources with host name pattern.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MonitoredResourcesSearchItemArgs']]]] items: List of monitored resources.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourcesSearchItemArgs', 'MonitoredResourcesSearchItemArgsDict']]]] items: List of monitored resources.
         :param pulumi.Input[str] license: License edition of the monitored resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] lifecycle_states: Multiple lifecycle states filter.
         :param pulumi.Input[str] management_agent_id: A filter to return resources with matching management agent id.

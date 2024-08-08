@@ -137,7 +137,7 @@ class AwaitableGetCommitmentAggregatedsResult(GetCommitmentAggregatedsResult):
 
 
 def get_commitment_aggregateds(compartment_id: Optional[str] = None,
-                               filters: Optional[Sequence[pulumi.InputType['GetCommitmentAggregatedsFilterArgs']]] = None,
+                               filters: Optional[Sequence[Union['GetCommitmentAggregatedsFilterArgs', 'GetCommitmentAggregatedsFilterArgsDict']]] = None,
                                grouping: Optional[str] = None,
                                parent_product: Optional[str] = None,
                                subscription_id: Optional[str] = None,
@@ -186,7 +186,7 @@ def get_commitment_aggregateds(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_commitment_aggregateds)
 def get_commitment_aggregateds_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                      filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetCommitmentAggregatedsFilterArgs']]]]] = None,
+                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCommitmentAggregatedsFilterArgs', 'GetCommitmentAggregatedsFilterArgsDict']]]]] = None,
                                       grouping: Optional[pulumi.Input[Optional[str]]] = None,
                                       parent_product: Optional[pulumi.Input[Optional[str]]] = None,
                                       subscription_id: Optional[pulumi.Input[str]] = None,

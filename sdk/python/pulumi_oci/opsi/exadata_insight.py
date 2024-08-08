@@ -621,7 +621,7 @@ class ExadataInsight(pulumi.CustomResource):
                  exadata_infra_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_auto_sync_enabled: Optional[pulumi.Input[bool]] = None,
-                 member_vm_cluster_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExadataInsightMemberVmClusterDetailArgs']]]]] = None,
+                 member_vm_cluster_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExadataInsightMemberVmClusterDetailArgs', 'ExadataInsightMemberVmClusterDetailArgsDict']]]]] = None,
                  status: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -648,41 +648,41 @@ class ExadataInsight(pulumi.CustomResource):
                 "bar-key": "value",
             },
             is_auto_sync_enabled=exadata_insight_is_auto_sync_enabled,
-            member_vm_cluster_details=[oci.opsi.ExadataInsightMemberVmClusterDetailArgs(
-                compartment_id=compartment_id,
-                dbm_private_endpoint_id=test_private_endpoint["id"],
-                member_database_details=[oci.opsi.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs(
-                    compartment_id=compartment_id,
-                    connection_details=oci.opsi.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs(
-                        hosts=[oci.opsi.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgs(
-                            host_ip=exadata_insight_member_vm_cluster_details_member_database_details_connection_details_hosts_host_ip,
-                            port=exadata_insight_member_vm_cluster_details_member_database_details_connection_details_hosts_port,
-                        )],
-                        protocol=exadata_insight_member_vm_cluster_details_member_database_details_connection_details_protocol,
-                        service_name=test_service["name"],
-                    ),
-                    credential_details=oci.opsi.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs(
-                        credential_type=exadata_insight_member_vm_cluster_details_member_database_details_credential_details_credential_type,
-                        credential_source_name=exadata_insight_member_vm_cluster_details_member_database_details_credential_details_credential_source_name,
-                        password_secret_id=test_secret["id"],
-                        role=exadata_insight_member_vm_cluster_details_member_database_details_credential_details_role,
-                        user_name=test_user["name"],
-                        wallet_secret_id=test_secret["id"],
-                    ),
-                    database_id=test_database["id"],
-                    database_resource_type=exadata_insight_member_vm_cluster_details_member_database_details_database_resource_type,
-                    dbm_private_endpoint_id=test_private_endpoint["id"],
-                    defined_tags=exadata_insight_member_vm_cluster_details_member_database_details_defined_tags,
-                    deployment_type=exadata_insight_member_vm_cluster_details_member_database_details_deployment_type,
-                    entity_source=exadata_insight_member_vm_cluster_details_member_database_details_entity_source,
-                    freeform_tags=exadata_insight_member_vm_cluster_details_member_database_details_freeform_tags,
-                    opsi_private_endpoint_id=test_private_endpoint["id"],
-                    service_name=test_service["name"],
-                    system_tags=exadata_insight_member_vm_cluster_details_member_database_details_system_tags,
-                )],
-                opsi_private_endpoint_id=test_private_endpoint["id"],
-                vmcluster_id=test_vmcluster["id"],
-            )])
+            member_vm_cluster_details=[{
+                "compartment_id": compartment_id,
+                "dbm_private_endpoint_id": test_private_endpoint["id"],
+                "member_database_details": [{
+                    "compartment_id": compartment_id,
+                    "connection_details": {
+                        "hosts": [{
+                            "host_ip": exadata_insight_member_vm_cluster_details_member_database_details_connection_details_hosts_host_ip,
+                            "port": exadata_insight_member_vm_cluster_details_member_database_details_connection_details_hosts_port,
+                        }],
+                        "protocol": exadata_insight_member_vm_cluster_details_member_database_details_connection_details_protocol,
+                        "service_name": test_service["name"],
+                    },
+                    "credential_details": {
+                        "credential_type": exadata_insight_member_vm_cluster_details_member_database_details_credential_details_credential_type,
+                        "credential_source_name": exadata_insight_member_vm_cluster_details_member_database_details_credential_details_credential_source_name,
+                        "password_secret_id": test_secret["id"],
+                        "role": exadata_insight_member_vm_cluster_details_member_database_details_credential_details_role,
+                        "user_name": test_user["name"],
+                        "wallet_secret_id": test_secret["id"],
+                    },
+                    "database_id": test_database["id"],
+                    "database_resource_type": exadata_insight_member_vm_cluster_details_member_database_details_database_resource_type,
+                    "dbm_private_endpoint_id": test_private_endpoint["id"],
+                    "defined_tags": exadata_insight_member_vm_cluster_details_member_database_details_defined_tags,
+                    "deployment_type": exadata_insight_member_vm_cluster_details_member_database_details_deployment_type,
+                    "entity_source": exadata_insight_member_vm_cluster_details_member_database_details_entity_source,
+                    "freeform_tags": exadata_insight_member_vm_cluster_details_member_database_details_freeform_tags,
+                    "opsi_private_endpoint_id": test_private_endpoint["id"],
+                    "service_name": test_service["name"],
+                    "system_tags": exadata_insight_member_vm_cluster_details_member_database_details_system_tags,
+                }],
+                "opsi_private_endpoint_id": test_private_endpoint["id"],
+                "vmcluster_id": test_vmcluster["id"],
+            }])
         ```
 
         ## Import
@@ -738,41 +738,41 @@ class ExadataInsight(pulumi.CustomResource):
                 "bar-key": "value",
             },
             is_auto_sync_enabled=exadata_insight_is_auto_sync_enabled,
-            member_vm_cluster_details=[oci.opsi.ExadataInsightMemberVmClusterDetailArgs(
-                compartment_id=compartment_id,
-                dbm_private_endpoint_id=test_private_endpoint["id"],
-                member_database_details=[oci.opsi.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs(
-                    compartment_id=compartment_id,
-                    connection_details=oci.opsi.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs(
-                        hosts=[oci.opsi.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgs(
-                            host_ip=exadata_insight_member_vm_cluster_details_member_database_details_connection_details_hosts_host_ip,
-                            port=exadata_insight_member_vm_cluster_details_member_database_details_connection_details_hosts_port,
-                        )],
-                        protocol=exadata_insight_member_vm_cluster_details_member_database_details_connection_details_protocol,
-                        service_name=test_service["name"],
-                    ),
-                    credential_details=oci.opsi.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs(
-                        credential_type=exadata_insight_member_vm_cluster_details_member_database_details_credential_details_credential_type,
-                        credential_source_name=exadata_insight_member_vm_cluster_details_member_database_details_credential_details_credential_source_name,
-                        password_secret_id=test_secret["id"],
-                        role=exadata_insight_member_vm_cluster_details_member_database_details_credential_details_role,
-                        user_name=test_user["name"],
-                        wallet_secret_id=test_secret["id"],
-                    ),
-                    database_id=test_database["id"],
-                    database_resource_type=exadata_insight_member_vm_cluster_details_member_database_details_database_resource_type,
-                    dbm_private_endpoint_id=test_private_endpoint["id"],
-                    defined_tags=exadata_insight_member_vm_cluster_details_member_database_details_defined_tags,
-                    deployment_type=exadata_insight_member_vm_cluster_details_member_database_details_deployment_type,
-                    entity_source=exadata_insight_member_vm_cluster_details_member_database_details_entity_source,
-                    freeform_tags=exadata_insight_member_vm_cluster_details_member_database_details_freeform_tags,
-                    opsi_private_endpoint_id=test_private_endpoint["id"],
-                    service_name=test_service["name"],
-                    system_tags=exadata_insight_member_vm_cluster_details_member_database_details_system_tags,
-                )],
-                opsi_private_endpoint_id=test_private_endpoint["id"],
-                vmcluster_id=test_vmcluster["id"],
-            )])
+            member_vm_cluster_details=[{
+                "compartment_id": compartment_id,
+                "dbm_private_endpoint_id": test_private_endpoint["id"],
+                "member_database_details": [{
+                    "compartment_id": compartment_id,
+                    "connection_details": {
+                        "hosts": [{
+                            "host_ip": exadata_insight_member_vm_cluster_details_member_database_details_connection_details_hosts_host_ip,
+                            "port": exadata_insight_member_vm_cluster_details_member_database_details_connection_details_hosts_port,
+                        }],
+                        "protocol": exadata_insight_member_vm_cluster_details_member_database_details_connection_details_protocol,
+                        "service_name": test_service["name"],
+                    },
+                    "credential_details": {
+                        "credential_type": exadata_insight_member_vm_cluster_details_member_database_details_credential_details_credential_type,
+                        "credential_source_name": exadata_insight_member_vm_cluster_details_member_database_details_credential_details_credential_source_name,
+                        "password_secret_id": test_secret["id"],
+                        "role": exadata_insight_member_vm_cluster_details_member_database_details_credential_details_role,
+                        "user_name": test_user["name"],
+                        "wallet_secret_id": test_secret["id"],
+                    },
+                    "database_id": test_database["id"],
+                    "database_resource_type": exadata_insight_member_vm_cluster_details_member_database_details_database_resource_type,
+                    "dbm_private_endpoint_id": test_private_endpoint["id"],
+                    "defined_tags": exadata_insight_member_vm_cluster_details_member_database_details_defined_tags,
+                    "deployment_type": exadata_insight_member_vm_cluster_details_member_database_details_deployment_type,
+                    "entity_source": exadata_insight_member_vm_cluster_details_member_database_details_entity_source,
+                    "freeform_tags": exadata_insight_member_vm_cluster_details_member_database_details_freeform_tags,
+                    "opsi_private_endpoint_id": test_private_endpoint["id"],
+                    "service_name": test_service["name"],
+                    "system_tags": exadata_insight_member_vm_cluster_details_member_database_details_system_tags,
+                }],
+                "opsi_private_endpoint_id": test_private_endpoint["id"],
+                "vmcluster_id": test_vmcluster["id"],
+            }])
         ```
 
         ## Import
@@ -807,7 +807,7 @@ class ExadataInsight(pulumi.CustomResource):
                  exadata_infra_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_auto_sync_enabled: Optional[pulumi.Input[bool]] = None,
-                 member_vm_cluster_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExadataInsightMemberVmClusterDetailArgs']]]]] = None,
+                 member_vm_cluster_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExadataInsightMemberVmClusterDetailArgs', 'ExadataInsightMemberVmClusterDetailArgsDict']]]]] = None,
                  status: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -878,7 +878,7 @@ class ExadataInsight(pulumi.CustomResource):
             is_auto_sync_enabled: Optional[pulumi.Input[bool]] = None,
             is_virtualized_exadata: Optional[pulumi.Input[bool]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
-            member_vm_cluster_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExadataInsightMemberVmClusterDetailArgs']]]]] = None,
+            member_vm_cluster_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExadataInsightMemberVmClusterDetailArgs', 'ExadataInsightMemberVmClusterDetailArgsDict']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             status: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,

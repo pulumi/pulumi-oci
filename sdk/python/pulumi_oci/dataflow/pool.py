@@ -432,13 +432,13 @@ class Pool(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 configurations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PoolConfigurationArgs']]]]] = None,
+                 configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PoolConfigurationArgs', 'PoolConfigurationArgsDict']]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  idle_timeout_in_minutes: Optional[pulumi.Input[int]] = None,
-                 schedules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PoolScheduleArgs']]]]] = None,
+                 schedules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PoolScheduleArgs', 'PoolScheduleArgsDict']]]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -454,15 +454,15 @@ class Pool(pulumi.CustomResource):
 
         test_pool = oci.data_flow.Pool("test_pool",
             compartment_id=compartment_id,
-            configurations=[oci.data_flow.PoolConfigurationArgs(
-                max=pool_configurations_max,
-                min=pool_configurations_min,
-                shape=pool_configurations_shape,
-                shape_config=oci.data_flow.PoolConfigurationShapeConfigArgs(
-                    memory_in_gbs=pool_configurations_shape_config_memory_in_gbs,
-                    ocpus=pool_configurations_shape_config_ocpus,
-                ),
-            )],
+            configurations=[{
+                "max": pool_configurations_max,
+                "min": pool_configurations_min,
+                "shape": pool_configurations_shape,
+                "shape_config": {
+                    "memory_in_gbs": pool_configurations_shape_config_memory_in_gbs,
+                    "ocpus": pool_configurations_shape_config_ocpus,
+                },
+            }],
             display_name=pool_display_name,
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -472,11 +472,11 @@ class Pool(pulumi.CustomResource):
                 "Department": "Finance",
             },
             idle_timeout_in_minutes=pool_idle_timeout_in_minutes,
-            schedules=[oci.data_flow.PoolScheduleArgs(
-                day_of_week=pool_schedules_day_of_week,
-                start_time=pool_schedules_start_time,
-                stop_time=pool_schedules_stop_time,
-            )])
+            schedules=[{
+                "day_of_week": pool_schedules_day_of_week,
+                "start_time": pool_schedules_start_time,
+                "stop_time": pool_schedules_stop_time,
+            }])
         ```
 
         ## Import
@@ -490,13 +490,13 @@ class Pool(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of a compartment.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PoolConfigurationArgs']]]] configurations: (Updatable) List of PoolConfig items.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PoolConfigurationArgs', 'PoolConfigurationArgsDict']]]] configurations: (Updatable) List of PoolConfig items.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) A user-friendly description. Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[int] idle_timeout_in_minutes: (Updatable) Optional timeout value in minutes used to auto stop Pools. A Pool will be auto stopped after inactivity for this amount of time period. If value not set, pool will not be auto stopped auto.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PoolScheduleArgs']]]] schedules: (Updatable) A list of schedules for pool to auto start and stop.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PoolScheduleArgs', 'PoolScheduleArgsDict']]]] schedules: (Updatable) A list of schedules for pool to auto start and stop.
         :param pulumi.Input[str] state: (Updatable) The target state for the Pool. Could be set to `ACTIVE` or `DELETED`. 
                
                
@@ -522,15 +522,15 @@ class Pool(pulumi.CustomResource):
 
         test_pool = oci.data_flow.Pool("test_pool",
             compartment_id=compartment_id,
-            configurations=[oci.data_flow.PoolConfigurationArgs(
-                max=pool_configurations_max,
-                min=pool_configurations_min,
-                shape=pool_configurations_shape,
-                shape_config=oci.data_flow.PoolConfigurationShapeConfigArgs(
-                    memory_in_gbs=pool_configurations_shape_config_memory_in_gbs,
-                    ocpus=pool_configurations_shape_config_ocpus,
-                ),
-            )],
+            configurations=[{
+                "max": pool_configurations_max,
+                "min": pool_configurations_min,
+                "shape": pool_configurations_shape,
+                "shape_config": {
+                    "memory_in_gbs": pool_configurations_shape_config_memory_in_gbs,
+                    "ocpus": pool_configurations_shape_config_ocpus,
+                },
+            }],
             display_name=pool_display_name,
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -540,11 +540,11 @@ class Pool(pulumi.CustomResource):
                 "Department": "Finance",
             },
             idle_timeout_in_minutes=pool_idle_timeout_in_minutes,
-            schedules=[oci.data_flow.PoolScheduleArgs(
-                day_of_week=pool_schedules_day_of_week,
-                start_time=pool_schedules_start_time,
-                stop_time=pool_schedules_stop_time,
-            )])
+            schedules=[{
+                "day_of_week": pool_schedules_day_of_week,
+                "start_time": pool_schedules_start_time,
+                "stop_time": pool_schedules_stop_time,
+            }])
         ```
 
         ## Import
@@ -571,13 +571,13 @@ class Pool(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 configurations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PoolConfigurationArgs']]]]] = None,
+                 configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PoolConfigurationArgs', 'PoolConfigurationArgsDict']]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  idle_timeout_in_minutes: Optional[pulumi.Input[int]] = None,
-                 schedules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PoolScheduleArgs']]]]] = None,
+                 schedules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PoolScheduleArgs', 'PoolScheduleArgsDict']]]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -620,7 +620,7 @@ class Pool(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            configurations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PoolConfigurationArgs']]]]] = None,
+            configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PoolConfigurationArgs', 'PoolConfigurationArgsDict']]]]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
@@ -629,8 +629,8 @@ class Pool(pulumi.CustomResource):
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             owner_principal_id: Optional[pulumi.Input[str]] = None,
             owner_user_name: Optional[pulumi.Input[str]] = None,
-            pool_metrics: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PoolPoolMetricArgs']]]]] = None,
-            schedules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PoolScheduleArgs']]]]] = None,
+            pool_metrics: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PoolPoolMetricArgs', 'PoolPoolMetricArgsDict']]]]] = None,
+            schedules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PoolScheduleArgs', 'PoolScheduleArgsDict']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None) -> 'Pool':
@@ -642,7 +642,7 @@ class Pool(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of a compartment.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PoolConfigurationArgs']]]] configurations: (Updatable) List of PoolConfig items.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PoolConfigurationArgs', 'PoolConfigurationArgsDict']]]] configurations: (Updatable) List of PoolConfig items.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) A user-friendly description. Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique. Avoid entering confidential information.
@@ -651,8 +651,8 @@ class Pool(pulumi.CustomResource):
         :param pulumi.Input[str] lifecycle_details: The detailed messages about the lifecycle state.
         :param pulumi.Input[str] owner_principal_id: The OCID of the user who created the resource.
         :param pulumi.Input[str] owner_user_name: The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PoolPoolMetricArgs']]]] pool_metrics: A collection of metrics related to a particular pool.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PoolScheduleArgs']]]] schedules: (Updatable) A list of schedules for pool to auto start and stop.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PoolPoolMetricArgs', 'PoolPoolMetricArgsDict']]]] pool_metrics: A collection of metrics related to a particular pool.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PoolScheduleArgs', 'PoolScheduleArgsDict']]]] schedules: (Updatable) A list of schedules for pool to auto start and stop.
         :param pulumi.Input[str] state: (Updatable) The target state for the Pool. Could be set to `ACTIVE` or `DELETED`. 
                
                

@@ -746,7 +746,7 @@ class BlockchainPlatform(pulumi.CustomResource):
                  load_balancer_shape: Optional[pulumi.Input[str]] = None,
                  platform_role: Optional[pulumi.Input[str]] = None,
                  platform_version: Optional[pulumi.Input[str]] = None,
-                 replicas: Optional[pulumi.Input[pulumi.InputType['BlockchainPlatformReplicasArgs']]] = None,
+                 replicas: Optional[pulumi.Input[Union['BlockchainPlatformReplicasArgs', 'BlockchainPlatformReplicasArgsDict']]] = None,
                  storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
                  total_ocpu_capacity: Optional[pulumi.Input[int]] = None,
                  __props__=None):
@@ -807,7 +807,7 @@ class BlockchainPlatform(pulumi.CustomResource):
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] platform_role: Role of platform - founder or participant
         :param pulumi.Input[str] platform_version: Platform version
-        :param pulumi.Input[pulumi.InputType['BlockchainPlatformReplicasArgs']] replicas: Number of replicas of service components like Rest Proxy, CA and Console
+        :param pulumi.Input[Union['BlockchainPlatformReplicasArgs', 'BlockchainPlatformReplicasArgsDict']] replicas: Number of replicas of service components like Rest Proxy, CA and Console
         :param pulumi.Input[float] storage_size_in_tbs: Storage size in TBs
         :param pulumi.Input[int] total_ocpu_capacity: Number of total OCPUs allocated to the platform cluster
         """
@@ -883,7 +883,7 @@ class BlockchainPlatform(pulumi.CustomResource):
                  load_balancer_shape: Optional[pulumi.Input[str]] = None,
                  platform_role: Optional[pulumi.Input[str]] = None,
                  platform_version: Optional[pulumi.Input[str]] = None,
-                 replicas: Optional[pulumi.Input[pulumi.InputType['BlockchainPlatformReplicasArgs']]] = None,
+                 replicas: Optional[pulumi.Input[Union['BlockchainPlatformReplicasArgs', 'BlockchainPlatformReplicasArgsDict']]] = None,
                  storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
                  total_ocpu_capacity: Optional[pulumi.Input[int]] = None,
                  __props__=None):
@@ -946,14 +946,14 @@ class BlockchainPlatform(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             ca_cert_archive_text: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            component_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BlockchainPlatformComponentDetailArgs']]]]] = None,
+            component_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BlockchainPlatformComponentDetailArgs', 'BlockchainPlatformComponentDetailArgsDict']]]]] = None,
             compute_shape: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             federated_user_id: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            host_ocpu_utilization_infos: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BlockchainPlatformHostOcpuUtilizationInfoArgs']]]]] = None,
+            host_ocpu_utilization_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BlockchainPlatformHostOcpuUtilizationInfoArgs', 'BlockchainPlatformHostOcpuUtilizationInfoArgsDict']]]]] = None,
             idcs_access_token: Optional[pulumi.Input[str]] = None,
             is_byol: Optional[pulumi.Input[bool]] = None,
             is_multi_ad: Optional[pulumi.Input[bool]] = None,
@@ -962,7 +962,7 @@ class BlockchainPlatform(pulumi.CustomResource):
             platform_role: Optional[pulumi.Input[str]] = None,
             platform_shape_type: Optional[pulumi.Input[str]] = None,
             platform_version: Optional[pulumi.Input[str]] = None,
-            replicas: Optional[pulumi.Input[pulumi.InputType['BlockchainPlatformReplicasArgs']]] = None,
+            replicas: Optional[pulumi.Input[Union['BlockchainPlatformReplicasArgs', 'BlockchainPlatformReplicasArgsDict']]] = None,
             service_endpoint: Optional[pulumi.Input[str]] = None,
             service_version: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -980,14 +980,14 @@ class BlockchainPlatform(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] ca_cert_archive_text: Base64 encoded text in ASCII character set of a Thirdparty CA Certificates archive file. The Archive file is a zip file containing third part CA Certificates, the ca key and certificate files used when issuing enrollment certificates (ECerts) and transaction certificates (TCerts). The chainfile (if it exists) contains the certificate chain which should be trusted for this CA, where the 1st in the chain is always the root CA certificate. File list in zip file [ca-cert.pem,ca-key.pem,ca-chain.pem(optional)].
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BlockchainPlatformComponentDetailArgs']]]] component_details: Blockchain Platform component details.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['BlockchainPlatformComponentDetailArgs', 'BlockchainPlatformComponentDetailArgsDict']]]] component_details: Blockchain Platform component details.
         :param pulumi.Input[str] compute_shape: Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Platform Instance Description
         :param pulumi.Input[str] display_name: Platform Instance Display name, can be renamed
         :param pulumi.Input[str] federated_user_id: Identifier for a federated user
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BlockchainPlatformHostOcpuUtilizationInfoArgs']]]] host_ocpu_utilization_infos: List of OcpuUtilization for all hosts
+        :param pulumi.Input[Sequence[pulumi.Input[Union['BlockchainPlatformHostOcpuUtilizationInfoArgs', 'BlockchainPlatformHostOcpuUtilizationInfoArgsDict']]]] host_ocpu_utilization_infos: List of OcpuUtilization for all hosts
         :param pulumi.Input[str] idcs_access_token: IDCS access token with Identity Domain Administrator role
         :param pulumi.Input[bool] is_byol: Bring your own license
         :param pulumi.Input[bool] is_multi_ad: True for multi-AD blockchain plaforms, false for single-AD
@@ -1000,7 +1000,7 @@ class BlockchainPlatform(pulumi.CustomResource):
         :param pulumi.Input[str] platform_role: Role of platform - founder or participant
         :param pulumi.Input[str] platform_shape_type: Type of Platform shape - DEFAULT or CUSTOM
         :param pulumi.Input[str] platform_version: Platform version
-        :param pulumi.Input[pulumi.InputType['BlockchainPlatformReplicasArgs']] replicas: Number of replicas of service components like Rest Proxy, CA and Console
+        :param pulumi.Input[Union['BlockchainPlatformReplicasArgs', 'BlockchainPlatformReplicasArgsDict']] replicas: Number of replicas of service components like Rest Proxy, CA and Console
         :param pulumi.Input[str] service_endpoint: Service endpoint URL, valid post-provisioning
         :param pulumi.Input[str] service_version: The version of the Platform Instance.
         :param pulumi.Input[str] state: The current state of the Platform Instance.

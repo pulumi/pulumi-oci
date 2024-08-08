@@ -73,7 +73,7 @@ class AwaitableGetListingResourceVersionsResult(GetListingResourceVersionsResult
             listing_id=self.listing_id)
 
 
-def get_listing_resource_versions(filters: Optional[Sequence[pulumi.InputType['GetListingResourceVersionsFilterArgs']]] = None,
+def get_listing_resource_versions(filters: Optional[Sequence[Union['GetListingResourceVersionsFilterArgs', 'GetListingResourceVersionsFilterArgsDict']]] = None,
                                   listing_id: Optional[str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetListingResourceVersionsResult:
     """
@@ -93,7 +93,7 @@ def get_listing_resource_versions(filters: Optional[Sequence[pulumi.InputType['G
 
 
 @_utilities.lift_output_func(get_listing_resource_versions)
-def get_listing_resource_versions_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetListingResourceVersionsFilterArgs']]]]] = None,
+def get_listing_resource_versions_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetListingResourceVersionsFilterArgs', 'GetListingResourceVersionsFilterArgsDict']]]]] = None,
                                          listing_id: Optional[pulumi.Input[str]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetListingResourceVersionsResult]:
     """

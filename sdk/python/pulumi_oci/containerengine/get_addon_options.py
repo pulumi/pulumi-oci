@@ -86,7 +86,7 @@ class AwaitableGetAddonOptionsResult(GetAddonOptionsResult):
 
 
 def get_addon_options(addon_name: Optional[str] = None,
-                      filters: Optional[Sequence[pulumi.InputType['GetAddonOptionsFilterArgs']]] = None,
+                      filters: Optional[Sequence[Union['GetAddonOptionsFilterArgs', 'GetAddonOptionsFilterArgsDict']]] = None,
                       kubernetes_version: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAddonOptionsResult:
     """
@@ -125,7 +125,7 @@ def get_addon_options(addon_name: Optional[str] = None,
 
 @_utilities.lift_output_func(get_addon_options)
 def get_addon_options_output(addon_name: Optional[pulumi.Input[Optional[str]]] = None,
-                             filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAddonOptionsFilterArgs']]]]] = None,
+                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAddonOptionsFilterArgs', 'GetAddonOptionsFilterArgsDict']]]]] = None,
                              kubernetes_version: Optional[pulumi.Input[str]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAddonOptionsResult]:
     """

@@ -89,7 +89,7 @@ class AwaitableGetProductLicensesResult(GetProductLicensesResult):
 
 
 def get_product_licenses(compartment_id: Optional[str] = None,
-                         filters: Optional[Sequence[pulumi.InputType['GetProductLicensesFilterArgs']]] = None,
+                         filters: Optional[Sequence[Union['GetProductLicensesFilterArgs', 'GetProductLicensesFilterArgsDict']]] = None,
                          is_compartment_id_in_subtree: Optional[bool] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetProductLicensesResult:
     """
@@ -128,7 +128,7 @@ def get_product_licenses(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_product_licenses)
 def get_product_licenses_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetProductLicensesFilterArgs']]]]] = None,
+                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetProductLicensesFilterArgs', 'GetProductLicensesFilterArgsDict']]]]] = None,
                                 is_compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProductLicensesResult]:
     """

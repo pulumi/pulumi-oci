@@ -93,7 +93,7 @@ class AwaitableGetRemotePeeringConnectionsResult(GetRemotePeeringConnectionsResu
 
 def get_remote_peering_connections(compartment_id: Optional[str] = None,
                                    drg_id: Optional[str] = None,
-                                   filters: Optional[Sequence[pulumi.InputType['GetRemotePeeringConnectionsFilterArgs']]] = None,
+                                   filters: Optional[Sequence[Union['GetRemotePeeringConnectionsFilterArgs', 'GetRemotePeeringConnectionsFilterArgsDict']]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRemotePeeringConnectionsResult:
     """
     This data source provides the list of Remote Peering Connections in Oracle Cloud Infrastructure Core service.
@@ -133,7 +133,7 @@ def get_remote_peering_connections(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_remote_peering_connections)
 def get_remote_peering_connections_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                           drg_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                          filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetRemotePeeringConnectionsFilterArgs']]]]] = None,
+                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRemotePeeringConnectionsFilterArgs', 'GetRemotePeeringConnectionsFilterArgsDict']]]]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRemotePeeringConnectionsResult]:
     """
     This data source provides the list of Remote Peering Connections in Oracle Cloud Infrastructure Core service.

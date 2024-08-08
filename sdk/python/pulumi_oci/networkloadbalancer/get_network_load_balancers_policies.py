@@ -67,7 +67,7 @@ class AwaitableGetNetworkLoadBalancersPoliciesResult(GetNetworkLoadBalancersPoli
             network_load_balancers_policy_collections=self.network_load_balancers_policy_collections)
 
 
-def get_network_load_balancers_policies(filters: Optional[Sequence[pulumi.InputType['GetNetworkLoadBalancersPoliciesFilterArgs']]] = None,
+def get_network_load_balancers_policies(filters: Optional[Sequence[Union['GetNetworkLoadBalancersPoliciesFilterArgs', 'GetNetworkLoadBalancersPoliciesFilterArgsDict']]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkLoadBalancersPoliciesResult:
     """
     This data source provides the list of Network Load Balancers Policies in Oracle Cloud Infrastructure Network Load Balancer service.
@@ -95,7 +95,7 @@ def get_network_load_balancers_policies(filters: Optional[Sequence[pulumi.InputT
 
 
 @_utilities.lift_output_func(get_network_load_balancers_policies)
-def get_network_load_balancers_policies_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetNetworkLoadBalancersPoliciesFilterArgs']]]]] = None,
+def get_network_load_balancers_policies_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNetworkLoadBalancersPoliciesFilterArgs', 'GetNetworkLoadBalancersPoliciesFilterArgsDict']]]]] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkLoadBalancersPoliciesResult]:
     """
     This data source provides the list of Network Load Balancers Policies in Oracle Cloud Infrastructure Network Load Balancer service.

@@ -116,7 +116,7 @@ class AwaitableGetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult(GetM
 
 
 def get_managed_database_sql_tuning_advisor_tasks_recommendations(execution_id: Optional[str] = None,
-                                                                  filters: Optional[Sequence[pulumi.InputType['GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterArgs']]] = None,
+                                                                  filters: Optional[Sequence[Union['GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterArgs', 'GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterArgsDict']]] = None,
                                                                   managed_database_id: Optional[str] = None,
                                                                   opc_named_credential_id: Optional[str] = None,
                                                                   sql_object_id: Optional[str] = None,
@@ -171,7 +171,7 @@ def get_managed_database_sql_tuning_advisor_tasks_recommendations(execution_id: 
 
 @_utilities.lift_output_func(get_managed_database_sql_tuning_advisor_tasks_recommendations)
 def get_managed_database_sql_tuning_advisor_tasks_recommendations_output(execution_id: Optional[pulumi.Input[str]] = None,
-                                                                         filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterArgs']]]]] = None,
+                                                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterArgs', 'GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterArgsDict']]]]] = None,
                                                                          managed_database_id: Optional[pulumi.Input[str]] = None,
                                                                          opc_named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                                          sql_object_id: Optional[pulumi.Input[str]] = None,

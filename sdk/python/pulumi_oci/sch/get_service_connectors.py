@@ -105,7 +105,7 @@ class AwaitableGetServiceConnectorsResult(GetServiceConnectorsResult):
 
 def get_service_connectors(compartment_id: Optional[str] = None,
                            display_name: Optional[str] = None,
-                           filters: Optional[Sequence[pulumi.InputType['GetServiceConnectorsFilterArgs']]] = None,
+                           filters: Optional[Sequence[Union['GetServiceConnectorsFilterArgs', 'GetServiceConnectorsFilterArgsDict']]] = None,
                            state: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetServiceConnectorsResult:
     """
@@ -151,7 +151,7 @@ def get_service_connectors(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_service_connectors)
 def get_service_connectors_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                   display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                  filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetServiceConnectorsFilterArgs']]]]] = None,
+                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetServiceConnectorsFilterArgs', 'GetServiceConnectorsFilterArgsDict']]]]] = None,
                                   state: Optional[pulumi.Input[Optional[str]]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetServiceConnectorsResult]:
     """

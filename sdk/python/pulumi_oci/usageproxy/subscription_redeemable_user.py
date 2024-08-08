@@ -175,7 +175,7 @@ class SubscriptionRedeemableUser(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 items: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SubscriptionRedeemableUserItemArgs']]]]] = None,
+                 items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SubscriptionRedeemableUserItemArgs', 'SubscriptionRedeemableUserItemArgsDict']]]]] = None,
                  subscription_id: Optional[pulumi.Input[str]] = None,
                  tenancy_id: Optional[pulumi.Input[str]] = None,
                  user_id: Optional[pulumi.Input[str]] = None,
@@ -194,11 +194,11 @@ class SubscriptionRedeemableUser(pulumi.CustomResource):
         test_subscription_redeemable_user = oci.usage_proxy.SubscriptionRedeemableUser("test_subscription_redeemable_user",
             subscription_id=test_subscription["id"],
             tenancy_id=test_tenancy["id"],
-            items=[oci.usage_proxy.SubscriptionRedeemableUserItemArgs(
-                email_id=test_email["id"],
-                first_name=subscription_redeemable_user_items_first_name,
-                last_name=subscription_redeemable_user_items_last_name,
-            )],
+            items=[{
+                "email_id": test_email["id"],
+                "first_name": subscription_redeemable_user_items_first_name,
+                "last_name": subscription_redeemable_user_items_last_name,
+            }],
             user_id=test_user["id"])
         ```
 
@@ -212,7 +212,7 @@ class SubscriptionRedeemableUser(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SubscriptionRedeemableUserItemArgs']]]] items: The list of new user to be added to the list of user that can redeem rewards.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SubscriptionRedeemableUserItemArgs', 'SubscriptionRedeemableUserItemArgsDict']]]] items: The list of new user to be added to the list of user that can redeem rewards.
         :param pulumi.Input[str] subscription_id: The subscription ID for which rewards information is requested for.
         :param pulumi.Input[str] tenancy_id: The OCID of the tenancy.
         :param pulumi.Input[str] user_id: The user ID of the person to send a copy of an email.
@@ -241,11 +241,11 @@ class SubscriptionRedeemableUser(pulumi.CustomResource):
         test_subscription_redeemable_user = oci.usage_proxy.SubscriptionRedeemableUser("test_subscription_redeemable_user",
             subscription_id=test_subscription["id"],
             tenancy_id=test_tenancy["id"],
-            items=[oci.usage_proxy.SubscriptionRedeemableUserItemArgs(
-                email_id=test_email["id"],
-                first_name=subscription_redeemable_user_items_first_name,
-                last_name=subscription_redeemable_user_items_last_name,
-            )],
+            items=[{
+                "email_id": test_email["id"],
+                "first_name": subscription_redeemable_user_items_first_name,
+                "last_name": subscription_redeemable_user_items_last_name,
+            }],
             user_id=test_user["id"])
         ```
 
@@ -272,7 +272,7 @@ class SubscriptionRedeemableUser(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 items: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SubscriptionRedeemableUserItemArgs']]]]] = None,
+                 items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SubscriptionRedeemableUserItemArgs', 'SubscriptionRedeemableUserItemArgsDict']]]]] = None,
                  subscription_id: Optional[pulumi.Input[str]] = None,
                  tenancy_id: Optional[pulumi.Input[str]] = None,
                  user_id: Optional[pulumi.Input[str]] = None,
@@ -305,7 +305,7 @@ class SubscriptionRedeemableUser(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            items: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SubscriptionRedeemableUserItemArgs']]]]] = None,
+            items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SubscriptionRedeemableUserItemArgs', 'SubscriptionRedeemableUserItemArgsDict']]]]] = None,
             subscription_id: Optional[pulumi.Input[str]] = None,
             tenancy_id: Optional[pulumi.Input[str]] = None,
             user_id: Optional[pulumi.Input[str]] = None) -> 'SubscriptionRedeemableUser':
@@ -316,7 +316,7 @@ class SubscriptionRedeemableUser(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SubscriptionRedeemableUserItemArgs']]]] items: The list of new user to be added to the list of user that can redeem rewards.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SubscriptionRedeemableUserItemArgs', 'SubscriptionRedeemableUserItemArgsDict']]]] items: The list of new user to be added to the list of user that can redeem rewards.
         :param pulumi.Input[str] subscription_id: The subscription ID for which rewards information is requested for.
         :param pulumi.Input[str] tenancy_id: The OCID of the tenancy.
         :param pulumi.Input[str] user_id: The user ID of the person to send a copy of an email.

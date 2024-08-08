@@ -131,7 +131,7 @@ def get_onprem_connectors(access_level: Optional[str] = None,
                           compartment_id: Optional[str] = None,
                           compartment_id_in_subtree: Optional[bool] = None,
                           display_name: Optional[str] = None,
-                          filters: Optional[Sequence[pulumi.InputType['GetOnpremConnectorsFilterArgs']]] = None,
+                          filters: Optional[Sequence[Union['GetOnpremConnectorsFilterArgs', 'GetOnpremConnectorsFilterArgsDict']]] = None,
                           on_prem_connector_id: Optional[str] = None,
                           on_prem_connector_lifecycle_state: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOnpremConnectorsResult:
@@ -190,7 +190,7 @@ def get_onprem_connectors_output(access_level: Optional[pulumi.Input[Optional[st
                                  compartment_id: Optional[pulumi.Input[str]] = None,
                                  compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                                  display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetOnpremConnectorsFilterArgs']]]]] = None,
+                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOnpremConnectorsFilterArgs', 'GetOnpremConnectorsFilterArgsDict']]]]] = None,
                                  on_prem_connector_id: Optional[pulumi.Input[Optional[str]]] = None,
                                  on_prem_connector_lifecycle_state: Optional[pulumi.Input[Optional[str]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOnpremConnectorsResult]:

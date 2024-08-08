@@ -76,7 +76,7 @@ class AwaitableGetFleetDiagnosesResult(GetFleetDiagnosesResult):
             id=self.id)
 
 
-def get_fleet_diagnoses(filters: Optional[Sequence[pulumi.InputType['GetFleetDiagnosesFilterArgs']]] = None,
+def get_fleet_diagnoses(filters: Optional[Sequence[Union['GetFleetDiagnosesFilterArgs', 'GetFleetDiagnosesFilterArgsDict']]] = None,
                         fleet_id: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFleetDiagnosesResult:
     """
@@ -110,7 +110,7 @@ def get_fleet_diagnoses(filters: Optional[Sequence[pulumi.InputType['GetFleetDia
 
 
 @_utilities.lift_output_func(get_fleet_diagnoses)
-def get_fleet_diagnoses_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetFleetDiagnosesFilterArgs']]]]] = None,
+def get_fleet_diagnoses_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFleetDiagnosesFilterArgs', 'GetFleetDiagnosesFilterArgsDict']]]]] = None,
                                fleet_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFleetDiagnosesResult]:
     """

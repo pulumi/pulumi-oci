@@ -98,7 +98,7 @@ class AwaitableGetDbSystemsUpgradeHistoryEntriesResult(GetDbSystemsUpgradeHistor
 
 
 def get_db_systems_upgrade_history_entries(db_system_id: Optional[str] = None,
-                                           filters: Optional[Sequence[pulumi.InputType['GetDbSystemsUpgradeHistoryEntriesFilterArgs']]] = None,
+                                           filters: Optional[Sequence[Union['GetDbSystemsUpgradeHistoryEntriesFilterArgs', 'GetDbSystemsUpgradeHistoryEntriesFilterArgsDict']]] = None,
                                            state: Optional[str] = None,
                                            upgrade_action: Optional[str] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbSystemsUpgradeHistoryEntriesResult:
@@ -142,7 +142,7 @@ def get_db_systems_upgrade_history_entries(db_system_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_db_systems_upgrade_history_entries)
 def get_db_systems_upgrade_history_entries_output(db_system_id: Optional[pulumi.Input[str]] = None,
-                                                  filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDbSystemsUpgradeHistoryEntriesFilterArgs']]]]] = None,
+                                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbSystemsUpgradeHistoryEntriesFilterArgs', 'GetDbSystemsUpgradeHistoryEntriesFilterArgsDict']]]]] = None,
                                                   state: Optional[pulumi.Input[Optional[str]]] = None,
                                                   upgrade_action: Optional[pulumi.Input[Optional[str]]] = None,
                                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbSystemsUpgradeHistoryEntriesResult]:

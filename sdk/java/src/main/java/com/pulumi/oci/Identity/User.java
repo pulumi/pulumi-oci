@@ -32,7 +32,7 @@ import javax.annotation.Nullable;
  * 
  * You must also specify a *name* for the user, which must be unique across all users in your tenancy
  * and cannot be changed. Allowed characters: No spaces. Only letters, numerals, hyphens, periods,
- * underscores, +, and{@literal @}. If you specify a name that&#39;s already in use, you&#39;ll get a 409 error.
+ * underscores, +, and {@literal @}. If you specify a name that&#39;s already in use, you&#39;ll get a 409 error.
  * This name will be the user&#39;s login to the Console. You might want to pick a
  * name that your company&#39;s own identity system (e.g., Active Directory, LDAP, etc.) already uses.
  * If you delete a user and then create a new user with the same name, they&#39;ll be considered different
@@ -345,7 +345,7 @@ public class User extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public User(String name) {
+    public User(java.lang.String name) {
         this(name, UserArgs.Empty);
     }
     /**
@@ -353,7 +353,7 @@ public class User extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public User(String name, UserArgs args) {
+    public User(java.lang.String name, UserArgs args) {
         this(name, args, null);
     }
     /**
@@ -362,12 +362,12 @@ public class User extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public User(String name, UserArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/user:User", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public User(java.lang.String name, UserArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/user:User", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private User(String name, Output<String> id, @Nullable UserState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/user:User", name, state, makeResourceOptions(options, id));
+    private User(java.lang.String name, Output<java.lang.String> id, @Nullable UserState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/user:User", name, state, makeResourceOptions(options, id), false);
     }
 
     private static UserArgs makeArgs(UserArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -377,7 +377,7 @@ public class User extends com.pulumi.resources.CustomResource {
         return args == null ? UserArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -393,7 +393,7 @@ public class User extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static User get(String name, Output<String> id, @Nullable UserState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static User get(java.lang.String name, Output<java.lang.String> id, @Nullable UserState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new User(name, id, state, options);
     }
 }

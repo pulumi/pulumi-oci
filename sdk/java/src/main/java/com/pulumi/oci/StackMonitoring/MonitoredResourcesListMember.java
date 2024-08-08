@@ -137,7 +137,7 @@ public class MonitoredResourcesListMember extends com.pulumi.resources.CustomRes
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public MonitoredResourcesListMember(String name) {
+    public MonitoredResourcesListMember(java.lang.String name) {
         this(name, MonitoredResourcesListMemberArgs.Empty);
     }
     /**
@@ -145,7 +145,7 @@ public class MonitoredResourcesListMember extends com.pulumi.resources.CustomRes
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public MonitoredResourcesListMember(String name, MonitoredResourcesListMemberArgs args) {
+    public MonitoredResourcesListMember(java.lang.String name, MonitoredResourcesListMemberArgs args) {
         this(name, args, null);
     }
     /**
@@ -154,12 +154,12 @@ public class MonitoredResourcesListMember extends com.pulumi.resources.CustomRes
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public MonitoredResourcesListMember(String name, MonitoredResourcesListMemberArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:StackMonitoring/monitoredResourcesListMember:MonitoredResourcesListMember", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public MonitoredResourcesListMember(java.lang.String name, MonitoredResourcesListMemberArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:StackMonitoring/monitoredResourcesListMember:MonitoredResourcesListMember", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private MonitoredResourcesListMember(String name, Output<String> id, @Nullable MonitoredResourcesListMemberState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:StackMonitoring/monitoredResourcesListMember:MonitoredResourcesListMember", name, state, makeResourceOptions(options, id));
+    private MonitoredResourcesListMember(java.lang.String name, Output<java.lang.String> id, @Nullable MonitoredResourcesListMemberState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:StackMonitoring/monitoredResourcesListMember:MonitoredResourcesListMember", name, state, makeResourceOptions(options, id), false);
     }
 
     private static MonitoredResourcesListMemberArgs makeArgs(MonitoredResourcesListMemberArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -169,7 +169,7 @@ public class MonitoredResourcesListMember extends com.pulumi.resources.CustomRes
         return args == null ? MonitoredResourcesListMemberArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -185,7 +185,7 @@ public class MonitoredResourcesListMember extends com.pulumi.resources.CustomRes
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static MonitoredResourcesListMember get(String name, Output<String> id, @Nullable MonitoredResourcesListMemberState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static MonitoredResourcesListMember get(java.lang.String name, Output<java.lang.String> id, @Nullable MonitoredResourcesListMemberState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new MonitoredResourcesListMember(name, id, state, options);
     }
 }

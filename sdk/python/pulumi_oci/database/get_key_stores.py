@@ -80,7 +80,7 @@ class AwaitableGetKeyStoresResult(GetKeyStoresResult):
 
 
 def get_key_stores(compartment_id: Optional[str] = None,
-                   filters: Optional[Sequence[pulumi.InputType['GetKeyStoresFilterArgs']]] = None,
+                   filters: Optional[Sequence[Union['GetKeyStoresFilterArgs', 'GetKeyStoresFilterArgsDict']]] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetKeyStoresResult:
     """
     This data source provides the list of Key Stores in Oracle Cloud Infrastructure Database service.
@@ -114,7 +114,7 @@ def get_key_stores(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_key_stores)
 def get_key_stores_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                          filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetKeyStoresFilterArgs']]]]] = None,
+                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetKeyStoresFilterArgs', 'GetKeyStoresFilterArgsDict']]]]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetKeyStoresResult]:
     """
     This data source provides the list of Key Stores in Oracle Cloud Infrastructure Database service.

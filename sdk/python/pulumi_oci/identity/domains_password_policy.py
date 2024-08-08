@@ -3357,7 +3357,7 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
                  external_id: Optional[pulumi.Input[str]] = None,
                  first_name_disallowed: Optional[pulumi.Input[bool]] = None,
                  force_password_reset: Optional[pulumi.Input[bool]] = None,
-                 groups: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsPasswordPolicyGroupArgs']]]]] = None,
+                 groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsPasswordPolicyGroupArgs', 'DomainsPasswordPolicyGroupArgsDict']]]]] = None,
                  idcs_endpoint: Optional[pulumi.Input[str]] = None,
                  last_name_disallowed: Optional[pulumi.Input[bool]] = None,
                  lockout_duration: Optional[pulumi.Input[int]] = None,
@@ -3385,7 +3385,7 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
                  resource_type_schema_version: Optional[pulumi.Input[str]] = None,
                  schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  starts_with_alphabet: Optional[pulumi.Input[bool]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsPasswordPolicyTagArgs']]]]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsPasswordPolicyTagArgs', 'DomainsPasswordPolicyTagArgsDict']]]]] = None,
                  user_name_disallowed: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         """
@@ -3530,7 +3530,7 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
                * returned: never
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsPasswordPolicyGroupArgs']]]] groups: (Updatable) A list of groups that the password policy belongs to.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsPasswordPolicyGroupArgs', 'DomainsPasswordPolicyGroupArgsDict']]]] groups: (Updatable) A list of groups that the password policy belongs to.
                
                **Added In:** 20.1.3
                
@@ -3803,7 +3803,7 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsPasswordPolicyTagArgs']]]] tags: (Updatable) A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsPasswordPolicyTagArgs', 'DomainsPasswordPolicyTagArgsDict']]]] tags: (Updatable) A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -3878,7 +3878,7 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
                  external_id: Optional[pulumi.Input[str]] = None,
                  first_name_disallowed: Optional[pulumi.Input[bool]] = None,
                  force_password_reset: Optional[pulumi.Input[bool]] = None,
-                 groups: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsPasswordPolicyGroupArgs']]]]] = None,
+                 groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsPasswordPolicyGroupArgs', 'DomainsPasswordPolicyGroupArgsDict']]]]] = None,
                  idcs_endpoint: Optional[pulumi.Input[str]] = None,
                  last_name_disallowed: Optional[pulumi.Input[bool]] = None,
                  lockout_duration: Optional[pulumi.Input[int]] = None,
@@ -3906,7 +3906,7 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
                  resource_type_schema_version: Optional[pulumi.Input[str]] = None,
                  schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  starts_with_alphabet: Optional[pulumi.Input[bool]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsPasswordPolicyTagArgs']]]]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsPasswordPolicyTagArgs', 'DomainsPasswordPolicyTagArgsDict']]]]] = None,
                  user_name_disallowed: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -3993,7 +3993,7 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
             attributes: Optional[pulumi.Input[str]] = None,
             authorization: Optional[pulumi.Input[str]] = None,
             compartment_ocid: Optional[pulumi.Input[str]] = None,
-            configured_password_policy_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsPasswordPolicyConfiguredPasswordPolicyRuleArgs']]]]] = None,
+            configured_password_policy_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsPasswordPolicyConfiguredPasswordPolicyRuleArgs', 'DomainsPasswordPolicyConfiguredPasswordPolicyRuleArgsDict']]]]] = None,
             delete_in_progress: Optional[pulumi.Input[bool]] = None,
             description: Optional[pulumi.Input[str]] = None,
             dictionary_delimiter: Optional[pulumi.Input[str]] = None,
@@ -4007,10 +4007,10 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
             external_id: Optional[pulumi.Input[str]] = None,
             first_name_disallowed: Optional[pulumi.Input[bool]] = None,
             force_password_reset: Optional[pulumi.Input[bool]] = None,
-            groups: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsPasswordPolicyGroupArgs']]]]] = None,
-            idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsPasswordPolicyIdcsCreatedByArgs']]]]] = None,
+            groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsPasswordPolicyGroupArgs', 'DomainsPasswordPolicyGroupArgsDict']]]]] = None,
+            idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsPasswordPolicyIdcsCreatedByArgs', 'DomainsPasswordPolicyIdcsCreatedByArgsDict']]]]] = None,
             idcs_endpoint: Optional[pulumi.Input[str]] = None,
-            idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsPasswordPolicyIdcsLastModifiedByArgs']]]]] = None,
+            idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsPasswordPolicyIdcsLastModifiedByArgs', 'DomainsPasswordPolicyIdcsLastModifiedByArgsDict']]]]] = None,
             idcs_last_upgraded_in_release: Optional[pulumi.Input[str]] = None,
             idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             last_name_disallowed: Optional[pulumi.Input[bool]] = None,
@@ -4019,7 +4019,7 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
             max_length: Optional[pulumi.Input[int]] = None,
             max_repeated_chars: Optional[pulumi.Input[int]] = None,
             max_special_chars: Optional[pulumi.Input[int]] = None,
-            metas: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsPasswordPolicyMetaArgs']]]]] = None,
+            metas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsPasswordPolicyMetaArgs', 'DomainsPasswordPolicyMetaArgsDict']]]]] = None,
             min_alpha_numerals: Optional[pulumi.Input[int]] = None,
             min_alphas: Optional[pulumi.Input[int]] = None,
             min_length: Optional[pulumi.Input[int]] = None,
@@ -4040,7 +4040,7 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             starts_with_alphabet: Optional[pulumi.Input[bool]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsPasswordPolicyTagArgs']]]]] = None,
+            tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsPasswordPolicyTagArgs', 'DomainsPasswordPolicyTagArgsDict']]]]] = None,
             tenancy_ocid: Optional[pulumi.Input[str]] = None,
             user_name_disallowed: Optional[pulumi.Input[bool]] = None) -> 'DomainsPasswordPolicy':
         """
@@ -4074,7 +4074,7 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsPasswordPolicyConfiguredPasswordPolicyRuleArgs']]]] configured_password_policy_rules: (Updatable) List of password policy rules that have values set. This map of stringKey:stringValue pairs can be used to aid users while setting/resetting password
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsPasswordPolicyConfiguredPasswordPolicyRuleArgs', 'DomainsPasswordPolicyConfiguredPasswordPolicyRuleArgsDict']]]] configured_password_policy_rules: (Updatable) List of password policy rules that have values set. This map of stringKey:stringValue pairs can be used to aid users while setting/resetting password
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -4221,7 +4221,7 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
                * returned: never
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsPasswordPolicyGroupArgs']]]] groups: (Updatable) A list of groups that the password policy belongs to.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsPasswordPolicyGroupArgs', 'DomainsPasswordPolicyGroupArgsDict']]]] groups: (Updatable) A list of groups that the password policy belongs to.
                
                **Added In:** 20.1.3
                
@@ -4235,7 +4235,7 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
                * returned: default
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsPasswordPolicyIdcsCreatedByArgs']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsPasswordPolicyIdcsCreatedByArgs', 'DomainsPasswordPolicyIdcsCreatedByArgsDict']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -4245,7 +4245,7 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
                * returned: default
                * type: complex
         :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsPasswordPolicyIdcsLastModifiedByArgs']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsPasswordPolicyIdcsLastModifiedByArgs', 'DomainsPasswordPolicyIdcsLastModifiedByArgsDict']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -4336,7 +4336,7 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
                * returned: default
                * type: integer
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsPasswordPolicyMetaArgs']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsPasswordPolicyMetaArgs', 'DomainsPasswordPolicyMetaArgsDict']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -4544,7 +4544,7 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsPasswordPolicyTagArgs']]]] tags: (Updatable) A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsPasswordPolicyTagArgs', 'DomainsPasswordPolicyTagArgsDict']]]] tags: (Updatable) A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]

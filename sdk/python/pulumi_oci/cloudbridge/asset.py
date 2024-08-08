@@ -512,16 +512,16 @@ class Asset(pulumi.CustomResource):
                  asset_source_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  asset_type: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 compute: Optional[pulumi.Input[pulumi.InputType['AssetComputeArgs']]] = None,
+                 compute: Optional[pulumi.Input[Union['AssetComputeArgs', 'AssetComputeArgsDict']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  external_asset_key: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  inventory_id: Optional[pulumi.Input[str]] = None,
                  source_key: Optional[pulumi.Input[str]] = None,
-                 vm: Optional[pulumi.Input[pulumi.InputType['AssetVmArgs']]] = None,
-                 vmware_vcenter: Optional[pulumi.Input[pulumi.InputType['AssetVmwareVcenterArgs']]] = None,
-                 vmware_vm: Optional[pulumi.Input[pulumi.InputType['AssetVmwareVmArgs']]] = None,
+                 vm: Optional[pulumi.Input[Union['AssetVmArgs', 'AssetVmArgsDict']]] = None,
+                 vmware_vcenter: Optional[pulumi.Input[Union['AssetVmwareVcenterArgs', 'AssetVmwareVcenterArgsDict']]] = None,
+                 vmware_vm: Optional[pulumi.Input[Union['AssetVmwareVmArgs', 'AssetVmwareVmArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Asset resource in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -541,69 +541,69 @@ class Asset(pulumi.CustomResource):
             inventory_id=test_inventory["id"],
             source_key=asset_source_key,
             asset_source_ids=asset_asset_source_ids,
-            compute=oci.cloud_bridge.AssetComputeArgs(
-                connected_networks=asset_compute_connected_networks,
-                cores_count=asset_compute_cores_count,
-                cpu_model=asset_compute_cpu_model,
-                description=asset_compute_description,
-                disks=[oci.cloud_bridge.AssetComputeDiskArgs(
-                    boot_order=asset_compute_disks_boot_order,
-                    location=asset_compute_disks_location,
-                    name=asset_compute_disks_name,
-                    persistent_mode=asset_compute_disks_persistent_mode,
-                    size_in_mbs=asset_compute_disks_size_in_mbs,
-                    uuid=asset_compute_disks_uuid,
-                    uuid_lun=asset_compute_disks_uuid_lun,
-                )],
-                disks_count=asset_compute_disks_count,
-                dns_name=asset_compute_dns_name,
-                firmware=asset_compute_firmware,
-                gpu_devices=[oci.cloud_bridge.AssetComputeGpuDeviceArgs(
-                    cores_count=asset_compute_gpu_devices_cores_count,
-                    description=asset_compute_gpu_devices_description,
-                    manufacturer=asset_compute_gpu_devices_manufacturer,
-                    memory_in_mbs=asset_compute_gpu_devices_memory_in_mbs,
-                    name=asset_compute_gpu_devices_name,
-                )],
-                gpu_devices_count=asset_compute_gpu_devices_count,
-                guest_state=asset_compute_guest_state,
-                hardware_version=asset_compute_hardware_version,
-                host_name=asset_compute_host_name,
-                is_pmem_enabled=asset_compute_is_pmem_enabled,
-                is_tpm_enabled=asset_compute_is_tpm_enabled,
-                latency_sensitivity=asset_compute_latency_sensitivity,
-                memory_in_mbs=asset_compute_memory_in_mbs,
-                nics=[oci.cloud_bridge.AssetComputeNicArgs(
-                    ip_addresses=asset_compute_nics_ip_addresses,
-                    label=asset_compute_nics_label,
-                    mac_address=asset_compute_nics_mac_address,
-                    mac_address_type=asset_compute_nics_mac_address_type,
-                    network_name=asset_compute_nics_network_name,
-                    switch_name=asset_compute_nics_switch_name,
-                )],
-                nics_count=asset_compute_nics_count,
-                nvdimm_controller=oci.cloud_bridge.AssetComputeNvdimmControllerArgs(
-                    bus_number=asset_compute_nvdimm_controller_bus_number,
-                    label=asset_compute_nvdimm_controller_label,
-                ),
-                nvdimms=[oci.cloud_bridge.AssetComputeNvdimmArgs(
-                    controller_key=asset_compute_nvdimms_controller_key,
-                    label=asset_compute_nvdimms_label,
-                    unit_number=asset_compute_nvdimms_unit_number,
-                )],
-                operating_system=asset_compute_operating_system,
-                operating_system_version=asset_compute_operating_system_version,
-                pmem_in_mbs=asset_compute_pmem_in_mbs,
-                power_state=asset_compute_power_state,
-                primary_ip=asset_compute_primary_ip,
-                scsi_controller=oci.cloud_bridge.AssetComputeScsiControllerArgs(
-                    label=asset_compute_scsi_controller_label,
-                    shared_bus=asset_compute_scsi_controller_shared_bus,
-                    unit_number=asset_compute_scsi_controller_unit_number,
-                ),
-                storage_provisioned_in_mbs=asset_compute_storage_provisioned_in_mbs,
-                threads_per_core_count=asset_compute_threads_per_core_count,
-            ),
+            compute={
+                "connected_networks": asset_compute_connected_networks,
+                "cores_count": asset_compute_cores_count,
+                "cpu_model": asset_compute_cpu_model,
+                "description": asset_compute_description,
+                "disks": [{
+                    "boot_order": asset_compute_disks_boot_order,
+                    "location": asset_compute_disks_location,
+                    "name": asset_compute_disks_name,
+                    "persistent_mode": asset_compute_disks_persistent_mode,
+                    "size_in_mbs": asset_compute_disks_size_in_mbs,
+                    "uuid": asset_compute_disks_uuid,
+                    "uuid_lun": asset_compute_disks_uuid_lun,
+                }],
+                "disks_count": asset_compute_disks_count,
+                "dns_name": asset_compute_dns_name,
+                "firmware": asset_compute_firmware,
+                "gpu_devices": [{
+                    "cores_count": asset_compute_gpu_devices_cores_count,
+                    "description": asset_compute_gpu_devices_description,
+                    "manufacturer": asset_compute_gpu_devices_manufacturer,
+                    "memory_in_mbs": asset_compute_gpu_devices_memory_in_mbs,
+                    "name": asset_compute_gpu_devices_name,
+                }],
+                "gpu_devices_count": asset_compute_gpu_devices_count,
+                "guest_state": asset_compute_guest_state,
+                "hardware_version": asset_compute_hardware_version,
+                "host_name": asset_compute_host_name,
+                "is_pmem_enabled": asset_compute_is_pmem_enabled,
+                "is_tpm_enabled": asset_compute_is_tpm_enabled,
+                "latency_sensitivity": asset_compute_latency_sensitivity,
+                "memory_in_mbs": asset_compute_memory_in_mbs,
+                "nics": [{
+                    "ip_addresses": asset_compute_nics_ip_addresses,
+                    "label": asset_compute_nics_label,
+                    "mac_address": asset_compute_nics_mac_address,
+                    "mac_address_type": asset_compute_nics_mac_address_type,
+                    "network_name": asset_compute_nics_network_name,
+                    "switch_name": asset_compute_nics_switch_name,
+                }],
+                "nics_count": asset_compute_nics_count,
+                "nvdimm_controller": {
+                    "bus_number": asset_compute_nvdimm_controller_bus_number,
+                    "label": asset_compute_nvdimm_controller_label,
+                },
+                "nvdimms": [{
+                    "controller_key": asset_compute_nvdimms_controller_key,
+                    "label": asset_compute_nvdimms_label,
+                    "unit_number": asset_compute_nvdimms_unit_number,
+                }],
+                "operating_system": asset_compute_operating_system,
+                "operating_system_version": asset_compute_operating_system_version,
+                "pmem_in_mbs": asset_compute_pmem_in_mbs,
+                "power_state": asset_compute_power_state,
+                "primary_ip": asset_compute_primary_ip,
+                "scsi_controller": {
+                    "label": asset_compute_scsi_controller_label,
+                    "shared_bus": asset_compute_scsi_controller_shared_bus,
+                    "unit_number": asset_compute_scsi_controller_unit_number,
+                },
+                "storage_provisioned_in_mbs": asset_compute_storage_provisioned_in_mbs,
+                "threads_per_core_count": asset_compute_threads_per_core_count,
+            },
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -611,32 +611,32 @@ class Asset(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            vm=oci.cloud_bridge.AssetVmArgs(
-                hypervisor_host=asset_vm_hypervisor_host,
-                hypervisor_vendor=asset_vm_hypervisor_vendor,
-                hypervisor_version=asset_vm_hypervisor_version,
-            ),
-            vmware_vcenter=oci.cloud_bridge.AssetVmwareVcenterArgs(
-                data_center=asset_vmware_vcenter_data_center,
-                vcenter_key=asset_vmware_vcenter_vcenter_key,
-                vcenter_version=asset_vmware_vcenter_vcenter_version,
-            ),
-            vmware_vm=oci.cloud_bridge.AssetVmwareVmArgs(
-                cluster=asset_vmware_vm_cluster,
-                customer_fields=asset_vmware_vm_customer_fields,
-                customer_tags=[oci.cloud_bridge.AssetVmwareVmCustomerTagArgs(
-                    description=asset_vmware_vm_customer_tags_description,
-                    name=asset_vmware_vm_customer_tags_name,
-                )],
-                fault_tolerance_bandwidth=asset_vmware_vm_fault_tolerance_bandwidth,
-                fault_tolerance_secondary_latency=asset_vmware_vm_fault_tolerance_secondary_latency,
-                fault_tolerance_state=asset_vmware_vm_fault_tolerance_state,
-                instance_uuid=asset_vmware_vm_instance_uuid,
-                is_disks_cbt_enabled=asset_vmware_vm_is_disks_cbt_enabled,
-                is_disks_uuid_enabled=asset_vmware_vm_is_disks_uuid_enabled,
-                path=asset_vmware_vm_path,
-                vmware_tools_status=asset_vmware_vm_vmware_tools_status,
-            ))
+            vm={
+                "hypervisor_host": asset_vm_hypervisor_host,
+                "hypervisor_vendor": asset_vm_hypervisor_vendor,
+                "hypervisor_version": asset_vm_hypervisor_version,
+            },
+            vmware_vcenter={
+                "data_center": asset_vmware_vcenter_data_center,
+                "vcenter_key": asset_vmware_vcenter_vcenter_key,
+                "vcenter_version": asset_vmware_vcenter_vcenter_version,
+            },
+            vmware_vm={
+                "cluster": asset_vmware_vm_cluster,
+                "customer_fields": asset_vmware_vm_customer_fields,
+                "customer_tags": [{
+                    "description": asset_vmware_vm_customer_tags_description,
+                    "name": asset_vmware_vm_customer_tags_name,
+                }],
+                "fault_tolerance_bandwidth": asset_vmware_vm_fault_tolerance_bandwidth,
+                "fault_tolerance_secondary_latency": asset_vmware_vm_fault_tolerance_secondary_latency,
+                "fault_tolerance_state": asset_vmware_vm_fault_tolerance_state,
+                "instance_uuid": asset_vmware_vm_instance_uuid,
+                "is_disks_cbt_enabled": asset_vmware_vm_is_disks_cbt_enabled,
+                "is_disks_uuid_enabled": asset_vmware_vm_is_disks_uuid_enabled,
+                "path": asset_vmware_vm_path,
+                "vmware_tools_status": asset_vmware_vm_vmware_tools_status,
+            })
         ```
 
         ## Import
@@ -652,16 +652,16 @@ class Asset(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] asset_source_ids: (Updatable) List of asset source OCID.
         :param pulumi.Input[str] asset_type: (Updatable) The type of asset.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that the asset belongs to.
-        :param pulumi.Input[pulumi.InputType['AssetComputeArgs']] compute: (Updatable) Compute related properties.
+        :param pulumi.Input[Union['AssetComputeArgs', 'AssetComputeArgsDict']] compute: (Updatable) Compute related properties.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) Asset display name.
         :param pulumi.Input[str] external_asset_key: The key of the asset from the external environment.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] inventory_id: Inventory ID to which an asset belongs.
         :param pulumi.Input[str] source_key: The source key to which the asset belongs.
-        :param pulumi.Input[pulumi.InputType['AssetVmArgs']] vm: (Updatable) Virtual machine related properties.
-        :param pulumi.Input[pulumi.InputType['AssetVmwareVcenterArgs']] vmware_vcenter: (Updatable) VMware vCenter related properties.
-        :param pulumi.Input[pulumi.InputType['AssetVmwareVmArgs']] vmware_vm: (Updatable) VMware virtual machine related properties.
+        :param pulumi.Input[Union['AssetVmArgs', 'AssetVmArgsDict']] vm: (Updatable) Virtual machine related properties.
+        :param pulumi.Input[Union['AssetVmwareVcenterArgs', 'AssetVmwareVcenterArgsDict']] vmware_vcenter: (Updatable) VMware vCenter related properties.
+        :param pulumi.Input[Union['AssetVmwareVmArgs', 'AssetVmwareVmArgsDict']] vmware_vm: (Updatable) VMware virtual machine related properties.
         """
         ...
     @overload
@@ -687,69 +687,69 @@ class Asset(pulumi.CustomResource):
             inventory_id=test_inventory["id"],
             source_key=asset_source_key,
             asset_source_ids=asset_asset_source_ids,
-            compute=oci.cloud_bridge.AssetComputeArgs(
-                connected_networks=asset_compute_connected_networks,
-                cores_count=asset_compute_cores_count,
-                cpu_model=asset_compute_cpu_model,
-                description=asset_compute_description,
-                disks=[oci.cloud_bridge.AssetComputeDiskArgs(
-                    boot_order=asset_compute_disks_boot_order,
-                    location=asset_compute_disks_location,
-                    name=asset_compute_disks_name,
-                    persistent_mode=asset_compute_disks_persistent_mode,
-                    size_in_mbs=asset_compute_disks_size_in_mbs,
-                    uuid=asset_compute_disks_uuid,
-                    uuid_lun=asset_compute_disks_uuid_lun,
-                )],
-                disks_count=asset_compute_disks_count,
-                dns_name=asset_compute_dns_name,
-                firmware=asset_compute_firmware,
-                gpu_devices=[oci.cloud_bridge.AssetComputeGpuDeviceArgs(
-                    cores_count=asset_compute_gpu_devices_cores_count,
-                    description=asset_compute_gpu_devices_description,
-                    manufacturer=asset_compute_gpu_devices_manufacturer,
-                    memory_in_mbs=asset_compute_gpu_devices_memory_in_mbs,
-                    name=asset_compute_gpu_devices_name,
-                )],
-                gpu_devices_count=asset_compute_gpu_devices_count,
-                guest_state=asset_compute_guest_state,
-                hardware_version=asset_compute_hardware_version,
-                host_name=asset_compute_host_name,
-                is_pmem_enabled=asset_compute_is_pmem_enabled,
-                is_tpm_enabled=asset_compute_is_tpm_enabled,
-                latency_sensitivity=asset_compute_latency_sensitivity,
-                memory_in_mbs=asset_compute_memory_in_mbs,
-                nics=[oci.cloud_bridge.AssetComputeNicArgs(
-                    ip_addresses=asset_compute_nics_ip_addresses,
-                    label=asset_compute_nics_label,
-                    mac_address=asset_compute_nics_mac_address,
-                    mac_address_type=asset_compute_nics_mac_address_type,
-                    network_name=asset_compute_nics_network_name,
-                    switch_name=asset_compute_nics_switch_name,
-                )],
-                nics_count=asset_compute_nics_count,
-                nvdimm_controller=oci.cloud_bridge.AssetComputeNvdimmControllerArgs(
-                    bus_number=asset_compute_nvdimm_controller_bus_number,
-                    label=asset_compute_nvdimm_controller_label,
-                ),
-                nvdimms=[oci.cloud_bridge.AssetComputeNvdimmArgs(
-                    controller_key=asset_compute_nvdimms_controller_key,
-                    label=asset_compute_nvdimms_label,
-                    unit_number=asset_compute_nvdimms_unit_number,
-                )],
-                operating_system=asset_compute_operating_system,
-                operating_system_version=asset_compute_operating_system_version,
-                pmem_in_mbs=asset_compute_pmem_in_mbs,
-                power_state=asset_compute_power_state,
-                primary_ip=asset_compute_primary_ip,
-                scsi_controller=oci.cloud_bridge.AssetComputeScsiControllerArgs(
-                    label=asset_compute_scsi_controller_label,
-                    shared_bus=asset_compute_scsi_controller_shared_bus,
-                    unit_number=asset_compute_scsi_controller_unit_number,
-                ),
-                storage_provisioned_in_mbs=asset_compute_storage_provisioned_in_mbs,
-                threads_per_core_count=asset_compute_threads_per_core_count,
-            ),
+            compute={
+                "connected_networks": asset_compute_connected_networks,
+                "cores_count": asset_compute_cores_count,
+                "cpu_model": asset_compute_cpu_model,
+                "description": asset_compute_description,
+                "disks": [{
+                    "boot_order": asset_compute_disks_boot_order,
+                    "location": asset_compute_disks_location,
+                    "name": asset_compute_disks_name,
+                    "persistent_mode": asset_compute_disks_persistent_mode,
+                    "size_in_mbs": asset_compute_disks_size_in_mbs,
+                    "uuid": asset_compute_disks_uuid,
+                    "uuid_lun": asset_compute_disks_uuid_lun,
+                }],
+                "disks_count": asset_compute_disks_count,
+                "dns_name": asset_compute_dns_name,
+                "firmware": asset_compute_firmware,
+                "gpu_devices": [{
+                    "cores_count": asset_compute_gpu_devices_cores_count,
+                    "description": asset_compute_gpu_devices_description,
+                    "manufacturer": asset_compute_gpu_devices_manufacturer,
+                    "memory_in_mbs": asset_compute_gpu_devices_memory_in_mbs,
+                    "name": asset_compute_gpu_devices_name,
+                }],
+                "gpu_devices_count": asset_compute_gpu_devices_count,
+                "guest_state": asset_compute_guest_state,
+                "hardware_version": asset_compute_hardware_version,
+                "host_name": asset_compute_host_name,
+                "is_pmem_enabled": asset_compute_is_pmem_enabled,
+                "is_tpm_enabled": asset_compute_is_tpm_enabled,
+                "latency_sensitivity": asset_compute_latency_sensitivity,
+                "memory_in_mbs": asset_compute_memory_in_mbs,
+                "nics": [{
+                    "ip_addresses": asset_compute_nics_ip_addresses,
+                    "label": asset_compute_nics_label,
+                    "mac_address": asset_compute_nics_mac_address,
+                    "mac_address_type": asset_compute_nics_mac_address_type,
+                    "network_name": asset_compute_nics_network_name,
+                    "switch_name": asset_compute_nics_switch_name,
+                }],
+                "nics_count": asset_compute_nics_count,
+                "nvdimm_controller": {
+                    "bus_number": asset_compute_nvdimm_controller_bus_number,
+                    "label": asset_compute_nvdimm_controller_label,
+                },
+                "nvdimms": [{
+                    "controller_key": asset_compute_nvdimms_controller_key,
+                    "label": asset_compute_nvdimms_label,
+                    "unit_number": asset_compute_nvdimms_unit_number,
+                }],
+                "operating_system": asset_compute_operating_system,
+                "operating_system_version": asset_compute_operating_system_version,
+                "pmem_in_mbs": asset_compute_pmem_in_mbs,
+                "power_state": asset_compute_power_state,
+                "primary_ip": asset_compute_primary_ip,
+                "scsi_controller": {
+                    "label": asset_compute_scsi_controller_label,
+                    "shared_bus": asset_compute_scsi_controller_shared_bus,
+                    "unit_number": asset_compute_scsi_controller_unit_number,
+                },
+                "storage_provisioned_in_mbs": asset_compute_storage_provisioned_in_mbs,
+                "threads_per_core_count": asset_compute_threads_per_core_count,
+            },
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -757,32 +757,32 @@ class Asset(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            vm=oci.cloud_bridge.AssetVmArgs(
-                hypervisor_host=asset_vm_hypervisor_host,
-                hypervisor_vendor=asset_vm_hypervisor_vendor,
-                hypervisor_version=asset_vm_hypervisor_version,
-            ),
-            vmware_vcenter=oci.cloud_bridge.AssetVmwareVcenterArgs(
-                data_center=asset_vmware_vcenter_data_center,
-                vcenter_key=asset_vmware_vcenter_vcenter_key,
-                vcenter_version=asset_vmware_vcenter_vcenter_version,
-            ),
-            vmware_vm=oci.cloud_bridge.AssetVmwareVmArgs(
-                cluster=asset_vmware_vm_cluster,
-                customer_fields=asset_vmware_vm_customer_fields,
-                customer_tags=[oci.cloud_bridge.AssetVmwareVmCustomerTagArgs(
-                    description=asset_vmware_vm_customer_tags_description,
-                    name=asset_vmware_vm_customer_tags_name,
-                )],
-                fault_tolerance_bandwidth=asset_vmware_vm_fault_tolerance_bandwidth,
-                fault_tolerance_secondary_latency=asset_vmware_vm_fault_tolerance_secondary_latency,
-                fault_tolerance_state=asset_vmware_vm_fault_tolerance_state,
-                instance_uuid=asset_vmware_vm_instance_uuid,
-                is_disks_cbt_enabled=asset_vmware_vm_is_disks_cbt_enabled,
-                is_disks_uuid_enabled=asset_vmware_vm_is_disks_uuid_enabled,
-                path=asset_vmware_vm_path,
-                vmware_tools_status=asset_vmware_vm_vmware_tools_status,
-            ))
+            vm={
+                "hypervisor_host": asset_vm_hypervisor_host,
+                "hypervisor_vendor": asset_vm_hypervisor_vendor,
+                "hypervisor_version": asset_vm_hypervisor_version,
+            },
+            vmware_vcenter={
+                "data_center": asset_vmware_vcenter_data_center,
+                "vcenter_key": asset_vmware_vcenter_vcenter_key,
+                "vcenter_version": asset_vmware_vcenter_vcenter_version,
+            },
+            vmware_vm={
+                "cluster": asset_vmware_vm_cluster,
+                "customer_fields": asset_vmware_vm_customer_fields,
+                "customer_tags": [{
+                    "description": asset_vmware_vm_customer_tags_description,
+                    "name": asset_vmware_vm_customer_tags_name,
+                }],
+                "fault_tolerance_bandwidth": asset_vmware_vm_fault_tolerance_bandwidth,
+                "fault_tolerance_secondary_latency": asset_vmware_vm_fault_tolerance_secondary_latency,
+                "fault_tolerance_state": asset_vmware_vm_fault_tolerance_state,
+                "instance_uuid": asset_vmware_vm_instance_uuid,
+                "is_disks_cbt_enabled": asset_vmware_vm_is_disks_cbt_enabled,
+                "is_disks_uuid_enabled": asset_vmware_vm_is_disks_uuid_enabled,
+                "path": asset_vmware_vm_path,
+                "vmware_tools_status": asset_vmware_vm_vmware_tools_status,
+            })
         ```
 
         ## Import
@@ -811,16 +811,16 @@ class Asset(pulumi.CustomResource):
                  asset_source_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  asset_type: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 compute: Optional[pulumi.Input[pulumi.InputType['AssetComputeArgs']]] = None,
+                 compute: Optional[pulumi.Input[Union['AssetComputeArgs', 'AssetComputeArgsDict']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  external_asset_key: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  inventory_id: Optional[pulumi.Input[str]] = None,
                  source_key: Optional[pulumi.Input[str]] = None,
-                 vm: Optional[pulumi.Input[pulumi.InputType['AssetVmArgs']]] = None,
-                 vmware_vcenter: Optional[pulumi.Input[pulumi.InputType['AssetVmwareVcenterArgs']]] = None,
-                 vmware_vm: Optional[pulumi.Input[pulumi.InputType['AssetVmwareVmArgs']]] = None,
+                 vm: Optional[pulumi.Input[Union['AssetVmArgs', 'AssetVmArgsDict']]] = None,
+                 vmware_vcenter: Optional[pulumi.Input[Union['AssetVmwareVcenterArgs', 'AssetVmwareVcenterArgsDict']]] = None,
+                 vmware_vm: Optional[pulumi.Input[Union['AssetVmwareVmArgs', 'AssetVmwareVmArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -870,7 +870,7 @@ class Asset(pulumi.CustomResource):
             asset_source_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             asset_type: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            compute: Optional[pulumi.Input[pulumi.InputType['AssetComputeArgs']]] = None,
+            compute: Optional[pulumi.Input[Union['AssetComputeArgs', 'AssetComputeArgsDict']]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             external_asset_key: Optional[pulumi.Input[str]] = None,
@@ -881,9 +881,9 @@ class Asset(pulumi.CustomResource):
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
-            vm: Optional[pulumi.Input[pulumi.InputType['AssetVmArgs']]] = None,
-            vmware_vcenter: Optional[pulumi.Input[pulumi.InputType['AssetVmwareVcenterArgs']]] = None,
-            vmware_vm: Optional[pulumi.Input[pulumi.InputType['AssetVmwareVmArgs']]] = None) -> 'Asset':
+            vm: Optional[pulumi.Input[Union['AssetVmArgs', 'AssetVmArgsDict']]] = None,
+            vmware_vcenter: Optional[pulumi.Input[Union['AssetVmwareVcenterArgs', 'AssetVmwareVcenterArgsDict']]] = None,
+            vmware_vm: Optional[pulumi.Input[Union['AssetVmwareVmArgs', 'AssetVmwareVmArgsDict']]] = None) -> 'Asset':
         """
         Get an existing Asset resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -894,7 +894,7 @@ class Asset(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] asset_source_ids: (Updatable) List of asset source OCID.
         :param pulumi.Input[str] asset_type: (Updatable) The type of asset.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that the asset belongs to.
-        :param pulumi.Input[pulumi.InputType['AssetComputeArgs']] compute: (Updatable) Compute related properties.
+        :param pulumi.Input[Union['AssetComputeArgs', 'AssetComputeArgsDict']] compute: (Updatable) Compute related properties.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) Asset display name.
         :param pulumi.Input[str] external_asset_key: The key of the asset from the external environment.
@@ -905,9 +905,9 @@ class Asset(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param pulumi.Input[str] time_created: The time when the asset was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time when the asset was updated. An RFC3339 formatted datetime string.
-        :param pulumi.Input[pulumi.InputType['AssetVmArgs']] vm: (Updatable) Virtual machine related properties.
-        :param pulumi.Input[pulumi.InputType['AssetVmwareVcenterArgs']] vmware_vcenter: (Updatable) VMware vCenter related properties.
-        :param pulumi.Input[pulumi.InputType['AssetVmwareVmArgs']] vmware_vm: (Updatable) VMware virtual machine related properties.
+        :param pulumi.Input[Union['AssetVmArgs', 'AssetVmArgsDict']] vm: (Updatable) Virtual machine related properties.
+        :param pulumi.Input[Union['AssetVmwareVcenterArgs', 'AssetVmwareVcenterArgsDict']] vmware_vcenter: (Updatable) VMware vCenter related properties.
+        :param pulumi.Input[Union['AssetVmwareVmArgs', 'AssetVmwareVmArgsDict']] vmware_vm: (Updatable) VMware virtual machine related properties.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

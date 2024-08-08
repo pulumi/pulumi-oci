@@ -108,7 +108,7 @@ class AwaitableGetManagementStationMirrorsResult(GetManagementStationMirrorsResu
 
 def get_management_station_mirrors(display_name: Optional[str] = None,
                                    display_name_contains: Optional[str] = None,
-                                   filters: Optional[Sequence[pulumi.InputType['GetManagementStationMirrorsFilterArgs']]] = None,
+                                   filters: Optional[Sequence[Union['GetManagementStationMirrorsFilterArgs', 'GetManagementStationMirrorsFilterArgsDict']]] = None,
                                    management_station_id: Optional[str] = None,
                                    mirror_states: Optional[Sequence[str]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagementStationMirrorsResult:
@@ -157,7 +157,7 @@ def get_management_station_mirrors(display_name: Optional[str] = None,
 @_utilities.lift_output_func(get_management_station_mirrors)
 def get_management_station_mirrors_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                           display_name_contains: Optional[pulumi.Input[Optional[str]]] = None,
-                                          filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetManagementStationMirrorsFilterArgs']]]]] = None,
+                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagementStationMirrorsFilterArgs', 'GetManagementStationMirrorsFilterArgsDict']]]]] = None,
                                           management_station_id: Optional[pulumi.Input[str]] = None,
                                           mirror_states: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagementStationMirrorsResult]:

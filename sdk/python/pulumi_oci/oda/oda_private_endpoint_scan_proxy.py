@@ -208,7 +208,7 @@ class OdaPrivateEndpointScanProxy(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  oda_private_endpoint_id: Optional[pulumi.Input[str]] = None,
                  protocol: Optional[pulumi.Input[str]] = None,
-                 scan_listener_infos: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['OdaPrivateEndpointScanProxyScanListenerInfoArgs']]]]] = None,
+                 scan_listener_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OdaPrivateEndpointScanProxyScanListenerInfoArgs', 'OdaPrivateEndpointScanProxyScanListenerInfoArgsDict']]]]] = None,
                  scan_listener_type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -228,11 +228,11 @@ class OdaPrivateEndpointScanProxy(pulumi.CustomResource):
         test_oda_private_endpoint_scan_proxy = oci.oda.OdaPrivateEndpointScanProxy("test_oda_private_endpoint_scan_proxy",
             oda_private_endpoint_id=test_oda_private_endpoint["id"],
             protocol=oda_private_endpoint_scan_proxy_protocol,
-            scan_listener_infos=[oci.oda.OdaPrivateEndpointScanProxyScanListenerInfoArgs(
-                scan_listener_fqdn=oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_fqdn,
-                scan_listener_ip=oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_ip,
-                scan_listener_port=oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_port,
-            )],
+            scan_listener_infos=[{
+                "scan_listener_fqdn": oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_fqdn,
+                "scan_listener_ip": oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_ip,
+                "scan_listener_port": oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_port,
+            }],
             scan_listener_type=oda_private_endpoint_scan_proxy_scan_listener_type)
         ```
 
@@ -248,7 +248,7 @@ class OdaPrivateEndpointScanProxy(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] oda_private_endpoint_id: Unique ODA Private Endpoint identifier which is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] protocol: The protocol used for communication between client, scanProxy and RAC's scan listeners
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['OdaPrivateEndpointScanProxyScanListenerInfoArgs']]]] scan_listener_infos: The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN listeners.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['OdaPrivateEndpointScanProxyScanListenerInfoArgs', 'OdaPrivateEndpointScanProxyScanListenerInfoArgsDict']]]] scan_listener_infos: The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN listeners.
         :param pulumi.Input[str] scan_listener_type: Type indicating whether Scan listener is specified by its FQDN or list of IPs 
                
                
@@ -278,11 +278,11 @@ class OdaPrivateEndpointScanProxy(pulumi.CustomResource):
         test_oda_private_endpoint_scan_proxy = oci.oda.OdaPrivateEndpointScanProxy("test_oda_private_endpoint_scan_proxy",
             oda_private_endpoint_id=test_oda_private_endpoint["id"],
             protocol=oda_private_endpoint_scan_proxy_protocol,
-            scan_listener_infos=[oci.oda.OdaPrivateEndpointScanProxyScanListenerInfoArgs(
-                scan_listener_fqdn=oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_fqdn,
-                scan_listener_ip=oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_ip,
-                scan_listener_port=oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_port,
-            )],
+            scan_listener_infos=[{
+                "scan_listener_fqdn": oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_fqdn,
+                "scan_listener_ip": oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_ip,
+                "scan_listener_port": oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_port,
+            }],
             scan_listener_type=oda_private_endpoint_scan_proxy_scan_listener_type)
         ```
 
@@ -311,7 +311,7 @@ class OdaPrivateEndpointScanProxy(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  oda_private_endpoint_id: Optional[pulumi.Input[str]] = None,
                  protocol: Optional[pulumi.Input[str]] = None,
-                 scan_listener_infos: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['OdaPrivateEndpointScanProxyScanListenerInfoArgs']]]]] = None,
+                 scan_listener_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OdaPrivateEndpointScanProxyScanListenerInfoArgs', 'OdaPrivateEndpointScanProxyScanListenerInfoArgsDict']]]]] = None,
                  scan_listener_type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -348,7 +348,7 @@ class OdaPrivateEndpointScanProxy(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             oda_private_endpoint_id: Optional[pulumi.Input[str]] = None,
             protocol: Optional[pulumi.Input[str]] = None,
-            scan_listener_infos: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['OdaPrivateEndpointScanProxyScanListenerInfoArgs']]]]] = None,
+            scan_listener_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OdaPrivateEndpointScanProxyScanListenerInfoArgs', 'OdaPrivateEndpointScanProxyScanListenerInfoArgsDict']]]]] = None,
             scan_listener_type: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None) -> 'OdaPrivateEndpointScanProxy':
@@ -361,7 +361,7 @@ class OdaPrivateEndpointScanProxy(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] oda_private_endpoint_id: Unique ODA Private Endpoint identifier which is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] protocol: The protocol used for communication between client, scanProxy and RAC's scan listeners
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['OdaPrivateEndpointScanProxyScanListenerInfoArgs']]]] scan_listener_infos: The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN listeners.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['OdaPrivateEndpointScanProxyScanListenerInfoArgs', 'OdaPrivateEndpointScanProxyScanListenerInfoArgsDict']]]] scan_listener_infos: The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN listeners.
         :param pulumi.Input[str] scan_listener_type: Type indicating whether Scan listener is specified by its FQDN or list of IPs 
                
                

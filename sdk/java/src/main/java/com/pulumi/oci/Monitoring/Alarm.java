@@ -589,7 +589,7 @@ public class Alarm extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public Alarm(String name) {
+    public Alarm(java.lang.String name) {
         this(name, AlarmArgs.Empty);
     }
     /**
@@ -597,7 +597,7 @@ public class Alarm extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public Alarm(String name, AlarmArgs args) {
+    public Alarm(java.lang.String name, AlarmArgs args) {
         this(name, args, null);
     }
     /**
@@ -606,12 +606,12 @@ public class Alarm extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public Alarm(String name, AlarmArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Monitoring/alarm:Alarm", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public Alarm(java.lang.String name, AlarmArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Monitoring/alarm:Alarm", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private Alarm(String name, Output<String> id, @Nullable AlarmState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Monitoring/alarm:Alarm", name, state, makeResourceOptions(options, id));
+    private Alarm(java.lang.String name, Output<java.lang.String> id, @Nullable AlarmState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Monitoring/alarm:Alarm", name, state, makeResourceOptions(options, id), false);
     }
 
     private static AlarmArgs makeArgs(AlarmArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -621,7 +621,7 @@ public class Alarm extends com.pulumi.resources.CustomResource {
         return args == null ? AlarmArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -637,7 +637,7 @@ public class Alarm extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static Alarm get(String name, Output<String> id, @Nullable AlarmState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static Alarm get(java.lang.String name, Output<java.lang.String> id, @Nullable AlarmState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new Alarm(name, id, state, options);
     }
 }

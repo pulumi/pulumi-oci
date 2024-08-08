@@ -178,7 +178,7 @@ public class IdpGroupMapping extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public IdpGroupMapping(String name) {
+    public IdpGroupMapping(java.lang.String name) {
         this(name, IdpGroupMappingArgs.Empty);
     }
     /**
@@ -186,7 +186,7 @@ public class IdpGroupMapping extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public IdpGroupMapping(String name, IdpGroupMappingArgs args) {
+    public IdpGroupMapping(java.lang.String name, IdpGroupMappingArgs args) {
         this(name, args, null);
     }
     /**
@@ -195,12 +195,12 @@ public class IdpGroupMapping extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public IdpGroupMapping(String name, IdpGroupMappingArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/idpGroupMapping:IdpGroupMapping", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public IdpGroupMapping(java.lang.String name, IdpGroupMappingArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/idpGroupMapping:IdpGroupMapping", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private IdpGroupMapping(String name, Output<String> id, @Nullable IdpGroupMappingState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/idpGroupMapping:IdpGroupMapping", name, state, makeResourceOptions(options, id));
+    private IdpGroupMapping(java.lang.String name, Output<java.lang.String> id, @Nullable IdpGroupMappingState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/idpGroupMapping:IdpGroupMapping", name, state, makeResourceOptions(options, id), false);
     }
 
     private static IdpGroupMappingArgs makeArgs(IdpGroupMappingArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -210,7 +210,7 @@ public class IdpGroupMapping extends com.pulumi.resources.CustomResource {
         return args == null ? IdpGroupMappingArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -226,7 +226,7 @@ public class IdpGroupMapping extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static IdpGroupMapping get(String name, Output<String> id, @Nullable IdpGroupMappingState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static IdpGroupMapping get(java.lang.String name, Output<java.lang.String> id, @Nullable IdpGroupMappingState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new IdpGroupMapping(name, id, state, options);
     }
 }

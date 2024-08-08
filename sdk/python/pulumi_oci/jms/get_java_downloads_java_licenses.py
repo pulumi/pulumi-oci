@@ -92,7 +92,7 @@ class AwaitableGetJavaDownloadsJavaLicensesResult(GetJavaDownloadsJavaLicensesRe
 
 
 def get_java_downloads_java_licenses(display_name: Optional[str] = None,
-                                     filters: Optional[Sequence[pulumi.InputType['GetJavaDownloadsJavaLicensesFilterArgs']]] = None,
+                                     filters: Optional[Sequence[Union['GetJavaDownloadsJavaLicensesFilterArgs', 'GetJavaDownloadsJavaLicensesFilterArgsDict']]] = None,
                                      license_type: Optional[str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetJavaDownloadsJavaLicensesResult:
     """
@@ -131,7 +131,7 @@ def get_java_downloads_java_licenses(display_name: Optional[str] = None,
 
 @_utilities.lift_output_func(get_java_downloads_java_licenses)
 def get_java_downloads_java_licenses_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                            filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetJavaDownloadsJavaLicensesFilterArgs']]]]] = None,
+                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetJavaDownloadsJavaLicensesFilterArgs', 'GetJavaDownloadsJavaLicensesFilterArgsDict']]]]] = None,
                                             license_type: Optional[pulumi.Input[Optional[str]]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetJavaDownloadsJavaLicensesResult]:
     """

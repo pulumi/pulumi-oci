@@ -104,7 +104,7 @@ class AwaitableGetConnectorPluginsResult(GetConnectorPluginsResult):
 
 
 def get_connector_plugins(display_name: Optional[str] = None,
-                          filters: Optional[Sequence[pulumi.InputType['GetConnectorPluginsFilterArgs']]] = None,
+                          filters: Optional[Sequence[Union['GetConnectorPluginsFilterArgs', 'GetConnectorPluginsFilterArgsDict']]] = None,
                           name: Optional[str] = None,
                           state: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetConnectorPluginsResult:
@@ -148,7 +148,7 @@ def get_connector_plugins(display_name: Optional[str] = None,
 
 @_utilities.lift_output_func(get_connector_plugins)
 def get_connector_plugins_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetConnectorPluginsFilterArgs']]]]] = None,
+                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetConnectorPluginsFilterArgs', 'GetConnectorPluginsFilterArgsDict']]]]] = None,
                                  name: Optional[pulumi.Input[Optional[str]]] = None,
                                  state: Optional[pulumi.Input[Optional[str]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConnectorPluginsResult]:

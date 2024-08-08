@@ -399,7 +399,7 @@ public class OdaInstance extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public OdaInstance(String name) {
+    public OdaInstance(java.lang.String name) {
         this(name, OdaInstanceArgs.Empty);
     }
     /**
@@ -407,7 +407,7 @@ public class OdaInstance extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public OdaInstance(String name, OdaInstanceArgs args) {
+    public OdaInstance(java.lang.String name, OdaInstanceArgs args) {
         this(name, args, null);
     }
     /**
@@ -416,12 +416,12 @@ public class OdaInstance extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public OdaInstance(String name, OdaInstanceArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Oda/odaInstance:OdaInstance", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public OdaInstance(java.lang.String name, OdaInstanceArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Oda/odaInstance:OdaInstance", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private OdaInstance(String name, Output<String> id, @Nullable OdaInstanceState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Oda/odaInstance:OdaInstance", name, state, makeResourceOptions(options, id));
+    private OdaInstance(java.lang.String name, Output<java.lang.String> id, @Nullable OdaInstanceState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Oda/odaInstance:OdaInstance", name, state, makeResourceOptions(options, id), false);
     }
 
     private static OdaInstanceArgs makeArgs(OdaInstanceArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -431,7 +431,7 @@ public class OdaInstance extends com.pulumi.resources.CustomResource {
         return args == null ? OdaInstanceArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -447,7 +447,7 @@ public class OdaInstance extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static OdaInstance get(String name, Output<String> id, @Nullable OdaInstanceState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static OdaInstance get(java.lang.String name, Output<java.lang.String> id, @Nullable OdaInstanceState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new OdaInstance(name, id, state, options);
     }
 }

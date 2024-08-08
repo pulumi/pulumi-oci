@@ -334,7 +334,7 @@ class FilesystemSnapshotPolicy(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  policy_prefix: Optional[pulumi.Input[str]] = None,
-                 schedules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['FilesystemSnapshotPolicyScheduleArgs']]]]] = None,
+                 schedules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FilesystemSnapshotPolicyScheduleArgs', 'FilesystemSnapshotPolicyScheduleArgsDict']]]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -363,17 +363,17 @@ class FilesystemSnapshotPolicy(pulumi.CustomResource):
                 "Department": "Finance",
             },
             policy_prefix=filesystem_snapshot_policy_policy_prefix,
-            schedules=[oci.file_storage.FilesystemSnapshotPolicyScheduleArgs(
-                period=filesystem_snapshot_policy_schedules_period,
-                time_zone=filesystem_snapshot_policy_schedules_time_zone,
-                day_of_month=filesystem_snapshot_policy_schedules_day_of_month,
-                day_of_week=filesystem_snapshot_policy_schedules_day_of_week,
-                hour_of_day=filesystem_snapshot_policy_schedules_hour_of_day,
-                month=filesystem_snapshot_policy_schedules_month,
-                retention_duration_in_seconds=filesystem_snapshot_policy_schedules_retention_duration_in_seconds,
-                schedule_prefix=filesystem_snapshot_policy_schedules_schedule_prefix,
-                time_schedule_start=filesystem_snapshot_policy_schedules_time_schedule_start,
-            )])
+            schedules=[{
+                "period": filesystem_snapshot_policy_schedules_period,
+                "time_zone": filesystem_snapshot_policy_schedules_time_zone,
+                "day_of_month": filesystem_snapshot_policy_schedules_day_of_month,
+                "day_of_week": filesystem_snapshot_policy_schedules_day_of_week,
+                "hour_of_day": filesystem_snapshot_policy_schedules_hour_of_day,
+                "month": filesystem_snapshot_policy_schedules_month,
+                "retention_duration_in_seconds": filesystem_snapshot_policy_schedules_retention_duration_in_seconds,
+                "schedule_prefix": filesystem_snapshot_policy_schedules_schedule_prefix,
+                "time_schedule_start": filesystem_snapshot_policy_schedules_time_schedule_start,
+            }])
         ```
 
         ## Import
@@ -392,7 +392,7 @@ class FilesystemSnapshotPolicy(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `policy1`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] policy_prefix: (Updatable) The prefix to apply to all snapshots created by this policy.  Example: `acme`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['FilesystemSnapshotPolicyScheduleArgs']]]] schedules: (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FilesystemSnapshotPolicyScheduleArgs', 'FilesystemSnapshotPolicyScheduleArgsDict']]]] schedules: (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
                
                If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. ``` --schedules '[{"timeZone":"UTC","period":"DAILY","hourOfDay":18},{"timeZone":"UTC","period":"HOURLY"}]' ```
         :param pulumi.Input[str] state: (Updatable) The target state for the Filesystem Snapshot Policy. Could be set to `ACTIVE` or `INACTIVE`. 
@@ -433,17 +433,17 @@ class FilesystemSnapshotPolicy(pulumi.CustomResource):
                 "Department": "Finance",
             },
             policy_prefix=filesystem_snapshot_policy_policy_prefix,
-            schedules=[oci.file_storage.FilesystemSnapshotPolicyScheduleArgs(
-                period=filesystem_snapshot_policy_schedules_period,
-                time_zone=filesystem_snapshot_policy_schedules_time_zone,
-                day_of_month=filesystem_snapshot_policy_schedules_day_of_month,
-                day_of_week=filesystem_snapshot_policy_schedules_day_of_week,
-                hour_of_day=filesystem_snapshot_policy_schedules_hour_of_day,
-                month=filesystem_snapshot_policy_schedules_month,
-                retention_duration_in_seconds=filesystem_snapshot_policy_schedules_retention_duration_in_seconds,
-                schedule_prefix=filesystem_snapshot_policy_schedules_schedule_prefix,
-                time_schedule_start=filesystem_snapshot_policy_schedules_time_schedule_start,
-            )])
+            schedules=[{
+                "period": filesystem_snapshot_policy_schedules_period,
+                "time_zone": filesystem_snapshot_policy_schedules_time_zone,
+                "day_of_month": filesystem_snapshot_policy_schedules_day_of_month,
+                "day_of_week": filesystem_snapshot_policy_schedules_day_of_week,
+                "hour_of_day": filesystem_snapshot_policy_schedules_hour_of_day,
+                "month": filesystem_snapshot_policy_schedules_month,
+                "retention_duration_in_seconds": filesystem_snapshot_policy_schedules_retention_duration_in_seconds,
+                "schedule_prefix": filesystem_snapshot_policy_schedules_schedule_prefix,
+                "time_schedule_start": filesystem_snapshot_policy_schedules_time_schedule_start,
+            }])
         ```
 
         ## Import
@@ -475,7 +475,7 @@ class FilesystemSnapshotPolicy(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  policy_prefix: Optional[pulumi.Input[str]] = None,
-                 schedules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['FilesystemSnapshotPolicyScheduleArgs']]]]] = None,
+                 schedules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FilesystemSnapshotPolicyScheduleArgs', 'FilesystemSnapshotPolicyScheduleArgsDict']]]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -515,7 +515,7 @@ class FilesystemSnapshotPolicy(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             policy_prefix: Optional[pulumi.Input[str]] = None,
-            schedules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['FilesystemSnapshotPolicyScheduleArgs']]]]] = None,
+            schedules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FilesystemSnapshotPolicyScheduleArgs', 'FilesystemSnapshotPolicyScheduleArgsDict']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None) -> 'FilesystemSnapshotPolicy':
         """
@@ -531,7 +531,7 @@ class FilesystemSnapshotPolicy(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `policy1`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] policy_prefix: (Updatable) The prefix to apply to all snapshots created by this policy.  Example: `acme`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['FilesystemSnapshotPolicyScheduleArgs']]]] schedules: (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FilesystemSnapshotPolicyScheduleArgs', 'FilesystemSnapshotPolicyScheduleArgsDict']]]] schedules: (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
                
                If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. ``` --schedules '[{"timeZone":"UTC","period":"DAILY","hourOfDay":18},{"timeZone":"UTC","period":"HOURLY"}]' ```
         :param pulumi.Input[str] state: (Updatable) The target state for the Filesystem Snapshot Policy. Could be set to `ACTIVE` or `INACTIVE`. 

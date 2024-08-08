@@ -781,7 +781,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DbSystemsUpgrade(String name) {
+    public DbSystemsUpgrade(java.lang.String name) {
         this(name, DbSystemsUpgradeArgs.Empty);
     }
     /**
@@ -789,7 +789,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DbSystemsUpgrade(String name, DbSystemsUpgradeArgs args) {
+    public DbSystemsUpgrade(java.lang.String name, DbSystemsUpgradeArgs args) {
         this(name, args, null);
     }
     /**
@@ -798,12 +798,12 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DbSystemsUpgrade(String name, DbSystemsUpgradeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/dbSystemsUpgrade:DbSystemsUpgrade", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DbSystemsUpgrade(java.lang.String name, DbSystemsUpgradeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/dbSystemsUpgrade:DbSystemsUpgrade", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DbSystemsUpgrade(String name, Output<String> id, @Nullable DbSystemsUpgradeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/dbSystemsUpgrade:DbSystemsUpgrade", name, state, makeResourceOptions(options, id));
+    private DbSystemsUpgrade(java.lang.String name, Output<java.lang.String> id, @Nullable DbSystemsUpgradeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/dbSystemsUpgrade:DbSystemsUpgrade", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DbSystemsUpgradeArgs makeArgs(DbSystemsUpgradeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -813,7 +813,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
         return args == null ? DbSystemsUpgradeArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -829,7 +829,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DbSystemsUpgrade get(String name, Output<String> id, @Nullable DbSystemsUpgradeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DbSystemsUpgrade get(java.lang.String name, Output<java.lang.String> id, @Nullable DbSystemsUpgradeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DbSystemsUpgrade(name, id, state, options);
     }
 }

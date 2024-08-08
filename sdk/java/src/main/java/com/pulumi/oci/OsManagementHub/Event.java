@@ -300,7 +300,7 @@ public class Event extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public Event(String name) {
+    public Event(java.lang.String name) {
         this(name, EventArgs.Empty);
     }
     /**
@@ -308,7 +308,7 @@ public class Event extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public Event(String name, EventArgs args) {
+    public Event(java.lang.String name, EventArgs args) {
         this(name, args, null);
     }
     /**
@@ -317,12 +317,12 @@ public class Event extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public Event(String name, EventArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:OsManagementHub/event:Event", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public Event(java.lang.String name, EventArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:OsManagementHub/event:Event", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private Event(String name, Output<String> id, @Nullable EventState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:OsManagementHub/event:Event", name, state, makeResourceOptions(options, id));
+    private Event(java.lang.String name, Output<java.lang.String> id, @Nullable EventState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:OsManagementHub/event:Event", name, state, makeResourceOptions(options, id), false);
     }
 
     private static EventArgs makeArgs(EventArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -332,7 +332,7 @@ public class Event extends com.pulumi.resources.CustomResource {
         return args == null ? EventArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -348,7 +348,7 @@ public class Event extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static Event get(String name, Output<String> id, @Nullable EventState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static Event get(java.lang.String name, Output<java.lang.String> id, @Nullable EventState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new Event(name, id, state, options);
     }
 }

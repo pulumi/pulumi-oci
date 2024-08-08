@@ -307,7 +307,7 @@ public class BaselineableMetric extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public BaselineableMetric(String name) {
+    public BaselineableMetric(java.lang.String name) {
         this(name, BaselineableMetricArgs.Empty);
     }
     /**
@@ -315,7 +315,7 @@ public class BaselineableMetric extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public BaselineableMetric(String name, BaselineableMetricArgs args) {
+    public BaselineableMetric(java.lang.String name, BaselineableMetricArgs args) {
         this(name, args, null);
     }
     /**
@@ -324,12 +324,12 @@ public class BaselineableMetric extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public BaselineableMetric(String name, BaselineableMetricArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:StackMonitoring/baselineableMetric:BaselineableMetric", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public BaselineableMetric(java.lang.String name, BaselineableMetricArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:StackMonitoring/baselineableMetric:BaselineableMetric", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private BaselineableMetric(String name, Output<String> id, @Nullable BaselineableMetricState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:StackMonitoring/baselineableMetric:BaselineableMetric", name, state, makeResourceOptions(options, id));
+    private BaselineableMetric(java.lang.String name, Output<java.lang.String> id, @Nullable BaselineableMetricState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:StackMonitoring/baselineableMetric:BaselineableMetric", name, state, makeResourceOptions(options, id), false);
     }
 
     private static BaselineableMetricArgs makeArgs(BaselineableMetricArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -339,7 +339,7 @@ public class BaselineableMetric extends com.pulumi.resources.CustomResource {
         return args == null ? BaselineableMetricArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -355,7 +355,7 @@ public class BaselineableMetric extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static BaselineableMetric get(String name, Output<String> id, @Nullable BaselineableMetricState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static BaselineableMetric get(java.lang.String name, Output<java.lang.String> id, @Nullable BaselineableMetricState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new BaselineableMetric(name, id, state, options);
     }
 }

@@ -635,11 +635,11 @@ class Job(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  job_artifact: Optional[pulumi.Input[str]] = None,
-                 job_configuration_details: Optional[pulumi.Input[pulumi.InputType['JobJobConfigurationDetailsArgs']]] = None,
-                 job_environment_configuration_details: Optional[pulumi.Input[pulumi.InputType['JobJobEnvironmentConfigurationDetailsArgs']]] = None,
-                 job_infrastructure_configuration_details: Optional[pulumi.Input[pulumi.InputType['JobJobInfrastructureConfigurationDetailsArgs']]] = None,
-                 job_log_configuration_details: Optional[pulumi.Input[pulumi.InputType['JobJobLogConfigurationDetailsArgs']]] = None,
-                 job_storage_mount_configuration_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['JobJobStorageMountConfigurationDetailsListArgs']]]]] = None,
+                 job_configuration_details: Optional[pulumi.Input[Union['JobJobConfigurationDetailsArgs', 'JobJobConfigurationDetailsArgsDict']]] = None,
+                 job_environment_configuration_details: Optional[pulumi.Input[Union['JobJobEnvironmentConfigurationDetailsArgs', 'JobJobEnvironmentConfigurationDetailsArgsDict']]] = None,
+                 job_infrastructure_configuration_details: Optional[pulumi.Input[Union['JobJobInfrastructureConfigurationDetailsArgs', 'JobJobInfrastructureConfigurationDetailsArgsDict']]] = None,
+                 job_log_configuration_details: Optional[pulumi.Input[Union['JobJobLogConfigurationDetailsArgs', 'JobJobLogConfigurationDetailsArgsDict']]] = None,
+                 job_storage_mount_configuration_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['JobJobStorageMountConfigurationDetailsListArgs', 'JobJobStorageMountConfigurationDetailsListArgsDict']]]]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -655,22 +655,22 @@ class Job(pulumi.CustomResource):
 
         test_job = oci.data_science.Job("test_job",
             compartment_id=compartment_id,
-            job_configuration_details=oci.data_science.JobJobConfigurationDetailsArgs(
-                job_type=job_job_configuration_details_job_type,
-                command_line_arguments=job_job_configuration_details_command_line_arguments,
-                environment_variables=job_job_configuration_details_environment_variables,
-                maximum_runtime_in_minutes=job_job_configuration_details_maximum_runtime_in_minutes,
-            ),
-            job_infrastructure_configuration_details=oci.data_science.JobJobInfrastructureConfigurationDetailsArgs(
-                block_storage_size_in_gbs=job_job_infrastructure_configuration_details_block_storage_size_in_gbs,
-                job_infrastructure_type=job_job_infrastructure_configuration_details_job_infrastructure_type,
-                shape_name=test_shape["name"],
-                job_shape_config_details=oci.data_science.JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs(
-                    memory_in_gbs=job_job_infrastructure_configuration_details_job_shape_config_details_memory_in_gbs,
-                    ocpus=job_job_infrastructure_configuration_details_job_shape_config_details_ocpus,
-                ),
-                subnet_id=test_subnet["id"],
-            ),
+            job_configuration_details={
+                "job_type": job_job_configuration_details_job_type,
+                "command_line_arguments": job_job_configuration_details_command_line_arguments,
+                "environment_variables": job_job_configuration_details_environment_variables,
+                "maximum_runtime_in_minutes": job_job_configuration_details_maximum_runtime_in_minutes,
+            },
+            job_infrastructure_configuration_details={
+                "block_storage_size_in_gbs": job_job_infrastructure_configuration_details_block_storage_size_in_gbs,
+                "job_infrastructure_type": job_job_infrastructure_configuration_details_job_infrastructure_type,
+                "shape_name": test_shape["name"],
+                "job_shape_config_details": {
+                    "memory_in_gbs": job_job_infrastructure_configuration_details_job_shape_config_details_memory_in_gbs,
+                    "ocpus": job_job_infrastructure_configuration_details_job_shape_config_details_ocpus,
+                },
+                "subnet_id": test_subnet["id"],
+            },
             project_id=test_project["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -680,30 +680,30 @@ class Job(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            job_environment_configuration_details=oci.data_science.JobJobEnvironmentConfigurationDetailsArgs(
-                image=job_job_environment_configuration_details_image,
-                job_environment_type=job_job_environment_configuration_details_job_environment_type,
-                cmds=job_job_environment_configuration_details_cmd,
-                entrypoints=job_job_environment_configuration_details_entrypoint,
-                image_digest=job_job_environment_configuration_details_image_digest,
-                image_signature_id=test_image_signature["id"],
-            ),
-            job_log_configuration_details=oci.data_science.JobJobLogConfigurationDetailsArgs(
-                enable_auto_log_creation=job_job_log_configuration_details_enable_auto_log_creation,
-                enable_logging=job_job_log_configuration_details_enable_logging,
-                log_group_id=test_log_group["id"],
-                log_id=test_log["id"],
-            ),
-            job_storage_mount_configuration_details_lists=[oci.data_science.JobJobStorageMountConfigurationDetailsListArgs(
-                destination_directory_name=job_job_storage_mount_configuration_details_list_destination_directory_name,
-                storage_type=job_job_storage_mount_configuration_details_list_storage_type,
-                bucket=job_job_storage_mount_configuration_details_list_bucket,
-                destination_path=job_job_storage_mount_configuration_details_list_destination_path,
-                export_id=test_export["id"],
-                mount_target_id=test_mount_target["id"],
-                namespace=job_job_storage_mount_configuration_details_list_namespace,
-                prefix=job_job_storage_mount_configuration_details_list_prefix,
-            )])
+            job_environment_configuration_details={
+                "image": job_job_environment_configuration_details_image,
+                "job_environment_type": job_job_environment_configuration_details_job_environment_type,
+                "cmds": job_job_environment_configuration_details_cmd,
+                "entrypoints": job_job_environment_configuration_details_entrypoint,
+                "image_digest": job_job_environment_configuration_details_image_digest,
+                "image_signature_id": test_image_signature["id"],
+            },
+            job_log_configuration_details={
+                "enable_auto_log_creation": job_job_log_configuration_details_enable_auto_log_creation,
+                "enable_logging": job_job_log_configuration_details_enable_logging,
+                "log_group_id": test_log_group["id"],
+                "log_id": test_log["id"],
+            },
+            job_storage_mount_configuration_details_lists=[{
+                "destination_directory_name": job_job_storage_mount_configuration_details_list_destination_directory_name,
+                "storage_type": job_job_storage_mount_configuration_details_list_storage_type,
+                "bucket": job_job_storage_mount_configuration_details_list_bucket,
+                "destination_path": job_job_storage_mount_configuration_details_list_destination_path,
+                "export_id": test_export["id"],
+                "mount_target_id": test_mount_target["id"],
+                "namespace": job_job_storage_mount_configuration_details_list_namespace,
+                "prefix": job_job_storage_mount_configuration_details_list_prefix,
+            }])
         ```
 
         ## Import
@@ -729,11 +729,11 @@ class Job(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] job_artifact: The job artifact to upload. This can be done in a separate step or from cli/sdk. The Job will remain in "Creating" state until its artifact is uploaded.
-        :param pulumi.Input[pulumi.InputType['JobJobConfigurationDetailsArgs']] job_configuration_details: The job configuration details
-        :param pulumi.Input[pulumi.InputType['JobJobEnvironmentConfigurationDetailsArgs']] job_environment_configuration_details: Environment configuration to capture job runtime dependencies.
-        :param pulumi.Input[pulumi.InputType['JobJobInfrastructureConfigurationDetailsArgs']] job_infrastructure_configuration_details: (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
-        :param pulumi.Input[pulumi.InputType['JobJobLogConfigurationDetailsArgs']] job_log_configuration_details: Logging configuration for resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['JobJobStorageMountConfigurationDetailsListArgs']]]] job_storage_mount_configuration_details_lists: (Updatable) Collection of JobStorageMountConfigurationDetails.
+        :param pulumi.Input[Union['JobJobConfigurationDetailsArgs', 'JobJobConfigurationDetailsArgsDict']] job_configuration_details: The job configuration details
+        :param pulumi.Input[Union['JobJobEnvironmentConfigurationDetailsArgs', 'JobJobEnvironmentConfigurationDetailsArgsDict']] job_environment_configuration_details: Environment configuration to capture job runtime dependencies.
+        :param pulumi.Input[Union['JobJobInfrastructureConfigurationDetailsArgs', 'JobJobInfrastructureConfigurationDetailsArgsDict']] job_infrastructure_configuration_details: (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
+        :param pulumi.Input[Union['JobJobLogConfigurationDetailsArgs', 'JobJobLogConfigurationDetailsArgsDict']] job_log_configuration_details: Logging configuration for resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['JobJobStorageMountConfigurationDetailsListArgs', 'JobJobStorageMountConfigurationDetailsListArgsDict']]]] job_storage_mount_configuration_details_lists: (Updatable) Collection of JobStorageMountConfigurationDetails.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
         """
         ...
@@ -755,22 +755,22 @@ class Job(pulumi.CustomResource):
 
         test_job = oci.data_science.Job("test_job",
             compartment_id=compartment_id,
-            job_configuration_details=oci.data_science.JobJobConfigurationDetailsArgs(
-                job_type=job_job_configuration_details_job_type,
-                command_line_arguments=job_job_configuration_details_command_line_arguments,
-                environment_variables=job_job_configuration_details_environment_variables,
-                maximum_runtime_in_minutes=job_job_configuration_details_maximum_runtime_in_minutes,
-            ),
-            job_infrastructure_configuration_details=oci.data_science.JobJobInfrastructureConfigurationDetailsArgs(
-                block_storage_size_in_gbs=job_job_infrastructure_configuration_details_block_storage_size_in_gbs,
-                job_infrastructure_type=job_job_infrastructure_configuration_details_job_infrastructure_type,
-                shape_name=test_shape["name"],
-                job_shape_config_details=oci.data_science.JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs(
-                    memory_in_gbs=job_job_infrastructure_configuration_details_job_shape_config_details_memory_in_gbs,
-                    ocpus=job_job_infrastructure_configuration_details_job_shape_config_details_ocpus,
-                ),
-                subnet_id=test_subnet["id"],
-            ),
+            job_configuration_details={
+                "job_type": job_job_configuration_details_job_type,
+                "command_line_arguments": job_job_configuration_details_command_line_arguments,
+                "environment_variables": job_job_configuration_details_environment_variables,
+                "maximum_runtime_in_minutes": job_job_configuration_details_maximum_runtime_in_minutes,
+            },
+            job_infrastructure_configuration_details={
+                "block_storage_size_in_gbs": job_job_infrastructure_configuration_details_block_storage_size_in_gbs,
+                "job_infrastructure_type": job_job_infrastructure_configuration_details_job_infrastructure_type,
+                "shape_name": test_shape["name"],
+                "job_shape_config_details": {
+                    "memory_in_gbs": job_job_infrastructure_configuration_details_job_shape_config_details_memory_in_gbs,
+                    "ocpus": job_job_infrastructure_configuration_details_job_shape_config_details_ocpus,
+                },
+                "subnet_id": test_subnet["id"],
+            },
             project_id=test_project["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -780,30 +780,30 @@ class Job(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            job_environment_configuration_details=oci.data_science.JobJobEnvironmentConfigurationDetailsArgs(
-                image=job_job_environment_configuration_details_image,
-                job_environment_type=job_job_environment_configuration_details_job_environment_type,
-                cmds=job_job_environment_configuration_details_cmd,
-                entrypoints=job_job_environment_configuration_details_entrypoint,
-                image_digest=job_job_environment_configuration_details_image_digest,
-                image_signature_id=test_image_signature["id"],
-            ),
-            job_log_configuration_details=oci.data_science.JobJobLogConfigurationDetailsArgs(
-                enable_auto_log_creation=job_job_log_configuration_details_enable_auto_log_creation,
-                enable_logging=job_job_log_configuration_details_enable_logging,
-                log_group_id=test_log_group["id"],
-                log_id=test_log["id"],
-            ),
-            job_storage_mount_configuration_details_lists=[oci.data_science.JobJobStorageMountConfigurationDetailsListArgs(
-                destination_directory_name=job_job_storage_mount_configuration_details_list_destination_directory_name,
-                storage_type=job_job_storage_mount_configuration_details_list_storage_type,
-                bucket=job_job_storage_mount_configuration_details_list_bucket,
-                destination_path=job_job_storage_mount_configuration_details_list_destination_path,
-                export_id=test_export["id"],
-                mount_target_id=test_mount_target["id"],
-                namespace=job_job_storage_mount_configuration_details_list_namespace,
-                prefix=job_job_storage_mount_configuration_details_list_prefix,
-            )])
+            job_environment_configuration_details={
+                "image": job_job_environment_configuration_details_image,
+                "job_environment_type": job_job_environment_configuration_details_job_environment_type,
+                "cmds": job_job_environment_configuration_details_cmd,
+                "entrypoints": job_job_environment_configuration_details_entrypoint,
+                "image_digest": job_job_environment_configuration_details_image_digest,
+                "image_signature_id": test_image_signature["id"],
+            },
+            job_log_configuration_details={
+                "enable_auto_log_creation": job_job_log_configuration_details_enable_auto_log_creation,
+                "enable_logging": job_job_log_configuration_details_enable_logging,
+                "log_group_id": test_log_group["id"],
+                "log_id": test_log["id"],
+            },
+            job_storage_mount_configuration_details_lists=[{
+                "destination_directory_name": job_job_storage_mount_configuration_details_list_destination_directory_name,
+                "storage_type": job_job_storage_mount_configuration_details_list_storage_type,
+                "bucket": job_job_storage_mount_configuration_details_list_bucket,
+                "destination_path": job_job_storage_mount_configuration_details_list_destination_path,
+                "export_id": test_export["id"],
+                "mount_target_id": test_mount_target["id"],
+                "namespace": job_job_storage_mount_configuration_details_list_namespace,
+                "prefix": job_job_storage_mount_configuration_details_list_prefix,
+            }])
         ```
 
         ## Import
@@ -838,11 +838,11 @@ class Job(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  job_artifact: Optional[pulumi.Input[str]] = None,
-                 job_configuration_details: Optional[pulumi.Input[pulumi.InputType['JobJobConfigurationDetailsArgs']]] = None,
-                 job_environment_configuration_details: Optional[pulumi.Input[pulumi.InputType['JobJobEnvironmentConfigurationDetailsArgs']]] = None,
-                 job_infrastructure_configuration_details: Optional[pulumi.Input[pulumi.InputType['JobJobInfrastructureConfigurationDetailsArgs']]] = None,
-                 job_log_configuration_details: Optional[pulumi.Input[pulumi.InputType['JobJobLogConfigurationDetailsArgs']]] = None,
-                 job_storage_mount_configuration_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['JobJobStorageMountConfigurationDetailsListArgs']]]]] = None,
+                 job_configuration_details: Optional[pulumi.Input[Union['JobJobConfigurationDetailsArgs', 'JobJobConfigurationDetailsArgsDict']]] = None,
+                 job_environment_configuration_details: Optional[pulumi.Input[Union['JobJobEnvironmentConfigurationDetailsArgs', 'JobJobEnvironmentConfigurationDetailsArgsDict']]] = None,
+                 job_infrastructure_configuration_details: Optional[pulumi.Input[Union['JobJobInfrastructureConfigurationDetailsArgs', 'JobJobInfrastructureConfigurationDetailsArgsDict']]] = None,
+                 job_log_configuration_details: Optional[pulumi.Input[Union['JobJobLogConfigurationDetailsArgs', 'JobJobLogConfigurationDetailsArgsDict']]] = None,
+                 job_storage_mount_configuration_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['JobJobStorageMountConfigurationDetailsListArgs', 'JobJobStorageMountConfigurationDetailsListArgsDict']]]]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -906,11 +906,11 @@ class Job(pulumi.CustomResource):
             empty_artifact: Optional[pulumi.Input[bool]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             job_artifact: Optional[pulumi.Input[str]] = None,
-            job_configuration_details: Optional[pulumi.Input[pulumi.InputType['JobJobConfigurationDetailsArgs']]] = None,
-            job_environment_configuration_details: Optional[pulumi.Input[pulumi.InputType['JobJobEnvironmentConfigurationDetailsArgs']]] = None,
-            job_infrastructure_configuration_details: Optional[pulumi.Input[pulumi.InputType['JobJobInfrastructureConfigurationDetailsArgs']]] = None,
-            job_log_configuration_details: Optional[pulumi.Input[pulumi.InputType['JobJobLogConfigurationDetailsArgs']]] = None,
-            job_storage_mount_configuration_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['JobJobStorageMountConfigurationDetailsListArgs']]]]] = None,
+            job_configuration_details: Optional[pulumi.Input[Union['JobJobConfigurationDetailsArgs', 'JobJobConfigurationDetailsArgsDict']]] = None,
+            job_environment_configuration_details: Optional[pulumi.Input[Union['JobJobEnvironmentConfigurationDetailsArgs', 'JobJobEnvironmentConfigurationDetailsArgsDict']]] = None,
+            job_infrastructure_configuration_details: Optional[pulumi.Input[Union['JobJobInfrastructureConfigurationDetailsArgs', 'JobJobInfrastructureConfigurationDetailsArgsDict']]] = None,
+            job_log_configuration_details: Optional[pulumi.Input[Union['JobJobLogConfigurationDetailsArgs', 'JobJobLogConfigurationDetailsArgsDict']]] = None,
+            job_storage_mount_configuration_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['JobJobStorageMountConfigurationDetailsListArgs', 'JobJobStorageMountConfigurationDetailsListArgsDict']]]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             project_id: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -936,11 +936,11 @@ class Job(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] job_artifact: The job artifact to upload. This can be done in a separate step or from cli/sdk. The Job will remain in "Creating" state until its artifact is uploaded.
-        :param pulumi.Input[pulumi.InputType['JobJobConfigurationDetailsArgs']] job_configuration_details: The job configuration details
-        :param pulumi.Input[pulumi.InputType['JobJobEnvironmentConfigurationDetailsArgs']] job_environment_configuration_details: Environment configuration to capture job runtime dependencies.
-        :param pulumi.Input[pulumi.InputType['JobJobInfrastructureConfigurationDetailsArgs']] job_infrastructure_configuration_details: (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
-        :param pulumi.Input[pulumi.InputType['JobJobLogConfigurationDetailsArgs']] job_log_configuration_details: Logging configuration for resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['JobJobStorageMountConfigurationDetailsListArgs']]]] job_storage_mount_configuration_details_lists: (Updatable) Collection of JobStorageMountConfigurationDetails.
+        :param pulumi.Input[Union['JobJobConfigurationDetailsArgs', 'JobJobConfigurationDetailsArgsDict']] job_configuration_details: The job configuration details
+        :param pulumi.Input[Union['JobJobEnvironmentConfigurationDetailsArgs', 'JobJobEnvironmentConfigurationDetailsArgsDict']] job_environment_configuration_details: Environment configuration to capture job runtime dependencies.
+        :param pulumi.Input[Union['JobJobInfrastructureConfigurationDetailsArgs', 'JobJobInfrastructureConfigurationDetailsArgsDict']] job_infrastructure_configuration_details: (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
+        :param pulumi.Input[Union['JobJobLogConfigurationDetailsArgs', 'JobJobLogConfigurationDetailsArgsDict']] job_log_configuration_details: Logging configuration for resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['JobJobStorageMountConfigurationDetailsListArgs', 'JobJobStorageMountConfigurationDetailsListArgsDict']]]] job_storage_mount_configuration_details_lists: (Updatable) Collection of JobStorageMountConfigurationDetails.
         :param pulumi.Input[str] lifecycle_details: The state of the job.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
         :param pulumi.Input[str] state: The state of the job.

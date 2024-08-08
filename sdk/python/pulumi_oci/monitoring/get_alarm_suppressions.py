@@ -105,7 +105,7 @@ class AwaitableGetAlarmSuppressionsResult(GetAlarmSuppressionsResult):
 
 def get_alarm_suppressions(alarm_id: Optional[str] = None,
                            display_name: Optional[str] = None,
-                           filters: Optional[Sequence[pulumi.InputType['GetAlarmSuppressionsFilterArgs']]] = None,
+                           filters: Optional[Sequence[Union['GetAlarmSuppressionsFilterArgs', 'GetAlarmSuppressionsFilterArgsDict']]] = None,
                            state: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAlarmSuppressionsResult:
     """
@@ -157,7 +157,7 @@ def get_alarm_suppressions(alarm_id: Optional[str] = None,
 @_utilities.lift_output_func(get_alarm_suppressions)
 def get_alarm_suppressions_output(alarm_id: Optional[pulumi.Input[str]] = None,
                                   display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                  filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAlarmSuppressionsFilterArgs']]]]] = None,
+                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAlarmSuppressionsFilterArgs', 'GetAlarmSuppressionsFilterArgsDict']]]]] = None,
                                   state: Optional[pulumi.Input[Optional[str]]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAlarmSuppressionsResult]:
     """

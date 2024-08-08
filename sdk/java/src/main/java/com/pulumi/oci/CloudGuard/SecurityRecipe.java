@@ -246,7 +246,7 @@ public class SecurityRecipe extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public SecurityRecipe(String name) {
+    public SecurityRecipe(java.lang.String name) {
         this(name, SecurityRecipeArgs.Empty);
     }
     /**
@@ -254,7 +254,7 @@ public class SecurityRecipe extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public SecurityRecipe(String name, SecurityRecipeArgs args) {
+    public SecurityRecipe(java.lang.String name, SecurityRecipeArgs args) {
         this(name, args, null);
     }
     /**
@@ -263,12 +263,12 @@ public class SecurityRecipe extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public SecurityRecipe(String name, SecurityRecipeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:CloudGuard/securityRecipe:SecurityRecipe", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public SecurityRecipe(java.lang.String name, SecurityRecipeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:CloudGuard/securityRecipe:SecurityRecipe", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private SecurityRecipe(String name, Output<String> id, @Nullable SecurityRecipeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:CloudGuard/securityRecipe:SecurityRecipe", name, state, makeResourceOptions(options, id));
+    private SecurityRecipe(java.lang.String name, Output<java.lang.String> id, @Nullable SecurityRecipeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:CloudGuard/securityRecipe:SecurityRecipe", name, state, makeResourceOptions(options, id), false);
     }
 
     private static SecurityRecipeArgs makeArgs(SecurityRecipeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -278,7 +278,7 @@ public class SecurityRecipe extends com.pulumi.resources.CustomResource {
         return args == null ? SecurityRecipeArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -294,7 +294,7 @@ public class SecurityRecipe extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static SecurityRecipe get(String name, Output<String> id, @Nullable SecurityRecipeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static SecurityRecipe get(java.lang.String name, Output<java.lang.String> id, @Nullable SecurityRecipeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new SecurityRecipe(name, id, state, options);
     }
 }

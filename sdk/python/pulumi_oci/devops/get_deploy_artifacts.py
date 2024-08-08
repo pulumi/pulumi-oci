@@ -117,7 +117,7 @@ class AwaitableGetDeployArtifactsResult(GetDeployArtifactsResult):
 
 def get_deploy_artifacts(compartment_id: Optional[str] = None,
                          display_name: Optional[str] = None,
-                         filters: Optional[Sequence[pulumi.InputType['GetDeployArtifactsFilterArgs']]] = None,
+                         filters: Optional[Sequence[Union['GetDeployArtifactsFilterArgs', 'GetDeployArtifactsFilterArgsDict']]] = None,
                          id: Optional[str] = None,
                          project_id: Optional[str] = None,
                          state: Optional[str] = None,
@@ -170,7 +170,7 @@ def get_deploy_artifacts(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_deploy_artifacts)
 def get_deploy_artifacts_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                 display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDeployArtifactsFilterArgs']]]]] = None,
+                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDeployArtifactsFilterArgs', 'GetDeployArtifactsFilterArgsDict']]]]] = None,
                                 id: Optional[pulumi.Input[Optional[str]]] = None,
                                 project_id: Optional[pulumi.Input[Optional[str]]] = None,
                                 state: Optional[pulumi.Input[Optional[str]]] = None,

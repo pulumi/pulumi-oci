@@ -45,7 +45,7 @@ public class AutonomousContainerDatabaseDataguardRoleChange extends com.pulumi.r
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public AutonomousContainerDatabaseDataguardRoleChange(String name) {
+    public AutonomousContainerDatabaseDataguardRoleChange(java.lang.String name) {
         this(name, AutonomousContainerDatabaseDataguardRoleChangeArgs.Empty);
     }
     /**
@@ -53,7 +53,7 @@ public class AutonomousContainerDatabaseDataguardRoleChange extends com.pulumi.r
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public AutonomousContainerDatabaseDataguardRoleChange(String name, AutonomousContainerDatabaseDataguardRoleChangeArgs args) {
+    public AutonomousContainerDatabaseDataguardRoleChange(java.lang.String name, AutonomousContainerDatabaseDataguardRoleChangeArgs args) {
         this(name, args, null);
     }
     /**
@@ -62,12 +62,12 @@ public class AutonomousContainerDatabaseDataguardRoleChange extends com.pulumi.r
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public AutonomousContainerDatabaseDataguardRoleChange(String name, AutonomousContainerDatabaseDataguardRoleChangeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/autonomousContainerDatabaseDataguardRoleChange:AutonomousContainerDatabaseDataguardRoleChange", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public AutonomousContainerDatabaseDataguardRoleChange(java.lang.String name, AutonomousContainerDatabaseDataguardRoleChangeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/autonomousContainerDatabaseDataguardRoleChange:AutonomousContainerDatabaseDataguardRoleChange", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private AutonomousContainerDatabaseDataguardRoleChange(String name, Output<String> id, @Nullable AutonomousContainerDatabaseDataguardRoleChangeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/autonomousContainerDatabaseDataguardRoleChange:AutonomousContainerDatabaseDataguardRoleChange", name, state, makeResourceOptions(options, id));
+    private AutonomousContainerDatabaseDataguardRoleChange(java.lang.String name, Output<java.lang.String> id, @Nullable AutonomousContainerDatabaseDataguardRoleChangeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/autonomousContainerDatabaseDataguardRoleChange:AutonomousContainerDatabaseDataguardRoleChange", name, state, makeResourceOptions(options, id), false);
     }
 
     private static AutonomousContainerDatabaseDataguardRoleChangeArgs makeArgs(AutonomousContainerDatabaseDataguardRoleChangeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -77,7 +77,7 @@ public class AutonomousContainerDatabaseDataguardRoleChange extends com.pulumi.r
         return args == null ? AutonomousContainerDatabaseDataguardRoleChangeArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -93,7 +93,7 @@ public class AutonomousContainerDatabaseDataguardRoleChange extends com.pulumi.r
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static AutonomousContainerDatabaseDataguardRoleChange get(String name, Output<String> id, @Nullable AutonomousContainerDatabaseDataguardRoleChangeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static AutonomousContainerDatabaseDataguardRoleChange get(java.lang.String name, Output<java.lang.String> id, @Nullable AutonomousContainerDatabaseDataguardRoleChangeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new AutonomousContainerDatabaseDataguardRoleChange(name, id, state, options);
     }
 }

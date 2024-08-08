@@ -728,7 +728,7 @@ public class DomainsMyOauth2clientCredential extends com.pulumi.resources.Custom
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DomainsMyOauth2clientCredential(String name) {
+    public DomainsMyOauth2clientCredential(java.lang.String name) {
         this(name, DomainsMyOauth2clientCredentialArgs.Empty);
     }
     /**
@@ -736,7 +736,7 @@ public class DomainsMyOauth2clientCredential extends com.pulumi.resources.Custom
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DomainsMyOauth2clientCredential(String name, DomainsMyOauth2clientCredentialArgs args) {
+    public DomainsMyOauth2clientCredential(java.lang.String name, DomainsMyOauth2clientCredentialArgs args) {
         this(name, args, null);
     }
     /**
@@ -745,12 +745,12 @@ public class DomainsMyOauth2clientCredential extends com.pulumi.resources.Custom
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DomainsMyOauth2clientCredential(String name, DomainsMyOauth2clientCredentialArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsMyOauth2clientCredential:DomainsMyOauth2clientCredential", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DomainsMyOauth2clientCredential(java.lang.String name, DomainsMyOauth2clientCredentialArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/domainsMyOauth2clientCredential:DomainsMyOauth2clientCredential", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DomainsMyOauth2clientCredential(String name, Output<String> id, @Nullable DomainsMyOauth2clientCredentialState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsMyOauth2clientCredential:DomainsMyOauth2clientCredential", name, state, makeResourceOptions(options, id));
+    private DomainsMyOauth2clientCredential(java.lang.String name, Output<java.lang.String> id, @Nullable DomainsMyOauth2clientCredentialState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/domainsMyOauth2clientCredential:DomainsMyOauth2clientCredential", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DomainsMyOauth2clientCredentialArgs makeArgs(DomainsMyOauth2clientCredentialArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -760,7 +760,7 @@ public class DomainsMyOauth2clientCredential extends com.pulumi.resources.Custom
         return args == null ? DomainsMyOauth2clientCredentialArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -776,7 +776,7 @@ public class DomainsMyOauth2clientCredential extends com.pulumi.resources.Custom
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DomainsMyOauth2clientCredential get(String name, Output<String> id, @Nullable DomainsMyOauth2clientCredentialState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DomainsMyOauth2clientCredential get(java.lang.String name, Output<java.lang.String> id, @Nullable DomainsMyOauth2clientCredentialState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DomainsMyOauth2clientCredential(name, id, state, options);
     }
 }

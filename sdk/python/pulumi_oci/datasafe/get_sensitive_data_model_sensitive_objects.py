@@ -112,7 +112,7 @@ class AwaitableGetSensitiveDataModelSensitiveObjectsResult(GetSensitiveDataModel
             sensitive_object_collections=self.sensitive_object_collections)
 
 
-def get_sensitive_data_model_sensitive_objects(filters: Optional[Sequence[pulumi.InputType['GetSensitiveDataModelSensitiveObjectsFilterArgs']]] = None,
+def get_sensitive_data_model_sensitive_objects(filters: Optional[Sequence[Union['GetSensitiveDataModelSensitiveObjectsFilterArgs', 'GetSensitiveDataModelSensitiveObjectsFilterArgsDict']]] = None,
                                                object_types: Optional[Sequence[str]] = None,
                                                objects: Optional[Sequence[str]] = None,
                                                schema_names: Optional[Sequence[str]] = None,
@@ -161,7 +161,7 @@ def get_sensitive_data_model_sensitive_objects(filters: Optional[Sequence[pulumi
 
 
 @_utilities.lift_output_func(get_sensitive_data_model_sensitive_objects)
-def get_sensitive_data_model_sensitive_objects_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetSensitiveDataModelSensitiveObjectsFilterArgs']]]]] = None,
+def get_sensitive_data_model_sensitive_objects_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSensitiveDataModelSensitiveObjectsFilterArgs', 'GetSensitiveDataModelSensitiveObjectsFilterArgsDict']]]]] = None,
                                                       object_types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                                       objects: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                                       schema_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,

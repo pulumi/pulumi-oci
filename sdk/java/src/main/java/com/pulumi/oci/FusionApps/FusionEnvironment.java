@@ -500,7 +500,7 @@ public class FusionEnvironment extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public FusionEnvironment(String name) {
+    public FusionEnvironment(java.lang.String name) {
         this(name, FusionEnvironmentArgs.Empty);
     }
     /**
@@ -508,7 +508,7 @@ public class FusionEnvironment extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public FusionEnvironment(String name, FusionEnvironmentArgs args) {
+    public FusionEnvironment(java.lang.String name, FusionEnvironmentArgs args) {
         this(name, args, null);
     }
     /**
@@ -517,12 +517,12 @@ public class FusionEnvironment extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public FusionEnvironment(String name, FusionEnvironmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:FusionApps/fusionEnvironment:FusionEnvironment", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public FusionEnvironment(java.lang.String name, FusionEnvironmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:FusionApps/fusionEnvironment:FusionEnvironment", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private FusionEnvironment(String name, Output<String> id, @Nullable FusionEnvironmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:FusionApps/fusionEnvironment:FusionEnvironment", name, state, makeResourceOptions(options, id));
+    private FusionEnvironment(java.lang.String name, Output<java.lang.String> id, @Nullable FusionEnvironmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:FusionApps/fusionEnvironment:FusionEnvironment", name, state, makeResourceOptions(options, id), false);
     }
 
     private static FusionEnvironmentArgs makeArgs(FusionEnvironmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -532,7 +532,7 @@ public class FusionEnvironment extends com.pulumi.resources.CustomResource {
         return args == null ? FusionEnvironmentArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -548,7 +548,7 @@ public class FusionEnvironment extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static FusionEnvironment get(String name, Output<String> id, @Nullable FusionEnvironmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static FusionEnvironment get(java.lang.String name, Output<java.lang.String> id, @Nullable FusionEnvironmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new FusionEnvironment(name, id, state, options);
     }
 }

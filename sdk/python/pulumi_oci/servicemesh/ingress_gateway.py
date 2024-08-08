@@ -415,14 +415,14 @@ class IngressGateway(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_logging: Optional[pulumi.Input[pulumi.InputType['IngressGatewayAccessLoggingArgs']]] = None,
+                 access_logging: Optional[pulumi.Input[Union['IngressGatewayAccessLoggingArgs', 'IngressGatewayAccessLoggingArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 hosts: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IngressGatewayHostArgs']]]]] = None,
+                 hosts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IngressGatewayHostArgs', 'IngressGatewayHostArgsDict']]]]] = None,
                  mesh_id: Optional[pulumi.Input[str]] = None,
-                 mtls: Optional[pulumi.Input[pulumi.InputType['IngressGatewayMtlsArgs']]] = None,
+                 mtls: Optional[pulumi.Input[Union['IngressGatewayMtlsArgs', 'IngressGatewayMtlsArgsDict']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -438,35 +438,35 @@ class IngressGateway(pulumi.CustomResource):
 
         test_ingress_gateway = oci.service_mesh.IngressGateway("test_ingress_gateway",
             compartment_id=compartment_id,
-            hosts=[oci.service_mesh.IngressGatewayHostArgs(
-                listeners=[oci.service_mesh.IngressGatewayHostListenerArgs(
-                    port=ingress_gateway_hosts_listeners_port,
-                    protocol=ingress_gateway_hosts_listeners_protocol,
-                    tls=oci.service_mesh.IngressGatewayHostListenerTlsArgs(
-                        mode=ingress_gateway_hosts_listeners_tls_mode,
-                        client_validation=oci.service_mesh.IngressGatewayHostListenerTlsClientValidationArgs(
-                            subject_alternate_names=ingress_gateway_hosts_listeners_tls_client_validation_subject_alternate_names,
-                            trusted_ca_bundle=oci.service_mesh.IngressGatewayHostListenerTlsClientValidationTrustedCaBundleArgs(
-                                type=ingress_gateway_hosts_listeners_tls_client_validation_trusted_ca_bundle_type,
-                                ca_bundle_id=test_ca_bundle["id"],
-                                secret_name=test_secret["name"],
-                            ),
-                        ),
-                        server_certificate=oci.service_mesh.IngressGatewayHostListenerTlsServerCertificateArgs(
-                            type=ingress_gateway_hosts_listeners_tls_server_certificate_type,
-                            certificate_id=test_certificate["id"],
-                            secret_name=test_secret["name"],
-                        ),
-                    ),
-                )],
-                name=ingress_gateway_hosts_name,
-                hostnames=ingress_gateway_hosts_hostnames,
-            )],
+            hosts=[{
+                "listeners": [{
+                    "port": ingress_gateway_hosts_listeners_port,
+                    "protocol": ingress_gateway_hosts_listeners_protocol,
+                    "tls": {
+                        "mode": ingress_gateway_hosts_listeners_tls_mode,
+                        "client_validation": {
+                            "subject_alternate_names": ingress_gateway_hosts_listeners_tls_client_validation_subject_alternate_names,
+                            "trusted_ca_bundle": {
+                                "type": ingress_gateway_hosts_listeners_tls_client_validation_trusted_ca_bundle_type,
+                                "ca_bundle_id": test_ca_bundle["id"],
+                                "secret_name": test_secret["name"],
+                            },
+                        },
+                        "server_certificate": {
+                            "type": ingress_gateway_hosts_listeners_tls_server_certificate_type,
+                            "certificate_id": test_certificate["id"],
+                            "secret_name": test_secret["name"],
+                        },
+                    },
+                }],
+                "name": ingress_gateway_hosts_name,
+                "hostnames": ingress_gateway_hosts_hostnames,
+            }],
             mesh_id=test_mesh["id"],
             name=ingress_gateway_name,
-            access_logging=oci.service_mesh.IngressGatewayAccessLoggingArgs(
-                is_enabled=ingress_gateway_access_logging_is_enabled,
-            ),
+            access_logging={
+                "is_enabled": ingress_gateway_access_logging_is_enabled,
+            },
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -474,9 +474,9 @@ class IngressGateway(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            mtls=oci.service_mesh.IngressGatewayMtlsArgs(
-                maximum_validity=ingress_gateway_mtls_maximum_validity,
-            ))
+            mtls={
+                "maximum_validity": ingress_gateway_mtls_maximum_validity,
+            })
         ```
 
         ## Import
@@ -489,14 +489,14 @@ class IngressGateway(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['IngressGatewayAccessLoggingArgs']] access_logging: (Updatable) This configuration determines if logging is enabled and where the logs will be output.
+        :param pulumi.Input[Union['IngressGatewayAccessLoggingArgs', 'IngressGatewayAccessLoggingArgsDict']] access_logging: (Updatable) This configuration determines if logging is enabled and where the logs will be output.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IngressGatewayHostArgs']]]] hosts: (Updatable) An array of hostnames and their listener configuration that this gateway will bind to.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IngressGatewayHostArgs', 'IngressGatewayHostArgsDict']]]] hosts: (Updatable) An array of hostnames and their listener configuration that this gateway will bind to.
         :param pulumi.Input[str] mesh_id: The OCID of the service mesh in which this ingress gateway is created.
-        :param pulumi.Input[pulumi.InputType['IngressGatewayMtlsArgs']] mtls: (Updatable) Mutual TLS settings used when sending requests to virtual services within the mesh.
+        :param pulumi.Input[Union['IngressGatewayMtlsArgs', 'IngressGatewayMtlsArgsDict']] mtls: (Updatable) Mutual TLS settings used when sending requests to virtual services within the mesh.
         :param pulumi.Input[str] name: A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name` 
                
                
@@ -522,35 +522,35 @@ class IngressGateway(pulumi.CustomResource):
 
         test_ingress_gateway = oci.service_mesh.IngressGateway("test_ingress_gateway",
             compartment_id=compartment_id,
-            hosts=[oci.service_mesh.IngressGatewayHostArgs(
-                listeners=[oci.service_mesh.IngressGatewayHostListenerArgs(
-                    port=ingress_gateway_hosts_listeners_port,
-                    protocol=ingress_gateway_hosts_listeners_protocol,
-                    tls=oci.service_mesh.IngressGatewayHostListenerTlsArgs(
-                        mode=ingress_gateway_hosts_listeners_tls_mode,
-                        client_validation=oci.service_mesh.IngressGatewayHostListenerTlsClientValidationArgs(
-                            subject_alternate_names=ingress_gateway_hosts_listeners_tls_client_validation_subject_alternate_names,
-                            trusted_ca_bundle=oci.service_mesh.IngressGatewayHostListenerTlsClientValidationTrustedCaBundleArgs(
-                                type=ingress_gateway_hosts_listeners_tls_client_validation_trusted_ca_bundle_type,
-                                ca_bundle_id=test_ca_bundle["id"],
-                                secret_name=test_secret["name"],
-                            ),
-                        ),
-                        server_certificate=oci.service_mesh.IngressGatewayHostListenerTlsServerCertificateArgs(
-                            type=ingress_gateway_hosts_listeners_tls_server_certificate_type,
-                            certificate_id=test_certificate["id"],
-                            secret_name=test_secret["name"],
-                        ),
-                    ),
-                )],
-                name=ingress_gateway_hosts_name,
-                hostnames=ingress_gateway_hosts_hostnames,
-            )],
+            hosts=[{
+                "listeners": [{
+                    "port": ingress_gateway_hosts_listeners_port,
+                    "protocol": ingress_gateway_hosts_listeners_protocol,
+                    "tls": {
+                        "mode": ingress_gateway_hosts_listeners_tls_mode,
+                        "client_validation": {
+                            "subject_alternate_names": ingress_gateway_hosts_listeners_tls_client_validation_subject_alternate_names,
+                            "trusted_ca_bundle": {
+                                "type": ingress_gateway_hosts_listeners_tls_client_validation_trusted_ca_bundle_type,
+                                "ca_bundle_id": test_ca_bundle["id"],
+                                "secret_name": test_secret["name"],
+                            },
+                        },
+                        "server_certificate": {
+                            "type": ingress_gateway_hosts_listeners_tls_server_certificate_type,
+                            "certificate_id": test_certificate["id"],
+                            "secret_name": test_secret["name"],
+                        },
+                    },
+                }],
+                "name": ingress_gateway_hosts_name,
+                "hostnames": ingress_gateway_hosts_hostnames,
+            }],
             mesh_id=test_mesh["id"],
             name=ingress_gateway_name,
-            access_logging=oci.service_mesh.IngressGatewayAccessLoggingArgs(
-                is_enabled=ingress_gateway_access_logging_is_enabled,
-            ),
+            access_logging={
+                "is_enabled": ingress_gateway_access_logging_is_enabled,
+            },
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -558,9 +558,9 @@ class IngressGateway(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            mtls=oci.service_mesh.IngressGatewayMtlsArgs(
-                maximum_validity=ingress_gateway_mtls_maximum_validity,
-            ))
+            mtls={
+                "maximum_validity": ingress_gateway_mtls_maximum_validity,
+            })
         ```
 
         ## Import
@@ -586,14 +586,14 @@ class IngressGateway(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_logging: Optional[pulumi.Input[pulumi.InputType['IngressGatewayAccessLoggingArgs']]] = None,
+                 access_logging: Optional[pulumi.Input[Union['IngressGatewayAccessLoggingArgs', 'IngressGatewayAccessLoggingArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 hosts: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IngressGatewayHostArgs']]]]] = None,
+                 hosts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IngressGatewayHostArgs', 'IngressGatewayHostArgsDict']]]]] = None,
                  mesh_id: Optional[pulumi.Input[str]] = None,
-                 mtls: Optional[pulumi.Input[pulumi.InputType['IngressGatewayMtlsArgs']]] = None,
+                 mtls: Optional[pulumi.Input[Union['IngressGatewayMtlsArgs', 'IngressGatewayMtlsArgsDict']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -634,15 +634,15 @@ class IngressGateway(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            access_logging: Optional[pulumi.Input[pulumi.InputType['IngressGatewayAccessLoggingArgs']]] = None,
+            access_logging: Optional[pulumi.Input[Union['IngressGatewayAccessLoggingArgs', 'IngressGatewayAccessLoggingArgsDict']]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             description: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            hosts: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IngressGatewayHostArgs']]]]] = None,
+            hosts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IngressGatewayHostArgs', 'IngressGatewayHostArgsDict']]]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             mesh_id: Optional[pulumi.Input[str]] = None,
-            mtls: Optional[pulumi.Input[pulumi.InputType['IngressGatewayMtlsArgs']]] = None,
+            mtls: Optional[pulumi.Input[Union['IngressGatewayMtlsArgs', 'IngressGatewayMtlsArgsDict']]] = None,
             name: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -655,15 +655,15 @@ class IngressGateway(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['IngressGatewayAccessLoggingArgs']] access_logging: (Updatable) This configuration determines if logging is enabled and where the logs will be output.
+        :param pulumi.Input[Union['IngressGatewayAccessLoggingArgs', 'IngressGatewayAccessLoggingArgsDict']] access_logging: (Updatable) This configuration determines if logging is enabled and where the logs will be output.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IngressGatewayHostArgs']]]] hosts: (Updatable) An array of hostnames and their listener configuration that this gateway will bind to.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IngressGatewayHostArgs', 'IngressGatewayHostArgsDict']]]] hosts: (Updatable) An array of hostnames and their listener configuration that this gateway will bind to.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
         :param pulumi.Input[str] mesh_id: The OCID of the service mesh in which this ingress gateway is created.
-        :param pulumi.Input[pulumi.InputType['IngressGatewayMtlsArgs']] mtls: (Updatable) Mutual TLS settings used when sending requests to virtual services within the mesh.
+        :param pulumi.Input[Union['IngressGatewayMtlsArgs', 'IngressGatewayMtlsArgsDict']] mtls: (Updatable) Mutual TLS settings used when sending requests to virtual services within the mesh.
         :param pulumi.Input[str] name: A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name` 
                
                

@@ -118,7 +118,7 @@ class AwaitableGetBootVolumeAttachmentsResult(GetBootVolumeAttachmentsResult):
 def get_boot_volume_attachments(availability_domain: Optional[str] = None,
                                 boot_volume_id: Optional[str] = None,
                                 compartment_id: Optional[str] = None,
-                                filters: Optional[Sequence[pulumi.InputType['GetBootVolumeAttachmentsFilterArgs']]] = None,
+                                filters: Optional[Sequence[Union['GetBootVolumeAttachmentsFilterArgs', 'GetBootVolumeAttachmentsFilterArgsDict']]] = None,
                                 instance_id: Optional[str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBootVolumeAttachmentsResult:
     """
@@ -169,7 +169,7 @@ def get_boot_volume_attachments(availability_domain: Optional[str] = None,
 def get_boot_volume_attachments_output(availability_domain: Optional[pulumi.Input[str]] = None,
                                        boot_volume_id: Optional[pulumi.Input[Optional[str]]] = None,
                                        compartment_id: Optional[pulumi.Input[str]] = None,
-                                       filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetBootVolumeAttachmentsFilterArgs']]]]] = None,
+                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBootVolumeAttachmentsFilterArgs', 'GetBootVolumeAttachmentsFilterArgsDict']]]]] = None,
                                        instance_id: Optional[pulumi.Input[Optional[str]]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBootVolumeAttachmentsResult]:
     """

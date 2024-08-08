@@ -650,19 +650,19 @@ class Key(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 auto_key_rotation_details: Optional[pulumi.Input[pulumi.InputType['KeyAutoKeyRotationDetailsArgs']]] = None,
+                 auto_key_rotation_details: Optional[pulumi.Input[Union['KeyAutoKeyRotationDetailsArgs', 'KeyAutoKeyRotationDetailsArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  desired_state: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 external_key_reference: Optional[pulumi.Input[pulumi.InputType['KeyExternalKeyReferenceArgs']]] = None,
+                 external_key_reference: Optional[pulumi.Input[Union['KeyExternalKeyReferenceArgs', 'KeyExternalKeyReferenceArgsDict']]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_auto_rotation_enabled: Optional[pulumi.Input[bool]] = None,
-                 key_shape: Optional[pulumi.Input[pulumi.InputType['KeyKeyShapeArgs']]] = None,
+                 key_shape: Optional[pulumi.Input[Union['KeyKeyShapeArgs', 'KeyKeyShapeArgsDict']]] = None,
                  management_endpoint: Optional[pulumi.Input[str]] = None,
                  protection_mode: Optional[pulumi.Input[str]] = None,
-                 restore_from_file: Optional[pulumi.Input[pulumi.InputType['KeyRestoreFromFileArgs']]] = None,
-                 restore_from_object_store: Optional[pulumi.Input[pulumi.InputType['KeyRestoreFromObjectStoreArgs']]] = None,
+                 restore_from_file: Optional[pulumi.Input[Union['KeyRestoreFromFileArgs', 'KeyRestoreFromFileArgsDict']]] = None,
+                 restore_from_object_store: Optional[pulumi.Input[Union['KeyRestoreFromObjectStoreArgs', 'KeyRestoreFromObjectStoreArgsDict']]] = None,
                  restore_trigger: Optional[pulumi.Input[bool]] = None,
                  time_of_deletion: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -686,19 +686,19 @@ class Key(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['KeyAutoKeyRotationDetailsArgs']] auto_key_rotation_details: (Updatable) The details of auto rotation schedule for the Key being create updated or imported.
+        :param pulumi.Input[Union['KeyAutoKeyRotationDetailsArgs', 'KeyAutoKeyRotationDetailsArgsDict']] auto_key_rotation_details: (Updatable) The details of auto rotation schedule for the Key being create updated or imported.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where you want to create the master encryption key.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] desired_state: (Updatable) Desired state of the key. Possible values : `ENABLED` or `DISABLED`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid entering confidential information.
-        :param pulumi.Input[pulumi.InputType['KeyExternalKeyReferenceArgs']] external_key_reference: A reference to the key on external key manager.
+        :param pulumi.Input[Union['KeyExternalKeyReferenceArgs', 'KeyExternalKeyReferenceArgsDict']] external_key_reference: A reference to the key on external key manager.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_auto_rotation_enabled: (Updatable) A parameter specifying whether the auto key rotation is enabled or not.
-        :param pulumi.Input[pulumi.InputType['KeyKeyShapeArgs']] key_shape: The cryptographic properties of a key.
+        :param pulumi.Input[Union['KeyKeyShapeArgs', 'KeyKeyShapeArgsDict']] key_shape: The cryptographic properties of a key.
         :param pulumi.Input[str] management_endpoint: The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
         :param pulumi.Input[str] protection_mode: The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
-        :param pulumi.Input[pulumi.InputType['KeyRestoreFromFileArgs']] restore_from_file: (Updatable) Details where key was backed up.
-        :param pulumi.Input[pulumi.InputType['KeyRestoreFromObjectStoreArgs']] restore_from_object_store: (Updatable) Details where key was backed up
+        :param pulumi.Input[Union['KeyRestoreFromFileArgs', 'KeyRestoreFromFileArgsDict']] restore_from_file: (Updatable) Details where key was backed up.
+        :param pulumi.Input[Union['KeyRestoreFromObjectStoreArgs', 'KeyRestoreFromObjectStoreArgsDict']] restore_from_object_store: (Updatable) Details where key was backed up
         :param pulumi.Input[bool] restore_trigger: (Updatable) An optional property when flipped triggers restore from restore option provided in config file.
         :param pulumi.Input[str] time_of_deletion: (Updatable) An optional property for the deletion time of the key, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
                
@@ -744,19 +744,19 @@ class Key(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 auto_key_rotation_details: Optional[pulumi.Input[pulumi.InputType['KeyAutoKeyRotationDetailsArgs']]] = None,
+                 auto_key_rotation_details: Optional[pulumi.Input[Union['KeyAutoKeyRotationDetailsArgs', 'KeyAutoKeyRotationDetailsArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  desired_state: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 external_key_reference: Optional[pulumi.Input[pulumi.InputType['KeyExternalKeyReferenceArgs']]] = None,
+                 external_key_reference: Optional[pulumi.Input[Union['KeyExternalKeyReferenceArgs', 'KeyExternalKeyReferenceArgsDict']]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_auto_rotation_enabled: Optional[pulumi.Input[bool]] = None,
-                 key_shape: Optional[pulumi.Input[pulumi.InputType['KeyKeyShapeArgs']]] = None,
+                 key_shape: Optional[pulumi.Input[Union['KeyKeyShapeArgs', 'KeyKeyShapeArgsDict']]] = None,
                  management_endpoint: Optional[pulumi.Input[str]] = None,
                  protection_mode: Optional[pulumi.Input[str]] = None,
-                 restore_from_file: Optional[pulumi.Input[pulumi.InputType['KeyRestoreFromFileArgs']]] = None,
-                 restore_from_object_store: Optional[pulumi.Input[pulumi.InputType['KeyRestoreFromObjectStoreArgs']]] = None,
+                 restore_from_file: Optional[pulumi.Input[Union['KeyRestoreFromFileArgs', 'KeyRestoreFromFileArgsDict']]] = None,
+                 restore_from_object_store: Optional[pulumi.Input[Union['KeyRestoreFromObjectStoreArgs', 'KeyRestoreFromObjectStoreArgsDict']]] = None,
                  restore_trigger: Optional[pulumi.Input[bool]] = None,
                  time_of_deletion: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -809,23 +809,23 @@ class Key(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            auto_key_rotation_details: Optional[pulumi.Input[pulumi.InputType['KeyAutoKeyRotationDetailsArgs']]] = None,
+            auto_key_rotation_details: Optional[pulumi.Input[Union['KeyAutoKeyRotationDetailsArgs', 'KeyAutoKeyRotationDetailsArgsDict']]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             current_key_version: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             desired_state: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
-            external_key_reference: Optional[pulumi.Input[pulumi.InputType['KeyExternalKeyReferenceArgs']]] = None,
-            external_key_reference_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['KeyExternalKeyReferenceDetailArgs']]]]] = None,
+            external_key_reference: Optional[pulumi.Input[Union['KeyExternalKeyReferenceArgs', 'KeyExternalKeyReferenceArgsDict']]] = None,
+            external_key_reference_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['KeyExternalKeyReferenceDetailArgs', 'KeyExternalKeyReferenceDetailArgsDict']]]]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             is_auto_rotation_enabled: Optional[pulumi.Input[bool]] = None,
             is_primary: Optional[pulumi.Input[bool]] = None,
-            key_shape: Optional[pulumi.Input[pulumi.InputType['KeyKeyShapeArgs']]] = None,
+            key_shape: Optional[pulumi.Input[Union['KeyKeyShapeArgs', 'KeyKeyShapeArgsDict']]] = None,
             management_endpoint: Optional[pulumi.Input[str]] = None,
             protection_mode: Optional[pulumi.Input[str]] = None,
-            replica_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['KeyReplicaDetailArgs']]]]] = None,
-            restore_from_file: Optional[pulumi.Input[pulumi.InputType['KeyRestoreFromFileArgs']]] = None,
-            restore_from_object_store: Optional[pulumi.Input[pulumi.InputType['KeyRestoreFromObjectStoreArgs']]] = None,
+            replica_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['KeyReplicaDetailArgs', 'KeyReplicaDetailArgsDict']]]]] = None,
+            restore_from_file: Optional[pulumi.Input[Union['KeyRestoreFromFileArgs', 'KeyRestoreFromFileArgsDict']]] = None,
+            restore_from_object_store: Optional[pulumi.Input[Union['KeyRestoreFromObjectStoreArgs', 'KeyRestoreFromObjectStoreArgsDict']]] = None,
             restore_trigger: Optional[pulumi.Input[bool]] = None,
             restored_from_key_id: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -839,23 +839,23 @@ class Key(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['KeyAutoKeyRotationDetailsArgs']] auto_key_rotation_details: (Updatable) The details of auto rotation schedule for the Key being create updated or imported.
+        :param pulumi.Input[Union['KeyAutoKeyRotationDetailsArgs', 'KeyAutoKeyRotationDetailsArgsDict']] auto_key_rotation_details: (Updatable) The details of auto rotation schedule for the Key being create updated or imported.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where you want to create the master encryption key.
         :param pulumi.Input[str] current_key_version: The OCID of the key version used in cryptographic operations. During key rotation, the service might be in a transitional state where this or a newer key version are used intermittently. The `currentKeyVersion` property is updated when the service is guaranteed to use the new key version for all subsequent encryption operations.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] desired_state: (Updatable) Desired state of the key. Possible values : `ENABLED` or `DISABLED`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid entering confidential information.
-        :param pulumi.Input[pulumi.InputType['KeyExternalKeyReferenceArgs']] external_key_reference: A reference to the key on external key manager.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['KeyExternalKeyReferenceDetailArgs']]]] external_key_reference_details: Key reference data to be returned to the customer as a response.
+        :param pulumi.Input[Union['KeyExternalKeyReferenceArgs', 'KeyExternalKeyReferenceArgsDict']] external_key_reference: A reference to the key on external key manager.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['KeyExternalKeyReferenceDetailArgs', 'KeyExternalKeyReferenceDetailArgsDict']]]] external_key_reference_details: Key reference data to be returned to the customer as a response.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_auto_rotation_enabled: (Updatable) A parameter specifying whether the auto key rotation is enabled or not.
         :param pulumi.Input[bool] is_primary: A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
-        :param pulumi.Input[pulumi.InputType['KeyKeyShapeArgs']] key_shape: The cryptographic properties of a key.
+        :param pulumi.Input[Union['KeyKeyShapeArgs', 'KeyKeyShapeArgsDict']] key_shape: The cryptographic properties of a key.
         :param pulumi.Input[str] management_endpoint: The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
         :param pulumi.Input[str] protection_mode: The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['KeyReplicaDetailArgs']]]] replica_details: Key replica details
-        :param pulumi.Input[pulumi.InputType['KeyRestoreFromFileArgs']] restore_from_file: (Updatable) Details where key was backed up.
-        :param pulumi.Input[pulumi.InputType['KeyRestoreFromObjectStoreArgs']] restore_from_object_store: (Updatable) Details where key was backed up
+        :param pulumi.Input[Sequence[pulumi.Input[Union['KeyReplicaDetailArgs', 'KeyReplicaDetailArgsDict']]]] replica_details: Key replica details
+        :param pulumi.Input[Union['KeyRestoreFromFileArgs', 'KeyRestoreFromFileArgsDict']] restore_from_file: (Updatable) Details where key was backed up.
+        :param pulumi.Input[Union['KeyRestoreFromObjectStoreArgs', 'KeyRestoreFromObjectStoreArgsDict']] restore_from_object_store: (Updatable) Details where key was backed up
         :param pulumi.Input[bool] restore_trigger: (Updatable) An optional property when flipped triggers restore from restore option provided in config file.
         :param pulumi.Input[str] restored_from_key_id: The OCID of the key from which this key was restored.
         :param pulumi.Input[str] state: The key's current lifecycle state.  Example: `ENABLED`

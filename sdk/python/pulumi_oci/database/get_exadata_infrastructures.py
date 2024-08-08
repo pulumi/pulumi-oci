@@ -105,7 +105,7 @@ class AwaitableGetExadataInfrastructuresResult(GetExadataInfrastructuresResult):
 
 def get_exadata_infrastructures(compartment_id: Optional[str] = None,
                                 display_name: Optional[str] = None,
-                                filters: Optional[Sequence[pulumi.InputType['GetExadataInfrastructuresFilterArgs']]] = None,
+                                filters: Optional[Sequence[Union['GetExadataInfrastructuresFilterArgs', 'GetExadataInfrastructuresFilterArgsDict']]] = None,
                                 state: Optional[str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExadataInfrastructuresResult:
     """
@@ -139,7 +139,7 @@ def get_exadata_infrastructures(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_exadata_infrastructures)
 def get_exadata_infrastructures_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                        display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                       filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetExadataInfrastructuresFilterArgs']]]]] = None,
+                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExadataInfrastructuresFilterArgs', 'GetExadataInfrastructuresFilterArgsDict']]]]] = None,
                                        state: Optional[pulumi.Input[Optional[str]]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExadataInfrastructuresResult]:
     """

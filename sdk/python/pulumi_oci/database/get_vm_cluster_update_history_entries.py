@@ -100,7 +100,7 @@ class AwaitableGetVmClusterUpdateHistoryEntriesResult(GetVmClusterUpdateHistoryE
             vm_cluster_update_history_entries=self.vm_cluster_update_history_entries)
 
 
-def get_vm_cluster_update_history_entries(filters: Optional[Sequence[pulumi.InputType['GetVmClusterUpdateHistoryEntriesFilterArgs']]] = None,
+def get_vm_cluster_update_history_entries(filters: Optional[Sequence[Union['GetVmClusterUpdateHistoryEntriesFilterArgs', 'GetVmClusterUpdateHistoryEntriesFilterArgsDict']]] = None,
                                           state: Optional[str] = None,
                                           update_type: Optional[str] = None,
                                           vm_cluster_id: Optional[str] = None,
@@ -144,7 +144,7 @@ def get_vm_cluster_update_history_entries(filters: Optional[Sequence[pulumi.Inpu
 
 
 @_utilities.lift_output_func(get_vm_cluster_update_history_entries)
-def get_vm_cluster_update_history_entries_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetVmClusterUpdateHistoryEntriesFilterArgs']]]]] = None,
+def get_vm_cluster_update_history_entries_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVmClusterUpdateHistoryEntriesFilterArgs', 'GetVmClusterUpdateHistoryEntriesFilterArgsDict']]]]] = None,
                                                  state: Optional[pulumi.Input[Optional[str]]] = None,
                                                  update_type: Optional[pulumi.Input[Optional[str]]] = None,
                                                  vm_cluster_id: Optional[pulumi.Input[str]] = None,

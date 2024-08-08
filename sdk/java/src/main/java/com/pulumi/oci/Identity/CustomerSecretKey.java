@@ -184,7 +184,7 @@ public class CustomerSecretKey extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public CustomerSecretKey(String name) {
+    public CustomerSecretKey(java.lang.String name) {
         this(name, CustomerSecretKeyArgs.Empty);
     }
     /**
@@ -192,7 +192,7 @@ public class CustomerSecretKey extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public CustomerSecretKey(String name, CustomerSecretKeyArgs args) {
+    public CustomerSecretKey(java.lang.String name, CustomerSecretKeyArgs args) {
         this(name, args, null);
     }
     /**
@@ -201,12 +201,12 @@ public class CustomerSecretKey extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public CustomerSecretKey(String name, CustomerSecretKeyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/customerSecretKey:CustomerSecretKey", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public CustomerSecretKey(java.lang.String name, CustomerSecretKeyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/customerSecretKey:CustomerSecretKey", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private CustomerSecretKey(String name, Output<String> id, @Nullable CustomerSecretKeyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/customerSecretKey:CustomerSecretKey", name, state, makeResourceOptions(options, id));
+    private CustomerSecretKey(java.lang.String name, Output<java.lang.String> id, @Nullable CustomerSecretKeyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/customerSecretKey:CustomerSecretKey", name, state, makeResourceOptions(options, id), false);
     }
 
     private static CustomerSecretKeyArgs makeArgs(CustomerSecretKeyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -216,7 +216,7 @@ public class CustomerSecretKey extends com.pulumi.resources.CustomResource {
         return args == null ? CustomerSecretKeyArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -232,7 +232,7 @@ public class CustomerSecretKey extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static CustomerSecretKey get(String name, Output<String> id, @Nullable CustomerSecretKeyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static CustomerSecretKey get(java.lang.String name, Output<java.lang.String> id, @Nullable CustomerSecretKeyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new CustomerSecretKey(name, id, state, options);
     }
 }

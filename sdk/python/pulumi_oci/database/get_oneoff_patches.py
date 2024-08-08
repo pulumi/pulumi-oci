@@ -105,7 +105,7 @@ class AwaitableGetOneoffPatchesResult(GetOneoffPatchesResult):
 
 def get_oneoff_patches(compartment_id: Optional[str] = None,
                        display_name: Optional[str] = None,
-                       filters: Optional[Sequence[pulumi.InputType['GetOneoffPatchesFilterArgs']]] = None,
+                       filters: Optional[Sequence[Union['GetOneoffPatchesFilterArgs', 'GetOneoffPatchesFilterArgsDict']]] = None,
                        state: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOneoffPatchesResult:
     """
@@ -149,7 +149,7 @@ def get_oneoff_patches(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_oneoff_patches)
 def get_oneoff_patches_output(compartment_id: Optional[pulumi.Input[str]] = None,
                               display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                              filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetOneoffPatchesFilterArgs']]]]] = None,
+                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOneoffPatchesFilterArgs', 'GetOneoffPatchesFilterArgsDict']]]]] = None,
                               state: Optional[pulumi.Input[Optional[str]]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOneoffPatchesResult]:
     """

@@ -144,7 +144,7 @@ public class AppCatalogListingResourceVersionAgreement extends com.pulumi.resour
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public AppCatalogListingResourceVersionAgreement(String name) {
+    public AppCatalogListingResourceVersionAgreement(java.lang.String name) {
         this(name, AppCatalogListingResourceVersionAgreementArgs.Empty);
     }
     /**
@@ -152,7 +152,7 @@ public class AppCatalogListingResourceVersionAgreement extends com.pulumi.resour
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public AppCatalogListingResourceVersionAgreement(String name, AppCatalogListingResourceVersionAgreementArgs args) {
+    public AppCatalogListingResourceVersionAgreement(java.lang.String name, AppCatalogListingResourceVersionAgreementArgs args) {
         this(name, args, null);
     }
     /**
@@ -161,12 +161,12 @@ public class AppCatalogListingResourceVersionAgreement extends com.pulumi.resour
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public AppCatalogListingResourceVersionAgreement(String name, AppCatalogListingResourceVersionAgreementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/appCatalogListingResourceVersionAgreement:AppCatalogListingResourceVersionAgreement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public AppCatalogListingResourceVersionAgreement(java.lang.String name, AppCatalogListingResourceVersionAgreementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Core/appCatalogListingResourceVersionAgreement:AppCatalogListingResourceVersionAgreement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private AppCatalogListingResourceVersionAgreement(String name, Output<String> id, @Nullable AppCatalogListingResourceVersionAgreementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/appCatalogListingResourceVersionAgreement:AppCatalogListingResourceVersionAgreement", name, state, makeResourceOptions(options, id));
+    private AppCatalogListingResourceVersionAgreement(java.lang.String name, Output<java.lang.String> id, @Nullable AppCatalogListingResourceVersionAgreementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Core/appCatalogListingResourceVersionAgreement:AppCatalogListingResourceVersionAgreement", name, state, makeResourceOptions(options, id), false);
     }
 
     private static AppCatalogListingResourceVersionAgreementArgs makeArgs(AppCatalogListingResourceVersionAgreementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -176,7 +176,7 @@ public class AppCatalogListingResourceVersionAgreement extends com.pulumi.resour
         return args == null ? AppCatalogListingResourceVersionAgreementArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -192,7 +192,7 @@ public class AppCatalogListingResourceVersionAgreement extends com.pulumi.resour
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static AppCatalogListingResourceVersionAgreement get(String name, Output<String> id, @Nullable AppCatalogListingResourceVersionAgreementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static AppCatalogListingResourceVersionAgreement get(java.lang.String name, Output<java.lang.String> id, @Nullable AppCatalogListingResourceVersionAgreementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new AppCatalogListingResourceVersionAgreement(name, id, state, options);
     }
 }

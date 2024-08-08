@@ -309,7 +309,7 @@ public class OperationsInsightsWarehouse extends com.pulumi.resources.CustomReso
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public OperationsInsightsWarehouse(String name) {
+    public OperationsInsightsWarehouse(java.lang.String name) {
         this(name, OperationsInsightsWarehouseArgs.Empty);
     }
     /**
@@ -317,7 +317,7 @@ public class OperationsInsightsWarehouse extends com.pulumi.resources.CustomReso
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public OperationsInsightsWarehouse(String name, OperationsInsightsWarehouseArgs args) {
+    public OperationsInsightsWarehouse(java.lang.String name, OperationsInsightsWarehouseArgs args) {
         this(name, args, null);
     }
     /**
@@ -326,12 +326,12 @@ public class OperationsInsightsWarehouse extends com.pulumi.resources.CustomReso
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public OperationsInsightsWarehouse(String name, OperationsInsightsWarehouseArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Opsi/operationsInsightsWarehouse:OperationsInsightsWarehouse", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public OperationsInsightsWarehouse(java.lang.String name, OperationsInsightsWarehouseArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Opsi/operationsInsightsWarehouse:OperationsInsightsWarehouse", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private OperationsInsightsWarehouse(String name, Output<String> id, @Nullable OperationsInsightsWarehouseState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Opsi/operationsInsightsWarehouse:OperationsInsightsWarehouse", name, state, makeResourceOptions(options, id));
+    private OperationsInsightsWarehouse(java.lang.String name, Output<java.lang.String> id, @Nullable OperationsInsightsWarehouseState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Opsi/operationsInsightsWarehouse:OperationsInsightsWarehouse", name, state, makeResourceOptions(options, id), false);
     }
 
     private static OperationsInsightsWarehouseArgs makeArgs(OperationsInsightsWarehouseArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -341,7 +341,7 @@ public class OperationsInsightsWarehouse extends com.pulumi.resources.CustomReso
         return args == null ? OperationsInsightsWarehouseArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -357,7 +357,7 @@ public class OperationsInsightsWarehouse extends com.pulumi.resources.CustomReso
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static OperationsInsightsWarehouse get(String name, Output<String> id, @Nullable OperationsInsightsWarehouseState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static OperationsInsightsWarehouse get(java.lang.String name, Output<java.lang.String> id, @Nullable OperationsInsightsWarehouseState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new OperationsInsightsWarehouse(name, id, state, options);
     }
 }

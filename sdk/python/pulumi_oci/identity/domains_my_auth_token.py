@@ -966,8 +966,8 @@ class DomainsMyAuthToken(pulumi.CustomResource):
                  resource_type_schema_version: Optional[pulumi.Input[str]] = None,
                  schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  status: Optional[pulumi.Input[str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMyAuthTokenTagArgs']]]]] = None,
-                 user: Optional[pulumi.Input[pulumi.InputType['DomainsMyAuthTokenUserArgs']]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyAuthTokenTagArgs', 'DomainsMyAuthTokenTagArgsDict']]]]] = None,
+                 user: Optional[pulumi.Input[Union['DomainsMyAuthTokenUserArgs', 'DomainsMyAuthTokenUserArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the My Auth Token resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -1045,7 +1045,7 @@ class DomainsMyAuthToken(pulumi.CustomResource):
                * returned: never
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMyAuthTokenTagArgs']]]] tags: A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyAuthTokenTagArgs', 'DomainsMyAuthTokenTagArgsDict']]]] tags: A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -1056,7 +1056,7 @@ class DomainsMyAuthToken(pulumi.CustomResource):
                * returned: request
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsMyAuthTokenUserArgs']] user: The user linked to the Auth token.
+        :param pulumi.Input[Union['DomainsMyAuthTokenUserArgs', 'DomainsMyAuthTokenUserArgsDict']] user: The user linked to the Auth token.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1110,8 +1110,8 @@ class DomainsMyAuthToken(pulumi.CustomResource):
                  resource_type_schema_version: Optional[pulumi.Input[str]] = None,
                  schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  status: Optional[pulumi.Input[str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMyAuthTokenTagArgs']]]]] = None,
-                 user: Optional[pulumi.Input[pulumi.InputType['DomainsMyAuthTokenUserArgs']]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyAuthTokenTagArgs', 'DomainsMyAuthTokenTagArgsDict']]]]] = None,
+                 user: Optional[pulumi.Input[Union['DomainsMyAuthTokenUserArgs', 'DomainsMyAuthTokenUserArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1160,19 +1160,19 @@ class DomainsMyAuthToken(pulumi.CustomResource):
             description: Optional[pulumi.Input[str]] = None,
             domain_ocid: Optional[pulumi.Input[str]] = None,
             expires_on: Optional[pulumi.Input[str]] = None,
-            idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMyAuthTokenIdcsCreatedByArgs']]]]] = None,
+            idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyAuthTokenIdcsCreatedByArgs', 'DomainsMyAuthTokenIdcsCreatedByArgsDict']]]]] = None,
             idcs_endpoint: Optional[pulumi.Input[str]] = None,
-            idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMyAuthTokenIdcsLastModifiedByArgs']]]]] = None,
+            idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyAuthTokenIdcsLastModifiedByArgs', 'DomainsMyAuthTokenIdcsLastModifiedByArgsDict']]]]] = None,
             idcs_last_upgraded_in_release: Optional[pulumi.Input[str]] = None,
             idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            metas: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMyAuthTokenMetaArgs']]]]] = None,
+            metas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyAuthTokenMetaArgs', 'DomainsMyAuthTokenMetaArgsDict']]]]] = None,
             ocid: Optional[pulumi.Input[str]] = None,
             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             status: Optional[pulumi.Input[str]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMyAuthTokenTagArgs']]]]] = None,
+            tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyAuthTokenTagArgs', 'DomainsMyAuthTokenTagArgsDict']]]]] = None,
             tenancy_ocid: Optional[pulumi.Input[str]] = None,
-            user: Optional[pulumi.Input[pulumi.InputType['DomainsMyAuthTokenUserArgs']]] = None) -> 'DomainsMyAuthToken':
+            user: Optional[pulumi.Input[Union['DomainsMyAuthTokenUserArgs', 'DomainsMyAuthTokenUserArgsDict']]] = None) -> 'DomainsMyAuthToken':
         """
         Get an existing DomainsMyAuthToken resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -1237,7 +1237,7 @@ class DomainsMyAuthToken(pulumi.CustomResource):
                * returned: default
                * type: dateTime
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMyAuthTokenIdcsCreatedByArgs']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyAuthTokenIdcsCreatedByArgs', 'DomainsMyAuthTokenIdcsCreatedByArgsDict']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1247,7 +1247,7 @@ class DomainsMyAuthToken(pulumi.CustomResource):
                * returned: default
                * type: complex
         :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMyAuthTokenIdcsLastModifiedByArgs']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyAuthTokenIdcsLastModifiedByArgs', 'DomainsMyAuthTokenIdcsLastModifiedByArgsDict']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1277,7 +1277,7 @@ class DomainsMyAuthToken(pulumi.CustomResource):
                * returned: request
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMyAuthTokenMetaArgs']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyAuthTokenMetaArgs', 'DomainsMyAuthTokenMetaArgsDict']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1324,7 +1324,7 @@ class DomainsMyAuthToken(pulumi.CustomResource):
                * returned: never
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMyAuthTokenTagArgs']]]] tags: A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMyAuthTokenTagArgs', 'DomainsMyAuthTokenTagArgsDict']]]] tags: A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -1346,7 +1346,7 @@ class DomainsMyAuthToken(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsMyAuthTokenUserArgs']] user: The user linked to the Auth token.
+        :param pulumi.Input[Union['DomainsMyAuthTokenUserArgs', 'DomainsMyAuthTokenUserArgsDict']] user: The user linked to the Auth token.
                
                **SCIM++ Properties:**
                * caseExact: false

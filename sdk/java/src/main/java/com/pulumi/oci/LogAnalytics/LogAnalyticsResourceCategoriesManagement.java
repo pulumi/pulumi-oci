@@ -131,7 +131,7 @@ public class LogAnalyticsResourceCategoriesManagement extends com.pulumi.resourc
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public LogAnalyticsResourceCategoriesManagement(String name) {
+    public LogAnalyticsResourceCategoriesManagement(java.lang.String name) {
         this(name, LogAnalyticsResourceCategoriesManagementArgs.Empty);
     }
     /**
@@ -139,7 +139,7 @@ public class LogAnalyticsResourceCategoriesManagement extends com.pulumi.resourc
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public LogAnalyticsResourceCategoriesManagement(String name, LogAnalyticsResourceCategoriesManagementArgs args) {
+    public LogAnalyticsResourceCategoriesManagement(java.lang.String name, LogAnalyticsResourceCategoriesManagementArgs args) {
         this(name, args, null);
     }
     /**
@@ -148,12 +148,12 @@ public class LogAnalyticsResourceCategoriesManagement extends com.pulumi.resourc
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public LogAnalyticsResourceCategoriesManagement(String name, LogAnalyticsResourceCategoriesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:LogAnalytics/logAnalyticsResourceCategoriesManagement:LogAnalyticsResourceCategoriesManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public LogAnalyticsResourceCategoriesManagement(java.lang.String name, LogAnalyticsResourceCategoriesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:LogAnalytics/logAnalyticsResourceCategoriesManagement:LogAnalyticsResourceCategoriesManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private LogAnalyticsResourceCategoriesManagement(String name, Output<String> id, @Nullable LogAnalyticsResourceCategoriesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:LogAnalytics/logAnalyticsResourceCategoriesManagement:LogAnalyticsResourceCategoriesManagement", name, state, makeResourceOptions(options, id));
+    private LogAnalyticsResourceCategoriesManagement(java.lang.String name, Output<java.lang.String> id, @Nullable LogAnalyticsResourceCategoriesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:LogAnalytics/logAnalyticsResourceCategoriesManagement:LogAnalyticsResourceCategoriesManagement", name, state, makeResourceOptions(options, id), false);
     }
 
     private static LogAnalyticsResourceCategoriesManagementArgs makeArgs(LogAnalyticsResourceCategoriesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -163,7 +163,7 @@ public class LogAnalyticsResourceCategoriesManagement extends com.pulumi.resourc
         return args == null ? LogAnalyticsResourceCategoriesManagementArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -179,7 +179,7 @@ public class LogAnalyticsResourceCategoriesManagement extends com.pulumi.resourc
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static LogAnalyticsResourceCategoriesManagement get(String name, Output<String> id, @Nullable LogAnalyticsResourceCategoriesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static LogAnalyticsResourceCategoriesManagement get(java.lang.String name, Output<java.lang.String> id, @Nullable LogAnalyticsResourceCategoriesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new LogAnalyticsResourceCategoriesManagement(name, id, state, options);
     }
 }

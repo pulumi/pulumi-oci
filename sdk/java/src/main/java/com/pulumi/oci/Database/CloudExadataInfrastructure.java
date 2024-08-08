@@ -604,7 +604,7 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public CloudExadataInfrastructure(String name) {
+    public CloudExadataInfrastructure(java.lang.String name) {
         this(name, CloudExadataInfrastructureArgs.Empty);
     }
     /**
@@ -612,7 +612,7 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public CloudExadataInfrastructure(String name, CloudExadataInfrastructureArgs args) {
+    public CloudExadataInfrastructure(java.lang.String name, CloudExadataInfrastructureArgs args) {
         this(name, args, null);
     }
     /**
@@ -621,12 +621,12 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public CloudExadataInfrastructure(String name, CloudExadataInfrastructureArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/cloudExadataInfrastructure:CloudExadataInfrastructure", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public CloudExadataInfrastructure(java.lang.String name, CloudExadataInfrastructureArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/cloudExadataInfrastructure:CloudExadataInfrastructure", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private CloudExadataInfrastructure(String name, Output<String> id, @Nullable CloudExadataInfrastructureState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/cloudExadataInfrastructure:CloudExadataInfrastructure", name, state, makeResourceOptions(options, id));
+    private CloudExadataInfrastructure(java.lang.String name, Output<java.lang.String> id, @Nullable CloudExadataInfrastructureState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/cloudExadataInfrastructure:CloudExadataInfrastructure", name, state, makeResourceOptions(options, id), false);
     }
 
     private static CloudExadataInfrastructureArgs makeArgs(CloudExadataInfrastructureArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -636,7 +636,7 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
         return args == null ? CloudExadataInfrastructureArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -652,7 +652,7 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static CloudExadataInfrastructure get(String name, Output<String> id, @Nullable CloudExadataInfrastructureState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static CloudExadataInfrastructure get(java.lang.String name, Output<java.lang.String> id, @Nullable CloudExadataInfrastructureState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new CloudExadataInfrastructure(name, id, state, options);
     }
 }

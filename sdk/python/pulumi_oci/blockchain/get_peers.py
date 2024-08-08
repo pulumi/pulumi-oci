@@ -87,7 +87,7 @@ class AwaitableGetPeersResult(GetPeersResult):
 
 def get_peers(blockchain_platform_id: Optional[str] = None,
               display_name: Optional[str] = None,
-              filters: Optional[Sequence[pulumi.InputType['GetPeersFilterArgs']]] = None,
+              filters: Optional[Sequence[Union['GetPeersFilterArgs', 'GetPeersFilterArgsDict']]] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPeersResult:
     """
     This data source provides the list of Peers in Oracle Cloud Infrastructure Blockchain service.
@@ -126,7 +126,7 @@ def get_peers(blockchain_platform_id: Optional[str] = None,
 @_utilities.lift_output_func(get_peers)
 def get_peers_output(blockchain_platform_id: Optional[pulumi.Input[str]] = None,
                      display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                     filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetPeersFilterArgs']]]]] = None,
+                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPeersFilterArgs', 'GetPeersFilterArgsDict']]]]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPeersResult]:
     """
     This data source provides the list of Peers in Oracle Cloud Infrastructure Blockchain service.

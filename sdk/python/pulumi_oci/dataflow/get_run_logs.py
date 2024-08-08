@@ -76,7 +76,7 @@ class AwaitableGetRunLogsResult(GetRunLogsResult):
             run_logs=self.run_logs)
 
 
-def get_run_logs(filters: Optional[Sequence[pulumi.InputType['GetRunLogsFilterArgs']]] = None,
+def get_run_logs(filters: Optional[Sequence[Union['GetRunLogsFilterArgs', 'GetRunLogsFilterArgsDict']]] = None,
                  run_id: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRunLogsResult:
     """
@@ -110,7 +110,7 @@ def get_run_logs(filters: Optional[Sequence[pulumi.InputType['GetRunLogsFilterAr
 
 
 @_utilities.lift_output_func(get_run_logs)
-def get_run_logs_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetRunLogsFilterArgs']]]]] = None,
+def get_run_logs_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRunLogsFilterArgs', 'GetRunLogsFilterArgsDict']]]]] = None,
                         run_id: Optional[pulumi.Input[str]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRunLogsResult]:
     """

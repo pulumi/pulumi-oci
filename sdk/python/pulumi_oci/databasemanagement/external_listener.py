@@ -683,7 +683,7 @@ class ExternalListener(pulumi.CustomResource):
             component_name: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
-            endpoints: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalListenerEndpointArgs']]]]] = None,
+            endpoints: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExternalListenerEndpointArgs', 'ExternalListenerEndpointArgsDict']]]]] = None,
             external_connector_id: Optional[pulumi.Input[str]] = None,
             external_db_home_id: Optional[pulumi.Input[str]] = None,
             external_db_node_id: Optional[pulumi.Input[str]] = None,
@@ -697,8 +697,8 @@ class ExternalListener(pulumi.CustomResource):
             listener_type: Optional[pulumi.Input[str]] = None,
             log_directory: Optional[pulumi.Input[str]] = None,
             oracle_home: Optional[pulumi.Input[str]] = None,
-            serviced_asms: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalListenerServicedAsmArgs']]]]] = None,
-            serviced_databases: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalListenerServicedDatabaseArgs']]]]] = None,
+            serviced_asms: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExternalListenerServicedAsmArgs', 'ExternalListenerServicedAsmArgsDict']]]]] = None,
+            serviced_databases: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExternalListenerServicedDatabaseArgs', 'ExternalListenerServicedDatabaseArgsDict']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
@@ -718,7 +718,7 @@ class ExternalListener(pulumi.CustomResource):
         :param pulumi.Input[str] component_name: The name of the external listener.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: The user-friendly name for the database. The name does not have to be unique.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalListenerEndpointArgs']]]] endpoints: The list of protocol addresses the listener is configured to listen on.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExternalListenerEndpointArgs', 'ExternalListenerEndpointArgsDict']]]] endpoints: The list of protocol addresses the listener is configured to listen on.
         :param pulumi.Input[str] external_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
         :param pulumi.Input[str] external_db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB home.
         :param pulumi.Input[str] external_db_node_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
@@ -736,8 +736,8 @@ class ExternalListener(pulumi.CustomResource):
         :param pulumi.Input[str] listener_type: The type of listener.
         :param pulumi.Input[str] log_directory: The destination directory of the listener log file.
         :param pulumi.Input[str] oracle_home: The Oracle home location of the listener.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalListenerServicedAsmArgs']]]] serviced_asms: The list of ASMs that are serviced by the listener.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalListenerServicedDatabaseArgs']]]] serviced_databases: The list of databases that are serviced by the listener.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExternalListenerServicedAsmArgs', 'ExternalListenerServicedAsmArgsDict']]]] serviced_asms: The list of ASMs that are serviced by the listener.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExternalListenerServicedDatabaseArgs', 'ExternalListenerServicedDatabaseArgsDict']]]] serviced_databases: The list of databases that are serviced by the listener.
         :param pulumi.Input[str] state: The current lifecycle state of the external listener.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time the external listener was created.

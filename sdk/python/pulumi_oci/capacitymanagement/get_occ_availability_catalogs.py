@@ -118,7 +118,7 @@ class AwaitableGetOccAvailabilityCatalogsResult(GetOccAvailabilityCatalogsResult
 def get_occ_availability_catalogs(catalog_state: Optional[str] = None,
                                   compartment_id: Optional[str] = None,
                                   display_name: Optional[str] = None,
-                                  filters: Optional[Sequence[pulumi.InputType['GetOccAvailabilityCatalogsFilterArgs']]] = None,
+                                  filters: Optional[Sequence[Union['GetOccAvailabilityCatalogsFilterArgs', 'GetOccAvailabilityCatalogsFilterArgsDict']]] = None,
                                   id: Optional[str] = None,
                                   namespace: Optional[str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOccAvailabilityCatalogsResult:
@@ -171,7 +171,7 @@ def get_occ_availability_catalogs(catalog_state: Optional[str] = None,
 def get_occ_availability_catalogs_output(catalog_state: Optional[pulumi.Input[Optional[str]]] = None,
                                          compartment_id: Optional[pulumi.Input[str]] = None,
                                          display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                         filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetOccAvailabilityCatalogsFilterArgs']]]]] = None,
+                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOccAvailabilityCatalogsFilterArgs', 'GetOccAvailabilityCatalogsFilterArgsDict']]]]] = None,
                                          id: Optional[pulumi.Input[Optional[str]]] = None,
                                          namespace: Optional[pulumi.Input[Optional[str]]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOccAvailabilityCatalogsResult]:

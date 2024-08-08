@@ -329,7 +329,7 @@ public class Publication extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public Publication(String name) {
+    public Publication(java.lang.String name) {
         this(name, PublicationArgs.Empty);
     }
     /**
@@ -337,7 +337,7 @@ public class Publication extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public Publication(String name, PublicationArgs args) {
+    public Publication(java.lang.String name, PublicationArgs args) {
         this(name, args, null);
     }
     /**
@@ -346,12 +346,12 @@ public class Publication extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public Publication(String name, PublicationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Marketplace/publication:Publication", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public Publication(java.lang.String name, PublicationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Marketplace/publication:Publication", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private Publication(String name, Output<String> id, @Nullable PublicationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Marketplace/publication:Publication", name, state, makeResourceOptions(options, id));
+    private Publication(java.lang.String name, Output<java.lang.String> id, @Nullable PublicationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Marketplace/publication:Publication", name, state, makeResourceOptions(options, id), false);
     }
 
     private static PublicationArgs makeArgs(PublicationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -361,7 +361,7 @@ public class Publication extends com.pulumi.resources.CustomResource {
         return args == null ? PublicationArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -377,7 +377,7 @@ public class Publication extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static Publication get(String name, Output<String> id, @Nullable PublicationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static Publication get(java.lang.String name, Output<java.lang.String> id, @Nullable PublicationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new Publication(name, id, state, options);
     }
 }

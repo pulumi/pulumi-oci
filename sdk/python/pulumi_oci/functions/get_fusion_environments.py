@@ -117,7 +117,7 @@ class AwaitableGetFusionEnvironmentsResult(GetFusionEnvironmentsResult):
 
 def get_fusion_environments(compartment_id: Optional[str] = None,
                             display_name: Optional[str] = None,
-                            filters: Optional[Sequence[pulumi.InputType['GetFusionEnvironmentsFilterArgs']]] = None,
+                            filters: Optional[Sequence[Union['GetFusionEnvironmentsFilterArgs', 'GetFusionEnvironmentsFilterArgsDict']]] = None,
                             fusion_environment_family_id: Optional[str] = None,
                             state: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFusionEnvironmentsResult:
@@ -166,7 +166,7 @@ def get_fusion_environments(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_fusion_environments)
 def get_fusion_environments_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                    display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetFusionEnvironmentsFilterArgs']]]]] = None,
+                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFusionEnvironmentsFilterArgs', 'GetFusionEnvironmentsFilterArgsDict']]]]] = None,
                                    fusion_environment_family_id: Optional[pulumi.Input[Optional[str]]] = None,
                                    state: Optional[pulumi.Input[Optional[str]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFusionEnvironmentsResult]:

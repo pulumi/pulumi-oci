@@ -422,7 +422,7 @@ class ContainerRepository(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_immutable: Optional[pulumi.Input[bool]] = None,
                  is_public: Optional[pulumi.Input[bool]] = None,
-                 readme: Optional[pulumi.Input[pulumi.InputType['ContainerRepositoryReadmeArgs']]] = None,
+                 readme: Optional[pulumi.Input[Union['ContainerRepositoryReadmeArgs', 'ContainerRepositoryReadmeArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Container Repository resource in Oracle Cloud Infrastructure Artifacts service.
@@ -446,10 +446,10 @@ class ContainerRepository(pulumi.CustomResource):
             },
             is_immutable=container_repository_is_immutable,
             is_public=container_repository_is_public,
-            readme=oci.artifacts.ContainerRepositoryReadmeArgs(
-                content=container_repository_readme_content,
-                format=container_repository_readme_format,
-            ))
+            readme={
+                "content": container_repository_readme_content,
+                "format": container_repository_readme_format,
+            })
         ```
 
         ## Import
@@ -468,7 +468,7 @@ class ContainerRepository(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_immutable: (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
         :param pulumi.Input[bool] is_public: (Updatable) Whether the repository is public. A public repository allows unauthenticated access.
-        :param pulumi.Input[pulumi.InputType['ContainerRepositoryReadmeArgs']] readme: (Updatable) Container repository readme.
+        :param pulumi.Input[Union['ContainerRepositoryReadmeArgs', 'ContainerRepositoryReadmeArgsDict']] readme: (Updatable) Container repository readme.
         """
         ...
     @overload
@@ -498,10 +498,10 @@ class ContainerRepository(pulumi.CustomResource):
             },
             is_immutable=container_repository_is_immutable,
             is_public=container_repository_is_public,
-            readme=oci.artifacts.ContainerRepositoryReadmeArgs(
-                content=container_repository_readme_content,
-                format=container_repository_readme_format,
-            ))
+            readme={
+                "content": container_repository_readme_content,
+                "format": container_repository_readme_format,
+            })
         ```
 
         ## Import
@@ -533,7 +533,7 @@ class ContainerRepository(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_immutable: Optional[pulumi.Input[bool]] = None,
                  is_public: Optional[pulumi.Input[bool]] = None,
-                 readme: Optional[pulumi.Input[pulumi.InputType['ContainerRepositoryReadmeArgs']]] = None,
+                 readme: Optional[pulumi.Input[Union['ContainerRepositoryReadmeArgs', 'ContainerRepositoryReadmeArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -586,7 +586,7 @@ class ContainerRepository(pulumi.CustomResource):
             layer_count: Optional[pulumi.Input[int]] = None,
             layers_size_in_bytes: Optional[pulumi.Input[str]] = None,
             namespace: Optional[pulumi.Input[str]] = None,
-            readme: Optional[pulumi.Input[pulumi.InputType['ContainerRepositoryReadmeArgs']]] = None,
+            readme: Optional[pulumi.Input[Union['ContainerRepositoryReadmeArgs', 'ContainerRepositoryReadmeArgsDict']]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
@@ -610,7 +610,7 @@ class ContainerRepository(pulumi.CustomResource):
         :param pulumi.Input[int] layer_count: Total number of layers.
         :param pulumi.Input[str] layers_size_in_bytes: Total storage in bytes consumed by layers.
         :param pulumi.Input[str] namespace: The tenancy namespace used in the container repository path.
-        :param pulumi.Input[pulumi.InputType['ContainerRepositoryReadmeArgs']] readme: (Updatable) Container repository readme.
+        :param pulumi.Input[Union['ContainerRepositoryReadmeArgs', 'ContainerRepositoryReadmeArgsDict']] readme: (Updatable) Container repository readme.
         :param pulumi.Input[str] state: The current state of the container repository.
         :param pulumi.Input[Mapping[str, Any]] system_tags: The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: An RFC 3339 timestamp indicating when the repository was created.

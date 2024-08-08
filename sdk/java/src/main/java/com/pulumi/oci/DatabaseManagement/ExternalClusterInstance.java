@@ -308,7 +308,7 @@ public class ExternalClusterInstance extends com.pulumi.resources.CustomResource
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ExternalClusterInstance(String name) {
+    public ExternalClusterInstance(java.lang.String name) {
         this(name, ExternalClusterInstanceArgs.Empty);
     }
     /**
@@ -316,7 +316,7 @@ public class ExternalClusterInstance extends com.pulumi.resources.CustomResource
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ExternalClusterInstance(String name, ExternalClusterInstanceArgs args) {
+    public ExternalClusterInstance(java.lang.String name, ExternalClusterInstanceArgs args) {
         this(name, args, null);
     }
     /**
@@ -325,12 +325,12 @@ public class ExternalClusterInstance extends com.pulumi.resources.CustomResource
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ExternalClusterInstance(String name, ExternalClusterInstanceArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseManagement/externalClusterInstance:ExternalClusterInstance", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ExternalClusterInstance(java.lang.String name, ExternalClusterInstanceArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DatabaseManagement/externalClusterInstance:ExternalClusterInstance", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ExternalClusterInstance(String name, Output<String> id, @Nullable ExternalClusterInstanceState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseManagement/externalClusterInstance:ExternalClusterInstance", name, state, makeResourceOptions(options, id));
+    private ExternalClusterInstance(java.lang.String name, Output<java.lang.String> id, @Nullable ExternalClusterInstanceState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DatabaseManagement/externalClusterInstance:ExternalClusterInstance", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ExternalClusterInstanceArgs makeArgs(ExternalClusterInstanceArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -340,7 +340,7 @@ public class ExternalClusterInstance extends com.pulumi.resources.CustomResource
         return args == null ? ExternalClusterInstanceArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -356,7 +356,7 @@ public class ExternalClusterInstance extends com.pulumi.resources.CustomResource
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ExternalClusterInstance get(String name, Output<String> id, @Nullable ExternalClusterInstanceState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ExternalClusterInstance get(java.lang.String name, Output<java.lang.String> id, @Nullable ExternalClusterInstanceState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ExternalClusterInstance(name, id, state, options);
     }
 }

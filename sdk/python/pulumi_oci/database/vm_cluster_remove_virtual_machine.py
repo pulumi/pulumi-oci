@@ -512,7 +512,7 @@ class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 db_servers: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterRemoveVirtualMachineDbServerArgs']]]]] = None,
+                 db_servers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VmClusterRemoveVirtualMachineDbServerArgs', 'VmClusterRemoveVirtualMachineDbServerArgsDict']]]]] = None,
                  vm_cluster_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -527,9 +527,9 @@ class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_vm_cluster_remove_virtual_machine = oci.database.VmClusterRemoveVirtualMachine("test_vm_cluster_remove_virtual_machine",
-            db_servers=[oci.database.VmClusterRemoveVirtualMachineDbServerArgs(
-                db_server_id=test_db_server["id"],
-            )],
+            db_servers=[{
+                "db_server_id": test_db_server["id"],
+            }],
             vm_cluster_id=test_vm_cluster["id"])
         ```
 
@@ -543,7 +543,7 @@ class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterRemoveVirtualMachineDbServerArgs']]]] db_servers: The list of Exacc DB servers for the cluster to be removed.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmClusterRemoveVirtualMachineDbServerArgs', 'VmClusterRemoveVirtualMachineDbServerArgsDict']]]] db_servers: The list of Exacc DB servers for the cluster to be removed.
         :param pulumi.Input[str] vm_cluster_id: The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
                
                
@@ -568,9 +568,9 @@ class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_vm_cluster_remove_virtual_machine = oci.database.VmClusterRemoveVirtualMachine("test_vm_cluster_remove_virtual_machine",
-            db_servers=[oci.database.VmClusterRemoveVirtualMachineDbServerArgs(
-                db_server_id=test_db_server["id"],
-            )],
+            db_servers=[{
+                "db_server_id": test_db_server["id"],
+            }],
             vm_cluster_id=test_vm_cluster["id"])
         ```
 
@@ -597,7 +597,7 @@ class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 db_servers: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterRemoveVirtualMachineDbServerArgs']]]]] = None,
+                 db_servers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VmClusterRemoveVirtualMachineDbServerArgs', 'VmClusterRemoveVirtualMachineDbServerArgsDict']]]]] = None,
                  vm_cluster_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -652,14 +652,14 @@ class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
             availability_domain: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             cpus_enabled: Optional[pulumi.Input[int]] = None,
-            data_collection_options: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterRemoveVirtualMachineDataCollectionOptionArgs']]]]] = None,
+            data_collection_options: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VmClusterRemoveVirtualMachineDataCollectionOptionArgs', 'VmClusterRemoveVirtualMachineDataCollectionOptionArgsDict']]]]] = None,
             data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
             db_node_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
-            db_servers: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterRemoveVirtualMachineDbServerArgs']]]]] = None,
+            db_servers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VmClusterRemoveVirtualMachineDbServerArgs', 'VmClusterRemoveVirtualMachineDbServerArgsDict']]]]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
-            file_system_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterRemoveVirtualMachineFileSystemConfigurationDetailArgs']]]]] = None,
+            file_system_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VmClusterRemoveVirtualMachineFileSystemConfigurationDetailArgs', 'VmClusterRemoveVirtualMachineFileSystemConfigurationDetailArgsDict']]]]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             gi_version: Optional[pulumi.Input[str]] = None,
             is_local_backup_enabled: Optional[pulumi.Input[bool]] = None,
@@ -686,14 +686,14 @@ class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
         :param pulumi.Input[str] availability_domain: The name of the availability domain that the VM cluster is located in.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[int] cpus_enabled: The number of enabled CPU cores.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterRemoveVirtualMachineDataCollectionOptionArgs']]]] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmClusterRemoveVirtualMachineDataCollectionOptionArgs', 'VmClusterRemoveVirtualMachineDataCollectionOptionArgsDict']]]] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[float] data_storage_size_in_tbs: Size, in terabytes, of the DATA disk group.
         :param pulumi.Input[int] db_node_storage_size_in_gbs: The local node storage allocated in GBs.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterRemoveVirtualMachineDbServerArgs']]]] db_servers: The list of Exacc DB servers for the cluster to be removed.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmClusterRemoveVirtualMachineDbServerArgs', 'VmClusterRemoveVirtualMachineDbServerArgsDict']]]] db_servers: The list of Exacc DB servers for the cluster to be removed.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: The user-friendly name for the Exadata Cloud@Customer VM cluster. The name does not need to be unique.
         :param pulumi.Input[str] exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterRemoveVirtualMachineFileSystemConfigurationDetailArgs']]]] file_system_configuration_details: Details of the file system configuration of the VM cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmClusterRemoveVirtualMachineFileSystemConfigurationDetailArgs', 'VmClusterRemoveVirtualMachineFileSystemConfigurationDetailArgsDict']]]] file_system_configuration_details: Details of the file system configuration of the VM cluster.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] gi_version: The Oracle Grid Infrastructure software version for the VM cluster.
         :param pulumi.Input[bool] is_local_backup_enabled: If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.

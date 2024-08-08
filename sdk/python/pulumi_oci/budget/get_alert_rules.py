@@ -105,7 +105,7 @@ class AwaitableGetAlertRulesResult(GetAlertRulesResult):
 
 def get_alert_rules(budget_id: Optional[str] = None,
                     display_name: Optional[str] = None,
-                    filters: Optional[Sequence[pulumi.InputType['GetAlertRulesFilterArgs']]] = None,
+                    filters: Optional[Sequence[Union['GetAlertRulesFilterArgs', 'GetAlertRulesFilterArgsDict']]] = None,
                     state: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAlertRulesResult:
     """
@@ -149,7 +149,7 @@ def get_alert_rules(budget_id: Optional[str] = None,
 @_utilities.lift_output_func(get_alert_rules)
 def get_alert_rules_output(budget_id: Optional[pulumi.Input[str]] = None,
                            display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                           filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAlertRulesFilterArgs']]]]] = None,
+                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAlertRulesFilterArgs', 'GetAlertRulesFilterArgsDict']]]]] = None,
                            state: Optional[pulumi.Input[Optional[str]]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAlertRulesResult]:
     """

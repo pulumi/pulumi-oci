@@ -106,7 +106,7 @@ class AwaitableGetManagedDatabaseUserConsumerGroupPrivilegesResult(GetManagedDat
             user_name=self.user_name)
 
 
-def get_managed_database_user_consumer_group_privileges(filters: Optional[Sequence[pulumi.InputType['GetManagedDatabaseUserConsumerGroupPrivilegesFilterArgs']]] = None,
+def get_managed_database_user_consumer_group_privileges(filters: Optional[Sequence[Union['GetManagedDatabaseUserConsumerGroupPrivilegesFilterArgs', 'GetManagedDatabaseUserConsumerGroupPrivilegesFilterArgsDict']]] = None,
                                                         managed_database_id: Optional[str] = None,
                                                         name: Optional[str] = None,
                                                         opc_named_credential_id: Optional[str] = None,
@@ -155,7 +155,7 @@ def get_managed_database_user_consumer_group_privileges(filters: Optional[Sequen
 
 
 @_utilities.lift_output_func(get_managed_database_user_consumer_group_privileges)
-def get_managed_database_user_consumer_group_privileges_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetManagedDatabaseUserConsumerGroupPrivilegesFilterArgs']]]]] = None,
+def get_managed_database_user_consumer_group_privileges_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedDatabaseUserConsumerGroupPrivilegesFilterArgs', 'GetManagedDatabaseUserConsumerGroupPrivilegesFilterArgsDict']]]]] = None,
                                                                managed_database_id: Optional[pulumi.Input[str]] = None,
                                                                name: Optional[pulumi.Input[Optional[str]]] = None,
                                                                opc_named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,

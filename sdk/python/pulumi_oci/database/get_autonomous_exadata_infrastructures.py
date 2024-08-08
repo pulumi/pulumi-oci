@@ -118,7 +118,7 @@ class AwaitableGetAutonomousExadataInfrastructuresResult(GetAutonomousExadataInf
 def get_autonomous_exadata_infrastructures(availability_domain: Optional[str] = None,
                                            compartment_id: Optional[str] = None,
                                            display_name: Optional[str] = None,
-                                           filters: Optional[Sequence[pulumi.InputType['GetAutonomousExadataInfrastructuresFilterArgs']]] = None,
+                                           filters: Optional[Sequence[Union['GetAutonomousExadataInfrastructuresFilterArgs', 'GetAutonomousExadataInfrastructuresFilterArgsDict']]] = None,
                                            state: Optional[str] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousExadataInfrastructuresResult:
     """
@@ -167,7 +167,7 @@ def get_autonomous_exadata_infrastructures(availability_domain: Optional[str] = 
 def get_autonomous_exadata_infrastructures_output(availability_domain: Optional[pulumi.Input[Optional[str]]] = None,
                                                   compartment_id: Optional[pulumi.Input[str]] = None,
                                                   display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                                  filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAutonomousExadataInfrastructuresFilterArgs']]]]] = None,
+                                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutonomousExadataInfrastructuresFilterArgs', 'GetAutonomousExadataInfrastructuresFilterArgsDict']]]]] = None,
                                                   state: Optional[pulumi.Input[Optional[str]]] = None,
                                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousExadataInfrastructuresResult]:
     """

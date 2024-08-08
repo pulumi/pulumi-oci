@@ -108,7 +108,7 @@ class AwaitableGetRecommendationStrategiesResult(GetRecommendationStrategiesResu
 
 def get_recommendation_strategies(compartment_id: Optional[str] = None,
                                   compartment_id_in_subtree: Optional[bool] = None,
-                                  filters: Optional[Sequence[pulumi.InputType['GetRecommendationStrategiesFilterArgs']]] = None,
+                                  filters: Optional[Sequence[Union['GetRecommendationStrategiesFilterArgs', 'GetRecommendationStrategiesFilterArgsDict']]] = None,
                                   name: Optional[str] = None,
                                   recommendation_name: Optional[str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRecommendationStrategiesResult:
@@ -159,7 +159,7 @@ def get_recommendation_strategies(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_recommendation_strategies)
 def get_recommendation_strategies_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                          compartment_id_in_subtree: Optional[pulumi.Input[bool]] = None,
-                                         filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetRecommendationStrategiesFilterArgs']]]]] = None,
+                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRecommendationStrategiesFilterArgs', 'GetRecommendationStrategiesFilterArgsDict']]]]] = None,
                                          name: Optional[pulumi.Input[Optional[str]]] = None,
                                          recommendation_name: Optional[pulumi.Input[Optional[str]]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRecommendationStrategiesResult]:

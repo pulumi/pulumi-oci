@@ -109,7 +109,7 @@ public class ExternalPluggableDatabaseManagement extends com.pulumi.resources.Cu
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ExternalPluggableDatabaseManagement(String name) {
+    public ExternalPluggableDatabaseManagement(java.lang.String name) {
         this(name, ExternalPluggableDatabaseManagementArgs.Empty);
     }
     /**
@@ -117,7 +117,7 @@ public class ExternalPluggableDatabaseManagement extends com.pulumi.resources.Cu
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ExternalPluggableDatabaseManagement(String name, ExternalPluggableDatabaseManagementArgs args) {
+    public ExternalPluggableDatabaseManagement(java.lang.String name, ExternalPluggableDatabaseManagementArgs args) {
         this(name, args, null);
     }
     /**
@@ -126,12 +126,12 @@ public class ExternalPluggableDatabaseManagement extends com.pulumi.resources.Cu
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ExternalPluggableDatabaseManagement(String name, ExternalPluggableDatabaseManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/externalPluggableDatabaseManagement:ExternalPluggableDatabaseManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ExternalPluggableDatabaseManagement(java.lang.String name, ExternalPluggableDatabaseManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/externalPluggableDatabaseManagement:ExternalPluggableDatabaseManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ExternalPluggableDatabaseManagement(String name, Output<String> id, @Nullable ExternalPluggableDatabaseManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/externalPluggableDatabaseManagement:ExternalPluggableDatabaseManagement", name, state, makeResourceOptions(options, id));
+    private ExternalPluggableDatabaseManagement(java.lang.String name, Output<java.lang.String> id, @Nullable ExternalPluggableDatabaseManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/externalPluggableDatabaseManagement:ExternalPluggableDatabaseManagement", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ExternalPluggableDatabaseManagementArgs makeArgs(ExternalPluggableDatabaseManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -141,7 +141,7 @@ public class ExternalPluggableDatabaseManagement extends com.pulumi.resources.Cu
         return args == null ? ExternalPluggableDatabaseManagementArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -157,7 +157,7 @@ public class ExternalPluggableDatabaseManagement extends com.pulumi.resources.Cu
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ExternalPluggableDatabaseManagement get(String name, Output<String> id, @Nullable ExternalPluggableDatabaseManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ExternalPluggableDatabaseManagement get(java.lang.String name, Output<java.lang.String> id, @Nullable ExternalPluggableDatabaseManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ExternalPluggableDatabaseManagement(name, id, state, options);
     }
 }

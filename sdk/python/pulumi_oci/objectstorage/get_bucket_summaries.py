@@ -92,7 +92,7 @@ class AwaitableGetBucketSummariesResult(GetBucketSummariesResult):
 
 
 def get_bucket_summaries(compartment_id: Optional[str] = None,
-                         filters: Optional[Sequence[pulumi.InputType['GetBucketSummariesFilterArgs']]] = None,
+                         filters: Optional[Sequence[Union['GetBucketSummariesFilterArgs', 'GetBucketSummariesFilterArgsDict']]] = None,
                          namespace: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBucketSummariesResult:
     """
@@ -139,7 +139,7 @@ def get_bucket_summaries(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_bucket_summaries)
 def get_bucket_summaries_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetBucketSummariesFilterArgs']]]]] = None,
+                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBucketSummariesFilterArgs', 'GetBucketSummariesFilterArgsDict']]]]] = None,
                                 namespace: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBucketSummariesResult]:
     """

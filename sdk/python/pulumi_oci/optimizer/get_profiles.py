@@ -104,7 +104,7 @@ class AwaitableGetProfilesResult(GetProfilesResult):
 
 
 def get_profiles(compartment_id: Optional[str] = None,
-                 filters: Optional[Sequence[pulumi.InputType['GetProfilesFilterArgs']]] = None,
+                 filters: Optional[Sequence[Union['GetProfilesFilterArgs', 'GetProfilesFilterArgsDict']]] = None,
                  name: Optional[str] = None,
                  state: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetProfilesResult:
@@ -148,7 +148,7 @@ def get_profiles(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_profiles)
 def get_profiles_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                        filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetProfilesFilterArgs']]]]] = None,
+                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetProfilesFilterArgs', 'GetProfilesFilterArgsDict']]]]] = None,
                         name: Optional[pulumi.Input[Optional[str]]] = None,
                         state: Optional[pulumi.Input[Optional[str]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProfilesResult]:

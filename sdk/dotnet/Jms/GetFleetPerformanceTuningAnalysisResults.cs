@@ -29,8 +29,9 @@ namespace Pulumi.Oci.Jms
         ///     var testFleetPerformanceTuningAnalysisResults = Oci.Jms.GetFleetPerformanceTuningAnalysisResults.Invoke(new()
         ///     {
         ///         FleetId = testFleet.Id,
-        ///         ApplicationId = testApplication.Id,
-        ///         ManagedInstanceId = testManagedInstance.Id,
+        ///         ApplicationId = fleetPerformanceTuningAnalysisResultApplicationId,
+        ///         HostName = fleetPerformanceTuningAnalysisResultHostName,
+        ///         ManagedInstanceId = fleetPerformanceTuningAnalysisResultManagedInstanceId,
         ///         TimeEnd = fleetPerformanceTuningAnalysisResultTimeEnd,
         ///         TimeStart = fleetPerformanceTuningAnalysisResultTimeStart,
         ///     });
@@ -59,8 +60,9 @@ namespace Pulumi.Oci.Jms
         ///     var testFleetPerformanceTuningAnalysisResults = Oci.Jms.GetFleetPerformanceTuningAnalysisResults.Invoke(new()
         ///     {
         ///         FleetId = testFleet.Id,
-        ///         ApplicationId = testApplication.Id,
-        ///         ManagedInstanceId = testManagedInstance.Id,
+        ///         ApplicationId = fleetPerformanceTuningAnalysisResultApplicationId,
+        ///         HostName = fleetPerformanceTuningAnalysisResultHostName,
+        ///         ManagedInstanceId = fleetPerformanceTuningAnalysisResultManagedInstanceId,
         ///         TimeEnd = fleetPerformanceTuningAnalysisResultTimeEnd,
         ///         TimeStart = fleetPerformanceTuningAnalysisResultTimeStart,
         ///     });
@@ -94,6 +96,12 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         [Input("fleetId", required: true)]
         public string FleetId { get; set; } = null!;
+
+        /// <summary>
+        /// The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
+        /// </summary>
+        [Input("hostName")]
+        public string? HostName { get; set; }
 
         /// <summary>
         /// The Fleet-unique identifier of the related managed instance.
@@ -142,6 +150,12 @@ namespace Pulumi.Oci.Jms
         public Input<string> FleetId { get; set; } = null!;
 
         /// <summary>
+        /// The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
+        /// </summary>
+        [Input("hostName")]
+        public Input<string>? HostName { get; set; }
+
+        /// <summary>
         /// The Fleet-unique identifier of the related managed instance.
         /// </summary>
         [Input("managedInstanceId")]
@@ -179,6 +193,10 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public readonly string FleetId;
         /// <summary>
+        /// The hostname of the managed instance.
+        /// </summary>
+        public readonly string? HostName;
+        /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
@@ -201,6 +219,8 @@ namespace Pulumi.Oci.Jms
 
             string fleetId,
 
+            string? hostName,
+
             string id,
 
             string? managedInstanceId,
@@ -214,6 +234,7 @@ namespace Pulumi.Oci.Jms
             ApplicationId = applicationId;
             Filters = filters;
             FleetId = fleetId;
+            HostName = hostName;
             Id = id;
             ManagedInstanceId = managedInstanceId;
             PerformanceTuningAnalysisResultCollections = performanceTuningAnalysisResultCollections;

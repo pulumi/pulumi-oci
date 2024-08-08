@@ -34,6 +34,12 @@ import (
 //				BdsInstanceId:        pulumi.Any(testBdsInstance.Id),
 //				ClusterAdminPassword: pulumi.Any(bdsInstancePatchActionClusterAdminPassword),
 //				Version:              pulumi.Any(bdsInstancePatchActionVersion),
+//				PatchingConfig: &bigdataservice.BdsInstancePatchActionPatchingConfigArgs{
+//					PatchingConfigStrategy:         pulumi.Any(bdsInstancePatchActionPatchingConfigPatchingConfigStrategy),
+//					BatchSize:                      pulumi.Any(bdsInstancePatchActionPatchingConfigBatchSize),
+//					WaitTimeBetweenBatchInSeconds:  pulumi.Any(bdsInstancePatchActionPatchingConfigWaitTimeBetweenBatchInSeconds),
+//					WaitTimeBetweenDomainInSeconds: pulumi.Any(bdsInstancePatchActionPatchingConfigWaitTimeBetweenDomainInSeconds),
+//				},
 //			})
 //			if err != nil {
 //				return err
@@ -54,6 +60,8 @@ type BdsInstancePatchAction struct {
 	BdsInstanceId pulumi.StringOutput `pulumi:"bdsInstanceId"`
 	// Base-64 encoded password for the cluster admin user.
 	ClusterAdminPassword pulumi.StringOutput `pulumi:"clusterAdminPassword"`
+	// Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
+	PatchingConfig BdsInstancePatchActionPatchingConfigOutput `pulumi:"patchingConfig"`
 	// The version of the patch to be installed.
 	//
 	// ** IMPORTANT **
@@ -111,6 +119,8 @@ type bdsInstancePatchActionState struct {
 	BdsInstanceId *string `pulumi:"bdsInstanceId"`
 	// Base-64 encoded password for the cluster admin user.
 	ClusterAdminPassword *string `pulumi:"clusterAdminPassword"`
+	// Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
+	PatchingConfig *BdsInstancePatchActionPatchingConfig `pulumi:"patchingConfig"`
 	// The version of the patch to be installed.
 	//
 	// ** IMPORTANT **
@@ -123,6 +133,8 @@ type BdsInstancePatchActionState struct {
 	BdsInstanceId pulumi.StringPtrInput
 	// Base-64 encoded password for the cluster admin user.
 	ClusterAdminPassword pulumi.StringPtrInput
+	// Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
+	PatchingConfig BdsInstancePatchActionPatchingConfigPtrInput
 	// The version of the patch to be installed.
 	//
 	// ** IMPORTANT **
@@ -139,6 +151,8 @@ type bdsInstancePatchActionArgs struct {
 	BdsInstanceId string `pulumi:"bdsInstanceId"`
 	// Base-64 encoded password for the cluster admin user.
 	ClusterAdminPassword string `pulumi:"clusterAdminPassword"`
+	// Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
+	PatchingConfig *BdsInstancePatchActionPatchingConfig `pulumi:"patchingConfig"`
 	// The version of the patch to be installed.
 	//
 	// ** IMPORTANT **
@@ -152,6 +166,8 @@ type BdsInstancePatchActionArgs struct {
 	BdsInstanceId pulumi.StringInput
 	// Base-64 encoded password for the cluster admin user.
 	ClusterAdminPassword pulumi.StringInput
+	// Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
+	PatchingConfig BdsInstancePatchActionPatchingConfigPtrInput
 	// The version of the patch to be installed.
 	//
 	// ** IMPORTANT **
@@ -254,6 +270,11 @@ func (o BdsInstancePatchActionOutput) BdsInstanceId() pulumi.StringOutput {
 // Base-64 encoded password for the cluster admin user.
 func (o BdsInstancePatchActionOutput) ClusterAdminPassword() pulumi.StringOutput {
 	return o.ApplyT(func(v *BdsInstancePatchAction) pulumi.StringOutput { return v.ClusterAdminPassword }).(pulumi.StringOutput)
+}
+
+// Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
+func (o BdsInstancePatchActionOutput) PatchingConfig() BdsInstancePatchActionPatchingConfigOutput {
+	return o.ApplyT(func(v *BdsInstancePatchAction) BdsInstancePatchActionPatchingConfigOutput { return v.PatchingConfig }).(BdsInstancePatchActionPatchingConfigOutput)
 }
 
 // The version of the patch to be installed.

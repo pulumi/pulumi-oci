@@ -17,14 +17,14 @@ public final class TriggerActionFilterIncludeArgs extends com.pulumi.resources.R
     public static final TriggerActionFilterIncludeArgs Empty = new TriggerActionFilterIncludeArgs();
 
     /**
-     * (Updatable) The target branch for pull requests; not applicable for push requests.
+     * The target branch for pull requests; not applicable for push requests.
      * 
      */
     @Import(name="baseRef")
     private @Nullable Output<String> baseRef;
 
     /**
-     * @return (Updatable) The target branch for pull requests; not applicable for push requests.
+     * @return The target branch for pull requests; not applicable for push requests.
      * 
      */
     public Optional<Output<String>> baseRef() {
@@ -32,14 +32,14 @@ public final class TriggerActionFilterIncludeArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) Attributes to support include/exclude files for triggering build runs.
+     * Attributes to support include/exclude files for triggering build runs.
      * 
      */
     @Import(name="fileFilter")
     private @Nullable Output<TriggerActionFilterIncludeFileFilterArgs> fileFilter;
 
     /**
-     * @return (Updatable) Attributes to support include/exclude files for triggering build runs.
+     * @return Attributes to support include/exclude files for triggering build runs.
      * 
      */
     public Optional<Output<TriggerActionFilterIncludeFileFilterArgs>> fileFilter() {
@@ -47,14 +47,14 @@ public final class TriggerActionFilterIncludeArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) Branch for push event; source branch for pull requests.
+     * Branch for push event; source branch for pull requests.
      * 
      */
     @Import(name="headRef")
     private @Nullable Output<String> headRef;
 
     /**
-     * @return (Updatable) Branch for push event; source branch for pull requests.
+     * @return Branch for push event; source branch for pull requests.
      * 
      */
     public Optional<Output<String>> headRef() {
@@ -62,14 +62,14 @@ public final class TriggerActionFilterIncludeArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) The repository name for trigger events.
+     * The repository name for trigger events.
      * 
      */
     @Import(name="repositoryName")
     private @Nullable Output<String> repositoryName;
 
     /**
-     * @return (Updatable) The repository name for trigger events.
+     * @return The repository name for trigger events.
      * 
      */
     public Optional<Output<String>> repositoryName() {
@@ -104,7 +104,7 @@ public final class TriggerActionFilterIncludeArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param baseRef (Updatable) The target branch for pull requests; not applicable for push requests.
+         * @param baseRef The target branch for pull requests; not applicable for push requests.
          * 
          * @return builder
          * 
@@ -115,7 +115,7 @@ public final class TriggerActionFilterIncludeArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param baseRef (Updatable) The target branch for pull requests; not applicable for push requests.
+         * @param baseRef The target branch for pull requests; not applicable for push requests.
          * 
          * @return builder
          * 
@@ -125,7 +125,7 @@ public final class TriggerActionFilterIncludeArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param fileFilter (Updatable) Attributes to support include/exclude files for triggering build runs.
+         * @param fileFilter Attributes to support include/exclude files for triggering build runs.
          * 
          * @return builder
          * 
@@ -136,7 +136,7 @@ public final class TriggerActionFilterIncludeArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param fileFilter (Updatable) Attributes to support include/exclude files for triggering build runs.
+         * @param fileFilter Attributes to support include/exclude files for triggering build runs.
          * 
          * @return builder
          * 
@@ -146,7 +146,7 @@ public final class TriggerActionFilterIncludeArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param headRef (Updatable) Branch for push event; source branch for pull requests.
+         * @param headRef Branch for push event; source branch for pull requests.
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class TriggerActionFilterIncludeArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param headRef (Updatable) Branch for push event; source branch for pull requests.
+         * @param headRef Branch for push event; source branch for pull requests.
          * 
          * @return builder
          * 
@@ -167,7 +167,7 @@ public final class TriggerActionFilterIncludeArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param repositoryName (Updatable) The repository name for trigger events.
+         * @param repositoryName The repository name for trigger events.
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class TriggerActionFilterIncludeArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param repositoryName (Updatable) The repository name for trigger events.
+         * @param repositoryName The repository name for trigger events.
          * 
          * @return builder
          * 

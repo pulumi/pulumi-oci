@@ -62,17 +62,9 @@ public final class GetBuildRunsArgs extends com.pulumi.resources.InvokeArgs {
         return Optional.ofNullable(this.displayName);
     }
 
-    /**
-     * The filters for the trigger.
-     * 
-     */
     @Import(name="filters")
     private @Nullable Output<List<GetBuildRunsFilterArgs>> filters;
 
-    /**
-     * @return The filters for the trigger.
-     * 
-     */
     public Optional<Output<List<GetBuildRunsFilterArgs>>> filters() {
         return Optional.ofNullable(this.filters);
     }
@@ -215,33 +207,15 @@ public final class GetBuildRunsArgs extends com.pulumi.resources.InvokeArgs {
             return displayName(Output.of(displayName));
         }
 
-        /**
-         * @param filters The filters for the trigger.
-         * 
-         * @return builder
-         * 
-         */
         public Builder filters(@Nullable Output<List<GetBuildRunsFilterArgs>> filters) {
             $.filters = filters;
             return this;
         }
 
-        /**
-         * @param filters The filters for the trigger.
-         * 
-         * @return builder
-         * 
-         */
         public Builder filters(List<GetBuildRunsFilterArgs> filters) {
             return filters(Output.of(filters));
         }
 
-        /**
-         * @param filters The filters for the trigger.
-         * 
-         * @return builder
-         * 
-         */
         public Builder filters(GetBuildRunsFilterArgs... filters) {
             return filters(List.of(filters));
         }

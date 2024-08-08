@@ -49,6 +49,11 @@ public final class GetJavaReleaseFamilyDetail {
      */
     private String latestReleaseVersion;
     /**
+     * @return The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * 
+     */
+    private String releaseDate;
+    /**
      * @return This indicates the support category for the Java release family.
      * 
      */
@@ -105,6 +110,13 @@ public final class GetJavaReleaseFamilyDetail {
         return this.latestReleaseVersion;
     }
     /**
+     * @return The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * 
+     */
+    public String releaseDate() {
+        return this.releaseDate;
+    }
+    /**
      * @return This indicates the support category for the Java release family.
      * 
      */
@@ -128,6 +140,7 @@ public final class GetJavaReleaseFamilyDetail {
         private Boolean isSupportedVersion;
         private List<GetJavaReleaseFamilyDetailLatestReleaseArtifact> latestReleaseArtifacts;
         private String latestReleaseVersion;
+        private String releaseDate;
         private String supportType;
         public Builder() {}
         public Builder(GetJavaReleaseFamilyDetail defaults) {
@@ -139,6 +152,7 @@ public final class GetJavaReleaseFamilyDetail {
     	      this.isSupportedVersion = defaults.isSupportedVersion;
     	      this.latestReleaseArtifacts = defaults.latestReleaseArtifacts;
     	      this.latestReleaseVersion = defaults.latestReleaseVersion;
+    	      this.releaseDate = defaults.releaseDate;
     	      this.supportType = defaults.supportType;
         }
 
@@ -202,6 +216,14 @@ public final class GetJavaReleaseFamilyDetail {
             return this;
         }
         @CustomType.Setter
+        public Builder releaseDate(String releaseDate) {
+            if (releaseDate == null) {
+              throw new MissingRequiredPropertyException("GetJavaReleaseFamilyDetail", "releaseDate");
+            }
+            this.releaseDate = releaseDate;
+            return this;
+        }
+        @CustomType.Setter
         public Builder supportType(String supportType) {
             if (supportType == null) {
               throw new MissingRequiredPropertyException("GetJavaReleaseFamilyDetail", "supportType");
@@ -218,6 +240,7 @@ public final class GetJavaReleaseFamilyDetail {
             _resultValue.isSupportedVersion = isSupportedVersion;
             _resultValue.latestReleaseArtifacts = latestReleaseArtifacts;
             _resultValue.latestReleaseVersion = latestReleaseVersion;
+            _resultValue.releaseDate = releaseDate;
             _resultValue.supportType = supportType;
             return _resultValue;
         }

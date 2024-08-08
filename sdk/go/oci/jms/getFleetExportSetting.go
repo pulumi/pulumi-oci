@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Fleet Export Setting resource in Oracle Cloud Infrastructure Jms service.
 //
-// Returns export setting for the specified Fleet.
+// Returns export setting for the specified fleet.
 //
 // ## Example Usage
 //
@@ -78,7 +78,7 @@ type GetFleetExportSettingResult struct {
 	TargetBucketName string `pulumi:"targetBucketName"`
 	// The namespace of the bucket where data will be exported.
 	TargetBucketNamespace string `pulumi:"targetBucketNamespace"`
-	// The namespace of the bucket where data will be exported.
+	// The id of the region of the target bucket.
 	TargetBucketRegion string `pulumi:"targetBucketRegion"`
 	// The creation date and time of the export setting (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	TimeCreated string `pulumi:"timeCreated"`
@@ -174,7 +174,7 @@ func (o GetFleetExportSettingResultOutput) TargetBucketNamespace() pulumi.String
 	return o.ApplyT(func(v GetFleetExportSettingResult) string { return v.TargetBucketNamespace }).(pulumi.StringOutput)
 }
 
-// The namespace of the bucket where data will be exported.
+// The id of the region of the target bucket.
 func (o GetFleetExportSettingResultOutput) TargetBucketRegion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFleetExportSettingResult) string { return v.TargetBucketRegion }).(pulumi.StringOutput)
 }

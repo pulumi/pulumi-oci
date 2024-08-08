@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Jms
         ///     var testFleetBlocklists = Oci.Jms.GetFleetBlocklists.Invoke(new()
         ///     {
         ///         FleetId = testFleet.Id,
-        ///         ManagedInstanceId = testManagedInstance.Id,
+        ///         ManagedInstanceId = fleetBlocklistManagedInstanceId,
         ///         Operation = fleetBlocklistOperation,
         ///     });
         /// 
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.Jms
         ///     var testFleetBlocklists = Oci.Jms.GetFleetBlocklists.Invoke(new()
         ///     {
         ///         FleetId = testFleet.Id,
-        ///         ManagedInstanceId = testManagedInstance.Id,
+        ///         ManagedInstanceId = fleetBlocklistManagedInstanceId,
         ///         Operation = fleetBlocklistOperation,
         ///     });
         /// 

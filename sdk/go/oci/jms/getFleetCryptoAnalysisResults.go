@@ -30,11 +30,16 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Jms.GetFleetCryptoAnalysisResults(ctx, &jms.GetFleetCryptoAnalysisResultsArgs{
-//				FleetId:           testFleet.Id,
-//				AggregationMode:   pulumi.StringRef(fleetCryptoAnalysisResultAggregationMode),
-//				ManagedInstanceId: pulumi.StringRef(testManagedInstance.Id),
-//				TimeEnd:           pulumi.StringRef(fleetCryptoAnalysisResultTimeEnd),
-//				TimeStart:         pulumi.StringRef(fleetCryptoAnalysisResultTimeStart),
+//				FleetId:                             testFleet.Id,
+//				AggregationMode:                     pulumi.StringRef(fleetCryptoAnalysisResultAggregationMode),
+//				FindingCount:                        pulumi.IntRef(fleetCryptoAnalysisResultFindingCount),
+//				FindingCountGreaterThan:             pulumi.IntRef(fleetCryptoAnalysisResultFindingCountGreaterThan),
+//				HostName:                            pulumi.StringRef(fleetCryptoAnalysisResultHostName),
+//				ManagedInstanceId:                   pulumi.StringRef(fleetCryptoAnalysisResultManagedInstanceOcid),
+//				NonCompliantFindingCount:            pulumi.IntRef(fleetCryptoAnalysisResultNonCompliantFindingCount),
+//				NonCompliantFindingCountGreaterThan: pulumi.IntRef(fleetCryptoAnalysisResultNonCompliantFindingCountGreaterThan),
+//				TimeEnd:                             pulumi.StringRef(fleetCryptoAnalysisResultTimeEnd),
+//				TimeStart:                           pulumi.StringRef(fleetCryptoAnalysisResultTimeStart),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -59,10 +64,20 @@ type GetFleetCryptoAnalysisResultsArgs struct {
 	// The aggregation mode of the crypto event analysis result.
 	AggregationMode *string                               `pulumi:"aggregationMode"`
 	Filters         []GetFleetCryptoAnalysisResultsFilter `pulumi:"filters"`
+	// FindingCount of CryptoAnalysis Report.
+	FindingCount *int `pulumi:"findingCount"`
+	// FindingCount of CryptoAnalysis Report.
+	FindingCountGreaterThan *int `pulumi:"findingCountGreaterThan"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
 	FleetId string `pulumi:"fleetId"`
+	// The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
+	HostName *string `pulumi:"hostName"`
 	// The Fleet-unique identifier of the related managed instance.
 	ManagedInstanceId *string `pulumi:"managedInstanceId"`
+	// Non Compliant Finding Count of CryptoAnalysis Report.
+	NonCompliantFindingCount *int `pulumi:"nonCompliantFindingCount"`
+	// Non Compliant Finding Count of CryptoAnalysis Report.
+	NonCompliantFindingCountGreaterThan *int `pulumi:"nonCompliantFindingCountGreaterThan"`
 	// The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	TimeEnd *string `pulumi:"timeEnd"`
 	// The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -76,14 +91,22 @@ type GetFleetCryptoAnalysisResultsResult struct {
 	// The list of crypto_analysis_result_collection.
 	CryptoAnalysisResultCollections []GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection `pulumi:"cryptoAnalysisResultCollections"`
 	Filters                         []GetFleetCryptoAnalysisResultsFilter                         `pulumi:"filters"`
+	// Total number of findings with the analysis.
+	FindingCount            *int `pulumi:"findingCount"`
+	FindingCountGreaterThan *int `pulumi:"findingCountGreaterThan"`
 	// The fleet OCID.
 	FleetId string `pulumi:"fleetId"`
+	// The hostname of the managed instance.
+	HostName *string `pulumi:"hostName"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// The managed instance OCID.
 	ManagedInstanceId *string `pulumi:"managedInstanceId"`
-	TimeEnd           *string `pulumi:"timeEnd"`
-	TimeStart         *string `pulumi:"timeStart"`
+	// Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the Crypto Roadmap version used by the analysis.
+	NonCompliantFindingCount            *int    `pulumi:"nonCompliantFindingCount"`
+	NonCompliantFindingCountGreaterThan *int    `pulumi:"nonCompliantFindingCountGreaterThan"`
+	TimeEnd                             *string `pulumi:"timeEnd"`
+	TimeStart                           *string `pulumi:"timeStart"`
 }
 
 func GetFleetCryptoAnalysisResultsOutput(ctx *pulumi.Context, args GetFleetCryptoAnalysisResultsOutputArgs, opts ...pulumi.InvokeOption) GetFleetCryptoAnalysisResultsResultOutput {
@@ -104,10 +127,20 @@ type GetFleetCryptoAnalysisResultsOutputArgs struct {
 	// The aggregation mode of the crypto event analysis result.
 	AggregationMode pulumi.StringPtrInput                         `pulumi:"aggregationMode"`
 	Filters         GetFleetCryptoAnalysisResultsFilterArrayInput `pulumi:"filters"`
+	// FindingCount of CryptoAnalysis Report.
+	FindingCount pulumi.IntPtrInput `pulumi:"findingCount"`
+	// FindingCount of CryptoAnalysis Report.
+	FindingCountGreaterThan pulumi.IntPtrInput `pulumi:"findingCountGreaterThan"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
 	FleetId pulumi.StringInput `pulumi:"fleetId"`
+	// The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
+	HostName pulumi.StringPtrInput `pulumi:"hostName"`
 	// The Fleet-unique identifier of the related managed instance.
 	ManagedInstanceId pulumi.StringPtrInput `pulumi:"managedInstanceId"`
+	// Non Compliant Finding Count of CryptoAnalysis Report.
+	NonCompliantFindingCount pulumi.IntPtrInput `pulumi:"nonCompliantFindingCount"`
+	// Non Compliant Finding Count of CryptoAnalysis Report.
+	NonCompliantFindingCountGreaterThan pulumi.IntPtrInput `pulumi:"nonCompliantFindingCountGreaterThan"`
 	// The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	TimeEnd pulumi.StringPtrInput `pulumi:"timeEnd"`
 	// The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -149,9 +182,23 @@ func (o GetFleetCryptoAnalysisResultsResultOutput) Filters() GetFleetCryptoAnaly
 	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsResult) []GetFleetCryptoAnalysisResultsFilter { return v.Filters }).(GetFleetCryptoAnalysisResultsFilterArrayOutput)
 }
 
+// Total number of findings with the analysis.
+func (o GetFleetCryptoAnalysisResultsResultOutput) FindingCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsResult) *int { return v.FindingCount }).(pulumi.IntPtrOutput)
+}
+
+func (o GetFleetCryptoAnalysisResultsResultOutput) FindingCountGreaterThan() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsResult) *int { return v.FindingCountGreaterThan }).(pulumi.IntPtrOutput)
+}
+
 // The fleet OCID.
 func (o GetFleetCryptoAnalysisResultsResultOutput) FleetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsResult) string { return v.FleetId }).(pulumi.StringOutput)
+}
+
+// The hostname of the managed instance.
+func (o GetFleetCryptoAnalysisResultsResultOutput) HostName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsResult) *string { return v.HostName }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
@@ -162,6 +209,15 @@ func (o GetFleetCryptoAnalysisResultsResultOutput) Id() pulumi.StringOutput {
 // The managed instance OCID.
 func (o GetFleetCryptoAnalysisResultsResultOutput) ManagedInstanceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsResult) *string { return v.ManagedInstanceId }).(pulumi.StringPtrOutput)
+}
+
+// Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the Crypto Roadmap version used by the analysis.
+func (o GetFleetCryptoAnalysisResultsResultOutput) NonCompliantFindingCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsResult) *int { return v.NonCompliantFindingCount }).(pulumi.IntPtrOutput)
+}
+
+func (o GetFleetCryptoAnalysisResultsResultOutput) NonCompliantFindingCountGreaterThan() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsResult) *int { return v.NonCompliantFindingCountGreaterThan }).(pulumi.IntPtrOutput)
 }
 
 func (o GetFleetCryptoAnalysisResultsResultOutput) TimeEnd() pulumi.StringPtrOutput {

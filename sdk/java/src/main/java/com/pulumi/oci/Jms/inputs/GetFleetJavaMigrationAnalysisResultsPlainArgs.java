@@ -17,6 +17,21 @@ public final class GetFleetJavaMigrationAnalysisResultsPlainArgs extends com.pul
 
     public static final GetFleetJavaMigrationAnalysisResultsPlainArgs Empty = new GetFleetJavaMigrationAnalysisResultsPlainArgs();
 
+    /**
+     * The name of the application.
+     * 
+     */
+    @Import(name="applicationName")
+    private @Nullable String applicationName;
+
+    /**
+     * @return The name of the application.
+     * 
+     */
+    public Optional<String> applicationName() {
+        return Optional.ofNullable(this.applicationName);
+    }
+
     @Import(name="filters")
     private @Nullable List<GetFleetJavaMigrationAnalysisResultsFilter> filters;
 
@@ -37,6 +52,21 @@ public final class GetFleetJavaMigrationAnalysisResultsPlainArgs extends com.pul
      */
     public String fleetId() {
         return this.fleetId;
+    }
+
+    /**
+     * The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
+     * 
+     */
+    @Import(name="hostName")
+    private @Nullable String hostName;
+
+    /**
+     * @return The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
+     * 
+     */
+    public Optional<String> hostName() {
+        return Optional.ofNullable(this.hostName);
     }
 
     /**
@@ -87,8 +117,10 @@ public final class GetFleetJavaMigrationAnalysisResultsPlainArgs extends com.pul
     private GetFleetJavaMigrationAnalysisResultsPlainArgs() {}
 
     private GetFleetJavaMigrationAnalysisResultsPlainArgs(GetFleetJavaMigrationAnalysisResultsPlainArgs $) {
+        this.applicationName = $.applicationName;
         this.filters = $.filters;
         this.fleetId = $.fleetId;
+        this.hostName = $.hostName;
         this.managedInstanceId = $.managedInstanceId;
         this.timeEnd = $.timeEnd;
         this.timeStart = $.timeStart;
@@ -112,6 +144,17 @@ public final class GetFleetJavaMigrationAnalysisResultsPlainArgs extends com.pul
             $ = new GetFleetJavaMigrationAnalysisResultsPlainArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param applicationName The name of the application.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder applicationName(@Nullable String applicationName) {
+            $.applicationName = applicationName;
+            return this;
+        }
+
         public Builder filters(@Nullable List<GetFleetJavaMigrationAnalysisResultsFilter> filters) {
             $.filters = filters;
             return this;
@@ -129,6 +172,17 @@ public final class GetFleetJavaMigrationAnalysisResultsPlainArgs extends com.pul
          */
         public Builder fleetId(String fleetId) {
             $.fleetId = fleetId;
+            return this;
+        }
+
+        /**
+         * @param hostName The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder hostName(@Nullable String hostName) {
+            $.hostName = hostName;
             return this;
         }
 

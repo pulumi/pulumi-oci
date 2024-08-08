@@ -18,10 +18,6 @@ public final class BuildRunBuildRunSourceTriggerInfoAction {
      * 
      */
     private @Nullable String buildPipelineId;
-    /**
-     * @return The filters for the trigger.
-     * 
-     */
     private @Nullable List<BuildRunBuildRunSourceTriggerInfoActionFilter> filters;
     /**
      * @return The type of action that will be taken. Allowed value is TRIGGER_BUILD_PIPELINE.
@@ -37,10 +33,6 @@ public final class BuildRunBuildRunSourceTriggerInfoAction {
     public Optional<String> buildPipelineId() {
         return Optional.ofNullable(this.buildPipelineId);
     }
-    /**
-     * @return The filters for the trigger.
-     * 
-     */
     public List<BuildRunBuildRunSourceTriggerInfoActionFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }

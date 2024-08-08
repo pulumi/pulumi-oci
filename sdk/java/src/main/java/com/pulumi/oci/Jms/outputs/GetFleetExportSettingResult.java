@@ -62,7 +62,7 @@ public final class GetFleetExportSettingResult {
      */
     private String targetBucketNamespace;
     /**
-     * @return The namespace of the bucket where data will be exported.
+     * @return The id of the region of the target bucket.
      * 
      */
     private String targetBucketRegion;
@@ -149,7 +149,7 @@ public final class GetFleetExportSettingResult {
         return this.targetBucketNamespace;
     }
     /**
-     * @return The namespace of the bucket where data will be exported.
+     * @return The id of the region of the target bucket.
      * 
      */
     public String targetBucketRegion() {

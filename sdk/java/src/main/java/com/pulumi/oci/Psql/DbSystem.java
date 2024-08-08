@@ -43,10 +43,10 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.Psql.DbSystem;
  * import com.pulumi.oci.Psql.DbSystemArgs;
- * import com.pulumi.oci.Psql.inputs.DbSystemNetworkDetailsArgs;
- * import com.pulumi.oci.Psql.inputs.DbSystemStorageDetailsArgs;
  * import com.pulumi.oci.Psql.inputs.DbSystemCredentialsArgs;
  * import com.pulumi.oci.Psql.inputs.DbSystemCredentialsPasswordDetailsArgs;
+ * import com.pulumi.oci.Psql.inputs.DbSystemNetworkDetailsArgs;
+ * import com.pulumi.oci.Psql.inputs.DbSystemStorageDetailsArgs;
  * import com.pulumi.oci.Psql.inputs.DbSystemInstancesDetailArgs;
  * import com.pulumi.oci.Psql.inputs.DbSystemManagementPolicyArgs;
  * import com.pulumi.oci.Psql.inputs.DbSystemManagementPolicyBackupPolicyArgs;
@@ -67,6 +67,15 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testDbSystem = new DbSystem("testDbSystem", DbSystemArgs.builder()
  *             .compartmentId(compartmentId)
+ *             .credentials(DbSystemCredentialsArgs.builder()
+ *                 .passwordDetails(DbSystemCredentialsPasswordDetailsArgs.builder()
+ *                     .passwordType(dbSystemCredentialsPasswordDetailsPasswordType)
+ *                     .password(dbSystemCredentialsPasswordDetailsPassword)
+ *                     .secretId(testSecret.id())
+ *                     .secretVersion(dbSystemCredentialsPasswordDetailsSecretVersion)
+ *                     .build())
+ *                 .username(dbSystemCredentialsUsername)
+ *                 .build())
  *             .dbVersion(dbSystemDbVersion)
  *             .displayName(dbSystemDisplayName)
  *             .networkDetails(DbSystemNetworkDetailsArgs.builder()
@@ -82,16 +91,6 @@ import javax.annotation.Nullable;
  *                 .iops(dbSystemStorageDetailsIops)
  *                 .build())
  *             .configId(testConfig.id())
- *             .applyConfig(dbSystemApplyConfigType)
- *             .credentials(DbSystemCredentialsArgs.builder()
- *                 .passwordDetails(DbSystemCredentialsPasswordDetailsArgs.builder()
- *                     .passwordType(dbSystemCredentialsPasswordDetailsPasswordType)
- *                     .password(dbSystemCredentialsPasswordDetailsPassword)
- *                     .secretId(testSecret.id())
- *                     .secretVersion(dbSystemCredentialsPasswordDetailsSecretVersion)
- *                     .build())
- *                 .username(dbSystemCredentialsUsername)
- *                 .build())
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(dbSystemDescription)
  *             .freeformTags(Map.of("bar-key", "value"))
@@ -284,42 +283,42 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * (Updatable when patch_operations are specified) Count of database instances nodes to be created in the database system.
+     * Count of database instances nodes to be created in the database system.
      * 
      */
     @Export(name="instanceCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> instanceCount;
 
     /**
-     * @return (Updatable when patch_operations are specified) Count of database instances nodes to be created in the database system.
+     * @return Count of database instances nodes to be created in the database system.
      * 
      */
     public Output<Integer> instanceCount() {
         return this.instanceCount;
     }
     /**
-     * The total amount of memory available to each database instance node, in gigabytes.
+     * (Updatable) The total amount of memory available to each database instance node, in gigabytes.
      * 
      */
     @Export(name="instanceMemorySizeInGbs", refs={Integer.class}, tree="[0]")
     private Output<Integer> instanceMemorySizeInGbs;
 
     /**
-     * @return The total amount of memory available to each database instance node, in gigabytes.
+     * @return (Updatable) The total amount of memory available to each database instance node, in gigabytes.
      * 
      */
     public Output<Integer> instanceMemorySizeInGbs() {
         return this.instanceMemorySizeInGbs;
     }
     /**
-     * The total number of OCPUs available to each database instance node.
+     * (Updatable) The total number of OCPUs available to each database instance node.
      * 
      */
     @Export(name="instanceOcpuCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> instanceOcpuCount;
 
     /**
-     * @return The total number of OCPUs available to each database instance node.
+     * @return (Updatable) The total number of OCPUs available to each database instance node.
      * 
      */
     public Output<Integer> instanceOcpuCount() {
@@ -382,14 +381,14 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
         return this.managementPolicy;
     }
     /**
-     * Network details for the database system.
+     * (Updatable) Network details for the database system.
      * 
      */
     @Export(name="networkDetails", refs={DbSystemNetworkDetails.class}, tree="[0]")
     private Output<DbSystemNetworkDetails> networkDetails;
 
     /**
-     * @return Network details for the database system.
+     * @return (Updatable) Network details for the database system.
      * 
      */
     public Output<DbSystemNetworkDetails> networkDetails() {
@@ -410,14 +409,14 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.patchOperations);
     }
     /**
-     * The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
+     * (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
      * 
      */
     @Export(name="shape", refs={String.class}, tree="[0]")
     private Output<String> shape;
 
     /**
-     * @return The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
+     * @return (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
      * 
      */
     public Output<String> shape() {

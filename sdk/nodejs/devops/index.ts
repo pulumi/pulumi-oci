@@ -145,6 +145,11 @@ export const getProject: typeof import("./getProject").getProject = null as any;
 export const getProjectOutput: typeof import("./getProject").getProjectOutput = null as any;
 utilities.lazyLoad(exports, ["getProject","getProjectOutput"], () => require("./getProject"));
 
+export { GetProjectRepositorySettingArgs, GetProjectRepositorySettingResult, GetProjectRepositorySettingOutputArgs } from "./getProjectRepositorySetting";
+export const getProjectRepositorySetting: typeof import("./getProjectRepositorySetting").getProjectRepositorySetting = null as any;
+export const getProjectRepositorySettingOutput: typeof import("./getProjectRepositorySetting").getProjectRepositorySettingOutput = null as any;
+utilities.lazyLoad(exports, ["getProjectRepositorySetting","getProjectRepositorySettingOutput"], () => require("./getProjectRepositorySetting"));
+
 export { GetProjectsArgs, GetProjectsResult, GetProjectsOutputArgs } from "./getProjects";
 export const getProjects: typeof import("./getProjects").getProjects = null as any;
 export const getProjectsOutput: typeof import("./getProjects").getProjectsOutput = null as any;
@@ -240,6 +245,11 @@ export const getRepositoryPaths: typeof import("./getRepositoryPaths").getReposi
 export const getRepositoryPathsOutput: typeof import("./getRepositoryPaths").getRepositoryPathsOutput = null as any;
 utilities.lazyLoad(exports, ["getRepositoryPaths","getRepositoryPathsOutput"], () => require("./getRepositoryPaths"));
 
+export { GetRepositoryProtectedBranchesArgs, GetRepositoryProtectedBranchesResult, GetRepositoryProtectedBranchesOutputArgs } from "./getRepositoryProtectedBranches";
+export const getRepositoryProtectedBranches: typeof import("./getRepositoryProtectedBranches").getRepositoryProtectedBranches = null as any;
+export const getRepositoryProtectedBranchesOutput: typeof import("./getRepositoryProtectedBranches").getRepositoryProtectedBranchesOutput = null as any;
+utilities.lazyLoad(exports, ["getRepositoryProtectedBranches","getRepositoryProtectedBranchesOutput"], () => require("./getRepositoryProtectedBranches"));
+
 export { GetRepositoryRefArgs, GetRepositoryRefResult, GetRepositoryRefOutputArgs } from "./getRepositoryRef";
 export const getRepositoryRef: typeof import("./getRepositoryRef").getRepositoryRef = null as any;
 export const getRepositoryRefOutput: typeof import("./getRepositoryRef").getRepositoryRefOutput = null as any;
@@ -249,6 +259,11 @@ export { GetRepositoryRefsArgs, GetRepositoryRefsResult, GetRepositoryRefsOutput
 export const getRepositoryRefs: typeof import("./getRepositoryRefs").getRepositoryRefs = null as any;
 export const getRepositoryRefsOutput: typeof import("./getRepositoryRefs").getRepositoryRefsOutput = null as any;
 utilities.lazyLoad(exports, ["getRepositoryRefs","getRepositoryRefsOutput"], () => require("./getRepositoryRefs"));
+
+export { GetRepositorySettingArgs, GetRepositorySettingResult, GetRepositorySettingOutputArgs } from "./getRepositorySetting";
+export const getRepositorySetting: typeof import("./getRepositorySetting").getRepositorySetting = null as any;
+export const getRepositorySettingOutput: typeof import("./getRepositorySetting").getRepositorySettingOutput = null as any;
+utilities.lazyLoad(exports, ["getRepositorySetting","getRepositorySettingOutput"], () => require("./getRepositorySetting"));
 
 export { GetTriggerArgs, GetTriggerResult, GetTriggerOutputArgs } from "./getTrigger";
 export const getTrigger: typeof import("./getTrigger").getTrigger = null as any;
@@ -265,6 +280,11 @@ export type Project = import("./project").Project;
 export const Project: typeof import("./project").Project = null as any;
 utilities.lazyLoad(exports, ["Project"], () => require("./project"));
 
+export { ProjectRepositorySettingArgs, ProjectRepositorySettingState } from "./projectRepositorySetting";
+export type ProjectRepositorySetting = import("./projectRepositorySetting").ProjectRepositorySetting;
+export const ProjectRepositorySetting: typeof import("./projectRepositorySetting").ProjectRepositorySetting = null as any;
+utilities.lazyLoad(exports, ["ProjectRepositorySetting"], () => require("./projectRepositorySetting"));
+
 export { RepositoryArgs, RepositoryState } from "./repository";
 export type Repository = import("./repository").Repository;
 export const Repository: typeof import("./repository").Repository = null as any;
@@ -275,10 +295,20 @@ export type RepositoryMirror = import("./repositoryMirror").RepositoryMirror;
 export const RepositoryMirror: typeof import("./repositoryMirror").RepositoryMirror = null as any;
 utilities.lazyLoad(exports, ["RepositoryMirror"], () => require("./repositoryMirror"));
 
+export { RepositoryProtectedBranchManagementArgs, RepositoryProtectedBranchManagementState } from "./repositoryProtectedBranchManagement";
+export type RepositoryProtectedBranchManagement = import("./repositoryProtectedBranchManagement").RepositoryProtectedBranchManagement;
+export const RepositoryProtectedBranchManagement: typeof import("./repositoryProtectedBranchManagement").RepositoryProtectedBranchManagement = null as any;
+utilities.lazyLoad(exports, ["RepositoryProtectedBranchManagement"], () => require("./repositoryProtectedBranchManagement"));
+
 export { RepositoryRefArgs, RepositoryRefState } from "./repositoryRef";
 export type RepositoryRef = import("./repositoryRef").RepositoryRef;
 export const RepositoryRef: typeof import("./repositoryRef").RepositoryRef = null as any;
 utilities.lazyLoad(exports, ["RepositoryRef"], () => require("./repositoryRef"));
+
+export { RepositorySettingArgs, RepositorySettingState } from "./repositorySetting";
+export type RepositorySetting = import("./repositorySetting").RepositorySetting;
+export const RepositorySetting: typeof import("./repositorySetting").RepositorySetting = null as any;
+utilities.lazyLoad(exports, ["RepositorySetting"], () => require("./repositorySetting"));
 
 export { TriggerArgs, TriggerState } from "./trigger";
 export type Trigger = import("./trigger").Trigger;
@@ -310,12 +340,18 @@ const _module = {
                 return new Deployment(name, <any>undefined, { urn })
             case "oci:DevOps/project:Project":
                 return new Project(name, <any>undefined, { urn })
+            case "oci:DevOps/projectRepositorySetting:ProjectRepositorySetting":
+                return new ProjectRepositorySetting(name, <any>undefined, { urn })
             case "oci:DevOps/repository:Repository":
                 return new Repository(name, <any>undefined, { urn })
             case "oci:DevOps/repositoryMirror:RepositoryMirror":
                 return new RepositoryMirror(name, <any>undefined, { urn })
+            case "oci:DevOps/repositoryProtectedBranchManagement:RepositoryProtectedBranchManagement":
+                return new RepositoryProtectedBranchManagement(name, <any>undefined, { urn })
             case "oci:DevOps/repositoryRef:RepositoryRef":
                 return new RepositoryRef(name, <any>undefined, { urn })
+            case "oci:DevOps/repositorySetting:RepositorySetting":
+                return new RepositorySetting(name, <any>undefined, { urn })
             case "oci:DevOps/trigger:Trigger":
                 return new Trigger(name, <any>undefined, { urn })
             default:
@@ -333,7 +369,10 @@ pulumi.runtime.registerResourceModule("oci", "DevOps/deployPipeline", _module)
 pulumi.runtime.registerResourceModule("oci", "DevOps/deployStage", _module)
 pulumi.runtime.registerResourceModule("oci", "DevOps/deployment", _module)
 pulumi.runtime.registerResourceModule("oci", "DevOps/project", _module)
+pulumi.runtime.registerResourceModule("oci", "DevOps/projectRepositorySetting", _module)
 pulumi.runtime.registerResourceModule("oci", "DevOps/repository", _module)
 pulumi.runtime.registerResourceModule("oci", "DevOps/repositoryMirror", _module)
+pulumi.runtime.registerResourceModule("oci", "DevOps/repositoryProtectedBranchManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "DevOps/repositoryRef", _module)
+pulumi.runtime.registerResourceModule("oci", "DevOps/repositorySetting", _module)
 pulumi.runtime.registerResourceModule("oci", "DevOps/trigger", _module)

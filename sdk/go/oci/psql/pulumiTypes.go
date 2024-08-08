@@ -1249,7 +1249,9 @@ func (o DbSystemInstancesDetailArrayOutput) Index(i pulumi.IntInput) DbSystemIns
 type DbSystemManagementPolicy struct {
 	// (Updatable) PostgreSQL database system backup policy.
 	BackupPolicy *DbSystemManagementPolicyBackupPolicy `pulumi:"backupPolicy"`
-	// (Updatable) The start of the maintenance window.
+	// (Updatable) The start of the maintenance window in UTC.
+	//
+	// This string is of the format: "{day-of-week} {time-of-day}". "{day-of-week}" is a case-insensitive string like "mon", "tue", &c. "{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
 	MaintenanceWindowStart *string `pulumi:"maintenanceWindowStart"`
 }
 
@@ -1267,7 +1269,9 @@ type DbSystemManagementPolicyInput interface {
 type DbSystemManagementPolicyArgs struct {
 	// (Updatable) PostgreSQL database system backup policy.
 	BackupPolicy DbSystemManagementPolicyBackupPolicyPtrInput `pulumi:"backupPolicy"`
-	// (Updatable) The start of the maintenance window.
+	// (Updatable) The start of the maintenance window in UTC.
+	//
+	// This string is of the format: "{day-of-week} {time-of-day}". "{day-of-week}" is a case-insensitive string like "mon", "tue", &c. "{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
 	MaintenanceWindowStart pulumi.StringPtrInput `pulumi:"maintenanceWindowStart"`
 }
 
@@ -1353,7 +1357,9 @@ func (o DbSystemManagementPolicyOutput) BackupPolicy() DbSystemManagementPolicyB
 	return o.ApplyT(func(v DbSystemManagementPolicy) *DbSystemManagementPolicyBackupPolicy { return v.BackupPolicy }).(DbSystemManagementPolicyBackupPolicyPtrOutput)
 }
 
-// (Updatable) The start of the maintenance window.
+// (Updatable) The start of the maintenance window in UTC.
+//
+// This string is of the format: "{day-of-week} {time-of-day}". "{day-of-week}" is a case-insensitive string like "mon", "tue", &c. "{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
 func (o DbSystemManagementPolicyOutput) MaintenanceWindowStart() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DbSystemManagementPolicy) *string { return v.MaintenanceWindowStart }).(pulumi.StringPtrOutput)
 }
@@ -1392,7 +1398,9 @@ func (o DbSystemManagementPolicyPtrOutput) BackupPolicy() DbSystemManagementPoli
 	}).(DbSystemManagementPolicyBackupPolicyPtrOutput)
 }
 
-// (Updatable) The start of the maintenance window.
+// (Updatable) The start of the maintenance window in UTC.
+//
+// This string is of the format: "{day-of-week} {time-of-day}". "{day-of-week}" is a case-insensitive string like "mon", "tue", &c. "{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
 func (o DbSystemManagementPolicyPtrOutput) MaintenanceWindowStart() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DbSystemManagementPolicy) *string {
 		if v == nil {
@@ -1616,7 +1624,7 @@ func (o DbSystemManagementPolicyBackupPolicyPtrOutput) RetentionDays() pulumi.In
 }
 
 type DbSystemNetworkDetails struct {
-	// List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
+	// (Updatable) List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
 	NsgIds []string `pulumi:"nsgIds"`
 	// Private IP in customer subnet. The value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses from the specified subnet.
 	PrimaryDbEndpointPrivateIp *string `pulumi:"primaryDbEndpointPrivateIp"`
@@ -1636,7 +1644,7 @@ type DbSystemNetworkDetailsInput interface {
 }
 
 type DbSystemNetworkDetailsArgs struct {
-	// List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
+	// (Updatable) List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// Private IP in customer subnet. The value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses from the specified subnet.
 	PrimaryDbEndpointPrivateIp pulumi.StringPtrInput `pulumi:"primaryDbEndpointPrivateIp"`
@@ -1721,7 +1729,7 @@ func (o DbSystemNetworkDetailsOutput) ToDbSystemNetworkDetailsPtrOutputWithConte
 	}).(DbSystemNetworkDetailsPtrOutput)
 }
 
-// List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
+// (Updatable) List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
 func (o DbSystemNetworkDetailsOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v DbSystemNetworkDetails) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
@@ -1760,7 +1768,7 @@ func (o DbSystemNetworkDetailsPtrOutput) Elem() DbSystemNetworkDetailsOutput {
 	}).(DbSystemNetworkDetailsOutput)
 }
 
-// List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
+// (Updatable) List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
 func (o DbSystemNetworkDetailsPtrOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DbSystemNetworkDetails) []string {
 		if v == nil {
@@ -2525,7 +2533,7 @@ type GetBackupsBackupCollectionItem struct {
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The date and time the backup was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+	// The date and time the backup request was received, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated string `pulumi:"timeUpdated"`
@@ -2575,7 +2583,7 @@ type GetBackupsBackupCollectionItemArgs struct {
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
-	// The date and time the backup was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+	// The date and time the backup request was received, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
@@ -2714,7 +2722,7 @@ func (o GetBackupsBackupCollectionItemOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetBackupsBackupCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// The date and time the backup was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+// The date and time the backup request was received, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 func (o GetBackupsBackupCollectionItemOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBackupsBackupCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
@@ -3520,10 +3528,12 @@ func (o GetConfigurationsConfigurationCollectionArrayOutput) Index(i pulumi.IntI
 type GetConfigurationsConfigurationCollectionItem struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
+	// The type of configuration. Either user-created or a default configuration.
+	ConfigType string `pulumi:"configType"`
 	// List of configuration details.
 	ConfigurationDetails     []GetConfigurationsConfigurationCollectionItemConfigurationDetail     `pulumi:"configurationDetails"`
 	DbConfigurationOverrides []GetConfigurationsConfigurationCollectionItemDbConfigurationOverride `pulumi:"dbConfigurationOverrides"`
-	// Verison of the PostgreSQL database, such as 14.9.
+	// Version of the PostgreSQL database, such as 14.9.
 	DbVersion string `pulumi:"dbVersion"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -3539,6 +3549,8 @@ type GetConfigurationsConfigurationCollectionItem struct {
 	InstanceMemorySizeInGbs int `pulumi:"instanceMemorySizeInGbs"`
 	// CPU core count.
 	InstanceOcpuCount int `pulumi:"instanceOcpuCount"`
+	// Whether the configuration supports flexible shapes.
+	IsFlexible bool `pulumi:"isFlexible"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
@@ -3565,10 +3577,12 @@ type GetConfigurationsConfigurationCollectionItemInput interface {
 type GetConfigurationsConfigurationCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The type of configuration. Either user-created or a default configuration.
+	ConfigType pulumi.StringInput `pulumi:"configType"`
 	// List of configuration details.
 	ConfigurationDetails     GetConfigurationsConfigurationCollectionItemConfigurationDetailArrayInput     `pulumi:"configurationDetails"`
 	DbConfigurationOverrides GetConfigurationsConfigurationCollectionItemDbConfigurationOverrideArrayInput `pulumi:"dbConfigurationOverrides"`
-	// Verison of the PostgreSQL database, such as 14.9.
+	// Version of the PostgreSQL database, such as 14.9.
 	DbVersion pulumi.StringInput `pulumi:"dbVersion"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
@@ -3584,6 +3598,8 @@ type GetConfigurationsConfigurationCollectionItemArgs struct {
 	InstanceMemorySizeInGbs pulumi.IntInput `pulumi:"instanceMemorySizeInGbs"`
 	// CPU core count.
 	InstanceOcpuCount pulumi.IntInput `pulumi:"instanceOcpuCount"`
+	// Whether the configuration supports flexible shapes.
+	IsFlexible pulumi.BoolInput `pulumi:"isFlexible"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
@@ -3652,6 +3668,11 @@ func (o GetConfigurationsConfigurationCollectionItemOutput) CompartmentId() pulu
 	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// The type of configuration. Either user-created or a default configuration.
+func (o GetConfigurationsConfigurationCollectionItemOutput) ConfigType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItem) string { return v.ConfigType }).(pulumi.StringOutput)
+}
+
 // List of configuration details.
 func (o GetConfigurationsConfigurationCollectionItemOutput) ConfigurationDetails() GetConfigurationsConfigurationCollectionItemConfigurationDetailArrayOutput {
 	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItem) []GetConfigurationsConfigurationCollectionItemConfigurationDetail {
@@ -3665,7 +3686,7 @@ func (o GetConfigurationsConfigurationCollectionItemOutput) DbConfigurationOverr
 	}).(GetConfigurationsConfigurationCollectionItemDbConfigurationOverrideArrayOutput)
 }
 
-// Verison of the PostgreSQL database, such as 14.9.
+// Version of the PostgreSQL database, such as 14.9.
 func (o GetConfigurationsConfigurationCollectionItemOutput) DbVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItem) string { return v.DbVersion }).(pulumi.StringOutput)
 }
@@ -3703,6 +3724,11 @@ func (o GetConfigurationsConfigurationCollectionItemOutput) InstanceMemorySizeIn
 // CPU core count.
 func (o GetConfigurationsConfigurationCollectionItemOutput) InstanceOcpuCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItem) int { return v.InstanceOcpuCount }).(pulumi.IntOutput)
+}
+
+// Whether the configuration supports flexible shapes.
+func (o GetConfigurationsConfigurationCollectionItemOutput) IsFlexible() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItem) bool { return v.IsFlexible }).(pulumi.BoolOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -7978,7 +8004,7 @@ func (o GetDefaultConfigurationsDefaultConfigurationCollectionArrayOutput) Index
 type GetDefaultConfigurationsDefaultConfigurationCollectionItem struct {
 	// List of default configuration values for databases.
 	ConfigurationDetails []GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetail `pulumi:"configurationDetails"`
-	// Verison of the PostgreSQL database, such as 14.9.
+	// Version of the PostgreSQL database, such as 14.9.
 	DbVersion string `pulumi:"dbVersion"`
 	// A description for the configuration.
 	Description string `pulumi:"description"`
@@ -7988,8 +8014,10 @@ type GetDefaultConfigurationsDefaultConfigurationCollectionItem struct {
 	Id string `pulumi:"id"`
 	// Memory size in gigabytes with 1GB increment.
 	InstanceMemorySizeInGbs int `pulumi:"instanceMemorySizeInGbs"`
-	// CPU core count. Minimum value is 1.
+	// CPU core count.
 	InstanceOcpuCount int `pulumi:"instanceOcpuCount"`
+	// True if the configuration supports flexible shapes, false otherwise.
+	IsFlexible bool `pulumi:"isFlexible"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
@@ -8014,7 +8042,7 @@ type GetDefaultConfigurationsDefaultConfigurationCollectionItemInput interface {
 type GetDefaultConfigurationsDefaultConfigurationCollectionItemArgs struct {
 	// List of default configuration values for databases.
 	ConfigurationDetails GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetailArrayInput `pulumi:"configurationDetails"`
-	// Verison of the PostgreSQL database, such as 14.9.
+	// Version of the PostgreSQL database, such as 14.9.
 	DbVersion pulumi.StringInput `pulumi:"dbVersion"`
 	// A description for the configuration.
 	Description pulumi.StringInput `pulumi:"description"`
@@ -8024,8 +8052,10 @@ type GetDefaultConfigurationsDefaultConfigurationCollectionItemArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// Memory size in gigabytes with 1GB increment.
 	InstanceMemorySizeInGbs pulumi.IntInput `pulumi:"instanceMemorySizeInGbs"`
-	// CPU core count. Minimum value is 1.
+	// CPU core count.
 	InstanceOcpuCount pulumi.IntInput `pulumi:"instanceOcpuCount"`
+	// True if the configuration supports flexible shapes, false otherwise.
+	IsFlexible pulumi.BoolInput `pulumi:"isFlexible"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
@@ -8094,7 +8124,7 @@ func (o GetDefaultConfigurationsDefaultConfigurationCollectionItemOutput) Config
 	}).(GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetailArrayOutput)
 }
 
-// Verison of the PostgreSQL database, such as 14.9.
+// Version of the PostgreSQL database, such as 14.9.
 func (o GetDefaultConfigurationsDefaultConfigurationCollectionItemOutput) DbVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationsDefaultConfigurationCollectionItem) string { return v.DbVersion }).(pulumi.StringOutput)
 }
@@ -8121,9 +8151,14 @@ func (o GetDefaultConfigurationsDefaultConfigurationCollectionItemOutput) Instan
 	}).(pulumi.IntOutput)
 }
 
-// CPU core count. Minimum value is 1.
+// CPU core count.
 func (o GetDefaultConfigurationsDefaultConfigurationCollectionItemOutput) InstanceOcpuCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationsDefaultConfigurationCollectionItem) int { return v.InstanceOcpuCount }).(pulumi.IntOutput)
+}
+
+// True if the configuration supports flexible shapes, false otherwise.
+func (o GetDefaultConfigurationsDefaultConfigurationCollectionItemOutput) IsFlexible() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDefaultConfigurationsDefaultConfigurationCollectionItem) bool { return v.IsFlexible }).(pulumi.BoolOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -8742,12 +8777,18 @@ func (o GetShapesShapeCollectionArrayOutput) Index(i pulumi.IntInput) GetShapesS
 type GetShapesShapeCollectionItem struct {
 	// A filter to return the feature by the shape name.
 	Id string `pulumi:"id"`
+	// Indicates if the shape is a flex shape.
+	IsFlexible bool `pulumi:"isFlexible"`
 	// The amount of memory in gigabytes.
 	MemorySizeInGbs int `pulumi:"memorySizeInGbs"`
 	// The number of OCPUs.
 	OcpuCount int `pulumi:"ocpuCount"`
 	// The name of the Compute VM shape. Example: `VM.Standard.E4.Flex`
 	Shape string `pulumi:"shape"`
+	// Options for the the shape memory
+	ShapeMemoryOptions []GetShapesShapeCollectionItemShapeMemoryOption `pulumi:"shapeMemoryOptions"`
+	// Options for the the shape OCPU
+	ShapeOcpuOptions []GetShapesShapeCollectionItemShapeOcpuOption `pulumi:"shapeOcpuOptions"`
 }
 
 // GetShapesShapeCollectionItemInput is an input type that accepts GetShapesShapeCollectionItemArgs and GetShapesShapeCollectionItemOutput values.
@@ -8764,12 +8805,18 @@ type GetShapesShapeCollectionItemInput interface {
 type GetShapesShapeCollectionItemArgs struct {
 	// A filter to return the feature by the shape name.
 	Id pulumi.StringInput `pulumi:"id"`
+	// Indicates if the shape is a flex shape.
+	IsFlexible pulumi.BoolInput `pulumi:"isFlexible"`
 	// The amount of memory in gigabytes.
 	MemorySizeInGbs pulumi.IntInput `pulumi:"memorySizeInGbs"`
 	// The number of OCPUs.
 	OcpuCount pulumi.IntInput `pulumi:"ocpuCount"`
 	// The name of the Compute VM shape. Example: `VM.Standard.E4.Flex`
 	Shape pulumi.StringInput `pulumi:"shape"`
+	// Options for the the shape memory
+	ShapeMemoryOptions GetShapesShapeCollectionItemShapeMemoryOptionArrayInput `pulumi:"shapeMemoryOptions"`
+	// Options for the the shape OCPU
+	ShapeOcpuOptions GetShapesShapeCollectionItemShapeOcpuOptionArrayInput `pulumi:"shapeOcpuOptions"`
 }
 
 func (GetShapesShapeCollectionItemArgs) ElementType() reflect.Type {
@@ -8828,6 +8875,11 @@ func (o GetShapesShapeCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetShapesShapeCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// Indicates if the shape is a flex shape.
+func (o GetShapesShapeCollectionItemOutput) IsFlexible() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetShapesShapeCollectionItem) bool { return v.IsFlexible }).(pulumi.BoolOutput)
+}
+
 // The amount of memory in gigabytes.
 func (o GetShapesShapeCollectionItemOutput) MemorySizeInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v GetShapesShapeCollectionItem) int { return v.MemorySizeInGbs }).(pulumi.IntOutput)
@@ -8841,6 +8893,20 @@ func (o GetShapesShapeCollectionItemOutput) OcpuCount() pulumi.IntOutput {
 // The name of the Compute VM shape. Example: `VM.Standard.E4.Flex`
 func (o GetShapesShapeCollectionItemOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v GetShapesShapeCollectionItem) string { return v.Shape }).(pulumi.StringOutput)
+}
+
+// Options for the the shape memory
+func (o GetShapesShapeCollectionItemOutput) ShapeMemoryOptions() GetShapesShapeCollectionItemShapeMemoryOptionArrayOutput {
+	return o.ApplyT(func(v GetShapesShapeCollectionItem) []GetShapesShapeCollectionItemShapeMemoryOption {
+		return v.ShapeMemoryOptions
+	}).(GetShapesShapeCollectionItemShapeMemoryOptionArrayOutput)
+}
+
+// Options for the the shape OCPU
+func (o GetShapesShapeCollectionItemOutput) ShapeOcpuOptions() GetShapesShapeCollectionItemShapeOcpuOptionArrayOutput {
+	return o.ApplyT(func(v GetShapesShapeCollectionItem) []GetShapesShapeCollectionItemShapeOcpuOption {
+		return v.ShapeOcpuOptions
+	}).(GetShapesShapeCollectionItemShapeOcpuOptionArrayOutput)
 }
 
 type GetShapesShapeCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -8861,6 +8927,245 @@ func (o GetShapesShapeCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSha
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapesShapeCollectionItem {
 		return vs[0].([]GetShapesShapeCollectionItem)[vs[1].(int)]
 	}).(GetShapesShapeCollectionItemOutput)
+}
+
+type GetShapesShapeCollectionItemShapeMemoryOption struct {
+	// Default per OCPU configuration in GBs
+	DefaultPerOcpuInGbs int `pulumi:"defaultPerOcpuInGbs"`
+	// Maximum Memory configuration in GBs
+	MaxInGbs int `pulumi:"maxInGbs"`
+	// Maximum Memory configuration per OCPU in GBs
+	MaxPerOcpuInGbs int `pulumi:"maxPerOcpuInGbs"`
+	// Minimum Memory configuration in GBs
+	MinInGbs int `pulumi:"minInGbs"`
+	// Minimum Memory configuration per OCPU in GBs
+	MinPerOcpuInGbs int `pulumi:"minPerOcpuInGbs"`
+}
+
+// GetShapesShapeCollectionItemShapeMemoryOptionInput is an input type that accepts GetShapesShapeCollectionItemShapeMemoryOptionArgs and GetShapesShapeCollectionItemShapeMemoryOptionOutput values.
+// You can construct a concrete instance of `GetShapesShapeCollectionItemShapeMemoryOptionInput` via:
+//
+//	GetShapesShapeCollectionItemShapeMemoryOptionArgs{...}
+type GetShapesShapeCollectionItemShapeMemoryOptionInput interface {
+	pulumi.Input
+
+	ToGetShapesShapeCollectionItemShapeMemoryOptionOutput() GetShapesShapeCollectionItemShapeMemoryOptionOutput
+	ToGetShapesShapeCollectionItemShapeMemoryOptionOutputWithContext(context.Context) GetShapesShapeCollectionItemShapeMemoryOptionOutput
+}
+
+type GetShapesShapeCollectionItemShapeMemoryOptionArgs struct {
+	// Default per OCPU configuration in GBs
+	DefaultPerOcpuInGbs pulumi.IntInput `pulumi:"defaultPerOcpuInGbs"`
+	// Maximum Memory configuration in GBs
+	MaxInGbs pulumi.IntInput `pulumi:"maxInGbs"`
+	// Maximum Memory configuration per OCPU in GBs
+	MaxPerOcpuInGbs pulumi.IntInput `pulumi:"maxPerOcpuInGbs"`
+	// Minimum Memory configuration in GBs
+	MinInGbs pulumi.IntInput `pulumi:"minInGbs"`
+	// Minimum Memory configuration per OCPU in GBs
+	MinPerOcpuInGbs pulumi.IntInput `pulumi:"minPerOcpuInGbs"`
+}
+
+func (GetShapesShapeCollectionItemShapeMemoryOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapesShapeCollectionItemShapeMemoryOption)(nil)).Elem()
+}
+
+func (i GetShapesShapeCollectionItemShapeMemoryOptionArgs) ToGetShapesShapeCollectionItemShapeMemoryOptionOutput() GetShapesShapeCollectionItemShapeMemoryOptionOutput {
+	return i.ToGetShapesShapeCollectionItemShapeMemoryOptionOutputWithContext(context.Background())
+}
+
+func (i GetShapesShapeCollectionItemShapeMemoryOptionArgs) ToGetShapesShapeCollectionItemShapeMemoryOptionOutputWithContext(ctx context.Context) GetShapesShapeCollectionItemShapeMemoryOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapeCollectionItemShapeMemoryOptionOutput)
+}
+
+// GetShapesShapeCollectionItemShapeMemoryOptionArrayInput is an input type that accepts GetShapesShapeCollectionItemShapeMemoryOptionArray and GetShapesShapeCollectionItemShapeMemoryOptionArrayOutput values.
+// You can construct a concrete instance of `GetShapesShapeCollectionItemShapeMemoryOptionArrayInput` via:
+//
+//	GetShapesShapeCollectionItemShapeMemoryOptionArray{ GetShapesShapeCollectionItemShapeMemoryOptionArgs{...} }
+type GetShapesShapeCollectionItemShapeMemoryOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetShapesShapeCollectionItemShapeMemoryOptionArrayOutput() GetShapesShapeCollectionItemShapeMemoryOptionArrayOutput
+	ToGetShapesShapeCollectionItemShapeMemoryOptionArrayOutputWithContext(context.Context) GetShapesShapeCollectionItemShapeMemoryOptionArrayOutput
+}
+
+type GetShapesShapeCollectionItemShapeMemoryOptionArray []GetShapesShapeCollectionItemShapeMemoryOptionInput
+
+func (GetShapesShapeCollectionItemShapeMemoryOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapesShapeCollectionItemShapeMemoryOption)(nil)).Elem()
+}
+
+func (i GetShapesShapeCollectionItemShapeMemoryOptionArray) ToGetShapesShapeCollectionItemShapeMemoryOptionArrayOutput() GetShapesShapeCollectionItemShapeMemoryOptionArrayOutput {
+	return i.ToGetShapesShapeCollectionItemShapeMemoryOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetShapesShapeCollectionItemShapeMemoryOptionArray) ToGetShapesShapeCollectionItemShapeMemoryOptionArrayOutputWithContext(ctx context.Context) GetShapesShapeCollectionItemShapeMemoryOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapeCollectionItemShapeMemoryOptionArrayOutput)
+}
+
+type GetShapesShapeCollectionItemShapeMemoryOptionOutput struct{ *pulumi.OutputState }
+
+func (GetShapesShapeCollectionItemShapeMemoryOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapesShapeCollectionItemShapeMemoryOption)(nil)).Elem()
+}
+
+func (o GetShapesShapeCollectionItemShapeMemoryOptionOutput) ToGetShapesShapeCollectionItemShapeMemoryOptionOutput() GetShapesShapeCollectionItemShapeMemoryOptionOutput {
+	return o
+}
+
+func (o GetShapesShapeCollectionItemShapeMemoryOptionOutput) ToGetShapesShapeCollectionItemShapeMemoryOptionOutputWithContext(ctx context.Context) GetShapesShapeCollectionItemShapeMemoryOptionOutput {
+	return o
+}
+
+// Default per OCPU configuration in GBs
+func (o GetShapesShapeCollectionItemShapeMemoryOptionOutput) DefaultPerOcpuInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetShapesShapeCollectionItemShapeMemoryOption) int { return v.DefaultPerOcpuInGbs }).(pulumi.IntOutput)
+}
+
+// Maximum Memory configuration in GBs
+func (o GetShapesShapeCollectionItemShapeMemoryOptionOutput) MaxInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetShapesShapeCollectionItemShapeMemoryOption) int { return v.MaxInGbs }).(pulumi.IntOutput)
+}
+
+// Maximum Memory configuration per OCPU in GBs
+func (o GetShapesShapeCollectionItemShapeMemoryOptionOutput) MaxPerOcpuInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetShapesShapeCollectionItemShapeMemoryOption) int { return v.MaxPerOcpuInGbs }).(pulumi.IntOutput)
+}
+
+// Minimum Memory configuration in GBs
+func (o GetShapesShapeCollectionItemShapeMemoryOptionOutput) MinInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetShapesShapeCollectionItemShapeMemoryOption) int { return v.MinInGbs }).(pulumi.IntOutput)
+}
+
+// Minimum Memory configuration per OCPU in GBs
+func (o GetShapesShapeCollectionItemShapeMemoryOptionOutput) MinPerOcpuInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetShapesShapeCollectionItemShapeMemoryOption) int { return v.MinPerOcpuInGbs }).(pulumi.IntOutput)
+}
+
+type GetShapesShapeCollectionItemShapeMemoryOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetShapesShapeCollectionItemShapeMemoryOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapesShapeCollectionItemShapeMemoryOption)(nil)).Elem()
+}
+
+func (o GetShapesShapeCollectionItemShapeMemoryOptionArrayOutput) ToGetShapesShapeCollectionItemShapeMemoryOptionArrayOutput() GetShapesShapeCollectionItemShapeMemoryOptionArrayOutput {
+	return o
+}
+
+func (o GetShapesShapeCollectionItemShapeMemoryOptionArrayOutput) ToGetShapesShapeCollectionItemShapeMemoryOptionArrayOutputWithContext(ctx context.Context) GetShapesShapeCollectionItemShapeMemoryOptionArrayOutput {
+	return o
+}
+
+func (o GetShapesShapeCollectionItemShapeMemoryOptionArrayOutput) Index(i pulumi.IntInput) GetShapesShapeCollectionItemShapeMemoryOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapesShapeCollectionItemShapeMemoryOption {
+		return vs[0].([]GetShapesShapeCollectionItemShapeMemoryOption)[vs[1].(int)]
+	}).(GetShapesShapeCollectionItemShapeMemoryOptionOutput)
+}
+
+type GetShapesShapeCollectionItemShapeOcpuOption struct {
+	// Maximum OCPU configuration
+	Max int `pulumi:"max"`
+	// Minimum OCPU configuration
+	Min int `pulumi:"min"`
+}
+
+// GetShapesShapeCollectionItemShapeOcpuOptionInput is an input type that accepts GetShapesShapeCollectionItemShapeOcpuOptionArgs and GetShapesShapeCollectionItemShapeOcpuOptionOutput values.
+// You can construct a concrete instance of `GetShapesShapeCollectionItemShapeOcpuOptionInput` via:
+//
+//	GetShapesShapeCollectionItemShapeOcpuOptionArgs{...}
+type GetShapesShapeCollectionItemShapeOcpuOptionInput interface {
+	pulumi.Input
+
+	ToGetShapesShapeCollectionItemShapeOcpuOptionOutput() GetShapesShapeCollectionItemShapeOcpuOptionOutput
+	ToGetShapesShapeCollectionItemShapeOcpuOptionOutputWithContext(context.Context) GetShapesShapeCollectionItemShapeOcpuOptionOutput
+}
+
+type GetShapesShapeCollectionItemShapeOcpuOptionArgs struct {
+	// Maximum OCPU configuration
+	Max pulumi.IntInput `pulumi:"max"`
+	// Minimum OCPU configuration
+	Min pulumi.IntInput `pulumi:"min"`
+}
+
+func (GetShapesShapeCollectionItemShapeOcpuOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapesShapeCollectionItemShapeOcpuOption)(nil)).Elem()
+}
+
+func (i GetShapesShapeCollectionItemShapeOcpuOptionArgs) ToGetShapesShapeCollectionItemShapeOcpuOptionOutput() GetShapesShapeCollectionItemShapeOcpuOptionOutput {
+	return i.ToGetShapesShapeCollectionItemShapeOcpuOptionOutputWithContext(context.Background())
+}
+
+func (i GetShapesShapeCollectionItemShapeOcpuOptionArgs) ToGetShapesShapeCollectionItemShapeOcpuOptionOutputWithContext(ctx context.Context) GetShapesShapeCollectionItemShapeOcpuOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapeCollectionItemShapeOcpuOptionOutput)
+}
+
+// GetShapesShapeCollectionItemShapeOcpuOptionArrayInput is an input type that accepts GetShapesShapeCollectionItemShapeOcpuOptionArray and GetShapesShapeCollectionItemShapeOcpuOptionArrayOutput values.
+// You can construct a concrete instance of `GetShapesShapeCollectionItemShapeOcpuOptionArrayInput` via:
+//
+//	GetShapesShapeCollectionItemShapeOcpuOptionArray{ GetShapesShapeCollectionItemShapeOcpuOptionArgs{...} }
+type GetShapesShapeCollectionItemShapeOcpuOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetShapesShapeCollectionItemShapeOcpuOptionArrayOutput() GetShapesShapeCollectionItemShapeOcpuOptionArrayOutput
+	ToGetShapesShapeCollectionItemShapeOcpuOptionArrayOutputWithContext(context.Context) GetShapesShapeCollectionItemShapeOcpuOptionArrayOutput
+}
+
+type GetShapesShapeCollectionItemShapeOcpuOptionArray []GetShapesShapeCollectionItemShapeOcpuOptionInput
+
+func (GetShapesShapeCollectionItemShapeOcpuOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapesShapeCollectionItemShapeOcpuOption)(nil)).Elem()
+}
+
+func (i GetShapesShapeCollectionItemShapeOcpuOptionArray) ToGetShapesShapeCollectionItemShapeOcpuOptionArrayOutput() GetShapesShapeCollectionItemShapeOcpuOptionArrayOutput {
+	return i.ToGetShapesShapeCollectionItemShapeOcpuOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetShapesShapeCollectionItemShapeOcpuOptionArray) ToGetShapesShapeCollectionItemShapeOcpuOptionArrayOutputWithContext(ctx context.Context) GetShapesShapeCollectionItemShapeOcpuOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapeCollectionItemShapeOcpuOptionArrayOutput)
+}
+
+type GetShapesShapeCollectionItemShapeOcpuOptionOutput struct{ *pulumi.OutputState }
+
+func (GetShapesShapeCollectionItemShapeOcpuOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShapesShapeCollectionItemShapeOcpuOption)(nil)).Elem()
+}
+
+func (o GetShapesShapeCollectionItemShapeOcpuOptionOutput) ToGetShapesShapeCollectionItemShapeOcpuOptionOutput() GetShapesShapeCollectionItemShapeOcpuOptionOutput {
+	return o
+}
+
+func (o GetShapesShapeCollectionItemShapeOcpuOptionOutput) ToGetShapesShapeCollectionItemShapeOcpuOptionOutputWithContext(ctx context.Context) GetShapesShapeCollectionItemShapeOcpuOptionOutput {
+	return o
+}
+
+// Maximum OCPU configuration
+func (o GetShapesShapeCollectionItemShapeOcpuOptionOutput) Max() pulumi.IntOutput {
+	return o.ApplyT(func(v GetShapesShapeCollectionItemShapeOcpuOption) int { return v.Max }).(pulumi.IntOutput)
+}
+
+// Minimum OCPU configuration
+func (o GetShapesShapeCollectionItemShapeOcpuOptionOutput) Min() pulumi.IntOutput {
+	return o.ApplyT(func(v GetShapesShapeCollectionItemShapeOcpuOption) int { return v.Min }).(pulumi.IntOutput)
+}
+
+type GetShapesShapeCollectionItemShapeOcpuOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetShapesShapeCollectionItemShapeOcpuOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetShapesShapeCollectionItemShapeOcpuOption)(nil)).Elem()
+}
+
+func (o GetShapesShapeCollectionItemShapeOcpuOptionArrayOutput) ToGetShapesShapeCollectionItemShapeOcpuOptionArrayOutput() GetShapesShapeCollectionItemShapeOcpuOptionArrayOutput {
+	return o
+}
+
+func (o GetShapesShapeCollectionItemShapeOcpuOptionArrayOutput) ToGetShapesShapeCollectionItemShapeOcpuOptionArrayOutputWithContext(ctx context.Context) GetShapesShapeCollectionItemShapeOcpuOptionArrayOutput {
+	return o
+}
+
+func (o GetShapesShapeCollectionItemShapeOcpuOptionArrayOutput) Index(i pulumi.IntInput) GetShapesShapeCollectionItemShapeOcpuOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapesShapeCollectionItemShapeOcpuOption {
+		return vs[0].([]GetShapesShapeCollectionItemShapeOcpuOption)[vs[1].(int)]
+	}).(GetShapesShapeCollectionItemShapeOcpuOptionOutput)
 }
 
 func init() {
@@ -8998,6 +9303,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapeCollectionArrayInput)(nil)).Elem(), GetShapesShapeCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapeCollectionItemInput)(nil)).Elem(), GetShapesShapeCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapeCollectionItemArrayInput)(nil)).Elem(), GetShapesShapeCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapeCollectionItemShapeMemoryOptionInput)(nil)).Elem(), GetShapesShapeCollectionItemShapeMemoryOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapeCollectionItemShapeMemoryOptionArrayInput)(nil)).Elem(), GetShapesShapeCollectionItemShapeMemoryOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapeCollectionItemShapeOcpuOptionInput)(nil)).Elem(), GetShapesShapeCollectionItemShapeOcpuOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapeCollectionItemShapeOcpuOptionArrayInput)(nil)).Elem(), GetShapesShapeCollectionItemShapeOcpuOptionArray{})
 	pulumi.RegisterOutputType(BackupDbSystemDetailOutput{})
 	pulumi.RegisterOutputType(BackupDbSystemDetailArrayOutput{})
 	pulumi.RegisterOutputType(ConfigurationConfigurationDetailOutput{})
@@ -9132,4 +9441,8 @@ func init() {
 	pulumi.RegisterOutputType(GetShapesShapeCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetShapesShapeCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetShapesShapeCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetShapesShapeCollectionItemShapeMemoryOptionOutput{})
+	pulumi.RegisterOutputType(GetShapesShapeCollectionItemShapeMemoryOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetShapesShapeCollectionItemShapeOcpuOptionOutput{})
+	pulumi.RegisterOutputType(GetShapesShapeCollectionItemShapeOcpuOptionArrayOutput{})
 }

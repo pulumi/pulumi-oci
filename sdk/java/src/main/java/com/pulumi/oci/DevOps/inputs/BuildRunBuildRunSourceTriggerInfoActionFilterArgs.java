@@ -19,23 +19,31 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilterArgs extends com
     public static final BuildRunBuildRunSourceTriggerInfoActionFilterArgs Empty = new BuildRunBuildRunSourceTriggerInfoActionFilterArgs();
 
     /**
-     * The events, for example, PUSH, PULL_REQUEST_MERGE.
+     * The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
      * 
      */
     @Import(name="events")
     private @Nullable Output<List<String>> events;
 
     /**
-     * @return The events, for example, PUSH, PULL_REQUEST_MERGE.
+     * @return The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
      * 
      */
     public Optional<Output<List<String>>> events() {
         return Optional.ofNullable(this.events);
     }
 
+    /**
+     * Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
+     * 
+     */
     @Import(name="excludes")
     private @Nullable Output<List<BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgs>> excludes;
 
+    /**
+     * @return Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
+     * 
+     */
     public Optional<Output<List<BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgs>>> excludes() {
         return Optional.ofNullable(this.excludes);
     }
@@ -98,7 +106,7 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilterArgs extends com
         }
 
         /**
-         * @param events The events, for example, PUSH, PULL_REQUEST_MERGE.
+         * @param events The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
          * 
          * @return builder
          * 
@@ -109,7 +117,7 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilterArgs extends com
         }
 
         /**
-         * @param events The events, for example, PUSH, PULL_REQUEST_MERGE.
+         * @param events The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
          * 
          * @return builder
          * 
@@ -119,7 +127,7 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilterArgs extends com
         }
 
         /**
-         * @param events The events, for example, PUSH, PULL_REQUEST_MERGE.
+         * @param events The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
          * 
          * @return builder
          * 
@@ -128,15 +136,33 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilterArgs extends com
             return events(List.of(events));
         }
 
+        /**
+         * @param excludes Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
+         * 
+         * @return builder
+         * 
+         */
         public Builder excludes(@Nullable Output<List<BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgs>> excludes) {
             $.excludes = excludes;
             return this;
         }
 
+        /**
+         * @param excludes Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
+         * 
+         * @return builder
+         * 
+         */
         public Builder excludes(List<BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgs> excludes) {
             return excludes(Output.of(excludes));
         }
 
+        /**
+         * @param excludes Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
+         * 
+         * @return builder
+         * 
+         */
         public Builder excludes(BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgs... excludes) {
             return excludes(List.of(excludes));
         }

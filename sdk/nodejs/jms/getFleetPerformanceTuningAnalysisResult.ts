@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  *
  * const testFleetPerformanceTuningAnalysisResult = oci.Jms.getFleetPerformanceTuningAnalysisResult({
  *     fleetId: testFleet.id,
- *     performanceTuningAnalysisResultId: testResult.id,
+ *     performanceTuningAnalysisResultId: fleetPerformanceTuningAnalysisResultId,
  * });
  * ```
  */
@@ -102,11 +102,11 @@ export interface GetFleetPerformanceTuningAnalysisResultResult {
      */
     readonly timeCreated: string;
     /**
-     * The time the JFR capture finished.
+     * The time the JFR recording has finished.
      */
     readonly timeFinished: string;
     /**
-     * The time the JFR capture started.
+     * The time the JFR recording has started.
      */
     readonly timeStarted: string;
     /**
@@ -131,7 +131,7 @@ export interface GetFleetPerformanceTuningAnalysisResultResult {
  *
  * const testFleetPerformanceTuningAnalysisResult = oci.Jms.getFleetPerformanceTuningAnalysisResult({
  *     fleetId: testFleet.id,
- *     performanceTuningAnalysisResultId: testResult.id,
+ *     performanceTuningAnalysisResultId: fleetPerformanceTuningAnalysisResultId,
  * });
  * ```
  */

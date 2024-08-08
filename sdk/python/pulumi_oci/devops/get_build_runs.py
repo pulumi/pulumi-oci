@@ -84,9 +84,6 @@ class GetBuildRunsResult:
     @property
     @pulumi.getter
     def filters(self) -> Optional[Sequence['outputs.GetBuildRunsFilterResult']]:
-        """
-        The filters for the trigger.
-        """
         return pulumi.get(self, "filters")
 
     @property
@@ -161,7 +158,6 @@ def get_build_runs(build_pipeline_id: Optional[str] = None,
     :param str build_pipeline_id: Unique build pipeline identifier.
     :param str compartment_id: The OCID of the compartment in which to list resources.
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param Sequence[pulumi.InputType['GetBuildRunsFilterArgs']] filters: The filters for the trigger.
     :param str id: Unique identifier or OCID for listing a single resource by ID.
     :param str project_id: unique project identifier
     :param str state: A filter to return only build runs that matches the given lifecycle state.
@@ -220,7 +216,6 @@ def get_build_runs_output(build_pipeline_id: Optional[pulumi.Input[Optional[str]
     :param str build_pipeline_id: Unique build pipeline identifier.
     :param str compartment_id: The OCID of the compartment in which to list resources.
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param Sequence[pulumi.InputType['GetBuildRunsFilterArgs']] filters: The filters for the trigger.
     :param str id: Unique identifier or OCID for listing a single resource by ID.
     :param str project_id: unique project identifier
     :param str state: A filter to return only build runs that matches the given lifecycle state.

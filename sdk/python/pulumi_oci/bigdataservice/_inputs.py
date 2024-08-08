@@ -46,6 +46,7 @@ __all__ = [
     'BdsInstanceNodeAttachedBlockVolumeArgs',
     'BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs',
     'BdsInstanceOsPatchActionPatchingConfigArgs',
+    'BdsInstancePatchActionPatchingConfigArgs',
     'BdsInstanceUtilNodeArgs',
     'BdsInstanceUtilNodeShapeConfigArgs',
     'BdsInstanceWorkerNodeArgs',
@@ -348,7 +349,7 @@ class AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs:
                  metric_type: Optional[pulumi.Input[str]] = None,
                  threshold: Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs']] = None):
         """
-        :param pulumi.Input[str] metric_type: (Updatable) Allowed value is CPU_UTILIZATION.
+        :param pulumi.Input[str] metric_type: (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
         :param pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs'] threshold: (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
         """
         if metric_type is not None:
@@ -360,7 +361,7 @@ class AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs:
     @pulumi.getter(name="metricType")
     def metric_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Allowed value is CPU_UTILIZATION.
+        (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
         """
         return pulumi.get(self, "metric_type")
 
@@ -497,7 +498,7 @@ class AutoScalingConfigurationPolicyDetailsScaleInConfigMetricArgs:
                  metric_type: Optional[pulumi.Input[str]] = None,
                  threshold: Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdArgs']] = None):
         """
-        :param pulumi.Input[str] metric_type: (Updatable) Allowed value is CPU_UTILIZATION.
+        :param pulumi.Input[str] metric_type: (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
         :param pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdArgs'] threshold: (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
         """
         if metric_type is not None:
@@ -509,7 +510,7 @@ class AutoScalingConfigurationPolicyDetailsScaleInConfigMetricArgs:
     @pulumi.getter(name="metricType")
     def metric_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Allowed value is CPU_UTILIZATION.
+        (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
         """
         return pulumi.get(self, "metric_type")
 
@@ -646,7 +647,7 @@ class AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricArgs:
                  metric_type: Optional[pulumi.Input[str]] = None,
                  threshold: Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdArgs']] = None):
         """
-        :param pulumi.Input[str] metric_type: (Updatable) Allowed value is CPU_UTILIZATION.
+        :param pulumi.Input[str] metric_type: (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
         :param pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdArgs'] threshold: (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
         """
         if metric_type is not None:
@@ -658,7 +659,7 @@ class AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricArgs:
     @pulumi.getter(name="metricType")
     def metric_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Allowed value is CPU_UTILIZATION.
+        (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
         """
         return pulumi.get(self, "metric_type")
 
@@ -827,7 +828,7 @@ class AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs:
                  metric_type: Optional[pulumi.Input[str]] = None,
                  threshold: Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs']] = None):
         """
-        :param pulumi.Input[str] metric_type: (Updatable) Allowed value is CPU_UTILIZATION.
+        :param pulumi.Input[str] metric_type: (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
         :param pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs'] threshold: (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
         """
         if metric_type is not None:
@@ -839,7 +840,7 @@ class AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs:
     @pulumi.getter(name="metricType")
     def metric_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Allowed value is CPU_UTILIZATION.
+        (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
         """
         return pulumi.get(self, "metric_type")
 
@@ -1123,7 +1124,7 @@ class AutoScalingConfigurationPolicyRuleMetricArgs:
                  metric_type: pulumi.Input[str],
                  threshold: pulumi.Input['AutoScalingConfigurationPolicyRuleMetricThresholdArgs']):
         """
-        :param pulumi.Input[str] metric_type: (Updatable) Allowed value is CPU_UTILIZATION.
+        :param pulumi.Input[str] metric_type: (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
         :param pulumi.Input['AutoScalingConfigurationPolicyRuleMetricThresholdArgs'] threshold: (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
         """
         pulumi.set(__self__, "metric_type", metric_type)
@@ -1133,7 +1134,7 @@ class AutoScalingConfigurationPolicyRuleMetricArgs:
     @pulumi.getter(name="metricType")
     def metric_type(self) -> pulumi.Input[str]:
         """
-        (Updatable) Allowed value is CPU_UTILIZATION.
+        (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
         """
         return pulumi.get(self, "metric_type")
 
@@ -1216,7 +1217,10 @@ class BdsInstanceCloudSqlDetailArgs:
                  kerberos_details: Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceCloudSqlDetailKerberosDetailArgs']]]] = None,
                  memory_in_gbs: Optional[pulumi.Input[int]] = None,
                  nvmes: Optional[pulumi.Input[int]] = None,
-                 ocpus: Optional[pulumi.Input[int]] = None):
+                 ocpus: Optional[pulumi.Input[int]] = None,
+                 odh_version: Optional[pulumi.Input[str]] = None,
+                 os_version: Optional[pulumi.Input[str]] = None,
+                 ssh_fingerprint: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] shape: Shape of the node
         :param pulumi.Input[str] block_volume_size_in_gbs: The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
@@ -1226,6 +1230,9 @@ class BdsInstanceCloudSqlDetailArgs:
         :param pulumi.Input[int] memory_in_gbs: The total amount of memory available to the node, in gigabytes.
         :param pulumi.Input[int] nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param pulumi.Input[int] ocpus: The total number of OCPUs available to the node.
+        :param pulumi.Input[str] odh_version: Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+        :param pulumi.Input[str] os_version: BDS-assigned Operating System version for the node.
+        :param pulumi.Input[str] ssh_fingerprint: The fingerprint of the SSH key used for node access
         """
         pulumi.set(__self__, "shape", shape)
         if block_volume_size_in_gbs is not None:
@@ -1242,6 +1249,12 @@ class BdsInstanceCloudSqlDetailArgs:
             pulumi.set(__self__, "nvmes", nvmes)
         if ocpus is not None:
             pulumi.set(__self__, "ocpus", ocpus)
+        if odh_version is not None:
+            pulumi.set(__self__, "odh_version", odh_version)
+        if os_version is not None:
+            pulumi.set(__self__, "os_version", os_version)
+        if ssh_fingerprint is not None:
+            pulumi.set(__self__, "ssh_fingerprint", ssh_fingerprint)
 
     @property
     @pulumi.getter
@@ -1339,6 +1352,42 @@ class BdsInstanceCloudSqlDetailArgs:
     def ocpus(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "ocpus", value)
 
+    @property
+    @pulumi.getter(name="odhVersion")
+    def odh_version(self) -> Optional[pulumi.Input[str]]:
+        """
+        Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+        """
+        return pulumi.get(self, "odh_version")
+
+    @odh_version.setter
+    def odh_version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "odh_version", value)
+
+    @property
+    @pulumi.getter(name="osVersion")
+    def os_version(self) -> Optional[pulumi.Input[str]]:
+        """
+        BDS-assigned Operating System version for the node.
+        """
+        return pulumi.get(self, "os_version")
+
+    @os_version.setter
+    def os_version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "os_version", value)
+
+    @property
+    @pulumi.getter(name="sshFingerprint")
+    def ssh_fingerprint(self) -> Optional[pulumi.Input[str]]:
+        """
+        The fingerprint of the SSH key used for node access
+        """
+        return pulumi.get(self, "ssh_fingerprint")
+
+    @ssh_fingerprint.setter
+    def ssh_fingerprint(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ssh_fingerprint", value)
+
 
 @pulumi.input_type
 class BdsInstanceCloudSqlDetailKerberosDetailArgs:
@@ -1409,7 +1458,7 @@ class BdsInstanceClusterDetailArgs:
         :param pulumi.Input[str] db_version: Cloud SQL query server database version.
         :param pulumi.Input[str] hue_server_url: The URL of the Hue server.
         :param pulumi.Input[str] jupyter_hub_url: The URL of the Jupyterhub.
-        :param pulumi.Input[str] odh_version: Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
+        :param pulumi.Input[str] odh_version: Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
         :param pulumi.Input[str] os_version: BDS-assigned Operating System version for the node.
         :param pulumi.Input[str] time_created: The time the BDS instance was created. An RFC3339 formatted datetime string
         :param pulumi.Input[str] time_refreshed: The time the cluster was automatically or manually refreshed, shown as an RFC 3339 formatted datetime string.
@@ -1581,7 +1630,7 @@ class BdsInstanceClusterDetailArgs:
     @pulumi.getter(name="odhVersion")
     def odh_version(self) -> Optional[pulumi.Input[str]]:
         """
-        Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
+        Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
         """
         return pulumi.get(self, "odh_version")
 
@@ -2652,14 +2701,20 @@ class BdsInstanceOsPatchActionPatchingConfigArgs:
                  patching_config_strategy: pulumi.Input[str],
                  batch_size: Optional[pulumi.Input[int]] = None,
                  tolerance_threshold_per_batch: Optional[pulumi.Input[int]] = None,
-                 wait_time_between_batch_in_seconds: Optional[pulumi.Input[int]] = None):
+                 tolerance_threshold_per_domain: Optional[pulumi.Input[int]] = None,
+                 wait_time_between_batch_in_seconds: Optional[pulumi.Input[int]] = None,
+                 wait_time_between_domain_in_seconds: Optional[pulumi.Input[int]] = None):
         pulumi.set(__self__, "patching_config_strategy", patching_config_strategy)
         if batch_size is not None:
             pulumi.set(__self__, "batch_size", batch_size)
         if tolerance_threshold_per_batch is not None:
             pulumi.set(__self__, "tolerance_threshold_per_batch", tolerance_threshold_per_batch)
+        if tolerance_threshold_per_domain is not None:
+            pulumi.set(__self__, "tolerance_threshold_per_domain", tolerance_threshold_per_domain)
         if wait_time_between_batch_in_seconds is not None:
             pulumi.set(__self__, "wait_time_between_batch_in_seconds", wait_time_between_batch_in_seconds)
+        if wait_time_between_domain_in_seconds is not None:
+            pulumi.set(__self__, "wait_time_between_domain_in_seconds", wait_time_between_domain_in_seconds)
 
     @property
     @pulumi.getter(name="patchingConfigStrategy")
@@ -2689,6 +2744,15 @@ class BdsInstanceOsPatchActionPatchingConfigArgs:
         pulumi.set(self, "tolerance_threshold_per_batch", value)
 
     @property
+    @pulumi.getter(name="toleranceThresholdPerDomain")
+    def tolerance_threshold_per_domain(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "tolerance_threshold_per_domain")
+
+    @tolerance_threshold_per_domain.setter
+    def tolerance_threshold_per_domain(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "tolerance_threshold_per_domain", value)
+
+    @property
     @pulumi.getter(name="waitTimeBetweenBatchInSeconds")
     def wait_time_between_batch_in_seconds(self) -> Optional[pulumi.Input[int]]:
         return pulumi.get(self, "wait_time_between_batch_in_seconds")
@@ -2696,6 +2760,85 @@ class BdsInstanceOsPatchActionPatchingConfigArgs:
     @wait_time_between_batch_in_seconds.setter
     def wait_time_between_batch_in_seconds(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "wait_time_between_batch_in_seconds", value)
+
+    @property
+    @pulumi.getter(name="waitTimeBetweenDomainInSeconds")
+    def wait_time_between_domain_in_seconds(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "wait_time_between_domain_in_seconds")
+
+    @wait_time_between_domain_in_seconds.setter
+    def wait_time_between_domain_in_seconds(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "wait_time_between_domain_in_seconds", value)
+
+
+@pulumi.input_type
+class BdsInstancePatchActionPatchingConfigArgs:
+    def __init__(__self__, *,
+                 patching_config_strategy: pulumi.Input[str],
+                 batch_size: Optional[pulumi.Input[int]] = None,
+                 wait_time_between_batch_in_seconds: Optional[pulumi.Input[int]] = None,
+                 wait_time_between_domain_in_seconds: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[str] patching_config_strategy: Type of strategy used for detailed patching configuration
+        :param pulumi.Input[int] batch_size: How many nodes to be patched in each iteration.
+        :param pulumi.Input[int] wait_time_between_batch_in_seconds: The wait time between batches in seconds.
+        :param pulumi.Input[int] wait_time_between_domain_in_seconds: The wait time between AD/FD in seconds.
+        """
+        pulumi.set(__self__, "patching_config_strategy", patching_config_strategy)
+        if batch_size is not None:
+            pulumi.set(__self__, "batch_size", batch_size)
+        if wait_time_between_batch_in_seconds is not None:
+            pulumi.set(__self__, "wait_time_between_batch_in_seconds", wait_time_between_batch_in_seconds)
+        if wait_time_between_domain_in_seconds is not None:
+            pulumi.set(__self__, "wait_time_between_domain_in_seconds", wait_time_between_domain_in_seconds)
+
+    @property
+    @pulumi.getter(name="patchingConfigStrategy")
+    def patching_config_strategy(self) -> pulumi.Input[str]:
+        """
+        Type of strategy used for detailed patching configuration
+        """
+        return pulumi.get(self, "patching_config_strategy")
+
+    @patching_config_strategy.setter
+    def patching_config_strategy(self, value: pulumi.Input[str]):
+        pulumi.set(self, "patching_config_strategy", value)
+
+    @property
+    @pulumi.getter(name="batchSize")
+    def batch_size(self) -> Optional[pulumi.Input[int]]:
+        """
+        How many nodes to be patched in each iteration.
+        """
+        return pulumi.get(self, "batch_size")
+
+    @batch_size.setter
+    def batch_size(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "batch_size", value)
+
+    @property
+    @pulumi.getter(name="waitTimeBetweenBatchInSeconds")
+    def wait_time_between_batch_in_seconds(self) -> Optional[pulumi.Input[int]]:
+        """
+        The wait time between batches in seconds.
+        """
+        return pulumi.get(self, "wait_time_between_batch_in_seconds")
+
+    @wait_time_between_batch_in_seconds.setter
+    def wait_time_between_batch_in_seconds(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "wait_time_between_batch_in_seconds", value)
+
+    @property
+    @pulumi.getter(name="waitTimeBetweenDomainInSeconds")
+    def wait_time_between_domain_in_seconds(self) -> Optional[pulumi.Input[int]]:
+        """
+        The wait time between AD/FD in seconds.
+        """
+        return pulumi.get(self, "wait_time_between_domain_in_seconds")
+
+    @wait_time_between_domain_in_seconds.setter
+    def wait_time_between_domain_in_seconds(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "wait_time_between_domain_in_seconds", value)
 
 
 @pulumi.input_type

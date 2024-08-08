@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Fleet Export Setting resource in Oracle Cloud Infrastructure Jms service.
  *
- * Returns export setting for the specified Fleet.
+ * Returns export setting for the specified fleet.
  *
  * ## Example Usage
  *
@@ -83,7 +83,7 @@ export interface GetFleetExportSettingResult {
      */
     readonly targetBucketNamespace: string;
     /**
-     * The namespace of the bucket where data will be exported.
+     * The id of the region of the target bucket.
      */
     readonly targetBucketRegion: string;
     /**
@@ -98,7 +98,7 @@ export interface GetFleetExportSettingResult {
 /**
  * This data source provides details about a specific Fleet Export Setting resource in Oracle Cloud Infrastructure Jms service.
  *
- * Returns export setting for the specified Fleet.
+ * Returns export setting for the specified fleet.
  *
  * ## Example Usage
  *

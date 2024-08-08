@@ -7,6 +7,7 @@ import typing
 # Export this package's modules as members:
 from .fleet import *
 from .fleet_advanced_feature_configuration import *
+from .get_agent_installers import *
 from .get_announcements import *
 from .get_fleet import *
 from .get_fleet_advanced_feature_configuration import *
@@ -39,10 +40,13 @@ from .get_java_families import *
 from .get_java_family import *
 from .get_java_release import *
 from .get_java_releases import *
+from .get_jms_plugin import *
+from .get_jms_plugins import *
 from .get_list_jre_usage import *
 from .get_summarize_resource_inventory import *
 from .java_downloads_java_download_report import *
 from .java_downloads_java_download_token import *
 from .java_downloads_java_license_acceptance_record import *
+from .jms_plugin import *
 from ._inputs import *
 from . import outputs

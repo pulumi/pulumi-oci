@@ -16,14 +16,14 @@ public final class AutoScalingConfigurationPolicyRuleMetricArgs extends com.pulu
     public static final AutoScalingConfigurationPolicyRuleMetricArgs Empty = new AutoScalingConfigurationPolicyRuleMetricArgs();
 
     /**
-     * (Updatable) Allowed value is CPU_UTILIZATION.
+     * (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
      * 
      */
     @Import(name="metricType", required=true)
     private Output<String> metricType;
 
     /**
-     * @return (Updatable) Allowed value is CPU_UTILIZATION.
+     * @return (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
      * 
      */
     public Output<String> metricType() {
@@ -71,7 +71,7 @@ public final class AutoScalingConfigurationPolicyRuleMetricArgs extends com.pulu
         }
 
         /**
-         * @param metricType (Updatable) Allowed value is CPU_UTILIZATION.
+         * @param metricType (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class AutoScalingConfigurationPolicyRuleMetricArgs extends com.pulu
         }
 
         /**
-         * @param metricType (Updatable) Allowed value is CPU_UTILIZATION.
+         * @param metricType (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
          * 
          * @return builder
          * 

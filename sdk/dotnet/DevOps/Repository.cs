@@ -14,46 +14,6 @@ namespace Pulumi.Oci.DevOps
     /// 
     /// Creates a new repository.
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testRepository = new Oci.DevOps.Repository("test_repository", new()
-    ///     {
-    ///         Name = repositoryName,
-    ///         ProjectId = testProject.Id,
-    ///         RepositoryType = repositoryRepositoryType,
-    ///         DefaultBranch = repositoryDefaultBranch,
-    ///         DefinedTags = 
-    ///         {
-    ///             { "foo-namespace.bar-key", "value" },
-    ///         },
-    ///         Description = repositoryDescription,
-    ///         FreeformTags = 
-    ///         {
-    ///             { "bar-key", "value" },
-    ///         },
-    ///         MirrorRepositoryConfig = new Oci.DevOps.Inputs.RepositoryMirrorRepositoryConfigArgs
-    ///         {
-    ///             ConnectorId = testConnector.Id,
-    ///             RepositoryUrl = repositoryMirrorRepositoryConfigRepositoryUrl,
-    ///             TriggerSchedule = new Oci.DevOps.Inputs.RepositoryMirrorRepositoryConfigTriggerScheduleArgs
-    ///             {
-    ///                 ScheduleType = repositoryMirrorRepositoryConfigTriggerScheduleScheduleType,
-    ///                 CustomSchedule = repositoryMirrorRepositoryConfigTriggerScheduleCustomSchedule,
-    ///             },
-    ///         },
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// Repositories can be imported using the `id`, e.g.
@@ -126,7 +86,7 @@ namespace Pulumi.Oci.DevOps
         public Output<Outputs.RepositoryMirrorRepositoryConfig> MirrorRepositoryConfig { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Unique name of a repository.
+        /// (Updatable) Name of the repository. Should be unique within the project.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -136,6 +96,12 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         [Output("namespace")]
         public Output<string> Namespace { get; private set; } = null!;
+
+        /// <summary>
+        /// The OCID of the parent repository.
+        /// </summary>
+        [Output("parentRepositoryId")]
+        public Output<string> ParentRepositoryId { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the DevOps project containing the repository.
@@ -150,7 +116,7 @@ namespace Pulumi.Oci.DevOps
         public Output<string> ProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` 
+        /// (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED` 
         /// 
         /// 
         /// ** IMPORTANT **
@@ -196,7 +162,7 @@ namespace Pulumi.Oci.DevOps
         public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
-        /// Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
+        /// Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the repository. PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an open pull request. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
         /// </summary>
         [Output("triggerBuildEvents")]
         public Output<ImmutableArray<string>> TriggerBuildEvents { get; private set; } = null!;
@@ -290,10 +256,16 @@ namespace Pulumi.Oci.DevOps
         public Input<Inputs.RepositoryMirrorRepositoryConfigArgs>? MirrorRepositoryConfig { get; set; }
 
         /// <summary>
-        /// (Updatable) Unique name of a repository.
+        /// (Updatable) Name of the repository. Should be unique within the project.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
+
+        /// <summary>
+        /// The OCID of the parent repository.
+        /// </summary>
+        [Input("parentRepositoryId")]
+        public Input<string>? ParentRepositoryId { get; set; }
 
         /// <summary>
         /// The OCID of the DevOps project containing the repository.
@@ -302,7 +274,7 @@ namespace Pulumi.Oci.DevOps
         public Input<string> ProjectId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` 
+        /// (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED` 
         /// 
         /// 
         /// ** IMPORTANT **
@@ -392,7 +364,7 @@ namespace Pulumi.Oci.DevOps
         public Input<Inputs.RepositoryMirrorRepositoryConfigGetArgs>? MirrorRepositoryConfig { get; set; }
 
         /// <summary>
-        /// (Updatable) Unique name of a repository.
+        /// (Updatable) Name of the repository. Should be unique within the project.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -402,6 +374,12 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         [Input("namespace")]
         public Input<string>? Namespace { get; set; }
+
+        /// <summary>
+        /// The OCID of the parent repository.
+        /// </summary>
+        [Input("parentRepositoryId")]
+        public Input<string>? ParentRepositoryId { get; set; }
 
         /// <summary>
         /// The OCID of the DevOps project containing the repository.
@@ -416,7 +394,7 @@ namespace Pulumi.Oci.DevOps
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` 
+        /// (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED` 
         /// 
         /// 
         /// ** IMPORTANT **
@@ -471,7 +449,7 @@ namespace Pulumi.Oci.DevOps
         private InputList<string>? _triggerBuildEvents;
 
         /// <summary>
-        /// Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
+        /// Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the repository. PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an open pull request. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
         /// </summary>
         public InputList<string> TriggerBuildEvents
         {

@@ -23,7 +23,7 @@ class GetRepositoryDiffsResult:
     """
     A collection of values returned by getRepositoryDiffs.
     """
-    def __init__(__self__, base_version=None, diff_collections=None, filters=None, id=None, is_comparison_from_merge_base=None, repository_id=None, target_version=None):
+    def __init__(__self__, base_version=None, diff_collections=None, filters=None, id=None, is_comparison_from_merge_base=None, repository_id=None, target_repository_id=None, target_version=None):
         if base_version and not isinstance(base_version, str):
             raise TypeError("Expected argument 'base_version' to be a str")
         pulumi.set(__self__, "base_version", base_version)
@@ -42,6 +42,9 @@ class GetRepositoryDiffsResult:
         if repository_id and not isinstance(repository_id, str):
             raise TypeError("Expected argument 'repository_id' to be a str")
         pulumi.set(__self__, "repository_id", repository_id)
+        if target_repository_id and not isinstance(target_repository_id, str):
+            raise TypeError("Expected argument 'target_repository_id' to be a str")
+        pulumi.set(__self__, "target_repository_id", target_repository_id)
         if target_version and not isinstance(target_version, str):
             raise TypeError("Expected argument 'target_version' to be a str")
         pulumi.set(__self__, "target_version", target_version)
@@ -83,6 +86,11 @@ class GetRepositoryDiffsResult:
         return pulumi.get(self, "repository_id")
 
     @property
+    @pulumi.getter(name="targetRepositoryId")
+    def target_repository_id(self) -> Optional[str]:
+        return pulumi.get(self, "target_repository_id")
+
+    @property
     @pulumi.getter(name="targetVersion")
     def target_version(self) -> str:
         return pulumi.get(self, "target_version")
@@ -100,6 +108,7 @@ class AwaitableGetRepositoryDiffsResult(GetRepositoryDiffsResult):
             id=self.id,
             is_comparison_from_merge_base=self.is_comparison_from_merge_base,
             repository_id=self.repository_id,
+            target_repository_id=self.target_repository_id,
             target_version=self.target_version)
 
 
@@ -107,6 +116,7 @@ def get_repository_diffs(base_version: Optional[str] = None,
                          filters: Optional[Sequence[pulumi.InputType['GetRepositoryDiffsFilterArgs']]] = None,
                          is_comparison_from_merge_base: Optional[bool] = None,
                          repository_id: Optional[str] = None,
+                         target_repository_id: Optional[str] = None,
                          target_version: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRepositoryDiffsResult:
     """
@@ -123,13 +133,15 @@ def get_repository_diffs(base_version: Optional[str] = None,
     test_repository_diffs = oci.DevOps.get_repository_diffs(base_version=repository_diff_base_version,
         repository_id=test_repository["id"],
         target_version=repository_diff_target_version,
-        is_comparison_from_merge_base=repository_diff_is_comparison_from_merge_base)
+        is_comparison_from_merge_base=repository_diff_is_comparison_from_merge_base,
+        target_repository_id=test_repository["id"])
     ```
 
 
     :param str base_version: The commit or reference name to compare changes against.
     :param bool is_comparison_from_merge_base: Boolean value to indicate whether to use merge base or most recent revision.
     :param str repository_id: Unique repository identifier.
+    :param str target_repository_id: The target repository identifier
     :param str target_version: The commit or reference name where changes are coming from.
     """
     __args__ = dict()
@@ -137,6 +149,7 @@ def get_repository_diffs(base_version: Optional[str] = None,
     __args__['filters'] = filters
     __args__['isComparisonFromMergeBase'] = is_comparison_from_merge_base
     __args__['repositoryId'] = repository_id
+    __args__['targetRepositoryId'] = target_repository_id
     __args__['targetVersion'] = target_version
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:DevOps/getRepositoryDiffs:getRepositoryDiffs', __args__, opts=opts, typ=GetRepositoryDiffsResult).value
@@ -148,6 +161,7 @@ def get_repository_diffs(base_version: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         is_comparison_from_merge_base=pulumi.get(__ret__, 'is_comparison_from_merge_base'),
         repository_id=pulumi.get(__ret__, 'repository_id'),
+        target_repository_id=pulumi.get(__ret__, 'target_repository_id'),
         target_version=pulumi.get(__ret__, 'target_version'))
 
 
@@ -156,6 +170,7 @@ def get_repository_diffs_output(base_version: Optional[pulumi.Input[str]] = None
                                 filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetRepositoryDiffsFilterArgs']]]]] = None,
                                 is_comparison_from_merge_base: Optional[pulumi.Input[Optional[bool]]] = None,
                                 repository_id: Optional[pulumi.Input[str]] = None,
+                                target_repository_id: Optional[pulumi.Input[Optional[str]]] = None,
                                 target_version: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRepositoryDiffsResult]:
     """
@@ -172,13 +187,15 @@ def get_repository_diffs_output(base_version: Optional[pulumi.Input[str]] = None
     test_repository_diffs = oci.DevOps.get_repository_diffs(base_version=repository_diff_base_version,
         repository_id=test_repository["id"],
         target_version=repository_diff_target_version,
-        is_comparison_from_merge_base=repository_diff_is_comparison_from_merge_base)
+        is_comparison_from_merge_base=repository_diff_is_comparison_from_merge_base,
+        target_repository_id=test_repository["id"])
     ```
 
 
     :param str base_version: The commit or reference name to compare changes against.
     :param bool is_comparison_from_merge_base: Boolean value to indicate whether to use merge base or most recent revision.
     :param str repository_id: Unique repository identifier.
+    :param str target_repository_id: The target repository identifier
     :param str target_version: The commit or reference name where changes are coming from.
     """
     ...

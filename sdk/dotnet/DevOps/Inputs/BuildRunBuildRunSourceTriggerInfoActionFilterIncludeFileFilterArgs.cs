@@ -14,6 +14,10 @@ namespace Pulumi.Oci.DevOps.Inputs
     {
         [Input("filePaths")]
         private InputList<string>? _filePaths;
+
+        /// <summary>
+        /// The file paths/glob pattern for files.
+        /// </summary>
         public InputList<string> FilePaths
         {
             get => _filePaths ?? (_filePaths = new InputList<string>());

@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Jms
         ///     var testFleetJavaMigrationAnalysisResult = Oci.Jms.GetFleetJavaMigrationAnalysisResult.Invoke(new()
         ///     {
         ///         FleetId = testFleet.Id,
-        ///         JavaMigrationAnalysisResultId = testResult.Id,
+        ///         JavaMigrationAnalysisResultId = fleetJavaMigrationAnalysisResultId,
         ///     });
         /// 
         /// });
@@ -56,7 +56,7 @@ namespace Pulumi.Oci.Jms
         ///     var testFleetJavaMigrationAnalysisResult = Oci.Jms.GetFleetJavaMigrationAnalysisResult.Invoke(new()
         ///     {
         ///         FleetId = testFleet.Id,
-        ///         JavaMigrationAnalysisResultId = testResult.Id,
+        ///         JavaMigrationAnalysisResultId = fleetJavaMigrationAnalysisResultId,
         ///     });
         /// 
         /// });

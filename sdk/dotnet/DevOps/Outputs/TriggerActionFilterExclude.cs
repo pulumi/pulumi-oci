@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DevOps.Outputs
     public sealed class TriggerActionFilterExclude
     {
         /// <summary>
-        /// (Updatable) Attributes to support include/exclude files for triggering build runs.
+        /// Attributes to support include/exclude files for triggering build runs.
         /// </summary>
         public readonly Outputs.TriggerActionFilterExcludeFileFilter? FileFilter;
 

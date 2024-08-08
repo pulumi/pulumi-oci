@@ -16,50 +16,6 @@ import (
 //
 // Creates a new repository.
 //
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DevOps"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DevOps.NewRepository(ctx, "test_repository", &DevOps.RepositoryArgs{
-//				Name:           pulumi.Any(repositoryName),
-//				ProjectId:      pulumi.Any(testProject.Id),
-//				RepositoryType: pulumi.Any(repositoryRepositoryType),
-//				DefaultBranch:  pulumi.Any(repositoryDefaultBranch),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
-//				},
-//				Description: pulumi.Any(repositoryDescription),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
-//				},
-//				MirrorRepositoryConfig: &devops.RepositoryMirrorRepositoryConfigArgs{
-//					ConnectorId:   pulumi.Any(testConnector.Id),
-//					RepositoryUrl: pulumi.Any(repositoryMirrorRepositoryConfigRepositoryUrl),
-//					TriggerSchedule: &devops.RepositoryMirrorRepositoryConfigTriggerScheduleArgs{
-//						ScheduleType:   pulumi.Any(repositoryMirrorRepositoryConfigTriggerScheduleScheduleType),
-//						CustomSchedule: pulumi.Any(repositoryMirrorRepositoryConfigTriggerScheduleCustomSchedule),
-//					},
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
 // ## Import
 //
 // Repositories can be imported using the `id`, e.g.
@@ -90,15 +46,17 @@ type Repository struct {
 	LifecyleDetails pulumi.StringOutput `pulumi:"lifecyleDetails"`
 	// (Updatable) Configuration information for mirroring the repository.
 	MirrorRepositoryConfig RepositoryMirrorRepositoryConfigOutput `pulumi:"mirrorRepositoryConfig"`
-	// (Updatable) Unique name of a repository.
+	// (Updatable) Name of the repository. Should be unique within the project.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// Tenancy unique namespace.
 	Namespace pulumi.StringOutput `pulumi:"namespace"`
+	// The OCID of the parent repository.
+	ParentRepositoryId pulumi.StringOutput `pulumi:"parentRepositoryId"`
 	// The OCID of the DevOps project containing the repository.
 	ProjectId pulumi.StringOutput `pulumi:"projectId"`
 	// Unique project name in a namespace.
 	ProjectName pulumi.StringOutput `pulumi:"projectName"`
-	// (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
+	// (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -115,7 +73,7 @@ type Repository struct {
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the repository was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
-	// Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
+	// Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the repository. PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an open pull request. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
 	TriggerBuildEvents pulumi.StringArrayOutput `pulumi:"triggerBuildEvents"`
 }
 
@@ -175,15 +133,17 @@ type repositoryState struct {
 	LifecyleDetails *string `pulumi:"lifecyleDetails"`
 	// (Updatable) Configuration information for mirroring the repository.
 	MirrorRepositoryConfig *RepositoryMirrorRepositoryConfig `pulumi:"mirrorRepositoryConfig"`
-	// (Updatable) Unique name of a repository.
+	// (Updatable) Name of the repository. Should be unique within the project.
 	Name *string `pulumi:"name"`
 	// Tenancy unique namespace.
 	Namespace *string `pulumi:"namespace"`
+	// The OCID of the parent repository.
+	ParentRepositoryId *string `pulumi:"parentRepositoryId"`
 	// The OCID of the DevOps project containing the repository.
 	ProjectId *string `pulumi:"projectId"`
 	// Unique project name in a namespace.
 	ProjectName *string `pulumi:"projectName"`
-	// (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
+	// (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -200,7 +160,7 @@ type repositoryState struct {
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the repository was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated *string `pulumi:"timeUpdated"`
-	// Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
+	// Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the repository. PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an open pull request. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
 	TriggerBuildEvents []string `pulumi:"triggerBuildEvents"`
 }
 
@@ -225,15 +185,17 @@ type RepositoryState struct {
 	LifecyleDetails pulumi.StringPtrInput
 	// (Updatable) Configuration information for mirroring the repository.
 	MirrorRepositoryConfig RepositoryMirrorRepositoryConfigPtrInput
-	// (Updatable) Unique name of a repository.
+	// (Updatable) Name of the repository. Should be unique within the project.
 	Name pulumi.StringPtrInput
 	// Tenancy unique namespace.
 	Namespace pulumi.StringPtrInput
+	// The OCID of the parent repository.
+	ParentRepositoryId pulumi.StringPtrInput
 	// The OCID of the DevOps project containing the repository.
 	ProjectId pulumi.StringPtrInput
 	// Unique project name in a namespace.
 	ProjectName pulumi.StringPtrInput
-	// (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
+	// (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -250,7 +212,7 @@ type RepositoryState struct {
 	TimeCreated pulumi.StringPtrInput
 	// The time the repository was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated pulumi.StringPtrInput
-	// Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
+	// Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the repository. PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an open pull request. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
 	TriggerBuildEvents pulumi.StringArrayInput
 }
 
@@ -269,11 +231,13 @@ type repositoryArgs struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) Configuration information for mirroring the repository.
 	MirrorRepositoryConfig *RepositoryMirrorRepositoryConfig `pulumi:"mirrorRepositoryConfig"`
-	// (Updatable) Unique name of a repository.
+	// (Updatable) Name of the repository. Should be unique within the project.
 	Name *string `pulumi:"name"`
+	// The OCID of the parent repository.
+	ParentRepositoryId *string `pulumi:"parentRepositoryId"`
 	// The OCID of the DevOps project containing the repository.
 	ProjectId string `pulumi:"projectId"`
-	// (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
+	// (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -292,11 +256,13 @@ type RepositoryArgs struct {
 	FreeformTags pulumi.MapInput
 	// (Updatable) Configuration information for mirroring the repository.
 	MirrorRepositoryConfig RepositoryMirrorRepositoryConfigPtrInput
-	// (Updatable) Unique name of a repository.
+	// (Updatable) Name of the repository. Should be unique within the project.
 	Name pulumi.StringPtrInput
+	// The OCID of the parent repository.
+	ParentRepositoryId pulumi.StringPtrInput
 	// The OCID of the DevOps project containing the repository.
 	ProjectId pulumi.StringInput
-	// (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
+	// (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -440,7 +406,7 @@ func (o RepositoryOutput) MirrorRepositoryConfig() RepositoryMirrorRepositoryCon
 	return o.ApplyT(func(v *Repository) RepositoryMirrorRepositoryConfigOutput { return v.MirrorRepositoryConfig }).(RepositoryMirrorRepositoryConfigOutput)
 }
 
-// (Updatable) Unique name of a repository.
+// (Updatable) Name of the repository. Should be unique within the project.
 func (o RepositoryOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *Repository) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
@@ -448,6 +414,11 @@ func (o RepositoryOutput) Name() pulumi.StringOutput {
 // Tenancy unique namespace.
 func (o RepositoryOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v *Repository) pulumi.StringOutput { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// The OCID of the parent repository.
+func (o RepositoryOutput) ParentRepositoryId() pulumi.StringOutput {
+	return o.ApplyT(func(v *Repository) pulumi.StringOutput { return v.ParentRepositoryId }).(pulumi.StringOutput)
 }
 
 // The OCID of the DevOps project containing the repository.
@@ -460,7 +431,7 @@ func (o RepositoryOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Repository) pulumi.StringOutput { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
+// (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED`
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -498,7 +469,7 @@ func (o RepositoryOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *Repository) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
+// Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the repository. PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an open pull request. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
 func (o RepositoryOutput) TriggerBuildEvents() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Repository) pulumi.StringArrayOutput { return v.TriggerBuildEvents }).(pulumi.StringArrayOutput)
 }

@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DevOps.Inputs
         private InputList<string>? _filePaths;
 
         /// <summary>
-        /// (Updatable) The file paths/glob pattern for files.
+        /// The file paths/glob pattern for files.
         /// </summary>
         public InputList<string> FilePaths
         {

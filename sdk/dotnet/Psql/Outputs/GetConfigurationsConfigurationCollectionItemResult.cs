@@ -18,12 +18,16 @@ namespace Pulumi.Oci.Psql.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
+        /// The type of configuration. Either user-created or a default configuration.
+        /// </summary>
+        public readonly string ConfigType;
+        /// <summary>
         /// List of configuration details.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetConfigurationsConfigurationCollectionItemConfigurationDetailResult> ConfigurationDetails;
         public readonly ImmutableArray<Outputs.GetConfigurationsConfigurationCollectionItemDbConfigurationOverrideResult> DbConfigurationOverrides;
         /// <summary>
-        /// Verison of the PostgreSQL database, such as 14.9.
+        /// Version of the PostgreSQL database, such as 14.9.
         /// </summary>
         public readonly string DbVersion;
         /// <summary>
@@ -55,6 +59,10 @@ namespace Pulumi.Oci.Psql.Outputs
         /// </summary>
         public readonly int InstanceOcpuCount;
         /// <summary>
+        /// Whether the configuration supports flexible shapes.
+        /// </summary>
+        public readonly bool IsFlexible;
+        /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         public readonly string LifecycleDetails;
@@ -79,6 +87,8 @@ namespace Pulumi.Oci.Psql.Outputs
         private GetConfigurationsConfigurationCollectionItemResult(
             string compartmentId,
 
+            string configType,
+
             ImmutableArray<Outputs.GetConfigurationsConfigurationCollectionItemConfigurationDetailResult> configurationDetails,
 
             ImmutableArray<Outputs.GetConfigurationsConfigurationCollectionItemDbConfigurationOverrideResult> dbConfigurationOverrides,
@@ -99,6 +109,8 @@ namespace Pulumi.Oci.Psql.Outputs
 
             int instanceOcpuCount,
 
+            bool isFlexible,
+
             string lifecycleDetails,
 
             string shape,
@@ -110,6 +122,7 @@ namespace Pulumi.Oci.Psql.Outputs
             string timeCreated)
         {
             CompartmentId = compartmentId;
+            ConfigType = configType;
             ConfigurationDetails = configurationDetails;
             DbConfigurationOverrides = dbConfigurationOverrides;
             DbVersion = dbVersion;
@@ -120,6 +133,7 @@ namespace Pulumi.Oci.Psql.Outputs
             Id = id;
             InstanceMemorySizeInGbs = instanceMemorySizeInGbs;
             InstanceOcpuCount = instanceOcpuCount;
+            IsFlexible = isFlexible;
             LifecycleDetails = lifecycleDetails;
             Shape = shape;
             State = state;

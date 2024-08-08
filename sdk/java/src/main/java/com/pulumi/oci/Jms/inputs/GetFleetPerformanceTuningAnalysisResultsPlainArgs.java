@@ -55,6 +55,21 @@ public final class GetFleetPerformanceTuningAnalysisResultsPlainArgs extends com
     }
 
     /**
+     * The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
+     * 
+     */
+    @Import(name="hostName")
+    private @Nullable String hostName;
+
+    /**
+     * @return The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
+     * 
+     */
+    public Optional<String> hostName() {
+        return Optional.ofNullable(this.hostName);
+    }
+
+    /**
      * The Fleet-unique identifier of the related managed instance.
      * 
      */
@@ -105,6 +120,7 @@ public final class GetFleetPerformanceTuningAnalysisResultsPlainArgs extends com
         this.applicationId = $.applicationId;
         this.filters = $.filters;
         this.fleetId = $.fleetId;
+        this.hostName = $.hostName;
         this.managedInstanceId = $.managedInstanceId;
         this.timeEnd = $.timeEnd;
         this.timeStart = $.timeStart;
@@ -156,6 +172,17 @@ public final class GetFleetPerformanceTuningAnalysisResultsPlainArgs extends com
          */
         public Builder fleetId(String fleetId) {
             $.fleetId = fleetId;
+            return this;
+        }
+
+        /**
+         * @param hostName The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder hostName(@Nullable String hostName) {
+            $.hostName = hostName;
             return this;
         }
 

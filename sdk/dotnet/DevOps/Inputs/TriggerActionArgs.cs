@@ -18,9 +18,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         [Input("buildPipelineId", required: true)]
         public Input<string> BuildPipelineId { get; set; } = null!;
 
-        /// <summary>
-        /// (Updatable) The filters for the trigger.
-        /// </summary>
         [Input("filter")]
         public Input<Inputs.TriggerActionFilterArgs>? Filter { get; set; }
 

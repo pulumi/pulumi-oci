@@ -19,6 +19,15 @@ import * as utilities from "../utilities";
  *
  * const testDbSystem = new oci.psql.DbSystem("test_db_system", {
  *     compartmentId: compartmentId,
+ *     credentials: {
+ *         passwordDetails: {
+ *             passwordType: dbSystemCredentialsPasswordDetailsPasswordType,
+ *             password: dbSystemCredentialsPasswordDetailsPassword,
+ *             secretId: testSecret.id,
+ *             secretVersion: dbSystemCredentialsPasswordDetailsSecretVersion,
+ *         },
+ *         username: dbSystemCredentialsUsername,
+ *     },
  *     dbVersion: dbSystemDbVersion,
  *     displayName: dbSystemDisplayName,
  *     networkDetails: {
@@ -34,16 +43,6 @@ import * as utilities from "../utilities";
  *         iops: dbSystemStorageDetailsIops,
  *     },
  *     configId: testConfig.id,
- *     applyConfig: dbSystemApplyConfigType,
- *     credentials: {
- *         passwordDetails: {
- *             passwordType: dbSystemCredentialsPasswordDetailsPasswordType,
- *             password: dbSystemCredentialsPasswordDetailsPassword,
- *             secretId: testSecret.id,
- *             secretVersion: dbSystemCredentialsPasswordDetailsSecretVersion,
- *         },
- *         username: dbSystemCredentialsUsername,
- *     },
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
@@ -160,15 +159,15 @@ export class DbSystem extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable when patchOperations are specified) Count of database instances nodes to be created in the database system.
+     * Count of database instances nodes to be created in the database system.
      */
     public readonly instanceCount!: pulumi.Output<number>;
     /**
-     * The total amount of memory available to each database instance node, in gigabytes.
+     * (Updatable) The total amount of memory available to each database instance node, in gigabytes.
      */
     public readonly instanceMemorySizeInGbs!: pulumi.Output<number>;
     /**
-     * The total number of OCPUs available to each database instance node.
+     * (Updatable) The total number of OCPUs available to each database instance node.
      */
     public readonly instanceOcpuCount!: pulumi.Output<number>;
     /**
@@ -188,7 +187,7 @@ export class DbSystem extends pulumi.CustomResource {
      */
     public readonly managementPolicy!: pulumi.Output<outputs.Psql.DbSystemManagementPolicy>;
     /**
-     * Network details for the database system.
+     * (Updatable) Network details for the database system.
      */
     public readonly networkDetails!: pulumi.Output<outputs.Psql.DbSystemNetworkDetails>;
     /**
@@ -196,7 +195,7 @@ export class DbSystem extends pulumi.CustomResource {
      */
     public readonly patchOperations!: pulumi.Output<outputs.Psql.DbSystemPatchOperation[] | undefined>;
     /**
-     * The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
+     * (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
      */
     public readonly shape!: pulumi.Output<string>;
     /**
@@ -370,15 +369,15 @@ export interface DbSystemState {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable when patchOperations are specified) Count of database instances nodes to be created in the database system.
+     * Count of database instances nodes to be created in the database system.
      */
     instanceCount?: pulumi.Input<number>;
     /**
-     * The total amount of memory available to each database instance node, in gigabytes.
+     * (Updatable) The total amount of memory available to each database instance node, in gigabytes.
      */
     instanceMemorySizeInGbs?: pulumi.Input<number>;
     /**
-     * The total number of OCPUs available to each database instance node.
+     * (Updatable) The total number of OCPUs available to each database instance node.
      */
     instanceOcpuCount?: pulumi.Input<number>;
     /**
@@ -398,7 +397,7 @@ export interface DbSystemState {
      */
     managementPolicy?: pulumi.Input<inputs.Psql.DbSystemManagementPolicy>;
     /**
-     * Network details for the database system.
+     * (Updatable) Network details for the database system.
      */
     networkDetails?: pulumi.Input<inputs.Psql.DbSystemNetworkDetails>;
     /**
@@ -406,7 +405,7 @@ export interface DbSystemState {
      */
     patchOperations?: pulumi.Input<pulumi.Input<inputs.Psql.DbSystemPatchOperation>[]>;
     /**
-     * The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
+     * (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
      */
     shape?: pulumi.Input<string>;
     /**
@@ -484,15 +483,15 @@ export interface DbSystemArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable when patchOperations are specified) Count of database instances nodes to be created in the database system.
+     * Count of database instances nodes to be created in the database system.
      */
     instanceCount?: pulumi.Input<number>;
     /**
-     * The total amount of memory available to each database instance node, in gigabytes.
+     * (Updatable) The total amount of memory available to each database instance node, in gigabytes.
      */
     instanceMemorySizeInGbs?: pulumi.Input<number>;
     /**
-     * The total number of OCPUs available to each database instance node.
+     * (Updatable) The total number of OCPUs available to each database instance node.
      */
     instanceOcpuCount?: pulumi.Input<number>;
     /**
@@ -504,7 +503,7 @@ export interface DbSystemArgs {
      */
     managementPolicy?: pulumi.Input<inputs.Psql.DbSystemManagementPolicy>;
     /**
-     * Network details for the database system.
+     * (Updatable) Network details for the database system.
      */
     networkDetails: pulumi.Input<inputs.Psql.DbSystemNetworkDetails>;
     /**
@@ -512,7 +511,7 @@ export interface DbSystemArgs {
      */
     patchOperations?: pulumi.Input<pulumi.Input<inputs.Psql.DbSystemPatchOperation>[]>;
     /**
-     * The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
+     * (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
      */
     shape: pulumi.Input<string>;
     /**

@@ -12,7 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig {
     /**
-     * @return Upstream git repository connection identifer.
+     * @return Upstream git repository connection identifier.
      * 
      */
     private String connectorId;
@@ -29,7 +29,7 @@ public final class GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig
 
     private GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig() {}
     /**
-     * @return Upstream git repository connection identifer.
+     * @return Upstream git repository connection identifier.
      * 
      */
     public String connectorId() {

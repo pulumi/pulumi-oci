@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Jms.Outputs
         /// </summary>
         public readonly string FleetId;
         /// <summary>
-        /// The hostname of the managed instance.
+        /// The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
         /// </summary>
         public readonly string HostName;
         /// <summary>
@@ -66,11 +66,11 @@ namespace Pulumi.Oci.Jms.Outputs
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The time the JFR capture finished.
+        /// The time the JFR recording has finished.
         /// </summary>
         public readonly string TimeFinished;
         /// <summary>
-        /// The time the JFR capture started.
+        /// The time the JFR recording has started.
         /// </summary>
         public readonly string TimeStarted;
         /// <summary>

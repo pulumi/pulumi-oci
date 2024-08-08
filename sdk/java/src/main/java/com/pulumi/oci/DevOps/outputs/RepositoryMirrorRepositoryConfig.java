@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class RepositoryMirrorRepositoryConfig {
     /**
-     * @return (Updatable) Upstream git repository connection identifer.
+     * @return (Updatable) Upstream git repository connection identifier.
      * 
      */
     private @Nullable String connectorId;
@@ -30,7 +30,7 @@ public final class RepositoryMirrorRepositoryConfig {
 
     private RepositoryMirrorRepositoryConfig() {}
     /**
-     * @return (Updatable) Upstream git repository connection identifer.
+     * @return (Updatable) Upstream git repository connection identifier.
      * 
      */
     public Optional<String> connectorId() {

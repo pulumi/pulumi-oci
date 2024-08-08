@@ -15,12 +15,22 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFleetJavaMigrationAnalysisResultsResult {
+    /**
+     * @return The name of the application for which the Java migration analysis was performed.
+     * 
+     */
+    private @Nullable String applicationName;
     private @Nullable List<GetFleetJavaMigrationAnalysisResultsFilter> filters;
     /**
      * @return The fleet OCID.
      * 
      */
     private String fleetId;
+    /**
+     * @return The hostname of the managed instance that hosts the application for which the Java migration analysis was performed.
+     * 
+     */
+    private @Nullable String hostName;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
@@ -40,6 +50,13 @@ public final class GetFleetJavaMigrationAnalysisResultsResult {
     private @Nullable String timeStart;
 
     private GetFleetJavaMigrationAnalysisResultsResult() {}
+    /**
+     * @return The name of the application for which the Java migration analysis was performed.
+     * 
+     */
+    public Optional<String> applicationName() {
+        return Optional.ofNullable(this.applicationName);
+    }
     public List<GetFleetJavaMigrationAnalysisResultsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -49,6 +66,13 @@ public final class GetFleetJavaMigrationAnalysisResultsResult {
      */
     public String fleetId() {
         return this.fleetId;
+    }
+    /**
+     * @return The hostname of the managed instance that hosts the application for which the Java migration analysis was performed.
+     * 
+     */
+    public Optional<String> hostName() {
+        return Optional.ofNullable(this.hostName);
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
@@ -87,8 +111,10 @@ public final class GetFleetJavaMigrationAnalysisResultsResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String applicationName;
         private @Nullable List<GetFleetJavaMigrationAnalysisResultsFilter> filters;
         private String fleetId;
+        private @Nullable String hostName;
         private String id;
         private List<GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection> javaMigrationAnalysisResultCollections;
         private @Nullable String managedInstanceId;
@@ -97,8 +123,10 @@ public final class GetFleetJavaMigrationAnalysisResultsResult {
         public Builder() {}
         public Builder(GetFleetJavaMigrationAnalysisResultsResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.applicationName = defaults.applicationName;
     	      this.filters = defaults.filters;
     	      this.fleetId = defaults.fleetId;
+    	      this.hostName = defaults.hostName;
     	      this.id = defaults.id;
     	      this.javaMigrationAnalysisResultCollections = defaults.javaMigrationAnalysisResultCollections;
     	      this.managedInstanceId = defaults.managedInstanceId;
@@ -106,6 +134,12 @@ public final class GetFleetJavaMigrationAnalysisResultsResult {
     	      this.timeStart = defaults.timeStart;
         }
 
+        @CustomType.Setter
+        public Builder applicationName(@Nullable String applicationName) {
+
+            this.applicationName = applicationName;
+            return this;
+        }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetFleetJavaMigrationAnalysisResultsFilter> filters) {
 
@@ -121,6 +155,12 @@ public final class GetFleetJavaMigrationAnalysisResultsResult {
               throw new MissingRequiredPropertyException("GetFleetJavaMigrationAnalysisResultsResult", "fleetId");
             }
             this.fleetId = fleetId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder hostName(@Nullable String hostName) {
+
+            this.hostName = hostName;
             return this;
         }
         @CustomType.Setter
@@ -162,8 +202,10 @@ public final class GetFleetJavaMigrationAnalysisResultsResult {
         }
         public GetFleetJavaMigrationAnalysisResultsResult build() {
             final var _resultValue = new GetFleetJavaMigrationAnalysisResultsResult();
+            _resultValue.applicationName = applicationName;
             _resultValue.filters = filters;
             _resultValue.fleetId = fleetId;
+            _resultValue.hostName = hostName;
             _resultValue.id = id;
             _resultValue.javaMigrationAnalysisResultCollections = javaMigrationAnalysisResultCollections;
             _resultValue.managedInstanceId = managedInstanceId;

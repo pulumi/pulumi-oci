@@ -68,7 +68,7 @@ public final class GetFleetsFleetCollectionItem {
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return The ID of the Fleet.
+     * @return The ID.
      * 
      */
     private String id;
@@ -180,7 +180,7 @@ public final class GetFleetsFleetCollectionItem {
         return this.freeformTags;
     }
     /**
-     * @return The ID of the Fleet.
+     * @return The ID.
      * 
      */
     public String id() {

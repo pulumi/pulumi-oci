@@ -19,7 +19,9 @@ namespace Pulumi.Oci.Psql.Inputs
         public Input<Inputs.DbSystemManagementPolicyBackupPolicyGetArgs>? BackupPolicy { get; set; }
 
         /// <summary>
-        /// (Updatable) The start of the maintenance window.
+        /// (Updatable) The start of the maintenance window in UTC.
+        /// 
+        /// This string is of the format: "{day-of-week} {time-of-day}". "{day-of-week}" is a case-insensitive string like "mon", "tue", &amp;c. "{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
         /// </summary>
         [Input("maintenanceWindowStart")]
         public Input<string>? MaintenanceWindowStart { get; set; }

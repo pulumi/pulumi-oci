@@ -42,9 +42,21 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// </summary>
         public readonly int Ocpus;
         /// <summary>
+        /// Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+        /// </summary>
+        public readonly string OdhVersion;
+        /// <summary>
+        /// BDS-assigned Operating System version for the node.
+        /// </summary>
+        public readonly string OsVersion;
+        /// <summary>
         /// Shape of the node.
         /// </summary>
         public readonly string Shape;
+        /// <summary>
+        /// The fingerprint of the SSH key used for node access.
+        /// </summary>
+        public readonly string SshFingerprint;
 
         [OutputConstructor]
         private GetBdsInstancesBdsInstanceCloudSqlDetailResult(
@@ -62,7 +74,13 @@ namespace Pulumi.Oci.BigDataService.Outputs
 
             int ocpus,
 
-            string shape)
+            string odhVersion,
+
+            string osVersion,
+
+            string shape,
+
+            string sshFingerprint)
         {
             BlockVolumeSizeInGbs = blockVolumeSizeInGbs;
             IpAddress = ipAddress;
@@ -71,7 +89,10 @@ namespace Pulumi.Oci.BigDataService.Outputs
             MemoryInGbs = memoryInGbs;
             Nvmes = nvmes;
             Ocpus = ocpus;
+            OdhVersion = odhVersion;
+            OsVersion = osVersion;
             Shape = shape;
+            SshFingerprint = sshFingerprint;
         }
     }
 }

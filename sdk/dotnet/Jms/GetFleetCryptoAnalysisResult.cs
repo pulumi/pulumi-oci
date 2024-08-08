@@ -28,7 +28,7 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testFleetCryptoAnalysisResult = Oci.Jms.GetFleetCryptoAnalysisResult.Invoke(new()
         ///     {
-        ///         CryptoAnalysisResultId = testResult.Id,
+        ///         CryptoAnalysisResultId = fleetCryptoAnalysisResultId,
         ///         FleetId = testFleet.Id,
         ///     });
         /// 
@@ -55,7 +55,7 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testFleetCryptoAnalysisResult = Oci.Jms.GetFleetCryptoAnalysisResult.Invoke(new()
         ///     {
-        ///         CryptoAnalysisResultId = testResult.Id,
+        ///         CryptoAnalysisResultId = fleetCryptoAnalysisResultId,
         ///         FleetId = testFleet.Id,
         ///     });
         /// 
@@ -165,6 +165,10 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
+        /// The time the JFR recording has finished.
+        /// </summary>
+        public readonly string TimeFinished;
+        /// <summary>
         /// Time of the first event in the analysis.
         /// </summary>
         public readonly string TimeFirstEvent;
@@ -172,6 +176,10 @@ namespace Pulumi.Oci.Jms
         /// Time of the last event in the analysis.
         /// </summary>
         public readonly string TimeLastEvent;
+        /// <summary>
+        /// The time the JFR recording has started.
+        /// </summary>
+        public readonly string TimeStarted;
         /// <summary>
         /// Total number of events in the analysis.
         /// </summary>
@@ -211,9 +219,13 @@ namespace Pulumi.Oci.Jms
 
             string timeCreated,
 
+            string timeFinished,
+
             string timeFirstEvent,
 
             string timeLastEvent,
+
+            string timeStarted,
 
             int totalEventCount,
 
@@ -233,8 +245,10 @@ namespace Pulumi.Oci.Jms
             Object = @object;
             SummarizedEventCount = summarizedEventCount;
             TimeCreated = timeCreated;
+            TimeFinished = timeFinished;
             TimeFirstEvent = timeFirstEvent;
             TimeLastEvent = timeLastEvent;
+            TimeStarted = timeStarted;
             TotalEventCount = totalEventCount;
             WorkRequestId = workRequestId;
         }

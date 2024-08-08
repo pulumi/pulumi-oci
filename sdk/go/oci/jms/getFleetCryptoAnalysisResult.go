@@ -30,7 +30,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Jms.GetFleetCryptoAnalysisResult(ctx, &jms.GetFleetCryptoAnalysisResultArgs{
-//				CryptoAnalysisResultId: testResult.Id,
+//				CryptoAnalysisResultId: fleetCryptoAnalysisResultId,
 //				FleetId:                testFleet.Id,
 //			}, nil)
 //			if err != nil {
@@ -88,10 +88,14 @@ type GetFleetCryptoAnalysisResultResult struct {
 	SummarizedEventCount int `pulumi:"summarizedEventCount"`
 	// The time the result is compiled.
 	TimeCreated string `pulumi:"timeCreated"`
+	// The time the JFR recording has finished.
+	TimeFinished string `pulumi:"timeFinished"`
 	// Time of the first event in the analysis.
 	TimeFirstEvent string `pulumi:"timeFirstEvent"`
 	// Time of the last event in the analysis.
 	TimeLastEvent string `pulumi:"timeLastEvent"`
+	// The time the JFR recording has started.
+	TimeStarted string `pulumi:"timeStarted"`
 	// Total number of events in the analysis.
 	TotalEventCount int `pulumi:"totalEventCount"`
 	// The OCID of the work request to start the analysis.
@@ -207,6 +211,11 @@ func (o GetFleetCryptoAnalysisResultResultOutput) TimeCreated() pulumi.StringOut
 	return o.ApplyT(func(v GetFleetCryptoAnalysisResultResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
+// The time the JFR recording has finished.
+func (o GetFleetCryptoAnalysisResultResultOutput) TimeFinished() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultResult) string { return v.TimeFinished }).(pulumi.StringOutput)
+}
+
 // Time of the first event in the analysis.
 func (o GetFleetCryptoAnalysisResultResultOutput) TimeFirstEvent() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFleetCryptoAnalysisResultResult) string { return v.TimeFirstEvent }).(pulumi.StringOutput)
@@ -215,6 +224,11 @@ func (o GetFleetCryptoAnalysisResultResultOutput) TimeFirstEvent() pulumi.String
 // Time of the last event in the analysis.
 func (o GetFleetCryptoAnalysisResultResultOutput) TimeLastEvent() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFleetCryptoAnalysisResultResult) string { return v.TimeLastEvent }).(pulumi.StringOutput)
+}
+
+// The time the JFR recording has started.
+func (o GetFleetCryptoAnalysisResultResultOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultResult) string { return v.TimeStarted }).(pulumi.StringOutput)
 }
 
 // Total number of events in the analysis.

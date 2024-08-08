@@ -146,7 +146,7 @@ class GetFleetExportSettingResult:
     @pulumi.getter(name="targetBucketRegion")
     def target_bucket_region(self) -> str:
         """
-        The namespace of the bucket where data will be exported.
+        The id of the region of the target bucket.
         """
         return pulumi.get(self, "target_bucket_region")
 
@@ -193,7 +193,7 @@ def get_fleet_export_setting(fleet_id: Optional[str] = None,
     """
     This data source provides details about a specific Fleet Export Setting resource in Oracle Cloud Infrastructure Jms service.
 
-    Returns export setting for the specified Fleet.
+    Returns export setting for the specified fleet.
 
     ## Example Usage
 
@@ -234,7 +234,7 @@ def get_fleet_export_setting_output(fleet_id: Optional[pulumi.Input[str]] = None
     """
     This data source provides details about a specific Fleet Export Setting resource in Oracle Cloud Infrastructure Jms service.
 
-    Returns export setting for the specified Fleet.
+    Returns export setting for the specified fleet.
 
     ## Example Usage
 

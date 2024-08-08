@@ -70,14 +70,14 @@ public final class GetFleetsArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * The ID of the Fleet.
+     * The ID.
      * 
      */
     @Import(name="id")
     private @Nullable Output<String> id;
 
     /**
-     * @return The ID of the Fleet.
+     * @return The ID.
      * 
      */
     public Optional<Output<String>> id() {
@@ -205,7 +205,7 @@ public final class GetFleetsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param id The ID of the Fleet.
+         * @param id The ID.
          * 
          * @return builder
          * 
@@ -216,7 +216,7 @@ public final class GetFleetsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param id The ID of the Fleet.
+         * @param id The ID.
          * 
          * @return builder
          * 

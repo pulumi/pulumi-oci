@@ -32,17 +32,9 @@ public final class BuildRunBuildRunSourceTriggerInfoActionArgs extends com.pulum
         return Optional.ofNullable(this.buildPipelineId);
     }
 
-    /**
-     * The filters for the trigger.
-     * 
-     */
     @Import(name="filters")
     private @Nullable Output<List<BuildRunBuildRunSourceTriggerInfoActionFilterArgs>> filters;
 
-    /**
-     * @return The filters for the trigger.
-     * 
-     */
     public Optional<Output<List<BuildRunBuildRunSourceTriggerInfoActionFilterArgs>>> filters() {
         return Optional.ofNullable(this.filters);
     }
@@ -109,33 +101,15 @@ public final class BuildRunBuildRunSourceTriggerInfoActionArgs extends com.pulum
             return buildPipelineId(Output.of(buildPipelineId));
         }
 
-        /**
-         * @param filters The filters for the trigger.
-         * 
-         * @return builder
-         * 
-         */
         public Builder filters(@Nullable Output<List<BuildRunBuildRunSourceTriggerInfoActionFilterArgs>> filters) {
             $.filters = filters;
             return this;
         }
 
-        /**
-         * @param filters The filters for the trigger.
-         * 
-         * @return builder
-         * 
-         */
         public Builder filters(List<BuildRunBuildRunSourceTriggerInfoActionFilterArgs> filters) {
             return filters(Output.of(filters));
         }
 
-        /**
-         * @param filters The filters for the trigger.
-         * 
-         * @return builder
-         * 
-         */
         public Builder filters(BuildRunBuildRunSourceTriggerInfoActionFilterArgs... filters) {
             return filters(List.of(filters));
         }

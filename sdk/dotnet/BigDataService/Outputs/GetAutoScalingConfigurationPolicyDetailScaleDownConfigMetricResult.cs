@@ -14,7 +14,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
     public sealed class GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricResult
     {
         /// <summary>
-        /// Allowed value is CPU_UTILIZATION.
+        /// Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
         /// </summary>
         public readonly string MetricType;
         /// <summary>

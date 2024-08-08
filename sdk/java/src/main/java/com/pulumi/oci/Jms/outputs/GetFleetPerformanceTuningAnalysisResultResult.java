@@ -78,12 +78,12 @@ public final class GetFleetPerformanceTuningAnalysisResultResult {
      */
     private String timeCreated;
     /**
-     * @return The time the JFR capture finished.
+     * @return The time the JFR recording has finished.
      * 
      */
     private String timeFinished;
     /**
-     * @return The time the JFR capture started.
+     * @return The time the JFR recording has started.
      * 
      */
     private String timeStarted;
@@ -194,14 +194,14 @@ public final class GetFleetPerformanceTuningAnalysisResultResult {
         return this.timeCreated;
     }
     /**
-     * @return The time the JFR capture finished.
+     * @return The time the JFR recording has finished.
      * 
      */
     public String timeFinished() {
         return this.timeFinished;
     }
     /**
-     * @return The time the JFR capture started.
+     * @return The time the JFR recording has started.
      * 
      */
     public String timeStarted() {

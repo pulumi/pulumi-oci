@@ -18,7 +18,9 @@ public final class DbSystemManagementPolicy {
      */
     private @Nullable DbSystemManagementPolicyBackupPolicy backupPolicy;
     /**
-     * @return (Updatable) The start of the maintenance window.
+     * @return (Updatable) The start of the maintenance window in UTC.
+     * 
+     * This string is of the format: &#34;{day-of-week} {time-of-day}&#34;. &#34;{day-of-week}&#34; is a case-insensitive string like &#34;mon&#34;, &#34;tue&#34;, &amp;c. &#34;{time-of-day}&#34; is the &#34;Time&#34; portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
      * 
      */
     private @Nullable String maintenanceWindowStart;
@@ -32,7 +34,9 @@ public final class DbSystemManagementPolicy {
         return Optional.ofNullable(this.backupPolicy);
     }
     /**
-     * @return (Updatable) The start of the maintenance window.
+     * @return (Updatable) The start of the maintenance window in UTC.
+     * 
+     * This string is of the format: &#34;{day-of-week} {time-of-day}&#34;. &#34;{day-of-week}&#34; is a case-insensitive string like &#34;mon&#34;, &#34;tue&#34;, &amp;c. &#34;{time-of-day}&#34; is the &#34;Time&#34; portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
      * 
      */
     public Optional<String> maintenanceWindowStart() {

@@ -40,11 +40,9 @@ import (
 //						},
 //					},
 //				},
-//				DbVersion:               pulumi.Any(configurationDbVersion),
-//				DisplayName:             pulumi.Any(configurationDisplayName),
-//				InstanceMemorySizeInGbs: pulumi.Any(configurationInstanceMemorySizeInGbs),
-//				InstanceOcpuCount:       pulumi.Any(configurationInstanceOcpuCount),
-//				Shape:                   pulumi.Any(configurationShape),
+//				DbVersion:   pulumi.Any(configurationDbVersion),
+//				DisplayName: pulumi.Any(configurationDisplayName),
+//				Shape:       pulumi.Any(configurationShape),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
@@ -52,7 +50,10 @@ import (
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				SystemTags: pulumi.Any(configurationSystemTags),
+//				InstanceMemorySizeInGbs: pulumi.Any(configurationInstanceMemorySizeInGbs),
+//				InstanceOcpuCount:       pulumi.Any(configurationInstanceOcpuCount),
+//				IsFlexible:              pulumi.Any(configurationIsFlexible),
+//				SystemTags:              pulumi.Any(configurationSystemTags),
 //			})
 //			if err != nil {
 //				return err
@@ -75,6 +76,8 @@ type Configuration struct {
 
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	// The type of configuration. Either user-created or a default configuration.
+	ConfigType pulumi.StringOutput `pulumi:"configType"`
 	// List of configuration details.
 	ConfigurationDetails ConfigurationConfigurationDetailArrayOutput `pulumi:"configurationDetails"`
 	// Configuration overrides for a PostgreSQL instance.
@@ -90,9 +93,15 @@ type Configuration struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Memory size in gigabytes with 1GB increment.
+	//
+	// Skip or set it's value to 0 if configuration is for a flexible shape.
 	InstanceMemorySizeInGbs pulumi.IntOutput `pulumi:"instanceMemorySizeInGbs"`
 	// CPU core count.
+	//
+	// Skip or set it's value to 0 if configuration is for a flexible shape.
 	InstanceOcpuCount pulumi.IntOutput `pulumi:"instanceOcpuCount"`
+	// Whether the configuration supports flexible shapes.
+	IsFlexible pulumi.BoolOutput `pulumi:"isFlexible"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
@@ -127,12 +136,6 @@ func NewConfiguration(ctx *pulumi.Context,
 	if args.DisplayName == nil {
 		return nil, errors.New("invalid value for required argument 'DisplayName'")
 	}
-	if args.InstanceMemorySizeInGbs == nil {
-		return nil, errors.New("invalid value for required argument 'InstanceMemorySizeInGbs'")
-	}
-	if args.InstanceOcpuCount == nil {
-		return nil, errors.New("invalid value for required argument 'InstanceOcpuCount'")
-	}
 	if args.Shape == nil {
 		return nil, errors.New("invalid value for required argument 'Shape'")
 	}
@@ -161,6 +164,8 @@ func GetConfiguration(ctx *pulumi.Context,
 type configurationState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
 	CompartmentId *string `pulumi:"compartmentId"`
+	// The type of configuration. Either user-created or a default configuration.
+	ConfigType *string `pulumi:"configType"`
 	// List of configuration details.
 	ConfigurationDetails []ConfigurationConfigurationDetail `pulumi:"configurationDetails"`
 	// Configuration overrides for a PostgreSQL instance.
@@ -176,9 +181,15 @@ type configurationState struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Memory size in gigabytes with 1GB increment.
+	//
+	// Skip or set it's value to 0 if configuration is for a flexible shape.
 	InstanceMemorySizeInGbs *int `pulumi:"instanceMemorySizeInGbs"`
 	// CPU core count.
+	//
+	// Skip or set it's value to 0 if configuration is for a flexible shape.
 	InstanceOcpuCount *int `pulumi:"instanceOcpuCount"`
+	// Whether the configuration supports flexible shapes.
+	IsFlexible *bool `pulumi:"isFlexible"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
@@ -197,6 +208,8 @@ type configurationState struct {
 type ConfigurationState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
 	CompartmentId pulumi.StringPtrInput
+	// The type of configuration. Either user-created or a default configuration.
+	ConfigType pulumi.StringPtrInput
 	// List of configuration details.
 	ConfigurationDetails ConfigurationConfigurationDetailArrayInput
 	// Configuration overrides for a PostgreSQL instance.
@@ -212,9 +225,15 @@ type ConfigurationState struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// Memory size in gigabytes with 1GB increment.
+	//
+	// Skip or set it's value to 0 if configuration is for a flexible shape.
 	InstanceMemorySizeInGbs pulumi.IntPtrInput
 	// CPU core count.
+	//
+	// Skip or set it's value to 0 if configuration is for a flexible shape.
 	InstanceOcpuCount pulumi.IntPtrInput
+	// Whether the configuration supports flexible shapes.
+	IsFlexible pulumi.BoolPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput
 	// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
@@ -250,9 +269,15 @@ type configurationArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Memory size in gigabytes with 1GB increment.
-	InstanceMemorySizeInGbs int `pulumi:"instanceMemorySizeInGbs"`
+	//
+	// Skip or set it's value to 0 if configuration is for a flexible shape.
+	InstanceMemorySizeInGbs *int `pulumi:"instanceMemorySizeInGbs"`
 	// CPU core count.
-	InstanceOcpuCount int `pulumi:"instanceOcpuCount"`
+	//
+	// Skip or set it's value to 0 if configuration is for a flexible shape.
+	InstanceOcpuCount *int `pulumi:"instanceOcpuCount"`
+	// Whether the configuration supports flexible shapes.
+	IsFlexible *bool `pulumi:"isFlexible"`
 	// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
 	Shape string `pulumi:"shape"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -279,9 +304,15 @@ type ConfigurationArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// Memory size in gigabytes with 1GB increment.
-	InstanceMemorySizeInGbs pulumi.IntInput
+	//
+	// Skip or set it's value to 0 if configuration is for a flexible shape.
+	InstanceMemorySizeInGbs pulumi.IntPtrInput
 	// CPU core count.
-	InstanceOcpuCount pulumi.IntInput
+	//
+	// Skip or set it's value to 0 if configuration is for a flexible shape.
+	InstanceOcpuCount pulumi.IntPtrInput
+	// Whether the configuration supports flexible shapes.
+	IsFlexible pulumi.BoolPtrInput
 	// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
 	Shape pulumi.StringInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -383,6 +414,11 @@ func (o ConfigurationOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Configuration) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// The type of configuration. Either user-created or a default configuration.
+func (o ConfigurationOutput) ConfigType() pulumi.StringOutput {
+	return o.ApplyT(func(v *Configuration) pulumi.StringOutput { return v.ConfigType }).(pulumi.StringOutput)
+}
+
 // List of configuration details.
 func (o ConfigurationOutput) ConfigurationDetails() ConfigurationConfigurationDetailArrayOutput {
 	return o.ApplyT(func(v *Configuration) ConfigurationConfigurationDetailArrayOutput { return v.ConfigurationDetails }).(ConfigurationConfigurationDetailArrayOutput)
@@ -419,13 +455,22 @@ func (o ConfigurationOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Memory size in gigabytes with 1GB increment.
+//
+// Skip or set it's value to 0 if configuration is for a flexible shape.
 func (o ConfigurationOutput) InstanceMemorySizeInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v *Configuration) pulumi.IntOutput { return v.InstanceMemorySizeInGbs }).(pulumi.IntOutput)
 }
 
 // CPU core count.
+//
+// Skip or set it's value to 0 if configuration is for a flexible shape.
 func (o ConfigurationOutput) InstanceOcpuCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *Configuration) pulumi.IntOutput { return v.InstanceOcpuCount }).(pulumi.IntOutput)
+}
+
+// Whether the configuration supports flexible shapes.
+func (o ConfigurationOutput) IsFlexible() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Configuration) pulumi.BoolOutput { return v.IsFlexible }).(pulumi.BoolOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.

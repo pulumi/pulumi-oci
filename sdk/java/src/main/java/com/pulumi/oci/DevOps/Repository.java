@@ -23,57 +23,6 @@ import javax.annotation.Nullable;
  * 
  * Creates a new repository.
  * 
- * ## Example Usage
- * 
- * &lt;!--Start PulumiCodeChooser --&gt;
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.DevOps.Repository;
- * import com.pulumi.oci.DevOps.RepositoryArgs;
- * import com.pulumi.oci.DevOps.inputs.RepositoryMirrorRepositoryConfigArgs;
- * import com.pulumi.oci.DevOps.inputs.RepositoryMirrorRepositoryConfigTriggerScheduleArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testRepository = new Repository("testRepository", RepositoryArgs.builder()
- *             .name(repositoryName)
- *             .projectId(testProject.id())
- *             .repositoryType(repositoryRepositoryType)
- *             .defaultBranch(repositoryDefaultBranch)
- *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
- *             .description(repositoryDescription)
- *             .freeformTags(Map.of("bar-key", "value"))
- *             .mirrorRepositoryConfig(RepositoryMirrorRepositoryConfigArgs.builder()
- *                 .connectorId(testConnector.id())
- *                 .repositoryUrl(repositoryMirrorRepositoryConfigRepositoryUrl)
- *                 .triggerSchedule(RepositoryMirrorRepositoryConfigTriggerScheduleArgs.builder()
- *                     .scheduleType(repositoryMirrorRepositoryConfigTriggerScheduleScheduleType)
- *                     .customSchedule(repositoryMirrorRepositoryConfigTriggerScheduleCustomSchedule)
- *                     .build())
- *                 .build())
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
- * &lt;!--End PulumiCodeChooser --&gt;
- * 
  * ## Import
  * 
  * Repositories can be imported using the `id`, e.g.
@@ -226,14 +175,14 @@ public class Repository extends com.pulumi.resources.CustomResource {
         return this.mirrorRepositoryConfig;
     }
     /**
-     * (Updatable) Unique name of a repository.
+     * (Updatable) Name of the repository. Should be unique within the project.
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
-     * @return (Updatable) Unique name of a repository.
+     * @return (Updatable) Name of the repository. Should be unique within the project.
      * 
      */
     public Output<String> name() {
@@ -252,6 +201,20 @@ public class Repository extends com.pulumi.resources.CustomResource {
      */
     public Output<String> namespace() {
         return this.namespace;
+    }
+    /**
+     * The OCID of the parent repository.
+     * 
+     */
+    @Export(name="parentRepositoryId", refs={String.class}, tree="[0]")
+    private Output<String> parentRepositoryId;
+
+    /**
+     * @return The OCID of the parent repository.
+     * 
+     */
+    public Output<String> parentRepositoryId() {
+        return this.parentRepositoryId;
     }
     /**
      * The OCID of the DevOps project containing the repository.
@@ -282,7 +245,7 @@ public class Repository extends com.pulumi.resources.CustomResource {
         return this.projectName;
     }
     /**
-     * (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
+     * (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED`
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -292,7 +255,7 @@ public class Repository extends com.pulumi.resources.CustomResource {
     private Output<String> repositoryType;
 
     /**
-     * @return (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
+     * @return (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED`
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -386,14 +349,14 @@ public class Repository extends com.pulumi.resources.CustomResource {
         return this.timeUpdated;
     }
     /**
-     * Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
+     * Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the repository. PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an open pull request. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
      * 
      */
     @Export(name="triggerBuildEvents", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> triggerBuildEvents;
 
     /**
-     * @return Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
+     * @return Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the repository. PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an open pull request. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
      * 
      */
     public Output<List<String>> triggerBuildEvents() {

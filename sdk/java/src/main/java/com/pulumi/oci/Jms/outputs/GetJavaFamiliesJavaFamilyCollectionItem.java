@@ -49,6 +49,11 @@ public final class GetJavaFamiliesJavaFamilyCollectionItem {
      */
     private String latestReleaseVersion;
     /**
+     * @return The date on which the Java release family was first made available (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * 
+     */
+    private String releaseDate;
+    /**
      * @return This indicates the support category for the Java release family.
      * 
      */
@@ -105,6 +110,13 @@ public final class GetJavaFamiliesJavaFamilyCollectionItem {
         return this.latestReleaseVersion;
     }
     /**
+     * @return The date on which the Java release family was first made available (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * 
+     */
+    public String releaseDate() {
+        return this.releaseDate;
+    }
+    /**
      * @return This indicates the support category for the Java release family.
      * 
      */
@@ -128,6 +140,7 @@ public final class GetJavaFamiliesJavaFamilyCollectionItem {
         private Boolean isSupportedVersion;
         private List<GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifact> latestReleaseArtifacts;
         private String latestReleaseVersion;
+        private String releaseDate;
         private String supportType;
         public Builder() {}
         public Builder(GetJavaFamiliesJavaFamilyCollectionItem defaults) {
@@ -139,6 +152,7 @@ public final class GetJavaFamiliesJavaFamilyCollectionItem {
     	      this.isSupportedVersion = defaults.isSupportedVersion;
     	      this.latestReleaseArtifacts = defaults.latestReleaseArtifacts;
     	      this.latestReleaseVersion = defaults.latestReleaseVersion;
+    	      this.releaseDate = defaults.releaseDate;
     	      this.supportType = defaults.supportType;
         }
 
@@ -202,6 +216,14 @@ public final class GetJavaFamiliesJavaFamilyCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder releaseDate(String releaseDate) {
+            if (releaseDate == null) {
+              throw new MissingRequiredPropertyException("GetJavaFamiliesJavaFamilyCollectionItem", "releaseDate");
+            }
+            this.releaseDate = releaseDate;
+            return this;
+        }
+        @CustomType.Setter
         public Builder supportType(String supportType) {
             if (supportType == null) {
               throw new MissingRequiredPropertyException("GetJavaFamiliesJavaFamilyCollectionItem", "supportType");
@@ -218,6 +240,7 @@ public final class GetJavaFamiliesJavaFamilyCollectionItem {
             _resultValue.isSupportedVersion = isSupportedVersion;
             _resultValue.latestReleaseArtifacts = latestReleaseArtifacts;
             _resultValue.latestReleaseVersion = latestReleaseVersion;
+            _resultValue.releaseDate = releaseDate;
             _resultValue.supportType = supportType;
             return _resultValue;
         }

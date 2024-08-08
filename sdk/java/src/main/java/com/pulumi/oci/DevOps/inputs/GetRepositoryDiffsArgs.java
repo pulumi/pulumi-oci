@@ -72,6 +72,21 @@ public final class GetRepositoryDiffsArgs extends com.pulumi.resources.InvokeArg
     }
 
     /**
+     * The target repository identifier
+     * 
+     */
+    @Import(name="targetRepositoryId")
+    private @Nullable Output<String> targetRepositoryId;
+
+    /**
+     * @return The target repository identifier
+     * 
+     */
+    public Optional<Output<String>> targetRepositoryId() {
+        return Optional.ofNullable(this.targetRepositoryId);
+    }
+
+    /**
      * The commit or reference name where changes are coming from.
      * 
      */
@@ -93,6 +108,7 @@ public final class GetRepositoryDiffsArgs extends com.pulumi.resources.InvokeArg
         this.filters = $.filters;
         this.isComparisonFromMergeBase = $.isComparisonFromMergeBase;
         this.repositoryId = $.repositoryId;
+        this.targetRepositoryId = $.targetRepositoryId;
         this.targetVersion = $.targetVersion;
     }
 
@@ -188,6 +204,27 @@ public final class GetRepositoryDiffsArgs extends com.pulumi.resources.InvokeArg
          */
         public Builder repositoryId(String repositoryId) {
             return repositoryId(Output.of(repositoryId));
+        }
+
+        /**
+         * @param targetRepositoryId The target repository identifier
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetRepositoryId(@Nullable Output<String> targetRepositoryId) {
+            $.targetRepositoryId = targetRepositoryId;
+            return this;
+        }
+
+        /**
+         * @param targetRepositoryId The target repository identifier
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetRepositoryId(String targetRepositoryId) {
+            return targetRepositoryId(Output.of(targetRepositoryId));
         }
 
         /**

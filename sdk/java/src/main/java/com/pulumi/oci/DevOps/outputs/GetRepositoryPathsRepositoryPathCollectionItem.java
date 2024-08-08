@@ -48,6 +48,11 @@ public final class GetRepositoryPathsRepositoryPathCollectionItem {
      */
     private String submoduleGitUrl;
     /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    private Map<String,Object> systemTags;
+    /**
      * @return File or directory.
      * 
      */
@@ -104,6 +109,13 @@ public final class GetRepositoryPathsRepositoryPathCollectionItem {
         return this.submoduleGitUrl;
     }
     /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Map<String,Object> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * @return File or directory.
      * 
      */
@@ -127,6 +139,7 @@ public final class GetRepositoryPathsRepositoryPathCollectionItem {
         private String sha;
         private String sizeInBytes;
         private String submoduleGitUrl;
+        private Map<String,Object> systemTags;
         private String type;
         public Builder() {}
         public Builder(GetRepositoryPathsRepositoryPathCollectionItem defaults) {
@@ -138,6 +151,7 @@ public final class GetRepositoryPathsRepositoryPathCollectionItem {
     	      this.sha = defaults.sha;
     	      this.sizeInBytes = defaults.sizeInBytes;
     	      this.submoduleGitUrl = defaults.submoduleGitUrl;
+    	      this.systemTags = defaults.systemTags;
     	      this.type = defaults.type;
         }
 
@@ -198,6 +212,14 @@ public final class GetRepositoryPathsRepositoryPathCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,Object> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryPathsRepositoryPathCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder type(String type) {
             if (type == null) {
               throw new MissingRequiredPropertyException("GetRepositoryPathsRepositoryPathCollectionItem", "type");
@@ -214,6 +236,7 @@ public final class GetRepositoryPathsRepositoryPathCollectionItem {
             _resultValue.sha = sha;
             _resultValue.sizeInBytes = sizeInBytes;
             _resultValue.submoduleGitUrl = submoduleGitUrl;
+            _resultValue.systemTags = systemTags;
             _resultValue.type = type;
             return _resultValue;
         }

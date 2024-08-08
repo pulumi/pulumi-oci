@@ -95,18 +95,33 @@ public final class RepositoryArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Unique name of a repository.
+     * (Updatable) Name of the repository. Should be unique within the project.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) Unique name of a repository.
+     * @return (Updatable) Name of the repository. Should be unique within the project.
      * 
      */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
+    }
+
+    /**
+     * The OCID of the parent repository.
+     * 
+     */
+    @Import(name="parentRepositoryId")
+    private @Nullable Output<String> parentRepositoryId;
+
+    /**
+     * @return The OCID of the parent repository.
+     * 
+     */
+    public Optional<Output<String>> parentRepositoryId() {
+        return Optional.ofNullable(this.parentRepositoryId);
     }
 
     /**
@@ -125,7 +140,7 @@ public final class RepositoryArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
+     * (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED`
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -135,7 +150,7 @@ public final class RepositoryArgs extends com.pulumi.resources.ResourceArgs {
     private Output<String> repositoryType;
 
     /**
-     * @return (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
+     * @return (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED`
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -154,6 +169,7 @@ public final class RepositoryArgs extends com.pulumi.resources.ResourceArgs {
         this.freeformTags = $.freeformTags;
         this.mirrorRepositoryConfig = $.mirrorRepositoryConfig;
         this.name = $.name;
+        this.parentRepositoryId = $.parentRepositoryId;
         this.projectId = $.projectId;
         this.repositoryType = $.repositoryType;
     }
@@ -282,7 +298,7 @@ public final class RepositoryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name (Updatable) Unique name of a repository.
+         * @param name (Updatable) Name of the repository. Should be unique within the project.
          * 
          * @return builder
          * 
@@ -293,13 +309,34 @@ public final class RepositoryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name (Updatable) Unique name of a repository.
+         * @param name (Updatable) Name of the repository. Should be unique within the project.
          * 
          * @return builder
          * 
          */
         public Builder name(String name) {
             return name(Output.of(name));
+        }
+
+        /**
+         * @param parentRepositoryId The OCID of the parent repository.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder parentRepositoryId(@Nullable Output<String> parentRepositoryId) {
+            $.parentRepositoryId = parentRepositoryId;
+            return this;
+        }
+
+        /**
+         * @param parentRepositoryId The OCID of the parent repository.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder parentRepositoryId(String parentRepositoryId) {
+            return parentRepositoryId(Output.of(parentRepositoryId));
         }
 
         /**
@@ -324,7 +361,7 @@ public final class RepositoryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param repositoryType (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
+         * @param repositoryType (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED`
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -338,7 +375,7 @@ public final class RepositoryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param repositoryType (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
+         * @param repositoryType (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED`
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

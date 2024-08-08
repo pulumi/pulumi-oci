@@ -48,14 +48,14 @@ public final class GetConfigurationsArgs extends com.pulumi.resources.InvokeArgs
     }
 
     /**
-     * Verison of the PostgreSQL database, such as 14.9.
+     * Version of the PostgreSQL database, such as 14.9.
      * 
      */
     @Import(name="dbVersion")
     private @Nullable Output<String> dbVersion;
 
     /**
-     * @return Verison of the PostgreSQL database, such as 14.9.
+     * @return Version of the PostgreSQL database, such as 14.9.
      * 
      */
     public Optional<Output<String>> dbVersion() {
@@ -187,7 +187,7 @@ public final class GetConfigurationsArgs extends com.pulumi.resources.InvokeArgs
         }
 
         /**
-         * @param dbVersion Verison of the PostgreSQL database, such as 14.9.
+         * @param dbVersion Version of the PostgreSQL database, such as 14.9.
          * 
          * @return builder
          * 
@@ -198,7 +198,7 @@ public final class GetConfigurationsArgs extends com.pulumi.resources.InvokeArgs
         }
 
         /**
-         * @param dbVersion Verison of the PostgreSQL database, such as 14.9.
+         * @param dbVersion Version of the PostgreSQL database, such as 14.9.
          * 
          * @return builder
          * 

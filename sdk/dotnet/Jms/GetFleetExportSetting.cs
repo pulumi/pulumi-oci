@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Jms
         /// <summary>
         /// This data source provides details about a specific Fleet Export Setting resource in Oracle Cloud Infrastructure Jms service.
         /// 
-        /// Returns export setting for the specified Fleet.
+        /// Returns export setting for the specified fleet.
         /// 
         /// ## Example Usage
         /// 
@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Jms
         /// <summary>
         /// This data source provides details about a specific Fleet Export Setting resource in Oracle Cloud Infrastructure Jms service.
         /// 
-        /// Returns export setting for the specified Fleet.
+        /// Returns export setting for the specified fleet.
         /// 
         /// ## Example Usage
         /// 
@@ -138,7 +138,7 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public readonly string TargetBucketNamespace;
         /// <summary>
-        /// The namespace of the bucket where data will be exported.
+        /// The id of the region of the target bucket.
         /// </summary>
         public readonly string TargetBucketRegion;
         /// <summary>

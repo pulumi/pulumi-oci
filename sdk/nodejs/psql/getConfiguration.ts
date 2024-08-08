@@ -49,6 +49,10 @@ export interface GetConfigurationResult {
      */
     readonly compartmentId: string;
     /**
+     * The type of configuration. Either user-created or a default configuration.
+     */
+    readonly configType: string;
+    /**
      * List of configuration details.
      */
     readonly configurationDetails: outputs.Psql.GetConfigurationConfigurationDetail[];
@@ -86,6 +90,10 @@ export interface GetConfigurationResult {
      * CPU core count.
      */
     readonly instanceOcpuCount: number;
+    /**
+     * Whether the configuration supports flexible shapes.
+     */
+    readonly isFlexible: boolean;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */

@@ -41,12 +41,18 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Deployment{}
 	case "oci:DevOps/project:Project":
 		r = &Project{}
+	case "oci:DevOps/projectRepositorySetting:ProjectRepositorySetting":
+		r = &ProjectRepositorySetting{}
 	case "oci:DevOps/repository:Repository":
 		r = &Repository{}
 	case "oci:DevOps/repositoryMirror:RepositoryMirror":
 		r = &RepositoryMirror{}
+	case "oci:DevOps/repositoryProtectedBranchManagement:RepositoryProtectedBranchManagement":
+		r = &RepositoryProtectedBranchManagement{}
 	case "oci:DevOps/repositoryRef:RepositoryRef":
 		r = &RepositoryRef{}
+	case "oci:DevOps/repositorySetting:RepositorySetting":
+		r = &RepositorySetting{}
 	case "oci:DevOps/trigger:Trigger":
 		r = &Trigger{}
 	default:
@@ -114,6 +120,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"DevOps/projectRepositorySetting",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"DevOps/repository",
 		&module{version},
 	)
@@ -124,7 +135,17 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"DevOps/repositoryProtectedBranchManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"DevOps/repositoryRef",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DevOps/repositorySetting",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

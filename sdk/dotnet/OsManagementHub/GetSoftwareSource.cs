@@ -166,6 +166,15 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public readonly bool IsCreatedFromPackageList;
         /// <summary>
+        /// Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
+        /// * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
+        /// * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
+        /// * For a package filter that does not specify a version, this will include only the latest available version of the package.
+        /// * For a package filter that does specify a version, this will include only the specified version of the package (the isLatestContentOnly attribute is ignored).
+        /// * For a package list, this will include only the specified version of packages and modules in the list (the isLatestContentOnly attribute is ignored).
+        /// </summary>
+        public readonly bool IsLatestContentOnly;
+        /// <summary>
         /// Indicates whether the software source is required for the Autonomous Linux service.
         /// </summary>
         public readonly bool IsMandatoryForAutonomousLinux;
@@ -263,6 +272,8 @@ namespace Pulumi.Oci.OsManagementHub
 
             bool isCreatedFromPackageList,
 
+            bool isLatestContentOnly,
+
             bool isMandatoryForAutonomousLinux,
 
             string originSoftwareSourceId,
@@ -312,6 +323,7 @@ namespace Pulumi.Oci.OsManagementHub
             IsAutoResolveDependencies = isAutoResolveDependencies;
             IsAutomaticallyUpdated = isAutomaticallyUpdated;
             IsCreatedFromPackageList = isCreatedFromPackageList;
+            IsLatestContentOnly = isLatestContentOnly;
             IsMandatoryForAutonomousLinux = isMandatoryForAutonomousLinux;
             OriginSoftwareSourceId = originSoftwareSourceId;
             OsFamily = osFamily;

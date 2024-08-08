@@ -46,17 +46,9 @@ public final class GetTriggersPlainArgs extends com.pulumi.resources.InvokeArgs 
         return Optional.ofNullable(this.displayName);
     }
 
-    /**
-     * The filters for the trigger.
-     * 
-     */
     @Import(name="filters")
     private @Nullable List<GetTriggersFilter> filters;
 
-    /**
-     * @return The filters for the trigger.
-     * 
-     */
     public Optional<List<GetTriggersFilter>> filters() {
         return Optional.ofNullable(this.filters);
     }
@@ -157,23 +149,11 @@ public final class GetTriggersPlainArgs extends com.pulumi.resources.InvokeArgs 
             return this;
         }
 
-        /**
-         * @param filters The filters for the trigger.
-         * 
-         * @return builder
-         * 
-         */
         public Builder filters(@Nullable List<GetTriggersFilter> filters) {
             $.filters = filters;
             return this;
         }
 
-        /**
-         * @param filters The filters for the trigger.
-         * 
-         * @return builder
-         * 
-         */
         public Builder filters(GetTriggersFilter... filters) {
             return filters(List.of(filters));
         }

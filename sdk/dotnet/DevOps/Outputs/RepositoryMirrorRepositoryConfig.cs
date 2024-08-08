@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DevOps.Outputs
     public sealed class RepositoryMirrorRepositoryConfig
     {
         /// <summary>
-        /// (Updatable) Upstream git repository connection identifer.
+        /// (Updatable) Upstream git repository connection identifier.
         /// </summary>
         public readonly string? ConnectorId;
         /// <summary>

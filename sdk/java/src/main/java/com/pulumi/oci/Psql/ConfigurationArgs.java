@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Psql.inputs.ConfigurationDbConfigurationOverridesArgs;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -128,31 +129,54 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Memory size in gigabytes with 1GB increment.
      * 
+     * Skip or set it&#39;s value to 0 if configuration is for a flexible shape.
+     * 
      */
-    @Import(name="instanceMemorySizeInGbs", required=true)
-    private Output<Integer> instanceMemorySizeInGbs;
+    @Import(name="instanceMemorySizeInGbs")
+    private @Nullable Output<Integer> instanceMemorySizeInGbs;
 
     /**
      * @return Memory size in gigabytes with 1GB increment.
      * 
+     * Skip or set it&#39;s value to 0 if configuration is for a flexible shape.
+     * 
      */
-    public Output<Integer> instanceMemorySizeInGbs() {
-        return this.instanceMemorySizeInGbs;
+    public Optional<Output<Integer>> instanceMemorySizeInGbs() {
+        return Optional.ofNullable(this.instanceMemorySizeInGbs);
     }
 
     /**
      * CPU core count.
      * 
+     * Skip or set it&#39;s value to 0 if configuration is for a flexible shape.
+     * 
      */
-    @Import(name="instanceOcpuCount", required=true)
-    private Output<Integer> instanceOcpuCount;
+    @Import(name="instanceOcpuCount")
+    private @Nullable Output<Integer> instanceOcpuCount;
 
     /**
      * @return CPU core count.
      * 
+     * Skip or set it&#39;s value to 0 if configuration is for a flexible shape.
+     * 
      */
-    public Output<Integer> instanceOcpuCount() {
-        return this.instanceOcpuCount;
+    public Optional<Output<Integer>> instanceOcpuCount() {
+        return Optional.ofNullable(this.instanceOcpuCount);
+    }
+
+    /**
+     * Whether the configuration supports flexible shapes.
+     * 
+     */
+    @Import(name="isFlexible")
+    private @Nullable Output<Boolean> isFlexible;
+
+    /**
+     * @return Whether the configuration supports flexible shapes.
+     * 
+     */
+    public Optional<Output<Boolean>> isFlexible() {
+        return Optional.ofNullable(this.isFlexible);
     }
 
     /**
@@ -203,6 +227,7 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
         this.freeformTags = $.freeformTags;
         this.instanceMemorySizeInGbs = $.instanceMemorySizeInGbs;
         this.instanceOcpuCount = $.instanceOcpuCount;
+        this.isFlexible = $.isFlexible;
         this.shape = $.shape;
         this.systemTags = $.systemTags;
     }
@@ -375,16 +400,20 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param instanceMemorySizeInGbs Memory size in gigabytes with 1GB increment.
          * 
+         * Skip or set it&#39;s value to 0 if configuration is for a flexible shape.
+         * 
          * @return builder
          * 
          */
-        public Builder instanceMemorySizeInGbs(Output<Integer> instanceMemorySizeInGbs) {
+        public Builder instanceMemorySizeInGbs(@Nullable Output<Integer> instanceMemorySizeInGbs) {
             $.instanceMemorySizeInGbs = instanceMemorySizeInGbs;
             return this;
         }
 
         /**
          * @param instanceMemorySizeInGbs Memory size in gigabytes with 1GB increment.
+         * 
+         * Skip or set it&#39;s value to 0 if configuration is for a flexible shape.
          * 
          * @return builder
          * 
@@ -396,10 +425,12 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param instanceOcpuCount CPU core count.
          * 
+         * Skip or set it&#39;s value to 0 if configuration is for a flexible shape.
+         * 
          * @return builder
          * 
          */
-        public Builder instanceOcpuCount(Output<Integer> instanceOcpuCount) {
+        public Builder instanceOcpuCount(@Nullable Output<Integer> instanceOcpuCount) {
             $.instanceOcpuCount = instanceOcpuCount;
             return this;
         }
@@ -407,11 +438,34 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param instanceOcpuCount CPU core count.
          * 
+         * Skip or set it&#39;s value to 0 if configuration is for a flexible shape.
+         * 
          * @return builder
          * 
          */
         public Builder instanceOcpuCount(Integer instanceOcpuCount) {
             return instanceOcpuCount(Output.of(instanceOcpuCount));
+        }
+
+        /**
+         * @param isFlexible Whether the configuration supports flexible shapes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isFlexible(@Nullable Output<Boolean> isFlexible) {
+            $.isFlexible = isFlexible;
+            return this;
+        }
+
+        /**
+         * @param isFlexible Whether the configuration supports flexible shapes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isFlexible(Boolean isFlexible) {
+            return isFlexible(Output.of(isFlexible));
         }
 
         /**
@@ -474,12 +528,6 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
             }
             if ($.displayName == null) {
                 throw new MissingRequiredPropertyException("ConfigurationArgs", "displayName");
-            }
-            if ($.instanceMemorySizeInGbs == null) {
-                throw new MissingRequiredPropertyException("ConfigurationArgs", "instanceMemorySizeInGbs");
-            }
-            if ($.instanceOcpuCount == null) {
-                throw new MissingRequiredPropertyException("ConfigurationArgs", "instanceOcpuCount");
             }
             if ($.shape == null) {
                 throw new MissingRequiredPropertyException("ConfigurationArgs", "shape");

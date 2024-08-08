@@ -3166,9 +3166,8 @@ func (o BuildRunBuildRunSourceTriggerInfoArrayOutput) Index(i pulumi.IntInput) B
 
 type BuildRunBuildRunSourceTriggerInfoAction struct {
 	// The OCID of the build pipeline.
-	BuildPipelineId *string `pulumi:"buildPipelineId"`
-	// The filters for the trigger.
-	Filters []BuildRunBuildRunSourceTriggerInfoActionFilter `pulumi:"filters"`
+	BuildPipelineId *string                                         `pulumi:"buildPipelineId"`
+	Filters         []BuildRunBuildRunSourceTriggerInfoActionFilter `pulumi:"filters"`
 	// The type of action that will be taken. Allowed value is TRIGGER_BUILD_PIPELINE.
 	Type *string `pulumi:"type"`
 }
@@ -3186,9 +3185,8 @@ type BuildRunBuildRunSourceTriggerInfoActionInput interface {
 
 type BuildRunBuildRunSourceTriggerInfoActionArgs struct {
 	// The OCID of the build pipeline.
-	BuildPipelineId pulumi.StringPtrInput `pulumi:"buildPipelineId"`
-	// The filters for the trigger.
-	Filters BuildRunBuildRunSourceTriggerInfoActionFilterArrayInput `pulumi:"filters"`
+	BuildPipelineId pulumi.StringPtrInput                                   `pulumi:"buildPipelineId"`
+	Filters         BuildRunBuildRunSourceTriggerInfoActionFilterArrayInput `pulumi:"filters"`
 	// The type of action that will be taken. Allowed value is TRIGGER_BUILD_PIPELINE.
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
@@ -3249,7 +3247,6 @@ func (o BuildRunBuildRunSourceTriggerInfoActionOutput) BuildPipelineId() pulumi.
 	return o.ApplyT(func(v BuildRunBuildRunSourceTriggerInfoAction) *string { return v.BuildPipelineId }).(pulumi.StringPtrOutput)
 }
 
-// The filters for the trigger.
 func (o BuildRunBuildRunSourceTriggerInfoActionOutput) Filters() BuildRunBuildRunSourceTriggerInfoActionFilterArrayOutput {
 	return o.ApplyT(func(v BuildRunBuildRunSourceTriggerInfoAction) []BuildRunBuildRunSourceTriggerInfoActionFilter {
 		return v.Filters
@@ -3282,8 +3279,9 @@ func (o BuildRunBuildRunSourceTriggerInfoActionArrayOutput) Index(i pulumi.IntIn
 }
 
 type BuildRunBuildRunSourceTriggerInfoActionFilter struct {
-	// The events, for example, PUSH, PULL_REQUEST_MERGE.
-	Events   []string                                               `pulumi:"events"`
+	// The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
+	Events []string `pulumi:"events"`
+	// Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
 	Excludes []BuildRunBuildRunSourceTriggerInfoActionFilterExclude `pulumi:"excludes"`
 	// Attributes to filter GitLab self-hosted server events.
 	Includes []BuildRunBuildRunSourceTriggerInfoActionFilterInclude `pulumi:"includes"`
@@ -3303,8 +3301,9 @@ type BuildRunBuildRunSourceTriggerInfoActionFilterInput interface {
 }
 
 type BuildRunBuildRunSourceTriggerInfoActionFilterArgs struct {
-	// The events, for example, PUSH, PULL_REQUEST_MERGE.
-	Events   pulumi.StringArrayInput                                        `pulumi:"events"`
+	// The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
+	Events pulumi.StringArrayInput `pulumi:"events"`
+	// Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
 	Excludes BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayInput `pulumi:"excludes"`
 	// Attributes to filter GitLab self-hosted server events.
 	Includes BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArrayInput `pulumi:"includes"`
@@ -3363,11 +3362,12 @@ func (o BuildRunBuildRunSourceTriggerInfoActionFilterOutput) ToBuildRunBuildRunS
 	return o
 }
 
-// The events, for example, PUSH, PULL_REQUEST_MERGE.
+// The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
 func (o BuildRunBuildRunSourceTriggerInfoActionFilterOutput) Events() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v BuildRunBuildRunSourceTriggerInfoActionFilter) []string { return v.Events }).(pulumi.StringArrayOutput)
 }
 
+// Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
 func (o BuildRunBuildRunSourceTriggerInfoActionFilterOutput) Excludes() BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutput {
 	return o.ApplyT(func(v BuildRunBuildRunSourceTriggerInfoActionFilter) []BuildRunBuildRunSourceTriggerInfoActionFilterExclude {
 		return v.Excludes
@@ -3407,6 +3407,7 @@ func (o BuildRunBuildRunSourceTriggerInfoActionFilterArrayOutput) Index(i pulumi
 }
 
 type BuildRunBuildRunSourceTriggerInfoActionFilterExclude struct {
+	// Attributes to support include/exclude files for triggering build runs.
 	FileFilters []BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter `pulumi:"fileFilters"`
 }
 
@@ -3422,6 +3423,7 @@ type BuildRunBuildRunSourceTriggerInfoActionFilterExcludeInput interface {
 }
 
 type BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgs struct {
+	// Attributes to support include/exclude files for triggering build runs.
 	FileFilters BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayInput `pulumi:"fileFilters"`
 }
 
@@ -3476,6 +3478,7 @@ func (o BuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutput) ToBuildRunBu
 	return o
 }
 
+// Attributes to support include/exclude files for triggering build runs.
 func (o BuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutput) FileFilters() BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutput {
 	return o.ApplyT(func(v BuildRunBuildRunSourceTriggerInfoActionFilterExclude) []BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter {
 		return v.FileFilters
@@ -3503,6 +3506,7 @@ func (o BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutput) Index(i
 }
 
 type BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter struct {
+	// The file paths/glob pattern for files.
 	FilePaths []string `pulumi:"filePaths"`
 }
 
@@ -3518,6 +3522,7 @@ type BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterInput interfa
 }
 
 type BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArgs struct {
+	// The file paths/glob pattern for files.
 	FilePaths pulumi.StringArrayInput `pulumi:"filePaths"`
 }
 
@@ -3572,6 +3577,7 @@ func (o BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutput) To
 	return o
 }
 
+// The file paths/glob pattern for files.
 func (o BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutput) FilePaths() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter) []string { return v.FilePaths }).(pulumi.StringArrayOutput)
 }
@@ -3598,7 +3604,8 @@ func (o BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutpu
 
 type BuildRunBuildRunSourceTriggerInfoActionFilterInclude struct {
 	// The target branch for pull requests; not applicable for push requests.
-	BaseRef     *string                                                          `pulumi:"baseRef"`
+	BaseRef *string `pulumi:"baseRef"`
+	// Attributes to support include/exclude files for triggering build runs.
 	FileFilters []BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter `pulumi:"fileFilters"`
 	// Branch for push event; source branch for pull requests.
 	HeadRef *string `pulumi:"headRef"`
@@ -3619,7 +3626,8 @@ type BuildRunBuildRunSourceTriggerInfoActionFilterIncludeInput interface {
 
 type BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs struct {
 	// The target branch for pull requests; not applicable for push requests.
-	BaseRef     pulumi.StringPtrInput                                                    `pulumi:"baseRef"`
+	BaseRef pulumi.StringPtrInput `pulumi:"baseRef"`
+	// Attributes to support include/exclude files for triggering build runs.
 	FileFilters BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayInput `pulumi:"fileFilters"`
 	// Branch for push event; source branch for pull requests.
 	HeadRef pulumi.StringPtrInput `pulumi:"headRef"`
@@ -3683,6 +3691,7 @@ func (o BuildRunBuildRunSourceTriggerInfoActionFilterIncludeOutput) BaseRef() pu
 	return o.ApplyT(func(v BuildRunBuildRunSourceTriggerInfoActionFilterInclude) *string { return v.BaseRef }).(pulumi.StringPtrOutput)
 }
 
+// Attributes to support include/exclude files for triggering build runs.
 func (o BuildRunBuildRunSourceTriggerInfoActionFilterIncludeOutput) FileFilters() BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutput {
 	return o.ApplyT(func(v BuildRunBuildRunSourceTriggerInfoActionFilterInclude) []BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter {
 		return v.FileFilters
@@ -3720,6 +3729,7 @@ func (o BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArrayOutput) Index(i
 }
 
 type BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter struct {
+	// The file paths/glob pattern for files.
 	FilePaths []string `pulumi:"filePaths"`
 }
 
@@ -3735,6 +3745,7 @@ type BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterInput interfa
 }
 
 type BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArgs struct {
+	// The file paths/glob pattern for files.
 	FilePaths pulumi.StringArrayInput `pulumi:"filePaths"`
 }
 
@@ -3789,6 +3800,7 @@ func (o BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutput) To
 	return o
 }
 
+// The file paths/glob pattern for files.
 func (o BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutput) FilePaths() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter) []string { return v.FilePaths }).(pulumi.StringArrayOutput)
 }
@@ -11524,8 +11536,553 @@ func (o ProjectNotificationConfigPtrOutput) TopicId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+type ProjectRepositorySettingApprovalRules struct {
+	// (Updatable) List of approval rules.
+	Items []ProjectRepositorySettingApprovalRulesItem `pulumi:"items"`
+}
+
+// ProjectRepositorySettingApprovalRulesInput is an input type that accepts ProjectRepositorySettingApprovalRulesArgs and ProjectRepositorySettingApprovalRulesOutput values.
+// You can construct a concrete instance of `ProjectRepositorySettingApprovalRulesInput` via:
+//
+//	ProjectRepositorySettingApprovalRulesArgs{...}
+type ProjectRepositorySettingApprovalRulesInput interface {
+	pulumi.Input
+
+	ToProjectRepositorySettingApprovalRulesOutput() ProjectRepositorySettingApprovalRulesOutput
+	ToProjectRepositorySettingApprovalRulesOutputWithContext(context.Context) ProjectRepositorySettingApprovalRulesOutput
+}
+
+type ProjectRepositorySettingApprovalRulesArgs struct {
+	// (Updatable) List of approval rules.
+	Items ProjectRepositorySettingApprovalRulesItemArrayInput `pulumi:"items"`
+}
+
+func (ProjectRepositorySettingApprovalRulesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProjectRepositorySettingApprovalRules)(nil)).Elem()
+}
+
+func (i ProjectRepositorySettingApprovalRulesArgs) ToProjectRepositorySettingApprovalRulesOutput() ProjectRepositorySettingApprovalRulesOutput {
+	return i.ToProjectRepositorySettingApprovalRulesOutputWithContext(context.Background())
+}
+
+func (i ProjectRepositorySettingApprovalRulesArgs) ToProjectRepositorySettingApprovalRulesOutputWithContext(ctx context.Context) ProjectRepositorySettingApprovalRulesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProjectRepositorySettingApprovalRulesOutput)
+}
+
+func (i ProjectRepositorySettingApprovalRulesArgs) ToProjectRepositorySettingApprovalRulesPtrOutput() ProjectRepositorySettingApprovalRulesPtrOutput {
+	return i.ToProjectRepositorySettingApprovalRulesPtrOutputWithContext(context.Background())
+}
+
+func (i ProjectRepositorySettingApprovalRulesArgs) ToProjectRepositorySettingApprovalRulesPtrOutputWithContext(ctx context.Context) ProjectRepositorySettingApprovalRulesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProjectRepositorySettingApprovalRulesOutput).ToProjectRepositorySettingApprovalRulesPtrOutputWithContext(ctx)
+}
+
+// ProjectRepositorySettingApprovalRulesPtrInput is an input type that accepts ProjectRepositorySettingApprovalRulesArgs, ProjectRepositorySettingApprovalRulesPtr and ProjectRepositorySettingApprovalRulesPtrOutput values.
+// You can construct a concrete instance of `ProjectRepositorySettingApprovalRulesPtrInput` via:
+//
+//	        ProjectRepositorySettingApprovalRulesArgs{...}
+//
+//	or:
+//
+//	        nil
+type ProjectRepositorySettingApprovalRulesPtrInput interface {
+	pulumi.Input
+
+	ToProjectRepositorySettingApprovalRulesPtrOutput() ProjectRepositorySettingApprovalRulesPtrOutput
+	ToProjectRepositorySettingApprovalRulesPtrOutputWithContext(context.Context) ProjectRepositorySettingApprovalRulesPtrOutput
+}
+
+type projectRepositorySettingApprovalRulesPtrType ProjectRepositorySettingApprovalRulesArgs
+
+func ProjectRepositorySettingApprovalRulesPtr(v *ProjectRepositorySettingApprovalRulesArgs) ProjectRepositorySettingApprovalRulesPtrInput {
+	return (*projectRepositorySettingApprovalRulesPtrType)(v)
+}
+
+func (*projectRepositorySettingApprovalRulesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ProjectRepositorySettingApprovalRules)(nil)).Elem()
+}
+
+func (i *projectRepositorySettingApprovalRulesPtrType) ToProjectRepositorySettingApprovalRulesPtrOutput() ProjectRepositorySettingApprovalRulesPtrOutput {
+	return i.ToProjectRepositorySettingApprovalRulesPtrOutputWithContext(context.Background())
+}
+
+func (i *projectRepositorySettingApprovalRulesPtrType) ToProjectRepositorySettingApprovalRulesPtrOutputWithContext(ctx context.Context) ProjectRepositorySettingApprovalRulesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProjectRepositorySettingApprovalRulesPtrOutput)
+}
+
+type ProjectRepositorySettingApprovalRulesOutput struct{ *pulumi.OutputState }
+
+func (ProjectRepositorySettingApprovalRulesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProjectRepositorySettingApprovalRules)(nil)).Elem()
+}
+
+func (o ProjectRepositorySettingApprovalRulesOutput) ToProjectRepositorySettingApprovalRulesOutput() ProjectRepositorySettingApprovalRulesOutput {
+	return o
+}
+
+func (o ProjectRepositorySettingApprovalRulesOutput) ToProjectRepositorySettingApprovalRulesOutputWithContext(ctx context.Context) ProjectRepositorySettingApprovalRulesOutput {
+	return o
+}
+
+func (o ProjectRepositorySettingApprovalRulesOutput) ToProjectRepositorySettingApprovalRulesPtrOutput() ProjectRepositorySettingApprovalRulesPtrOutput {
+	return o.ToProjectRepositorySettingApprovalRulesPtrOutputWithContext(context.Background())
+}
+
+func (o ProjectRepositorySettingApprovalRulesOutput) ToProjectRepositorySettingApprovalRulesPtrOutputWithContext(ctx context.Context) ProjectRepositorySettingApprovalRulesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ProjectRepositorySettingApprovalRules) *ProjectRepositorySettingApprovalRules {
+		return &v
+	}).(ProjectRepositorySettingApprovalRulesPtrOutput)
+}
+
+// (Updatable) List of approval rules.
+func (o ProjectRepositorySettingApprovalRulesOutput) Items() ProjectRepositorySettingApprovalRulesItemArrayOutput {
+	return o.ApplyT(func(v ProjectRepositorySettingApprovalRules) []ProjectRepositorySettingApprovalRulesItem {
+		return v.Items
+	}).(ProjectRepositorySettingApprovalRulesItemArrayOutput)
+}
+
+type ProjectRepositorySettingApprovalRulesPtrOutput struct{ *pulumi.OutputState }
+
+func (ProjectRepositorySettingApprovalRulesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ProjectRepositorySettingApprovalRules)(nil)).Elem()
+}
+
+func (o ProjectRepositorySettingApprovalRulesPtrOutput) ToProjectRepositorySettingApprovalRulesPtrOutput() ProjectRepositorySettingApprovalRulesPtrOutput {
+	return o
+}
+
+func (o ProjectRepositorySettingApprovalRulesPtrOutput) ToProjectRepositorySettingApprovalRulesPtrOutputWithContext(ctx context.Context) ProjectRepositorySettingApprovalRulesPtrOutput {
+	return o
+}
+
+func (o ProjectRepositorySettingApprovalRulesPtrOutput) Elem() ProjectRepositorySettingApprovalRulesOutput {
+	return o.ApplyT(func(v *ProjectRepositorySettingApprovalRules) ProjectRepositorySettingApprovalRules {
+		if v != nil {
+			return *v
+		}
+		var ret ProjectRepositorySettingApprovalRules
+		return ret
+	}).(ProjectRepositorySettingApprovalRulesOutput)
+}
+
+// (Updatable) List of approval rules.
+func (o ProjectRepositorySettingApprovalRulesPtrOutput) Items() ProjectRepositorySettingApprovalRulesItemArrayOutput {
+	return o.ApplyT(func(v *ProjectRepositorySettingApprovalRules) []ProjectRepositorySettingApprovalRulesItem {
+		if v == nil {
+			return nil
+		}
+		return v.Items
+	}).(ProjectRepositorySettingApprovalRulesItemArrayOutput)
+}
+
+type ProjectRepositorySettingApprovalRulesItem struct {
+	// (Updatable) Branch name where pull requests targeting the branch must satisfy the approval rule. This value being null means the rule applies to all pull requests
+	DestinationBranch *string `pulumi:"destinationBranch"`
+	// (Updatable) Minimum number of approvals which must be provided by the reviewers specified in the list before the rule can be satisfied
+	MinApprovalsCount int `pulumi:"minApprovalsCount"`
+	// (Updatable) Name which is used to uniquely identify an approval rule.
+	Name string `pulumi:"name"`
+	// (Updatable) List of users who must provide approvals up to the minApprovalsCount specified in the rule. An empty list means the approvals can come from any user.
+	Reviewers []ProjectRepositorySettingApprovalRulesItemReviewer `pulumi:"reviewers"`
+}
+
+// ProjectRepositorySettingApprovalRulesItemInput is an input type that accepts ProjectRepositorySettingApprovalRulesItemArgs and ProjectRepositorySettingApprovalRulesItemOutput values.
+// You can construct a concrete instance of `ProjectRepositorySettingApprovalRulesItemInput` via:
+//
+//	ProjectRepositorySettingApprovalRulesItemArgs{...}
+type ProjectRepositorySettingApprovalRulesItemInput interface {
+	pulumi.Input
+
+	ToProjectRepositorySettingApprovalRulesItemOutput() ProjectRepositorySettingApprovalRulesItemOutput
+	ToProjectRepositorySettingApprovalRulesItemOutputWithContext(context.Context) ProjectRepositorySettingApprovalRulesItemOutput
+}
+
+type ProjectRepositorySettingApprovalRulesItemArgs struct {
+	// (Updatable) Branch name where pull requests targeting the branch must satisfy the approval rule. This value being null means the rule applies to all pull requests
+	DestinationBranch pulumi.StringPtrInput `pulumi:"destinationBranch"`
+	// (Updatable) Minimum number of approvals which must be provided by the reviewers specified in the list before the rule can be satisfied
+	MinApprovalsCount pulumi.IntInput `pulumi:"minApprovalsCount"`
+	// (Updatable) Name which is used to uniquely identify an approval rule.
+	Name pulumi.StringInput `pulumi:"name"`
+	// (Updatable) List of users who must provide approvals up to the minApprovalsCount specified in the rule. An empty list means the approvals can come from any user.
+	Reviewers ProjectRepositorySettingApprovalRulesItemReviewerArrayInput `pulumi:"reviewers"`
+}
+
+func (ProjectRepositorySettingApprovalRulesItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProjectRepositorySettingApprovalRulesItem)(nil)).Elem()
+}
+
+func (i ProjectRepositorySettingApprovalRulesItemArgs) ToProjectRepositorySettingApprovalRulesItemOutput() ProjectRepositorySettingApprovalRulesItemOutput {
+	return i.ToProjectRepositorySettingApprovalRulesItemOutputWithContext(context.Background())
+}
+
+func (i ProjectRepositorySettingApprovalRulesItemArgs) ToProjectRepositorySettingApprovalRulesItemOutputWithContext(ctx context.Context) ProjectRepositorySettingApprovalRulesItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProjectRepositorySettingApprovalRulesItemOutput)
+}
+
+// ProjectRepositorySettingApprovalRulesItemArrayInput is an input type that accepts ProjectRepositorySettingApprovalRulesItemArray and ProjectRepositorySettingApprovalRulesItemArrayOutput values.
+// You can construct a concrete instance of `ProjectRepositorySettingApprovalRulesItemArrayInput` via:
+//
+//	ProjectRepositorySettingApprovalRulesItemArray{ ProjectRepositorySettingApprovalRulesItemArgs{...} }
+type ProjectRepositorySettingApprovalRulesItemArrayInput interface {
+	pulumi.Input
+
+	ToProjectRepositorySettingApprovalRulesItemArrayOutput() ProjectRepositorySettingApprovalRulesItemArrayOutput
+	ToProjectRepositorySettingApprovalRulesItemArrayOutputWithContext(context.Context) ProjectRepositorySettingApprovalRulesItemArrayOutput
+}
+
+type ProjectRepositorySettingApprovalRulesItemArray []ProjectRepositorySettingApprovalRulesItemInput
+
+func (ProjectRepositorySettingApprovalRulesItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ProjectRepositorySettingApprovalRulesItem)(nil)).Elem()
+}
+
+func (i ProjectRepositorySettingApprovalRulesItemArray) ToProjectRepositorySettingApprovalRulesItemArrayOutput() ProjectRepositorySettingApprovalRulesItemArrayOutput {
+	return i.ToProjectRepositorySettingApprovalRulesItemArrayOutputWithContext(context.Background())
+}
+
+func (i ProjectRepositorySettingApprovalRulesItemArray) ToProjectRepositorySettingApprovalRulesItemArrayOutputWithContext(ctx context.Context) ProjectRepositorySettingApprovalRulesItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProjectRepositorySettingApprovalRulesItemArrayOutput)
+}
+
+type ProjectRepositorySettingApprovalRulesItemOutput struct{ *pulumi.OutputState }
+
+func (ProjectRepositorySettingApprovalRulesItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProjectRepositorySettingApprovalRulesItem)(nil)).Elem()
+}
+
+func (o ProjectRepositorySettingApprovalRulesItemOutput) ToProjectRepositorySettingApprovalRulesItemOutput() ProjectRepositorySettingApprovalRulesItemOutput {
+	return o
+}
+
+func (o ProjectRepositorySettingApprovalRulesItemOutput) ToProjectRepositorySettingApprovalRulesItemOutputWithContext(ctx context.Context) ProjectRepositorySettingApprovalRulesItemOutput {
+	return o
+}
+
+// (Updatable) Branch name where pull requests targeting the branch must satisfy the approval rule. This value being null means the rule applies to all pull requests
+func (o ProjectRepositorySettingApprovalRulesItemOutput) DestinationBranch() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ProjectRepositorySettingApprovalRulesItem) *string { return v.DestinationBranch }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Minimum number of approvals which must be provided by the reviewers specified in the list before the rule can be satisfied
+func (o ProjectRepositorySettingApprovalRulesItemOutput) MinApprovalsCount() pulumi.IntOutput {
+	return o.ApplyT(func(v ProjectRepositorySettingApprovalRulesItem) int { return v.MinApprovalsCount }).(pulumi.IntOutput)
+}
+
+// (Updatable) Name which is used to uniquely identify an approval rule.
+func (o ProjectRepositorySettingApprovalRulesItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v ProjectRepositorySettingApprovalRulesItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// (Updatable) List of users who must provide approvals up to the minApprovalsCount specified in the rule. An empty list means the approvals can come from any user.
+func (o ProjectRepositorySettingApprovalRulesItemOutput) Reviewers() ProjectRepositorySettingApprovalRulesItemReviewerArrayOutput {
+	return o.ApplyT(func(v ProjectRepositorySettingApprovalRulesItem) []ProjectRepositorySettingApprovalRulesItemReviewer {
+		return v.Reviewers
+	}).(ProjectRepositorySettingApprovalRulesItemReviewerArrayOutput)
+}
+
+type ProjectRepositorySettingApprovalRulesItemArrayOutput struct{ *pulumi.OutputState }
+
+func (ProjectRepositorySettingApprovalRulesItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ProjectRepositorySettingApprovalRulesItem)(nil)).Elem()
+}
+
+func (o ProjectRepositorySettingApprovalRulesItemArrayOutput) ToProjectRepositorySettingApprovalRulesItemArrayOutput() ProjectRepositorySettingApprovalRulesItemArrayOutput {
+	return o
+}
+
+func (o ProjectRepositorySettingApprovalRulesItemArrayOutput) ToProjectRepositorySettingApprovalRulesItemArrayOutputWithContext(ctx context.Context) ProjectRepositorySettingApprovalRulesItemArrayOutput {
+	return o
+}
+
+func (o ProjectRepositorySettingApprovalRulesItemArrayOutput) Index(i pulumi.IntInput) ProjectRepositorySettingApprovalRulesItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ProjectRepositorySettingApprovalRulesItem {
+		return vs[0].([]ProjectRepositorySettingApprovalRulesItem)[vs[1].(int)]
+	}).(ProjectRepositorySettingApprovalRulesItemOutput)
+}
+
+type ProjectRepositorySettingApprovalRulesItemReviewer struct {
+	// (Updatable) Pull Request reviewer id
+	PrincipalId string `pulumi:"principalId"`
+	// the name of the principal
+	PrincipalName *string `pulumi:"principalName"`
+	// The state of the principal, it can be active or inactive or suppressed for emails
+	PrincipalState *string `pulumi:"principalState"`
+	// the type of principal
+	PrincipalType *string `pulumi:"principalType"`
+}
+
+// ProjectRepositorySettingApprovalRulesItemReviewerInput is an input type that accepts ProjectRepositorySettingApprovalRulesItemReviewerArgs and ProjectRepositorySettingApprovalRulesItemReviewerOutput values.
+// You can construct a concrete instance of `ProjectRepositorySettingApprovalRulesItemReviewerInput` via:
+//
+//	ProjectRepositorySettingApprovalRulesItemReviewerArgs{...}
+type ProjectRepositorySettingApprovalRulesItemReviewerInput interface {
+	pulumi.Input
+
+	ToProjectRepositorySettingApprovalRulesItemReviewerOutput() ProjectRepositorySettingApprovalRulesItemReviewerOutput
+	ToProjectRepositorySettingApprovalRulesItemReviewerOutputWithContext(context.Context) ProjectRepositorySettingApprovalRulesItemReviewerOutput
+}
+
+type ProjectRepositorySettingApprovalRulesItemReviewerArgs struct {
+	// (Updatable) Pull Request reviewer id
+	PrincipalId pulumi.StringInput `pulumi:"principalId"`
+	// the name of the principal
+	PrincipalName pulumi.StringPtrInput `pulumi:"principalName"`
+	// The state of the principal, it can be active or inactive or suppressed for emails
+	PrincipalState pulumi.StringPtrInput `pulumi:"principalState"`
+	// the type of principal
+	PrincipalType pulumi.StringPtrInput `pulumi:"principalType"`
+}
+
+func (ProjectRepositorySettingApprovalRulesItemReviewerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProjectRepositorySettingApprovalRulesItemReviewer)(nil)).Elem()
+}
+
+func (i ProjectRepositorySettingApprovalRulesItemReviewerArgs) ToProjectRepositorySettingApprovalRulesItemReviewerOutput() ProjectRepositorySettingApprovalRulesItemReviewerOutput {
+	return i.ToProjectRepositorySettingApprovalRulesItemReviewerOutputWithContext(context.Background())
+}
+
+func (i ProjectRepositorySettingApprovalRulesItemReviewerArgs) ToProjectRepositorySettingApprovalRulesItemReviewerOutputWithContext(ctx context.Context) ProjectRepositorySettingApprovalRulesItemReviewerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProjectRepositorySettingApprovalRulesItemReviewerOutput)
+}
+
+// ProjectRepositorySettingApprovalRulesItemReviewerArrayInput is an input type that accepts ProjectRepositorySettingApprovalRulesItemReviewerArray and ProjectRepositorySettingApprovalRulesItemReviewerArrayOutput values.
+// You can construct a concrete instance of `ProjectRepositorySettingApprovalRulesItemReviewerArrayInput` via:
+//
+//	ProjectRepositorySettingApprovalRulesItemReviewerArray{ ProjectRepositorySettingApprovalRulesItemReviewerArgs{...} }
+type ProjectRepositorySettingApprovalRulesItemReviewerArrayInput interface {
+	pulumi.Input
+
+	ToProjectRepositorySettingApprovalRulesItemReviewerArrayOutput() ProjectRepositorySettingApprovalRulesItemReviewerArrayOutput
+	ToProjectRepositorySettingApprovalRulesItemReviewerArrayOutputWithContext(context.Context) ProjectRepositorySettingApprovalRulesItemReviewerArrayOutput
+}
+
+type ProjectRepositorySettingApprovalRulesItemReviewerArray []ProjectRepositorySettingApprovalRulesItemReviewerInput
+
+func (ProjectRepositorySettingApprovalRulesItemReviewerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ProjectRepositorySettingApprovalRulesItemReviewer)(nil)).Elem()
+}
+
+func (i ProjectRepositorySettingApprovalRulesItemReviewerArray) ToProjectRepositorySettingApprovalRulesItemReviewerArrayOutput() ProjectRepositorySettingApprovalRulesItemReviewerArrayOutput {
+	return i.ToProjectRepositorySettingApprovalRulesItemReviewerArrayOutputWithContext(context.Background())
+}
+
+func (i ProjectRepositorySettingApprovalRulesItemReviewerArray) ToProjectRepositorySettingApprovalRulesItemReviewerArrayOutputWithContext(ctx context.Context) ProjectRepositorySettingApprovalRulesItemReviewerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProjectRepositorySettingApprovalRulesItemReviewerArrayOutput)
+}
+
+type ProjectRepositorySettingApprovalRulesItemReviewerOutput struct{ *pulumi.OutputState }
+
+func (ProjectRepositorySettingApprovalRulesItemReviewerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProjectRepositorySettingApprovalRulesItemReviewer)(nil)).Elem()
+}
+
+func (o ProjectRepositorySettingApprovalRulesItemReviewerOutput) ToProjectRepositorySettingApprovalRulesItemReviewerOutput() ProjectRepositorySettingApprovalRulesItemReviewerOutput {
+	return o
+}
+
+func (o ProjectRepositorySettingApprovalRulesItemReviewerOutput) ToProjectRepositorySettingApprovalRulesItemReviewerOutputWithContext(ctx context.Context) ProjectRepositorySettingApprovalRulesItemReviewerOutput {
+	return o
+}
+
+// (Updatable) Pull Request reviewer id
+func (o ProjectRepositorySettingApprovalRulesItemReviewerOutput) PrincipalId() pulumi.StringOutput {
+	return o.ApplyT(func(v ProjectRepositorySettingApprovalRulesItemReviewer) string { return v.PrincipalId }).(pulumi.StringOutput)
+}
+
+// the name of the principal
+func (o ProjectRepositorySettingApprovalRulesItemReviewerOutput) PrincipalName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ProjectRepositorySettingApprovalRulesItemReviewer) *string { return v.PrincipalName }).(pulumi.StringPtrOutput)
+}
+
+// The state of the principal, it can be active or inactive or suppressed for emails
+func (o ProjectRepositorySettingApprovalRulesItemReviewerOutput) PrincipalState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ProjectRepositorySettingApprovalRulesItemReviewer) *string { return v.PrincipalState }).(pulumi.StringPtrOutput)
+}
+
+// the type of principal
+func (o ProjectRepositorySettingApprovalRulesItemReviewerOutput) PrincipalType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ProjectRepositorySettingApprovalRulesItemReviewer) *string { return v.PrincipalType }).(pulumi.StringPtrOutput)
+}
+
+type ProjectRepositorySettingApprovalRulesItemReviewerArrayOutput struct{ *pulumi.OutputState }
+
+func (ProjectRepositorySettingApprovalRulesItemReviewerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ProjectRepositorySettingApprovalRulesItemReviewer)(nil)).Elem()
+}
+
+func (o ProjectRepositorySettingApprovalRulesItemReviewerArrayOutput) ToProjectRepositorySettingApprovalRulesItemReviewerArrayOutput() ProjectRepositorySettingApprovalRulesItemReviewerArrayOutput {
+	return o
+}
+
+func (o ProjectRepositorySettingApprovalRulesItemReviewerArrayOutput) ToProjectRepositorySettingApprovalRulesItemReviewerArrayOutputWithContext(ctx context.Context) ProjectRepositorySettingApprovalRulesItemReviewerArrayOutput {
+	return o
+}
+
+func (o ProjectRepositorySettingApprovalRulesItemReviewerArrayOutput) Index(i pulumi.IntInput) ProjectRepositorySettingApprovalRulesItemReviewerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ProjectRepositorySettingApprovalRulesItemReviewer {
+		return vs[0].([]ProjectRepositorySettingApprovalRulesItemReviewer)[vs[1].(int)]
+	}).(ProjectRepositorySettingApprovalRulesItemReviewerOutput)
+}
+
+type ProjectRepositorySettingMergeSettings struct {
+	// (Updatable) List of merge strategies which are allowed for a Project or Repository.
+	AllowedMergeStrategies []string `pulumi:"allowedMergeStrategies"`
+	// (Updatable) Default type of merge strategy associated with the a Project or Repository.
+	DefaultMergeStrategy string `pulumi:"defaultMergeStrategy"`
+}
+
+// ProjectRepositorySettingMergeSettingsInput is an input type that accepts ProjectRepositorySettingMergeSettingsArgs and ProjectRepositorySettingMergeSettingsOutput values.
+// You can construct a concrete instance of `ProjectRepositorySettingMergeSettingsInput` via:
+//
+//	ProjectRepositorySettingMergeSettingsArgs{...}
+type ProjectRepositorySettingMergeSettingsInput interface {
+	pulumi.Input
+
+	ToProjectRepositorySettingMergeSettingsOutput() ProjectRepositorySettingMergeSettingsOutput
+	ToProjectRepositorySettingMergeSettingsOutputWithContext(context.Context) ProjectRepositorySettingMergeSettingsOutput
+}
+
+type ProjectRepositorySettingMergeSettingsArgs struct {
+	// (Updatable) List of merge strategies which are allowed for a Project or Repository.
+	AllowedMergeStrategies pulumi.StringArrayInput `pulumi:"allowedMergeStrategies"`
+	// (Updatable) Default type of merge strategy associated with the a Project or Repository.
+	DefaultMergeStrategy pulumi.StringInput `pulumi:"defaultMergeStrategy"`
+}
+
+func (ProjectRepositorySettingMergeSettingsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProjectRepositorySettingMergeSettings)(nil)).Elem()
+}
+
+func (i ProjectRepositorySettingMergeSettingsArgs) ToProjectRepositorySettingMergeSettingsOutput() ProjectRepositorySettingMergeSettingsOutput {
+	return i.ToProjectRepositorySettingMergeSettingsOutputWithContext(context.Background())
+}
+
+func (i ProjectRepositorySettingMergeSettingsArgs) ToProjectRepositorySettingMergeSettingsOutputWithContext(ctx context.Context) ProjectRepositorySettingMergeSettingsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProjectRepositorySettingMergeSettingsOutput)
+}
+
+func (i ProjectRepositorySettingMergeSettingsArgs) ToProjectRepositorySettingMergeSettingsPtrOutput() ProjectRepositorySettingMergeSettingsPtrOutput {
+	return i.ToProjectRepositorySettingMergeSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i ProjectRepositorySettingMergeSettingsArgs) ToProjectRepositorySettingMergeSettingsPtrOutputWithContext(ctx context.Context) ProjectRepositorySettingMergeSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProjectRepositorySettingMergeSettingsOutput).ToProjectRepositorySettingMergeSettingsPtrOutputWithContext(ctx)
+}
+
+// ProjectRepositorySettingMergeSettingsPtrInput is an input type that accepts ProjectRepositorySettingMergeSettingsArgs, ProjectRepositorySettingMergeSettingsPtr and ProjectRepositorySettingMergeSettingsPtrOutput values.
+// You can construct a concrete instance of `ProjectRepositorySettingMergeSettingsPtrInput` via:
+//
+//	        ProjectRepositorySettingMergeSettingsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ProjectRepositorySettingMergeSettingsPtrInput interface {
+	pulumi.Input
+
+	ToProjectRepositorySettingMergeSettingsPtrOutput() ProjectRepositorySettingMergeSettingsPtrOutput
+	ToProjectRepositorySettingMergeSettingsPtrOutputWithContext(context.Context) ProjectRepositorySettingMergeSettingsPtrOutput
+}
+
+type projectRepositorySettingMergeSettingsPtrType ProjectRepositorySettingMergeSettingsArgs
+
+func ProjectRepositorySettingMergeSettingsPtr(v *ProjectRepositorySettingMergeSettingsArgs) ProjectRepositorySettingMergeSettingsPtrInput {
+	return (*projectRepositorySettingMergeSettingsPtrType)(v)
+}
+
+func (*projectRepositorySettingMergeSettingsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ProjectRepositorySettingMergeSettings)(nil)).Elem()
+}
+
+func (i *projectRepositorySettingMergeSettingsPtrType) ToProjectRepositorySettingMergeSettingsPtrOutput() ProjectRepositorySettingMergeSettingsPtrOutput {
+	return i.ToProjectRepositorySettingMergeSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i *projectRepositorySettingMergeSettingsPtrType) ToProjectRepositorySettingMergeSettingsPtrOutputWithContext(ctx context.Context) ProjectRepositorySettingMergeSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProjectRepositorySettingMergeSettingsPtrOutput)
+}
+
+type ProjectRepositorySettingMergeSettingsOutput struct{ *pulumi.OutputState }
+
+func (ProjectRepositorySettingMergeSettingsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProjectRepositorySettingMergeSettings)(nil)).Elem()
+}
+
+func (o ProjectRepositorySettingMergeSettingsOutput) ToProjectRepositorySettingMergeSettingsOutput() ProjectRepositorySettingMergeSettingsOutput {
+	return o
+}
+
+func (o ProjectRepositorySettingMergeSettingsOutput) ToProjectRepositorySettingMergeSettingsOutputWithContext(ctx context.Context) ProjectRepositorySettingMergeSettingsOutput {
+	return o
+}
+
+func (o ProjectRepositorySettingMergeSettingsOutput) ToProjectRepositorySettingMergeSettingsPtrOutput() ProjectRepositorySettingMergeSettingsPtrOutput {
+	return o.ToProjectRepositorySettingMergeSettingsPtrOutputWithContext(context.Background())
+}
+
+func (o ProjectRepositorySettingMergeSettingsOutput) ToProjectRepositorySettingMergeSettingsPtrOutputWithContext(ctx context.Context) ProjectRepositorySettingMergeSettingsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ProjectRepositorySettingMergeSettings) *ProjectRepositorySettingMergeSettings {
+		return &v
+	}).(ProjectRepositorySettingMergeSettingsPtrOutput)
+}
+
+// (Updatable) List of merge strategies which are allowed for a Project or Repository.
+func (o ProjectRepositorySettingMergeSettingsOutput) AllowedMergeStrategies() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ProjectRepositorySettingMergeSettings) []string { return v.AllowedMergeStrategies }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Default type of merge strategy associated with the a Project or Repository.
+func (o ProjectRepositorySettingMergeSettingsOutput) DefaultMergeStrategy() pulumi.StringOutput {
+	return o.ApplyT(func(v ProjectRepositorySettingMergeSettings) string { return v.DefaultMergeStrategy }).(pulumi.StringOutput)
+}
+
+type ProjectRepositorySettingMergeSettingsPtrOutput struct{ *pulumi.OutputState }
+
+func (ProjectRepositorySettingMergeSettingsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ProjectRepositorySettingMergeSettings)(nil)).Elem()
+}
+
+func (o ProjectRepositorySettingMergeSettingsPtrOutput) ToProjectRepositorySettingMergeSettingsPtrOutput() ProjectRepositorySettingMergeSettingsPtrOutput {
+	return o
+}
+
+func (o ProjectRepositorySettingMergeSettingsPtrOutput) ToProjectRepositorySettingMergeSettingsPtrOutputWithContext(ctx context.Context) ProjectRepositorySettingMergeSettingsPtrOutput {
+	return o
+}
+
+func (o ProjectRepositorySettingMergeSettingsPtrOutput) Elem() ProjectRepositorySettingMergeSettingsOutput {
+	return o.ApplyT(func(v *ProjectRepositorySettingMergeSettings) ProjectRepositorySettingMergeSettings {
+		if v != nil {
+			return *v
+		}
+		var ret ProjectRepositorySettingMergeSettings
+		return ret
+	}).(ProjectRepositorySettingMergeSettingsOutput)
+}
+
+// (Updatable) List of merge strategies which are allowed for a Project or Repository.
+func (o ProjectRepositorySettingMergeSettingsPtrOutput) AllowedMergeStrategies() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ProjectRepositorySettingMergeSettings) []string {
+		if v == nil {
+			return nil
+		}
+		return v.AllowedMergeStrategies
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Default type of merge strategy associated with the a Project or Repository.
+func (o ProjectRepositorySettingMergeSettingsPtrOutput) DefaultMergeStrategy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProjectRepositorySettingMergeSettings) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.DefaultMergeStrategy
+	}).(pulumi.StringPtrOutput)
+}
+
 type RepositoryMirrorRepositoryConfig struct {
-	// (Updatable) Upstream git repository connection identifer.
+	// (Updatable) Upstream git repository connection identifier.
 	ConnectorId *string `pulumi:"connectorId"`
 	// (Updatable) URL of external repository you want to mirror.
 	RepositoryUrl *string `pulumi:"repositoryUrl"`
@@ -11545,7 +12102,7 @@ type RepositoryMirrorRepositoryConfigInput interface {
 }
 
 type RepositoryMirrorRepositoryConfigArgs struct {
-	// (Updatable) Upstream git repository connection identifer.
+	// (Updatable) Upstream git repository connection identifier.
 	ConnectorId pulumi.StringPtrInput `pulumi:"connectorId"`
 	// (Updatable) URL of external repository you want to mirror.
 	RepositoryUrl pulumi.StringPtrInput `pulumi:"repositoryUrl"`
@@ -11630,7 +12187,7 @@ func (o RepositoryMirrorRepositoryConfigOutput) ToRepositoryMirrorRepositoryConf
 	}).(RepositoryMirrorRepositoryConfigPtrOutput)
 }
 
-// (Updatable) Upstream git repository connection identifer.
+// (Updatable) Upstream git repository connection identifier.
 func (o RepositoryMirrorRepositoryConfigOutput) ConnectorId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RepositoryMirrorRepositoryConfig) *string { return v.ConnectorId }).(pulumi.StringPtrOutput)
 }
@@ -11671,7 +12228,7 @@ func (o RepositoryMirrorRepositoryConfigPtrOutput) Elem() RepositoryMirrorReposi
 	}).(RepositoryMirrorRepositoryConfigOutput)
 }
 
-// (Updatable) Upstream git repository connection identifer.
+// (Updatable) Upstream git repository connection identifier.
 func (o RepositoryMirrorRepositoryConfigPtrOutput) ConnectorId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RepositoryMirrorRepositoryConfig) *string {
 		if v == nil {
@@ -11857,11 +12414,690 @@ func (o RepositoryMirrorRepositoryConfigTriggerSchedulePtrOutput) ScheduleType()
 	}).(pulumi.StringPtrOutput)
 }
 
+type RepositorySettingApprovalRules struct {
+	// (Updatable) List of approval rules.
+	Items []RepositorySettingApprovalRulesItem `pulumi:"items"`
+}
+
+// RepositorySettingApprovalRulesInput is an input type that accepts RepositorySettingApprovalRulesArgs and RepositorySettingApprovalRulesOutput values.
+// You can construct a concrete instance of `RepositorySettingApprovalRulesInput` via:
+//
+//	RepositorySettingApprovalRulesArgs{...}
+type RepositorySettingApprovalRulesInput interface {
+	pulumi.Input
+
+	ToRepositorySettingApprovalRulesOutput() RepositorySettingApprovalRulesOutput
+	ToRepositorySettingApprovalRulesOutputWithContext(context.Context) RepositorySettingApprovalRulesOutput
+}
+
+type RepositorySettingApprovalRulesArgs struct {
+	// (Updatable) List of approval rules.
+	Items RepositorySettingApprovalRulesItemArrayInput `pulumi:"items"`
+}
+
+func (RepositorySettingApprovalRulesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RepositorySettingApprovalRules)(nil)).Elem()
+}
+
+func (i RepositorySettingApprovalRulesArgs) ToRepositorySettingApprovalRulesOutput() RepositorySettingApprovalRulesOutput {
+	return i.ToRepositorySettingApprovalRulesOutputWithContext(context.Background())
+}
+
+func (i RepositorySettingApprovalRulesArgs) ToRepositorySettingApprovalRulesOutputWithContext(ctx context.Context) RepositorySettingApprovalRulesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RepositorySettingApprovalRulesOutput)
+}
+
+func (i RepositorySettingApprovalRulesArgs) ToRepositorySettingApprovalRulesPtrOutput() RepositorySettingApprovalRulesPtrOutput {
+	return i.ToRepositorySettingApprovalRulesPtrOutputWithContext(context.Background())
+}
+
+func (i RepositorySettingApprovalRulesArgs) ToRepositorySettingApprovalRulesPtrOutputWithContext(ctx context.Context) RepositorySettingApprovalRulesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RepositorySettingApprovalRulesOutput).ToRepositorySettingApprovalRulesPtrOutputWithContext(ctx)
+}
+
+// RepositorySettingApprovalRulesPtrInput is an input type that accepts RepositorySettingApprovalRulesArgs, RepositorySettingApprovalRulesPtr and RepositorySettingApprovalRulesPtrOutput values.
+// You can construct a concrete instance of `RepositorySettingApprovalRulesPtrInput` via:
+//
+//	        RepositorySettingApprovalRulesArgs{...}
+//
+//	or:
+//
+//	        nil
+type RepositorySettingApprovalRulesPtrInput interface {
+	pulumi.Input
+
+	ToRepositorySettingApprovalRulesPtrOutput() RepositorySettingApprovalRulesPtrOutput
+	ToRepositorySettingApprovalRulesPtrOutputWithContext(context.Context) RepositorySettingApprovalRulesPtrOutput
+}
+
+type repositorySettingApprovalRulesPtrType RepositorySettingApprovalRulesArgs
+
+func RepositorySettingApprovalRulesPtr(v *RepositorySettingApprovalRulesArgs) RepositorySettingApprovalRulesPtrInput {
+	return (*repositorySettingApprovalRulesPtrType)(v)
+}
+
+func (*repositorySettingApprovalRulesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**RepositorySettingApprovalRules)(nil)).Elem()
+}
+
+func (i *repositorySettingApprovalRulesPtrType) ToRepositorySettingApprovalRulesPtrOutput() RepositorySettingApprovalRulesPtrOutput {
+	return i.ToRepositorySettingApprovalRulesPtrOutputWithContext(context.Background())
+}
+
+func (i *repositorySettingApprovalRulesPtrType) ToRepositorySettingApprovalRulesPtrOutputWithContext(ctx context.Context) RepositorySettingApprovalRulesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RepositorySettingApprovalRulesPtrOutput)
+}
+
+type RepositorySettingApprovalRulesOutput struct{ *pulumi.OutputState }
+
+func (RepositorySettingApprovalRulesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RepositorySettingApprovalRules)(nil)).Elem()
+}
+
+func (o RepositorySettingApprovalRulesOutput) ToRepositorySettingApprovalRulesOutput() RepositorySettingApprovalRulesOutput {
+	return o
+}
+
+func (o RepositorySettingApprovalRulesOutput) ToRepositorySettingApprovalRulesOutputWithContext(ctx context.Context) RepositorySettingApprovalRulesOutput {
+	return o
+}
+
+func (o RepositorySettingApprovalRulesOutput) ToRepositorySettingApprovalRulesPtrOutput() RepositorySettingApprovalRulesPtrOutput {
+	return o.ToRepositorySettingApprovalRulesPtrOutputWithContext(context.Background())
+}
+
+func (o RepositorySettingApprovalRulesOutput) ToRepositorySettingApprovalRulesPtrOutputWithContext(ctx context.Context) RepositorySettingApprovalRulesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v RepositorySettingApprovalRules) *RepositorySettingApprovalRules {
+		return &v
+	}).(RepositorySettingApprovalRulesPtrOutput)
+}
+
+// (Updatable) List of approval rules.
+func (o RepositorySettingApprovalRulesOutput) Items() RepositorySettingApprovalRulesItemArrayOutput {
+	return o.ApplyT(func(v RepositorySettingApprovalRules) []RepositorySettingApprovalRulesItem { return v.Items }).(RepositorySettingApprovalRulesItemArrayOutput)
+}
+
+type RepositorySettingApprovalRulesPtrOutput struct{ *pulumi.OutputState }
+
+func (RepositorySettingApprovalRulesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**RepositorySettingApprovalRules)(nil)).Elem()
+}
+
+func (o RepositorySettingApprovalRulesPtrOutput) ToRepositorySettingApprovalRulesPtrOutput() RepositorySettingApprovalRulesPtrOutput {
+	return o
+}
+
+func (o RepositorySettingApprovalRulesPtrOutput) ToRepositorySettingApprovalRulesPtrOutputWithContext(ctx context.Context) RepositorySettingApprovalRulesPtrOutput {
+	return o
+}
+
+func (o RepositorySettingApprovalRulesPtrOutput) Elem() RepositorySettingApprovalRulesOutput {
+	return o.ApplyT(func(v *RepositorySettingApprovalRules) RepositorySettingApprovalRules {
+		if v != nil {
+			return *v
+		}
+		var ret RepositorySettingApprovalRules
+		return ret
+	}).(RepositorySettingApprovalRulesOutput)
+}
+
+// (Updatable) List of approval rules.
+func (o RepositorySettingApprovalRulesPtrOutput) Items() RepositorySettingApprovalRulesItemArrayOutput {
+	return o.ApplyT(func(v *RepositorySettingApprovalRules) []RepositorySettingApprovalRulesItem {
+		if v == nil {
+			return nil
+		}
+		return v.Items
+	}).(RepositorySettingApprovalRulesItemArrayOutput)
+}
+
+type RepositorySettingApprovalRulesItem struct {
+	// (Updatable) Branch name where pull requests targeting the branch must satisfy the approval rule. This value being null means the rule applies to all pull requests
+	DestinationBranch *string `pulumi:"destinationBranch"`
+	// (Updatable) Minimum number of approvals which must be provided by the reviewers specified in the list before the rule can be satisfied
+	MinApprovalsCount int `pulumi:"minApprovalsCount"`
+	// (Updatable) Name which is used to uniquely identify an approval rule.
+	Name string `pulumi:"name"`
+	// (Updatable) List of users who must provide approvals up to the minApprovalsCount specified in the rule. An empty list means the approvals can come from any user.
+	Reviewers []RepositorySettingApprovalRulesItemReviewer `pulumi:"reviewers"`
+}
+
+// RepositorySettingApprovalRulesItemInput is an input type that accepts RepositorySettingApprovalRulesItemArgs and RepositorySettingApprovalRulesItemOutput values.
+// You can construct a concrete instance of `RepositorySettingApprovalRulesItemInput` via:
+//
+//	RepositorySettingApprovalRulesItemArgs{...}
+type RepositorySettingApprovalRulesItemInput interface {
+	pulumi.Input
+
+	ToRepositorySettingApprovalRulesItemOutput() RepositorySettingApprovalRulesItemOutput
+	ToRepositorySettingApprovalRulesItemOutputWithContext(context.Context) RepositorySettingApprovalRulesItemOutput
+}
+
+type RepositorySettingApprovalRulesItemArgs struct {
+	// (Updatable) Branch name where pull requests targeting the branch must satisfy the approval rule. This value being null means the rule applies to all pull requests
+	DestinationBranch pulumi.StringPtrInput `pulumi:"destinationBranch"`
+	// (Updatable) Minimum number of approvals which must be provided by the reviewers specified in the list before the rule can be satisfied
+	MinApprovalsCount pulumi.IntInput `pulumi:"minApprovalsCount"`
+	// (Updatable) Name which is used to uniquely identify an approval rule.
+	Name pulumi.StringInput `pulumi:"name"`
+	// (Updatable) List of users who must provide approvals up to the minApprovalsCount specified in the rule. An empty list means the approvals can come from any user.
+	Reviewers RepositorySettingApprovalRulesItemReviewerArrayInput `pulumi:"reviewers"`
+}
+
+func (RepositorySettingApprovalRulesItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RepositorySettingApprovalRulesItem)(nil)).Elem()
+}
+
+func (i RepositorySettingApprovalRulesItemArgs) ToRepositorySettingApprovalRulesItemOutput() RepositorySettingApprovalRulesItemOutput {
+	return i.ToRepositorySettingApprovalRulesItemOutputWithContext(context.Background())
+}
+
+func (i RepositorySettingApprovalRulesItemArgs) ToRepositorySettingApprovalRulesItemOutputWithContext(ctx context.Context) RepositorySettingApprovalRulesItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RepositorySettingApprovalRulesItemOutput)
+}
+
+// RepositorySettingApprovalRulesItemArrayInput is an input type that accepts RepositorySettingApprovalRulesItemArray and RepositorySettingApprovalRulesItemArrayOutput values.
+// You can construct a concrete instance of `RepositorySettingApprovalRulesItemArrayInput` via:
+//
+//	RepositorySettingApprovalRulesItemArray{ RepositorySettingApprovalRulesItemArgs{...} }
+type RepositorySettingApprovalRulesItemArrayInput interface {
+	pulumi.Input
+
+	ToRepositorySettingApprovalRulesItemArrayOutput() RepositorySettingApprovalRulesItemArrayOutput
+	ToRepositorySettingApprovalRulesItemArrayOutputWithContext(context.Context) RepositorySettingApprovalRulesItemArrayOutput
+}
+
+type RepositorySettingApprovalRulesItemArray []RepositorySettingApprovalRulesItemInput
+
+func (RepositorySettingApprovalRulesItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RepositorySettingApprovalRulesItem)(nil)).Elem()
+}
+
+func (i RepositorySettingApprovalRulesItemArray) ToRepositorySettingApprovalRulesItemArrayOutput() RepositorySettingApprovalRulesItemArrayOutput {
+	return i.ToRepositorySettingApprovalRulesItemArrayOutputWithContext(context.Background())
+}
+
+func (i RepositorySettingApprovalRulesItemArray) ToRepositorySettingApprovalRulesItemArrayOutputWithContext(ctx context.Context) RepositorySettingApprovalRulesItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RepositorySettingApprovalRulesItemArrayOutput)
+}
+
+type RepositorySettingApprovalRulesItemOutput struct{ *pulumi.OutputState }
+
+func (RepositorySettingApprovalRulesItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RepositorySettingApprovalRulesItem)(nil)).Elem()
+}
+
+func (o RepositorySettingApprovalRulesItemOutput) ToRepositorySettingApprovalRulesItemOutput() RepositorySettingApprovalRulesItemOutput {
+	return o
+}
+
+func (o RepositorySettingApprovalRulesItemOutput) ToRepositorySettingApprovalRulesItemOutputWithContext(ctx context.Context) RepositorySettingApprovalRulesItemOutput {
+	return o
+}
+
+// (Updatable) Branch name where pull requests targeting the branch must satisfy the approval rule. This value being null means the rule applies to all pull requests
+func (o RepositorySettingApprovalRulesItemOutput) DestinationBranch() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RepositorySettingApprovalRulesItem) *string { return v.DestinationBranch }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Minimum number of approvals which must be provided by the reviewers specified in the list before the rule can be satisfied
+func (o RepositorySettingApprovalRulesItemOutput) MinApprovalsCount() pulumi.IntOutput {
+	return o.ApplyT(func(v RepositorySettingApprovalRulesItem) int { return v.MinApprovalsCount }).(pulumi.IntOutput)
+}
+
+// (Updatable) Name which is used to uniquely identify an approval rule.
+func (o RepositorySettingApprovalRulesItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v RepositorySettingApprovalRulesItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// (Updatable) List of users who must provide approvals up to the minApprovalsCount specified in the rule. An empty list means the approvals can come from any user.
+func (o RepositorySettingApprovalRulesItemOutput) Reviewers() RepositorySettingApprovalRulesItemReviewerArrayOutput {
+	return o.ApplyT(func(v RepositorySettingApprovalRulesItem) []RepositorySettingApprovalRulesItemReviewer {
+		return v.Reviewers
+	}).(RepositorySettingApprovalRulesItemReviewerArrayOutput)
+}
+
+type RepositorySettingApprovalRulesItemArrayOutput struct{ *pulumi.OutputState }
+
+func (RepositorySettingApprovalRulesItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RepositorySettingApprovalRulesItem)(nil)).Elem()
+}
+
+func (o RepositorySettingApprovalRulesItemArrayOutput) ToRepositorySettingApprovalRulesItemArrayOutput() RepositorySettingApprovalRulesItemArrayOutput {
+	return o
+}
+
+func (o RepositorySettingApprovalRulesItemArrayOutput) ToRepositorySettingApprovalRulesItemArrayOutputWithContext(ctx context.Context) RepositorySettingApprovalRulesItemArrayOutput {
+	return o
+}
+
+func (o RepositorySettingApprovalRulesItemArrayOutput) Index(i pulumi.IntInput) RepositorySettingApprovalRulesItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) RepositorySettingApprovalRulesItem {
+		return vs[0].([]RepositorySettingApprovalRulesItem)[vs[1].(int)]
+	}).(RepositorySettingApprovalRulesItemOutput)
+}
+
+type RepositorySettingApprovalRulesItemReviewer struct {
+	// (Updatable) Pull Request reviewer id
+	PrincipalId string `pulumi:"principalId"`
+	// the name of the principal
+	PrincipalName *string `pulumi:"principalName"`
+	// The state of the principal, it can be active or inactive or suppressed for emails
+	PrincipalState *string `pulumi:"principalState"`
+	// the type of principal
+	PrincipalType *string `pulumi:"principalType"`
+}
+
+// RepositorySettingApprovalRulesItemReviewerInput is an input type that accepts RepositorySettingApprovalRulesItemReviewerArgs and RepositorySettingApprovalRulesItemReviewerOutput values.
+// You can construct a concrete instance of `RepositorySettingApprovalRulesItemReviewerInput` via:
+//
+//	RepositorySettingApprovalRulesItemReviewerArgs{...}
+type RepositorySettingApprovalRulesItemReviewerInput interface {
+	pulumi.Input
+
+	ToRepositorySettingApprovalRulesItemReviewerOutput() RepositorySettingApprovalRulesItemReviewerOutput
+	ToRepositorySettingApprovalRulesItemReviewerOutputWithContext(context.Context) RepositorySettingApprovalRulesItemReviewerOutput
+}
+
+type RepositorySettingApprovalRulesItemReviewerArgs struct {
+	// (Updatable) Pull Request reviewer id
+	PrincipalId pulumi.StringInput `pulumi:"principalId"`
+	// the name of the principal
+	PrincipalName pulumi.StringPtrInput `pulumi:"principalName"`
+	// The state of the principal, it can be active or inactive or suppressed for emails
+	PrincipalState pulumi.StringPtrInput `pulumi:"principalState"`
+	// the type of principal
+	PrincipalType pulumi.StringPtrInput `pulumi:"principalType"`
+}
+
+func (RepositorySettingApprovalRulesItemReviewerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RepositorySettingApprovalRulesItemReviewer)(nil)).Elem()
+}
+
+func (i RepositorySettingApprovalRulesItemReviewerArgs) ToRepositorySettingApprovalRulesItemReviewerOutput() RepositorySettingApprovalRulesItemReviewerOutput {
+	return i.ToRepositorySettingApprovalRulesItemReviewerOutputWithContext(context.Background())
+}
+
+func (i RepositorySettingApprovalRulesItemReviewerArgs) ToRepositorySettingApprovalRulesItemReviewerOutputWithContext(ctx context.Context) RepositorySettingApprovalRulesItemReviewerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RepositorySettingApprovalRulesItemReviewerOutput)
+}
+
+// RepositorySettingApprovalRulesItemReviewerArrayInput is an input type that accepts RepositorySettingApprovalRulesItemReviewerArray and RepositorySettingApprovalRulesItemReviewerArrayOutput values.
+// You can construct a concrete instance of `RepositorySettingApprovalRulesItemReviewerArrayInput` via:
+//
+//	RepositorySettingApprovalRulesItemReviewerArray{ RepositorySettingApprovalRulesItemReviewerArgs{...} }
+type RepositorySettingApprovalRulesItemReviewerArrayInput interface {
+	pulumi.Input
+
+	ToRepositorySettingApprovalRulesItemReviewerArrayOutput() RepositorySettingApprovalRulesItemReviewerArrayOutput
+	ToRepositorySettingApprovalRulesItemReviewerArrayOutputWithContext(context.Context) RepositorySettingApprovalRulesItemReviewerArrayOutput
+}
+
+type RepositorySettingApprovalRulesItemReviewerArray []RepositorySettingApprovalRulesItemReviewerInput
+
+func (RepositorySettingApprovalRulesItemReviewerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RepositorySettingApprovalRulesItemReviewer)(nil)).Elem()
+}
+
+func (i RepositorySettingApprovalRulesItemReviewerArray) ToRepositorySettingApprovalRulesItemReviewerArrayOutput() RepositorySettingApprovalRulesItemReviewerArrayOutput {
+	return i.ToRepositorySettingApprovalRulesItemReviewerArrayOutputWithContext(context.Background())
+}
+
+func (i RepositorySettingApprovalRulesItemReviewerArray) ToRepositorySettingApprovalRulesItemReviewerArrayOutputWithContext(ctx context.Context) RepositorySettingApprovalRulesItemReviewerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RepositorySettingApprovalRulesItemReviewerArrayOutput)
+}
+
+type RepositorySettingApprovalRulesItemReviewerOutput struct{ *pulumi.OutputState }
+
+func (RepositorySettingApprovalRulesItemReviewerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RepositorySettingApprovalRulesItemReviewer)(nil)).Elem()
+}
+
+func (o RepositorySettingApprovalRulesItemReviewerOutput) ToRepositorySettingApprovalRulesItemReviewerOutput() RepositorySettingApprovalRulesItemReviewerOutput {
+	return o
+}
+
+func (o RepositorySettingApprovalRulesItemReviewerOutput) ToRepositorySettingApprovalRulesItemReviewerOutputWithContext(ctx context.Context) RepositorySettingApprovalRulesItemReviewerOutput {
+	return o
+}
+
+// (Updatable) Pull Request reviewer id
+func (o RepositorySettingApprovalRulesItemReviewerOutput) PrincipalId() pulumi.StringOutput {
+	return o.ApplyT(func(v RepositorySettingApprovalRulesItemReviewer) string { return v.PrincipalId }).(pulumi.StringOutput)
+}
+
+// the name of the principal
+func (o RepositorySettingApprovalRulesItemReviewerOutput) PrincipalName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RepositorySettingApprovalRulesItemReviewer) *string { return v.PrincipalName }).(pulumi.StringPtrOutput)
+}
+
+// The state of the principal, it can be active or inactive or suppressed for emails
+func (o RepositorySettingApprovalRulesItemReviewerOutput) PrincipalState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RepositorySettingApprovalRulesItemReviewer) *string { return v.PrincipalState }).(pulumi.StringPtrOutput)
+}
+
+// the type of principal
+func (o RepositorySettingApprovalRulesItemReviewerOutput) PrincipalType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RepositorySettingApprovalRulesItemReviewer) *string { return v.PrincipalType }).(pulumi.StringPtrOutput)
+}
+
+type RepositorySettingApprovalRulesItemReviewerArrayOutput struct{ *pulumi.OutputState }
+
+func (RepositorySettingApprovalRulesItemReviewerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RepositorySettingApprovalRulesItemReviewer)(nil)).Elem()
+}
+
+func (o RepositorySettingApprovalRulesItemReviewerArrayOutput) ToRepositorySettingApprovalRulesItemReviewerArrayOutput() RepositorySettingApprovalRulesItemReviewerArrayOutput {
+	return o
+}
+
+func (o RepositorySettingApprovalRulesItemReviewerArrayOutput) ToRepositorySettingApprovalRulesItemReviewerArrayOutputWithContext(ctx context.Context) RepositorySettingApprovalRulesItemReviewerArrayOutput {
+	return o
+}
+
+func (o RepositorySettingApprovalRulesItemReviewerArrayOutput) Index(i pulumi.IntInput) RepositorySettingApprovalRulesItemReviewerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) RepositorySettingApprovalRulesItemReviewer {
+		return vs[0].([]RepositorySettingApprovalRulesItemReviewer)[vs[1].(int)]
+	}).(RepositorySettingApprovalRulesItemReviewerOutput)
+}
+
+type RepositorySettingMergeChecks struct {
+	// (Updatable) Indicates whether or not a pull request must have a successful build run and no queued builds before it can be merged
+	LastBuildSucceeded string `pulumi:"lastBuildSucceeded"`
+}
+
+// RepositorySettingMergeChecksInput is an input type that accepts RepositorySettingMergeChecksArgs and RepositorySettingMergeChecksOutput values.
+// You can construct a concrete instance of `RepositorySettingMergeChecksInput` via:
+//
+//	RepositorySettingMergeChecksArgs{...}
+type RepositorySettingMergeChecksInput interface {
+	pulumi.Input
+
+	ToRepositorySettingMergeChecksOutput() RepositorySettingMergeChecksOutput
+	ToRepositorySettingMergeChecksOutputWithContext(context.Context) RepositorySettingMergeChecksOutput
+}
+
+type RepositorySettingMergeChecksArgs struct {
+	// (Updatable) Indicates whether or not a pull request must have a successful build run and no queued builds before it can be merged
+	LastBuildSucceeded pulumi.StringInput `pulumi:"lastBuildSucceeded"`
+}
+
+func (RepositorySettingMergeChecksArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RepositorySettingMergeChecks)(nil)).Elem()
+}
+
+func (i RepositorySettingMergeChecksArgs) ToRepositorySettingMergeChecksOutput() RepositorySettingMergeChecksOutput {
+	return i.ToRepositorySettingMergeChecksOutputWithContext(context.Background())
+}
+
+func (i RepositorySettingMergeChecksArgs) ToRepositorySettingMergeChecksOutputWithContext(ctx context.Context) RepositorySettingMergeChecksOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RepositorySettingMergeChecksOutput)
+}
+
+func (i RepositorySettingMergeChecksArgs) ToRepositorySettingMergeChecksPtrOutput() RepositorySettingMergeChecksPtrOutput {
+	return i.ToRepositorySettingMergeChecksPtrOutputWithContext(context.Background())
+}
+
+func (i RepositorySettingMergeChecksArgs) ToRepositorySettingMergeChecksPtrOutputWithContext(ctx context.Context) RepositorySettingMergeChecksPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RepositorySettingMergeChecksOutput).ToRepositorySettingMergeChecksPtrOutputWithContext(ctx)
+}
+
+// RepositorySettingMergeChecksPtrInput is an input type that accepts RepositorySettingMergeChecksArgs, RepositorySettingMergeChecksPtr and RepositorySettingMergeChecksPtrOutput values.
+// You can construct a concrete instance of `RepositorySettingMergeChecksPtrInput` via:
+//
+//	        RepositorySettingMergeChecksArgs{...}
+//
+//	or:
+//
+//	        nil
+type RepositorySettingMergeChecksPtrInput interface {
+	pulumi.Input
+
+	ToRepositorySettingMergeChecksPtrOutput() RepositorySettingMergeChecksPtrOutput
+	ToRepositorySettingMergeChecksPtrOutputWithContext(context.Context) RepositorySettingMergeChecksPtrOutput
+}
+
+type repositorySettingMergeChecksPtrType RepositorySettingMergeChecksArgs
+
+func RepositorySettingMergeChecksPtr(v *RepositorySettingMergeChecksArgs) RepositorySettingMergeChecksPtrInput {
+	return (*repositorySettingMergeChecksPtrType)(v)
+}
+
+func (*repositorySettingMergeChecksPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**RepositorySettingMergeChecks)(nil)).Elem()
+}
+
+func (i *repositorySettingMergeChecksPtrType) ToRepositorySettingMergeChecksPtrOutput() RepositorySettingMergeChecksPtrOutput {
+	return i.ToRepositorySettingMergeChecksPtrOutputWithContext(context.Background())
+}
+
+func (i *repositorySettingMergeChecksPtrType) ToRepositorySettingMergeChecksPtrOutputWithContext(ctx context.Context) RepositorySettingMergeChecksPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RepositorySettingMergeChecksPtrOutput)
+}
+
+type RepositorySettingMergeChecksOutput struct{ *pulumi.OutputState }
+
+func (RepositorySettingMergeChecksOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RepositorySettingMergeChecks)(nil)).Elem()
+}
+
+func (o RepositorySettingMergeChecksOutput) ToRepositorySettingMergeChecksOutput() RepositorySettingMergeChecksOutput {
+	return o
+}
+
+func (o RepositorySettingMergeChecksOutput) ToRepositorySettingMergeChecksOutputWithContext(ctx context.Context) RepositorySettingMergeChecksOutput {
+	return o
+}
+
+func (o RepositorySettingMergeChecksOutput) ToRepositorySettingMergeChecksPtrOutput() RepositorySettingMergeChecksPtrOutput {
+	return o.ToRepositorySettingMergeChecksPtrOutputWithContext(context.Background())
+}
+
+func (o RepositorySettingMergeChecksOutput) ToRepositorySettingMergeChecksPtrOutputWithContext(ctx context.Context) RepositorySettingMergeChecksPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v RepositorySettingMergeChecks) *RepositorySettingMergeChecks {
+		return &v
+	}).(RepositorySettingMergeChecksPtrOutput)
+}
+
+// (Updatable) Indicates whether or not a pull request must have a successful build run and no queued builds before it can be merged
+func (o RepositorySettingMergeChecksOutput) LastBuildSucceeded() pulumi.StringOutput {
+	return o.ApplyT(func(v RepositorySettingMergeChecks) string { return v.LastBuildSucceeded }).(pulumi.StringOutput)
+}
+
+type RepositorySettingMergeChecksPtrOutput struct{ *pulumi.OutputState }
+
+func (RepositorySettingMergeChecksPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**RepositorySettingMergeChecks)(nil)).Elem()
+}
+
+func (o RepositorySettingMergeChecksPtrOutput) ToRepositorySettingMergeChecksPtrOutput() RepositorySettingMergeChecksPtrOutput {
+	return o
+}
+
+func (o RepositorySettingMergeChecksPtrOutput) ToRepositorySettingMergeChecksPtrOutputWithContext(ctx context.Context) RepositorySettingMergeChecksPtrOutput {
+	return o
+}
+
+func (o RepositorySettingMergeChecksPtrOutput) Elem() RepositorySettingMergeChecksOutput {
+	return o.ApplyT(func(v *RepositorySettingMergeChecks) RepositorySettingMergeChecks {
+		if v != nil {
+			return *v
+		}
+		var ret RepositorySettingMergeChecks
+		return ret
+	}).(RepositorySettingMergeChecksOutput)
+}
+
+// (Updatable) Indicates whether or not a pull request must have a successful build run and no queued builds before it can be merged
+func (o RepositorySettingMergeChecksPtrOutput) LastBuildSucceeded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RepositorySettingMergeChecks) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.LastBuildSucceeded
+	}).(pulumi.StringPtrOutput)
+}
+
+type RepositorySettingMergeSettings struct {
+	// (Updatable) List of merge strategies which are allowed for a Project or Repository.
+	AllowedMergeStrategies []string `pulumi:"allowedMergeStrategies"`
+	// (Updatable) Default type of merge strategy associated with the a Project or Repository.
+	DefaultMergeStrategy string `pulumi:"defaultMergeStrategy"`
+}
+
+// RepositorySettingMergeSettingsInput is an input type that accepts RepositorySettingMergeSettingsArgs and RepositorySettingMergeSettingsOutput values.
+// You can construct a concrete instance of `RepositorySettingMergeSettingsInput` via:
+//
+//	RepositorySettingMergeSettingsArgs{...}
+type RepositorySettingMergeSettingsInput interface {
+	pulumi.Input
+
+	ToRepositorySettingMergeSettingsOutput() RepositorySettingMergeSettingsOutput
+	ToRepositorySettingMergeSettingsOutputWithContext(context.Context) RepositorySettingMergeSettingsOutput
+}
+
+type RepositorySettingMergeSettingsArgs struct {
+	// (Updatable) List of merge strategies which are allowed for a Project or Repository.
+	AllowedMergeStrategies pulumi.StringArrayInput `pulumi:"allowedMergeStrategies"`
+	// (Updatable) Default type of merge strategy associated with the a Project or Repository.
+	DefaultMergeStrategy pulumi.StringInput `pulumi:"defaultMergeStrategy"`
+}
+
+func (RepositorySettingMergeSettingsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RepositorySettingMergeSettings)(nil)).Elem()
+}
+
+func (i RepositorySettingMergeSettingsArgs) ToRepositorySettingMergeSettingsOutput() RepositorySettingMergeSettingsOutput {
+	return i.ToRepositorySettingMergeSettingsOutputWithContext(context.Background())
+}
+
+func (i RepositorySettingMergeSettingsArgs) ToRepositorySettingMergeSettingsOutputWithContext(ctx context.Context) RepositorySettingMergeSettingsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RepositorySettingMergeSettingsOutput)
+}
+
+func (i RepositorySettingMergeSettingsArgs) ToRepositorySettingMergeSettingsPtrOutput() RepositorySettingMergeSettingsPtrOutput {
+	return i.ToRepositorySettingMergeSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i RepositorySettingMergeSettingsArgs) ToRepositorySettingMergeSettingsPtrOutputWithContext(ctx context.Context) RepositorySettingMergeSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RepositorySettingMergeSettingsOutput).ToRepositorySettingMergeSettingsPtrOutputWithContext(ctx)
+}
+
+// RepositorySettingMergeSettingsPtrInput is an input type that accepts RepositorySettingMergeSettingsArgs, RepositorySettingMergeSettingsPtr and RepositorySettingMergeSettingsPtrOutput values.
+// You can construct a concrete instance of `RepositorySettingMergeSettingsPtrInput` via:
+//
+//	        RepositorySettingMergeSettingsArgs{...}
+//
+//	or:
+//
+//	        nil
+type RepositorySettingMergeSettingsPtrInput interface {
+	pulumi.Input
+
+	ToRepositorySettingMergeSettingsPtrOutput() RepositorySettingMergeSettingsPtrOutput
+	ToRepositorySettingMergeSettingsPtrOutputWithContext(context.Context) RepositorySettingMergeSettingsPtrOutput
+}
+
+type repositorySettingMergeSettingsPtrType RepositorySettingMergeSettingsArgs
+
+func RepositorySettingMergeSettingsPtr(v *RepositorySettingMergeSettingsArgs) RepositorySettingMergeSettingsPtrInput {
+	return (*repositorySettingMergeSettingsPtrType)(v)
+}
+
+func (*repositorySettingMergeSettingsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**RepositorySettingMergeSettings)(nil)).Elem()
+}
+
+func (i *repositorySettingMergeSettingsPtrType) ToRepositorySettingMergeSettingsPtrOutput() RepositorySettingMergeSettingsPtrOutput {
+	return i.ToRepositorySettingMergeSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i *repositorySettingMergeSettingsPtrType) ToRepositorySettingMergeSettingsPtrOutputWithContext(ctx context.Context) RepositorySettingMergeSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RepositorySettingMergeSettingsPtrOutput)
+}
+
+type RepositorySettingMergeSettingsOutput struct{ *pulumi.OutputState }
+
+func (RepositorySettingMergeSettingsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RepositorySettingMergeSettings)(nil)).Elem()
+}
+
+func (o RepositorySettingMergeSettingsOutput) ToRepositorySettingMergeSettingsOutput() RepositorySettingMergeSettingsOutput {
+	return o
+}
+
+func (o RepositorySettingMergeSettingsOutput) ToRepositorySettingMergeSettingsOutputWithContext(ctx context.Context) RepositorySettingMergeSettingsOutput {
+	return o
+}
+
+func (o RepositorySettingMergeSettingsOutput) ToRepositorySettingMergeSettingsPtrOutput() RepositorySettingMergeSettingsPtrOutput {
+	return o.ToRepositorySettingMergeSettingsPtrOutputWithContext(context.Background())
+}
+
+func (o RepositorySettingMergeSettingsOutput) ToRepositorySettingMergeSettingsPtrOutputWithContext(ctx context.Context) RepositorySettingMergeSettingsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v RepositorySettingMergeSettings) *RepositorySettingMergeSettings {
+		return &v
+	}).(RepositorySettingMergeSettingsPtrOutput)
+}
+
+// (Updatable) List of merge strategies which are allowed for a Project or Repository.
+func (o RepositorySettingMergeSettingsOutput) AllowedMergeStrategies() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v RepositorySettingMergeSettings) []string { return v.AllowedMergeStrategies }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Default type of merge strategy associated with the a Project or Repository.
+func (o RepositorySettingMergeSettingsOutput) DefaultMergeStrategy() pulumi.StringOutput {
+	return o.ApplyT(func(v RepositorySettingMergeSettings) string { return v.DefaultMergeStrategy }).(pulumi.StringOutput)
+}
+
+type RepositorySettingMergeSettingsPtrOutput struct{ *pulumi.OutputState }
+
+func (RepositorySettingMergeSettingsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**RepositorySettingMergeSettings)(nil)).Elem()
+}
+
+func (o RepositorySettingMergeSettingsPtrOutput) ToRepositorySettingMergeSettingsPtrOutput() RepositorySettingMergeSettingsPtrOutput {
+	return o
+}
+
+func (o RepositorySettingMergeSettingsPtrOutput) ToRepositorySettingMergeSettingsPtrOutputWithContext(ctx context.Context) RepositorySettingMergeSettingsPtrOutput {
+	return o
+}
+
+func (o RepositorySettingMergeSettingsPtrOutput) Elem() RepositorySettingMergeSettingsOutput {
+	return o.ApplyT(func(v *RepositorySettingMergeSettings) RepositorySettingMergeSettings {
+		if v != nil {
+			return *v
+		}
+		var ret RepositorySettingMergeSettings
+		return ret
+	}).(RepositorySettingMergeSettingsOutput)
+}
+
+// (Updatable) List of merge strategies which are allowed for a Project or Repository.
+func (o RepositorySettingMergeSettingsPtrOutput) AllowedMergeStrategies() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *RepositorySettingMergeSettings) []string {
+		if v == nil {
+			return nil
+		}
+		return v.AllowedMergeStrategies
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Default type of merge strategy associated with the a Project or Repository.
+func (o RepositorySettingMergeSettingsPtrOutput) DefaultMergeStrategy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RepositorySettingMergeSettings) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.DefaultMergeStrategy
+	}).(pulumi.StringPtrOutput)
+}
+
 type TriggerAction struct {
 	// (Updatable) The OCID of the build pipeline to be triggered.
-	BuildPipelineId string `pulumi:"buildPipelineId"`
-	// (Updatable) The filters for the trigger.
-	Filter *TriggerActionFilter `pulumi:"filter"`
+	BuildPipelineId string               `pulumi:"buildPipelineId"`
+	Filter          *TriggerActionFilter `pulumi:"filter"`
 	// (Updatable) The type of action that will be taken. Allowed value is TRIGGER_BUILD_PIPELINE.
 	Type string `pulumi:"type"`
 }
@@ -11879,9 +13115,8 @@ type TriggerActionInput interface {
 
 type TriggerActionArgs struct {
 	// (Updatable) The OCID of the build pipeline to be triggered.
-	BuildPipelineId pulumi.StringInput `pulumi:"buildPipelineId"`
-	// (Updatable) The filters for the trigger.
-	Filter TriggerActionFilterPtrInput `pulumi:"filter"`
+	BuildPipelineId pulumi.StringInput          `pulumi:"buildPipelineId"`
+	Filter          TriggerActionFilterPtrInput `pulumi:"filter"`
 	// (Updatable) The type of action that will be taken. Allowed value is TRIGGER_BUILD_PIPELINE.
 	Type pulumi.StringInput `pulumi:"type"`
 }
@@ -11942,7 +13177,6 @@ func (o TriggerActionOutput) BuildPipelineId() pulumi.StringOutput {
 	return o.ApplyT(func(v TriggerAction) string { return v.BuildPipelineId }).(pulumi.StringOutput)
 }
 
-// (Updatable) The filters for the trigger.
 func (o TriggerActionOutput) Filter() TriggerActionFilterPtrOutput {
 	return o.ApplyT(func(v TriggerAction) *TriggerActionFilter { return v.Filter }).(TriggerActionFilterPtrOutput)
 }
@@ -11973,13 +13207,16 @@ func (o TriggerActionArrayOutput) Index(i pulumi.IntInput) TriggerActionOutput {
 }
 
 type TriggerActionFilter struct {
-	// (Updatable) The events, for example, PUSH, PULL_REQUEST_MERGE.
+	// The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
 	Events []string `pulumi:"events"`
-	// (Updatable) Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
+	// Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
 	Exclude *TriggerActionFilterExclude `pulumi:"exclude"`
-	// (Updatable) Attributes to filter GitLab self-hosted server events.
+	// Attributes to filter GitLab self-hosted server events.
 	Include *TriggerActionFilterInclude `pulumi:"include"`
 	// (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TriggerSource string `pulumi:"triggerSource"`
 }
 
@@ -11995,13 +13232,16 @@ type TriggerActionFilterInput interface {
 }
 
 type TriggerActionFilterArgs struct {
-	// (Updatable) The events, for example, PUSH, PULL_REQUEST_MERGE.
+	// The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
 	Events pulumi.StringArrayInput `pulumi:"events"`
-	// (Updatable) Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
+	// Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
 	Exclude TriggerActionFilterExcludePtrInput `pulumi:"exclude"`
-	// (Updatable) Attributes to filter GitLab self-hosted server events.
+	// Attributes to filter GitLab self-hosted server events.
 	Include TriggerActionFilterIncludePtrInput `pulumi:"include"`
 	// (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TriggerSource pulumi.StringInput `pulumi:"triggerSource"`
 }
 
@@ -12082,22 +13322,25 @@ func (o TriggerActionFilterOutput) ToTriggerActionFilterPtrOutputWithContext(ctx
 	}).(TriggerActionFilterPtrOutput)
 }
 
-// (Updatable) The events, for example, PUSH, PULL_REQUEST_MERGE.
+// The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
 func (o TriggerActionFilterOutput) Events() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v TriggerActionFilter) []string { return v.Events }).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
+// Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
 func (o TriggerActionFilterOutput) Exclude() TriggerActionFilterExcludePtrOutput {
 	return o.ApplyT(func(v TriggerActionFilter) *TriggerActionFilterExclude { return v.Exclude }).(TriggerActionFilterExcludePtrOutput)
 }
 
-// (Updatable) Attributes to filter GitLab self-hosted server events.
+// Attributes to filter GitLab self-hosted server events.
 func (o TriggerActionFilterOutput) Include() TriggerActionFilterIncludePtrOutput {
 	return o.ApplyT(func(v TriggerActionFilter) *TriggerActionFilterInclude { return v.Include }).(TriggerActionFilterIncludePtrOutput)
 }
 
 // (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o TriggerActionFilterOutput) TriggerSource() pulumi.StringOutput {
 	return o.ApplyT(func(v TriggerActionFilter) string { return v.TriggerSource }).(pulumi.StringOutput)
 }
@@ -12126,7 +13369,7 @@ func (o TriggerActionFilterPtrOutput) Elem() TriggerActionFilterOutput {
 	}).(TriggerActionFilterOutput)
 }
 
-// (Updatable) The events, for example, PUSH, PULL_REQUEST_MERGE.
+// The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
 func (o TriggerActionFilterPtrOutput) Events() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *TriggerActionFilter) []string {
 		if v == nil {
@@ -12136,7 +13379,7 @@ func (o TriggerActionFilterPtrOutput) Events() pulumi.StringArrayOutput {
 	}).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
+// Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
 func (o TriggerActionFilterPtrOutput) Exclude() TriggerActionFilterExcludePtrOutput {
 	return o.ApplyT(func(v *TriggerActionFilter) *TriggerActionFilterExclude {
 		if v == nil {
@@ -12146,7 +13389,7 @@ func (o TriggerActionFilterPtrOutput) Exclude() TriggerActionFilterExcludePtrOut
 	}).(TriggerActionFilterExcludePtrOutput)
 }
 
-// (Updatable) Attributes to filter GitLab self-hosted server events.
+// Attributes to filter GitLab self-hosted server events.
 func (o TriggerActionFilterPtrOutput) Include() TriggerActionFilterIncludePtrOutput {
 	return o.ApplyT(func(v *TriggerActionFilter) *TriggerActionFilterInclude {
 		if v == nil {
@@ -12157,6 +13400,9 @@ func (o TriggerActionFilterPtrOutput) Include() TriggerActionFilterIncludePtrOut
 }
 
 // (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o TriggerActionFilterPtrOutput) TriggerSource() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *TriggerActionFilter) *string {
 		if v == nil {
@@ -12167,7 +13413,7 @@ func (o TriggerActionFilterPtrOutput) TriggerSource() pulumi.StringPtrOutput {
 }
 
 type TriggerActionFilterExclude struct {
-	// (Updatable) Attributes to support include/exclude files for triggering build runs.
+	// Attributes to support include/exclude files for triggering build runs.
 	FileFilter *TriggerActionFilterExcludeFileFilter `pulumi:"fileFilter"`
 }
 
@@ -12183,7 +13429,7 @@ type TriggerActionFilterExcludeInput interface {
 }
 
 type TriggerActionFilterExcludeArgs struct {
-	// (Updatable) Attributes to support include/exclude files for triggering build runs.
+	// Attributes to support include/exclude files for triggering build runs.
 	FileFilter TriggerActionFilterExcludeFileFilterPtrInput `pulumi:"fileFilter"`
 }
 
@@ -12264,7 +13510,7 @@ func (o TriggerActionFilterExcludeOutput) ToTriggerActionFilterExcludePtrOutputW
 	}).(TriggerActionFilterExcludePtrOutput)
 }
 
-// (Updatable) Attributes to support include/exclude files for triggering build runs.
+// Attributes to support include/exclude files for triggering build runs.
 func (o TriggerActionFilterExcludeOutput) FileFilter() TriggerActionFilterExcludeFileFilterPtrOutput {
 	return o.ApplyT(func(v TriggerActionFilterExclude) *TriggerActionFilterExcludeFileFilter { return v.FileFilter }).(TriggerActionFilterExcludeFileFilterPtrOutput)
 }
@@ -12293,7 +13539,7 @@ func (o TriggerActionFilterExcludePtrOutput) Elem() TriggerActionFilterExcludeOu
 	}).(TriggerActionFilterExcludeOutput)
 }
 
-// (Updatable) Attributes to support include/exclude files for triggering build runs.
+// Attributes to support include/exclude files for triggering build runs.
 func (o TriggerActionFilterExcludePtrOutput) FileFilter() TriggerActionFilterExcludeFileFilterPtrOutput {
 	return o.ApplyT(func(v *TriggerActionFilterExclude) *TriggerActionFilterExcludeFileFilter {
 		if v == nil {
@@ -12304,7 +13550,7 @@ func (o TriggerActionFilterExcludePtrOutput) FileFilter() TriggerActionFilterExc
 }
 
 type TriggerActionFilterExcludeFileFilter struct {
-	// (Updatable) The file paths/glob pattern for files.
+	// The file paths/glob pattern for files.
 	FilePaths []string `pulumi:"filePaths"`
 }
 
@@ -12320,7 +13566,7 @@ type TriggerActionFilterExcludeFileFilterInput interface {
 }
 
 type TriggerActionFilterExcludeFileFilterArgs struct {
-	// (Updatable) The file paths/glob pattern for files.
+	// The file paths/glob pattern for files.
 	FilePaths pulumi.StringArrayInput `pulumi:"filePaths"`
 }
 
@@ -12401,7 +13647,7 @@ func (o TriggerActionFilterExcludeFileFilterOutput) ToTriggerActionFilterExclude
 	}).(TriggerActionFilterExcludeFileFilterPtrOutput)
 }
 
-// (Updatable) The file paths/glob pattern for files.
+// The file paths/glob pattern for files.
 func (o TriggerActionFilterExcludeFileFilterOutput) FilePaths() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v TriggerActionFilterExcludeFileFilter) []string { return v.FilePaths }).(pulumi.StringArrayOutput)
 }
@@ -12430,7 +13676,7 @@ func (o TriggerActionFilterExcludeFileFilterPtrOutput) Elem() TriggerActionFilte
 	}).(TriggerActionFilterExcludeFileFilterOutput)
 }
 
-// (Updatable) The file paths/glob pattern for files.
+// The file paths/glob pattern for files.
 func (o TriggerActionFilterExcludeFileFilterPtrOutput) FilePaths() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *TriggerActionFilterExcludeFileFilter) []string {
 		if v == nil {
@@ -12441,13 +13687,13 @@ func (o TriggerActionFilterExcludeFileFilterPtrOutput) FilePaths() pulumi.String
 }
 
 type TriggerActionFilterInclude struct {
-	// (Updatable) The target branch for pull requests; not applicable for push requests.
+	// The target branch for pull requests; not applicable for push requests.
 	BaseRef *string `pulumi:"baseRef"`
-	// (Updatable) Attributes to support include/exclude files for triggering build runs.
+	// Attributes to support include/exclude files for triggering build runs.
 	FileFilter *TriggerActionFilterIncludeFileFilter `pulumi:"fileFilter"`
-	// (Updatable) Branch for push event; source branch for pull requests.
+	// Branch for push event; source branch for pull requests.
 	HeadRef *string `pulumi:"headRef"`
-	// (Updatable) The repository name for trigger events.
+	// The repository name for trigger events.
 	RepositoryName *string `pulumi:"repositoryName"`
 }
 
@@ -12463,13 +13709,13 @@ type TriggerActionFilterIncludeInput interface {
 }
 
 type TriggerActionFilterIncludeArgs struct {
-	// (Updatable) The target branch for pull requests; not applicable for push requests.
+	// The target branch for pull requests; not applicable for push requests.
 	BaseRef pulumi.StringPtrInput `pulumi:"baseRef"`
-	// (Updatable) Attributes to support include/exclude files for triggering build runs.
+	// Attributes to support include/exclude files for triggering build runs.
 	FileFilter TriggerActionFilterIncludeFileFilterPtrInput `pulumi:"fileFilter"`
-	// (Updatable) Branch for push event; source branch for pull requests.
+	// Branch for push event; source branch for pull requests.
 	HeadRef pulumi.StringPtrInput `pulumi:"headRef"`
-	// (Updatable) The repository name for trigger events.
+	// The repository name for trigger events.
 	RepositoryName pulumi.StringPtrInput `pulumi:"repositoryName"`
 }
 
@@ -12550,22 +13796,22 @@ func (o TriggerActionFilterIncludeOutput) ToTriggerActionFilterIncludePtrOutputW
 	}).(TriggerActionFilterIncludePtrOutput)
 }
 
-// (Updatable) The target branch for pull requests; not applicable for push requests.
+// The target branch for pull requests; not applicable for push requests.
 func (o TriggerActionFilterIncludeOutput) BaseRef() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TriggerActionFilterInclude) *string { return v.BaseRef }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Attributes to support include/exclude files for triggering build runs.
+// Attributes to support include/exclude files for triggering build runs.
 func (o TriggerActionFilterIncludeOutput) FileFilter() TriggerActionFilterIncludeFileFilterPtrOutput {
 	return o.ApplyT(func(v TriggerActionFilterInclude) *TriggerActionFilterIncludeFileFilter { return v.FileFilter }).(TriggerActionFilterIncludeFileFilterPtrOutput)
 }
 
-// (Updatable) Branch for push event; source branch for pull requests.
+// Branch for push event; source branch for pull requests.
 func (o TriggerActionFilterIncludeOutput) HeadRef() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TriggerActionFilterInclude) *string { return v.HeadRef }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The repository name for trigger events.
+// The repository name for trigger events.
 func (o TriggerActionFilterIncludeOutput) RepositoryName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TriggerActionFilterInclude) *string { return v.RepositoryName }).(pulumi.StringPtrOutput)
 }
@@ -12594,7 +13840,7 @@ func (o TriggerActionFilterIncludePtrOutput) Elem() TriggerActionFilterIncludeOu
 	}).(TriggerActionFilterIncludeOutput)
 }
 
-// (Updatable) The target branch for pull requests; not applicable for push requests.
+// The target branch for pull requests; not applicable for push requests.
 func (o TriggerActionFilterIncludePtrOutput) BaseRef() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *TriggerActionFilterInclude) *string {
 		if v == nil {
@@ -12604,7 +13850,7 @@ func (o TriggerActionFilterIncludePtrOutput) BaseRef() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Attributes to support include/exclude files for triggering build runs.
+// Attributes to support include/exclude files for triggering build runs.
 func (o TriggerActionFilterIncludePtrOutput) FileFilter() TriggerActionFilterIncludeFileFilterPtrOutput {
 	return o.ApplyT(func(v *TriggerActionFilterInclude) *TriggerActionFilterIncludeFileFilter {
 		if v == nil {
@@ -12614,7 +13860,7 @@ func (o TriggerActionFilterIncludePtrOutput) FileFilter() TriggerActionFilterInc
 	}).(TriggerActionFilterIncludeFileFilterPtrOutput)
 }
 
-// (Updatable) Branch for push event; source branch for pull requests.
+// Branch for push event; source branch for pull requests.
 func (o TriggerActionFilterIncludePtrOutput) HeadRef() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *TriggerActionFilterInclude) *string {
 		if v == nil {
@@ -12624,7 +13870,7 @@ func (o TriggerActionFilterIncludePtrOutput) HeadRef() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The repository name for trigger events.
+// The repository name for trigger events.
 func (o TriggerActionFilterIncludePtrOutput) RepositoryName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *TriggerActionFilterInclude) *string {
 		if v == nil {
@@ -12635,7 +13881,7 @@ func (o TriggerActionFilterIncludePtrOutput) RepositoryName() pulumi.StringPtrOu
 }
 
 type TriggerActionFilterIncludeFileFilter struct {
-	// (Updatable) The file paths/glob pattern for files.
+	// The file paths/glob pattern for files.
 	FilePaths []string `pulumi:"filePaths"`
 }
 
@@ -12651,7 +13897,7 @@ type TriggerActionFilterIncludeFileFilterInput interface {
 }
 
 type TriggerActionFilterIncludeFileFilterArgs struct {
-	// (Updatable) The file paths/glob pattern for files.
+	// The file paths/glob pattern for files.
 	FilePaths pulumi.StringArrayInput `pulumi:"filePaths"`
 }
 
@@ -12732,7 +13978,7 @@ func (o TriggerActionFilterIncludeFileFilterOutput) ToTriggerActionFilterInclude
 	}).(TriggerActionFilterIncludeFileFilterPtrOutput)
 }
 
-// (Updatable) The file paths/glob pattern for files.
+// The file paths/glob pattern for files.
 func (o TriggerActionFilterIncludeFileFilterOutput) FilePaths() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v TriggerActionFilterIncludeFileFilter) []string { return v.FilePaths }).(pulumi.StringArrayOutput)
 }
@@ -12761,7 +14007,7 @@ func (o TriggerActionFilterIncludeFileFilterPtrOutput) Elem() TriggerActionFilte
 	}).(TriggerActionFilterIncludeFileFilterOutput)
 }
 
-// (Updatable) The file paths/glob pattern for files.
+// The file paths/glob pattern for files.
 func (o TriggerActionFilterIncludeFileFilterPtrOutput) FilePaths() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *TriggerActionFilterIncludeFileFilter) []string {
 		if v == nil {
@@ -17525,9 +18771,8 @@ func (o GetBuildRunBuildRunSourceTriggerInfoArrayOutput) Index(i pulumi.IntInput
 
 type GetBuildRunBuildRunSourceTriggerInfoAction struct {
 	// The OCID of the build pipeline to be triggered.
-	BuildPipelineId string `pulumi:"buildPipelineId"`
-	// The filters for the trigger.
-	Filters []GetBuildRunBuildRunSourceTriggerInfoActionFilter `pulumi:"filters"`
+	BuildPipelineId string                                             `pulumi:"buildPipelineId"`
+	Filters         []GetBuildRunBuildRunSourceTriggerInfoActionFilter `pulumi:"filters"`
 	// The type of action that will be taken. Allowed value is TRIGGER_BUILD_PIPELINE.
 	Type string `pulumi:"type"`
 }
@@ -17545,9 +18790,8 @@ type GetBuildRunBuildRunSourceTriggerInfoActionInput interface {
 
 type GetBuildRunBuildRunSourceTriggerInfoActionArgs struct {
 	// The OCID of the build pipeline to be triggered.
-	BuildPipelineId pulumi.StringInput `pulumi:"buildPipelineId"`
-	// The filters for the trigger.
-	Filters GetBuildRunBuildRunSourceTriggerInfoActionFilterArrayInput `pulumi:"filters"`
+	BuildPipelineId pulumi.StringInput                                         `pulumi:"buildPipelineId"`
+	Filters         GetBuildRunBuildRunSourceTriggerInfoActionFilterArrayInput `pulumi:"filters"`
 	// The type of action that will be taken. Allowed value is TRIGGER_BUILD_PIPELINE.
 	Type pulumi.StringInput `pulumi:"type"`
 }
@@ -17608,7 +18852,6 @@ func (o GetBuildRunBuildRunSourceTriggerInfoActionOutput) BuildPipelineId() pulu
 	return o.ApplyT(func(v GetBuildRunBuildRunSourceTriggerInfoAction) string { return v.BuildPipelineId }).(pulumi.StringOutput)
 }
 
-// The filters for the trigger.
 func (o GetBuildRunBuildRunSourceTriggerInfoActionOutput) Filters() GetBuildRunBuildRunSourceTriggerInfoActionFilterArrayOutput {
 	return o.ApplyT(func(v GetBuildRunBuildRunSourceTriggerInfoAction) []GetBuildRunBuildRunSourceTriggerInfoActionFilter {
 		return v.Filters
@@ -17641,8 +18884,9 @@ func (o GetBuildRunBuildRunSourceTriggerInfoActionArrayOutput) Index(i pulumi.In
 }
 
 type GetBuildRunBuildRunSourceTriggerInfoActionFilter struct {
-	// The events, for example, PUSH, PULL_REQUEST_MERGE.
-	Events   []string                                                  `pulumi:"events"`
+	// The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
+	Events []string `pulumi:"events"`
+	// Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
 	Excludes []GetBuildRunBuildRunSourceTriggerInfoActionFilterExclude `pulumi:"excludes"`
 	// Attributes to filter GitLab self-hosted server events.
 	Includes []GetBuildRunBuildRunSourceTriggerInfoActionFilterInclude `pulumi:"includes"`
@@ -17662,8 +18906,9 @@ type GetBuildRunBuildRunSourceTriggerInfoActionFilterInput interface {
 }
 
 type GetBuildRunBuildRunSourceTriggerInfoActionFilterArgs struct {
-	// The events, for example, PUSH, PULL_REQUEST_MERGE.
-	Events   pulumi.StringArrayInput                                           `pulumi:"events"`
+	// The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
+	Events pulumi.StringArrayInput `pulumi:"events"`
+	// Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
 	Excludes GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayInput `pulumi:"excludes"`
 	// Attributes to filter GitLab self-hosted server events.
 	Includes GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeArrayInput `pulumi:"includes"`
@@ -17722,11 +18967,12 @@ func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterOutput) ToGetBuildRunBui
 	return o
 }
 
-// The events, for example, PUSH, PULL_REQUEST_MERGE.
+// The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
 func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterOutput) Events() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetBuildRunBuildRunSourceTriggerInfoActionFilter) []string { return v.Events }).(pulumi.StringArrayOutput)
 }
 
+// Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
 func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterOutput) Excludes() GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutput {
 	return o.ApplyT(func(v GetBuildRunBuildRunSourceTriggerInfoActionFilter) []GetBuildRunBuildRunSourceTriggerInfoActionFilterExclude {
 		return v.Excludes
@@ -17766,6 +19012,7 @@ func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterArrayOutput) Index(i pul
 }
 
 type GetBuildRunBuildRunSourceTriggerInfoActionFilterExclude struct {
+	// Attributes to support include/exclude files for triggering build runs.
 	FileFilters []GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter `pulumi:"fileFilters"`
 }
 
@@ -17781,6 +19028,7 @@ type GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeInput interface {
 }
 
 type GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgs struct {
+	// Attributes to support include/exclude files for triggering build runs.
 	FileFilters GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayInput `pulumi:"fileFilters"`
 }
 
@@ -17835,6 +19083,7 @@ func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutput) ToGetBuil
 	return o
 }
 
+// Attributes to support include/exclude files for triggering build runs.
 func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutput) FileFilters() GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutput {
 	return o.ApplyT(func(v GetBuildRunBuildRunSourceTriggerInfoActionFilterExclude) []GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter {
 		return v.FileFilters
@@ -17862,6 +19111,7 @@ func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutput) Inde
 }
 
 type GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter struct {
+	// The file paths/glob pattern for files.
 	FilePaths []string `pulumi:"filePaths"`
 }
 
@@ -17877,6 +19127,7 @@ type GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterInput inte
 }
 
 type GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArgs struct {
+	// The file paths/glob pattern for files.
 	FilePaths pulumi.StringArrayInput `pulumi:"filePaths"`
 }
 
@@ -17931,6 +19182,7 @@ func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutput)
 	return o
 }
 
+// The file paths/glob pattern for files.
 func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutput) FilePaths() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter) []string { return v.FilePaths }).(pulumi.StringArrayOutput)
 }
@@ -17957,7 +19209,8 @@ func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOu
 
 type GetBuildRunBuildRunSourceTriggerInfoActionFilterInclude struct {
 	// The target branch for pull requests; not applicable for push requests.
-	BaseRef     string                                                              `pulumi:"baseRef"`
+	BaseRef string `pulumi:"baseRef"`
+	// Attributes to support include/exclude files for triggering build runs.
 	FileFilters []GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter `pulumi:"fileFilters"`
 	// Branch for push event; source branch for pull requests.
 	HeadRef string `pulumi:"headRef"`
@@ -17978,7 +19231,8 @@ type GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeInput interface {
 
 type GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs struct {
 	// The target branch for pull requests; not applicable for push requests.
-	BaseRef     pulumi.StringInput                                                          `pulumi:"baseRef"`
+	BaseRef pulumi.StringInput `pulumi:"baseRef"`
+	// Attributes to support include/exclude files for triggering build runs.
 	FileFilters GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayInput `pulumi:"fileFilters"`
 	// Branch for push event; source branch for pull requests.
 	HeadRef pulumi.StringInput `pulumi:"headRef"`
@@ -18042,6 +19296,7 @@ func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeOutput) BaseRef()
 	return o.ApplyT(func(v GetBuildRunBuildRunSourceTriggerInfoActionFilterInclude) string { return v.BaseRef }).(pulumi.StringOutput)
 }
 
+// Attributes to support include/exclude files for triggering build runs.
 func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeOutput) FileFilters() GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutput {
 	return o.ApplyT(func(v GetBuildRunBuildRunSourceTriggerInfoActionFilterInclude) []GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter {
 		return v.FileFilters
@@ -18079,6 +19334,7 @@ func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeArrayOutput) Inde
 }
 
 type GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter struct {
+	// The file paths/glob pattern for files.
 	FilePaths []string `pulumi:"filePaths"`
 }
 
@@ -18094,6 +19350,7 @@ type GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterInput inte
 }
 
 type GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArgs struct {
+	// The file paths/glob pattern for files.
 	FilePaths pulumi.StringArrayInput `pulumi:"filePaths"`
 }
 
@@ -18148,6 +19405,7 @@ func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutput)
 	return o
 }
 
+// The file paths/glob pattern for files.
 func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutput) FilePaths() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter) []string { return v.FilePaths }).(pulumi.StringArrayOutput)
 }
@@ -19127,9 +20385,8 @@ func (o GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoArrayO
 
 type GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoAction struct {
 	// Unique build pipeline identifier.
-	BuildPipelineId string `pulumi:"buildPipelineId"`
-	// The filters for the trigger.
-	Filters []GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilter `pulumi:"filters"`
+	BuildPipelineId string                                                                           `pulumi:"buildPipelineId"`
+	Filters         []GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilter `pulumi:"filters"`
 	// The type of action that will be taken. Allowed value is TRIGGER_BUILD_PIPELINE.
 	Type string `pulumi:"type"`
 }
@@ -19147,9 +20404,8 @@ type GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionInp
 
 type GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionArgs struct {
 	// Unique build pipeline identifier.
-	BuildPipelineId pulumi.StringInput `pulumi:"buildPipelineId"`
-	// The filters for the trigger.
-	Filters GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterArrayInput `pulumi:"filters"`
+	BuildPipelineId pulumi.StringInput                                                                       `pulumi:"buildPipelineId"`
+	Filters         GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterArrayInput `pulumi:"filters"`
 	// The type of action that will be taken. Allowed value is TRIGGER_BUILD_PIPELINE.
 	Type pulumi.StringInput `pulumi:"type"`
 }
@@ -19212,7 +20468,6 @@ func (o GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoAction
 	}).(pulumi.StringOutput)
 }
 
-// The filters for the trigger.
 func (o GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionOutput) Filters() GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterArrayOutput {
 	return o.ApplyT(func(v GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoAction) []GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilter {
 		return v.Filters
@@ -19245,7 +20500,7 @@ func (o GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoAction
 }
 
 type GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilter struct {
-	// The events, for example, PUSH, PULL_REQUEST_MERGE.
+	// The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
 	Events []string `pulumi:"events"`
 	// Attributes to filter GitLab self-hosted server events.
 	Includes []GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterInclude `pulumi:"includes"`
@@ -19265,7 +20520,7 @@ type GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFil
 }
 
 type GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterArgs struct {
-	// The events, for example, PUSH, PULL_REQUEST_MERGE.
+	// The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
 	Events pulumi.StringArrayInput `pulumi:"events"`
 	// Attributes to filter GitLab self-hosted server events.
 	Includes GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterIncludeArrayInput `pulumi:"includes"`
@@ -19324,7 +20579,7 @@ func (o GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoAction
 	return o
 }
 
-// The events, for example, PUSH, PULL_REQUEST_MERGE.
+// The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
 func (o GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterOutput) Events() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilter) []string {
 		return v.Events
@@ -34795,6 +36050,461 @@ func (o GetProjectNotificationConfigArrayOutput) Index(i pulumi.IntInput) GetPro
 	}).(GetProjectNotificationConfigOutput)
 }
 
+type GetProjectRepositorySettingApprovalRule struct {
+	// List of approval rules.
+	Items []GetProjectRepositorySettingApprovalRuleItem `pulumi:"items"`
+}
+
+// GetProjectRepositorySettingApprovalRuleInput is an input type that accepts GetProjectRepositorySettingApprovalRuleArgs and GetProjectRepositorySettingApprovalRuleOutput values.
+// You can construct a concrete instance of `GetProjectRepositorySettingApprovalRuleInput` via:
+//
+//	GetProjectRepositorySettingApprovalRuleArgs{...}
+type GetProjectRepositorySettingApprovalRuleInput interface {
+	pulumi.Input
+
+	ToGetProjectRepositorySettingApprovalRuleOutput() GetProjectRepositorySettingApprovalRuleOutput
+	ToGetProjectRepositorySettingApprovalRuleOutputWithContext(context.Context) GetProjectRepositorySettingApprovalRuleOutput
+}
+
+type GetProjectRepositorySettingApprovalRuleArgs struct {
+	// List of approval rules.
+	Items GetProjectRepositorySettingApprovalRuleItemArrayInput `pulumi:"items"`
+}
+
+func (GetProjectRepositorySettingApprovalRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectRepositorySettingApprovalRule)(nil)).Elem()
+}
+
+func (i GetProjectRepositorySettingApprovalRuleArgs) ToGetProjectRepositorySettingApprovalRuleOutput() GetProjectRepositorySettingApprovalRuleOutput {
+	return i.ToGetProjectRepositorySettingApprovalRuleOutputWithContext(context.Background())
+}
+
+func (i GetProjectRepositorySettingApprovalRuleArgs) ToGetProjectRepositorySettingApprovalRuleOutputWithContext(ctx context.Context) GetProjectRepositorySettingApprovalRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectRepositorySettingApprovalRuleOutput)
+}
+
+// GetProjectRepositorySettingApprovalRuleArrayInput is an input type that accepts GetProjectRepositorySettingApprovalRuleArray and GetProjectRepositorySettingApprovalRuleArrayOutput values.
+// You can construct a concrete instance of `GetProjectRepositorySettingApprovalRuleArrayInput` via:
+//
+//	GetProjectRepositorySettingApprovalRuleArray{ GetProjectRepositorySettingApprovalRuleArgs{...} }
+type GetProjectRepositorySettingApprovalRuleArrayInput interface {
+	pulumi.Input
+
+	ToGetProjectRepositorySettingApprovalRuleArrayOutput() GetProjectRepositorySettingApprovalRuleArrayOutput
+	ToGetProjectRepositorySettingApprovalRuleArrayOutputWithContext(context.Context) GetProjectRepositorySettingApprovalRuleArrayOutput
+}
+
+type GetProjectRepositorySettingApprovalRuleArray []GetProjectRepositorySettingApprovalRuleInput
+
+func (GetProjectRepositorySettingApprovalRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectRepositorySettingApprovalRule)(nil)).Elem()
+}
+
+func (i GetProjectRepositorySettingApprovalRuleArray) ToGetProjectRepositorySettingApprovalRuleArrayOutput() GetProjectRepositorySettingApprovalRuleArrayOutput {
+	return i.ToGetProjectRepositorySettingApprovalRuleArrayOutputWithContext(context.Background())
+}
+
+func (i GetProjectRepositorySettingApprovalRuleArray) ToGetProjectRepositorySettingApprovalRuleArrayOutputWithContext(ctx context.Context) GetProjectRepositorySettingApprovalRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectRepositorySettingApprovalRuleArrayOutput)
+}
+
+type GetProjectRepositorySettingApprovalRuleOutput struct{ *pulumi.OutputState }
+
+func (GetProjectRepositorySettingApprovalRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectRepositorySettingApprovalRule)(nil)).Elem()
+}
+
+func (o GetProjectRepositorySettingApprovalRuleOutput) ToGetProjectRepositorySettingApprovalRuleOutput() GetProjectRepositorySettingApprovalRuleOutput {
+	return o
+}
+
+func (o GetProjectRepositorySettingApprovalRuleOutput) ToGetProjectRepositorySettingApprovalRuleOutputWithContext(ctx context.Context) GetProjectRepositorySettingApprovalRuleOutput {
+	return o
+}
+
+// List of approval rules.
+func (o GetProjectRepositorySettingApprovalRuleOutput) Items() GetProjectRepositorySettingApprovalRuleItemArrayOutput {
+	return o.ApplyT(func(v GetProjectRepositorySettingApprovalRule) []GetProjectRepositorySettingApprovalRuleItem {
+		return v.Items
+	}).(GetProjectRepositorySettingApprovalRuleItemArrayOutput)
+}
+
+type GetProjectRepositorySettingApprovalRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProjectRepositorySettingApprovalRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectRepositorySettingApprovalRule)(nil)).Elem()
+}
+
+func (o GetProjectRepositorySettingApprovalRuleArrayOutput) ToGetProjectRepositorySettingApprovalRuleArrayOutput() GetProjectRepositorySettingApprovalRuleArrayOutput {
+	return o
+}
+
+func (o GetProjectRepositorySettingApprovalRuleArrayOutput) ToGetProjectRepositorySettingApprovalRuleArrayOutputWithContext(ctx context.Context) GetProjectRepositorySettingApprovalRuleArrayOutput {
+	return o
+}
+
+func (o GetProjectRepositorySettingApprovalRuleArrayOutput) Index(i pulumi.IntInput) GetProjectRepositorySettingApprovalRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectRepositorySettingApprovalRule {
+		return vs[0].([]GetProjectRepositorySettingApprovalRule)[vs[1].(int)]
+	}).(GetProjectRepositorySettingApprovalRuleOutput)
+}
+
+type GetProjectRepositorySettingApprovalRuleItem struct {
+	// Branch name where pull requests targeting the branch must satisfy the approval rule. This value being null means the rule applies to all pull requests
+	DestinationBranch string `pulumi:"destinationBranch"`
+	// Minimum number of approvals which must be provided by the reviewers specified in the list before the rule can be satisfied
+	MinApprovalsCount int `pulumi:"minApprovalsCount"`
+	// Name which is used to uniquely identify an approval rule.
+	Name string `pulumi:"name"`
+	// List of users who must provide approvals up to the minApprovalsCount specified in the rule. An empty list means the approvals can come from any user.
+	Reviewers []GetProjectRepositorySettingApprovalRuleItemReviewer `pulumi:"reviewers"`
+}
+
+// GetProjectRepositorySettingApprovalRuleItemInput is an input type that accepts GetProjectRepositorySettingApprovalRuleItemArgs and GetProjectRepositorySettingApprovalRuleItemOutput values.
+// You can construct a concrete instance of `GetProjectRepositorySettingApprovalRuleItemInput` via:
+//
+//	GetProjectRepositorySettingApprovalRuleItemArgs{...}
+type GetProjectRepositorySettingApprovalRuleItemInput interface {
+	pulumi.Input
+
+	ToGetProjectRepositorySettingApprovalRuleItemOutput() GetProjectRepositorySettingApprovalRuleItemOutput
+	ToGetProjectRepositorySettingApprovalRuleItemOutputWithContext(context.Context) GetProjectRepositorySettingApprovalRuleItemOutput
+}
+
+type GetProjectRepositorySettingApprovalRuleItemArgs struct {
+	// Branch name where pull requests targeting the branch must satisfy the approval rule. This value being null means the rule applies to all pull requests
+	DestinationBranch pulumi.StringInput `pulumi:"destinationBranch"`
+	// Minimum number of approvals which must be provided by the reviewers specified in the list before the rule can be satisfied
+	MinApprovalsCount pulumi.IntInput `pulumi:"minApprovalsCount"`
+	// Name which is used to uniquely identify an approval rule.
+	Name pulumi.StringInput `pulumi:"name"`
+	// List of users who must provide approvals up to the minApprovalsCount specified in the rule. An empty list means the approvals can come from any user.
+	Reviewers GetProjectRepositorySettingApprovalRuleItemReviewerArrayInput `pulumi:"reviewers"`
+}
+
+func (GetProjectRepositorySettingApprovalRuleItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectRepositorySettingApprovalRuleItem)(nil)).Elem()
+}
+
+func (i GetProjectRepositorySettingApprovalRuleItemArgs) ToGetProjectRepositorySettingApprovalRuleItemOutput() GetProjectRepositorySettingApprovalRuleItemOutput {
+	return i.ToGetProjectRepositorySettingApprovalRuleItemOutputWithContext(context.Background())
+}
+
+func (i GetProjectRepositorySettingApprovalRuleItemArgs) ToGetProjectRepositorySettingApprovalRuleItemOutputWithContext(ctx context.Context) GetProjectRepositorySettingApprovalRuleItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectRepositorySettingApprovalRuleItemOutput)
+}
+
+// GetProjectRepositorySettingApprovalRuleItemArrayInput is an input type that accepts GetProjectRepositorySettingApprovalRuleItemArray and GetProjectRepositorySettingApprovalRuleItemArrayOutput values.
+// You can construct a concrete instance of `GetProjectRepositorySettingApprovalRuleItemArrayInput` via:
+//
+//	GetProjectRepositorySettingApprovalRuleItemArray{ GetProjectRepositorySettingApprovalRuleItemArgs{...} }
+type GetProjectRepositorySettingApprovalRuleItemArrayInput interface {
+	pulumi.Input
+
+	ToGetProjectRepositorySettingApprovalRuleItemArrayOutput() GetProjectRepositorySettingApprovalRuleItemArrayOutput
+	ToGetProjectRepositorySettingApprovalRuleItemArrayOutputWithContext(context.Context) GetProjectRepositorySettingApprovalRuleItemArrayOutput
+}
+
+type GetProjectRepositorySettingApprovalRuleItemArray []GetProjectRepositorySettingApprovalRuleItemInput
+
+func (GetProjectRepositorySettingApprovalRuleItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectRepositorySettingApprovalRuleItem)(nil)).Elem()
+}
+
+func (i GetProjectRepositorySettingApprovalRuleItemArray) ToGetProjectRepositorySettingApprovalRuleItemArrayOutput() GetProjectRepositorySettingApprovalRuleItemArrayOutput {
+	return i.ToGetProjectRepositorySettingApprovalRuleItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetProjectRepositorySettingApprovalRuleItemArray) ToGetProjectRepositorySettingApprovalRuleItemArrayOutputWithContext(ctx context.Context) GetProjectRepositorySettingApprovalRuleItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectRepositorySettingApprovalRuleItemArrayOutput)
+}
+
+type GetProjectRepositorySettingApprovalRuleItemOutput struct{ *pulumi.OutputState }
+
+func (GetProjectRepositorySettingApprovalRuleItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectRepositorySettingApprovalRuleItem)(nil)).Elem()
+}
+
+func (o GetProjectRepositorySettingApprovalRuleItemOutput) ToGetProjectRepositorySettingApprovalRuleItemOutput() GetProjectRepositorySettingApprovalRuleItemOutput {
+	return o
+}
+
+func (o GetProjectRepositorySettingApprovalRuleItemOutput) ToGetProjectRepositorySettingApprovalRuleItemOutputWithContext(ctx context.Context) GetProjectRepositorySettingApprovalRuleItemOutput {
+	return o
+}
+
+// Branch name where pull requests targeting the branch must satisfy the approval rule. This value being null means the rule applies to all pull requests
+func (o GetProjectRepositorySettingApprovalRuleItemOutput) DestinationBranch() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectRepositorySettingApprovalRuleItem) string { return v.DestinationBranch }).(pulumi.StringOutput)
+}
+
+// Minimum number of approvals which must be provided by the reviewers specified in the list before the rule can be satisfied
+func (o GetProjectRepositorySettingApprovalRuleItemOutput) MinApprovalsCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetProjectRepositorySettingApprovalRuleItem) int { return v.MinApprovalsCount }).(pulumi.IntOutput)
+}
+
+// Name which is used to uniquely identify an approval rule.
+func (o GetProjectRepositorySettingApprovalRuleItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectRepositorySettingApprovalRuleItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// List of users who must provide approvals up to the minApprovalsCount specified in the rule. An empty list means the approvals can come from any user.
+func (o GetProjectRepositorySettingApprovalRuleItemOutput) Reviewers() GetProjectRepositorySettingApprovalRuleItemReviewerArrayOutput {
+	return o.ApplyT(func(v GetProjectRepositorySettingApprovalRuleItem) []GetProjectRepositorySettingApprovalRuleItemReviewer {
+		return v.Reviewers
+	}).(GetProjectRepositorySettingApprovalRuleItemReviewerArrayOutput)
+}
+
+type GetProjectRepositorySettingApprovalRuleItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProjectRepositorySettingApprovalRuleItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectRepositorySettingApprovalRuleItem)(nil)).Elem()
+}
+
+func (o GetProjectRepositorySettingApprovalRuleItemArrayOutput) ToGetProjectRepositorySettingApprovalRuleItemArrayOutput() GetProjectRepositorySettingApprovalRuleItemArrayOutput {
+	return o
+}
+
+func (o GetProjectRepositorySettingApprovalRuleItemArrayOutput) ToGetProjectRepositorySettingApprovalRuleItemArrayOutputWithContext(ctx context.Context) GetProjectRepositorySettingApprovalRuleItemArrayOutput {
+	return o
+}
+
+func (o GetProjectRepositorySettingApprovalRuleItemArrayOutput) Index(i pulumi.IntInput) GetProjectRepositorySettingApprovalRuleItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectRepositorySettingApprovalRuleItem {
+		return vs[0].([]GetProjectRepositorySettingApprovalRuleItem)[vs[1].(int)]
+	}).(GetProjectRepositorySettingApprovalRuleItemOutput)
+}
+
+type GetProjectRepositorySettingApprovalRuleItemReviewer struct {
+	// the OCID of the principal
+	PrincipalId string `pulumi:"principalId"`
+	// the name of the principal
+	PrincipalName string `pulumi:"principalName"`
+	// The state of the principal, it can be active or inactive or suppressed for emails
+	PrincipalState string `pulumi:"principalState"`
+	// the type of principal
+	PrincipalType string `pulumi:"principalType"`
+}
+
+// GetProjectRepositorySettingApprovalRuleItemReviewerInput is an input type that accepts GetProjectRepositorySettingApprovalRuleItemReviewerArgs and GetProjectRepositorySettingApprovalRuleItemReviewerOutput values.
+// You can construct a concrete instance of `GetProjectRepositorySettingApprovalRuleItemReviewerInput` via:
+//
+//	GetProjectRepositorySettingApprovalRuleItemReviewerArgs{...}
+type GetProjectRepositorySettingApprovalRuleItemReviewerInput interface {
+	pulumi.Input
+
+	ToGetProjectRepositorySettingApprovalRuleItemReviewerOutput() GetProjectRepositorySettingApprovalRuleItemReviewerOutput
+	ToGetProjectRepositorySettingApprovalRuleItemReviewerOutputWithContext(context.Context) GetProjectRepositorySettingApprovalRuleItemReviewerOutput
+}
+
+type GetProjectRepositorySettingApprovalRuleItemReviewerArgs struct {
+	// the OCID of the principal
+	PrincipalId pulumi.StringInput `pulumi:"principalId"`
+	// the name of the principal
+	PrincipalName pulumi.StringInput `pulumi:"principalName"`
+	// The state of the principal, it can be active or inactive or suppressed for emails
+	PrincipalState pulumi.StringInput `pulumi:"principalState"`
+	// the type of principal
+	PrincipalType pulumi.StringInput `pulumi:"principalType"`
+}
+
+func (GetProjectRepositorySettingApprovalRuleItemReviewerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectRepositorySettingApprovalRuleItemReviewer)(nil)).Elem()
+}
+
+func (i GetProjectRepositorySettingApprovalRuleItemReviewerArgs) ToGetProjectRepositorySettingApprovalRuleItemReviewerOutput() GetProjectRepositorySettingApprovalRuleItemReviewerOutput {
+	return i.ToGetProjectRepositorySettingApprovalRuleItemReviewerOutputWithContext(context.Background())
+}
+
+func (i GetProjectRepositorySettingApprovalRuleItemReviewerArgs) ToGetProjectRepositorySettingApprovalRuleItemReviewerOutputWithContext(ctx context.Context) GetProjectRepositorySettingApprovalRuleItemReviewerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectRepositorySettingApprovalRuleItemReviewerOutput)
+}
+
+// GetProjectRepositorySettingApprovalRuleItemReviewerArrayInput is an input type that accepts GetProjectRepositorySettingApprovalRuleItemReviewerArray and GetProjectRepositorySettingApprovalRuleItemReviewerArrayOutput values.
+// You can construct a concrete instance of `GetProjectRepositorySettingApprovalRuleItemReviewerArrayInput` via:
+//
+//	GetProjectRepositorySettingApprovalRuleItemReviewerArray{ GetProjectRepositorySettingApprovalRuleItemReviewerArgs{...} }
+type GetProjectRepositorySettingApprovalRuleItemReviewerArrayInput interface {
+	pulumi.Input
+
+	ToGetProjectRepositorySettingApprovalRuleItemReviewerArrayOutput() GetProjectRepositorySettingApprovalRuleItemReviewerArrayOutput
+	ToGetProjectRepositorySettingApprovalRuleItemReviewerArrayOutputWithContext(context.Context) GetProjectRepositorySettingApprovalRuleItemReviewerArrayOutput
+}
+
+type GetProjectRepositorySettingApprovalRuleItemReviewerArray []GetProjectRepositorySettingApprovalRuleItemReviewerInput
+
+func (GetProjectRepositorySettingApprovalRuleItemReviewerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectRepositorySettingApprovalRuleItemReviewer)(nil)).Elem()
+}
+
+func (i GetProjectRepositorySettingApprovalRuleItemReviewerArray) ToGetProjectRepositorySettingApprovalRuleItemReviewerArrayOutput() GetProjectRepositorySettingApprovalRuleItemReviewerArrayOutput {
+	return i.ToGetProjectRepositorySettingApprovalRuleItemReviewerArrayOutputWithContext(context.Background())
+}
+
+func (i GetProjectRepositorySettingApprovalRuleItemReviewerArray) ToGetProjectRepositorySettingApprovalRuleItemReviewerArrayOutputWithContext(ctx context.Context) GetProjectRepositorySettingApprovalRuleItemReviewerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectRepositorySettingApprovalRuleItemReviewerArrayOutput)
+}
+
+type GetProjectRepositorySettingApprovalRuleItemReviewerOutput struct{ *pulumi.OutputState }
+
+func (GetProjectRepositorySettingApprovalRuleItemReviewerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectRepositorySettingApprovalRuleItemReviewer)(nil)).Elem()
+}
+
+func (o GetProjectRepositorySettingApprovalRuleItemReviewerOutput) ToGetProjectRepositorySettingApprovalRuleItemReviewerOutput() GetProjectRepositorySettingApprovalRuleItemReviewerOutput {
+	return o
+}
+
+func (o GetProjectRepositorySettingApprovalRuleItemReviewerOutput) ToGetProjectRepositorySettingApprovalRuleItemReviewerOutputWithContext(ctx context.Context) GetProjectRepositorySettingApprovalRuleItemReviewerOutput {
+	return o
+}
+
+// the OCID of the principal
+func (o GetProjectRepositorySettingApprovalRuleItemReviewerOutput) PrincipalId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectRepositorySettingApprovalRuleItemReviewer) string { return v.PrincipalId }).(pulumi.StringOutput)
+}
+
+// the name of the principal
+func (o GetProjectRepositorySettingApprovalRuleItemReviewerOutput) PrincipalName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectRepositorySettingApprovalRuleItemReviewer) string { return v.PrincipalName }).(pulumi.StringOutput)
+}
+
+// The state of the principal, it can be active or inactive or suppressed for emails
+func (o GetProjectRepositorySettingApprovalRuleItemReviewerOutput) PrincipalState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectRepositorySettingApprovalRuleItemReviewer) string { return v.PrincipalState }).(pulumi.StringOutput)
+}
+
+// the type of principal
+func (o GetProjectRepositorySettingApprovalRuleItemReviewerOutput) PrincipalType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectRepositorySettingApprovalRuleItemReviewer) string { return v.PrincipalType }).(pulumi.StringOutput)
+}
+
+type GetProjectRepositorySettingApprovalRuleItemReviewerArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProjectRepositorySettingApprovalRuleItemReviewerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectRepositorySettingApprovalRuleItemReviewer)(nil)).Elem()
+}
+
+func (o GetProjectRepositorySettingApprovalRuleItemReviewerArrayOutput) ToGetProjectRepositorySettingApprovalRuleItemReviewerArrayOutput() GetProjectRepositorySettingApprovalRuleItemReviewerArrayOutput {
+	return o
+}
+
+func (o GetProjectRepositorySettingApprovalRuleItemReviewerArrayOutput) ToGetProjectRepositorySettingApprovalRuleItemReviewerArrayOutputWithContext(ctx context.Context) GetProjectRepositorySettingApprovalRuleItemReviewerArrayOutput {
+	return o
+}
+
+func (o GetProjectRepositorySettingApprovalRuleItemReviewerArrayOutput) Index(i pulumi.IntInput) GetProjectRepositorySettingApprovalRuleItemReviewerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectRepositorySettingApprovalRuleItemReviewer {
+		return vs[0].([]GetProjectRepositorySettingApprovalRuleItemReviewer)[vs[1].(int)]
+	}).(GetProjectRepositorySettingApprovalRuleItemReviewerOutput)
+}
+
+type GetProjectRepositorySettingMergeSetting struct {
+	// List of merge strategies which are allowed for a Project or Repository.
+	AllowedMergeStrategies []string `pulumi:"allowedMergeStrategies"`
+	// Default type of merge strategy associated with the a Project or Repository.
+	DefaultMergeStrategy string `pulumi:"defaultMergeStrategy"`
+}
+
+// GetProjectRepositorySettingMergeSettingInput is an input type that accepts GetProjectRepositorySettingMergeSettingArgs and GetProjectRepositorySettingMergeSettingOutput values.
+// You can construct a concrete instance of `GetProjectRepositorySettingMergeSettingInput` via:
+//
+//	GetProjectRepositorySettingMergeSettingArgs{...}
+type GetProjectRepositorySettingMergeSettingInput interface {
+	pulumi.Input
+
+	ToGetProjectRepositorySettingMergeSettingOutput() GetProjectRepositorySettingMergeSettingOutput
+	ToGetProjectRepositorySettingMergeSettingOutputWithContext(context.Context) GetProjectRepositorySettingMergeSettingOutput
+}
+
+type GetProjectRepositorySettingMergeSettingArgs struct {
+	// List of merge strategies which are allowed for a Project or Repository.
+	AllowedMergeStrategies pulumi.StringArrayInput `pulumi:"allowedMergeStrategies"`
+	// Default type of merge strategy associated with the a Project or Repository.
+	DefaultMergeStrategy pulumi.StringInput `pulumi:"defaultMergeStrategy"`
+}
+
+func (GetProjectRepositorySettingMergeSettingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectRepositorySettingMergeSetting)(nil)).Elem()
+}
+
+func (i GetProjectRepositorySettingMergeSettingArgs) ToGetProjectRepositorySettingMergeSettingOutput() GetProjectRepositorySettingMergeSettingOutput {
+	return i.ToGetProjectRepositorySettingMergeSettingOutputWithContext(context.Background())
+}
+
+func (i GetProjectRepositorySettingMergeSettingArgs) ToGetProjectRepositorySettingMergeSettingOutputWithContext(ctx context.Context) GetProjectRepositorySettingMergeSettingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectRepositorySettingMergeSettingOutput)
+}
+
+// GetProjectRepositorySettingMergeSettingArrayInput is an input type that accepts GetProjectRepositorySettingMergeSettingArray and GetProjectRepositorySettingMergeSettingArrayOutput values.
+// You can construct a concrete instance of `GetProjectRepositorySettingMergeSettingArrayInput` via:
+//
+//	GetProjectRepositorySettingMergeSettingArray{ GetProjectRepositorySettingMergeSettingArgs{...} }
+type GetProjectRepositorySettingMergeSettingArrayInput interface {
+	pulumi.Input
+
+	ToGetProjectRepositorySettingMergeSettingArrayOutput() GetProjectRepositorySettingMergeSettingArrayOutput
+	ToGetProjectRepositorySettingMergeSettingArrayOutputWithContext(context.Context) GetProjectRepositorySettingMergeSettingArrayOutput
+}
+
+type GetProjectRepositorySettingMergeSettingArray []GetProjectRepositorySettingMergeSettingInput
+
+func (GetProjectRepositorySettingMergeSettingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectRepositorySettingMergeSetting)(nil)).Elem()
+}
+
+func (i GetProjectRepositorySettingMergeSettingArray) ToGetProjectRepositorySettingMergeSettingArrayOutput() GetProjectRepositorySettingMergeSettingArrayOutput {
+	return i.ToGetProjectRepositorySettingMergeSettingArrayOutputWithContext(context.Background())
+}
+
+func (i GetProjectRepositorySettingMergeSettingArray) ToGetProjectRepositorySettingMergeSettingArrayOutputWithContext(ctx context.Context) GetProjectRepositorySettingMergeSettingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectRepositorySettingMergeSettingArrayOutput)
+}
+
+type GetProjectRepositorySettingMergeSettingOutput struct{ *pulumi.OutputState }
+
+func (GetProjectRepositorySettingMergeSettingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectRepositorySettingMergeSetting)(nil)).Elem()
+}
+
+func (o GetProjectRepositorySettingMergeSettingOutput) ToGetProjectRepositorySettingMergeSettingOutput() GetProjectRepositorySettingMergeSettingOutput {
+	return o
+}
+
+func (o GetProjectRepositorySettingMergeSettingOutput) ToGetProjectRepositorySettingMergeSettingOutputWithContext(ctx context.Context) GetProjectRepositorySettingMergeSettingOutput {
+	return o
+}
+
+// List of merge strategies which are allowed for a Project or Repository.
+func (o GetProjectRepositorySettingMergeSettingOutput) AllowedMergeStrategies() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetProjectRepositorySettingMergeSetting) []string { return v.AllowedMergeStrategies }).(pulumi.StringArrayOutput)
+}
+
+// Default type of merge strategy associated with the a Project or Repository.
+func (o GetProjectRepositorySettingMergeSettingOutput) DefaultMergeStrategy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectRepositorySettingMergeSetting) string { return v.DefaultMergeStrategy }).(pulumi.StringOutput)
+}
+
+type GetProjectRepositorySettingMergeSettingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProjectRepositorySettingMergeSettingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectRepositorySettingMergeSetting)(nil)).Elem()
+}
+
+func (o GetProjectRepositorySettingMergeSettingArrayOutput) ToGetProjectRepositorySettingMergeSettingArrayOutput() GetProjectRepositorySettingMergeSettingArrayOutput {
+	return o
+}
+
+func (o GetProjectRepositorySettingMergeSettingArrayOutput) ToGetProjectRepositorySettingMergeSettingArrayOutputWithContext(ctx context.Context) GetProjectRepositorySettingMergeSettingArrayOutput {
+	return o
+}
+
+func (o GetProjectRepositorySettingMergeSettingArrayOutput) Index(i pulumi.IntInput) GetProjectRepositorySettingMergeSettingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectRepositorySettingMergeSetting {
+		return vs[0].([]GetProjectRepositorySettingMergeSetting)[vs[1].(int)]
+	}).(GetProjectRepositorySettingMergeSettingOutput)
+}
+
 type GetProjectsFilter struct {
 	// A filter to return only resources that match the entire name given.
 	Name   string   `pulumi:"name"`
@@ -35637,11 +37347,13 @@ type GetRepositoriesRepositoryCollectionItem struct {
 	Name string `pulumi:"name"`
 	// Tenancy unique namespace.
 	Namespace string `pulumi:"namespace"`
+	// The OCID of the parent repository.
+	ParentRepositoryId string `pulumi:"parentRepositoryId"`
 	// unique project identifier
 	ProjectId string `pulumi:"projectId"`
 	// Unique project name in a namespace.
 	ProjectName string `pulumi:"projectName"`
-	// Type of repository: MIRRORED - Repository created by mirroring an existing repository. HOSTED - Repository created and hosted using Oracle Cloud Infrastructure DevOps code repository.
+	// Type of repository: MIRRORED - Repository created by mirroring an existing repository. HOSTED - Repository created and hosted using Oracle Cloud Infrastructure DevOps code repository. FORKED - Repository created by forking an existing repository.
 	RepositoryType string `pulumi:"repositoryType"`
 	// The size of the repository in bytes.
 	SizeInBytes string `pulumi:"sizeInBytes"`
@@ -35655,7 +37367,7 @@ type GetRepositoriesRepositoryCollectionItem struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the repository was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
+	// Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the repository. PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an open pull request. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
 	TriggerBuildEvents []string `pulumi:"triggerBuildEvents"`
 }
 
@@ -35696,11 +37408,13 @@ type GetRepositoriesRepositoryCollectionItemArgs struct {
 	Name pulumi.StringInput `pulumi:"name"`
 	// Tenancy unique namespace.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The OCID of the parent repository.
+	ParentRepositoryId pulumi.StringInput `pulumi:"parentRepositoryId"`
 	// unique project identifier
 	ProjectId pulumi.StringInput `pulumi:"projectId"`
 	// Unique project name in a namespace.
 	ProjectName pulumi.StringInput `pulumi:"projectName"`
-	// Type of repository: MIRRORED - Repository created by mirroring an existing repository. HOSTED - Repository created and hosted using Oracle Cloud Infrastructure DevOps code repository.
+	// Type of repository: MIRRORED - Repository created by mirroring an existing repository. HOSTED - Repository created and hosted using Oracle Cloud Infrastructure DevOps code repository. FORKED - Repository created by forking an existing repository.
 	RepositoryType pulumi.StringInput `pulumi:"repositoryType"`
 	// The size of the repository in bytes.
 	SizeInBytes pulumi.StringInput `pulumi:"sizeInBytes"`
@@ -35714,7 +37428,7 @@ type GetRepositoriesRepositoryCollectionItemArgs struct {
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the repository was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-	// Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
+	// Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the repository. PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an open pull request. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
 	TriggerBuildEvents pulumi.StringArrayInput `pulumi:"triggerBuildEvents"`
 }
 
@@ -35835,6 +37549,11 @@ func (o GetRepositoriesRepositoryCollectionItemOutput) Namespace() pulumi.String
 	return o.ApplyT(func(v GetRepositoriesRepositoryCollectionItem) string { return v.Namespace }).(pulumi.StringOutput)
 }
 
+// The OCID of the parent repository.
+func (o GetRepositoriesRepositoryCollectionItemOutput) ParentRepositoryId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRepositoriesRepositoryCollectionItem) string { return v.ParentRepositoryId }).(pulumi.StringOutput)
+}
+
 // unique project identifier
 func (o GetRepositoriesRepositoryCollectionItemOutput) ProjectId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRepositoriesRepositoryCollectionItem) string { return v.ProjectId }).(pulumi.StringOutput)
@@ -35845,7 +37564,7 @@ func (o GetRepositoriesRepositoryCollectionItemOutput) ProjectName() pulumi.Stri
 	return o.ApplyT(func(v GetRepositoriesRepositoryCollectionItem) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// Type of repository: MIRRORED - Repository created by mirroring an existing repository. HOSTED - Repository created and hosted using Oracle Cloud Infrastructure DevOps code repository.
+// Type of repository: MIRRORED - Repository created by mirroring an existing repository. HOSTED - Repository created and hosted using Oracle Cloud Infrastructure DevOps code repository. FORKED - Repository created by forking an existing repository.
 func (o GetRepositoriesRepositoryCollectionItemOutput) RepositoryType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRepositoriesRepositoryCollectionItem) string { return v.RepositoryType }).(pulumi.StringOutput)
 }
@@ -35880,7 +37599,7 @@ func (o GetRepositoriesRepositoryCollectionItemOutput) TimeUpdated() pulumi.Stri
 	return o.ApplyT(func(v GetRepositoriesRepositoryCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
+// Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the repository. PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an open pull request. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
 func (o GetRepositoriesRepositoryCollectionItemOutput) TriggerBuildEvents() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetRepositoriesRepositoryCollectionItem) []string { return v.TriggerBuildEvents }).(pulumi.StringArrayOutput)
 }
@@ -35906,7 +37625,7 @@ func (o GetRepositoriesRepositoryCollectionItemArrayOutput) Index(i pulumi.IntIn
 }
 
 type GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig struct {
-	// Upstream git repository connection identifer.
+	// Upstream git repository connection identifier.
 	ConnectorId string `pulumi:"connectorId"`
 	// URL of external repository you want to mirror.
 	RepositoryUrl string `pulumi:"repositoryUrl"`
@@ -35926,7 +37645,7 @@ type GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigInput interfac
 }
 
 type GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArgs struct {
-	// Upstream git repository connection identifer.
+	// Upstream git repository connection identifier.
 	ConnectorId pulumi.StringInput `pulumi:"connectorId"`
 	// URL of external repository you want to mirror.
 	RepositoryUrl pulumi.StringInput `pulumi:"repositoryUrl"`
@@ -35960,7 +37679,7 @@ func (o GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigOutput) ToG
 	return o
 }
 
-// Upstream git repository connection identifer.
+// Upstream git repository connection identifier.
 func (o GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigOutput) ConnectorId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig) string { return v.ConnectorId }).(pulumi.StringOutput)
 }
@@ -36369,6 +38088,8 @@ type GetRepositoryAuthorsRepositoryAuthorCollectionItem struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
 }
 
 // GetRepositoryAuthorsRepositoryAuthorCollectionItemInput is an input type that accepts GetRepositoryAuthorsRepositoryAuthorCollectionItemArgs and GetRepositoryAuthorsRepositoryAuthorCollectionItemOutput values.
@@ -36389,6 +38110,8 @@ type GetRepositoryAuthorsRepositoryAuthorCollectionItemArgs struct {
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 }
 
 func (GetRepositoryAuthorsRepositoryAuthorCollectionItemArgs) ElementType() reflect.Type {
@@ -36459,6 +38182,11 @@ func (o GetRepositoryAuthorsRepositoryAuthorCollectionItemOutput) FreeformTags()
 	return o.ApplyT(func(v GetRepositoryAuthorsRepositoryAuthorCollectionItem) map[string]interface{} {
 		return v.FreeformTags
 	}).(pulumi.MapOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetRepositoryAuthorsRepositoryAuthorCollectionItemOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetRepositoryAuthorsRepositoryAuthorCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
 type GetRepositoryAuthorsRepositoryAuthorCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -38778,7 +40506,7 @@ func (o GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItemArrayOutpu
 }
 
 type GetRepositoryMirrorRepositoryConfig struct {
-	// Upstream git repository connection identifer.
+	// Upstream git repository connection identifier.
 	ConnectorId string `pulumi:"connectorId"`
 	// URL of external repository you want to mirror.
 	RepositoryUrl string `pulumi:"repositoryUrl"`
@@ -38798,7 +40526,7 @@ type GetRepositoryMirrorRepositoryConfigInput interface {
 }
 
 type GetRepositoryMirrorRepositoryConfigArgs struct {
-	// Upstream git repository connection identifer.
+	// Upstream git repository connection identifier.
 	ConnectorId pulumi.StringInput `pulumi:"connectorId"`
 	// URL of external repository you want to mirror.
 	RepositoryUrl pulumi.StringInput `pulumi:"repositoryUrl"`
@@ -38857,7 +40585,7 @@ func (o GetRepositoryMirrorRepositoryConfigOutput) ToGetRepositoryMirrorReposito
 	return o
 }
 
-// Upstream git repository connection identifer.
+// Upstream git repository connection identifier.
 func (o GetRepositoryMirrorRepositoryConfigOutput) ConnectorId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRepositoryMirrorRepositoryConfig) string { return v.ConnectorId }).(pulumi.StringOutput)
 }
@@ -39383,6 +41111,8 @@ type GetRepositoryPathsRepositoryPathCollectionItem struct {
 	SizeInBytes string `pulumi:"sizeInBytes"`
 	// The git URL of the submodule.
 	SubmoduleGitUrl string `pulumi:"submoduleGitUrl"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// File or directory.
 	Type string `pulumi:"type"`
 }
@@ -39413,6 +41143,8 @@ type GetRepositoryPathsRepositoryPathCollectionItemArgs struct {
 	SizeInBytes pulumi.StringInput `pulumi:"sizeInBytes"`
 	// The git URL of the submodule.
 	SubmoduleGitUrl pulumi.StringInput `pulumi:"submoduleGitUrl"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// File or directory.
 	Type pulumi.StringInput `pulumi:"type"`
 }
@@ -39503,6 +41235,11 @@ func (o GetRepositoryPathsRepositoryPathCollectionItemOutput) SubmoduleGitUrl() 
 	return o.ApplyT(func(v GetRepositoryPathsRepositoryPathCollectionItem) string { return v.SubmoduleGitUrl }).(pulumi.StringOutput)
 }
 
+// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetRepositoryPathsRepositoryPathCollectionItemOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetRepositoryPathsRepositoryPathCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+}
+
 // File or directory.
 func (o GetRepositoryPathsRepositoryPathCollectionItemOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRepositoryPathsRepositoryPathCollectionItem) string { return v.Type }).(pulumi.StringOutput)
@@ -39526,6 +41263,355 @@ func (o GetRepositoryPathsRepositoryPathCollectionItemArrayOutput) Index(i pulum
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRepositoryPathsRepositoryPathCollectionItem {
 		return vs[0].([]GetRepositoryPathsRepositoryPathCollectionItem)[vs[1].(int)]
 	}).(GetRepositoryPathsRepositoryPathCollectionItemOutput)
+}
+
+type GetRepositoryProtectedBranchesFilter struct {
+	// A filter to return only resources that match the given branch name.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetRepositoryProtectedBranchesFilterInput is an input type that accepts GetRepositoryProtectedBranchesFilterArgs and GetRepositoryProtectedBranchesFilterOutput values.
+// You can construct a concrete instance of `GetRepositoryProtectedBranchesFilterInput` via:
+//
+//	GetRepositoryProtectedBranchesFilterArgs{...}
+type GetRepositoryProtectedBranchesFilterInput interface {
+	pulumi.Input
+
+	ToGetRepositoryProtectedBranchesFilterOutput() GetRepositoryProtectedBranchesFilterOutput
+	ToGetRepositoryProtectedBranchesFilterOutputWithContext(context.Context) GetRepositoryProtectedBranchesFilterOutput
+}
+
+type GetRepositoryProtectedBranchesFilterArgs struct {
+	// A filter to return only resources that match the given branch name.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetRepositoryProtectedBranchesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRepositoryProtectedBranchesFilter)(nil)).Elem()
+}
+
+func (i GetRepositoryProtectedBranchesFilterArgs) ToGetRepositoryProtectedBranchesFilterOutput() GetRepositoryProtectedBranchesFilterOutput {
+	return i.ToGetRepositoryProtectedBranchesFilterOutputWithContext(context.Background())
+}
+
+func (i GetRepositoryProtectedBranchesFilterArgs) ToGetRepositoryProtectedBranchesFilterOutputWithContext(ctx context.Context) GetRepositoryProtectedBranchesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRepositoryProtectedBranchesFilterOutput)
+}
+
+// GetRepositoryProtectedBranchesFilterArrayInput is an input type that accepts GetRepositoryProtectedBranchesFilterArray and GetRepositoryProtectedBranchesFilterArrayOutput values.
+// You can construct a concrete instance of `GetRepositoryProtectedBranchesFilterArrayInput` via:
+//
+//	GetRepositoryProtectedBranchesFilterArray{ GetRepositoryProtectedBranchesFilterArgs{...} }
+type GetRepositoryProtectedBranchesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetRepositoryProtectedBranchesFilterArrayOutput() GetRepositoryProtectedBranchesFilterArrayOutput
+	ToGetRepositoryProtectedBranchesFilterArrayOutputWithContext(context.Context) GetRepositoryProtectedBranchesFilterArrayOutput
+}
+
+type GetRepositoryProtectedBranchesFilterArray []GetRepositoryProtectedBranchesFilterInput
+
+func (GetRepositoryProtectedBranchesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRepositoryProtectedBranchesFilter)(nil)).Elem()
+}
+
+func (i GetRepositoryProtectedBranchesFilterArray) ToGetRepositoryProtectedBranchesFilterArrayOutput() GetRepositoryProtectedBranchesFilterArrayOutput {
+	return i.ToGetRepositoryProtectedBranchesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetRepositoryProtectedBranchesFilterArray) ToGetRepositoryProtectedBranchesFilterArrayOutputWithContext(ctx context.Context) GetRepositoryProtectedBranchesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRepositoryProtectedBranchesFilterArrayOutput)
+}
+
+type GetRepositoryProtectedBranchesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetRepositoryProtectedBranchesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRepositoryProtectedBranchesFilter)(nil)).Elem()
+}
+
+func (o GetRepositoryProtectedBranchesFilterOutput) ToGetRepositoryProtectedBranchesFilterOutput() GetRepositoryProtectedBranchesFilterOutput {
+	return o
+}
+
+func (o GetRepositoryProtectedBranchesFilterOutput) ToGetRepositoryProtectedBranchesFilterOutputWithContext(ctx context.Context) GetRepositoryProtectedBranchesFilterOutput {
+	return o
+}
+
+// A filter to return only resources that match the given branch name.
+func (o GetRepositoryProtectedBranchesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRepositoryProtectedBranchesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetRepositoryProtectedBranchesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRepositoryProtectedBranchesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetRepositoryProtectedBranchesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRepositoryProtectedBranchesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetRepositoryProtectedBranchesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRepositoryProtectedBranchesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRepositoryProtectedBranchesFilter)(nil)).Elem()
+}
+
+func (o GetRepositoryProtectedBranchesFilterArrayOutput) ToGetRepositoryProtectedBranchesFilterArrayOutput() GetRepositoryProtectedBranchesFilterArrayOutput {
+	return o
+}
+
+func (o GetRepositoryProtectedBranchesFilterArrayOutput) ToGetRepositoryProtectedBranchesFilterArrayOutputWithContext(ctx context.Context) GetRepositoryProtectedBranchesFilterArrayOutput {
+	return o
+}
+
+func (o GetRepositoryProtectedBranchesFilterArrayOutput) Index(i pulumi.IntInput) GetRepositoryProtectedBranchesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRepositoryProtectedBranchesFilter {
+		return vs[0].([]GetRepositoryProtectedBranchesFilter)[vs[1].(int)]
+	}).(GetRepositoryProtectedBranchesFilterOutput)
+}
+
+type GetRepositoryProtectedBranchesProtectedBranchCollection struct {
+	// List of objects describing protected branches
+	Items []GetRepositoryProtectedBranchesProtectedBranchCollectionItem `pulumi:"items"`
+}
+
+// GetRepositoryProtectedBranchesProtectedBranchCollectionInput is an input type that accepts GetRepositoryProtectedBranchesProtectedBranchCollectionArgs and GetRepositoryProtectedBranchesProtectedBranchCollectionOutput values.
+// You can construct a concrete instance of `GetRepositoryProtectedBranchesProtectedBranchCollectionInput` via:
+//
+//	GetRepositoryProtectedBranchesProtectedBranchCollectionArgs{...}
+type GetRepositoryProtectedBranchesProtectedBranchCollectionInput interface {
+	pulumi.Input
+
+	ToGetRepositoryProtectedBranchesProtectedBranchCollectionOutput() GetRepositoryProtectedBranchesProtectedBranchCollectionOutput
+	ToGetRepositoryProtectedBranchesProtectedBranchCollectionOutputWithContext(context.Context) GetRepositoryProtectedBranchesProtectedBranchCollectionOutput
+}
+
+type GetRepositoryProtectedBranchesProtectedBranchCollectionArgs struct {
+	// List of objects describing protected branches
+	Items GetRepositoryProtectedBranchesProtectedBranchCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetRepositoryProtectedBranchesProtectedBranchCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRepositoryProtectedBranchesProtectedBranchCollection)(nil)).Elem()
+}
+
+func (i GetRepositoryProtectedBranchesProtectedBranchCollectionArgs) ToGetRepositoryProtectedBranchesProtectedBranchCollectionOutput() GetRepositoryProtectedBranchesProtectedBranchCollectionOutput {
+	return i.ToGetRepositoryProtectedBranchesProtectedBranchCollectionOutputWithContext(context.Background())
+}
+
+func (i GetRepositoryProtectedBranchesProtectedBranchCollectionArgs) ToGetRepositoryProtectedBranchesProtectedBranchCollectionOutputWithContext(ctx context.Context) GetRepositoryProtectedBranchesProtectedBranchCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRepositoryProtectedBranchesProtectedBranchCollectionOutput)
+}
+
+// GetRepositoryProtectedBranchesProtectedBranchCollectionArrayInput is an input type that accepts GetRepositoryProtectedBranchesProtectedBranchCollectionArray and GetRepositoryProtectedBranchesProtectedBranchCollectionArrayOutput values.
+// You can construct a concrete instance of `GetRepositoryProtectedBranchesProtectedBranchCollectionArrayInput` via:
+//
+//	GetRepositoryProtectedBranchesProtectedBranchCollectionArray{ GetRepositoryProtectedBranchesProtectedBranchCollectionArgs{...} }
+type GetRepositoryProtectedBranchesProtectedBranchCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetRepositoryProtectedBranchesProtectedBranchCollectionArrayOutput() GetRepositoryProtectedBranchesProtectedBranchCollectionArrayOutput
+	ToGetRepositoryProtectedBranchesProtectedBranchCollectionArrayOutputWithContext(context.Context) GetRepositoryProtectedBranchesProtectedBranchCollectionArrayOutput
+}
+
+type GetRepositoryProtectedBranchesProtectedBranchCollectionArray []GetRepositoryProtectedBranchesProtectedBranchCollectionInput
+
+func (GetRepositoryProtectedBranchesProtectedBranchCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRepositoryProtectedBranchesProtectedBranchCollection)(nil)).Elem()
+}
+
+func (i GetRepositoryProtectedBranchesProtectedBranchCollectionArray) ToGetRepositoryProtectedBranchesProtectedBranchCollectionArrayOutput() GetRepositoryProtectedBranchesProtectedBranchCollectionArrayOutput {
+	return i.ToGetRepositoryProtectedBranchesProtectedBranchCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetRepositoryProtectedBranchesProtectedBranchCollectionArray) ToGetRepositoryProtectedBranchesProtectedBranchCollectionArrayOutputWithContext(ctx context.Context) GetRepositoryProtectedBranchesProtectedBranchCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRepositoryProtectedBranchesProtectedBranchCollectionArrayOutput)
+}
+
+type GetRepositoryProtectedBranchesProtectedBranchCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetRepositoryProtectedBranchesProtectedBranchCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRepositoryProtectedBranchesProtectedBranchCollection)(nil)).Elem()
+}
+
+func (o GetRepositoryProtectedBranchesProtectedBranchCollectionOutput) ToGetRepositoryProtectedBranchesProtectedBranchCollectionOutput() GetRepositoryProtectedBranchesProtectedBranchCollectionOutput {
+	return o
+}
+
+func (o GetRepositoryProtectedBranchesProtectedBranchCollectionOutput) ToGetRepositoryProtectedBranchesProtectedBranchCollectionOutputWithContext(ctx context.Context) GetRepositoryProtectedBranchesProtectedBranchCollectionOutput {
+	return o
+}
+
+// List of objects describing protected branches
+func (o GetRepositoryProtectedBranchesProtectedBranchCollectionOutput) Items() GetRepositoryProtectedBranchesProtectedBranchCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetRepositoryProtectedBranchesProtectedBranchCollection) []GetRepositoryProtectedBranchesProtectedBranchCollectionItem {
+		return v.Items
+	}).(GetRepositoryProtectedBranchesProtectedBranchCollectionItemArrayOutput)
+}
+
+type GetRepositoryProtectedBranchesProtectedBranchCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRepositoryProtectedBranchesProtectedBranchCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRepositoryProtectedBranchesProtectedBranchCollection)(nil)).Elem()
+}
+
+func (o GetRepositoryProtectedBranchesProtectedBranchCollectionArrayOutput) ToGetRepositoryProtectedBranchesProtectedBranchCollectionArrayOutput() GetRepositoryProtectedBranchesProtectedBranchCollectionArrayOutput {
+	return o
+}
+
+func (o GetRepositoryProtectedBranchesProtectedBranchCollectionArrayOutput) ToGetRepositoryProtectedBranchesProtectedBranchCollectionArrayOutputWithContext(ctx context.Context) GetRepositoryProtectedBranchesProtectedBranchCollectionArrayOutput {
+	return o
+}
+
+func (o GetRepositoryProtectedBranchesProtectedBranchCollectionArrayOutput) Index(i pulumi.IntInput) GetRepositoryProtectedBranchesProtectedBranchCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRepositoryProtectedBranchesProtectedBranchCollection {
+		return vs[0].([]GetRepositoryProtectedBranchesProtectedBranchCollection)[vs[1].(int)]
+	}).(GetRepositoryProtectedBranchesProtectedBranchCollectionOutput)
+}
+
+type GetRepositoryProtectedBranchesProtectedBranchCollectionItem struct {
+	// Branch name inside a repository.
+	BranchName string `pulumi:"branchName"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// Protection level to be added on the branch.
+	ProtectionLevels []string `pulumi:"protectionLevels"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+}
+
+// GetRepositoryProtectedBranchesProtectedBranchCollectionItemInput is an input type that accepts GetRepositoryProtectedBranchesProtectedBranchCollectionItemArgs and GetRepositoryProtectedBranchesProtectedBranchCollectionItemOutput values.
+// You can construct a concrete instance of `GetRepositoryProtectedBranchesProtectedBranchCollectionItemInput` via:
+//
+//	GetRepositoryProtectedBranchesProtectedBranchCollectionItemArgs{...}
+type GetRepositoryProtectedBranchesProtectedBranchCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetRepositoryProtectedBranchesProtectedBranchCollectionItemOutput() GetRepositoryProtectedBranchesProtectedBranchCollectionItemOutput
+	ToGetRepositoryProtectedBranchesProtectedBranchCollectionItemOutputWithContext(context.Context) GetRepositoryProtectedBranchesProtectedBranchCollectionItemOutput
+}
+
+type GetRepositoryProtectedBranchesProtectedBranchCollectionItemArgs struct {
+	// Branch name inside a repository.
+	BranchName pulumi.StringInput `pulumi:"branchName"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// Protection level to be added on the branch.
+	ProtectionLevels pulumi.StringArrayInput `pulumi:"protectionLevels"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+}
+
+func (GetRepositoryProtectedBranchesProtectedBranchCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRepositoryProtectedBranchesProtectedBranchCollectionItem)(nil)).Elem()
+}
+
+func (i GetRepositoryProtectedBranchesProtectedBranchCollectionItemArgs) ToGetRepositoryProtectedBranchesProtectedBranchCollectionItemOutput() GetRepositoryProtectedBranchesProtectedBranchCollectionItemOutput {
+	return i.ToGetRepositoryProtectedBranchesProtectedBranchCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetRepositoryProtectedBranchesProtectedBranchCollectionItemArgs) ToGetRepositoryProtectedBranchesProtectedBranchCollectionItemOutputWithContext(ctx context.Context) GetRepositoryProtectedBranchesProtectedBranchCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRepositoryProtectedBranchesProtectedBranchCollectionItemOutput)
+}
+
+// GetRepositoryProtectedBranchesProtectedBranchCollectionItemArrayInput is an input type that accepts GetRepositoryProtectedBranchesProtectedBranchCollectionItemArray and GetRepositoryProtectedBranchesProtectedBranchCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetRepositoryProtectedBranchesProtectedBranchCollectionItemArrayInput` via:
+//
+//	GetRepositoryProtectedBranchesProtectedBranchCollectionItemArray{ GetRepositoryProtectedBranchesProtectedBranchCollectionItemArgs{...} }
+type GetRepositoryProtectedBranchesProtectedBranchCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetRepositoryProtectedBranchesProtectedBranchCollectionItemArrayOutput() GetRepositoryProtectedBranchesProtectedBranchCollectionItemArrayOutput
+	ToGetRepositoryProtectedBranchesProtectedBranchCollectionItemArrayOutputWithContext(context.Context) GetRepositoryProtectedBranchesProtectedBranchCollectionItemArrayOutput
+}
+
+type GetRepositoryProtectedBranchesProtectedBranchCollectionItemArray []GetRepositoryProtectedBranchesProtectedBranchCollectionItemInput
+
+func (GetRepositoryProtectedBranchesProtectedBranchCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRepositoryProtectedBranchesProtectedBranchCollectionItem)(nil)).Elem()
+}
+
+func (i GetRepositoryProtectedBranchesProtectedBranchCollectionItemArray) ToGetRepositoryProtectedBranchesProtectedBranchCollectionItemArrayOutput() GetRepositoryProtectedBranchesProtectedBranchCollectionItemArrayOutput {
+	return i.ToGetRepositoryProtectedBranchesProtectedBranchCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetRepositoryProtectedBranchesProtectedBranchCollectionItemArray) ToGetRepositoryProtectedBranchesProtectedBranchCollectionItemArrayOutputWithContext(ctx context.Context) GetRepositoryProtectedBranchesProtectedBranchCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRepositoryProtectedBranchesProtectedBranchCollectionItemArrayOutput)
+}
+
+type GetRepositoryProtectedBranchesProtectedBranchCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetRepositoryProtectedBranchesProtectedBranchCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRepositoryProtectedBranchesProtectedBranchCollectionItem)(nil)).Elem()
+}
+
+func (o GetRepositoryProtectedBranchesProtectedBranchCollectionItemOutput) ToGetRepositoryProtectedBranchesProtectedBranchCollectionItemOutput() GetRepositoryProtectedBranchesProtectedBranchCollectionItemOutput {
+	return o
+}
+
+func (o GetRepositoryProtectedBranchesProtectedBranchCollectionItemOutput) ToGetRepositoryProtectedBranchesProtectedBranchCollectionItemOutputWithContext(ctx context.Context) GetRepositoryProtectedBranchesProtectedBranchCollectionItemOutput {
+	return o
+}
+
+// Branch name inside a repository.
+func (o GetRepositoryProtectedBranchesProtectedBranchCollectionItemOutput) BranchName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRepositoryProtectedBranchesProtectedBranchCollectionItem) string { return v.BranchName }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetRepositoryProtectedBranchesProtectedBranchCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetRepositoryProtectedBranchesProtectedBranchCollectionItem) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+func (o GetRepositoryProtectedBranchesProtectedBranchCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetRepositoryProtectedBranchesProtectedBranchCollectionItem) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
+}
+
+// Protection level to be added on the branch.
+func (o GetRepositoryProtectedBranchesProtectedBranchCollectionItemOutput) ProtectionLevels() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRepositoryProtectedBranchesProtectedBranchCollectionItem) []string {
+		return v.ProtectionLevels
+	}).(pulumi.StringArrayOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetRepositoryProtectedBranchesProtectedBranchCollectionItemOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetRepositoryProtectedBranchesProtectedBranchCollectionItem) map[string]interface{} {
+		return v.SystemTags
+	}).(pulumi.MapOutput)
+}
+
+type GetRepositoryProtectedBranchesProtectedBranchCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRepositoryProtectedBranchesProtectedBranchCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRepositoryProtectedBranchesProtectedBranchCollectionItem)(nil)).Elem()
+}
+
+func (o GetRepositoryProtectedBranchesProtectedBranchCollectionItemArrayOutput) ToGetRepositoryProtectedBranchesProtectedBranchCollectionItemArrayOutput() GetRepositoryProtectedBranchesProtectedBranchCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetRepositoryProtectedBranchesProtectedBranchCollectionItemArrayOutput) ToGetRepositoryProtectedBranchesProtectedBranchCollectionItemArrayOutputWithContext(ctx context.Context) GetRepositoryProtectedBranchesProtectedBranchCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetRepositoryProtectedBranchesProtectedBranchCollectionItemArrayOutput) Index(i pulumi.IntInput) GetRepositoryProtectedBranchesProtectedBranchCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRepositoryProtectedBranchesProtectedBranchCollectionItem {
+		return vs[0].([]GetRepositoryProtectedBranchesProtectedBranchCollectionItem)[vs[1].(int)]
+	}).(GetRepositoryProtectedBranchesProtectedBranchCollectionItemOutput)
 }
 
 type GetRepositoryRefsFilter struct {
@@ -39896,11 +41982,560 @@ func (o GetRepositoryRefsRepositoryRefCollectionItemArrayOutput) Index(i pulumi.
 	}).(GetRepositoryRefsRepositoryRefCollectionItemOutput)
 }
 
+type GetRepositorySettingApprovalRule struct {
+	// List of approval rules.
+	Items []GetRepositorySettingApprovalRuleItem `pulumi:"items"`
+}
+
+// GetRepositorySettingApprovalRuleInput is an input type that accepts GetRepositorySettingApprovalRuleArgs and GetRepositorySettingApprovalRuleOutput values.
+// You can construct a concrete instance of `GetRepositorySettingApprovalRuleInput` via:
+//
+//	GetRepositorySettingApprovalRuleArgs{...}
+type GetRepositorySettingApprovalRuleInput interface {
+	pulumi.Input
+
+	ToGetRepositorySettingApprovalRuleOutput() GetRepositorySettingApprovalRuleOutput
+	ToGetRepositorySettingApprovalRuleOutputWithContext(context.Context) GetRepositorySettingApprovalRuleOutput
+}
+
+type GetRepositorySettingApprovalRuleArgs struct {
+	// List of approval rules.
+	Items GetRepositorySettingApprovalRuleItemArrayInput `pulumi:"items"`
+}
+
+func (GetRepositorySettingApprovalRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRepositorySettingApprovalRule)(nil)).Elem()
+}
+
+func (i GetRepositorySettingApprovalRuleArgs) ToGetRepositorySettingApprovalRuleOutput() GetRepositorySettingApprovalRuleOutput {
+	return i.ToGetRepositorySettingApprovalRuleOutputWithContext(context.Background())
+}
+
+func (i GetRepositorySettingApprovalRuleArgs) ToGetRepositorySettingApprovalRuleOutputWithContext(ctx context.Context) GetRepositorySettingApprovalRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRepositorySettingApprovalRuleOutput)
+}
+
+// GetRepositorySettingApprovalRuleArrayInput is an input type that accepts GetRepositorySettingApprovalRuleArray and GetRepositorySettingApprovalRuleArrayOutput values.
+// You can construct a concrete instance of `GetRepositorySettingApprovalRuleArrayInput` via:
+//
+//	GetRepositorySettingApprovalRuleArray{ GetRepositorySettingApprovalRuleArgs{...} }
+type GetRepositorySettingApprovalRuleArrayInput interface {
+	pulumi.Input
+
+	ToGetRepositorySettingApprovalRuleArrayOutput() GetRepositorySettingApprovalRuleArrayOutput
+	ToGetRepositorySettingApprovalRuleArrayOutputWithContext(context.Context) GetRepositorySettingApprovalRuleArrayOutput
+}
+
+type GetRepositorySettingApprovalRuleArray []GetRepositorySettingApprovalRuleInput
+
+func (GetRepositorySettingApprovalRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRepositorySettingApprovalRule)(nil)).Elem()
+}
+
+func (i GetRepositorySettingApprovalRuleArray) ToGetRepositorySettingApprovalRuleArrayOutput() GetRepositorySettingApprovalRuleArrayOutput {
+	return i.ToGetRepositorySettingApprovalRuleArrayOutputWithContext(context.Background())
+}
+
+func (i GetRepositorySettingApprovalRuleArray) ToGetRepositorySettingApprovalRuleArrayOutputWithContext(ctx context.Context) GetRepositorySettingApprovalRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRepositorySettingApprovalRuleArrayOutput)
+}
+
+type GetRepositorySettingApprovalRuleOutput struct{ *pulumi.OutputState }
+
+func (GetRepositorySettingApprovalRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRepositorySettingApprovalRule)(nil)).Elem()
+}
+
+func (o GetRepositorySettingApprovalRuleOutput) ToGetRepositorySettingApprovalRuleOutput() GetRepositorySettingApprovalRuleOutput {
+	return o
+}
+
+func (o GetRepositorySettingApprovalRuleOutput) ToGetRepositorySettingApprovalRuleOutputWithContext(ctx context.Context) GetRepositorySettingApprovalRuleOutput {
+	return o
+}
+
+// List of approval rules.
+func (o GetRepositorySettingApprovalRuleOutput) Items() GetRepositorySettingApprovalRuleItemArrayOutput {
+	return o.ApplyT(func(v GetRepositorySettingApprovalRule) []GetRepositorySettingApprovalRuleItem { return v.Items }).(GetRepositorySettingApprovalRuleItemArrayOutput)
+}
+
+type GetRepositorySettingApprovalRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRepositorySettingApprovalRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRepositorySettingApprovalRule)(nil)).Elem()
+}
+
+func (o GetRepositorySettingApprovalRuleArrayOutput) ToGetRepositorySettingApprovalRuleArrayOutput() GetRepositorySettingApprovalRuleArrayOutput {
+	return o
+}
+
+func (o GetRepositorySettingApprovalRuleArrayOutput) ToGetRepositorySettingApprovalRuleArrayOutputWithContext(ctx context.Context) GetRepositorySettingApprovalRuleArrayOutput {
+	return o
+}
+
+func (o GetRepositorySettingApprovalRuleArrayOutput) Index(i pulumi.IntInput) GetRepositorySettingApprovalRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRepositorySettingApprovalRule {
+		return vs[0].([]GetRepositorySettingApprovalRule)[vs[1].(int)]
+	}).(GetRepositorySettingApprovalRuleOutput)
+}
+
+type GetRepositorySettingApprovalRuleItem struct {
+	// Branch name where pull requests targeting the branch must satisfy the approval rule. This value being null means the rule applies to all pull requests
+	DestinationBranch string `pulumi:"destinationBranch"`
+	// Minimum number of approvals which must be provided by the reviewers specified in the list before the rule can be satisfied
+	MinApprovalsCount int `pulumi:"minApprovalsCount"`
+	// Name which is used to uniquely identify an approval rule.
+	Name string `pulumi:"name"`
+	// List of users who must provide approvals up to the minApprovalsCount specified in the rule. An empty list means the approvals can come from any user.
+	Reviewers []GetRepositorySettingApprovalRuleItemReviewer `pulumi:"reviewers"`
+}
+
+// GetRepositorySettingApprovalRuleItemInput is an input type that accepts GetRepositorySettingApprovalRuleItemArgs and GetRepositorySettingApprovalRuleItemOutput values.
+// You can construct a concrete instance of `GetRepositorySettingApprovalRuleItemInput` via:
+//
+//	GetRepositorySettingApprovalRuleItemArgs{...}
+type GetRepositorySettingApprovalRuleItemInput interface {
+	pulumi.Input
+
+	ToGetRepositorySettingApprovalRuleItemOutput() GetRepositorySettingApprovalRuleItemOutput
+	ToGetRepositorySettingApprovalRuleItemOutputWithContext(context.Context) GetRepositorySettingApprovalRuleItemOutput
+}
+
+type GetRepositorySettingApprovalRuleItemArgs struct {
+	// Branch name where pull requests targeting the branch must satisfy the approval rule. This value being null means the rule applies to all pull requests
+	DestinationBranch pulumi.StringInput `pulumi:"destinationBranch"`
+	// Minimum number of approvals which must be provided by the reviewers specified in the list before the rule can be satisfied
+	MinApprovalsCount pulumi.IntInput `pulumi:"minApprovalsCount"`
+	// Name which is used to uniquely identify an approval rule.
+	Name pulumi.StringInput `pulumi:"name"`
+	// List of users who must provide approvals up to the minApprovalsCount specified in the rule. An empty list means the approvals can come from any user.
+	Reviewers GetRepositorySettingApprovalRuleItemReviewerArrayInput `pulumi:"reviewers"`
+}
+
+func (GetRepositorySettingApprovalRuleItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRepositorySettingApprovalRuleItem)(nil)).Elem()
+}
+
+func (i GetRepositorySettingApprovalRuleItemArgs) ToGetRepositorySettingApprovalRuleItemOutput() GetRepositorySettingApprovalRuleItemOutput {
+	return i.ToGetRepositorySettingApprovalRuleItemOutputWithContext(context.Background())
+}
+
+func (i GetRepositorySettingApprovalRuleItemArgs) ToGetRepositorySettingApprovalRuleItemOutputWithContext(ctx context.Context) GetRepositorySettingApprovalRuleItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRepositorySettingApprovalRuleItemOutput)
+}
+
+// GetRepositorySettingApprovalRuleItemArrayInput is an input type that accepts GetRepositorySettingApprovalRuleItemArray and GetRepositorySettingApprovalRuleItemArrayOutput values.
+// You can construct a concrete instance of `GetRepositorySettingApprovalRuleItemArrayInput` via:
+//
+//	GetRepositorySettingApprovalRuleItemArray{ GetRepositorySettingApprovalRuleItemArgs{...} }
+type GetRepositorySettingApprovalRuleItemArrayInput interface {
+	pulumi.Input
+
+	ToGetRepositorySettingApprovalRuleItemArrayOutput() GetRepositorySettingApprovalRuleItemArrayOutput
+	ToGetRepositorySettingApprovalRuleItemArrayOutputWithContext(context.Context) GetRepositorySettingApprovalRuleItemArrayOutput
+}
+
+type GetRepositorySettingApprovalRuleItemArray []GetRepositorySettingApprovalRuleItemInput
+
+func (GetRepositorySettingApprovalRuleItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRepositorySettingApprovalRuleItem)(nil)).Elem()
+}
+
+func (i GetRepositorySettingApprovalRuleItemArray) ToGetRepositorySettingApprovalRuleItemArrayOutput() GetRepositorySettingApprovalRuleItemArrayOutput {
+	return i.ToGetRepositorySettingApprovalRuleItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetRepositorySettingApprovalRuleItemArray) ToGetRepositorySettingApprovalRuleItemArrayOutputWithContext(ctx context.Context) GetRepositorySettingApprovalRuleItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRepositorySettingApprovalRuleItemArrayOutput)
+}
+
+type GetRepositorySettingApprovalRuleItemOutput struct{ *pulumi.OutputState }
+
+func (GetRepositorySettingApprovalRuleItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRepositorySettingApprovalRuleItem)(nil)).Elem()
+}
+
+func (o GetRepositorySettingApprovalRuleItemOutput) ToGetRepositorySettingApprovalRuleItemOutput() GetRepositorySettingApprovalRuleItemOutput {
+	return o
+}
+
+func (o GetRepositorySettingApprovalRuleItemOutput) ToGetRepositorySettingApprovalRuleItemOutputWithContext(ctx context.Context) GetRepositorySettingApprovalRuleItemOutput {
+	return o
+}
+
+// Branch name where pull requests targeting the branch must satisfy the approval rule. This value being null means the rule applies to all pull requests
+func (o GetRepositorySettingApprovalRuleItemOutput) DestinationBranch() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRepositorySettingApprovalRuleItem) string { return v.DestinationBranch }).(pulumi.StringOutput)
+}
+
+// Minimum number of approvals which must be provided by the reviewers specified in the list before the rule can be satisfied
+func (o GetRepositorySettingApprovalRuleItemOutput) MinApprovalsCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetRepositorySettingApprovalRuleItem) int { return v.MinApprovalsCount }).(pulumi.IntOutput)
+}
+
+// Name which is used to uniquely identify an approval rule.
+func (o GetRepositorySettingApprovalRuleItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRepositorySettingApprovalRuleItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// List of users who must provide approvals up to the minApprovalsCount specified in the rule. An empty list means the approvals can come from any user.
+func (o GetRepositorySettingApprovalRuleItemOutput) Reviewers() GetRepositorySettingApprovalRuleItemReviewerArrayOutput {
+	return o.ApplyT(func(v GetRepositorySettingApprovalRuleItem) []GetRepositorySettingApprovalRuleItemReviewer {
+		return v.Reviewers
+	}).(GetRepositorySettingApprovalRuleItemReviewerArrayOutput)
+}
+
+type GetRepositorySettingApprovalRuleItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRepositorySettingApprovalRuleItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRepositorySettingApprovalRuleItem)(nil)).Elem()
+}
+
+func (o GetRepositorySettingApprovalRuleItemArrayOutput) ToGetRepositorySettingApprovalRuleItemArrayOutput() GetRepositorySettingApprovalRuleItemArrayOutput {
+	return o
+}
+
+func (o GetRepositorySettingApprovalRuleItemArrayOutput) ToGetRepositorySettingApprovalRuleItemArrayOutputWithContext(ctx context.Context) GetRepositorySettingApprovalRuleItemArrayOutput {
+	return o
+}
+
+func (o GetRepositorySettingApprovalRuleItemArrayOutput) Index(i pulumi.IntInput) GetRepositorySettingApprovalRuleItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRepositorySettingApprovalRuleItem {
+		return vs[0].([]GetRepositorySettingApprovalRuleItem)[vs[1].(int)]
+	}).(GetRepositorySettingApprovalRuleItemOutput)
+}
+
+type GetRepositorySettingApprovalRuleItemReviewer struct {
+	// the OCID of the principal
+	PrincipalId string `pulumi:"principalId"`
+	// the name of the principal
+	PrincipalName string `pulumi:"principalName"`
+	// The state of the principal, it can be active or inactive or suppressed for emails
+	PrincipalState string `pulumi:"principalState"`
+	// the type of principal
+	PrincipalType string `pulumi:"principalType"`
+}
+
+// GetRepositorySettingApprovalRuleItemReviewerInput is an input type that accepts GetRepositorySettingApprovalRuleItemReviewerArgs and GetRepositorySettingApprovalRuleItemReviewerOutput values.
+// You can construct a concrete instance of `GetRepositorySettingApprovalRuleItemReviewerInput` via:
+//
+//	GetRepositorySettingApprovalRuleItemReviewerArgs{...}
+type GetRepositorySettingApprovalRuleItemReviewerInput interface {
+	pulumi.Input
+
+	ToGetRepositorySettingApprovalRuleItemReviewerOutput() GetRepositorySettingApprovalRuleItemReviewerOutput
+	ToGetRepositorySettingApprovalRuleItemReviewerOutputWithContext(context.Context) GetRepositorySettingApprovalRuleItemReviewerOutput
+}
+
+type GetRepositorySettingApprovalRuleItemReviewerArgs struct {
+	// the OCID of the principal
+	PrincipalId pulumi.StringInput `pulumi:"principalId"`
+	// the name of the principal
+	PrincipalName pulumi.StringInput `pulumi:"principalName"`
+	// The state of the principal, it can be active or inactive or suppressed for emails
+	PrincipalState pulumi.StringInput `pulumi:"principalState"`
+	// the type of principal
+	PrincipalType pulumi.StringInput `pulumi:"principalType"`
+}
+
+func (GetRepositorySettingApprovalRuleItemReviewerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRepositorySettingApprovalRuleItemReviewer)(nil)).Elem()
+}
+
+func (i GetRepositorySettingApprovalRuleItemReviewerArgs) ToGetRepositorySettingApprovalRuleItemReviewerOutput() GetRepositorySettingApprovalRuleItemReviewerOutput {
+	return i.ToGetRepositorySettingApprovalRuleItemReviewerOutputWithContext(context.Background())
+}
+
+func (i GetRepositorySettingApprovalRuleItemReviewerArgs) ToGetRepositorySettingApprovalRuleItemReviewerOutputWithContext(ctx context.Context) GetRepositorySettingApprovalRuleItemReviewerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRepositorySettingApprovalRuleItemReviewerOutput)
+}
+
+// GetRepositorySettingApprovalRuleItemReviewerArrayInput is an input type that accepts GetRepositorySettingApprovalRuleItemReviewerArray and GetRepositorySettingApprovalRuleItemReviewerArrayOutput values.
+// You can construct a concrete instance of `GetRepositorySettingApprovalRuleItemReviewerArrayInput` via:
+//
+//	GetRepositorySettingApprovalRuleItemReviewerArray{ GetRepositorySettingApprovalRuleItemReviewerArgs{...} }
+type GetRepositorySettingApprovalRuleItemReviewerArrayInput interface {
+	pulumi.Input
+
+	ToGetRepositorySettingApprovalRuleItemReviewerArrayOutput() GetRepositorySettingApprovalRuleItemReviewerArrayOutput
+	ToGetRepositorySettingApprovalRuleItemReviewerArrayOutputWithContext(context.Context) GetRepositorySettingApprovalRuleItemReviewerArrayOutput
+}
+
+type GetRepositorySettingApprovalRuleItemReviewerArray []GetRepositorySettingApprovalRuleItemReviewerInput
+
+func (GetRepositorySettingApprovalRuleItemReviewerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRepositorySettingApprovalRuleItemReviewer)(nil)).Elem()
+}
+
+func (i GetRepositorySettingApprovalRuleItemReviewerArray) ToGetRepositorySettingApprovalRuleItemReviewerArrayOutput() GetRepositorySettingApprovalRuleItemReviewerArrayOutput {
+	return i.ToGetRepositorySettingApprovalRuleItemReviewerArrayOutputWithContext(context.Background())
+}
+
+func (i GetRepositorySettingApprovalRuleItemReviewerArray) ToGetRepositorySettingApprovalRuleItemReviewerArrayOutputWithContext(ctx context.Context) GetRepositorySettingApprovalRuleItemReviewerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRepositorySettingApprovalRuleItemReviewerArrayOutput)
+}
+
+type GetRepositorySettingApprovalRuleItemReviewerOutput struct{ *pulumi.OutputState }
+
+func (GetRepositorySettingApprovalRuleItemReviewerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRepositorySettingApprovalRuleItemReviewer)(nil)).Elem()
+}
+
+func (o GetRepositorySettingApprovalRuleItemReviewerOutput) ToGetRepositorySettingApprovalRuleItemReviewerOutput() GetRepositorySettingApprovalRuleItemReviewerOutput {
+	return o
+}
+
+func (o GetRepositorySettingApprovalRuleItemReviewerOutput) ToGetRepositorySettingApprovalRuleItemReviewerOutputWithContext(ctx context.Context) GetRepositorySettingApprovalRuleItemReviewerOutput {
+	return o
+}
+
+// the OCID of the principal
+func (o GetRepositorySettingApprovalRuleItemReviewerOutput) PrincipalId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRepositorySettingApprovalRuleItemReviewer) string { return v.PrincipalId }).(pulumi.StringOutput)
+}
+
+// the name of the principal
+func (o GetRepositorySettingApprovalRuleItemReviewerOutput) PrincipalName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRepositorySettingApprovalRuleItemReviewer) string { return v.PrincipalName }).(pulumi.StringOutput)
+}
+
+// The state of the principal, it can be active or inactive or suppressed for emails
+func (o GetRepositorySettingApprovalRuleItemReviewerOutput) PrincipalState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRepositorySettingApprovalRuleItemReviewer) string { return v.PrincipalState }).(pulumi.StringOutput)
+}
+
+// the type of principal
+func (o GetRepositorySettingApprovalRuleItemReviewerOutput) PrincipalType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRepositorySettingApprovalRuleItemReviewer) string { return v.PrincipalType }).(pulumi.StringOutput)
+}
+
+type GetRepositorySettingApprovalRuleItemReviewerArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRepositorySettingApprovalRuleItemReviewerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRepositorySettingApprovalRuleItemReviewer)(nil)).Elem()
+}
+
+func (o GetRepositorySettingApprovalRuleItemReviewerArrayOutput) ToGetRepositorySettingApprovalRuleItemReviewerArrayOutput() GetRepositorySettingApprovalRuleItemReviewerArrayOutput {
+	return o
+}
+
+func (o GetRepositorySettingApprovalRuleItemReviewerArrayOutput) ToGetRepositorySettingApprovalRuleItemReviewerArrayOutputWithContext(ctx context.Context) GetRepositorySettingApprovalRuleItemReviewerArrayOutput {
+	return o
+}
+
+func (o GetRepositorySettingApprovalRuleItemReviewerArrayOutput) Index(i pulumi.IntInput) GetRepositorySettingApprovalRuleItemReviewerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRepositorySettingApprovalRuleItemReviewer {
+		return vs[0].([]GetRepositorySettingApprovalRuleItemReviewer)[vs[1].(int)]
+	}).(GetRepositorySettingApprovalRuleItemReviewerOutput)
+}
+
+type GetRepositorySettingMergeCheck struct {
+	// Indicates whether or not a pull request must have a successful build run and no queued builds before it can be merged
+	LastBuildSucceeded string `pulumi:"lastBuildSucceeded"`
+}
+
+// GetRepositorySettingMergeCheckInput is an input type that accepts GetRepositorySettingMergeCheckArgs and GetRepositorySettingMergeCheckOutput values.
+// You can construct a concrete instance of `GetRepositorySettingMergeCheckInput` via:
+//
+//	GetRepositorySettingMergeCheckArgs{...}
+type GetRepositorySettingMergeCheckInput interface {
+	pulumi.Input
+
+	ToGetRepositorySettingMergeCheckOutput() GetRepositorySettingMergeCheckOutput
+	ToGetRepositorySettingMergeCheckOutputWithContext(context.Context) GetRepositorySettingMergeCheckOutput
+}
+
+type GetRepositorySettingMergeCheckArgs struct {
+	// Indicates whether or not a pull request must have a successful build run and no queued builds before it can be merged
+	LastBuildSucceeded pulumi.StringInput `pulumi:"lastBuildSucceeded"`
+}
+
+func (GetRepositorySettingMergeCheckArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRepositorySettingMergeCheck)(nil)).Elem()
+}
+
+func (i GetRepositorySettingMergeCheckArgs) ToGetRepositorySettingMergeCheckOutput() GetRepositorySettingMergeCheckOutput {
+	return i.ToGetRepositorySettingMergeCheckOutputWithContext(context.Background())
+}
+
+func (i GetRepositorySettingMergeCheckArgs) ToGetRepositorySettingMergeCheckOutputWithContext(ctx context.Context) GetRepositorySettingMergeCheckOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRepositorySettingMergeCheckOutput)
+}
+
+// GetRepositorySettingMergeCheckArrayInput is an input type that accepts GetRepositorySettingMergeCheckArray and GetRepositorySettingMergeCheckArrayOutput values.
+// You can construct a concrete instance of `GetRepositorySettingMergeCheckArrayInput` via:
+//
+//	GetRepositorySettingMergeCheckArray{ GetRepositorySettingMergeCheckArgs{...} }
+type GetRepositorySettingMergeCheckArrayInput interface {
+	pulumi.Input
+
+	ToGetRepositorySettingMergeCheckArrayOutput() GetRepositorySettingMergeCheckArrayOutput
+	ToGetRepositorySettingMergeCheckArrayOutputWithContext(context.Context) GetRepositorySettingMergeCheckArrayOutput
+}
+
+type GetRepositorySettingMergeCheckArray []GetRepositorySettingMergeCheckInput
+
+func (GetRepositorySettingMergeCheckArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRepositorySettingMergeCheck)(nil)).Elem()
+}
+
+func (i GetRepositorySettingMergeCheckArray) ToGetRepositorySettingMergeCheckArrayOutput() GetRepositorySettingMergeCheckArrayOutput {
+	return i.ToGetRepositorySettingMergeCheckArrayOutputWithContext(context.Background())
+}
+
+func (i GetRepositorySettingMergeCheckArray) ToGetRepositorySettingMergeCheckArrayOutputWithContext(ctx context.Context) GetRepositorySettingMergeCheckArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRepositorySettingMergeCheckArrayOutput)
+}
+
+type GetRepositorySettingMergeCheckOutput struct{ *pulumi.OutputState }
+
+func (GetRepositorySettingMergeCheckOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRepositorySettingMergeCheck)(nil)).Elem()
+}
+
+func (o GetRepositorySettingMergeCheckOutput) ToGetRepositorySettingMergeCheckOutput() GetRepositorySettingMergeCheckOutput {
+	return o
+}
+
+func (o GetRepositorySettingMergeCheckOutput) ToGetRepositorySettingMergeCheckOutputWithContext(ctx context.Context) GetRepositorySettingMergeCheckOutput {
+	return o
+}
+
+// Indicates whether or not a pull request must have a successful build run and no queued builds before it can be merged
+func (o GetRepositorySettingMergeCheckOutput) LastBuildSucceeded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRepositorySettingMergeCheck) string { return v.LastBuildSucceeded }).(pulumi.StringOutput)
+}
+
+type GetRepositorySettingMergeCheckArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRepositorySettingMergeCheckArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRepositorySettingMergeCheck)(nil)).Elem()
+}
+
+func (o GetRepositorySettingMergeCheckArrayOutput) ToGetRepositorySettingMergeCheckArrayOutput() GetRepositorySettingMergeCheckArrayOutput {
+	return o
+}
+
+func (o GetRepositorySettingMergeCheckArrayOutput) ToGetRepositorySettingMergeCheckArrayOutputWithContext(ctx context.Context) GetRepositorySettingMergeCheckArrayOutput {
+	return o
+}
+
+func (o GetRepositorySettingMergeCheckArrayOutput) Index(i pulumi.IntInput) GetRepositorySettingMergeCheckOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRepositorySettingMergeCheck {
+		return vs[0].([]GetRepositorySettingMergeCheck)[vs[1].(int)]
+	}).(GetRepositorySettingMergeCheckOutput)
+}
+
+type GetRepositorySettingMergeSetting struct {
+	// List of merge strategies which are allowed for a Project or Repository.
+	AllowedMergeStrategies []string `pulumi:"allowedMergeStrategies"`
+	// Default type of merge strategy associated with the a Project or Repository.
+	DefaultMergeStrategy string `pulumi:"defaultMergeStrategy"`
+}
+
+// GetRepositorySettingMergeSettingInput is an input type that accepts GetRepositorySettingMergeSettingArgs and GetRepositorySettingMergeSettingOutput values.
+// You can construct a concrete instance of `GetRepositorySettingMergeSettingInput` via:
+//
+//	GetRepositorySettingMergeSettingArgs{...}
+type GetRepositorySettingMergeSettingInput interface {
+	pulumi.Input
+
+	ToGetRepositorySettingMergeSettingOutput() GetRepositorySettingMergeSettingOutput
+	ToGetRepositorySettingMergeSettingOutputWithContext(context.Context) GetRepositorySettingMergeSettingOutput
+}
+
+type GetRepositorySettingMergeSettingArgs struct {
+	// List of merge strategies which are allowed for a Project or Repository.
+	AllowedMergeStrategies pulumi.StringArrayInput `pulumi:"allowedMergeStrategies"`
+	// Default type of merge strategy associated with the a Project or Repository.
+	DefaultMergeStrategy pulumi.StringInput `pulumi:"defaultMergeStrategy"`
+}
+
+func (GetRepositorySettingMergeSettingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRepositorySettingMergeSetting)(nil)).Elem()
+}
+
+func (i GetRepositorySettingMergeSettingArgs) ToGetRepositorySettingMergeSettingOutput() GetRepositorySettingMergeSettingOutput {
+	return i.ToGetRepositorySettingMergeSettingOutputWithContext(context.Background())
+}
+
+func (i GetRepositorySettingMergeSettingArgs) ToGetRepositorySettingMergeSettingOutputWithContext(ctx context.Context) GetRepositorySettingMergeSettingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRepositorySettingMergeSettingOutput)
+}
+
+// GetRepositorySettingMergeSettingArrayInput is an input type that accepts GetRepositorySettingMergeSettingArray and GetRepositorySettingMergeSettingArrayOutput values.
+// You can construct a concrete instance of `GetRepositorySettingMergeSettingArrayInput` via:
+//
+//	GetRepositorySettingMergeSettingArray{ GetRepositorySettingMergeSettingArgs{...} }
+type GetRepositorySettingMergeSettingArrayInput interface {
+	pulumi.Input
+
+	ToGetRepositorySettingMergeSettingArrayOutput() GetRepositorySettingMergeSettingArrayOutput
+	ToGetRepositorySettingMergeSettingArrayOutputWithContext(context.Context) GetRepositorySettingMergeSettingArrayOutput
+}
+
+type GetRepositorySettingMergeSettingArray []GetRepositorySettingMergeSettingInput
+
+func (GetRepositorySettingMergeSettingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRepositorySettingMergeSetting)(nil)).Elem()
+}
+
+func (i GetRepositorySettingMergeSettingArray) ToGetRepositorySettingMergeSettingArrayOutput() GetRepositorySettingMergeSettingArrayOutput {
+	return i.ToGetRepositorySettingMergeSettingArrayOutputWithContext(context.Background())
+}
+
+func (i GetRepositorySettingMergeSettingArray) ToGetRepositorySettingMergeSettingArrayOutputWithContext(ctx context.Context) GetRepositorySettingMergeSettingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRepositorySettingMergeSettingArrayOutput)
+}
+
+type GetRepositorySettingMergeSettingOutput struct{ *pulumi.OutputState }
+
+func (GetRepositorySettingMergeSettingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRepositorySettingMergeSetting)(nil)).Elem()
+}
+
+func (o GetRepositorySettingMergeSettingOutput) ToGetRepositorySettingMergeSettingOutput() GetRepositorySettingMergeSettingOutput {
+	return o
+}
+
+func (o GetRepositorySettingMergeSettingOutput) ToGetRepositorySettingMergeSettingOutputWithContext(ctx context.Context) GetRepositorySettingMergeSettingOutput {
+	return o
+}
+
+// List of merge strategies which are allowed for a Project or Repository.
+func (o GetRepositorySettingMergeSettingOutput) AllowedMergeStrategies() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRepositorySettingMergeSetting) []string { return v.AllowedMergeStrategies }).(pulumi.StringArrayOutput)
+}
+
+// Default type of merge strategy associated with the a Project or Repository.
+func (o GetRepositorySettingMergeSettingOutput) DefaultMergeStrategy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRepositorySettingMergeSetting) string { return v.DefaultMergeStrategy }).(pulumi.StringOutput)
+}
+
+type GetRepositorySettingMergeSettingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRepositorySettingMergeSettingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRepositorySettingMergeSetting)(nil)).Elem()
+}
+
+func (o GetRepositorySettingMergeSettingArrayOutput) ToGetRepositorySettingMergeSettingArrayOutput() GetRepositorySettingMergeSettingArrayOutput {
+	return o
+}
+
+func (o GetRepositorySettingMergeSettingArrayOutput) ToGetRepositorySettingMergeSettingArrayOutputWithContext(ctx context.Context) GetRepositorySettingMergeSettingArrayOutput {
+	return o
+}
+
+func (o GetRepositorySettingMergeSettingArrayOutput) Index(i pulumi.IntInput) GetRepositorySettingMergeSettingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRepositorySettingMergeSetting {
+		return vs[0].([]GetRepositorySettingMergeSetting)[vs[1].(int)]
+	}).(GetRepositorySettingMergeSettingOutput)
+}
+
 type GetTriggerAction struct {
 	// The OCID of the build pipeline to be triggered.
-	BuildPipelineId string `pulumi:"buildPipelineId"`
-	// The filters for the trigger.
-	Filters []GetTriggerActionFilter `pulumi:"filters"`
+	BuildPipelineId string                   `pulumi:"buildPipelineId"`
+	Filters         []GetTriggerActionFilter `pulumi:"filters"`
 	// The type of action that will be taken. Allowed value is TRIGGER_BUILD_PIPELINE.
 	Type string `pulumi:"type"`
 }
@@ -39918,9 +42553,8 @@ type GetTriggerActionInput interface {
 
 type GetTriggerActionArgs struct {
 	// The OCID of the build pipeline to be triggered.
-	BuildPipelineId pulumi.StringInput `pulumi:"buildPipelineId"`
-	// The filters for the trigger.
-	Filters GetTriggerActionFilterArrayInput `pulumi:"filters"`
+	BuildPipelineId pulumi.StringInput               `pulumi:"buildPipelineId"`
+	Filters         GetTriggerActionFilterArrayInput `pulumi:"filters"`
 	// The type of action that will be taken. Allowed value is TRIGGER_BUILD_PIPELINE.
 	Type pulumi.StringInput `pulumi:"type"`
 }
@@ -39981,7 +42615,6 @@ func (o GetTriggerActionOutput) BuildPipelineId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTriggerAction) string { return v.BuildPipelineId }).(pulumi.StringOutput)
 }
 
-// The filters for the trigger.
 func (o GetTriggerActionOutput) Filters() GetTriggerActionFilterArrayOutput {
 	return o.ApplyT(func(v GetTriggerAction) []GetTriggerActionFilter { return v.Filters }).(GetTriggerActionFilterArrayOutput)
 }
@@ -40012,8 +42645,9 @@ func (o GetTriggerActionArrayOutput) Index(i pulumi.IntInput) GetTriggerActionOu
 }
 
 type GetTriggerActionFilter struct {
-	// The events, for example, PUSH, PULL_REQUEST_MERGE.
-	Events   []string                        `pulumi:"events"`
+	// The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
+	Events []string `pulumi:"events"`
+	// Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
 	Excludes []GetTriggerActionFilterExclude `pulumi:"excludes"`
 	// Attributes to filter GitLab self-hosted server events.
 	Includes []GetTriggerActionFilterInclude `pulumi:"includes"`
@@ -40033,8 +42667,9 @@ type GetTriggerActionFilterInput interface {
 }
 
 type GetTriggerActionFilterArgs struct {
-	// The events, for example, PUSH, PULL_REQUEST_MERGE.
-	Events   pulumi.StringArrayInput                 `pulumi:"events"`
+	// The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
+	Events pulumi.StringArrayInput `pulumi:"events"`
+	// Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
 	Excludes GetTriggerActionFilterExcludeArrayInput `pulumi:"excludes"`
 	// Attributes to filter GitLab self-hosted server events.
 	Includes GetTriggerActionFilterIncludeArrayInput `pulumi:"includes"`
@@ -40093,11 +42728,12 @@ func (o GetTriggerActionFilterOutput) ToGetTriggerActionFilterOutputWithContext(
 	return o
 }
 
-// The events, for example, PUSH, PULL_REQUEST_MERGE.
+// The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
 func (o GetTriggerActionFilterOutput) Events() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetTriggerActionFilter) []string { return v.Events }).(pulumi.StringArrayOutput)
 }
 
+// Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
 func (o GetTriggerActionFilterOutput) Excludes() GetTriggerActionFilterExcludeArrayOutput {
 	return o.ApplyT(func(v GetTriggerActionFilter) []GetTriggerActionFilterExclude { return v.Excludes }).(GetTriggerActionFilterExcludeArrayOutput)
 }
@@ -40133,6 +42769,7 @@ func (o GetTriggerActionFilterArrayOutput) Index(i pulumi.IntInput) GetTriggerAc
 }
 
 type GetTriggerActionFilterExclude struct {
+	// Attributes to support include/exclude files for triggering build runs.
 	FileFilters []GetTriggerActionFilterExcludeFileFilter `pulumi:"fileFilters"`
 }
 
@@ -40148,6 +42785,7 @@ type GetTriggerActionFilterExcludeInput interface {
 }
 
 type GetTriggerActionFilterExcludeArgs struct {
+	// Attributes to support include/exclude files for triggering build runs.
 	FileFilters GetTriggerActionFilterExcludeFileFilterArrayInput `pulumi:"fileFilters"`
 }
 
@@ -40202,6 +42840,7 @@ func (o GetTriggerActionFilterExcludeOutput) ToGetTriggerActionFilterExcludeOutp
 	return o
 }
 
+// Attributes to support include/exclude files for triggering build runs.
 func (o GetTriggerActionFilterExcludeOutput) FileFilters() GetTriggerActionFilterExcludeFileFilterArrayOutput {
 	return o.ApplyT(func(v GetTriggerActionFilterExclude) []GetTriggerActionFilterExcludeFileFilter { return v.FileFilters }).(GetTriggerActionFilterExcludeFileFilterArrayOutput)
 }
@@ -40227,6 +42866,7 @@ func (o GetTriggerActionFilterExcludeArrayOutput) Index(i pulumi.IntInput) GetTr
 }
 
 type GetTriggerActionFilterExcludeFileFilter struct {
+	// The file paths/glob pattern for files.
 	FilePaths []string `pulumi:"filePaths"`
 }
 
@@ -40242,6 +42882,7 @@ type GetTriggerActionFilterExcludeFileFilterInput interface {
 }
 
 type GetTriggerActionFilterExcludeFileFilterArgs struct {
+	// The file paths/glob pattern for files.
 	FilePaths pulumi.StringArrayInput `pulumi:"filePaths"`
 }
 
@@ -40296,6 +42937,7 @@ func (o GetTriggerActionFilterExcludeFileFilterOutput) ToGetTriggerActionFilterE
 	return o
 }
 
+// The file paths/glob pattern for files.
 func (o GetTriggerActionFilterExcludeFileFilterOutput) FilePaths() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetTriggerActionFilterExcludeFileFilter) []string { return v.FilePaths }).(pulumi.StringArrayOutput)
 }
@@ -40322,7 +42964,8 @@ func (o GetTriggerActionFilterExcludeFileFilterArrayOutput) Index(i pulumi.IntIn
 
 type GetTriggerActionFilterInclude struct {
 	// The target branch for pull requests; not applicable for push requests.
-	BaseRef     string                                    `pulumi:"baseRef"`
+	BaseRef string `pulumi:"baseRef"`
+	// Attributes to support include/exclude files for triggering build runs.
 	FileFilters []GetTriggerActionFilterIncludeFileFilter `pulumi:"fileFilters"`
 	// Branch for push event; source branch for pull requests.
 	HeadRef string `pulumi:"headRef"`
@@ -40343,7 +42986,8 @@ type GetTriggerActionFilterIncludeInput interface {
 
 type GetTriggerActionFilterIncludeArgs struct {
 	// The target branch for pull requests; not applicable for push requests.
-	BaseRef     pulumi.StringInput                                `pulumi:"baseRef"`
+	BaseRef pulumi.StringInput `pulumi:"baseRef"`
+	// Attributes to support include/exclude files for triggering build runs.
 	FileFilters GetTriggerActionFilterIncludeFileFilterArrayInput `pulumi:"fileFilters"`
 	// Branch for push event; source branch for pull requests.
 	HeadRef pulumi.StringInput `pulumi:"headRef"`
@@ -40407,6 +43051,7 @@ func (o GetTriggerActionFilterIncludeOutput) BaseRef() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTriggerActionFilterInclude) string { return v.BaseRef }).(pulumi.StringOutput)
 }
 
+// Attributes to support include/exclude files for triggering build runs.
 func (o GetTriggerActionFilterIncludeOutput) FileFilters() GetTriggerActionFilterIncludeFileFilterArrayOutput {
 	return o.ApplyT(func(v GetTriggerActionFilterInclude) []GetTriggerActionFilterIncludeFileFilter { return v.FileFilters }).(GetTriggerActionFilterIncludeFileFilterArrayOutput)
 }
@@ -40442,6 +43087,7 @@ func (o GetTriggerActionFilterIncludeArrayOutput) Index(i pulumi.IntInput) GetTr
 }
 
 type GetTriggerActionFilterIncludeFileFilter struct {
+	// The file paths/glob pattern for files.
 	FilePaths []string `pulumi:"filePaths"`
 }
 
@@ -40457,6 +43103,7 @@ type GetTriggerActionFilterIncludeFileFilterInput interface {
 }
 
 type GetTriggerActionFilterIncludeFileFilterArgs struct {
+	// The file paths/glob pattern for files.
 	FilePaths pulumi.StringArrayInput `pulumi:"filePaths"`
 }
 
@@ -40511,6 +43158,7 @@ func (o GetTriggerActionFilterIncludeFileFilterOutput) ToGetTriggerActionFilterI
 	return o
 }
 
+// The file paths/glob pattern for files.
 func (o GetTriggerActionFilterIncludeFileFilterOutput) FilePaths() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetTriggerActionFilterIncludeFileFilter) []string { return v.FilePaths }).(pulumi.StringArrayOutput)
 }
@@ -40975,9 +43623,8 @@ func (o GetTriggersTriggerCollectionItemArrayOutput) Index(i pulumi.IntInput) Ge
 
 type GetTriggersTriggerCollectionItemAction struct {
 	// The OCID of the build pipeline to be triggered.
-	BuildPipelineId string `pulumi:"buildPipelineId"`
-	// The filters for the trigger.
-	Filters []GetTriggersTriggerCollectionItemActionFilter `pulumi:"filters"`
+	BuildPipelineId string                                         `pulumi:"buildPipelineId"`
+	Filters         []GetTriggersTriggerCollectionItemActionFilter `pulumi:"filters"`
 	// The type of action that will be taken. Allowed value is TRIGGER_BUILD_PIPELINE.
 	Type string `pulumi:"type"`
 }
@@ -40995,9 +43642,8 @@ type GetTriggersTriggerCollectionItemActionInput interface {
 
 type GetTriggersTriggerCollectionItemActionArgs struct {
 	// The OCID of the build pipeline to be triggered.
-	BuildPipelineId pulumi.StringInput `pulumi:"buildPipelineId"`
-	// The filters for the trigger.
-	Filters GetTriggersTriggerCollectionItemActionFilterArrayInput `pulumi:"filters"`
+	BuildPipelineId pulumi.StringInput                                     `pulumi:"buildPipelineId"`
+	Filters         GetTriggersTriggerCollectionItemActionFilterArrayInput `pulumi:"filters"`
 	// The type of action that will be taken. Allowed value is TRIGGER_BUILD_PIPELINE.
 	Type pulumi.StringInput `pulumi:"type"`
 }
@@ -41058,7 +43704,6 @@ func (o GetTriggersTriggerCollectionItemActionOutput) BuildPipelineId() pulumi.S
 	return o.ApplyT(func(v GetTriggersTriggerCollectionItemAction) string { return v.BuildPipelineId }).(pulumi.StringOutput)
 }
 
-// The filters for the trigger.
 func (o GetTriggersTriggerCollectionItemActionOutput) Filters() GetTriggersTriggerCollectionItemActionFilterArrayOutput {
 	return o.ApplyT(func(v GetTriggersTriggerCollectionItemAction) []GetTriggersTriggerCollectionItemActionFilter {
 		return v.Filters
@@ -41091,8 +43736,9 @@ func (o GetTriggersTriggerCollectionItemActionArrayOutput) Index(i pulumi.IntInp
 }
 
 type GetTriggersTriggerCollectionItemActionFilter struct {
-	// The events, for example, PUSH, PULL_REQUEST_MERGE.
-	Events   []string                                              `pulumi:"events"`
+	// The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
+	Events []string `pulumi:"events"`
+	// Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
 	Excludes []GetTriggersTriggerCollectionItemActionFilterExclude `pulumi:"excludes"`
 	// Attributes to filter GitLab self-hosted server events.
 	Includes []GetTriggersTriggerCollectionItemActionFilterInclude `pulumi:"includes"`
@@ -41112,8 +43758,9 @@ type GetTriggersTriggerCollectionItemActionFilterInput interface {
 }
 
 type GetTriggersTriggerCollectionItemActionFilterArgs struct {
-	// The events, for example, PUSH, PULL_REQUEST_MERGE.
-	Events   pulumi.StringArrayInput                                       `pulumi:"events"`
+	// The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
+	Events pulumi.StringArrayInput `pulumi:"events"`
+	// Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
 	Excludes GetTriggersTriggerCollectionItemActionFilterExcludeArrayInput `pulumi:"excludes"`
 	// Attributes to filter GitLab self-hosted server events.
 	Includes GetTriggersTriggerCollectionItemActionFilterIncludeArrayInput `pulumi:"includes"`
@@ -41172,11 +43819,12 @@ func (o GetTriggersTriggerCollectionItemActionFilterOutput) ToGetTriggersTrigger
 	return o
 }
 
-// The events, for example, PUSH, PULL_REQUEST_MERGE.
+// The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
 func (o GetTriggersTriggerCollectionItemActionFilterOutput) Events() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetTriggersTriggerCollectionItemActionFilter) []string { return v.Events }).(pulumi.StringArrayOutput)
 }
 
+// Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
 func (o GetTriggersTriggerCollectionItemActionFilterOutput) Excludes() GetTriggersTriggerCollectionItemActionFilterExcludeArrayOutput {
 	return o.ApplyT(func(v GetTriggersTriggerCollectionItemActionFilter) []GetTriggersTriggerCollectionItemActionFilterExclude {
 		return v.Excludes
@@ -41216,6 +43864,7 @@ func (o GetTriggersTriggerCollectionItemActionFilterArrayOutput) Index(i pulumi.
 }
 
 type GetTriggersTriggerCollectionItemActionFilterExclude struct {
+	// Attributes to support include/exclude files for triggering build runs.
 	FileFilters []GetTriggersTriggerCollectionItemActionFilterExcludeFileFilter `pulumi:"fileFilters"`
 }
 
@@ -41231,6 +43880,7 @@ type GetTriggersTriggerCollectionItemActionFilterExcludeInput interface {
 }
 
 type GetTriggersTriggerCollectionItemActionFilterExcludeArgs struct {
+	// Attributes to support include/exclude files for triggering build runs.
 	FileFilters GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArrayInput `pulumi:"fileFilters"`
 }
 
@@ -41285,6 +43935,7 @@ func (o GetTriggersTriggerCollectionItemActionFilterExcludeOutput) ToGetTriggers
 	return o
 }
 
+// Attributes to support include/exclude files for triggering build runs.
 func (o GetTriggersTriggerCollectionItemActionFilterExcludeOutput) FileFilters() GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArrayOutput {
 	return o.ApplyT(func(v GetTriggersTriggerCollectionItemActionFilterExclude) []GetTriggersTriggerCollectionItemActionFilterExcludeFileFilter {
 		return v.FileFilters
@@ -41312,6 +43963,7 @@ func (o GetTriggersTriggerCollectionItemActionFilterExcludeArrayOutput) Index(i 
 }
 
 type GetTriggersTriggerCollectionItemActionFilterExcludeFileFilter struct {
+	// The file paths/glob pattern for files.
 	FilePaths []string `pulumi:"filePaths"`
 }
 
@@ -41327,6 +43979,7 @@ type GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterInput interfac
 }
 
 type GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArgs struct {
+	// The file paths/glob pattern for files.
 	FilePaths pulumi.StringArrayInput `pulumi:"filePaths"`
 }
 
@@ -41381,6 +44034,7 @@ func (o GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterOutput) ToG
 	return o
 }
 
+// The file paths/glob pattern for files.
 func (o GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterOutput) FilePaths() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetTriggersTriggerCollectionItemActionFilterExcludeFileFilter) []string { return v.FilePaths }).(pulumi.StringArrayOutput)
 }
@@ -41407,7 +44061,8 @@ func (o GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArrayOutput
 
 type GetTriggersTriggerCollectionItemActionFilterInclude struct {
 	// The target branch for pull requests; not applicable for push requests.
-	BaseRef     string                                                          `pulumi:"baseRef"`
+	BaseRef string `pulumi:"baseRef"`
+	// Attributes to support include/exclude files for triggering build runs.
 	FileFilters []GetTriggersTriggerCollectionItemActionFilterIncludeFileFilter `pulumi:"fileFilters"`
 	// Branch for push event; source branch for pull requests.
 	HeadRef string `pulumi:"headRef"`
@@ -41428,7 +44083,8 @@ type GetTriggersTriggerCollectionItemActionFilterIncludeInput interface {
 
 type GetTriggersTriggerCollectionItemActionFilterIncludeArgs struct {
 	// The target branch for pull requests; not applicable for push requests.
-	BaseRef     pulumi.StringInput                                                      `pulumi:"baseRef"`
+	BaseRef pulumi.StringInput `pulumi:"baseRef"`
+	// Attributes to support include/exclude files for triggering build runs.
 	FileFilters GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArrayInput `pulumi:"fileFilters"`
 	// Branch for push event; source branch for pull requests.
 	HeadRef pulumi.StringInput `pulumi:"headRef"`
@@ -41492,6 +44148,7 @@ func (o GetTriggersTriggerCollectionItemActionFilterIncludeOutput) BaseRef() pul
 	return o.ApplyT(func(v GetTriggersTriggerCollectionItemActionFilterInclude) string { return v.BaseRef }).(pulumi.StringOutput)
 }
 
+// Attributes to support include/exclude files for triggering build runs.
 func (o GetTriggersTriggerCollectionItemActionFilterIncludeOutput) FileFilters() GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArrayOutput {
 	return o.ApplyT(func(v GetTriggersTriggerCollectionItemActionFilterInclude) []GetTriggersTriggerCollectionItemActionFilterIncludeFileFilter {
 		return v.FileFilters
@@ -41529,6 +44186,7 @@ func (o GetTriggersTriggerCollectionItemActionFilterIncludeArrayOutput) Index(i 
 }
 
 type GetTriggersTriggerCollectionItemActionFilterIncludeFileFilter struct {
+	// The file paths/glob pattern for files.
 	FilePaths []string `pulumi:"filePaths"`
 }
 
@@ -41544,6 +44202,7 @@ type GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterInput interfac
 }
 
 type GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArgs struct {
+	// The file paths/glob pattern for files.
 	FilePaths pulumi.StringArrayInput `pulumi:"filePaths"`
 }
 
@@ -41598,6 +44257,7 @@ func (o GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterOutput) ToG
 	return o
 }
 
+// The file paths/glob pattern for files.
 func (o GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterOutput) FilePaths() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetTriggersTriggerCollectionItemActionFilterIncludeFileFilter) []string { return v.FilePaths }).(pulumi.StringArrayOutput)
 }
@@ -41795,10 +44455,28 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentDeploymentExecutionProgressArrayInput)(nil)).Elem(), DeploymentDeploymentExecutionProgressArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ProjectNotificationConfigInput)(nil)).Elem(), ProjectNotificationConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ProjectNotificationConfigPtrInput)(nil)).Elem(), ProjectNotificationConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProjectRepositorySettingApprovalRulesInput)(nil)).Elem(), ProjectRepositorySettingApprovalRulesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProjectRepositorySettingApprovalRulesPtrInput)(nil)).Elem(), ProjectRepositorySettingApprovalRulesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProjectRepositorySettingApprovalRulesItemInput)(nil)).Elem(), ProjectRepositorySettingApprovalRulesItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProjectRepositorySettingApprovalRulesItemArrayInput)(nil)).Elem(), ProjectRepositorySettingApprovalRulesItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProjectRepositorySettingApprovalRulesItemReviewerInput)(nil)).Elem(), ProjectRepositorySettingApprovalRulesItemReviewerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProjectRepositorySettingApprovalRulesItemReviewerArrayInput)(nil)).Elem(), ProjectRepositorySettingApprovalRulesItemReviewerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProjectRepositorySettingMergeSettingsInput)(nil)).Elem(), ProjectRepositorySettingMergeSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProjectRepositorySettingMergeSettingsPtrInput)(nil)).Elem(), ProjectRepositorySettingMergeSettingsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RepositoryMirrorRepositoryConfigInput)(nil)).Elem(), RepositoryMirrorRepositoryConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RepositoryMirrorRepositoryConfigPtrInput)(nil)).Elem(), RepositoryMirrorRepositoryConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RepositoryMirrorRepositoryConfigTriggerScheduleInput)(nil)).Elem(), RepositoryMirrorRepositoryConfigTriggerScheduleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RepositoryMirrorRepositoryConfigTriggerSchedulePtrInput)(nil)).Elem(), RepositoryMirrorRepositoryConfigTriggerScheduleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RepositorySettingApprovalRulesInput)(nil)).Elem(), RepositorySettingApprovalRulesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RepositorySettingApprovalRulesPtrInput)(nil)).Elem(), RepositorySettingApprovalRulesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RepositorySettingApprovalRulesItemInput)(nil)).Elem(), RepositorySettingApprovalRulesItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RepositorySettingApprovalRulesItemArrayInput)(nil)).Elem(), RepositorySettingApprovalRulesItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RepositorySettingApprovalRulesItemReviewerInput)(nil)).Elem(), RepositorySettingApprovalRulesItemReviewerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RepositorySettingApprovalRulesItemReviewerArrayInput)(nil)).Elem(), RepositorySettingApprovalRulesItemReviewerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RepositorySettingMergeChecksInput)(nil)).Elem(), RepositorySettingMergeChecksArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RepositorySettingMergeChecksPtrInput)(nil)).Elem(), RepositorySettingMergeChecksArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RepositorySettingMergeSettingsInput)(nil)).Elem(), RepositorySettingMergeSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RepositorySettingMergeSettingsPtrInput)(nil)).Elem(), RepositorySettingMergeSettingsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TriggerActionInput)(nil)).Elem(), TriggerActionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TriggerActionArrayInput)(nil)).Elem(), TriggerActionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TriggerActionFilterInput)(nil)).Elem(), TriggerActionFilterArgs{})
@@ -42176,6 +44854,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsFilterArrayInput)(nil)).Elem(), GetDeploymentsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectNotificationConfigInput)(nil)).Elem(), GetProjectNotificationConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectNotificationConfigArrayInput)(nil)).Elem(), GetProjectNotificationConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectRepositorySettingApprovalRuleInput)(nil)).Elem(), GetProjectRepositorySettingApprovalRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectRepositorySettingApprovalRuleArrayInput)(nil)).Elem(), GetProjectRepositorySettingApprovalRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectRepositorySettingApprovalRuleItemInput)(nil)).Elem(), GetProjectRepositorySettingApprovalRuleItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectRepositorySettingApprovalRuleItemArrayInput)(nil)).Elem(), GetProjectRepositorySettingApprovalRuleItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectRepositorySettingApprovalRuleItemReviewerInput)(nil)).Elem(), GetProjectRepositorySettingApprovalRuleItemReviewerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectRepositorySettingApprovalRuleItemReviewerArrayInput)(nil)).Elem(), GetProjectRepositorySettingApprovalRuleItemReviewerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectRepositorySettingMergeSettingInput)(nil)).Elem(), GetProjectRepositorySettingMergeSettingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectRepositorySettingMergeSettingArrayInput)(nil)).Elem(), GetProjectRepositorySettingMergeSettingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsFilterInput)(nil)).Elem(), GetProjectsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsFilterArrayInput)(nil)).Elem(), GetProjectsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsProjectCollectionInput)(nil)).Elem(), GetProjectsProjectCollectionArgs{})
@@ -42252,12 +44938,28 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRepositoryPathsRepositoryPathCollectionArrayInput)(nil)).Elem(), GetRepositoryPathsRepositoryPathCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRepositoryPathsRepositoryPathCollectionItemInput)(nil)).Elem(), GetRepositoryPathsRepositoryPathCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRepositoryPathsRepositoryPathCollectionItemArrayInput)(nil)).Elem(), GetRepositoryPathsRepositoryPathCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRepositoryProtectedBranchesFilterInput)(nil)).Elem(), GetRepositoryProtectedBranchesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRepositoryProtectedBranchesFilterArrayInput)(nil)).Elem(), GetRepositoryProtectedBranchesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRepositoryProtectedBranchesProtectedBranchCollectionInput)(nil)).Elem(), GetRepositoryProtectedBranchesProtectedBranchCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRepositoryProtectedBranchesProtectedBranchCollectionArrayInput)(nil)).Elem(), GetRepositoryProtectedBranchesProtectedBranchCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRepositoryProtectedBranchesProtectedBranchCollectionItemInput)(nil)).Elem(), GetRepositoryProtectedBranchesProtectedBranchCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRepositoryProtectedBranchesProtectedBranchCollectionItemArrayInput)(nil)).Elem(), GetRepositoryProtectedBranchesProtectedBranchCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRepositoryRefsFilterInput)(nil)).Elem(), GetRepositoryRefsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRepositoryRefsFilterArrayInput)(nil)).Elem(), GetRepositoryRefsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRepositoryRefsRepositoryRefCollectionInput)(nil)).Elem(), GetRepositoryRefsRepositoryRefCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRepositoryRefsRepositoryRefCollectionArrayInput)(nil)).Elem(), GetRepositoryRefsRepositoryRefCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRepositoryRefsRepositoryRefCollectionItemInput)(nil)).Elem(), GetRepositoryRefsRepositoryRefCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRepositoryRefsRepositoryRefCollectionItemArrayInput)(nil)).Elem(), GetRepositoryRefsRepositoryRefCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRepositorySettingApprovalRuleInput)(nil)).Elem(), GetRepositorySettingApprovalRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRepositorySettingApprovalRuleArrayInput)(nil)).Elem(), GetRepositorySettingApprovalRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRepositorySettingApprovalRuleItemInput)(nil)).Elem(), GetRepositorySettingApprovalRuleItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRepositorySettingApprovalRuleItemArrayInput)(nil)).Elem(), GetRepositorySettingApprovalRuleItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRepositorySettingApprovalRuleItemReviewerInput)(nil)).Elem(), GetRepositorySettingApprovalRuleItemReviewerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRepositorySettingApprovalRuleItemReviewerArrayInput)(nil)).Elem(), GetRepositorySettingApprovalRuleItemReviewerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRepositorySettingMergeCheckInput)(nil)).Elem(), GetRepositorySettingMergeCheckArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRepositorySettingMergeCheckArrayInput)(nil)).Elem(), GetRepositorySettingMergeCheckArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRepositorySettingMergeSettingInput)(nil)).Elem(), GetRepositorySettingMergeSettingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRepositorySettingMergeSettingArrayInput)(nil)).Elem(), GetRepositorySettingMergeSettingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTriggerActionInput)(nil)).Elem(), GetTriggerActionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTriggerActionArrayInput)(nil)).Elem(), GetTriggerActionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTriggerActionFilterInput)(nil)).Elem(), GetTriggerActionFilterArgs{})
@@ -42460,10 +45162,28 @@ func init() {
 	pulumi.RegisterOutputType(DeploymentDeploymentExecutionProgressArrayOutput{})
 	pulumi.RegisterOutputType(ProjectNotificationConfigOutput{})
 	pulumi.RegisterOutputType(ProjectNotificationConfigPtrOutput{})
+	pulumi.RegisterOutputType(ProjectRepositorySettingApprovalRulesOutput{})
+	pulumi.RegisterOutputType(ProjectRepositorySettingApprovalRulesPtrOutput{})
+	pulumi.RegisterOutputType(ProjectRepositorySettingApprovalRulesItemOutput{})
+	pulumi.RegisterOutputType(ProjectRepositorySettingApprovalRulesItemArrayOutput{})
+	pulumi.RegisterOutputType(ProjectRepositorySettingApprovalRulesItemReviewerOutput{})
+	pulumi.RegisterOutputType(ProjectRepositorySettingApprovalRulesItemReviewerArrayOutput{})
+	pulumi.RegisterOutputType(ProjectRepositorySettingMergeSettingsOutput{})
+	pulumi.RegisterOutputType(ProjectRepositorySettingMergeSettingsPtrOutput{})
 	pulumi.RegisterOutputType(RepositoryMirrorRepositoryConfigOutput{})
 	pulumi.RegisterOutputType(RepositoryMirrorRepositoryConfigPtrOutput{})
 	pulumi.RegisterOutputType(RepositoryMirrorRepositoryConfigTriggerScheduleOutput{})
 	pulumi.RegisterOutputType(RepositoryMirrorRepositoryConfigTriggerSchedulePtrOutput{})
+	pulumi.RegisterOutputType(RepositorySettingApprovalRulesOutput{})
+	pulumi.RegisterOutputType(RepositorySettingApprovalRulesPtrOutput{})
+	pulumi.RegisterOutputType(RepositorySettingApprovalRulesItemOutput{})
+	pulumi.RegisterOutputType(RepositorySettingApprovalRulesItemArrayOutput{})
+	pulumi.RegisterOutputType(RepositorySettingApprovalRulesItemReviewerOutput{})
+	pulumi.RegisterOutputType(RepositorySettingApprovalRulesItemReviewerArrayOutput{})
+	pulumi.RegisterOutputType(RepositorySettingMergeChecksOutput{})
+	pulumi.RegisterOutputType(RepositorySettingMergeChecksPtrOutput{})
+	pulumi.RegisterOutputType(RepositorySettingMergeSettingsOutput{})
+	pulumi.RegisterOutputType(RepositorySettingMergeSettingsPtrOutput{})
 	pulumi.RegisterOutputType(TriggerActionOutput{})
 	pulumi.RegisterOutputType(TriggerActionArrayOutput{})
 	pulumi.RegisterOutputType(TriggerActionFilterOutput{})
@@ -42841,6 +45561,14 @@ func init() {
 	pulumi.RegisterOutputType(GetDeploymentsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetProjectNotificationConfigOutput{})
 	pulumi.RegisterOutputType(GetProjectNotificationConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetProjectRepositorySettingApprovalRuleOutput{})
+	pulumi.RegisterOutputType(GetProjectRepositorySettingApprovalRuleArrayOutput{})
+	pulumi.RegisterOutputType(GetProjectRepositorySettingApprovalRuleItemOutput{})
+	pulumi.RegisterOutputType(GetProjectRepositorySettingApprovalRuleItemArrayOutput{})
+	pulumi.RegisterOutputType(GetProjectRepositorySettingApprovalRuleItemReviewerOutput{})
+	pulumi.RegisterOutputType(GetProjectRepositorySettingApprovalRuleItemReviewerArrayOutput{})
+	pulumi.RegisterOutputType(GetProjectRepositorySettingMergeSettingOutput{})
+	pulumi.RegisterOutputType(GetProjectRepositorySettingMergeSettingArrayOutput{})
 	pulumi.RegisterOutputType(GetProjectsFilterOutput{})
 	pulumi.RegisterOutputType(GetProjectsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetProjectsProjectCollectionOutput{})
@@ -42917,12 +45645,28 @@ func init() {
 	pulumi.RegisterOutputType(GetRepositoryPathsRepositoryPathCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetRepositoryPathsRepositoryPathCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetRepositoryPathsRepositoryPathCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetRepositoryProtectedBranchesFilterOutput{})
+	pulumi.RegisterOutputType(GetRepositoryProtectedBranchesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetRepositoryProtectedBranchesProtectedBranchCollectionOutput{})
+	pulumi.RegisterOutputType(GetRepositoryProtectedBranchesProtectedBranchCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetRepositoryProtectedBranchesProtectedBranchCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetRepositoryProtectedBranchesProtectedBranchCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetRepositoryRefsFilterOutput{})
 	pulumi.RegisterOutputType(GetRepositoryRefsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetRepositoryRefsRepositoryRefCollectionOutput{})
 	pulumi.RegisterOutputType(GetRepositoryRefsRepositoryRefCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetRepositoryRefsRepositoryRefCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetRepositoryRefsRepositoryRefCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetRepositorySettingApprovalRuleOutput{})
+	pulumi.RegisterOutputType(GetRepositorySettingApprovalRuleArrayOutput{})
+	pulumi.RegisterOutputType(GetRepositorySettingApprovalRuleItemOutput{})
+	pulumi.RegisterOutputType(GetRepositorySettingApprovalRuleItemArrayOutput{})
+	pulumi.RegisterOutputType(GetRepositorySettingApprovalRuleItemReviewerOutput{})
+	pulumi.RegisterOutputType(GetRepositorySettingApprovalRuleItemReviewerArrayOutput{})
+	pulumi.RegisterOutputType(GetRepositorySettingMergeCheckOutput{})
+	pulumi.RegisterOutputType(GetRepositorySettingMergeCheckArrayOutput{})
+	pulumi.RegisterOutputType(GetRepositorySettingMergeSettingOutput{})
+	pulumi.RegisterOutputType(GetRepositorySettingMergeSettingArrayOutput{})
 	pulumi.RegisterOutputType(GetTriggerActionOutput{})
 	pulumi.RegisterOutputType(GetTriggerActionArrayOutput{})
 	pulumi.RegisterOutputType(GetTriggerActionFilterOutput{})

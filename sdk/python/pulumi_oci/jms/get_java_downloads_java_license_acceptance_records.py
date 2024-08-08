@@ -138,7 +138,7 @@ def get_java_downloads_java_license_acceptance_records(compartment_id: Optional[
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.
     :param str id: Unique Java license acceptance record identifier.
     :param str license_type: Unique Java license type.
-    :param str search_by_user: A filter to return only resources that match the user principal detail.  The search string can be any of the property values from the [Principal](https://docs.cloud.oracle.com/iaas/api/#/en/jms/latest/datatypes/Principal) object. This object is used as response datatype for the `createdBy` and `lastUpdatedBy` fields in applicable resource.
+    :param str search_by_user: A filter to return only resources that match the user principal detail.  The search string can be any of the property values from the [Principal](https://docs.cloud.oracle.com/iaas/api/#/en/jms/latest/datatypes/Principal) object. This object is used as a response datatype for the `createdBy` and `lastUpdatedBy` fields in applicable resource.
     :param str status: The status of license acceptance.
     """
     __args__ = dict()
@@ -191,7 +191,7 @@ def get_java_downloads_java_license_acceptance_records_output(compartment_id: Op
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.
     :param str id: Unique Java license acceptance record identifier.
     :param str license_type: Unique Java license type.
-    :param str search_by_user: A filter to return only resources that match the user principal detail.  The search string can be any of the property values from the [Principal](https://docs.cloud.oracle.com/iaas/api/#/en/jms/latest/datatypes/Principal) object. This object is used as response datatype for the `createdBy` and `lastUpdatedBy` fields in applicable resource.
+    :param str search_by_user: A filter to return only resources that match the user principal detail.  The search string can be any of the property values from the [Principal](https://docs.cloud.oracle.com/iaas/api/#/en/jms/latest/datatypes/Principal) object. This object is used as a response datatype for the `createdBy` and `lastUpdatedBy` fields in applicable resource.
     :param str status: The status of license acceptance.
     """
     ...

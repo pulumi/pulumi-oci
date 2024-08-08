@@ -58,7 +58,7 @@ func GetDefaultConfigurations(ctx *pulumi.Context, args *GetDefaultConfiguration
 type GetDefaultConfigurationsArgs struct {
 	// A unique identifier for the configuration.
 	ConfigurationId *string `pulumi:"configurationId"`
-	// Verison of the PostgreSQL database, such as 14.9.
+	// Version of the PostgreSQL database, such as 14.9.
 	DbVersion *string `pulumi:"dbVersion"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName *string                          `pulumi:"displayName"`
@@ -104,7 +104,7 @@ func GetDefaultConfigurationsOutput(ctx *pulumi.Context, args GetDefaultConfigur
 type GetDefaultConfigurationsOutputArgs struct {
 	// A unique identifier for the configuration.
 	ConfigurationId pulumi.StringPtrInput `pulumi:"configurationId"`
-	// Verison of the PostgreSQL database, such as 14.9.
+	// Version of the PostgreSQL database, such as 14.9.
 	DbVersion pulumi.StringPtrInput `pulumi:"dbVersion"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringPtrInput                    `pulumi:"displayName"`

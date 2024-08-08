@@ -21,8 +21,14 @@ namespace Pulumi.Oci.BigDataService.Inputs
         [Input("toleranceThresholdPerBatch")]
         public Input<int>? ToleranceThresholdPerBatch { get; set; }
 
+        [Input("toleranceThresholdPerDomain")]
+        public Input<int>? ToleranceThresholdPerDomain { get; set; }
+
         [Input("waitTimeBetweenBatchInSeconds")]
         public Input<int>? WaitTimeBetweenBatchInSeconds { get; set; }
+
+        [Input("waitTimeBetweenDomainInSeconds")]
+        public Input<int>? WaitTimeBetweenDomainInSeconds { get; set; }
 
         public BdsInstanceOsPatchActionPatchingConfigArgs()
         {

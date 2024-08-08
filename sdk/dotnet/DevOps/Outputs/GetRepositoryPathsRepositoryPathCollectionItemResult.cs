@@ -42,6 +42,10 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// </summary>
         public readonly string SubmoduleGitUrl;
         /// <summary>
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> SystemTags;
+        /// <summary>
         /// File or directory.
         /// </summary>
         public readonly string Type;
@@ -62,6 +66,8 @@ namespace Pulumi.Oci.DevOps.Outputs
 
             string submoduleGitUrl,
 
+            ImmutableDictionary<string, object> systemTags,
+
             string type)
         {
             DefinedTags = definedTags;
@@ -71,6 +77,7 @@ namespace Pulumi.Oci.DevOps.Outputs
             Sha = sha;
             SizeInBytes = sizeInBytes;
             SubmoduleGitUrl = submoduleGitUrl;
+            SystemTags = systemTags;
             Type = type;
         }
     }

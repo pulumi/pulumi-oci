@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Jms.outputs.GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection;
 import com.pulumi.oci.Jms.outputs.GetFleetCryptoAnalysisResultsFilter;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -27,10 +28,21 @@ public final class GetFleetCryptoAnalysisResultsResult {
     private List<GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection> cryptoAnalysisResultCollections;
     private @Nullable List<GetFleetCryptoAnalysisResultsFilter> filters;
     /**
+     * @return Total number of findings with the analysis.
+     * 
+     */
+    private @Nullable Integer findingCount;
+    private @Nullable Integer findingCountGreaterThan;
+    /**
      * @return The fleet OCID.
      * 
      */
     private String fleetId;
+    /**
+     * @return The hostname of the managed instance.
+     * 
+     */
+    private @Nullable String hostName;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
@@ -41,6 +53,12 @@ public final class GetFleetCryptoAnalysisResultsResult {
      * 
      */
     private @Nullable String managedInstanceId;
+    /**
+     * @return Total number of non-compliant findings with the analysis. A non-compliant finding means the application won&#39;t work properly with the changes introduced by the Crypto Roadmap version used by the analysis.
+     * 
+     */
+    private @Nullable Integer nonCompliantFindingCount;
+    private @Nullable Integer nonCompliantFindingCountGreaterThan;
     private @Nullable String timeEnd;
     private @Nullable String timeStart;
 
@@ -63,11 +81,28 @@ public final class GetFleetCryptoAnalysisResultsResult {
         return this.filters == null ? List.of() : this.filters;
     }
     /**
+     * @return Total number of findings with the analysis.
+     * 
+     */
+    public Optional<Integer> findingCount() {
+        return Optional.ofNullable(this.findingCount);
+    }
+    public Optional<Integer> findingCountGreaterThan() {
+        return Optional.ofNullable(this.findingCountGreaterThan);
+    }
+    /**
      * @return The fleet OCID.
      * 
      */
     public String fleetId() {
         return this.fleetId;
+    }
+    /**
+     * @return The hostname of the managed instance.
+     * 
+     */
+    public Optional<String> hostName() {
+        return Optional.ofNullable(this.hostName);
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
@@ -82,6 +117,16 @@ public final class GetFleetCryptoAnalysisResultsResult {
      */
     public Optional<String> managedInstanceId() {
         return Optional.ofNullable(this.managedInstanceId);
+    }
+    /**
+     * @return Total number of non-compliant findings with the analysis. A non-compliant finding means the application won&#39;t work properly with the changes introduced by the Crypto Roadmap version used by the analysis.
+     * 
+     */
+    public Optional<Integer> nonCompliantFindingCount() {
+        return Optional.ofNullable(this.nonCompliantFindingCount);
+    }
+    public Optional<Integer> nonCompliantFindingCountGreaterThan() {
+        return Optional.ofNullable(this.nonCompliantFindingCountGreaterThan);
     }
     public Optional<String> timeEnd() {
         return Optional.ofNullable(this.timeEnd);
@@ -102,9 +147,14 @@ public final class GetFleetCryptoAnalysisResultsResult {
         private @Nullable String aggregationMode;
         private List<GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection> cryptoAnalysisResultCollections;
         private @Nullable List<GetFleetCryptoAnalysisResultsFilter> filters;
+        private @Nullable Integer findingCount;
+        private @Nullable Integer findingCountGreaterThan;
         private String fleetId;
+        private @Nullable String hostName;
         private String id;
         private @Nullable String managedInstanceId;
+        private @Nullable Integer nonCompliantFindingCount;
+        private @Nullable Integer nonCompliantFindingCountGreaterThan;
         private @Nullable String timeEnd;
         private @Nullable String timeStart;
         public Builder() {}
@@ -113,9 +163,14 @@ public final class GetFleetCryptoAnalysisResultsResult {
     	      this.aggregationMode = defaults.aggregationMode;
     	      this.cryptoAnalysisResultCollections = defaults.cryptoAnalysisResultCollections;
     	      this.filters = defaults.filters;
+    	      this.findingCount = defaults.findingCount;
+    	      this.findingCountGreaterThan = defaults.findingCountGreaterThan;
     	      this.fleetId = defaults.fleetId;
+    	      this.hostName = defaults.hostName;
     	      this.id = defaults.id;
     	      this.managedInstanceId = defaults.managedInstanceId;
+    	      this.nonCompliantFindingCount = defaults.nonCompliantFindingCount;
+    	      this.nonCompliantFindingCountGreaterThan = defaults.nonCompliantFindingCountGreaterThan;
     	      this.timeEnd = defaults.timeEnd;
     	      this.timeStart = defaults.timeStart;
         }
@@ -147,11 +202,29 @@ public final class GetFleetCryptoAnalysisResultsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
+        public Builder findingCount(@Nullable Integer findingCount) {
+
+            this.findingCount = findingCount;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder findingCountGreaterThan(@Nullable Integer findingCountGreaterThan) {
+
+            this.findingCountGreaterThan = findingCountGreaterThan;
+            return this;
+        }
+        @CustomType.Setter
         public Builder fleetId(String fleetId) {
             if (fleetId == null) {
               throw new MissingRequiredPropertyException("GetFleetCryptoAnalysisResultsResult", "fleetId");
             }
             this.fleetId = fleetId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder hostName(@Nullable String hostName) {
+
+            this.hostName = hostName;
             return this;
         }
         @CustomType.Setter
@@ -166,6 +239,18 @@ public final class GetFleetCryptoAnalysisResultsResult {
         public Builder managedInstanceId(@Nullable String managedInstanceId) {
 
             this.managedInstanceId = managedInstanceId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder nonCompliantFindingCount(@Nullable Integer nonCompliantFindingCount) {
+
+            this.nonCompliantFindingCount = nonCompliantFindingCount;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder nonCompliantFindingCountGreaterThan(@Nullable Integer nonCompliantFindingCountGreaterThan) {
+
+            this.nonCompliantFindingCountGreaterThan = nonCompliantFindingCountGreaterThan;
             return this;
         }
         @CustomType.Setter
@@ -185,9 +270,14 @@ public final class GetFleetCryptoAnalysisResultsResult {
             _resultValue.aggregationMode = aggregationMode;
             _resultValue.cryptoAnalysisResultCollections = cryptoAnalysisResultCollections;
             _resultValue.filters = filters;
+            _resultValue.findingCount = findingCount;
+            _resultValue.findingCountGreaterThan = findingCountGreaterThan;
             _resultValue.fleetId = fleetId;
+            _resultValue.hostName = hostName;
             _resultValue.id = id;
             _resultValue.managedInstanceId = managedInstanceId;
+            _resultValue.nonCompliantFindingCount = nonCompliantFindingCount;
+            _resultValue.nonCompliantFindingCountGreaterThan = nonCompliantFindingCountGreaterThan;
             _resultValue.timeEnd = timeEnd;
             _resultValue.timeStart = timeStart;
             return _resultValue;

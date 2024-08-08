@@ -16,43 +16,46 @@ import javax.annotation.Nullable;
 @CustomType
 public final class TriggerActionFilter {
     /**
-     * @return (Updatable) The events, for example, PUSH, PULL_REQUEST_MERGE.
+     * @return The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
      * 
      */
     private @Nullable List<String> events;
     /**
-     * @return (Updatable) Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
+     * @return Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
      * 
      */
     private @Nullable TriggerActionFilterExclude exclude;
     /**
-     * @return (Updatable) Attributes to filter GitLab self-hosted server events.
+     * @return Attributes to filter GitLab self-hosted server events.
      * 
      */
     private @Nullable TriggerActionFilterInclude include;
     /**
      * @return (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     private String triggerSource;
 
     private TriggerActionFilter() {}
     /**
-     * @return (Updatable) The events, for example, PUSH, PULL_REQUEST_MERGE.
+     * @return The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
      * 
      */
     public List<String> events() {
         return this.events == null ? List.of() : this.events;
     }
     /**
-     * @return (Updatable) Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
+     * @return Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
      * 
      */
     public Optional<TriggerActionFilterExclude> exclude() {
         return Optional.ofNullable(this.exclude);
     }
     /**
-     * @return (Updatable) Attributes to filter GitLab self-hosted server events.
+     * @return Attributes to filter GitLab self-hosted server events.
      * 
      */
     public Optional<TriggerActionFilterInclude> include() {
@@ -60,6 +63,9 @@ public final class TriggerActionFilter {
     }
     /**
      * @return (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String triggerSource() {

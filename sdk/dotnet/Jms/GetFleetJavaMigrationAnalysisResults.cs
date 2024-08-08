@@ -29,7 +29,9 @@ namespace Pulumi.Oci.Jms
         ///     var testFleetJavaMigrationAnalysisResults = Oci.Jms.GetFleetJavaMigrationAnalysisResults.Invoke(new()
         ///     {
         ///         FleetId = testFleet.Id,
-        ///         ManagedInstanceId = testManagedInstance.Id,
+        ///         ApplicationName = fleetJavaMigrationAnalysisResultApplicationName,
+        ///         HostName = fleetJavaMigrationAnalysisResultHostName,
+        ///         ManagedInstanceId = fleetJavaMigrationAnalysisResultManagedInstanceId,
         ///         TimeEnd = fleetJavaMigrationAnalysisResultTimeEnd,
         ///         TimeStart = fleetJavaMigrationAnalysisResultTimeStart,
         ///     });
@@ -58,7 +60,9 @@ namespace Pulumi.Oci.Jms
         ///     var testFleetJavaMigrationAnalysisResults = Oci.Jms.GetFleetJavaMigrationAnalysisResults.Invoke(new()
         ///     {
         ///         FleetId = testFleet.Id,
-        ///         ManagedInstanceId = testManagedInstance.Id,
+        ///         ApplicationName = fleetJavaMigrationAnalysisResultApplicationName,
+        ///         HostName = fleetJavaMigrationAnalysisResultHostName,
+        ///         ManagedInstanceId = fleetJavaMigrationAnalysisResultManagedInstanceId,
         ///         TimeEnd = fleetJavaMigrationAnalysisResultTimeEnd,
         ///         TimeStart = fleetJavaMigrationAnalysisResultTimeStart,
         ///     });
@@ -73,6 +77,12 @@ namespace Pulumi.Oci.Jms
 
     public sealed class GetFleetJavaMigrationAnalysisResultsArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The name of the application.
+        /// </summary>
+        [Input("applicationName")]
+        public string? ApplicationName { get; set; }
+
         [Input("filters")]
         private List<Inputs.GetFleetJavaMigrationAnalysisResultsFilterArgs>? _filters;
         public List<Inputs.GetFleetJavaMigrationAnalysisResultsFilterArgs> Filters
@@ -86,6 +96,12 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         [Input("fleetId", required: true)]
         public string FleetId { get; set; } = null!;
+
+        /// <summary>
+        /// The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
+        /// </summary>
+        [Input("hostName")]
+        public string? HostName { get; set; }
 
         /// <summary>
         /// The Fleet-unique identifier of the related managed instance.
@@ -113,6 +129,12 @@ namespace Pulumi.Oci.Jms
 
     public sealed class GetFleetJavaMigrationAnalysisResultsInvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The name of the application.
+        /// </summary>
+        [Input("applicationName")]
+        public Input<string>? ApplicationName { get; set; }
+
         [Input("filters")]
         private InputList<Inputs.GetFleetJavaMigrationAnalysisResultsFilterInputArgs>? _filters;
         public InputList<Inputs.GetFleetJavaMigrationAnalysisResultsFilterInputArgs> Filters
@@ -126,6 +148,12 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         [Input("fleetId", required: true)]
         public Input<string> FleetId { get; set; } = null!;
+
+        /// <summary>
+        /// The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
+        /// </summary>
+        [Input("hostName")]
+        public Input<string>? HostName { get; set; }
 
         /// <summary>
         /// The Fleet-unique identifier of the related managed instance.
@@ -155,11 +183,19 @@ namespace Pulumi.Oci.Jms
     [OutputType]
     public sealed class GetFleetJavaMigrationAnalysisResultsResult
     {
+        /// <summary>
+        /// The name of the application for which the Java migration analysis was performed.
+        /// </summary>
+        public readonly string? ApplicationName;
         public readonly ImmutableArray<Outputs.GetFleetJavaMigrationAnalysisResultsFilterResult> Filters;
         /// <summary>
         /// The fleet OCID.
         /// </summary>
         public readonly string FleetId;
+        /// <summary>
+        /// The hostname of the managed instance that hosts the application for which the Java migration analysis was performed.
+        /// </summary>
+        public readonly string? HostName;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
@@ -177,9 +213,13 @@ namespace Pulumi.Oci.Jms
 
         [OutputConstructor]
         private GetFleetJavaMigrationAnalysisResultsResult(
+            string? applicationName,
+
             ImmutableArray<Outputs.GetFleetJavaMigrationAnalysisResultsFilterResult> filters,
 
             string fleetId,
+
+            string? hostName,
 
             string id,
 
@@ -191,8 +231,10 @@ namespace Pulumi.Oci.Jms
 
             string? timeStart)
         {
+            ApplicationName = applicationName;
             Filters = filters;
             FleetId = fleetId;
+            HostName = hostName;
             Id = id;
             JavaMigrationAnalysisResultCollections = javaMigrationAnalysisResultCollections;
             ManagedInstanceId = managedInstanceId;

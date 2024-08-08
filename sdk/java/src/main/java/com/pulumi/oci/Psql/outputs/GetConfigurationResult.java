@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Psql.outputs.GetConfigurationConfigurationDetail;
 import com.pulumi.oci.Psql.outputs.GetConfigurationDbConfigurationOverride;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -21,6 +22,11 @@ public final class GetConfigurationResult {
      * 
      */
     private String compartmentId;
+    /**
+     * @return The type of configuration. Either user-created or a default configuration.
+     * 
+     */
+    private String configType;
     /**
      * @return List of configuration details.
      * 
@@ -69,6 +75,11 @@ public final class GetConfigurationResult {
      */
     private Integer instanceOcpuCount;
     /**
+     * @return Whether the configuration supports flexible shapes.
+     * 
+     */
+    private Boolean isFlexible;
+    /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
@@ -101,6 +112,13 @@ public final class GetConfigurationResult {
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * @return The type of configuration. Either user-created or a default configuration.
+     * 
+     */
+    public String configType() {
+        return this.configType;
     }
     /**
      * @return List of configuration details.
@@ -172,6 +190,13 @@ public final class GetConfigurationResult {
         return this.instanceOcpuCount;
     }
     /**
+     * @return Whether the configuration supports flexible shapes.
+     * 
+     */
+    public Boolean isFlexible() {
+        return this.isFlexible;
+    }
+    /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
@@ -217,6 +242,7 @@ public final class GetConfigurationResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
+        private String configType;
         private List<GetConfigurationConfigurationDetail> configurationDetails;
         private String configurationId;
         private List<GetConfigurationDbConfigurationOverride> dbConfigurationOverrides;
@@ -228,6 +254,7 @@ public final class GetConfigurationResult {
         private String id;
         private Integer instanceMemorySizeInGbs;
         private Integer instanceOcpuCount;
+        private Boolean isFlexible;
         private String lifecycleDetails;
         private String shape;
         private String state;
@@ -237,6 +264,7 @@ public final class GetConfigurationResult {
         public Builder(GetConfigurationResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
+    	      this.configType = defaults.configType;
     	      this.configurationDetails = defaults.configurationDetails;
     	      this.configurationId = defaults.configurationId;
     	      this.dbConfigurationOverrides = defaults.dbConfigurationOverrides;
@@ -248,6 +276,7 @@ public final class GetConfigurationResult {
     	      this.id = defaults.id;
     	      this.instanceMemorySizeInGbs = defaults.instanceMemorySizeInGbs;
     	      this.instanceOcpuCount = defaults.instanceOcpuCount;
+    	      this.isFlexible = defaults.isFlexible;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.shape = defaults.shape;
     	      this.state = defaults.state;
@@ -261,6 +290,14 @@ public final class GetConfigurationResult {
               throw new MissingRequiredPropertyException("GetConfigurationResult", "compartmentId");
             }
             this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder configType(String configType) {
+            if (configType == null) {
+              throw new MissingRequiredPropertyException("GetConfigurationResult", "configType");
+            }
+            this.configType = configType;
             return this;
         }
         @CustomType.Setter
@@ -358,6 +395,14 @@ public final class GetConfigurationResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isFlexible(Boolean isFlexible) {
+            if (isFlexible == null) {
+              throw new MissingRequiredPropertyException("GetConfigurationResult", "isFlexible");
+            }
+            this.isFlexible = isFlexible;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             if (lifecycleDetails == null) {
               throw new MissingRequiredPropertyException("GetConfigurationResult", "lifecycleDetails");
@@ -400,6 +445,7 @@ public final class GetConfigurationResult {
         public GetConfigurationResult build() {
             final var _resultValue = new GetConfigurationResult();
             _resultValue.compartmentId = compartmentId;
+            _resultValue.configType = configType;
             _resultValue.configurationDetails = configurationDetails;
             _resultValue.configurationId = configurationId;
             _resultValue.dbConfigurationOverrides = dbConfigurationOverrides;
@@ -411,6 +457,7 @@ public final class GetConfigurationResult {
             _resultValue.id = id;
             _resultValue.instanceMemorySizeInGbs = instanceMemorySizeInGbs;
             _resultValue.instanceOcpuCount = instanceOcpuCount;
+            _resultValue.isFlexible = isFlexible;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.shape = shape;
             _resultValue.state = state;

@@ -18,14 +18,14 @@ public final class DbSystemNetworkDetailsArgs extends com.pulumi.resources.Resou
     public static final DbSystemNetworkDetailsArgs Empty = new DbSystemNetworkDetailsArgs();
 
     /**
-     * List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
+     * (Updatable) List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
      * 
      */
     @Import(name="nsgIds")
     private @Nullable Output<List<String>> nsgIds;
 
     /**
-     * @return List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
+     * @return (Updatable) List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
      * 
      */
     public Optional<Output<List<String>>> nsgIds() {
@@ -89,7 +89,7 @@ public final class DbSystemNetworkDetailsArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param nsgIds List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
+         * @param nsgIds (Updatable) List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
          * 
          * @return builder
          * 
@@ -100,7 +100,7 @@ public final class DbSystemNetworkDetailsArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param nsgIds List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
+         * @param nsgIds (Updatable) List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
          * 
          * @return builder
          * 
@@ -110,7 +110,7 @@ public final class DbSystemNetworkDetailsArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param nsgIds List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
+         * @param nsgIds (Updatable) List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
          * 
          * @return builder
          * 

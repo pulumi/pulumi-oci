@@ -97,6 +97,7 @@ namespace Pulumi.Oci.BigDataService
     [OutputType]
     public sealed class GetBdsInstanceResult
     {
+        public readonly int AddKafkaTrigger;
         public readonly string BdsInstanceId;
         /// <summary>
         /// pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
@@ -138,6 +139,7 @@ namespace Pulumi.Oci.BigDataService
         /// </summary>
         public readonly string DisplayName;
         public readonly ImmutableArray<Outputs.GetBdsInstanceEdgeNodeResult> EdgeNodes;
+        public readonly int ExecuteBootstrapScriptTrigger;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
         /// </summary>
@@ -188,6 +190,7 @@ namespace Pulumi.Oci.BigDataService
         /// </summary>
         public readonly int NumberOfNodesRequiringMaintenanceReboot;
         public readonly string OsPatchVersion;
+        public readonly int RemoveKafkaTrigger;
         /// <summary>
         /// The state of the cluster.
         /// </summary>
@@ -205,6 +208,8 @@ namespace Pulumi.Oci.BigDataService
 
         [OutputConstructor]
         private GetBdsInstanceResult(
+            int addKafkaTrigger,
+
             string bdsInstanceId,
 
             string bootstrapScriptUrl,
@@ -232,6 +237,8 @@ namespace Pulumi.Oci.BigDataService
             string displayName,
 
             ImmutableArray<Outputs.GetBdsInstanceEdgeNodeResult> edgeNodes,
+
+            int executeBootstrapScriptTrigger,
 
             ImmutableDictionary<string, object> freeformTags,
 
@@ -267,6 +274,8 @@ namespace Pulumi.Oci.BigDataService
 
             string osPatchVersion,
 
+            int removeKafkaTrigger,
+
             string state,
 
             string timeCreated,
@@ -277,6 +286,7 @@ namespace Pulumi.Oci.BigDataService
 
             ImmutableArray<Outputs.GetBdsInstanceWorkerNodeResult> workerNodes)
         {
+            AddKafkaTrigger = addKafkaTrigger;
             BdsInstanceId = bdsInstanceId;
             BootstrapScriptUrl = bootstrapScriptUrl;
             CloudSqlDetails = cloudSqlDetails;
@@ -291,6 +301,7 @@ namespace Pulumi.Oci.BigDataService
             DefinedTags = definedTags;
             DisplayName = displayName;
             EdgeNodes = edgeNodes;
+            ExecuteBootstrapScriptTrigger = executeBootstrapScriptTrigger;
             FreeformTags = freeformTags;
             Id = id;
             IgnoreExistingNodesShapes = ignoreExistingNodesShapes;
@@ -308,6 +319,7 @@ namespace Pulumi.Oci.BigDataService
             NumberOfNodes = numberOfNodes;
             NumberOfNodesRequiringMaintenanceReboot = numberOfNodesRequiringMaintenanceReboot;
             OsPatchVersion = osPatchVersion;
+            RemoveKafkaTrigger = removeKafkaTrigger;
             State = state;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;

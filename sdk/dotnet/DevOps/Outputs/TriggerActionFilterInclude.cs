@@ -14,19 +14,19 @@ namespace Pulumi.Oci.DevOps.Outputs
     public sealed class TriggerActionFilterInclude
     {
         /// <summary>
-        /// (Updatable) The target branch for pull requests; not applicable for push requests.
+        /// The target branch for pull requests; not applicable for push requests.
         /// </summary>
         public readonly string? BaseRef;
         /// <summary>
-        /// (Updatable) Attributes to support include/exclude files for triggering build runs.
+        /// Attributes to support include/exclude files for triggering build runs.
         /// </summary>
         public readonly Outputs.TriggerActionFilterIncludeFileFilter? FileFilter;
         /// <summary>
-        /// (Updatable) Branch for push event; source branch for pull requests.
+        /// Branch for push event; source branch for pull requests.
         /// </summary>
         public readonly string? HeadRef;
         /// <summary>
-        /// (Updatable) The repository name for trigger events.
+        /// The repository name for trigger events.
         /// </summary>
         public readonly string? RepositoryName;
 

@@ -6,8 +6,11 @@ package com.pulumi.oci.BigDataService;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.BigDataService.inputs.BdsInstancePatchActionPatchingConfigArgs;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class BdsInstancePatchActionArgs extends com.pulumi.resources.ResourceArgs {
@@ -45,6 +48,21 @@ public final class BdsInstancePatchActionArgs extends com.pulumi.resources.Resou
     }
 
     /**
+     * Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
+     * 
+     */
+    @Import(name="patchingConfig")
+    private @Nullable Output<BdsInstancePatchActionPatchingConfigArgs> patchingConfig;
+
+    /**
+     * @return Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
+     * 
+     */
+    public Optional<Output<BdsInstancePatchActionPatchingConfigArgs>> patchingConfig() {
+        return Optional.ofNullable(this.patchingConfig);
+    }
+
+    /**
      * The version of the patch to be installed.
      * 
      * ** IMPORTANT **
@@ -70,6 +88,7 @@ public final class BdsInstancePatchActionArgs extends com.pulumi.resources.Resou
     private BdsInstancePatchActionArgs(BdsInstancePatchActionArgs $) {
         this.bdsInstanceId = $.bdsInstanceId;
         this.clusterAdminPassword = $.clusterAdminPassword;
+        this.patchingConfig = $.patchingConfig;
         this.version = $.version;
     }
 
@@ -131,6 +150,27 @@ public final class BdsInstancePatchActionArgs extends com.pulumi.resources.Resou
          */
         public Builder clusterAdminPassword(String clusterAdminPassword) {
             return clusterAdminPassword(Output.of(clusterAdminPassword));
+        }
+
+        /**
+         * @param patchingConfig Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder patchingConfig(@Nullable Output<BdsInstancePatchActionPatchingConfigArgs> patchingConfig) {
+            $.patchingConfig = patchingConfig;
+            return this;
+        }
+
+        /**
+         * @param patchingConfig Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder patchingConfig(BdsInstancePatchActionPatchingConfigArgs patchingConfig) {
+            return patchingConfig(Output.of(patchingConfig));
         }
 
         /**

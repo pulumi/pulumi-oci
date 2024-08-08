@@ -49,7 +49,7 @@ export interface GetDefaultConfigurationsArgs {
      */
     configurationId?: string;
     /**
-     * Verison of the PostgreSQL database, such as 14.9.
+     * Version of the PostgreSQL database, such as 14.9.
      */
     dbVersion?: string;
     /**
@@ -131,7 +131,7 @@ export interface GetDefaultConfigurationsOutputArgs {
      */
     configurationId?: pulumi.Input<string>;
     /**
-     * Verison of the PostgreSQL database, such as 14.9.
+     * Version of the PostgreSQL database, such as 14.9.
      */
     dbVersion?: pulumi.Input<string>;
     /**

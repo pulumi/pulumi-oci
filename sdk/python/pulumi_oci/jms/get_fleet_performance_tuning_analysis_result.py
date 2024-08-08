@@ -190,7 +190,7 @@ class GetFleetPerformanceTuningAnalysisResultResult:
     @pulumi.getter(name="timeFinished")
     def time_finished(self) -> str:
         """
-        The time the JFR capture finished.
+        The time the JFR recording has finished.
         """
         return pulumi.get(self, "time_finished")
 
@@ -198,7 +198,7 @@ class GetFleetPerformanceTuningAnalysisResultResult:
     @pulumi.getter(name="timeStarted")
     def time_started(self) -> str:
         """
-        The time the JFR capture started.
+        The time the JFR recording has started.
         """
         return pulumi.get(self, "time_started")
 
@@ -260,7 +260,7 @@ def get_fleet_performance_tuning_analysis_result(fleet_id: Optional[str] = None,
     import pulumi_oci as oci
 
     test_fleet_performance_tuning_analysis_result = oci.Jms.get_fleet_performance_tuning_analysis_result(fleet_id=test_fleet["id"],
-        performance_tuning_analysis_result_id=test_result["id"])
+        performance_tuning_analysis_result_id=fleet_performance_tuning_analysis_result_id)
     ```
 
 
@@ -310,7 +310,7 @@ def get_fleet_performance_tuning_analysis_result_output(fleet_id: Optional[pulum
     import pulumi_oci as oci
 
     test_fleet_performance_tuning_analysis_result = oci.Jms.get_fleet_performance_tuning_analysis_result(fleet_id=test_fleet["id"],
-        performance_tuning_analysis_result_id=test_result["id"])
+        performance_tuning_analysis_result_id=fleet_performance_tuning_analysis_result_id)
     ```
 
 

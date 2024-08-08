@@ -20,6 +20,10 @@ namespace Pulumi.Oci.DevOps.Inputs
 
         [Input("fileFilters")]
         private InputList<Inputs.BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArgs>? _fileFilters;
+
+        /// <summary>
+        /// Attributes to support include/exclude files for triggering build runs.
+        /// </summary>
         public InputList<Inputs.BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArgs> FileFilters
         {
             get => _fileFilters ?? (_fileFilters = new InputList<Inputs.BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArgs>());

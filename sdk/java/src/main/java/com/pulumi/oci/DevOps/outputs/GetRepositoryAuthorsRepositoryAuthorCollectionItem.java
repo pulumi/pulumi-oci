@@ -27,6 +27,11 @@ public final class GetRepositoryAuthorsRepositoryAuthorCollectionItem {
      * 
      */
     private Map<String,Object> freeformTags;
+    /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    private Map<String,Object> systemTags;
 
     private GetRepositoryAuthorsRepositoryAuthorCollectionItem() {}
     /**
@@ -50,6 +55,13 @@ public final class GetRepositoryAuthorsRepositoryAuthorCollectionItem {
     public Map<String,Object> freeformTags() {
         return this.freeformTags;
     }
+    /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Map<String,Object> systemTags() {
+        return this.systemTags;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -63,12 +75,14 @@ public final class GetRepositoryAuthorsRepositoryAuthorCollectionItem {
         private String authorName;
         private Map<String,Object> definedTags;
         private Map<String,Object> freeformTags;
+        private Map<String,Object> systemTags;
         public Builder() {}
         public Builder(GetRepositoryAuthorsRepositoryAuthorCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.authorName = defaults.authorName;
     	      this.definedTags = defaults.definedTags;
     	      this.freeformTags = defaults.freeformTags;
+    	      this.systemTags = defaults.systemTags;
         }
 
         @CustomType.Setter
@@ -95,11 +109,20 @@ public final class GetRepositoryAuthorsRepositoryAuthorCollectionItem {
             this.freeformTags = freeformTags;
             return this;
         }
+        @CustomType.Setter
+        public Builder systemTags(Map<String,Object> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryAuthorsRepositoryAuthorCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
         public GetRepositoryAuthorsRepositoryAuthorCollectionItem build() {
             final var _resultValue = new GetRepositoryAuthorsRepositoryAuthorCollectionItem();
             _resultValue.authorName = authorName;
             _resultValue.definedTags = definedTags;
             _resultValue.freeformTags = freeformTags;
+            _resultValue.systemTags = systemTags;
             return _resultValue;
         }
     }

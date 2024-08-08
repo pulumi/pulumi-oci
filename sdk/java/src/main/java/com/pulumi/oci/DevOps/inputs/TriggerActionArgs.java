@@ -32,17 +32,9 @@ public final class TriggerActionArgs extends com.pulumi.resources.ResourceArgs {
         return this.buildPipelineId;
     }
 
-    /**
-     * (Updatable) The filters for the trigger.
-     * 
-     */
     @Import(name="filter")
     private @Nullable Output<TriggerActionFilterArgs> filter;
 
-    /**
-     * @return (Updatable) The filters for the trigger.
-     * 
-     */
     public Optional<Output<TriggerActionFilterArgs>> filter() {
         return Optional.ofNullable(this.filter);
     }
@@ -109,23 +101,11 @@ public final class TriggerActionArgs extends com.pulumi.resources.ResourceArgs {
             return buildPipelineId(Output.of(buildPipelineId));
         }
 
-        /**
-         * @param filter (Updatable) The filters for the trigger.
-         * 
-         * @return builder
-         * 
-         */
         public Builder filter(@Nullable Output<TriggerActionFilterArgs> filter) {
             $.filter = filter;
             return this;
         }
 
-        /**
-         * @param filter (Updatable) The filters for the trigger.
-         * 
-         * @return builder
-         * 
-         */
         public Builder filter(TriggerActionFilterArgs filter) {
             return filter(Output.of(filter));
         }

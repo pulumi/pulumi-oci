@@ -11,9 +11,17 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class BuildRunBuildRunSourceTriggerInfoActionFilterExclude {
+    /**
+     * @return Attributes to support include/exclude files for triggering build runs.
+     * 
+     */
     private @Nullable List<BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter> fileFilters;
 
     private BuildRunBuildRunSourceTriggerInfoActionFilterExclude() {}
+    /**
+     * @return Attributes to support include/exclude files for triggering build runs.
+     * 
+     */
     public List<BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter> fileFilters() {
         return this.fileFilters == null ? List.of() : this.fileFilters;
     }

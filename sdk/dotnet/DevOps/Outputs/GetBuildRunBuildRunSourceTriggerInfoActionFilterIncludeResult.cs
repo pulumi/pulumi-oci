@@ -17,6 +17,9 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// The target branch for pull requests; not applicable for push requests.
         /// </summary>
         public readonly string BaseRef;
+        /// <summary>
+        /// Attributes to support include/exclude files for triggering build runs.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterResult> FileFilters;
         /// <summary>
         /// Branch for push event; source branch for pull requests.

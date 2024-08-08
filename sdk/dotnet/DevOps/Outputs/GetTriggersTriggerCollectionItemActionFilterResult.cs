@@ -14,9 +14,12 @@ namespace Pulumi.Oci.DevOps.Outputs
     public sealed class GetTriggersTriggerCollectionItemActionFilterResult
     {
         /// <summary>
-        /// The events, for example, PUSH, PULL_REQUEST_MERGE.
+        /// The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
         /// </summary>
         public readonly ImmutableArray<string> Events;
+        /// <summary>
+        /// Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetTriggersTriggerCollectionItemActionFilterExcludeResult> Excludes;
         /// <summary>
         /// Attributes to filter GitLab self-hosted server events.

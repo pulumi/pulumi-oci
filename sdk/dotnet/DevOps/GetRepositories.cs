@@ -181,7 +181,7 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Unique name of a repository. This value is mutable.
+        /// Name of the repository. Should be unique within the project. This value is mutable.
         /// </summary>
         public readonly string? Name;
         /// <summary>

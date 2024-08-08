@@ -31,7 +31,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Jms.GetFleetBlocklists(ctx, &jms.GetFleetBlocklistsArgs{
 //				FleetId:           testFleet.Id,
-//				ManagedInstanceId: pulumi.StringRef(testManagedInstance.Id),
+//				ManagedInstanceId: pulumi.StringRef(fleetBlocklistManagedInstanceId),
 //				Operation:         pulumi.StringRef(fleetBlocklistOperation),
 //			}, nil)
 //			if err != nil {

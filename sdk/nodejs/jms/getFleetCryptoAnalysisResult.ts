@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testFleetCryptoAnalysisResult = oci.Jms.getFleetCryptoAnalysisResult({
- *     cryptoAnalysisResultId: testResult.id,
+ *     cryptoAnalysisResultId: fleetCryptoAnalysisResultId,
  *     fleetId: testFleet.id,
  * });
  * ```
@@ -102,6 +102,10 @@ export interface GetFleetCryptoAnalysisResultResult {
      */
     readonly timeCreated: string;
     /**
+     * The time the JFR recording has finished.
+     */
+    readonly timeFinished: string;
+    /**
      * Time of the first event in the analysis.
      */
     readonly timeFirstEvent: string;
@@ -109,6 +113,10 @@ export interface GetFleetCryptoAnalysisResultResult {
      * Time of the last event in the analysis.
      */
     readonly timeLastEvent: string;
+    /**
+     * The time the JFR recording has started.
+     */
+    readonly timeStarted: string;
     /**
      * Total number of events in the analysis.
      */
@@ -130,7 +138,7 @@ export interface GetFleetCryptoAnalysisResultResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testFleetCryptoAnalysisResult = oci.Jms.getFleetCryptoAnalysisResult({
- *     cryptoAnalysisResultId: testResult.id,
+ *     cryptoAnalysisResultId: fleetCryptoAnalysisResultId,
  *     fleetId: testFleet.id,
  * });
  * ```

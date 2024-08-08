@@ -166,7 +166,7 @@ def get_configurations(compartment_id: Optional[str] = None,
 
     :param str compartment_id: The ID of the compartment in which to list resources.
     :param str configuration_id: A unique identifier for the configuration.
-    :param str db_version: Verison of the PostgreSQL database, such as 14.9.
+    :param str db_version: Version of the PostgreSQL database, such as 14.9.
     :param str display_name: A filter to return only resources that match the entire display name given.
     :param str shape: The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
     :param str state: A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
@@ -225,7 +225,7 @@ def get_configurations_output(compartment_id: Optional[pulumi.Input[Optional[str
 
     :param str compartment_id: The ID of the compartment in which to list resources.
     :param str configuration_id: A unique identifier for the configuration.
-    :param str db_version: Verison of the PostgreSQL database, such as 14.9.
+    :param str db_version: Version of the PostgreSQL database, such as 14.9.
     :param str display_name: A filter to return only resources that match the entire display name given.
     :param str shape: The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
     :param str state: A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.

@@ -22,10 +22,13 @@ class GetConfigurationResult:
     """
     A collection of values returned by getConfiguration.
     """
-    def __init__(__self__, compartment_id=None, configuration_details=None, configuration_id=None, db_configuration_overrides=None, db_version=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, instance_memory_size_in_gbs=None, instance_ocpu_count=None, lifecycle_details=None, shape=None, state=None, system_tags=None, time_created=None):
+    def __init__(__self__, compartment_id=None, config_type=None, configuration_details=None, configuration_id=None, db_configuration_overrides=None, db_version=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, instance_memory_size_in_gbs=None, instance_ocpu_count=None, is_flexible=None, lifecycle_details=None, shape=None, state=None, system_tags=None, time_created=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if config_type and not isinstance(config_type, str):
+            raise TypeError("Expected argument 'config_type' to be a str")
+        pulumi.set(__self__, "config_type", config_type)
         if configuration_details and not isinstance(configuration_details, list):
             raise TypeError("Expected argument 'configuration_details' to be a list")
         pulumi.set(__self__, "configuration_details", configuration_details)
@@ -59,6 +62,9 @@ class GetConfigurationResult:
         if instance_ocpu_count and not isinstance(instance_ocpu_count, int):
             raise TypeError("Expected argument 'instance_ocpu_count' to be a int")
         pulumi.set(__self__, "instance_ocpu_count", instance_ocpu_count)
+        if is_flexible and not isinstance(is_flexible, bool):
+            raise TypeError("Expected argument 'is_flexible' to be a bool")
+        pulumi.set(__self__, "is_flexible", is_flexible)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -82,6 +88,14 @@ class GetConfigurationResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="configType")
+    def config_type(self) -> str:
+        """
+        The type of configuration. Either user-created or a default configuration.
+        """
+        return pulumi.get(self, "config_type")
 
     @property
     @pulumi.getter(name="configurationDetails")
@@ -166,6 +180,14 @@ class GetConfigurationResult:
         return pulumi.get(self, "instance_ocpu_count")
 
     @property
+    @pulumi.getter(name="isFlexible")
+    def is_flexible(self) -> bool:
+        """
+        Whether the configuration supports flexible shapes.
+        """
+        return pulumi.get(self, "is_flexible")
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
@@ -213,6 +235,7 @@ class AwaitableGetConfigurationResult(GetConfigurationResult):
             yield self
         return GetConfigurationResult(
             compartment_id=self.compartment_id,
+            config_type=self.config_type,
             configuration_details=self.configuration_details,
             configuration_id=self.configuration_id,
             db_configuration_overrides=self.db_configuration_overrides,
@@ -224,6 +247,7 @@ class AwaitableGetConfigurationResult(GetConfigurationResult):
             id=self.id,
             instance_memory_size_in_gbs=self.instance_memory_size_in_gbs,
             instance_ocpu_count=self.instance_ocpu_count,
+            is_flexible=self.is_flexible,
             lifecycle_details=self.lifecycle_details,
             shape=self.shape,
             state=self.state,
@@ -257,6 +281,7 @@ def get_configuration(configuration_id: Optional[str] = None,
 
     return AwaitableGetConfigurationResult(
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        config_type=pulumi.get(__ret__, 'config_type'),
         configuration_details=pulumi.get(__ret__, 'configuration_details'),
         configuration_id=pulumi.get(__ret__, 'configuration_id'),
         db_configuration_overrides=pulumi.get(__ret__, 'db_configuration_overrides'),
@@ -268,6 +293,7 @@ def get_configuration(configuration_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         instance_memory_size_in_gbs=pulumi.get(__ret__, 'instance_memory_size_in_gbs'),
         instance_ocpu_count=pulumi.get(__ret__, 'instance_ocpu_count'),
+        is_flexible=pulumi.get(__ret__, 'is_flexible'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         shape=pulumi.get(__ret__, 'shape'),
         state=pulumi.get(__ret__, 'state'),

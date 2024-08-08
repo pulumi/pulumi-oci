@@ -27,7 +27,7 @@ public final class GetRepositoriesResult {
      */
     private String id;
     /**
-     * @return Unique name of a repository. This value is mutable.
+     * @return Name of the repository. Should be unique within the project. This value is mutable.
      * 
      */
     private @Nullable String name;
@@ -67,7 +67,7 @@ public final class GetRepositoriesResult {
         return this.id;
     }
     /**
-     * @return Unique name of a repository. This value is mutable.
+     * @return Name of the repository. Should be unique within the project. This value is mutable.
      * 
      */
     public Optional<String> name() {

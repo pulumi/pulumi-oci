@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Psql.outputs.GetConfigurationsConfigurationCollectionItemConfigurationDetail;
 import com.pulumi.oci.Psql.outputs.GetConfigurationsConfigurationCollectionItemDbConfigurationOverride;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -22,13 +23,18 @@ public final class GetConfigurationsConfigurationCollectionItem {
      */
     private String compartmentId;
     /**
+     * @return The type of configuration. Either user-created or a default configuration.
+     * 
+     */
+    private String configType;
+    /**
      * @return List of configuration details.
      * 
      */
     private List<GetConfigurationsConfigurationCollectionItemConfigurationDetail> configurationDetails;
     private List<GetConfigurationsConfigurationCollectionItemDbConfigurationOverride> dbConfigurationOverrides;
     /**
-     * @return Verison of the PostgreSQL database, such as 14.9.
+     * @return Version of the PostgreSQL database, such as 14.9.
      * 
      */
     private String dbVersion;
@@ -68,6 +74,11 @@ public final class GetConfigurationsConfigurationCollectionItem {
      */
     private Integer instanceOcpuCount;
     /**
+     * @return Whether the configuration supports flexible shapes.
+     * 
+     */
+    private Boolean isFlexible;
+    /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
@@ -102,6 +113,13 @@ public final class GetConfigurationsConfigurationCollectionItem {
         return this.compartmentId;
     }
     /**
+     * @return The type of configuration. Either user-created or a default configuration.
+     * 
+     */
+    public String configType() {
+        return this.configType;
+    }
+    /**
      * @return List of configuration details.
      * 
      */
@@ -112,7 +130,7 @@ public final class GetConfigurationsConfigurationCollectionItem {
         return this.dbConfigurationOverrides;
     }
     /**
-     * @return Verison of the PostgreSQL database, such as 14.9.
+     * @return Version of the PostgreSQL database, such as 14.9.
      * 
      */
     public String dbVersion() {
@@ -168,6 +186,13 @@ public final class GetConfigurationsConfigurationCollectionItem {
         return this.instanceOcpuCount;
     }
     /**
+     * @return Whether the configuration supports flexible shapes.
+     * 
+     */
+    public Boolean isFlexible() {
+        return this.isFlexible;
+    }
+    /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
@@ -213,6 +238,7 @@ public final class GetConfigurationsConfigurationCollectionItem {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
+        private String configType;
         private List<GetConfigurationsConfigurationCollectionItemConfigurationDetail> configurationDetails;
         private List<GetConfigurationsConfigurationCollectionItemDbConfigurationOverride> dbConfigurationOverrides;
         private String dbVersion;
@@ -223,6 +249,7 @@ public final class GetConfigurationsConfigurationCollectionItem {
         private String id;
         private Integer instanceMemorySizeInGbs;
         private Integer instanceOcpuCount;
+        private Boolean isFlexible;
         private String lifecycleDetails;
         private String shape;
         private String state;
@@ -232,6 +259,7 @@ public final class GetConfigurationsConfigurationCollectionItem {
         public Builder(GetConfigurationsConfigurationCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
+    	      this.configType = defaults.configType;
     	      this.configurationDetails = defaults.configurationDetails;
     	      this.dbConfigurationOverrides = defaults.dbConfigurationOverrides;
     	      this.dbVersion = defaults.dbVersion;
@@ -242,6 +270,7 @@ public final class GetConfigurationsConfigurationCollectionItem {
     	      this.id = defaults.id;
     	      this.instanceMemorySizeInGbs = defaults.instanceMemorySizeInGbs;
     	      this.instanceOcpuCount = defaults.instanceOcpuCount;
+    	      this.isFlexible = defaults.isFlexible;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.shape = defaults.shape;
     	      this.state = defaults.state;
@@ -255,6 +284,14 @@ public final class GetConfigurationsConfigurationCollectionItem {
               throw new MissingRequiredPropertyException("GetConfigurationsConfigurationCollectionItem", "compartmentId");
             }
             this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder configType(String configType) {
+            if (configType == null) {
+              throw new MissingRequiredPropertyException("GetConfigurationsConfigurationCollectionItem", "configType");
+            }
+            this.configType = configType;
             return this;
         }
         @CustomType.Setter
@@ -344,6 +381,14 @@ public final class GetConfigurationsConfigurationCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder isFlexible(Boolean isFlexible) {
+            if (isFlexible == null) {
+              throw new MissingRequiredPropertyException("GetConfigurationsConfigurationCollectionItem", "isFlexible");
+            }
+            this.isFlexible = isFlexible;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             if (lifecycleDetails == null) {
               throw new MissingRequiredPropertyException("GetConfigurationsConfigurationCollectionItem", "lifecycleDetails");
@@ -386,6 +431,7 @@ public final class GetConfigurationsConfigurationCollectionItem {
         public GetConfigurationsConfigurationCollectionItem build() {
             final var _resultValue = new GetConfigurationsConfigurationCollectionItem();
             _resultValue.compartmentId = compartmentId;
+            _resultValue.configType = configType;
             _resultValue.configurationDetails = configurationDetails;
             _resultValue.dbConfigurationOverrides = dbConfigurationOverrides;
             _resultValue.dbVersion = dbVersion;
@@ -396,6 +442,7 @@ public final class GetConfigurationsConfigurationCollectionItem {
             _resultValue.id = id;
             _resultValue.instanceMemorySizeInGbs = instanceMemorySizeInGbs;
             _resultValue.instanceOcpuCount = instanceOcpuCount;
+            _resultValue.isFlexible = isFlexible;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.shape = shape;
             _resultValue.state = state;

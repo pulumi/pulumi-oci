@@ -76,7 +76,7 @@ type GetRepositoriesResult struct {
 	Filters       []GetRepositoriesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// Unique name of a repository. This value is mutable.
+	// Name of the repository. Should be unique within the project. This value is mutable.
 	Name *string `pulumi:"name"`
 	// The OCID of the DevOps project containing the repository.
 	ProjectId *string `pulumi:"projectId"`
@@ -148,7 +148,7 @@ func (o GetRepositoriesResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRepositoriesResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Unique name of a repository. This value is mutable.
+// Name of the repository. Should be unique within the project. This value is mutable.
 func (o GetRepositoriesResultOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetRepositoriesResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }

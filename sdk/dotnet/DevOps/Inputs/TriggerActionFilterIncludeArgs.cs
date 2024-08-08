@@ -13,25 +13,25 @@ namespace Pulumi.Oci.DevOps.Inputs
     public sealed class TriggerActionFilterIncludeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The target branch for pull requests; not applicable for push requests.
+        /// The target branch for pull requests; not applicable for push requests.
         /// </summary>
         [Input("baseRef")]
         public Input<string>? BaseRef { get; set; }
 
         /// <summary>
-        /// (Updatable) Attributes to support include/exclude files for triggering build runs.
+        /// Attributes to support include/exclude files for triggering build runs.
         /// </summary>
         [Input("fileFilter")]
         public Input<Inputs.TriggerActionFilterIncludeFileFilterArgs>? FileFilter { get; set; }
 
         /// <summary>
-        /// (Updatable) Branch for push event; source branch for pull requests.
+        /// Branch for push event; source branch for pull requests.
         /// </summary>
         [Input("headRef")]
         public Input<string>? HeadRef { get; set; }
 
         /// <summary>
-        /// (Updatable) The repository name for trigger events.
+        /// The repository name for trigger events.
         /// </summary>
         [Input("repositoryName")]
         public Input<string>? RepositoryName { get; set; }

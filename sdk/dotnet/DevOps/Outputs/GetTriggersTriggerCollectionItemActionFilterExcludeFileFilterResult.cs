@@ -13,6 +13,9 @@ namespace Pulumi.Oci.DevOps.Outputs
     [OutputType]
     public sealed class GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterResult
     {
+        /// <summary>
+        /// The file paths/glob pattern for files.
+        /// </summary>
         public readonly ImmutableArray<string> FilePaths;
 
         [OutputConstructor]

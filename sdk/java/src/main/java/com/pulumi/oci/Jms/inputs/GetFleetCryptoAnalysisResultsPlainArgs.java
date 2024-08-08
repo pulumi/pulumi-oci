@@ -6,6 +6,7 @@ package com.pulumi.oci.Jms.inputs;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Jms.inputs.GetFleetCryptoAnalysisResultsFilter;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -40,6 +41,36 @@ public final class GetFleetCryptoAnalysisResultsPlainArgs extends com.pulumi.res
     }
 
     /**
+     * FindingCount of CryptoAnalysis Report.
+     * 
+     */
+    @Import(name="findingCount")
+    private @Nullable Integer findingCount;
+
+    /**
+     * @return FindingCount of CryptoAnalysis Report.
+     * 
+     */
+    public Optional<Integer> findingCount() {
+        return Optional.ofNullable(this.findingCount);
+    }
+
+    /**
+     * FindingCount of CryptoAnalysis Report.
+     * 
+     */
+    @Import(name="findingCountGreaterThan")
+    private @Nullable Integer findingCountGreaterThan;
+
+    /**
+     * @return FindingCount of CryptoAnalysis Report.
+     * 
+     */
+    public Optional<Integer> findingCountGreaterThan() {
+        return Optional.ofNullable(this.findingCountGreaterThan);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      * 
      */
@@ -55,6 +86,21 @@ public final class GetFleetCryptoAnalysisResultsPlainArgs extends com.pulumi.res
     }
 
     /**
+     * The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
+     * 
+     */
+    @Import(name="hostName")
+    private @Nullable String hostName;
+
+    /**
+     * @return The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
+     * 
+     */
+    public Optional<String> hostName() {
+        return Optional.ofNullable(this.hostName);
+    }
+
+    /**
      * The Fleet-unique identifier of the related managed instance.
      * 
      */
@@ -67,6 +113,36 @@ public final class GetFleetCryptoAnalysisResultsPlainArgs extends com.pulumi.res
      */
     public Optional<String> managedInstanceId() {
         return Optional.ofNullable(this.managedInstanceId);
+    }
+
+    /**
+     * Non Compliant Finding Count of CryptoAnalysis Report.
+     * 
+     */
+    @Import(name="nonCompliantFindingCount")
+    private @Nullable Integer nonCompliantFindingCount;
+
+    /**
+     * @return Non Compliant Finding Count of CryptoAnalysis Report.
+     * 
+     */
+    public Optional<Integer> nonCompliantFindingCount() {
+        return Optional.ofNullable(this.nonCompliantFindingCount);
+    }
+
+    /**
+     * Non Compliant Finding Count of CryptoAnalysis Report.
+     * 
+     */
+    @Import(name="nonCompliantFindingCountGreaterThan")
+    private @Nullable Integer nonCompliantFindingCountGreaterThan;
+
+    /**
+     * @return Non Compliant Finding Count of CryptoAnalysis Report.
+     * 
+     */
+    public Optional<Integer> nonCompliantFindingCountGreaterThan() {
+        return Optional.ofNullable(this.nonCompliantFindingCountGreaterThan);
     }
 
     /**
@@ -104,8 +180,13 @@ public final class GetFleetCryptoAnalysisResultsPlainArgs extends com.pulumi.res
     private GetFleetCryptoAnalysisResultsPlainArgs(GetFleetCryptoAnalysisResultsPlainArgs $) {
         this.aggregationMode = $.aggregationMode;
         this.filters = $.filters;
+        this.findingCount = $.findingCount;
+        this.findingCountGreaterThan = $.findingCountGreaterThan;
         this.fleetId = $.fleetId;
+        this.hostName = $.hostName;
         this.managedInstanceId = $.managedInstanceId;
+        this.nonCompliantFindingCount = $.nonCompliantFindingCount;
+        this.nonCompliantFindingCountGreaterThan = $.nonCompliantFindingCountGreaterThan;
         this.timeEnd = $.timeEnd;
         this.timeStart = $.timeStart;
     }
@@ -149,6 +230,28 @@ public final class GetFleetCryptoAnalysisResultsPlainArgs extends com.pulumi.res
         }
 
         /**
+         * @param findingCount FindingCount of CryptoAnalysis Report.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder findingCount(@Nullable Integer findingCount) {
+            $.findingCount = findingCount;
+            return this;
+        }
+
+        /**
+         * @param findingCountGreaterThan FindingCount of CryptoAnalysis Report.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder findingCountGreaterThan(@Nullable Integer findingCountGreaterThan) {
+            $.findingCountGreaterThan = findingCountGreaterThan;
+            return this;
+        }
+
+        /**
          * @param fleetId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
          * 
          * @return builder
@@ -160,6 +263,17 @@ public final class GetFleetCryptoAnalysisResultsPlainArgs extends com.pulumi.res
         }
 
         /**
+         * @param hostName The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder hostName(@Nullable String hostName) {
+            $.hostName = hostName;
+            return this;
+        }
+
+        /**
          * @param managedInstanceId The Fleet-unique identifier of the related managed instance.
          * 
          * @return builder
@@ -167,6 +281,28 @@ public final class GetFleetCryptoAnalysisResultsPlainArgs extends com.pulumi.res
          */
         public Builder managedInstanceId(@Nullable String managedInstanceId) {
             $.managedInstanceId = managedInstanceId;
+            return this;
+        }
+
+        /**
+         * @param nonCompliantFindingCount Non Compliant Finding Count of CryptoAnalysis Report.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nonCompliantFindingCount(@Nullable Integer nonCompliantFindingCount) {
+            $.nonCompliantFindingCount = nonCompliantFindingCount;
+            return this;
+        }
+
+        /**
+         * @param nonCompliantFindingCountGreaterThan Non Compliant Finding Count of CryptoAnalysis Report.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nonCompliantFindingCountGreaterThan(@Nullable Integer nonCompliantFindingCountGreaterThan) {
+            $.nonCompliantFindingCountGreaterThan = nonCompliantFindingCountGreaterThan;
             return this;
         }
 

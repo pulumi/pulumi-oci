@@ -123,9 +123,13 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         public readonly int InstanceMemorySizeInGbs;
         /// <summary>
-        /// CPU core count. Minimum value is 1.
+        /// CPU core count.
         /// </summary>
         public readonly int InstanceOcpuCount;
+        /// <summary>
+        /// True if the configuration supports flexible shapes, false otherwise.
+        /// </summary>
+        public readonly bool IsFlexible;
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
@@ -161,6 +165,8 @@ namespace Pulumi.Oci.Psql
 
             int instanceOcpuCount,
 
+            bool isFlexible,
+
             string lifecycleDetails,
 
             string shape,
@@ -177,6 +183,7 @@ namespace Pulumi.Oci.Psql
             Id = id;
             InstanceMemorySizeInGbs = instanceMemorySizeInGbs;
             InstanceOcpuCount = instanceOcpuCount;
+            IsFlexible = isFlexible;
             LifecycleDetails = lifecycleDetails;
             Shape = shape;
             State = state;

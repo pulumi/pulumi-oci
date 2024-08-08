@@ -15,6 +15,11 @@ export type FleetAdvancedFeatureConfiguration = import("./fleetAdvancedFeatureCo
 export const FleetAdvancedFeatureConfiguration: typeof import("./fleetAdvancedFeatureConfiguration").FleetAdvancedFeatureConfiguration = null as any;
 utilities.lazyLoad(exports, ["FleetAdvancedFeatureConfiguration"], () => require("./fleetAdvancedFeatureConfiguration"));
 
+export { GetAgentInstallersArgs, GetAgentInstallersResult, GetAgentInstallersOutputArgs } from "./getAgentInstallers";
+export const getAgentInstallers: typeof import("./getAgentInstallers").getAgentInstallers = null as any;
+export const getAgentInstallersOutput: typeof import("./getAgentInstallers").getAgentInstallersOutput = null as any;
+utilities.lazyLoad(exports, ["getAgentInstallers","getAgentInstallersOutput"], () => require("./getAgentInstallers"));
+
 export { GetAnnouncementsArgs, GetAnnouncementsResult, GetAnnouncementsOutputArgs } from "./getAnnouncements";
 export const getAnnouncements: typeof import("./getAnnouncements").getAnnouncements = null as any;
 export const getAnnouncementsOutput: typeof import("./getAnnouncements").getAnnouncementsOutput = null as any;
@@ -175,6 +180,16 @@ export const getJavaReleases: typeof import("./getJavaReleases").getJavaReleases
 export const getJavaReleasesOutput: typeof import("./getJavaReleases").getJavaReleasesOutput = null as any;
 utilities.lazyLoad(exports, ["getJavaReleases","getJavaReleasesOutput"], () => require("./getJavaReleases"));
 
+export { GetJmsPluginArgs, GetJmsPluginResult, GetJmsPluginOutputArgs } from "./getJmsPlugin";
+export const getJmsPlugin: typeof import("./getJmsPlugin").getJmsPlugin = null as any;
+export const getJmsPluginOutput: typeof import("./getJmsPlugin").getJmsPluginOutput = null as any;
+utilities.lazyLoad(exports, ["getJmsPlugin","getJmsPluginOutput"], () => require("./getJmsPlugin"));
+
+export { GetJmsPluginsArgs, GetJmsPluginsResult, GetJmsPluginsOutputArgs } from "./getJmsPlugins";
+export const getJmsPlugins: typeof import("./getJmsPlugins").getJmsPlugins = null as any;
+export const getJmsPluginsOutput: typeof import("./getJmsPlugins").getJmsPluginsOutput = null as any;
+utilities.lazyLoad(exports, ["getJmsPlugins","getJmsPluginsOutput"], () => require("./getJmsPlugins"));
+
 export { GetListJreUsageArgs, GetListJreUsageResult, GetListJreUsageOutputArgs } from "./getListJreUsage";
 export const getListJreUsage: typeof import("./getListJreUsage").getListJreUsage = null as any;
 export const getListJreUsageOutput: typeof import("./getListJreUsage").getListJreUsageOutput = null as any;
@@ -200,6 +215,11 @@ export type JavaDownloadsJavaLicenseAcceptanceRecord = import("./javaDownloadsJa
 export const JavaDownloadsJavaLicenseAcceptanceRecord: typeof import("./javaDownloadsJavaLicenseAcceptanceRecord").JavaDownloadsJavaLicenseAcceptanceRecord = null as any;
 utilities.lazyLoad(exports, ["JavaDownloadsJavaLicenseAcceptanceRecord"], () => require("./javaDownloadsJavaLicenseAcceptanceRecord"));
 
+export { JmsPluginArgs, JmsPluginState } from "./jmsPlugin";
+export type JmsPlugin = import("./jmsPlugin").JmsPlugin;
+export const JmsPlugin: typeof import("./jmsPlugin").JmsPlugin = null as any;
+utilities.lazyLoad(exports, ["JmsPlugin"], () => require("./jmsPlugin"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -215,6 +235,8 @@ const _module = {
                 return new JavaDownloadsJavaDownloadToken(name, <any>undefined, { urn })
             case "oci:Jms/javaDownloadsJavaLicenseAcceptanceRecord:JavaDownloadsJavaLicenseAcceptanceRecord":
                 return new JavaDownloadsJavaLicenseAcceptanceRecord(name, <any>undefined, { urn })
+            case "oci:Jms/jmsPlugin:JmsPlugin":
+                return new JmsPlugin(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -225,3 +247,4 @@ pulumi.runtime.registerResourceModule("oci", "Jms/fleetAdvancedFeatureConfigurat
 pulumi.runtime.registerResourceModule("oci", "Jms/javaDownloadsJavaDownloadReport", _module)
 pulumi.runtime.registerResourceModule("oci", "Jms/javaDownloadsJavaDownloadToken", _module)
 pulumi.runtime.registerResourceModule("oci", "Jms/javaDownloadsJavaLicenseAcceptanceRecord", _module)
+pulumi.runtime.registerResourceModule("oci", "Jms/jmsPlugin", _module)

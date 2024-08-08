@@ -77,6 +77,11 @@ public final class GetRepositoriesRepositoryCollectionItem {
      */
     private String namespace;
     /**
+     * @return The OCID of the parent repository.
+     * 
+     */
+    private String parentRepositoryId;
+    /**
      * @return unique project identifier
      * 
      */
@@ -87,7 +92,7 @@ public final class GetRepositoriesRepositoryCollectionItem {
      */
     private String projectName;
     /**
-     * @return Type of repository: MIRRORED - Repository created by mirroring an existing repository. HOSTED - Repository created and hosted using Oracle Cloud Infrastructure DevOps code repository.
+     * @return Type of repository: MIRRORED - Repository created by mirroring an existing repository. HOSTED - Repository created and hosted using Oracle Cloud Infrastructure DevOps code repository. FORKED - Repository created by forking an existing repository.
      * 
      */
     private String repositoryType;
@@ -122,7 +127,7 @@ public final class GetRepositoriesRepositoryCollectionItem {
      */
     private String timeUpdated;
     /**
-     * @return Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
+     * @return Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the repository. PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an open pull request. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
      * 
      */
     private List<String> triggerBuildEvents;
@@ -216,6 +221,13 @@ public final class GetRepositoriesRepositoryCollectionItem {
         return this.namespace;
     }
     /**
+     * @return The OCID of the parent repository.
+     * 
+     */
+    public String parentRepositoryId() {
+        return this.parentRepositoryId;
+    }
+    /**
      * @return unique project identifier
      * 
      */
@@ -230,7 +242,7 @@ public final class GetRepositoriesRepositoryCollectionItem {
         return this.projectName;
     }
     /**
-     * @return Type of repository: MIRRORED - Repository created by mirroring an existing repository. HOSTED - Repository created and hosted using Oracle Cloud Infrastructure DevOps code repository.
+     * @return Type of repository: MIRRORED - Repository created by mirroring an existing repository. HOSTED - Repository created and hosted using Oracle Cloud Infrastructure DevOps code repository. FORKED - Repository created by forking an existing repository.
      * 
      */
     public String repositoryType() {
@@ -279,7 +291,7 @@ public final class GetRepositoriesRepositoryCollectionItem {
         return this.timeUpdated;
     }
     /**
-     * @return Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
+     * @return Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the repository. PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an open pull request. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
      * 
      */
     public List<String> triggerBuildEvents() {
@@ -308,6 +320,7 @@ public final class GetRepositoriesRepositoryCollectionItem {
         private GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig mirrorRepositoryConfig;
         private String name;
         private String namespace;
+        private String parentRepositoryId;
         private String projectId;
         private String projectName;
         private String repositoryType;
@@ -334,6 +347,7 @@ public final class GetRepositoriesRepositoryCollectionItem {
     	      this.mirrorRepositoryConfig = defaults.mirrorRepositoryConfig;
     	      this.name = defaults.name;
     	      this.namespace = defaults.namespace;
+    	      this.parentRepositoryId = defaults.parentRepositoryId;
     	      this.projectId = defaults.projectId;
     	      this.projectName = defaults.projectName;
     	      this.repositoryType = defaults.repositoryType;
@@ -451,6 +465,14 @@ public final class GetRepositoriesRepositoryCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder parentRepositoryId(String parentRepositoryId) {
+            if (parentRepositoryId == null) {
+              throw new MissingRequiredPropertyException("GetRepositoriesRepositoryCollectionItem", "parentRepositoryId");
+            }
+            this.parentRepositoryId = parentRepositoryId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder projectId(String projectId) {
             if (projectId == null) {
               throw new MissingRequiredPropertyException("GetRepositoriesRepositoryCollectionItem", "projectId");
@@ -548,6 +570,7 @@ public final class GetRepositoriesRepositoryCollectionItem {
             _resultValue.mirrorRepositoryConfig = mirrorRepositoryConfig;
             _resultValue.name = name;
             _resultValue.namespace = namespace;
+            _resultValue.parentRepositoryId = parentRepositoryId;
             _resultValue.projectId = projectId;
             _resultValue.projectName = projectName;
             _resultValue.repositoryType = repositoryType;

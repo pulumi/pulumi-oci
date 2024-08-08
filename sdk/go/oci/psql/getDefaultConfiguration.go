@@ -71,8 +71,10 @@ type GetDefaultConfigurationResult struct {
 	Id string `pulumi:"id"`
 	// Memory size in gigabytes with 1GB increment.
 	InstanceMemorySizeInGbs int `pulumi:"instanceMemorySizeInGbs"`
-	// CPU core count. Minimum value is 1.
+	// CPU core count.
 	InstanceOcpuCount int `pulumi:"instanceOcpuCount"`
+	// True if the configuration supports flexible shapes, false otherwise.
+	IsFlexible bool `pulumi:"isFlexible"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
@@ -157,9 +159,14 @@ func (o GetDefaultConfigurationResultOutput) InstanceMemorySizeInGbs() pulumi.In
 	return o.ApplyT(func(v GetDefaultConfigurationResult) int { return v.InstanceMemorySizeInGbs }).(pulumi.IntOutput)
 }
 
-// CPU core count. Minimum value is 1.
+// CPU core count.
 func (o GetDefaultConfigurationResultOutput) InstanceOcpuCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationResult) int { return v.InstanceOcpuCount }).(pulumi.IntOutput)
+}
+
+// True if the configuration supports flexible shapes, false otherwise.
+func (o GetDefaultConfigurationResultOutput) IsFlexible() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDefaultConfigurationResult) bool { return v.IsFlexible }).(pulumi.BoolOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.

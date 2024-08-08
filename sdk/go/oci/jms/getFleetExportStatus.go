@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Fleet Export Status resource in Oracle Cloud Infrastructure Jms service.
 //
-// Returns last export status for the specified Fleet.
+// Returns last export status for the specified fleet.
 //
 // ## Example Usage
 //

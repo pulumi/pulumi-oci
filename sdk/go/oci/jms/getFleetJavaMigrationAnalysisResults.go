@@ -31,7 +31,9 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Jms.GetFleetJavaMigrationAnalysisResults(ctx, &jms.GetFleetJavaMigrationAnalysisResultsArgs{
 //				FleetId:           testFleet.Id,
-//				ManagedInstanceId: pulumi.StringRef(testManagedInstance.Id),
+//				ApplicationName:   pulumi.StringRef(fleetJavaMigrationAnalysisResultApplicationName),
+//				HostName:          pulumi.StringRef(fleetJavaMigrationAnalysisResultHostName),
+//				ManagedInstanceId: pulumi.StringRef(fleetJavaMigrationAnalysisResultManagedInstanceId),
 //				TimeEnd:           pulumi.StringRef(fleetJavaMigrationAnalysisResultTimeEnd),
 //				TimeStart:         pulumi.StringRef(fleetJavaMigrationAnalysisResultTimeStart),
 //			}, nil)
@@ -55,9 +57,13 @@ func GetFleetJavaMigrationAnalysisResults(ctx *pulumi.Context, args *GetFleetJav
 
 // A collection of arguments for invoking getFleetJavaMigrationAnalysisResults.
 type GetFleetJavaMigrationAnalysisResultsArgs struct {
-	Filters []GetFleetJavaMigrationAnalysisResultsFilter `pulumi:"filters"`
+	// The name of the application.
+	ApplicationName *string                                      `pulumi:"applicationName"`
+	Filters         []GetFleetJavaMigrationAnalysisResultsFilter `pulumi:"filters"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
 	FleetId string `pulumi:"fleetId"`
+	// The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
+	HostName *string `pulumi:"hostName"`
 	// The Fleet-unique identifier of the related managed instance.
 	ManagedInstanceId *string `pulumi:"managedInstanceId"`
 	// The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -68,9 +74,13 @@ type GetFleetJavaMigrationAnalysisResultsArgs struct {
 
 // A collection of values returned by getFleetJavaMigrationAnalysisResults.
 type GetFleetJavaMigrationAnalysisResultsResult struct {
-	Filters []GetFleetJavaMigrationAnalysisResultsFilter `pulumi:"filters"`
+	// The name of the application for which the Java migration analysis was performed.
+	ApplicationName *string                                      `pulumi:"applicationName"`
+	Filters         []GetFleetJavaMigrationAnalysisResultsFilter `pulumi:"filters"`
 	// The fleet OCID.
 	FleetId string `pulumi:"fleetId"`
+	// The hostname of the managed instance that hosts the application for which the Java migration analysis was performed.
+	HostName *string `pulumi:"hostName"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// The list of java_migration_analysis_result_collection.
@@ -96,9 +106,13 @@ func GetFleetJavaMigrationAnalysisResultsOutput(ctx *pulumi.Context, args GetFle
 
 // A collection of arguments for invoking getFleetJavaMigrationAnalysisResults.
 type GetFleetJavaMigrationAnalysisResultsOutputArgs struct {
-	Filters GetFleetJavaMigrationAnalysisResultsFilterArrayInput `pulumi:"filters"`
+	// The name of the application.
+	ApplicationName pulumi.StringPtrInput                                `pulumi:"applicationName"`
+	Filters         GetFleetJavaMigrationAnalysisResultsFilterArrayInput `pulumi:"filters"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
 	FleetId pulumi.StringInput `pulumi:"fleetId"`
+	// The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
+	HostName pulumi.StringPtrInput `pulumi:"hostName"`
 	// The Fleet-unique identifier of the related managed instance.
 	ManagedInstanceId pulumi.StringPtrInput `pulumi:"managedInstanceId"`
 	// The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -126,6 +140,11 @@ func (o GetFleetJavaMigrationAnalysisResultsResultOutput) ToGetFleetJavaMigratio
 	return o
 }
 
+// The name of the application for which the Java migration analysis was performed.
+func (o GetFleetJavaMigrationAnalysisResultsResultOutput) ApplicationName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsResult) *string { return v.ApplicationName }).(pulumi.StringPtrOutput)
+}
+
 func (o GetFleetJavaMigrationAnalysisResultsResultOutput) Filters() GetFleetJavaMigrationAnalysisResultsFilterArrayOutput {
 	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsResult) []GetFleetJavaMigrationAnalysisResultsFilter {
 		return v.Filters
@@ -135,6 +154,11 @@ func (o GetFleetJavaMigrationAnalysisResultsResultOutput) Filters() GetFleetJava
 // The fleet OCID.
 func (o GetFleetJavaMigrationAnalysisResultsResultOutput) FleetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsResult) string { return v.FleetId }).(pulumi.StringOutput)
+}
+
+// The hostname of the managed instance that hosts the application for which the Java migration analysis was performed.
+func (o GetFleetJavaMigrationAnalysisResultsResultOutput) HostName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsResult) *string { return v.HostName }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.

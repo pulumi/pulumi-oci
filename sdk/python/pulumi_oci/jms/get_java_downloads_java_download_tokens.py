@@ -167,7 +167,7 @@ def get_java_downloads_java_download_tokens(compartment_id: Optional[str] = None
     :param str display_name: A filter to return only resources that match the entire display name given.
     :param str family_version: Unique Java family version identifier.
     :param str id: Unique JavaDownloadToken identifier.
-    :param str search_by_user: A filter to return only resources that match the user principal detail.  The search string can be any of the property values from the [Principal](https://docs.cloud.oracle.com/iaas/api/#/en/jms/latest/datatypes/Principal) object. This object is used as response datatype for the `createdBy` and `lastUpdatedBy` fields in applicable resource.
+    :param str search_by_user: A filter to return only resources that match the user principal detail.  The search string can be any of the property values from the [Principal](https://docs.cloud.oracle.com/iaas/api/#/en/jms/latest/datatypes/Principal) object. This object is used as a response datatype for the `createdBy` and `lastUpdatedBy` fields in applicable resource.
     :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
     :param str value: Unique JavaDownloadToken value.
     """
@@ -230,7 +230,7 @@ def get_java_downloads_java_download_tokens_output(compartment_id: Optional[pulu
     :param str display_name: A filter to return only resources that match the entire display name given.
     :param str family_version: Unique Java family version identifier.
     :param str id: Unique JavaDownloadToken identifier.
-    :param str search_by_user: A filter to return only resources that match the user principal detail.  The search string can be any of the property values from the [Principal](https://docs.cloud.oracle.com/iaas/api/#/en/jms/latest/datatypes/Principal) object. This object is used as response datatype for the `createdBy` and `lastUpdatedBy` fields in applicable resource.
+    :param str search_by_user: A filter to return only resources that match the user principal detail.  The search string can be any of the property values from the [Principal](https://docs.cloud.oracle.com/iaas/api/#/en/jms/latest/datatypes/Principal) object. This object is used as a response datatype for the `createdBy` and `lastUpdatedBy` fields in applicable resource.
     :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
     :param str value: Unique JavaDownloadToken value.
     """

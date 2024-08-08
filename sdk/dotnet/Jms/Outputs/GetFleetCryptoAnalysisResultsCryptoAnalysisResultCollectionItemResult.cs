@@ -26,7 +26,7 @@ namespace Pulumi.Oci.Jms.Outputs
         /// </summary>
         public readonly string CryptoRoadmapVersion;
         /// <summary>
-        /// Total number of findings with the analysis.
+        /// FindingCount of CryptoAnalysis Report.
         /// </summary>
         public readonly int FindingCount;
         /// <summary>
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.Jms.Outputs
         /// </summary>
         public readonly string FleetId;
         /// <summary>
-        /// The hostname of the managed instance.
+        /// The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
         /// </summary>
         public readonly string HostName;
         /// <summary>
@@ -50,7 +50,7 @@ namespace Pulumi.Oci.Jms.Outputs
         /// </summary>
         public readonly string Namespace;
         /// <summary>
-        /// Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the Crypto Roadmap version used by the analysis.
+        /// Non Compliant Finding Count of CryptoAnalysis Report.
         /// </summary>
         public readonly int NonCompliantFindingCount;
         /// <summary>
@@ -66,6 +66,10 @@ namespace Pulumi.Oci.Jms.Outputs
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
+        /// The time the JFR recording has finished.
+        /// </summary>
+        public readonly string TimeFinished;
+        /// <summary>
         /// Time of the first event in the analysis.
         /// </summary>
         public readonly string TimeFirstEvent;
@@ -73,6 +77,10 @@ namespace Pulumi.Oci.Jms.Outputs
         /// Time of the last event in the analysis.
         /// </summary>
         public readonly string TimeLastEvent;
+        /// <summary>
+        /// The time the JFR recording has started.
+        /// </summary>
+        public readonly string TimeStarted;
         /// <summary>
         /// Total number of events in the analysis.
         /// </summary>
@@ -110,9 +118,13 @@ namespace Pulumi.Oci.Jms.Outputs
 
             string timeCreated,
 
+            string timeFinished,
+
             string timeFirstEvent,
 
             string timeLastEvent,
+
+            string timeStarted,
 
             int totalEventCount,
 
@@ -131,8 +143,10 @@ namespace Pulumi.Oci.Jms.Outputs
             Object = @object;
             SummarizedEventCount = summarizedEventCount;
             TimeCreated = timeCreated;
+            TimeFinished = timeFinished;
             TimeFirstEvent = timeFirstEvent;
             TimeLastEvent = timeLastEvent;
+            TimeStarted = timeStarted;
             TotalEventCount = totalEventCount;
             WorkRequestId = workRequestId;
         }

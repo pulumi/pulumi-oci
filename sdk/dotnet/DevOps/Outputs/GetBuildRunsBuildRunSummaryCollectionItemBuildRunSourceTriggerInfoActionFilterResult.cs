@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DevOps.Outputs
     public sealed class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterResult
     {
         /// <summary>
-        /// The events, for example, PUSH, PULL_REQUEST_MERGE.
+        /// The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
         /// </summary>
         public readonly ImmutableArray<string> Events;
         /// <summary>

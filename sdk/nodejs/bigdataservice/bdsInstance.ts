@@ -47,6 +47,7 @@ export class BdsInstance extends pulumi.CustomResource {
         return obj['__pulumiType'] === BdsInstance.__pulumiType;
     }
 
+    public readonly addKafkaTrigger!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
      */
@@ -93,6 +94,10 @@ export class BdsInstance extends pulumi.CustomResource {
      */
     public readonly displayName!: pulumi.Output<string>;
     public readonly edgeNode!: pulumi.Output<outputs.BigDataService.BdsInstanceEdgeNode | undefined>;
+    /**
+     * (Updatable) An optional property when incremented triggers Execute Bootstrap Script. Could be set to any integer value.
+     */
+    public readonly executeBootstrapScriptTrigger!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
@@ -158,6 +163,10 @@ export class BdsInstance extends pulumi.CustomResource {
      */
     public readonly osPatchVersion!: pulumi.Output<string | undefined>;
     /**
+     * (Updatable) An optional property when incremented triggers Remove Kafka. Could be set to any integer value.
+     */
+    public readonly removeKafkaTrigger!: pulumi.Output<number | undefined>;
+    /**
      * (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
      */
     public readonly state!: pulumi.Output<string>;
@@ -188,6 +197,7 @@ export class BdsInstance extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BdsInstanceState | undefined;
+            resourceInputs["addKafkaTrigger"] = state ? state.addKafkaTrigger : undefined;
             resourceInputs["bootstrapScriptUrl"] = state ? state.bootstrapScriptUrl : undefined;
             resourceInputs["cloudSqlDetails"] = state ? state.cloudSqlDetails : undefined;
             resourceInputs["clusterAdminPassword"] = state ? state.clusterAdminPassword : undefined;
@@ -201,6 +211,7 @@ export class BdsInstance extends pulumi.CustomResource {
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["edgeNode"] = state ? state.edgeNode : undefined;
+            resourceInputs["executeBootstrapScriptTrigger"] = state ? state.executeBootstrapScriptTrigger : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["ignoreExistingNodesShapes"] = state ? state.ignoreExistingNodesShapes : undefined;
             resourceInputs["isCloudSqlConfigured"] = state ? state.isCloudSqlConfigured : undefined;
@@ -217,6 +228,7 @@ export class BdsInstance extends pulumi.CustomResource {
             resourceInputs["numberOfNodes"] = state ? state.numberOfNodes : undefined;
             resourceInputs["numberOfNodesRequiringMaintenanceReboot"] = state ? state.numberOfNodesRequiringMaintenanceReboot : undefined;
             resourceInputs["osPatchVersion"] = state ? state.osPatchVersion : undefined;
+            resourceInputs["removeKafkaTrigger"] = state ? state.removeKafkaTrigger : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
@@ -254,6 +266,7 @@ export class BdsInstance extends pulumi.CustomResource {
             if ((!args || args.workerNode === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'workerNode'");
             }
+            resourceInputs["addKafkaTrigger"] = args ? args.addKafkaTrigger : undefined;
             resourceInputs["bootstrapScriptUrl"] = args ? args.bootstrapScriptUrl : undefined;
             resourceInputs["cloudSqlDetails"] = args ? args.cloudSqlDetails : undefined;
             resourceInputs["clusterAdminPassword"] = args?.clusterAdminPassword ? pulumi.secret(args.clusterAdminPassword) : undefined;
@@ -265,6 +278,7 @@ export class BdsInstance extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["edgeNode"] = args ? args.edgeNode : undefined;
+            resourceInputs["executeBootstrapScriptTrigger"] = args ? args.executeBootstrapScriptTrigger : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["ignoreExistingNodesShapes"] = args ? args.ignoreExistingNodesShapes : undefined;
             resourceInputs["isCloudSqlConfigured"] = args ? args.isCloudSqlConfigured : undefined;
@@ -278,6 +292,7 @@ export class BdsInstance extends pulumi.CustomResource {
             resourceInputs["masterNode"] = args ? args.masterNode : undefined;
             resourceInputs["networkConfig"] = args ? args.networkConfig : undefined;
             resourceInputs["osPatchVersion"] = args ? args.osPatchVersion : undefined;
+            resourceInputs["removeKafkaTrigger"] = args ? args.removeKafkaTrigger : undefined;
             resourceInputs["state"] = args ? args.state : undefined;
             resourceInputs["utilNode"] = args ? args.utilNode : undefined;
             resourceInputs["workerNode"] = args ? args.workerNode : undefined;
@@ -300,6 +315,7 @@ export class BdsInstance extends pulumi.CustomResource {
  * Input properties used for looking up and filtering BdsInstance resources.
  */
 export interface BdsInstanceState {
+    addKafkaTrigger?: pulumi.Input<number>;
     /**
      * (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
      */
@@ -346,6 +362,10 @@ export interface BdsInstanceState {
      */
     displayName?: pulumi.Input<string>;
     edgeNode?: pulumi.Input<inputs.BigDataService.BdsInstanceEdgeNode>;
+    /**
+     * (Updatable) An optional property when incremented triggers Execute Bootstrap Script. Could be set to any integer value.
+     */
+    executeBootstrapScriptTrigger?: pulumi.Input<number>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
@@ -411,6 +431,10 @@ export interface BdsInstanceState {
      */
     osPatchVersion?: pulumi.Input<string>;
     /**
+     * (Updatable) An optional property when incremented triggers Remove Kafka. Could be set to any integer value.
+     */
+    removeKafkaTrigger?: pulumi.Input<number>;
+    /**
      * (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
      */
     state?: pulumi.Input<string>;
@@ -433,6 +457,7 @@ export interface BdsInstanceState {
  * The set of arguments for constructing a BdsInstance resource.
  */
 export interface BdsInstanceArgs {
+    addKafkaTrigger?: pulumi.Input<number>;
     /**
      * (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
      */
@@ -471,6 +496,10 @@ export interface BdsInstanceArgs {
      */
     displayName: pulumi.Input<string>;
     edgeNode?: pulumi.Input<inputs.BigDataService.BdsInstanceEdgeNode>;
+    /**
+     * (Updatable) An optional property when incremented triggers Execute Bootstrap Script. Could be set to any integer value.
+     */
+    executeBootstrapScriptTrigger?: pulumi.Input<number>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
@@ -523,6 +552,10 @@ export interface BdsInstanceArgs {
      * (Updatable) The version of the patch to be upated.
      */
     osPatchVersion?: pulumi.Input<string>;
+    /**
+     * (Updatable) An optional property when incremented triggers Remove Kafka. Could be set to any integer value.
+     */
+    removeKafkaTrigger?: pulumi.Input<number>;
     /**
      * (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
      */

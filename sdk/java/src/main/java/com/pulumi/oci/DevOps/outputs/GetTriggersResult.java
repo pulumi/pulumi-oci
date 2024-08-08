@@ -25,10 +25,6 @@ public final class GetTriggersResult {
      * 
      */
     private @Nullable String displayName;
-    /**
-     * @return The filters for the trigger.
-     * 
-     */
     private @Nullable List<GetTriggersFilter> filters;
     /**
      * @return Unique identifier that is immutable on creation.
@@ -66,10 +62,6 @@ public final class GetTriggersResult {
     public Optional<String> displayName() {
         return Optional.ofNullable(this.displayName);
     }
-    /**
-     * @return The filters for the trigger.
-     * 
-     */
     public List<GetTriggersFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }

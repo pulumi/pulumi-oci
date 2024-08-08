@@ -32,8 +32,17 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Psql.NewDbSystem(ctx, "test_db_system", &Psql.DbSystemArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
-//				DbVersion:     pulumi.Any(dbSystemDbVersion),
-//				DisplayName:   pulumi.Any(dbSystemDisplayName),
+//				Credentials: &psql.DbSystemCredentialsArgs{
+//					PasswordDetails: &psql.DbSystemCredentialsPasswordDetailsArgs{
+//						PasswordType:  pulumi.Any(dbSystemCredentialsPasswordDetailsPasswordType),
+//						Password:      pulumi.Any(dbSystemCredentialsPasswordDetailsPassword),
+//						SecretId:      pulumi.Any(testSecret.Id),
+//						SecretVersion: pulumi.Any(dbSystemCredentialsPasswordDetailsSecretVersion),
+//					},
+//					Username: pulumi.Any(dbSystemCredentialsUsername),
+//				},
+//				DbVersion:   pulumi.Any(dbSystemDbVersion),
+//				DisplayName: pulumi.Any(dbSystemDisplayName),
 //				NetworkDetails: &psql.DbSystemNetworkDetailsArgs{
 //					SubnetId:                   pulumi.Any(testSubnet.Id),
 //					NsgIds:                     pulumi.Any(dbSystemNetworkDetailsNsgIds),
@@ -46,17 +55,7 @@ import (
 //					AvailabilityDomain:  pulumi.Any(dbSystemStorageDetailsAvailabilityDomain),
 //					Iops:                pulumi.Any(dbSystemStorageDetailsIops),
 //				},
-//				ConfigId:    pulumi.Any(testConfig.Id),
-//				ApplyConfig: pulumi.Any(dbSystemApplyConfigType),
-//				Credentials: &psql.DbSystemCredentialsArgs{
-//					PasswordDetails: &psql.DbSystemCredentialsPasswordDetailsArgs{
-//						PasswordType:  pulumi.Any(dbSystemCredentialsPasswordDetailsPasswordType),
-//						Password:      pulumi.Any(dbSystemCredentialsPasswordDetailsPassword),
-//						SecretId:      pulumi.Any(testSecret.Id),
-//						SecretVersion: pulumi.Any(dbSystemCredentialsPasswordDetailsSecretVersion),
-//					},
-//					Username: pulumi.Any(dbSystemCredentialsUsername),
-//				},
+//				ConfigId: pulumi.Any(testConfig.Id),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
@@ -137,11 +136,11 @@ type DbSystem struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
-	// (Updatable when patchOperations are specified) Count of database instances nodes to be created in the database system.
+	// Count of database instances nodes to be created in the database system.
 	InstanceCount pulumi.IntOutput `pulumi:"instanceCount"`
-	// The total amount of memory available to each database instance node, in gigabytes.
+	// (Updatable) The total amount of memory available to each database instance node, in gigabytes.
 	InstanceMemorySizeInGbs pulumi.IntOutput `pulumi:"instanceMemorySizeInGbs"`
-	// The total number of OCPUs available to each database instance node.
+	// (Updatable) The total number of OCPUs available to each database instance node.
 	InstanceOcpuCount pulumi.IntOutput `pulumi:"instanceOcpuCount"`
 	// The list of instances, or nodes, in the database system.
 	Instances DbSystemInstanceArrayOutput `pulumi:"instances"`
@@ -151,11 +150,11 @@ type DbSystem struct {
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) PostgreSQL database system management policy update details.
 	ManagementPolicy DbSystemManagementPolicyOutput `pulumi:"managementPolicy"`
-	// Network details for the database system.
+	// (Updatable) Network details for the database system.
 	NetworkDetails DbSystemNetworkDetailsOutput `pulumi:"networkDetails"`
 	// (Updatable) For adding and removing from read replica database instances. Please remove the patchOperations after it is applied. Update the instanceCount arrodrandly. Cannot be specified when creating the resource.
 	PatchOperations DbSystemPatchOperationArrayOutput `pulumi:"patchOperations"`
-	// The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
+	// (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
 	Shape pulumi.StringOutput `pulumi:"shape"`
 	// The source used to restore the database system.
 	Source DbSystemSourceOutput `pulumi:"source"`
@@ -244,11 +243,11 @@ type dbSystemState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// (Updatable when patchOperations are specified) Count of database instances nodes to be created in the database system.
+	// Count of database instances nodes to be created in the database system.
 	InstanceCount *int `pulumi:"instanceCount"`
-	// The total amount of memory available to each database instance node, in gigabytes.
+	// (Updatable) The total amount of memory available to each database instance node, in gigabytes.
 	InstanceMemorySizeInGbs *int `pulumi:"instanceMemorySizeInGbs"`
-	// The total number of OCPUs available to each database instance node.
+	// (Updatable) The total number of OCPUs available to each database instance node.
 	InstanceOcpuCount *int `pulumi:"instanceOcpuCount"`
 	// The list of instances, or nodes, in the database system.
 	Instances []DbSystemInstance `pulumi:"instances"`
@@ -258,11 +257,11 @@ type dbSystemState struct {
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// (Updatable) PostgreSQL database system management policy update details.
 	ManagementPolicy *DbSystemManagementPolicy `pulumi:"managementPolicy"`
-	// Network details for the database system.
+	// (Updatable) Network details for the database system.
 	NetworkDetails *DbSystemNetworkDetails `pulumi:"networkDetails"`
 	// (Updatable) For adding and removing from read replica database instances. Please remove the patchOperations after it is applied. Update the instanceCount arrodrandly. Cannot be specified when creating the resource.
 	PatchOperations []DbSystemPatchOperation `pulumi:"patchOperations"`
-	// The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
+	// (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
 	Shape *string `pulumi:"shape"`
 	// The source used to restore the database system.
 	Source *DbSystemSource `pulumi:"source"`
@@ -304,11 +303,11 @@ type DbSystemState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
-	// (Updatable when patchOperations are specified) Count of database instances nodes to be created in the database system.
+	// Count of database instances nodes to be created in the database system.
 	InstanceCount pulumi.IntPtrInput
-	// The total amount of memory available to each database instance node, in gigabytes.
+	// (Updatable) The total amount of memory available to each database instance node, in gigabytes.
 	InstanceMemorySizeInGbs pulumi.IntPtrInput
-	// The total number of OCPUs available to each database instance node.
+	// (Updatable) The total number of OCPUs available to each database instance node.
 	InstanceOcpuCount pulumi.IntPtrInput
 	// The list of instances, or nodes, in the database system.
 	Instances DbSystemInstanceArrayInput
@@ -318,11 +317,11 @@ type DbSystemState struct {
 	LifecycleDetails pulumi.StringPtrInput
 	// (Updatable) PostgreSQL database system management policy update details.
 	ManagementPolicy DbSystemManagementPolicyPtrInput
-	// Network details for the database system.
+	// (Updatable) Network details for the database system.
 	NetworkDetails DbSystemNetworkDetailsPtrInput
 	// (Updatable) For adding and removing from read replica database instances. Please remove the patchOperations after it is applied. Update the instanceCount arrodrandly. Cannot be specified when creating the resource.
 	PatchOperations DbSystemPatchOperationArrayInput
-	// The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
+	// (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
 	Shape pulumi.StringPtrInput
 	// The source used to restore the database system.
 	Source DbSystemSourcePtrInput
@@ -366,21 +365,21 @@ type dbSystemArgs struct {
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// (Updatable when patchOperations are specified) Count of database instances nodes to be created in the database system.
+	// Count of database instances nodes to be created in the database system.
 	InstanceCount *int `pulumi:"instanceCount"`
-	// The total amount of memory available to each database instance node, in gigabytes.
+	// (Updatable) The total amount of memory available to each database instance node, in gigabytes.
 	InstanceMemorySizeInGbs *int `pulumi:"instanceMemorySizeInGbs"`
-	// The total number of OCPUs available to each database instance node.
+	// (Updatable) The total number of OCPUs available to each database instance node.
 	InstanceOcpuCount *int `pulumi:"instanceOcpuCount"`
 	// Details of database instances nodes to be created. This parameter is optional. If specified, its size must match `instanceCount`.
 	InstancesDetails []DbSystemInstancesDetail `pulumi:"instancesDetails"`
 	// (Updatable) PostgreSQL database system management policy update details.
 	ManagementPolicy *DbSystemManagementPolicy `pulumi:"managementPolicy"`
-	// Network details for the database system.
+	// (Updatable) Network details for the database system.
 	NetworkDetails DbSystemNetworkDetails `pulumi:"networkDetails"`
 	// (Updatable) For adding and removing from read replica database instances. Please remove the patchOperations after it is applied. Update the instanceCount arrodrandly. Cannot be specified when creating the resource.
 	PatchOperations []DbSystemPatchOperation `pulumi:"patchOperations"`
-	// The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
+	// (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
 	Shape string `pulumi:"shape"`
 	// The source used to restore the database system.
 	Source *DbSystemSource `pulumi:"source"`
@@ -413,21 +412,21 @@ type DbSystemArgs struct {
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
-	// (Updatable when patchOperations are specified) Count of database instances nodes to be created in the database system.
+	// Count of database instances nodes to be created in the database system.
 	InstanceCount pulumi.IntPtrInput
-	// The total amount of memory available to each database instance node, in gigabytes.
+	// (Updatable) The total amount of memory available to each database instance node, in gigabytes.
 	InstanceMemorySizeInGbs pulumi.IntPtrInput
-	// The total number of OCPUs available to each database instance node.
+	// (Updatable) The total number of OCPUs available to each database instance node.
 	InstanceOcpuCount pulumi.IntPtrInput
 	// Details of database instances nodes to be created. This parameter is optional. If specified, its size must match `instanceCount`.
 	InstancesDetails DbSystemInstancesDetailArrayInput
 	// (Updatable) PostgreSQL database system management policy update details.
 	ManagementPolicy DbSystemManagementPolicyPtrInput
-	// Network details for the database system.
+	// (Updatable) Network details for the database system.
 	NetworkDetails DbSystemNetworkDetailsInput
 	// (Updatable) For adding and removing from read replica database instances. Please remove the patchOperations after it is applied. Update the instanceCount arrodrandly. Cannot be specified when creating the resource.
 	PatchOperations DbSystemPatchOperationArrayInput
-	// The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
+	// (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
 	Shape pulumi.StringInput
 	// The source used to restore the database system.
 	Source DbSystemSourcePtrInput
@@ -577,17 +576,17 @@ func (o DbSystemOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *DbSystem) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// (Updatable when patchOperations are specified) Count of database instances nodes to be created in the database system.
+// Count of database instances nodes to be created in the database system.
 func (o DbSystemOutput) InstanceCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *DbSystem) pulumi.IntOutput { return v.InstanceCount }).(pulumi.IntOutput)
 }
 
-// The total amount of memory available to each database instance node, in gigabytes.
+// (Updatable) The total amount of memory available to each database instance node, in gigabytes.
 func (o DbSystemOutput) InstanceMemorySizeInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v *DbSystem) pulumi.IntOutput { return v.InstanceMemorySizeInGbs }).(pulumi.IntOutput)
 }
 
-// The total number of OCPUs available to each database instance node.
+// (Updatable) The total number of OCPUs available to each database instance node.
 func (o DbSystemOutput) InstanceOcpuCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *DbSystem) pulumi.IntOutput { return v.InstanceOcpuCount }).(pulumi.IntOutput)
 }
@@ -612,7 +611,7 @@ func (o DbSystemOutput) ManagementPolicy() DbSystemManagementPolicyOutput {
 	return o.ApplyT(func(v *DbSystem) DbSystemManagementPolicyOutput { return v.ManagementPolicy }).(DbSystemManagementPolicyOutput)
 }
 
-// Network details for the database system.
+// (Updatable) Network details for the database system.
 func (o DbSystemOutput) NetworkDetails() DbSystemNetworkDetailsOutput {
 	return o.ApplyT(func(v *DbSystem) DbSystemNetworkDetailsOutput { return v.NetworkDetails }).(DbSystemNetworkDetailsOutput)
 }
@@ -622,7 +621,7 @@ func (o DbSystemOutput) PatchOperations() DbSystemPatchOperationArrayOutput {
 	return o.ApplyT(func(v *DbSystem) DbSystemPatchOperationArrayOutput { return v.PatchOperations }).(DbSystemPatchOperationArrayOutput)
 }
 
-// The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
+// (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
 func (o DbSystemOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbSystem) pulumi.StringOutput { return v.Shape }).(pulumi.StringOutput)
 }

@@ -23,7 +23,7 @@ class GetFleetCryptoAnalysisResultsResult:
     """
     A collection of values returned by getFleetCryptoAnalysisResults.
     """
-    def __init__(__self__, aggregation_mode=None, crypto_analysis_result_collections=None, filters=None, fleet_id=None, id=None, managed_instance_id=None, time_end=None, time_start=None):
+    def __init__(__self__, aggregation_mode=None, crypto_analysis_result_collections=None, filters=None, finding_count=None, finding_count_greater_than=None, fleet_id=None, host_name=None, id=None, managed_instance_id=None, non_compliant_finding_count=None, non_compliant_finding_count_greater_than=None, time_end=None, time_start=None):
         if aggregation_mode and not isinstance(aggregation_mode, str):
             raise TypeError("Expected argument 'aggregation_mode' to be a str")
         pulumi.set(__self__, "aggregation_mode", aggregation_mode)
@@ -33,15 +33,30 @@ class GetFleetCryptoAnalysisResultsResult:
         if filters and not isinstance(filters, list):
             raise TypeError("Expected argument 'filters' to be a list")
         pulumi.set(__self__, "filters", filters)
+        if finding_count and not isinstance(finding_count, int):
+            raise TypeError("Expected argument 'finding_count' to be a int")
+        pulumi.set(__self__, "finding_count", finding_count)
+        if finding_count_greater_than and not isinstance(finding_count_greater_than, int):
+            raise TypeError("Expected argument 'finding_count_greater_than' to be a int")
+        pulumi.set(__self__, "finding_count_greater_than", finding_count_greater_than)
         if fleet_id and not isinstance(fleet_id, str):
             raise TypeError("Expected argument 'fleet_id' to be a str")
         pulumi.set(__self__, "fleet_id", fleet_id)
+        if host_name and not isinstance(host_name, str):
+            raise TypeError("Expected argument 'host_name' to be a str")
+        pulumi.set(__self__, "host_name", host_name)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
         if managed_instance_id and not isinstance(managed_instance_id, str):
             raise TypeError("Expected argument 'managed_instance_id' to be a str")
         pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+        if non_compliant_finding_count and not isinstance(non_compliant_finding_count, int):
+            raise TypeError("Expected argument 'non_compliant_finding_count' to be a int")
+        pulumi.set(__self__, "non_compliant_finding_count", non_compliant_finding_count)
+        if non_compliant_finding_count_greater_than and not isinstance(non_compliant_finding_count_greater_than, int):
+            raise TypeError("Expected argument 'non_compliant_finding_count_greater_than' to be a int")
+        pulumi.set(__self__, "non_compliant_finding_count_greater_than", non_compliant_finding_count_greater_than)
         if time_end and not isinstance(time_end, str):
             raise TypeError("Expected argument 'time_end' to be a str")
         pulumi.set(__self__, "time_end", time_end)
@@ -71,12 +86,33 @@ class GetFleetCryptoAnalysisResultsResult:
         return pulumi.get(self, "filters")
 
     @property
+    @pulumi.getter(name="findingCount")
+    def finding_count(self) -> Optional[int]:
+        """
+        Total number of findings with the analysis.
+        """
+        return pulumi.get(self, "finding_count")
+
+    @property
+    @pulumi.getter(name="findingCountGreaterThan")
+    def finding_count_greater_than(self) -> Optional[int]:
+        return pulumi.get(self, "finding_count_greater_than")
+
+    @property
     @pulumi.getter(name="fleetId")
     def fleet_id(self) -> str:
         """
         The fleet OCID.
         """
         return pulumi.get(self, "fleet_id")
+
+    @property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> Optional[str]:
+        """
+        The hostname of the managed instance.
+        """
+        return pulumi.get(self, "host_name")
 
     @property
     @pulumi.getter
@@ -93,6 +129,19 @@ class GetFleetCryptoAnalysisResultsResult:
         The managed instance OCID.
         """
         return pulumi.get(self, "managed_instance_id")
+
+    @property
+    @pulumi.getter(name="nonCompliantFindingCount")
+    def non_compliant_finding_count(self) -> Optional[int]:
+        """
+        Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the Crypto Roadmap version used by the analysis.
+        """
+        return pulumi.get(self, "non_compliant_finding_count")
+
+    @property
+    @pulumi.getter(name="nonCompliantFindingCountGreaterThan")
+    def non_compliant_finding_count_greater_than(self) -> Optional[int]:
+        return pulumi.get(self, "non_compliant_finding_count_greater_than")
 
     @property
     @pulumi.getter(name="timeEnd")
@@ -114,17 +163,27 @@ class AwaitableGetFleetCryptoAnalysisResultsResult(GetFleetCryptoAnalysisResults
             aggregation_mode=self.aggregation_mode,
             crypto_analysis_result_collections=self.crypto_analysis_result_collections,
             filters=self.filters,
+            finding_count=self.finding_count,
+            finding_count_greater_than=self.finding_count_greater_than,
             fleet_id=self.fleet_id,
+            host_name=self.host_name,
             id=self.id,
             managed_instance_id=self.managed_instance_id,
+            non_compliant_finding_count=self.non_compliant_finding_count,
+            non_compliant_finding_count_greater_than=self.non_compliant_finding_count_greater_than,
             time_end=self.time_end,
             time_start=self.time_start)
 
 
 def get_fleet_crypto_analysis_results(aggregation_mode: Optional[str] = None,
                                       filters: Optional[Sequence[pulumi.InputType['GetFleetCryptoAnalysisResultsFilterArgs']]] = None,
+                                      finding_count: Optional[int] = None,
+                                      finding_count_greater_than: Optional[int] = None,
                                       fleet_id: Optional[str] = None,
+                                      host_name: Optional[str] = None,
                                       managed_instance_id: Optional[str] = None,
+                                      non_compliant_finding_count: Optional[int] = None,
+                                      non_compliant_finding_count_greater_than: Optional[int] = None,
                                       time_end: Optional[str] = None,
                                       time_start: Optional[str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFleetCryptoAnalysisResultsResult:
@@ -141,23 +200,38 @@ def get_fleet_crypto_analysis_results(aggregation_mode: Optional[str] = None,
 
     test_fleet_crypto_analysis_results = oci.Jms.get_fleet_crypto_analysis_results(fleet_id=test_fleet["id"],
         aggregation_mode=fleet_crypto_analysis_result_aggregation_mode,
-        managed_instance_id=test_managed_instance["id"],
+        finding_count=fleet_crypto_analysis_result_finding_count,
+        finding_count_greater_than=fleet_crypto_analysis_result_finding_count_greater_than,
+        host_name=fleet_crypto_analysis_result_host_name,
+        managed_instance_id=fleet_crypto_analysis_result_managed_instance_ocid,
+        non_compliant_finding_count=fleet_crypto_analysis_result_non_compliant_finding_count,
+        non_compliant_finding_count_greater_than=fleet_crypto_analysis_result_non_compliant_finding_count_greater_than,
         time_end=fleet_crypto_analysis_result_time_end,
         time_start=fleet_crypto_analysis_result_time_start)
     ```
 
 
     :param str aggregation_mode: The aggregation mode of the crypto event analysis result.
+    :param int finding_count: FindingCount of CryptoAnalysis Report.
+    :param int finding_count_greater_than: FindingCount of CryptoAnalysis Report.
     :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
+    :param str host_name: The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
     :param str managed_instance_id: The Fleet-unique identifier of the related managed instance.
+    :param int non_compliant_finding_count: Non Compliant Finding Count of CryptoAnalysis Report.
+    :param int non_compliant_finding_count_greater_than: Non Compliant Finding Count of CryptoAnalysis Report.
     :param str time_end: The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
     :param str time_start: The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
     """
     __args__ = dict()
     __args__['aggregationMode'] = aggregation_mode
     __args__['filters'] = filters
+    __args__['findingCount'] = finding_count
+    __args__['findingCountGreaterThan'] = finding_count_greater_than
     __args__['fleetId'] = fleet_id
+    __args__['hostName'] = host_name
     __args__['managedInstanceId'] = managed_instance_id
+    __args__['nonCompliantFindingCount'] = non_compliant_finding_count
+    __args__['nonCompliantFindingCountGreaterThan'] = non_compliant_finding_count_greater_than
     __args__['timeEnd'] = time_end
     __args__['timeStart'] = time_start
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -167,9 +241,14 @@ def get_fleet_crypto_analysis_results(aggregation_mode: Optional[str] = None,
         aggregation_mode=pulumi.get(__ret__, 'aggregation_mode'),
         crypto_analysis_result_collections=pulumi.get(__ret__, 'crypto_analysis_result_collections'),
         filters=pulumi.get(__ret__, 'filters'),
+        finding_count=pulumi.get(__ret__, 'finding_count'),
+        finding_count_greater_than=pulumi.get(__ret__, 'finding_count_greater_than'),
         fleet_id=pulumi.get(__ret__, 'fleet_id'),
+        host_name=pulumi.get(__ret__, 'host_name'),
         id=pulumi.get(__ret__, 'id'),
         managed_instance_id=pulumi.get(__ret__, 'managed_instance_id'),
+        non_compliant_finding_count=pulumi.get(__ret__, 'non_compliant_finding_count'),
+        non_compliant_finding_count_greater_than=pulumi.get(__ret__, 'non_compliant_finding_count_greater_than'),
         time_end=pulumi.get(__ret__, 'time_end'),
         time_start=pulumi.get(__ret__, 'time_start'))
 
@@ -177,8 +256,13 @@ def get_fleet_crypto_analysis_results(aggregation_mode: Optional[str] = None,
 @_utilities.lift_output_func(get_fleet_crypto_analysis_results)
 def get_fleet_crypto_analysis_results_output(aggregation_mode: Optional[pulumi.Input[Optional[str]]] = None,
                                              filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetFleetCryptoAnalysisResultsFilterArgs']]]]] = None,
+                                             finding_count: Optional[pulumi.Input[Optional[int]]] = None,
+                                             finding_count_greater_than: Optional[pulumi.Input[Optional[int]]] = None,
                                              fleet_id: Optional[pulumi.Input[str]] = None,
+                                             host_name: Optional[pulumi.Input[Optional[str]]] = None,
                                              managed_instance_id: Optional[pulumi.Input[Optional[str]]] = None,
+                                             non_compliant_finding_count: Optional[pulumi.Input[Optional[int]]] = None,
+                                             non_compliant_finding_count_greater_than: Optional[pulumi.Input[Optional[int]]] = None,
                                              time_end: Optional[pulumi.Input[Optional[str]]] = None,
                                              time_start: Optional[pulumi.Input[Optional[str]]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFleetCryptoAnalysisResultsResult]:
@@ -195,15 +279,25 @@ def get_fleet_crypto_analysis_results_output(aggregation_mode: Optional[pulumi.I
 
     test_fleet_crypto_analysis_results = oci.Jms.get_fleet_crypto_analysis_results(fleet_id=test_fleet["id"],
         aggregation_mode=fleet_crypto_analysis_result_aggregation_mode,
-        managed_instance_id=test_managed_instance["id"],
+        finding_count=fleet_crypto_analysis_result_finding_count,
+        finding_count_greater_than=fleet_crypto_analysis_result_finding_count_greater_than,
+        host_name=fleet_crypto_analysis_result_host_name,
+        managed_instance_id=fleet_crypto_analysis_result_managed_instance_ocid,
+        non_compliant_finding_count=fleet_crypto_analysis_result_non_compliant_finding_count,
+        non_compliant_finding_count_greater_than=fleet_crypto_analysis_result_non_compliant_finding_count_greater_than,
         time_end=fleet_crypto_analysis_result_time_end,
         time_start=fleet_crypto_analysis_result_time_start)
     ```
 
 
     :param str aggregation_mode: The aggregation mode of the crypto event analysis result.
+    :param int finding_count: FindingCount of CryptoAnalysis Report.
+    :param int finding_count_greater_than: FindingCount of CryptoAnalysis Report.
     :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
+    :param str host_name: The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
     :param str managed_instance_id: The Fleet-unique identifier of the related managed instance.
+    :param int non_compliant_finding_count: Non Compliant Finding Count of CryptoAnalysis Report.
+    :param int non_compliant_finding_count_greater_than: Non Compliant Finding Count of CryptoAnalysis Report.
     :param str time_end: The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
     :param str time_start: The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
     """

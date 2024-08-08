@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  *
  * const testFleetJavaMigrationAnalysisResult = oci.Jms.getFleetJavaMigrationAnalysisResult({
  *     fleetId: testFleet.id,
- *     javaMigrationAnalysisResultId: testResult.id,
+ *     javaMigrationAnalysisResultId: fleetJavaMigrationAnalysisResultId,
  * });
  * ```
  */
@@ -131,7 +131,7 @@ export interface GetFleetJavaMigrationAnalysisResultResult {
  *
  * const testFleetJavaMigrationAnalysisResult = oci.Jms.getFleetJavaMigrationAnalysisResult({
  *     fleetId: testFleet.id,
- *     javaMigrationAnalysisResultId: testResult.id,
+ *     javaMigrationAnalysisResultId: fleetJavaMigrationAnalysisResultId,
  * });
  * ```
  */

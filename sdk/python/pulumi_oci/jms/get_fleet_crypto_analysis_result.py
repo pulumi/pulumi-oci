@@ -21,7 +21,7 @@ class GetFleetCryptoAnalysisResultResult:
     """
     A collection of values returned by getFleetCryptoAnalysisResult.
     """
-    def __init__(__self__, aggregation_mode=None, bucket=None, crypto_analysis_result_id=None, crypto_roadmap_version=None, finding_count=None, fleet_id=None, host_name=None, id=None, managed_instance_id=None, namespace=None, non_compliant_finding_count=None, object=None, summarized_event_count=None, time_created=None, time_first_event=None, time_last_event=None, total_event_count=None, work_request_id=None):
+    def __init__(__self__, aggregation_mode=None, bucket=None, crypto_analysis_result_id=None, crypto_roadmap_version=None, finding_count=None, fleet_id=None, host_name=None, id=None, managed_instance_id=None, namespace=None, non_compliant_finding_count=None, object=None, summarized_event_count=None, time_created=None, time_finished=None, time_first_event=None, time_last_event=None, time_started=None, total_event_count=None, work_request_id=None):
         if aggregation_mode and not isinstance(aggregation_mode, str):
             raise TypeError("Expected argument 'aggregation_mode' to be a str")
         pulumi.set(__self__, "aggregation_mode", aggregation_mode)
@@ -64,12 +64,18 @@ class GetFleetCryptoAnalysisResultResult:
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
+        if time_finished and not isinstance(time_finished, str):
+            raise TypeError("Expected argument 'time_finished' to be a str")
+        pulumi.set(__self__, "time_finished", time_finished)
         if time_first_event and not isinstance(time_first_event, str):
             raise TypeError("Expected argument 'time_first_event' to be a str")
         pulumi.set(__self__, "time_first_event", time_first_event)
         if time_last_event and not isinstance(time_last_event, str):
             raise TypeError("Expected argument 'time_last_event' to be a str")
         pulumi.set(__self__, "time_last_event", time_last_event)
+        if time_started and not isinstance(time_started, str):
+            raise TypeError("Expected argument 'time_started' to be a str")
+        pulumi.set(__self__, "time_started", time_started)
         if total_event_count and not isinstance(total_event_count, int):
             raise TypeError("Expected argument 'total_event_count' to be a int")
         pulumi.set(__self__, "total_event_count", total_event_count)
@@ -187,6 +193,14 @@ class GetFleetCryptoAnalysisResultResult:
         return pulumi.get(self, "time_created")
 
     @property
+    @pulumi.getter(name="timeFinished")
+    def time_finished(self) -> str:
+        """
+        The time the JFR recording has finished.
+        """
+        return pulumi.get(self, "time_finished")
+
+    @property
     @pulumi.getter(name="timeFirstEvent")
     def time_first_event(self) -> str:
         """
@@ -201,6 +215,14 @@ class GetFleetCryptoAnalysisResultResult:
         Time of the last event in the analysis.
         """
         return pulumi.get(self, "time_last_event")
+
+    @property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> str:
+        """
+        The time the JFR recording has started.
+        """
+        return pulumi.get(self, "time_started")
 
     @property
     @pulumi.getter(name="totalEventCount")
@@ -239,8 +261,10 @@ class AwaitableGetFleetCryptoAnalysisResultResult(GetFleetCryptoAnalysisResultRe
             object=self.object,
             summarized_event_count=self.summarized_event_count,
             time_created=self.time_created,
+            time_finished=self.time_finished,
             time_first_event=self.time_first_event,
             time_last_event=self.time_last_event,
+            time_started=self.time_started,
             total_event_count=self.total_event_count,
             work_request_id=self.work_request_id)
 
@@ -259,7 +283,7 @@ def get_fleet_crypto_analysis_result(crypto_analysis_result_id: Optional[str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_crypto_analysis_result = oci.Jms.get_fleet_crypto_analysis_result(crypto_analysis_result_id=test_result["id"],
+    test_fleet_crypto_analysis_result = oci.Jms.get_fleet_crypto_analysis_result(crypto_analysis_result_id=fleet_crypto_analysis_result_id,
         fleet_id=test_fleet["id"])
     ```
 
@@ -288,8 +312,10 @@ def get_fleet_crypto_analysis_result(crypto_analysis_result_id: Optional[str] = 
         object=pulumi.get(__ret__, 'object'),
         summarized_event_count=pulumi.get(__ret__, 'summarized_event_count'),
         time_created=pulumi.get(__ret__, 'time_created'),
+        time_finished=pulumi.get(__ret__, 'time_finished'),
         time_first_event=pulumi.get(__ret__, 'time_first_event'),
         time_last_event=pulumi.get(__ret__, 'time_last_event'),
+        time_started=pulumi.get(__ret__, 'time_started'),
         total_event_count=pulumi.get(__ret__, 'total_event_count'),
         work_request_id=pulumi.get(__ret__, 'work_request_id'))
 
@@ -309,7 +335,7 @@ def get_fleet_crypto_analysis_result_output(crypto_analysis_result_id: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_crypto_analysis_result = oci.Jms.get_fleet_crypto_analysis_result(crypto_analysis_result_id=test_result["id"],
+    test_fleet_crypto_analysis_result = oci.Jms.get_fleet_crypto_analysis_result(crypto_analysis_result_id=fleet_crypto_analysis_result_id,
         fleet_id=test_fleet["id"])
     ```
 

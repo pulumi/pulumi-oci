@@ -59,9 +59,8 @@ type GetTriggersArgs struct {
 	// The OCID of the compartment in which to list resources.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName *string `pulumi:"displayName"`
-	// The filters for the trigger.
-	Filters []GetTriggersFilter `pulumi:"filters"`
+	DisplayName *string             `pulumi:"displayName"`
+	Filters     []GetTriggersFilter `pulumi:"filters"`
 	// Unique trigger identifier.
 	Id *string `pulumi:"id"`
 	// unique project identifier
@@ -75,9 +74,8 @@ type GetTriggersResult struct {
 	// The OCID of the compartment that contains the trigger.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// Trigger display name. Avoid entering confidential information.
-	DisplayName *string `pulumi:"displayName"`
-	// The filters for the trigger.
-	Filters []GetTriggersFilter `pulumi:"filters"`
+	DisplayName *string             `pulumi:"displayName"`
+	Filters     []GetTriggersFilter `pulumi:"filters"`
 	// Unique identifier that is immutable on creation.
 	Id *string `pulumi:"id"`
 	// The OCID of the DevOps project to which the trigger belongs to.
@@ -106,9 +104,8 @@ type GetTriggersOutputArgs struct {
 	// The OCID of the compartment in which to list resources.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
-	// The filters for the trigger.
-	Filters GetTriggersFilterArrayInput `pulumi:"filters"`
+	DisplayName pulumi.StringPtrInput       `pulumi:"displayName"`
+	Filters     GetTriggersFilterArrayInput `pulumi:"filters"`
 	// Unique trigger identifier.
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// unique project identifier
@@ -146,7 +143,6 @@ func (o GetTriggersResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetTriggersResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
-// The filters for the trigger.
 func (o GetTriggersResultOutput) Filters() GetTriggersFilterArrayOutput {
 	return o.ApplyT(func(v GetTriggersResult) []GetTriggersFilter { return v.Filters }).(GetTriggersFilterArrayOutput)
 }

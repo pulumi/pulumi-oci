@@ -13,50 +13,50 @@ import javax.annotation.Nullable;
 @CustomType
 public final class TriggerActionFilterInclude {
     /**
-     * @return (Updatable) The target branch for pull requests; not applicable for push requests.
+     * @return The target branch for pull requests; not applicable for push requests.
      * 
      */
     private @Nullable String baseRef;
     /**
-     * @return (Updatable) Attributes to support include/exclude files for triggering build runs.
+     * @return Attributes to support include/exclude files for triggering build runs.
      * 
      */
     private @Nullable TriggerActionFilterIncludeFileFilter fileFilter;
     /**
-     * @return (Updatable) Branch for push event; source branch for pull requests.
+     * @return Branch for push event; source branch for pull requests.
      * 
      */
     private @Nullable String headRef;
     /**
-     * @return (Updatable) The repository name for trigger events.
+     * @return The repository name for trigger events.
      * 
      */
     private @Nullable String repositoryName;
 
     private TriggerActionFilterInclude() {}
     /**
-     * @return (Updatable) The target branch for pull requests; not applicable for push requests.
+     * @return The target branch for pull requests; not applicable for push requests.
      * 
      */
     public Optional<String> baseRef() {
         return Optional.ofNullable(this.baseRef);
     }
     /**
-     * @return (Updatable) Attributes to support include/exclude files for triggering build runs.
+     * @return Attributes to support include/exclude files for triggering build runs.
      * 
      */
     public Optional<TriggerActionFilterIncludeFileFilter> fileFilter() {
         return Optional.ofNullable(this.fileFilter);
     }
     /**
-     * @return (Updatable) Branch for push event; source branch for pull requests.
+     * @return Branch for push event; source branch for pull requests.
      * 
      */
     public Optional<String> headRef() {
         return Optional.ofNullable(this.headRef);
     }
     /**
-     * @return (Updatable) The repository name for trigger events.
+     * @return The repository name for trigger events.
      * 
      */
     public Optional<String> repositoryName() {

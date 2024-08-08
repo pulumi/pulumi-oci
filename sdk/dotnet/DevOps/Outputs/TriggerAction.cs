@@ -17,9 +17,6 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// (Updatable) The OCID of the build pipeline to be triggered.
         /// </summary>
         public readonly string BuildPipelineId;
-        /// <summary>
-        /// (Updatable) The filters for the trigger.
-        /// </summary>
         public readonly Outputs.TriggerActionFilter? Filter;
         /// <summary>
         /// (Updatable) The type of action that will be taken. Allowed value is TRIGGER_BUILD_PIPELINE.

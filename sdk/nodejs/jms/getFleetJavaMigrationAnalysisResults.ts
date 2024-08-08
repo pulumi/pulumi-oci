@@ -19,7 +19,9 @@ import * as utilities from "../utilities";
  *
  * const testFleetJavaMigrationAnalysisResults = oci.Jms.getFleetJavaMigrationAnalysisResults({
  *     fleetId: testFleet.id,
- *     managedInstanceId: testManagedInstance.id,
+ *     applicationName: fleetJavaMigrationAnalysisResultApplicationName,
+ *     hostName: fleetJavaMigrationAnalysisResultHostName,
+ *     managedInstanceId: fleetJavaMigrationAnalysisResultManagedInstanceId,
  *     timeEnd: fleetJavaMigrationAnalysisResultTimeEnd,
  *     timeStart: fleetJavaMigrationAnalysisResultTimeStart,
  * });
@@ -29,8 +31,10 @@ export function getFleetJavaMigrationAnalysisResults(args: GetFleetJavaMigration
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Jms/getFleetJavaMigrationAnalysisResults:getFleetJavaMigrationAnalysisResults", {
+        "applicationName": args.applicationName,
         "filters": args.filters,
         "fleetId": args.fleetId,
+        "hostName": args.hostName,
         "managedInstanceId": args.managedInstanceId,
         "timeEnd": args.timeEnd,
         "timeStart": args.timeStart,
@@ -41,11 +45,19 @@ export function getFleetJavaMigrationAnalysisResults(args: GetFleetJavaMigration
  * A collection of arguments for invoking getFleetJavaMigrationAnalysisResults.
  */
 export interface GetFleetJavaMigrationAnalysisResultsArgs {
+    /**
+     * The name of the application.
+     */
+    applicationName?: string;
     filters?: inputs.Jms.GetFleetJavaMigrationAnalysisResultsFilter[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      */
     fleetId: string;
+    /**
+     * The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
+     */
+    hostName?: string;
     /**
      * The Fleet-unique identifier of the related managed instance.
      */
@@ -64,11 +76,19 @@ export interface GetFleetJavaMigrationAnalysisResultsArgs {
  * A collection of values returned by getFleetJavaMigrationAnalysisResults.
  */
 export interface GetFleetJavaMigrationAnalysisResultsResult {
+    /**
+     * The name of the application for which the Java migration analysis was performed.
+     */
+    readonly applicationName?: string;
     readonly filters?: outputs.Jms.GetFleetJavaMigrationAnalysisResultsFilter[];
     /**
      * The fleet OCID.
      */
     readonly fleetId: string;
+    /**
+     * The hostname of the managed instance that hosts the application for which the Java migration analysis was performed.
+     */
+    readonly hostName?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
@@ -97,7 +117,9 @@ export interface GetFleetJavaMigrationAnalysisResultsResult {
  *
  * const testFleetJavaMigrationAnalysisResults = oci.Jms.getFleetJavaMigrationAnalysisResults({
  *     fleetId: testFleet.id,
- *     managedInstanceId: testManagedInstance.id,
+ *     applicationName: fleetJavaMigrationAnalysisResultApplicationName,
+ *     hostName: fleetJavaMigrationAnalysisResultHostName,
+ *     managedInstanceId: fleetJavaMigrationAnalysisResultManagedInstanceId,
  *     timeEnd: fleetJavaMigrationAnalysisResultTimeEnd,
  *     timeStart: fleetJavaMigrationAnalysisResultTimeStart,
  * });
@@ -111,11 +133,19 @@ export function getFleetJavaMigrationAnalysisResultsOutput(args: GetFleetJavaMig
  * A collection of arguments for invoking getFleetJavaMigrationAnalysisResults.
  */
 export interface GetFleetJavaMigrationAnalysisResultsOutputArgs {
+    /**
+     * The name of the application.
+     */
+    applicationName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetFleetJavaMigrationAnalysisResultsFilterArgs>[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      */
     fleetId: pulumi.Input<string>;
+    /**
+     * The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
+     */
+    hostName?: pulumi.Input<string>;
     /**
      * The Fleet-unique identifier of the related managed instance.
      */

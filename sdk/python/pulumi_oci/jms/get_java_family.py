@@ -22,7 +22,7 @@ class GetJavaFamilyResult:
     """
     A collection of values returned by getJavaFamily.
     """
-    def __init__(__self__, display_name=None, doc_url=None, end_of_support_life_date=None, family_version=None, id=None, is_supported_version=None, latest_release_artifacts=None, latest_release_version=None, support_type=None):
+    def __init__(__self__, display_name=None, doc_url=None, end_of_support_life_date=None, family_version=None, id=None, is_supported_version=None, latest_release_artifacts=None, latest_release_version=None, release_date=None, support_type=None):
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
@@ -47,6 +47,9 @@ class GetJavaFamilyResult:
         if latest_release_version and not isinstance(latest_release_version, str):
             raise TypeError("Expected argument 'latest_release_version' to be a str")
         pulumi.set(__self__, "latest_release_version", latest_release_version)
+        if release_date and not isinstance(release_date, str):
+            raise TypeError("Expected argument 'release_date' to be a str")
+        pulumi.set(__self__, "release_date", release_date)
         if support_type and not isinstance(support_type, str):
             raise TypeError("Expected argument 'support_type' to be a str")
         pulumi.set(__self__, "support_type", support_type)
@@ -116,6 +119,14 @@ class GetJavaFamilyResult:
         return pulumi.get(self, "latest_release_version")
 
     @property
+    @pulumi.getter(name="releaseDate")
+    def release_date(self) -> str:
+        """
+        The date on which the Java release family was first made available (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        """
+        return pulumi.get(self, "release_date")
+
+    @property
     @pulumi.getter(name="supportType")
     def support_type(self) -> str:
         """
@@ -138,6 +149,7 @@ class AwaitableGetJavaFamilyResult(GetJavaFamilyResult):
             is_supported_version=self.is_supported_version,
             latest_release_artifacts=self.latest_release_artifacts,
             latest_release_version=self.latest_release_version,
+            release_date=self.release_date,
             support_type=self.support_type)
 
 
@@ -174,6 +186,7 @@ def get_java_family(family_version: Optional[str] = None,
         is_supported_version=pulumi.get(__ret__, 'is_supported_version'),
         latest_release_artifacts=pulumi.get(__ret__, 'latest_release_artifacts'),
         latest_release_version=pulumi.get(__ret__, 'latest_release_version'),
+        release_date=pulumi.get(__ret__, 'release_date'),
         support_type=pulumi.get(__ret__, 'support_type'))
 
 

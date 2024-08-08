@@ -74,7 +74,7 @@ class GetRepositoriesResult:
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        Unique name of a repository. This value is mutable.
+        Name of the repository. Should be unique within the project. This value is mutable.
         """
         return pulumi.get(self, "name")
 

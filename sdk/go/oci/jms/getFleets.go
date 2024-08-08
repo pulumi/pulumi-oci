@@ -64,7 +64,7 @@ type GetFleetsArgs struct {
 	// Filter the list with displayName contains the given value.
 	DisplayNameContains *string           `pulumi:"displayNameContains"`
 	Filters             []GetFleetsFilter `pulumi:"filters"`
-	// The ID of the Fleet.
+	// The ID.
 	Id *string `pulumi:"id"`
 	// The state of the lifecycle.
 	State *string `pulumi:"state"`
@@ -108,7 +108,7 @@ type GetFleetsOutputArgs struct {
 	// Filter the list with displayName contains the given value.
 	DisplayNameContains pulumi.StringPtrInput     `pulumi:"displayNameContains"`
 	Filters             GetFleetsFilterArrayInput `pulumi:"filters"`
-	// The ID of the Fleet.
+	// The ID.
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The state of the lifecycle.
 	State pulumi.StringPtrInput `pulumi:"state"`

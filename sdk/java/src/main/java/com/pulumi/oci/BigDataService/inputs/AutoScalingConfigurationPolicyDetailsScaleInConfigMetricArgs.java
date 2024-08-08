@@ -17,14 +17,14 @@ public final class AutoScalingConfigurationPolicyDetailsScaleInConfigMetricArgs 
     public static final AutoScalingConfigurationPolicyDetailsScaleInConfigMetricArgs Empty = new AutoScalingConfigurationPolicyDetailsScaleInConfigMetricArgs();
 
     /**
-     * (Updatable) Allowed value is CPU_UTILIZATION.
+     * (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
      * 
      */
     @Import(name="metricType")
     private @Nullable Output<String> metricType;
 
     /**
-     * @return (Updatable) Allowed value is CPU_UTILIZATION.
+     * @return (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
      * 
      */
     public Optional<Output<String>> metricType() {
@@ -72,7 +72,7 @@ public final class AutoScalingConfigurationPolicyDetailsScaleInConfigMetricArgs 
         }
 
         /**
-         * @param metricType (Updatable) Allowed value is CPU_UTILIZATION.
+         * @param metricType (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class AutoScalingConfigurationPolicyDetailsScaleInConfigMetricArgs 
         }
 
         /**
-         * @param metricType (Updatable) Allowed value is CPU_UTILIZATION.
+         * @param metricType (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
          * 
          * @return builder
          * 

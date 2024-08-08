@@ -11,9 +11,17 @@ import java.util.Objects;
 
 @CustomType
 public final class GetTriggersTriggerCollectionItemActionFilterExclude {
+    /**
+     * @return Attributes to support include/exclude files for triggering build runs.
+     * 
+     */
     private List<GetTriggersTriggerCollectionItemActionFilterExcludeFileFilter> fileFilters;
 
     private GetTriggersTriggerCollectionItemActionFilterExclude() {}
+    /**
+     * @return Attributes to support include/exclude files for triggering build runs.
+     * 
+     */
     public List<GetTriggersTriggerCollectionItemActionFilterExcludeFileFilter> fileFilters() {
         return this.fileFilters;
     }

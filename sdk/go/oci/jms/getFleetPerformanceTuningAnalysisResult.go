@@ -31,7 +31,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Jms.GetFleetPerformanceTuningAnalysisResult(ctx, &jms.GetFleetPerformanceTuningAnalysisResultArgs{
 //				FleetId:                           testFleet.Id,
-//				PerformanceTuningAnalysisResultId: testResult.Id,
+//				PerformanceTuningAnalysisResultId: fleetPerformanceTuningAnalysisResultId,
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -88,9 +88,9 @@ type GetFleetPerformanceTuningAnalysisResultResult struct {
 	Result string `pulumi:"result"`
 	// The time the result is compiled.
 	TimeCreated string `pulumi:"timeCreated"`
-	// The time the JFR capture finished.
+	// The time the JFR recording has finished.
 	TimeFinished string `pulumi:"timeFinished"`
-	// The time the JFR capture started.
+	// The time the JFR recording has started.
 	TimeStarted string `pulumi:"timeStarted"`
 	// Total number of warnings reported by the analysis.
 	WarningCount int `pulumi:"warningCount"`
@@ -209,12 +209,12 @@ func (o GetFleetPerformanceTuningAnalysisResultResultOutput) TimeCreated() pulum
 	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The time the JFR capture finished.
+// The time the JFR recording has finished.
 func (o GetFleetPerformanceTuningAnalysisResultResultOutput) TimeFinished() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultResult) string { return v.TimeFinished }).(pulumi.StringOutput)
 }
 
-// The time the JFR capture started.
+// The time the JFR recording has started.
 func (o GetFleetPerformanceTuningAnalysisResultResultOutput) TimeStarted() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultResult) string { return v.TimeStarted }).(pulumi.StringOutput)
 }

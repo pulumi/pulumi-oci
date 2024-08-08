@@ -73,7 +73,7 @@ public final class GetRepositoryResult {
      */
     private List<GetRepositoryMirrorRepositoryConfig> mirrorRepositoryConfigs;
     /**
-     * @return Unique name of a repository. This value is mutable.
+     * @return Name of the repository. Should be unique within the project. This value is mutable.
      * 
      */
     private String name;
@@ -82,6 +82,11 @@ public final class GetRepositoryResult {
      * 
      */
     private String namespace;
+    /**
+     * @return The OCID of the parent repository.
+     * 
+     */
+    private String parentRepositoryId;
     /**
      * @return The OCID of the DevOps project containing the repository.
      * 
@@ -94,7 +99,7 @@ public final class GetRepositoryResult {
     private String projectName;
     private String repositoryId;
     /**
-     * @return Type of repository: MIRRORED - Repository created by mirroring an existing repository. HOSTED - Repository created and hosted using Oracle Cloud Infrastructure DevOps code repository.
+     * @return Type of repository: MIRRORED - Repository created by mirroring an existing repository. HOSTED - Repository created and hosted using Oracle Cloud Infrastructure DevOps code repository. FORKED - Repository created by forking an existing repository.
      * 
      */
     private String repositoryType;
@@ -129,7 +134,7 @@ public final class GetRepositoryResult {
      */
     private String timeUpdated;
     /**
-     * @return Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
+     * @return Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the repository. PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an open pull request. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
      * 
      */
     private List<String> triggerBuildEvents;
@@ -216,7 +221,7 @@ public final class GetRepositoryResult {
         return this.mirrorRepositoryConfigs;
     }
     /**
-     * @return Unique name of a repository. This value is mutable.
+     * @return Name of the repository. Should be unique within the project. This value is mutable.
      * 
      */
     public String name() {
@@ -228,6 +233,13 @@ public final class GetRepositoryResult {
      */
     public String namespace() {
         return this.namespace;
+    }
+    /**
+     * @return The OCID of the parent repository.
+     * 
+     */
+    public String parentRepositoryId() {
+        return this.parentRepositoryId;
     }
     /**
      * @return The OCID of the DevOps project containing the repository.
@@ -247,7 +259,7 @@ public final class GetRepositoryResult {
         return this.repositoryId;
     }
     /**
-     * @return Type of repository: MIRRORED - Repository created by mirroring an existing repository. HOSTED - Repository created and hosted using Oracle Cloud Infrastructure DevOps code repository.
+     * @return Type of repository: MIRRORED - Repository created by mirroring an existing repository. HOSTED - Repository created and hosted using Oracle Cloud Infrastructure DevOps code repository. FORKED - Repository created by forking an existing repository.
      * 
      */
     public String repositoryType() {
@@ -296,7 +308,7 @@ public final class GetRepositoryResult {
         return this.timeUpdated;
     }
     /**
-     * @return Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
+     * @return Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the repository. PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an open pull request. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
      * 
      */
     public List<String> triggerBuildEvents() {
@@ -326,6 +338,7 @@ public final class GetRepositoryResult {
         private List<GetRepositoryMirrorRepositoryConfig> mirrorRepositoryConfigs;
         private String name;
         private String namespace;
+        private String parentRepositoryId;
         private String projectId;
         private String projectName;
         private String repositoryId;
@@ -354,6 +367,7 @@ public final class GetRepositoryResult {
     	      this.mirrorRepositoryConfigs = defaults.mirrorRepositoryConfigs;
     	      this.name = defaults.name;
     	      this.namespace = defaults.namespace;
+    	      this.parentRepositoryId = defaults.parentRepositoryId;
     	      this.projectId = defaults.projectId;
     	      this.projectName = defaults.projectName;
     	      this.repositoryId = defaults.repositoryId;
@@ -484,6 +498,14 @@ public final class GetRepositoryResult {
             return this;
         }
         @CustomType.Setter
+        public Builder parentRepositoryId(String parentRepositoryId) {
+            if (parentRepositoryId == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryResult", "parentRepositoryId");
+            }
+            this.parentRepositoryId = parentRepositoryId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder projectId(String projectId) {
             if (projectId == null) {
               throw new MissingRequiredPropertyException("GetRepositoryResult", "projectId");
@@ -590,6 +612,7 @@ public final class GetRepositoryResult {
             _resultValue.mirrorRepositoryConfigs = mirrorRepositoryConfigs;
             _resultValue.name = name;
             _resultValue.namespace = namespace;
+            _resultValue.parentRepositoryId = parentRepositoryId;
             _resultValue.projectId = projectId;
             _resultValue.projectName = projectName;
             _resultValue.repositoryId = repositoryId;

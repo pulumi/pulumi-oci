@@ -18,6 +18,21 @@ public final class GetFleetJavaMigrationAnalysisResultsArgs extends com.pulumi.r
 
     public static final GetFleetJavaMigrationAnalysisResultsArgs Empty = new GetFleetJavaMigrationAnalysisResultsArgs();
 
+    /**
+     * The name of the application.
+     * 
+     */
+    @Import(name="applicationName")
+    private @Nullable Output<String> applicationName;
+
+    /**
+     * @return The name of the application.
+     * 
+     */
+    public Optional<Output<String>> applicationName() {
+        return Optional.ofNullable(this.applicationName);
+    }
+
     @Import(name="filters")
     private @Nullable Output<List<GetFleetJavaMigrationAnalysisResultsFilterArgs>> filters;
 
@@ -38,6 +53,21 @@ public final class GetFleetJavaMigrationAnalysisResultsArgs extends com.pulumi.r
      */
     public Output<String> fleetId() {
         return this.fleetId;
+    }
+
+    /**
+     * The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
+     * 
+     */
+    @Import(name="hostName")
+    private @Nullable Output<String> hostName;
+
+    /**
+     * @return The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
+     * 
+     */
+    public Optional<Output<String>> hostName() {
+        return Optional.ofNullable(this.hostName);
     }
 
     /**
@@ -88,8 +118,10 @@ public final class GetFleetJavaMigrationAnalysisResultsArgs extends com.pulumi.r
     private GetFleetJavaMigrationAnalysisResultsArgs() {}
 
     private GetFleetJavaMigrationAnalysisResultsArgs(GetFleetJavaMigrationAnalysisResultsArgs $) {
+        this.applicationName = $.applicationName;
         this.filters = $.filters;
         this.fleetId = $.fleetId;
+        this.hostName = $.hostName;
         this.managedInstanceId = $.managedInstanceId;
         this.timeEnd = $.timeEnd;
         this.timeStart = $.timeStart;
@@ -111,6 +143,27 @@ public final class GetFleetJavaMigrationAnalysisResultsArgs extends com.pulumi.r
 
         public Builder(GetFleetJavaMigrationAnalysisResultsArgs defaults) {
             $ = new GetFleetJavaMigrationAnalysisResultsArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param applicationName The name of the application.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder applicationName(@Nullable Output<String> applicationName) {
+            $.applicationName = applicationName;
+            return this;
+        }
+
+        /**
+         * @param applicationName The name of the application.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder applicationName(String applicationName) {
+            return applicationName(Output.of(applicationName));
         }
 
         public Builder filters(@Nullable Output<List<GetFleetJavaMigrationAnalysisResultsFilterArgs>> filters) {
@@ -145,6 +198,27 @@ public final class GetFleetJavaMigrationAnalysisResultsArgs extends com.pulumi.r
          */
         public Builder fleetId(String fleetId) {
             return fleetId(Output.of(fleetId));
+        }
+
+        /**
+         * @param hostName The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder hostName(@Nullable Output<String> hostName) {
+            $.hostName = hostName;
+            return this;
+        }
+
+        /**
+         * @param hostName The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder hostName(String hostName) {
+            return hostName(Output.of(hostName));
         }
 
         /**

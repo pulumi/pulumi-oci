@@ -11,9 +11,17 @@ import java.util.Objects;
 
 @CustomType
 public final class GetBuildRunBuildRunSourceTriggerInfoActionFilterExclude {
+    /**
+     * @return Attributes to support include/exclude files for triggering build runs.
+     * 
+     */
     private List<GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter> fileFilters;
 
     private GetBuildRunBuildRunSourceTriggerInfoActionFilterExclude() {}
+    /**
+     * @return Attributes to support include/exclude files for triggering build runs.
+     * 
+     */
     public List<GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter> fileFilters() {
         return this.fileFilters;
     }

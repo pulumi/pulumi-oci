@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Psql.inputs.ConfigurationConfigurationDetailArgs;
 import com.pulumi.oci.Psql.inputs.ConfigurationDbConfigurationOverridesArgs;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -34,6 +35,21 @@ public final class ConfigurationState extends com.pulumi.resources.ResourceArgs 
      */
     public Optional<Output<String>> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
+    }
+
+    /**
+     * The type of configuration. Either user-created or a default configuration.
+     * 
+     */
+    @Import(name="configType")
+    private @Nullable Output<String> configType;
+
+    /**
+     * @return The type of configuration. Either user-created or a default configuration.
+     * 
+     */
+    public Optional<Output<String>> configType() {
+        return Optional.ofNullable(this.configType);
     }
 
     /**
@@ -144,12 +160,16 @@ public final class ConfigurationState extends com.pulumi.resources.ResourceArgs 
     /**
      * Memory size in gigabytes with 1GB increment.
      * 
+     * Skip or set it&#39;s value to 0 if configuration is for a flexible shape.
+     * 
      */
     @Import(name="instanceMemorySizeInGbs")
     private @Nullable Output<Integer> instanceMemorySizeInGbs;
 
     /**
      * @return Memory size in gigabytes with 1GB increment.
+     * 
+     * Skip or set it&#39;s value to 0 if configuration is for a flexible shape.
      * 
      */
     public Optional<Output<Integer>> instanceMemorySizeInGbs() {
@@ -159,6 +179,8 @@ public final class ConfigurationState extends com.pulumi.resources.ResourceArgs 
     /**
      * CPU core count.
      * 
+     * Skip or set it&#39;s value to 0 if configuration is for a flexible shape.
+     * 
      */
     @Import(name="instanceOcpuCount")
     private @Nullable Output<Integer> instanceOcpuCount;
@@ -166,9 +188,26 @@ public final class ConfigurationState extends com.pulumi.resources.ResourceArgs 
     /**
      * @return CPU core count.
      * 
+     * Skip or set it&#39;s value to 0 if configuration is for a flexible shape.
+     * 
      */
     public Optional<Output<Integer>> instanceOcpuCount() {
         return Optional.ofNullable(this.instanceOcpuCount);
+    }
+
+    /**
+     * Whether the configuration supports flexible shapes.
+     * 
+     */
+    @Import(name="isFlexible")
+    private @Nullable Output<Boolean> isFlexible;
+
+    /**
+     * @return Whether the configuration supports flexible shapes.
+     * 
+     */
+    public Optional<Output<Boolean>> isFlexible() {
+        return Optional.ofNullable(this.isFlexible);
     }
 
     /**
@@ -256,6 +295,7 @@ public final class ConfigurationState extends com.pulumi.resources.ResourceArgs 
 
     private ConfigurationState(ConfigurationState $) {
         this.compartmentId = $.compartmentId;
+        this.configType = $.configType;
         this.configurationDetails = $.configurationDetails;
         this.dbConfigurationOverrides = $.dbConfigurationOverrides;
         this.dbVersion = $.dbVersion;
@@ -265,6 +305,7 @@ public final class ConfigurationState extends com.pulumi.resources.ResourceArgs 
         this.freeformTags = $.freeformTags;
         this.instanceMemorySizeInGbs = $.instanceMemorySizeInGbs;
         this.instanceOcpuCount = $.instanceOcpuCount;
+        this.isFlexible = $.isFlexible;
         this.lifecycleDetails = $.lifecycleDetails;
         this.shape = $.shape;
         this.state = $.state;
@@ -309,6 +350,27 @@ public final class ConfigurationState extends com.pulumi.resources.ResourceArgs 
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param configType The type of configuration. Either user-created or a default configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder configType(@Nullable Output<String> configType) {
+            $.configType = configType;
+            return this;
+        }
+
+        /**
+         * @param configType The type of configuration. Either user-created or a default configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder configType(String configType) {
+            return configType(Output.of(configType));
         }
 
         /**
@@ -471,6 +533,8 @@ public final class ConfigurationState extends com.pulumi.resources.ResourceArgs 
         /**
          * @param instanceMemorySizeInGbs Memory size in gigabytes with 1GB increment.
          * 
+         * Skip or set it&#39;s value to 0 if configuration is for a flexible shape.
+         * 
          * @return builder
          * 
          */
@@ -482,6 +546,8 @@ public final class ConfigurationState extends com.pulumi.resources.ResourceArgs 
         /**
          * @param instanceMemorySizeInGbs Memory size in gigabytes with 1GB increment.
          * 
+         * Skip or set it&#39;s value to 0 if configuration is for a flexible shape.
+         * 
          * @return builder
          * 
          */
@@ -491,6 +557,8 @@ public final class ConfigurationState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param instanceOcpuCount CPU core count.
+         * 
+         * Skip or set it&#39;s value to 0 if configuration is for a flexible shape.
          * 
          * @return builder
          * 
@@ -503,11 +571,34 @@ public final class ConfigurationState extends com.pulumi.resources.ResourceArgs 
         /**
          * @param instanceOcpuCount CPU core count.
          * 
+         * Skip or set it&#39;s value to 0 if configuration is for a flexible shape.
+         * 
          * @return builder
          * 
          */
         public Builder instanceOcpuCount(Integer instanceOcpuCount) {
             return instanceOcpuCount(Output.of(instanceOcpuCount));
+        }
+
+        /**
+         * @param isFlexible Whether the configuration supports flexible shapes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isFlexible(@Nullable Output<Boolean> isFlexible) {
+            $.isFlexible = isFlexible;
+            return this;
+        }
+
+        /**
+         * @param isFlexible Whether the configuration supports flexible shapes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isFlexible(Boolean isFlexible) {
+            return isFlexible(Output.of(isFlexible));
         }
 
         /**

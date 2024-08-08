@@ -27,6 +27,11 @@ public final class GetFleetPerformanceTuningAnalysisResultsResult {
      */
     private String fleetId;
     /**
+     * @return The hostname of the managed instance.
+     * 
+     */
+    private @Nullable String hostName;
+    /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
@@ -61,6 +66,13 @@ public final class GetFleetPerformanceTuningAnalysisResultsResult {
      */
     public String fleetId() {
         return this.fleetId;
+    }
+    /**
+     * @return The hostname of the managed instance.
+     * 
+     */
+    public Optional<String> hostName() {
+        return Optional.ofNullable(this.hostName);
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
@@ -102,6 +114,7 @@ public final class GetFleetPerformanceTuningAnalysisResultsResult {
         private @Nullable String applicationId;
         private @Nullable List<GetFleetPerformanceTuningAnalysisResultsFilter> filters;
         private String fleetId;
+        private @Nullable String hostName;
         private String id;
         private @Nullable String managedInstanceId;
         private List<GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollection> performanceTuningAnalysisResultCollections;
@@ -113,6 +126,7 @@ public final class GetFleetPerformanceTuningAnalysisResultsResult {
     	      this.applicationId = defaults.applicationId;
     	      this.filters = defaults.filters;
     	      this.fleetId = defaults.fleetId;
+    	      this.hostName = defaults.hostName;
     	      this.id = defaults.id;
     	      this.managedInstanceId = defaults.managedInstanceId;
     	      this.performanceTuningAnalysisResultCollections = defaults.performanceTuningAnalysisResultCollections;
@@ -141,6 +155,12 @@ public final class GetFleetPerformanceTuningAnalysisResultsResult {
               throw new MissingRequiredPropertyException("GetFleetPerformanceTuningAnalysisResultsResult", "fleetId");
             }
             this.fleetId = fleetId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder hostName(@Nullable String hostName) {
+
+            this.hostName = hostName;
             return this;
         }
         @CustomType.Setter
@@ -185,6 +205,7 @@ public final class GetFleetPerformanceTuningAnalysisResultsResult {
             _resultValue.applicationId = applicationId;
             _resultValue.filters = filters;
             _resultValue.fleetId = fleetId;
+            _resultValue.hostName = hostName;
             _resultValue.id = id;
             _resultValue.managedInstanceId = managedInstanceId;
             _resultValue.performanceTuningAnalysisResultCollections = performanceTuningAnalysisResultCollections;

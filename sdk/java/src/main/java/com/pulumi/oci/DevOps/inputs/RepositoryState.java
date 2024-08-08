@@ -171,14 +171,14 @@ public final class RepositoryState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Unique name of a repository.
+     * (Updatable) Name of the repository. Should be unique within the project.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) Unique name of a repository.
+     * @return (Updatable) Name of the repository. Should be unique within the project.
      * 
      */
     public Optional<Output<String>> name() {
@@ -198,6 +198,21 @@ public final class RepositoryState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> namespace() {
         return Optional.ofNullable(this.namespace);
+    }
+
+    /**
+     * The OCID of the parent repository.
+     * 
+     */
+    @Import(name="parentRepositoryId")
+    private @Nullable Output<String> parentRepositoryId;
+
+    /**
+     * @return The OCID of the parent repository.
+     * 
+     */
+    public Optional<Output<String>> parentRepositoryId() {
+        return Optional.ofNullable(this.parentRepositoryId);
     }
 
     /**
@@ -231,7 +246,7 @@ public final class RepositoryState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
+     * (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED`
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -241,7 +256,7 @@ public final class RepositoryState extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<String> repositoryType;
 
     /**
-     * @return (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
+     * @return (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED`
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -342,14 +357,14 @@ public final class RepositoryState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
+     * Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the repository. PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an open pull request. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
      * 
      */
     @Import(name="triggerBuildEvents")
     private @Nullable Output<List<String>> triggerBuildEvents;
 
     /**
-     * @return Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
+     * @return Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the repository. PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an open pull request. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
      * 
      */
     public Optional<Output<List<String>>> triggerBuildEvents() {
@@ -371,6 +386,7 @@ public final class RepositoryState extends com.pulumi.resources.ResourceArgs {
         this.mirrorRepositoryConfig = $.mirrorRepositoryConfig;
         this.name = $.name;
         this.namespace = $.namespace;
+        this.parentRepositoryId = $.parentRepositoryId;
         this.projectId = $.projectId;
         this.projectName = $.projectName;
         this.repositoryType = $.repositoryType;
@@ -612,7 +628,7 @@ public final class RepositoryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name (Updatable) Unique name of a repository.
+         * @param name (Updatable) Name of the repository. Should be unique within the project.
          * 
          * @return builder
          * 
@@ -623,7 +639,7 @@ public final class RepositoryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name (Updatable) Unique name of a repository.
+         * @param name (Updatable) Name of the repository. Should be unique within the project.
          * 
          * @return builder
          * 
@@ -651,6 +667,27 @@ public final class RepositoryState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder namespace(String namespace) {
             return namespace(Output.of(namespace));
+        }
+
+        /**
+         * @param parentRepositoryId The OCID of the parent repository.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder parentRepositoryId(@Nullable Output<String> parentRepositoryId) {
+            $.parentRepositoryId = parentRepositoryId;
+            return this;
+        }
+
+        /**
+         * @param parentRepositoryId The OCID of the parent repository.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder parentRepositoryId(String parentRepositoryId) {
+            return parentRepositoryId(Output.of(parentRepositoryId));
         }
 
         /**
@@ -696,7 +733,7 @@ public final class RepositoryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param repositoryType (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
+         * @param repositoryType (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED`
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -710,7 +747,7 @@ public final class RepositoryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param repositoryType (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
+         * @param repositoryType (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED`
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -849,7 +886,7 @@ public final class RepositoryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param triggerBuildEvents Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
+         * @param triggerBuildEvents Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the repository. PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an open pull request. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
          * 
          * @return builder
          * 
@@ -860,7 +897,7 @@ public final class RepositoryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param triggerBuildEvents Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
+         * @param triggerBuildEvents Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the repository. PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an open pull request. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
          * 
          * @return builder
          * 
@@ -870,7 +907,7 @@ public final class RepositoryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param triggerBuildEvents Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
+         * @param triggerBuildEvents Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the repository. PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an open pull request. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
          * 
          * @return builder
          * 

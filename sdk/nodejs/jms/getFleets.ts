@@ -59,7 +59,7 @@ export interface GetFleetsArgs {
     displayNameContains?: string;
     filters?: inputs.Jms.GetFleetsFilter[];
     /**
-     * The ID of the Fleet.
+     * The ID.
      */
     id?: string;
     /**
@@ -138,7 +138,7 @@ export interface GetFleetsOutputArgs {
     displayNameContains?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetFleetsFilterArgs>[]>;
     /**
-     * The ID of the Fleet.
+     * The ID.
      */
     id?: pulumi.Input<string>;
     /**

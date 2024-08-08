@@ -78,6 +78,11 @@ public final class GetFleetCryptoAnalysisResultResult {
      */
     private String timeCreated;
     /**
+     * @return The time the JFR recording has finished.
+     * 
+     */
+    private String timeFinished;
+    /**
      * @return Time of the first event in the analysis.
      * 
      */
@@ -87,6 +92,11 @@ public final class GetFleetCryptoAnalysisResultResult {
      * 
      */
     private String timeLastEvent;
+    /**
+     * @return The time the JFR recording has started.
+     * 
+     */
+    private String timeStarted;
     /**
      * @return Total number of events in the analysis.
      * 
@@ -194,6 +204,13 @@ public final class GetFleetCryptoAnalysisResultResult {
         return this.timeCreated;
     }
     /**
+     * @return The time the JFR recording has finished.
+     * 
+     */
+    public String timeFinished() {
+        return this.timeFinished;
+    }
+    /**
      * @return Time of the first event in the analysis.
      * 
      */
@@ -206,6 +223,13 @@ public final class GetFleetCryptoAnalysisResultResult {
      */
     public String timeLastEvent() {
         return this.timeLastEvent;
+    }
+    /**
+     * @return The time the JFR recording has started.
+     * 
+     */
+    public String timeStarted() {
+        return this.timeStarted;
     }
     /**
      * @return Total number of events in the analysis.
@@ -245,8 +269,10 @@ public final class GetFleetCryptoAnalysisResultResult {
         private String object;
         private Integer summarizedEventCount;
         private String timeCreated;
+        private String timeFinished;
         private String timeFirstEvent;
         private String timeLastEvent;
+        private String timeStarted;
         private Integer totalEventCount;
         private String workRequestId;
         public Builder() {}
@@ -266,8 +292,10 @@ public final class GetFleetCryptoAnalysisResultResult {
     	      this.object = defaults.object;
     	      this.summarizedEventCount = defaults.summarizedEventCount;
     	      this.timeCreated = defaults.timeCreated;
+    	      this.timeFinished = defaults.timeFinished;
     	      this.timeFirstEvent = defaults.timeFirstEvent;
     	      this.timeLastEvent = defaults.timeLastEvent;
+    	      this.timeStarted = defaults.timeStarted;
     	      this.totalEventCount = defaults.totalEventCount;
     	      this.workRequestId = defaults.workRequestId;
         }
@@ -385,6 +413,14 @@ public final class GetFleetCryptoAnalysisResultResult {
             return this;
         }
         @CustomType.Setter
+        public Builder timeFinished(String timeFinished) {
+            if (timeFinished == null) {
+              throw new MissingRequiredPropertyException("GetFleetCryptoAnalysisResultResult", "timeFinished");
+            }
+            this.timeFinished = timeFinished;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeFirstEvent(String timeFirstEvent) {
             if (timeFirstEvent == null) {
               throw new MissingRequiredPropertyException("GetFleetCryptoAnalysisResultResult", "timeFirstEvent");
@@ -398,6 +434,14 @@ public final class GetFleetCryptoAnalysisResultResult {
               throw new MissingRequiredPropertyException("GetFleetCryptoAnalysisResultResult", "timeLastEvent");
             }
             this.timeLastEvent = timeLastEvent;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeStarted(String timeStarted) {
+            if (timeStarted == null) {
+              throw new MissingRequiredPropertyException("GetFleetCryptoAnalysisResultResult", "timeStarted");
+            }
+            this.timeStarted = timeStarted;
             return this;
         }
         @CustomType.Setter
@@ -432,8 +476,10 @@ public final class GetFleetCryptoAnalysisResultResult {
             _resultValue.object = object;
             _resultValue.summarizedEventCount = summarizedEventCount;
             _resultValue.timeCreated = timeCreated;
+            _resultValue.timeFinished = timeFinished;
             _resultValue.timeFirstEvent = timeFirstEvent;
             _resultValue.timeLastEvent = timeLastEvent;
+            _resultValue.timeStarted = timeStarted;
             _resultValue.totalEventCount = totalEventCount;
             _resultValue.workRequestId = workRequestId;
             return _resultValue;

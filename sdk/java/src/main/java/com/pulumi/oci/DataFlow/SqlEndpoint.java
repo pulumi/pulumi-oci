@@ -390,7 +390,7 @@ public class SqlEndpoint extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public SqlEndpoint(String name) {
+    public SqlEndpoint(java.lang.String name) {
         this(name, SqlEndpointArgs.Empty);
     }
     /**
@@ -398,7 +398,7 @@ public class SqlEndpoint extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public SqlEndpoint(String name, SqlEndpointArgs args) {
+    public SqlEndpoint(java.lang.String name, SqlEndpointArgs args) {
         this(name, args, null);
     }
     /**
@@ -407,12 +407,12 @@ public class SqlEndpoint extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public SqlEndpoint(String name, SqlEndpointArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataFlow/sqlEndpoint:SqlEndpoint", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public SqlEndpoint(java.lang.String name, SqlEndpointArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataFlow/sqlEndpoint:SqlEndpoint", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private SqlEndpoint(String name, Output<String> id, @Nullable SqlEndpointState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataFlow/sqlEndpoint:SqlEndpoint", name, state, makeResourceOptions(options, id));
+    private SqlEndpoint(java.lang.String name, Output<java.lang.String> id, @Nullable SqlEndpointState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataFlow/sqlEndpoint:SqlEndpoint", name, state, makeResourceOptions(options, id), false);
     }
 
     private static SqlEndpointArgs makeArgs(SqlEndpointArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -422,7 +422,7 @@ public class SqlEndpoint extends com.pulumi.resources.CustomResource {
         return args == null ? SqlEndpointArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -438,7 +438,7 @@ public class SqlEndpoint extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static SqlEndpoint get(String name, Output<String> id, @Nullable SqlEndpointState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static SqlEndpoint get(java.lang.String name, Output<java.lang.String> id, @Nullable SqlEndpointState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new SqlEndpoint(name, id, state, options);
     }
 }

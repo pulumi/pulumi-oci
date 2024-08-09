@@ -146,7 +146,7 @@ public class PluggabledatabasePluggableDatabaseDbmFeaturesManagement extends com
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public PluggabledatabasePluggableDatabaseDbmFeaturesManagement(String name) {
+    public PluggabledatabasePluggableDatabaseDbmFeaturesManagement(java.lang.String name) {
         this(name, PluggabledatabasePluggableDatabaseDbmFeaturesManagementArgs.Empty);
     }
     /**
@@ -154,7 +154,7 @@ public class PluggabledatabasePluggableDatabaseDbmFeaturesManagement extends com
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public PluggabledatabasePluggableDatabaseDbmFeaturesManagement(String name, PluggabledatabasePluggableDatabaseDbmFeaturesManagementArgs args) {
+    public PluggabledatabasePluggableDatabaseDbmFeaturesManagement(java.lang.String name, PluggabledatabasePluggableDatabaseDbmFeaturesManagementArgs args) {
         this(name, args, null);
     }
     /**
@@ -163,12 +163,12 @@ public class PluggabledatabasePluggableDatabaseDbmFeaturesManagement extends com
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public PluggabledatabasePluggableDatabaseDbmFeaturesManagement(String name, PluggabledatabasePluggableDatabaseDbmFeaturesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseManagement/pluggabledatabasePluggableDatabaseDbmFeaturesManagement:PluggabledatabasePluggableDatabaseDbmFeaturesManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public PluggabledatabasePluggableDatabaseDbmFeaturesManagement(java.lang.String name, PluggabledatabasePluggableDatabaseDbmFeaturesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DatabaseManagement/pluggabledatabasePluggableDatabaseDbmFeaturesManagement:PluggabledatabasePluggableDatabaseDbmFeaturesManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private PluggabledatabasePluggableDatabaseDbmFeaturesManagement(String name, Output<String> id, @Nullable PluggabledatabasePluggableDatabaseDbmFeaturesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseManagement/pluggabledatabasePluggableDatabaseDbmFeaturesManagement:PluggabledatabasePluggableDatabaseDbmFeaturesManagement", name, state, makeResourceOptions(options, id));
+    private PluggabledatabasePluggableDatabaseDbmFeaturesManagement(java.lang.String name, Output<java.lang.String> id, @Nullable PluggabledatabasePluggableDatabaseDbmFeaturesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DatabaseManagement/pluggabledatabasePluggableDatabaseDbmFeaturesManagement:PluggabledatabasePluggableDatabaseDbmFeaturesManagement", name, state, makeResourceOptions(options, id), false);
     }
 
     private static PluggabledatabasePluggableDatabaseDbmFeaturesManagementArgs makeArgs(PluggabledatabasePluggableDatabaseDbmFeaturesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -178,7 +178,7 @@ public class PluggabledatabasePluggableDatabaseDbmFeaturesManagement extends com
         return args == null ? PluggabledatabasePluggableDatabaseDbmFeaturesManagementArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -194,7 +194,7 @@ public class PluggabledatabasePluggableDatabaseDbmFeaturesManagement extends com
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static PluggabledatabasePluggableDatabaseDbmFeaturesManagement get(String name, Output<String> id, @Nullable PluggabledatabasePluggableDatabaseDbmFeaturesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static PluggabledatabasePluggableDatabaseDbmFeaturesManagement get(java.lang.String name, Output<java.lang.String> id, @Nullable PluggabledatabasePluggableDatabaseDbmFeaturesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new PluggabledatabasePluggableDatabaseDbmFeaturesManagement(name, id, state, options);
     }
 }

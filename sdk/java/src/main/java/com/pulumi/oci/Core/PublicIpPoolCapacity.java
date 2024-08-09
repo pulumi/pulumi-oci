@@ -115,7 +115,7 @@ public class PublicIpPoolCapacity extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public PublicIpPoolCapacity(String name) {
+    public PublicIpPoolCapacity(java.lang.String name) {
         this(name, PublicIpPoolCapacityArgs.Empty);
     }
     /**
@@ -123,7 +123,7 @@ public class PublicIpPoolCapacity extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public PublicIpPoolCapacity(String name, PublicIpPoolCapacityArgs args) {
+    public PublicIpPoolCapacity(java.lang.String name, PublicIpPoolCapacityArgs args) {
         this(name, args, null);
     }
     /**
@@ -132,12 +132,12 @@ public class PublicIpPoolCapacity extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public PublicIpPoolCapacity(String name, PublicIpPoolCapacityArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/publicIpPoolCapacity:PublicIpPoolCapacity", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public PublicIpPoolCapacity(java.lang.String name, PublicIpPoolCapacityArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Core/publicIpPoolCapacity:PublicIpPoolCapacity", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private PublicIpPoolCapacity(String name, Output<String> id, @Nullable PublicIpPoolCapacityState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/publicIpPoolCapacity:PublicIpPoolCapacity", name, state, makeResourceOptions(options, id));
+    private PublicIpPoolCapacity(java.lang.String name, Output<java.lang.String> id, @Nullable PublicIpPoolCapacityState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Core/publicIpPoolCapacity:PublicIpPoolCapacity", name, state, makeResourceOptions(options, id), false);
     }
 
     private static PublicIpPoolCapacityArgs makeArgs(PublicIpPoolCapacityArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -147,7 +147,7 @@ public class PublicIpPoolCapacity extends com.pulumi.resources.CustomResource {
         return args == null ? PublicIpPoolCapacityArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -163,7 +163,7 @@ public class PublicIpPoolCapacity extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static PublicIpPoolCapacity get(String name, Output<String> id, @Nullable PublicIpPoolCapacityState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static PublicIpPoolCapacity get(java.lang.String name, Output<java.lang.String> id, @Nullable PublicIpPoolCapacityState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new PublicIpPoolCapacity(name, id, state, options);
     }
 }

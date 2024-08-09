@@ -93,7 +93,7 @@ class AwaitableGetComputeGlobalImageCapabilitySchemasResult(GetComputeGlobalImag
 
 def get_compute_global_image_capability_schemas(compartment_id: Optional[str] = None,
                                                 display_name: Optional[str] = None,
-                                                filters: Optional[Sequence[pulumi.InputType['GetComputeGlobalImageCapabilitySchemasFilterArgs']]] = None,
+                                                filters: Optional[Sequence[Union['GetComputeGlobalImageCapabilitySchemasFilterArgs', 'GetComputeGlobalImageCapabilitySchemasFilterArgsDict']]] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetComputeGlobalImageCapabilitySchemasResult:
     """
     This data source provides the list of Compute Global Image Capability Schemas in Oracle Cloud Infrastructure Core service.
@@ -132,7 +132,7 @@ def get_compute_global_image_capability_schemas(compartment_id: Optional[str] = 
 @_utilities.lift_output_func(get_compute_global_image_capability_schemas)
 def get_compute_global_image_capability_schemas_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                        display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                                       filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetComputeGlobalImageCapabilitySchemasFilterArgs']]]]] = None,
+                                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetComputeGlobalImageCapabilitySchemasFilterArgs', 'GetComputeGlobalImageCapabilitySchemasFilterArgsDict']]]]] = None,
                                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetComputeGlobalImageCapabilitySchemasResult]:
     """
     This data source provides the list of Compute Global Image Capability Schemas in Oracle Cloud Infrastructure Core service.

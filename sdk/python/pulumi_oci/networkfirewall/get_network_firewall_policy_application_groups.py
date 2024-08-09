@@ -86,7 +86,7 @@ class AwaitableGetNetworkFirewallPolicyApplicationGroupsResult(GetNetworkFirewal
 
 
 def get_network_firewall_policy_application_groups(display_name: Optional[str] = None,
-                                                   filters: Optional[Sequence[pulumi.InputType['GetNetworkFirewallPolicyApplicationGroupsFilterArgs']]] = None,
+                                                   filters: Optional[Sequence[Union['GetNetworkFirewallPolicyApplicationGroupsFilterArgs', 'GetNetworkFirewallPolicyApplicationGroupsFilterArgsDict']]] = None,
                                                    network_firewall_policy_id: Optional[str] = None,
                                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkFirewallPolicyApplicationGroupsResult:
     """
@@ -125,7 +125,7 @@ def get_network_firewall_policy_application_groups(display_name: Optional[str] =
 
 @_utilities.lift_output_func(get_network_firewall_policy_application_groups)
 def get_network_firewall_policy_application_groups_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                                          filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetNetworkFirewallPolicyApplicationGroupsFilterArgs']]]]] = None,
+                                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNetworkFirewallPolicyApplicationGroupsFilterArgs', 'GetNetworkFirewallPolicyApplicationGroupsFilterArgsDict']]]]] = None,
                                                           network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
                                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkFirewallPolicyApplicationGroupsResult]:
     """

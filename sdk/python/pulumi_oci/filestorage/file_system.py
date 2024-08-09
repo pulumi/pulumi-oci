@@ -782,7 +782,7 @@ class FileSystem(pulumi.CustomResource):
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             metered_bytes: Optional[pulumi.Input[str]] = None,
             replication_target_id: Optional[pulumi.Input[str]] = None,
-            source_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['FileSystemSourceDetailArgs']]]]] = None,
+            source_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FileSystemSourceDetailArgs', 'FileSystemSourceDetailArgsDict']]]]] = None,
             source_snapshot_id: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None) -> 'FileSystem':
@@ -815,7 +815,7 @@ class FileSystem(pulumi.CustomResource):
         :param pulumi.Input[str] lifecycle_details: Additional information about the current 'lifecycleState'.
         :param pulumi.Input[str] metered_bytes: The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
         :param pulumi.Input[str] replication_target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['FileSystemSourceDetailArgs']]]] source_details: Source information for the file system.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FileSystemSourceDetailArgs', 'FileSystemSourceDetailArgsDict']]]] source_details: Source information for the file system.
         :param pulumi.Input[str] source_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         :param pulumi.Input[str] state: The current state of the file system.
         :param pulumi.Input[str] time_created: The date and time the file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`

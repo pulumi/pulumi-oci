@@ -145,7 +145,7 @@ class ComputeCapacityReport(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  availability_domain: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 shape_availabilities: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ComputeCapacityReportShapeAvailabilityArgs']]]]] = None,
+                 shape_availabilities: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ComputeCapacityReportShapeAvailabilityArgs', 'ComputeCapacityReportShapeAvailabilityArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Compute Capacity Report resource in Oracle Cloud Infrastructure Core service.
@@ -166,15 +166,15 @@ class ComputeCapacityReport(pulumi.CustomResource):
         test_compute_capacity_report = oci.core.ComputeCapacityReport("test_compute_capacity_report",
             availability_domain=compute_capacity_report_availability_domain,
             compartment_id=compartment_id,
-            shape_availabilities=[oci.core.ComputeCapacityReportShapeAvailabilityArgs(
-                instance_shape=compute_capacity_report_shape_availabilities_instance_shape,
-                fault_domain=compute_capacity_report_shape_availabilities_fault_domain,
-                instance_shape_config=oci.core.ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs(
-                    memory_in_gbs=compute_capacity_report_shape_availabilities_instance_shape_config_memory_in_gbs,
-                    nvmes=compute_capacity_report_shape_availabilities_instance_shape_config_nvmes,
-                    ocpus=compute_capacity_report_shape_availabilities_instance_shape_config_ocpus,
-                ),
-            )])
+            shape_availabilities=[{
+                "instance_shape": compute_capacity_report_shape_availabilities_instance_shape,
+                "fault_domain": compute_capacity_report_shape_availabilities_fault_domain,
+                "instance_shape_config": {
+                    "memory_in_gbs": compute_capacity_report_shape_availabilities_instance_shape_config_memory_in_gbs,
+                    "nvmes": compute_capacity_report_shape_availabilities_instance_shape_config_nvmes,
+                    "ocpus": compute_capacity_report_shape_availabilities_instance_shape_config_ocpus,
+                },
+            }])
         ```
 
         ## Import
@@ -189,7 +189,7 @@ class ComputeCapacityReport(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] availability_domain: The availability domain for the capacity report.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ComputeCapacityReportShapeAvailabilityArgs']]]] shape_availabilities: Information about the shapes in the capacity report.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeCapacityReportShapeAvailabilityArgs', 'ComputeCapacityReportShapeAvailabilityArgsDict']]]] shape_availabilities: Information about the shapes in the capacity report.
         """
         ...
     @overload
@@ -216,15 +216,15 @@ class ComputeCapacityReport(pulumi.CustomResource):
         test_compute_capacity_report = oci.core.ComputeCapacityReport("test_compute_capacity_report",
             availability_domain=compute_capacity_report_availability_domain,
             compartment_id=compartment_id,
-            shape_availabilities=[oci.core.ComputeCapacityReportShapeAvailabilityArgs(
-                instance_shape=compute_capacity_report_shape_availabilities_instance_shape,
-                fault_domain=compute_capacity_report_shape_availabilities_fault_domain,
-                instance_shape_config=oci.core.ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs(
-                    memory_in_gbs=compute_capacity_report_shape_availabilities_instance_shape_config_memory_in_gbs,
-                    nvmes=compute_capacity_report_shape_availabilities_instance_shape_config_nvmes,
-                    ocpus=compute_capacity_report_shape_availabilities_instance_shape_config_ocpus,
-                ),
-            )])
+            shape_availabilities=[{
+                "instance_shape": compute_capacity_report_shape_availabilities_instance_shape,
+                "fault_domain": compute_capacity_report_shape_availabilities_fault_domain,
+                "instance_shape_config": {
+                    "memory_in_gbs": compute_capacity_report_shape_availabilities_instance_shape_config_memory_in_gbs,
+                    "nvmes": compute_capacity_report_shape_availabilities_instance_shape_config_nvmes,
+                    "ocpus": compute_capacity_report_shape_availabilities_instance_shape_config_ocpus,
+                },
+            }])
         ```
 
         ## Import
@@ -252,7 +252,7 @@ class ComputeCapacityReport(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  availability_domain: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 shape_availabilities: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ComputeCapacityReportShapeAvailabilityArgs']]]]] = None,
+                 shape_availabilities: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ComputeCapacityReportShapeAvailabilityArgs', 'ComputeCapacityReportShapeAvailabilityArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -284,7 +284,7 @@ class ComputeCapacityReport(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             availability_domain: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            shape_availabilities: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ComputeCapacityReportShapeAvailabilityArgs']]]]] = None,
+            shape_availabilities: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ComputeCapacityReportShapeAvailabilityArgs', 'ComputeCapacityReportShapeAvailabilityArgsDict']]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None) -> 'ComputeCapacityReport':
         """
         Get an existing ComputeCapacityReport resource's state with the given name, id, and optional extra
@@ -295,7 +295,7 @@ class ComputeCapacityReport(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] availability_domain: The availability domain for the capacity report.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ComputeCapacityReportShapeAvailabilityArgs']]]] shape_availabilities: Information about the shapes in the capacity report.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeCapacityReportShapeAvailabilityArgs', 'ComputeCapacityReportShapeAvailabilityArgsDict']]]] shape_availabilities: Information about the shapes in the capacity report.
         :param pulumi.Input[str] time_created: The date and time the capacity report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

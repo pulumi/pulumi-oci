@@ -107,7 +107,7 @@ class AwaitableGetInstanceAvailablePluginResult(GetInstanceAvailablePluginResult
 
 
 def get_instance_available_plugin(compartment_id: Optional[str] = None,
-                                  filters: Optional[Sequence[pulumi.InputType['GetInstanceAvailablePluginFilterArgs']]] = None,
+                                  filters: Optional[Sequence[Union['GetInstanceAvailablePluginFilterArgs', 'GetInstanceAvailablePluginFilterArgsDict']]] = None,
                                   name: Optional[str] = None,
                                   os_name: Optional[str] = None,
                                   os_version: Optional[str] = None,
@@ -154,7 +154,7 @@ def get_instance_available_plugin(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_instance_available_plugin)
 def get_instance_available_plugin_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                         filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetInstanceAvailablePluginFilterArgs']]]]] = None,
+                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetInstanceAvailablePluginFilterArgs', 'GetInstanceAvailablePluginFilterArgsDict']]]]] = None,
                                          name: Optional[pulumi.Input[Optional[str]]] = None,
                                          os_name: Optional[pulumi.Input[str]] = None,
                                          os_version: Optional[pulumi.Input[str]] = None,

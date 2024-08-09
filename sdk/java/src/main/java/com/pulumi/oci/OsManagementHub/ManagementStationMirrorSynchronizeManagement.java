@@ -104,7 +104,7 @@ public class ManagementStationMirrorSynchronizeManagement extends com.pulumi.res
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ManagementStationMirrorSynchronizeManagement(String name) {
+    public ManagementStationMirrorSynchronizeManagement(java.lang.String name) {
         this(name, ManagementStationMirrorSynchronizeManagementArgs.Empty);
     }
     /**
@@ -112,7 +112,7 @@ public class ManagementStationMirrorSynchronizeManagement extends com.pulumi.res
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ManagementStationMirrorSynchronizeManagement(String name, ManagementStationMirrorSynchronizeManagementArgs args) {
+    public ManagementStationMirrorSynchronizeManagement(java.lang.String name, ManagementStationMirrorSynchronizeManagementArgs args) {
         this(name, args, null);
     }
     /**
@@ -121,12 +121,12 @@ public class ManagementStationMirrorSynchronizeManagement extends com.pulumi.res
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ManagementStationMirrorSynchronizeManagement(String name, ManagementStationMirrorSynchronizeManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:OsManagementHub/managementStationMirrorSynchronizeManagement:ManagementStationMirrorSynchronizeManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ManagementStationMirrorSynchronizeManagement(java.lang.String name, ManagementStationMirrorSynchronizeManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:OsManagementHub/managementStationMirrorSynchronizeManagement:ManagementStationMirrorSynchronizeManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ManagementStationMirrorSynchronizeManagement(String name, Output<String> id, @Nullable ManagementStationMirrorSynchronizeManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:OsManagementHub/managementStationMirrorSynchronizeManagement:ManagementStationMirrorSynchronizeManagement", name, state, makeResourceOptions(options, id));
+    private ManagementStationMirrorSynchronizeManagement(java.lang.String name, Output<java.lang.String> id, @Nullable ManagementStationMirrorSynchronizeManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:OsManagementHub/managementStationMirrorSynchronizeManagement:ManagementStationMirrorSynchronizeManagement", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ManagementStationMirrorSynchronizeManagementArgs makeArgs(ManagementStationMirrorSynchronizeManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -136,7 +136,7 @@ public class ManagementStationMirrorSynchronizeManagement extends com.pulumi.res
         return args == null ? ManagementStationMirrorSynchronizeManagementArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -152,7 +152,7 @@ public class ManagementStationMirrorSynchronizeManagement extends com.pulumi.res
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ManagementStationMirrorSynchronizeManagement get(String name, Output<String> id, @Nullable ManagementStationMirrorSynchronizeManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ManagementStationMirrorSynchronizeManagement get(java.lang.String name, Output<java.lang.String> id, @Nullable ManagementStationMirrorSynchronizeManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ManagementStationMirrorSynchronizeManagement(name, id, state, options);
     }
 }

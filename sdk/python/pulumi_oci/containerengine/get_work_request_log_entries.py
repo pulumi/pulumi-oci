@@ -86,7 +86,7 @@ class AwaitableGetWorkRequestLogEntriesResult(GetWorkRequestLogEntriesResult):
 
 
 def get_work_request_log_entries(compartment_id: Optional[str] = None,
-                                 filters: Optional[Sequence[pulumi.InputType['GetWorkRequestLogEntriesFilterArgs']]] = None,
+                                 filters: Optional[Sequence[Union['GetWorkRequestLogEntriesFilterArgs', 'GetWorkRequestLogEntriesFilterArgsDict']]] = None,
                                  work_request_id: Optional[str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetWorkRequestLogEntriesResult:
     """
@@ -125,7 +125,7 @@ def get_work_request_log_entries(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_work_request_log_entries)
 def get_work_request_log_entries_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                        filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetWorkRequestLogEntriesFilterArgs']]]]] = None,
+                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetWorkRequestLogEntriesFilterArgs', 'GetWorkRequestLogEntriesFilterArgsDict']]]]] = None,
                                         work_request_id: Optional[pulumi.Input[str]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetWorkRequestLogEntriesResult]:
     """

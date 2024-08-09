@@ -183,7 +183,7 @@ public class NetworkFirewallPolicyMappedSecret extends com.pulumi.resources.Cust
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public NetworkFirewallPolicyMappedSecret(String name) {
+    public NetworkFirewallPolicyMappedSecret(java.lang.String name) {
         this(name, NetworkFirewallPolicyMappedSecretArgs.Empty);
     }
     /**
@@ -191,7 +191,7 @@ public class NetworkFirewallPolicyMappedSecret extends com.pulumi.resources.Cust
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public NetworkFirewallPolicyMappedSecret(String name, NetworkFirewallPolicyMappedSecretArgs args) {
+    public NetworkFirewallPolicyMappedSecret(java.lang.String name, NetworkFirewallPolicyMappedSecretArgs args) {
         this(name, args, null);
     }
     /**
@@ -200,12 +200,12 @@ public class NetworkFirewallPolicyMappedSecret extends com.pulumi.resources.Cust
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public NetworkFirewallPolicyMappedSecret(String name, NetworkFirewallPolicyMappedSecretArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:NetworkFirewall/networkFirewallPolicyMappedSecret:NetworkFirewallPolicyMappedSecret", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public NetworkFirewallPolicyMappedSecret(java.lang.String name, NetworkFirewallPolicyMappedSecretArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:NetworkFirewall/networkFirewallPolicyMappedSecret:NetworkFirewallPolicyMappedSecret", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private NetworkFirewallPolicyMappedSecret(String name, Output<String> id, @Nullable NetworkFirewallPolicyMappedSecretState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:NetworkFirewall/networkFirewallPolicyMappedSecret:NetworkFirewallPolicyMappedSecret", name, state, makeResourceOptions(options, id));
+    private NetworkFirewallPolicyMappedSecret(java.lang.String name, Output<java.lang.String> id, @Nullable NetworkFirewallPolicyMappedSecretState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:NetworkFirewall/networkFirewallPolicyMappedSecret:NetworkFirewallPolicyMappedSecret", name, state, makeResourceOptions(options, id), false);
     }
 
     private static NetworkFirewallPolicyMappedSecretArgs makeArgs(NetworkFirewallPolicyMappedSecretArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -215,7 +215,7 @@ public class NetworkFirewallPolicyMappedSecret extends com.pulumi.resources.Cust
         return args == null ? NetworkFirewallPolicyMappedSecretArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -231,7 +231,7 @@ public class NetworkFirewallPolicyMappedSecret extends com.pulumi.resources.Cust
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static NetworkFirewallPolicyMappedSecret get(String name, Output<String> id, @Nullable NetworkFirewallPolicyMappedSecretState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static NetworkFirewallPolicyMappedSecret get(java.lang.String name, Output<java.lang.String> id, @Nullable NetworkFirewallPolicyMappedSecretState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new NetworkFirewallPolicyMappedSecret(name, id, state, options);
     }
 }

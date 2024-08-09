@@ -118,7 +118,7 @@ class AwaitableGetVolumeGroupReplicasResult(GetVolumeGroupReplicasResult):
 def get_volume_group_replicas(availability_domain: Optional[str] = None,
                               compartment_id: Optional[str] = None,
                               display_name: Optional[str] = None,
-                              filters: Optional[Sequence[pulumi.InputType['GetVolumeGroupReplicasFilterArgs']]] = None,
+                              filters: Optional[Sequence[Union['GetVolumeGroupReplicasFilterArgs', 'GetVolumeGroupReplicasFilterArgsDict']]] = None,
                               state: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVolumeGroupReplicasResult:
     """
@@ -168,7 +168,7 @@ def get_volume_group_replicas(availability_domain: Optional[str] = None,
 def get_volume_group_replicas_output(availability_domain: Optional[pulumi.Input[str]] = None,
                                      compartment_id: Optional[pulumi.Input[str]] = None,
                                      display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                     filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetVolumeGroupReplicasFilterArgs']]]]] = None,
+                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVolumeGroupReplicasFilterArgs', 'GetVolumeGroupReplicasFilterArgsDict']]]]] = None,
                                      state: Optional[pulumi.Input[Optional[str]]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVolumeGroupReplicasResult]:
     """

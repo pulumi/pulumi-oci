@@ -97,7 +97,7 @@ class AwaitableGetSecurityPolicyReportDatabaseViewAccessEntriesResult(GetSecurit
             target_id=self.target_id)
 
 
-def get_security_policy_report_database_view_access_entries(filters: Optional[Sequence[pulumi.InputType['GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArgs']]] = None,
+def get_security_policy_report_database_view_access_entries(filters: Optional[Sequence[Union['GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArgs', 'GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArgsDict']]] = None,
                                                             scim_query: Optional[str] = None,
                                                             security_policy_report_id: Optional[str] = None,
                                                             target_id: Optional[str] = None,
@@ -145,7 +145,7 @@ def get_security_policy_report_database_view_access_entries(filters: Optional[Se
 
 
 @_utilities.lift_output_func(get_security_policy_report_database_view_access_entries)
-def get_security_policy_report_database_view_access_entries_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArgs']]]]] = None,
+def get_security_policy_report_database_view_access_entries_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArgs', 'GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArgsDict']]]]] = None,
                                                                    scim_query: Optional[pulumi.Input[Optional[str]]] = None,
                                                                    security_policy_report_id: Optional[pulumi.Input[str]] = None,
                                                                    target_id: Optional[pulumi.Input[Optional[str]]] = None,

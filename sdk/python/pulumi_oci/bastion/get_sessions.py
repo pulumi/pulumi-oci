@@ -111,7 +111,7 @@ class AwaitableGetSessionsResult(GetSessionsResult):
 
 def get_sessions(bastion_id: Optional[str] = None,
                  display_name: Optional[str] = None,
-                 filters: Optional[Sequence[pulumi.InputType['GetSessionsFilterArgs']]] = None,
+                 filters: Optional[Sequence[Union['GetSessionsFilterArgs', 'GetSessionsFilterArgsDict']]] = None,
                  session_id: Optional[str] = None,
                  session_lifecycle_state: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSessionsResult:
@@ -160,7 +160,7 @@ def get_sessions(bastion_id: Optional[str] = None,
 @_utilities.lift_output_func(get_sessions)
 def get_sessions_output(bastion_id: Optional[pulumi.Input[str]] = None,
                         display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                        filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetSessionsFilterArgs']]]]] = None,
+                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSessionsFilterArgs', 'GetSessionsFilterArgsDict']]]]] = None,
                         session_id: Optional[pulumi.Input[Optional[str]]] = None,
                         session_lifecycle_state: Optional[pulumi.Input[Optional[str]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSessionsResult]:

@@ -274,7 +274,7 @@ public class PrivateApplication extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public PrivateApplication(String name) {
+    public PrivateApplication(java.lang.String name) {
         this(name, PrivateApplicationArgs.Empty);
     }
     /**
@@ -282,7 +282,7 @@ public class PrivateApplication extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public PrivateApplication(String name, PrivateApplicationArgs args) {
+    public PrivateApplication(java.lang.String name, PrivateApplicationArgs args) {
         this(name, args, null);
     }
     /**
@@ -291,12 +291,12 @@ public class PrivateApplication extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public PrivateApplication(String name, PrivateApplicationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:ServiceCatalog/privateApplication:PrivateApplication", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public PrivateApplication(java.lang.String name, PrivateApplicationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:ServiceCatalog/privateApplication:PrivateApplication", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private PrivateApplication(String name, Output<String> id, @Nullable PrivateApplicationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:ServiceCatalog/privateApplication:PrivateApplication", name, state, makeResourceOptions(options, id));
+    private PrivateApplication(java.lang.String name, Output<java.lang.String> id, @Nullable PrivateApplicationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:ServiceCatalog/privateApplication:PrivateApplication", name, state, makeResourceOptions(options, id), false);
     }
 
     private static PrivateApplicationArgs makeArgs(PrivateApplicationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -306,7 +306,7 @@ public class PrivateApplication extends com.pulumi.resources.CustomResource {
         return args == null ? PrivateApplicationArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -322,7 +322,7 @@ public class PrivateApplication extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static PrivateApplication get(String name, Output<String> id, @Nullable PrivateApplicationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static PrivateApplication get(java.lang.String name, Output<java.lang.String> id, @Nullable PrivateApplicationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new PrivateApplication(name, id, state, options);
     }
 }

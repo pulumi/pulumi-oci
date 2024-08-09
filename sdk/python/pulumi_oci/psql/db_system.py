@@ -799,7 +799,7 @@ class DbSystem(pulumi.CustomResource):
                  apply_config: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  config_id: Optional[pulumi.Input[str]] = None,
-                 credentials: Optional[pulumi.Input[pulumi.InputType['DbSystemCredentialsArgs']]] = None,
+                 credentials: Optional[pulumi.Input[Union['DbSystemCredentialsArgs', 'DbSystemCredentialsArgsDict']]] = None,
                  db_version: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
@@ -808,13 +808,13 @@ class DbSystem(pulumi.CustomResource):
                  instance_count: Optional[pulumi.Input[int]] = None,
                  instance_memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
                  instance_ocpu_count: Optional[pulumi.Input[int]] = None,
-                 instances_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemInstancesDetailArgs']]]]] = None,
-                 management_policy: Optional[pulumi.Input[pulumi.InputType['DbSystemManagementPolicyArgs']]] = None,
-                 network_details: Optional[pulumi.Input[pulumi.InputType['DbSystemNetworkDetailsArgs']]] = None,
-                 patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemPatchOperationArgs']]]]] = None,
+                 instances_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DbSystemInstancesDetailArgs', 'DbSystemInstancesDetailArgsDict']]]]] = None,
+                 management_policy: Optional[pulumi.Input[Union['DbSystemManagementPolicyArgs', 'DbSystemManagementPolicyArgsDict']]] = None,
+                 network_details: Optional[pulumi.Input[Union['DbSystemNetworkDetailsArgs', 'DbSystemNetworkDetailsArgsDict']]] = None,
+                 patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DbSystemPatchOperationArgs', 'DbSystemPatchOperationArgsDict']]]]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
-                 source: Optional[pulumi.Input[pulumi.InputType['DbSystemSourceArgs']]] = None,
-                 storage_details: Optional[pulumi.Input[pulumi.InputType['DbSystemStorageDetailsArgs']]] = None,
+                 source: Optional[pulumi.Input[Union['DbSystemSourceArgs', 'DbSystemSourceArgsDict']]] = None,
+                 storage_details: Optional[pulumi.Input[Union['DbSystemStorageDetailsArgs', 'DbSystemStorageDetailsArgsDict']]] = None,
                  system_type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -830,29 +830,29 @@ class DbSystem(pulumi.CustomResource):
 
         test_db_system = oci.psql.DbSystem("test_db_system",
             compartment_id=compartment_id,
-            credentials=oci.psql.DbSystemCredentialsArgs(
-                password_details=oci.psql.DbSystemCredentialsPasswordDetailsArgs(
-                    password_type=db_system_credentials_password_details_password_type,
-                    password=db_system_credentials_password_details_password,
-                    secret_id=test_secret["id"],
-                    secret_version=db_system_credentials_password_details_secret_version,
-                ),
-                username=db_system_credentials_username,
-            ),
+            credentials={
+                "password_details": {
+                    "password_type": db_system_credentials_password_details_password_type,
+                    "password": db_system_credentials_password_details_password,
+                    "secret_id": test_secret["id"],
+                    "secret_version": db_system_credentials_password_details_secret_version,
+                },
+                "username": db_system_credentials_username,
+            },
             db_version=db_system_db_version,
             display_name=db_system_display_name,
-            network_details=oci.psql.DbSystemNetworkDetailsArgs(
-                subnet_id=test_subnet["id"],
-                nsg_ids=db_system_network_details_nsg_ids,
-                primary_db_endpoint_private_ip=db_system_network_details_primary_db_endpoint_private_ip,
-            ),
+            network_details={
+                "subnet_id": test_subnet["id"],
+                "nsg_ids": db_system_network_details_nsg_ids,
+                "primary_db_endpoint_private_ip": db_system_network_details_primary_db_endpoint_private_ip,
+            },
             shape=db_system_shape,
-            storage_details=oci.psql.DbSystemStorageDetailsArgs(
-                is_regionally_durable=db_system_storage_details_is_regionally_durable,
-                system_type=db_system_storage_details_system_type,
-                availability_domain=db_system_storage_details_availability_domain,
-                iops=db_system_storage_details_iops,
-            ),
+            storage_details={
+                "is_regionally_durable": db_system_storage_details_is_regionally_durable,
+                "system_type": db_system_storage_details_system_type,
+                "availability_domain": db_system_storage_details_availability_domain,
+                "iops": db_system_storage_details_iops,
+            },
             config_id=test_config["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -864,32 +864,32 @@ class DbSystem(pulumi.CustomResource):
             instance_count=db_system_instance_count,
             instance_memory_size_in_gbs=db_system_instance_memory_size_in_gbs,
             instance_ocpu_count=db_system_instance_ocpu_count,
-            instances_details=[oci.psql.DbSystemInstancesDetailArgs(
-                description=db_system_instances_details_description,
-                display_name=db_system_instances_details_display_name,
-                private_ip=db_system_instances_details_private_ip,
-            )],
-            management_policy=oci.psql.DbSystemManagementPolicyArgs(
-                backup_policy=oci.psql.DbSystemManagementPolicyBackupPolicyArgs(
-                    backup_start=db_system_management_policy_backup_policy_backup_start,
-                    days_of_the_months=db_system_management_policy_backup_policy_days_of_the_month,
-                    days_of_the_weeks=db_system_management_policy_backup_policy_days_of_the_week,
-                    kind=db_system_management_policy_backup_policy_kind,
-                    retention_days=db_system_management_policy_backup_policy_retention_days,
-                ),
-                maintenance_window_start=db_system_management_policy_maintenance_window_start,
-            ),
-            source=oci.psql.DbSystemSourceArgs(
-                source_type=db_system_source_source_type,
-                backup_id=test_backup["id"],
-                is_having_restore_config_overrides=db_system_source_is_having_restore_config_overrides,
-            ),
+            instances_details=[{
+                "description": db_system_instances_details_description,
+                "display_name": db_system_instances_details_display_name,
+                "private_ip": db_system_instances_details_private_ip,
+            }],
+            management_policy={
+                "backup_policy": {
+                    "backup_start": db_system_management_policy_backup_policy_backup_start,
+                    "days_of_the_months": db_system_management_policy_backup_policy_days_of_the_month,
+                    "days_of_the_weeks": db_system_management_policy_backup_policy_days_of_the_week,
+                    "kind": db_system_management_policy_backup_policy_kind,
+                    "retention_days": db_system_management_policy_backup_policy_retention_days,
+                },
+                "maintenance_window_start": db_system_management_policy_maintenance_window_start,
+            },
+            source={
+                "source_type": db_system_source_source_type,
+                "backup_id": test_backup["id"],
+                "is_having_restore_config_overrides": db_system_source_is_having_restore_config_overrides,
+            },
             system_type=db_system_system_type,
-            patch_operations=[oci.psql.DbSystemPatchOperationArgs(
-                operation=db_system_patch_operations_operation,
-                selection=db_system_patch_operations_selection,
-                value=db_system_patch_operations_value,
-            )])
+            patch_operations=[{
+                "operation": db_system_patch_operations_operation,
+                "selection": db_system_patch_operations_selection,
+                "value": db_system_patch_operations_value,
+            }])
         ```
 
         ## Import
@@ -905,7 +905,7 @@ class DbSystem(pulumi.CustomResource):
         :param pulumi.Input[str] apply_config: Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
         :param pulumi.Input[str] config_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
-        :param pulumi.Input[pulumi.InputType['DbSystemCredentialsArgs']] credentials: Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
+        :param pulumi.Input[Union['DbSystemCredentialsArgs', 'DbSystemCredentialsArgsDict']] credentials: Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
         :param pulumi.Input[str] db_version: Version of database system software.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) A user-provided description of a database system.
@@ -914,13 +914,13 @@ class DbSystem(pulumi.CustomResource):
         :param pulumi.Input[int] instance_count: Count of database instances nodes to be created in the database system.
         :param pulumi.Input[int] instance_memory_size_in_gbs: (Updatable) The total amount of memory available to each database instance node, in gigabytes.
         :param pulumi.Input[int] instance_ocpu_count: (Updatable) The total number of OCPUs available to each database instance node.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemInstancesDetailArgs']]]] instances_details: Details of database instances nodes to be created. This parameter is optional. If specified, its size must match `instanceCount`.
-        :param pulumi.Input[pulumi.InputType['DbSystemManagementPolicyArgs']] management_policy: (Updatable) PostgreSQL database system management policy update details.
-        :param pulumi.Input[pulumi.InputType['DbSystemNetworkDetailsArgs']] network_details: (Updatable) Network details for the database system.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemPatchOperationArgs']]]] patch_operations: (Updatable) For adding and removing from read replica database instances. Please remove the patch_operations after it is applied. Update the instance_count arrodrandly. Cannot be specified when creating the resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DbSystemInstancesDetailArgs', 'DbSystemInstancesDetailArgsDict']]]] instances_details: Details of database instances nodes to be created. This parameter is optional. If specified, its size must match `instanceCount`.
+        :param pulumi.Input[Union['DbSystemManagementPolicyArgs', 'DbSystemManagementPolicyArgsDict']] management_policy: (Updatable) PostgreSQL database system management policy update details.
+        :param pulumi.Input[Union['DbSystemNetworkDetailsArgs', 'DbSystemNetworkDetailsArgsDict']] network_details: (Updatable) Network details for the database system.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DbSystemPatchOperationArgs', 'DbSystemPatchOperationArgsDict']]]] patch_operations: (Updatable) For adding and removing from read replica database instances. Please remove the patch_operations after it is applied. Update the instance_count arrodrandly. Cannot be specified when creating the resource.
         :param pulumi.Input[str] shape: (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
-        :param pulumi.Input[pulumi.InputType['DbSystemSourceArgs']] source: The source used to restore the database system.
-        :param pulumi.Input[pulumi.InputType['DbSystemStorageDetailsArgs']] storage_details: (Updatable) Storage details of the database system.
+        :param pulumi.Input[Union['DbSystemSourceArgs', 'DbSystemSourceArgsDict']] source: The source used to restore the database system.
+        :param pulumi.Input[Union['DbSystemStorageDetailsArgs', 'DbSystemStorageDetailsArgsDict']] storage_details: (Updatable) Storage details of the database system.
         :param pulumi.Input[str] system_type: Type of the database system.
                
                
@@ -946,29 +946,29 @@ class DbSystem(pulumi.CustomResource):
 
         test_db_system = oci.psql.DbSystem("test_db_system",
             compartment_id=compartment_id,
-            credentials=oci.psql.DbSystemCredentialsArgs(
-                password_details=oci.psql.DbSystemCredentialsPasswordDetailsArgs(
-                    password_type=db_system_credentials_password_details_password_type,
-                    password=db_system_credentials_password_details_password,
-                    secret_id=test_secret["id"],
-                    secret_version=db_system_credentials_password_details_secret_version,
-                ),
-                username=db_system_credentials_username,
-            ),
+            credentials={
+                "password_details": {
+                    "password_type": db_system_credentials_password_details_password_type,
+                    "password": db_system_credentials_password_details_password,
+                    "secret_id": test_secret["id"],
+                    "secret_version": db_system_credentials_password_details_secret_version,
+                },
+                "username": db_system_credentials_username,
+            },
             db_version=db_system_db_version,
             display_name=db_system_display_name,
-            network_details=oci.psql.DbSystemNetworkDetailsArgs(
-                subnet_id=test_subnet["id"],
-                nsg_ids=db_system_network_details_nsg_ids,
-                primary_db_endpoint_private_ip=db_system_network_details_primary_db_endpoint_private_ip,
-            ),
+            network_details={
+                "subnet_id": test_subnet["id"],
+                "nsg_ids": db_system_network_details_nsg_ids,
+                "primary_db_endpoint_private_ip": db_system_network_details_primary_db_endpoint_private_ip,
+            },
             shape=db_system_shape,
-            storage_details=oci.psql.DbSystemStorageDetailsArgs(
-                is_regionally_durable=db_system_storage_details_is_regionally_durable,
-                system_type=db_system_storage_details_system_type,
-                availability_domain=db_system_storage_details_availability_domain,
-                iops=db_system_storage_details_iops,
-            ),
+            storage_details={
+                "is_regionally_durable": db_system_storage_details_is_regionally_durable,
+                "system_type": db_system_storage_details_system_type,
+                "availability_domain": db_system_storage_details_availability_domain,
+                "iops": db_system_storage_details_iops,
+            },
             config_id=test_config["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -980,32 +980,32 @@ class DbSystem(pulumi.CustomResource):
             instance_count=db_system_instance_count,
             instance_memory_size_in_gbs=db_system_instance_memory_size_in_gbs,
             instance_ocpu_count=db_system_instance_ocpu_count,
-            instances_details=[oci.psql.DbSystemInstancesDetailArgs(
-                description=db_system_instances_details_description,
-                display_name=db_system_instances_details_display_name,
-                private_ip=db_system_instances_details_private_ip,
-            )],
-            management_policy=oci.psql.DbSystemManagementPolicyArgs(
-                backup_policy=oci.psql.DbSystemManagementPolicyBackupPolicyArgs(
-                    backup_start=db_system_management_policy_backup_policy_backup_start,
-                    days_of_the_months=db_system_management_policy_backup_policy_days_of_the_month,
-                    days_of_the_weeks=db_system_management_policy_backup_policy_days_of_the_week,
-                    kind=db_system_management_policy_backup_policy_kind,
-                    retention_days=db_system_management_policy_backup_policy_retention_days,
-                ),
-                maintenance_window_start=db_system_management_policy_maintenance_window_start,
-            ),
-            source=oci.psql.DbSystemSourceArgs(
-                source_type=db_system_source_source_type,
-                backup_id=test_backup["id"],
-                is_having_restore_config_overrides=db_system_source_is_having_restore_config_overrides,
-            ),
+            instances_details=[{
+                "description": db_system_instances_details_description,
+                "display_name": db_system_instances_details_display_name,
+                "private_ip": db_system_instances_details_private_ip,
+            }],
+            management_policy={
+                "backup_policy": {
+                    "backup_start": db_system_management_policy_backup_policy_backup_start,
+                    "days_of_the_months": db_system_management_policy_backup_policy_days_of_the_month,
+                    "days_of_the_weeks": db_system_management_policy_backup_policy_days_of_the_week,
+                    "kind": db_system_management_policy_backup_policy_kind,
+                    "retention_days": db_system_management_policy_backup_policy_retention_days,
+                },
+                "maintenance_window_start": db_system_management_policy_maintenance_window_start,
+            },
+            source={
+                "source_type": db_system_source_source_type,
+                "backup_id": test_backup["id"],
+                "is_having_restore_config_overrides": db_system_source_is_having_restore_config_overrides,
+            },
             system_type=db_system_system_type,
-            patch_operations=[oci.psql.DbSystemPatchOperationArgs(
-                operation=db_system_patch_operations_operation,
-                selection=db_system_patch_operations_selection,
-                value=db_system_patch_operations_value,
-            )])
+            patch_operations=[{
+                "operation": db_system_patch_operations_operation,
+                "selection": db_system_patch_operations_selection,
+                "value": db_system_patch_operations_value,
+            }])
         ```
 
         ## Import
@@ -1034,7 +1034,7 @@ class DbSystem(pulumi.CustomResource):
                  apply_config: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  config_id: Optional[pulumi.Input[str]] = None,
-                 credentials: Optional[pulumi.Input[pulumi.InputType['DbSystemCredentialsArgs']]] = None,
+                 credentials: Optional[pulumi.Input[Union['DbSystemCredentialsArgs', 'DbSystemCredentialsArgsDict']]] = None,
                  db_version: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
@@ -1043,13 +1043,13 @@ class DbSystem(pulumi.CustomResource):
                  instance_count: Optional[pulumi.Input[int]] = None,
                  instance_memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
                  instance_ocpu_count: Optional[pulumi.Input[int]] = None,
-                 instances_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemInstancesDetailArgs']]]]] = None,
-                 management_policy: Optional[pulumi.Input[pulumi.InputType['DbSystemManagementPolicyArgs']]] = None,
-                 network_details: Optional[pulumi.Input[pulumi.InputType['DbSystemNetworkDetailsArgs']]] = None,
-                 patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemPatchOperationArgs']]]]] = None,
+                 instances_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DbSystemInstancesDetailArgs', 'DbSystemInstancesDetailArgsDict']]]]] = None,
+                 management_policy: Optional[pulumi.Input[Union['DbSystemManagementPolicyArgs', 'DbSystemManagementPolicyArgsDict']]] = None,
+                 network_details: Optional[pulumi.Input[Union['DbSystemNetworkDetailsArgs', 'DbSystemNetworkDetailsArgsDict']]] = None,
+                 patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DbSystemPatchOperationArgs', 'DbSystemPatchOperationArgsDict']]]]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
-                 source: Optional[pulumi.Input[pulumi.InputType['DbSystemSourceArgs']]] = None,
-                 storage_details: Optional[pulumi.Input[pulumi.InputType['DbSystemStorageDetailsArgs']]] = None,
+                 source: Optional[pulumi.Input[Union['DbSystemSourceArgs', 'DbSystemSourceArgsDict']]] = None,
+                 storage_details: Optional[pulumi.Input[Union['DbSystemStorageDetailsArgs', 'DbSystemStorageDetailsArgsDict']]] = None,
                  system_type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -1113,7 +1113,7 @@ class DbSystem(pulumi.CustomResource):
             apply_config: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             config_id: Optional[pulumi.Input[str]] = None,
-            credentials: Optional[pulumi.Input[pulumi.InputType['DbSystemCredentialsArgs']]] = None,
+            credentials: Optional[pulumi.Input[Union['DbSystemCredentialsArgs', 'DbSystemCredentialsArgsDict']]] = None,
             db_version: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             description: Optional[pulumi.Input[str]] = None,
@@ -1122,16 +1122,16 @@ class DbSystem(pulumi.CustomResource):
             instance_count: Optional[pulumi.Input[int]] = None,
             instance_memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
             instance_ocpu_count: Optional[pulumi.Input[int]] = None,
-            instances: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemInstanceArgs']]]]] = None,
-            instances_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemInstancesDetailArgs']]]]] = None,
+            instances: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DbSystemInstanceArgs', 'DbSystemInstanceArgsDict']]]]] = None,
+            instances_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DbSystemInstancesDetailArgs', 'DbSystemInstancesDetailArgsDict']]]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
-            management_policy: Optional[pulumi.Input[pulumi.InputType['DbSystemManagementPolicyArgs']]] = None,
-            network_details: Optional[pulumi.Input[pulumi.InputType['DbSystemNetworkDetailsArgs']]] = None,
-            patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemPatchOperationArgs']]]]] = None,
+            management_policy: Optional[pulumi.Input[Union['DbSystemManagementPolicyArgs', 'DbSystemManagementPolicyArgsDict']]] = None,
+            network_details: Optional[pulumi.Input[Union['DbSystemNetworkDetailsArgs', 'DbSystemNetworkDetailsArgsDict']]] = None,
+            patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DbSystemPatchOperationArgs', 'DbSystemPatchOperationArgsDict']]]]] = None,
             shape: Optional[pulumi.Input[str]] = None,
-            source: Optional[pulumi.Input[pulumi.InputType['DbSystemSourceArgs']]] = None,
+            source: Optional[pulumi.Input[Union['DbSystemSourceArgs', 'DbSystemSourceArgsDict']]] = None,
             state: Optional[pulumi.Input[str]] = None,
-            storage_details: Optional[pulumi.Input[pulumi.InputType['DbSystemStorageDetailsArgs']]] = None,
+            storage_details: Optional[pulumi.Input[Union['DbSystemStorageDetailsArgs', 'DbSystemStorageDetailsArgsDict']]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             system_type: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
@@ -1147,7 +1147,7 @@ class DbSystem(pulumi.CustomResource):
         :param pulumi.Input[str] apply_config: Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
         :param pulumi.Input[str] config_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
-        :param pulumi.Input[pulumi.InputType['DbSystemCredentialsArgs']] credentials: Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
+        :param pulumi.Input[Union['DbSystemCredentialsArgs', 'DbSystemCredentialsArgsDict']] credentials: Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
         :param pulumi.Input[str] db_version: Version of database system software.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) A user-provided description of a database system.
@@ -1156,16 +1156,16 @@ class DbSystem(pulumi.CustomResource):
         :param pulumi.Input[int] instance_count: Count of database instances nodes to be created in the database system.
         :param pulumi.Input[int] instance_memory_size_in_gbs: (Updatable) The total amount of memory available to each database instance node, in gigabytes.
         :param pulumi.Input[int] instance_ocpu_count: (Updatable) The total number of OCPUs available to each database instance node.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemInstanceArgs']]]] instances: The list of instances, or nodes, in the database system.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemInstancesDetailArgs']]]] instances_details: Details of database instances nodes to be created. This parameter is optional. If specified, its size must match `instanceCount`.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DbSystemInstanceArgs', 'DbSystemInstanceArgsDict']]]] instances: The list of instances, or nodes, in the database system.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DbSystemInstancesDetailArgs', 'DbSystemInstancesDetailArgsDict']]]] instances_details: Details of database instances nodes to be created. This parameter is optional. If specified, its size must match `instanceCount`.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[pulumi.InputType['DbSystemManagementPolicyArgs']] management_policy: (Updatable) PostgreSQL database system management policy update details.
-        :param pulumi.Input[pulumi.InputType['DbSystemNetworkDetailsArgs']] network_details: (Updatable) Network details for the database system.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemPatchOperationArgs']]]] patch_operations: (Updatable) For adding and removing from read replica database instances. Please remove the patch_operations after it is applied. Update the instance_count arrodrandly. Cannot be specified when creating the resource.
+        :param pulumi.Input[Union['DbSystemManagementPolicyArgs', 'DbSystemManagementPolicyArgsDict']] management_policy: (Updatable) PostgreSQL database system management policy update details.
+        :param pulumi.Input[Union['DbSystemNetworkDetailsArgs', 'DbSystemNetworkDetailsArgsDict']] network_details: (Updatable) Network details for the database system.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DbSystemPatchOperationArgs', 'DbSystemPatchOperationArgsDict']]]] patch_operations: (Updatable) For adding and removing from read replica database instances. Please remove the patch_operations after it is applied. Update the instance_count arrodrandly. Cannot be specified when creating the resource.
         :param pulumi.Input[str] shape: (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
-        :param pulumi.Input[pulumi.InputType['DbSystemSourceArgs']] source: The source used to restore the database system.
+        :param pulumi.Input[Union['DbSystemSourceArgs', 'DbSystemSourceArgsDict']] source: The source used to restore the database system.
         :param pulumi.Input[str] state: The current state of the database system.
-        :param pulumi.Input[pulumi.InputType['DbSystemStorageDetailsArgs']] storage_details: (Updatable) Storage details of the database system.
+        :param pulumi.Input[Union['DbSystemStorageDetailsArgs', 'DbSystemStorageDetailsArgsDict']] storage_details: (Updatable) Storage details of the database system.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] system_type: Type of the database system.
                

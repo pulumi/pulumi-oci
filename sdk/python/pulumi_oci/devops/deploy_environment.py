@@ -465,14 +465,14 @@ class DeployEnvironment(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  cluster_id: Optional[pulumi.Input[str]] = None,
-                 compute_instance_group_selectors: Optional[pulumi.Input[pulumi.InputType['DeployEnvironmentComputeInstanceGroupSelectorsArgs']]] = None,
+                 compute_instance_group_selectors: Optional[pulumi.Input[Union['DeployEnvironmentComputeInstanceGroupSelectorsArgs', 'DeployEnvironmentComputeInstanceGroupSelectorsArgsDict']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  deploy_environment_type: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  function_id: Optional[pulumi.Input[str]] = None,
-                 network_channel: Optional[pulumi.Input[pulumi.InputType['DeployEnvironmentNetworkChannelArgs']]] = None,
+                 network_channel: Optional[pulumi.Input[Union['DeployEnvironmentNetworkChannelArgs', 'DeployEnvironmentNetworkChannelArgsDict']]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -490,14 +490,14 @@ class DeployEnvironment(pulumi.CustomResource):
             deploy_environment_type=deploy_environment_deploy_environment_type,
             project_id=test_project["id"],
             cluster_id=test_cluster["id"],
-            compute_instance_group_selectors=oci.dev_ops.DeployEnvironmentComputeInstanceGroupSelectorsArgs(
-                items=[oci.dev_ops.DeployEnvironmentComputeInstanceGroupSelectorsItemArgs(
-                    selector_type=deploy_environment_compute_instance_group_selectors_items_selector_type,
-                    compute_instance_ids=deploy_environment_compute_instance_group_selectors_items_compute_instance_ids,
-                    query=deploy_environment_compute_instance_group_selectors_items_query,
-                    region=deploy_environment_compute_instance_group_selectors_items_region,
-                )],
-            ),
+            compute_instance_group_selectors={
+                "items": [{
+                    "selector_type": deploy_environment_compute_instance_group_selectors_items_selector_type,
+                    "compute_instance_ids": deploy_environment_compute_instance_group_selectors_items_compute_instance_ids,
+                    "query": deploy_environment_compute_instance_group_selectors_items_query,
+                    "region": deploy_environment_compute_instance_group_selectors_items_region,
+                }],
+            },
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -507,11 +507,11 @@ class DeployEnvironment(pulumi.CustomResource):
                 "bar-key": "value",
             },
             function_id=test_function["id"],
-            network_channel=oci.dev_ops.DeployEnvironmentNetworkChannelArgs(
-                network_channel_type=deploy_environment_network_channel_network_channel_type,
-                subnet_id=test_subnet["id"],
-                nsg_ids=deploy_environment_network_channel_nsg_ids,
-            ))
+            network_channel={
+                "network_channel_type": deploy_environment_network_channel_network_channel_type,
+                "subnet_id": test_subnet["id"],
+                "nsg_ids": deploy_environment_network_channel_nsg_ids,
+            })
         ```
 
         ## Import
@@ -525,14 +525,14 @@ class DeployEnvironment(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] cluster_id: (Updatable) The OCID of the Kubernetes cluster.
-        :param pulumi.Input[pulumi.InputType['DeployEnvironmentComputeInstanceGroupSelectorsArgs']] compute_instance_group_selectors: (Updatable) A collection of selectors. The combination of instances matching the selectors are included in the instance group.
+        :param pulumi.Input[Union['DeployEnvironmentComputeInstanceGroupSelectorsArgs', 'DeployEnvironmentComputeInstanceGroupSelectorsArgsDict']] compute_instance_group_selectors: (Updatable) A collection of selectors. The combination of instances matching the selectors are included in the instance group.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] deploy_environment_type: (Updatable) Deployment environment type.
         :param pulumi.Input[str] description: (Updatable) Optional description about the deployment environment.
         :param pulumi.Input[str] display_name: (Updatable) Deployment environment display name. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] function_id: (Updatable) The OCID of the Function.
-        :param pulumi.Input[pulumi.InputType['DeployEnvironmentNetworkChannelArgs']] network_channel: (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+        :param pulumi.Input[Union['DeployEnvironmentNetworkChannelArgs', 'DeployEnvironmentNetworkChannelArgsDict']] network_channel: (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
         :param pulumi.Input[str] project_id: The OCID of a project.
                
                
@@ -560,14 +560,14 @@ class DeployEnvironment(pulumi.CustomResource):
             deploy_environment_type=deploy_environment_deploy_environment_type,
             project_id=test_project["id"],
             cluster_id=test_cluster["id"],
-            compute_instance_group_selectors=oci.dev_ops.DeployEnvironmentComputeInstanceGroupSelectorsArgs(
-                items=[oci.dev_ops.DeployEnvironmentComputeInstanceGroupSelectorsItemArgs(
-                    selector_type=deploy_environment_compute_instance_group_selectors_items_selector_type,
-                    compute_instance_ids=deploy_environment_compute_instance_group_selectors_items_compute_instance_ids,
-                    query=deploy_environment_compute_instance_group_selectors_items_query,
-                    region=deploy_environment_compute_instance_group_selectors_items_region,
-                )],
-            ),
+            compute_instance_group_selectors={
+                "items": [{
+                    "selector_type": deploy_environment_compute_instance_group_selectors_items_selector_type,
+                    "compute_instance_ids": deploy_environment_compute_instance_group_selectors_items_compute_instance_ids,
+                    "query": deploy_environment_compute_instance_group_selectors_items_query,
+                    "region": deploy_environment_compute_instance_group_selectors_items_region,
+                }],
+            },
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -577,11 +577,11 @@ class DeployEnvironment(pulumi.CustomResource):
                 "bar-key": "value",
             },
             function_id=test_function["id"],
-            network_channel=oci.dev_ops.DeployEnvironmentNetworkChannelArgs(
-                network_channel_type=deploy_environment_network_channel_network_channel_type,
-                subnet_id=test_subnet["id"],
-                nsg_ids=deploy_environment_network_channel_nsg_ids,
-            ))
+            network_channel={
+                "network_channel_type": deploy_environment_network_channel_network_channel_type,
+                "subnet_id": test_subnet["id"],
+                "nsg_ids": deploy_environment_network_channel_nsg_ids,
+            })
         ```
 
         ## Import
@@ -608,14 +608,14 @@ class DeployEnvironment(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  cluster_id: Optional[pulumi.Input[str]] = None,
-                 compute_instance_group_selectors: Optional[pulumi.Input[pulumi.InputType['DeployEnvironmentComputeInstanceGroupSelectorsArgs']]] = None,
+                 compute_instance_group_selectors: Optional[pulumi.Input[Union['DeployEnvironmentComputeInstanceGroupSelectorsArgs', 'DeployEnvironmentComputeInstanceGroupSelectorsArgsDict']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  deploy_environment_type: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  function_id: Optional[pulumi.Input[str]] = None,
-                 network_channel: Optional[pulumi.Input[pulumi.InputType['DeployEnvironmentNetworkChannelArgs']]] = None,
+                 network_channel: Optional[pulumi.Input[Union['DeployEnvironmentNetworkChannelArgs', 'DeployEnvironmentNetworkChannelArgsDict']]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -658,7 +658,7 @@ class DeployEnvironment(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             cluster_id: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            compute_instance_group_selectors: Optional[pulumi.Input[pulumi.InputType['DeployEnvironmentComputeInstanceGroupSelectorsArgs']]] = None,
+            compute_instance_group_selectors: Optional[pulumi.Input[Union['DeployEnvironmentComputeInstanceGroupSelectorsArgs', 'DeployEnvironmentComputeInstanceGroupSelectorsArgsDict']]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             deploy_environment_type: Optional[pulumi.Input[str]] = None,
             description: Optional[pulumi.Input[str]] = None,
@@ -666,7 +666,7 @@ class DeployEnvironment(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             function_id: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
-            network_channel: Optional[pulumi.Input[pulumi.InputType['DeployEnvironmentNetworkChannelArgs']]] = None,
+            network_channel: Optional[pulumi.Input[Union['DeployEnvironmentNetworkChannelArgs', 'DeployEnvironmentNetworkChannelArgsDict']]] = None,
             project_id: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -681,7 +681,7 @@ class DeployEnvironment(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] cluster_id: (Updatable) The OCID of the Kubernetes cluster.
         :param pulumi.Input[str] compartment_id: The OCID of a compartment.
-        :param pulumi.Input[pulumi.InputType['DeployEnvironmentComputeInstanceGroupSelectorsArgs']] compute_instance_group_selectors: (Updatable) A collection of selectors. The combination of instances matching the selectors are included in the instance group.
+        :param pulumi.Input[Union['DeployEnvironmentComputeInstanceGroupSelectorsArgs', 'DeployEnvironmentComputeInstanceGroupSelectorsArgsDict']] compute_instance_group_selectors: (Updatable) A collection of selectors. The combination of instances matching the selectors are included in the instance group.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] deploy_environment_type: (Updatable) Deployment environment type.
         :param pulumi.Input[str] description: (Updatable) Optional description about the deployment environment.
@@ -689,7 +689,7 @@ class DeployEnvironment(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] function_id: (Updatable) The OCID of the Function.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[pulumi.InputType['DeployEnvironmentNetworkChannelArgs']] network_channel: (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+        :param pulumi.Input[Union['DeployEnvironmentNetworkChannelArgs', 'DeployEnvironmentNetworkChannelArgsDict']] network_channel: (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
         :param pulumi.Input[str] project_id: The OCID of a project.
                
                

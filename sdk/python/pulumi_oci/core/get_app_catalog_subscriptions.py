@@ -92,7 +92,7 @@ class AwaitableGetAppCatalogSubscriptionsResult(GetAppCatalogSubscriptionsResult
 
 
 def get_app_catalog_subscriptions(compartment_id: Optional[str] = None,
-                                  filters: Optional[Sequence[pulumi.InputType['GetAppCatalogSubscriptionsFilterArgs']]] = None,
+                                  filters: Optional[Sequence[Union['GetAppCatalogSubscriptionsFilterArgs', 'GetAppCatalogSubscriptionsFilterArgsDict']]] = None,
                                   listing_id: Optional[str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppCatalogSubscriptionsResult:
     """
@@ -131,7 +131,7 @@ def get_app_catalog_subscriptions(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_app_catalog_subscriptions)
 def get_app_catalog_subscriptions_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                         filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAppCatalogSubscriptionsFilterArgs']]]]] = None,
+                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAppCatalogSubscriptionsFilterArgs', 'GetAppCatalogSubscriptionsFilterArgsDict']]]]] = None,
                                          listing_id: Optional[pulumi.Input[Optional[str]]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppCatalogSubscriptionsResult]:
     """

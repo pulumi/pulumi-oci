@@ -327,7 +327,7 @@ public class DatabaseSoftwareImage extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DatabaseSoftwareImage(String name) {
+    public DatabaseSoftwareImage(java.lang.String name) {
         this(name, DatabaseSoftwareImageArgs.Empty);
     }
     /**
@@ -335,7 +335,7 @@ public class DatabaseSoftwareImage extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DatabaseSoftwareImage(String name, DatabaseSoftwareImageArgs args) {
+    public DatabaseSoftwareImage(java.lang.String name, DatabaseSoftwareImageArgs args) {
         this(name, args, null);
     }
     /**
@@ -344,12 +344,12 @@ public class DatabaseSoftwareImage extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DatabaseSoftwareImage(String name, DatabaseSoftwareImageArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/databaseSoftwareImage:DatabaseSoftwareImage", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DatabaseSoftwareImage(java.lang.String name, DatabaseSoftwareImageArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/databaseSoftwareImage:DatabaseSoftwareImage", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DatabaseSoftwareImage(String name, Output<String> id, @Nullable DatabaseSoftwareImageState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/databaseSoftwareImage:DatabaseSoftwareImage", name, state, makeResourceOptions(options, id));
+    private DatabaseSoftwareImage(java.lang.String name, Output<java.lang.String> id, @Nullable DatabaseSoftwareImageState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/databaseSoftwareImage:DatabaseSoftwareImage", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DatabaseSoftwareImageArgs makeArgs(DatabaseSoftwareImageArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -359,7 +359,7 @@ public class DatabaseSoftwareImage extends com.pulumi.resources.CustomResource {
         return args == null ? DatabaseSoftwareImageArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -375,7 +375,7 @@ public class DatabaseSoftwareImage extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DatabaseSoftwareImage get(String name, Output<String> id, @Nullable DatabaseSoftwareImageState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DatabaseSoftwareImage get(java.lang.String name, Output<java.lang.String> id, @Nullable DatabaseSoftwareImageState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DatabaseSoftwareImage(name, id, state, options);
     }
 }

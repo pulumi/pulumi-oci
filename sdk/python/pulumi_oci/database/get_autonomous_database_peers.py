@@ -77,7 +77,7 @@ class AwaitableGetAutonomousDatabasePeersResult(GetAutonomousDatabasePeersResult
 
 
 def get_autonomous_database_peers(autonomous_database_id: Optional[str] = None,
-                                  filters: Optional[Sequence[pulumi.InputType['GetAutonomousDatabasePeersFilterArgs']]] = None,
+                                  filters: Optional[Sequence[Union['GetAutonomousDatabasePeersFilterArgs', 'GetAutonomousDatabasePeersFilterArgsDict']]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousDatabasePeersResult:
     """
     This data source provides the list of Autonomous Database Peers in Oracle Cloud Infrastructure Database service.
@@ -111,7 +111,7 @@ def get_autonomous_database_peers(autonomous_database_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_autonomous_database_peers)
 def get_autonomous_database_peers_output(autonomous_database_id: Optional[pulumi.Input[str]] = None,
-                                         filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAutonomousDatabasePeersFilterArgs']]]]] = None,
+                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutonomousDatabasePeersFilterArgs', 'GetAutonomousDatabasePeersFilterArgsDict']]]]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousDatabasePeersResult]:
     """
     This data source provides the list of Autonomous Database Peers in Oracle Cloud Infrastructure Database service.

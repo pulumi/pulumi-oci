@@ -217,7 +217,7 @@ def get_autonomous_databases(autonomous_container_database_id: Optional[str] = N
                              db_version: Optional[str] = None,
                              db_workload: Optional[str] = None,
                              display_name: Optional[str] = None,
-                             filters: Optional[Sequence[pulumi.InputType['GetAutonomousDatabasesFilterArgs']]] = None,
+                             filters: Optional[Sequence[Union['GetAutonomousDatabasesFilterArgs', 'GetAutonomousDatabasesFilterArgsDict']]] = None,
                              infrastructure_type: Optional[str] = None,
                              is_data_guard_enabled: Optional[bool] = None,
                              is_free_tier: Optional[bool] = None,
@@ -230,7 +230,8 @@ def get_autonomous_databases(autonomous_container_database_id: Optional[str] = N
     ## 
 
     ***
-    subcategory: "Database"
+    ## subcategory: "Database"
+
     layout: "oci"
     page_title: "Oracle Cloud Infrastructure: database_get_autonomous_databases"
     sidebar_current: "docs-oci-datasource-database-autonomous_databases"
@@ -318,7 +319,7 @@ def get_autonomous_databases_output(autonomous_container_database_id: Optional[p
                                     db_version: Optional[pulumi.Input[Optional[str]]] = None,
                                     db_workload: Optional[pulumi.Input[Optional[str]]] = None,
                                     display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                    filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAutonomousDatabasesFilterArgs']]]]] = None,
+                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutonomousDatabasesFilterArgs', 'GetAutonomousDatabasesFilterArgsDict']]]]] = None,
                                     infrastructure_type: Optional[pulumi.Input[Optional[str]]] = None,
                                     is_data_guard_enabled: Optional[pulumi.Input[Optional[bool]]] = None,
                                     is_free_tier: Optional[pulumi.Input[Optional[bool]]] = None,
@@ -331,7 +332,8 @@ def get_autonomous_databases_output(autonomous_container_database_id: Optional[p
     ## 
 
     ***
-    subcategory: "Database"
+    ## subcategory: "Database"
+
     layout: "oci"
     page_title: "Oracle Cloud Infrastructure: database_get_autonomous_databases"
     sidebar_current: "docs-oci-datasource-database-autonomous_databases"

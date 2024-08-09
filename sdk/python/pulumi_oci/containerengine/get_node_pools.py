@@ -117,7 +117,7 @@ class AwaitableGetNodePoolsResult(GetNodePoolsResult):
 
 def get_node_pools(cluster_id: Optional[str] = None,
                    compartment_id: Optional[str] = None,
-                   filters: Optional[Sequence[pulumi.InputType['GetNodePoolsFilterArgs']]] = None,
+                   filters: Optional[Sequence[Union['GetNodePoolsFilterArgs', 'GetNodePoolsFilterArgsDict']]] = None,
                    name: Optional[str] = None,
                    states: Optional[Sequence[str]] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNodePoolsResult:
@@ -166,7 +166,7 @@ def get_node_pools(cluster_id: Optional[str] = None,
 @_utilities.lift_output_func(get_node_pools)
 def get_node_pools_output(cluster_id: Optional[pulumi.Input[Optional[str]]] = None,
                           compartment_id: Optional[pulumi.Input[str]] = None,
-                          filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetNodePoolsFilterArgs']]]]] = None,
+                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNodePoolsFilterArgs', 'GetNodePoolsFilterArgsDict']]]]] = None,
                           name: Optional[pulumi.Input[Optional[str]]] = None,
                           states: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNodePoolsResult]:

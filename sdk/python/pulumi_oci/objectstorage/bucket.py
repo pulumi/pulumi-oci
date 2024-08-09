@@ -618,7 +618,7 @@ class Bucket(pulumi.CustomResource):
                  name: Optional[pulumi.Input[str]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  object_events_enabled: Optional[pulumi.Input[bool]] = None,
-                 retention_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BucketRetentionRuleArgs']]]]] = None,
+                 retention_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BucketRetentionRuleArgs', 'BucketRetentionRuleArgsDict']]]]] = None,
                  storage_tier: Optional[pulumi.Input[str]] = None,
                  versioning: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -650,14 +650,14 @@ class Bucket(pulumi.CustomResource):
             metadata=bucket_metadata,
             object_events_enabled=bucket_object_events_enabled,
             storage_tier=bucket_storage_tier,
-            retention_rules=[oci.object_storage.BucketRetentionRuleArgs(
-                display_name=retention_rule_display_name,
-                duration=oci.object_storage.BucketRetentionRuleDurationArgs(
-                    time_amount=retention_rule_duration_time_amount,
-                    time_unit=retention_rule_duration_time_unit,
-                ),
-                time_rule_locked=retention_rule_time_rule_locked,
-            )],
+            retention_rules=[{
+                "display_name": retention_rule_display_name,
+                "duration": {
+                    "time_amount": retention_rule_duration_time_amount,
+                    "time_unit": retention_rule_duration_time_unit,
+                },
+                "time_rule_locked": retention_rule_time_rule_locked,
+            }],
             versioning=bucket_versioning)
         ```
 
@@ -681,7 +681,7 @@ class Bucket(pulumi.CustomResource):
         :param pulumi.Input[str] name: The name of the bucket. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods. Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information. example: Example: my-new-bucket1
         :param pulumi.Input[str] namespace: The Object Storage namespace used for the request.
         :param pulumi.Input[bool] object_events_enabled: (Updatable) Whether or not events are emitted for object state changes in this bucket. By default, `objectEventsEnabled` is set to `false`. Set `objectEventsEnabled` to `true` to emit events for object state changes. For more information about events, see [Overview of Events](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/eventsoverview.htm).
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BucketRetentionRuleArgs']]]] retention_rules: (Updatable) Creates a new retention rule in the specified bucket. The new rule will take effect typically within 30 seconds. Note that a maximum of 100 rules are supported on a bucket.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['BucketRetentionRuleArgs', 'BucketRetentionRuleArgsDict']]]] retention_rules: (Updatable) Creates a new retention rule in the specified bucket. The new rule will take effect typically within 30 seconds. Note that a maximum of 100 rules are supported on a bucket.
         :param pulumi.Input[str] storage_tier: The type of storage tier of this bucket. A bucket is set to 'Standard' tier by default, which means the bucket will be put in the standard storage tier. When 'Archive' tier type is set explicitly, the bucket is put in the Archive Storage tier. The 'storageTier' property is immutable after bucket is created.
         :param pulumi.Input[str] versioning: (Updatable) Set the versioning status on the bucket. By default, a bucket is created with versioning `Disabled`. Use this option to enable versioning during bucket creation. Objects in a version enabled bucket are protected from overwrites and deletions. Previous versions of the same object will be available in the bucket. Allowed Create values: Enabled, Disabled. Allowed Update values: Enabled, Suspended.
                
@@ -723,14 +723,14 @@ class Bucket(pulumi.CustomResource):
             metadata=bucket_metadata,
             object_events_enabled=bucket_object_events_enabled,
             storage_tier=bucket_storage_tier,
-            retention_rules=[oci.object_storage.BucketRetentionRuleArgs(
-                display_name=retention_rule_display_name,
-                duration=oci.object_storage.BucketRetentionRuleDurationArgs(
-                    time_amount=retention_rule_duration_time_amount,
-                    time_unit=retention_rule_duration_time_unit,
-                ),
-                time_rule_locked=retention_rule_time_rule_locked,
-            )],
+            retention_rules=[{
+                "display_name": retention_rule_display_name,
+                "duration": {
+                    "time_amount": retention_rule_duration_time_amount,
+                    "time_unit": retention_rule_duration_time_unit,
+                },
+                "time_rule_locked": retention_rule_time_rule_locked,
+            }],
             versioning=bucket_versioning)
         ```
 
@@ -767,7 +767,7 @@ class Bucket(pulumi.CustomResource):
                  name: Optional[pulumi.Input[str]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  object_events_enabled: Optional[pulumi.Input[bool]] = None,
-                 retention_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BucketRetentionRuleArgs']]]]] = None,
+                 retention_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BucketRetentionRuleArgs', 'BucketRetentionRuleArgsDict']]]]] = None,
                  storage_tier: Optional[pulumi.Input[str]] = None,
                  versioning: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -833,7 +833,7 @@ class Bucket(pulumi.CustomResource):
             object_events_enabled: Optional[pulumi.Input[bool]] = None,
             object_lifecycle_policy_etag: Optional[pulumi.Input[str]] = None,
             replication_enabled: Optional[pulumi.Input[bool]] = None,
-            retention_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BucketRetentionRuleArgs']]]]] = None,
+            retention_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BucketRetentionRuleArgs', 'BucketRetentionRuleArgsDict']]]]] = None,
             storage_tier: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             versioning: Optional[pulumi.Input[str]] = None) -> 'Bucket':
@@ -862,7 +862,7 @@ class Bucket(pulumi.CustomResource):
         :param pulumi.Input[bool] object_events_enabled: (Updatable) Whether or not events are emitted for object state changes in this bucket. By default, `objectEventsEnabled` is set to `false`. Set `objectEventsEnabled` to `true` to emit events for object state changes. For more information about events, see [Overview of Events](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/eventsoverview.htm).
         :param pulumi.Input[str] object_lifecycle_policy_etag: The entity tag (ETag) for the live object lifecycle policy on the bucket.
         :param pulumi.Input[bool] replication_enabled: Whether or not this bucket is a replication source. By default, `replicationEnabled` is set to `false`. This will be set to 'true' when you create a replication policy for the bucket.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BucketRetentionRuleArgs']]]] retention_rules: (Updatable) Creates a new retention rule in the specified bucket. The new rule will take effect typically within 30 seconds. Note that a maximum of 100 rules are supported on a bucket.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['BucketRetentionRuleArgs', 'BucketRetentionRuleArgsDict']]]] retention_rules: (Updatable) Creates a new retention rule in the specified bucket. The new rule will take effect typically within 30 seconds. Note that a maximum of 100 rules are supported on a bucket.
         :param pulumi.Input[str] storage_tier: The type of storage tier of this bucket. A bucket is set to 'Standard' tier by default, which means the bucket will be put in the standard storage tier. When 'Archive' tier type is set explicitly, the bucket is put in the Archive Storage tier. The 'storageTier' property is immutable after bucket is created.
         :param pulumi.Input[str] time_created: The date and time the bucket was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
         :param pulumi.Input[str] versioning: (Updatable) Set the versioning status on the bucket. By default, a bucket is created with versioning `Disabled`. Use this option to enable versioning during bucket creation. Objects in a version enabled bucket are protected from overwrites and deletions. Previous versions of the same object will be available in the bucket. Allowed Create values: Enabled, Disabled. Allowed Update values: Enabled, Suspended.

@@ -351,8 +351,8 @@ class NetworkLoadBalancersBackendSetsUnified(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 backends: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkLoadBalancersBackendSetsUnifiedBackendArgs']]]]] = None,
-                 health_checker: Optional[pulumi.Input[pulumi.InputType['NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs']]] = None,
+                 backends: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkLoadBalancersBackendSetsUnifiedBackendArgs', 'NetworkLoadBalancersBackendSetsUnifiedBackendArgsDict']]]]] = None,
+                 health_checker: Optional[pulumi.Input[Union['NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs', 'NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgsDict']]] = None,
                  ip_version: Optional[pulumi.Input[str]] = None,
                  is_fail_open: Optional[pulumi.Input[bool]] = None,
                  is_instant_failover_enabled: Optional[pulumi.Input[bool]] = None,
@@ -373,38 +373,38 @@ class NetworkLoadBalancersBackendSetsUnified(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_network_load_balancers_backend_sets_unified = oci.network_load_balancer.NetworkLoadBalancersBackendSetsUnified("test_network_load_balancers_backend_sets_unified",
-            health_checker=oci.network_load_balancer.NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs(
-                protocol=network_load_balancers_backend_sets_unified_health_checker_protocol,
-                dns=oci.network_load_balancer.NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsArgs(
-                    domain_name=test_domain["name"],
-                    query_class=network_load_balancers_backend_sets_unified_health_checker_dns_query_class,
-                    query_type=network_load_balancers_backend_sets_unified_health_checker_dns_query_type,
-                    rcodes=network_load_balancers_backend_sets_unified_health_checker_dns_rcodes,
-                    transport_protocol=network_load_balancers_backend_sets_unified_health_checker_dns_transport_protocol,
-                ),
-                interval_in_millis=network_load_balancers_backend_sets_unified_health_checker_interval_in_millis,
-                port=network_load_balancers_backend_sets_unified_health_checker_port,
-                request_data=network_load_balancers_backend_sets_unified_health_checker_request_data,
-                response_body_regex=network_load_balancers_backend_sets_unified_health_checker_response_body_regex,
-                response_data=network_load_balancers_backend_sets_unified_health_checker_response_data,
-                retries=network_load_balancers_backend_sets_unified_health_checker_retries,
-                return_code=network_load_balancers_backend_sets_unified_health_checker_return_code,
-                timeout_in_millis=network_load_balancers_backend_sets_unified_health_checker_timeout_in_millis,
-                url_path=network_load_balancers_backend_sets_unified_health_checker_url_path,
-            ),
+            health_checker={
+                "protocol": network_load_balancers_backend_sets_unified_health_checker_protocol,
+                "dns": {
+                    "domain_name": test_domain["name"],
+                    "query_class": network_load_balancers_backend_sets_unified_health_checker_dns_query_class,
+                    "query_type": network_load_balancers_backend_sets_unified_health_checker_dns_query_type,
+                    "rcodes": network_load_balancers_backend_sets_unified_health_checker_dns_rcodes,
+                    "transport_protocol": network_load_balancers_backend_sets_unified_health_checker_dns_transport_protocol,
+                },
+                "interval_in_millis": network_load_balancers_backend_sets_unified_health_checker_interval_in_millis,
+                "port": network_load_balancers_backend_sets_unified_health_checker_port,
+                "request_data": network_load_balancers_backend_sets_unified_health_checker_request_data,
+                "response_body_regex": network_load_balancers_backend_sets_unified_health_checker_response_body_regex,
+                "response_data": network_load_balancers_backend_sets_unified_health_checker_response_data,
+                "retries": network_load_balancers_backend_sets_unified_health_checker_retries,
+                "return_code": network_load_balancers_backend_sets_unified_health_checker_return_code,
+                "timeout_in_millis": network_load_balancers_backend_sets_unified_health_checker_timeout_in_millis,
+                "url_path": network_load_balancers_backend_sets_unified_health_checker_url_path,
+            },
             name=network_load_balancers_backend_sets_unified_name,
             network_load_balancer_id=test_network_load_balancer["id"],
             policy=network_load_balancers_backend_sets_unified_policy,
-            backends=[oci.network_load_balancer.NetworkLoadBalancersBackendSetsUnifiedBackendArgs(
-                port=network_load_balancers_backend_sets_unified_backends_port,
-                ip_address=network_load_balancers_backend_sets_unified_backends_ip_address,
-                is_backup=network_load_balancers_backend_sets_unified_backends_is_backup,
-                is_drain=network_load_balancers_backend_sets_unified_backends_is_drain,
-                is_offline=network_load_balancers_backend_sets_unified_backends_is_offline,
-                name=network_load_balancers_backend_sets_unified_backends_name,
-                target_id=test_target["id"],
-                weight=network_load_balancers_backend_sets_unified_backends_weight,
-            )],
+            backends=[{
+                "port": network_load_balancers_backend_sets_unified_backends_port,
+                "ip_address": network_load_balancers_backend_sets_unified_backends_ip_address,
+                "is_backup": network_load_balancers_backend_sets_unified_backends_is_backup,
+                "is_drain": network_load_balancers_backend_sets_unified_backends_is_drain,
+                "is_offline": network_load_balancers_backend_sets_unified_backends_is_offline,
+                "name": network_load_balancers_backend_sets_unified_backends_name,
+                "target_id": test_target["id"],
+                "weight": network_load_balancers_backend_sets_unified_backends_weight,
+            }],
             ip_version=network_load_balancers_backend_sets_unified_ip_version,
             is_instant_failover_enabled=network_load_balancers_backend_sets_unified_is_instant_failover_enabled,
             is_fail_open=network_load_balancers_backend_sets_unified_is_fail_open,
@@ -421,8 +421,8 @@ class NetworkLoadBalancersBackendSetsUnified(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkLoadBalancersBackendSetsUnifiedBackendArgs']]]] backends: (Updatable) An array of backends to be associated with the backend set.
-        :param pulumi.Input[pulumi.InputType['NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs']] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkLoadBalancersBackendSetsUnifiedBackendArgs', 'NetworkLoadBalancersBackendSetsUnifiedBackendArgsDict']]]] backends: (Updatable) An array of backends to be associated with the backend set.
+        :param pulumi.Input[Union['NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs', 'NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgsDict']] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
         :param pulumi.Input[str] ip_version: (Updatable) IP version associated with the backend set.
         :param pulumi.Input[bool] is_fail_open: (Updatable) If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
         :param pulumi.Input[bool] is_instant_failover_enabled: (Updatable) If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
@@ -457,38 +457,38 @@ class NetworkLoadBalancersBackendSetsUnified(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_network_load_balancers_backend_sets_unified = oci.network_load_balancer.NetworkLoadBalancersBackendSetsUnified("test_network_load_balancers_backend_sets_unified",
-            health_checker=oci.network_load_balancer.NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs(
-                protocol=network_load_balancers_backend_sets_unified_health_checker_protocol,
-                dns=oci.network_load_balancer.NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsArgs(
-                    domain_name=test_domain["name"],
-                    query_class=network_load_balancers_backend_sets_unified_health_checker_dns_query_class,
-                    query_type=network_load_balancers_backend_sets_unified_health_checker_dns_query_type,
-                    rcodes=network_load_balancers_backend_sets_unified_health_checker_dns_rcodes,
-                    transport_protocol=network_load_balancers_backend_sets_unified_health_checker_dns_transport_protocol,
-                ),
-                interval_in_millis=network_load_balancers_backend_sets_unified_health_checker_interval_in_millis,
-                port=network_load_balancers_backend_sets_unified_health_checker_port,
-                request_data=network_load_balancers_backend_sets_unified_health_checker_request_data,
-                response_body_regex=network_load_balancers_backend_sets_unified_health_checker_response_body_regex,
-                response_data=network_load_balancers_backend_sets_unified_health_checker_response_data,
-                retries=network_load_balancers_backend_sets_unified_health_checker_retries,
-                return_code=network_load_balancers_backend_sets_unified_health_checker_return_code,
-                timeout_in_millis=network_load_balancers_backend_sets_unified_health_checker_timeout_in_millis,
-                url_path=network_load_balancers_backend_sets_unified_health_checker_url_path,
-            ),
+            health_checker={
+                "protocol": network_load_balancers_backend_sets_unified_health_checker_protocol,
+                "dns": {
+                    "domain_name": test_domain["name"],
+                    "query_class": network_load_balancers_backend_sets_unified_health_checker_dns_query_class,
+                    "query_type": network_load_balancers_backend_sets_unified_health_checker_dns_query_type,
+                    "rcodes": network_load_balancers_backend_sets_unified_health_checker_dns_rcodes,
+                    "transport_protocol": network_load_balancers_backend_sets_unified_health_checker_dns_transport_protocol,
+                },
+                "interval_in_millis": network_load_balancers_backend_sets_unified_health_checker_interval_in_millis,
+                "port": network_load_balancers_backend_sets_unified_health_checker_port,
+                "request_data": network_load_balancers_backend_sets_unified_health_checker_request_data,
+                "response_body_regex": network_load_balancers_backend_sets_unified_health_checker_response_body_regex,
+                "response_data": network_load_balancers_backend_sets_unified_health_checker_response_data,
+                "retries": network_load_balancers_backend_sets_unified_health_checker_retries,
+                "return_code": network_load_balancers_backend_sets_unified_health_checker_return_code,
+                "timeout_in_millis": network_load_balancers_backend_sets_unified_health_checker_timeout_in_millis,
+                "url_path": network_load_balancers_backend_sets_unified_health_checker_url_path,
+            },
             name=network_load_balancers_backend_sets_unified_name,
             network_load_balancer_id=test_network_load_balancer["id"],
             policy=network_load_balancers_backend_sets_unified_policy,
-            backends=[oci.network_load_balancer.NetworkLoadBalancersBackendSetsUnifiedBackendArgs(
-                port=network_load_balancers_backend_sets_unified_backends_port,
-                ip_address=network_load_balancers_backend_sets_unified_backends_ip_address,
-                is_backup=network_load_balancers_backend_sets_unified_backends_is_backup,
-                is_drain=network_load_balancers_backend_sets_unified_backends_is_drain,
-                is_offline=network_load_balancers_backend_sets_unified_backends_is_offline,
-                name=network_load_balancers_backend_sets_unified_backends_name,
-                target_id=test_target["id"],
-                weight=network_load_balancers_backend_sets_unified_backends_weight,
-            )],
+            backends=[{
+                "port": network_load_balancers_backend_sets_unified_backends_port,
+                "ip_address": network_load_balancers_backend_sets_unified_backends_ip_address,
+                "is_backup": network_load_balancers_backend_sets_unified_backends_is_backup,
+                "is_drain": network_load_balancers_backend_sets_unified_backends_is_drain,
+                "is_offline": network_load_balancers_backend_sets_unified_backends_is_offline,
+                "name": network_load_balancers_backend_sets_unified_backends_name,
+                "target_id": test_target["id"],
+                "weight": network_load_balancers_backend_sets_unified_backends_weight,
+            }],
             ip_version=network_load_balancers_backend_sets_unified_ip_version,
             is_instant_failover_enabled=network_load_balancers_backend_sets_unified_is_instant_failover_enabled,
             is_fail_open=network_load_balancers_backend_sets_unified_is_fail_open,
@@ -518,8 +518,8 @@ class NetworkLoadBalancersBackendSetsUnified(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 backends: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkLoadBalancersBackendSetsUnifiedBackendArgs']]]]] = None,
-                 health_checker: Optional[pulumi.Input[pulumi.InputType['NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs']]] = None,
+                 backends: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkLoadBalancersBackendSetsUnifiedBackendArgs', 'NetworkLoadBalancersBackendSetsUnifiedBackendArgsDict']]]]] = None,
+                 health_checker: Optional[pulumi.Input[Union['NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs', 'NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgsDict']]] = None,
                  ip_version: Optional[pulumi.Input[str]] = None,
                  is_fail_open: Optional[pulumi.Input[bool]] = None,
                  is_instant_failover_enabled: Optional[pulumi.Input[bool]] = None,
@@ -561,8 +561,8 @@ class NetworkLoadBalancersBackendSetsUnified(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            backends: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkLoadBalancersBackendSetsUnifiedBackendArgs']]]]] = None,
-            health_checker: Optional[pulumi.Input[pulumi.InputType['NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs']]] = None,
+            backends: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkLoadBalancersBackendSetsUnifiedBackendArgs', 'NetworkLoadBalancersBackendSetsUnifiedBackendArgsDict']]]]] = None,
+            health_checker: Optional[pulumi.Input[Union['NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs', 'NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgsDict']]] = None,
             ip_version: Optional[pulumi.Input[str]] = None,
             is_fail_open: Optional[pulumi.Input[bool]] = None,
             is_instant_failover_enabled: Optional[pulumi.Input[bool]] = None,
@@ -577,8 +577,8 @@ class NetworkLoadBalancersBackendSetsUnified(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkLoadBalancersBackendSetsUnifiedBackendArgs']]]] backends: (Updatable) An array of backends to be associated with the backend set.
-        :param pulumi.Input[pulumi.InputType['NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs']] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkLoadBalancersBackendSetsUnifiedBackendArgs', 'NetworkLoadBalancersBackendSetsUnifiedBackendArgsDict']]]] backends: (Updatable) An array of backends to be associated with the backend set.
+        :param pulumi.Input[Union['NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs', 'NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgsDict']] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
         :param pulumi.Input[str] ip_version: (Updatable) IP version associated with the backend set.
         :param pulumi.Input[bool] is_fail_open: (Updatable) If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
         :param pulumi.Input[bool] is_instant_failover_enabled: (Updatable) If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.

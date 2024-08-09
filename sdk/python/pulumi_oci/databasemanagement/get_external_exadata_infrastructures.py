@@ -93,7 +93,7 @@ class AwaitableGetExternalExadataInfrastructuresResult(GetExternalExadataInfrast
 
 def get_external_exadata_infrastructures(compartment_id: Optional[str] = None,
                                          display_name: Optional[str] = None,
-                                         filters: Optional[Sequence[pulumi.InputType['GetExternalExadataInfrastructuresFilterArgs']]] = None,
+                                         filters: Optional[Sequence[Union['GetExternalExadataInfrastructuresFilterArgs', 'GetExternalExadataInfrastructuresFilterArgsDict']]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalExadataInfrastructuresResult:
     """
     This data source provides the list of External Exadata Infrastructures in Oracle Cloud Infrastructure Database Management service.
@@ -132,7 +132,7 @@ def get_external_exadata_infrastructures(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_external_exadata_infrastructures)
 def get_external_exadata_infrastructures_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                                 display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                                filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetExternalExadataInfrastructuresFilterArgs']]]]] = None,
+                                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExternalExadataInfrastructuresFilterArgs', 'GetExternalExadataInfrastructuresFilterArgsDict']]]]] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalExadataInfrastructuresResult]:
     """
     This data source provides the list of External Exadata Infrastructures in Oracle Cloud Infrastructure Database Management service.

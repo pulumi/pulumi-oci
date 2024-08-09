@@ -419,7 +419,7 @@ class AnnouncementSubscription(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 filter_groups: Optional[pulumi.Input[pulumi.InputType['AnnouncementSubscriptionFilterGroupsArgs']]] = None,
+                 filter_groups: Optional[pulumi.Input[Union['AnnouncementSubscriptionFilterGroupsArgs', 'AnnouncementSubscriptionFilterGroupsArgsDict']]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  ons_topic_id: Optional[pulumi.Input[str]] = None,
                  preferred_language: Optional[pulumi.Input[str]] = None,
@@ -446,12 +446,12 @@ class AnnouncementSubscription(pulumi.CustomResource):
                 "foo-namespace.bar-key": "value",
             },
             description=announcement_subscription_description,
-            filter_groups=oci.announcements_service.AnnouncementSubscriptionFilterGroupsArgs(
-                filters=[oci.announcements_service.AnnouncementSubscriptionFilterGroupsFilterArgs(
-                    type=announcement_subscription_filter_groups_filters_type,
-                    value=announcement_subscription_filter_groups_filters_value,
-                )],
-            ),
+            filter_groups={
+                "filters": [{
+                    "type": announcement_subscription_filter_groups_filters_type,
+                    "value": announcement_subscription_filter_groups_filters_value,
+                }],
+            },
             freeform_tags={
                 "bar-key": "value",
             },
@@ -473,7 +473,7 @@ class AnnouncementSubscription(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) A description of the announcement subscription. Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the announcement subscription. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[pulumi.InputType['AnnouncementSubscriptionFilterGroupsArgs']] filter_groups: A list of filter groups for the announcement subscription. A filter group combines one or more filters that the Announcements service applies to announcements for matching purposes.
+        :param pulumi.Input[Union['AnnouncementSubscriptionFilterGroupsArgs', 'AnnouncementSubscriptionFilterGroupsArgsDict']] filter_groups: A list of filter groups for the announcement subscription. A filter group combines one or more filters that the Announcements service applies to announcements for matching purposes.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] ons_topic_id: (Updatable) The OCID of the Notifications service topic that is the target for publishing announcements that match the configured announcement subscription. The caller of the operation needs the ONS_TOPIC_PUBLISH permission for the targeted Notifications service topic. For more information about Notifications permissions, see [Details for Notifications](https://docs.cloud.oracle.com/iaas/Content/Identity/policyreference/notificationpolicyreference.htm).
         :param pulumi.Input[str] preferred_language: (Updatable) (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
@@ -510,12 +510,12 @@ class AnnouncementSubscription(pulumi.CustomResource):
                 "foo-namespace.bar-key": "value",
             },
             description=announcement_subscription_description,
-            filter_groups=oci.announcements_service.AnnouncementSubscriptionFilterGroupsArgs(
-                filters=[oci.announcements_service.AnnouncementSubscriptionFilterGroupsFilterArgs(
-                    type=announcement_subscription_filter_groups_filters_type,
-                    value=announcement_subscription_filter_groups_filters_value,
-                )],
-            ),
+            filter_groups={
+                "filters": [{
+                    "type": announcement_subscription_filter_groups_filters_type,
+                    "value": announcement_subscription_filter_groups_filters_value,
+                }],
+            },
             freeform_tags={
                 "bar-key": "value",
             },
@@ -550,7 +550,7 @@ class AnnouncementSubscription(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 filter_groups: Optional[pulumi.Input[pulumi.InputType['AnnouncementSubscriptionFilterGroupsArgs']]] = None,
+                 filter_groups: Optional[pulumi.Input[Union['AnnouncementSubscriptionFilterGroupsArgs', 'AnnouncementSubscriptionFilterGroupsArgsDict']]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  ons_topic_id: Optional[pulumi.Input[str]] = None,
                  preferred_language: Optional[pulumi.Input[str]] = None,
@@ -598,7 +598,7 @@ class AnnouncementSubscription(pulumi.CustomResource):
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
-            filter_groups: Optional[pulumi.Input[pulumi.InputType['AnnouncementSubscriptionFilterGroupsArgs']]] = None,
+            filter_groups: Optional[pulumi.Input[Union['AnnouncementSubscriptionFilterGroupsArgs', 'AnnouncementSubscriptionFilterGroupsArgsDict']]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             ons_topic_id: Optional[pulumi.Input[str]] = None,
@@ -619,7 +619,7 @@ class AnnouncementSubscription(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) A description of the announcement subscription. Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the announcement subscription. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[pulumi.InputType['AnnouncementSubscriptionFilterGroupsArgs']] filter_groups: A list of filter groups for the announcement subscription. A filter group combines one or more filters that the Announcements service applies to announcements for matching purposes.
+        :param pulumi.Input[Union['AnnouncementSubscriptionFilterGroupsArgs', 'AnnouncementSubscriptionFilterGroupsArgsDict']] filter_groups: A list of filter groups for the announcement subscription. A filter group combines one or more filters that the Announcements service applies to announcements for matching purposes.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current lifecycle state in more detail. For example, details might provide required or recommended actions for a resource in a Failed state.
         :param pulumi.Input[str] ons_topic_id: (Updatable) The OCID of the Notifications service topic that is the target for publishing announcements that match the configured announcement subscription. The caller of the operation needs the ONS_TOPIC_PUBLISH permission for the targeted Notifications service topic. For more information about Notifications permissions, see [Details for Notifications](https://docs.cloud.oracle.com/iaas/Content/Identity/policyreference/notificationpolicyreference.htm).

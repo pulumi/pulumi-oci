@@ -140,7 +140,7 @@ def get_configurations(compartment_id: Optional[str] = None,
                        configuration_id: Optional[str] = None,
                        db_version: Optional[str] = None,
                        display_name: Optional[str] = None,
-                       filters: Optional[Sequence[pulumi.InputType['GetConfigurationsFilterArgs']]] = None,
+                       filters: Optional[Sequence[Union['GetConfigurationsFilterArgs', 'GetConfigurationsFilterArgsDict']]] = None,
                        shape: Optional[str] = None,
                        state: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetConfigurationsResult:
@@ -199,7 +199,7 @@ def get_configurations_output(compartment_id: Optional[pulumi.Input[Optional[str
                               configuration_id: Optional[pulumi.Input[Optional[str]]] = None,
                               db_version: Optional[pulumi.Input[Optional[str]]] = None,
                               display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                              filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetConfigurationsFilterArgs']]]]] = None,
+                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetConfigurationsFilterArgs', 'GetConfigurationsFilterArgsDict']]]]] = None,
                               shape: Optional[pulumi.Input[Optional[str]]] = None,
                               state: Optional[pulumi.Input[Optional[str]]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConfigurationsResult]:

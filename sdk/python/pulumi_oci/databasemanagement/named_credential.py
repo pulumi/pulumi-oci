@@ -416,7 +416,7 @@ class NamedCredential(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  associated_resource: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 content: Optional[pulumi.Input[pulumi.InputType['NamedCredentialContentArgs']]] = None,
+                 content: Optional[pulumi.Input[Union['NamedCredentialContentArgs', 'NamedCredentialContentArgsDict']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -437,13 +437,13 @@ class NamedCredential(pulumi.CustomResource):
 
         test_named_credential = oci.database_management.NamedCredential("test_named_credential",
             compartment_id=compartment_id,
-            content=oci.database_management.NamedCredentialContentArgs(
-                credential_type=named_credential_content_credential_type,
-                password_secret_access_mode=named_credential_content_password_secret_access_mode,
-                password_secret_id=test_secret["id"],
-                role=named_credential_content_role,
-                user_name=test_user["name"],
-            ),
+            content={
+                "credential_type": named_credential_content_credential_type,
+                "password_secret_access_mode": named_credential_content_password_secret_access_mode,
+                "password_secret_id": test_secret["id"],
+                "role": named_credential_content_role,
+                "user_name": test_user["name"],
+            },
             name=named_credential_name,
             scope=named_credential_scope,
             type=named_credential_type,
@@ -469,7 +469,7 @@ class NamedCredential(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] associated_resource: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that  is associated to the named credential.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the named credential resides.
-        :param pulumi.Input[pulumi.InputType['NamedCredentialContentArgs']] content: (Updatable) The details of the named credential.
+        :param pulumi.Input[Union['NamedCredentialContentArgs', 'NamedCredentialContentArgsDict']] content: (Updatable) The details of the named credential.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The information specified by the user about the named credential.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -500,13 +500,13 @@ class NamedCredential(pulumi.CustomResource):
 
         test_named_credential = oci.database_management.NamedCredential("test_named_credential",
             compartment_id=compartment_id,
-            content=oci.database_management.NamedCredentialContentArgs(
-                credential_type=named_credential_content_credential_type,
-                password_secret_access_mode=named_credential_content_password_secret_access_mode,
-                password_secret_id=test_secret["id"],
-                role=named_credential_content_role,
-                user_name=test_user["name"],
-            ),
+            content={
+                "credential_type": named_credential_content_credential_type,
+                "password_secret_access_mode": named_credential_content_password_secret_access_mode,
+                "password_secret_id": test_secret["id"],
+                "role": named_credential_content_role,
+                "user_name": test_user["name"],
+            },
             name=named_credential_name,
             scope=named_credential_scope,
             type=named_credential_type,
@@ -545,7 +545,7 @@ class NamedCredential(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  associated_resource: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 content: Optional[pulumi.Input[pulumi.InputType['NamedCredentialContentArgs']]] = None,
+                 content: Optional[pulumi.Input[Union['NamedCredentialContentArgs', 'NamedCredentialContentArgsDict']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -595,7 +595,7 @@ class NamedCredential(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             associated_resource: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            content: Optional[pulumi.Input[pulumi.InputType['NamedCredentialContentArgs']]] = None,
+            content: Optional[pulumi.Input[Union['NamedCredentialContentArgs', 'NamedCredentialContentArgsDict']]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             description: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -616,7 +616,7 @@ class NamedCredential(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] associated_resource: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that  is associated to the named credential.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the named credential resides.
-        :param pulumi.Input[pulumi.InputType['NamedCredentialContentArgs']] content: (Updatable) The details of the named credential.
+        :param pulumi.Input[Union['NamedCredentialContentArgs', 'NamedCredentialContentArgsDict']] content: (Updatable) The details of the named credential.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The information specified by the user about the named credential.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`

@@ -80,7 +80,7 @@ class AwaitableGetDrgsResult(GetDrgsResult):
 
 
 def get_drgs(compartment_id: Optional[str] = None,
-             filters: Optional[Sequence[pulumi.InputType['GetDrgsFilterArgs']]] = None,
+             filters: Optional[Sequence[Union['GetDrgsFilterArgs', 'GetDrgsFilterArgsDict']]] = None,
              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDrgsResult:
     """
     This data source provides the list of Drgs in Oracle Cloud Infrastructure Core service.
@@ -114,7 +114,7 @@ def get_drgs(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_drgs)
 def get_drgs_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                    filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDrgsFilterArgs']]]]] = None,
+                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDrgsFilterArgs', 'GetDrgsFilterArgsDict']]]]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDrgsResult]:
     """
     This data source provides the list of Drgs in Oracle Cloud Infrastructure Core service.

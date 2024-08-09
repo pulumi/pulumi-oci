@@ -129,7 +129,7 @@ def get_managed_instance_updatable_packages(advisory_names: Optional[Sequence[st
                                             compartment_id: Optional[str] = None,
                                             display_name_contains: Optional[str] = None,
                                             display_names: Optional[Sequence[str]] = None,
-                                            filters: Optional[Sequence[pulumi.InputType['GetManagedInstanceUpdatablePackagesFilterArgs']]] = None,
+                                            filters: Optional[Sequence[Union['GetManagedInstanceUpdatablePackagesFilterArgs', 'GetManagedInstanceUpdatablePackagesFilterArgsDict']]] = None,
                                             managed_instance_id: Optional[str] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedInstanceUpdatablePackagesResult:
     """
@@ -188,7 +188,7 @@ def get_managed_instance_updatable_packages_output(advisory_names: Optional[pulu
                                                    compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                    display_name_contains: Optional[pulumi.Input[Optional[str]]] = None,
                                                    display_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                                                   filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetManagedInstanceUpdatablePackagesFilterArgs']]]]] = None,
+                                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedInstanceUpdatablePackagesFilterArgs', 'GetManagedInstanceUpdatablePackagesFilterArgsDict']]]]] = None,
                                                    managed_instance_id: Optional[pulumi.Input[str]] = None,
                                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedInstanceUpdatablePackagesResult]:
     """

@@ -223,7 +223,7 @@ public class ApmDomain extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ApmDomain(String name) {
+    public ApmDomain(java.lang.String name) {
         this(name, ApmDomainArgs.Empty);
     }
     /**
@@ -231,7 +231,7 @@ public class ApmDomain extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ApmDomain(String name, ApmDomainArgs args) {
+    public ApmDomain(java.lang.String name, ApmDomainArgs args) {
         this(name, args, null);
     }
     /**
@@ -240,12 +240,12 @@ public class ApmDomain extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ApmDomain(String name, ApmDomainArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Apm/apmDomain:ApmDomain", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ApmDomain(java.lang.String name, ApmDomainArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Apm/apmDomain:ApmDomain", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ApmDomain(String name, Output<String> id, @Nullable ApmDomainState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Apm/apmDomain:ApmDomain", name, state, makeResourceOptions(options, id));
+    private ApmDomain(java.lang.String name, Output<java.lang.String> id, @Nullable ApmDomainState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Apm/apmDomain:ApmDomain", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ApmDomainArgs makeArgs(ApmDomainArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -255,7 +255,7 @@ public class ApmDomain extends com.pulumi.resources.CustomResource {
         return args == null ? ApmDomainArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -271,7 +271,7 @@ public class ApmDomain extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ApmDomain get(String name, Output<String> id, @Nullable ApmDomainState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ApmDomain get(java.lang.String name, Output<java.lang.String> id, @Nullable ApmDomainState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ApmDomain(name, id, state, options);
     }
 }

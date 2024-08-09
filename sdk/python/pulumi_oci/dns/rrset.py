@@ -281,7 +281,7 @@ class Rrset(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  domain: Optional[pulumi.Input[str]] = None,
-                 items: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['RrsetItemArgs']]]]] = None,
+                 items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RrsetItemArgs', 'RrsetItemArgsDict']]]]] = None,
                  rtype: Optional[pulumi.Input[str]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
                  view_id: Optional[pulumi.Input[str]] = None,
@@ -304,12 +304,12 @@ class Rrset(pulumi.CustomResource):
             rtype=rrset_rtype,
             zone_name_or_id=test_zone["id"],
             compartment_id=compartment_id,
-            items=[oci.dns.RrsetItemArgs(
-                domain=rrset_items_domain,
-                rdata=rrset_items_rdata,
-                rtype=rrset_items_rtype,
-                ttl=rrset_items_ttl,
-            )],
+            items=[{
+                "domain": rrset_items_domain,
+                "rdata": rrset_items_rdata,
+                "rtype": rrset_items_rtype,
+                "ttl": rrset_items_ttl,
+            }],
             scope=rrset_scope,
             view_id=test_view["id"])
         ```
@@ -332,7 +332,7 @@ class Rrset(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment the resource belongs to.
         :param pulumi.Input[str] domain: The target fully-qualified domain name (FQDN) within the target zone.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['RrsetItemArgs']]]] items: (Updatable) 
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RrsetItemArgs', 'RrsetItemArgsDict']]]] items: (Updatable) 
                **NOTE** Omitting `items` at time of create, will delete any existing records in the RRSet
         :param pulumi.Input[str] rtype: The type of the target RRSet within the target zone.
         :param pulumi.Input[str] scope: Specifies to operate only on resources that have a matching DNS scope. 
@@ -367,12 +367,12 @@ class Rrset(pulumi.CustomResource):
             rtype=rrset_rtype,
             zone_name_or_id=test_zone["id"],
             compartment_id=compartment_id,
-            items=[oci.dns.RrsetItemArgs(
-                domain=rrset_items_domain,
-                rdata=rrset_items_rdata,
-                rtype=rrset_items_rtype,
-                ttl=rrset_items_ttl,
-            )],
+            items=[{
+                "domain": rrset_items_domain,
+                "rdata": rrset_items_rdata,
+                "rtype": rrset_items_rtype,
+                "ttl": rrset_items_ttl,
+            }],
             scope=rrset_scope,
             view_id=test_view["id"])
         ```
@@ -408,7 +408,7 @@ class Rrset(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  domain: Optional[pulumi.Input[str]] = None,
-                 items: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['RrsetItemArgs']]]]] = None,
+                 items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RrsetItemArgs', 'RrsetItemArgsDict']]]]] = None,
                  rtype: Optional[pulumi.Input[str]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
                  view_id: Optional[pulumi.Input[str]] = None,
@@ -447,7 +447,7 @@ class Rrset(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             domain: Optional[pulumi.Input[str]] = None,
-            items: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['RrsetItemArgs']]]]] = None,
+            items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RrsetItemArgs', 'RrsetItemArgsDict']]]]] = None,
             rtype: Optional[pulumi.Input[str]] = None,
             scope: Optional[pulumi.Input[str]] = None,
             view_id: Optional[pulumi.Input[str]] = None,
@@ -461,7 +461,7 @@ class Rrset(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment the resource belongs to.
         :param pulumi.Input[str] domain: The target fully-qualified domain name (FQDN) within the target zone.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['RrsetItemArgs']]]] items: (Updatable) 
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RrsetItemArgs', 'RrsetItemArgsDict']]]] items: (Updatable) 
                **NOTE** Omitting `items` at time of create, will delete any existing records in the RRSet
         :param pulumi.Input[str] rtype: The type of the target RRSet within the target zone.
         :param pulumi.Input[str] scope: Specifies to operate only on resources that have a matching DNS scope. 

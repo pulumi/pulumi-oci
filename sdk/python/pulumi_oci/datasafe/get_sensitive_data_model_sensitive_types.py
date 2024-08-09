@@ -88,7 +88,7 @@ class AwaitableGetSensitiveDataModelSensitiveTypesResult(GetSensitiveDataModelSe
             sensitive_type_id=self.sensitive_type_id)
 
 
-def get_sensitive_data_model_sensitive_types(filters: Optional[Sequence[pulumi.InputType['GetSensitiveDataModelSensitiveTypesFilterArgs']]] = None,
+def get_sensitive_data_model_sensitive_types(filters: Optional[Sequence[Union['GetSensitiveDataModelSensitiveTypesFilterArgs', 'GetSensitiveDataModelSensitiveTypesFilterArgsDict']]] = None,
                                              sensitive_data_model_id: Optional[str] = None,
                                              sensitive_type_id: Optional[str] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSensitiveDataModelSensitiveTypesResult:
@@ -127,7 +127,7 @@ def get_sensitive_data_model_sensitive_types(filters: Optional[Sequence[pulumi.I
 
 
 @_utilities.lift_output_func(get_sensitive_data_model_sensitive_types)
-def get_sensitive_data_model_sensitive_types_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetSensitiveDataModelSensitiveTypesFilterArgs']]]]] = None,
+def get_sensitive_data_model_sensitive_types_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSensitiveDataModelSensitiveTypesFilterArgs', 'GetSensitiveDataModelSensitiveTypesFilterArgsDict']]]]] = None,
                                                     sensitive_data_model_id: Optional[pulumi.Input[str]] = None,
                                                     sensitive_type_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSensitiveDataModelSensitiveTypesResult]:

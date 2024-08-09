@@ -299,7 +299,7 @@ public class DeployArtifact extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DeployArtifact(String name) {
+    public DeployArtifact(java.lang.String name) {
         this(name, DeployArtifactArgs.Empty);
     }
     /**
@@ -307,7 +307,7 @@ public class DeployArtifact extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DeployArtifact(String name, DeployArtifactArgs args) {
+    public DeployArtifact(java.lang.String name, DeployArtifactArgs args) {
         this(name, args, null);
     }
     /**
@@ -316,12 +316,12 @@ public class DeployArtifact extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DeployArtifact(String name, DeployArtifactArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DevOps/deployArtifact:DeployArtifact", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DeployArtifact(java.lang.String name, DeployArtifactArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DevOps/deployArtifact:DeployArtifact", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DeployArtifact(String name, Output<String> id, @Nullable DeployArtifactState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DevOps/deployArtifact:DeployArtifact", name, state, makeResourceOptions(options, id));
+    private DeployArtifact(java.lang.String name, Output<java.lang.String> id, @Nullable DeployArtifactState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DevOps/deployArtifact:DeployArtifact", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DeployArtifactArgs makeArgs(DeployArtifactArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -331,7 +331,7 @@ public class DeployArtifact extends com.pulumi.resources.CustomResource {
         return args == null ? DeployArtifactArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -347,7 +347,7 @@ public class DeployArtifact extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DeployArtifact get(String name, Output<String> id, @Nullable DeployArtifactState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DeployArtifact get(java.lang.String name, Output<java.lang.String> id, @Nullable DeployArtifactState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DeployArtifact(name, id, state, options);
     }
 }

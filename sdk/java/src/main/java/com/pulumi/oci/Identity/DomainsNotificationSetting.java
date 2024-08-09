@@ -805,7 +805,7 @@ public class DomainsNotificationSetting extends com.pulumi.resources.CustomResou
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DomainsNotificationSetting(String name) {
+    public DomainsNotificationSetting(java.lang.String name) {
         this(name, DomainsNotificationSettingArgs.Empty);
     }
     /**
@@ -813,7 +813,7 @@ public class DomainsNotificationSetting extends com.pulumi.resources.CustomResou
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DomainsNotificationSetting(String name, DomainsNotificationSettingArgs args) {
+    public DomainsNotificationSetting(java.lang.String name, DomainsNotificationSettingArgs args) {
         this(name, args, null);
     }
     /**
@@ -822,12 +822,12 @@ public class DomainsNotificationSetting extends com.pulumi.resources.CustomResou
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DomainsNotificationSetting(String name, DomainsNotificationSettingArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsNotificationSetting:DomainsNotificationSetting", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DomainsNotificationSetting(java.lang.String name, DomainsNotificationSettingArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/domainsNotificationSetting:DomainsNotificationSetting", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DomainsNotificationSetting(String name, Output<String> id, @Nullable DomainsNotificationSettingState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsNotificationSetting:DomainsNotificationSetting", name, state, makeResourceOptions(options, id));
+    private DomainsNotificationSetting(java.lang.String name, Output<java.lang.String> id, @Nullable DomainsNotificationSettingState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/domainsNotificationSetting:DomainsNotificationSetting", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DomainsNotificationSettingArgs makeArgs(DomainsNotificationSettingArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -837,7 +837,7 @@ public class DomainsNotificationSetting extends com.pulumi.resources.CustomResou
         return args == null ? DomainsNotificationSettingArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -853,7 +853,7 @@ public class DomainsNotificationSetting extends com.pulumi.resources.CustomResou
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DomainsNotificationSetting get(String name, Output<String> id, @Nullable DomainsNotificationSettingState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DomainsNotificationSetting get(java.lang.String name, Output<java.lang.String> id, @Nullable DomainsNotificationSettingState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DomainsNotificationSetting(name, id, state, options);
     }
 }

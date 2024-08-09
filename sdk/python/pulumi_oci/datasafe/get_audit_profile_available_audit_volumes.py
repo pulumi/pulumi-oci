@@ -119,7 +119,7 @@ class AwaitableGetAuditProfileAvailableAuditVolumesResult(GetAuditProfileAvailab
 
 
 def get_audit_profile_available_audit_volumes(audit_profile_id: Optional[str] = None,
-                                              filters: Optional[Sequence[pulumi.InputType['GetAuditProfileAvailableAuditVolumesFilterArgs']]] = None,
+                                              filters: Optional[Sequence[Union['GetAuditProfileAvailableAuditVolumesFilterArgs', 'GetAuditProfileAvailableAuditVolumesFilterArgsDict']]] = None,
                                               month_in_consideration_greater_than: Optional[str] = None,
                                               month_in_consideration_less_than: Optional[str] = None,
                                               trail_location: Optional[str] = None,
@@ -177,7 +177,7 @@ def get_audit_profile_available_audit_volumes(audit_profile_id: Optional[str] = 
 
 @_utilities.lift_output_func(get_audit_profile_available_audit_volumes)
 def get_audit_profile_available_audit_volumes_output(audit_profile_id: Optional[pulumi.Input[str]] = None,
-                                                     filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAuditProfileAvailableAuditVolumesFilterArgs']]]]] = None,
+                                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAuditProfileAvailableAuditVolumesFilterArgs', 'GetAuditProfileAvailableAuditVolumesFilterArgsDict']]]]] = None,
                                                      month_in_consideration_greater_than: Optional[pulumi.Input[Optional[str]]] = None,
                                                      month_in_consideration_less_than: Optional[pulumi.Input[Optional[str]]] = None,
                                                      trail_location: Optional[pulumi.Input[Optional[str]]] = None,

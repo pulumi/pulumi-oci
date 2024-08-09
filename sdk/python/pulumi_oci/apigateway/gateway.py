@@ -463,7 +463,7 @@ class Gateway(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 ca_bundles: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GatewayCaBundleArgs']]]]] = None,
+                 ca_bundles: Optional[pulumi.Input[Sequence[pulumi.Input[Union['GatewayCaBundleArgs', 'GatewayCaBundleArgsDict']]]]] = None,
                  certificate_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -471,7 +471,7 @@ class Gateway(pulumi.CustomResource):
                  endpoint_type: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 response_cache_details: Optional[pulumi.Input[pulumi.InputType['GatewayResponseCacheDetailsArgs']]] = None,
+                 response_cache_details: Optional[pulumi.Input[Union['GatewayResponseCacheDetailsArgs', 'GatewayResponseCacheDetailsArgsDict']]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -490,11 +490,11 @@ class Gateway(pulumi.CustomResource):
             endpoint_type=gateway_endpoint_type,
             subnet_id=test_subnet["id"],
             certificate_id=test_certificate["id"],
-            ca_bundles=[oci.api_gateway.GatewayCaBundleArgs(
-                type=gateway_ca_bundles_type,
-                ca_bundle_id=test_ca_bundle["id"],
-                certificate_authority_id=test_certificate_authority["id"],
-            )],
+            ca_bundles=[{
+                "type": gateway_ca_bundles_type,
+                "ca_bundle_id": test_ca_bundle["id"],
+                "certificate_authority_id": test_certificate_authority["id"],
+            }],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -503,20 +503,20 @@ class Gateway(pulumi.CustomResource):
                 "Department": "Finance",
             },
             network_security_group_ids=gateway_network_security_group_ids,
-            response_cache_details=oci.api_gateway.GatewayResponseCacheDetailsArgs(
-                type=gateway_response_cache_details_type,
-                authentication_secret_id=test_secret["id"],
-                authentication_secret_version_number=gateway_response_cache_details_authentication_secret_version_number,
-                connect_timeout_in_ms=gateway_response_cache_details_connect_timeout_in_ms,
-                is_ssl_enabled=gateway_response_cache_details_is_ssl_enabled,
-                is_ssl_verify_disabled=gateway_response_cache_details_is_ssl_verify_disabled,
-                read_timeout_in_ms=gateway_response_cache_details_read_timeout_in_ms,
-                send_timeout_in_ms=gateway_response_cache_details_send_timeout_in_ms,
-                servers=[oci.api_gateway.GatewayResponseCacheDetailsServerArgs(
-                    host=gateway_response_cache_details_servers_host,
-                    port=gateway_response_cache_details_servers_port,
-                )],
-            ))
+            response_cache_details={
+                "type": gateway_response_cache_details_type,
+                "authentication_secret_id": test_secret["id"],
+                "authentication_secret_version_number": gateway_response_cache_details_authentication_secret_version_number,
+                "connect_timeout_in_ms": gateway_response_cache_details_connect_timeout_in_ms,
+                "is_ssl_enabled": gateway_response_cache_details_is_ssl_enabled,
+                "is_ssl_verify_disabled": gateway_response_cache_details_is_ssl_verify_disabled,
+                "read_timeout_in_ms": gateway_response_cache_details_read_timeout_in_ms,
+                "send_timeout_in_ms": gateway_response_cache_details_send_timeout_in_ms,
+                "servers": [{
+                    "host": gateway_response_cache_details_servers_host,
+                    "port": gateway_response_cache_details_servers_port,
+                }],
+            })
         ```
 
         ## Import
@@ -529,7 +529,7 @@ class Gateway(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GatewayCaBundleArgs']]]] ca_bundles: (Updatable) An array of CA bundles that should be used on the Gateway for TLS validation.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['GatewayCaBundleArgs', 'GatewayCaBundleArgsDict']]]] ca_bundles: (Updatable) An array of CA bundles that should be used on the Gateway for TLS validation.
         :param pulumi.Input[str] certificate_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -537,7 +537,7 @@ class Gateway(pulumi.CustomResource):
         :param pulumi.Input[str] endpoint_type: Gateway endpoint type. `PUBLIC` will have a public ip address assigned to it, while `PRIVATE` will only be accessible on a private IP address on the subnet.  Example: `PUBLIC` or `PRIVATE`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) An array of Network Security Groups OCIDs associated with this API Gateway.
-        :param pulumi.Input[pulumi.InputType['GatewayResponseCacheDetailsArgs']] response_cache_details: (Updatable) Base Gateway response cache.
+        :param pulumi.Input[Union['GatewayResponseCacheDetailsArgs', 'GatewayResponseCacheDetailsArgsDict']] response_cache_details: (Updatable) Base Gateway response cache.
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which related resources are created. 
                
                
@@ -566,11 +566,11 @@ class Gateway(pulumi.CustomResource):
             endpoint_type=gateway_endpoint_type,
             subnet_id=test_subnet["id"],
             certificate_id=test_certificate["id"],
-            ca_bundles=[oci.api_gateway.GatewayCaBundleArgs(
-                type=gateway_ca_bundles_type,
-                ca_bundle_id=test_ca_bundle["id"],
-                certificate_authority_id=test_certificate_authority["id"],
-            )],
+            ca_bundles=[{
+                "type": gateway_ca_bundles_type,
+                "ca_bundle_id": test_ca_bundle["id"],
+                "certificate_authority_id": test_certificate_authority["id"],
+            }],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -579,20 +579,20 @@ class Gateway(pulumi.CustomResource):
                 "Department": "Finance",
             },
             network_security_group_ids=gateway_network_security_group_ids,
-            response_cache_details=oci.api_gateway.GatewayResponseCacheDetailsArgs(
-                type=gateway_response_cache_details_type,
-                authentication_secret_id=test_secret["id"],
-                authentication_secret_version_number=gateway_response_cache_details_authentication_secret_version_number,
-                connect_timeout_in_ms=gateway_response_cache_details_connect_timeout_in_ms,
-                is_ssl_enabled=gateway_response_cache_details_is_ssl_enabled,
-                is_ssl_verify_disabled=gateway_response_cache_details_is_ssl_verify_disabled,
-                read_timeout_in_ms=gateway_response_cache_details_read_timeout_in_ms,
-                send_timeout_in_ms=gateway_response_cache_details_send_timeout_in_ms,
-                servers=[oci.api_gateway.GatewayResponseCacheDetailsServerArgs(
-                    host=gateway_response_cache_details_servers_host,
-                    port=gateway_response_cache_details_servers_port,
-                )],
-            ))
+            response_cache_details={
+                "type": gateway_response_cache_details_type,
+                "authentication_secret_id": test_secret["id"],
+                "authentication_secret_version_number": gateway_response_cache_details_authentication_secret_version_number,
+                "connect_timeout_in_ms": gateway_response_cache_details_connect_timeout_in_ms,
+                "is_ssl_enabled": gateway_response_cache_details_is_ssl_enabled,
+                "is_ssl_verify_disabled": gateway_response_cache_details_is_ssl_verify_disabled,
+                "read_timeout_in_ms": gateway_response_cache_details_read_timeout_in_ms,
+                "send_timeout_in_ms": gateway_response_cache_details_send_timeout_in_ms,
+                "servers": [{
+                    "host": gateway_response_cache_details_servers_host,
+                    "port": gateway_response_cache_details_servers_port,
+                }],
+            })
         ```
 
         ## Import
@@ -618,7 +618,7 @@ class Gateway(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 ca_bundles: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GatewayCaBundleArgs']]]]] = None,
+                 ca_bundles: Optional[pulumi.Input[Sequence[pulumi.Input[Union['GatewayCaBundleArgs', 'GatewayCaBundleArgsDict']]]]] = None,
                  certificate_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -626,7 +626,7 @@ class Gateway(pulumi.CustomResource):
                  endpoint_type: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 response_cache_details: Optional[pulumi.Input[pulumi.InputType['GatewayResponseCacheDetailsArgs']]] = None,
+                 response_cache_details: Optional[pulumi.Input[Union['GatewayResponseCacheDetailsArgs', 'GatewayResponseCacheDetailsArgsDict']]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -669,7 +669,7 @@ class Gateway(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            ca_bundles: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GatewayCaBundleArgs']]]]] = None,
+            ca_bundles: Optional[pulumi.Input[Sequence[pulumi.Input[Union['GatewayCaBundleArgs', 'GatewayCaBundleArgsDict']]]]] = None,
             certificate_id: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -677,10 +677,10 @@ class Gateway(pulumi.CustomResource):
             endpoint_type: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             hostname: Optional[pulumi.Input[str]] = None,
-            ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GatewayIpAddressArgs']]]]] = None,
+            ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['GatewayIpAddressArgs', 'GatewayIpAddressArgsDict']]]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            response_cache_details: Optional[pulumi.Input[pulumi.InputType['GatewayResponseCacheDetailsArgs']]] = None,
+            response_cache_details: Optional[pulumi.Input[Union['GatewayResponseCacheDetailsArgs', 'GatewayResponseCacheDetailsArgsDict']]] = None,
             state: Optional[pulumi.Input[str]] = None,
             subnet_id: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
@@ -692,7 +692,7 @@ class Gateway(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GatewayCaBundleArgs']]]] ca_bundles: (Updatable) An array of CA bundles that should be used on the Gateway for TLS validation.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['GatewayCaBundleArgs', 'GatewayCaBundleArgsDict']]]] ca_bundles: (Updatable) An array of CA bundles that should be used on the Gateway for TLS validation.
         :param pulumi.Input[str] certificate_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -700,10 +700,10 @@ class Gateway(pulumi.CustomResource):
         :param pulumi.Input[str] endpoint_type: Gateway endpoint type. `PUBLIC` will have a public ip address assigned to it, while `PRIVATE` will only be accessible on a private IP address on the subnet.  Example: `PUBLIC` or `PRIVATE`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] hostname: The hostname for APIs deployed on the gateway.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GatewayIpAddressArgs']]]] ip_addresses: An array of IP addresses associated with the gateway.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['GatewayIpAddressArgs', 'GatewayIpAddressArgsDict']]]] ip_addresses: An array of IP addresses associated with the gateway.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) An array of Network Security Groups OCIDs associated with this API Gateway.
-        :param pulumi.Input[pulumi.InputType['GatewayResponseCacheDetailsArgs']] response_cache_details: (Updatable) Base Gateway response cache.
+        :param pulumi.Input[Union['GatewayResponseCacheDetailsArgs', 'GatewayResponseCacheDetailsArgsDict']] response_cache_details: (Updatable) Base Gateway response cache.
         :param pulumi.Input[str] state: The current state of the gateway.
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which related resources are created. 
                

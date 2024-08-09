@@ -310,7 +310,7 @@ public class AuditArchiveRetrieval extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public AuditArchiveRetrieval(String name) {
+    public AuditArchiveRetrieval(java.lang.String name) {
         this(name, AuditArchiveRetrievalArgs.Empty);
     }
     /**
@@ -318,7 +318,7 @@ public class AuditArchiveRetrieval extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public AuditArchiveRetrieval(String name, AuditArchiveRetrievalArgs args) {
+    public AuditArchiveRetrieval(java.lang.String name, AuditArchiveRetrievalArgs args) {
         this(name, args, null);
     }
     /**
@@ -327,12 +327,12 @@ public class AuditArchiveRetrieval extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public AuditArchiveRetrieval(String name, AuditArchiveRetrievalArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/auditArchiveRetrieval:AuditArchiveRetrieval", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public AuditArchiveRetrieval(java.lang.String name, AuditArchiveRetrievalArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataSafe/auditArchiveRetrieval:AuditArchiveRetrieval", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private AuditArchiveRetrieval(String name, Output<String> id, @Nullable AuditArchiveRetrievalState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/auditArchiveRetrieval:AuditArchiveRetrieval", name, state, makeResourceOptions(options, id));
+    private AuditArchiveRetrieval(java.lang.String name, Output<java.lang.String> id, @Nullable AuditArchiveRetrievalState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataSafe/auditArchiveRetrieval:AuditArchiveRetrieval", name, state, makeResourceOptions(options, id), false);
     }
 
     private static AuditArchiveRetrievalArgs makeArgs(AuditArchiveRetrievalArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -342,7 +342,7 @@ public class AuditArchiveRetrieval extends com.pulumi.resources.CustomResource {
         return args == null ? AuditArchiveRetrievalArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -358,7 +358,7 @@ public class AuditArchiveRetrieval extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static AuditArchiveRetrieval get(String name, Output<String> id, @Nullable AuditArchiveRetrievalState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static AuditArchiveRetrieval get(java.lang.String name, Output<java.lang.String> id, @Nullable AuditArchiveRetrievalState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new AuditArchiveRetrieval(name, id, state, options);
     }
 }

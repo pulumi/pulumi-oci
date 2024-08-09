@@ -79,7 +79,7 @@ class AwaitableGetIdpGroupMappingsResult(GetIdpGroupMappingsResult):
             idp_group_mappings=self.idp_group_mappings)
 
 
-def get_idp_group_mappings(filters: Optional[Sequence[pulumi.InputType['GetIdpGroupMappingsFilterArgs']]] = None,
+def get_idp_group_mappings(filters: Optional[Sequence[Union['GetIdpGroupMappingsFilterArgs', 'GetIdpGroupMappingsFilterArgsDict']]] = None,
                            identity_provider_id: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIdpGroupMappingsResult:
     """
@@ -115,7 +115,7 @@ def get_idp_group_mappings(filters: Optional[Sequence[pulumi.InputType['GetIdpGr
 
 
 @_utilities.lift_output_func(get_idp_group_mappings)
-def get_idp_group_mappings_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetIdpGroupMappingsFilterArgs']]]]] = None,
+def get_idp_group_mappings_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetIdpGroupMappingsFilterArgs', 'GetIdpGroupMappingsFilterArgsDict']]]]] = None,
                                   identity_provider_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIdpGroupMappingsResult]:
     """

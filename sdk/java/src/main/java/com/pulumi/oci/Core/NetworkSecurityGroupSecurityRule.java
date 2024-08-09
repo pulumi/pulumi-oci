@@ -319,7 +319,7 @@ public class NetworkSecurityGroupSecurityRule extends com.pulumi.resources.Custo
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public NetworkSecurityGroupSecurityRule(String name) {
+    public NetworkSecurityGroupSecurityRule(java.lang.String name) {
         this(name, NetworkSecurityGroupSecurityRuleArgs.Empty);
     }
     /**
@@ -327,7 +327,7 @@ public class NetworkSecurityGroupSecurityRule extends com.pulumi.resources.Custo
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public NetworkSecurityGroupSecurityRule(String name, NetworkSecurityGroupSecurityRuleArgs args) {
+    public NetworkSecurityGroupSecurityRule(java.lang.String name, NetworkSecurityGroupSecurityRuleArgs args) {
         this(name, args, null);
     }
     /**
@@ -336,12 +336,12 @@ public class NetworkSecurityGroupSecurityRule extends com.pulumi.resources.Custo
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public NetworkSecurityGroupSecurityRule(String name, NetworkSecurityGroupSecurityRuleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/networkSecurityGroupSecurityRule:NetworkSecurityGroupSecurityRule", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public NetworkSecurityGroupSecurityRule(java.lang.String name, NetworkSecurityGroupSecurityRuleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Core/networkSecurityGroupSecurityRule:NetworkSecurityGroupSecurityRule", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private NetworkSecurityGroupSecurityRule(String name, Output<String> id, @Nullable NetworkSecurityGroupSecurityRuleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/networkSecurityGroupSecurityRule:NetworkSecurityGroupSecurityRule", name, state, makeResourceOptions(options, id));
+    private NetworkSecurityGroupSecurityRule(java.lang.String name, Output<java.lang.String> id, @Nullable NetworkSecurityGroupSecurityRuleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Core/networkSecurityGroupSecurityRule:NetworkSecurityGroupSecurityRule", name, state, makeResourceOptions(options, id), false);
     }
 
     private static NetworkSecurityGroupSecurityRuleArgs makeArgs(NetworkSecurityGroupSecurityRuleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -351,7 +351,7 @@ public class NetworkSecurityGroupSecurityRule extends com.pulumi.resources.Custo
         return args == null ? NetworkSecurityGroupSecurityRuleArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -367,7 +367,7 @@ public class NetworkSecurityGroupSecurityRule extends com.pulumi.resources.Custo
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static NetworkSecurityGroupSecurityRule get(String name, Output<String> id, @Nullable NetworkSecurityGroupSecurityRuleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static NetworkSecurityGroupSecurityRule get(java.lang.String name, Output<java.lang.String> id, @Nullable NetworkSecurityGroupSecurityRuleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new NetworkSecurityGroupSecurityRule(name, id, state, options);
     }
 }

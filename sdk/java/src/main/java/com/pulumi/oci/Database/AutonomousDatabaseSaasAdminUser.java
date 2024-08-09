@@ -165,7 +165,7 @@ public class AutonomousDatabaseSaasAdminUser extends com.pulumi.resources.Custom
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public AutonomousDatabaseSaasAdminUser(String name) {
+    public AutonomousDatabaseSaasAdminUser(java.lang.String name) {
         this(name, AutonomousDatabaseSaasAdminUserArgs.Empty);
     }
     /**
@@ -173,7 +173,7 @@ public class AutonomousDatabaseSaasAdminUser extends com.pulumi.resources.Custom
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public AutonomousDatabaseSaasAdminUser(String name, AutonomousDatabaseSaasAdminUserArgs args) {
+    public AutonomousDatabaseSaasAdminUser(java.lang.String name, AutonomousDatabaseSaasAdminUserArgs args) {
         this(name, args, null);
     }
     /**
@@ -182,12 +182,12 @@ public class AutonomousDatabaseSaasAdminUser extends com.pulumi.resources.Custom
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public AutonomousDatabaseSaasAdminUser(String name, AutonomousDatabaseSaasAdminUserArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/autonomousDatabaseSaasAdminUser:AutonomousDatabaseSaasAdminUser", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public AutonomousDatabaseSaasAdminUser(java.lang.String name, AutonomousDatabaseSaasAdminUserArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/autonomousDatabaseSaasAdminUser:AutonomousDatabaseSaasAdminUser", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private AutonomousDatabaseSaasAdminUser(String name, Output<String> id, @Nullable AutonomousDatabaseSaasAdminUserState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/autonomousDatabaseSaasAdminUser:AutonomousDatabaseSaasAdminUser", name, state, makeResourceOptions(options, id));
+    private AutonomousDatabaseSaasAdminUser(java.lang.String name, Output<java.lang.String> id, @Nullable AutonomousDatabaseSaasAdminUserState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/autonomousDatabaseSaasAdminUser:AutonomousDatabaseSaasAdminUser", name, state, makeResourceOptions(options, id), false);
     }
 
     private static AutonomousDatabaseSaasAdminUserArgs makeArgs(AutonomousDatabaseSaasAdminUserArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -197,7 +197,7 @@ public class AutonomousDatabaseSaasAdminUser extends com.pulumi.resources.Custom
         return args == null ? AutonomousDatabaseSaasAdminUserArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .additionalSecretOutputs(List.of(
@@ -216,7 +216,7 @@ public class AutonomousDatabaseSaasAdminUser extends com.pulumi.resources.Custom
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static AutonomousDatabaseSaasAdminUser get(String name, Output<String> id, @Nullable AutonomousDatabaseSaasAdminUserState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static AutonomousDatabaseSaasAdminUser get(java.lang.String name, Output<java.lang.String> id, @Nullable AutonomousDatabaseSaasAdminUserState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new AutonomousDatabaseSaasAdminUser(name, id, state, options);
     }
 }

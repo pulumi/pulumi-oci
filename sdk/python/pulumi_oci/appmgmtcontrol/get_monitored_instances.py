@@ -93,7 +93,7 @@ class AwaitableGetMonitoredInstancesResult(GetMonitoredInstancesResult):
 
 def get_monitored_instances(compartment_id: Optional[str] = None,
                             display_name: Optional[str] = None,
-                            filters: Optional[Sequence[pulumi.InputType['GetMonitoredInstancesFilterArgs']]] = None,
+                            filters: Optional[Sequence[Union['GetMonitoredInstancesFilterArgs', 'GetMonitoredInstancesFilterArgsDict']]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMonitoredInstancesResult:
     """
     This data source provides the list of Monitored Instances in Oracle Cloud Infrastructure Appmgmt Control service.
@@ -132,7 +132,7 @@ def get_monitored_instances(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_monitored_instances)
 def get_monitored_instances_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                    display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetMonitoredInstancesFilterArgs']]]]] = None,
+                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMonitoredInstancesFilterArgs', 'GetMonitoredInstancesFilterArgsDict']]]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMonitoredInstancesResult]:
     """
     This data source provides the list of Monitored Instances in Oracle Cloud Infrastructure Appmgmt Control service.

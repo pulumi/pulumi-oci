@@ -457,7 +457,7 @@ public class SecurityAssessment extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public SecurityAssessment(String name) {
+    public SecurityAssessment(java.lang.String name) {
         this(name, SecurityAssessmentArgs.Empty);
     }
     /**
@@ -465,7 +465,7 @@ public class SecurityAssessment extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public SecurityAssessment(String name, SecurityAssessmentArgs args) {
+    public SecurityAssessment(java.lang.String name, SecurityAssessmentArgs args) {
         this(name, args, null);
     }
     /**
@@ -474,12 +474,12 @@ public class SecurityAssessment extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public SecurityAssessment(String name, SecurityAssessmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/securityAssessment:SecurityAssessment", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public SecurityAssessment(java.lang.String name, SecurityAssessmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataSafe/securityAssessment:SecurityAssessment", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private SecurityAssessment(String name, Output<String> id, @Nullable SecurityAssessmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/securityAssessment:SecurityAssessment", name, state, makeResourceOptions(options, id));
+    private SecurityAssessment(java.lang.String name, Output<java.lang.String> id, @Nullable SecurityAssessmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataSafe/securityAssessment:SecurityAssessment", name, state, makeResourceOptions(options, id), false);
     }
 
     private static SecurityAssessmentArgs makeArgs(SecurityAssessmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -489,7 +489,7 @@ public class SecurityAssessment extends com.pulumi.resources.CustomResource {
         return args == null ? SecurityAssessmentArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -505,7 +505,7 @@ public class SecurityAssessment extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static SecurityAssessment get(String name, Output<String> id, @Nullable SecurityAssessmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static SecurityAssessment get(java.lang.String name, Output<java.lang.String> id, @Nullable SecurityAssessmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new SecurityAssessment(name, id, state, options);
     }
 }

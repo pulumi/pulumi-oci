@@ -135,7 +135,7 @@ public class ProjectRepositorySetting extends com.pulumi.resources.CustomResourc
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ProjectRepositorySetting(String name) {
+    public ProjectRepositorySetting(java.lang.String name) {
         this(name, ProjectRepositorySettingArgs.Empty);
     }
     /**
@@ -143,7 +143,7 @@ public class ProjectRepositorySetting extends com.pulumi.resources.CustomResourc
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ProjectRepositorySetting(String name, ProjectRepositorySettingArgs args) {
+    public ProjectRepositorySetting(java.lang.String name, ProjectRepositorySettingArgs args) {
         this(name, args, null);
     }
     /**
@@ -152,12 +152,12 @@ public class ProjectRepositorySetting extends com.pulumi.resources.CustomResourc
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ProjectRepositorySetting(String name, ProjectRepositorySettingArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DevOps/projectRepositorySetting:ProjectRepositorySetting", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ProjectRepositorySetting(java.lang.String name, ProjectRepositorySettingArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DevOps/projectRepositorySetting:ProjectRepositorySetting", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ProjectRepositorySetting(String name, Output<String> id, @Nullable ProjectRepositorySettingState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DevOps/projectRepositorySetting:ProjectRepositorySetting", name, state, makeResourceOptions(options, id));
+    private ProjectRepositorySetting(java.lang.String name, Output<java.lang.String> id, @Nullable ProjectRepositorySettingState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DevOps/projectRepositorySetting:ProjectRepositorySetting", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ProjectRepositorySettingArgs makeArgs(ProjectRepositorySettingArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -167,7 +167,7 @@ public class ProjectRepositorySetting extends com.pulumi.resources.CustomResourc
         return args == null ? ProjectRepositorySettingArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -183,7 +183,7 @@ public class ProjectRepositorySetting extends com.pulumi.resources.CustomResourc
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ProjectRepositorySetting get(String name, Output<String> id, @Nullable ProjectRepositorySettingState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ProjectRepositorySetting get(java.lang.String name, Output<java.lang.String> id, @Nullable ProjectRepositorySettingState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ProjectRepositorySetting(name, id, state, options);
     }
 }

@@ -288,9 +288,9 @@ class ProcessorJob(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 input_location: Optional[pulumi.Input[pulumi.InputType['ProcessorJobInputLocationArgs']]] = None,
-                 output_location: Optional[pulumi.Input[pulumi.InputType['ProcessorJobOutputLocationArgs']]] = None,
-                 processor_config: Optional[pulumi.Input[pulumi.InputType['ProcessorJobProcessorConfigArgs']]] = None,
+                 input_location: Optional[pulumi.Input[Union['ProcessorJobInputLocationArgs', 'ProcessorJobInputLocationArgsDict']]] = None,
+                 output_location: Optional[pulumi.Input[Union['ProcessorJobOutputLocationArgs', 'ProcessorJobOutputLocationArgsDict']]] = None,
+                 processor_config: Optional[pulumi.Input[Union['ProcessorJobProcessorConfigArgs', 'ProcessorJobProcessorConfigArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Processor Job resource in Oracle Cloud Infrastructure Ai Document service.
@@ -305,33 +305,33 @@ class ProcessorJob(pulumi.CustomResource):
 
         test_processor_job = oci.ai_document.ProcessorJob("test_processor_job",
             compartment_id=compartment_id,
-            input_location=oci.ai_document.ProcessorJobInputLocationArgs(
-                source_type=processor_job_input_location_source_type,
-                data=processor_job_input_location_data,
-                object_locations=[oci.ai_document.ProcessorJobInputLocationObjectLocationArgs(
-                    bucket=processor_job_input_location_object_locations_bucket,
-                    namespace=processor_job_input_location_object_locations_namespace,
-                    object=processor_job_input_location_object_locations_object,
-                )],
-            ),
-            output_location=oci.ai_document.ProcessorJobOutputLocationArgs(
-                bucket=processor_job_output_location_bucket,
-                namespace=processor_job_output_location_namespace,
-                prefix=processor_job_output_location_prefix,
-            ),
-            processor_config=oci.ai_document.ProcessorJobProcessorConfigArgs(
-                features=[oci.ai_document.ProcessorJobProcessorConfigFeatureArgs(
-                    feature_type=processor_job_processor_config_features_feature_type,
-                    generate_searchable_pdf=processor_job_processor_config_features_generate_searchable_pdf,
-                    max_results=processor_job_processor_config_features_max_results,
-                    model_id=test_model["id"],
-                    tenancy_id=test_tenancy["id"],
-                )],
-                processor_type=processor_job_processor_config_processor_type,
-                document_type=processor_job_processor_config_document_type,
-                is_zip_output_enabled=processor_job_processor_config_is_zip_output_enabled,
-                language=processor_job_processor_config_language,
-            ),
+            input_location={
+                "source_type": processor_job_input_location_source_type,
+                "data": processor_job_input_location_data,
+                "object_locations": [{
+                    "bucket": processor_job_input_location_object_locations_bucket,
+                    "namespace": processor_job_input_location_object_locations_namespace,
+                    "object": processor_job_input_location_object_locations_object,
+                }],
+            },
+            output_location={
+                "bucket": processor_job_output_location_bucket,
+                "namespace": processor_job_output_location_namespace,
+                "prefix": processor_job_output_location_prefix,
+            },
+            processor_config={
+                "features": [{
+                    "feature_type": processor_job_processor_config_features_feature_type,
+                    "generate_searchable_pdf": processor_job_processor_config_features_generate_searchable_pdf,
+                    "max_results": processor_job_processor_config_features_max_results,
+                    "model_id": test_model["id"],
+                    "tenancy_id": test_tenancy["id"],
+                }],
+                "processor_type": processor_job_processor_config_processor_type,
+                "document_type": processor_job_processor_config_document_type,
+                "is_zip_output_enabled": processor_job_processor_config_is_zip_output_enabled,
+                "language": processor_job_processor_config_language,
+            },
             display_name=processor_job_display_name)
         ```
 
@@ -347,9 +347,9 @@ class ProcessorJob(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: The compartment identifier.
         :param pulumi.Input[str] display_name: The display name of the processor job.
-        :param pulumi.Input[pulumi.InputType['ProcessorJobInputLocationArgs']] input_location: The location of the inputs.
-        :param pulumi.Input[pulumi.InputType['ProcessorJobOutputLocationArgs']] output_location: The object storage location where to store analysis results.
-        :param pulumi.Input[pulumi.InputType['ProcessorJobProcessorConfigArgs']] processor_config: The configuration of a processor.
+        :param pulumi.Input[Union['ProcessorJobInputLocationArgs', 'ProcessorJobInputLocationArgsDict']] input_location: The location of the inputs.
+        :param pulumi.Input[Union['ProcessorJobOutputLocationArgs', 'ProcessorJobOutputLocationArgsDict']] output_location: The object storage location where to store analysis results.
+        :param pulumi.Input[Union['ProcessorJobProcessorConfigArgs', 'ProcessorJobProcessorConfigArgsDict']] processor_config: The configuration of a processor.
         """
         ...
     @overload
@@ -370,33 +370,33 @@ class ProcessorJob(pulumi.CustomResource):
 
         test_processor_job = oci.ai_document.ProcessorJob("test_processor_job",
             compartment_id=compartment_id,
-            input_location=oci.ai_document.ProcessorJobInputLocationArgs(
-                source_type=processor_job_input_location_source_type,
-                data=processor_job_input_location_data,
-                object_locations=[oci.ai_document.ProcessorJobInputLocationObjectLocationArgs(
-                    bucket=processor_job_input_location_object_locations_bucket,
-                    namespace=processor_job_input_location_object_locations_namespace,
-                    object=processor_job_input_location_object_locations_object,
-                )],
-            ),
-            output_location=oci.ai_document.ProcessorJobOutputLocationArgs(
-                bucket=processor_job_output_location_bucket,
-                namespace=processor_job_output_location_namespace,
-                prefix=processor_job_output_location_prefix,
-            ),
-            processor_config=oci.ai_document.ProcessorJobProcessorConfigArgs(
-                features=[oci.ai_document.ProcessorJobProcessorConfigFeatureArgs(
-                    feature_type=processor_job_processor_config_features_feature_type,
-                    generate_searchable_pdf=processor_job_processor_config_features_generate_searchable_pdf,
-                    max_results=processor_job_processor_config_features_max_results,
-                    model_id=test_model["id"],
-                    tenancy_id=test_tenancy["id"],
-                )],
-                processor_type=processor_job_processor_config_processor_type,
-                document_type=processor_job_processor_config_document_type,
-                is_zip_output_enabled=processor_job_processor_config_is_zip_output_enabled,
-                language=processor_job_processor_config_language,
-            ),
+            input_location={
+                "source_type": processor_job_input_location_source_type,
+                "data": processor_job_input_location_data,
+                "object_locations": [{
+                    "bucket": processor_job_input_location_object_locations_bucket,
+                    "namespace": processor_job_input_location_object_locations_namespace,
+                    "object": processor_job_input_location_object_locations_object,
+                }],
+            },
+            output_location={
+                "bucket": processor_job_output_location_bucket,
+                "namespace": processor_job_output_location_namespace,
+                "prefix": processor_job_output_location_prefix,
+            },
+            processor_config={
+                "features": [{
+                    "feature_type": processor_job_processor_config_features_feature_type,
+                    "generate_searchable_pdf": processor_job_processor_config_features_generate_searchable_pdf,
+                    "max_results": processor_job_processor_config_features_max_results,
+                    "model_id": test_model["id"],
+                    "tenancy_id": test_tenancy["id"],
+                }],
+                "processor_type": processor_job_processor_config_processor_type,
+                "document_type": processor_job_processor_config_document_type,
+                "is_zip_output_enabled": processor_job_processor_config_is_zip_output_enabled,
+                "language": processor_job_processor_config_language,
+            },
             display_name=processor_job_display_name)
         ```
 
@@ -425,9 +425,9 @@ class ProcessorJob(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 input_location: Optional[pulumi.Input[pulumi.InputType['ProcessorJobInputLocationArgs']]] = None,
-                 output_location: Optional[pulumi.Input[pulumi.InputType['ProcessorJobOutputLocationArgs']]] = None,
-                 processor_config: Optional[pulumi.Input[pulumi.InputType['ProcessorJobProcessorConfigArgs']]] = None,
+                 input_location: Optional[pulumi.Input[Union['ProcessorJobInputLocationArgs', 'ProcessorJobInputLocationArgsDict']]] = None,
+                 output_location: Optional[pulumi.Input[Union['ProcessorJobOutputLocationArgs', 'ProcessorJobOutputLocationArgsDict']]] = None,
+                 processor_config: Optional[pulumi.Input[Union['ProcessorJobProcessorConfigArgs', 'ProcessorJobProcessorConfigArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -468,11 +468,11 @@ class ProcessorJob(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
-            input_location: Optional[pulumi.Input[pulumi.InputType['ProcessorJobInputLocationArgs']]] = None,
+            input_location: Optional[pulumi.Input[Union['ProcessorJobInputLocationArgs', 'ProcessorJobInputLocationArgsDict']]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
-            output_location: Optional[pulumi.Input[pulumi.InputType['ProcessorJobOutputLocationArgs']]] = None,
+            output_location: Optional[pulumi.Input[Union['ProcessorJobOutputLocationArgs', 'ProcessorJobOutputLocationArgsDict']]] = None,
             percent_complete: Optional[pulumi.Input[float]] = None,
-            processor_config: Optional[pulumi.Input[pulumi.InputType['ProcessorJobProcessorConfigArgs']]] = None,
+            processor_config: Optional[pulumi.Input[Union['ProcessorJobProcessorConfigArgs', 'ProcessorJobProcessorConfigArgsDict']]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_accepted: Optional[pulumi.Input[str]] = None,
             time_finished: Optional[pulumi.Input[str]] = None,
@@ -486,11 +486,11 @@ class ProcessorJob(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: The compartment identifier.
         :param pulumi.Input[str] display_name: The display name of the processor job.
-        :param pulumi.Input[pulumi.InputType['ProcessorJobInputLocationArgs']] input_location: The location of the inputs.
+        :param pulumi.Input[Union['ProcessorJobInputLocationArgs', 'ProcessorJobInputLocationArgsDict']] input_location: The location of the inputs.
         :param pulumi.Input[str] lifecycle_details: The detailed status of FAILED state.
-        :param pulumi.Input[pulumi.InputType['ProcessorJobOutputLocationArgs']] output_location: The object storage location where to store analysis results.
+        :param pulumi.Input[Union['ProcessorJobOutputLocationArgs', 'ProcessorJobOutputLocationArgsDict']] output_location: The object storage location where to store analysis results.
         :param pulumi.Input[float] percent_complete: How much progress the operation has made, compared to the total amount of work to be performed.
-        :param pulumi.Input[pulumi.InputType['ProcessorJobProcessorConfigArgs']] processor_config: The configuration of a processor.
+        :param pulumi.Input[Union['ProcessorJobProcessorConfigArgs', 'ProcessorJobProcessorConfigArgsDict']] processor_config: The configuration of a processor.
         :param pulumi.Input[str] state: The current state of the processor job.
         :param pulumi.Input[str] time_accepted: The job acceptance time.
         :param pulumi.Input[str] time_finished: The job finish time.

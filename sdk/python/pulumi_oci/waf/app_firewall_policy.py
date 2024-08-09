@@ -465,16 +465,16 @@ class AppFirewallPolicy(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 actions: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AppFirewallPolicyActionArgs']]]]] = None,
+                 actions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AppFirewallPolicyActionArgs', 'AppFirewallPolicyActionArgsDict']]]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 request_access_control: Optional[pulumi.Input[pulumi.InputType['AppFirewallPolicyRequestAccessControlArgs']]] = None,
-                 request_protection: Optional[pulumi.Input[pulumi.InputType['AppFirewallPolicyRequestProtectionArgs']]] = None,
-                 request_rate_limiting: Optional[pulumi.Input[pulumi.InputType['AppFirewallPolicyRequestRateLimitingArgs']]] = None,
-                 response_access_control: Optional[pulumi.Input[pulumi.InputType['AppFirewallPolicyResponseAccessControlArgs']]] = None,
-                 response_protection: Optional[pulumi.Input[pulumi.InputType['AppFirewallPolicyResponseProtectionArgs']]] = None,
+                 request_access_control: Optional[pulumi.Input[Union['AppFirewallPolicyRequestAccessControlArgs', 'AppFirewallPolicyRequestAccessControlArgsDict']]] = None,
+                 request_protection: Optional[pulumi.Input[Union['AppFirewallPolicyRequestProtectionArgs', 'AppFirewallPolicyRequestProtectionArgsDict']]] = None,
+                 request_rate_limiting: Optional[pulumi.Input[Union['AppFirewallPolicyRequestRateLimitingArgs', 'AppFirewallPolicyRequestRateLimitingArgsDict']]] = None,
+                 response_access_control: Optional[pulumi.Input[Union['AppFirewallPolicyResponseAccessControlArgs', 'AppFirewallPolicyResponseAccessControlArgsDict']]] = None,
+                 response_protection: Optional[pulumi.Input[Union['AppFirewallPolicyResponseProtectionArgs', 'AppFirewallPolicyResponseProtectionArgsDict']]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  __props__=None):
         """
@@ -490,19 +490,19 @@ class AppFirewallPolicy(pulumi.CustomResource):
 
         test_web_app_firewall_policy = oci.waf.AppFirewallPolicy("test_web_app_firewall_policy",
             compartment_id=compartment_id,
-            actions=[oci.waf.AppFirewallPolicyActionArgs(
-                name=web_app_firewall_policy_actions_name,
-                type=web_app_firewall_policy_actions_type,
-                body=oci.waf.AppFirewallPolicyActionBodyArgs(
-                    text=web_app_firewall_policy_actions_body_text,
-                    type=web_app_firewall_policy_actions_body_type,
-                ),
-                code=web_app_firewall_policy_actions_code,
-                headers=[oci.waf.AppFirewallPolicyActionHeaderArgs(
-                    name=web_app_firewall_policy_actions_headers_name,
-                    value=web_app_firewall_policy_actions_headers_value,
-                )],
-            )],
+            actions=[{
+                "name": web_app_firewall_policy_actions_name,
+                "type": web_app_firewall_policy_actions_type,
+                "body": {
+                    "text": web_app_firewall_policy_actions_body_text,
+                    "type": web_app_firewall_policy_actions_body_type,
+                },
+                "code": web_app_firewall_policy_actions_code,
+                "headers": [{
+                    "name": web_app_firewall_policy_actions_headers_name,
+                    "value": web_app_firewall_policy_actions_headers_value,
+                }],
+            }],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -510,105 +510,105 @@ class AppFirewallPolicy(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            request_access_control=oci.waf.AppFirewallPolicyRequestAccessControlArgs(
-                default_action_name=web_app_firewall_policy_request_access_control_default_action_name,
-                rules=[oci.waf.AppFirewallPolicyRequestAccessControlRuleArgs(
-                    action_name=web_app_firewall_policy_request_access_control_rules_action_name,
-                    name=web_app_firewall_policy_request_access_control_rules_name,
-                    type=web_app_firewall_policy_request_access_control_rules_type,
-                    condition=web_app_firewall_policy_request_access_control_rules_condition,
-                    condition_language=web_app_firewall_policy_request_access_control_rules_condition_language,
-                )],
-            ),
-            request_protection=oci.waf.AppFirewallPolicyRequestProtectionArgs(
-                body_inspection_size_limit_exceeded_action_name=web_app_firewall_policy_request_protection_body_inspection_size_limit_exceeded_action_name,
-                body_inspection_size_limit_in_bytes=web_app_firewall_policy_request_protection_body_inspection_size_limit_in_bytes,
-                rules=[oci.waf.AppFirewallPolicyRequestProtectionRuleArgs(
-                    action_name=web_app_firewall_policy_request_protection_rules_action_name,
-                    name=web_app_firewall_policy_request_protection_rules_name,
-                    protection_capabilities=[oci.waf.AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgs(
-                        key=web_app_firewall_policy_request_protection_rules_protection_capabilities_key,
-                        version=web_app_firewall_policy_request_protection_rules_protection_capabilities_version,
-                        action_name=web_app_firewall_policy_request_protection_rules_protection_capabilities_action_name,
-                        collaborative_action_threshold=web_app_firewall_policy_request_protection_rules_protection_capabilities_collaborative_action_threshold,
-                        collaborative_weights=[oci.waf.AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs(
-                            key=web_app_firewall_policy_request_protection_rules_protection_capabilities_collaborative_weights_key,
-                            weight=web_app_firewall_policy_request_protection_rules_protection_capabilities_collaborative_weights_weight,
-                        )],
-                        exclusions=oci.waf.AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsArgs(
-                            args=web_app_firewall_policy_request_protection_rules_protection_capabilities_exclusions_args,
-                            request_cookies=web_app_firewall_policy_request_protection_rules_protection_capabilities_exclusions_request_cookies,
-                        ),
-                    )],
-                    type=web_app_firewall_policy_request_protection_rules_type,
-                    condition=web_app_firewall_policy_request_protection_rules_condition,
-                    condition_language=web_app_firewall_policy_request_protection_rules_condition_language,
-                    is_body_inspection_enabled=web_app_firewall_policy_request_protection_rules_is_body_inspection_enabled,
-                    protection_capability_settings=oci.waf.AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgs(
-                        allowed_http_methods=web_app_firewall_policy_request_protection_rules_protection_capability_settings_allowed_http_methods,
-                        max_http_request_header_length=web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_http_request_header_length,
-                        max_http_request_headers=web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_http_request_headers,
-                        max_number_of_arguments=web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_number_of_arguments,
-                        max_single_argument_length=web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_single_argument_length,
-                        max_total_argument_length=web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_total_argument_length,
-                    ),
-                )],
-            ),
-            request_rate_limiting=oci.waf.AppFirewallPolicyRequestRateLimitingArgs(
-                rules=[oci.waf.AppFirewallPolicyRequestRateLimitingRuleArgs(
-                    action_name=web_app_firewall_policy_request_rate_limiting_rules_action_name,
-                    configurations=[oci.waf.AppFirewallPolicyRequestRateLimitingRuleConfigurationArgs(
-                        period_in_seconds=web_app_firewall_policy_request_rate_limiting_rules_configurations_period_in_seconds,
-                        requests_limit=web_app_firewall_policy_request_rate_limiting_rules_configurations_requests_limit,
-                        action_duration_in_seconds=web_app_firewall_policy_request_rate_limiting_rules_configurations_action_duration_in_seconds,
-                    )],
-                    name=web_app_firewall_policy_request_rate_limiting_rules_name,
-                    type=web_app_firewall_policy_request_rate_limiting_rules_type,
-                    condition=web_app_firewall_policy_request_rate_limiting_rules_condition,
-                    condition_language=web_app_firewall_policy_request_rate_limiting_rules_condition_language,
-                )],
-            ),
-            response_access_control=oci.waf.AppFirewallPolicyResponseAccessControlArgs(
-                rules=[oci.waf.AppFirewallPolicyResponseAccessControlRuleArgs(
-                    action_name=web_app_firewall_policy_response_access_control_rules_action_name,
-                    name=web_app_firewall_policy_response_access_control_rules_name,
-                    type=web_app_firewall_policy_response_access_control_rules_type,
-                    condition=web_app_firewall_policy_response_access_control_rules_condition,
-                    condition_language=web_app_firewall_policy_response_access_control_rules_condition_language,
-                )],
-            ),
-            response_protection=oci.waf.AppFirewallPolicyResponseProtectionArgs(
-                rules=[oci.waf.AppFirewallPolicyResponseProtectionRuleArgs(
-                    action_name=web_app_firewall_policy_response_protection_rules_action_name,
-                    name=web_app_firewall_policy_response_protection_rules_name,
-                    protection_capabilities=[oci.waf.AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs(
-                        key=web_app_firewall_policy_response_protection_rules_protection_capabilities_key,
-                        version=web_app_firewall_policy_response_protection_rules_protection_capabilities_version,
-                        action_name=web_app_firewall_policy_response_protection_rules_protection_capabilities_action_name,
-                        collaborative_action_threshold=web_app_firewall_policy_response_protection_rules_protection_capabilities_collaborative_action_threshold,
-                        collaborative_weights=[oci.waf.AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs(
-                            key=web_app_firewall_policy_response_protection_rules_protection_capabilities_collaborative_weights_key,
-                            weight=web_app_firewall_policy_response_protection_rules_protection_capabilities_collaborative_weights_weight,
-                        )],
-                        exclusions=oci.waf.AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsArgs(
-                            args=web_app_firewall_policy_response_protection_rules_protection_capabilities_exclusions_args,
-                            request_cookies=web_app_firewall_policy_response_protection_rules_protection_capabilities_exclusions_request_cookies,
-                        ),
-                    )],
-                    type=web_app_firewall_policy_response_protection_rules_type,
-                    condition=web_app_firewall_policy_response_protection_rules_condition,
-                    condition_language=web_app_firewall_policy_response_protection_rules_condition_language,
-                    is_body_inspection_enabled=web_app_firewall_policy_response_protection_rules_is_body_inspection_enabled,
-                    protection_capability_settings=oci.waf.AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgs(
-                        allowed_http_methods=web_app_firewall_policy_response_protection_rules_protection_capability_settings_allowed_http_methods,
-                        max_http_request_header_length=web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_http_request_header_length,
-                        max_http_request_headers=web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_http_request_headers,
-                        max_number_of_arguments=web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_number_of_arguments,
-                        max_single_argument_length=web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_single_argument_length,
-                        max_total_argument_length=web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_total_argument_length,
-                    ),
-                )],
-            ),
+            request_access_control={
+                "default_action_name": web_app_firewall_policy_request_access_control_default_action_name,
+                "rules": [{
+                    "action_name": web_app_firewall_policy_request_access_control_rules_action_name,
+                    "name": web_app_firewall_policy_request_access_control_rules_name,
+                    "type": web_app_firewall_policy_request_access_control_rules_type,
+                    "condition": web_app_firewall_policy_request_access_control_rules_condition,
+                    "condition_language": web_app_firewall_policy_request_access_control_rules_condition_language,
+                }],
+            },
+            request_protection={
+                "body_inspection_size_limit_exceeded_action_name": web_app_firewall_policy_request_protection_body_inspection_size_limit_exceeded_action_name,
+                "body_inspection_size_limit_in_bytes": web_app_firewall_policy_request_protection_body_inspection_size_limit_in_bytes,
+                "rules": [{
+                    "action_name": web_app_firewall_policy_request_protection_rules_action_name,
+                    "name": web_app_firewall_policy_request_protection_rules_name,
+                    "protection_capabilities": [{
+                        "key": web_app_firewall_policy_request_protection_rules_protection_capabilities_key,
+                        "version": web_app_firewall_policy_request_protection_rules_protection_capabilities_version,
+                        "action_name": web_app_firewall_policy_request_protection_rules_protection_capabilities_action_name,
+                        "collaborative_action_threshold": web_app_firewall_policy_request_protection_rules_protection_capabilities_collaborative_action_threshold,
+                        "collaborative_weights": [{
+                            "key": web_app_firewall_policy_request_protection_rules_protection_capabilities_collaborative_weights_key,
+                            "weight": web_app_firewall_policy_request_protection_rules_protection_capabilities_collaborative_weights_weight,
+                        }],
+                        "exclusions": {
+                            "args": web_app_firewall_policy_request_protection_rules_protection_capabilities_exclusions_args,
+                            "request_cookies": web_app_firewall_policy_request_protection_rules_protection_capabilities_exclusions_request_cookies,
+                        },
+                    }],
+                    "type": web_app_firewall_policy_request_protection_rules_type,
+                    "condition": web_app_firewall_policy_request_protection_rules_condition,
+                    "condition_language": web_app_firewall_policy_request_protection_rules_condition_language,
+                    "is_body_inspection_enabled": web_app_firewall_policy_request_protection_rules_is_body_inspection_enabled,
+                    "protection_capability_settings": {
+                        "allowed_http_methods": web_app_firewall_policy_request_protection_rules_protection_capability_settings_allowed_http_methods,
+                        "max_http_request_header_length": web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_http_request_header_length,
+                        "max_http_request_headers": web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_http_request_headers,
+                        "max_number_of_arguments": web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_number_of_arguments,
+                        "max_single_argument_length": web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_single_argument_length,
+                        "max_total_argument_length": web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_total_argument_length,
+                    },
+                }],
+            },
+            request_rate_limiting={
+                "rules": [{
+                    "action_name": web_app_firewall_policy_request_rate_limiting_rules_action_name,
+                    "configurations": [{
+                        "period_in_seconds": web_app_firewall_policy_request_rate_limiting_rules_configurations_period_in_seconds,
+                        "requests_limit": web_app_firewall_policy_request_rate_limiting_rules_configurations_requests_limit,
+                        "action_duration_in_seconds": web_app_firewall_policy_request_rate_limiting_rules_configurations_action_duration_in_seconds,
+                    }],
+                    "name": web_app_firewall_policy_request_rate_limiting_rules_name,
+                    "type": web_app_firewall_policy_request_rate_limiting_rules_type,
+                    "condition": web_app_firewall_policy_request_rate_limiting_rules_condition,
+                    "condition_language": web_app_firewall_policy_request_rate_limiting_rules_condition_language,
+                }],
+            },
+            response_access_control={
+                "rules": [{
+                    "action_name": web_app_firewall_policy_response_access_control_rules_action_name,
+                    "name": web_app_firewall_policy_response_access_control_rules_name,
+                    "type": web_app_firewall_policy_response_access_control_rules_type,
+                    "condition": web_app_firewall_policy_response_access_control_rules_condition,
+                    "condition_language": web_app_firewall_policy_response_access_control_rules_condition_language,
+                }],
+            },
+            response_protection={
+                "rules": [{
+                    "action_name": web_app_firewall_policy_response_protection_rules_action_name,
+                    "name": web_app_firewall_policy_response_protection_rules_name,
+                    "protection_capabilities": [{
+                        "key": web_app_firewall_policy_response_protection_rules_protection_capabilities_key,
+                        "version": web_app_firewall_policy_response_protection_rules_protection_capabilities_version,
+                        "action_name": web_app_firewall_policy_response_protection_rules_protection_capabilities_action_name,
+                        "collaborative_action_threshold": web_app_firewall_policy_response_protection_rules_protection_capabilities_collaborative_action_threshold,
+                        "collaborative_weights": [{
+                            "key": web_app_firewall_policy_response_protection_rules_protection_capabilities_collaborative_weights_key,
+                            "weight": web_app_firewall_policy_response_protection_rules_protection_capabilities_collaborative_weights_weight,
+                        }],
+                        "exclusions": {
+                            "args": web_app_firewall_policy_response_protection_rules_protection_capabilities_exclusions_args,
+                            "request_cookies": web_app_firewall_policy_response_protection_rules_protection_capabilities_exclusions_request_cookies,
+                        },
+                    }],
+                    "type": web_app_firewall_policy_response_protection_rules_type,
+                    "condition": web_app_firewall_policy_response_protection_rules_condition,
+                    "condition_language": web_app_firewall_policy_response_protection_rules_condition_language,
+                    "is_body_inspection_enabled": web_app_firewall_policy_response_protection_rules_is_body_inspection_enabled,
+                    "protection_capability_settings": {
+                        "allowed_http_methods": web_app_firewall_policy_response_protection_rules_protection_capability_settings_allowed_http_methods,
+                        "max_http_request_header_length": web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_http_request_header_length,
+                        "max_http_request_headers": web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_http_request_headers,
+                        "max_number_of_arguments": web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_number_of_arguments,
+                        "max_single_argument_length": web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_single_argument_length,
+                        "max_total_argument_length": web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_total_argument_length,
+                    },
+                }],
+            },
             system_tags=web_app_firewall_policy_system_tags)
         ```
 
@@ -622,16 +622,16 @@ class AppFirewallPolicy(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AppFirewallPolicyActionArgs']]]] actions: (Updatable) Predefined actions for use in multiple different rules. Not all actions are supported in every module. Some actions terminate further execution of modules and rules in a module and some do not. Actions names must be unique within this array.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AppFirewallPolicyActionArgs', 'AppFirewallPolicyActionArgsDict']]]] actions: (Updatable) Predefined actions for use in multiple different rules. Not all actions are supported in every module. Some actions terminate further execution of modules and rules in a module and some do not. Actions names must be unique within this array.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) WebAppFirewallPolicy display name, can be renamed.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[pulumi.InputType['AppFirewallPolicyRequestAccessControlArgs']] request_access_control: (Updatable) Module that allows inspection of HTTP request properties and to return a defined HTTP response. In this module, rules with the name 'Default Action' are not allowed, since this name is reserved for default action logs.
-        :param pulumi.Input[pulumi.InputType['AppFirewallPolicyRequestProtectionArgs']] request_protection: (Updatable) Module that allows to enable OCI-managed protection capabilities for incoming HTTP requests.
-        :param pulumi.Input[pulumi.InputType['AppFirewallPolicyRequestRateLimitingArgs']] request_rate_limiting: (Updatable) Module that allows inspection of HTTP connection properties and to limit requests frequency for a given key.
-        :param pulumi.Input[pulumi.InputType['AppFirewallPolicyResponseAccessControlArgs']] response_access_control: (Updatable) Module that allows inspection of HTTP response properties and to return a defined HTTP response.
-        :param pulumi.Input[pulumi.InputType['AppFirewallPolicyResponseProtectionArgs']] response_protection: (Updatable) Module that allows to enable OCI-managed protection capabilities for HTTP responses.
+        :param pulumi.Input[Union['AppFirewallPolicyRequestAccessControlArgs', 'AppFirewallPolicyRequestAccessControlArgsDict']] request_access_control: (Updatable) Module that allows inspection of HTTP request properties and to return a defined HTTP response. In this module, rules with the name 'Default Action' are not allowed, since this name is reserved for default action logs.
+        :param pulumi.Input[Union['AppFirewallPolicyRequestProtectionArgs', 'AppFirewallPolicyRequestProtectionArgsDict']] request_protection: (Updatable) Module that allows to enable OCI-managed protection capabilities for incoming HTTP requests.
+        :param pulumi.Input[Union['AppFirewallPolicyRequestRateLimitingArgs', 'AppFirewallPolicyRequestRateLimitingArgsDict']] request_rate_limiting: (Updatable) Module that allows inspection of HTTP connection properties and to limit requests frequency for a given key.
+        :param pulumi.Input[Union['AppFirewallPolicyResponseAccessControlArgs', 'AppFirewallPolicyResponseAccessControlArgsDict']] response_access_control: (Updatable) Module that allows inspection of HTTP response properties and to return a defined HTTP response.
+        :param pulumi.Input[Union['AppFirewallPolicyResponseProtectionArgs', 'AppFirewallPolicyResponseProtectionArgsDict']] response_protection: (Updatable) Module that allows to enable OCI-managed protection capabilities for HTTP responses.
         :param pulumi.Input[Mapping[str, Any]] system_tags: (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
                
                
@@ -657,19 +657,19 @@ class AppFirewallPolicy(pulumi.CustomResource):
 
         test_web_app_firewall_policy = oci.waf.AppFirewallPolicy("test_web_app_firewall_policy",
             compartment_id=compartment_id,
-            actions=[oci.waf.AppFirewallPolicyActionArgs(
-                name=web_app_firewall_policy_actions_name,
-                type=web_app_firewall_policy_actions_type,
-                body=oci.waf.AppFirewallPolicyActionBodyArgs(
-                    text=web_app_firewall_policy_actions_body_text,
-                    type=web_app_firewall_policy_actions_body_type,
-                ),
-                code=web_app_firewall_policy_actions_code,
-                headers=[oci.waf.AppFirewallPolicyActionHeaderArgs(
-                    name=web_app_firewall_policy_actions_headers_name,
-                    value=web_app_firewall_policy_actions_headers_value,
-                )],
-            )],
+            actions=[{
+                "name": web_app_firewall_policy_actions_name,
+                "type": web_app_firewall_policy_actions_type,
+                "body": {
+                    "text": web_app_firewall_policy_actions_body_text,
+                    "type": web_app_firewall_policy_actions_body_type,
+                },
+                "code": web_app_firewall_policy_actions_code,
+                "headers": [{
+                    "name": web_app_firewall_policy_actions_headers_name,
+                    "value": web_app_firewall_policy_actions_headers_value,
+                }],
+            }],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -677,105 +677,105 @@ class AppFirewallPolicy(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            request_access_control=oci.waf.AppFirewallPolicyRequestAccessControlArgs(
-                default_action_name=web_app_firewall_policy_request_access_control_default_action_name,
-                rules=[oci.waf.AppFirewallPolicyRequestAccessControlRuleArgs(
-                    action_name=web_app_firewall_policy_request_access_control_rules_action_name,
-                    name=web_app_firewall_policy_request_access_control_rules_name,
-                    type=web_app_firewall_policy_request_access_control_rules_type,
-                    condition=web_app_firewall_policy_request_access_control_rules_condition,
-                    condition_language=web_app_firewall_policy_request_access_control_rules_condition_language,
-                )],
-            ),
-            request_protection=oci.waf.AppFirewallPolicyRequestProtectionArgs(
-                body_inspection_size_limit_exceeded_action_name=web_app_firewall_policy_request_protection_body_inspection_size_limit_exceeded_action_name,
-                body_inspection_size_limit_in_bytes=web_app_firewall_policy_request_protection_body_inspection_size_limit_in_bytes,
-                rules=[oci.waf.AppFirewallPolicyRequestProtectionRuleArgs(
-                    action_name=web_app_firewall_policy_request_protection_rules_action_name,
-                    name=web_app_firewall_policy_request_protection_rules_name,
-                    protection_capabilities=[oci.waf.AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgs(
-                        key=web_app_firewall_policy_request_protection_rules_protection_capabilities_key,
-                        version=web_app_firewall_policy_request_protection_rules_protection_capabilities_version,
-                        action_name=web_app_firewall_policy_request_protection_rules_protection_capabilities_action_name,
-                        collaborative_action_threshold=web_app_firewall_policy_request_protection_rules_protection_capabilities_collaborative_action_threshold,
-                        collaborative_weights=[oci.waf.AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs(
-                            key=web_app_firewall_policy_request_protection_rules_protection_capabilities_collaborative_weights_key,
-                            weight=web_app_firewall_policy_request_protection_rules_protection_capabilities_collaborative_weights_weight,
-                        )],
-                        exclusions=oci.waf.AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsArgs(
-                            args=web_app_firewall_policy_request_protection_rules_protection_capabilities_exclusions_args,
-                            request_cookies=web_app_firewall_policy_request_protection_rules_protection_capabilities_exclusions_request_cookies,
-                        ),
-                    )],
-                    type=web_app_firewall_policy_request_protection_rules_type,
-                    condition=web_app_firewall_policy_request_protection_rules_condition,
-                    condition_language=web_app_firewall_policy_request_protection_rules_condition_language,
-                    is_body_inspection_enabled=web_app_firewall_policy_request_protection_rules_is_body_inspection_enabled,
-                    protection_capability_settings=oci.waf.AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgs(
-                        allowed_http_methods=web_app_firewall_policy_request_protection_rules_protection_capability_settings_allowed_http_methods,
-                        max_http_request_header_length=web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_http_request_header_length,
-                        max_http_request_headers=web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_http_request_headers,
-                        max_number_of_arguments=web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_number_of_arguments,
-                        max_single_argument_length=web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_single_argument_length,
-                        max_total_argument_length=web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_total_argument_length,
-                    ),
-                )],
-            ),
-            request_rate_limiting=oci.waf.AppFirewallPolicyRequestRateLimitingArgs(
-                rules=[oci.waf.AppFirewallPolicyRequestRateLimitingRuleArgs(
-                    action_name=web_app_firewall_policy_request_rate_limiting_rules_action_name,
-                    configurations=[oci.waf.AppFirewallPolicyRequestRateLimitingRuleConfigurationArgs(
-                        period_in_seconds=web_app_firewall_policy_request_rate_limiting_rules_configurations_period_in_seconds,
-                        requests_limit=web_app_firewall_policy_request_rate_limiting_rules_configurations_requests_limit,
-                        action_duration_in_seconds=web_app_firewall_policy_request_rate_limiting_rules_configurations_action_duration_in_seconds,
-                    )],
-                    name=web_app_firewall_policy_request_rate_limiting_rules_name,
-                    type=web_app_firewall_policy_request_rate_limiting_rules_type,
-                    condition=web_app_firewall_policy_request_rate_limiting_rules_condition,
-                    condition_language=web_app_firewall_policy_request_rate_limiting_rules_condition_language,
-                )],
-            ),
-            response_access_control=oci.waf.AppFirewallPolicyResponseAccessControlArgs(
-                rules=[oci.waf.AppFirewallPolicyResponseAccessControlRuleArgs(
-                    action_name=web_app_firewall_policy_response_access_control_rules_action_name,
-                    name=web_app_firewall_policy_response_access_control_rules_name,
-                    type=web_app_firewall_policy_response_access_control_rules_type,
-                    condition=web_app_firewall_policy_response_access_control_rules_condition,
-                    condition_language=web_app_firewall_policy_response_access_control_rules_condition_language,
-                )],
-            ),
-            response_protection=oci.waf.AppFirewallPolicyResponseProtectionArgs(
-                rules=[oci.waf.AppFirewallPolicyResponseProtectionRuleArgs(
-                    action_name=web_app_firewall_policy_response_protection_rules_action_name,
-                    name=web_app_firewall_policy_response_protection_rules_name,
-                    protection_capabilities=[oci.waf.AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs(
-                        key=web_app_firewall_policy_response_protection_rules_protection_capabilities_key,
-                        version=web_app_firewall_policy_response_protection_rules_protection_capabilities_version,
-                        action_name=web_app_firewall_policy_response_protection_rules_protection_capabilities_action_name,
-                        collaborative_action_threshold=web_app_firewall_policy_response_protection_rules_protection_capabilities_collaborative_action_threshold,
-                        collaborative_weights=[oci.waf.AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs(
-                            key=web_app_firewall_policy_response_protection_rules_protection_capabilities_collaborative_weights_key,
-                            weight=web_app_firewall_policy_response_protection_rules_protection_capabilities_collaborative_weights_weight,
-                        )],
-                        exclusions=oci.waf.AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsArgs(
-                            args=web_app_firewall_policy_response_protection_rules_protection_capabilities_exclusions_args,
-                            request_cookies=web_app_firewall_policy_response_protection_rules_protection_capabilities_exclusions_request_cookies,
-                        ),
-                    )],
-                    type=web_app_firewall_policy_response_protection_rules_type,
-                    condition=web_app_firewall_policy_response_protection_rules_condition,
-                    condition_language=web_app_firewall_policy_response_protection_rules_condition_language,
-                    is_body_inspection_enabled=web_app_firewall_policy_response_protection_rules_is_body_inspection_enabled,
-                    protection_capability_settings=oci.waf.AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgs(
-                        allowed_http_methods=web_app_firewall_policy_response_protection_rules_protection_capability_settings_allowed_http_methods,
-                        max_http_request_header_length=web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_http_request_header_length,
-                        max_http_request_headers=web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_http_request_headers,
-                        max_number_of_arguments=web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_number_of_arguments,
-                        max_single_argument_length=web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_single_argument_length,
-                        max_total_argument_length=web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_total_argument_length,
-                    ),
-                )],
-            ),
+            request_access_control={
+                "default_action_name": web_app_firewall_policy_request_access_control_default_action_name,
+                "rules": [{
+                    "action_name": web_app_firewall_policy_request_access_control_rules_action_name,
+                    "name": web_app_firewall_policy_request_access_control_rules_name,
+                    "type": web_app_firewall_policy_request_access_control_rules_type,
+                    "condition": web_app_firewall_policy_request_access_control_rules_condition,
+                    "condition_language": web_app_firewall_policy_request_access_control_rules_condition_language,
+                }],
+            },
+            request_protection={
+                "body_inspection_size_limit_exceeded_action_name": web_app_firewall_policy_request_protection_body_inspection_size_limit_exceeded_action_name,
+                "body_inspection_size_limit_in_bytes": web_app_firewall_policy_request_protection_body_inspection_size_limit_in_bytes,
+                "rules": [{
+                    "action_name": web_app_firewall_policy_request_protection_rules_action_name,
+                    "name": web_app_firewall_policy_request_protection_rules_name,
+                    "protection_capabilities": [{
+                        "key": web_app_firewall_policy_request_protection_rules_protection_capabilities_key,
+                        "version": web_app_firewall_policy_request_protection_rules_protection_capabilities_version,
+                        "action_name": web_app_firewall_policy_request_protection_rules_protection_capabilities_action_name,
+                        "collaborative_action_threshold": web_app_firewall_policy_request_protection_rules_protection_capabilities_collaborative_action_threshold,
+                        "collaborative_weights": [{
+                            "key": web_app_firewall_policy_request_protection_rules_protection_capabilities_collaborative_weights_key,
+                            "weight": web_app_firewall_policy_request_protection_rules_protection_capabilities_collaborative_weights_weight,
+                        }],
+                        "exclusions": {
+                            "args": web_app_firewall_policy_request_protection_rules_protection_capabilities_exclusions_args,
+                            "request_cookies": web_app_firewall_policy_request_protection_rules_protection_capabilities_exclusions_request_cookies,
+                        },
+                    }],
+                    "type": web_app_firewall_policy_request_protection_rules_type,
+                    "condition": web_app_firewall_policy_request_protection_rules_condition,
+                    "condition_language": web_app_firewall_policy_request_protection_rules_condition_language,
+                    "is_body_inspection_enabled": web_app_firewall_policy_request_protection_rules_is_body_inspection_enabled,
+                    "protection_capability_settings": {
+                        "allowed_http_methods": web_app_firewall_policy_request_protection_rules_protection_capability_settings_allowed_http_methods,
+                        "max_http_request_header_length": web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_http_request_header_length,
+                        "max_http_request_headers": web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_http_request_headers,
+                        "max_number_of_arguments": web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_number_of_arguments,
+                        "max_single_argument_length": web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_single_argument_length,
+                        "max_total_argument_length": web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_total_argument_length,
+                    },
+                }],
+            },
+            request_rate_limiting={
+                "rules": [{
+                    "action_name": web_app_firewall_policy_request_rate_limiting_rules_action_name,
+                    "configurations": [{
+                        "period_in_seconds": web_app_firewall_policy_request_rate_limiting_rules_configurations_period_in_seconds,
+                        "requests_limit": web_app_firewall_policy_request_rate_limiting_rules_configurations_requests_limit,
+                        "action_duration_in_seconds": web_app_firewall_policy_request_rate_limiting_rules_configurations_action_duration_in_seconds,
+                    }],
+                    "name": web_app_firewall_policy_request_rate_limiting_rules_name,
+                    "type": web_app_firewall_policy_request_rate_limiting_rules_type,
+                    "condition": web_app_firewall_policy_request_rate_limiting_rules_condition,
+                    "condition_language": web_app_firewall_policy_request_rate_limiting_rules_condition_language,
+                }],
+            },
+            response_access_control={
+                "rules": [{
+                    "action_name": web_app_firewall_policy_response_access_control_rules_action_name,
+                    "name": web_app_firewall_policy_response_access_control_rules_name,
+                    "type": web_app_firewall_policy_response_access_control_rules_type,
+                    "condition": web_app_firewall_policy_response_access_control_rules_condition,
+                    "condition_language": web_app_firewall_policy_response_access_control_rules_condition_language,
+                }],
+            },
+            response_protection={
+                "rules": [{
+                    "action_name": web_app_firewall_policy_response_protection_rules_action_name,
+                    "name": web_app_firewall_policy_response_protection_rules_name,
+                    "protection_capabilities": [{
+                        "key": web_app_firewall_policy_response_protection_rules_protection_capabilities_key,
+                        "version": web_app_firewall_policy_response_protection_rules_protection_capabilities_version,
+                        "action_name": web_app_firewall_policy_response_protection_rules_protection_capabilities_action_name,
+                        "collaborative_action_threshold": web_app_firewall_policy_response_protection_rules_protection_capabilities_collaborative_action_threshold,
+                        "collaborative_weights": [{
+                            "key": web_app_firewall_policy_response_protection_rules_protection_capabilities_collaborative_weights_key,
+                            "weight": web_app_firewall_policy_response_protection_rules_protection_capabilities_collaborative_weights_weight,
+                        }],
+                        "exclusions": {
+                            "args": web_app_firewall_policy_response_protection_rules_protection_capabilities_exclusions_args,
+                            "request_cookies": web_app_firewall_policy_response_protection_rules_protection_capabilities_exclusions_request_cookies,
+                        },
+                    }],
+                    "type": web_app_firewall_policy_response_protection_rules_type,
+                    "condition": web_app_firewall_policy_response_protection_rules_condition,
+                    "condition_language": web_app_firewall_policy_response_protection_rules_condition_language,
+                    "is_body_inspection_enabled": web_app_firewall_policy_response_protection_rules_is_body_inspection_enabled,
+                    "protection_capability_settings": {
+                        "allowed_http_methods": web_app_firewall_policy_response_protection_rules_protection_capability_settings_allowed_http_methods,
+                        "max_http_request_header_length": web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_http_request_header_length,
+                        "max_http_request_headers": web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_http_request_headers,
+                        "max_number_of_arguments": web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_number_of_arguments,
+                        "max_single_argument_length": web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_single_argument_length,
+                        "max_total_argument_length": web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_total_argument_length,
+                    },
+                }],
+            },
             system_tags=web_app_firewall_policy_system_tags)
         ```
 
@@ -802,16 +802,16 @@ class AppFirewallPolicy(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 actions: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AppFirewallPolicyActionArgs']]]]] = None,
+                 actions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AppFirewallPolicyActionArgs', 'AppFirewallPolicyActionArgsDict']]]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 request_access_control: Optional[pulumi.Input[pulumi.InputType['AppFirewallPolicyRequestAccessControlArgs']]] = None,
-                 request_protection: Optional[pulumi.Input[pulumi.InputType['AppFirewallPolicyRequestProtectionArgs']]] = None,
-                 request_rate_limiting: Optional[pulumi.Input[pulumi.InputType['AppFirewallPolicyRequestRateLimitingArgs']]] = None,
-                 response_access_control: Optional[pulumi.Input[pulumi.InputType['AppFirewallPolicyResponseAccessControlArgs']]] = None,
-                 response_protection: Optional[pulumi.Input[pulumi.InputType['AppFirewallPolicyResponseProtectionArgs']]] = None,
+                 request_access_control: Optional[pulumi.Input[Union['AppFirewallPolicyRequestAccessControlArgs', 'AppFirewallPolicyRequestAccessControlArgsDict']]] = None,
+                 request_protection: Optional[pulumi.Input[Union['AppFirewallPolicyRequestProtectionArgs', 'AppFirewallPolicyRequestProtectionArgsDict']]] = None,
+                 request_rate_limiting: Optional[pulumi.Input[Union['AppFirewallPolicyRequestRateLimitingArgs', 'AppFirewallPolicyRequestRateLimitingArgsDict']]] = None,
+                 response_access_control: Optional[pulumi.Input[Union['AppFirewallPolicyResponseAccessControlArgs', 'AppFirewallPolicyResponseAccessControlArgsDict']]] = None,
+                 response_protection: Optional[pulumi.Input[Union['AppFirewallPolicyResponseProtectionArgs', 'AppFirewallPolicyResponseProtectionArgsDict']]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -849,17 +849,17 @@ class AppFirewallPolicy(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            actions: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AppFirewallPolicyActionArgs']]]]] = None,
+            actions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AppFirewallPolicyActionArgs', 'AppFirewallPolicyActionArgsDict']]]]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
-            request_access_control: Optional[pulumi.Input[pulumi.InputType['AppFirewallPolicyRequestAccessControlArgs']]] = None,
-            request_protection: Optional[pulumi.Input[pulumi.InputType['AppFirewallPolicyRequestProtectionArgs']]] = None,
-            request_rate_limiting: Optional[pulumi.Input[pulumi.InputType['AppFirewallPolicyRequestRateLimitingArgs']]] = None,
-            response_access_control: Optional[pulumi.Input[pulumi.InputType['AppFirewallPolicyResponseAccessControlArgs']]] = None,
-            response_protection: Optional[pulumi.Input[pulumi.InputType['AppFirewallPolicyResponseProtectionArgs']]] = None,
+            request_access_control: Optional[pulumi.Input[Union['AppFirewallPolicyRequestAccessControlArgs', 'AppFirewallPolicyRequestAccessControlArgsDict']]] = None,
+            request_protection: Optional[pulumi.Input[Union['AppFirewallPolicyRequestProtectionArgs', 'AppFirewallPolicyRequestProtectionArgsDict']]] = None,
+            request_rate_limiting: Optional[pulumi.Input[Union['AppFirewallPolicyRequestRateLimitingArgs', 'AppFirewallPolicyRequestRateLimitingArgsDict']]] = None,
+            response_access_control: Optional[pulumi.Input[Union['AppFirewallPolicyResponseAccessControlArgs', 'AppFirewallPolicyResponseAccessControlArgsDict']]] = None,
+            response_protection: Optional[pulumi.Input[Union['AppFirewallPolicyResponseProtectionArgs', 'AppFirewallPolicyResponseProtectionArgsDict']]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
@@ -871,17 +871,17 @@ class AppFirewallPolicy(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AppFirewallPolicyActionArgs']]]] actions: (Updatable) Predefined actions for use in multiple different rules. Not all actions are supported in every module. Some actions terminate further execution of modules and rules in a module and some do not. Actions names must be unique within this array.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AppFirewallPolicyActionArgs', 'AppFirewallPolicyActionArgsDict']]]] actions: (Updatable) Predefined actions for use in multiple different rules. Not all actions are supported in every module. Some actions terminate further execution of modules and rules in a module and some do not. Actions names must be unique within this array.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) WebAppFirewallPolicy display name, can be renamed.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
-        :param pulumi.Input[pulumi.InputType['AppFirewallPolicyRequestAccessControlArgs']] request_access_control: (Updatable) Module that allows inspection of HTTP request properties and to return a defined HTTP response. In this module, rules with the name 'Default Action' are not allowed, since this name is reserved for default action logs.
-        :param pulumi.Input[pulumi.InputType['AppFirewallPolicyRequestProtectionArgs']] request_protection: (Updatable) Module that allows to enable OCI-managed protection capabilities for incoming HTTP requests.
-        :param pulumi.Input[pulumi.InputType['AppFirewallPolicyRequestRateLimitingArgs']] request_rate_limiting: (Updatable) Module that allows inspection of HTTP connection properties and to limit requests frequency for a given key.
-        :param pulumi.Input[pulumi.InputType['AppFirewallPolicyResponseAccessControlArgs']] response_access_control: (Updatable) Module that allows inspection of HTTP response properties and to return a defined HTTP response.
-        :param pulumi.Input[pulumi.InputType['AppFirewallPolicyResponseProtectionArgs']] response_protection: (Updatable) Module that allows to enable OCI-managed protection capabilities for HTTP responses.
+        :param pulumi.Input[Union['AppFirewallPolicyRequestAccessControlArgs', 'AppFirewallPolicyRequestAccessControlArgsDict']] request_access_control: (Updatable) Module that allows inspection of HTTP request properties and to return a defined HTTP response. In this module, rules with the name 'Default Action' are not allowed, since this name is reserved for default action logs.
+        :param pulumi.Input[Union['AppFirewallPolicyRequestProtectionArgs', 'AppFirewallPolicyRequestProtectionArgsDict']] request_protection: (Updatable) Module that allows to enable OCI-managed protection capabilities for incoming HTTP requests.
+        :param pulumi.Input[Union['AppFirewallPolicyRequestRateLimitingArgs', 'AppFirewallPolicyRequestRateLimitingArgsDict']] request_rate_limiting: (Updatable) Module that allows inspection of HTTP connection properties and to limit requests frequency for a given key.
+        :param pulumi.Input[Union['AppFirewallPolicyResponseAccessControlArgs', 'AppFirewallPolicyResponseAccessControlArgsDict']] response_access_control: (Updatable) Module that allows inspection of HTTP response properties and to return a defined HTTP response.
+        :param pulumi.Input[Union['AppFirewallPolicyResponseProtectionArgs', 'AppFirewallPolicyResponseProtectionArgsDict']] response_protection: (Updatable) Module that allows to enable OCI-managed protection capabilities for HTTP responses.
         :param pulumi.Input[str] state: The current state of the WebAppFirewallPolicy.
         :param pulumi.Input[Mapping[str, Any]] system_tags: (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
                

@@ -391,7 +391,7 @@ public class ManagedInstanceGroup extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ManagedInstanceGroup(String name) {
+    public ManagedInstanceGroup(java.lang.String name) {
         this(name, ManagedInstanceGroupArgs.Empty);
     }
     /**
@@ -399,7 +399,7 @@ public class ManagedInstanceGroup extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ManagedInstanceGroup(String name, ManagedInstanceGroupArgs args) {
+    public ManagedInstanceGroup(java.lang.String name, ManagedInstanceGroupArgs args) {
         this(name, args, null);
     }
     /**
@@ -408,12 +408,12 @@ public class ManagedInstanceGroup extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ManagedInstanceGroup(String name, ManagedInstanceGroupArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:OsManagementHub/managedInstanceGroup:ManagedInstanceGroup", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ManagedInstanceGroup(java.lang.String name, ManagedInstanceGroupArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:OsManagementHub/managedInstanceGroup:ManagedInstanceGroup", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ManagedInstanceGroup(String name, Output<String> id, @Nullable ManagedInstanceGroupState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:OsManagementHub/managedInstanceGroup:ManagedInstanceGroup", name, state, makeResourceOptions(options, id));
+    private ManagedInstanceGroup(java.lang.String name, Output<java.lang.String> id, @Nullable ManagedInstanceGroupState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:OsManagementHub/managedInstanceGroup:ManagedInstanceGroup", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ManagedInstanceGroupArgs makeArgs(ManagedInstanceGroupArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -423,7 +423,7 @@ public class ManagedInstanceGroup extends com.pulumi.resources.CustomResource {
         return args == null ? ManagedInstanceGroupArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -439,7 +439,7 @@ public class ManagedInstanceGroup extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ManagedInstanceGroup get(String name, Output<String> id, @Nullable ManagedInstanceGroupState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ManagedInstanceGroup get(java.lang.String name, Output<java.lang.String> id, @Nullable ManagedInstanceGroupState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ManagedInstanceGroup(name, id, state, options);
     }
 }

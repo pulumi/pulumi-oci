@@ -79,7 +79,7 @@ class AwaitableGetProblemEntitiesResult(GetProblemEntitiesResult):
             problem_id=self.problem_id)
 
 
-def get_problem_entities(filters: Optional[Sequence[pulumi.InputType['GetProblemEntitiesFilterArgs']]] = None,
+def get_problem_entities(filters: Optional[Sequence[Union['GetProblemEntitiesFilterArgs', 'GetProblemEntitiesFilterArgsDict']]] = None,
                          problem_id: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetProblemEntitiesResult:
     """
@@ -114,7 +114,7 @@ def get_problem_entities(filters: Optional[Sequence[pulumi.InputType['GetProblem
 
 
 @_utilities.lift_output_func(get_problem_entities)
-def get_problem_entities_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetProblemEntitiesFilterArgs']]]]] = None,
+def get_problem_entities_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetProblemEntitiesFilterArgs', 'GetProblemEntitiesFilterArgsDict']]]]] = None,
                                 problem_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProblemEntitiesResult]:
     """

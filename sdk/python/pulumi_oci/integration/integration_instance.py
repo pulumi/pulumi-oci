@@ -725,10 +725,10 @@ class IntegrationInstance(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 alternate_custom_endpoints: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IntegrationInstanceAlternateCustomEndpointArgs']]]]] = None,
+                 alternate_custom_endpoints: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstanceAlternateCustomEndpointArgs', 'IntegrationInstanceAlternateCustomEndpointArgsDict']]]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  consumption_model: Optional[pulumi.Input[str]] = None,
-                 custom_endpoint: Optional[pulumi.Input[pulumi.InputType['IntegrationInstanceCustomEndpointArgs']]] = None,
+                 custom_endpoint: Optional[pulumi.Input[Union['IntegrationInstanceCustomEndpointArgs', 'IntegrationInstanceCustomEndpointArgsDict']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  domain_id: Optional[pulumi.Input[str]] = None,
@@ -740,7 +740,7 @@ class IntegrationInstance(pulumi.CustomResource):
                  is_file_server_enabled: Optional[pulumi.Input[bool]] = None,
                  is_visual_builder_enabled: Optional[pulumi.Input[bool]] = None,
                  message_packs: Optional[pulumi.Input[int]] = None,
-                 network_endpoint_details: Optional[pulumi.Input[pulumi.InputType['IntegrationInstanceNetworkEndpointDetailsArgs']]] = None,
+                 network_endpoint_details: Optional[pulumi.Input[Union['IntegrationInstanceNetworkEndpointDetailsArgs', 'IntegrationInstanceNetworkEndpointDetailsArgsDict']]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -761,15 +761,15 @@ class IntegrationInstance(pulumi.CustomResource):
             integration_instance_type=integration_instance_integration_instance_type,
             is_byol=integration_instance_is_byol,
             message_packs=integration_instance_message_packs,
-            alternate_custom_endpoints=[oci.integration.IntegrationInstanceAlternateCustomEndpointArgs(
-                hostname=integration_instance_alternate_custom_endpoints_hostname,
-                certificate_secret_id=test_secret["id"],
-            )],
+            alternate_custom_endpoints=[{
+                "hostname": integration_instance_alternate_custom_endpoints_hostname,
+                "certificate_secret_id": test_secret["id"],
+            }],
             consumption_model=integration_instance_consumption_model,
-            custom_endpoint=oci.integration.IntegrationInstanceCustomEndpointArgs(
-                hostname=integration_instance_custom_endpoint_hostname,
-                certificate_secret_id=test_secret["id"],
-            ),
+            custom_endpoint={
+                "hostname": integration_instance_custom_endpoint_hostname,
+                "certificate_secret_id": test_secret["id"],
+            },
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -780,15 +780,15 @@ class IntegrationInstance(pulumi.CustomResource):
             idcs_at=integration_instance_idcs_at,
             is_file_server_enabled=integration_instance_is_file_server_enabled,
             is_visual_builder_enabled=integration_instance_is_visual_builder_enabled,
-            network_endpoint_details=oci.integration.IntegrationInstanceNetworkEndpointDetailsArgs(
-                network_endpoint_type=integration_instance_network_endpoint_details_network_endpoint_type,
-                allowlisted_http_ips=integration_instance_network_endpoint_details_allowlisted_http_ips,
-                allowlisted_http_vcns=[oci.integration.IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs(
-                    id=integration_instance_network_endpoint_details_allowlisted_http_vcns_id,
-                    allowlisted_ips=integration_instance_network_endpoint_details_allowlisted_http_vcns_allowlisted_ips,
-                )],
-                is_integration_vcn_allowlisted=integration_instance_network_endpoint_details_is_integration_vcn_allowlisted,
-            ),
+            network_endpoint_details={
+                "network_endpoint_type": integration_instance_network_endpoint_details_network_endpoint_type,
+                "allowlisted_http_ips": integration_instance_network_endpoint_details_allowlisted_http_ips,
+                "allowlisted_http_vcns": [{
+                    "id": integration_instance_network_endpoint_details_allowlisted_http_vcns_id,
+                    "allowlisted_ips": integration_instance_network_endpoint_details_allowlisted_http_vcns_allowlisted_ips,
+                }],
+                "is_integration_vcn_allowlisted": integration_instance_network_endpoint_details_is_integration_vcn_allowlisted,
+            },
             shape=integration_instance_shape,
             state=integration_instance_target_state)
         ```
@@ -803,10 +803,10 @@ class IntegrationInstance(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IntegrationInstanceAlternateCustomEndpointArgs']]]] alternate_custom_endpoints: (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstanceAlternateCustomEndpointArgs', 'IntegrationInstanceAlternateCustomEndpointArgsDict']]]] alternate_custom_endpoints: (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[str] consumption_model: Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
-        :param pulumi.Input[pulumi.InputType['IntegrationInstanceCustomEndpointArgs']] custom_endpoint: (Updatable) Details for a custom endpoint for the integration instance (update).
+        :param pulumi.Input[Union['IntegrationInstanceCustomEndpointArgs', 'IntegrationInstanceCustomEndpointArgsDict']] custom_endpoint: (Updatable) Details for a custom endpoint for the integration instance (update).
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Integration Instance Identifier.
         :param pulumi.Input[str] domain_id: The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
@@ -817,7 +817,7 @@ class IntegrationInstance(pulumi.CustomResource):
         :param pulumi.Input[bool] is_file_server_enabled: (Updatable) The file server is enabled or not.
         :param pulumi.Input[bool] is_visual_builder_enabled: (Updatable) Visual Builder is enabled or not.
         :param pulumi.Input[int] message_packs: (Updatable) The number of configured message packs
-        :param pulumi.Input[pulumi.InputType['IntegrationInstanceNetworkEndpointDetailsArgs']] network_endpoint_details: Base representation of a network endpoint.
+        :param pulumi.Input[Union['IntegrationInstanceNetworkEndpointDetailsArgs', 'IntegrationInstanceNetworkEndpointDetailsArgsDict']] network_endpoint_details: Base representation of a network endpoint.
         :param pulumi.Input[str] shape: Shape
         :param pulumi.Input[str] state: (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
                
@@ -848,15 +848,15 @@ class IntegrationInstance(pulumi.CustomResource):
             integration_instance_type=integration_instance_integration_instance_type,
             is_byol=integration_instance_is_byol,
             message_packs=integration_instance_message_packs,
-            alternate_custom_endpoints=[oci.integration.IntegrationInstanceAlternateCustomEndpointArgs(
-                hostname=integration_instance_alternate_custom_endpoints_hostname,
-                certificate_secret_id=test_secret["id"],
-            )],
+            alternate_custom_endpoints=[{
+                "hostname": integration_instance_alternate_custom_endpoints_hostname,
+                "certificate_secret_id": test_secret["id"],
+            }],
             consumption_model=integration_instance_consumption_model,
-            custom_endpoint=oci.integration.IntegrationInstanceCustomEndpointArgs(
-                hostname=integration_instance_custom_endpoint_hostname,
-                certificate_secret_id=test_secret["id"],
-            ),
+            custom_endpoint={
+                "hostname": integration_instance_custom_endpoint_hostname,
+                "certificate_secret_id": test_secret["id"],
+            },
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -867,15 +867,15 @@ class IntegrationInstance(pulumi.CustomResource):
             idcs_at=integration_instance_idcs_at,
             is_file_server_enabled=integration_instance_is_file_server_enabled,
             is_visual_builder_enabled=integration_instance_is_visual_builder_enabled,
-            network_endpoint_details=oci.integration.IntegrationInstanceNetworkEndpointDetailsArgs(
-                network_endpoint_type=integration_instance_network_endpoint_details_network_endpoint_type,
-                allowlisted_http_ips=integration_instance_network_endpoint_details_allowlisted_http_ips,
-                allowlisted_http_vcns=[oci.integration.IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs(
-                    id=integration_instance_network_endpoint_details_allowlisted_http_vcns_id,
-                    allowlisted_ips=integration_instance_network_endpoint_details_allowlisted_http_vcns_allowlisted_ips,
-                )],
-                is_integration_vcn_allowlisted=integration_instance_network_endpoint_details_is_integration_vcn_allowlisted,
-            ),
+            network_endpoint_details={
+                "network_endpoint_type": integration_instance_network_endpoint_details_network_endpoint_type,
+                "allowlisted_http_ips": integration_instance_network_endpoint_details_allowlisted_http_ips,
+                "allowlisted_http_vcns": [{
+                    "id": integration_instance_network_endpoint_details_allowlisted_http_vcns_id,
+                    "allowlisted_ips": integration_instance_network_endpoint_details_allowlisted_http_vcns_allowlisted_ips,
+                }],
+                "is_integration_vcn_allowlisted": integration_instance_network_endpoint_details_is_integration_vcn_allowlisted,
+            },
             shape=integration_instance_shape,
             state=integration_instance_target_state)
         ```
@@ -903,10 +903,10 @@ class IntegrationInstance(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 alternate_custom_endpoints: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IntegrationInstanceAlternateCustomEndpointArgs']]]]] = None,
+                 alternate_custom_endpoints: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstanceAlternateCustomEndpointArgs', 'IntegrationInstanceAlternateCustomEndpointArgsDict']]]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  consumption_model: Optional[pulumi.Input[str]] = None,
-                 custom_endpoint: Optional[pulumi.Input[pulumi.InputType['IntegrationInstanceCustomEndpointArgs']]] = None,
+                 custom_endpoint: Optional[pulumi.Input[Union['IntegrationInstanceCustomEndpointArgs', 'IntegrationInstanceCustomEndpointArgsDict']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  domain_id: Optional[pulumi.Input[str]] = None,
@@ -918,7 +918,7 @@ class IntegrationInstance(pulumi.CustomResource):
                  is_file_server_enabled: Optional[pulumi.Input[bool]] = None,
                  is_visual_builder_enabled: Optional[pulumi.Input[bool]] = None,
                  message_packs: Optional[pulumi.Input[int]] = None,
-                 network_endpoint_details: Optional[pulumi.Input[pulumi.InputType['IntegrationInstanceNetworkEndpointDetailsArgs']]] = None,
+                 network_endpoint_details: Optional[pulumi.Input[Union['IntegrationInstanceNetworkEndpointDetailsArgs', 'IntegrationInstanceNetworkEndpointDetailsArgsDict']]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -977,26 +977,26 @@ class IntegrationInstance(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            alternate_custom_endpoints: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IntegrationInstanceAlternateCustomEndpointArgs']]]]] = None,
-            attachments: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IntegrationInstanceAttachmentArgs']]]]] = None,
+            alternate_custom_endpoints: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstanceAlternateCustomEndpointArgs', 'IntegrationInstanceAlternateCustomEndpointArgsDict']]]]] = None,
+            attachments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstanceAttachmentArgs', 'IntegrationInstanceAttachmentArgsDict']]]]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             consumption_model: Optional[pulumi.Input[str]] = None,
-            custom_endpoint: Optional[pulumi.Input[pulumi.InputType['IntegrationInstanceCustomEndpointArgs']]] = None,
+            custom_endpoint: Optional[pulumi.Input[Union['IntegrationInstanceCustomEndpointArgs', 'IntegrationInstanceCustomEndpointArgsDict']]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             domain_id: Optional[pulumi.Input[str]] = None,
             enable_process_automation_trigger: Optional[pulumi.Input[int]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             idcs_at: Optional[pulumi.Input[str]] = None,
-            idcs_infos: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IntegrationInstanceIdcsInfoArgs']]]]] = None,
+            idcs_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstanceIdcsInfoArgs', 'IntegrationInstanceIdcsInfoArgsDict']]]]] = None,
             instance_url: Optional[pulumi.Input[str]] = None,
             integration_instance_type: Optional[pulumi.Input[str]] = None,
             is_byol: Optional[pulumi.Input[bool]] = None,
             is_file_server_enabled: Optional[pulumi.Input[bool]] = None,
             is_visual_builder_enabled: Optional[pulumi.Input[bool]] = None,
             message_packs: Optional[pulumi.Input[int]] = None,
-            network_endpoint_details: Optional[pulumi.Input[pulumi.InputType['IntegrationInstanceNetworkEndpointDetailsArgs']]] = None,
-            private_endpoint_outbound_connections: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IntegrationInstancePrivateEndpointOutboundConnectionArgs']]]]] = None,
+            network_endpoint_details: Optional[pulumi.Input[Union['IntegrationInstanceNetworkEndpointDetailsArgs', 'IntegrationInstanceNetworkEndpointDetailsArgsDict']]] = None,
+            private_endpoint_outbound_connections: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstancePrivateEndpointOutboundConnectionArgs', 'IntegrationInstancePrivateEndpointOutboundConnectionArgsDict']]]]] = None,
             shape: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             state_message: Optional[pulumi.Input[str]] = None,
@@ -1009,25 +1009,25 @@ class IntegrationInstance(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IntegrationInstanceAlternateCustomEndpointArgs']]]] alternate_custom_endpoints: (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IntegrationInstanceAttachmentArgs']]]] attachments: A list of associated attachments to other services
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstanceAlternateCustomEndpointArgs', 'IntegrationInstanceAlternateCustomEndpointArgsDict']]]] alternate_custom_endpoints: (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstanceAttachmentArgs', 'IntegrationInstanceAttachmentArgsDict']]]] attachments: A list of associated attachments to other services
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[str] consumption_model: Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
-        :param pulumi.Input[pulumi.InputType['IntegrationInstanceCustomEndpointArgs']] custom_endpoint: (Updatable) Details for a custom endpoint for the integration instance (update).
+        :param pulumi.Input[Union['IntegrationInstanceCustomEndpointArgs', 'IntegrationInstanceCustomEndpointArgsDict']] custom_endpoint: (Updatable) Details for a custom endpoint for the integration instance (update).
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Integration Instance Identifier.
         :param pulumi.Input[str] domain_id: The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] idcs_at: (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IntegrationInstanceIdcsInfoArgs']]]] idcs_infos: Information for IDCS access
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstanceIdcsInfoArgs', 'IntegrationInstanceIdcsInfoArgsDict']]]] idcs_infos: Information for IDCS access
         :param pulumi.Input[str] instance_url: The Integration Instance URL.
         :param pulumi.Input[str] integration_instance_type: (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
         :param pulumi.Input[bool] is_byol: (Updatable) Bring your own license.
         :param pulumi.Input[bool] is_file_server_enabled: (Updatable) The file server is enabled or not.
         :param pulumi.Input[bool] is_visual_builder_enabled: (Updatable) Visual Builder is enabled or not.
         :param pulumi.Input[int] message_packs: (Updatable) The number of configured message packs
-        :param pulumi.Input[pulumi.InputType['IntegrationInstanceNetworkEndpointDetailsArgs']] network_endpoint_details: Base representation of a network endpoint.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IntegrationInstancePrivateEndpointOutboundConnectionArgs']]]] private_endpoint_outbound_connections: Base representation for Outbound Connection (Reverse Connection).
+        :param pulumi.Input[Union['IntegrationInstanceNetworkEndpointDetailsArgs', 'IntegrationInstanceNetworkEndpointDetailsArgsDict']] network_endpoint_details: Base representation of a network endpoint.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstancePrivateEndpointOutboundConnectionArgs', 'IntegrationInstancePrivateEndpointOutboundConnectionArgsDict']]]] private_endpoint_outbound_connections: Base representation for Outbound Connection (Reverse Connection).
         :param pulumi.Input[str] shape: Shape
         :param pulumi.Input[str] state: (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
                

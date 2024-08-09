@@ -429,7 +429,7 @@ public class TargetAsset extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public TargetAsset(String name) {
+    public TargetAsset(java.lang.String name) {
         this(name, TargetAssetArgs.Empty);
     }
     /**
@@ -437,7 +437,7 @@ public class TargetAsset extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public TargetAsset(String name, TargetAssetArgs args) {
+    public TargetAsset(java.lang.String name, TargetAssetArgs args) {
         this(name, args, null);
     }
     /**
@@ -446,12 +446,12 @@ public class TargetAsset extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public TargetAsset(String name, TargetAssetArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:CloudMigrations/targetAsset:TargetAsset", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public TargetAsset(java.lang.String name, TargetAssetArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:CloudMigrations/targetAsset:TargetAsset", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private TargetAsset(String name, Output<String> id, @Nullable TargetAssetState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:CloudMigrations/targetAsset:TargetAsset", name, state, makeResourceOptions(options, id));
+    private TargetAsset(java.lang.String name, Output<java.lang.String> id, @Nullable TargetAssetState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:CloudMigrations/targetAsset:TargetAsset", name, state, makeResourceOptions(options, id), false);
     }
 
     private static TargetAssetArgs makeArgs(TargetAssetArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -461,7 +461,7 @@ public class TargetAsset extends com.pulumi.resources.CustomResource {
         return args == null ? TargetAssetArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -477,7 +477,7 @@ public class TargetAsset extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static TargetAsset get(String name, Output<String> id, @Nullable TargetAssetState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static TargetAsset get(java.lang.String name, Output<java.lang.String> id, @Nullable TargetAssetState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new TargetAsset(name, id, state, options);
     }
 }

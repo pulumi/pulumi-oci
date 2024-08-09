@@ -183,7 +183,7 @@ public class AuthToken extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public AuthToken(String name) {
+    public AuthToken(java.lang.String name) {
         this(name, AuthTokenArgs.Empty);
     }
     /**
@@ -191,7 +191,7 @@ public class AuthToken extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public AuthToken(String name, AuthTokenArgs args) {
+    public AuthToken(java.lang.String name, AuthTokenArgs args) {
         this(name, args, null);
     }
     /**
@@ -200,12 +200,12 @@ public class AuthToken extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public AuthToken(String name, AuthTokenArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/authToken:AuthToken", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public AuthToken(java.lang.String name, AuthTokenArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/authToken:AuthToken", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private AuthToken(String name, Output<String> id, @Nullable AuthTokenState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/authToken:AuthToken", name, state, makeResourceOptions(options, id));
+    private AuthToken(java.lang.String name, Output<java.lang.String> id, @Nullable AuthTokenState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/authToken:AuthToken", name, state, makeResourceOptions(options, id), false);
     }
 
     private static AuthTokenArgs makeArgs(AuthTokenArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -215,7 +215,7 @@ public class AuthToken extends com.pulumi.resources.CustomResource {
         return args == null ? AuthTokenArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -231,7 +231,7 @@ public class AuthToken extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static AuthToken get(String name, Output<String> id, @Nullable AuthTokenState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static AuthToken get(java.lang.String name, Output<java.lang.String> id, @Nullable AuthTokenState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new AuthToken(name, id, state, options);
     }
 }

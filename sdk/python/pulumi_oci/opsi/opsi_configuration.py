@@ -500,7 +500,7 @@ class OpsiConfiguration(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  config_item_custom_statuses: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  config_item_fields: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 config_items: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['OpsiConfigurationConfigItemArgs']]]]] = None,
+                 config_items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OpsiConfigurationConfigItemArgs', 'OpsiConfigurationConfigItemArgsDict']]]]] = None,
                  config_items_applicable_contexts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
@@ -526,11 +526,11 @@ class OpsiConfiguration(pulumi.CustomResource):
             compartment_id=compartment_id,
             config_item_custom_statuses=opsi_configuration_config_item_custom_status,
             config_item_fields=opsi_configuration_config_item_field,
-            config_items=[oci.opsi.OpsiConfigurationConfigItemArgs(
-                config_item_type=opsi_configuration_config_items_config_item_type,
-                name=opsi_configuration_config_items_name,
-                value=opsi_configuration_config_items_value,
-            )],
+            config_items=[{
+                "config_item_type": opsi_configuration_config_items_config_item_type,
+                "name": opsi_configuration_config_items_name,
+                "value": opsi_configuration_config_items_value,
+            }],
             config_items_applicable_contexts=opsi_configuration_config_items_applicable_context,
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -557,7 +557,7 @@ class OpsiConfiguration(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] config_item_custom_statuses: Specifies whether only customized configuration items or only non-customized configuration items or both have to be returned. By default only customized configuration items are returned.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] config_item_fields: Specifies the fields to return in a config item summary.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['OpsiConfigurationConfigItemArgs']]]] config_items: (Updatable) Array of configuration items with custom values. All and only configuration items requiring custom values should be part of this array.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['OpsiConfigurationConfigItemArgs', 'OpsiConfigurationConfigItemArgsDict']]]] config_items: (Updatable) Array of configuration items with custom values. All and only configuration items requiring custom values should be part of this array.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] config_items_applicable_contexts: Returns the configuration items filtered by applicable contexts sent in this param. By default configuration items of all applicable contexts are returned.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Description of OPSI configuration.
@@ -593,11 +593,11 @@ class OpsiConfiguration(pulumi.CustomResource):
             compartment_id=compartment_id,
             config_item_custom_statuses=opsi_configuration_config_item_custom_status,
             config_item_fields=opsi_configuration_config_item_field,
-            config_items=[oci.opsi.OpsiConfigurationConfigItemArgs(
-                config_item_type=opsi_configuration_config_items_config_item_type,
-                name=opsi_configuration_config_items_name,
-                value=opsi_configuration_config_items_value,
-            )],
+            config_items=[{
+                "config_item_type": opsi_configuration_config_items_config_item_type,
+                "name": opsi_configuration_config_items_name,
+                "value": opsi_configuration_config_items_value,
+            }],
             config_items_applicable_contexts=opsi_configuration_config_items_applicable_context,
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -637,7 +637,7 @@ class OpsiConfiguration(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  config_item_custom_statuses: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  config_item_fields: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 config_items: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['OpsiConfigurationConfigItemArgs']]]]] = None,
+                 config_items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OpsiConfigurationConfigItemArgs', 'OpsiConfigurationConfigItemArgsDict']]]]] = None,
                  config_items_applicable_contexts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
@@ -686,7 +686,7 @@ class OpsiConfiguration(pulumi.CustomResource):
             compartment_id: Optional[pulumi.Input[str]] = None,
             config_item_custom_statuses: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             config_item_fields: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            config_items: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['OpsiConfigurationConfigItemArgs']]]]] = None,
+            config_items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OpsiConfigurationConfigItemArgs', 'OpsiConfigurationConfigItemArgsDict']]]]] = None,
             config_items_applicable_contexts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             description: Optional[pulumi.Input[str]] = None,
@@ -709,7 +709,7 @@ class OpsiConfiguration(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] config_item_custom_statuses: Specifies whether only customized configuration items or only non-customized configuration items or both have to be returned. By default only customized configuration items are returned.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] config_item_fields: Specifies the fields to return in a config item summary.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['OpsiConfigurationConfigItemArgs']]]] config_items: (Updatable) Array of configuration items with custom values. All and only configuration items requiring custom values should be part of this array.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['OpsiConfigurationConfigItemArgs', 'OpsiConfigurationConfigItemArgsDict']]]] config_items: (Updatable) Array of configuration items with custom values. All and only configuration items requiring custom values should be part of this array.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] config_items_applicable_contexts: Returns the configuration items filtered by applicable contexts sent in this param. By default configuration items of all applicable contexts are returned.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Description of OPSI configuration.

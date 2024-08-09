@@ -553,7 +553,7 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DatabaseInsight(String name) {
+    public DatabaseInsight(java.lang.String name) {
         this(name, DatabaseInsightArgs.Empty);
     }
     /**
@@ -561,7 +561,7 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DatabaseInsight(String name, DatabaseInsightArgs args) {
+    public DatabaseInsight(java.lang.String name, DatabaseInsightArgs args) {
         this(name, args, null);
     }
     /**
@@ -570,12 +570,12 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DatabaseInsight(String name, DatabaseInsightArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Opsi/databaseInsight:DatabaseInsight", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DatabaseInsight(java.lang.String name, DatabaseInsightArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Opsi/databaseInsight:DatabaseInsight", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DatabaseInsight(String name, Output<String> id, @Nullable DatabaseInsightState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Opsi/databaseInsight:DatabaseInsight", name, state, makeResourceOptions(options, id));
+    private DatabaseInsight(java.lang.String name, Output<java.lang.String> id, @Nullable DatabaseInsightState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Opsi/databaseInsight:DatabaseInsight", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DatabaseInsightArgs makeArgs(DatabaseInsightArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -585,7 +585,7 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
         return args == null ? DatabaseInsightArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -601,7 +601,7 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DatabaseInsight get(String name, Output<String> id, @Nullable DatabaseInsightState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DatabaseInsight get(java.lang.String name, Output<java.lang.String> id, @Nullable DatabaseInsightState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DatabaseInsight(name, id, state, options);
     }
 }

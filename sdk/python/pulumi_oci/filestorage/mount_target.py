@@ -559,8 +559,8 @@ class MountTarget(pulumi.CustomResource):
                  hostname_label: Optional[pulumi.Input[str]] = None,
                  idmap_type: Optional[pulumi.Input[str]] = None,
                  ip_address: Optional[pulumi.Input[str]] = None,
-                 kerberos: Optional[pulumi.Input[pulumi.InputType['MountTargetKerberosArgs']]] = None,
-                 ldap_idmap: Optional[pulumi.Input[pulumi.InputType['MountTargetLdapIdmapArgs']]] = None,
+                 kerberos: Optional[pulumi.Input[Union['MountTargetKerberosArgs', 'MountTargetKerberosArgsDict']]] = None,
+                 ldap_idmap: Optional[pulumi.Input[Union['MountTargetLdapIdmapArgs', 'MountTargetLdapIdmapArgsDict']]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -620,23 +620,23 @@ class MountTarget(pulumi.CustomResource):
             hostname_label=mount_target_hostname_label,
             idmap_type=mount_target_idmap_type,
             ip_address=mount_target_ip_address,
-            kerberos=oci.file_storage.MountTargetKerberosArgs(
-                kerberos_realm=mount_target_kerberos_kerberos_realm,
-                backup_key_tab_secret_version=mount_target_kerberos_backup_key_tab_secret_version,
-                current_key_tab_secret_version=mount_target_kerberos_current_key_tab_secret_version,
-                is_kerberos_enabled=mount_target_kerberos_is_kerberos_enabled,
-                key_tab_secret_id=test_secret["id"],
-            ),
-            ldap_idmap=oci.file_storage.MountTargetLdapIdmapArgs(
-                cache_lifetime_seconds=mount_target_ldap_idmap_cache_lifetime_seconds,
-                cache_refresh_interval_seconds=mount_target_ldap_idmap_cache_refresh_interval_seconds,
-                group_search_base=mount_target_ldap_idmap_group_search_base,
-                negative_cache_lifetime_seconds=mount_target_ldap_idmap_negative_cache_lifetime_seconds,
-                outbound_connector1id=test_outbound_connector1["id"],
-                outbound_connector2id=test_outbound_connector2["id"],
-                schema_type=mount_target_ldap_idmap_schema_type,
-                user_search_base=mount_target_ldap_idmap_user_search_base,
-            ),
+            kerberos={
+                "kerberos_realm": mount_target_kerberos_kerberos_realm,
+                "backup_key_tab_secret_version": mount_target_kerberos_backup_key_tab_secret_version,
+                "current_key_tab_secret_version": mount_target_kerberos_current_key_tab_secret_version,
+                "is_kerberos_enabled": mount_target_kerberos_is_kerberos_enabled,
+                "key_tab_secret_id": test_secret["id"],
+            },
+            ldap_idmap={
+                "cache_lifetime_seconds": mount_target_ldap_idmap_cache_lifetime_seconds,
+                "cache_refresh_interval_seconds": mount_target_ldap_idmap_cache_refresh_interval_seconds,
+                "group_search_base": mount_target_ldap_idmap_group_search_base,
+                "negative_cache_lifetime_seconds": mount_target_ldap_idmap_negative_cache_lifetime_seconds,
+                "outbound_connector1id": test_outbound_connector1["id"],
+                "outbound_connector2id": test_outbound_connector2["id"],
+                "schema_type": mount_target_ldap_idmap_schema_type,
+                "user_search_base": mount_target_ldap_idmap_user_search_base,
+            },
             nsg_ids=mount_target_nsg_ids)
         ```
 
@@ -668,8 +668,8 @@ class MountTarget(pulumi.CustomResource):
                Note: This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `ipAddress`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `ipAddress` value.
                
                Example: `10.0.3.3`
-        :param pulumi.Input[pulumi.InputType['MountTargetKerberosArgs']] kerberos: (Updatable) Kerberos details needed to create configuration.
-        :param pulumi.Input[pulumi.InputType['MountTargetLdapIdmapArgs']] ldap_idmap: (Updatable) Mount target details about the LDAP ID mapping configuration.
+        :param pulumi.Input[Union['MountTargetKerberosArgs', 'MountTargetKerberosArgsDict']] kerberos: (Updatable) Kerberos details needed to create configuration.
+        :param pulumi.Input[Union['MountTargetLdapIdmapArgs', 'MountTargetLdapIdmapArgsDict']] ldap_idmap: (Updatable) Mount target details about the LDAP ID mapping configuration.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which to create the mount target. 
                
@@ -739,23 +739,23 @@ class MountTarget(pulumi.CustomResource):
             hostname_label=mount_target_hostname_label,
             idmap_type=mount_target_idmap_type,
             ip_address=mount_target_ip_address,
-            kerberos=oci.file_storage.MountTargetKerberosArgs(
-                kerberos_realm=mount_target_kerberos_kerberos_realm,
-                backup_key_tab_secret_version=mount_target_kerberos_backup_key_tab_secret_version,
-                current_key_tab_secret_version=mount_target_kerberos_current_key_tab_secret_version,
-                is_kerberos_enabled=mount_target_kerberos_is_kerberos_enabled,
-                key_tab_secret_id=test_secret["id"],
-            ),
-            ldap_idmap=oci.file_storage.MountTargetLdapIdmapArgs(
-                cache_lifetime_seconds=mount_target_ldap_idmap_cache_lifetime_seconds,
-                cache_refresh_interval_seconds=mount_target_ldap_idmap_cache_refresh_interval_seconds,
-                group_search_base=mount_target_ldap_idmap_group_search_base,
-                negative_cache_lifetime_seconds=mount_target_ldap_idmap_negative_cache_lifetime_seconds,
-                outbound_connector1id=test_outbound_connector1["id"],
-                outbound_connector2id=test_outbound_connector2["id"],
-                schema_type=mount_target_ldap_idmap_schema_type,
-                user_search_base=mount_target_ldap_idmap_user_search_base,
-            ),
+            kerberos={
+                "kerberos_realm": mount_target_kerberos_kerberos_realm,
+                "backup_key_tab_secret_version": mount_target_kerberos_backup_key_tab_secret_version,
+                "current_key_tab_secret_version": mount_target_kerberos_current_key_tab_secret_version,
+                "is_kerberos_enabled": mount_target_kerberos_is_kerberos_enabled,
+                "key_tab_secret_id": test_secret["id"],
+            },
+            ldap_idmap={
+                "cache_lifetime_seconds": mount_target_ldap_idmap_cache_lifetime_seconds,
+                "cache_refresh_interval_seconds": mount_target_ldap_idmap_cache_refresh_interval_seconds,
+                "group_search_base": mount_target_ldap_idmap_group_search_base,
+                "negative_cache_lifetime_seconds": mount_target_ldap_idmap_negative_cache_lifetime_seconds,
+                "outbound_connector1id": test_outbound_connector1["id"],
+                "outbound_connector2id": test_outbound_connector2["id"],
+                "schema_type": mount_target_ldap_idmap_schema_type,
+                "user_search_base": mount_target_ldap_idmap_user_search_base,
+            },
             nsg_ids=mount_target_nsg_ids)
         ```
 
@@ -790,8 +790,8 @@ class MountTarget(pulumi.CustomResource):
                  hostname_label: Optional[pulumi.Input[str]] = None,
                  idmap_type: Optional[pulumi.Input[str]] = None,
                  ip_address: Optional[pulumi.Input[str]] = None,
-                 kerberos: Optional[pulumi.Input[pulumi.InputType['MountTargetKerberosArgs']]] = None,
-                 ldap_idmap: Optional[pulumi.Input[pulumi.InputType['MountTargetLdapIdmapArgs']]] = None,
+                 kerberos: Optional[pulumi.Input[Union['MountTargetKerberosArgs', 'MountTargetKerberosArgsDict']]] = None,
+                 ldap_idmap: Optional[pulumi.Input[Union['MountTargetLdapIdmapArgs', 'MountTargetLdapIdmapArgsDict']]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -845,8 +845,8 @@ class MountTarget(pulumi.CustomResource):
             hostname_label: Optional[pulumi.Input[str]] = None,
             idmap_type: Optional[pulumi.Input[str]] = None,
             ip_address: Optional[pulumi.Input[str]] = None,
-            kerberos: Optional[pulumi.Input[pulumi.InputType['MountTargetKerberosArgs']]] = None,
-            ldap_idmap: Optional[pulumi.Input[pulumi.InputType['MountTargetLdapIdmapArgs']]] = None,
+            kerberos: Optional[pulumi.Input[Union['MountTargetKerberosArgs', 'MountTargetKerberosArgsDict']]] = None,
+            ldap_idmap: Optional[pulumi.Input[Union['MountTargetLdapIdmapArgs', 'MountTargetLdapIdmapArgsDict']]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             private_ip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -879,8 +879,8 @@ class MountTarget(pulumi.CustomResource):
                Note: This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `ipAddress`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `ipAddress` value.
                
                Example: `10.0.3.3`
-        :param pulumi.Input[pulumi.InputType['MountTargetKerberosArgs']] kerberos: (Updatable) Kerberos details needed to create configuration.
-        :param pulumi.Input[pulumi.InputType['MountTargetLdapIdmapArgs']] ldap_idmap: (Updatable) Mount target details about the LDAP ID mapping configuration.
+        :param pulumi.Input[Union['MountTargetKerberosArgs', 'MountTargetKerberosArgsDict']] kerberos: (Updatable) Kerberos details needed to create configuration.
+        :param pulumi.Input[Union['MountTargetLdapIdmapArgs', 'MountTargetLdapIdmapArgsDict']] ldap_idmap: (Updatable) Mount target details about the LDAP ID mapping configuration.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current 'lifecycleState'.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
         :param pulumi.Input[Sequence[pulumi.Input[str]]] private_ip_ids: The OCIDs of the private IP addresses associated with this mount target.

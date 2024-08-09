@@ -451,9 +451,9 @@ class Publication(pulumi.CustomResource):
                  listing_type: Optional[pulumi.Input[str]] = None,
                  long_description: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 package_details: Optional[pulumi.Input[pulumi.InputType['PublicationPackageDetailsArgs']]] = None,
+                 package_details: Optional[pulumi.Input[Union['PublicationPackageDetailsArgs', 'PublicationPackageDetailsArgsDict']]] = None,
                  short_description: Optional[pulumi.Input[str]] = None,
-                 support_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PublicationSupportContactArgs']]]]] = None,
+                 support_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PublicationSupportContactArgs', 'PublicationSupportContactArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Publication resource in Oracle Cloud Infrastructure Marketplace service.
@@ -471,25 +471,25 @@ class Publication(pulumi.CustomResource):
             is_agreement_acknowledged=publication_is_agreement_acknowledged,
             listing_type=publication_listing_type,
             name=publication_name,
-            package_details=oci.marketplace.PublicationPackageDetailsArgs(
-                eulas=[oci.marketplace.PublicationPackageDetailsEulaArgs(
-                    eula_type=publication_package_details_eula_eula_type,
-                    license_text=publication_package_details_eula_license_text,
-                )],
-                operating_system=oci.marketplace.PublicationPackageDetailsOperatingSystemArgs(
-                    name=publication_package_details_operating_system_name,
-                ),
-                package_type=publication_package_details_package_type,
-                package_version=publication_package_details_package_version,
-                image_id=test_image["id"],
-            ),
+            package_details={
+                "eulas": [{
+                    "eula_type": publication_package_details_eula_eula_type,
+                    "license_text": publication_package_details_eula_license_text,
+                }],
+                "operating_system": {
+                    "name": publication_package_details_operating_system_name,
+                },
+                "package_type": publication_package_details_package_type,
+                "package_version": publication_package_details_package_version,
+                "image_id": test_image["id"],
+            },
             short_description=publication_short_description,
-            support_contacts=[oci.marketplace.PublicationSupportContactArgs(
-                email=publication_support_contacts_email,
-                name=publication_support_contacts_name,
-                phone=publication_support_contacts_phone,
-                subject=publication_support_contacts_subject,
-            )],
+            support_contacts=[{
+                "email": publication_support_contacts_email,
+                "name": publication_support_contacts_name,
+                "phone": publication_support_contacts_phone,
+                "subject": publication_support_contacts_subject,
+            }],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -516,9 +516,9 @@ class Publication(pulumi.CustomResource):
         :param pulumi.Input[str] listing_type: The publisher category to which the publication belongs. The publisher category informs where the listing appears for use.
         :param pulumi.Input[str] long_description: (Updatable) A long description of the publication to use in the listing.
         :param pulumi.Input[str] name: (Updatable) The name of the publication, which is also used in the listing.
-        :param pulumi.Input[pulumi.InputType['PublicationPackageDetailsArgs']] package_details: A base object for creating a publication package.
+        :param pulumi.Input[Union['PublicationPackageDetailsArgs', 'PublicationPackageDetailsArgsDict']] package_details: A base object for creating a publication package.
         :param pulumi.Input[str] short_description: (Updatable) A short description of the publication to use in the listing.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PublicationSupportContactArgs']]]] support_contacts: (Updatable) Contact information for getting support from the publisher for the listing.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PublicationSupportContactArgs', 'PublicationSupportContactArgsDict']]]] support_contacts: (Updatable) Contact information for getting support from the publisher for the listing.
         """
         ...
     @overload
@@ -542,25 +542,25 @@ class Publication(pulumi.CustomResource):
             is_agreement_acknowledged=publication_is_agreement_acknowledged,
             listing_type=publication_listing_type,
             name=publication_name,
-            package_details=oci.marketplace.PublicationPackageDetailsArgs(
-                eulas=[oci.marketplace.PublicationPackageDetailsEulaArgs(
-                    eula_type=publication_package_details_eula_eula_type,
-                    license_text=publication_package_details_eula_license_text,
-                )],
-                operating_system=oci.marketplace.PublicationPackageDetailsOperatingSystemArgs(
-                    name=publication_package_details_operating_system_name,
-                ),
-                package_type=publication_package_details_package_type,
-                package_version=publication_package_details_package_version,
-                image_id=test_image["id"],
-            ),
+            package_details={
+                "eulas": [{
+                    "eula_type": publication_package_details_eula_eula_type,
+                    "license_text": publication_package_details_eula_license_text,
+                }],
+                "operating_system": {
+                    "name": publication_package_details_operating_system_name,
+                },
+                "package_type": publication_package_details_package_type,
+                "package_version": publication_package_details_package_version,
+                "image_id": test_image["id"],
+            },
             short_description=publication_short_description,
-            support_contacts=[oci.marketplace.PublicationSupportContactArgs(
-                email=publication_support_contacts_email,
-                name=publication_support_contacts_name,
-                phone=publication_support_contacts_phone,
-                subject=publication_support_contacts_subject,
-            )],
+            support_contacts=[{
+                "email": publication_support_contacts_email,
+                "name": publication_support_contacts_name,
+                "phone": publication_support_contacts_phone,
+                "subject": publication_support_contacts_subject,
+            }],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -600,9 +600,9 @@ class Publication(pulumi.CustomResource):
                  listing_type: Optional[pulumi.Input[str]] = None,
                  long_description: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 package_details: Optional[pulumi.Input[pulumi.InputType['PublicationPackageDetailsArgs']]] = None,
+                 package_details: Optional[pulumi.Input[Union['PublicationPackageDetailsArgs', 'PublicationPackageDetailsArgsDict']]] = None,
                  short_description: Optional[pulumi.Input[str]] = None,
-                 support_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PublicationSupportContactArgs']]]]] = None,
+                 support_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PublicationSupportContactArgs', 'PublicationSupportContactArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -653,17 +653,17 @@ class Publication(pulumi.CustomResource):
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            icons: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PublicationIconArgs']]]]] = None,
+            icons: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PublicationIconArgs', 'PublicationIconArgsDict']]]]] = None,
             is_agreement_acknowledged: Optional[pulumi.Input[bool]] = None,
             listing_type: Optional[pulumi.Input[str]] = None,
             long_description: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
-            package_details: Optional[pulumi.Input[pulumi.InputType['PublicationPackageDetailsArgs']]] = None,
+            package_details: Optional[pulumi.Input[Union['PublicationPackageDetailsArgs', 'PublicationPackageDetailsArgsDict']]] = None,
             package_type: Optional[pulumi.Input[str]] = None,
             short_description: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
-            support_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PublicationSupportContactArgs']]]]] = None,
-            supported_operating_systems: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PublicationSupportedOperatingSystemArgs']]]]] = None,
+            support_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PublicationSupportContactArgs', 'PublicationSupportContactArgsDict']]]]] = None,
+            supported_operating_systems: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PublicationSupportedOperatingSystemArgs', 'PublicationSupportedOperatingSystemArgsDict']]]]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None) -> 'Publication':
         """
@@ -676,17 +676,17 @@ class Publication(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the publication.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PublicationIconArgs']]]] icons: The model for upload data for images and icons.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PublicationIconArgs', 'PublicationIconArgsDict']]]] icons: The model for upload data for images and icons.
         :param pulumi.Input[bool] is_agreement_acknowledged: Whether the publisher acknowledged that they have the right and authority to share the contents of the publication and that they accepted the Oracle terms of use agreements required to create a publication.
         :param pulumi.Input[str] listing_type: The publisher category to which the publication belongs. The publisher category informs where the listing appears for use.
         :param pulumi.Input[str] long_description: (Updatable) A long description of the publication to use in the listing.
         :param pulumi.Input[str] name: (Updatable) The name of the publication, which is also used in the listing.
-        :param pulumi.Input[pulumi.InputType['PublicationPackageDetailsArgs']] package_details: A base object for creating a publication package.
+        :param pulumi.Input[Union['PublicationPackageDetailsArgs', 'PublicationPackageDetailsArgsDict']] package_details: A base object for creating a publication package.
         :param pulumi.Input[str] package_type: The listing's package type.
         :param pulumi.Input[str] short_description: (Updatable) A short description of the publication to use in the listing.
         :param pulumi.Input[str] state: The lifecycle state of the publication.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PublicationSupportContactArgs']]]] support_contacts: (Updatable) Contact information for getting support from the publisher for the listing.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PublicationSupportedOperatingSystemArgs']]]] supported_operating_systems: The list of operating systems supported by the listing.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PublicationSupportContactArgs', 'PublicationSupportContactArgsDict']]]] support_contacts: (Updatable) Contact information for getting support from the publisher for the listing.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PublicationSupportedOperatingSystemArgs', 'PublicationSupportedOperatingSystemArgsDict']]]] supported_operating_systems: The list of operating systems supported by the listing.
         :param pulumi.Input[Mapping[str, Any]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param pulumi.Input[str] time_created: The date and time the publication was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """

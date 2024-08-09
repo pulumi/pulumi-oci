@@ -113,7 +113,7 @@ def get_saved_queries(access_level: Optional[str] = None,
                       compartment_id: Optional[str] = None,
                       compartment_id_in_subtree: Optional[bool] = None,
                       display_name: Optional[str] = None,
-                      filters: Optional[Sequence[pulumi.InputType['GetSavedQueriesFilterArgs']]] = None,
+                      filters: Optional[Sequence[Union['GetSavedQueriesFilterArgs', 'GetSavedQueriesFilterArgsDict']]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSavedQueriesResult:
     """
     This data source provides the list of Saved Queries in Oracle Cloud Infrastructure Cloud Guard service.
@@ -162,7 +162,7 @@ def get_saved_queries_output(access_level: Optional[pulumi.Input[Optional[str]]]
                              compartment_id: Optional[pulumi.Input[str]] = None,
                              compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                              display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                             filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetSavedQueriesFilterArgs']]]]] = None,
+                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSavedQueriesFilterArgs', 'GetSavedQueriesFilterArgsDict']]]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSavedQueriesResult]:
     """
     This data source provides the list of Saved Queries in Oracle Cloud Infrastructure Cloud Guard service.

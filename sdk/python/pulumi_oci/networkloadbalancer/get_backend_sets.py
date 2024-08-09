@@ -76,7 +76,7 @@ class AwaitableGetBackendSetsResult(GetBackendSetsResult):
             network_load_balancer_id=self.network_load_balancer_id)
 
 
-def get_backend_sets(filters: Optional[Sequence[pulumi.InputType['GetBackendSetsFilterArgs']]] = None,
+def get_backend_sets(filters: Optional[Sequence[Union['GetBackendSetsFilterArgs', 'GetBackendSetsFilterArgsDict']]] = None,
                      network_load_balancer_id: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBackendSetsResult:
     """
@@ -110,7 +110,7 @@ def get_backend_sets(filters: Optional[Sequence[pulumi.InputType['GetBackendSets
 
 
 @_utilities.lift_output_func(get_backend_sets)
-def get_backend_sets_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetBackendSetsFilterArgs']]]]] = None,
+def get_backend_sets_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBackendSetsFilterArgs', 'GetBackendSetsFilterArgsDict']]]]] = None,
                             network_load_balancer_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBackendSetsResult]:
     """

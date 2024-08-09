@@ -101,7 +101,7 @@ class AwaitableGetPreauthrequestsResult(GetPreauthrequestsResult):
 
 
 def get_preauthrequests(bucket: Optional[str] = None,
-                        filters: Optional[Sequence[pulumi.InputType['GetPreauthrequestsFilterArgs']]] = None,
+                        filters: Optional[Sequence[Union['GetPreauthrequestsFilterArgs', 'GetPreauthrequestsFilterArgsDict']]] = None,
                         namespace: Optional[str] = None,
                         object_name_prefix: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPreauthrequestsResult:
@@ -145,7 +145,7 @@ def get_preauthrequests(bucket: Optional[str] = None,
 
 @_utilities.lift_output_func(get_preauthrequests)
 def get_preauthrequests_output(bucket: Optional[pulumi.Input[str]] = None,
-                               filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetPreauthrequestsFilterArgs']]]]] = None,
+                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPreauthrequestsFilterArgs', 'GetPreauthrequestsFilterArgsDict']]]]] = None,
                                namespace: Optional[pulumi.Input[str]] = None,
                                object_name_prefix: Optional[pulumi.Input[Optional[str]]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPreauthrequestsResult]:

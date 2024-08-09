@@ -125,7 +125,7 @@ class AwaitableGetJavaReleasesResult(GetJavaReleasesResult):
 
 
 def get_java_releases(family_version: Optional[str] = None,
-                      filters: Optional[Sequence[pulumi.InputType['GetJavaReleasesFilterArgs']]] = None,
+                      filters: Optional[Sequence[Union['GetJavaReleasesFilterArgs', 'GetJavaReleasesFilterArgsDict']]] = None,
                       jre_security_status: Optional[str] = None,
                       license_type: Optional[str] = None,
                       release_type: Optional[str] = None,
@@ -179,7 +179,7 @@ def get_java_releases(family_version: Optional[str] = None,
 
 @_utilities.lift_output_func(get_java_releases)
 def get_java_releases_output(family_version: Optional[pulumi.Input[Optional[str]]] = None,
-                             filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetJavaReleasesFilterArgs']]]]] = None,
+                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetJavaReleasesFilterArgs', 'GetJavaReleasesFilterArgsDict']]]]] = None,
                              jre_security_status: Optional[pulumi.Input[Optional[str]]] = None,
                              license_type: Optional[pulumi.Input[Optional[str]]] = None,
                              release_type: Optional[pulumi.Input[Optional[str]]] = None,

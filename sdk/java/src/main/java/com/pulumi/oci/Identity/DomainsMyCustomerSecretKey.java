@@ -681,7 +681,7 @@ public class DomainsMyCustomerSecretKey extends com.pulumi.resources.CustomResou
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DomainsMyCustomerSecretKey(String name) {
+    public DomainsMyCustomerSecretKey(java.lang.String name) {
         this(name, DomainsMyCustomerSecretKeyArgs.Empty);
     }
     /**
@@ -689,7 +689,7 @@ public class DomainsMyCustomerSecretKey extends com.pulumi.resources.CustomResou
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DomainsMyCustomerSecretKey(String name, DomainsMyCustomerSecretKeyArgs args) {
+    public DomainsMyCustomerSecretKey(java.lang.String name, DomainsMyCustomerSecretKeyArgs args) {
         this(name, args, null);
     }
     /**
@@ -698,12 +698,12 @@ public class DomainsMyCustomerSecretKey extends com.pulumi.resources.CustomResou
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DomainsMyCustomerSecretKey(String name, DomainsMyCustomerSecretKeyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsMyCustomerSecretKey:DomainsMyCustomerSecretKey", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DomainsMyCustomerSecretKey(java.lang.String name, DomainsMyCustomerSecretKeyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/domainsMyCustomerSecretKey:DomainsMyCustomerSecretKey", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DomainsMyCustomerSecretKey(String name, Output<String> id, @Nullable DomainsMyCustomerSecretKeyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsMyCustomerSecretKey:DomainsMyCustomerSecretKey", name, state, makeResourceOptions(options, id));
+    private DomainsMyCustomerSecretKey(java.lang.String name, Output<java.lang.String> id, @Nullable DomainsMyCustomerSecretKeyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/domainsMyCustomerSecretKey:DomainsMyCustomerSecretKey", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DomainsMyCustomerSecretKeyArgs makeArgs(DomainsMyCustomerSecretKeyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -713,7 +713,7 @@ public class DomainsMyCustomerSecretKey extends com.pulumi.resources.CustomResou
         return args == null ? DomainsMyCustomerSecretKeyArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -729,7 +729,7 @@ public class DomainsMyCustomerSecretKey extends com.pulumi.resources.CustomResou
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DomainsMyCustomerSecretKey get(String name, Output<String> id, @Nullable DomainsMyCustomerSecretKeyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DomainsMyCustomerSecretKey get(java.lang.String name, Output<java.lang.String> id, @Nullable DomainsMyCustomerSecretKeyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DomainsMyCustomerSecretKey(name, id, state, options);
     }
 }

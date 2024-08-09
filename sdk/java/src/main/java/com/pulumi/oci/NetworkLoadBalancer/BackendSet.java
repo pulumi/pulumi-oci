@@ -240,7 +240,7 @@ public class BackendSet extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public BackendSet(String name) {
+    public BackendSet(java.lang.String name) {
         this(name, BackendSetArgs.Empty);
     }
     /**
@@ -248,7 +248,7 @@ public class BackendSet extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public BackendSet(String name, BackendSetArgs args) {
+    public BackendSet(java.lang.String name, BackendSetArgs args) {
         this(name, args, null);
     }
     /**
@@ -257,12 +257,12 @@ public class BackendSet extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public BackendSet(String name, BackendSetArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:NetworkLoadBalancer/backendSet:BackendSet", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public BackendSet(java.lang.String name, BackendSetArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:NetworkLoadBalancer/backendSet:BackendSet", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private BackendSet(String name, Output<String> id, @Nullable BackendSetState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:NetworkLoadBalancer/backendSet:BackendSet", name, state, makeResourceOptions(options, id));
+    private BackendSet(java.lang.String name, Output<java.lang.String> id, @Nullable BackendSetState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:NetworkLoadBalancer/backendSet:BackendSet", name, state, makeResourceOptions(options, id), false);
     }
 
     private static BackendSetArgs makeArgs(BackendSetArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -272,7 +272,7 @@ public class BackendSet extends com.pulumi.resources.CustomResource {
         return args == null ? BackendSetArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -288,7 +288,7 @@ public class BackendSet extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static BackendSet get(String name, Output<String> id, @Nullable BackendSetState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static BackendSet get(java.lang.String name, Output<java.lang.String> id, @Nullable BackendSetState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new BackendSet(name, id, state, options);
     }
 }

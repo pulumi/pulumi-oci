@@ -80,7 +80,7 @@ class AwaitableGetAutonomousContainerDatabaseDataguardAssociationsResult(GetAuto
 
 
 def get_autonomous_container_database_dataguard_associations(autonomous_container_database_id: Optional[str] = None,
-                                                             filters: Optional[Sequence[pulumi.InputType['GetAutonomousContainerDatabaseDataguardAssociationsFilterArgs']]] = None,
+                                                             filters: Optional[Sequence[Union['GetAutonomousContainerDatabaseDataguardAssociationsFilterArgs', 'GetAutonomousContainerDatabaseDataguardAssociationsFilterArgsDict']]] = None,
                                                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousContainerDatabaseDataguardAssociationsResult:
     """
     This data source provides the list of Autonomous Container Database Dataguard Associations in Oracle Cloud Infrastructure Database service.
@@ -114,7 +114,7 @@ def get_autonomous_container_database_dataguard_associations(autonomous_containe
 
 @_utilities.lift_output_func(get_autonomous_container_database_dataguard_associations)
 def get_autonomous_container_database_dataguard_associations_output(autonomous_container_database_id: Optional[pulumi.Input[str]] = None,
-                                                                    filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAutonomousContainerDatabaseDataguardAssociationsFilterArgs']]]]] = None,
+                                                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutonomousContainerDatabaseDataguardAssociationsFilterArgs', 'GetAutonomousContainerDatabaseDataguardAssociationsFilterArgsDict']]]]] = None,
                                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousContainerDatabaseDataguardAssociationsResult]:
     """
     This data source provides the list of Autonomous Container Database Dataguard Associations in Oracle Cloud Infrastructure Database service.

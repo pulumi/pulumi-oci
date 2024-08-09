@@ -461,7 +461,7 @@ class InstancePoolInstance(pulumi.CustomResource):
             instance_configuration_id: Optional[pulumi.Input[str]] = None,
             instance_id: Optional[pulumi.Input[str]] = None,
             instance_pool_id: Optional[pulumi.Input[str]] = None,
-            load_balancer_backends: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InstancePoolInstanceLoadBalancerBackendArgs']]]]] = None,
+            load_balancer_backends: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstancePoolInstanceLoadBalancerBackendArgs', 'InstancePoolInstanceLoadBalancerBackendArgsDict']]]]] = None,
             region: Optional[pulumi.Input[str]] = None,
             shape: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -484,7 +484,7 @@ class InstancePoolInstance(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InstancePoolInstanceLoadBalancerBackendArgs']]]] load_balancer_backends: The load balancer backends that are configured for the instance pool instance.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['InstancePoolInstanceLoadBalancerBackendArgs', 'InstancePoolInstanceLoadBalancerBackendArgsDict']]]] load_balancer_backends: The load balancer backends that are configured for the instance pool instance.
         :param pulumi.Input[str] region: The region that contains the availability domain the instance is running in.
         :param pulumi.Input[str] shape: The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
         :param pulumi.Input[str] state: The lifecycle state of the instance. Refer to `lifecycleState` in the [Instance](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance) resource.

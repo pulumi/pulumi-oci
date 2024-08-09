@@ -127,7 +127,7 @@ class AwaitableGetConnectionAssignmentsResult(GetConnectionAssignmentsResult):
 def get_connection_assignments(compartment_id: Optional[str] = None,
                                connection_id: Optional[str] = None,
                                deployment_id: Optional[str] = None,
-                               filters: Optional[Sequence[pulumi.InputType['GetConnectionAssignmentsFilterArgs']]] = None,
+                               filters: Optional[Sequence[Union['GetConnectionAssignmentsFilterArgs', 'GetConnectionAssignmentsFilterArgsDict']]] = None,
                                name: Optional[str] = None,
                                state: Optional[str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetConnectionAssignmentsResult:
@@ -181,7 +181,7 @@ def get_connection_assignments(compartment_id: Optional[str] = None,
 def get_connection_assignments_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                       connection_id: Optional[pulumi.Input[Optional[str]]] = None,
                                       deployment_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                      filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetConnectionAssignmentsFilterArgs']]]]] = None,
+                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetConnectionAssignmentsFilterArgs', 'GetConnectionAssignmentsFilterArgsDict']]]]] = None,
                                       name: Optional[pulumi.Input[Optional[str]]] = None,
                                       state: Optional[pulumi.Input[Optional[str]]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConnectionAssignmentsResult]:

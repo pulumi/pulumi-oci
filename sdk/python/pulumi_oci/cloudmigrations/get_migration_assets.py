@@ -113,7 +113,7 @@ class AwaitableGetMigrationAssetsResult(GetMigrationAssetsResult):
 
 
 def get_migration_assets(display_name: Optional[str] = None,
-                         filters: Optional[Sequence[pulumi.InputType['GetMigrationAssetsFilterArgs']]] = None,
+                         filters: Optional[Sequence[Union['GetMigrationAssetsFilterArgs', 'GetMigrationAssetsFilterArgsDict']]] = None,
                          migration_asset_id: Optional[str] = None,
                          migration_id: Optional[str] = None,
                          state: Optional[str] = None,
@@ -162,7 +162,7 @@ def get_migration_assets(display_name: Optional[str] = None,
 
 @_utilities.lift_output_func(get_migration_assets)
 def get_migration_assets_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetMigrationAssetsFilterArgs']]]]] = None,
+                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMigrationAssetsFilterArgs', 'GetMigrationAssetsFilterArgsDict']]]]] = None,
                                 migration_asset_id: Optional[pulumi.Input[Optional[str]]] = None,
                                 migration_id: Optional[pulumi.Input[Optional[str]]] = None,
                                 state: Optional[pulumi.Input[Optional[str]]] = None,

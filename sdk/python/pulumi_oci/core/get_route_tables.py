@@ -117,7 +117,7 @@ class AwaitableGetRouteTablesResult(GetRouteTablesResult):
 
 def get_route_tables(compartment_id: Optional[str] = None,
                      display_name: Optional[str] = None,
-                     filters: Optional[Sequence[pulumi.InputType['GetRouteTablesFilterArgs']]] = None,
+                     filters: Optional[Sequence[Union['GetRouteTablesFilterArgs', 'GetRouteTablesFilterArgsDict']]] = None,
                      state: Optional[str] = None,
                      vcn_id: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRouteTablesResult:
@@ -169,7 +169,7 @@ def get_route_tables(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_route_tables)
 def get_route_tables_output(compartment_id: Optional[pulumi.Input[str]] = None,
                             display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                            filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetRouteTablesFilterArgs']]]]] = None,
+                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRouteTablesFilterArgs', 'GetRouteTablesFilterArgsDict']]]]] = None,
                             state: Optional[pulumi.Input[Optional[str]]] = None,
                             vcn_id: Optional[pulumi.Input[Optional[str]]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRouteTablesResult]:

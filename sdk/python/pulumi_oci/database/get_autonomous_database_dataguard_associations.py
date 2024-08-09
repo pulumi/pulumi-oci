@@ -80,7 +80,7 @@ class AwaitableGetAutonomousDatabaseDataguardAssociationsResult(GetAutonomousDat
 
 
 def get_autonomous_database_dataguard_associations(autonomous_database_id: Optional[str] = None,
-                                                   filters: Optional[Sequence[pulumi.InputType['GetAutonomousDatabaseDataguardAssociationsFilterArgs']]] = None,
+                                                   filters: Optional[Sequence[Union['GetAutonomousDatabaseDataguardAssociationsFilterArgs', 'GetAutonomousDatabaseDataguardAssociationsFilterArgsDict']]] = None,
                                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousDatabaseDataguardAssociationsResult:
     """
     This data source provides the list of Autonomous Database Dataguard Associations in Oracle Cloud Infrastructure Database service.
@@ -114,7 +114,7 @@ def get_autonomous_database_dataguard_associations(autonomous_database_id: Optio
 
 @_utilities.lift_output_func(get_autonomous_database_dataguard_associations)
 def get_autonomous_database_dataguard_associations_output(autonomous_database_id: Optional[pulumi.Input[str]] = None,
-                                                          filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAutonomousDatabaseDataguardAssociationsFilterArgs']]]]] = None,
+                                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutonomousDatabaseDataguardAssociationsFilterArgs', 'GetAutonomousDatabaseDataguardAssociationsFilterArgsDict']]]]] = None,
                                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousDatabaseDataguardAssociationsResult]:
     """
     This data source provides the list of Autonomous Database Dataguard Associations in Oracle Cloud Infrastructure Database service.

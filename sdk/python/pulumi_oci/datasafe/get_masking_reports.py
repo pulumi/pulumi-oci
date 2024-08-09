@@ -124,7 +124,7 @@ class AwaitableGetMaskingReportsResult(GetMaskingReportsResult):
 def get_masking_reports(access_level: Optional[str] = None,
                         compartment_id: Optional[str] = None,
                         compartment_id_in_subtree: Optional[bool] = None,
-                        filters: Optional[Sequence[pulumi.InputType['GetMaskingReportsFilterArgs']]] = None,
+                        filters: Optional[Sequence[Union['GetMaskingReportsFilterArgs', 'GetMaskingReportsFilterArgsDict']]] = None,
                         masking_policy_id: Optional[str] = None,
                         target_id: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMaskingReportsResult:
@@ -178,7 +178,7 @@ def get_masking_reports(access_level: Optional[str] = None,
 def get_masking_reports_output(access_level: Optional[pulumi.Input[Optional[str]]] = None,
                                compartment_id: Optional[pulumi.Input[str]] = None,
                                compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
-                               filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetMaskingReportsFilterArgs']]]]] = None,
+                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMaskingReportsFilterArgs', 'GetMaskingReportsFilterArgsDict']]]]] = None,
                                masking_policy_id: Optional[pulumi.Input[Optional[str]]] = None,
                                target_id: Optional[pulumi.Input[Optional[str]]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMaskingReportsResult]:

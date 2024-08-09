@@ -118,7 +118,7 @@ class AwaitableGetFilesystemSnapshotPoliciesResult(GetFilesystemSnapshotPolicies
 def get_filesystem_snapshot_policies(availability_domain: Optional[str] = None,
                                      compartment_id: Optional[str] = None,
                                      display_name: Optional[str] = None,
-                                     filters: Optional[Sequence[pulumi.InputType['GetFilesystemSnapshotPoliciesFilterArgs']]] = None,
+                                     filters: Optional[Sequence[Union['GetFilesystemSnapshotPoliciesFilterArgs', 'GetFilesystemSnapshotPoliciesFilterArgsDict']]] = None,
                                      id: Optional[str] = None,
                                      state: Optional[str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFilesystemSnapshotPoliciesResult:
@@ -171,7 +171,7 @@ def get_filesystem_snapshot_policies(availability_domain: Optional[str] = None,
 def get_filesystem_snapshot_policies_output(availability_domain: Optional[pulumi.Input[str]] = None,
                                             compartment_id: Optional[pulumi.Input[str]] = None,
                                             display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                            filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetFilesystemSnapshotPoliciesFilterArgs']]]]] = None,
+                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFilesystemSnapshotPoliciesFilterArgs', 'GetFilesystemSnapshotPoliciesFilterArgsDict']]]]] = None,
                                             id: Optional[pulumi.Input[Optional[str]]] = None,
                                             state: Optional[pulumi.Input[Optional[str]]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFilesystemSnapshotPoliciesResult]:

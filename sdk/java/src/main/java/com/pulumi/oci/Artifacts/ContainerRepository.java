@@ -322,7 +322,7 @@ public class ContainerRepository extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ContainerRepository(String name) {
+    public ContainerRepository(java.lang.String name) {
         this(name, ContainerRepositoryArgs.Empty);
     }
     /**
@@ -330,7 +330,7 @@ public class ContainerRepository extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ContainerRepository(String name, ContainerRepositoryArgs args) {
+    public ContainerRepository(java.lang.String name, ContainerRepositoryArgs args) {
         this(name, args, null);
     }
     /**
@@ -339,12 +339,12 @@ public class ContainerRepository extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ContainerRepository(String name, ContainerRepositoryArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Artifacts/containerRepository:ContainerRepository", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ContainerRepository(java.lang.String name, ContainerRepositoryArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Artifacts/containerRepository:ContainerRepository", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ContainerRepository(String name, Output<String> id, @Nullable ContainerRepositoryState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Artifacts/containerRepository:ContainerRepository", name, state, makeResourceOptions(options, id));
+    private ContainerRepository(java.lang.String name, Output<java.lang.String> id, @Nullable ContainerRepositoryState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Artifacts/containerRepository:ContainerRepository", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ContainerRepositoryArgs makeArgs(ContainerRepositoryArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -354,7 +354,7 @@ public class ContainerRepository extends com.pulumi.resources.CustomResource {
         return args == null ? ContainerRepositoryArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -370,7 +370,7 @@ public class ContainerRepository extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ContainerRepository get(String name, Output<String> id, @Nullable ContainerRepositoryState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ContainerRepository get(java.lang.String name, Output<java.lang.String> id, @Nullable ContainerRepositoryState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ContainerRepository(name, id, state, options);
     }
 }

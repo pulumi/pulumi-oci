@@ -127,7 +127,7 @@ class AwaitableGetDefaultConfigurationsResult(GetDefaultConfigurationsResult):
 def get_default_configurations(configuration_id: Optional[str] = None,
                                db_version: Optional[str] = None,
                                display_name: Optional[str] = None,
-                               filters: Optional[Sequence[pulumi.InputType['GetDefaultConfigurationsFilterArgs']]] = None,
+                               filters: Optional[Sequence[Union['GetDefaultConfigurationsFilterArgs', 'GetDefaultConfigurationsFilterArgsDict']]] = None,
                                shape: Optional[str] = None,
                                state: Optional[str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDefaultConfigurationsResult:
@@ -181,7 +181,7 @@ def get_default_configurations(configuration_id: Optional[str] = None,
 def get_default_configurations_output(configuration_id: Optional[pulumi.Input[Optional[str]]] = None,
                                       db_version: Optional[pulumi.Input[Optional[str]]] = None,
                                       display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                      filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDefaultConfigurationsFilterArgs']]]]] = None,
+                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDefaultConfigurationsFilterArgs', 'GetDefaultConfigurationsFilterArgsDict']]]]] = None,
                                       shape: Optional[pulumi.Input[Optional[str]]] = None,
                                       state: Optional[pulumi.Input[Optional[str]]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDefaultConfigurationsResult]:

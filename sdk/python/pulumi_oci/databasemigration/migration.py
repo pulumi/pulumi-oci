@@ -781,21 +781,21 @@ class Migration(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 advanced_parameters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MigrationAdvancedParameterArgs']]]]] = None,
-                 advisor_settings: Optional[pulumi.Input[pulumi.InputType['MigrationAdvisorSettingsArgs']]] = None,
+                 advanced_parameters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationAdvancedParameterArgs', 'MigrationAdvancedParameterArgsDict']]]]] = None,
+                 advisor_settings: Optional[pulumi.Input[Union['MigrationAdvisorSettingsArgs', 'MigrationAdvisorSettingsArgsDict']]] = None,
                  bulk_include_exclude_data: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 data_transfer_medium_details: Optional[pulumi.Input[pulumi.InputType['MigrationDataTransferMediumDetailsArgs']]] = None,
+                 data_transfer_medium_details: Optional[pulumi.Input[Union['MigrationDataTransferMediumDetailsArgs', 'MigrationDataTransferMediumDetailsArgsDict']]] = None,
                  database_combination: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 exclude_objects: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MigrationExcludeObjectArgs']]]]] = None,
+                 exclude_objects: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationExcludeObjectArgs', 'MigrationExcludeObjectArgsDict']]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 ggs_details: Optional[pulumi.Input[pulumi.InputType['MigrationGgsDetailsArgs']]] = None,
-                 hub_details: Optional[pulumi.Input[pulumi.InputType['MigrationHubDetailsArgs']]] = None,
-                 include_objects: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MigrationIncludeObjectArgs']]]]] = None,
-                 initial_load_settings: Optional[pulumi.Input[pulumi.InputType['MigrationInitialLoadSettingsArgs']]] = None,
+                 ggs_details: Optional[pulumi.Input[Union['MigrationGgsDetailsArgs', 'MigrationGgsDetailsArgsDict']]] = None,
+                 hub_details: Optional[pulumi.Input[Union['MigrationHubDetailsArgs', 'MigrationHubDetailsArgsDict']]] = None,
+                 include_objects: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationIncludeObjectArgs', 'MigrationIncludeObjectArgsDict']]]]] = None,
+                 initial_load_settings: Optional[pulumi.Input[Union['MigrationInitialLoadSettingsArgs', 'MigrationInitialLoadSettingsArgsDict']]] = None,
                  source_container_database_connection_id: Optional[pulumi.Input[str]] = None,
                  source_database_connection_id: Optional[pulumi.Input[str]] = None,
                  target_database_connection_id: Optional[pulumi.Input[str]] = None,
@@ -814,124 +814,124 @@ class Migration(pulumi.CustomResource):
             source_database_connection_id=test_connection["id"],
             target_database_connection_id=test_connection["id"],
             type=migration_type,
-            advanced_parameters=[oci.database_migration.MigrationAdvancedParameterArgs(
-                data_type=migration_advanced_parameters_data_type,
-                name=migration_advanced_parameters_name,
-                value=migration_advanced_parameters_value,
-            )],
-            advisor_settings=oci.database_migration.MigrationAdvisorSettingsArgs(
-                is_ignore_errors=migration_advisor_settings_is_ignore_errors,
-                is_skip_advisor=migration_advisor_settings_is_skip_advisor,
-            ),
+            advanced_parameters=[{
+                "data_type": migration_advanced_parameters_data_type,
+                "name": migration_advanced_parameters_name,
+                "value": migration_advanced_parameters_value,
+            }],
+            advisor_settings={
+                "is_ignore_errors": migration_advisor_settings_is_ignore_errors,
+                "is_skip_advisor": migration_advisor_settings_is_skip_advisor,
+            },
             bulk_include_exclude_data=migration_bulk_include_exclude_data,
-            data_transfer_medium_details=oci.database_migration.MigrationDataTransferMediumDetailsArgs(
-                type=migration_data_transfer_medium_details_type,
-                access_key_id=test_key["id"],
-                name=migration_data_transfer_medium_details_name,
-                object_storage_bucket=oci.database_migration.MigrationDataTransferMediumDetailsObjectStorageBucketArgs(
-                    bucket=migration_data_transfer_medium_details_object_storage_bucket_bucket,
-                    namespace=migration_data_transfer_medium_details_object_storage_bucket_namespace,
-                ),
-                region=migration_data_transfer_medium_details_region,
-                secret_access_key=migration_data_transfer_medium_details_secret_access_key,
-                shared_storage_mount_target_id=test_mount_target["id"],
-                source=oci.database_migration.MigrationDataTransferMediumDetailsSourceArgs(
-                    kind=migration_data_transfer_medium_details_source_kind,
-                    oci_home=migration_data_transfer_medium_details_source_oci_home,
-                    wallet_location=migration_data_transfer_medium_details_source_wallet_location,
-                ),
-                target=oci.database_migration.MigrationDataTransferMediumDetailsTargetArgs(
-                    kind=migration_data_transfer_medium_details_target_kind,
-                    oci_home=migration_data_transfer_medium_details_target_oci_home,
-                    wallet_location=migration_data_transfer_medium_details_target_wallet_location,
-                ),
-            ),
+            data_transfer_medium_details={
+                "type": migration_data_transfer_medium_details_type,
+                "access_key_id": test_key["id"],
+                "name": migration_data_transfer_medium_details_name,
+                "object_storage_bucket": {
+                    "bucket": migration_data_transfer_medium_details_object_storage_bucket_bucket,
+                    "namespace": migration_data_transfer_medium_details_object_storage_bucket_namespace,
+                },
+                "region": migration_data_transfer_medium_details_region,
+                "secret_access_key": migration_data_transfer_medium_details_secret_access_key,
+                "shared_storage_mount_target_id": test_mount_target["id"],
+                "source": {
+                    "kind": migration_data_transfer_medium_details_source_kind,
+                    "oci_home": migration_data_transfer_medium_details_source_oci_home,
+                    "wallet_location": migration_data_transfer_medium_details_source_wallet_location,
+                },
+                "target": {
+                    "kind": migration_data_transfer_medium_details_target_kind,
+                    "oci_home": migration_data_transfer_medium_details_target_oci_home,
+                    "wallet_location": migration_data_transfer_medium_details_target_wallet_location,
+                },
+            },
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             description=migration_description,
             display_name=migration_display_name,
-            exclude_objects=[oci.database_migration.MigrationExcludeObjectArgs(
-                object=migration_exclude_objects_object,
-                is_omit_excluded_table_from_replication=migration_exclude_objects_is_omit_excluded_table_from_replication,
-                owner=migration_exclude_objects_owner,
-                schema=migration_exclude_objects_schema,
-                type=migration_exclude_objects_type,
-            )],
+            exclude_objects=[{
+                "object": migration_exclude_objects_object,
+                "is_omit_excluded_table_from_replication": migration_exclude_objects_is_omit_excluded_table_from_replication,
+                "owner": migration_exclude_objects_owner,
+                "schema": migration_exclude_objects_schema,
+                "type": migration_exclude_objects_type,
+            }],
             freeform_tags=migration_freeform_tags,
-            ggs_details=oci.database_migration.MigrationGgsDetailsArgs(
-                acceptable_lag=migration_ggs_details_acceptable_lag,
-                extract=oci.database_migration.MigrationGgsDetailsExtractArgs(
-                    long_trans_duration=migration_ggs_details_extract_long_trans_duration,
-                    performance_profile=migration_ggs_details_extract_performance_profile,
-                ),
-                replicat=oci.database_migration.MigrationGgsDetailsReplicatArgs(
-                    performance_profile=migration_ggs_details_replicat_performance_profile,
-                ),
-            ),
-            hub_details=oci.database_migration.MigrationHubDetailsArgs(
-                key_id=test_key["id"],
-                rest_admin_credentials=oci.database_migration.MigrationHubDetailsRestAdminCredentialsArgs(
-                    password=migration_hub_details_rest_admin_credentials_password,
-                    username=migration_hub_details_rest_admin_credentials_username,
-                ),
-                url=migration_hub_details_url,
-                vault_id=test_vault["id"],
-                acceptable_lag=migration_hub_details_acceptable_lag,
-                compute_id=test_compute["id"],
-                extract=oci.database_migration.MigrationHubDetailsExtractArgs(
-                    long_trans_duration=migration_hub_details_extract_long_trans_duration,
-                    performance_profile=migration_hub_details_extract_performance_profile,
-                ),
-                replicat=oci.database_migration.MigrationHubDetailsReplicatArgs(
-                    performance_profile=migration_hub_details_replicat_performance_profile,
-                ),
-            ),
-            include_objects=[oci.database_migration.MigrationIncludeObjectArgs(
-                object=migration_include_objects_object,
-                is_omit_excluded_table_from_replication=migration_include_objects_is_omit_excluded_table_from_replication,
-                owner=migration_include_objects_owner,
-                schema=migration_include_objects_schema,
-                type=migration_include_objects_type,
-            )],
-            initial_load_settings=oci.database_migration.MigrationInitialLoadSettingsArgs(
-                job_mode=migration_initial_load_settings_job_mode,
-                compatibilities=migration_initial_load_settings_compatibility,
-                data_pump_parameters=oci.database_migration.MigrationInitialLoadSettingsDataPumpParametersArgs(
-                    estimate=migration_initial_load_settings_data_pump_parameters_estimate,
-                    exclude_parameters=migration_initial_load_settings_data_pump_parameters_exclude_parameters,
-                    export_parallelism_degree=migration_initial_load_settings_data_pump_parameters_export_parallelism_degree,
-                    import_parallelism_degree=migration_initial_load_settings_data_pump_parameters_import_parallelism_degree,
-                    is_cluster=migration_initial_load_settings_data_pump_parameters_is_cluster,
-                    table_exists_action=migration_initial_load_settings_data_pump_parameters_table_exists_action,
-                ),
-                export_directory_object=oci.database_migration.MigrationInitialLoadSettingsExportDirectoryObjectArgs(
-                    name=migration_initial_load_settings_export_directory_object_name,
-                    path=migration_initial_load_settings_export_directory_object_path,
-                ),
-                handle_grant_errors=migration_initial_load_settings_handle_grant_errors,
-                import_directory_object=oci.database_migration.MigrationInitialLoadSettingsImportDirectoryObjectArgs(
-                    name=migration_initial_load_settings_import_directory_object_name,
-                    path=migration_initial_load_settings_import_directory_object_path,
-                ),
-                is_consistent=migration_initial_load_settings_is_consistent,
-                is_ignore_existing_objects=migration_initial_load_settings_is_ignore_existing_objects,
-                is_tz_utc=migration_initial_load_settings_is_tz_utc,
-                metadata_remaps=[oci.database_migration.MigrationInitialLoadSettingsMetadataRemapArgs(
-                    new_value=migration_initial_load_settings_metadata_remaps_new_value,
-                    old_value=migration_initial_load_settings_metadata_remaps_old_value,
-                    type=migration_initial_load_settings_metadata_remaps_type,
-                )],
-                primary_key_compatibility=migration_initial_load_settings_primary_key_compatibility,
-                tablespace_details=oci.database_migration.MigrationInitialLoadSettingsTablespaceDetailsArgs(
-                    target_type=migration_initial_load_settings_tablespace_details_target_type,
-                    block_size_in_kbs=migration_initial_load_settings_tablespace_details_block_size_in_kbs,
-                    extend_size_in_mbs=migration_initial_load_settings_tablespace_details_extend_size_in_mbs,
-                    is_auto_create=migration_initial_load_settings_tablespace_details_is_auto_create,
-                    is_big_file=migration_initial_load_settings_tablespace_details_is_big_file,
-                    remap_target=migration_initial_load_settings_tablespace_details_remap_target,
-                ),
-            ),
+            ggs_details={
+                "acceptable_lag": migration_ggs_details_acceptable_lag,
+                "extract": {
+                    "long_trans_duration": migration_ggs_details_extract_long_trans_duration,
+                    "performance_profile": migration_ggs_details_extract_performance_profile,
+                },
+                "replicat": {
+                    "performance_profile": migration_ggs_details_replicat_performance_profile,
+                },
+            },
+            hub_details={
+                "key_id": test_key["id"],
+                "rest_admin_credentials": {
+                    "password": migration_hub_details_rest_admin_credentials_password,
+                    "username": migration_hub_details_rest_admin_credentials_username,
+                },
+                "url": migration_hub_details_url,
+                "vault_id": test_vault["id"],
+                "acceptable_lag": migration_hub_details_acceptable_lag,
+                "compute_id": test_compute["id"],
+                "extract": {
+                    "long_trans_duration": migration_hub_details_extract_long_trans_duration,
+                    "performance_profile": migration_hub_details_extract_performance_profile,
+                },
+                "replicat": {
+                    "performance_profile": migration_hub_details_replicat_performance_profile,
+                },
+            },
+            include_objects=[{
+                "object": migration_include_objects_object,
+                "is_omit_excluded_table_from_replication": migration_include_objects_is_omit_excluded_table_from_replication,
+                "owner": migration_include_objects_owner,
+                "schema": migration_include_objects_schema,
+                "type": migration_include_objects_type,
+            }],
+            initial_load_settings={
+                "job_mode": migration_initial_load_settings_job_mode,
+                "compatibilities": migration_initial_load_settings_compatibility,
+                "data_pump_parameters": {
+                    "estimate": migration_initial_load_settings_data_pump_parameters_estimate,
+                    "exclude_parameters": migration_initial_load_settings_data_pump_parameters_exclude_parameters,
+                    "export_parallelism_degree": migration_initial_load_settings_data_pump_parameters_export_parallelism_degree,
+                    "import_parallelism_degree": migration_initial_load_settings_data_pump_parameters_import_parallelism_degree,
+                    "is_cluster": migration_initial_load_settings_data_pump_parameters_is_cluster,
+                    "table_exists_action": migration_initial_load_settings_data_pump_parameters_table_exists_action,
+                },
+                "export_directory_object": {
+                    "name": migration_initial_load_settings_export_directory_object_name,
+                    "path": migration_initial_load_settings_export_directory_object_path,
+                },
+                "handle_grant_errors": migration_initial_load_settings_handle_grant_errors,
+                "import_directory_object": {
+                    "name": migration_initial_load_settings_import_directory_object_name,
+                    "path": migration_initial_load_settings_import_directory_object_path,
+                },
+                "is_consistent": migration_initial_load_settings_is_consistent,
+                "is_ignore_existing_objects": migration_initial_load_settings_is_ignore_existing_objects,
+                "is_tz_utc": migration_initial_load_settings_is_tz_utc,
+                "metadata_remaps": [{
+                    "new_value": migration_initial_load_settings_metadata_remaps_new_value,
+                    "old_value": migration_initial_load_settings_metadata_remaps_old_value,
+                    "type": migration_initial_load_settings_metadata_remaps_type,
+                }],
+                "primary_key_compatibility": migration_initial_load_settings_primary_key_compatibility,
+                "tablespace_details": {
+                    "target_type": migration_initial_load_settings_tablespace_details_target_type,
+                    "block_size_in_kbs": migration_initial_load_settings_tablespace_details_block_size_in_kbs,
+                    "extend_size_in_mbs": migration_initial_load_settings_tablespace_details_extend_size_in_mbs,
+                    "is_auto_create": migration_initial_load_settings_tablespace_details_is_auto_create,
+                    "is_big_file": migration_initial_load_settings_tablespace_details_is_big_file,
+                    "remap_target": migration_initial_load_settings_tablespace_details_remap_target,
+                },
+            },
             source_container_database_connection_id=test_connection["id"])
         ```
 
@@ -945,21 +945,21 @@ class Migration(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MigrationAdvancedParameterArgs']]]] advanced_parameters: (Updatable) List of Migration Parameter objects.
-        :param pulumi.Input[pulumi.InputType['MigrationAdvisorSettingsArgs']] advisor_settings: (Updatable) Optional Pre-Migration advisor settings.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MigrationAdvancedParameterArgs', 'MigrationAdvancedParameterArgsDict']]]] advanced_parameters: (Updatable) List of Migration Parameter objects.
+        :param pulumi.Input[Union['MigrationAdvisorSettingsArgs', 'MigrationAdvisorSettingsArgsDict']] advisor_settings: (Updatable) Optional Pre-Migration advisor settings.
         :param pulumi.Input[str] bulk_include_exclude_data: Specifies the database objects to be excluded from the migration in bulk. The definition accepts input in a CSV format, newline separated for each entry. More details can be found in the documentation.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the resource being referenced.
-        :param pulumi.Input[pulumi.InputType['MigrationDataTransferMediumDetailsArgs']] data_transfer_medium_details: (Updatable) Optional additional properties for data transfer.
+        :param pulumi.Input[Union['MigrationDataTransferMediumDetailsArgs', 'MigrationDataTransferMediumDetailsArgsDict']] data_transfer_medium_details: (Updatable) Optional additional properties for data transfer.
         :param pulumi.Input[str] database_combination: (Updatable) The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MigrationExcludeObjectArgs']]]] exclude_objects: Database objects to exclude from migration, cannot be specified alongside 'includeObjects'
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MigrationExcludeObjectArgs', 'MigrationExcludeObjectArgsDict']]]] exclude_objects: Database objects to exclude from migration, cannot be specified alongside 'includeObjects'
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
-        :param pulumi.Input[pulumi.InputType['MigrationGgsDetailsArgs']] ggs_details: (Updatable) Optional settings for Oracle GoldenGate processes
-        :param pulumi.Input[pulumi.InputType['MigrationHubDetailsArgs']] hub_details: (Updatable) Details about Oracle GoldenGate Microservices.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MigrationIncludeObjectArgs']]]] include_objects: Database objects to include from migration, cannot be specified alongside 'excludeObjects'
-        :param pulumi.Input[pulumi.InputType['MigrationInitialLoadSettingsArgs']] initial_load_settings: (Updatable) Optional settings for Data Pump Export and Import jobs
+        :param pulumi.Input[Union['MigrationGgsDetailsArgs', 'MigrationGgsDetailsArgsDict']] ggs_details: (Updatable) Optional settings for Oracle GoldenGate processes
+        :param pulumi.Input[Union['MigrationHubDetailsArgs', 'MigrationHubDetailsArgsDict']] hub_details: (Updatable) Details about Oracle GoldenGate Microservices.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MigrationIncludeObjectArgs', 'MigrationIncludeObjectArgsDict']]]] include_objects: Database objects to include from migration, cannot be specified alongside 'excludeObjects'
+        :param pulumi.Input[Union['MigrationInitialLoadSettingsArgs', 'MigrationInitialLoadSettingsArgsDict']] initial_load_settings: (Updatable) Optional settings for Data Pump Export and Import jobs
         :param pulumi.Input[str] source_container_database_connection_id: (Updatable) The OCID of the resource being referenced.
         :param pulumi.Input[str] source_database_connection_id: (Updatable) The OCID of the resource being referenced.
         :param pulumi.Input[str] target_database_connection_id: (Updatable) The OCID of the resource being referenced.
@@ -988,124 +988,124 @@ class Migration(pulumi.CustomResource):
             source_database_connection_id=test_connection["id"],
             target_database_connection_id=test_connection["id"],
             type=migration_type,
-            advanced_parameters=[oci.database_migration.MigrationAdvancedParameterArgs(
-                data_type=migration_advanced_parameters_data_type,
-                name=migration_advanced_parameters_name,
-                value=migration_advanced_parameters_value,
-            )],
-            advisor_settings=oci.database_migration.MigrationAdvisorSettingsArgs(
-                is_ignore_errors=migration_advisor_settings_is_ignore_errors,
-                is_skip_advisor=migration_advisor_settings_is_skip_advisor,
-            ),
+            advanced_parameters=[{
+                "data_type": migration_advanced_parameters_data_type,
+                "name": migration_advanced_parameters_name,
+                "value": migration_advanced_parameters_value,
+            }],
+            advisor_settings={
+                "is_ignore_errors": migration_advisor_settings_is_ignore_errors,
+                "is_skip_advisor": migration_advisor_settings_is_skip_advisor,
+            },
             bulk_include_exclude_data=migration_bulk_include_exclude_data,
-            data_transfer_medium_details=oci.database_migration.MigrationDataTransferMediumDetailsArgs(
-                type=migration_data_transfer_medium_details_type,
-                access_key_id=test_key["id"],
-                name=migration_data_transfer_medium_details_name,
-                object_storage_bucket=oci.database_migration.MigrationDataTransferMediumDetailsObjectStorageBucketArgs(
-                    bucket=migration_data_transfer_medium_details_object_storage_bucket_bucket,
-                    namespace=migration_data_transfer_medium_details_object_storage_bucket_namespace,
-                ),
-                region=migration_data_transfer_medium_details_region,
-                secret_access_key=migration_data_transfer_medium_details_secret_access_key,
-                shared_storage_mount_target_id=test_mount_target["id"],
-                source=oci.database_migration.MigrationDataTransferMediumDetailsSourceArgs(
-                    kind=migration_data_transfer_medium_details_source_kind,
-                    oci_home=migration_data_transfer_medium_details_source_oci_home,
-                    wallet_location=migration_data_transfer_medium_details_source_wallet_location,
-                ),
-                target=oci.database_migration.MigrationDataTransferMediumDetailsTargetArgs(
-                    kind=migration_data_transfer_medium_details_target_kind,
-                    oci_home=migration_data_transfer_medium_details_target_oci_home,
-                    wallet_location=migration_data_transfer_medium_details_target_wallet_location,
-                ),
-            ),
+            data_transfer_medium_details={
+                "type": migration_data_transfer_medium_details_type,
+                "access_key_id": test_key["id"],
+                "name": migration_data_transfer_medium_details_name,
+                "object_storage_bucket": {
+                    "bucket": migration_data_transfer_medium_details_object_storage_bucket_bucket,
+                    "namespace": migration_data_transfer_medium_details_object_storage_bucket_namespace,
+                },
+                "region": migration_data_transfer_medium_details_region,
+                "secret_access_key": migration_data_transfer_medium_details_secret_access_key,
+                "shared_storage_mount_target_id": test_mount_target["id"],
+                "source": {
+                    "kind": migration_data_transfer_medium_details_source_kind,
+                    "oci_home": migration_data_transfer_medium_details_source_oci_home,
+                    "wallet_location": migration_data_transfer_medium_details_source_wallet_location,
+                },
+                "target": {
+                    "kind": migration_data_transfer_medium_details_target_kind,
+                    "oci_home": migration_data_transfer_medium_details_target_oci_home,
+                    "wallet_location": migration_data_transfer_medium_details_target_wallet_location,
+                },
+            },
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             description=migration_description,
             display_name=migration_display_name,
-            exclude_objects=[oci.database_migration.MigrationExcludeObjectArgs(
-                object=migration_exclude_objects_object,
-                is_omit_excluded_table_from_replication=migration_exclude_objects_is_omit_excluded_table_from_replication,
-                owner=migration_exclude_objects_owner,
-                schema=migration_exclude_objects_schema,
-                type=migration_exclude_objects_type,
-            )],
+            exclude_objects=[{
+                "object": migration_exclude_objects_object,
+                "is_omit_excluded_table_from_replication": migration_exclude_objects_is_omit_excluded_table_from_replication,
+                "owner": migration_exclude_objects_owner,
+                "schema": migration_exclude_objects_schema,
+                "type": migration_exclude_objects_type,
+            }],
             freeform_tags=migration_freeform_tags,
-            ggs_details=oci.database_migration.MigrationGgsDetailsArgs(
-                acceptable_lag=migration_ggs_details_acceptable_lag,
-                extract=oci.database_migration.MigrationGgsDetailsExtractArgs(
-                    long_trans_duration=migration_ggs_details_extract_long_trans_duration,
-                    performance_profile=migration_ggs_details_extract_performance_profile,
-                ),
-                replicat=oci.database_migration.MigrationGgsDetailsReplicatArgs(
-                    performance_profile=migration_ggs_details_replicat_performance_profile,
-                ),
-            ),
-            hub_details=oci.database_migration.MigrationHubDetailsArgs(
-                key_id=test_key["id"],
-                rest_admin_credentials=oci.database_migration.MigrationHubDetailsRestAdminCredentialsArgs(
-                    password=migration_hub_details_rest_admin_credentials_password,
-                    username=migration_hub_details_rest_admin_credentials_username,
-                ),
-                url=migration_hub_details_url,
-                vault_id=test_vault["id"],
-                acceptable_lag=migration_hub_details_acceptable_lag,
-                compute_id=test_compute["id"],
-                extract=oci.database_migration.MigrationHubDetailsExtractArgs(
-                    long_trans_duration=migration_hub_details_extract_long_trans_duration,
-                    performance_profile=migration_hub_details_extract_performance_profile,
-                ),
-                replicat=oci.database_migration.MigrationHubDetailsReplicatArgs(
-                    performance_profile=migration_hub_details_replicat_performance_profile,
-                ),
-            ),
-            include_objects=[oci.database_migration.MigrationIncludeObjectArgs(
-                object=migration_include_objects_object,
-                is_omit_excluded_table_from_replication=migration_include_objects_is_omit_excluded_table_from_replication,
-                owner=migration_include_objects_owner,
-                schema=migration_include_objects_schema,
-                type=migration_include_objects_type,
-            )],
-            initial_load_settings=oci.database_migration.MigrationInitialLoadSettingsArgs(
-                job_mode=migration_initial_load_settings_job_mode,
-                compatibilities=migration_initial_load_settings_compatibility,
-                data_pump_parameters=oci.database_migration.MigrationInitialLoadSettingsDataPumpParametersArgs(
-                    estimate=migration_initial_load_settings_data_pump_parameters_estimate,
-                    exclude_parameters=migration_initial_load_settings_data_pump_parameters_exclude_parameters,
-                    export_parallelism_degree=migration_initial_load_settings_data_pump_parameters_export_parallelism_degree,
-                    import_parallelism_degree=migration_initial_load_settings_data_pump_parameters_import_parallelism_degree,
-                    is_cluster=migration_initial_load_settings_data_pump_parameters_is_cluster,
-                    table_exists_action=migration_initial_load_settings_data_pump_parameters_table_exists_action,
-                ),
-                export_directory_object=oci.database_migration.MigrationInitialLoadSettingsExportDirectoryObjectArgs(
-                    name=migration_initial_load_settings_export_directory_object_name,
-                    path=migration_initial_load_settings_export_directory_object_path,
-                ),
-                handle_grant_errors=migration_initial_load_settings_handle_grant_errors,
-                import_directory_object=oci.database_migration.MigrationInitialLoadSettingsImportDirectoryObjectArgs(
-                    name=migration_initial_load_settings_import_directory_object_name,
-                    path=migration_initial_load_settings_import_directory_object_path,
-                ),
-                is_consistent=migration_initial_load_settings_is_consistent,
-                is_ignore_existing_objects=migration_initial_load_settings_is_ignore_existing_objects,
-                is_tz_utc=migration_initial_load_settings_is_tz_utc,
-                metadata_remaps=[oci.database_migration.MigrationInitialLoadSettingsMetadataRemapArgs(
-                    new_value=migration_initial_load_settings_metadata_remaps_new_value,
-                    old_value=migration_initial_load_settings_metadata_remaps_old_value,
-                    type=migration_initial_load_settings_metadata_remaps_type,
-                )],
-                primary_key_compatibility=migration_initial_load_settings_primary_key_compatibility,
-                tablespace_details=oci.database_migration.MigrationInitialLoadSettingsTablespaceDetailsArgs(
-                    target_type=migration_initial_load_settings_tablespace_details_target_type,
-                    block_size_in_kbs=migration_initial_load_settings_tablespace_details_block_size_in_kbs,
-                    extend_size_in_mbs=migration_initial_load_settings_tablespace_details_extend_size_in_mbs,
-                    is_auto_create=migration_initial_load_settings_tablespace_details_is_auto_create,
-                    is_big_file=migration_initial_load_settings_tablespace_details_is_big_file,
-                    remap_target=migration_initial_load_settings_tablespace_details_remap_target,
-                ),
-            ),
+            ggs_details={
+                "acceptable_lag": migration_ggs_details_acceptable_lag,
+                "extract": {
+                    "long_trans_duration": migration_ggs_details_extract_long_trans_duration,
+                    "performance_profile": migration_ggs_details_extract_performance_profile,
+                },
+                "replicat": {
+                    "performance_profile": migration_ggs_details_replicat_performance_profile,
+                },
+            },
+            hub_details={
+                "key_id": test_key["id"],
+                "rest_admin_credentials": {
+                    "password": migration_hub_details_rest_admin_credentials_password,
+                    "username": migration_hub_details_rest_admin_credentials_username,
+                },
+                "url": migration_hub_details_url,
+                "vault_id": test_vault["id"],
+                "acceptable_lag": migration_hub_details_acceptable_lag,
+                "compute_id": test_compute["id"],
+                "extract": {
+                    "long_trans_duration": migration_hub_details_extract_long_trans_duration,
+                    "performance_profile": migration_hub_details_extract_performance_profile,
+                },
+                "replicat": {
+                    "performance_profile": migration_hub_details_replicat_performance_profile,
+                },
+            },
+            include_objects=[{
+                "object": migration_include_objects_object,
+                "is_omit_excluded_table_from_replication": migration_include_objects_is_omit_excluded_table_from_replication,
+                "owner": migration_include_objects_owner,
+                "schema": migration_include_objects_schema,
+                "type": migration_include_objects_type,
+            }],
+            initial_load_settings={
+                "job_mode": migration_initial_load_settings_job_mode,
+                "compatibilities": migration_initial_load_settings_compatibility,
+                "data_pump_parameters": {
+                    "estimate": migration_initial_load_settings_data_pump_parameters_estimate,
+                    "exclude_parameters": migration_initial_load_settings_data_pump_parameters_exclude_parameters,
+                    "export_parallelism_degree": migration_initial_load_settings_data_pump_parameters_export_parallelism_degree,
+                    "import_parallelism_degree": migration_initial_load_settings_data_pump_parameters_import_parallelism_degree,
+                    "is_cluster": migration_initial_load_settings_data_pump_parameters_is_cluster,
+                    "table_exists_action": migration_initial_load_settings_data_pump_parameters_table_exists_action,
+                },
+                "export_directory_object": {
+                    "name": migration_initial_load_settings_export_directory_object_name,
+                    "path": migration_initial_load_settings_export_directory_object_path,
+                },
+                "handle_grant_errors": migration_initial_load_settings_handle_grant_errors,
+                "import_directory_object": {
+                    "name": migration_initial_load_settings_import_directory_object_name,
+                    "path": migration_initial_load_settings_import_directory_object_path,
+                },
+                "is_consistent": migration_initial_load_settings_is_consistent,
+                "is_ignore_existing_objects": migration_initial_load_settings_is_ignore_existing_objects,
+                "is_tz_utc": migration_initial_load_settings_is_tz_utc,
+                "metadata_remaps": [{
+                    "new_value": migration_initial_load_settings_metadata_remaps_new_value,
+                    "old_value": migration_initial_load_settings_metadata_remaps_old_value,
+                    "type": migration_initial_load_settings_metadata_remaps_type,
+                }],
+                "primary_key_compatibility": migration_initial_load_settings_primary_key_compatibility,
+                "tablespace_details": {
+                    "target_type": migration_initial_load_settings_tablespace_details_target_type,
+                    "block_size_in_kbs": migration_initial_load_settings_tablespace_details_block_size_in_kbs,
+                    "extend_size_in_mbs": migration_initial_load_settings_tablespace_details_extend_size_in_mbs,
+                    "is_auto_create": migration_initial_load_settings_tablespace_details_is_auto_create,
+                    "is_big_file": migration_initial_load_settings_tablespace_details_is_big_file,
+                    "remap_target": migration_initial_load_settings_tablespace_details_remap_target,
+                },
+            },
             source_container_database_connection_id=test_connection["id"])
         ```
 
@@ -1132,21 +1132,21 @@ class Migration(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 advanced_parameters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MigrationAdvancedParameterArgs']]]]] = None,
-                 advisor_settings: Optional[pulumi.Input[pulumi.InputType['MigrationAdvisorSettingsArgs']]] = None,
+                 advanced_parameters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationAdvancedParameterArgs', 'MigrationAdvancedParameterArgsDict']]]]] = None,
+                 advisor_settings: Optional[pulumi.Input[Union['MigrationAdvisorSettingsArgs', 'MigrationAdvisorSettingsArgsDict']]] = None,
                  bulk_include_exclude_data: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 data_transfer_medium_details: Optional[pulumi.Input[pulumi.InputType['MigrationDataTransferMediumDetailsArgs']]] = None,
+                 data_transfer_medium_details: Optional[pulumi.Input[Union['MigrationDataTransferMediumDetailsArgs', 'MigrationDataTransferMediumDetailsArgsDict']]] = None,
                  database_combination: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 exclude_objects: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MigrationExcludeObjectArgs']]]]] = None,
+                 exclude_objects: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationExcludeObjectArgs', 'MigrationExcludeObjectArgsDict']]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 ggs_details: Optional[pulumi.Input[pulumi.InputType['MigrationGgsDetailsArgs']]] = None,
-                 hub_details: Optional[pulumi.Input[pulumi.InputType['MigrationHubDetailsArgs']]] = None,
-                 include_objects: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MigrationIncludeObjectArgs']]]]] = None,
-                 initial_load_settings: Optional[pulumi.Input[pulumi.InputType['MigrationInitialLoadSettingsArgs']]] = None,
+                 ggs_details: Optional[pulumi.Input[Union['MigrationGgsDetailsArgs', 'MigrationGgsDetailsArgsDict']]] = None,
+                 hub_details: Optional[pulumi.Input[Union['MigrationHubDetailsArgs', 'MigrationHubDetailsArgsDict']]] = None,
+                 include_objects: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationIncludeObjectArgs', 'MigrationIncludeObjectArgsDict']]]]] = None,
+                 initial_load_settings: Optional[pulumi.Input[Union['MigrationInitialLoadSettingsArgs', 'MigrationInitialLoadSettingsArgsDict']]] = None,
                  source_container_database_connection_id: Optional[pulumi.Input[str]] = None,
                  source_database_connection_id: Optional[pulumi.Input[str]] = None,
                  target_database_connection_id: Optional[pulumi.Input[str]] = None,
@@ -1207,22 +1207,22 @@ class Migration(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            advanced_parameters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MigrationAdvancedParameterArgs']]]]] = None,
-            advisor_settings: Optional[pulumi.Input[pulumi.InputType['MigrationAdvisorSettingsArgs']]] = None,
+            advanced_parameters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationAdvancedParameterArgs', 'MigrationAdvancedParameterArgsDict']]]]] = None,
+            advisor_settings: Optional[pulumi.Input[Union['MigrationAdvisorSettingsArgs', 'MigrationAdvisorSettingsArgsDict']]] = None,
             bulk_include_exclude_data: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            data_transfer_medium_details: Optional[pulumi.Input[pulumi.InputType['MigrationDataTransferMediumDetailsArgs']]] = None,
+            data_transfer_medium_details: Optional[pulumi.Input[Union['MigrationDataTransferMediumDetailsArgs', 'MigrationDataTransferMediumDetailsArgsDict']]] = None,
             database_combination: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
-            exclude_objects: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MigrationExcludeObjectArgs']]]]] = None,
+            exclude_objects: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationExcludeObjectArgs', 'MigrationExcludeObjectArgsDict']]]]] = None,
             executing_job_id: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            ggs_details: Optional[pulumi.Input[pulumi.InputType['MigrationGgsDetailsArgs']]] = None,
-            hub_details: Optional[pulumi.Input[pulumi.InputType['MigrationHubDetailsArgs']]] = None,
-            include_objects: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MigrationIncludeObjectArgs']]]]] = None,
-            initial_load_settings: Optional[pulumi.Input[pulumi.InputType['MigrationInitialLoadSettingsArgs']]] = None,
+            ggs_details: Optional[pulumi.Input[Union['MigrationGgsDetailsArgs', 'MigrationGgsDetailsArgsDict']]] = None,
+            hub_details: Optional[pulumi.Input[Union['MigrationHubDetailsArgs', 'MigrationHubDetailsArgsDict']]] = None,
+            include_objects: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationIncludeObjectArgs', 'MigrationIncludeObjectArgsDict']]]]] = None,
+            initial_load_settings: Optional[pulumi.Input[Union['MigrationInitialLoadSettingsArgs', 'MigrationInitialLoadSettingsArgsDict']]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             source_container_database_connection_id: Optional[pulumi.Input[str]] = None,
             source_database_connection_id: Optional[pulumi.Input[str]] = None,
@@ -1241,22 +1241,22 @@ class Migration(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MigrationAdvancedParameterArgs']]]] advanced_parameters: (Updatable) List of Migration Parameter objects.
-        :param pulumi.Input[pulumi.InputType['MigrationAdvisorSettingsArgs']] advisor_settings: (Updatable) Optional Pre-Migration advisor settings.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MigrationAdvancedParameterArgs', 'MigrationAdvancedParameterArgsDict']]]] advanced_parameters: (Updatable) List of Migration Parameter objects.
+        :param pulumi.Input[Union['MigrationAdvisorSettingsArgs', 'MigrationAdvisorSettingsArgsDict']] advisor_settings: (Updatable) Optional Pre-Migration advisor settings.
         :param pulumi.Input[str] bulk_include_exclude_data: Specifies the database objects to be excluded from the migration in bulk. The definition accepts input in a CSV format, newline separated for each entry. More details can be found in the documentation.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the resource being referenced.
-        :param pulumi.Input[pulumi.InputType['MigrationDataTransferMediumDetailsArgs']] data_transfer_medium_details: (Updatable) Optional additional properties for data transfer.
+        :param pulumi.Input[Union['MigrationDataTransferMediumDetailsArgs', 'MigrationDataTransferMediumDetailsArgsDict']] data_transfer_medium_details: (Updatable) Optional additional properties for data transfer.
         :param pulumi.Input[str] database_combination: (Updatable) The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MigrationExcludeObjectArgs']]]] exclude_objects: Database objects to exclude from migration, cannot be specified alongside 'includeObjects'
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MigrationExcludeObjectArgs', 'MigrationExcludeObjectArgsDict']]]] exclude_objects: Database objects to exclude from migration, cannot be specified alongside 'includeObjects'
         :param pulumi.Input[str] executing_job_id: The OCID of the resource being referenced.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
-        :param pulumi.Input[pulumi.InputType['MigrationGgsDetailsArgs']] ggs_details: (Updatable) Optional settings for Oracle GoldenGate processes
-        :param pulumi.Input[pulumi.InputType['MigrationHubDetailsArgs']] hub_details: (Updatable) Details about Oracle GoldenGate Microservices.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MigrationIncludeObjectArgs']]]] include_objects: Database objects to include from migration, cannot be specified alongside 'excludeObjects'
-        :param pulumi.Input[pulumi.InputType['MigrationInitialLoadSettingsArgs']] initial_load_settings: (Updatable) Optional settings for Data Pump Export and Import jobs
+        :param pulumi.Input[Union['MigrationGgsDetailsArgs', 'MigrationGgsDetailsArgsDict']] ggs_details: (Updatable) Optional settings for Oracle GoldenGate processes
+        :param pulumi.Input[Union['MigrationHubDetailsArgs', 'MigrationHubDetailsArgsDict']] hub_details: (Updatable) Details about Oracle GoldenGate Microservices.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MigrationIncludeObjectArgs', 'MigrationIncludeObjectArgsDict']]]] include_objects: Database objects to include from migration, cannot be specified alongside 'excludeObjects'
+        :param pulumi.Input[Union['MigrationInitialLoadSettingsArgs', 'MigrationInitialLoadSettingsArgsDict']] initial_load_settings: (Updatable) Optional settings for Data Pump Export and Import jobs
         :param pulumi.Input[str] lifecycle_details: Additional status related to the execution and current state of the Migration.
         :param pulumi.Input[str] source_container_database_connection_id: (Updatable) The OCID of the resource being referenced.
         :param pulumi.Input[str] source_database_connection_id: (Updatable) The OCID of the resource being referenced.

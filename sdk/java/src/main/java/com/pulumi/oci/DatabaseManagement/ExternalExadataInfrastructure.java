@@ -387,7 +387,7 @@ public class ExternalExadataInfrastructure extends com.pulumi.resources.CustomRe
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ExternalExadataInfrastructure(String name) {
+    public ExternalExadataInfrastructure(java.lang.String name) {
         this(name, ExternalExadataInfrastructureArgs.Empty);
     }
     /**
@@ -395,7 +395,7 @@ public class ExternalExadataInfrastructure extends com.pulumi.resources.CustomRe
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ExternalExadataInfrastructure(String name, ExternalExadataInfrastructureArgs args) {
+    public ExternalExadataInfrastructure(java.lang.String name, ExternalExadataInfrastructureArgs args) {
         this(name, args, null);
     }
     /**
@@ -404,12 +404,12 @@ public class ExternalExadataInfrastructure extends com.pulumi.resources.CustomRe
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ExternalExadataInfrastructure(String name, ExternalExadataInfrastructureArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseManagement/externalExadataInfrastructure:ExternalExadataInfrastructure", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ExternalExadataInfrastructure(java.lang.String name, ExternalExadataInfrastructureArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DatabaseManagement/externalExadataInfrastructure:ExternalExadataInfrastructure", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ExternalExadataInfrastructure(String name, Output<String> id, @Nullable ExternalExadataInfrastructureState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseManagement/externalExadataInfrastructure:ExternalExadataInfrastructure", name, state, makeResourceOptions(options, id));
+    private ExternalExadataInfrastructure(java.lang.String name, Output<java.lang.String> id, @Nullable ExternalExadataInfrastructureState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DatabaseManagement/externalExadataInfrastructure:ExternalExadataInfrastructure", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ExternalExadataInfrastructureArgs makeArgs(ExternalExadataInfrastructureArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -419,7 +419,7 @@ public class ExternalExadataInfrastructure extends com.pulumi.resources.CustomRe
         return args == null ? ExternalExadataInfrastructureArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -435,7 +435,7 @@ public class ExternalExadataInfrastructure extends com.pulumi.resources.CustomRe
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ExternalExadataInfrastructure get(String name, Output<String> id, @Nullable ExternalExadataInfrastructureState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ExternalExadataInfrastructure get(java.lang.String name, Output<java.lang.String> id, @Nullable ExternalExadataInfrastructureState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ExternalExadataInfrastructure(name, id, state, options);
     }
 }

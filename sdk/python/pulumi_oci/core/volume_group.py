@@ -507,8 +507,8 @@ class VolumeGroup(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  preserve_volume_replica: Optional[pulumi.Input[bool]] = None,
-                 source_details: Optional[pulumi.Input[pulumi.InputType['VolumeGroupSourceDetailsArgs']]] = None,
-                 volume_group_replicas: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VolumeGroupVolumeGroupReplicaArgs']]]]] = None,
+                 source_details: Optional[pulumi.Input[Union['VolumeGroupSourceDetailsArgs', 'VolumeGroupSourceDetailsArgsDict']]] = None,
+                 volume_group_replicas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupVolumeGroupReplicaArgs', 'VolumeGroupVolumeGroupReplicaArgsDict']]]]] = None,
                  volume_group_replicas_deletion: Optional[pulumi.Input[bool]] = None,
                  volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  __props__=None):
@@ -522,10 +522,10 @@ class VolumeGroup(pulumi.CustomResource):
         test_volume_group = oci.core.VolumeGroup("test_volume_group",
             availability_domain=volume_group_availability_domain,
             compartment_id=compartment_id,
-            source_details=oci.core.VolumeGroupSourceDetailsArgs(
-                type="volumeIds",
-                volume_ids=[volume_group_source_id],
-            ),
+            source_details={
+                "type": "volumeIds",
+                "volume_ids": [volume_group_source_id],
+            },
             backup_policy_id=test_volume_backup_policies["volumeBackupPolicies"][0]["id"],
             cluster_placement_group_id=test_group["id"],
             defined_tags={
@@ -535,10 +535,10 @@ class VolumeGroup(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            volume_group_replicas=[oci.core.VolumeGroupVolumeGroupReplicaArgs(
-                availability_domain=volume_group_volume_group_replicas_availability_domain,
-                display_name=volume_group_volume_group_replicas_display_name,
-            )],
+            volume_group_replicas=[{
+                "availability_domain": volume_group_volume_group_replicas_availability_domain,
+                "display_name": volume_group_volume_group_replicas_display_name,
+            }],
             volume_ids=[volume_group_source_id])
         ```
 
@@ -559,8 +559,8 @@ class VolumeGroup(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[pulumi.InputType['VolumeGroupSourceDetailsArgs']] source_details: Specifies the source for a volume group.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VolumeGroupVolumeGroupReplicaArgs']]]] volume_group_replicas: (Updatable) The list of volume group replicas that this volume group will be enabled to have in the specified destination availability domains.
+        :param pulumi.Input[Union['VolumeGroupSourceDetailsArgs', 'VolumeGroupSourceDetailsArgsDict']] source_details: Specifies the source for a volume group.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupVolumeGroupReplicaArgs', 'VolumeGroupVolumeGroupReplicaArgsDict']]]] volume_group_replicas: (Updatable) The list of volume group replicas that this volume group will be enabled to have in the specified destination availability domains.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] volume_ids: (Updatable) Use this for update operation only. This field is not supported during creation. For create use `volume_ids` under `source_details`.
                
                ** IMPORTANT **
@@ -582,10 +582,10 @@ class VolumeGroup(pulumi.CustomResource):
         test_volume_group = oci.core.VolumeGroup("test_volume_group",
             availability_domain=volume_group_availability_domain,
             compartment_id=compartment_id,
-            source_details=oci.core.VolumeGroupSourceDetailsArgs(
-                type="volumeIds",
-                volume_ids=[volume_group_source_id],
-            ),
+            source_details={
+                "type": "volumeIds",
+                "volume_ids": [volume_group_source_id],
+            },
             backup_policy_id=test_volume_backup_policies["volumeBackupPolicies"][0]["id"],
             cluster_placement_group_id=test_group["id"],
             defined_tags={
@@ -595,10 +595,10 @@ class VolumeGroup(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            volume_group_replicas=[oci.core.VolumeGroupVolumeGroupReplicaArgs(
-                availability_domain=volume_group_volume_group_replicas_availability_domain,
-                display_name=volume_group_volume_group_replicas_display_name,
-            )],
+            volume_group_replicas=[{
+                "availability_domain": volume_group_volume_group_replicas_availability_domain,
+                "display_name": volume_group_volume_group_replicas_display_name,
+            }],
             volume_ids=[volume_group_source_id])
         ```
 
@@ -633,8 +633,8 @@ class VolumeGroup(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  preserve_volume_replica: Optional[pulumi.Input[bool]] = None,
-                 source_details: Optional[pulumi.Input[pulumi.InputType['VolumeGroupSourceDetailsArgs']]] = None,
-                 volume_group_replicas: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VolumeGroupVolumeGroupReplicaArgs']]]]] = None,
+                 source_details: Optional[pulumi.Input[Union['VolumeGroupSourceDetailsArgs', 'VolumeGroupSourceDetailsArgsDict']]] = None,
+                 volume_group_replicas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupVolumeGroupReplicaArgs', 'VolumeGroupVolumeGroupReplicaArgsDict']]]]] = None,
                  volume_group_replicas_deletion: Optional[pulumi.Input[bool]] = None,
                  volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  __props__=None):
@@ -690,10 +690,10 @@ class VolumeGroup(pulumi.CustomResource):
             preserve_volume_replica: Optional[pulumi.Input[bool]] = None,
             size_in_gbs: Optional[pulumi.Input[str]] = None,
             size_in_mbs: Optional[pulumi.Input[str]] = None,
-            source_details: Optional[pulumi.Input[pulumi.InputType['VolumeGroupSourceDetailsArgs']]] = None,
+            source_details: Optional[pulumi.Input[Union['VolumeGroupSourceDetailsArgs', 'VolumeGroupSourceDetailsArgsDict']]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
-            volume_group_replicas: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VolumeGroupVolumeGroupReplicaArgs']]]]] = None,
+            volume_group_replicas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupVolumeGroupReplicaArgs', 'VolumeGroupVolumeGroupReplicaArgsDict']]]]] = None,
             volume_group_replicas_deletion: Optional[pulumi.Input[bool]] = None,
             volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None) -> 'VolumeGroup':
         """
@@ -713,10 +713,10 @@ class VolumeGroup(pulumi.CustomResource):
         :param pulumi.Input[bool] is_hydrated: Specifies whether the newly created cloned volume group's data has finished copying from the source volume group or backup.
         :param pulumi.Input[str] size_in_gbs: The aggregate size of the volume group in GBs.
         :param pulumi.Input[str] size_in_mbs: The aggregate size of the volume group in MBs.
-        :param pulumi.Input[pulumi.InputType['VolumeGroupSourceDetailsArgs']] source_details: Specifies the source for a volume group.
+        :param pulumi.Input[Union['VolumeGroupSourceDetailsArgs', 'VolumeGroupSourceDetailsArgsDict']] source_details: Specifies the source for a volume group.
         :param pulumi.Input[str] state: The current state of a volume group.
         :param pulumi.Input[str] time_created: The date and time the volume group was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VolumeGroupVolumeGroupReplicaArgs']]]] volume_group_replicas: (Updatable) The list of volume group replicas that this volume group will be enabled to have in the specified destination availability domains.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupVolumeGroupReplicaArgs', 'VolumeGroupVolumeGroupReplicaArgsDict']]]] volume_group_replicas: (Updatable) The list of volume group replicas that this volume group will be enabled to have in the specified destination availability domains.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] volume_ids: (Updatable) Use this for update operation only. This field is not supported during creation. For create use `volume_ids` under `source_details`.
                
                ** IMPORTANT **

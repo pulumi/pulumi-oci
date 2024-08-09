@@ -115,7 +115,7 @@ class AwaitableGetDiscoverySchedulesResult(GetDiscoverySchedulesResult):
 def get_discovery_schedules(compartment_id: Optional[str] = None,
                             discovery_schedule_id: Optional[str] = None,
                             display_name: Optional[str] = None,
-                            filters: Optional[Sequence[pulumi.InputType['GetDiscoverySchedulesFilterArgs']]] = None,
+                            filters: Optional[Sequence[Union['GetDiscoverySchedulesFilterArgs', 'GetDiscoverySchedulesFilterArgsDict']]] = None,
                             state: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDiscoverySchedulesResult:
     """
@@ -164,7 +164,7 @@ def get_discovery_schedules(compartment_id: Optional[str] = None,
 def get_discovery_schedules_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                    discovery_schedule_id: Optional[pulumi.Input[Optional[str]]] = None,
                                    display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDiscoverySchedulesFilterArgs']]]]] = None,
+                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDiscoverySchedulesFilterArgs', 'GetDiscoverySchedulesFilterArgsDict']]]]] = None,
                                    state: Optional[pulumi.Input[Optional[str]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDiscoverySchedulesResult]:
     """

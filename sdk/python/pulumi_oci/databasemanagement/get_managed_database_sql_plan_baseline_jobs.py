@@ -97,7 +97,7 @@ class AwaitableGetManagedDatabaseSqlPlanBaselineJobsResult(GetManagedDatabaseSql
             sql_plan_baseline_job_collections=self.sql_plan_baseline_job_collections)
 
 
-def get_managed_database_sql_plan_baseline_jobs(filters: Optional[Sequence[pulumi.InputType['GetManagedDatabaseSqlPlanBaselineJobsFilterArgs']]] = None,
+def get_managed_database_sql_plan_baseline_jobs(filters: Optional[Sequence[Union['GetManagedDatabaseSqlPlanBaselineJobsFilterArgs', 'GetManagedDatabaseSqlPlanBaselineJobsFilterArgsDict']]] = None,
                                                 managed_database_id: Optional[str] = None,
                                                 name: Optional[str] = None,
                                                 opc_named_credential_id: Optional[str] = None,
@@ -141,7 +141,7 @@ def get_managed_database_sql_plan_baseline_jobs(filters: Optional[Sequence[pulum
 
 
 @_utilities.lift_output_func(get_managed_database_sql_plan_baseline_jobs)
-def get_managed_database_sql_plan_baseline_jobs_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetManagedDatabaseSqlPlanBaselineJobsFilterArgs']]]]] = None,
+def get_managed_database_sql_plan_baseline_jobs_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedDatabaseSqlPlanBaselineJobsFilterArgs', 'GetManagedDatabaseSqlPlanBaselineJobsFilterArgsDict']]]]] = None,
                                                        managed_database_id: Optional[pulumi.Input[str]] = None,
                                                        name: Optional[pulumi.Input[Optional[str]]] = None,
                                                        opc_named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,

@@ -282,7 +282,7 @@ public class DataAsset extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DataAsset(String name) {
+    public DataAsset(java.lang.String name) {
         this(name, DataAssetArgs.Empty);
     }
     /**
@@ -290,7 +290,7 @@ public class DataAsset extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DataAsset(String name, DataAssetArgs args) {
+    public DataAsset(java.lang.String name, DataAssetArgs args) {
         this(name, args, null);
     }
     /**
@@ -299,12 +299,12 @@ public class DataAsset extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DataAsset(String name, DataAssetArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:AiAnomalyDetection/dataAsset:DataAsset", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DataAsset(java.lang.String name, DataAssetArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:AiAnomalyDetection/dataAsset:DataAsset", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DataAsset(String name, Output<String> id, @Nullable DataAssetState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:AiAnomalyDetection/dataAsset:DataAsset", name, state, makeResourceOptions(options, id));
+    private DataAsset(java.lang.String name, Output<java.lang.String> id, @Nullable DataAssetState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:AiAnomalyDetection/dataAsset:DataAsset", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DataAssetArgs makeArgs(DataAssetArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -314,7 +314,7 @@ public class DataAsset extends com.pulumi.resources.CustomResource {
         return args == null ? DataAssetArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -330,7 +330,7 @@ public class DataAsset extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DataAsset get(String name, Output<String> id, @Nullable DataAssetState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DataAsset get(java.lang.String name, Output<java.lang.String> id, @Nullable DataAssetState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DataAsset(name, id, state, options);
     }
 }

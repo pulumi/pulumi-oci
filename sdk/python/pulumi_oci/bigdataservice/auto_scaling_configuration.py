@@ -347,8 +347,8 @@ class AutoScalingConfiguration(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  is_enabled: Optional[pulumi.Input[bool]] = None,
                  node_type: Optional[pulumi.Input[str]] = None,
-                 policy: Optional[pulumi.Input[pulumi.InputType['AutoScalingConfigurationPolicyArgs']]] = None,
-                 policy_details: Optional[pulumi.Input[pulumi.InputType['AutoScalingConfigurationPolicyDetailsArgs']]] = None,
+                 policy: Optional[pulumi.Input[Union['AutoScalingConfigurationPolicyArgs', 'AutoScalingConfigurationPolicyArgsDict']]] = None,
+                 policy_details: Optional[pulumi.Input[Union['AutoScalingConfigurationPolicyDetailsArgs', 'AutoScalingConfigurationPolicyDetailsArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Auto Scaling Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
@@ -367,37 +367,37 @@ class AutoScalingConfiguration(pulumi.CustomResource):
             is_enabled=auto_scaling_configuration_is_enabled,
             node_type=auto_scaling_configuration_node_type,
             display_name=auto_scaling_configuration_display_name,
-            policy_details=oci.big_data_service.AutoScalingConfigurationPolicyDetailsArgs(
-                policy_type=auto_scaling_configuration_policy_details_policy_type,
-                scale_down_config=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs(
-                    memory_step_size=auto_scaling_configuration_policy_details_scale_down_config_memory_step_size,
-                    metric=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs(
-                        metric_type=auto_scaling_configuration_policy_details_scale_down_config_metric_metric_type,
-                        threshold=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs(
-                            duration_in_minutes=auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_duration_in_minutes,
-                            operator=auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_operator,
-                            value=auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_value,
-                        ),
-                    ),
-                    min_memory_per_node=auto_scaling_configuration_policy_details_scale_down_config_min_memory_per_node,
-                    min_ocpus_per_node=auto_scaling_configuration_policy_details_scale_down_config_min_ocpus_per_node,
-                    ocpu_step_size=auto_scaling_configuration_policy_details_scale_down_config_ocpu_step_size,
-                ),
-                scale_up_config=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs(
-                    max_memory_per_node=auto_scaling_configuration_policy_details_scale_up_config_max_memory_per_node,
-                    max_ocpus_per_node=auto_scaling_configuration_policy_details_scale_up_config_max_ocpus_per_node,
-                    memory_step_size=auto_scaling_configuration_policy_details_scale_up_config_memory_step_size,
-                    metric=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs(
-                        metric_type=auto_scaling_configuration_policy_details_scale_up_config_metric_metric_type,
-                        threshold=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs(
-                            duration_in_minutes=auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_duration_in_minutes,
-                            operator=auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_operator,
-                            value=auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_value,
-                        ),
-                    ),
-                    ocpu_step_size=auto_scaling_configuration_policy_details_scale_up_config_ocpu_step_size,
-                ),
-            ))
+            policy_details={
+                "policy_type": auto_scaling_configuration_policy_details_policy_type,
+                "scale_down_config": {
+                    "memory_step_size": auto_scaling_configuration_policy_details_scale_down_config_memory_step_size,
+                    "metric": {
+                        "metric_type": auto_scaling_configuration_policy_details_scale_down_config_metric_metric_type,
+                        "threshold": {
+                            "duration_in_minutes": auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_duration_in_minutes,
+                            "operator": auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_operator,
+                            "value": auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_value,
+                        },
+                    },
+                    "min_memory_per_node": auto_scaling_configuration_policy_details_scale_down_config_min_memory_per_node,
+                    "min_ocpus_per_node": auto_scaling_configuration_policy_details_scale_down_config_min_ocpus_per_node,
+                    "ocpu_step_size": auto_scaling_configuration_policy_details_scale_down_config_ocpu_step_size,
+                },
+                "scale_up_config": {
+                    "max_memory_per_node": auto_scaling_configuration_policy_details_scale_up_config_max_memory_per_node,
+                    "max_ocpus_per_node": auto_scaling_configuration_policy_details_scale_up_config_max_ocpus_per_node,
+                    "memory_step_size": auto_scaling_configuration_policy_details_scale_up_config_memory_step_size,
+                    "metric": {
+                        "metric_type": auto_scaling_configuration_policy_details_scale_up_config_metric_metric_type,
+                        "threshold": {
+                            "duration_in_minutes": auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_duration_in_minutes,
+                            "operator": auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_operator,
+                            "value": auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_value,
+                        },
+                    },
+                    "ocpu_step_size": auto_scaling_configuration_policy_details_scale_up_config_ocpu_step_size,
+                },
+            })
         ```
 
         ## Import
@@ -415,8 +415,8 @@ class AutoScalingConfiguration(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether the autoscale configuration is enabled.
         :param pulumi.Input[str] node_type: A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER and KAFKA_BROKER.
-        :param pulumi.Input[pulumi.InputType['AutoScalingConfigurationPolicyArgs']] policy: (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
-        :param pulumi.Input[pulumi.InputType['AutoScalingConfigurationPolicyDetailsArgs']] policy_details: (Updatable) Policy definition for the autoscale configuration.
+        :param pulumi.Input[Union['AutoScalingConfigurationPolicyArgs', 'AutoScalingConfigurationPolicyArgsDict']] policy: (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
+        :param pulumi.Input[Union['AutoScalingConfigurationPolicyDetailsArgs', 'AutoScalingConfigurationPolicyDetailsArgsDict']] policy_details: (Updatable) Policy definition for the autoscale configuration.
                
                An autoscaling policy is part of an autoscaling configuration. For more information, see [Autoscaling](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-autoscale)
                
@@ -451,37 +451,37 @@ class AutoScalingConfiguration(pulumi.CustomResource):
             is_enabled=auto_scaling_configuration_is_enabled,
             node_type=auto_scaling_configuration_node_type,
             display_name=auto_scaling_configuration_display_name,
-            policy_details=oci.big_data_service.AutoScalingConfigurationPolicyDetailsArgs(
-                policy_type=auto_scaling_configuration_policy_details_policy_type,
-                scale_down_config=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs(
-                    memory_step_size=auto_scaling_configuration_policy_details_scale_down_config_memory_step_size,
-                    metric=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs(
-                        metric_type=auto_scaling_configuration_policy_details_scale_down_config_metric_metric_type,
-                        threshold=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs(
-                            duration_in_minutes=auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_duration_in_minutes,
-                            operator=auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_operator,
-                            value=auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_value,
-                        ),
-                    ),
-                    min_memory_per_node=auto_scaling_configuration_policy_details_scale_down_config_min_memory_per_node,
-                    min_ocpus_per_node=auto_scaling_configuration_policy_details_scale_down_config_min_ocpus_per_node,
-                    ocpu_step_size=auto_scaling_configuration_policy_details_scale_down_config_ocpu_step_size,
-                ),
-                scale_up_config=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs(
-                    max_memory_per_node=auto_scaling_configuration_policy_details_scale_up_config_max_memory_per_node,
-                    max_ocpus_per_node=auto_scaling_configuration_policy_details_scale_up_config_max_ocpus_per_node,
-                    memory_step_size=auto_scaling_configuration_policy_details_scale_up_config_memory_step_size,
-                    metric=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs(
-                        metric_type=auto_scaling_configuration_policy_details_scale_up_config_metric_metric_type,
-                        threshold=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs(
-                            duration_in_minutes=auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_duration_in_minutes,
-                            operator=auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_operator,
-                            value=auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_value,
-                        ),
-                    ),
-                    ocpu_step_size=auto_scaling_configuration_policy_details_scale_up_config_ocpu_step_size,
-                ),
-            ))
+            policy_details={
+                "policy_type": auto_scaling_configuration_policy_details_policy_type,
+                "scale_down_config": {
+                    "memory_step_size": auto_scaling_configuration_policy_details_scale_down_config_memory_step_size,
+                    "metric": {
+                        "metric_type": auto_scaling_configuration_policy_details_scale_down_config_metric_metric_type,
+                        "threshold": {
+                            "duration_in_minutes": auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_duration_in_minutes,
+                            "operator": auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_operator,
+                            "value": auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_value,
+                        },
+                    },
+                    "min_memory_per_node": auto_scaling_configuration_policy_details_scale_down_config_min_memory_per_node,
+                    "min_ocpus_per_node": auto_scaling_configuration_policy_details_scale_down_config_min_ocpus_per_node,
+                    "ocpu_step_size": auto_scaling_configuration_policy_details_scale_down_config_ocpu_step_size,
+                },
+                "scale_up_config": {
+                    "max_memory_per_node": auto_scaling_configuration_policy_details_scale_up_config_max_memory_per_node,
+                    "max_ocpus_per_node": auto_scaling_configuration_policy_details_scale_up_config_max_ocpus_per_node,
+                    "memory_step_size": auto_scaling_configuration_policy_details_scale_up_config_memory_step_size,
+                    "metric": {
+                        "metric_type": auto_scaling_configuration_policy_details_scale_up_config_metric_metric_type,
+                        "threshold": {
+                            "duration_in_minutes": auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_duration_in_minutes,
+                            "operator": auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_operator,
+                            "value": auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_value,
+                        },
+                    },
+                    "ocpu_step_size": auto_scaling_configuration_policy_details_scale_up_config_ocpu_step_size,
+                },
+            })
         ```
 
         ## Import
@@ -512,8 +512,8 @@ class AutoScalingConfiguration(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  is_enabled: Optional[pulumi.Input[bool]] = None,
                  node_type: Optional[pulumi.Input[str]] = None,
-                 policy: Optional[pulumi.Input[pulumi.InputType['AutoScalingConfigurationPolicyArgs']]] = None,
-                 policy_details: Optional[pulumi.Input[pulumi.InputType['AutoScalingConfigurationPolicyDetailsArgs']]] = None,
+                 policy: Optional[pulumi.Input[Union['AutoScalingConfigurationPolicyArgs', 'AutoScalingConfigurationPolicyArgsDict']]] = None,
+                 policy_details: Optional[pulumi.Input[Union['AutoScalingConfigurationPolicyDetailsArgs', 'AutoScalingConfigurationPolicyDetailsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -558,8 +558,8 @@ class AutoScalingConfiguration(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[str]] = None,
             is_enabled: Optional[pulumi.Input[bool]] = None,
             node_type: Optional[pulumi.Input[str]] = None,
-            policy: Optional[pulumi.Input[pulumi.InputType['AutoScalingConfigurationPolicyArgs']]] = None,
-            policy_details: Optional[pulumi.Input[pulumi.InputType['AutoScalingConfigurationPolicyDetailsArgs']]] = None,
+            policy: Optional[pulumi.Input[Union['AutoScalingConfigurationPolicyArgs', 'AutoScalingConfigurationPolicyArgsDict']]] = None,
+            policy_details: Optional[pulumi.Input[Union['AutoScalingConfigurationPolicyDetailsArgs', 'AutoScalingConfigurationPolicyDetailsArgsDict']]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None) -> 'AutoScalingConfiguration':
@@ -575,8 +575,8 @@ class AutoScalingConfiguration(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether the autoscale configuration is enabled.
         :param pulumi.Input[str] node_type: A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER and KAFKA_BROKER.
-        :param pulumi.Input[pulumi.InputType['AutoScalingConfigurationPolicyArgs']] policy: (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
-        :param pulumi.Input[pulumi.InputType['AutoScalingConfigurationPolicyDetailsArgs']] policy_details: (Updatable) Policy definition for the autoscale configuration.
+        :param pulumi.Input[Union['AutoScalingConfigurationPolicyArgs', 'AutoScalingConfigurationPolicyArgsDict']] policy: (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
+        :param pulumi.Input[Union['AutoScalingConfigurationPolicyDetailsArgs', 'AutoScalingConfigurationPolicyDetailsArgsDict']] policy_details: (Updatable) Policy definition for the autoscale configuration.
                
                An autoscaling policy is part of an autoscaling configuration. For more information, see [Autoscaling](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-autoscale)
                

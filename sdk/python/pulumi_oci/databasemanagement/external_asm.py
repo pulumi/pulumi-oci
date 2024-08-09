@@ -537,7 +537,7 @@ class ExternalAsm(pulumi.CustomResource):
             is_cluster: Optional[pulumi.Input[bool]] = None,
             is_flex_enabled: Optional[pulumi.Input[bool]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
-            serviced_databases: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalAsmServicedDatabaseArgs']]]]] = None,
+            serviced_databases: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExternalAsmServicedDatabaseArgs', 'ExternalAsmServicedDatabaseArgsDict']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
@@ -567,7 +567,7 @@ class ExternalAsm(pulumi.CustomResource):
         :param pulumi.Input[bool] is_cluster: Indicates whether the ASM is a cluster ASM or not.
         :param pulumi.Input[bool] is_flex_enabled: Indicates whether Oracle Flex ASM is enabled or not.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalAsmServicedDatabaseArgs']]]] serviced_databases: The list of databases that are serviced by the ASM.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExternalAsmServicedDatabaseArgs', 'ExternalAsmServicedDatabaseArgsDict']]]] serviced_databases: The list of databases that are serviced by the ASM.
         :param pulumi.Input[str] state: The current lifecycle state of the external ASM.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time the external ASM was created.

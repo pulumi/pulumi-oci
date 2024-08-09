@@ -118,7 +118,7 @@ class AwaitableGetExadbVmClustersResult(GetExadbVmClustersResult):
 def get_exadb_vm_clusters(compartment_id: Optional[str] = None,
                           display_name: Optional[str] = None,
                           exascale_db_storage_vault_id: Optional[str] = None,
-                          filters: Optional[Sequence[pulumi.InputType['GetExadbVmClustersFilterArgs']]] = None,
+                          filters: Optional[Sequence[Union['GetExadbVmClustersFilterArgs', 'GetExadbVmClustersFilterArgsDict']]] = None,
                           state: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExadbVmClustersResult:
     """
@@ -167,7 +167,7 @@ def get_exadb_vm_clusters(compartment_id: Optional[str] = None,
 def get_exadb_vm_clusters_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                  display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                  exascale_db_storage_vault_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetExadbVmClustersFilterArgs']]]]] = None,
+                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExadbVmClustersFilterArgs', 'GetExadbVmClustersFilterArgsDict']]]]] = None,
                                  state: Optional[pulumi.Input[Optional[str]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExadbVmClustersResult]:
     """

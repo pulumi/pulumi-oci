@@ -93,7 +93,7 @@ class AwaitableGetAutoScalingConfigurationsResult(GetAutoScalingConfigurationsRe
 
 def get_auto_scaling_configurations(compartment_id: Optional[str] = None,
                                     display_name: Optional[str] = None,
-                                    filters: Optional[Sequence[pulumi.InputType['GetAutoScalingConfigurationsFilterArgs']]] = None,
+                                    filters: Optional[Sequence[Union['GetAutoScalingConfigurationsFilterArgs', 'GetAutoScalingConfigurationsFilterArgsDict']]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutoScalingConfigurationsResult:
     """
     This data source provides the list of Auto Scaling Configurations in Oracle Cloud Infrastructure Auto Scaling service.
@@ -132,7 +132,7 @@ def get_auto_scaling_configurations(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_auto_scaling_configurations)
 def get_auto_scaling_configurations_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                            display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                           filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAutoScalingConfigurationsFilterArgs']]]]] = None,
+                                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutoScalingConfigurationsFilterArgs', 'GetAutoScalingConfigurationsFilterArgsDict']]]]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutoScalingConfigurationsResult]:
     """
     This data source provides the list of Auto Scaling Configurations in Oracle Cloud Infrastructure Auto Scaling service.

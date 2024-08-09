@@ -87,7 +87,7 @@ class AwaitableGetAutonomousVmClusterAcdResourceUsagesResult(GetAutonomousVmClus
 
 def get_autonomous_vm_cluster_acd_resource_usages(autonomous_vm_cluster_id: Optional[str] = None,
                                                   compartment_id: Optional[str] = None,
-                                                  filters: Optional[Sequence[pulumi.InputType['GetAutonomousVmClusterAcdResourceUsagesFilterArgs']]] = None,
+                                                  filters: Optional[Sequence[Union['GetAutonomousVmClusterAcdResourceUsagesFilterArgs', 'GetAutonomousVmClusterAcdResourceUsagesFilterArgsDict']]] = None,
                                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousVmClusterAcdResourceUsagesResult:
     """
     This data source provides the list of Autonomous Vm Cluster Acd Resource Usages in Oracle Cloud Infrastructure Database service.
@@ -126,7 +126,7 @@ def get_autonomous_vm_cluster_acd_resource_usages(autonomous_vm_cluster_id: Opti
 @_utilities.lift_output_func(get_autonomous_vm_cluster_acd_resource_usages)
 def get_autonomous_vm_cluster_acd_resource_usages_output(autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
                                                          compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                                         filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAutonomousVmClusterAcdResourceUsagesFilterArgs']]]]] = None,
+                                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutonomousVmClusterAcdResourceUsagesFilterArgs', 'GetAutonomousVmClusterAcdResourceUsagesFilterArgsDict']]]]] = None,
                                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousVmClusterAcdResourceUsagesResult]:
     """
     This data source provides the list of Autonomous Vm Cluster Acd Resource Usages in Oracle Cloud Infrastructure Database service.

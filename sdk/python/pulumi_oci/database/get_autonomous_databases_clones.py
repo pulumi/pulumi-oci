@@ -125,7 +125,7 @@ def get_autonomous_databases_clones(autonomous_database_id: Optional[str] = None
                                     clone_type: Optional[str] = None,
                                     compartment_id: Optional[str] = None,
                                     display_name: Optional[str] = None,
-                                    filters: Optional[Sequence[pulumi.InputType['GetAutonomousDatabasesClonesFilterArgs']]] = None,
+                                    filters: Optional[Sequence[Union['GetAutonomousDatabasesClonesFilterArgs', 'GetAutonomousDatabasesClonesFilterArgsDict']]] = None,
                                     state: Optional[str] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousDatabasesClonesResult:
     """
@@ -179,7 +179,7 @@ def get_autonomous_databases_clones_output(autonomous_database_id: Optional[pulu
                                            clone_type: Optional[pulumi.Input[Optional[str]]] = None,
                                            compartment_id: Optional[pulumi.Input[str]] = None,
                                            display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                           filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAutonomousDatabasesClonesFilterArgs']]]]] = None,
+                                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutonomousDatabasesClonesFilterArgs', 'GetAutonomousDatabasesClonesFilterArgsDict']]]]] = None,
                                            state: Optional[pulumi.Input[Optional[str]]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousDatabasesClonesResult]:
     """

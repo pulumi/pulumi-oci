@@ -368,7 +368,7 @@ public class AssetSource extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public AssetSource(String name) {
+    public AssetSource(java.lang.String name) {
         this(name, AssetSourceArgs.Empty);
     }
     /**
@@ -376,7 +376,7 @@ public class AssetSource extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public AssetSource(String name, AssetSourceArgs args) {
+    public AssetSource(java.lang.String name, AssetSourceArgs args) {
         this(name, args, null);
     }
     /**
@@ -385,12 +385,12 @@ public class AssetSource extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public AssetSource(String name, AssetSourceArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:CloudBridge/assetSource:AssetSource", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public AssetSource(java.lang.String name, AssetSourceArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:CloudBridge/assetSource:AssetSource", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private AssetSource(String name, Output<String> id, @Nullable AssetSourceState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:CloudBridge/assetSource:AssetSource", name, state, makeResourceOptions(options, id));
+    private AssetSource(java.lang.String name, Output<java.lang.String> id, @Nullable AssetSourceState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:CloudBridge/assetSource:AssetSource", name, state, makeResourceOptions(options, id), false);
     }
 
     private static AssetSourceArgs makeArgs(AssetSourceArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -400,7 +400,7 @@ public class AssetSource extends com.pulumi.resources.CustomResource {
         return args == null ? AssetSourceArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -416,7 +416,7 @@ public class AssetSource extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static AssetSource get(String name, Output<String> id, @Nullable AssetSourceState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static AssetSource get(java.lang.String name, Output<java.lang.String> id, @Nullable AssetSourceState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new AssetSource(name, id, state, options);
     }
 }

@@ -134,7 +134,7 @@ class AwaitableGetLogsResult(GetLogsResult):
 
 
 def get_logs(display_name: Optional[str] = None,
-             filters: Optional[Sequence[pulumi.InputType['GetLogsFilterArgs']]] = None,
+             filters: Optional[Sequence[Union['GetLogsFilterArgs', 'GetLogsFilterArgsDict']]] = None,
              log_group_id: Optional[str] = None,
              log_type: Optional[str] = None,
              source_resource: Optional[str] = None,
@@ -193,7 +193,7 @@ def get_logs(display_name: Optional[str] = None,
 
 @_utilities.lift_output_func(get_logs)
 def get_logs_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                    filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetLogsFilterArgs']]]]] = None,
+                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetLogsFilterArgs', 'GetLogsFilterArgsDict']]]]] = None,
                     log_group_id: Optional[pulumi.Input[str]] = None,
                     log_type: Optional[pulumi.Input[Optional[str]]] = None,
                     source_resource: Optional[pulumi.Input[Optional[str]]] = None,

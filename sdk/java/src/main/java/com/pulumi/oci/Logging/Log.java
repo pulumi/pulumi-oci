@@ -281,7 +281,7 @@ public class Log extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public Log(String name) {
+    public Log(java.lang.String name) {
         this(name, LogArgs.Empty);
     }
     /**
@@ -289,7 +289,7 @@ public class Log extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public Log(String name, LogArgs args) {
+    public Log(java.lang.String name, LogArgs args) {
         this(name, args, null);
     }
     /**
@@ -298,12 +298,12 @@ public class Log extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public Log(String name, LogArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Logging/log:Log", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public Log(java.lang.String name, LogArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Logging/log:Log", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private Log(String name, Output<String> id, @Nullable LogState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Logging/log:Log", name, state, makeResourceOptions(options, id));
+    private Log(java.lang.String name, Output<java.lang.String> id, @Nullable LogState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Logging/log:Log", name, state, makeResourceOptions(options, id), false);
     }
 
     private static LogArgs makeArgs(LogArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -313,7 +313,7 @@ public class Log extends com.pulumi.resources.CustomResource {
         return args == null ? LogArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -329,7 +329,7 @@ public class Log extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static Log get(String name, Output<String> id, @Nullable LogState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static Log get(java.lang.String name, Output<java.lang.String> id, @Nullable LogState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new Log(name, id, state, options);
     }
 }

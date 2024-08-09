@@ -110,7 +110,7 @@ class AwaitableGetBdsInstancePatchHistoriesResult(GetBdsInstancePatchHistoriesRe
 
 
 def get_bds_instance_patch_histories(bds_instance_id: Optional[str] = None,
-                                     filters: Optional[Sequence[pulumi.InputType['GetBdsInstancePatchHistoriesFilterArgs']]] = None,
+                                     filters: Optional[Sequence[Union['GetBdsInstancePatchHistoriesFilterArgs', 'GetBdsInstancePatchHistoriesFilterArgsDict']]] = None,
                                      patch_type: Optional[str] = None,
                                      patch_version: Optional[str] = None,
                                      state: Optional[str] = None,
@@ -159,7 +159,7 @@ def get_bds_instance_patch_histories(bds_instance_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_bds_instance_patch_histories)
 def get_bds_instance_patch_histories_output(bds_instance_id: Optional[pulumi.Input[str]] = None,
-                                            filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetBdsInstancePatchHistoriesFilterArgs']]]]] = None,
+                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBdsInstancePatchHistoriesFilterArgs', 'GetBdsInstancePatchHistoriesFilterArgsDict']]]]] = None,
                                             patch_type: Optional[pulumi.Input[Optional[str]]] = None,
                                             patch_version: Optional[pulumi.Input[Optional[str]]] = None,
                                             state: Optional[pulumi.Input[Optional[str]]] = None,

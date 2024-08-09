@@ -115,7 +115,7 @@ class AwaitableGetManagedDatabasesDatabaseParametersResult(GetManagedDatabasesDa
             source=self.source)
 
 
-def get_managed_databases_database_parameters(filters: Optional[Sequence[pulumi.InputType['GetManagedDatabasesDatabaseParametersFilterArgs']]] = None,
+def get_managed_databases_database_parameters(filters: Optional[Sequence[Union['GetManagedDatabasesDatabaseParametersFilterArgs', 'GetManagedDatabasesDatabaseParametersFilterArgsDict']]] = None,
                                               is_allowed_values_included: Optional[bool] = None,
                                               managed_database_id: Optional[str] = None,
                                               name: Optional[str] = None,
@@ -169,7 +169,7 @@ def get_managed_databases_database_parameters(filters: Optional[Sequence[pulumi.
 
 
 @_utilities.lift_output_func(get_managed_databases_database_parameters)
-def get_managed_databases_database_parameters_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetManagedDatabasesDatabaseParametersFilterArgs']]]]] = None,
+def get_managed_databases_database_parameters_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedDatabasesDatabaseParametersFilterArgs', 'GetManagedDatabasesDatabaseParametersFilterArgsDict']]]]] = None,
                                                      is_allowed_values_included: Optional[pulumi.Input[Optional[bool]]] = None,
                                                      managed_database_id: Optional[pulumi.Input[str]] = None,
                                                      name: Optional[pulumi.Input[Optional[str]]] = None,

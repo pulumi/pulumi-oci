@@ -105,7 +105,7 @@ class AwaitableGetOccCustomerGroupsResult(GetOccCustomerGroupsResult):
 
 def get_occ_customer_groups(compartment_id: Optional[str] = None,
                             display_name: Optional[str] = None,
-                            filters: Optional[Sequence[pulumi.InputType['GetOccCustomerGroupsFilterArgs']]] = None,
+                            filters: Optional[Sequence[Union['GetOccCustomerGroupsFilterArgs', 'GetOccCustomerGroupsFilterArgsDict']]] = None,
                             id: Optional[str] = None,
                             status: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOccCustomerGroupsResult:
@@ -153,7 +153,7 @@ def get_occ_customer_groups(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_occ_customer_groups)
 def get_occ_customer_groups_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                    display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetOccCustomerGroupsFilterArgs']]]]] = None,
+                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOccCustomerGroupsFilterArgs', 'GetOccCustomerGroupsFilterArgsDict']]]]] = None,
                                    id: Optional[pulumi.Input[Optional[str]]] = None,
                                    status: Optional[pulumi.Input[Optional[str]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOccCustomerGroupsResult]:

@@ -746,7 +746,7 @@ class SoftwareSource(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             arch_type: Optional[pulumi.Input[str]] = None,
-            associated_managed_instances: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SoftwareSourceAssociatedManagedInstanceArgs']]]]] = None,
+            associated_managed_instances: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SoftwareSourceAssociatedManagedInstanceArgs', 'SoftwareSourceAssociatedManagedInstanceArgsDict']]]]] = None,
             checksum_type: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -774,7 +774,7 @@ class SoftwareSource(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] arch_type: The architecture type supported by the Software Source
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SoftwareSourceAssociatedManagedInstanceArgs']]]] associated_managed_instances: list of the Managed Instances associated with this Software Sources
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SoftwareSourceAssociatedManagedInstanceArgs', 'SoftwareSourceAssociatedManagedInstanceArgsDict']]]] associated_managed_instances: list of the Managed Instances associated with this Software Sources
         :param pulumi.Input[str] checksum_type: (Updatable) The yum repository checksum type used by this software source
         :param pulumi.Input[str] compartment_id: (Updatable) OCID for the Compartment
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`

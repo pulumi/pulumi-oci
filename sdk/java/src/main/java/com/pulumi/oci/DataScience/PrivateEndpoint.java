@@ -310,7 +310,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public PrivateEndpoint(String name) {
+    public PrivateEndpoint(java.lang.String name) {
         this(name, PrivateEndpointArgs.Empty);
     }
     /**
@@ -318,7 +318,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public PrivateEndpoint(String name, PrivateEndpointArgs args) {
+    public PrivateEndpoint(java.lang.String name, PrivateEndpointArgs args) {
         this(name, args, null);
     }
     /**
@@ -327,12 +327,12 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public PrivateEndpoint(String name, PrivateEndpointArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataScience/privateEndpoint:PrivateEndpoint", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public PrivateEndpoint(java.lang.String name, PrivateEndpointArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataScience/privateEndpoint:PrivateEndpoint", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private PrivateEndpoint(String name, Output<String> id, @Nullable PrivateEndpointState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataScience/privateEndpoint:PrivateEndpoint", name, state, makeResourceOptions(options, id));
+    private PrivateEndpoint(java.lang.String name, Output<java.lang.String> id, @Nullable PrivateEndpointState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataScience/privateEndpoint:PrivateEndpoint", name, state, makeResourceOptions(options, id), false);
     }
 
     private static PrivateEndpointArgs makeArgs(PrivateEndpointArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -342,7 +342,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
         return args == null ? PrivateEndpointArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -358,7 +358,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static PrivateEndpoint get(String name, Output<String> id, @Nullable PrivateEndpointState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static PrivateEndpoint get(java.lang.String name, Output<java.lang.String> id, @Nullable PrivateEndpointState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new PrivateEndpoint(name, id, state, options);
     }
 }

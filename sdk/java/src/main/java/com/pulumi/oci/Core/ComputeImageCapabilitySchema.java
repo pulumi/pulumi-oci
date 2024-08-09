@@ -208,7 +208,7 @@ public class ComputeImageCapabilitySchema extends com.pulumi.resources.CustomRes
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ComputeImageCapabilitySchema(String name) {
+    public ComputeImageCapabilitySchema(java.lang.String name) {
         this(name, ComputeImageCapabilitySchemaArgs.Empty);
     }
     /**
@@ -216,7 +216,7 @@ public class ComputeImageCapabilitySchema extends com.pulumi.resources.CustomRes
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ComputeImageCapabilitySchema(String name, ComputeImageCapabilitySchemaArgs args) {
+    public ComputeImageCapabilitySchema(java.lang.String name, ComputeImageCapabilitySchemaArgs args) {
         this(name, args, null);
     }
     /**
@@ -225,12 +225,12 @@ public class ComputeImageCapabilitySchema extends com.pulumi.resources.CustomRes
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ComputeImageCapabilitySchema(String name, ComputeImageCapabilitySchemaArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/computeImageCapabilitySchema:ComputeImageCapabilitySchema", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ComputeImageCapabilitySchema(java.lang.String name, ComputeImageCapabilitySchemaArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Core/computeImageCapabilitySchema:ComputeImageCapabilitySchema", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ComputeImageCapabilitySchema(String name, Output<String> id, @Nullable ComputeImageCapabilitySchemaState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/computeImageCapabilitySchema:ComputeImageCapabilitySchema", name, state, makeResourceOptions(options, id));
+    private ComputeImageCapabilitySchema(java.lang.String name, Output<java.lang.String> id, @Nullable ComputeImageCapabilitySchemaState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Core/computeImageCapabilitySchema:ComputeImageCapabilitySchema", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ComputeImageCapabilitySchemaArgs makeArgs(ComputeImageCapabilitySchemaArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -240,7 +240,7 @@ public class ComputeImageCapabilitySchema extends com.pulumi.resources.CustomRes
         return args == null ? ComputeImageCapabilitySchemaArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -256,7 +256,7 @@ public class ComputeImageCapabilitySchema extends com.pulumi.resources.CustomRes
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ComputeImageCapabilitySchema get(String name, Output<String> id, @Nullable ComputeImageCapabilitySchemaState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ComputeImageCapabilitySchema get(java.lang.String name, Output<java.lang.String> id, @Nullable ComputeImageCapabilitySchemaState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ComputeImageCapabilitySchema(name, id, state, options);
     }
 }

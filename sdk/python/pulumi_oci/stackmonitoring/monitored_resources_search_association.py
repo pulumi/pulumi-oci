@@ -469,7 +469,7 @@ class MonitoredResourcesSearchAssociation(pulumi.CustomResource):
             destination_resource_id: Optional[pulumi.Input[str]] = None,
             destination_resource_name: Optional[pulumi.Input[str]] = None,
             destination_resource_type: Optional[pulumi.Input[str]] = None,
-            items: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MonitoredResourcesSearchAssociationItemArgs']]]]] = None,
+            items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourcesSearchAssociationItemArgs', 'MonitoredResourcesSearchAssociationItemArgsDict']]]]] = None,
             source_resource_id: Optional[pulumi.Input[str]] = None,
             source_resource_name: Optional[pulumi.Input[str]] = None,
             source_resource_type: Optional[pulumi.Input[str]] = None) -> 'MonitoredResourcesSearchAssociation':
@@ -485,7 +485,7 @@ class MonitoredResourcesSearchAssociation(pulumi.CustomResource):
         :param pulumi.Input[str] destination_resource_id: Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] destination_resource_name: Source Monitored Resource Name.
         :param pulumi.Input[str] destination_resource_type: Source Monitored Resource Type.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MonitoredResourcesSearchAssociationItemArgs']]]] items: List of Monitored Resource Associations.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourcesSearchAssociationItemArgs', 'MonitoredResourcesSearchAssociationItemArgsDict']]]] items: List of Monitored Resource Associations.
         :param pulumi.Input[str] source_resource_id: Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] source_resource_name: Source Monitored Resource Name.
         :param pulumi.Input[str] source_resource_type: Source Monitored Resource Type. 

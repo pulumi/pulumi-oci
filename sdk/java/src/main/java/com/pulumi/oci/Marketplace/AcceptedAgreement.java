@@ -211,7 +211,7 @@ public class AcceptedAgreement extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public AcceptedAgreement(String name) {
+    public AcceptedAgreement(java.lang.String name) {
         this(name, AcceptedAgreementArgs.Empty);
     }
     /**
@@ -219,7 +219,7 @@ public class AcceptedAgreement extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public AcceptedAgreement(String name, AcceptedAgreementArgs args) {
+    public AcceptedAgreement(java.lang.String name, AcceptedAgreementArgs args) {
         this(name, args, null);
     }
     /**
@@ -228,12 +228,12 @@ public class AcceptedAgreement extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public AcceptedAgreement(String name, AcceptedAgreementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Marketplace/acceptedAgreement:AcceptedAgreement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public AcceptedAgreement(java.lang.String name, AcceptedAgreementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Marketplace/acceptedAgreement:AcceptedAgreement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private AcceptedAgreement(String name, Output<String> id, @Nullable AcceptedAgreementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Marketplace/acceptedAgreement:AcceptedAgreement", name, state, makeResourceOptions(options, id));
+    private AcceptedAgreement(java.lang.String name, Output<java.lang.String> id, @Nullable AcceptedAgreementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Marketplace/acceptedAgreement:AcceptedAgreement", name, state, makeResourceOptions(options, id), false);
     }
 
     private static AcceptedAgreementArgs makeArgs(AcceptedAgreementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -243,7 +243,7 @@ public class AcceptedAgreement extends com.pulumi.resources.CustomResource {
         return args == null ? AcceptedAgreementArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -259,7 +259,7 @@ public class AcceptedAgreement extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static AcceptedAgreement get(String name, Output<String> id, @Nullable AcceptedAgreementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static AcceptedAgreement get(java.lang.String name, Output<java.lang.String> id, @Nullable AcceptedAgreementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new AcceptedAgreement(name, id, state, options);
     }
 }

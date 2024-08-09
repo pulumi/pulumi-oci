@@ -105,7 +105,7 @@ class AwaitableGetDbSystemsResult(GetDbSystemsResult):
 
 def get_db_systems(compartment_id: Optional[str] = None,
                    display_name: Optional[str] = None,
-                   filters: Optional[Sequence[pulumi.InputType['GetDbSystemsFilterArgs']]] = None,
+                   filters: Optional[Sequence[Union['GetDbSystemsFilterArgs', 'GetDbSystemsFilterArgsDict']]] = None,
                    id: Optional[str] = None,
                    state: Optional[str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbSystemsResult:
@@ -153,7 +153,7 @@ def get_db_systems(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_db_systems)
 def get_db_systems_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                           display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                          filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDbSystemsFilterArgs']]]]] = None,
+                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbSystemsFilterArgs', 'GetDbSystemsFilterArgsDict']]]]] = None,
                           id: Optional[pulumi.Input[Optional[str]]] = None,
                           state: Optional[pulumi.Input[Optional[str]]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbSystemsResult]:

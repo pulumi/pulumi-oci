@@ -1358,7 +1358,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DomainsAuthenticationFactorSetting(String name) {
+    public DomainsAuthenticationFactorSetting(java.lang.String name) {
         this(name, DomainsAuthenticationFactorSettingArgs.Empty);
     }
     /**
@@ -1366,7 +1366,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DomainsAuthenticationFactorSetting(String name, DomainsAuthenticationFactorSettingArgs args) {
+    public DomainsAuthenticationFactorSetting(java.lang.String name, DomainsAuthenticationFactorSettingArgs args) {
         this(name, args, null);
     }
     /**
@@ -1375,12 +1375,12 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DomainsAuthenticationFactorSetting(String name, DomainsAuthenticationFactorSettingArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsAuthenticationFactorSetting:DomainsAuthenticationFactorSetting", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DomainsAuthenticationFactorSetting(java.lang.String name, DomainsAuthenticationFactorSettingArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/domainsAuthenticationFactorSetting:DomainsAuthenticationFactorSetting", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DomainsAuthenticationFactorSetting(String name, Output<String> id, @Nullable DomainsAuthenticationFactorSettingState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsAuthenticationFactorSetting:DomainsAuthenticationFactorSetting", name, state, makeResourceOptions(options, id));
+    private DomainsAuthenticationFactorSetting(java.lang.String name, Output<java.lang.String> id, @Nullable DomainsAuthenticationFactorSettingState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/domainsAuthenticationFactorSetting:DomainsAuthenticationFactorSetting", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DomainsAuthenticationFactorSettingArgs makeArgs(DomainsAuthenticationFactorSettingArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -1390,7 +1390,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
         return args == null ? DomainsAuthenticationFactorSettingArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -1406,7 +1406,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DomainsAuthenticationFactorSetting get(String name, Output<String> id, @Nullable DomainsAuthenticationFactorSettingState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DomainsAuthenticationFactorSetting get(java.lang.String name, Output<java.lang.String> id, @Nullable DomainsAuthenticationFactorSettingState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DomainsAuthenticationFactorSetting(name, id, state, options);
     }
 }

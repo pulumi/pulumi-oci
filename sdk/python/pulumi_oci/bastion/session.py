@@ -353,10 +353,10 @@ class Session(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  bastion_id: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 key_details: Optional[pulumi.Input[pulumi.InputType['SessionKeyDetailsArgs']]] = None,
+                 key_details: Optional[pulumi.Input[Union['SessionKeyDetailsArgs', 'SessionKeyDetailsArgsDict']]] = None,
                  key_type: Optional[pulumi.Input[str]] = None,
                  session_ttl_in_seconds: Optional[pulumi.Input[int]] = None,
-                 target_resource_details: Optional[pulumi.Input[pulumi.InputType['SessionTargetResourceDetailsArgs']]] = None,
+                 target_resource_details: Optional[pulumi.Input[Union['SessionTargetResourceDetailsArgs', 'SessionTargetResourceDetailsArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Session resource in Oracle Cloud Infrastructure Bastion service.
@@ -371,17 +371,17 @@ class Session(pulumi.CustomResource):
 
         test_session = oci.bastion.Session("test_session",
             bastion_id=test_bastion["id"],
-            key_details=oci.bastion.SessionKeyDetailsArgs(
-                public_key_content=session_key_details_public_key_content,
-            ),
-            target_resource_details=oci.bastion.SessionTargetResourceDetailsArgs(
-                session_type=session_target_resource_details_session_type,
-                target_resource_fqdn=session_target_resource_details_target_resource_fqdn,
-                target_resource_id=test_target_resource["id"],
-                target_resource_operating_system_user_name=test_user["name"],
-                target_resource_port=session_target_resource_details_target_resource_port,
-                target_resource_private_ip_address=session_target_resource_details_target_resource_private_ip_address,
-            ),
+            key_details={
+                "public_key_content": session_key_details_public_key_content,
+            },
+            target_resource_details={
+                "session_type": session_target_resource_details_session_type,
+                "target_resource_fqdn": session_target_resource_details_target_resource_fqdn,
+                "target_resource_id": test_target_resource["id"],
+                "target_resource_operating_system_user_name": test_user["name"],
+                "target_resource_port": session_target_resource_details_target_resource_port,
+                "target_resource_private_ip_address": session_target_resource_details_target_resource_private_ip_address,
+            },
             display_name=session_display_name,
             key_type=session_key_type,
             session_ttl_in_seconds=session_session_ttl_in_seconds)
@@ -399,10 +399,10 @@ class Session(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] bastion_id: The unique identifier (OCID) of the bastion on which to create this session.
         :param pulumi.Input[str] display_name: (Updatable) The name of the session.
-        :param pulumi.Input[pulumi.InputType['SessionKeyDetailsArgs']] key_details: Public key details for a bastion session.
+        :param pulumi.Input[Union['SessionKeyDetailsArgs', 'SessionKeyDetailsArgsDict']] key_details: Public key details for a bastion session.
         :param pulumi.Input[str] key_type: The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
         :param pulumi.Input[int] session_ttl_in_seconds: The amount of time the session can remain active.
-        :param pulumi.Input[pulumi.InputType['SessionTargetResourceDetailsArgs']] target_resource_details: Details about a bastion session's target resource.
+        :param pulumi.Input[Union['SessionTargetResourceDetailsArgs', 'SessionTargetResourceDetailsArgsDict']] target_resource_details: Details about a bastion session's target resource.
         """
         ...
     @overload
@@ -423,17 +423,17 @@ class Session(pulumi.CustomResource):
 
         test_session = oci.bastion.Session("test_session",
             bastion_id=test_bastion["id"],
-            key_details=oci.bastion.SessionKeyDetailsArgs(
-                public_key_content=session_key_details_public_key_content,
-            ),
-            target_resource_details=oci.bastion.SessionTargetResourceDetailsArgs(
-                session_type=session_target_resource_details_session_type,
-                target_resource_fqdn=session_target_resource_details_target_resource_fqdn,
-                target_resource_id=test_target_resource["id"],
-                target_resource_operating_system_user_name=test_user["name"],
-                target_resource_port=session_target_resource_details_target_resource_port,
-                target_resource_private_ip_address=session_target_resource_details_target_resource_private_ip_address,
-            ),
+            key_details={
+                "public_key_content": session_key_details_public_key_content,
+            },
+            target_resource_details={
+                "session_type": session_target_resource_details_session_type,
+                "target_resource_fqdn": session_target_resource_details_target_resource_fqdn,
+                "target_resource_id": test_target_resource["id"],
+                "target_resource_operating_system_user_name": test_user["name"],
+                "target_resource_port": session_target_resource_details_target_resource_port,
+                "target_resource_private_ip_address": session_target_resource_details_target_resource_private_ip_address,
+            },
             display_name=session_display_name,
             key_type=session_key_type,
             session_ttl_in_seconds=session_session_ttl_in_seconds)
@@ -464,10 +464,10 @@ class Session(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  bastion_id: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 key_details: Optional[pulumi.Input[pulumi.InputType['SessionKeyDetailsArgs']]] = None,
+                 key_details: Optional[pulumi.Input[Union['SessionKeyDetailsArgs', 'SessionKeyDetailsArgsDict']]] = None,
                  key_type: Optional[pulumi.Input[str]] = None,
                  session_ttl_in_seconds: Optional[pulumi.Input[int]] = None,
-                 target_resource_details: Optional[pulumi.Input[pulumi.InputType['SessionTargetResourceDetailsArgs']]] = None,
+                 target_resource_details: Optional[pulumi.Input[Union['SessionTargetResourceDetailsArgs', 'SessionTargetResourceDetailsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -512,13 +512,13 @@ class Session(pulumi.CustomResource):
             bastion_public_host_key_info: Optional[pulumi.Input[str]] = None,
             bastion_user_name: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
-            key_details: Optional[pulumi.Input[pulumi.InputType['SessionKeyDetailsArgs']]] = None,
+            key_details: Optional[pulumi.Input[Union['SessionKeyDetailsArgs', 'SessionKeyDetailsArgsDict']]] = None,
             key_type: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             session_ttl_in_seconds: Optional[pulumi.Input[int]] = None,
             ssh_metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             state: Optional[pulumi.Input[str]] = None,
-            target_resource_details: Optional[pulumi.Input[pulumi.InputType['SessionTargetResourceDetailsArgs']]] = None,
+            target_resource_details: Optional[pulumi.Input[Union['SessionTargetResourceDetailsArgs', 'SessionTargetResourceDetailsArgsDict']]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None) -> 'Session':
         """
@@ -533,13 +533,13 @@ class Session(pulumi.CustomResource):
         :param pulumi.Input[str] bastion_public_host_key_info: The public key of the bastion host. You can use this to verify that you're connecting to the correct bastion.
         :param pulumi.Input[str] bastion_user_name: The username that the session uses to connect to the target resource.
         :param pulumi.Input[str] display_name: (Updatable) The name of the session.
-        :param pulumi.Input[pulumi.InputType['SessionKeyDetailsArgs']] key_details: Public key details for a bastion session.
+        :param pulumi.Input[Union['SessionKeyDetailsArgs', 'SessionKeyDetailsArgsDict']] key_details: Public key details for a bastion session.
         :param pulumi.Input[str] key_type: The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
         :param pulumi.Input[str] lifecycle_details: A message describing the current session state in more detail.
         :param pulumi.Input[int] session_ttl_in_seconds: The amount of time the session can remain active.
         :param pulumi.Input[Mapping[str, Any]] ssh_metadata: The connection message for the session.
         :param pulumi.Input[str] state: The current state of the session.
-        :param pulumi.Input[pulumi.InputType['SessionTargetResourceDetailsArgs']] target_resource_details: Details about a bastion session's target resource.
+        :param pulumi.Input[Union['SessionTargetResourceDetailsArgs', 'SessionTargetResourceDetailsArgsDict']] target_resource_details: Details about a bastion session's target resource.
         :param pulumi.Input[str] time_created: The time the session was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         :param pulumi.Input[str] time_updated: The time the session was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         """

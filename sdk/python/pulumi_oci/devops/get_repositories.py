@@ -125,7 +125,7 @@ class AwaitableGetRepositoriesResult(GetRepositoriesResult):
 
 
 def get_repositories(compartment_id: Optional[str] = None,
-                     filters: Optional[Sequence[pulumi.InputType['GetRepositoriesFilterArgs']]] = None,
+                     filters: Optional[Sequence[Union['GetRepositoriesFilterArgs', 'GetRepositoriesFilterArgsDict']]] = None,
                      name: Optional[str] = None,
                      project_id: Optional[str] = None,
                      repository_id: Optional[str] = None,
@@ -179,7 +179,7 @@ def get_repositories(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_repositories)
 def get_repositories_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
-                            filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetRepositoriesFilterArgs']]]]] = None,
+                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRepositoriesFilterArgs', 'GetRepositoriesFilterArgsDict']]]]] = None,
                             name: Optional[pulumi.Input[Optional[str]]] = None,
                             project_id: Optional[pulumi.Input[Optional[str]]] = None,
                             repository_id: Optional[pulumi.Input[Optional[str]]] = None,

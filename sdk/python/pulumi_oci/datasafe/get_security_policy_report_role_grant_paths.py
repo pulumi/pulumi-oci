@@ -100,7 +100,7 @@ class AwaitableGetSecurityPolicyReportRoleGrantPathsResult(GetSecurityPolicyRepo
             security_policy_report_id=self.security_policy_report_id)
 
 
-def get_security_policy_report_role_grant_paths(filters: Optional[Sequence[pulumi.InputType['GetSecurityPolicyReportRoleGrantPathsFilterArgs']]] = None,
+def get_security_policy_report_role_grant_paths(filters: Optional[Sequence[Union['GetSecurityPolicyReportRoleGrantPathsFilterArgs', 'GetSecurityPolicyReportRoleGrantPathsFilterArgsDict']]] = None,
                                                 granted_role: Optional[str] = None,
                                                 grantee: Optional[str] = None,
                                                 security_policy_report_id: Optional[str] = None,
@@ -146,7 +146,7 @@ def get_security_policy_report_role_grant_paths(filters: Optional[Sequence[pulum
 
 
 @_utilities.lift_output_func(get_security_policy_report_role_grant_paths)
-def get_security_policy_report_role_grant_paths_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetSecurityPolicyReportRoleGrantPathsFilterArgs']]]]] = None,
+def get_security_policy_report_role_grant_paths_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSecurityPolicyReportRoleGrantPathsFilterArgs', 'GetSecurityPolicyReportRoleGrantPathsFilterArgsDict']]]]] = None,
                                                        granted_role: Optional[pulumi.Input[str]] = None,
                                                        grantee: Optional[pulumi.Input[str]] = None,
                                                        security_policy_report_id: Optional[pulumi.Input[str]] = None,

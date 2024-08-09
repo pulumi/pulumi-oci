@@ -436,10 +436,10 @@ class NotebookSession(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 notebook_session_config_details: Optional[pulumi.Input[pulumi.InputType['NotebookSessionNotebookSessionConfigDetailsArgs']]] = None,
-                 notebook_session_configuration_details: Optional[pulumi.Input[pulumi.InputType['NotebookSessionNotebookSessionConfigurationDetailsArgs']]] = None,
-                 notebook_session_runtime_config_details: Optional[pulumi.Input[pulumi.InputType['NotebookSessionNotebookSessionRuntimeConfigDetailsArgs']]] = None,
-                 notebook_session_storage_mount_configuration_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs']]]]] = None,
+                 notebook_session_config_details: Optional[pulumi.Input[Union['NotebookSessionNotebookSessionConfigDetailsArgs', 'NotebookSessionNotebookSessionConfigDetailsArgsDict']]] = None,
+                 notebook_session_configuration_details: Optional[pulumi.Input[Union['NotebookSessionNotebookSessionConfigurationDetailsArgs', 'NotebookSessionNotebookSessionConfigurationDetailsArgsDict']]] = None,
+                 notebook_session_runtime_config_details: Optional[pulumi.Input[Union['NotebookSessionNotebookSessionRuntimeConfigDetailsArgs', 'NotebookSessionNotebookSessionRuntimeConfigDetailsArgsDict']]] = None,
+                 notebook_session_storage_mount_configuration_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs', 'NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgsDict']]]]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -464,44 +464,44 @@ class NotebookSession(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            notebook_session_config_details=oci.data_science.NotebookSessionNotebookSessionConfigDetailsArgs(
-                shape=notebook_session_notebook_session_config_details_shape,
-                block_storage_size_in_gbs=notebook_session_notebook_session_config_details_block_storage_size_in_gbs,
-                notebook_session_shape_config_details=oci.data_science.NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs(
-                    memory_in_gbs=notebook_session_notebook_session_config_details_notebook_session_shape_config_details_memory_in_gbs,
-                    ocpus=notebook_session_notebook_session_config_details_notebook_session_shape_config_details_ocpus,
-                ),
-                private_endpoint_id=test_private_endpoint["id"],
-                subnet_id=test_subnet["id"],
-            ),
-            notebook_session_configuration_details=oci.data_science.NotebookSessionNotebookSessionConfigurationDetailsArgs(
-                shape=notebook_session_notebook_session_configuration_details_shape,
-                subnet_id=test_subnet["id"],
-                block_storage_size_in_gbs=notebook_session_notebook_session_configuration_details_block_storage_size_in_gbs,
-                notebook_session_shape_config_details=oci.data_science.NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs(
-                    memory_in_gbs=notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_memory_in_gbs,
-                    ocpus=notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_ocpus,
-                ),
-                private_endpoint_id=test_private_endpoint["id"],
-            ),
-            notebook_session_runtime_config_details=oci.data_science.NotebookSessionNotebookSessionRuntimeConfigDetailsArgs(
-                custom_environment_variables=notebook_session_notebook_session_runtime_config_details_custom_environment_variables,
-                notebook_session_git_config_details=oci.data_science.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs(
-                    notebook_session_git_repo_config_collections=[oci.data_science.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgs(
-                        url=notebook_session_notebook_session_runtime_config_details_notebook_session_git_config_details_notebook_session_git_repo_config_collection_url,
-                    )],
-                ),
-            ),
-            notebook_session_storage_mount_configuration_details_lists=[oci.data_science.NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs(
-                destination_directory_name=notebook_session_notebook_session_storage_mount_configuration_details_list_destination_directory_name,
-                storage_type=notebook_session_notebook_session_storage_mount_configuration_details_list_storage_type,
-                bucket=notebook_session_notebook_session_storage_mount_configuration_details_list_bucket,
-                destination_path=notebook_session_notebook_session_storage_mount_configuration_details_list_destination_path,
-                export_id=test_export["id"],
-                mount_target_id=test_mount_target["id"],
-                namespace=notebook_session_notebook_session_storage_mount_configuration_details_list_namespace,
-                prefix=notebook_session_notebook_session_storage_mount_configuration_details_list_prefix,
-            )])
+            notebook_session_config_details={
+                "shape": notebook_session_notebook_session_config_details_shape,
+                "block_storage_size_in_gbs": notebook_session_notebook_session_config_details_block_storage_size_in_gbs,
+                "notebook_session_shape_config_details": {
+                    "memory_in_gbs": notebook_session_notebook_session_config_details_notebook_session_shape_config_details_memory_in_gbs,
+                    "ocpus": notebook_session_notebook_session_config_details_notebook_session_shape_config_details_ocpus,
+                },
+                "private_endpoint_id": test_private_endpoint["id"],
+                "subnet_id": test_subnet["id"],
+            },
+            notebook_session_configuration_details={
+                "shape": notebook_session_notebook_session_configuration_details_shape,
+                "subnet_id": test_subnet["id"],
+                "block_storage_size_in_gbs": notebook_session_notebook_session_configuration_details_block_storage_size_in_gbs,
+                "notebook_session_shape_config_details": {
+                    "memory_in_gbs": notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_memory_in_gbs,
+                    "ocpus": notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_ocpus,
+                },
+                "private_endpoint_id": test_private_endpoint["id"],
+            },
+            notebook_session_runtime_config_details={
+                "custom_environment_variables": notebook_session_notebook_session_runtime_config_details_custom_environment_variables,
+                "notebook_session_git_config_details": {
+                    "notebook_session_git_repo_config_collections": [{
+                        "url": notebook_session_notebook_session_runtime_config_details_notebook_session_git_config_details_notebook_session_git_repo_config_collection_url,
+                    }],
+                },
+            },
+            notebook_session_storage_mount_configuration_details_lists=[{
+                "destination_directory_name": notebook_session_notebook_session_storage_mount_configuration_details_list_destination_directory_name,
+                "storage_type": notebook_session_notebook_session_storage_mount_configuration_details_list_storage_type,
+                "bucket": notebook_session_notebook_session_storage_mount_configuration_details_list_bucket,
+                "destination_path": notebook_session_notebook_session_storage_mount_configuration_details_list_destination_path,
+                "export_id": test_export["id"],
+                "mount_target_id": test_mount_target["id"],
+                "namespace": notebook_session_notebook_session_storage_mount_configuration_details_list_namespace,
+                "prefix": notebook_session_notebook_session_storage_mount_configuration_details_list_prefix,
+            }])
         ```
 
         ## Import
@@ -518,10 +518,10 @@ class NotebookSession(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My NotebookSession`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[pulumi.InputType['NotebookSessionNotebookSessionConfigDetailsArgs']] notebook_session_config_details: Details for the notebook session configuration.
-        :param pulumi.Input[pulumi.InputType['NotebookSessionNotebookSessionConfigurationDetailsArgs']] notebook_session_configuration_details: (Updatable) Details for the notebook session configuration.
-        :param pulumi.Input[pulumi.InputType['NotebookSessionNotebookSessionRuntimeConfigDetailsArgs']] notebook_session_runtime_config_details: (Updatable) Notebook Session runtime configuration details.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs']]]] notebook_session_storage_mount_configuration_details_lists: (Updatable) Collection of NotebookSessionStorageMountConfigurationDetails.
+        :param pulumi.Input[Union['NotebookSessionNotebookSessionConfigDetailsArgs', 'NotebookSessionNotebookSessionConfigDetailsArgsDict']] notebook_session_config_details: Details for the notebook session configuration.
+        :param pulumi.Input[Union['NotebookSessionNotebookSessionConfigurationDetailsArgs', 'NotebookSessionNotebookSessionConfigurationDetailsArgsDict']] notebook_session_configuration_details: (Updatable) Details for the notebook session configuration.
+        :param pulumi.Input[Union['NotebookSessionNotebookSessionRuntimeConfigDetailsArgs', 'NotebookSessionNotebookSessionRuntimeConfigDetailsArgsDict']] notebook_session_runtime_config_details: (Updatable) Notebook Session runtime configuration details.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs', 'NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgsDict']]]] notebook_session_storage_mount_configuration_details_lists: (Updatable) Collection of NotebookSessionStorageMountConfigurationDetails.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the notebook session.
                
                
@@ -556,44 +556,44 @@ class NotebookSession(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            notebook_session_config_details=oci.data_science.NotebookSessionNotebookSessionConfigDetailsArgs(
-                shape=notebook_session_notebook_session_config_details_shape,
-                block_storage_size_in_gbs=notebook_session_notebook_session_config_details_block_storage_size_in_gbs,
-                notebook_session_shape_config_details=oci.data_science.NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs(
-                    memory_in_gbs=notebook_session_notebook_session_config_details_notebook_session_shape_config_details_memory_in_gbs,
-                    ocpus=notebook_session_notebook_session_config_details_notebook_session_shape_config_details_ocpus,
-                ),
-                private_endpoint_id=test_private_endpoint["id"],
-                subnet_id=test_subnet["id"],
-            ),
-            notebook_session_configuration_details=oci.data_science.NotebookSessionNotebookSessionConfigurationDetailsArgs(
-                shape=notebook_session_notebook_session_configuration_details_shape,
-                subnet_id=test_subnet["id"],
-                block_storage_size_in_gbs=notebook_session_notebook_session_configuration_details_block_storage_size_in_gbs,
-                notebook_session_shape_config_details=oci.data_science.NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs(
-                    memory_in_gbs=notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_memory_in_gbs,
-                    ocpus=notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_ocpus,
-                ),
-                private_endpoint_id=test_private_endpoint["id"],
-            ),
-            notebook_session_runtime_config_details=oci.data_science.NotebookSessionNotebookSessionRuntimeConfigDetailsArgs(
-                custom_environment_variables=notebook_session_notebook_session_runtime_config_details_custom_environment_variables,
-                notebook_session_git_config_details=oci.data_science.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs(
-                    notebook_session_git_repo_config_collections=[oci.data_science.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgs(
-                        url=notebook_session_notebook_session_runtime_config_details_notebook_session_git_config_details_notebook_session_git_repo_config_collection_url,
-                    )],
-                ),
-            ),
-            notebook_session_storage_mount_configuration_details_lists=[oci.data_science.NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs(
-                destination_directory_name=notebook_session_notebook_session_storage_mount_configuration_details_list_destination_directory_name,
-                storage_type=notebook_session_notebook_session_storage_mount_configuration_details_list_storage_type,
-                bucket=notebook_session_notebook_session_storage_mount_configuration_details_list_bucket,
-                destination_path=notebook_session_notebook_session_storage_mount_configuration_details_list_destination_path,
-                export_id=test_export["id"],
-                mount_target_id=test_mount_target["id"],
-                namespace=notebook_session_notebook_session_storage_mount_configuration_details_list_namespace,
-                prefix=notebook_session_notebook_session_storage_mount_configuration_details_list_prefix,
-            )])
+            notebook_session_config_details={
+                "shape": notebook_session_notebook_session_config_details_shape,
+                "block_storage_size_in_gbs": notebook_session_notebook_session_config_details_block_storage_size_in_gbs,
+                "notebook_session_shape_config_details": {
+                    "memory_in_gbs": notebook_session_notebook_session_config_details_notebook_session_shape_config_details_memory_in_gbs,
+                    "ocpus": notebook_session_notebook_session_config_details_notebook_session_shape_config_details_ocpus,
+                },
+                "private_endpoint_id": test_private_endpoint["id"],
+                "subnet_id": test_subnet["id"],
+            },
+            notebook_session_configuration_details={
+                "shape": notebook_session_notebook_session_configuration_details_shape,
+                "subnet_id": test_subnet["id"],
+                "block_storage_size_in_gbs": notebook_session_notebook_session_configuration_details_block_storage_size_in_gbs,
+                "notebook_session_shape_config_details": {
+                    "memory_in_gbs": notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_memory_in_gbs,
+                    "ocpus": notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_ocpus,
+                },
+                "private_endpoint_id": test_private_endpoint["id"],
+            },
+            notebook_session_runtime_config_details={
+                "custom_environment_variables": notebook_session_notebook_session_runtime_config_details_custom_environment_variables,
+                "notebook_session_git_config_details": {
+                    "notebook_session_git_repo_config_collections": [{
+                        "url": notebook_session_notebook_session_runtime_config_details_notebook_session_git_config_details_notebook_session_git_repo_config_collection_url,
+                    }],
+                },
+            },
+            notebook_session_storage_mount_configuration_details_lists=[{
+                "destination_directory_name": notebook_session_notebook_session_storage_mount_configuration_details_list_destination_directory_name,
+                "storage_type": notebook_session_notebook_session_storage_mount_configuration_details_list_storage_type,
+                "bucket": notebook_session_notebook_session_storage_mount_configuration_details_list_bucket,
+                "destination_path": notebook_session_notebook_session_storage_mount_configuration_details_list_destination_path,
+                "export_id": test_export["id"],
+                "mount_target_id": test_mount_target["id"],
+                "namespace": notebook_session_notebook_session_storage_mount_configuration_details_list_namespace,
+                "prefix": notebook_session_notebook_session_storage_mount_configuration_details_list_prefix,
+            }])
         ```
 
         ## Import
@@ -623,10 +623,10 @@ class NotebookSession(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 notebook_session_config_details: Optional[pulumi.Input[pulumi.InputType['NotebookSessionNotebookSessionConfigDetailsArgs']]] = None,
-                 notebook_session_configuration_details: Optional[pulumi.Input[pulumi.InputType['NotebookSessionNotebookSessionConfigurationDetailsArgs']]] = None,
-                 notebook_session_runtime_config_details: Optional[pulumi.Input[pulumi.InputType['NotebookSessionNotebookSessionRuntimeConfigDetailsArgs']]] = None,
-                 notebook_session_storage_mount_configuration_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs']]]]] = None,
+                 notebook_session_config_details: Optional[pulumi.Input[Union['NotebookSessionNotebookSessionConfigDetailsArgs', 'NotebookSessionNotebookSessionConfigDetailsArgsDict']]] = None,
+                 notebook_session_configuration_details: Optional[pulumi.Input[Union['NotebookSessionNotebookSessionConfigurationDetailsArgs', 'NotebookSessionNotebookSessionConfigurationDetailsArgsDict']]] = None,
+                 notebook_session_runtime_config_details: Optional[pulumi.Input[Union['NotebookSessionNotebookSessionRuntimeConfigDetailsArgs', 'NotebookSessionNotebookSessionRuntimeConfigDetailsArgsDict']]] = None,
+                 notebook_session_storage_mount_configuration_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs', 'NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgsDict']]]]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -672,10 +672,10 @@ class NotebookSession(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
-            notebook_session_config_details: Optional[pulumi.Input[pulumi.InputType['NotebookSessionNotebookSessionConfigDetailsArgs']]] = None,
-            notebook_session_configuration_details: Optional[pulumi.Input[pulumi.InputType['NotebookSessionNotebookSessionConfigurationDetailsArgs']]] = None,
-            notebook_session_runtime_config_details: Optional[pulumi.Input[pulumi.InputType['NotebookSessionNotebookSessionRuntimeConfigDetailsArgs']]] = None,
-            notebook_session_storage_mount_configuration_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs']]]]] = None,
+            notebook_session_config_details: Optional[pulumi.Input[Union['NotebookSessionNotebookSessionConfigDetailsArgs', 'NotebookSessionNotebookSessionConfigDetailsArgsDict']]] = None,
+            notebook_session_configuration_details: Optional[pulumi.Input[Union['NotebookSessionNotebookSessionConfigurationDetailsArgs', 'NotebookSessionNotebookSessionConfigurationDetailsArgsDict']]] = None,
+            notebook_session_runtime_config_details: Optional[pulumi.Input[Union['NotebookSessionNotebookSessionRuntimeConfigDetailsArgs', 'NotebookSessionNotebookSessionRuntimeConfigDetailsArgsDict']]] = None,
+            notebook_session_storage_mount_configuration_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs', 'NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgsDict']]]]] = None,
             notebook_session_url: Optional[pulumi.Input[str]] = None,
             project_id: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -693,10 +693,10 @@ class NotebookSession(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My NotebookSession`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] lifecycle_details: Details about the state of the notebook session.
-        :param pulumi.Input[pulumi.InputType['NotebookSessionNotebookSessionConfigDetailsArgs']] notebook_session_config_details: Details for the notebook session configuration.
-        :param pulumi.Input[pulumi.InputType['NotebookSessionNotebookSessionConfigurationDetailsArgs']] notebook_session_configuration_details: (Updatable) Details for the notebook session configuration.
-        :param pulumi.Input[pulumi.InputType['NotebookSessionNotebookSessionRuntimeConfigDetailsArgs']] notebook_session_runtime_config_details: (Updatable) Notebook Session runtime configuration details.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs']]]] notebook_session_storage_mount_configuration_details_lists: (Updatable) Collection of NotebookSessionStorageMountConfigurationDetails.
+        :param pulumi.Input[Union['NotebookSessionNotebookSessionConfigDetailsArgs', 'NotebookSessionNotebookSessionConfigDetailsArgsDict']] notebook_session_config_details: Details for the notebook session configuration.
+        :param pulumi.Input[Union['NotebookSessionNotebookSessionConfigurationDetailsArgs', 'NotebookSessionNotebookSessionConfigurationDetailsArgsDict']] notebook_session_configuration_details: (Updatable) Details for the notebook session configuration.
+        :param pulumi.Input[Union['NotebookSessionNotebookSessionRuntimeConfigDetailsArgs', 'NotebookSessionNotebookSessionRuntimeConfigDetailsArgsDict']] notebook_session_runtime_config_details: (Updatable) Notebook Session runtime configuration details.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs', 'NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgsDict']]]] notebook_session_storage_mount_configuration_details_lists: (Updatable) Collection of NotebookSessionStorageMountConfigurationDetails.
         :param pulumi.Input[str] notebook_session_url: The URL to interact with the notebook session.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the notebook session.
                

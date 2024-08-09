@@ -114,7 +114,7 @@ class AwaitableGetSubscriptionsResult(GetSubscriptionsResult):
 
 def get_subscriptions(buyer_email: Optional[str] = None,
                       compartment_id: Optional[str] = None,
-                      filters: Optional[Sequence[pulumi.InputType['GetSubscriptionsFilterArgs']]] = None,
+                      filters: Optional[Sequence[Union['GetSubscriptionsFilterArgs', 'GetSubscriptionsFilterArgsDict']]] = None,
                       is_commit_info_required: Optional[bool] = None,
                       plan_number: Optional[str] = None,
                       subscription_id: Optional[str] = None,
@@ -171,7 +171,7 @@ def get_subscriptions(buyer_email: Optional[str] = None,
 @_utilities.lift_output_func(get_subscriptions)
 def get_subscriptions_output(buyer_email: Optional[pulumi.Input[Optional[str]]] = None,
                              compartment_id: Optional[pulumi.Input[str]] = None,
-                             filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetSubscriptionsFilterArgs']]]]] = None,
+                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSubscriptionsFilterArgs', 'GetSubscriptionsFilterArgsDict']]]]] = None,
                              is_commit_info_required: Optional[pulumi.Input[Optional[bool]]] = None,
                              plan_number: Optional[pulumi.Input[Optional[str]]] = None,
                              subscription_id: Optional[pulumi.Input[Optional[str]]] = None,

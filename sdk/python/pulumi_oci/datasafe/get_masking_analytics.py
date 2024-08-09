@@ -117,7 +117,7 @@ class AwaitableGetMaskingAnalyticsResult(GetMaskingAnalyticsResult):
 
 def get_masking_analytics(compartment_id: Optional[str] = None,
                           compartment_id_in_subtree: Optional[bool] = None,
-                          filters: Optional[Sequence[pulumi.InputType['GetMaskingAnalyticsFilterArgs']]] = None,
+                          filters: Optional[Sequence[Union['GetMaskingAnalyticsFilterArgs', 'GetMaskingAnalyticsFilterArgsDict']]] = None,
                           group_by: Optional[str] = None,
                           masking_policy_id: Optional[str] = None,
                           target_id: Optional[str] = None,
@@ -173,7 +173,7 @@ def get_masking_analytics(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_masking_analytics)
 def get_masking_analytics_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                  compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetMaskingAnalyticsFilterArgs']]]]] = None,
+                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMaskingAnalyticsFilterArgs', 'GetMaskingAnalyticsFilterArgsDict']]]]] = None,
                                  group_by: Optional[pulumi.Input[Optional[str]]] = None,
                                  masking_policy_id: Optional[pulumi.Input[Optional[str]]] = None,
                                  target_id: Optional[pulumi.Input[Optional[str]]] = None,

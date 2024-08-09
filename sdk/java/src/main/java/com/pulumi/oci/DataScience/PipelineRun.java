@@ -426,7 +426,7 @@ public class PipelineRun extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public PipelineRun(String name) {
+    public PipelineRun(java.lang.String name) {
         this(name, PipelineRunArgs.Empty);
     }
     /**
@@ -434,7 +434,7 @@ public class PipelineRun extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public PipelineRun(String name, PipelineRunArgs args) {
+    public PipelineRun(java.lang.String name, PipelineRunArgs args) {
         this(name, args, null);
     }
     /**
@@ -443,12 +443,12 @@ public class PipelineRun extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public PipelineRun(String name, PipelineRunArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataScience/pipelineRun:PipelineRun", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public PipelineRun(java.lang.String name, PipelineRunArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataScience/pipelineRun:PipelineRun", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private PipelineRun(String name, Output<String> id, @Nullable PipelineRunState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataScience/pipelineRun:PipelineRun", name, state, makeResourceOptions(options, id));
+    private PipelineRun(java.lang.String name, Output<java.lang.String> id, @Nullable PipelineRunState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataScience/pipelineRun:PipelineRun", name, state, makeResourceOptions(options, id), false);
     }
 
     private static PipelineRunArgs makeArgs(PipelineRunArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -458,7 +458,7 @@ public class PipelineRun extends com.pulumi.resources.CustomResource {
         return args == null ? PipelineRunArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -474,7 +474,7 @@ public class PipelineRun extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static PipelineRun get(String name, Output<String> id, @Nullable PipelineRunState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static PipelineRun get(java.lang.String name, Output<java.lang.String> id, @Nullable PipelineRunState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new PipelineRun(name, id, state, options);
     }
 }

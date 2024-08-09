@@ -110,7 +110,7 @@ class AwaitableGetJavaDownloadsJavaLicenseAcceptanceRecordsResult(GetJavaDownloa
 
 
 def get_java_downloads_java_license_acceptance_records(compartment_id: Optional[str] = None,
-                                                       filters: Optional[Sequence[pulumi.InputType['GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArgs']]] = None,
+                                                       filters: Optional[Sequence[Union['GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArgs', 'GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArgsDict']]] = None,
                                                        id: Optional[str] = None,
                                                        license_type: Optional[str] = None,
                                                        search_by_user: Optional[str] = None,
@@ -163,7 +163,7 @@ def get_java_downloads_java_license_acceptance_records(compartment_id: Optional[
 
 @_utilities.lift_output_func(get_java_downloads_java_license_acceptance_records)
 def get_java_downloads_java_license_acceptance_records_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                                              filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArgs']]]]] = None,
+                                                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArgs', 'GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArgsDict']]]]] = None,
                                                               id: Optional[pulumi.Input[Optional[str]]] = None,
                                                               license_type: Optional[pulumi.Input[Optional[str]]] = None,
                                                               search_by_user: Optional[pulumi.Input[Optional[str]]] = None,

@@ -106,7 +106,7 @@ class AwaitableGetExternalClustersResult(GetExternalClustersResult):
 def get_external_clusters(compartment_id: Optional[str] = None,
                           display_name: Optional[str] = None,
                           external_db_system_id: Optional[str] = None,
-                          filters: Optional[Sequence[pulumi.InputType['GetExternalClustersFilterArgs']]] = None,
+                          filters: Optional[Sequence[Union['GetExternalClustersFilterArgs', 'GetExternalClustersFilterArgsDict']]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalClustersResult:
     """
     This data source provides the list of External Clusters in Oracle Cloud Infrastructure Database Management service.
@@ -150,7 +150,7 @@ def get_external_clusters(compartment_id: Optional[str] = None,
 def get_external_clusters_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                  display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                  external_db_system_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetExternalClustersFilterArgs']]]]] = None,
+                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExternalClustersFilterArgs', 'GetExternalClustersFilterArgsDict']]]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalClustersResult]:
     """
     This data source provides the list of External Clusters in Oracle Cloud Infrastructure Database Management service.

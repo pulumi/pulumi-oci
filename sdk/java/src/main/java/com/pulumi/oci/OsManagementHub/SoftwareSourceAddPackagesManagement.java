@@ -106,7 +106,7 @@ public class SoftwareSourceAddPackagesManagement extends com.pulumi.resources.Cu
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public SoftwareSourceAddPackagesManagement(String name) {
+    public SoftwareSourceAddPackagesManagement(java.lang.String name) {
         this(name, SoftwareSourceAddPackagesManagementArgs.Empty);
     }
     /**
@@ -114,7 +114,7 @@ public class SoftwareSourceAddPackagesManagement extends com.pulumi.resources.Cu
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public SoftwareSourceAddPackagesManagement(String name, SoftwareSourceAddPackagesManagementArgs args) {
+    public SoftwareSourceAddPackagesManagement(java.lang.String name, SoftwareSourceAddPackagesManagementArgs args) {
         this(name, args, null);
     }
     /**
@@ -123,12 +123,12 @@ public class SoftwareSourceAddPackagesManagement extends com.pulumi.resources.Cu
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public SoftwareSourceAddPackagesManagement(String name, SoftwareSourceAddPackagesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:OsManagementHub/softwareSourceAddPackagesManagement:SoftwareSourceAddPackagesManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public SoftwareSourceAddPackagesManagement(java.lang.String name, SoftwareSourceAddPackagesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:OsManagementHub/softwareSourceAddPackagesManagement:SoftwareSourceAddPackagesManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private SoftwareSourceAddPackagesManagement(String name, Output<String> id, @Nullable SoftwareSourceAddPackagesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:OsManagementHub/softwareSourceAddPackagesManagement:SoftwareSourceAddPackagesManagement", name, state, makeResourceOptions(options, id));
+    private SoftwareSourceAddPackagesManagement(java.lang.String name, Output<java.lang.String> id, @Nullable SoftwareSourceAddPackagesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:OsManagementHub/softwareSourceAddPackagesManagement:SoftwareSourceAddPackagesManagement", name, state, makeResourceOptions(options, id), false);
     }
 
     private static SoftwareSourceAddPackagesManagementArgs makeArgs(SoftwareSourceAddPackagesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -138,7 +138,7 @@ public class SoftwareSourceAddPackagesManagement extends com.pulumi.resources.Cu
         return args == null ? SoftwareSourceAddPackagesManagementArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -154,7 +154,7 @@ public class SoftwareSourceAddPackagesManagement extends com.pulumi.resources.Cu
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static SoftwareSourceAddPackagesManagement get(String name, Output<String> id, @Nullable SoftwareSourceAddPackagesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static SoftwareSourceAddPackagesManagement get(java.lang.String name, Output<java.lang.String> id, @Nullable SoftwareSourceAddPackagesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new SoftwareSourceAddPackagesManagement(name, id, state, options);
     }
 }

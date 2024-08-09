@@ -106,7 +106,7 @@ class AwaitableGetExternalClusterInstancesResult(GetExternalClusterInstancesResu
 def get_external_cluster_instances(compartment_id: Optional[str] = None,
                                    display_name: Optional[str] = None,
                                    external_cluster_id: Optional[str] = None,
-                                   filters: Optional[Sequence[pulumi.InputType['GetExternalClusterInstancesFilterArgs']]] = None,
+                                   filters: Optional[Sequence[Union['GetExternalClusterInstancesFilterArgs', 'GetExternalClusterInstancesFilterArgsDict']]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalClusterInstancesResult:
     """
     This data source provides the list of External Cluster Instances in Oracle Cloud Infrastructure Database Management service.
@@ -150,7 +150,7 @@ def get_external_cluster_instances(compartment_id: Optional[str] = None,
 def get_external_cluster_instances_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                           display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                           external_cluster_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                          filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetExternalClusterInstancesFilterArgs']]]]] = None,
+                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExternalClusterInstancesFilterArgs', 'GetExternalClusterInstancesFilterArgsDict']]]]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalClusterInstancesResult]:
     """
     This data source provides the list of External Cluster Instances in Oracle Cloud Infrastructure Database Management service.

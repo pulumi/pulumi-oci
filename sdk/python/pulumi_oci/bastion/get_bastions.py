@@ -112,7 +112,7 @@ class AwaitableGetBastionsResult(GetBastionsResult):
 def get_bastions(bastion_id: Optional[str] = None,
                  bastion_lifecycle_state: Optional[str] = None,
                  compartment_id: Optional[str] = None,
-                 filters: Optional[Sequence[pulumi.InputType['GetBastionsFilterArgs']]] = None,
+                 filters: Optional[Sequence[Union['GetBastionsFilterArgs', 'GetBastionsFilterArgsDict']]] = None,
                  name: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBastionsResult:
     """
@@ -161,7 +161,7 @@ def get_bastions(bastion_id: Optional[str] = None,
 def get_bastions_output(bastion_id: Optional[pulumi.Input[Optional[str]]] = None,
                         bastion_lifecycle_state: Optional[pulumi.Input[Optional[str]]] = None,
                         compartment_id: Optional[pulumi.Input[str]] = None,
-                        filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetBastionsFilterArgs']]]]] = None,
+                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBastionsFilterArgs', 'GetBastionsFilterArgsDict']]]]] = None,
                         name: Optional[pulumi.Input[Optional[str]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBastionsResult]:
     """

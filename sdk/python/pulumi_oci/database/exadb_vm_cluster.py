@@ -1088,7 +1088,7 @@ class ExadbVmCluster(pulumi.CustomResource):
                  backup_subnet_id: Optional[pulumi.Input[str]] = None,
                  cluster_name: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 data_collection_options: Optional[pulumi.Input[pulumi.InputType['ExadbVmClusterDataCollectionOptionsArgs']]] = None,
+                 data_collection_options: Optional[pulumi.Input[Union['ExadbVmClusterDataCollectionOptionsArgs', 'ExadbVmClusterDataCollectionOptionsArgsDict']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  domain: Optional[pulumi.Input[str]] = None,
@@ -1097,8 +1097,8 @@ class ExadbVmCluster(pulumi.CustomResource):
                  grid_image_id: Optional[pulumi.Input[str]] = None,
                  hostname: Optional[pulumi.Input[str]] = None,
                  license_model: Optional[pulumi.Input[str]] = None,
-                 node_config: Optional[pulumi.Input[pulumi.InputType['ExadbVmClusterNodeConfigArgs']]] = None,
-                 node_resources: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExadbVmClusterNodeResourceArgs']]]]] = None,
+                 node_config: Optional[pulumi.Input[Union['ExadbVmClusterNodeConfigArgs', 'ExadbVmClusterNodeConfigArgsDict']]] = None,
+                 node_resources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExadbVmClusterNodeResourceArgs', 'ExadbVmClusterNodeResourceArgsDict']]]]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  private_zone_id: Optional[pulumi.Input[str]] = None,
                  scan_listener_port_tcp: Optional[pulumi.Input[int]] = None,
@@ -1129,7 +1129,7 @@ class ExadbVmCluster(pulumi.CustomResource):
         :param pulumi.Input[str] backup_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
         :param pulumi.Input[str] cluster_name: The cluster name for Exadata VM cluster on Exascale Infrastructure. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[pulumi.InputType['ExadbVmClusterDataCollectionOptionsArgs']] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+        :param pulumi.Input[Union['ExadbVmClusterDataCollectionOptionsArgs', 'ExadbVmClusterDataCollectionOptionsArgsDict']] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the Exadata VM cluster on Exascale Infrastructure. The name does not need to be unique.
         :param pulumi.Input[str] domain: A domain name used for the Exadata VM cluster on Exascale Infrastructure. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.  Applies to Exadata Database Service on Exascale Infrastructure only.
@@ -1142,8 +1142,8 @@ class ExadbVmCluster(pulumi.CustomResource):
                
                **Note:** The hostname must be unique within the subnet. If it is not unique,  then the Exadata VM cluster on Exascale Infrastructure will fail to provision.
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
-        :param pulumi.Input[pulumi.InputType['ExadbVmClusterNodeConfigArgs']] node_config: (Updatable) The configuration of each node in the Exadata VM cluster on Exascale Infrastructure.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExadbVmClusterNodeResourceArgs']]]] node_resources: Each `node_resource` represents a node in the Exadata VM cluster on Exascale Infrastructure.
+        :param pulumi.Input[Union['ExadbVmClusterNodeConfigArgs', 'ExadbVmClusterNodeConfigArgsDict']] node_config: (Updatable) The configuration of each node in the Exadata VM cluster on Exascale Infrastructure.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExadbVmClusterNodeResourceArgs', 'ExadbVmClusterNodeResourceArgsDict']]]] node_resources: Each `node_resource` represents a node in the Exadata VM cluster on Exascale Infrastructure.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[str] private_zone_id: The private zone ID in which you want DNS records to be created.
@@ -1198,7 +1198,7 @@ class ExadbVmCluster(pulumi.CustomResource):
                  backup_subnet_id: Optional[pulumi.Input[str]] = None,
                  cluster_name: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 data_collection_options: Optional[pulumi.Input[pulumi.InputType['ExadbVmClusterDataCollectionOptionsArgs']]] = None,
+                 data_collection_options: Optional[pulumi.Input[Union['ExadbVmClusterDataCollectionOptionsArgs', 'ExadbVmClusterDataCollectionOptionsArgsDict']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  domain: Optional[pulumi.Input[str]] = None,
@@ -1207,8 +1207,8 @@ class ExadbVmCluster(pulumi.CustomResource):
                  grid_image_id: Optional[pulumi.Input[str]] = None,
                  hostname: Optional[pulumi.Input[str]] = None,
                  license_model: Optional[pulumi.Input[str]] = None,
-                 node_config: Optional[pulumi.Input[pulumi.InputType['ExadbVmClusterNodeConfigArgs']]] = None,
-                 node_resources: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExadbVmClusterNodeResourceArgs']]]]] = None,
+                 node_config: Optional[pulumi.Input[Union['ExadbVmClusterNodeConfigArgs', 'ExadbVmClusterNodeConfigArgsDict']]] = None,
+                 node_resources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExadbVmClusterNodeResourceArgs', 'ExadbVmClusterNodeResourceArgsDict']]]]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  private_zone_id: Optional[pulumi.Input[str]] = None,
                  scan_listener_port_tcp: Optional[pulumi.Input[int]] = None,
@@ -1303,7 +1303,7 @@ class ExadbVmCluster(pulumi.CustomResource):
             backup_subnet_id: Optional[pulumi.Input[str]] = None,
             cluster_name: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            data_collection_options: Optional[pulumi.Input[pulumi.InputType['ExadbVmClusterDataCollectionOptionsArgs']]] = None,
+            data_collection_options: Optional[pulumi.Input[Union['ExadbVmClusterDataCollectionOptionsArgs', 'ExadbVmClusterDataCollectionOptionsArgsDict']]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             domain: Optional[pulumi.Input[str]] = None,
@@ -1313,13 +1313,13 @@ class ExadbVmCluster(pulumi.CustomResource):
             grid_image_id: Optional[pulumi.Input[str]] = None,
             grid_image_type: Optional[pulumi.Input[str]] = None,
             hostname: Optional[pulumi.Input[str]] = None,
-            iorm_config_caches: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExadbVmClusterIormConfigCachArgs']]]]] = None,
+            iorm_config_caches: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExadbVmClusterIormConfigCachArgs', 'ExadbVmClusterIormConfigCachArgsDict']]]]] = None,
             last_update_history_entry_id: Optional[pulumi.Input[str]] = None,
             license_model: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             listener_port: Optional[pulumi.Input[str]] = None,
-            node_config: Optional[pulumi.Input[pulumi.InputType['ExadbVmClusterNodeConfigArgs']]] = None,
-            node_resources: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExadbVmClusterNodeResourceArgs']]]]] = None,
+            node_config: Optional[pulumi.Input[Union['ExadbVmClusterNodeConfigArgs', 'ExadbVmClusterNodeConfigArgsDict']]] = None,
+            node_resources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExadbVmClusterNodeResourceArgs', 'ExadbVmClusterNodeResourceArgsDict']]]]] = None,
             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             private_zone_id: Optional[pulumi.Input[str]] = None,
             scan_dns_name: Optional[pulumi.Input[str]] = None,
@@ -1349,7 +1349,7 @@ class ExadbVmCluster(pulumi.CustomResource):
         :param pulumi.Input[str] backup_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
         :param pulumi.Input[str] cluster_name: The cluster name for Exadata VM cluster on Exascale Infrastructure. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[pulumi.InputType['ExadbVmClusterDataCollectionOptionsArgs']] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+        :param pulumi.Input[Union['ExadbVmClusterDataCollectionOptionsArgs', 'ExadbVmClusterDataCollectionOptionsArgsDict']] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the Exadata VM cluster on Exascale Infrastructure. The name does not need to be unique.
         :param pulumi.Input[str] domain: A domain name used for the Exadata VM cluster on Exascale Infrastructure. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.  Applies to Exadata Database Service on Exascale Infrastructure only.
@@ -1363,13 +1363,13 @@ class ExadbVmCluster(pulumi.CustomResource):
                The maximum length of the combined hostname and domain is 63 characters.
                
                **Note:** The hostname must be unique within the subnet. If it is not unique,  then the Exadata VM cluster on Exascale Infrastructure will fail to provision.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExadbVmClusterIormConfigCachArgs']]]] iorm_config_caches: The IORM settings of the Exadata DB system.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExadbVmClusterIormConfigCachArgs', 'ExadbVmClusterIormConfigCachArgsDict']]]] iorm_config_caches: The IORM settings of the Exadata DB system.
         :param pulumi.Input[str] last_update_history_entry_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[str] listener_port: The port number configured for the listener on the Exadata VM cluster on Exascale Infrastructure.
-        :param pulumi.Input[pulumi.InputType['ExadbVmClusterNodeConfigArgs']] node_config: (Updatable) The configuration of each node in the Exadata VM cluster on Exascale Infrastructure.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExadbVmClusterNodeResourceArgs']]]] node_resources: Each `node_resource` represents a node in the Exadata VM cluster on Exascale Infrastructure.
+        :param pulumi.Input[Union['ExadbVmClusterNodeConfigArgs', 'ExadbVmClusterNodeConfigArgsDict']] node_config: (Updatable) The configuration of each node in the Exadata VM cluster on Exascale Infrastructure.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExadbVmClusterNodeResourceArgs', 'ExadbVmClusterNodeResourceArgsDict']]]] node_resources: Each `node_resource` represents a node in the Exadata VM cluster on Exascale Infrastructure.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[str] private_zone_id: The private zone ID in which you want DNS records to be created.

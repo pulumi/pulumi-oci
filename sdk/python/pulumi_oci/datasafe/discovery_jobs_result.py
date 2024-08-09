@@ -508,7 +508,7 @@ class DiscoveryJobsResult(pulumi.CustomResource):
             estimated_data_value_count: Optional[pulumi.Input[str]] = None,
             is_result_applied: Optional[pulumi.Input[bool]] = None,
             key: Optional[pulumi.Input[str]] = None,
-            modified_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DiscoveryJobsResultModifiedAttributeArgs']]]]] = None,
+            modified_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DiscoveryJobsResultModifiedAttributeArgs', 'DiscoveryJobsResultModifiedAttributeArgsDict']]]]] = None,
             object: Optional[pulumi.Input[str]] = None,
             object_type: Optional[pulumi.Input[str]] = None,
             parent_column_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -535,7 +535,7 @@ class DiscoveryJobsResult(pulumi.CustomResource):
         :param pulumi.Input[str] estimated_data_value_count: The estimated number of data values the column has in the associated database.
         :param pulumi.Input[bool] is_result_applied: Indicates if the discovery result has been processed. You can update this attribute using the PatchDiscoveryJobResults operation to track whether the discovery result has already been processed and applied to the sensitive data model.
         :param pulumi.Input[str] key: The unique key that identifies the discovery result.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DiscoveryJobsResultModifiedAttributeArgs']]]] modified_attributes: The attributes of a sensitive column that have been modified in the target database. It's populated only in the case of MODIFIED discovery results and shows the new values of the modified attributes.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DiscoveryJobsResultModifiedAttributeArgs', 'DiscoveryJobsResultModifiedAttributeArgsDict']]]] modified_attributes: The attributes of a sensitive column that have been modified in the target database. It's populated only in the case of MODIFIED discovery results and shows the new values of the modified attributes.
         :param pulumi.Input[str] object: The database object that contains the sensitive column.
         :param pulumi.Input[str] object_type: The type of the database object that contains the sensitive column.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] parent_column_keys: Unique keys identifying the columns that are parents of the sensitive column. At present, it tracks a single parent only.

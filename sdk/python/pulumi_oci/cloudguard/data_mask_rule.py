@@ -438,7 +438,7 @@ class DataMaskRule(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  iam_group_id: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
-                 target_selected: Optional[pulumi.Input[pulumi.InputType['DataMaskRuleTargetSelectedArgs']]] = None,
+                 target_selected: Optional[pulumi.Input[Union['DataMaskRuleTargetSelectedArgs', 'DataMaskRuleTargetSelectedArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Data Mask Rule resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -456,10 +456,10 @@ class DataMaskRule(pulumi.CustomResource):
             data_mask_categories=data_mask_rule_data_mask_categories,
             display_name=data_mask_rule_display_name,
             iam_group_id=test_group["id"],
-            target_selected=oci.cloud_guard.DataMaskRuleTargetSelectedArgs(
-                kind=data_mask_rule_target_selected_kind,
-                values=data_mask_rule_target_selected_values,
-            ),
+            target_selected={
+                "kind": data_mask_rule_target_selected_kind,
+                "values": data_mask_rule_target_selected_values,
+            },
             data_mask_rule_status=data_mask_rule_data_mask_rule_status,
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -494,7 +494,7 @@ class DataMaskRule(pulumi.CustomResource):
                Avoid entering confidential information.
         :param pulumi.Input[str] iam_group_id: (Updatable) IAM group ID associated with the data mask rule
         :param pulumi.Input[str] state: The current lifecycle state of the data mask rule
-        :param pulumi.Input[pulumi.InputType['DataMaskRuleTargetSelectedArgs']] target_selected: (Updatable) Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
+        :param pulumi.Input[Union['DataMaskRuleTargetSelectedArgs', 'DataMaskRuleTargetSelectedArgsDict']] target_selected: (Updatable) Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
         """
         ...
     @overload
@@ -518,10 +518,10 @@ class DataMaskRule(pulumi.CustomResource):
             data_mask_categories=data_mask_rule_data_mask_categories,
             display_name=data_mask_rule_display_name,
             iam_group_id=test_group["id"],
-            target_selected=oci.cloud_guard.DataMaskRuleTargetSelectedArgs(
-                kind=data_mask_rule_target_selected_kind,
-                values=data_mask_rule_target_selected_values,
-            ),
+            target_selected={
+                "kind": data_mask_rule_target_selected_kind,
+                "values": data_mask_rule_target_selected_values,
+            },
             data_mask_rule_status=data_mask_rule_data_mask_rule_status,
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -565,7 +565,7 @@ class DataMaskRule(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  iam_group_id: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
-                 target_selected: Optional[pulumi.Input[pulumi.InputType['DataMaskRuleTargetSelectedArgs']]] = None,
+                 target_selected: Optional[pulumi.Input[Union['DataMaskRuleTargetSelectedArgs', 'DataMaskRuleTargetSelectedArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -620,7 +620,7 @@ class DataMaskRule(pulumi.CustomResource):
             lifecyle_details: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            target_selected: Optional[pulumi.Input[pulumi.InputType['DataMaskRuleTargetSelectedArgs']]] = None,
+            target_selected: Optional[pulumi.Input[Union['DataMaskRuleTargetSelectedArgs', 'DataMaskRuleTargetSelectedArgsDict']]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None) -> 'DataMaskRule':
         """
@@ -645,7 +645,7 @@ class DataMaskRule(pulumi.CustomResource):
         :param pulumi.Input[str] lifecyle_details: Additional details on the substate of the lifecycle state [DEPRECATE]
         :param pulumi.Input[str] state: The current lifecycle state of the data mask rule
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[pulumi.InputType['DataMaskRuleTargetSelectedArgs']] target_selected: (Updatable) Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
+        :param pulumi.Input[Union['DataMaskRuleTargetSelectedArgs', 'DataMaskRuleTargetSelectedArgsDict']] target_selected: (Updatable) Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
         :param pulumi.Input[str] time_created: The date and time the target was created. Format defined by RFC3339.
         :param pulumi.Input[str] time_updated: The date and time the target was updated. Format defined by RFC3339.
         """

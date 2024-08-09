@@ -388,7 +388,7 @@ class PrivateApplication(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  logo_file_base64encoded: Optional[pulumi.Input[str]] = None,
                  long_description: Optional[pulumi.Input[str]] = None,
-                 package_details: Optional[pulumi.Input[pulumi.InputType['PrivateApplicationPackageDetailsArgs']]] = None,
+                 package_details: Optional[pulumi.Input[Union['PrivateApplicationPackageDetailsArgs', 'PrivateApplicationPackageDetailsArgsDict']]] = None,
                  short_description: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -405,11 +405,11 @@ class PrivateApplication(pulumi.CustomResource):
         test_private_application = oci.service_catalog.PrivateApplication("test_private_application",
             compartment_id=compartment_id,
             display_name=private_application_display_name,
-            package_details=oci.service_catalog.PrivateApplicationPackageDetailsArgs(
-                package_type=private_application_package_details_package_type,
-                version=private_application_package_details_version,
-                zip_file_base64encoded=private_application_package_details_zip_file_base64encoded,
-            ),
+            package_details={
+                "package_type": private_application_package_details_package_type,
+                "version": private_application_package_details_version,
+                "zip_file_base64encoded": private_application_package_details_zip_file_base64encoded,
+            },
             short_description=private_application_short_description,
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -437,7 +437,7 @@ class PrivateApplication(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] logo_file_base64encoded: (Updatable) Base64-encoded logo to use as the private application icon. Template icon file requirements: PNG format, 50 KB maximum, 130 x 130 pixels.
         :param pulumi.Input[str] long_description: (Updatable) A long description of the private application.
-        :param pulumi.Input[pulumi.InputType['PrivateApplicationPackageDetailsArgs']] package_details: A base object for creating a private application package.
+        :param pulumi.Input[Union['PrivateApplicationPackageDetailsArgs', 'PrivateApplicationPackageDetailsArgsDict']] package_details: A base object for creating a private application package.
         :param pulumi.Input[str] short_description: (Updatable) A short description of the private application.
                
                
@@ -464,11 +464,11 @@ class PrivateApplication(pulumi.CustomResource):
         test_private_application = oci.service_catalog.PrivateApplication("test_private_application",
             compartment_id=compartment_id,
             display_name=private_application_display_name,
-            package_details=oci.service_catalog.PrivateApplicationPackageDetailsArgs(
-                package_type=private_application_package_details_package_type,
-                version=private_application_package_details_version,
-                zip_file_base64encoded=private_application_package_details_zip_file_base64encoded,
-            ),
+            package_details={
+                "package_type": private_application_package_details_package_type,
+                "version": private_application_package_details_version,
+                "zip_file_base64encoded": private_application_package_details_zip_file_base64encoded,
+            },
             short_description=private_application_short_description,
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -509,7 +509,7 @@ class PrivateApplication(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  logo_file_base64encoded: Optional[pulumi.Input[str]] = None,
                  long_description: Optional[pulumi.Input[str]] = None,
-                 package_details: Optional[pulumi.Input[pulumi.InputType['PrivateApplicationPackageDetailsArgs']]] = None,
+                 package_details: Optional[pulumi.Input[Union['PrivateApplicationPackageDetailsArgs', 'PrivateApplicationPackageDetailsArgsDict']]] = None,
                  short_description: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -556,9 +556,9 @@ class PrivateApplication(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             logo_file_base64encoded: Optional[pulumi.Input[str]] = None,
-            logos: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PrivateApplicationLogoArgs']]]]] = None,
+            logos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PrivateApplicationLogoArgs', 'PrivateApplicationLogoArgsDict']]]]] = None,
             long_description: Optional[pulumi.Input[str]] = None,
-            package_details: Optional[pulumi.Input[pulumi.InputType['PrivateApplicationPackageDetailsArgs']]] = None,
+            package_details: Optional[pulumi.Input[Union['PrivateApplicationPackageDetailsArgs', 'PrivateApplicationPackageDetailsArgsDict']]] = None,
             package_type: Optional[pulumi.Input[str]] = None,
             short_description: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -576,9 +576,9 @@ class PrivateApplication(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) The name of the private application.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] logo_file_base64encoded: (Updatable) Base64-encoded logo to use as the private application icon. Template icon file requirements: PNG format, 50 KB maximum, 130 x 130 pixels.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PrivateApplicationLogoArgs']]]] logos: The model for uploaded binary data, like logos and images.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PrivateApplicationLogoArgs', 'PrivateApplicationLogoArgsDict']]]] logos: The model for uploaded binary data, like logos and images.
         :param pulumi.Input[str] long_description: (Updatable) A long description of the private application.
-        :param pulumi.Input[pulumi.InputType['PrivateApplicationPackageDetailsArgs']] package_details: A base object for creating a private application package.
+        :param pulumi.Input[Union['PrivateApplicationPackageDetailsArgs', 'PrivateApplicationPackageDetailsArgsDict']] package_details: A base object for creating a private application package.
         :param pulumi.Input[str] package_type: Type of packages within this private application.
         :param pulumi.Input[str] short_description: (Updatable) A short description of the private application.
                

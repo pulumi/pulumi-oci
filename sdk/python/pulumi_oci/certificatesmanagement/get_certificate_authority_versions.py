@@ -92,7 +92,7 @@ class AwaitableGetCertificateAuthorityVersionsResult(GetCertificateAuthorityVers
 
 
 def get_certificate_authority_versions(certificate_authority_id: Optional[str] = None,
-                                       filters: Optional[Sequence[pulumi.InputType['GetCertificateAuthorityVersionsFilterArgs']]] = None,
+                                       filters: Optional[Sequence[Union['GetCertificateAuthorityVersionsFilterArgs', 'GetCertificateAuthorityVersionsFilterArgsDict']]] = None,
                                        version_number: Optional[str] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCertificateAuthorityVersionsResult:
     """
@@ -132,7 +132,7 @@ def get_certificate_authority_versions(certificate_authority_id: Optional[str] =
 
 @_utilities.lift_output_func(get_certificate_authority_versions)
 def get_certificate_authority_versions_output(certificate_authority_id: Optional[pulumi.Input[str]] = None,
-                                              filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetCertificateAuthorityVersionsFilterArgs']]]]] = None,
+                                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCertificateAuthorityVersionsFilterArgs', 'GetCertificateAuthorityVersionsFilterArgsDict']]]]] = None,
                                               version_number: Optional[pulumi.Input[Optional[str]]] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCertificateAuthorityVersionsResult]:
     """

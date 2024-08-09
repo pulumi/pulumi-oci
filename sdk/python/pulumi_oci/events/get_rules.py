@@ -105,7 +105,7 @@ class AwaitableGetRulesResult(GetRulesResult):
 
 def get_rules(compartment_id: Optional[str] = None,
               display_name: Optional[str] = None,
-              filters: Optional[Sequence[pulumi.InputType['GetRulesFilterArgs']]] = None,
+              filters: Optional[Sequence[Union['GetRulesFilterArgs', 'GetRulesFilterArgsDict']]] = None,
               state: Optional[str] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRulesResult:
     """
@@ -149,7 +149,7 @@ def get_rules(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_rules)
 def get_rules_output(compartment_id: Optional[pulumi.Input[str]] = None,
                      display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                     filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetRulesFilterArgs']]]]] = None,
+                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRulesFilterArgs', 'GetRulesFilterArgsDict']]]]] = None,
                      state: Optional[pulumi.Input[Optional[str]]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRulesResult]:
     """

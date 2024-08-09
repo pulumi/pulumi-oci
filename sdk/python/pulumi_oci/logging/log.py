@@ -383,7 +383,7 @@ class Log(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 configuration: Optional[pulumi.Input[pulumi.InputType['LogConfigurationArgs']]] = None,
+                 configuration: Optional[pulumi.Input[Union['LogConfigurationArgs', 'LogConfigurationArgsDict']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -408,16 +408,16 @@ class Log(pulumi.CustomResource):
             display_name=log_display_name,
             log_group_id=test_log_group["id"],
             log_type=log_log_type,
-            configuration=oci.logging.LogConfigurationArgs(
-                source=oci.logging.LogConfigurationSourceArgs(
-                    category=log_configuration_source_category,
-                    resource=log_configuration_source_resource,
-                    service=log_configuration_source_service,
-                    source_type=log_configuration_source_source_type,
-                    parameters=log_configuration_source_parameters,
-                ),
-                compartment_id=compartment_id,
-            ),
+            configuration={
+                "source": {
+                    "category": log_configuration_source_category,
+                    "resource": log_configuration_source_resource,
+                    "service": log_configuration_source_service,
+                    "source_type": log_configuration_source_source_type,
+                    "parameters": log_configuration_source_parameters,
+                },
+                "compartment_id": compartment_id,
+            },
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -438,7 +438,7 @@ class Log(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['LogConfigurationArgs']] configuration: Log object configuration.
+        :param pulumi.Input[Union['LogConfigurationArgs', 'LogConfigurationArgsDict']] configuration: Log object configuration.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -473,16 +473,16 @@ class Log(pulumi.CustomResource):
             display_name=log_display_name,
             log_group_id=test_log_group["id"],
             log_type=log_log_type,
-            configuration=oci.logging.LogConfigurationArgs(
-                source=oci.logging.LogConfigurationSourceArgs(
-                    category=log_configuration_source_category,
-                    resource=log_configuration_source_resource,
-                    service=log_configuration_source_service,
-                    source_type=log_configuration_source_source_type,
-                    parameters=log_configuration_source_parameters,
-                ),
-                compartment_id=compartment_id,
-            ),
+            configuration={
+                "source": {
+                    "category": log_configuration_source_category,
+                    "resource": log_configuration_source_resource,
+                    "service": log_configuration_source_service,
+                    "source_type": log_configuration_source_source_type,
+                    "parameters": log_configuration_source_parameters,
+                },
+                "compartment_id": compartment_id,
+            },
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -516,7 +516,7 @@ class Log(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 configuration: Optional[pulumi.Input[pulumi.InputType['LogConfigurationArgs']]] = None,
+                 configuration: Optional[pulumi.Input[Union['LogConfigurationArgs', 'LogConfigurationArgsDict']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -563,7 +563,7 @@ class Log(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            configuration: Optional[pulumi.Input[pulumi.InputType['LogConfigurationArgs']]] = None,
+            configuration: Optional[pulumi.Input[Union['LogConfigurationArgs', 'LogConfigurationArgsDict']]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -583,7 +583,7 @@ class Log(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment that the resource belongs to.
-        :param pulumi.Input[pulumi.InputType['LogConfigurationArgs']] configuration: Log object configuration.
+        :param pulumi.Input[Union['LogConfigurationArgs', 'LogConfigurationArgsDict']] configuration: Log object configuration.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`

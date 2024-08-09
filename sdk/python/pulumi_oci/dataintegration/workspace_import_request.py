@@ -450,7 +450,7 @@ class WorkspaceImportRequest(pulumi.CustomResource):
                  are_data_asset_references_included: Optional[pulumi.Input[bool]] = None,
                  bucket: Optional[pulumi.Input[str]] = None,
                  file_name: Optional[pulumi.Input[str]] = None,
-                 import_conflict_resolution: Optional[pulumi.Input[pulumi.InputType['WorkspaceImportRequestImportConflictResolutionArgs']]] = None,
+                 import_conflict_resolution: Optional[pulumi.Input[Union['WorkspaceImportRequestImportConflictResolutionArgs', 'WorkspaceImportRequestImportConflictResolutionArgsDict']]] = None,
                  object_key_for_import: Optional[pulumi.Input[str]] = None,
                  object_storage_region: Optional[pulumi.Input[str]] = None,
                  object_storage_tenancy_id: Optional[pulumi.Input[str]] = None,
@@ -472,11 +472,11 @@ class WorkspaceImportRequest(pulumi.CustomResource):
             file_name=workspace_import_request_file_name,
             workspace_id=test_workspace["id"],
             are_data_asset_references_included=workspace_import_request_are_data_asset_references_included,
-            import_conflict_resolution=oci.data_integration.WorkspaceImportRequestImportConflictResolutionArgs(
-                import_conflict_resolution_type=workspace_import_request_import_conflict_resolution_import_conflict_resolution_type,
-                duplicate_prefix=workspace_import_request_import_conflict_resolution_duplicate_prefix,
-                duplicate_suffix=workspace_import_request_import_conflict_resolution_duplicate_suffix,
-            ),
+            import_conflict_resolution={
+                "import_conflict_resolution_type": workspace_import_request_import_conflict_resolution_import_conflict_resolution_type,
+                "duplicate_prefix": workspace_import_request_import_conflict_resolution_duplicate_prefix,
+                "duplicate_suffix": workspace_import_request_import_conflict_resolution_duplicate_suffix,
+            },
             object_key_for_import=workspace_import_request_object_key_for_import,
             object_storage_region=workspace_import_request_object_storage_region,
             object_storage_tenancy_id=test_tenancy["id"])
@@ -495,7 +495,7 @@ class WorkspaceImportRequest(pulumi.CustomResource):
         :param pulumi.Input[bool] are_data_asset_references_included: This field controls if the data asset references will be included during import.
         :param pulumi.Input[str] bucket: Name of the Object Storage bucket where the object will be imported from.
         :param pulumi.Input[str] file_name: Name of the zip file to be imported.
-        :param pulumi.Input[pulumi.InputType['WorkspaceImportRequestImportConflictResolutionArgs']] import_conflict_resolution: Import Objects Conflict resolution.
+        :param pulumi.Input[Union['WorkspaceImportRequestImportConflictResolutionArgs', 'WorkspaceImportRequestImportConflictResolutionArgsDict']] import_conflict_resolution: Import Objects Conflict resolution.
         :param pulumi.Input[str] object_key_for_import: Key of the object inside which all the objects will be imported
         :param pulumi.Input[str] object_storage_region: Region of the object storage (if using object storage of different region)
         :param pulumi.Input[str] object_storage_tenancy_id: Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
@@ -527,11 +527,11 @@ class WorkspaceImportRequest(pulumi.CustomResource):
             file_name=workspace_import_request_file_name,
             workspace_id=test_workspace["id"],
             are_data_asset_references_included=workspace_import_request_are_data_asset_references_included,
-            import_conflict_resolution=oci.data_integration.WorkspaceImportRequestImportConflictResolutionArgs(
-                import_conflict_resolution_type=workspace_import_request_import_conflict_resolution_import_conflict_resolution_type,
-                duplicate_prefix=workspace_import_request_import_conflict_resolution_duplicate_prefix,
-                duplicate_suffix=workspace_import_request_import_conflict_resolution_duplicate_suffix,
-            ),
+            import_conflict_resolution={
+                "import_conflict_resolution_type": workspace_import_request_import_conflict_resolution_import_conflict_resolution_type,
+                "duplicate_prefix": workspace_import_request_import_conflict_resolution_duplicate_prefix,
+                "duplicate_suffix": workspace_import_request_import_conflict_resolution_duplicate_suffix,
+            },
             object_key_for_import=workspace_import_request_object_key_for_import,
             object_storage_region=workspace_import_request_object_storage_region,
             object_storage_tenancy_id=test_tenancy["id"])
@@ -563,7 +563,7 @@ class WorkspaceImportRequest(pulumi.CustomResource):
                  are_data_asset_references_included: Optional[pulumi.Input[bool]] = None,
                  bucket: Optional[pulumi.Input[str]] = None,
                  file_name: Optional[pulumi.Input[str]] = None,
-                 import_conflict_resolution: Optional[pulumi.Input[pulumi.InputType['WorkspaceImportRequestImportConflictResolutionArgs']]] = None,
+                 import_conflict_resolution: Optional[pulumi.Input[Union['WorkspaceImportRequestImportConflictResolutionArgs', 'WorkspaceImportRequestImportConflictResolutionArgsDict']]] = None,
                  object_key_for_import: Optional[pulumi.Input[str]] = None,
                  object_storage_region: Optional[pulumi.Input[str]] = None,
                  object_storage_tenancy_id: Optional[pulumi.Input[str]] = None,
@@ -615,8 +615,8 @@ class WorkspaceImportRequest(pulumi.CustomResource):
             created_by: Optional[pulumi.Input[str]] = None,
             error_messages: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             file_name: Optional[pulumi.Input[str]] = None,
-            import_conflict_resolution: Optional[pulumi.Input[pulumi.InputType['WorkspaceImportRequestImportConflictResolutionArgs']]] = None,
-            imported_objects: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WorkspaceImportRequestImportedObjectArgs']]]]] = None,
+            import_conflict_resolution: Optional[pulumi.Input[Union['WorkspaceImportRequestImportConflictResolutionArgs', 'WorkspaceImportRequestImportConflictResolutionArgsDict']]] = None,
+            imported_objects: Optional[pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceImportRequestImportedObjectArgs', 'WorkspaceImportRequestImportedObjectArgsDict']]]]] = None,
             key: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             object_key_for_import: Optional[pulumi.Input[str]] = None,
@@ -639,8 +639,8 @@ class WorkspaceImportRequest(pulumi.CustomResource):
         :param pulumi.Input[str] created_by: Name of the user who initiated import request.
         :param pulumi.Input[Mapping[str, Any]] error_messages: Contains key of the error
         :param pulumi.Input[str] file_name: Name of the zip file to be imported.
-        :param pulumi.Input[pulumi.InputType['WorkspaceImportRequestImportConflictResolutionArgs']] import_conflict_resolution: Import Objects Conflict resolution.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WorkspaceImportRequestImportedObjectArgs']]]] imported_objects: The array of imported object details.
+        :param pulumi.Input[Union['WorkspaceImportRequestImportConflictResolutionArgs', 'WorkspaceImportRequestImportConflictResolutionArgsDict']] import_conflict_resolution: Import Objects Conflict resolution.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceImportRequestImportedObjectArgs', 'WorkspaceImportRequestImportedObjectArgsDict']]]] imported_objects: The array of imported object details.
         :param pulumi.Input[str] key: Import object request key
         :param pulumi.Input[str] name: Name of the import request.
         :param pulumi.Input[str] object_key_for_import: Key of the object inside which all the objects will be imported

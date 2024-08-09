@@ -416,10 +416,10 @@ class Usage(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_depth: Optional[pulumi.Input[float]] = None,
                  filter: Optional[pulumi.Input[str]] = None,
-                 forecast: Optional[pulumi.Input[pulumi.InputType['UsageForecastArgs']]] = None,
+                 forecast: Optional[pulumi.Input[Union['UsageForecastArgs', 'UsageForecastArgsDict']]] = None,
                  granularity: Optional[pulumi.Input[str]] = None,
                  group_bies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 group_by_tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['UsageGroupByTagArgs']]]]] = None,
+                 group_by_tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['UsageGroupByTagArgs', 'UsageGroupByTagArgsDict']]]]] = None,
                  is_aggregate_by_time: Optional[pulumi.Input[bool]] = None,
                  query_type: Optional[pulumi.Input[str]] = None,
                  tenant_id: Optional[pulumi.Input[str]] = None,
@@ -444,17 +444,17 @@ class Usage(pulumi.CustomResource):
             time_usage_started=usage_time_usage_started,
             compartment_depth=usage_compartment_depth,
             filter=usage_filter,
-            forecast=oci.metering_computation.UsageForecastArgs(
-                time_forecast_ended=usage_forecast_time_forecast_ended,
-                forecast_type=usage_forecast_forecast_type,
-                time_forecast_started=usage_forecast_time_forecast_started,
-            ),
+            forecast={
+                "time_forecast_ended": usage_forecast_time_forecast_ended,
+                "forecast_type": usage_forecast_forecast_type,
+                "time_forecast_started": usage_forecast_time_forecast_started,
+            },
             group_bies=usage_group_by,
-            group_by_tags=[oci.metering_computation.UsageGroupByTagArgs(
-                key=usage_group_by_tag_key,
-                namespace=usage_group_by_tag_namespace,
-                value=usage_group_by_tag_value,
-            )],
+            group_by_tags=[{
+                "key": usage_group_by_tag_key,
+                "namespace": usage_group_by_tag_namespace,
+                "value": usage_group_by_tag_value,
+            }],
             is_aggregate_by_time=usage_is_aggregate_by_time,
             query_type=usage_query_type)
         ```
@@ -467,10 +467,10 @@ class Usage(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[float] compartment_depth: The compartment depth level.
         :param pulumi.Input[str] filter: The filter object for query usage.
-        :param pulumi.Input[pulumi.InputType['UsageForecastArgs']] forecast: Forecast configuration of usage/cost.
+        :param pulumi.Input[Union['UsageForecastArgs', 'UsageForecastArgsDict']] forecast: Forecast configuration of usage/cost.
         :param pulumi.Input[str] granularity: The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] group_bies: Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['UsageGroupByTagArgs']]]] group_by_tags: GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
+        :param pulumi.Input[Sequence[pulumi.Input[Union['UsageGroupByTagArgs', 'UsageGroupByTagArgsDict']]]] group_by_tags: GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
         :param pulumi.Input[bool] is_aggregate_by_time: Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
         :param pulumi.Input[str] query_type: The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit.
         :param pulumi.Input[str] tenant_id: Tenant ID.
@@ -505,17 +505,17 @@ class Usage(pulumi.CustomResource):
             time_usage_started=usage_time_usage_started,
             compartment_depth=usage_compartment_depth,
             filter=usage_filter,
-            forecast=oci.metering_computation.UsageForecastArgs(
-                time_forecast_ended=usage_forecast_time_forecast_ended,
-                forecast_type=usage_forecast_forecast_type,
-                time_forecast_started=usage_forecast_time_forecast_started,
-            ),
+            forecast={
+                "time_forecast_ended": usage_forecast_time_forecast_ended,
+                "forecast_type": usage_forecast_forecast_type,
+                "time_forecast_started": usage_forecast_time_forecast_started,
+            },
             group_bies=usage_group_by,
-            group_by_tags=[oci.metering_computation.UsageGroupByTagArgs(
-                key=usage_group_by_tag_key,
-                namespace=usage_group_by_tag_namespace,
-                value=usage_group_by_tag_value,
-            )],
+            group_by_tags=[{
+                "key": usage_group_by_tag_key,
+                "namespace": usage_group_by_tag_namespace,
+                "value": usage_group_by_tag_value,
+            }],
             is_aggregate_by_time=usage_is_aggregate_by_time,
             query_type=usage_query_type)
         ```
@@ -541,10 +541,10 @@ class Usage(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_depth: Optional[pulumi.Input[float]] = None,
                  filter: Optional[pulumi.Input[str]] = None,
-                 forecast: Optional[pulumi.Input[pulumi.InputType['UsageForecastArgs']]] = None,
+                 forecast: Optional[pulumi.Input[Union['UsageForecastArgs', 'UsageForecastArgsDict']]] = None,
                  granularity: Optional[pulumi.Input[str]] = None,
                  group_bies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 group_by_tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['UsageGroupByTagArgs']]]]] = None,
+                 group_by_tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['UsageGroupByTagArgs', 'UsageGroupByTagArgsDict']]]]] = None,
                  is_aggregate_by_time: Optional[pulumi.Input[bool]] = None,
                  query_type: Optional[pulumi.Input[str]] = None,
                  tenant_id: Optional[pulumi.Input[str]] = None,
@@ -591,12 +591,12 @@ class Usage(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_depth: Optional[pulumi.Input[float]] = None,
             filter: Optional[pulumi.Input[str]] = None,
-            forecast: Optional[pulumi.Input[pulumi.InputType['UsageForecastArgs']]] = None,
+            forecast: Optional[pulumi.Input[Union['UsageForecastArgs', 'UsageForecastArgsDict']]] = None,
             granularity: Optional[pulumi.Input[str]] = None,
             group_bies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            group_by_tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['UsageGroupByTagArgs']]]]] = None,
+            group_by_tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['UsageGroupByTagArgs', 'UsageGroupByTagArgsDict']]]]] = None,
             is_aggregate_by_time: Optional[pulumi.Input[bool]] = None,
-            items: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['UsageItemArgs']]]]] = None,
+            items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['UsageItemArgs', 'UsageItemArgsDict']]]]] = None,
             query_type: Optional[pulumi.Input[str]] = None,
             tenant_id: Optional[pulumi.Input[str]] = None,
             time_usage_ended: Optional[pulumi.Input[str]] = None,
@@ -610,12 +610,12 @@ class Usage(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[float] compartment_depth: The compartment depth level.
         :param pulumi.Input[str] filter: The filter object for query usage.
-        :param pulumi.Input[pulumi.InputType['UsageForecastArgs']] forecast: Forecast configuration of usage/cost.
+        :param pulumi.Input[Union['UsageForecastArgs', 'UsageForecastArgsDict']] forecast: Forecast configuration of usage/cost.
         :param pulumi.Input[str] granularity: The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] group_bies: Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['UsageGroupByTagArgs']]]] group_by_tags: GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
+        :param pulumi.Input[Sequence[pulumi.Input[Union['UsageGroupByTagArgs', 'UsageGroupByTagArgsDict']]]] group_by_tags: GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
         :param pulumi.Input[bool] is_aggregate_by_time: Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['UsageItemArgs']]]] items: A list of usage items.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['UsageItemArgs', 'UsageItemArgsDict']]]] items: A list of usage items.
         :param pulumi.Input[str] query_type: The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit.
         :param pulumi.Input[str] tenant_id: Tenant ID.
         :param pulumi.Input[str] time_usage_ended: The usage end time.

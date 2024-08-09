@@ -119,7 +119,7 @@ class AwaitableGetWorkspaceProjectsResult(GetWorkspaceProjectsResult):
 
 
 def get_workspace_projects(fields: Optional[Sequence[str]] = None,
-                           filters: Optional[Sequence[pulumi.InputType['GetWorkspaceProjectsFilterArgs']]] = None,
+                           filters: Optional[Sequence[Union['GetWorkspaceProjectsFilterArgs', 'GetWorkspaceProjectsFilterArgsDict']]] = None,
                            identifiers: Optional[Sequence[str]] = None,
                            name: Optional[str] = None,
                            name_contains: Optional[str] = None,
@@ -173,7 +173,7 @@ def get_workspace_projects(fields: Optional[Sequence[str]] = None,
 
 @_utilities.lift_output_func(get_workspace_projects)
 def get_workspace_projects_output(fields: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                                  filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetWorkspaceProjectsFilterArgs']]]]] = None,
+                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetWorkspaceProjectsFilterArgs', 'GetWorkspaceProjectsFilterArgsDict']]]]] = None,
                                   identifiers: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                   name: Optional[pulumi.Input[Optional[str]]] = None,
                                   name_contains: Optional[pulumi.Input[Optional[str]]] = None,

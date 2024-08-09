@@ -146,7 +146,7 @@ class DatabaseDbmFeaturesManagement(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  database_id: Optional[pulumi.Input[str]] = None,
                  enable_database_dbm_feature: Optional[pulumi.Input[bool]] = None,
-                 feature_details: Optional[pulumi.Input[pulumi.InputType['DatabaseDbmFeaturesManagementFeatureDetailsArgs']]] = None,
+                 feature_details: Optional[pulumi.Input[Union['DatabaseDbmFeaturesManagementFeatureDetailsArgs', 'DatabaseDbmFeaturesManagementFeatureDetailsArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Database Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
@@ -161,7 +161,7 @@ class DatabaseDbmFeaturesManagement(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[pulumi.InputType['DatabaseDbmFeaturesManagementFeatureDetailsArgs']] feature_details: The details required to enable the specified Database Management feature.
+        :param pulumi.Input[Union['DatabaseDbmFeaturesManagementFeatureDetailsArgs', 'DatabaseDbmFeaturesManagementFeatureDetailsArgsDict']] feature_details: The details required to enable the specified Database Management feature.
         """
         ...
     @overload
@@ -191,7 +191,7 @@ class DatabaseDbmFeaturesManagement(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  database_id: Optional[pulumi.Input[str]] = None,
                  enable_database_dbm_feature: Optional[pulumi.Input[bool]] = None,
-                 feature_details: Optional[pulumi.Input[pulumi.InputType['DatabaseDbmFeaturesManagementFeatureDetailsArgs']]] = None,
+                 feature_details: Optional[pulumi.Input[Union['DatabaseDbmFeaturesManagementFeatureDetailsArgs', 'DatabaseDbmFeaturesManagementFeatureDetailsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -220,7 +220,7 @@ class DatabaseDbmFeaturesManagement(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             database_id: Optional[pulumi.Input[str]] = None,
             enable_database_dbm_feature: Optional[pulumi.Input[bool]] = None,
-            feature_details: Optional[pulumi.Input[pulumi.InputType['DatabaseDbmFeaturesManagementFeatureDetailsArgs']]] = None) -> 'DatabaseDbmFeaturesManagement':
+            feature_details: Optional[pulumi.Input[Union['DatabaseDbmFeaturesManagementFeatureDetailsArgs', 'DatabaseDbmFeaturesManagementFeatureDetailsArgsDict']]] = None) -> 'DatabaseDbmFeaturesManagement':
         """
         Get an existing DatabaseDbmFeaturesManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -234,7 +234,7 @@ class DatabaseDbmFeaturesManagement(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[pulumi.InputType['DatabaseDbmFeaturesManagementFeatureDetailsArgs']] feature_details: The details required to enable the specified Database Management feature.
+        :param pulumi.Input[Union['DatabaseDbmFeaturesManagementFeatureDetailsArgs', 'DatabaseDbmFeaturesManagementFeatureDetailsArgsDict']] feature_details: The details required to enable the specified Database Management feature.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

@@ -400,7 +400,7 @@ class DeployArtifact(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  argument_substitution_mode: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 deploy_artifact_source: Optional[pulumi.Input[pulumi.InputType['DeployArtifactDeployArtifactSourceArgs']]] = None,
+                 deploy_artifact_source: Optional[pulumi.Input[Union['DeployArtifactDeployArtifactSourceArgs', 'DeployArtifactDeployArtifactSourceArgsDict']]] = None,
                  deploy_artifact_type: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -420,23 +420,23 @@ class DeployArtifact(pulumi.CustomResource):
 
         test_deploy_artifact = oci.dev_ops.DeployArtifact("test_deploy_artifact",
             argument_substitution_mode=deploy_artifact_argument_substitution_mode,
-            deploy_artifact_source=oci.dev_ops.DeployArtifactDeployArtifactSourceArgs(
-                deploy_artifact_source_type=deploy_artifact_deploy_artifact_source_deploy_artifact_source_type,
-                base64encoded_content=deploy_artifact_deploy_artifact_source_base64encoded_content,
-                chart_url=deploy_artifact_deploy_artifact_source_chart_url,
-                deploy_artifact_path=deploy_artifact_deploy_artifact_source_deploy_artifact_path,
-                deploy_artifact_version=deploy_artifact_deploy_artifact_source_deploy_artifact_version,
-                helm_artifact_source_type=deploy_artifact_deploy_artifact_source_helm_artifact_source_type,
-                helm_verification_key_source=oci.dev_ops.DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs(
-                    verification_key_source_type=deploy_artifact_deploy_artifact_source_helm_verification_key_source_verification_key_source_type,
-                    current_public_key=deploy_artifact_deploy_artifact_source_helm_verification_key_source_current_public_key,
-                    previous_public_key=deploy_artifact_deploy_artifact_source_helm_verification_key_source_previous_public_key,
-                    vault_secret_id=test_secret["id"],
-                ),
-                image_digest=deploy_artifact_deploy_artifact_source_image_digest,
-                image_uri=deploy_artifact_deploy_artifact_source_image_uri,
-                repository_id=test_repository["id"],
-            ),
+            deploy_artifact_source={
+                "deploy_artifact_source_type": deploy_artifact_deploy_artifact_source_deploy_artifact_source_type,
+                "base64encoded_content": deploy_artifact_deploy_artifact_source_base64encoded_content,
+                "chart_url": deploy_artifact_deploy_artifact_source_chart_url,
+                "deploy_artifact_path": deploy_artifact_deploy_artifact_source_deploy_artifact_path,
+                "deploy_artifact_version": deploy_artifact_deploy_artifact_source_deploy_artifact_version,
+                "helm_artifact_source_type": deploy_artifact_deploy_artifact_source_helm_artifact_source_type,
+                "helm_verification_key_source": {
+                    "verification_key_source_type": deploy_artifact_deploy_artifact_source_helm_verification_key_source_verification_key_source_type,
+                    "current_public_key": deploy_artifact_deploy_artifact_source_helm_verification_key_source_current_public_key,
+                    "previous_public_key": deploy_artifact_deploy_artifact_source_helm_verification_key_source_previous_public_key,
+                    "vault_secret_id": test_secret["id"],
+                },
+                "image_digest": deploy_artifact_deploy_artifact_source_image_digest,
+                "image_uri": deploy_artifact_deploy_artifact_source_image_uri,
+                "repository_id": test_repository["id"],
+            },
             deploy_artifact_type=deploy_artifact_deploy_artifact_type,
             project_id=test_project["id"],
             defined_tags={
@@ -461,7 +461,7 @@ class DeployArtifact(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] argument_substitution_mode: (Updatable) Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[pulumi.InputType['DeployArtifactDeployArtifactSourceArgs']] deploy_artifact_source: (Updatable) Specifies source of an artifact.
+        :param pulumi.Input[Union['DeployArtifactDeployArtifactSourceArgs', 'DeployArtifactDeployArtifactSourceArgsDict']] deploy_artifact_source: (Updatable) Specifies source of an artifact.
         :param pulumi.Input[str] deploy_artifact_type: (Updatable) Type of the deployment artifact.
         :param pulumi.Input[str] description: (Updatable) Optional description about the deployment artifact.
         :param pulumi.Input[str] display_name: (Updatable) Deployment artifact display name. Avoid entering confidential information.
@@ -491,23 +491,23 @@ class DeployArtifact(pulumi.CustomResource):
 
         test_deploy_artifact = oci.dev_ops.DeployArtifact("test_deploy_artifact",
             argument_substitution_mode=deploy_artifact_argument_substitution_mode,
-            deploy_artifact_source=oci.dev_ops.DeployArtifactDeployArtifactSourceArgs(
-                deploy_artifact_source_type=deploy_artifact_deploy_artifact_source_deploy_artifact_source_type,
-                base64encoded_content=deploy_artifact_deploy_artifact_source_base64encoded_content,
-                chart_url=deploy_artifact_deploy_artifact_source_chart_url,
-                deploy_artifact_path=deploy_artifact_deploy_artifact_source_deploy_artifact_path,
-                deploy_artifact_version=deploy_artifact_deploy_artifact_source_deploy_artifact_version,
-                helm_artifact_source_type=deploy_artifact_deploy_artifact_source_helm_artifact_source_type,
-                helm_verification_key_source=oci.dev_ops.DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs(
-                    verification_key_source_type=deploy_artifact_deploy_artifact_source_helm_verification_key_source_verification_key_source_type,
-                    current_public_key=deploy_artifact_deploy_artifact_source_helm_verification_key_source_current_public_key,
-                    previous_public_key=deploy_artifact_deploy_artifact_source_helm_verification_key_source_previous_public_key,
-                    vault_secret_id=test_secret["id"],
-                ),
-                image_digest=deploy_artifact_deploy_artifact_source_image_digest,
-                image_uri=deploy_artifact_deploy_artifact_source_image_uri,
-                repository_id=test_repository["id"],
-            ),
+            deploy_artifact_source={
+                "deploy_artifact_source_type": deploy_artifact_deploy_artifact_source_deploy_artifact_source_type,
+                "base64encoded_content": deploy_artifact_deploy_artifact_source_base64encoded_content,
+                "chart_url": deploy_artifact_deploy_artifact_source_chart_url,
+                "deploy_artifact_path": deploy_artifact_deploy_artifact_source_deploy_artifact_path,
+                "deploy_artifact_version": deploy_artifact_deploy_artifact_source_deploy_artifact_version,
+                "helm_artifact_source_type": deploy_artifact_deploy_artifact_source_helm_artifact_source_type,
+                "helm_verification_key_source": {
+                    "verification_key_source_type": deploy_artifact_deploy_artifact_source_helm_verification_key_source_verification_key_source_type,
+                    "current_public_key": deploy_artifact_deploy_artifact_source_helm_verification_key_source_current_public_key,
+                    "previous_public_key": deploy_artifact_deploy_artifact_source_helm_verification_key_source_previous_public_key,
+                    "vault_secret_id": test_secret["id"],
+                },
+                "image_digest": deploy_artifact_deploy_artifact_source_image_digest,
+                "image_uri": deploy_artifact_deploy_artifact_source_image_uri,
+                "repository_id": test_repository["id"],
+            },
             deploy_artifact_type=deploy_artifact_deploy_artifact_type,
             project_id=test_project["id"],
             defined_tags={
@@ -545,7 +545,7 @@ class DeployArtifact(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  argument_substitution_mode: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 deploy_artifact_source: Optional[pulumi.Input[pulumi.InputType['DeployArtifactDeployArtifactSourceArgs']]] = None,
+                 deploy_artifact_source: Optional[pulumi.Input[Union['DeployArtifactDeployArtifactSourceArgs', 'DeployArtifactDeployArtifactSourceArgsDict']]] = None,
                  deploy_artifact_type: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -595,7 +595,7 @@ class DeployArtifact(pulumi.CustomResource):
             argument_substitution_mode: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            deploy_artifact_source: Optional[pulumi.Input[pulumi.InputType['DeployArtifactDeployArtifactSourceArgs']]] = None,
+            deploy_artifact_source: Optional[pulumi.Input[Union['DeployArtifactDeployArtifactSourceArgs', 'DeployArtifactDeployArtifactSourceArgsDict']]] = None,
             deploy_artifact_type: Optional[pulumi.Input[str]] = None,
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
@@ -616,7 +616,7 @@ class DeployArtifact(pulumi.CustomResource):
         :param pulumi.Input[str] argument_substitution_mode: (Updatable) Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
         :param pulumi.Input[str] compartment_id: The OCID of a compartment.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[pulumi.InputType['DeployArtifactDeployArtifactSourceArgs']] deploy_artifact_source: (Updatable) Specifies source of an artifact.
+        :param pulumi.Input[Union['DeployArtifactDeployArtifactSourceArgs', 'DeployArtifactDeployArtifactSourceArgsDict']] deploy_artifact_source: (Updatable) Specifies source of an artifact.
         :param pulumi.Input[str] deploy_artifact_type: (Updatable) Type of the deployment artifact.
         :param pulumi.Input[str] description: (Updatable) Optional description about the deployment artifact.
         :param pulumi.Input[str] display_name: (Updatable) Deployment artifact display name. Avoid entering confidential information.

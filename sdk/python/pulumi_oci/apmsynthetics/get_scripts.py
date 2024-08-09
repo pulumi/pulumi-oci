@@ -103,7 +103,7 @@ class AwaitableGetScriptsResult(GetScriptsResult):
 def get_scripts(apm_domain_id: Optional[str] = None,
                 content_type: Optional[str] = None,
                 display_name: Optional[str] = None,
-                filters: Optional[Sequence[pulumi.InputType['GetScriptsFilterArgs']]] = None,
+                filters: Optional[Sequence[Union['GetScriptsFilterArgs', 'GetScriptsFilterArgsDict']]] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetScriptsResult:
     """
     This data source provides the list of Scripts in Oracle Cloud Infrastructure Apm Synthetics service.
@@ -147,7 +147,7 @@ def get_scripts(apm_domain_id: Optional[str] = None,
 def get_scripts_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                        content_type: Optional[pulumi.Input[Optional[str]]] = None,
                        display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                       filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetScriptsFilterArgs']]]]] = None,
+                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetScriptsFilterArgs', 'GetScriptsFilterArgsDict']]]]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetScriptsResult]:
     """
     This data source provides the list of Scripts in Oracle Cloud Infrastructure Apm Synthetics service.

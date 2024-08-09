@@ -288,11 +288,11 @@ class NetworkFirewallPolicySecurityRule(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  action: Optional[pulumi.Input[str]] = None,
-                 condition: Optional[pulumi.Input[pulumi.InputType['NetworkFirewallPolicySecurityRuleConditionArgs']]] = None,
+                 condition: Optional[pulumi.Input[Union['NetworkFirewallPolicySecurityRuleConditionArgs', 'NetworkFirewallPolicySecurityRuleConditionArgsDict']]] = None,
                  inspection: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
-                 positions: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicySecurityRulePositionArgs']]]]] = None,
+                 positions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkFirewallPolicySecurityRulePositionArgs', 'NetworkFirewallPolicySecurityRulePositionArgsDict']]]]] = None,
                  priority_order: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -309,19 +309,19 @@ class NetworkFirewallPolicySecurityRule(pulumi.CustomResource):
         test_network_firewall_policy_security_rule = oci.network_firewall.NetworkFirewallPolicySecurityRule("test_network_firewall_policy_security_rule",
             action=network_firewall_policy_security_rule_action,
             name=network_firewall_policy_security_rule_name,
-            condition=oci.network_firewall.NetworkFirewallPolicySecurityRuleConditionArgs(
-                applications=network_firewall_policy_security_rule_condition_application,
-                destination_addresses=network_firewall_policy_security_rule_condition_destination_address,
-                services=network_firewall_policy_security_rule_condition_service,
-                source_addresses=network_firewall_policy_security_rule_condition_source_address,
-                urls=network_firewall_policy_security_rule_condition_url,
-            ),
+            condition={
+                "applications": network_firewall_policy_security_rule_condition_application,
+                "destination_addresses": network_firewall_policy_security_rule_condition_destination_address,
+                "services": network_firewall_policy_security_rule_condition_service,
+                "source_addresses": network_firewall_policy_security_rule_condition_source_address,
+                "urls": network_firewall_policy_security_rule_condition_url,
+            },
             network_firewall_policy_id=test_network_firewall_policy["id"],
             inspection=network_firewall_policy_security_rule_inspection,
-            positions=[oci.network_firewall.NetworkFirewallPolicySecurityRulePositionArgs(
-                after_rule=network_firewall_policy_security_rule_position_after_rule,
-                before_rule=network_firewall_policy_security_rule_position_before_rule,
-            )])
+            positions=[{
+                "after_rule": network_firewall_policy_security_rule_position_after_rule,
+                "before_rule": network_firewall_policy_security_rule_position_before_rule,
+            }])
         ```
 
         ## Import
@@ -339,13 +339,13 @@ class NetworkFirewallPolicySecurityRule(pulumi.CustomResource):
                * DROP - Silently drops the traffic, e.g. without sending a TCP reset.
                * REJECT - Rejects the traffic, sending a TCP reset to client and/or server as applicable.
                * INSPECT - Inspects traffic for vulnerability as specified in `inspection`, which may result in rejection.
-        :param pulumi.Input[pulumi.InputType['NetworkFirewallPolicySecurityRuleConditionArgs']] condition: (Updatable) Criteria to evaluate against network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic. The resources mentioned must already be present in the policy before being referenced in the rule.
+        :param pulumi.Input[Union['NetworkFirewallPolicySecurityRuleConditionArgs', 'NetworkFirewallPolicySecurityRuleConditionArgsDict']] condition: (Updatable) Criteria to evaluate against network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic. The resources mentioned must already be present in the policy before being referenced in the rule.
         :param pulumi.Input[str] inspection: (Updatable) Type of inspection to affect the traffic flow. This is only applicable if action is INSPECT.
                * INTRUSION_DETECTION - Intrusion Detection.
                * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
         :param pulumi.Input[str] name: Name for the Security rule, must be unique within the policy.
         :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicySecurityRulePositionArgs']]]] positions: (Updatable) An object which defines the position of the rule. Only one of the following position references should be provided.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkFirewallPolicySecurityRulePositionArgs', 'NetworkFirewallPolicySecurityRulePositionArgsDict']]]] positions: (Updatable) An object which defines the position of the rule. Only one of the following position references should be provided.
         """
         ...
     @overload
@@ -367,19 +367,19 @@ class NetworkFirewallPolicySecurityRule(pulumi.CustomResource):
         test_network_firewall_policy_security_rule = oci.network_firewall.NetworkFirewallPolicySecurityRule("test_network_firewall_policy_security_rule",
             action=network_firewall_policy_security_rule_action,
             name=network_firewall_policy_security_rule_name,
-            condition=oci.network_firewall.NetworkFirewallPolicySecurityRuleConditionArgs(
-                applications=network_firewall_policy_security_rule_condition_application,
-                destination_addresses=network_firewall_policy_security_rule_condition_destination_address,
-                services=network_firewall_policy_security_rule_condition_service,
-                source_addresses=network_firewall_policy_security_rule_condition_source_address,
-                urls=network_firewall_policy_security_rule_condition_url,
-            ),
+            condition={
+                "applications": network_firewall_policy_security_rule_condition_application,
+                "destination_addresses": network_firewall_policy_security_rule_condition_destination_address,
+                "services": network_firewall_policy_security_rule_condition_service,
+                "source_addresses": network_firewall_policy_security_rule_condition_source_address,
+                "urls": network_firewall_policy_security_rule_condition_url,
+            },
             network_firewall_policy_id=test_network_firewall_policy["id"],
             inspection=network_firewall_policy_security_rule_inspection,
-            positions=[oci.network_firewall.NetworkFirewallPolicySecurityRulePositionArgs(
-                after_rule=network_firewall_policy_security_rule_position_after_rule,
-                before_rule=network_firewall_policy_security_rule_position_before_rule,
-            )])
+            positions=[{
+                "after_rule": network_firewall_policy_security_rule_position_after_rule,
+                "before_rule": network_firewall_policy_security_rule_position_before_rule,
+            }])
         ```
 
         ## Import
@@ -406,11 +406,11 @@ class NetworkFirewallPolicySecurityRule(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  action: Optional[pulumi.Input[str]] = None,
-                 condition: Optional[pulumi.Input[pulumi.InputType['NetworkFirewallPolicySecurityRuleConditionArgs']]] = None,
+                 condition: Optional[pulumi.Input[Union['NetworkFirewallPolicySecurityRuleConditionArgs', 'NetworkFirewallPolicySecurityRuleConditionArgsDict']]] = None,
                  inspection: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
-                 positions: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicySecurityRulePositionArgs']]]]] = None,
+                 positions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkFirewallPolicySecurityRulePositionArgs', 'NetworkFirewallPolicySecurityRulePositionArgsDict']]]]] = None,
                  priority_order: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -446,12 +446,12 @@ class NetworkFirewallPolicySecurityRule(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             action: Optional[pulumi.Input[str]] = None,
-            condition: Optional[pulumi.Input[pulumi.InputType['NetworkFirewallPolicySecurityRuleConditionArgs']]] = None,
+            condition: Optional[pulumi.Input[Union['NetworkFirewallPolicySecurityRuleConditionArgs', 'NetworkFirewallPolicySecurityRuleConditionArgsDict']]] = None,
             inspection: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
             parent_resource_id: Optional[pulumi.Input[str]] = None,
-            positions: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicySecurityRulePositionArgs']]]]] = None,
+            positions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkFirewallPolicySecurityRulePositionArgs', 'NetworkFirewallPolicySecurityRulePositionArgsDict']]]]] = None,
             priority_order: Optional[pulumi.Input[str]] = None) -> 'NetworkFirewallPolicySecurityRule':
         """
         Get an existing NetworkFirewallPolicySecurityRule resource's state with the given name, id, and optional extra
@@ -465,14 +465,14 @@ class NetworkFirewallPolicySecurityRule(pulumi.CustomResource):
                * DROP - Silently drops the traffic, e.g. without sending a TCP reset.
                * REJECT - Rejects the traffic, sending a TCP reset to client and/or server as applicable.
                * INSPECT - Inspects traffic for vulnerability as specified in `inspection`, which may result in rejection.
-        :param pulumi.Input[pulumi.InputType['NetworkFirewallPolicySecurityRuleConditionArgs']] condition: (Updatable) Criteria to evaluate against network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic. The resources mentioned must already be present in the policy before being referenced in the rule.
+        :param pulumi.Input[Union['NetworkFirewallPolicySecurityRuleConditionArgs', 'NetworkFirewallPolicySecurityRuleConditionArgsDict']] condition: (Updatable) Criteria to evaluate against network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic. The resources mentioned must already be present in the policy before being referenced in the rule.
         :param pulumi.Input[str] inspection: (Updatable) Type of inspection to affect the traffic flow. This is only applicable if action is INSPECT.
                * INTRUSION_DETECTION - Intrusion Detection.
                * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
         :param pulumi.Input[str] name: Name for the Security rule, must be unique within the policy.
         :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[str] parent_resource_id: OCID of the Network Firewall Policy this security rule belongs to.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicySecurityRulePositionArgs']]]] positions: (Updatable) An object which defines the position of the rule. Only one of the following position references should be provided.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkFirewallPolicySecurityRulePositionArgs', 'NetworkFirewallPolicySecurityRulePositionArgsDict']]]] positions: (Updatable) An object which defines the position of the rule. Only one of the following position references should be provided.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

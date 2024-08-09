@@ -387,7 +387,7 @@ class DiscoveryJob(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  discovery_client: Optional[pulumi.Input[str]] = None,
-                 discovery_details: Optional[pulumi.Input[pulumi.InputType['DiscoveryJobDiscoveryDetailsArgs']]] = None,
+                 discovery_details: Optional[pulumi.Input[Union['DiscoveryJobDiscoveryDetailsArgs', 'DiscoveryJobDiscoveryDetailsArgsDict']]] = None,
                  discovery_type: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  should_propagate_tags_to_discovered_resources: Optional[pulumi.Input[bool]] = None,
@@ -405,27 +405,27 @@ class DiscoveryJob(pulumi.CustomResource):
 
         test_discovery_job = oci.stack_monitoring.DiscoveryJob("test_discovery_job",
             compartment_id=compartment_id,
-            discovery_details=oci.stack_monitoring.DiscoveryJobDiscoveryDetailsArgs(
-                agent_id=management_agent_id,
-                properties=oci.stack_monitoring.DiscoveryJobDiscoveryDetailsPropertiesArgs(
-                    properties_map=discovery_job_discovery_details_properties_properties_map,
-                ),
-                resource_name=discovery_job_discovery_details_resource_name,
-                resource_type=discovery_job_discovery_details_resource_type,
-                credentials=oci.stack_monitoring.DiscoveryJobDiscoveryDetailsCredentialsArgs(
-                    items=[oci.stack_monitoring.DiscoveryJobDiscoveryDetailsCredentialsItemArgs(
-                        credential_name=discovery_job_discovery_details_credentials_items_credential_name,
-                        credential_type=discovery_job_discovery_details_credentials_items_credential_type,
-                        properties=oci.stack_monitoring.DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesArgs(
-                            properties_map=discovery_job_discovery_details_credentials_items_properties_properties_map,
-                        ),
-                    )],
-                ),
-                license=discovery_job_discovery_details_license,
-                tags=oci.stack_monitoring.DiscoveryJobDiscoveryDetailsTagsArgs(
-                    properties_map=discovery_job_discovery_details_tags_properties_map,
-                ),
-            ),
+            discovery_details={
+                "agent_id": management_agent_id,
+                "properties": {
+                    "properties_map": discovery_job_discovery_details_properties_properties_map,
+                },
+                "resource_name": discovery_job_discovery_details_resource_name,
+                "resource_type": discovery_job_discovery_details_resource_type,
+                "credentials": {
+                    "items": [{
+                        "credential_name": discovery_job_discovery_details_credentials_items_credential_name,
+                        "credential_type": discovery_job_discovery_details_credentials_items_credential_type,
+                        "properties": {
+                            "properties_map": discovery_job_discovery_details_credentials_items_properties_properties_map,
+                        },
+                    }],
+                },
+                "license": discovery_job_discovery_details_license,
+                "tags": {
+                    "properties_map": discovery_job_discovery_details_tags_properties_map,
+                },
+            },
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -450,7 +450,7 @@ class DiscoveryJob(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: The OCID of Compartment
         :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] discovery_client: Client who submits discovery job.
-        :param pulumi.Input[pulumi.InputType['DiscoveryJobDiscoveryDetailsArgs']] discovery_details: The request of DiscoveryJob Resource details.
+        :param pulumi.Input[Union['DiscoveryJobDiscoveryDetailsArgs', 'DiscoveryJobDiscoveryDetailsArgsDict']] discovery_details: The request of DiscoveryJob Resource details.
         :param pulumi.Input[str] discovery_type: Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] should_propagate_tags_to_discovered_resources: If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true. 
@@ -478,27 +478,27 @@ class DiscoveryJob(pulumi.CustomResource):
 
         test_discovery_job = oci.stack_monitoring.DiscoveryJob("test_discovery_job",
             compartment_id=compartment_id,
-            discovery_details=oci.stack_monitoring.DiscoveryJobDiscoveryDetailsArgs(
-                agent_id=management_agent_id,
-                properties=oci.stack_monitoring.DiscoveryJobDiscoveryDetailsPropertiesArgs(
-                    properties_map=discovery_job_discovery_details_properties_properties_map,
-                ),
-                resource_name=discovery_job_discovery_details_resource_name,
-                resource_type=discovery_job_discovery_details_resource_type,
-                credentials=oci.stack_monitoring.DiscoveryJobDiscoveryDetailsCredentialsArgs(
-                    items=[oci.stack_monitoring.DiscoveryJobDiscoveryDetailsCredentialsItemArgs(
-                        credential_name=discovery_job_discovery_details_credentials_items_credential_name,
-                        credential_type=discovery_job_discovery_details_credentials_items_credential_type,
-                        properties=oci.stack_monitoring.DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesArgs(
-                            properties_map=discovery_job_discovery_details_credentials_items_properties_properties_map,
-                        ),
-                    )],
-                ),
-                license=discovery_job_discovery_details_license,
-                tags=oci.stack_monitoring.DiscoveryJobDiscoveryDetailsTagsArgs(
-                    properties_map=discovery_job_discovery_details_tags_properties_map,
-                ),
-            ),
+            discovery_details={
+                "agent_id": management_agent_id,
+                "properties": {
+                    "properties_map": discovery_job_discovery_details_properties_properties_map,
+                },
+                "resource_name": discovery_job_discovery_details_resource_name,
+                "resource_type": discovery_job_discovery_details_resource_type,
+                "credentials": {
+                    "items": [{
+                        "credential_name": discovery_job_discovery_details_credentials_items_credential_name,
+                        "credential_type": discovery_job_discovery_details_credentials_items_credential_type,
+                        "properties": {
+                            "properties_map": discovery_job_discovery_details_credentials_items_properties_properties_map,
+                        },
+                    }],
+                },
+                "license": discovery_job_discovery_details_license,
+                "tags": {
+                    "properties_map": discovery_job_discovery_details_tags_properties_map,
+                },
+            },
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -536,7 +536,7 @@ class DiscoveryJob(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  discovery_client: Optional[pulumi.Input[str]] = None,
-                 discovery_details: Optional[pulumi.Input[pulumi.InputType['DiscoveryJobDiscoveryDetailsArgs']]] = None,
+                 discovery_details: Optional[pulumi.Input[Union['DiscoveryJobDiscoveryDetailsArgs', 'DiscoveryJobDiscoveryDetailsArgsDict']]] = None,
                  discovery_type: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  should_propagate_tags_to_discovered_resources: Optional[pulumi.Input[bool]] = None,
@@ -580,7 +580,7 @@ class DiscoveryJob(pulumi.CustomResource):
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             discovery_client: Optional[pulumi.Input[str]] = None,
-            discovery_details: Optional[pulumi.Input[pulumi.InputType['DiscoveryJobDiscoveryDetailsArgs']]] = None,
+            discovery_details: Optional[pulumi.Input[Union['DiscoveryJobDiscoveryDetailsArgs', 'DiscoveryJobDiscoveryDetailsArgsDict']]] = None,
             discovery_type: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             should_propagate_tags_to_discovered_resources: Optional[pulumi.Input[bool]] = None,
@@ -601,7 +601,7 @@ class DiscoveryJob(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: The OCID of Compartment
         :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] discovery_client: Client who submits discovery job.
-        :param pulumi.Input[pulumi.InputType['DiscoveryJobDiscoveryDetailsArgs']] discovery_details: The request of DiscoveryJob Resource details.
+        :param pulumi.Input[Union['DiscoveryJobDiscoveryDetailsArgs', 'DiscoveryJobDiscoveryDetailsArgsDict']] discovery_details: The request of DiscoveryJob Resource details.
         :param pulumi.Input[str] discovery_type: Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] should_propagate_tags_to_discovered_resources: If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true. 

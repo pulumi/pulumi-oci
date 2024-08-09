@@ -544,7 +544,7 @@ public class InstanceConfiguration extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public InstanceConfiguration(String name) {
+    public InstanceConfiguration(java.lang.String name) {
         this(name, InstanceConfigurationArgs.Empty);
     }
     /**
@@ -552,7 +552,7 @@ public class InstanceConfiguration extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public InstanceConfiguration(String name, InstanceConfigurationArgs args) {
+    public InstanceConfiguration(java.lang.String name, InstanceConfigurationArgs args) {
         this(name, args, null);
     }
     /**
@@ -561,12 +561,12 @@ public class InstanceConfiguration extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public InstanceConfiguration(String name, InstanceConfigurationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/instanceConfiguration:InstanceConfiguration", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public InstanceConfiguration(java.lang.String name, InstanceConfigurationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Core/instanceConfiguration:InstanceConfiguration", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private InstanceConfiguration(String name, Output<String> id, @Nullable InstanceConfigurationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/instanceConfiguration:InstanceConfiguration", name, state, makeResourceOptions(options, id));
+    private InstanceConfiguration(java.lang.String name, Output<java.lang.String> id, @Nullable InstanceConfigurationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Core/instanceConfiguration:InstanceConfiguration", name, state, makeResourceOptions(options, id), false);
     }
 
     private static InstanceConfigurationArgs makeArgs(InstanceConfigurationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -576,7 +576,7 @@ public class InstanceConfiguration extends com.pulumi.resources.CustomResource {
         return args == null ? InstanceConfigurationArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -592,7 +592,7 @@ public class InstanceConfiguration extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static InstanceConfiguration get(String name, Output<String> id, @Nullable InstanceConfigurationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static InstanceConfiguration get(java.lang.String name, Output<java.lang.String> id, @Nullable InstanceConfigurationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new InstanceConfiguration(name, id, state, options);
     }
 }

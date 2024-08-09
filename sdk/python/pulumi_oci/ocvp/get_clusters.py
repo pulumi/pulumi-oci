@@ -117,7 +117,7 @@ class AwaitableGetClustersResult(GetClustersResult):
 
 def get_clusters(compartment_id: Optional[str] = None,
                  display_name: Optional[str] = None,
-                 filters: Optional[Sequence[pulumi.InputType['GetClustersFilterArgs']]] = None,
+                 filters: Optional[Sequence[Union['GetClustersFilterArgs', 'GetClustersFilterArgsDict']]] = None,
                  sddc_id: Optional[str] = None,
                  state: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetClustersResult:
@@ -166,7 +166,7 @@ def get_clusters(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_clusters)
 def get_clusters_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                         display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                        filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetClustersFilterArgs']]]]] = None,
+                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetClustersFilterArgs', 'GetClustersFilterArgsDict']]]]] = None,
                         sddc_id: Optional[pulumi.Input[Optional[str]]] = None,
                         state: Optional[pulumi.Input[Optional[str]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetClustersResult]:

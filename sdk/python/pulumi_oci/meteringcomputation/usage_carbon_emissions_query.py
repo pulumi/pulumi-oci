@@ -97,7 +97,7 @@ class UsageCarbonEmissionsQuery(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 query_definition: Optional[pulumi.Input[pulumi.InputType['UsageCarbonEmissionsQueryQueryDefinitionArgs']]] = None,
+                 query_definition: Optional[pulumi.Input[Union['UsageCarbonEmissionsQueryQueryDefinitionArgs', 'UsageCarbonEmissionsQueryQueryDefinitionArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Usage Carbon Emissions Query resource in Oracle Cloud Infrastructure Metering Computation service.
@@ -112,29 +112,29 @@ class UsageCarbonEmissionsQuery(pulumi.CustomResource):
 
         test_usage_carbon_emissions_query = oci.metering_computation.UsageCarbonEmissionsQuery("test_usage_carbon_emissions_query",
             compartment_id=compartment_id,
-            query_definition=oci.metering_computation.UsageCarbonEmissionsQueryQueryDefinitionArgs(
-                cost_analysis_ui=oci.metering_computation.UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArgs(
-                    graph=usage_carbon_emissions_query_query_definition_cost_analysis_ui_graph,
-                    is_cumulative_graph=usage_carbon_emissions_query_query_definition_cost_analysis_ui_is_cumulative_graph,
-                ),
-                display_name=usage_carbon_emissions_query_query_definition_display_name,
-                report_query=oci.metering_computation.UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs(
-                    tenant_id=test_tenant["id"],
-                    compartment_depth=usage_carbon_emissions_query_query_definition_report_query_compartment_depth,
-                    date_range_name=usage_carbon_emissions_query_query_definition_report_query_date_range_name,
-                    group_bies=usage_carbon_emissions_query_query_definition_report_query_group_by,
-                    group_by_tags=[oci.metering_computation.UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArgs(
-                        key=usage_carbon_emissions_query_query_definition_report_query_group_by_tag_key,
-                        namespace=usage_carbon_emissions_query_query_definition_report_query_group_by_tag_namespace,
-                        value=usage_carbon_emissions_query_query_definition_report_query_group_by_tag_value,
-                    )],
-                    is_aggregate_by_time=usage_carbon_emissions_query_query_definition_report_query_is_aggregate_by_time,
-                    time_usage_ended=usage_carbon_emissions_query_query_definition_report_query_time_usage_ended,
-                    time_usage_started=usage_carbon_emissions_query_query_definition_report_query_time_usage_started,
-                    usage_carbon_emissions_query_filter=usage_carbon_emissions_query_query_definition_report_query_usage_carbon_emissions_query_filter,
-                ),
-                version=usage_carbon_emissions_query_query_definition_version,
-            ))
+            query_definition={
+                "cost_analysis_ui": {
+                    "graph": usage_carbon_emissions_query_query_definition_cost_analysis_ui_graph,
+                    "is_cumulative_graph": usage_carbon_emissions_query_query_definition_cost_analysis_ui_is_cumulative_graph,
+                },
+                "display_name": usage_carbon_emissions_query_query_definition_display_name,
+                "report_query": {
+                    "tenant_id": test_tenant["id"],
+                    "compartment_depth": usage_carbon_emissions_query_query_definition_report_query_compartment_depth,
+                    "date_range_name": usage_carbon_emissions_query_query_definition_report_query_date_range_name,
+                    "group_bies": usage_carbon_emissions_query_query_definition_report_query_group_by,
+                    "group_by_tags": [{
+                        "key": usage_carbon_emissions_query_query_definition_report_query_group_by_tag_key,
+                        "namespace": usage_carbon_emissions_query_query_definition_report_query_group_by_tag_namespace,
+                        "value": usage_carbon_emissions_query_query_definition_report_query_group_by_tag_value,
+                    }],
+                    "is_aggregate_by_time": usage_carbon_emissions_query_query_definition_report_query_is_aggregate_by_time,
+                    "time_usage_ended": usage_carbon_emissions_query_query_definition_report_query_time_usage_ended,
+                    "time_usage_started": usage_carbon_emissions_query_query_definition_report_query_time_usage_started,
+                    "usage_carbon_emissions_query_filter": usage_carbon_emissions_query_query_definition_report_query_usage_carbon_emissions_query_filter,
+                },
+                "version": usage_carbon_emissions_query_query_definition_version,
+            })
         ```
 
         ## Import
@@ -148,7 +148,7 @@ class UsageCarbonEmissionsQuery(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: The compartment OCID.
-        :param pulumi.Input[pulumi.InputType['UsageCarbonEmissionsQueryQueryDefinitionArgs']] query_definition: (Updatable) The common fields for queries.
+        :param pulumi.Input[Union['UsageCarbonEmissionsQueryQueryDefinitionArgs', 'UsageCarbonEmissionsQueryQueryDefinitionArgsDict']] query_definition: (Updatable) The common fields for queries.
         """
         ...
     @overload
@@ -169,29 +169,29 @@ class UsageCarbonEmissionsQuery(pulumi.CustomResource):
 
         test_usage_carbon_emissions_query = oci.metering_computation.UsageCarbonEmissionsQuery("test_usage_carbon_emissions_query",
             compartment_id=compartment_id,
-            query_definition=oci.metering_computation.UsageCarbonEmissionsQueryQueryDefinitionArgs(
-                cost_analysis_ui=oci.metering_computation.UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArgs(
-                    graph=usage_carbon_emissions_query_query_definition_cost_analysis_ui_graph,
-                    is_cumulative_graph=usage_carbon_emissions_query_query_definition_cost_analysis_ui_is_cumulative_graph,
-                ),
-                display_name=usage_carbon_emissions_query_query_definition_display_name,
-                report_query=oci.metering_computation.UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs(
-                    tenant_id=test_tenant["id"],
-                    compartment_depth=usage_carbon_emissions_query_query_definition_report_query_compartment_depth,
-                    date_range_name=usage_carbon_emissions_query_query_definition_report_query_date_range_name,
-                    group_bies=usage_carbon_emissions_query_query_definition_report_query_group_by,
-                    group_by_tags=[oci.metering_computation.UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArgs(
-                        key=usage_carbon_emissions_query_query_definition_report_query_group_by_tag_key,
-                        namespace=usage_carbon_emissions_query_query_definition_report_query_group_by_tag_namespace,
-                        value=usage_carbon_emissions_query_query_definition_report_query_group_by_tag_value,
-                    )],
-                    is_aggregate_by_time=usage_carbon_emissions_query_query_definition_report_query_is_aggregate_by_time,
-                    time_usage_ended=usage_carbon_emissions_query_query_definition_report_query_time_usage_ended,
-                    time_usage_started=usage_carbon_emissions_query_query_definition_report_query_time_usage_started,
-                    usage_carbon_emissions_query_filter=usage_carbon_emissions_query_query_definition_report_query_usage_carbon_emissions_query_filter,
-                ),
-                version=usage_carbon_emissions_query_query_definition_version,
-            ))
+            query_definition={
+                "cost_analysis_ui": {
+                    "graph": usage_carbon_emissions_query_query_definition_cost_analysis_ui_graph,
+                    "is_cumulative_graph": usage_carbon_emissions_query_query_definition_cost_analysis_ui_is_cumulative_graph,
+                },
+                "display_name": usage_carbon_emissions_query_query_definition_display_name,
+                "report_query": {
+                    "tenant_id": test_tenant["id"],
+                    "compartment_depth": usage_carbon_emissions_query_query_definition_report_query_compartment_depth,
+                    "date_range_name": usage_carbon_emissions_query_query_definition_report_query_date_range_name,
+                    "group_bies": usage_carbon_emissions_query_query_definition_report_query_group_by,
+                    "group_by_tags": [{
+                        "key": usage_carbon_emissions_query_query_definition_report_query_group_by_tag_key,
+                        "namespace": usage_carbon_emissions_query_query_definition_report_query_group_by_tag_namespace,
+                        "value": usage_carbon_emissions_query_query_definition_report_query_group_by_tag_value,
+                    }],
+                    "is_aggregate_by_time": usage_carbon_emissions_query_query_definition_report_query_is_aggregate_by_time,
+                    "time_usage_ended": usage_carbon_emissions_query_query_definition_report_query_time_usage_ended,
+                    "time_usage_started": usage_carbon_emissions_query_query_definition_report_query_time_usage_started,
+                    "usage_carbon_emissions_query_filter": usage_carbon_emissions_query_query_definition_report_query_usage_carbon_emissions_query_filter,
+                },
+                "version": usage_carbon_emissions_query_query_definition_version,
+            })
         ```
 
         ## Import
@@ -218,7 +218,7 @@ class UsageCarbonEmissionsQuery(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 query_definition: Optional[pulumi.Input[pulumi.InputType['UsageCarbonEmissionsQueryQueryDefinitionArgs']]] = None,
+                 query_definition: Optional[pulumi.Input[Union['UsageCarbonEmissionsQueryQueryDefinitionArgs', 'UsageCarbonEmissionsQueryQueryDefinitionArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -245,7 +245,7 @@ class UsageCarbonEmissionsQuery(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            query_definition: Optional[pulumi.Input[pulumi.InputType['UsageCarbonEmissionsQueryQueryDefinitionArgs']]] = None) -> 'UsageCarbonEmissionsQuery':
+            query_definition: Optional[pulumi.Input[Union['UsageCarbonEmissionsQueryQueryDefinitionArgs', 'UsageCarbonEmissionsQueryQueryDefinitionArgsDict']]] = None) -> 'UsageCarbonEmissionsQuery':
         """
         Get an existing UsageCarbonEmissionsQuery resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -254,7 +254,7 @@ class UsageCarbonEmissionsQuery(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: The compartment OCID.
-        :param pulumi.Input[pulumi.InputType['UsageCarbonEmissionsQueryQueryDefinitionArgs']] query_definition: (Updatable) The common fields for queries.
+        :param pulumi.Input[Union['UsageCarbonEmissionsQueryQueryDefinitionArgs', 'UsageCarbonEmissionsQueryQueryDefinitionArgsDict']] query_definition: (Updatable) The common fields for queries.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

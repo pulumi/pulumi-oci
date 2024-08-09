@@ -376,7 +376,7 @@ class CloudGuardDataSource(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 data_source_details: Optional[pulumi.Input[pulumi.InputType['CloudGuardDataSourceDataSourceDetailsArgs']]] = None,
+                 data_source_details: Optional[pulumi.Input[Union['CloudGuardDataSourceDataSourceDetailsArgs', 'CloudGuardDataSourceDataSourceDetailsArgsDict']]] = None,
                  data_source_feed_provider: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -399,31 +399,31 @@ class CloudGuardDataSource(pulumi.CustomResource):
             compartment_id=compartment_id,
             data_source_feed_provider=data_source_data_source_feed_provider,
             display_name=data_source_display_name,
-            data_source_details=oci.cloud_guard.CloudGuardDataSourceDataSourceDetailsArgs(
-                data_source_feed_provider=data_source_data_source_details_data_source_feed_provider,
-                additional_entities_count=data_source_data_source_details_additional_entities_count,
-                description=data_source_data_source_details_description,
-                interval_in_minutes=data_source_data_source_details_interval_in_minutes,
-                interval_in_seconds=data_source_data_source_details_interval_in_seconds,
-                logging_query_details=oci.cloud_guard.CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs(
-                    logging_query_type=data_source_data_source_details_logging_query_details_logging_query_type,
-                    key_entities_count=data_source_data_source_details_logging_query_details_key_entities_count,
-                ),
-                logging_query_type=data_source_data_source_details_logging_query_type,
-                operator=data_source_data_source_details_operator,
-                query=data_source_data_source_details_query,
-                query_start_time=oci.cloud_guard.CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs(
-                    start_policy_type=data_source_data_source_details_query_start_time_start_policy_type,
-                    query_start_time=data_source_data_source_details_query_start_time_query_start_time,
-                ),
-                regions=data_source_data_source_details_regions,
-                scheduled_query_scope_details=[oci.cloud_guard.CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailArgs(
-                    region=data_source_data_source_details_scheduled_query_scope_details_region,
-                    resource_ids=data_source_data_source_details_scheduled_query_scope_details_resource_ids,
-                    resource_type=data_source_data_source_details_scheduled_query_scope_details_resource_type,
-                )],
-                threshold=data_source_data_source_details_threshold,
-            ),
+            data_source_details={
+                "data_source_feed_provider": data_source_data_source_details_data_source_feed_provider,
+                "additional_entities_count": data_source_data_source_details_additional_entities_count,
+                "description": data_source_data_source_details_description,
+                "interval_in_minutes": data_source_data_source_details_interval_in_minutes,
+                "interval_in_seconds": data_source_data_source_details_interval_in_seconds,
+                "logging_query_details": {
+                    "logging_query_type": data_source_data_source_details_logging_query_details_logging_query_type,
+                    "key_entities_count": data_source_data_source_details_logging_query_details_key_entities_count,
+                },
+                "logging_query_type": data_source_data_source_details_logging_query_type,
+                "operator": data_source_data_source_details_operator,
+                "query": data_source_data_source_details_query,
+                "query_start_time": {
+                    "start_policy_type": data_source_data_source_details_query_start_time_start_policy_type,
+                    "query_start_time": data_source_data_source_details_query_start_time_query_start_time,
+                },
+                "regions": data_source_data_source_details_regions,
+                "scheduled_query_scope_details": [{
+                    "region": data_source_data_source_details_scheduled_query_scope_details_region,
+                    "resource_ids": data_source_data_source_details_scheduled_query_scope_details_resource_ids,
+                    "resource_type": data_source_data_source_details_scheduled_query_scope_details_resource_type,
+                }],
+                "threshold": data_source_data_source_details_threshold,
+            },
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -444,7 +444,7 @@ class CloudGuardDataSource(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment OCID of the data source
-        :param pulumi.Input[pulumi.InputType['CloudGuardDataSourceDataSourceDetailsArgs']] data_source_details: (Updatable) Details specific to the data source type.
+        :param pulumi.Input[Union['CloudGuardDataSourceDataSourceDetailsArgs', 'CloudGuardDataSourceDataSourceDetailsArgsDict']] data_source_details: (Updatable) Details specific to the data source type.
         :param pulumi.Input[str] data_source_feed_provider: Type of data source feed provider (LoggingQuery)
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Data source display name
@@ -479,31 +479,31 @@ class CloudGuardDataSource(pulumi.CustomResource):
             compartment_id=compartment_id,
             data_source_feed_provider=data_source_data_source_feed_provider,
             display_name=data_source_display_name,
-            data_source_details=oci.cloud_guard.CloudGuardDataSourceDataSourceDetailsArgs(
-                data_source_feed_provider=data_source_data_source_details_data_source_feed_provider,
-                additional_entities_count=data_source_data_source_details_additional_entities_count,
-                description=data_source_data_source_details_description,
-                interval_in_minutes=data_source_data_source_details_interval_in_minutes,
-                interval_in_seconds=data_source_data_source_details_interval_in_seconds,
-                logging_query_details=oci.cloud_guard.CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs(
-                    logging_query_type=data_source_data_source_details_logging_query_details_logging_query_type,
-                    key_entities_count=data_source_data_source_details_logging_query_details_key_entities_count,
-                ),
-                logging_query_type=data_source_data_source_details_logging_query_type,
-                operator=data_source_data_source_details_operator,
-                query=data_source_data_source_details_query,
-                query_start_time=oci.cloud_guard.CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs(
-                    start_policy_type=data_source_data_source_details_query_start_time_start_policy_type,
-                    query_start_time=data_source_data_source_details_query_start_time_query_start_time,
-                ),
-                regions=data_source_data_source_details_regions,
-                scheduled_query_scope_details=[oci.cloud_guard.CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailArgs(
-                    region=data_source_data_source_details_scheduled_query_scope_details_region,
-                    resource_ids=data_source_data_source_details_scheduled_query_scope_details_resource_ids,
-                    resource_type=data_source_data_source_details_scheduled_query_scope_details_resource_type,
-                )],
-                threshold=data_source_data_source_details_threshold,
-            ),
+            data_source_details={
+                "data_source_feed_provider": data_source_data_source_details_data_source_feed_provider,
+                "additional_entities_count": data_source_data_source_details_additional_entities_count,
+                "description": data_source_data_source_details_description,
+                "interval_in_minutes": data_source_data_source_details_interval_in_minutes,
+                "interval_in_seconds": data_source_data_source_details_interval_in_seconds,
+                "logging_query_details": {
+                    "logging_query_type": data_source_data_source_details_logging_query_details_logging_query_type,
+                    "key_entities_count": data_source_data_source_details_logging_query_details_key_entities_count,
+                },
+                "logging_query_type": data_source_data_source_details_logging_query_type,
+                "operator": data_source_data_source_details_operator,
+                "query": data_source_data_source_details_query,
+                "query_start_time": {
+                    "start_policy_type": data_source_data_source_details_query_start_time_start_policy_type,
+                    "query_start_time": data_source_data_source_details_query_start_time_query_start_time,
+                },
+                "regions": data_source_data_source_details_regions,
+                "scheduled_query_scope_details": [{
+                    "region": data_source_data_source_details_scheduled_query_scope_details_region,
+                    "resource_ids": data_source_data_source_details_scheduled_query_scope_details_resource_ids,
+                    "resource_type": data_source_data_source_details_scheduled_query_scope_details_resource_type,
+                }],
+                "threshold": data_source_data_source_details_threshold,
+            },
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -537,7 +537,7 @@ class CloudGuardDataSource(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 data_source_details: Optional[pulumi.Input[pulumi.InputType['CloudGuardDataSourceDataSourceDetailsArgs']]] = None,
+                 data_source_details: Optional[pulumi.Input[Union['CloudGuardDataSourceDataSourceDetailsArgs', 'CloudGuardDataSourceDataSourceDetailsArgsDict']]] = None,
                  data_source_feed_provider: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -582,13 +582,13 @@ class CloudGuardDataSource(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            data_source_details: Optional[pulumi.Input[pulumi.InputType['CloudGuardDataSourceDataSourceDetailsArgs']]] = None,
-            data_source_detector_mapping_infos: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudGuardDataSourceDataSourceDetectorMappingInfoArgs']]]]] = None,
+            data_source_details: Optional[pulumi.Input[Union['CloudGuardDataSourceDataSourceDetailsArgs', 'CloudGuardDataSourceDataSourceDetailsArgsDict']]] = None,
+            data_source_detector_mapping_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CloudGuardDataSourceDataSourceDetectorMappingInfoArgs', 'CloudGuardDataSourceDataSourceDetectorMappingInfoArgsDict']]]]] = None,
             data_source_feed_provider: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            region_status_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudGuardDataSourceRegionStatusDetailArgs']]]]] = None,
+            region_status_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CloudGuardDataSourceRegionStatusDetailArgs', 'CloudGuardDataSourceRegionStatusDetailArgsDict']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             status: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -602,15 +602,15 @@ class CloudGuardDataSource(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment OCID of the data source
-        :param pulumi.Input[pulumi.InputType['CloudGuardDataSourceDataSourceDetailsArgs']] data_source_details: (Updatable) Details specific to the data source type.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudGuardDataSourceDataSourceDetectorMappingInfoArgs']]]] data_source_detector_mapping_infos: Information about the detector recipe and rule attached
+        :param pulumi.Input[Union['CloudGuardDataSourceDataSourceDetailsArgs', 'CloudGuardDataSourceDataSourceDetailsArgsDict']] data_source_details: (Updatable) Details specific to the data source type.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudGuardDataSourceDataSourceDetectorMappingInfoArgs', 'CloudGuardDataSourceDataSourceDetectorMappingInfoArgsDict']]]] data_source_detector_mapping_infos: Information about the detector recipe and rule attached
         :param pulumi.Input[str] data_source_feed_provider: Type of data source feed provider (LoggingQuery)
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Data source display name
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
                
                Avoid entering confidential information.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudGuardDataSourceRegionStatusDetailArgs']]]] region_status_details: Information about the region and status of query replication
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudGuardDataSourceRegionStatusDetailArgs', 'CloudGuardDataSourceRegionStatusDetailArgsDict']]]] region_status_details: Information about the region and status of query replication
         :param pulumi.Input[str] state: The current lifecycle state of the resource.
         :param pulumi.Input[str] status: (Updatable) Enablement status of data source.
                

@@ -98,7 +98,7 @@ class AwaitableGetListingPackageAgreementsResult(GetListingPackageAgreementsResu
 
 
 def get_listing_package_agreements(compartment_id: Optional[str] = None,
-                                   filters: Optional[Sequence[pulumi.InputType['GetListingPackageAgreementsFilterArgs']]] = None,
+                                   filters: Optional[Sequence[Union['GetListingPackageAgreementsFilterArgs', 'GetListingPackageAgreementsFilterArgsDict']]] = None,
                                    listing_id: Optional[str] = None,
                                    package_version: Optional[str] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetListingPackageAgreementsResult:
@@ -142,7 +142,7 @@ def get_listing_package_agreements(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_listing_package_agreements)
 def get_listing_package_agreements_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                          filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetListingPackageAgreementsFilterArgs']]]]] = None,
+                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetListingPackageAgreementsFilterArgs', 'GetListingPackageAgreementsFilterArgsDict']]]]] = None,
                                           listing_id: Optional[pulumi.Input[str]] = None,
                                           package_version: Optional[pulumi.Input[str]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetListingPackageAgreementsResult]:

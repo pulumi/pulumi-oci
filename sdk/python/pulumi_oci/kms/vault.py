@@ -486,10 +486,10 @@ class Vault(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 external_key_manager_metadata: Optional[pulumi.Input[pulumi.InputType['VaultExternalKeyManagerMetadataArgs']]] = None,
+                 external_key_manager_metadata: Optional[pulumi.Input[Union['VaultExternalKeyManagerMetadataArgs', 'VaultExternalKeyManagerMetadataArgsDict']]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 restore_from_file: Optional[pulumi.Input[pulumi.InputType['VaultRestoreFromFileArgs']]] = None,
-                 restore_from_object_store: Optional[pulumi.Input[pulumi.InputType['VaultRestoreFromObjectStoreArgs']]] = None,
+                 restore_from_file: Optional[pulumi.Input[Union['VaultRestoreFromFileArgs', 'VaultRestoreFromFileArgsDict']]] = None,
+                 restore_from_object_store: Optional[pulumi.Input[Union['VaultRestoreFromObjectStoreArgs', 'VaultRestoreFromObjectStoreArgsDict']]] = None,
                  restore_trigger: Optional[pulumi.Input[bool]] = None,
                  time_of_deletion: Optional[pulumi.Input[str]] = None,
                  vault_type: Optional[pulumi.Input[str]] = None,
@@ -520,15 +520,15 @@ class Vault(pulumi.CustomResource):
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            external_key_manager_metadata=oci.kms.VaultExternalKeyManagerMetadataArgs(
-                external_vault_endpoint_url=vault_external_key_manager_metadata_external_vault_endpoint_url,
-                oauth_metadata=oci.kms.VaultExternalKeyManagerMetadataOauthMetadataArgs(
-                    client_app_id=test_client_app["id"],
-                    client_app_secret=vault_external_key_manager_metadata_oauth_metadata_client_app_secret,
-                    idcs_account_name_url=vault_external_key_manager_metadata_oauth_metadata_idcs_account_name_url,
-                ),
-                private_endpoint_id=test_private_endpoint["id"],
-            ),
+            external_key_manager_metadata={
+                "external_vault_endpoint_url": vault_external_key_manager_metadata_external_vault_endpoint_url,
+                "oauth_metadata": {
+                    "client_app_id": test_client_app["id"],
+                    "client_app_secret": vault_external_key_manager_metadata_oauth_metadata_client_app_secret,
+                    "idcs_account_name_url": vault_external_key_manager_metadata_oauth_metadata_idcs_account_name_url,
+                },
+                "private_endpoint_id": test_private_endpoint["id"],
+            },
             freeform_tags={
                 "Department": "Finance",
             })
@@ -547,10 +547,10 @@ class Vault(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where you want to create this vault.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the vault. It does not have to be unique, and it is changeable. Avoid entering confidential information.
-        :param pulumi.Input[pulumi.InputType['VaultExternalKeyManagerMetadataArgs']] external_key_manager_metadata: Metadata required for accessing External Key manager
+        :param pulumi.Input[Union['VaultExternalKeyManagerMetadataArgs', 'VaultExternalKeyManagerMetadataArgsDict']] external_key_manager_metadata: Metadata required for accessing External Key manager
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[pulumi.InputType['VaultRestoreFromFileArgs']] restore_from_file: (Updatable) Details where vault was backed up.
-        :param pulumi.Input[pulumi.InputType['VaultRestoreFromObjectStoreArgs']] restore_from_object_store: (Updatable) Details where vault was backed up
+        :param pulumi.Input[Union['VaultRestoreFromFileArgs', 'VaultRestoreFromFileArgsDict']] restore_from_file: (Updatable) Details where vault was backed up.
+        :param pulumi.Input[Union['VaultRestoreFromObjectStoreArgs', 'VaultRestoreFromObjectStoreArgsDict']] restore_from_object_store: (Updatable) Details where vault was backed up
         :param pulumi.Input[str] time_of_deletion: (Updatable) An optional property for the deletion time of the vault, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
                
                ** IMPORTANT **
@@ -589,15 +589,15 @@ class Vault(pulumi.CustomResource):
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            external_key_manager_metadata=oci.kms.VaultExternalKeyManagerMetadataArgs(
-                external_vault_endpoint_url=vault_external_key_manager_metadata_external_vault_endpoint_url,
-                oauth_metadata=oci.kms.VaultExternalKeyManagerMetadataOauthMetadataArgs(
-                    client_app_id=test_client_app["id"],
-                    client_app_secret=vault_external_key_manager_metadata_oauth_metadata_client_app_secret,
-                    idcs_account_name_url=vault_external_key_manager_metadata_oauth_metadata_idcs_account_name_url,
-                ),
-                private_endpoint_id=test_private_endpoint["id"],
-            ),
+            external_key_manager_metadata={
+                "external_vault_endpoint_url": vault_external_key_manager_metadata_external_vault_endpoint_url,
+                "oauth_metadata": {
+                    "client_app_id": test_client_app["id"],
+                    "client_app_secret": vault_external_key_manager_metadata_oauth_metadata_client_app_secret,
+                    "idcs_account_name_url": vault_external_key_manager_metadata_oauth_metadata_idcs_account_name_url,
+                },
+                "private_endpoint_id": test_private_endpoint["id"],
+            },
             freeform_tags={
                 "Department": "Finance",
             })
@@ -629,10 +629,10 @@ class Vault(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 external_key_manager_metadata: Optional[pulumi.Input[pulumi.InputType['VaultExternalKeyManagerMetadataArgs']]] = None,
+                 external_key_manager_metadata: Optional[pulumi.Input[Union['VaultExternalKeyManagerMetadataArgs', 'VaultExternalKeyManagerMetadataArgsDict']]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 restore_from_file: Optional[pulumi.Input[pulumi.InputType['VaultRestoreFromFileArgs']]] = None,
-                 restore_from_object_store: Optional[pulumi.Input[pulumi.InputType['VaultRestoreFromObjectStoreArgs']]] = None,
+                 restore_from_file: Optional[pulumi.Input[Union['VaultRestoreFromFileArgs', 'VaultRestoreFromFileArgsDict']]] = None,
+                 restore_from_object_store: Optional[pulumi.Input[Union['VaultRestoreFromObjectStoreArgs', 'VaultRestoreFromObjectStoreArgsDict']]] = None,
                  restore_trigger: Optional[pulumi.Input[bool]] = None,
                  time_of_deletion: Optional[pulumi.Input[str]] = None,
                  vault_type: Optional[pulumi.Input[str]] = None,
@@ -683,14 +683,14 @@ class Vault(pulumi.CustomResource):
             crypto_endpoint: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
-            external_key_manager_metadata: Optional[pulumi.Input[pulumi.InputType['VaultExternalKeyManagerMetadataArgs']]] = None,
-            external_key_manager_metadata_summaries: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VaultExternalKeyManagerMetadataSummaryArgs']]]]] = None,
+            external_key_manager_metadata: Optional[pulumi.Input[Union['VaultExternalKeyManagerMetadataArgs', 'VaultExternalKeyManagerMetadataArgsDict']]] = None,
+            external_key_manager_metadata_summaries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VaultExternalKeyManagerMetadataSummaryArgs', 'VaultExternalKeyManagerMetadataSummaryArgsDict']]]]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             is_primary: Optional[pulumi.Input[bool]] = None,
             management_endpoint: Optional[pulumi.Input[str]] = None,
-            replica_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VaultReplicaDetailArgs']]]]] = None,
-            restore_from_file: Optional[pulumi.Input[pulumi.InputType['VaultRestoreFromFileArgs']]] = None,
-            restore_from_object_store: Optional[pulumi.Input[pulumi.InputType['VaultRestoreFromObjectStoreArgs']]] = None,
+            replica_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VaultReplicaDetailArgs', 'VaultReplicaDetailArgsDict']]]]] = None,
+            restore_from_file: Optional[pulumi.Input[Union['VaultRestoreFromFileArgs', 'VaultRestoreFromFileArgsDict']]] = None,
+            restore_from_object_store: Optional[pulumi.Input[Union['VaultRestoreFromObjectStoreArgs', 'VaultRestoreFromObjectStoreArgsDict']]] = None,
             restore_trigger: Optional[pulumi.Input[bool]] = None,
             restored_from_vault_id: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -708,14 +708,14 @@ class Vault(pulumi.CustomResource):
         :param pulumi.Input[str] crypto_endpoint: The service endpoint to perform cryptographic operations against. Cryptographic operations include [Encrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/EncryptedData/Encrypt), [Decrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/DecryptedData/Decrypt), and [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) operations.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the vault. It does not have to be unique, and it is changeable. Avoid entering confidential information.
-        :param pulumi.Input[pulumi.InputType['VaultExternalKeyManagerMetadataArgs']] external_key_manager_metadata: Metadata required for accessing External Key manager
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VaultExternalKeyManagerMetadataSummaryArgs']]]] external_key_manager_metadata_summaries: Summary about metadata of external key manager to be returned to the customer as a response.
+        :param pulumi.Input[Union['VaultExternalKeyManagerMetadataArgs', 'VaultExternalKeyManagerMetadataArgsDict']] external_key_manager_metadata: Metadata required for accessing External Key manager
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VaultExternalKeyManagerMetadataSummaryArgs', 'VaultExternalKeyManagerMetadataSummaryArgsDict']]]] external_key_manager_metadata_summaries: Summary about metadata of external key manager to be returned to the customer as a response.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_primary: A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
         :param pulumi.Input[str] management_endpoint: The service endpoint to perform management operations against. Management operations include "Create," "Update," "List," "Get," and "Delete" operations.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VaultReplicaDetailArgs']]]] replica_details: Vault replica details
-        :param pulumi.Input[pulumi.InputType['VaultRestoreFromFileArgs']] restore_from_file: (Updatable) Details where vault was backed up.
-        :param pulumi.Input[pulumi.InputType['VaultRestoreFromObjectStoreArgs']] restore_from_object_store: (Updatable) Details where vault was backed up
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VaultReplicaDetailArgs', 'VaultReplicaDetailArgsDict']]]] replica_details: Vault replica details
+        :param pulumi.Input[Union['VaultRestoreFromFileArgs', 'VaultRestoreFromFileArgsDict']] restore_from_file: (Updatable) Details where vault was backed up.
+        :param pulumi.Input[Union['VaultRestoreFromObjectStoreArgs', 'VaultRestoreFromObjectStoreArgsDict']] restore_from_object_store: (Updatable) Details where vault was backed up
         :param pulumi.Input[str] restored_from_vault_id: The OCID of the vault from which this vault was restored, if it was restored from a backup file. If you restore a vault to the same region, the vault retains the same OCID that it had when you backed up the vault.
         :param pulumi.Input[str] state: The vault's current lifecycle state.  Example: `DELETED`
         :param pulumi.Input[str] time_created: The date and time this vault was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-04-03T21:10:29.600Z`

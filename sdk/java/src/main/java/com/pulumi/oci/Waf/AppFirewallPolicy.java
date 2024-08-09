@@ -417,7 +417,7 @@ public class AppFirewallPolicy extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public AppFirewallPolicy(String name) {
+    public AppFirewallPolicy(java.lang.String name) {
         this(name, AppFirewallPolicyArgs.Empty);
     }
     /**
@@ -425,7 +425,7 @@ public class AppFirewallPolicy extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public AppFirewallPolicy(String name, AppFirewallPolicyArgs args) {
+    public AppFirewallPolicy(java.lang.String name, AppFirewallPolicyArgs args) {
         this(name, args, null);
     }
     /**
@@ -434,12 +434,12 @@ public class AppFirewallPolicy extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public AppFirewallPolicy(String name, AppFirewallPolicyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Waf/appFirewallPolicy:AppFirewallPolicy", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public AppFirewallPolicy(java.lang.String name, AppFirewallPolicyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Waf/appFirewallPolicy:AppFirewallPolicy", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private AppFirewallPolicy(String name, Output<String> id, @Nullable AppFirewallPolicyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Waf/appFirewallPolicy:AppFirewallPolicy", name, state, makeResourceOptions(options, id));
+    private AppFirewallPolicy(java.lang.String name, Output<java.lang.String> id, @Nullable AppFirewallPolicyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Waf/appFirewallPolicy:AppFirewallPolicy", name, state, makeResourceOptions(options, id), false);
     }
 
     private static AppFirewallPolicyArgs makeArgs(AppFirewallPolicyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -449,7 +449,7 @@ public class AppFirewallPolicy extends com.pulumi.resources.CustomResource {
         return args == null ? AppFirewallPolicyArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -465,7 +465,7 @@ public class AppFirewallPolicy extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static AppFirewallPolicy get(String name, Output<String> id, @Nullable AppFirewallPolicyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static AppFirewallPolicy get(java.lang.String name, Output<java.lang.String> id, @Nullable AppFirewallPolicyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new AppFirewallPolicy(name, id, state, options);
     }
 }

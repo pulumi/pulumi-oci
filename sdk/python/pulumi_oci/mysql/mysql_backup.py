@@ -557,13 +557,13 @@ class MysqlBackup(pulumi.CustomResource):
                  backup_type: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  db_system_id: Optional[pulumi.Input[str]] = None,
-                 db_system_snapshot_summaries: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MysqlBackupDbSystemSnapshotSummaryArgs']]]]] = None,
+                 db_system_snapshot_summaries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MysqlBackupDbSystemSnapshotSummaryArgs', 'MysqlBackupDbSystemSnapshotSummaryArgsDict']]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  retention_in_days: Optional[pulumi.Input[int]] = None,
-                 source_details: Optional[pulumi.Input[pulumi.InputType['MysqlBackupSourceDetailsArgs']]] = None,
+                 source_details: Optional[pulumi.Input[Union['MysqlBackupSourceDetailsArgs', 'MysqlBackupSourceDetailsArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Mysql Backup resource in Oracle Cloud Infrastructure MySQL Database service.
@@ -608,7 +608,7 @@ class MysqlBackup(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-supplied display name for the backup.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[int] retention_in_days: (Updatable) Number of days to retain this backup.
-        :param pulumi.Input[pulumi.InputType['MysqlBackupSourceDetailsArgs']] source_details: Details of backup source in the cloud.
+        :param pulumi.Input[Union['MysqlBackupSourceDetailsArgs', 'MysqlBackupSourceDetailsArgsDict']] source_details: Details of backup source in the cloud.
         """
         ...
     @overload
@@ -667,13 +667,13 @@ class MysqlBackup(pulumi.CustomResource):
                  backup_type: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  db_system_id: Optional[pulumi.Input[str]] = None,
-                 db_system_snapshot_summaries: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MysqlBackupDbSystemSnapshotSummaryArgs']]]]] = None,
+                 db_system_snapshot_summaries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MysqlBackupDbSystemSnapshotSummaryArgs', 'MysqlBackupDbSystemSnapshotSummaryArgsDict']]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  retention_in_days: Optional[pulumi.Input[int]] = None,
-                 source_details: Optional[pulumi.Input[pulumi.InputType['MysqlBackupSourceDetailsArgs']]] = None,
+                 source_details: Optional[pulumi.Input[Union['MysqlBackupSourceDetailsArgs', 'MysqlBackupSourceDetailsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -722,8 +722,8 @@ class MysqlBackup(pulumi.CustomResource):
             creation_type: Optional[pulumi.Input[str]] = None,
             data_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
             db_system_id: Optional[pulumi.Input[str]] = None,
-            db_system_snapshot_summaries: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MysqlBackupDbSystemSnapshotSummaryArgs']]]]] = None,
-            db_system_snapshots: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MysqlBackupDbSystemSnapshotArgs']]]]] = None,
+            db_system_snapshot_summaries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MysqlBackupDbSystemSnapshotSummaryArgs', 'MysqlBackupDbSystemSnapshotSummaryArgsDict']]]]] = None,
+            db_system_snapshots: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MysqlBackupDbSystemSnapshotArgs', 'MysqlBackupDbSystemSnapshotArgsDict']]]]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
@@ -734,7 +734,7 @@ class MysqlBackup(pulumi.CustomResource):
             original_source_backup_id: Optional[pulumi.Input[str]] = None,
             retention_in_days: Optional[pulumi.Input[int]] = None,
             shape_name: Optional[pulumi.Input[str]] = None,
-            source_details: Optional[pulumi.Input[pulumi.InputType['MysqlBackupSourceDetailsArgs']]] = None,
+            source_details: Optional[pulumi.Input[Union['MysqlBackupSourceDetailsArgs', 'MysqlBackupSourceDetailsArgsDict']]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_copy_created: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
@@ -752,7 +752,7 @@ class MysqlBackup(pulumi.CustomResource):
         :param pulumi.Input[str] creation_type: Indicates how the backup was created: manually, automatic, or by an Operator.
         :param pulumi.Input[int] data_storage_size_in_gb: Initial size of the data volume in GiBs that will be created and attached.
         :param pulumi.Input[str] db_system_id: The OCID of the DB System the Backup is associated with.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MysqlBackupDbSystemSnapshotArgs']]]] db_system_snapshots: Snapshot of the DbSystem details at the time of the backup
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MysqlBackupDbSystemSnapshotArgs', 'MysqlBackupDbSystemSnapshotArgsDict']]]] db_system_snapshots: Snapshot of the DbSystem details at the time of the backup
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) A user-supplied description for the backup.
         :param pulumi.Input[str] display_name: (Updatable) A user-supplied display name for the backup.
@@ -763,7 +763,7 @@ class MysqlBackup(pulumi.CustomResource):
         :param pulumi.Input[str] original_source_backup_id: The OCID of the original source DB system backup from which this DB system backup was copied.
         :param pulumi.Input[int] retention_in_days: (Updatable) Number of days to retain this backup.
         :param pulumi.Input[str] shape_name: The shape of the DB System instance used for backup.
-        :param pulumi.Input[pulumi.InputType['MysqlBackupSourceDetailsArgs']] source_details: Details of backup source in the cloud.
+        :param pulumi.Input[Union['MysqlBackupSourceDetailsArgs', 'MysqlBackupSourceDetailsArgsDict']] source_details: Details of backup source in the cloud.
         :param pulumi.Input[str] state: The state of the backup.
         :param pulumi.Input[str] time_copy_created: The date and time the DB system backup copy was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param pulumi.Input[str] time_created: The time the backup record was created.

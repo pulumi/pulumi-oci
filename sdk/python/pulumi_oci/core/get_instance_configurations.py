@@ -80,7 +80,7 @@ class AwaitableGetInstanceConfigurationsResult(GetInstanceConfigurationsResult):
 
 
 def get_instance_configurations(compartment_id: Optional[str] = None,
-                                filters: Optional[Sequence[pulumi.InputType['GetInstanceConfigurationsFilterArgs']]] = None,
+                                filters: Optional[Sequence[Union['GetInstanceConfigurationsFilterArgs', 'GetInstanceConfigurationsFilterArgsDict']]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetInstanceConfigurationsResult:
     """
     This data source provides the list of Instance Configurations in Oracle Cloud Infrastructure Core service.
@@ -114,7 +114,7 @@ def get_instance_configurations(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_instance_configurations)
 def get_instance_configurations_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                       filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetInstanceConfigurationsFilterArgs']]]]] = None,
+                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetInstanceConfigurationsFilterArgs', 'GetInstanceConfigurationsFilterArgsDict']]]]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInstanceConfigurationsResult]:
     """
     This data source provides the list of Instance Configurations in Oracle Cloud Infrastructure Core service.

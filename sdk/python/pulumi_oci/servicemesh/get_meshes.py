@@ -105,7 +105,7 @@ class AwaitableGetMeshesResult(GetMeshesResult):
 
 def get_meshes(compartment_id: Optional[str] = None,
                display_name: Optional[str] = None,
-               filters: Optional[Sequence[pulumi.InputType['GetMeshesFilterArgs']]] = None,
+               filters: Optional[Sequence[Union['GetMeshesFilterArgs', 'GetMeshesFilterArgsDict']]] = None,
                id: Optional[str] = None,
                state: Optional[str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMeshesResult:
@@ -153,7 +153,7 @@ def get_meshes(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_meshes)
 def get_meshes_output(compartment_id: Optional[pulumi.Input[str]] = None,
                       display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                      filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetMeshesFilterArgs']]]]] = None,
+                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMeshesFilterArgs', 'GetMeshesFilterArgsDict']]]]] = None,
                       id: Optional[pulumi.Input[Optional[str]]] = None,
                       state: Optional[pulumi.Input[Optional[str]]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMeshesResult]:

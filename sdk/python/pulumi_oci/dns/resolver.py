@@ -449,13 +449,13 @@ class Resolver(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 attached_views: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ResolverAttachedViewArgs']]]]] = None,
+                 attached_views: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ResolverAttachedViewArgs', 'ResolverAttachedViewArgsDict']]]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  resolver_id: Optional[pulumi.Input[str]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ResolverRuleArgs']]]]] = None,
+                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ResolverRuleArgs', 'ResolverRuleArgsDict']]]]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -476,7 +476,7 @@ class Resolver(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ResolverAttachedViewArgs']]]] attached_views: (Updatable) The attached views. Views are evaluated in order.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ResolverAttachedViewArgs', 'ResolverAttachedViewArgsDict']]]] attached_views: (Updatable) The attached views. Views are evaluated in order.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the owning compartment.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
                
@@ -486,7 +486,7 @@ class Resolver(pulumi.CustomResource):
                
                **Example:** `{"Department": "Finance"}`
         :param pulumi.Input[str] resolver_id: The OCID of the target resolver.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ResolverRuleArgs']]]] rules: (Updatable) Rules for the resolver. Rules are evaluated in order.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ResolverRuleArgs', 'ResolverRuleArgsDict']]]] rules: (Updatable) Rules for the resolver. Rules are evaluated in order.
         :param pulumi.Input[str] scope: If specified, must be `PRIVATE` when creating private name resolvers. 
                
                
@@ -530,13 +530,13 @@ class Resolver(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 attached_views: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ResolverAttachedViewArgs']]]]] = None,
+                 attached_views: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ResolverAttachedViewArgs', 'ResolverAttachedViewArgsDict']]]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  resolver_id: Optional[pulumi.Input[str]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ResolverRuleArgs']]]]] = None,
+                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ResolverRuleArgs', 'ResolverRuleArgsDict']]]]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -576,16 +576,16 @@ class Resolver(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             attached_vcn_id: Optional[pulumi.Input[str]] = None,
-            attached_views: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ResolverAttachedViewArgs']]]]] = None,
+            attached_views: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ResolverAttachedViewArgs', 'ResolverAttachedViewArgsDict']]]]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             default_view_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
-            endpoints: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ResolverEndpointArgs']]]]] = None,
+            endpoints: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ResolverEndpointArgs', 'ResolverEndpointArgsDict']]]]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             is_protected: Optional[pulumi.Input[bool]] = None,
             resolver_id: Optional[pulumi.Input[str]] = None,
-            rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ResolverRuleArgs']]]]] = None,
+            rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ResolverRuleArgs', 'ResolverRuleArgsDict']]]]] = None,
             scope: Optional[pulumi.Input[str]] = None,
             self: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -599,20 +599,20 @@ class Resolver(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] attached_vcn_id: The OCID of the attached VCN.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ResolverAttachedViewArgs']]]] attached_views: (Updatable) The attached views. Views are evaluated in order.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ResolverAttachedViewArgs', 'ResolverAttachedViewArgsDict']]]] attached_views: (Updatable) The attached views. Views are evaluated in order.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the owning compartment.
         :param pulumi.Input[str] default_view_id: The OCID of the default view.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
                
                **Example:** `{"Operations": {"CostCenter": "42"}}`
         :param pulumi.Input[str] display_name: (Updatable) The display name of the resolver.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ResolverEndpointArgs']]]] endpoints: Read-only array of endpoints for the resolver.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ResolverEndpointArgs', 'ResolverEndpointArgsDict']]]] endpoints: Read-only array of endpoints for the resolver.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
                
                **Example:** `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_protected: A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
         :param pulumi.Input[str] resolver_id: The OCID of the target resolver.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ResolverRuleArgs']]]] rules: (Updatable) Rules for the resolver. Rules are evaluated in order.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ResolverRuleArgs', 'ResolverRuleArgsDict']]]] rules: (Updatable) Rules for the resolver. Rules are evaluated in order.
         :param pulumi.Input[str] scope: If specified, must be `PRIVATE` when creating private name resolvers. 
                
                

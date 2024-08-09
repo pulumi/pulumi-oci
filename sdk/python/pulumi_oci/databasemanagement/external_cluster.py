@@ -570,15 +570,15 @@ class ExternalCluster(pulumi.CustomResource):
             grid_home: Optional[pulumi.Input[str]] = None,
             is_flex_cluster: Optional[pulumi.Input[bool]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
-            network_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalClusterNetworkConfigurationArgs']]]]] = None,
+            network_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExternalClusterNetworkConfigurationArgs', 'ExternalClusterNetworkConfigurationArgsDict']]]]] = None,
             ocr_file_location: Optional[pulumi.Input[str]] = None,
-            scan_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalClusterScanConfigurationArgs']]]]] = None,
+            scan_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExternalClusterScanConfigurationArgs', 'ExternalClusterScanConfigurationArgsDict']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
             version: Optional[pulumi.Input[str]] = None,
-            vip_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalClusterVipConfigurationArgs']]]]] = None) -> 'ExternalCluster':
+            vip_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExternalClusterVipConfigurationArgs', 'ExternalClusterVipConfigurationArgsDict']]]]] = None) -> 'ExternalCluster':
         """
         Get an existing ExternalCluster resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -602,15 +602,15 @@ class ExternalCluster(pulumi.CustomResource):
         :param pulumi.Input[str] grid_home: The directory in which Oracle Grid Infrastructure is installed.
         :param pulumi.Input[bool] is_flex_cluster: Indicates whether the cluster is Oracle Flex Cluster or not.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalClusterNetworkConfigurationArgs']]]] network_configurations: The list of network address configurations of the external cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExternalClusterNetworkConfigurationArgs', 'ExternalClusterNetworkConfigurationArgsDict']]]] network_configurations: The list of network address configurations of the external cluster.
         :param pulumi.Input[str] ocr_file_location: The location of the Oracle Cluster Registry (OCR).
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalClusterScanConfigurationArgs']]]] scan_configurations: The list of Single Client Access Name (SCAN) configurations of the external cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExternalClusterScanConfigurationArgs', 'ExternalClusterScanConfigurationArgsDict']]]] scan_configurations: The list of Single Client Access Name (SCAN) configurations of the external cluster.
         :param pulumi.Input[str] state: The current lifecycle state of the external cluster.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time the external cluster was created.
         :param pulumi.Input[str] time_updated: The date and time the external cluster was last updated.
         :param pulumi.Input[str] version: The cluster version.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalClusterVipConfigurationArgs']]]] vip_configurations: The list of Virtual IP (VIP) configurations of the external cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExternalClusterVipConfigurationArgs', 'ExternalClusterVipConfigurationArgsDict']]]] vip_configurations: The list of Virtual IP (VIP) configurations of the external cluster.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

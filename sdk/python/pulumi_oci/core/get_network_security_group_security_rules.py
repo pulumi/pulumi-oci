@@ -89,7 +89,7 @@ class AwaitableGetNetworkSecurityGroupSecurityRulesResult(GetNetworkSecurityGrou
 
 
 def get_network_security_group_security_rules(direction: Optional[str] = None,
-                                              filters: Optional[Sequence[pulumi.InputType['GetNetworkSecurityGroupSecurityRulesFilterArgs']]] = None,
+                                              filters: Optional[Sequence[Union['GetNetworkSecurityGroupSecurityRulesFilterArgs', 'GetNetworkSecurityGroupSecurityRulesFilterArgsDict']]] = None,
                                               network_security_group_id: Optional[str] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkSecurityGroupSecurityRulesResult:
     """
@@ -128,7 +128,7 @@ def get_network_security_group_security_rules(direction: Optional[str] = None,
 
 @_utilities.lift_output_func(get_network_security_group_security_rules)
 def get_network_security_group_security_rules_output(direction: Optional[pulumi.Input[Optional[str]]] = None,
-                                                     filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetNetworkSecurityGroupSecurityRulesFilterArgs']]]]] = None,
+                                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNetworkSecurityGroupSecurityRulesFilterArgs', 'GetNetworkSecurityGroupSecurityRulesFilterArgsDict']]]]] = None,
                                                      network_security_group_id: Optional[pulumi.Input[str]] = None,
                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkSecurityGroupSecurityRulesResult]:
     """

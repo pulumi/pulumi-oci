@@ -118,7 +118,7 @@ class AwaitableGetBuildPipelineStagesResult(GetBuildPipelineStagesResult):
 def get_build_pipeline_stages(build_pipeline_id: Optional[str] = None,
                               compartment_id: Optional[str] = None,
                               display_name: Optional[str] = None,
-                              filters: Optional[Sequence[pulumi.InputType['GetBuildPipelineStagesFilterArgs']]] = None,
+                              filters: Optional[Sequence[Union['GetBuildPipelineStagesFilterArgs', 'GetBuildPipelineStagesFilterArgsDict']]] = None,
                               id: Optional[str] = None,
                               state: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBuildPipelineStagesResult:
@@ -171,7 +171,7 @@ def get_build_pipeline_stages(build_pipeline_id: Optional[str] = None,
 def get_build_pipeline_stages_output(build_pipeline_id: Optional[pulumi.Input[Optional[str]]] = None,
                                      compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                      display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                     filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetBuildPipelineStagesFilterArgs']]]]] = None,
+                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBuildPipelineStagesFilterArgs', 'GetBuildPipelineStagesFilterArgsDict']]]]] = None,
                                      id: Optional[pulumi.Input[Optional[str]]] = None,
                                      state: Optional[pulumi.Input[Optional[str]]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBuildPipelineStagesResult]:

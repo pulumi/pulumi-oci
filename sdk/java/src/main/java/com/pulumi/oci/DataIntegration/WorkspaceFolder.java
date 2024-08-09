@@ -300,7 +300,7 @@ public class WorkspaceFolder extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public WorkspaceFolder(String name) {
+    public WorkspaceFolder(java.lang.String name) {
         this(name, WorkspaceFolderArgs.Empty);
     }
     /**
@@ -308,7 +308,7 @@ public class WorkspaceFolder extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public WorkspaceFolder(String name, WorkspaceFolderArgs args) {
+    public WorkspaceFolder(java.lang.String name, WorkspaceFolderArgs args) {
         this(name, args, null);
     }
     /**
@@ -317,12 +317,12 @@ public class WorkspaceFolder extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public WorkspaceFolder(String name, WorkspaceFolderArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataIntegration/workspaceFolder:WorkspaceFolder", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public WorkspaceFolder(java.lang.String name, WorkspaceFolderArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataIntegration/workspaceFolder:WorkspaceFolder", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private WorkspaceFolder(String name, Output<String> id, @Nullable WorkspaceFolderState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataIntegration/workspaceFolder:WorkspaceFolder", name, state, makeResourceOptions(options, id));
+    private WorkspaceFolder(java.lang.String name, Output<java.lang.String> id, @Nullable WorkspaceFolderState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataIntegration/workspaceFolder:WorkspaceFolder", name, state, makeResourceOptions(options, id), false);
     }
 
     private static WorkspaceFolderArgs makeArgs(WorkspaceFolderArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -332,7 +332,7 @@ public class WorkspaceFolder extends com.pulumi.resources.CustomResource {
         return args == null ? WorkspaceFolderArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -348,7 +348,7 @@ public class WorkspaceFolder extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static WorkspaceFolder get(String name, Output<String> id, @Nullable WorkspaceFolderState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static WorkspaceFolder get(java.lang.String name, Output<java.lang.String> id, @Nullable WorkspaceFolderState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new WorkspaceFolder(name, id, state, options);
     }
 }

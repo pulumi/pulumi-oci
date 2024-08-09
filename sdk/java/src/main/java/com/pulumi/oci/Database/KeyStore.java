@@ -219,7 +219,7 @@ public class KeyStore extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public KeyStore(String name) {
+    public KeyStore(java.lang.String name) {
         this(name, KeyStoreArgs.Empty);
     }
     /**
@@ -227,7 +227,7 @@ public class KeyStore extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public KeyStore(String name, KeyStoreArgs args) {
+    public KeyStore(java.lang.String name, KeyStoreArgs args) {
         this(name, args, null);
     }
     /**
@@ -236,12 +236,12 @@ public class KeyStore extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public KeyStore(String name, KeyStoreArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/keyStore:KeyStore", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public KeyStore(java.lang.String name, KeyStoreArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/keyStore:KeyStore", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private KeyStore(String name, Output<String> id, @Nullable KeyStoreState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/keyStore:KeyStore", name, state, makeResourceOptions(options, id));
+    private KeyStore(java.lang.String name, Output<java.lang.String> id, @Nullable KeyStoreState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/keyStore:KeyStore", name, state, makeResourceOptions(options, id), false);
     }
 
     private static KeyStoreArgs makeArgs(KeyStoreArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -251,7 +251,7 @@ public class KeyStore extends com.pulumi.resources.CustomResource {
         return args == null ? KeyStoreArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -267,7 +267,7 @@ public class KeyStore extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static KeyStore get(String name, Output<String> id, @Nullable KeyStoreState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static KeyStore get(java.lang.String name, Output<java.lang.String> id, @Nullable KeyStoreState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new KeyStore(name, id, state, options);
     }
 }

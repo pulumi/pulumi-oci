@@ -99,7 +99,7 @@ class AwaitableGetPodShapesResult(GetPodShapesResult):
 
 def get_pod_shapes(availability_domain: Optional[str] = None,
                    compartment_id: Optional[str] = None,
-                   filters: Optional[Sequence[pulumi.InputType['GetPodShapesFilterArgs']]] = None,
+                   filters: Optional[Sequence[Union['GetPodShapesFilterArgs', 'GetPodShapesFilterArgsDict']]] = None,
                    name: Optional[str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPodShapesResult:
     """
@@ -143,7 +143,7 @@ def get_pod_shapes(availability_domain: Optional[str] = None,
 @_utilities.lift_output_func(get_pod_shapes)
 def get_pod_shapes_output(availability_domain: Optional[pulumi.Input[Optional[str]]] = None,
                           compartment_id: Optional[pulumi.Input[str]] = None,
-                          filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetPodShapesFilterArgs']]]]] = None,
+                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPodShapesFilterArgs', 'GetPodShapesFilterArgsDict']]]]] = None,
                           name: Optional[pulumi.Input[Optional[str]]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPodShapesResult]:
     """

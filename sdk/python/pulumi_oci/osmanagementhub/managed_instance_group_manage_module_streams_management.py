@@ -257,13 +257,13 @@ class ManagedInstanceGroupManageModuleStreamsManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 disables: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceGroupManageModuleStreamsManagementDisableArgs']]]]] = None,
-                 enables: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceGroupManageModuleStreamsManagementEnableArgs']]]]] = None,
-                 installs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceGroupManageModuleStreamsManagementInstallArgs']]]]] = None,
+                 disables: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceGroupManageModuleStreamsManagementDisableArgs', 'ManagedInstanceGroupManageModuleStreamsManagementDisableArgsDict']]]]] = None,
+                 enables: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceGroupManageModuleStreamsManagementEnableArgs', 'ManagedInstanceGroupManageModuleStreamsManagementEnableArgsDict']]]]] = None,
+                 installs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceGroupManageModuleStreamsManagementInstallArgs', 'ManagedInstanceGroupManageModuleStreamsManagementInstallArgsDict']]]]] = None,
                  is_dry_run: Optional[pulumi.Input[bool]] = None,
                  managed_instance_group_id: Optional[pulumi.Input[str]] = None,
-                 removes: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceGroupManageModuleStreamsManagementRemoveArgs']]]]] = None,
-                 work_request_details: Optional[pulumi.Input[pulumi.InputType['ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsArgs']]] = None,
+                 removes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceGroupManageModuleStreamsManagementRemoveArgs', 'ManagedInstanceGroupManageModuleStreamsManagementRemoveArgsDict']]]]] = None,
+                 work_request_details: Optional[pulumi.Input[Union['ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Managed Instance Group Manage Module Streams Management resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -279,33 +279,33 @@ class ManagedInstanceGroupManageModuleStreamsManagement(pulumi.CustomResource):
 
         test_managed_instance_group_manage_module_streams_management = oci.os_management_hub.ManagedInstanceGroupManageModuleStreamsManagement("test_managed_instance_group_manage_module_streams_management",
             managed_instance_group_id=test_managed_instance_group["id"],
-            disables=[oci.os_management_hub.ManagedInstanceGroupManageModuleStreamsManagementDisableArgs(
-                module_name=managed_instance_group_manage_module_streams_management_disable_module_name,
-                stream_name=test_stream["name"],
-                software_source_id=test_software_source["id"],
-            )],
-            enables=[oci.os_management_hub.ManagedInstanceGroupManageModuleStreamsManagementEnableArgs(
-                module_name=managed_instance_group_manage_module_streams_management_enable_module_name,
-                stream_name=test_stream["name"],
-                software_source_id=test_software_source["id"],
-            )],
-            installs=[oci.os_management_hub.ManagedInstanceGroupManageModuleStreamsManagementInstallArgs(
-                module_name=managed_instance_group_manage_module_streams_management_install_module_name,
-                profile_name=test_profile["name"],
-                stream_name=test_stream["name"],
-                software_source_id=test_software_source["id"],
-            )],
+            disables=[{
+                "module_name": managed_instance_group_manage_module_streams_management_disable_module_name,
+                "stream_name": test_stream["name"],
+                "software_source_id": test_software_source["id"],
+            }],
+            enables=[{
+                "module_name": managed_instance_group_manage_module_streams_management_enable_module_name,
+                "stream_name": test_stream["name"],
+                "software_source_id": test_software_source["id"],
+            }],
+            installs=[{
+                "module_name": managed_instance_group_manage_module_streams_management_install_module_name,
+                "profile_name": test_profile["name"],
+                "stream_name": test_stream["name"],
+                "software_source_id": test_software_source["id"],
+            }],
             is_dry_run=managed_instance_group_manage_module_streams_management_is_dry_run,
-            removes=[oci.os_management_hub.ManagedInstanceGroupManageModuleStreamsManagementRemoveArgs(
-                module_name=managed_instance_group_manage_module_streams_management_remove_module_name,
-                profile_name=test_profile["name"],
-                stream_name=test_stream["name"],
-                software_source_id=test_software_source["id"],
-            )],
-            work_request_details=oci.os_management_hub.ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsArgs(
-                description=managed_instance_group_manage_module_streams_management_work_request_details_description,
-                display_name=managed_instance_group_manage_module_streams_management_work_request_details_display_name,
-            ))
+            removes=[{
+                "module_name": managed_instance_group_manage_module_streams_management_remove_module_name,
+                "profile_name": test_profile["name"],
+                "stream_name": test_stream["name"],
+                "software_source_id": test_software_source["id"],
+            }],
+            work_request_details={
+                "description": managed_instance_group_manage_module_streams_management_work_request_details_description,
+                "display_name": managed_instance_group_manage_module_streams_management_work_request_details_display_name,
+            })
         ```
 
         ## Import
@@ -318,13 +318,13 @@ class ManagedInstanceGroupManageModuleStreamsManagement(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceGroupManageModuleStreamsManagementDisableArgs']]]] disables: The set of module streams to disable.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceGroupManageModuleStreamsManagementEnableArgs']]]] enables: The set of module streams to enable.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceGroupManageModuleStreamsManagementInstallArgs']]]] installs: The set of module stream profiles to install.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceGroupManageModuleStreamsManagementDisableArgs', 'ManagedInstanceGroupManageModuleStreamsManagementDisableArgsDict']]]] disables: The set of module streams to disable.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceGroupManageModuleStreamsManagementEnableArgs', 'ManagedInstanceGroupManageModuleStreamsManagementEnableArgsDict']]]] enables: The set of module streams to enable.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceGroupManageModuleStreamsManagementInstallArgs', 'ManagedInstanceGroupManageModuleStreamsManagementInstallArgsDict']]]] installs: The set of module stream profiles to install.
         :param pulumi.Input[bool] is_dry_run: Indicates if this operation is a dry run or if the operation should be committed.  If set to true, the result of the operation will be evaluated but not committed.  If set to false, the operation is committed to the managed instance(s).  The default is false.
         :param pulumi.Input[str] managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceGroupManageModuleStreamsManagementRemoveArgs']]]] removes: The set of module stream profiles to remove.
-        :param pulumi.Input[pulumi.InputType['ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsArgs']] work_request_details: Provides the name and description of the job.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceGroupManageModuleStreamsManagementRemoveArgs', 'ManagedInstanceGroupManageModuleStreamsManagementRemoveArgsDict']]]] removes: The set of module stream profiles to remove.
+        :param pulumi.Input[Union['ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsArgsDict']] work_request_details: Provides the name and description of the job.
         """
         ...
     @overload
@@ -346,33 +346,33 @@ class ManagedInstanceGroupManageModuleStreamsManagement(pulumi.CustomResource):
 
         test_managed_instance_group_manage_module_streams_management = oci.os_management_hub.ManagedInstanceGroupManageModuleStreamsManagement("test_managed_instance_group_manage_module_streams_management",
             managed_instance_group_id=test_managed_instance_group["id"],
-            disables=[oci.os_management_hub.ManagedInstanceGroupManageModuleStreamsManagementDisableArgs(
-                module_name=managed_instance_group_manage_module_streams_management_disable_module_name,
-                stream_name=test_stream["name"],
-                software_source_id=test_software_source["id"],
-            )],
-            enables=[oci.os_management_hub.ManagedInstanceGroupManageModuleStreamsManagementEnableArgs(
-                module_name=managed_instance_group_manage_module_streams_management_enable_module_name,
-                stream_name=test_stream["name"],
-                software_source_id=test_software_source["id"],
-            )],
-            installs=[oci.os_management_hub.ManagedInstanceGroupManageModuleStreamsManagementInstallArgs(
-                module_name=managed_instance_group_manage_module_streams_management_install_module_name,
-                profile_name=test_profile["name"],
-                stream_name=test_stream["name"],
-                software_source_id=test_software_source["id"],
-            )],
+            disables=[{
+                "module_name": managed_instance_group_manage_module_streams_management_disable_module_name,
+                "stream_name": test_stream["name"],
+                "software_source_id": test_software_source["id"],
+            }],
+            enables=[{
+                "module_name": managed_instance_group_manage_module_streams_management_enable_module_name,
+                "stream_name": test_stream["name"],
+                "software_source_id": test_software_source["id"],
+            }],
+            installs=[{
+                "module_name": managed_instance_group_manage_module_streams_management_install_module_name,
+                "profile_name": test_profile["name"],
+                "stream_name": test_stream["name"],
+                "software_source_id": test_software_source["id"],
+            }],
             is_dry_run=managed_instance_group_manage_module_streams_management_is_dry_run,
-            removes=[oci.os_management_hub.ManagedInstanceGroupManageModuleStreamsManagementRemoveArgs(
-                module_name=managed_instance_group_manage_module_streams_management_remove_module_name,
-                profile_name=test_profile["name"],
-                stream_name=test_stream["name"],
-                software_source_id=test_software_source["id"],
-            )],
-            work_request_details=oci.os_management_hub.ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsArgs(
-                description=managed_instance_group_manage_module_streams_management_work_request_details_description,
-                display_name=managed_instance_group_manage_module_streams_management_work_request_details_display_name,
-            ))
+            removes=[{
+                "module_name": managed_instance_group_manage_module_streams_management_remove_module_name,
+                "profile_name": test_profile["name"],
+                "stream_name": test_stream["name"],
+                "software_source_id": test_software_source["id"],
+            }],
+            work_request_details={
+                "description": managed_instance_group_manage_module_streams_management_work_request_details_description,
+                "display_name": managed_instance_group_manage_module_streams_management_work_request_details_display_name,
+            })
         ```
 
         ## Import
@@ -398,13 +398,13 @@ class ManagedInstanceGroupManageModuleStreamsManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 disables: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceGroupManageModuleStreamsManagementDisableArgs']]]]] = None,
-                 enables: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceGroupManageModuleStreamsManagementEnableArgs']]]]] = None,
-                 installs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceGroupManageModuleStreamsManagementInstallArgs']]]]] = None,
+                 disables: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceGroupManageModuleStreamsManagementDisableArgs', 'ManagedInstanceGroupManageModuleStreamsManagementDisableArgsDict']]]]] = None,
+                 enables: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceGroupManageModuleStreamsManagementEnableArgs', 'ManagedInstanceGroupManageModuleStreamsManagementEnableArgsDict']]]]] = None,
+                 installs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceGroupManageModuleStreamsManagementInstallArgs', 'ManagedInstanceGroupManageModuleStreamsManagementInstallArgsDict']]]]] = None,
                  is_dry_run: Optional[pulumi.Input[bool]] = None,
                  managed_instance_group_id: Optional[pulumi.Input[str]] = None,
-                 removes: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceGroupManageModuleStreamsManagementRemoveArgs']]]]] = None,
-                 work_request_details: Optional[pulumi.Input[pulumi.InputType['ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsArgs']]] = None,
+                 removes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceGroupManageModuleStreamsManagementRemoveArgs', 'ManagedInstanceGroupManageModuleStreamsManagementRemoveArgsDict']]]]] = None,
+                 work_request_details: Optional[pulumi.Input[Union['ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -433,13 +433,13 @@ class ManagedInstanceGroupManageModuleStreamsManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            disables: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceGroupManageModuleStreamsManagementDisableArgs']]]]] = None,
-            enables: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceGroupManageModuleStreamsManagementEnableArgs']]]]] = None,
-            installs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceGroupManageModuleStreamsManagementInstallArgs']]]]] = None,
+            disables: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceGroupManageModuleStreamsManagementDisableArgs', 'ManagedInstanceGroupManageModuleStreamsManagementDisableArgsDict']]]]] = None,
+            enables: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceGroupManageModuleStreamsManagementEnableArgs', 'ManagedInstanceGroupManageModuleStreamsManagementEnableArgsDict']]]]] = None,
+            installs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceGroupManageModuleStreamsManagementInstallArgs', 'ManagedInstanceGroupManageModuleStreamsManagementInstallArgsDict']]]]] = None,
             is_dry_run: Optional[pulumi.Input[bool]] = None,
             managed_instance_group_id: Optional[pulumi.Input[str]] = None,
-            removes: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceGroupManageModuleStreamsManagementRemoveArgs']]]]] = None,
-            work_request_details: Optional[pulumi.Input[pulumi.InputType['ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsArgs']]] = None) -> 'ManagedInstanceGroupManageModuleStreamsManagement':
+            removes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceGroupManageModuleStreamsManagementRemoveArgs', 'ManagedInstanceGroupManageModuleStreamsManagementRemoveArgsDict']]]]] = None,
+            work_request_details: Optional[pulumi.Input[Union['ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsArgsDict']]] = None) -> 'ManagedInstanceGroupManageModuleStreamsManagement':
         """
         Get an existing ManagedInstanceGroupManageModuleStreamsManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -447,13 +447,13 @@ class ManagedInstanceGroupManageModuleStreamsManagement(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceGroupManageModuleStreamsManagementDisableArgs']]]] disables: The set of module streams to disable.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceGroupManageModuleStreamsManagementEnableArgs']]]] enables: The set of module streams to enable.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceGroupManageModuleStreamsManagementInstallArgs']]]] installs: The set of module stream profiles to install.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceGroupManageModuleStreamsManagementDisableArgs', 'ManagedInstanceGroupManageModuleStreamsManagementDisableArgsDict']]]] disables: The set of module streams to disable.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceGroupManageModuleStreamsManagementEnableArgs', 'ManagedInstanceGroupManageModuleStreamsManagementEnableArgsDict']]]] enables: The set of module streams to enable.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceGroupManageModuleStreamsManagementInstallArgs', 'ManagedInstanceGroupManageModuleStreamsManagementInstallArgsDict']]]] installs: The set of module stream profiles to install.
         :param pulumi.Input[bool] is_dry_run: Indicates if this operation is a dry run or if the operation should be committed.  If set to true, the result of the operation will be evaluated but not committed.  If set to false, the operation is committed to the managed instance(s).  The default is false.
         :param pulumi.Input[str] managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceGroupManageModuleStreamsManagementRemoveArgs']]]] removes: The set of module stream profiles to remove.
-        :param pulumi.Input[pulumi.InputType['ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsArgs']] work_request_details: Provides the name and description of the job.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceGroupManageModuleStreamsManagementRemoveArgs', 'ManagedInstanceGroupManageModuleStreamsManagementRemoveArgsDict']]]] removes: The set of module stream profiles to remove.
+        :param pulumi.Input[Union['ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsArgsDict']] work_request_details: Provides the name and description of the job.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

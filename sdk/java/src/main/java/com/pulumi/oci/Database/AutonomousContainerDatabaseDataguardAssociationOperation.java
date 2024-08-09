@@ -109,7 +109,7 @@ public class AutonomousContainerDatabaseDataguardAssociationOperation extends co
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public AutonomousContainerDatabaseDataguardAssociationOperation(String name) {
+    public AutonomousContainerDatabaseDataguardAssociationOperation(java.lang.String name) {
         this(name, AutonomousContainerDatabaseDataguardAssociationOperationArgs.Empty);
     }
     /**
@@ -117,7 +117,7 @@ public class AutonomousContainerDatabaseDataguardAssociationOperation extends co
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public AutonomousContainerDatabaseDataguardAssociationOperation(String name, AutonomousContainerDatabaseDataguardAssociationOperationArgs args) {
+    public AutonomousContainerDatabaseDataguardAssociationOperation(java.lang.String name, AutonomousContainerDatabaseDataguardAssociationOperationArgs args) {
         this(name, args, null);
     }
     /**
@@ -126,12 +126,12 @@ public class AutonomousContainerDatabaseDataguardAssociationOperation extends co
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public AutonomousContainerDatabaseDataguardAssociationOperation(String name, AutonomousContainerDatabaseDataguardAssociationOperationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/autonomousContainerDatabaseDataguardAssociationOperation:AutonomousContainerDatabaseDataguardAssociationOperation", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public AutonomousContainerDatabaseDataguardAssociationOperation(java.lang.String name, AutonomousContainerDatabaseDataguardAssociationOperationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/autonomousContainerDatabaseDataguardAssociationOperation:AutonomousContainerDatabaseDataguardAssociationOperation", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private AutonomousContainerDatabaseDataguardAssociationOperation(String name, Output<String> id, @Nullable AutonomousContainerDatabaseDataguardAssociationOperationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/autonomousContainerDatabaseDataguardAssociationOperation:AutonomousContainerDatabaseDataguardAssociationOperation", name, state, makeResourceOptions(options, id));
+    private AutonomousContainerDatabaseDataguardAssociationOperation(java.lang.String name, Output<java.lang.String> id, @Nullable AutonomousContainerDatabaseDataguardAssociationOperationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/autonomousContainerDatabaseDataguardAssociationOperation:AutonomousContainerDatabaseDataguardAssociationOperation", name, state, makeResourceOptions(options, id), false);
     }
 
     private static AutonomousContainerDatabaseDataguardAssociationOperationArgs makeArgs(AutonomousContainerDatabaseDataguardAssociationOperationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -141,7 +141,7 @@ public class AutonomousContainerDatabaseDataguardAssociationOperation extends co
         return args == null ? AutonomousContainerDatabaseDataguardAssociationOperationArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -157,7 +157,7 @@ public class AutonomousContainerDatabaseDataguardAssociationOperation extends co
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static AutonomousContainerDatabaseDataguardAssociationOperation get(String name, Output<String> id, @Nullable AutonomousContainerDatabaseDataguardAssociationOperationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static AutonomousContainerDatabaseDataguardAssociationOperation get(java.lang.String name, Output<java.lang.String> id, @Nullable AutonomousContainerDatabaseDataguardAssociationOperationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new AutonomousContainerDatabaseDataguardAssociationOperation(name, id, state, options);
     }
 }

@@ -56,7 +56,7 @@ public class ModelArtifactImport extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ModelArtifactImport(String name) {
+    public ModelArtifactImport(java.lang.String name) {
         this(name, ModelArtifactImportArgs.Empty);
     }
     /**
@@ -64,7 +64,7 @@ public class ModelArtifactImport extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ModelArtifactImport(String name, ModelArtifactImportArgs args) {
+    public ModelArtifactImport(java.lang.String name, ModelArtifactImportArgs args) {
         this(name, args, null);
     }
     /**
@@ -73,12 +73,12 @@ public class ModelArtifactImport extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ModelArtifactImport(String name, ModelArtifactImportArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataScience/modelArtifactImport:ModelArtifactImport", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ModelArtifactImport(java.lang.String name, ModelArtifactImportArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataScience/modelArtifactImport:ModelArtifactImport", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ModelArtifactImport(String name, Output<String> id, @Nullable ModelArtifactImportState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataScience/modelArtifactImport:ModelArtifactImport", name, state, makeResourceOptions(options, id));
+    private ModelArtifactImport(java.lang.String name, Output<java.lang.String> id, @Nullable ModelArtifactImportState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataScience/modelArtifactImport:ModelArtifactImport", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ModelArtifactImportArgs makeArgs(ModelArtifactImportArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -88,7 +88,7 @@ public class ModelArtifactImport extends com.pulumi.resources.CustomResource {
         return args == null ? ModelArtifactImportArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -104,7 +104,7 @@ public class ModelArtifactImport extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ModelArtifactImport get(String name, Output<String> id, @Nullable ModelArtifactImportState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ModelArtifactImport get(java.lang.String name, Output<java.lang.String> id, @Nullable ModelArtifactImportState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ModelArtifactImport(name, id, state, options);
     }
 }

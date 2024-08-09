@@ -467,7 +467,7 @@ class TargetAsset(pulumi.CustomResource):
                  ms_license: Optional[pulumi.Input[str]] = None,
                  preferred_shape_type: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None,
-                 user_spec: Optional[pulumi.Input[pulumi.InputType['TargetAssetUserSpecArgs']]] = None,
+                 user_spec: Optional[pulumi.Input[Union['TargetAssetUserSpecArgs', 'TargetAssetUserSpecArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Target Asset resource in Oracle Cloud Infrastructure Cloud Migrations service.
@@ -485,72 +485,72 @@ class TargetAsset(pulumi.CustomResource):
             migration_plan_id=test_migration_plan["id"],
             preferred_shape_type=target_asset_preferred_shape_type,
             type=target_asset_type,
-            user_spec=oci.cloud_migrations.TargetAssetUserSpecArgs(
-                agent_config=oci.cloud_migrations.TargetAssetUserSpecAgentConfigArgs(
-                    are_all_plugins_disabled=target_asset_user_spec_agent_config_are_all_plugins_disabled,
-                    is_management_disabled=target_asset_user_spec_agent_config_is_management_disabled,
-                    is_monitoring_disabled=target_asset_user_spec_agent_config_is_monitoring_disabled,
-                    plugins_configs=[oci.cloud_migrations.TargetAssetUserSpecAgentConfigPluginsConfigArgs(
-                        desired_state=target_asset_user_spec_agent_config_plugins_config_desired_state,
-                        name=target_asset_user_spec_agent_config_plugins_config_name,
-                    )],
-                ),
-                availability_domain=target_asset_user_spec_availability_domain,
-                capacity_reservation_id=test_capacity_reservation["id"],
-                compartment_id=compartment_id,
-                create_vnic_details=oci.cloud_migrations.TargetAssetUserSpecCreateVnicDetailsArgs(
-                    assign_private_dns_record=target_asset_user_spec_create_vnic_details_assign_private_dns_record,
-                    assign_public_ip=target_asset_user_spec_create_vnic_details_assign_public_ip,
-                    defined_tags={
-                        "foo-namespace.bar-key": "value",
-                    },
-                    display_name=target_asset_user_spec_create_vnic_details_display_name,
-                    freeform_tags={
-                        "bar-key": "value",
-                    },
-                    hostname_label=target_asset_user_spec_create_vnic_details_hostname_label,
-                    nsg_ids=target_asset_user_spec_create_vnic_details_nsg_ids,
-                    private_ip=target_asset_user_spec_create_vnic_details_private_ip,
-                    skip_source_dest_check=target_asset_user_spec_create_vnic_details_skip_source_dest_check,
-                    subnet_id=test_subnet["id"],
-                    vlan_id=test_vlan["id"],
-                ),
-                dedicated_vm_host_id=test_dedicated_vm_host["id"],
-                defined_tags={
-                    "foo-namespace.bar-key": "value",
+            user_spec={
+                "agent_config": {
+                    "are_all_plugins_disabled": target_asset_user_spec_agent_config_are_all_plugins_disabled,
+                    "is_management_disabled": target_asset_user_spec_agent_config_is_management_disabled,
+                    "is_monitoring_disabled": target_asset_user_spec_agent_config_is_monitoring_disabled,
+                    "plugins_configs": [{
+                        "desired_state": target_asset_user_spec_agent_config_plugins_config_desired_state,
+                        "name": target_asset_user_spec_agent_config_plugins_config_name,
+                    }],
                 },
-                display_name=target_asset_user_spec_display_name,
-                fault_domain=target_asset_user_spec_fault_domain,
-                freeform_tags={
-                    "bar-key": "value",
+                "availability_domain": target_asset_user_spec_availability_domain,
+                "capacity_reservation_id": test_capacity_reservation["id"],
+                "compartment_id": compartment_id,
+                "create_vnic_details": {
+                    "assign_private_dns_record": target_asset_user_spec_create_vnic_details_assign_private_dns_record,
+                    "assign_public_ip": target_asset_user_spec_create_vnic_details_assign_public_ip,
+                    "defined_tags": {
+                        "foo_namespace_bar_key": "value",
+                    },
+                    "display_name": target_asset_user_spec_create_vnic_details_display_name,
+                    "freeform_tags": {
+                        "bar_key": "value",
+                    },
+                    "hostname_label": target_asset_user_spec_create_vnic_details_hostname_label,
+                    "nsg_ids": target_asset_user_spec_create_vnic_details_nsg_ids,
+                    "private_ip": target_asset_user_spec_create_vnic_details_private_ip,
+                    "skip_source_dest_check": target_asset_user_spec_create_vnic_details_skip_source_dest_check,
+                    "subnet_id": test_subnet["id"],
+                    "vlan_id": test_vlan["id"],
                 },
-                hostname_label=target_asset_user_spec_hostname_label,
-                instance_options=oci.cloud_migrations.TargetAssetUserSpecInstanceOptionsArgs(
-                    are_legacy_imds_endpoints_disabled=target_asset_user_spec_instance_options_are_legacy_imds_endpoints_disabled,
-                ),
-                ipxe_script=target_asset_user_spec_ipxe_script,
-                is_pv_encryption_in_transit_enabled=target_asset_user_spec_is_pv_encryption_in_transit_enabled,
-                preemptible_instance_config=oci.cloud_migrations.TargetAssetUserSpecPreemptibleInstanceConfigArgs(
-                    preemption_action=oci.cloud_migrations.TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArgs(
-                        type=target_asset_user_spec_preemptible_instance_config_preemption_action_type,
-                        preserve_boot_volume=target_asset_user_spec_preemptible_instance_config_preemption_action_preserve_boot_volume,
-                    ),
-                ),
-                shape=target_asset_user_spec_shape,
-                shape_config=oci.cloud_migrations.TargetAssetUserSpecShapeConfigArgs(
-                    baseline_ocpu_utilization=target_asset_user_spec_shape_config_baseline_ocpu_utilization,
-                    memory_in_gbs=target_asset_user_spec_shape_config_memory_in_gbs,
-                    ocpus=target_asset_user_spec_shape_config_ocpus,
-                ),
-                source_details=oci.cloud_migrations.TargetAssetUserSpecSourceDetailsArgs(
-                    source_type=target_asset_user_spec_source_details_source_type,
-                    boot_volume_id=test_boot_volume["id"],
-                    boot_volume_size_in_gbs=target_asset_user_spec_source_details_boot_volume_size_in_gbs,
-                    boot_volume_vpus_per_gb=target_asset_user_spec_source_details_boot_volume_vpus_per_gb,
-                    image_id=test_image["id"],
-                    kms_key_id=test_key["id"],
-                ),
-            ),
+                "dedicated_vm_host_id": test_dedicated_vm_host["id"],
+                "defined_tags": {
+                    "foo_namespace_bar_key": "value",
+                },
+                "display_name": target_asset_user_spec_display_name,
+                "fault_domain": target_asset_user_spec_fault_domain,
+                "freeform_tags": {
+                    "bar_key": "value",
+                },
+                "hostname_label": target_asset_user_spec_hostname_label,
+                "instance_options": {
+                    "are_legacy_imds_endpoints_disabled": target_asset_user_spec_instance_options_are_legacy_imds_endpoints_disabled,
+                },
+                "ipxe_script": target_asset_user_spec_ipxe_script,
+                "is_pv_encryption_in_transit_enabled": target_asset_user_spec_is_pv_encryption_in_transit_enabled,
+                "preemptible_instance_config": {
+                    "preemption_action": {
+                        "type": target_asset_user_spec_preemptible_instance_config_preemption_action_type,
+                        "preserve_boot_volume": target_asset_user_spec_preemptible_instance_config_preemption_action_preserve_boot_volume,
+                    },
+                },
+                "shape": target_asset_user_spec_shape,
+                "shape_config": {
+                    "baseline_ocpu_utilization": target_asset_user_spec_shape_config_baseline_ocpu_utilization,
+                    "memory_in_gbs": target_asset_user_spec_shape_config_memory_in_gbs,
+                    "ocpus": target_asset_user_spec_shape_config_ocpus,
+                },
+                "source_details": {
+                    "source_type": target_asset_user_spec_source_details_source_type,
+                    "boot_volume_id": test_boot_volume["id"],
+                    "boot_volume_size_in_gbs": target_asset_user_spec_source_details_boot_volume_size_in_gbs,
+                    "boot_volume_vpus_per_gb": target_asset_user_spec_source_details_boot_volume_vpus_per_gb,
+                    "image_id": test_image["id"],
+                    "kms_key_id": test_key["id"],
+                },
+            },
             block_volumes_performance=target_asset_block_volumes_performance,
             ms_license=target_asset_ms_license)
         ```
@@ -571,7 +571,7 @@ class TargetAsset(pulumi.CustomResource):
         :param pulumi.Input[str] ms_license: (Updatable) Microsoft license for the VM configuration.
         :param pulumi.Input[str] preferred_shape_type: (Updatable) Preferred VM shape type that you provide.
         :param pulumi.Input[str] type: (Updatable) The type of target asset.
-        :param pulumi.Input[pulumi.InputType['TargetAssetUserSpecArgs']] user_spec: (Updatable) Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
+        :param pulumi.Input[Union['TargetAssetUserSpecArgs', 'TargetAssetUserSpecArgsDict']] user_spec: (Updatable) Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
         """
         ...
     @overload
@@ -595,72 +595,72 @@ class TargetAsset(pulumi.CustomResource):
             migration_plan_id=test_migration_plan["id"],
             preferred_shape_type=target_asset_preferred_shape_type,
             type=target_asset_type,
-            user_spec=oci.cloud_migrations.TargetAssetUserSpecArgs(
-                agent_config=oci.cloud_migrations.TargetAssetUserSpecAgentConfigArgs(
-                    are_all_plugins_disabled=target_asset_user_spec_agent_config_are_all_plugins_disabled,
-                    is_management_disabled=target_asset_user_spec_agent_config_is_management_disabled,
-                    is_monitoring_disabled=target_asset_user_spec_agent_config_is_monitoring_disabled,
-                    plugins_configs=[oci.cloud_migrations.TargetAssetUserSpecAgentConfigPluginsConfigArgs(
-                        desired_state=target_asset_user_spec_agent_config_plugins_config_desired_state,
-                        name=target_asset_user_spec_agent_config_plugins_config_name,
-                    )],
-                ),
-                availability_domain=target_asset_user_spec_availability_domain,
-                capacity_reservation_id=test_capacity_reservation["id"],
-                compartment_id=compartment_id,
-                create_vnic_details=oci.cloud_migrations.TargetAssetUserSpecCreateVnicDetailsArgs(
-                    assign_private_dns_record=target_asset_user_spec_create_vnic_details_assign_private_dns_record,
-                    assign_public_ip=target_asset_user_spec_create_vnic_details_assign_public_ip,
-                    defined_tags={
-                        "foo-namespace.bar-key": "value",
-                    },
-                    display_name=target_asset_user_spec_create_vnic_details_display_name,
-                    freeform_tags={
-                        "bar-key": "value",
-                    },
-                    hostname_label=target_asset_user_spec_create_vnic_details_hostname_label,
-                    nsg_ids=target_asset_user_spec_create_vnic_details_nsg_ids,
-                    private_ip=target_asset_user_spec_create_vnic_details_private_ip,
-                    skip_source_dest_check=target_asset_user_spec_create_vnic_details_skip_source_dest_check,
-                    subnet_id=test_subnet["id"],
-                    vlan_id=test_vlan["id"],
-                ),
-                dedicated_vm_host_id=test_dedicated_vm_host["id"],
-                defined_tags={
-                    "foo-namespace.bar-key": "value",
+            user_spec={
+                "agent_config": {
+                    "are_all_plugins_disabled": target_asset_user_spec_agent_config_are_all_plugins_disabled,
+                    "is_management_disabled": target_asset_user_spec_agent_config_is_management_disabled,
+                    "is_monitoring_disabled": target_asset_user_spec_agent_config_is_monitoring_disabled,
+                    "plugins_configs": [{
+                        "desired_state": target_asset_user_spec_agent_config_plugins_config_desired_state,
+                        "name": target_asset_user_spec_agent_config_plugins_config_name,
+                    }],
                 },
-                display_name=target_asset_user_spec_display_name,
-                fault_domain=target_asset_user_spec_fault_domain,
-                freeform_tags={
-                    "bar-key": "value",
+                "availability_domain": target_asset_user_spec_availability_domain,
+                "capacity_reservation_id": test_capacity_reservation["id"],
+                "compartment_id": compartment_id,
+                "create_vnic_details": {
+                    "assign_private_dns_record": target_asset_user_spec_create_vnic_details_assign_private_dns_record,
+                    "assign_public_ip": target_asset_user_spec_create_vnic_details_assign_public_ip,
+                    "defined_tags": {
+                        "foo_namespace_bar_key": "value",
+                    },
+                    "display_name": target_asset_user_spec_create_vnic_details_display_name,
+                    "freeform_tags": {
+                        "bar_key": "value",
+                    },
+                    "hostname_label": target_asset_user_spec_create_vnic_details_hostname_label,
+                    "nsg_ids": target_asset_user_spec_create_vnic_details_nsg_ids,
+                    "private_ip": target_asset_user_spec_create_vnic_details_private_ip,
+                    "skip_source_dest_check": target_asset_user_spec_create_vnic_details_skip_source_dest_check,
+                    "subnet_id": test_subnet["id"],
+                    "vlan_id": test_vlan["id"],
                 },
-                hostname_label=target_asset_user_spec_hostname_label,
-                instance_options=oci.cloud_migrations.TargetAssetUserSpecInstanceOptionsArgs(
-                    are_legacy_imds_endpoints_disabled=target_asset_user_spec_instance_options_are_legacy_imds_endpoints_disabled,
-                ),
-                ipxe_script=target_asset_user_spec_ipxe_script,
-                is_pv_encryption_in_transit_enabled=target_asset_user_spec_is_pv_encryption_in_transit_enabled,
-                preemptible_instance_config=oci.cloud_migrations.TargetAssetUserSpecPreemptibleInstanceConfigArgs(
-                    preemption_action=oci.cloud_migrations.TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArgs(
-                        type=target_asset_user_spec_preemptible_instance_config_preemption_action_type,
-                        preserve_boot_volume=target_asset_user_spec_preemptible_instance_config_preemption_action_preserve_boot_volume,
-                    ),
-                ),
-                shape=target_asset_user_spec_shape,
-                shape_config=oci.cloud_migrations.TargetAssetUserSpecShapeConfigArgs(
-                    baseline_ocpu_utilization=target_asset_user_spec_shape_config_baseline_ocpu_utilization,
-                    memory_in_gbs=target_asset_user_spec_shape_config_memory_in_gbs,
-                    ocpus=target_asset_user_spec_shape_config_ocpus,
-                ),
-                source_details=oci.cloud_migrations.TargetAssetUserSpecSourceDetailsArgs(
-                    source_type=target_asset_user_spec_source_details_source_type,
-                    boot_volume_id=test_boot_volume["id"],
-                    boot_volume_size_in_gbs=target_asset_user_spec_source_details_boot_volume_size_in_gbs,
-                    boot_volume_vpus_per_gb=target_asset_user_spec_source_details_boot_volume_vpus_per_gb,
-                    image_id=test_image["id"],
-                    kms_key_id=test_key["id"],
-                ),
-            ),
+                "dedicated_vm_host_id": test_dedicated_vm_host["id"],
+                "defined_tags": {
+                    "foo_namespace_bar_key": "value",
+                },
+                "display_name": target_asset_user_spec_display_name,
+                "fault_domain": target_asset_user_spec_fault_domain,
+                "freeform_tags": {
+                    "bar_key": "value",
+                },
+                "hostname_label": target_asset_user_spec_hostname_label,
+                "instance_options": {
+                    "are_legacy_imds_endpoints_disabled": target_asset_user_spec_instance_options_are_legacy_imds_endpoints_disabled,
+                },
+                "ipxe_script": target_asset_user_spec_ipxe_script,
+                "is_pv_encryption_in_transit_enabled": target_asset_user_spec_is_pv_encryption_in_transit_enabled,
+                "preemptible_instance_config": {
+                    "preemption_action": {
+                        "type": target_asset_user_spec_preemptible_instance_config_preemption_action_type,
+                        "preserve_boot_volume": target_asset_user_spec_preemptible_instance_config_preemption_action_preserve_boot_volume,
+                    },
+                },
+                "shape": target_asset_user_spec_shape,
+                "shape_config": {
+                    "baseline_ocpu_utilization": target_asset_user_spec_shape_config_baseline_ocpu_utilization,
+                    "memory_in_gbs": target_asset_user_spec_shape_config_memory_in_gbs,
+                    "ocpus": target_asset_user_spec_shape_config_ocpus,
+                },
+                "source_details": {
+                    "source_type": target_asset_user_spec_source_details_source_type,
+                    "boot_volume_id": test_boot_volume["id"],
+                    "boot_volume_size_in_gbs": target_asset_user_spec_source_details_boot_volume_size_in_gbs,
+                    "boot_volume_vpus_per_gb": target_asset_user_spec_source_details_boot_volume_vpus_per_gb,
+                    "image_id": test_image["id"],
+                    "kms_key_id": test_key["id"],
+                },
+            },
             block_volumes_performance=target_asset_block_volumes_performance,
             ms_license=target_asset_ms_license)
         ```
@@ -694,7 +694,7 @@ class TargetAsset(pulumi.CustomResource):
                  ms_license: Optional[pulumi.Input[str]] = None,
                  preferred_shape_type: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None,
-                 user_spec: Optional[pulumi.Input[pulumi.InputType['TargetAssetUserSpecArgs']]] = None,
+                 user_spec: Optional[pulumi.Input[Union['TargetAssetUserSpecArgs', 'TargetAssetUserSpecArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -746,24 +746,24 @@ class TargetAsset(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             block_volumes_performance: Optional[pulumi.Input[int]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            compatibility_messages: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TargetAssetCompatibilityMessageArgs']]]]] = None,
+            compatibility_messages: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TargetAssetCompatibilityMessageArgs', 'TargetAssetCompatibilityMessageArgsDict']]]]] = None,
             created_resource_id: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
-            estimated_costs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TargetAssetEstimatedCostArgs']]]]] = None,
+            estimated_costs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TargetAssetEstimatedCostArgs', 'TargetAssetEstimatedCostArgsDict']]]]] = None,
             is_excluded_from_execution: Optional[pulumi.Input[bool]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
-            migration_assets: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TargetAssetMigrationAssetArgs']]]]] = None,
+            migration_assets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TargetAssetMigrationAssetArgs', 'TargetAssetMigrationAssetArgsDict']]]]] = None,
             migration_plan_id: Optional[pulumi.Input[str]] = None,
             ms_license: Optional[pulumi.Input[str]] = None,
             preferred_shape_type: Optional[pulumi.Input[str]] = None,
-            recommended_specs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TargetAssetRecommendedSpecArgs']]]]] = None,
+            recommended_specs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TargetAssetRecommendedSpecArgs', 'TargetAssetRecommendedSpecArgsDict']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
-            test_specs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TargetAssetTestSpecArgs']]]]] = None,
+            test_specs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TargetAssetTestSpecArgs', 'TargetAssetTestSpecArgsDict']]]]] = None,
             time_assessed: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
             type: Optional[pulumi.Input[str]] = None,
-            user_spec: Optional[pulumi.Input[pulumi.InputType['TargetAssetUserSpecArgs']]] = None) -> 'TargetAsset':
+            user_spec: Optional[pulumi.Input[Union['TargetAssetUserSpecArgs', 'TargetAssetUserSpecArgsDict']]] = None) -> 'TargetAsset':
         """
         Get an existing TargetAsset resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -773,24 +773,24 @@ class TargetAsset(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] block_volumes_performance: (Updatable) Performance of the block volumes.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TargetAssetCompatibilityMessageArgs']]]] compatibility_messages: Messages about the compatibility issues.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['TargetAssetCompatibilityMessageArgs', 'TargetAssetCompatibilityMessageArgsDict']]]] compatibility_messages: Messages about the compatibility issues.
         :param pulumi.Input[str] created_resource_id: Created resource identifier
         :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TargetAssetEstimatedCostArgs']]]] estimated_costs: Cost estimation description
+        :param pulumi.Input[Sequence[pulumi.Input[Union['TargetAssetEstimatedCostArgs', 'TargetAssetEstimatedCostArgsDict']]]] estimated_costs: Cost estimation description
         :param pulumi.Input[bool] is_excluded_from_execution: (Updatable) A boolean indicating whether the asset should be migrated.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TargetAssetMigrationAssetArgs']]]] migration_assets: Description of the migration asset.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['TargetAssetMigrationAssetArgs', 'TargetAssetMigrationAssetArgsDict']]]] migration_assets: Description of the migration asset.
         :param pulumi.Input[str] migration_plan_id: OCID of the associated migration plan.
         :param pulumi.Input[str] ms_license: (Updatable) Microsoft license for the VM configuration.
         :param pulumi.Input[str] preferred_shape_type: (Updatable) Preferred VM shape type that you provide.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TargetAssetRecommendedSpecArgs']]]] recommended_specs: Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['TargetAssetRecommendedSpecArgs', 'TargetAssetRecommendedSpecArgsDict']]]] recommended_specs: Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
         :param pulumi.Input[str] state: The current state of the target asset.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TargetAssetTestSpecArgs']]]] test_specs: Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['TargetAssetTestSpecArgs', 'TargetAssetTestSpecArgsDict']]]] test_specs: Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
         :param pulumi.Input[str] time_assessed: The time when the assessment was done. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_created: The time when the target asset was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time when the target asset was updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] type: (Updatable) The type of target asset.
-        :param pulumi.Input[pulumi.InputType['TargetAssetUserSpecArgs']] user_spec: (Updatable) Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
+        :param pulumi.Input[Union['TargetAssetUserSpecArgs', 'TargetAssetUserSpecArgsDict']] user_spec: (Updatable) Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

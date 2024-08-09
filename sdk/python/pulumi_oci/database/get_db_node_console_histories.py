@@ -105,7 +105,7 @@ class AwaitableGetDbNodeConsoleHistoriesResult(GetDbNodeConsoleHistoriesResult):
 
 def get_db_node_console_histories(db_node_id: Optional[str] = None,
                                   display_name: Optional[str] = None,
-                                  filters: Optional[Sequence[pulumi.InputType['GetDbNodeConsoleHistoriesFilterArgs']]] = None,
+                                  filters: Optional[Sequence[Union['GetDbNodeConsoleHistoriesFilterArgs', 'GetDbNodeConsoleHistoriesFilterArgsDict']]] = None,
                                   state: Optional[str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbNodeConsoleHistoriesResult:
     """
@@ -149,7 +149,7 @@ def get_db_node_console_histories(db_node_id: Optional[str] = None,
 @_utilities.lift_output_func(get_db_node_console_histories)
 def get_db_node_console_histories_output(db_node_id: Optional[pulumi.Input[str]] = None,
                                          display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                         filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDbNodeConsoleHistoriesFilterArgs']]]]] = None,
+                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbNodeConsoleHistoriesFilterArgs', 'GetDbNodeConsoleHistoriesFilterArgsDict']]]]] = None,
                                          state: Optional[pulumi.Input[Optional[str]]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbNodeConsoleHistoriesResult]:
     """

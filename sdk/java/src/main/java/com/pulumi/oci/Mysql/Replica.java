@@ -381,7 +381,7 @@ public class Replica extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public Replica(String name) {
+    public Replica(java.lang.String name) {
         this(name, ReplicaArgs.Empty);
     }
     /**
@@ -389,7 +389,7 @@ public class Replica extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public Replica(String name, ReplicaArgs args) {
+    public Replica(java.lang.String name, ReplicaArgs args) {
         this(name, args, null);
     }
     /**
@@ -398,12 +398,12 @@ public class Replica extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public Replica(String name, ReplicaArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Mysql/replica:Replica", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public Replica(java.lang.String name, ReplicaArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Mysql/replica:Replica", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private Replica(String name, Output<String> id, @Nullable ReplicaState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Mysql/replica:Replica", name, state, makeResourceOptions(options, id));
+    private Replica(java.lang.String name, Output<java.lang.String> id, @Nullable ReplicaState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Mysql/replica:Replica", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ReplicaArgs makeArgs(ReplicaArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -413,7 +413,7 @@ public class Replica extends com.pulumi.resources.CustomResource {
         return args == null ? ReplicaArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -429,7 +429,7 @@ public class Replica extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static Replica get(String name, Output<String> id, @Nullable ReplicaState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static Replica get(java.lang.String name, Output<java.lang.String> id, @Nullable ReplicaState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new Replica(name, id, state, options);
     }
 }

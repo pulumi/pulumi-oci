@@ -124,7 +124,7 @@ class AwaitableGetSoftwareSourceModuleStreamsResult(GetSoftwareSourceModuleStrea
             software_source_id=self.software_source_id)
 
 
-def get_software_source_module_streams(filters: Optional[Sequence[pulumi.InputType['GetSoftwareSourceModuleStreamsFilterArgs']]] = None,
+def get_software_source_module_streams(filters: Optional[Sequence[Union['GetSoftwareSourceModuleStreamsFilterArgs', 'GetSoftwareSourceModuleStreamsFilterArgsDict']]] = None,
                                        is_latest: Optional[bool] = None,
                                        module_name: Optional[str] = None,
                                        module_name_contains: Optional[str] = None,
@@ -179,7 +179,7 @@ def get_software_source_module_streams(filters: Optional[Sequence[pulumi.InputTy
 
 
 @_utilities.lift_output_func(get_software_source_module_streams)
-def get_software_source_module_streams_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetSoftwareSourceModuleStreamsFilterArgs']]]]] = None,
+def get_software_source_module_streams_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSoftwareSourceModuleStreamsFilterArgs', 'GetSoftwareSourceModuleStreamsFilterArgsDict']]]]] = None,
                                               is_latest: Optional[pulumi.Input[Optional[bool]]] = None,
                                               module_name: Optional[pulumi.Input[Optional[str]]] = None,
                                               module_name_contains: Optional[pulumi.Input[Optional[str]]] = None,

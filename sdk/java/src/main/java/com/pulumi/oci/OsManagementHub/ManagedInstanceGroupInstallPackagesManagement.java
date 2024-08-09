@@ -119,7 +119,7 @@ public class ManagedInstanceGroupInstallPackagesManagement extends com.pulumi.re
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ManagedInstanceGroupInstallPackagesManagement(String name) {
+    public ManagedInstanceGroupInstallPackagesManagement(java.lang.String name) {
         this(name, ManagedInstanceGroupInstallPackagesManagementArgs.Empty);
     }
     /**
@@ -127,7 +127,7 @@ public class ManagedInstanceGroupInstallPackagesManagement extends com.pulumi.re
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ManagedInstanceGroupInstallPackagesManagement(String name, ManagedInstanceGroupInstallPackagesManagementArgs args) {
+    public ManagedInstanceGroupInstallPackagesManagement(java.lang.String name, ManagedInstanceGroupInstallPackagesManagementArgs args) {
         this(name, args, null);
     }
     /**
@@ -136,12 +136,12 @@ public class ManagedInstanceGroupInstallPackagesManagement extends com.pulumi.re
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ManagedInstanceGroupInstallPackagesManagement(String name, ManagedInstanceGroupInstallPackagesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:OsManagementHub/managedInstanceGroupInstallPackagesManagement:ManagedInstanceGroupInstallPackagesManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ManagedInstanceGroupInstallPackagesManagement(java.lang.String name, ManagedInstanceGroupInstallPackagesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:OsManagementHub/managedInstanceGroupInstallPackagesManagement:ManagedInstanceGroupInstallPackagesManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ManagedInstanceGroupInstallPackagesManagement(String name, Output<String> id, @Nullable ManagedInstanceGroupInstallPackagesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:OsManagementHub/managedInstanceGroupInstallPackagesManagement:ManagedInstanceGroupInstallPackagesManagement", name, state, makeResourceOptions(options, id));
+    private ManagedInstanceGroupInstallPackagesManagement(java.lang.String name, Output<java.lang.String> id, @Nullable ManagedInstanceGroupInstallPackagesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:OsManagementHub/managedInstanceGroupInstallPackagesManagement:ManagedInstanceGroupInstallPackagesManagement", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ManagedInstanceGroupInstallPackagesManagementArgs makeArgs(ManagedInstanceGroupInstallPackagesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -151,7 +151,7 @@ public class ManagedInstanceGroupInstallPackagesManagement extends com.pulumi.re
         return args == null ? ManagedInstanceGroupInstallPackagesManagementArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -167,7 +167,7 @@ public class ManagedInstanceGroupInstallPackagesManagement extends com.pulumi.re
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ManagedInstanceGroupInstallPackagesManagement get(String name, Output<String> id, @Nullable ManagedInstanceGroupInstallPackagesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ManagedInstanceGroupInstallPackagesManagement get(java.lang.String name, Output<java.lang.String> id, @Nullable ManagedInstanceGroupInstallPackagesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ManagedInstanceGroupInstallPackagesManagement(name, id, state, options);
     }
 }

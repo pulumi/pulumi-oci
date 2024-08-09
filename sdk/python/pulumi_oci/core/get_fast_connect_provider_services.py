@@ -77,7 +77,7 @@ class AwaitableGetFastConnectProviderServicesResult(GetFastConnectProviderServic
 
 
 def get_fast_connect_provider_services(compartment_id: Optional[str] = None,
-                                       filters: Optional[Sequence[pulumi.InputType['GetFastConnectProviderServicesFilterArgs']]] = None,
+                                       filters: Optional[Sequence[Union['GetFastConnectProviderServicesFilterArgs', 'GetFastConnectProviderServicesFilterArgsDict']]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFastConnectProviderServicesResult:
     """
     This data source provides the list of Fast Connect Provider Services in Oracle Cloud Infrastructure Core service.
@@ -117,7 +117,7 @@ def get_fast_connect_provider_services(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_fast_connect_provider_services)
 def get_fast_connect_provider_services_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                              filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetFastConnectProviderServicesFilterArgs']]]]] = None,
+                                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFastConnectProviderServicesFilterArgs', 'GetFastConnectProviderServicesFilterArgsDict']]]]] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFastConnectProviderServicesResult]:
     """
     This data source provides the list of Fast Connect Provider Services in Oracle Cloud Infrastructure Core service.

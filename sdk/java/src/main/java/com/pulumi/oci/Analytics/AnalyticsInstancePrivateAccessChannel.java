@@ -234,7 +234,7 @@ public class AnalyticsInstancePrivateAccessChannel extends com.pulumi.resources.
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public AnalyticsInstancePrivateAccessChannel(String name) {
+    public AnalyticsInstancePrivateAccessChannel(java.lang.String name) {
         this(name, AnalyticsInstancePrivateAccessChannelArgs.Empty);
     }
     /**
@@ -242,7 +242,7 @@ public class AnalyticsInstancePrivateAccessChannel extends com.pulumi.resources.
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public AnalyticsInstancePrivateAccessChannel(String name, AnalyticsInstancePrivateAccessChannelArgs args) {
+    public AnalyticsInstancePrivateAccessChannel(java.lang.String name, AnalyticsInstancePrivateAccessChannelArgs args) {
         this(name, args, null);
     }
     /**
@@ -251,12 +251,12 @@ public class AnalyticsInstancePrivateAccessChannel extends com.pulumi.resources.
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public AnalyticsInstancePrivateAccessChannel(String name, AnalyticsInstancePrivateAccessChannelArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Analytics/analyticsInstancePrivateAccessChannel:AnalyticsInstancePrivateAccessChannel", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public AnalyticsInstancePrivateAccessChannel(java.lang.String name, AnalyticsInstancePrivateAccessChannelArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Analytics/analyticsInstancePrivateAccessChannel:AnalyticsInstancePrivateAccessChannel", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private AnalyticsInstancePrivateAccessChannel(String name, Output<String> id, @Nullable AnalyticsInstancePrivateAccessChannelState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Analytics/analyticsInstancePrivateAccessChannel:AnalyticsInstancePrivateAccessChannel", name, state, makeResourceOptions(options, id));
+    private AnalyticsInstancePrivateAccessChannel(java.lang.String name, Output<java.lang.String> id, @Nullable AnalyticsInstancePrivateAccessChannelState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Analytics/analyticsInstancePrivateAccessChannel:AnalyticsInstancePrivateAccessChannel", name, state, makeResourceOptions(options, id), false);
     }
 
     private static AnalyticsInstancePrivateAccessChannelArgs makeArgs(AnalyticsInstancePrivateAccessChannelArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -266,7 +266,7 @@ public class AnalyticsInstancePrivateAccessChannel extends com.pulumi.resources.
         return args == null ? AnalyticsInstancePrivateAccessChannelArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -282,7 +282,7 @@ public class AnalyticsInstancePrivateAccessChannel extends com.pulumi.resources.
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static AnalyticsInstancePrivateAccessChannel get(String name, Output<String> id, @Nullable AnalyticsInstancePrivateAccessChannelState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static AnalyticsInstancePrivateAccessChannel get(java.lang.String name, Output<java.lang.String> id, @Nullable AnalyticsInstancePrivateAccessChannelState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new AnalyticsInstancePrivateAccessChannel(name, id, state, options);
     }
 }

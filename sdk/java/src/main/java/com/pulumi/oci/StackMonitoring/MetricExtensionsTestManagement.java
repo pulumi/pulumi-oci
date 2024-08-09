@@ -156,7 +156,7 @@ public class MetricExtensionsTestManagement extends com.pulumi.resources.CustomR
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public MetricExtensionsTestManagement(String name) {
+    public MetricExtensionsTestManagement(java.lang.String name) {
         this(name, MetricExtensionsTestManagementArgs.Empty);
     }
     /**
@@ -164,7 +164,7 @@ public class MetricExtensionsTestManagement extends com.pulumi.resources.CustomR
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public MetricExtensionsTestManagement(String name, MetricExtensionsTestManagementArgs args) {
+    public MetricExtensionsTestManagement(java.lang.String name, MetricExtensionsTestManagementArgs args) {
         this(name, args, null);
     }
     /**
@@ -173,12 +173,12 @@ public class MetricExtensionsTestManagement extends com.pulumi.resources.CustomR
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public MetricExtensionsTestManagement(String name, MetricExtensionsTestManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:StackMonitoring/metricExtensionsTestManagement:MetricExtensionsTestManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public MetricExtensionsTestManagement(java.lang.String name, MetricExtensionsTestManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:StackMonitoring/metricExtensionsTestManagement:MetricExtensionsTestManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private MetricExtensionsTestManagement(String name, Output<String> id, @Nullable MetricExtensionsTestManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:StackMonitoring/metricExtensionsTestManagement:MetricExtensionsTestManagement", name, state, makeResourceOptions(options, id));
+    private MetricExtensionsTestManagement(java.lang.String name, Output<java.lang.String> id, @Nullable MetricExtensionsTestManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:StackMonitoring/metricExtensionsTestManagement:MetricExtensionsTestManagement", name, state, makeResourceOptions(options, id), false);
     }
 
     private static MetricExtensionsTestManagementArgs makeArgs(MetricExtensionsTestManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -188,7 +188,7 @@ public class MetricExtensionsTestManagement extends com.pulumi.resources.CustomR
         return args == null ? MetricExtensionsTestManagementArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -204,7 +204,7 @@ public class MetricExtensionsTestManagement extends com.pulumi.resources.CustomR
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static MetricExtensionsTestManagement get(String name, Output<String> id, @Nullable MetricExtensionsTestManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static MetricExtensionsTestManagement get(java.lang.String name, Output<java.lang.String> id, @Nullable MetricExtensionsTestManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new MetricExtensionsTestManagement(name, id, state, options);
     }
 }

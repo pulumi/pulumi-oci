@@ -113,7 +113,7 @@ class AwaitableGetSubscribedServicesResult(GetSubscribedServicesResult):
 
 
 def get_subscribed_services(compartment_id: Optional[str] = None,
-                            filters: Optional[Sequence[pulumi.InputType['GetSubscribedServicesFilterArgs']]] = None,
+                            filters: Optional[Sequence[Union['GetSubscribedServicesFilterArgs', 'GetSubscribedServicesFilterArgsDict']]] = None,
                             order_line_id: Optional[str] = None,
                             status: Optional[str] = None,
                             subscription_id: Optional[str] = None,
@@ -162,7 +162,7 @@ def get_subscribed_services(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_subscribed_services)
 def get_subscribed_services_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetSubscribedServicesFilterArgs']]]]] = None,
+                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSubscribedServicesFilterArgs', 'GetSubscribedServicesFilterArgsDict']]]]] = None,
                                    order_line_id: Optional[pulumi.Input[Optional[str]]] = None,
                                    status: Optional[pulumi.Input[Optional[str]]] = None,
                                    subscription_id: Optional[pulumi.Input[str]] = None,

@@ -105,7 +105,7 @@ class AwaitableGetManagedMySqlDatabaseSqlDataResult(GetManagedMySqlDatabaseSqlDa
 
 def get_managed_my_sql_database_sql_data(end_time: Optional[str] = None,
                                          filter_column: Optional[str] = None,
-                                         filters: Optional[Sequence[pulumi.InputType['GetManagedMySqlDatabaseSqlDataFilterArgs']]] = None,
+                                         filters: Optional[Sequence[Union['GetManagedMySqlDatabaseSqlDataFilterArgs', 'GetManagedMySqlDatabaseSqlDataFilterArgsDict']]] = None,
                                          managed_my_sql_database_id: Optional[str] = None,
                                          start_time: Optional[str] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedMySqlDatabaseSqlDataResult:
@@ -168,7 +168,7 @@ def get_managed_my_sql_database_sql_data(end_time: Optional[str] = None,
 @_utilities.lift_output_func(get_managed_my_sql_database_sql_data)
 def get_managed_my_sql_database_sql_data_output(end_time: Optional[pulumi.Input[str]] = None,
                                                 filter_column: Optional[pulumi.Input[Optional[str]]] = None,
-                                                filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetManagedMySqlDatabaseSqlDataFilterArgs']]]]] = None,
+                                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedMySqlDatabaseSqlDataFilterArgs', 'GetManagedMySqlDatabaseSqlDataFilterArgsDict']]]]] = None,
                                                 managed_my_sql_database_id: Optional[pulumi.Input[str]] = None,
                                                 start_time: Optional[pulumi.Input[str]] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedMySqlDatabaseSqlDataResult]:

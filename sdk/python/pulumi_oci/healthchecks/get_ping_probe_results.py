@@ -109,7 +109,7 @@ class AwaitableGetPingProbeResultsResult(GetPingProbeResultsResult):
             target=self.target)
 
 
-def get_ping_probe_results(filters: Optional[Sequence[pulumi.InputType['GetPingProbeResultsFilterArgs']]] = None,
+def get_ping_probe_results(filters: Optional[Sequence[Union['GetPingProbeResultsFilterArgs', 'GetPingProbeResultsFilterArgsDict']]] = None,
                            probe_configuration_id: Optional[str] = None,
                            start_time_greater_than_or_equal_to: Optional[float] = None,
                            start_time_less_than_or_equal_to: Optional[float] = None,
@@ -164,7 +164,7 @@ def get_ping_probe_results(filters: Optional[Sequence[pulumi.InputType['GetPingP
 
 
 @_utilities.lift_output_func(get_ping_probe_results)
-def get_ping_probe_results_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetPingProbeResultsFilterArgs']]]]] = None,
+def get_ping_probe_results_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPingProbeResultsFilterArgs', 'GetPingProbeResultsFilterArgsDict']]]]] = None,
                                   probe_configuration_id: Optional[pulumi.Input[str]] = None,
                                   start_time_greater_than_or_equal_to: Optional[pulumi.Input[Optional[float]]] = None,
                                   start_time_less_than_or_equal_to: Optional[pulumi.Input[Optional[float]]] = None,

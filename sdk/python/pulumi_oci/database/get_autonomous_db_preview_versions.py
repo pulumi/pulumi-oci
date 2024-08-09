@@ -77,7 +77,7 @@ class AwaitableGetAutonomousDbPreviewVersionsResult(GetAutonomousDbPreviewVersio
 
 
 def get_autonomous_db_preview_versions(compartment_id: Optional[str] = None,
-                                       filters: Optional[Sequence[pulumi.InputType['GetAutonomousDbPreviewVersionsFilterArgs']]] = None,
+                                       filters: Optional[Sequence[Union['GetAutonomousDbPreviewVersionsFilterArgs', 'GetAutonomousDbPreviewVersionsFilterArgsDict']]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousDbPreviewVersionsResult:
     """
     This data source provides the list of Autonomous Db Preview Versions in Oracle Cloud Infrastructure Database service.
@@ -112,7 +112,7 @@ def get_autonomous_db_preview_versions(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_autonomous_db_preview_versions)
 def get_autonomous_db_preview_versions_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                              filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAutonomousDbPreviewVersionsFilterArgs']]]]] = None,
+                                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutonomousDbPreviewVersionsFilterArgs', 'GetAutonomousDbPreviewVersionsFilterArgsDict']]]]] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousDbPreviewVersionsResult]:
     """
     This data source provides the list of Autonomous Db Preview Versions in Oracle Cloud Infrastructure Database service.

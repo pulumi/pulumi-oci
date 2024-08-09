@@ -115,7 +115,7 @@ class AwaitableGetAssetSourcesResult(GetAssetSourcesResult):
 def get_asset_sources(asset_source_id: Optional[str] = None,
                       compartment_id: Optional[str] = None,
                       display_name: Optional[str] = None,
-                      filters: Optional[Sequence[pulumi.InputType['GetAssetSourcesFilterArgs']]] = None,
+                      filters: Optional[Sequence[Union['GetAssetSourcesFilterArgs', 'GetAssetSourcesFilterArgsDict']]] = None,
                       state: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAssetSourcesResult:
     """
@@ -164,7 +164,7 @@ def get_asset_sources(asset_source_id: Optional[str] = None,
 def get_asset_sources_output(asset_source_id: Optional[pulumi.Input[Optional[str]]] = None,
                              compartment_id: Optional[pulumi.Input[str]] = None,
                              display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                             filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAssetSourcesFilterArgs']]]]] = None,
+                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAssetSourcesFilterArgs', 'GetAssetSourcesFilterArgsDict']]]]] = None,
                              state: Optional[pulumi.Input[Optional[str]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAssetSourcesResult]:
     """

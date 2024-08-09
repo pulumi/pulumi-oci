@@ -339,7 +339,7 @@ class AtCustomerCccUpgradeSchedule(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 events: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AtCustomerCccUpgradeScheduleEventArgs']]]]] = None,
+                 events: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AtCustomerCccUpgradeScheduleEventArgs', 'AtCustomerCccUpgradeScheduleEventArgsDict']]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  __props__=None):
         """
@@ -356,12 +356,12 @@ class AtCustomerCccUpgradeSchedule(pulumi.CustomResource):
         test_ccc_upgrade_schedule = oci.compute_cloud.AtCustomerCccUpgradeSchedule("test_ccc_upgrade_schedule",
             compartment_id=compartment_id,
             display_name=ccc_upgrade_schedule_display_name,
-            events=[oci.compute_cloud.AtCustomerCccUpgradeScheduleEventArgs(
-                description=ccc_upgrade_schedule_events_description,
-                schedule_event_duration=ccc_upgrade_schedule_events_schedule_event_duration,
-                time_start=ccc_upgrade_schedule_events_time_start,
-                schedule_event_recurrences=ccc_upgrade_schedule_events_schedule_event_recurrences,
-            )],
+            events=[{
+                "description": ccc_upgrade_schedule_events_description,
+                "schedule_event_duration": ccc_upgrade_schedule_events_schedule_event_duration,
+                "time_start": ccc_upgrade_schedule_events_time_start,
+                "schedule_event_recurrences": ccc_upgrade_schedule_events_schedule_event_recurrences,
+            }],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -385,7 +385,7 @@ class AtCustomerCccUpgradeSchedule(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) An optional description of the Compute Cloud@Customer upgrade schedule. Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential information.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AtCustomerCccUpgradeScheduleEventArgs']]]] events: (Updatable) List of preferred times for Compute Cloud@Customer infrastructure to be upgraded.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AtCustomerCccUpgradeScheduleEventArgs', 'AtCustomerCccUpgradeScheduleEventArgsDict']]]] events: (Updatable) List of preferred times for Compute Cloud@Customer infrastructure to be upgraded.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
                
                
@@ -412,12 +412,12 @@ class AtCustomerCccUpgradeSchedule(pulumi.CustomResource):
         test_ccc_upgrade_schedule = oci.compute_cloud.AtCustomerCccUpgradeSchedule("test_ccc_upgrade_schedule",
             compartment_id=compartment_id,
             display_name=ccc_upgrade_schedule_display_name,
-            events=[oci.compute_cloud.AtCustomerCccUpgradeScheduleEventArgs(
-                description=ccc_upgrade_schedule_events_description,
-                schedule_event_duration=ccc_upgrade_schedule_events_schedule_event_duration,
-                time_start=ccc_upgrade_schedule_events_time_start,
-                schedule_event_recurrences=ccc_upgrade_schedule_events_schedule_event_recurrences,
-            )],
+            events=[{
+                "description": ccc_upgrade_schedule_events_description,
+                "schedule_event_duration": ccc_upgrade_schedule_events_schedule_event_duration,
+                "time_start": ccc_upgrade_schedule_events_time_start,
+                "schedule_event_recurrences": ccc_upgrade_schedule_events_schedule_event_recurrences,
+            }],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -454,7 +454,7 @@ class AtCustomerCccUpgradeSchedule(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 events: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AtCustomerCccUpgradeScheduleEventArgs']]]]] = None,
+                 events: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AtCustomerCccUpgradeScheduleEventArgs', 'AtCustomerCccUpgradeScheduleEventArgsDict']]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -497,7 +497,7 @@ class AtCustomerCccUpgradeSchedule(pulumi.CustomResource):
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
-            events: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AtCustomerCccUpgradeScheduleEventArgs']]]]] = None,
+            events: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AtCustomerCccUpgradeScheduleEventArgs', 'AtCustomerCccUpgradeScheduleEventArgsDict']]]]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             infrastructure_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
@@ -516,7 +516,7 @@ class AtCustomerCccUpgradeSchedule(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) An optional description of the Compute Cloud@Customer upgrade schedule. Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential information.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AtCustomerCccUpgradeScheduleEventArgs']]]] events: (Updatable) List of preferred times for Compute Cloud@Customer infrastructure to be upgraded.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AtCustomerCccUpgradeScheduleEventArgs', 'AtCustomerCccUpgradeScheduleEventArgsDict']]]] events: (Updatable) List of preferred times for Compute Cloud@Customer infrastructure to be upgraded.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
                
                

@@ -118,7 +118,7 @@ class AwaitableGetOutboundConnectorsResult(GetOutboundConnectorsResult):
 def get_outbound_connectors(availability_domain: Optional[str] = None,
                             compartment_id: Optional[str] = None,
                             display_name: Optional[str] = None,
-                            filters: Optional[Sequence[pulumi.InputType['GetOutboundConnectorsFilterArgs']]] = None,
+                            filters: Optional[Sequence[Union['GetOutboundConnectorsFilterArgs', 'GetOutboundConnectorsFilterArgsDict']]] = None,
                             id: Optional[str] = None,
                             state: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOutboundConnectorsResult:
@@ -171,7 +171,7 @@ def get_outbound_connectors(availability_domain: Optional[str] = None,
 def get_outbound_connectors_output(availability_domain: Optional[pulumi.Input[str]] = None,
                                    compartment_id: Optional[pulumi.Input[str]] = None,
                                    display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetOutboundConnectorsFilterArgs']]]]] = None,
+                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOutboundConnectorsFilterArgs', 'GetOutboundConnectorsFilterArgsDict']]]]] = None,
                                    id: Optional[pulumi.Input[Optional[str]]] = None,
                                    state: Optional[pulumi.Input[Optional[str]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOutboundConnectorsResult]:

@@ -115,7 +115,7 @@ class AwaitableGetInvoicesResult(GetInvoicesResult):
 def get_invoices(ar_customer_transaction_id: Optional[str] = None,
                  compartment_id: Optional[str] = None,
                  fields: Optional[Sequence[str]] = None,
-                 filters: Optional[Sequence[pulumi.InputType['GetInvoicesFilterArgs']]] = None,
+                 filters: Optional[Sequence[Union['GetInvoicesFilterArgs', 'GetInvoicesFilterArgsDict']]] = None,
                  time_from: Optional[str] = None,
                  time_to: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetInvoicesResult:
@@ -169,7 +169,7 @@ def get_invoices(ar_customer_transaction_id: Optional[str] = None,
 def get_invoices_output(ar_customer_transaction_id: Optional[pulumi.Input[str]] = None,
                         compartment_id: Optional[pulumi.Input[str]] = None,
                         fields: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                        filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetInvoicesFilterArgs']]]]] = None,
+                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetInvoicesFilterArgs', 'GetInvoicesFilterArgsDict']]]]] = None,
                         time_from: Optional[pulumi.Input[Optional[str]]] = None,
                         time_to: Optional[pulumi.Input[Optional[str]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInvoicesResult]:

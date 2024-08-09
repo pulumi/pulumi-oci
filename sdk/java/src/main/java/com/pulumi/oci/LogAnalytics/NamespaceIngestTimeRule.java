@@ -281,7 +281,7 @@ public class NamespaceIngestTimeRule extends com.pulumi.resources.CustomResource
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public NamespaceIngestTimeRule(String name) {
+    public NamespaceIngestTimeRule(java.lang.String name) {
         this(name, NamespaceIngestTimeRuleArgs.Empty);
     }
     /**
@@ -289,7 +289,7 @@ public class NamespaceIngestTimeRule extends com.pulumi.resources.CustomResource
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public NamespaceIngestTimeRule(String name, NamespaceIngestTimeRuleArgs args) {
+    public NamespaceIngestTimeRule(java.lang.String name, NamespaceIngestTimeRuleArgs args) {
         this(name, args, null);
     }
     /**
@@ -298,12 +298,12 @@ public class NamespaceIngestTimeRule extends com.pulumi.resources.CustomResource
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public NamespaceIngestTimeRule(String name, NamespaceIngestTimeRuleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:LogAnalytics/namespaceIngestTimeRule:NamespaceIngestTimeRule", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public NamespaceIngestTimeRule(java.lang.String name, NamespaceIngestTimeRuleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:LogAnalytics/namespaceIngestTimeRule:NamespaceIngestTimeRule", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private NamespaceIngestTimeRule(String name, Output<String> id, @Nullable NamespaceIngestTimeRuleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:LogAnalytics/namespaceIngestTimeRule:NamespaceIngestTimeRule", name, state, makeResourceOptions(options, id));
+    private NamespaceIngestTimeRule(java.lang.String name, Output<java.lang.String> id, @Nullable NamespaceIngestTimeRuleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:LogAnalytics/namespaceIngestTimeRule:NamespaceIngestTimeRule", name, state, makeResourceOptions(options, id), false);
     }
 
     private static NamespaceIngestTimeRuleArgs makeArgs(NamespaceIngestTimeRuleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -313,7 +313,7 @@ public class NamespaceIngestTimeRule extends com.pulumi.resources.CustomResource
         return args == null ? NamespaceIngestTimeRuleArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -329,7 +329,7 @@ public class NamespaceIngestTimeRule extends com.pulumi.resources.CustomResource
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static NamespaceIngestTimeRule get(String name, Output<String> id, @Nullable NamespaceIngestTimeRuleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static NamespaceIngestTimeRule get(java.lang.String name, Output<java.lang.String> id, @Nullable NamespaceIngestTimeRuleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new NamespaceIngestTimeRule(name, id, state, options);
     }
 }

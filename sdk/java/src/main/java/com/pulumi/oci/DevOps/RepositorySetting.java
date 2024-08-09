@@ -154,7 +154,7 @@ public class RepositorySetting extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public RepositorySetting(String name) {
+    public RepositorySetting(java.lang.String name) {
         this(name, RepositorySettingArgs.Empty);
     }
     /**
@@ -162,7 +162,7 @@ public class RepositorySetting extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public RepositorySetting(String name, RepositorySettingArgs args) {
+    public RepositorySetting(java.lang.String name, RepositorySettingArgs args) {
         this(name, args, null);
     }
     /**
@@ -171,12 +171,12 @@ public class RepositorySetting extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public RepositorySetting(String name, RepositorySettingArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DevOps/repositorySetting:RepositorySetting", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public RepositorySetting(java.lang.String name, RepositorySettingArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DevOps/repositorySetting:RepositorySetting", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private RepositorySetting(String name, Output<String> id, @Nullable RepositorySettingState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DevOps/repositorySetting:RepositorySetting", name, state, makeResourceOptions(options, id));
+    private RepositorySetting(java.lang.String name, Output<java.lang.String> id, @Nullable RepositorySettingState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DevOps/repositorySetting:RepositorySetting", name, state, makeResourceOptions(options, id), false);
     }
 
     private static RepositorySettingArgs makeArgs(RepositorySettingArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -186,7 +186,7 @@ public class RepositorySetting extends com.pulumi.resources.CustomResource {
         return args == null ? RepositorySettingArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -202,7 +202,7 @@ public class RepositorySetting extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static RepositorySetting get(String name, Output<String> id, @Nullable RepositorySettingState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static RepositorySetting get(java.lang.String name, Output<java.lang.String> id, @Nullable RepositorySettingState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new RepositorySetting(name, id, state, options);
     }
 }

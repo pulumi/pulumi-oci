@@ -888,7 +888,7 @@ public class DomainsOauthPartnerCertificate extends com.pulumi.resources.CustomR
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DomainsOauthPartnerCertificate(String name) {
+    public DomainsOauthPartnerCertificate(java.lang.String name) {
         this(name, DomainsOauthPartnerCertificateArgs.Empty);
     }
     /**
@@ -896,7 +896,7 @@ public class DomainsOauthPartnerCertificate extends com.pulumi.resources.CustomR
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DomainsOauthPartnerCertificate(String name, DomainsOauthPartnerCertificateArgs args) {
+    public DomainsOauthPartnerCertificate(java.lang.String name, DomainsOauthPartnerCertificateArgs args) {
         this(name, args, null);
     }
     /**
@@ -905,12 +905,12 @@ public class DomainsOauthPartnerCertificate extends com.pulumi.resources.CustomR
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DomainsOauthPartnerCertificate(String name, DomainsOauthPartnerCertificateArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsOauthPartnerCertificate:DomainsOauthPartnerCertificate", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DomainsOauthPartnerCertificate(java.lang.String name, DomainsOauthPartnerCertificateArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/domainsOauthPartnerCertificate:DomainsOauthPartnerCertificate", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DomainsOauthPartnerCertificate(String name, Output<String> id, @Nullable DomainsOauthPartnerCertificateState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsOauthPartnerCertificate:DomainsOauthPartnerCertificate", name, state, makeResourceOptions(options, id));
+    private DomainsOauthPartnerCertificate(java.lang.String name, Output<java.lang.String> id, @Nullable DomainsOauthPartnerCertificateState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/domainsOauthPartnerCertificate:DomainsOauthPartnerCertificate", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DomainsOauthPartnerCertificateArgs makeArgs(DomainsOauthPartnerCertificateArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -920,7 +920,7 @@ public class DomainsOauthPartnerCertificate extends com.pulumi.resources.CustomR
         return args == null ? DomainsOauthPartnerCertificateArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .additionalSecretOutputs(List.of(
@@ -939,7 +939,7 @@ public class DomainsOauthPartnerCertificate extends com.pulumi.resources.CustomR
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DomainsOauthPartnerCertificate get(String name, Output<String> id, @Nullable DomainsOauthPartnerCertificateState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DomainsOauthPartnerCertificate get(java.lang.String name, Output<java.lang.String> id, @Nullable DomainsOauthPartnerCertificateState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DomainsOauthPartnerCertificate(name, id, state, options);
     }
 }

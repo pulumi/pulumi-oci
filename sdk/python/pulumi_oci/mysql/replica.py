@@ -487,7 +487,7 @@ class Replica(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_delete_protected: Optional[pulumi.Input[bool]] = None,
-                 replica_overrides: Optional[pulumi.Input[pulumi.InputType['ReplicaReplicaOverridesArgs']]] = None,
+                 replica_overrides: Optional[pulumi.Input[Union['ReplicaReplicaOverridesArgs', 'ReplicaReplicaOverridesArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Replica resource in Oracle Cloud Infrastructure MySQL Database service.
@@ -511,11 +511,11 @@ class Replica(pulumi.CustomResource):
                 "bar-key": "value",
             },
             is_delete_protected=replica_is_delete_protected,
-            replica_overrides=oci.mysql.ReplicaReplicaOverridesArgs(
-                configuration_id=test_mysql_configuration["id"],
-                mysql_version=replica_replica_overrides_mysql_version,
-                shape_name=test_shape["name"],
-            ))
+            replica_overrides={
+                "configuration_id": test_mysql_configuration["id"],
+                "mysql_version": replica_replica_overrides_mysql_version,
+                "shape_name": test_shape["name"],
+            })
         ```
 
         ## Import
@@ -534,7 +534,7 @@ class Replica(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the read replica. It does not have to be unique.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_delete_protected: (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
-        :param pulumi.Input[pulumi.InputType['ReplicaReplicaOverridesArgs']] replica_overrides: (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
+        :param pulumi.Input[Union['ReplicaReplicaOverridesArgs', 'ReplicaReplicaOverridesArgsDict']] replica_overrides: (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
         """
         ...
     @overload
@@ -564,11 +564,11 @@ class Replica(pulumi.CustomResource):
                 "bar-key": "value",
             },
             is_delete_protected=replica_is_delete_protected,
-            replica_overrides=oci.mysql.ReplicaReplicaOverridesArgs(
-                configuration_id=test_mysql_configuration["id"],
-                mysql_version=replica_replica_overrides_mysql_version,
-                shape_name=test_shape["name"],
-            ))
+            replica_overrides={
+                "configuration_id": test_mysql_configuration["id"],
+                "mysql_version": replica_replica_overrides_mysql_version,
+                "shape_name": test_shape["name"],
+            })
         ```
 
         ## Import
@@ -600,7 +600,7 @@ class Replica(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_delete_protected: Optional[pulumi.Input[bool]] = None,
-                 replica_overrides: Optional[pulumi.Input[pulumi.InputType['ReplicaReplicaOverridesArgs']]] = None,
+                 replica_overrides: Optional[pulumi.Input[Union['ReplicaReplicaOverridesArgs', 'ReplicaReplicaOverridesArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -658,8 +658,8 @@ class Replica(pulumi.CustomResource):
             mysql_version: Optional[pulumi.Input[str]] = None,
             port: Optional[pulumi.Input[int]] = None,
             port_x: Optional[pulumi.Input[int]] = None,
-            replica_overrides: Optional[pulumi.Input[pulumi.InputType['ReplicaReplicaOverridesArgs']]] = None,
-            secure_connections: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ReplicaSecureConnectionArgs']]]]] = None,
+            replica_overrides: Optional[pulumi.Input[Union['ReplicaReplicaOverridesArgs', 'ReplicaReplicaOverridesArgsDict']]] = None,
+            secure_connections: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ReplicaSecureConnectionArgs', 'ReplicaSecureConnectionArgsDict']]]]] = None,
             shape_name: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
@@ -686,8 +686,8 @@ class Replica(pulumi.CustomResource):
         :param pulumi.Input[str] mysql_version: The MySQL version to be used by the read replica.
         :param pulumi.Input[int] port: The port the read replica is configured to listen on.
         :param pulumi.Input[int] port_x: The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
-        :param pulumi.Input[pulumi.InputType['ReplicaReplicaOverridesArgs']] replica_overrides: (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ReplicaSecureConnectionArgs']]]] secure_connections: Secure connection configuration details.
+        :param pulumi.Input[Union['ReplicaReplicaOverridesArgs', 'ReplicaReplicaOverridesArgsDict']] replica_overrides: (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ReplicaSecureConnectionArgs', 'ReplicaSecureConnectionArgsDict']]]] secure_connections: Secure connection configuration details.
         :param pulumi.Input[str] shape_name: The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         :param pulumi.Input[str] state: The state of the read replica.
         :param pulumi.Input[str] time_created: The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).

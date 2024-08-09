@@ -76,7 +76,7 @@ class AwaitableGetRuleSetsResult(GetRuleSetsResult):
             rule_sets=self.rule_sets)
 
 
-def get_rule_sets(filters: Optional[Sequence[pulumi.InputType['GetRuleSetsFilterArgs']]] = None,
+def get_rule_sets(filters: Optional[Sequence[Union['GetRuleSetsFilterArgs', 'GetRuleSetsFilterArgsDict']]] = None,
                   load_balancer_id: Optional[str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRuleSetsResult:
     """
@@ -110,7 +110,7 @@ def get_rule_sets(filters: Optional[Sequence[pulumi.InputType['GetRuleSetsFilter
 
 
 @_utilities.lift_output_func(get_rule_sets)
-def get_rule_sets_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetRuleSetsFilterArgs']]]]] = None,
+def get_rule_sets_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRuleSetsFilterArgs', 'GetRuleSetsFilterArgsDict']]]]] = None,
                          load_balancer_id: Optional[pulumi.Input[str]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRuleSetsResult]:
     """

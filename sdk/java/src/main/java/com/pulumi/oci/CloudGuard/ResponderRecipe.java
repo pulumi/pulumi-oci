@@ -254,7 +254,7 @@ public class ResponderRecipe extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ResponderRecipe(String name) {
+    public ResponderRecipe(java.lang.String name) {
         this(name, ResponderRecipeArgs.Empty);
     }
     /**
@@ -262,7 +262,7 @@ public class ResponderRecipe extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ResponderRecipe(String name, ResponderRecipeArgs args) {
+    public ResponderRecipe(java.lang.String name, ResponderRecipeArgs args) {
         this(name, args, null);
     }
     /**
@@ -271,12 +271,12 @@ public class ResponderRecipe extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ResponderRecipe(String name, ResponderRecipeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:CloudGuard/responderRecipe:ResponderRecipe", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ResponderRecipe(java.lang.String name, ResponderRecipeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:CloudGuard/responderRecipe:ResponderRecipe", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ResponderRecipe(String name, Output<String> id, @Nullable ResponderRecipeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:CloudGuard/responderRecipe:ResponderRecipe", name, state, makeResourceOptions(options, id));
+    private ResponderRecipe(java.lang.String name, Output<java.lang.String> id, @Nullable ResponderRecipeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:CloudGuard/responderRecipe:ResponderRecipe", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ResponderRecipeArgs makeArgs(ResponderRecipeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -286,7 +286,7 @@ public class ResponderRecipe extends com.pulumi.resources.CustomResource {
         return args == null ? ResponderRecipeArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -302,7 +302,7 @@ public class ResponderRecipe extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ResponderRecipe get(String name, Output<String> id, @Nullable ResponderRecipeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ResponderRecipe get(java.lang.String name, Output<java.lang.String> id, @Nullable ResponderRecipeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ResponderRecipe(name, id, state, options);
     }
 }

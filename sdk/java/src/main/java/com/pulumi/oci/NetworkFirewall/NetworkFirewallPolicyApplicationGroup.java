@@ -149,7 +149,7 @@ public class NetworkFirewallPolicyApplicationGroup extends com.pulumi.resources.
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public NetworkFirewallPolicyApplicationGroup(String name) {
+    public NetworkFirewallPolicyApplicationGroup(java.lang.String name) {
         this(name, NetworkFirewallPolicyApplicationGroupArgs.Empty);
     }
     /**
@@ -157,7 +157,7 @@ public class NetworkFirewallPolicyApplicationGroup extends com.pulumi.resources.
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public NetworkFirewallPolicyApplicationGroup(String name, NetworkFirewallPolicyApplicationGroupArgs args) {
+    public NetworkFirewallPolicyApplicationGroup(java.lang.String name, NetworkFirewallPolicyApplicationGroupArgs args) {
         this(name, args, null);
     }
     /**
@@ -166,12 +166,12 @@ public class NetworkFirewallPolicyApplicationGroup extends com.pulumi.resources.
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public NetworkFirewallPolicyApplicationGroup(String name, NetworkFirewallPolicyApplicationGroupArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:NetworkFirewall/networkFirewallPolicyApplicationGroup:NetworkFirewallPolicyApplicationGroup", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public NetworkFirewallPolicyApplicationGroup(java.lang.String name, NetworkFirewallPolicyApplicationGroupArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:NetworkFirewall/networkFirewallPolicyApplicationGroup:NetworkFirewallPolicyApplicationGroup", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private NetworkFirewallPolicyApplicationGroup(String name, Output<String> id, @Nullable NetworkFirewallPolicyApplicationGroupState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:NetworkFirewall/networkFirewallPolicyApplicationGroup:NetworkFirewallPolicyApplicationGroup", name, state, makeResourceOptions(options, id));
+    private NetworkFirewallPolicyApplicationGroup(java.lang.String name, Output<java.lang.String> id, @Nullable NetworkFirewallPolicyApplicationGroupState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:NetworkFirewall/networkFirewallPolicyApplicationGroup:NetworkFirewallPolicyApplicationGroup", name, state, makeResourceOptions(options, id), false);
     }
 
     private static NetworkFirewallPolicyApplicationGroupArgs makeArgs(NetworkFirewallPolicyApplicationGroupArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -181,7 +181,7 @@ public class NetworkFirewallPolicyApplicationGroup extends com.pulumi.resources.
         return args == null ? NetworkFirewallPolicyApplicationGroupArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -197,7 +197,7 @@ public class NetworkFirewallPolicyApplicationGroup extends com.pulumi.resources.
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static NetworkFirewallPolicyApplicationGroup get(String name, Output<String> id, @Nullable NetworkFirewallPolicyApplicationGroupState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static NetworkFirewallPolicyApplicationGroup get(java.lang.String name, Output<java.lang.String> id, @Nullable NetworkFirewallPolicyApplicationGroupState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new NetworkFirewallPolicyApplicationGroup(name, id, state, options);
     }
 }

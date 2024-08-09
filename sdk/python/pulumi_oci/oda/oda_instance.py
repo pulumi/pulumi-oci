@@ -734,7 +734,7 @@ class OdaInstance(pulumi.CustomResource):
             imported_package_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             is_role_based_access: Optional[pulumi.Input[bool]] = None,
             lifecycle_sub_state: Optional[pulumi.Input[str]] = None,
-            restricted_operations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['OdaInstanceRestrictedOperationArgs']]]]] = None,
+            restricted_operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OdaInstanceRestrictedOperationArgs', 'OdaInstanceRestrictedOperationArgsDict']]]]] = None,
             shape_name: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             state_message: Optional[pulumi.Input[str]] = None,
@@ -763,7 +763,7 @@ class OdaInstance(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] imported_package_names: A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
         :param pulumi.Input[bool] is_role_based_access: Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
         :param pulumi.Input[str] lifecycle_sub_state: The current sub-state of the Digital Assistant instance.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['OdaInstanceRestrictedOperationArgs']]]] restricted_operations: A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['OdaInstanceRestrictedOperationArgs', 'OdaInstanceRestrictedOperationArgsDict']]]] restricted_operations: A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
         :param pulumi.Input[str] shape_name: Shape or size of the instance.
                
                

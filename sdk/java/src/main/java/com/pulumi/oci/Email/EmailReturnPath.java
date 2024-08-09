@@ -263,7 +263,7 @@ public class EmailReturnPath extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public EmailReturnPath(String name) {
+    public EmailReturnPath(java.lang.String name) {
         this(name, EmailReturnPathArgs.Empty);
     }
     /**
@@ -271,7 +271,7 @@ public class EmailReturnPath extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public EmailReturnPath(String name, EmailReturnPathArgs args) {
+    public EmailReturnPath(java.lang.String name, EmailReturnPathArgs args) {
         this(name, args, null);
     }
     /**
@@ -280,12 +280,12 @@ public class EmailReturnPath extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public EmailReturnPath(String name, EmailReturnPathArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Email/emailReturnPath:EmailReturnPath", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public EmailReturnPath(java.lang.String name, EmailReturnPathArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Email/emailReturnPath:EmailReturnPath", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private EmailReturnPath(String name, Output<String> id, @Nullable EmailReturnPathState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Email/emailReturnPath:EmailReturnPath", name, state, makeResourceOptions(options, id));
+    private EmailReturnPath(java.lang.String name, Output<java.lang.String> id, @Nullable EmailReturnPathState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Email/emailReturnPath:EmailReturnPath", name, state, makeResourceOptions(options, id), false);
     }
 
     private static EmailReturnPathArgs makeArgs(EmailReturnPathArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -295,7 +295,7 @@ public class EmailReturnPath extends com.pulumi.resources.CustomResource {
         return args == null ? EmailReturnPathArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -311,7 +311,7 @@ public class EmailReturnPath extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static EmailReturnPath get(String name, Output<String> id, @Nullable EmailReturnPathState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static EmailReturnPath get(java.lang.String name, Output<java.lang.String> id, @Nullable EmailReturnPathState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new EmailReturnPath(name, id, state, options);
     }
 }

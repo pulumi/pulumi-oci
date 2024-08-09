@@ -407,7 +407,7 @@ public class LogAnalyticsEntity extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public LogAnalyticsEntity(String name) {
+    public LogAnalyticsEntity(java.lang.String name) {
         this(name, LogAnalyticsEntityArgs.Empty);
     }
     /**
@@ -415,7 +415,7 @@ public class LogAnalyticsEntity extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public LogAnalyticsEntity(String name, LogAnalyticsEntityArgs args) {
+    public LogAnalyticsEntity(java.lang.String name, LogAnalyticsEntityArgs args) {
         this(name, args, null);
     }
     /**
@@ -424,12 +424,12 @@ public class LogAnalyticsEntity extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public LogAnalyticsEntity(String name, LogAnalyticsEntityArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:LogAnalytics/logAnalyticsEntity:LogAnalyticsEntity", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public LogAnalyticsEntity(java.lang.String name, LogAnalyticsEntityArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:LogAnalytics/logAnalyticsEntity:LogAnalyticsEntity", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private LogAnalyticsEntity(String name, Output<String> id, @Nullable LogAnalyticsEntityState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:LogAnalytics/logAnalyticsEntity:LogAnalyticsEntity", name, state, makeResourceOptions(options, id));
+    private LogAnalyticsEntity(java.lang.String name, Output<java.lang.String> id, @Nullable LogAnalyticsEntityState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:LogAnalytics/logAnalyticsEntity:LogAnalyticsEntity", name, state, makeResourceOptions(options, id), false);
     }
 
     private static LogAnalyticsEntityArgs makeArgs(LogAnalyticsEntityArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -439,7 +439,7 @@ public class LogAnalyticsEntity extends com.pulumi.resources.CustomResource {
         return args == null ? LogAnalyticsEntityArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -455,7 +455,7 @@ public class LogAnalyticsEntity extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static LogAnalyticsEntity get(String name, Output<String> id, @Nullable LogAnalyticsEntityState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static LogAnalyticsEntity get(java.lang.String name, Output<java.lang.String> id, @Nullable LogAnalyticsEntityState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new LogAnalyticsEntity(name, id, state, options);
     }
 }

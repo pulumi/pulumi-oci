@@ -290,7 +290,7 @@ public class AnnouncementSubscription extends com.pulumi.resources.CustomResourc
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public AnnouncementSubscription(String name) {
+    public AnnouncementSubscription(java.lang.String name) {
         this(name, AnnouncementSubscriptionArgs.Empty);
     }
     /**
@@ -298,7 +298,7 @@ public class AnnouncementSubscription extends com.pulumi.resources.CustomResourc
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public AnnouncementSubscription(String name, AnnouncementSubscriptionArgs args) {
+    public AnnouncementSubscription(java.lang.String name, AnnouncementSubscriptionArgs args) {
         this(name, args, null);
     }
     /**
@@ -307,12 +307,12 @@ public class AnnouncementSubscription extends com.pulumi.resources.CustomResourc
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public AnnouncementSubscription(String name, AnnouncementSubscriptionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:AnnouncementsService/announcementSubscription:AnnouncementSubscription", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public AnnouncementSubscription(java.lang.String name, AnnouncementSubscriptionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:AnnouncementsService/announcementSubscription:AnnouncementSubscription", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private AnnouncementSubscription(String name, Output<String> id, @Nullable AnnouncementSubscriptionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:AnnouncementsService/announcementSubscription:AnnouncementSubscription", name, state, makeResourceOptions(options, id));
+    private AnnouncementSubscription(java.lang.String name, Output<java.lang.String> id, @Nullable AnnouncementSubscriptionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:AnnouncementsService/announcementSubscription:AnnouncementSubscription", name, state, makeResourceOptions(options, id), false);
     }
 
     private static AnnouncementSubscriptionArgs makeArgs(AnnouncementSubscriptionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -322,7 +322,7 @@ public class AnnouncementSubscription extends com.pulumi.resources.CustomResourc
         return args == null ? AnnouncementSubscriptionArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -338,7 +338,7 @@ public class AnnouncementSubscription extends com.pulumi.resources.CustomResourc
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static AnnouncementSubscription get(String name, Output<String> id, @Nullable AnnouncementSubscriptionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static AnnouncementSubscription get(java.lang.String name, Output<java.lang.String> id, @Nullable AnnouncementSubscriptionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new AnnouncementSubscription(name, id, state, options);
     }
 }

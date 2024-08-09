@@ -129,7 +129,7 @@ class AwaitableGetCertificateAuthoritiesResult(GetCertificateAuthoritiesResult):
 
 def get_certificate_authorities(certificate_authority_id: Optional[str] = None,
                                 compartment_id: Optional[str] = None,
-                                filters: Optional[Sequence[pulumi.InputType['GetCertificateAuthoritiesFilterArgs']]] = None,
+                                filters: Optional[Sequence[Union['GetCertificateAuthoritiesFilterArgs', 'GetCertificateAuthoritiesFilterArgsDict']]] = None,
                                 issuer_certificate_authority_id: Optional[str] = None,
                                 name: Optional[str] = None,
                                 state: Optional[str] = None,
@@ -184,7 +184,7 @@ def get_certificate_authorities(certificate_authority_id: Optional[str] = None,
 @_utilities.lift_output_func(get_certificate_authorities)
 def get_certificate_authorities_output(certificate_authority_id: Optional[pulumi.Input[Optional[str]]] = None,
                                        compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                       filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetCertificateAuthoritiesFilterArgs']]]]] = None,
+                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCertificateAuthoritiesFilterArgs', 'GetCertificateAuthoritiesFilterArgsDict']]]]] = None,
                                        issuer_certificate_authority_id: Optional[pulumi.Input[Optional[str]]] = None,
                                        name: Optional[pulumi.Input[Optional[str]]] = None,
                                        state: Optional[pulumi.Input[Optional[str]]] = None,

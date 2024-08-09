@@ -90,7 +90,7 @@ class AwaitableGetApplianceImagesResult(GetApplianceImagesResult):
 
 def get_appliance_images(compartment_id: Optional[str] = None,
                          display_name: Optional[str] = None,
-                         filters: Optional[Sequence[pulumi.InputType['GetApplianceImagesFilterArgs']]] = None,
+                         filters: Optional[Sequence[Union['GetApplianceImagesFilterArgs', 'GetApplianceImagesFilterArgsDict']]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetApplianceImagesResult:
     """
     This data source provides the list of Appliance Images in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -129,7 +129,7 @@ def get_appliance_images(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_appliance_images)
 def get_appliance_images_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                 display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetApplianceImagesFilterArgs']]]]] = None,
+                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetApplianceImagesFilterArgs', 'GetApplianceImagesFilterArgsDict']]]]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetApplianceImagesResult]:
     """
     This data source provides the list of Appliance Images in Oracle Cloud Infrastructure Cloud Bridge service.

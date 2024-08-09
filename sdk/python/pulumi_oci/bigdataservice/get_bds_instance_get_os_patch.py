@@ -137,7 +137,7 @@ class AwaitableGetBdsInstanceGetOsPatchResult(GetBdsInstanceGetOsPatchResult):
 
 
 def get_bds_instance_get_os_patch(bds_instance_id: Optional[str] = None,
-                                  filters: Optional[Sequence[pulumi.InputType['GetBdsInstanceGetOsPatchFilterArgs']]] = None,
+                                  filters: Optional[Sequence[Union['GetBdsInstanceGetOsPatchFilterArgs', 'GetBdsInstanceGetOsPatchFilterArgsDict']]] = None,
                                   os_patch_version: Optional[str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBdsInstanceGetOsPatchResult:
     """
@@ -180,7 +180,7 @@ def get_bds_instance_get_os_patch(bds_instance_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_bds_instance_get_os_patch)
 def get_bds_instance_get_os_patch_output(bds_instance_id: Optional[pulumi.Input[str]] = None,
-                                         filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetBdsInstanceGetOsPatchFilterArgs']]]]] = None,
+                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBdsInstanceGetOsPatchFilterArgs', 'GetBdsInstanceGetOsPatchFilterArgsDict']]]]] = None,
                                          os_patch_version: Optional[pulumi.Input[str]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBdsInstanceGetOsPatchResult]:
     """

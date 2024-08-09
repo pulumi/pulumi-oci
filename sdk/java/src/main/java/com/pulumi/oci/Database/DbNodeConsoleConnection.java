@@ -222,7 +222,7 @@ public class DbNodeConsoleConnection extends com.pulumi.resources.CustomResource
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DbNodeConsoleConnection(String name) {
+    public DbNodeConsoleConnection(java.lang.String name) {
         this(name, DbNodeConsoleConnectionArgs.Empty);
     }
     /**
@@ -230,7 +230,7 @@ public class DbNodeConsoleConnection extends com.pulumi.resources.CustomResource
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DbNodeConsoleConnection(String name, DbNodeConsoleConnectionArgs args) {
+    public DbNodeConsoleConnection(java.lang.String name, DbNodeConsoleConnectionArgs args) {
         this(name, args, null);
     }
     /**
@@ -239,12 +239,12 @@ public class DbNodeConsoleConnection extends com.pulumi.resources.CustomResource
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DbNodeConsoleConnection(String name, DbNodeConsoleConnectionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/dbNodeConsoleConnection:DbNodeConsoleConnection", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DbNodeConsoleConnection(java.lang.String name, DbNodeConsoleConnectionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/dbNodeConsoleConnection:DbNodeConsoleConnection", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DbNodeConsoleConnection(String name, Output<String> id, @Nullable DbNodeConsoleConnectionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/dbNodeConsoleConnection:DbNodeConsoleConnection", name, state, makeResourceOptions(options, id));
+    private DbNodeConsoleConnection(java.lang.String name, Output<java.lang.String> id, @Nullable DbNodeConsoleConnectionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/dbNodeConsoleConnection:DbNodeConsoleConnection", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DbNodeConsoleConnectionArgs makeArgs(DbNodeConsoleConnectionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -254,7 +254,7 @@ public class DbNodeConsoleConnection extends com.pulumi.resources.CustomResource
         return args == null ? DbNodeConsoleConnectionArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -270,7 +270,7 @@ public class DbNodeConsoleConnection extends com.pulumi.resources.CustomResource
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DbNodeConsoleConnection get(String name, Output<String> id, @Nullable DbNodeConsoleConnectionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DbNodeConsoleConnection get(java.lang.String name, Output<java.lang.String> id, @Nullable DbNodeConsoleConnectionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DbNodeConsoleConnection(name, id, state, options);
     }
 }

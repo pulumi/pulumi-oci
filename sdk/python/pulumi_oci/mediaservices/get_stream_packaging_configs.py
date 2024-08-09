@@ -114,7 +114,7 @@ class AwaitableGetStreamPackagingConfigsResult(GetStreamPackagingConfigsResult):
 
 def get_stream_packaging_configs(display_name: Optional[str] = None,
                                  distribution_channel_id: Optional[str] = None,
-                                 filters: Optional[Sequence[pulumi.InputType['GetStreamPackagingConfigsFilterArgs']]] = None,
+                                 filters: Optional[Sequence[Union['GetStreamPackagingConfigsFilterArgs', 'GetStreamPackagingConfigsFilterArgsDict']]] = None,
                                  state: Optional[str] = None,
                                  stream_packaging_config_id: Optional[str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetStreamPackagingConfigsResult:
@@ -163,7 +163,7 @@ def get_stream_packaging_configs(display_name: Optional[str] = None,
 @_utilities.lift_output_func(get_stream_packaging_configs)
 def get_stream_packaging_configs_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                         distribution_channel_id: Optional[pulumi.Input[str]] = None,
-                                        filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetStreamPackagingConfigsFilterArgs']]]]] = None,
+                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetStreamPackagingConfigsFilterArgs', 'GetStreamPackagingConfigsFilterArgsDict']]]]] = None,
                                         state: Optional[pulumi.Input[Optional[str]]] = None,
                                         stream_packaging_config_id: Optional[pulumi.Input[Optional[str]]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetStreamPackagingConfigsResult]:

@@ -252,7 +252,7 @@ public class FusionEnvironmentRefreshActivity extends com.pulumi.resources.Custo
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public FusionEnvironmentRefreshActivity(String name) {
+    public FusionEnvironmentRefreshActivity(java.lang.String name) {
         this(name, FusionEnvironmentRefreshActivityArgs.Empty);
     }
     /**
@@ -260,7 +260,7 @@ public class FusionEnvironmentRefreshActivity extends com.pulumi.resources.Custo
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public FusionEnvironmentRefreshActivity(String name, FusionEnvironmentRefreshActivityArgs args) {
+    public FusionEnvironmentRefreshActivity(java.lang.String name, FusionEnvironmentRefreshActivityArgs args) {
         this(name, args, null);
     }
     /**
@@ -269,12 +269,12 @@ public class FusionEnvironmentRefreshActivity extends com.pulumi.resources.Custo
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public FusionEnvironmentRefreshActivity(String name, FusionEnvironmentRefreshActivityArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:FusionApps/fusionEnvironmentRefreshActivity:FusionEnvironmentRefreshActivity", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public FusionEnvironmentRefreshActivity(java.lang.String name, FusionEnvironmentRefreshActivityArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:FusionApps/fusionEnvironmentRefreshActivity:FusionEnvironmentRefreshActivity", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private FusionEnvironmentRefreshActivity(String name, Output<String> id, @Nullable FusionEnvironmentRefreshActivityState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:FusionApps/fusionEnvironmentRefreshActivity:FusionEnvironmentRefreshActivity", name, state, makeResourceOptions(options, id));
+    private FusionEnvironmentRefreshActivity(java.lang.String name, Output<java.lang.String> id, @Nullable FusionEnvironmentRefreshActivityState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:FusionApps/fusionEnvironmentRefreshActivity:FusionEnvironmentRefreshActivity", name, state, makeResourceOptions(options, id), false);
     }
 
     private static FusionEnvironmentRefreshActivityArgs makeArgs(FusionEnvironmentRefreshActivityArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -284,7 +284,7 @@ public class FusionEnvironmentRefreshActivity extends com.pulumi.resources.Custo
         return args == null ? FusionEnvironmentRefreshActivityArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -300,7 +300,7 @@ public class FusionEnvironmentRefreshActivity extends com.pulumi.resources.Custo
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static FusionEnvironmentRefreshActivity get(String name, Output<String> id, @Nullable FusionEnvironmentRefreshActivityState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static FusionEnvironmentRefreshActivity get(java.lang.String name, Output<java.lang.String> id, @Nullable FusionEnvironmentRefreshActivityState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new FusionEnvironmentRefreshActivity(name, id, state, options);
     }
 }

@@ -105,7 +105,7 @@ class AwaitableGetAiPrivateEndpointsResult(GetAiPrivateEndpointsResult):
 
 def get_ai_private_endpoints(compartment_id: Optional[str] = None,
                              display_name: Optional[str] = None,
-                             filters: Optional[Sequence[pulumi.InputType['GetAiPrivateEndpointsFilterArgs']]] = None,
+                             filters: Optional[Sequence[Union['GetAiPrivateEndpointsFilterArgs', 'GetAiPrivateEndpointsFilterArgsDict']]] = None,
                              id: Optional[str] = None,
                              state: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAiPrivateEndpointsResult:
@@ -153,7 +153,7 @@ def get_ai_private_endpoints(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_ai_private_endpoints)
 def get_ai_private_endpoints_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                     display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                    filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAiPrivateEndpointsFilterArgs']]]]] = None,
+                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAiPrivateEndpointsFilterArgs', 'GetAiPrivateEndpointsFilterArgsDict']]]]] = None,
                                     id: Optional[pulumi.Input[Optional[str]]] = None,
                                     state: Optional[pulumi.Input[Optional[str]]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAiPrivateEndpointsResult]:

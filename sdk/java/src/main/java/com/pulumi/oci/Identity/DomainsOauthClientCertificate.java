@@ -878,7 +878,7 @@ public class DomainsOauthClientCertificate extends com.pulumi.resources.CustomRe
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DomainsOauthClientCertificate(String name) {
+    public DomainsOauthClientCertificate(java.lang.String name) {
         this(name, DomainsOauthClientCertificateArgs.Empty);
     }
     /**
@@ -886,7 +886,7 @@ public class DomainsOauthClientCertificate extends com.pulumi.resources.CustomRe
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DomainsOauthClientCertificate(String name, DomainsOauthClientCertificateArgs args) {
+    public DomainsOauthClientCertificate(java.lang.String name, DomainsOauthClientCertificateArgs args) {
         this(name, args, null);
     }
     /**
@@ -895,12 +895,12 @@ public class DomainsOauthClientCertificate extends com.pulumi.resources.CustomRe
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DomainsOauthClientCertificate(String name, DomainsOauthClientCertificateArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsOauthClientCertificate:DomainsOauthClientCertificate", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DomainsOauthClientCertificate(java.lang.String name, DomainsOauthClientCertificateArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/domainsOauthClientCertificate:DomainsOauthClientCertificate", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DomainsOauthClientCertificate(String name, Output<String> id, @Nullable DomainsOauthClientCertificateState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsOauthClientCertificate:DomainsOauthClientCertificate", name, state, makeResourceOptions(options, id));
+    private DomainsOauthClientCertificate(java.lang.String name, Output<java.lang.String> id, @Nullable DomainsOauthClientCertificateState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/domainsOauthClientCertificate:DomainsOauthClientCertificate", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DomainsOauthClientCertificateArgs makeArgs(DomainsOauthClientCertificateArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -910,7 +910,7 @@ public class DomainsOauthClientCertificate extends com.pulumi.resources.CustomRe
         return args == null ? DomainsOauthClientCertificateArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .additionalSecretOutputs(List.of(
@@ -929,7 +929,7 @@ public class DomainsOauthClientCertificate extends com.pulumi.resources.CustomRe
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DomainsOauthClientCertificate get(String name, Output<String> id, @Nullable DomainsOauthClientCertificateState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DomainsOauthClientCertificate get(java.lang.String name, Output<java.lang.String> id, @Nullable DomainsOauthClientCertificateState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DomainsOauthClientCertificate(name, id, state, options);
     }
 }

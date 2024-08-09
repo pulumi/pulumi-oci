@@ -690,7 +690,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public MysqlDbSystem(String name) {
+    public MysqlDbSystem(java.lang.String name) {
         this(name, MysqlDbSystemArgs.Empty);
     }
     /**
@@ -698,7 +698,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public MysqlDbSystem(String name, MysqlDbSystemArgs args) {
+    public MysqlDbSystem(java.lang.String name, MysqlDbSystemArgs args) {
         this(name, args, null);
     }
     /**
@@ -707,12 +707,12 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public MysqlDbSystem(String name, MysqlDbSystemArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Mysql/mysqlDbSystem:MysqlDbSystem", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public MysqlDbSystem(java.lang.String name, MysqlDbSystemArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Mysql/mysqlDbSystem:MysqlDbSystem", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private MysqlDbSystem(String name, Output<String> id, @Nullable MysqlDbSystemState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Mysql/mysqlDbSystem:MysqlDbSystem", name, state, makeResourceOptions(options, id));
+    private MysqlDbSystem(java.lang.String name, Output<java.lang.String> id, @Nullable MysqlDbSystemState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Mysql/mysqlDbSystem:MysqlDbSystem", name, state, makeResourceOptions(options, id), false);
     }
 
     private static MysqlDbSystemArgs makeArgs(MysqlDbSystemArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -722,7 +722,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
         return args == null ? MysqlDbSystemArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .additionalSecretOutputs(List.of(
@@ -741,7 +741,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static MysqlDbSystem get(String name, Output<String> id, @Nullable MysqlDbSystemState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static MysqlDbSystem get(java.lang.String name, Output<java.lang.String> id, @Nullable MysqlDbSystemState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new MysqlDbSystem(name, id, state, options);
     }
 }

@@ -100,7 +100,7 @@ class AwaitableGetIpsecConfigResult(GetIpsecConfigResult):
             tunnels=self.tunnels)
 
 
-def get_ipsec_config(filters: Optional[Sequence[pulumi.InputType['GetIpsecConfigFilterArgs']]] = None,
+def get_ipsec_config(filters: Optional[Sequence[Union['GetIpsecConfigFilterArgs', 'GetIpsecConfigFilterArgsDict']]] = None,
                      ipsec_id: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIpsecConfigResult:
     """
@@ -139,7 +139,7 @@ def get_ipsec_config(filters: Optional[Sequence[pulumi.InputType['GetIpsecConfig
 
 
 @_utilities.lift_output_func(get_ipsec_config)
-def get_ipsec_config_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetIpsecConfigFilterArgs']]]]] = None,
+def get_ipsec_config_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetIpsecConfigFilterArgs', 'GetIpsecConfigFilterArgsDict']]]]] = None,
                             ipsec_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIpsecConfigResult]:
     """

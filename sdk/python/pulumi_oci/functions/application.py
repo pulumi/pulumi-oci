@@ -444,12 +444,12 @@ class Application(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 image_policy_config: Optional[pulumi.Input[pulumi.InputType['ApplicationImagePolicyConfigArgs']]] = None,
+                 image_policy_config: Optional[pulumi.Input[Union['ApplicationImagePolicyConfigArgs', 'ApplicationImagePolicyConfigArgsDict']]] = None,
                  network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  syslog_url: Optional[pulumi.Input[str]] = None,
-                 trace_config: Optional[pulumi.Input[pulumi.InputType['ApplicationTraceConfigArgs']]] = None,
+                 trace_config: Optional[pulumi.Input[Union['ApplicationTraceConfigArgs', 'ApplicationTraceConfigArgsDict']]] = None,
                  __props__=None):
         """
         ## Example Usage
@@ -470,18 +470,18 @@ class Application(pulumi.CustomResource):
                 "Department": "Finance",
             },
             network_security_group_ids=application_network_security_group_ids,
-            image_policy_config=oci.functions.ApplicationImagePolicyConfigArgs(
-                is_policy_enabled=application_image_policy_config_is_policy_enabled,
-                key_details=[oci.functions.ApplicationImagePolicyConfigKeyDetailArgs(
-                    kms_key_id=test_key["id"],
-                )],
-            ),
+            image_policy_config={
+                "is_policy_enabled": application_image_policy_config_is_policy_enabled,
+                "key_details": [{
+                    "kms_key_id": test_key["id"],
+                }],
+            },
             shape=application_shape,
             syslog_url=application_syslog_url,
-            trace_config=oci.functions.ApplicationTraceConfigArgs(
-                domain_id=test_domain["id"],
-                is_enabled=application_trace_config_is_enabled,
-            ))
+            trace_config={
+                "domain_id": test_domain["id"],
+                "is_enabled": application_trace_config_is_enabled,
+            })
         ```
 
         ## Import
@@ -501,12 +501,12 @@ class Application(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: The display name of the application. The display name must be unique within the compartment containing the application. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[pulumi.InputType['ApplicationImagePolicyConfigArgs']] image_policy_config: (Updatable) Define the image signature verification policy for an application.
+        :param pulumi.Input[Union['ApplicationImagePolicyConfigArgs', 'ApplicationImagePolicyConfigArgsDict']] image_policy_config: (Updatable) Define the image signature verification policy for an application.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
         :param pulumi.Input[str] shape: Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] subnet_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the subnets in which to run functions in the application.
         :param pulumi.Input[str] syslog_url: (Updatable) A syslog URL to which to send all function logs. Supports tcp, udp, and tcp+tls. The syslog URL must be reachable from all of the subnets configured for the application. Note: If you enable the Oracle Cloud Infrastructure Logging service for this application, the syslogUrl value is ignored. Function logs are sent to the Oracle Cloud Infrastructure Logging service, and not to the syslog URL.  Example: `tcp://logserver.myserver:1234`
-        :param pulumi.Input[pulumi.InputType['ApplicationTraceConfigArgs']] trace_config: (Updatable) Define the tracing configuration for an application.
+        :param pulumi.Input[Union['ApplicationTraceConfigArgs', 'ApplicationTraceConfigArgsDict']] trace_config: (Updatable) Define the tracing configuration for an application.
         """
         ...
     @overload
@@ -533,18 +533,18 @@ class Application(pulumi.CustomResource):
                 "Department": "Finance",
             },
             network_security_group_ids=application_network_security_group_ids,
-            image_policy_config=oci.functions.ApplicationImagePolicyConfigArgs(
-                is_policy_enabled=application_image_policy_config_is_policy_enabled,
-                key_details=[oci.functions.ApplicationImagePolicyConfigKeyDetailArgs(
-                    kms_key_id=test_key["id"],
-                )],
-            ),
+            image_policy_config={
+                "is_policy_enabled": application_image_policy_config_is_policy_enabled,
+                "key_details": [{
+                    "kms_key_id": test_key["id"],
+                }],
+            },
             shape=application_shape,
             syslog_url=application_syslog_url,
-            trace_config=oci.functions.ApplicationTraceConfigArgs(
-                domain_id=test_domain["id"],
-                is_enabled=application_trace_config_is_enabled,
-            ))
+            trace_config={
+                "domain_id": test_domain["id"],
+                "is_enabled": application_trace_config_is_enabled,
+            })
         ```
 
         ## Import
@@ -575,12 +575,12 @@ class Application(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 image_policy_config: Optional[pulumi.Input[pulumi.InputType['ApplicationImagePolicyConfigArgs']]] = None,
+                 image_policy_config: Optional[pulumi.Input[Union['ApplicationImagePolicyConfigArgs', 'ApplicationImagePolicyConfigArgsDict']]] = None,
                  network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  syslog_url: Optional[pulumi.Input[str]] = None,
-                 trace_config: Optional[pulumi.Input[pulumi.InputType['ApplicationTraceConfigArgs']]] = None,
+                 trace_config: Optional[pulumi.Input[Union['ApplicationTraceConfigArgs', 'ApplicationTraceConfigArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -625,7 +625,7 @@ class Application(pulumi.CustomResource):
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            image_policy_config: Optional[pulumi.Input[pulumi.InputType['ApplicationImagePolicyConfigArgs']]] = None,
+            image_policy_config: Optional[pulumi.Input[Union['ApplicationImagePolicyConfigArgs', 'ApplicationImagePolicyConfigArgsDict']]] = None,
             network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             shape: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -633,7 +633,7 @@ class Application(pulumi.CustomResource):
             syslog_url: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
-            trace_config: Optional[pulumi.Input[pulumi.InputType['ApplicationTraceConfigArgs']]] = None) -> 'Application':
+            trace_config: Optional[pulumi.Input[Union['ApplicationTraceConfigArgs', 'ApplicationTraceConfigArgsDict']]] = None) -> 'Application':
         """
         Get an existing Application resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -648,7 +648,7 @@ class Application(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: The display name of the application. The display name must be unique within the compartment containing the application. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[pulumi.InputType['ApplicationImagePolicyConfigArgs']] image_policy_config: (Updatable) Define the image signature verification policy for an application.
+        :param pulumi.Input[Union['ApplicationImagePolicyConfigArgs', 'ApplicationImagePolicyConfigArgsDict']] image_policy_config: (Updatable) Define the image signature verification policy for an application.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
         :param pulumi.Input[str] shape: Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
         :param pulumi.Input[str] state: The current state of the application.
@@ -656,7 +656,7 @@ class Application(pulumi.CustomResource):
         :param pulumi.Input[str] syslog_url: (Updatable) A syslog URL to which to send all function logs. Supports tcp, udp, and tcp+tls. The syslog URL must be reachable from all of the subnets configured for the application. Note: If you enable the Oracle Cloud Infrastructure Logging service for this application, the syslogUrl value is ignored. Function logs are sent to the Oracle Cloud Infrastructure Logging service, and not to the syslog URL.  Example: `tcp://logserver.myserver:1234`
         :param pulumi.Input[str] time_created: The time the application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
         :param pulumi.Input[str] time_updated: The time the application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-09-12T22:47:12.613Z`
-        :param pulumi.Input[pulumi.InputType['ApplicationTraceConfigArgs']] trace_config: (Updatable) Define the tracing configuration for an application.
+        :param pulumi.Input[Union['ApplicationTraceConfigArgs', 'ApplicationTraceConfigArgsDict']] trace_config: (Updatable) Define the tracing configuration for an application.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

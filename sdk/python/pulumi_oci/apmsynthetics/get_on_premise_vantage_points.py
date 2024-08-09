@@ -102,7 +102,7 @@ class AwaitableGetOnPremiseVantagePointsResult(GetOnPremiseVantagePointsResult):
 
 def get_on_premise_vantage_points(apm_domain_id: Optional[str] = None,
                                   display_name: Optional[str] = None,
-                                  filters: Optional[Sequence[pulumi.InputType['GetOnPremiseVantagePointsFilterArgs']]] = None,
+                                  filters: Optional[Sequence[Union['GetOnPremiseVantagePointsFilterArgs', 'GetOnPremiseVantagePointsFilterArgsDict']]] = None,
                                   name: Optional[str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOnPremiseVantagePointsResult:
     """
@@ -146,7 +146,7 @@ def get_on_premise_vantage_points(apm_domain_id: Optional[str] = None,
 @_utilities.lift_output_func(get_on_premise_vantage_points)
 def get_on_premise_vantage_points_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                                          display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                         filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetOnPremiseVantagePointsFilterArgs']]]]] = None,
+                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOnPremiseVantagePointsFilterArgs', 'GetOnPremiseVantagePointsFilterArgsDict']]]]] = None,
                                          name: Optional[pulumi.Input[Optional[str]]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOnPremiseVantagePointsResult]:
     """

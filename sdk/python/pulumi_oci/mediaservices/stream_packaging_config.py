@@ -409,10 +409,10 @@ class StreamPackagingConfig(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  distribution_channel_id: Optional[pulumi.Input[str]] = None,
-                 encryption: Optional[pulumi.Input[pulumi.InputType['StreamPackagingConfigEncryptionArgs']]] = None,
+                 encryption: Optional[pulumi.Input[Union['StreamPackagingConfigEncryptionArgs', 'StreamPackagingConfigEncryptionArgsDict']]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_lock_override: Optional[pulumi.Input[bool]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['StreamPackagingConfigLockArgs']]]]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['StreamPackagingConfigLockArgs', 'StreamPackagingConfigLockArgsDict']]]]] = None,
                  segment_time_in_seconds: Optional[pulumi.Input[int]] = None,
                  stream_packaging_format: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -435,20 +435,20 @@ class StreamPackagingConfig(pulumi.CustomResource):
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            encryption=oci.media_services.StreamPackagingConfigEncryptionArgs(
-                algorithm=stream_packaging_config_encryption_algorithm,
-                kms_key_id=test_key["id"],
-            ),
+            encryption={
+                "algorithm": stream_packaging_config_encryption_algorithm,
+                "kms_key_id": test_key["id"],
+            },
             freeform_tags={
                 "bar-key": "value",
             },
-            locks=[oci.media_services.StreamPackagingConfigLockArgs(
-                compartment_id=compartment_id,
-                type=stream_packaging_config_locks_type,
-                message=stream_packaging_config_locks_message,
-                related_resource_id=test_resource["id"],
-                time_created=stream_packaging_config_locks_time_created,
-            )])
+            locks=[{
+                "compartment_id": compartment_id,
+                "type": stream_packaging_config_locks_type,
+                "message": stream_packaging_config_locks_message,
+                "related_resource_id": test_resource["id"],
+                "time_created": stream_packaging_config_locks_time_created,
+            }])
         ```
 
         ## Import
@@ -464,9 +464,9 @@ class StreamPackagingConfig(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) The name of the stream Packaging Configuration. Avoid entering confidential information.
         :param pulumi.Input[str] distribution_channel_id: Unique identifier of the Distribution Channel that this stream packaging configuration belongs to.
-        :param pulumi.Input[pulumi.InputType['StreamPackagingConfigEncryptionArgs']] encryption: The encryption used by the stream packaging configuration.
+        :param pulumi.Input[Union['StreamPackagingConfigEncryptionArgs', 'StreamPackagingConfigEncryptionArgsDict']] encryption: The encryption used by the stream packaging configuration.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['StreamPackagingConfigLockArgs']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['StreamPackagingConfigLockArgs', 'StreamPackagingConfigLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[int] segment_time_in_seconds: The duration in seconds for each fragment.
         :param pulumi.Input[str] stream_packaging_format: The output format for the package.
                
@@ -499,20 +499,20 @@ class StreamPackagingConfig(pulumi.CustomResource):
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            encryption=oci.media_services.StreamPackagingConfigEncryptionArgs(
-                algorithm=stream_packaging_config_encryption_algorithm,
-                kms_key_id=test_key["id"],
-            ),
+            encryption={
+                "algorithm": stream_packaging_config_encryption_algorithm,
+                "kms_key_id": test_key["id"],
+            },
             freeform_tags={
                 "bar-key": "value",
             },
-            locks=[oci.media_services.StreamPackagingConfigLockArgs(
-                compartment_id=compartment_id,
-                type=stream_packaging_config_locks_type,
-                message=stream_packaging_config_locks_message,
-                related_resource_id=test_resource["id"],
-                time_created=stream_packaging_config_locks_time_created,
-            )])
+            locks=[{
+                "compartment_id": compartment_id,
+                "type": stream_packaging_config_locks_type,
+                "message": stream_packaging_config_locks_message,
+                "related_resource_id": test_resource["id"],
+                "time_created": stream_packaging_config_locks_time_created,
+            }])
         ```
 
         ## Import
@@ -541,10 +541,10 @@ class StreamPackagingConfig(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  distribution_channel_id: Optional[pulumi.Input[str]] = None,
-                 encryption: Optional[pulumi.Input[pulumi.InputType['StreamPackagingConfigEncryptionArgs']]] = None,
+                 encryption: Optional[pulumi.Input[Union['StreamPackagingConfigEncryptionArgs', 'StreamPackagingConfigEncryptionArgsDict']]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_lock_override: Optional[pulumi.Input[bool]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['StreamPackagingConfigLockArgs']]]]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['StreamPackagingConfigLockArgs', 'StreamPackagingConfigLockArgsDict']]]]] = None,
                  segment_time_in_seconds: Optional[pulumi.Input[int]] = None,
                  stream_packaging_format: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -592,10 +592,10 @@ class StreamPackagingConfig(pulumi.CustomResource):
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             distribution_channel_id: Optional[pulumi.Input[str]] = None,
-            encryption: Optional[pulumi.Input[pulumi.InputType['StreamPackagingConfigEncryptionArgs']]] = None,
+            encryption: Optional[pulumi.Input[Union['StreamPackagingConfigEncryptionArgs', 'StreamPackagingConfigEncryptionArgsDict']]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             is_lock_override: Optional[pulumi.Input[bool]] = None,
-            locks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['StreamPackagingConfigLockArgs']]]]] = None,
+            locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['StreamPackagingConfigLockArgs', 'StreamPackagingConfigLockArgsDict']]]]] = None,
             segment_time_in_seconds: Optional[pulumi.Input[int]] = None,
             state: Optional[pulumi.Input[str]] = None,
             stream_packaging_format: Optional[pulumi.Input[str]] = None,
@@ -613,9 +613,9 @@ class StreamPackagingConfig(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) The name of the stream Packaging Configuration. Avoid entering confidential information.
         :param pulumi.Input[str] distribution_channel_id: Unique identifier of the Distribution Channel that this stream packaging configuration belongs to.
-        :param pulumi.Input[pulumi.InputType['StreamPackagingConfigEncryptionArgs']] encryption: The encryption used by the stream packaging configuration.
+        :param pulumi.Input[Union['StreamPackagingConfigEncryptionArgs', 'StreamPackagingConfigEncryptionArgsDict']] encryption: The encryption used by the stream packaging configuration.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['StreamPackagingConfigLockArgs']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['StreamPackagingConfigLockArgs', 'StreamPackagingConfigLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[int] segment_time_in_seconds: The duration in seconds for each fragment.
         :param pulumi.Input[str] state: The current state of the Packaging Configuration.
         :param pulumi.Input[str] stream_packaging_format: The output format for the package.

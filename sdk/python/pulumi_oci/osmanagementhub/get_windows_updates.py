@@ -109,7 +109,7 @@ class AwaitableGetWindowsUpdatesResult(GetWindowsUpdatesResult):
 def get_windows_updates(classification_types: Optional[Sequence[str]] = None,
                         compartment_id: Optional[str] = None,
                         display_name_contains: Optional[str] = None,
-                        filters: Optional[Sequence[pulumi.InputType['GetWindowsUpdatesFilterArgs']]] = None,
+                        filters: Optional[Sequence[Union['GetWindowsUpdatesFilterArgs', 'GetWindowsUpdatesFilterArgsDict']]] = None,
                         names: Optional[Sequence[str]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetWindowsUpdatesResult:
     """
@@ -158,7 +158,7 @@ def get_windows_updates(classification_types: Optional[Sequence[str]] = None,
 def get_windows_updates_output(classification_types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                compartment_id: Optional[pulumi.Input[str]] = None,
                                display_name_contains: Optional[pulumi.Input[Optional[str]]] = None,
-                               filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetWindowsUpdatesFilterArgs']]]]] = None,
+                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetWindowsUpdatesFilterArgs', 'GetWindowsUpdatesFilterArgsDict']]]]] = None,
                                names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetWindowsUpdatesResult]:
     """

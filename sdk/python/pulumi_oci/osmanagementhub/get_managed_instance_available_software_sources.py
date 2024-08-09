@@ -112,7 +112,7 @@ class AwaitableGetManagedInstanceAvailableSoftwareSourcesResult(GetManagedInstan
 def get_managed_instance_available_software_sources(compartment_id: Optional[str] = None,
                                                     display_name_contains: Optional[str] = None,
                                                     display_names: Optional[Sequence[str]] = None,
-                                                    filters: Optional[Sequence[pulumi.InputType['GetManagedInstanceAvailableSoftwareSourcesFilterArgs']]] = None,
+                                                    filters: Optional[Sequence[Union['GetManagedInstanceAvailableSoftwareSourcesFilterArgs', 'GetManagedInstanceAvailableSoftwareSourcesFilterArgsDict']]] = None,
                                                     managed_instance_id: Optional[str] = None,
                                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedInstanceAvailableSoftwareSourcesResult:
     """
@@ -161,7 +161,7 @@ def get_managed_instance_available_software_sources(compartment_id: Optional[str
 def get_managed_instance_available_software_sources_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                            display_name_contains: Optional[pulumi.Input[Optional[str]]] = None,
                                                            display_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                                                           filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetManagedInstanceAvailableSoftwareSourcesFilterArgs']]]]] = None,
+                                                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedInstanceAvailableSoftwareSourcesFilterArgs', 'GetManagedInstanceAvailableSoftwareSourcesFilterArgsDict']]]]] = None,
                                                            managed_instance_id: Optional[pulumi.Input[str]] = None,
                                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedInstanceAvailableSoftwareSourcesResult]:
     """

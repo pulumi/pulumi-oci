@@ -76,7 +76,7 @@ class AwaitableGetModelEvaluationResultsResult(GetModelEvaluationResultsResult):
             model_id=self.model_id)
 
 
-def get_model_evaluation_results(filters: Optional[Sequence[pulumi.InputType['GetModelEvaluationResultsFilterArgs']]] = None,
+def get_model_evaluation_results(filters: Optional[Sequence[Union['GetModelEvaluationResultsFilterArgs', 'GetModelEvaluationResultsFilterArgsDict']]] = None,
                                  model_id: Optional[str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetModelEvaluationResultsResult:
     """
@@ -110,7 +110,7 @@ def get_model_evaluation_results(filters: Optional[Sequence[pulumi.InputType['Ge
 
 
 @_utilities.lift_output_func(get_model_evaluation_results)
-def get_model_evaluation_results_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetModelEvaluationResultsFilterArgs']]]]] = None,
+def get_model_evaluation_results_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetModelEvaluationResultsFilterArgs', 'GetModelEvaluationResultsFilterArgsDict']]]]] = None,
                                         model_id: Optional[pulumi.Input[str]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetModelEvaluationResultsResult]:
     """

@@ -384,7 +384,7 @@ class Endpoint(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 content_moderation_config: Optional[pulumi.Input[pulumi.InputType['EndpointContentModerationConfigArgs']]] = None,
+                 content_moderation_config: Optional[pulumi.Input[Union['EndpointContentModerationConfigArgs', 'EndpointContentModerationConfigArgsDict']]] = None,
                  dedicated_ai_cluster_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
@@ -409,9 +409,9 @@ class Endpoint(pulumi.CustomResource):
             compartment_id=compartment_id,
             dedicated_ai_cluster_id=test_dedicated_ai_cluster["id"],
             model_id=test_model["id"],
-            content_moderation_config=oci.generative_ai.EndpointContentModerationConfigArgs(
-                is_enabled=endpoint_content_moderation_config_is_enabled,
-            ),
+            content_moderation_config={
+                "is_enabled": endpoint_content_moderation_config_is_enabled,
+            },
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -433,7 +433,7 @@ class Endpoint(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The compartment OCID to create the endpoint in.
-        :param pulumi.Input[pulumi.InputType['EndpointContentModerationConfigArgs']] content_moderation_config: (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses. It's recommended to use content moderation.
+        :param pulumi.Input[Union['EndpointContentModerationConfigArgs', 'EndpointContentModerationConfigArgsDict']] content_moderation_config: (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses. It's recommended to use content moderation.
         :param pulumi.Input[str] dedicated_ai_cluster_id: The OCID of the dedicated AI cluster on which a model will be deployed to.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) An optional description of the endpoint.
@@ -468,9 +468,9 @@ class Endpoint(pulumi.CustomResource):
             compartment_id=compartment_id,
             dedicated_ai_cluster_id=test_dedicated_ai_cluster["id"],
             model_id=test_model["id"],
-            content_moderation_config=oci.generative_ai.EndpointContentModerationConfigArgs(
-                is_enabled=endpoint_content_moderation_config_is_enabled,
-            ),
+            content_moderation_config={
+                "is_enabled": endpoint_content_moderation_config_is_enabled,
+            },
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -505,7 +505,7 @@ class Endpoint(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 content_moderation_config: Optional[pulumi.Input[pulumi.InputType['EndpointContentModerationConfigArgs']]] = None,
+                 content_moderation_config: Optional[pulumi.Input[Union['EndpointContentModerationConfigArgs', 'EndpointContentModerationConfigArgsDict']]] = None,
                  dedicated_ai_cluster_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
@@ -551,7 +551,7 @@ class Endpoint(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            content_moderation_config: Optional[pulumi.Input[pulumi.InputType['EndpointContentModerationConfigArgs']]] = None,
+            content_moderation_config: Optional[pulumi.Input[Union['EndpointContentModerationConfigArgs', 'EndpointContentModerationConfigArgsDict']]] = None,
             dedicated_ai_cluster_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             description: Optional[pulumi.Input[str]] = None,
@@ -571,7 +571,7 @@ class Endpoint(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The compartment OCID to create the endpoint in.
-        :param pulumi.Input[pulumi.InputType['EndpointContentModerationConfigArgs']] content_moderation_config: (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses. It's recommended to use content moderation.
+        :param pulumi.Input[Union['EndpointContentModerationConfigArgs', 'EndpointContentModerationConfigArgsDict']] content_moderation_config: (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses. It's recommended to use content moderation.
         :param pulumi.Input[str] dedicated_ai_cluster_id: The OCID of the dedicated AI cluster on which a model will be deployed to.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) An optional description of the endpoint.

@@ -219,7 +219,7 @@ public class Compartment extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public Compartment(String name) {
+    public Compartment(java.lang.String name) {
         this(name, CompartmentArgs.Empty);
     }
     /**
@@ -227,7 +227,7 @@ public class Compartment extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public Compartment(String name, CompartmentArgs args) {
+    public Compartment(java.lang.String name, CompartmentArgs args) {
         this(name, args, null);
     }
     /**
@@ -236,12 +236,12 @@ public class Compartment extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public Compartment(String name, CompartmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/compartment:Compartment", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public Compartment(java.lang.String name, CompartmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/compartment:Compartment", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private Compartment(String name, Output<String> id, @Nullable CompartmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/compartment:Compartment", name, state, makeResourceOptions(options, id));
+    private Compartment(java.lang.String name, Output<java.lang.String> id, @Nullable CompartmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/compartment:Compartment", name, state, makeResourceOptions(options, id), false);
     }
 
     private static CompartmentArgs makeArgs(CompartmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -251,7 +251,7 @@ public class Compartment extends com.pulumi.resources.CustomResource {
         return args == null ? CompartmentArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -267,7 +267,7 @@ public class Compartment extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static Compartment get(String name, Output<String> id, @Nullable CompartmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static Compartment get(java.lang.String name, Output<java.lang.String> id, @Nullable CompartmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new Compartment(name, id, state, options);
     }
 }

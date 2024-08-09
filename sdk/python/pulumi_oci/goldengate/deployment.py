@@ -1017,11 +1017,11 @@ class Deployment(pulumi.CustomResource):
                  is_public: Optional[pulumi.Input[bool]] = None,
                  license_model: Optional[pulumi.Input[str]] = None,
                  load_balancer_subnet_id: Optional[pulumi.Input[str]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DeploymentLockArgs']]]]] = None,
-                 maintenance_configuration: Optional[pulumi.Input[pulumi.InputType['DeploymentMaintenanceConfigurationArgs']]] = None,
-                 maintenance_window: Optional[pulumi.Input[pulumi.InputType['DeploymentMaintenanceWindowArgs']]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DeploymentLockArgs', 'DeploymentLockArgsDict']]]]] = None,
+                 maintenance_configuration: Optional[pulumi.Input[Union['DeploymentMaintenanceConfigurationArgs', 'DeploymentMaintenanceConfigurationArgsDict']]] = None,
+                 maintenance_window: Optional[pulumi.Input[Union['DeploymentMaintenanceWindowArgs', 'DeploymentMaintenanceWindowArgsDict']]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 ogg_data: Optional[pulumi.Input[pulumi.InputType['DeploymentOggDataArgs']]] = None,
+                 ogg_data: Optional[pulumi.Input[Union['DeploymentOggDataArgs', 'DeploymentOggDataArgsDict']]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -1053,11 +1053,11 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[bool] is_public: (Updatable) True if this object is publicly available.
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to a Deployment.
         :param pulumi.Input[str] load_balancer_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DeploymentLockArgs']]]] locks: Locks associated with this resource.
-        :param pulumi.Input[pulumi.InputType['DeploymentMaintenanceConfigurationArgs']] maintenance_configuration: (Updatable) Defines the maintenance configuration for create operation.
-        :param pulumi.Input[pulumi.InputType['DeploymentMaintenanceWindowArgs']] maintenance_window: (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DeploymentLockArgs', 'DeploymentLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Union['DeploymentMaintenanceConfigurationArgs', 'DeploymentMaintenanceConfigurationArgsDict']] maintenance_configuration: (Updatable) Defines the maintenance configuration for create operation.
+        :param pulumi.Input[Union['DeploymentMaintenanceWindowArgs', 'DeploymentMaintenanceWindowArgsDict']] maintenance_window: (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
-        :param pulumi.Input[pulumi.InputType['DeploymentOggDataArgs']] ogg_data: (Updatable) Deployment Data for creating an OggDeployment
+        :param pulumi.Input[Union['DeploymentOggDataArgs', 'DeploymentOggDataArgsDict']] ogg_data: (Updatable) Deployment Data for creating an OggDeployment
         :param pulumi.Input[str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
         """
         ...
@@ -1108,11 +1108,11 @@ class Deployment(pulumi.CustomResource):
                  is_public: Optional[pulumi.Input[bool]] = None,
                  license_model: Optional[pulumi.Input[str]] = None,
                  load_balancer_subnet_id: Optional[pulumi.Input[str]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DeploymentLockArgs']]]]] = None,
-                 maintenance_configuration: Optional[pulumi.Input[pulumi.InputType['DeploymentMaintenanceConfigurationArgs']]] = None,
-                 maintenance_window: Optional[pulumi.Input[pulumi.InputType['DeploymentMaintenanceWindowArgs']]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DeploymentLockArgs', 'DeploymentLockArgsDict']]]]] = None,
+                 maintenance_configuration: Optional[pulumi.Input[Union['DeploymentMaintenanceConfigurationArgs', 'DeploymentMaintenanceConfigurationArgsDict']]] = None,
+                 maintenance_window: Optional[pulumi.Input[Union['DeploymentMaintenanceWindowArgs', 'DeploymentMaintenanceWindowArgsDict']]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 ogg_data: Optional[pulumi.Input[pulumi.InputType['DeploymentOggDataArgs']]] = None,
+                 ogg_data: Optional[pulumi.Input[Union['DeploymentOggDataArgs', 'DeploymentOggDataArgsDict']]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -1193,14 +1193,14 @@ class Deployment(pulumi.CustomResource):
             cpu_core_count: Optional[pulumi.Input[int]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             deployment_backup_id: Optional[pulumi.Input[str]] = None,
-            deployment_diagnostic_datas: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DeploymentDeploymentDiagnosticDataArgs']]]]] = None,
+            deployment_diagnostic_datas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DeploymentDeploymentDiagnosticDataArgs', 'DeploymentDeploymentDiagnosticDataArgsDict']]]]] = None,
             deployment_type: Optional[pulumi.Input[str]] = None,
             deployment_url: Optional[pulumi.Input[str]] = None,
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             fqdn: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            ingress_ips: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DeploymentIngressIpArgs']]]]] = None,
+            ingress_ips: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DeploymentIngressIpArgs', 'DeploymentIngressIpArgsDict']]]]] = None,
             is_auto_scaling_enabled: Optional[pulumi.Input[bool]] = None,
             is_healthy: Optional[pulumi.Input[bool]] = None,
             is_latest_version: Optional[pulumi.Input[bool]] = None,
@@ -1212,13 +1212,13 @@ class Deployment(pulumi.CustomResource):
             lifecycle_sub_state: Optional[pulumi.Input[str]] = None,
             load_balancer_id: Optional[pulumi.Input[str]] = None,
             load_balancer_subnet_id: Optional[pulumi.Input[str]] = None,
-            locks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DeploymentLockArgs']]]]] = None,
-            maintenance_configuration: Optional[pulumi.Input[pulumi.InputType['DeploymentMaintenanceConfigurationArgs']]] = None,
-            maintenance_window: Optional[pulumi.Input[pulumi.InputType['DeploymentMaintenanceWindowArgs']]] = None,
+            locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DeploymentLockArgs', 'DeploymentLockArgsDict']]]]] = None,
+            maintenance_configuration: Optional[pulumi.Input[Union['DeploymentMaintenanceConfigurationArgs', 'DeploymentMaintenanceConfigurationArgsDict']]] = None,
+            maintenance_window: Optional[pulumi.Input[Union['DeploymentMaintenanceWindowArgs', 'DeploymentMaintenanceWindowArgsDict']]] = None,
             next_maintenance_action_type: Optional[pulumi.Input[str]] = None,
             next_maintenance_description: Optional[pulumi.Input[str]] = None,
             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            ogg_data: Optional[pulumi.Input[pulumi.InputType['DeploymentOggDataArgs']]] = None,
+            ogg_data: Optional[pulumi.Input[Union['DeploymentOggDataArgs', 'DeploymentOggDataArgsDict']]] = None,
             private_ip_address: Optional[pulumi.Input[str]] = None,
             public_ip_address: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -1241,14 +1241,14 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[int] cpu_core_count: (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] deployment_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DeploymentDeploymentDiagnosticDataArgs']]]] deployment_diagnostic_datas: Information regarding the deployment diagnostic collection
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DeploymentDeploymentDiagnosticDataArgs', 'DeploymentDeploymentDiagnosticDataArgsDict']]]] deployment_diagnostic_datas: Information regarding the deployment diagnostic collection
         :param pulumi.Input[str] deployment_type: The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
         :param pulumi.Input[str] deployment_url: The URL of a resource.
         :param pulumi.Input[str] description: (Updatable) Metadata about this specific object.
         :param pulumi.Input[str] display_name: (Updatable) An object's Display Name.
         :param pulumi.Input[str] fqdn: (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DeploymentIngressIpArgs']]]] ingress_ips: List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DeploymentIngressIpArgs', 'DeploymentIngressIpArgsDict']]]] ingress_ips: List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
         :param pulumi.Input[bool] is_auto_scaling_enabled: (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
         :param pulumi.Input[bool] is_healthy: True if all of the aggregate resources are working correctly.
         :param pulumi.Input[bool] is_latest_version: Indicates if the resource is the the latest available version.
@@ -1259,13 +1259,13 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[str] lifecycle_sub_state: Possible GGS lifecycle sub-states.
         :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet. The loadbalancer of the public deployment created in the customer subnet.
         :param pulumi.Input[str] load_balancer_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DeploymentLockArgs']]]] locks: Locks associated with this resource.
-        :param pulumi.Input[pulumi.InputType['DeploymentMaintenanceConfigurationArgs']] maintenance_configuration: (Updatable) Defines the maintenance configuration for create operation.
-        :param pulumi.Input[pulumi.InputType['DeploymentMaintenanceWindowArgs']] maintenance_window: (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DeploymentLockArgs', 'DeploymentLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Union['DeploymentMaintenanceConfigurationArgs', 'DeploymentMaintenanceConfigurationArgsDict']] maintenance_configuration: (Updatable) Defines the maintenance configuration for create operation.
+        :param pulumi.Input[Union['DeploymentMaintenanceWindowArgs', 'DeploymentMaintenanceWindowArgsDict']] maintenance_window: (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
         :param pulumi.Input[str] next_maintenance_action_type: Type of the next maintenance.
         :param pulumi.Input[str] next_maintenance_description: Description of the next maintenance.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
-        :param pulumi.Input[pulumi.InputType['DeploymentOggDataArgs']] ogg_data: (Updatable) Deployment Data for creating an OggDeployment
+        :param pulumi.Input[Union['DeploymentOggDataArgs', 'DeploymentOggDataArgsDict']] ogg_data: (Updatable) Deployment Data for creating an OggDeployment
         :param pulumi.Input[str] private_ip_address: The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
         :param pulumi.Input[str] public_ip_address: The public IP address representing the access point for the Deployment.
         :param pulumi.Input[str] storage_utilization_in_bytes: The amount of storage being utilized (in bytes)

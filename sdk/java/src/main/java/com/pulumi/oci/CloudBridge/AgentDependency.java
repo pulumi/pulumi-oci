@@ -311,7 +311,7 @@ public class AgentDependency extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public AgentDependency(String name) {
+    public AgentDependency(java.lang.String name) {
         this(name, AgentDependencyArgs.Empty);
     }
     /**
@@ -319,7 +319,7 @@ public class AgentDependency extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public AgentDependency(String name, AgentDependencyArgs args) {
+    public AgentDependency(java.lang.String name, AgentDependencyArgs args) {
         this(name, args, null);
     }
     /**
@@ -328,12 +328,12 @@ public class AgentDependency extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public AgentDependency(String name, AgentDependencyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:CloudBridge/agentDependency:AgentDependency", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public AgentDependency(java.lang.String name, AgentDependencyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:CloudBridge/agentDependency:AgentDependency", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private AgentDependency(String name, Output<String> id, @Nullable AgentDependencyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:CloudBridge/agentDependency:AgentDependency", name, state, makeResourceOptions(options, id));
+    private AgentDependency(java.lang.String name, Output<java.lang.String> id, @Nullable AgentDependencyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:CloudBridge/agentDependency:AgentDependency", name, state, makeResourceOptions(options, id), false);
     }
 
     private static AgentDependencyArgs makeArgs(AgentDependencyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -343,7 +343,7 @@ public class AgentDependency extends com.pulumi.resources.CustomResource {
         return args == null ? AgentDependencyArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -359,7 +359,7 @@ public class AgentDependency extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static AgentDependency get(String name, Output<String> id, @Nullable AgentDependencyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static AgentDependency get(java.lang.String name, Output<java.lang.String> id, @Nullable AgentDependencyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new AgentDependency(name, id, state, options);
     }
 }

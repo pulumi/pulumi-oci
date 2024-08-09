@@ -637,7 +637,7 @@ public class DomainsMySupportAccount extends com.pulumi.resources.CustomResource
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DomainsMySupportAccount(String name) {
+    public DomainsMySupportAccount(java.lang.String name) {
         this(name, DomainsMySupportAccountArgs.Empty);
     }
     /**
@@ -645,7 +645,7 @@ public class DomainsMySupportAccount extends com.pulumi.resources.CustomResource
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DomainsMySupportAccount(String name, DomainsMySupportAccountArgs args) {
+    public DomainsMySupportAccount(java.lang.String name, DomainsMySupportAccountArgs args) {
         this(name, args, null);
     }
     /**
@@ -654,12 +654,12 @@ public class DomainsMySupportAccount extends com.pulumi.resources.CustomResource
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DomainsMySupportAccount(String name, DomainsMySupportAccountArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsMySupportAccount:DomainsMySupportAccount", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DomainsMySupportAccount(java.lang.String name, DomainsMySupportAccountArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/domainsMySupportAccount:DomainsMySupportAccount", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DomainsMySupportAccount(String name, Output<String> id, @Nullable DomainsMySupportAccountState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsMySupportAccount:DomainsMySupportAccount", name, state, makeResourceOptions(options, id));
+    private DomainsMySupportAccount(java.lang.String name, Output<java.lang.String> id, @Nullable DomainsMySupportAccountState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/domainsMySupportAccount:DomainsMySupportAccount", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DomainsMySupportAccountArgs makeArgs(DomainsMySupportAccountArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -669,7 +669,7 @@ public class DomainsMySupportAccount extends com.pulumi.resources.CustomResource
         return args == null ? DomainsMySupportAccountArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -685,7 +685,7 @@ public class DomainsMySupportAccount extends com.pulumi.resources.CustomResource
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DomainsMySupportAccount get(String name, Output<String> id, @Nullable DomainsMySupportAccountState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DomainsMySupportAccount get(java.lang.String name, Output<java.lang.String> id, @Nullable DomainsMySupportAccountState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DomainsMySupportAccount(name, id, state, options);
     }
 }

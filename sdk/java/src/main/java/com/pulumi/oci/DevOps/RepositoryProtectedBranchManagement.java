@@ -132,7 +132,7 @@ public class RepositoryProtectedBranchManagement extends com.pulumi.resources.Cu
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public RepositoryProtectedBranchManagement(String name) {
+    public RepositoryProtectedBranchManagement(java.lang.String name) {
         this(name, RepositoryProtectedBranchManagementArgs.Empty);
     }
     /**
@@ -140,7 +140,7 @@ public class RepositoryProtectedBranchManagement extends com.pulumi.resources.Cu
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public RepositoryProtectedBranchManagement(String name, RepositoryProtectedBranchManagementArgs args) {
+    public RepositoryProtectedBranchManagement(java.lang.String name, RepositoryProtectedBranchManagementArgs args) {
         this(name, args, null);
     }
     /**
@@ -149,12 +149,12 @@ public class RepositoryProtectedBranchManagement extends com.pulumi.resources.Cu
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public RepositoryProtectedBranchManagement(String name, RepositoryProtectedBranchManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DevOps/repositoryProtectedBranchManagement:RepositoryProtectedBranchManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public RepositoryProtectedBranchManagement(java.lang.String name, RepositoryProtectedBranchManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DevOps/repositoryProtectedBranchManagement:RepositoryProtectedBranchManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private RepositoryProtectedBranchManagement(String name, Output<String> id, @Nullable RepositoryProtectedBranchManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DevOps/repositoryProtectedBranchManagement:RepositoryProtectedBranchManagement", name, state, makeResourceOptions(options, id));
+    private RepositoryProtectedBranchManagement(java.lang.String name, Output<java.lang.String> id, @Nullable RepositoryProtectedBranchManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DevOps/repositoryProtectedBranchManagement:RepositoryProtectedBranchManagement", name, state, makeResourceOptions(options, id), false);
     }
 
     private static RepositoryProtectedBranchManagementArgs makeArgs(RepositoryProtectedBranchManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -164,7 +164,7 @@ public class RepositoryProtectedBranchManagement extends com.pulumi.resources.Cu
         return args == null ? RepositoryProtectedBranchManagementArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -180,7 +180,7 @@ public class RepositoryProtectedBranchManagement extends com.pulumi.resources.Cu
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static RepositoryProtectedBranchManagement get(String name, Output<String> id, @Nullable RepositoryProtectedBranchManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static RepositoryProtectedBranchManagement get(java.lang.String name, Output<java.lang.String> id, @Nullable RepositoryProtectedBranchManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new RepositoryProtectedBranchManagement(name, id, state, options);
     }
 }

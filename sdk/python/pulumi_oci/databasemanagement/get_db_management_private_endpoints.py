@@ -128,7 +128,7 @@ class AwaitableGetDbManagementPrivateEndpointsResult(GetDbManagementPrivateEndpo
 
 
 def get_db_management_private_endpoints(compartment_id: Optional[str] = None,
-                                        filters: Optional[Sequence[pulumi.InputType['GetDbManagementPrivateEndpointsFilterArgs']]] = None,
+                                        filters: Optional[Sequence[Union['GetDbManagementPrivateEndpointsFilterArgs', 'GetDbManagementPrivateEndpointsFilterArgsDict']]] = None,
                                         is_cluster: Optional[bool] = None,
                                         name: Optional[str] = None,
                                         state: Optional[str] = None,
@@ -182,7 +182,7 @@ def get_db_management_private_endpoints(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_db_management_private_endpoints)
 def get_db_management_private_endpoints_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                               filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDbManagementPrivateEndpointsFilterArgs']]]]] = None,
+                                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbManagementPrivateEndpointsFilterArgs', 'GetDbManagementPrivateEndpointsFilterArgsDict']]]]] = None,
                                                is_cluster: Optional[pulumi.Input[Optional[bool]]] = None,
                                                name: Optional[pulumi.Input[Optional[str]]] = None,
                                                state: Optional[pulumi.Input[Optional[str]]] = None,

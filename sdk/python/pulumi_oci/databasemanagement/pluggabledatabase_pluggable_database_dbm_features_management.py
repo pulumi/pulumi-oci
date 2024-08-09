@@ -145,7 +145,7 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagement(pulumi.CustomResou
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enable_pluggable_database_dbm_feature: Optional[pulumi.Input[bool]] = None,
-                 feature_details: Optional[pulumi.Input[pulumi.InputType['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgs']]] = None,
+                 feature_details: Optional[pulumi.Input[Union['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgs', 'PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgsDict']]] = None,
                  pluggable_database_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -160,7 +160,7 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagement(pulumi.CustomResou
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[pulumi.InputType['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgs']] feature_details: The details required to enable the specified Database Management feature.
+        :param pulumi.Input[Union['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgs', 'PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgsDict']] feature_details: The details required to enable the specified Database Management feature.
         :param pulumi.Input[str] pluggable_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle cloud pluggable database.
         """
         ...
@@ -190,7 +190,7 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagement(pulumi.CustomResou
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enable_pluggable_database_dbm_feature: Optional[pulumi.Input[bool]] = None,
-                 feature_details: Optional[pulumi.Input[pulumi.InputType['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgs']]] = None,
+                 feature_details: Optional[pulumi.Input[Union['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgs', 'PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgsDict']]] = None,
                  pluggable_database_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -219,7 +219,7 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagement(pulumi.CustomResou
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             enable_pluggable_database_dbm_feature: Optional[pulumi.Input[bool]] = None,
-            feature_details: Optional[pulumi.Input[pulumi.InputType['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgs']]] = None,
+            feature_details: Optional[pulumi.Input[Union['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgs', 'PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgsDict']]] = None,
             pluggable_database_id: Optional[pulumi.Input[str]] = None) -> 'PluggabledatabasePluggableDatabaseDbmFeaturesManagement':
         """
         Get an existing PluggabledatabasePluggableDatabaseDbmFeaturesManagement resource's state with the given name, id, and optional extra
@@ -233,7 +233,7 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagement(pulumi.CustomResou
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[pulumi.InputType['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgs']] feature_details: The details required to enable the specified Database Management feature.
+        :param pulumi.Input[Union['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgs', 'PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgsDict']] feature_details: The details required to enable the specified Database Management feature.
         :param pulumi.Input[str] pluggable_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle cloud pluggable database.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

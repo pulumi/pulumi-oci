@@ -1142,7 +1142,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
                  is_local_backup_enabled: Optional[pulumi.Input[bool]] = None,
                  is_mtls_enabled: Optional[pulumi.Input[bool]] = None,
                  license_model: Optional[pulumi.Input[str]] = None,
-                 maintenance_window_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousVmClusterMaintenanceWindowDetailArgs']]]]] = None,
+                 maintenance_window_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousVmClusterMaintenanceWindowDetailArgs', 'AutonomousVmClusterMaintenanceWindowDetailArgsDict']]]]] = None,
                  memory_per_oracle_compute_unit_in_gbs: Optional[pulumi.Input[int]] = None,
                  scan_listener_port_non_tls: Optional[pulumi.Input[int]] = None,
                  scan_listener_port_tls: Optional[pulumi.Input[int]] = None,
@@ -1177,19 +1177,19 @@ class AutonomousVmCluster(pulumi.CustomResource):
             is_local_backup_enabled=autonomous_vm_cluster_is_local_backup_enabled,
             is_mtls_enabled=autonomous_vm_cluster_is_mtls_enabled,
             license_model=autonomous_vm_cluster_license_model,
-            maintenance_window_details=[oci.database.AutonomousVmClusterMaintenanceWindowDetailArgs(
-                days_of_weeks=[oci.database.AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs(
-                    name=autonomous_vm_cluster_maintenance_window_details_days_of_week_name,
-                )],
-                hours_of_days=autonomous_vm_cluster_maintenance_window_details_hours_of_day,
-                lead_time_in_weeks=autonomous_vm_cluster_maintenance_window_details_lead_time_in_weeks,
-                months=[oci.database.AutonomousVmClusterMaintenanceWindowDetailMonthArgs(
-                    name=autonomous_vm_cluster_maintenance_window_details_months_name,
-                )],
-                patching_mode=autonomous_vm_cluster_maintenance_window_details_patching_mode,
-                preference=autonomous_vm_cluster_maintenance_window_details_preference,
-                weeks_of_months=autonomous_vm_cluster_maintenance_window_details_weeks_of_month,
-            )],
+            maintenance_window_details=[{
+                "days_of_weeks": [{
+                    "name": autonomous_vm_cluster_maintenance_window_details_days_of_week_name,
+                }],
+                "hours_of_days": autonomous_vm_cluster_maintenance_window_details_hours_of_day,
+                "lead_time_in_weeks": autonomous_vm_cluster_maintenance_window_details_lead_time_in_weeks,
+                "months": [{
+                    "name": autonomous_vm_cluster_maintenance_window_details_months_name,
+                }],
+                "patching_mode": autonomous_vm_cluster_maintenance_window_details_patching_mode,
+                "preference": autonomous_vm_cluster_maintenance_window_details_preference,
+                "weeks_of_months": autonomous_vm_cluster_maintenance_window_details_weeks_of_month,
+            }],
             memory_per_oracle_compute_unit_in_gbs=autonomous_vm_cluster_memory_per_oracle_compute_unit_in_gbs,
             scan_listener_port_non_tls=autonomous_vm_cluster_scan_listener_port_non_tls,
             scan_listener_port_tls=autonomous_vm_cluster_scan_listener_port_tls,
@@ -1219,7 +1219,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
         :param pulumi.Input[bool] is_local_backup_enabled: If true, database backup on local Exadata storage is configured for the Autonomous VM cluster. If false, database backup on local Exadata storage is not available in the Autonomous VM cluster.
         :param pulumi.Input[bool] is_mtls_enabled: Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to the Autonomous VM cluster. The default is BRING_YOUR_OWN_LICENSE.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousVmClusterMaintenanceWindowDetailArgs']]]] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousVmClusterMaintenanceWindowDetailArgs', 'AutonomousVmClusterMaintenanceWindowDetailArgsDict']]]] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         :param pulumi.Input[int] scan_listener_port_non_tls: The SCAN Listener Non TLS port number. Default value is 1521.
         :param pulumi.Input[int] scan_listener_port_tls: The SCAN Listener TLS port number. Default value is 2484.
@@ -1264,19 +1264,19 @@ class AutonomousVmCluster(pulumi.CustomResource):
             is_local_backup_enabled=autonomous_vm_cluster_is_local_backup_enabled,
             is_mtls_enabled=autonomous_vm_cluster_is_mtls_enabled,
             license_model=autonomous_vm_cluster_license_model,
-            maintenance_window_details=[oci.database.AutonomousVmClusterMaintenanceWindowDetailArgs(
-                days_of_weeks=[oci.database.AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs(
-                    name=autonomous_vm_cluster_maintenance_window_details_days_of_week_name,
-                )],
-                hours_of_days=autonomous_vm_cluster_maintenance_window_details_hours_of_day,
-                lead_time_in_weeks=autonomous_vm_cluster_maintenance_window_details_lead_time_in_weeks,
-                months=[oci.database.AutonomousVmClusterMaintenanceWindowDetailMonthArgs(
-                    name=autonomous_vm_cluster_maintenance_window_details_months_name,
-                )],
-                patching_mode=autonomous_vm_cluster_maintenance_window_details_patching_mode,
-                preference=autonomous_vm_cluster_maintenance_window_details_preference,
-                weeks_of_months=autonomous_vm_cluster_maintenance_window_details_weeks_of_month,
-            )],
+            maintenance_window_details=[{
+                "days_of_weeks": [{
+                    "name": autonomous_vm_cluster_maintenance_window_details_days_of_week_name,
+                }],
+                "hours_of_days": autonomous_vm_cluster_maintenance_window_details_hours_of_day,
+                "lead_time_in_weeks": autonomous_vm_cluster_maintenance_window_details_lead_time_in_weeks,
+                "months": [{
+                    "name": autonomous_vm_cluster_maintenance_window_details_months_name,
+                }],
+                "patching_mode": autonomous_vm_cluster_maintenance_window_details_patching_mode,
+                "preference": autonomous_vm_cluster_maintenance_window_details_preference,
+                "weeks_of_months": autonomous_vm_cluster_maintenance_window_details_weeks_of_month,
+            }],
             memory_per_oracle_compute_unit_in_gbs=autonomous_vm_cluster_memory_per_oracle_compute_unit_in_gbs,
             scan_listener_port_non_tls=autonomous_vm_cluster_scan_listener_port_non_tls,
             scan_listener_port_tls=autonomous_vm_cluster_scan_listener_port_tls,
@@ -1319,7 +1319,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
                  is_local_backup_enabled: Optional[pulumi.Input[bool]] = None,
                  is_mtls_enabled: Optional[pulumi.Input[bool]] = None,
                  license_model: Optional[pulumi.Input[str]] = None,
-                 maintenance_window_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousVmClusterMaintenanceWindowDetailArgs']]]]] = None,
+                 maintenance_window_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousVmClusterMaintenanceWindowDetailArgs', 'AutonomousVmClusterMaintenanceWindowDetailArgsDict']]]]] = None,
                  memory_per_oracle_compute_unit_in_gbs: Optional[pulumi.Input[int]] = None,
                  scan_listener_port_non_tls: Optional[pulumi.Input[int]] = None,
                  scan_listener_port_tls: Optional[pulumi.Input[int]] = None,
@@ -1429,8 +1429,8 @@ class AutonomousVmCluster(pulumi.CustomResource):
             last_maintenance_run_id: Optional[pulumi.Input[str]] = None,
             license_model: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
-            maintenance_window_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousVmClusterMaintenanceWindowDetailArgs']]]]] = None,
-            maintenance_windows: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousVmClusterMaintenanceWindowArgs']]]]] = None,
+            maintenance_window_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousVmClusterMaintenanceWindowDetailArgs', 'AutonomousVmClusterMaintenanceWindowDetailArgsDict']]]]] = None,
+            maintenance_windows: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousVmClusterMaintenanceWindowArgs', 'AutonomousVmClusterMaintenanceWindowArgsDict']]]]] = None,
             max_acds_lowest_scaled_value: Optional[pulumi.Input[int]] = None,
             memory_per_oracle_compute_unit_in_gbs: Optional[pulumi.Input[int]] = None,
             memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
@@ -1482,8 +1482,8 @@ class AutonomousVmCluster(pulumi.CustomResource):
         :param pulumi.Input[str] last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to the Autonomous VM cluster. The default is BRING_YOUR_OWN_LICENSE.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousVmClusterMaintenanceWindowDetailArgs']]]] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousVmClusterMaintenanceWindowArgs']]]] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousVmClusterMaintenanceWindowDetailArgs', 'AutonomousVmClusterMaintenanceWindowDetailArgsDict']]]] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousVmClusterMaintenanceWindowArgs', 'AutonomousVmClusterMaintenanceWindowArgsDict']]]] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[int] max_acds_lowest_scaled_value: The lowest value to which maximum number of ACDs can be scaled down.
         :param pulumi.Input[int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         :param pulumi.Input[int] memory_size_in_gbs: The memory allocated in GBs.

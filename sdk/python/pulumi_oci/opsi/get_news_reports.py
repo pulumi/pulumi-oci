@@ -123,7 +123,7 @@ class AwaitableGetNewsReportsResult(GetNewsReportsResult):
 
 def get_news_reports(compartment_id: Optional[str] = None,
                      compartment_id_in_subtree: Optional[bool] = None,
-                     filters: Optional[Sequence[pulumi.InputType['GetNewsReportsFilterArgs']]] = None,
+                     filters: Optional[Sequence[Union['GetNewsReportsFilterArgs', 'GetNewsReportsFilterArgsDict']]] = None,
                      news_report_id: Optional[str] = None,
                      states: Optional[Sequence[str]] = None,
                      statuses: Optional[Sequence[str]] = None,
@@ -177,7 +177,7 @@ def get_news_reports(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_news_reports)
 def get_news_reports_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                             compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
-                            filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetNewsReportsFilterArgs']]]]] = None,
+                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNewsReportsFilterArgs', 'GetNewsReportsFilterArgsDict']]]]] = None,
                             news_report_id: Optional[pulumi.Input[Optional[str]]] = None,
                             states: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                             statuses: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,

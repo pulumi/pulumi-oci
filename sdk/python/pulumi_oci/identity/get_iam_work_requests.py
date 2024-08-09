@@ -89,7 +89,7 @@ class AwaitableGetIamWorkRequestsResult(GetIamWorkRequestsResult):
 
 
 def get_iam_work_requests(compartment_id: Optional[str] = None,
-                          filters: Optional[Sequence[pulumi.InputType['GetIamWorkRequestsFilterArgs']]] = None,
+                          filters: Optional[Sequence[Union['GetIamWorkRequestsFilterArgs', 'GetIamWorkRequestsFilterArgsDict']]] = None,
                           resource_identifier: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIamWorkRequestsResult:
     """
@@ -131,7 +131,7 @@ def get_iam_work_requests(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_iam_work_requests)
 def get_iam_work_requests_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetIamWorkRequestsFilterArgs']]]]] = None,
+                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetIamWorkRequestsFilterArgs', 'GetIamWorkRequestsFilterArgsDict']]]]] = None,
                                  resource_identifier: Optional[pulumi.Input[Optional[str]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIamWorkRequestsResult]:
     """

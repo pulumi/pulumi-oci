@@ -113,7 +113,7 @@ class AwaitableGetPrivateApplicationPackagesResult(GetPrivateApplicationPackages
 
 
 def get_private_application_packages(display_name: Optional[str] = None,
-                                     filters: Optional[Sequence[pulumi.InputType['GetPrivateApplicationPackagesFilterArgs']]] = None,
+                                     filters: Optional[Sequence[Union['GetPrivateApplicationPackagesFilterArgs', 'GetPrivateApplicationPackagesFilterArgsDict']]] = None,
                                      package_types: Optional[Sequence[str]] = None,
                                      private_application_id: Optional[str] = None,
                                      private_application_package_id: Optional[str] = None,
@@ -162,7 +162,7 @@ def get_private_application_packages(display_name: Optional[str] = None,
 
 @_utilities.lift_output_func(get_private_application_packages)
 def get_private_application_packages_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                            filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetPrivateApplicationPackagesFilterArgs']]]]] = None,
+                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPrivateApplicationPackagesFilterArgs', 'GetPrivateApplicationPackagesFilterArgsDict']]]]] = None,
                                             package_types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                             private_application_id: Optional[pulumi.Input[str]] = None,
                                             private_application_package_id: Optional[pulumi.Input[Optional[str]]] = None,

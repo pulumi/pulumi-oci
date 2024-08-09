@@ -264,7 +264,7 @@ public class ArtifactByPath extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ArtifactByPath(String name) {
+    public ArtifactByPath(java.lang.String name) {
         this(name, ArtifactByPathArgs.Empty);
     }
     /**
@@ -272,7 +272,7 @@ public class ArtifactByPath extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ArtifactByPath(String name, ArtifactByPathArgs args) {
+    public ArtifactByPath(java.lang.String name, ArtifactByPathArgs args) {
         this(name, args, null);
     }
     /**
@@ -281,12 +281,12 @@ public class ArtifactByPath extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ArtifactByPath(String name, ArtifactByPathArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:GenericArtifactsContent/artifactByPath:ArtifactByPath", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ArtifactByPath(java.lang.String name, ArtifactByPathArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:GenericArtifactsContent/artifactByPath:ArtifactByPath", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ArtifactByPath(String name, Output<String> id, @Nullable ArtifactByPathState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:GenericArtifactsContent/artifactByPath:ArtifactByPath", name, state, makeResourceOptions(options, id));
+    private ArtifactByPath(java.lang.String name, Output<java.lang.String> id, @Nullable ArtifactByPathState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:GenericArtifactsContent/artifactByPath:ArtifactByPath", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ArtifactByPathArgs makeArgs(ArtifactByPathArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -296,7 +296,7 @@ public class ArtifactByPath extends com.pulumi.resources.CustomResource {
         return args == null ? ArtifactByPathArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -312,7 +312,7 @@ public class ArtifactByPath extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ArtifactByPath get(String name, Output<String> id, @Nullable ArtifactByPathState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ArtifactByPath get(java.lang.String name, Output<java.lang.String> id, @Nullable ArtifactByPathState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ArtifactByPath(name, id, state, options);
     }
 }

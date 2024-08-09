@@ -86,7 +86,7 @@ class AwaitableGetExternalAsmDiskGroupsResult(GetExternalAsmDiskGroupsResult):
 
 
 def get_external_asm_disk_groups(external_asm_id: Optional[str] = None,
-                                 filters: Optional[Sequence[pulumi.InputType['GetExternalAsmDiskGroupsFilterArgs']]] = None,
+                                 filters: Optional[Sequence[Union['GetExternalAsmDiskGroupsFilterArgs', 'GetExternalAsmDiskGroupsFilterArgsDict']]] = None,
                                  opc_named_credential_id: Optional[str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalAsmDiskGroupsResult:
     """
@@ -125,7 +125,7 @@ def get_external_asm_disk_groups(external_asm_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_external_asm_disk_groups)
 def get_external_asm_disk_groups_output(external_asm_id: Optional[pulumi.Input[str]] = None,
-                                        filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetExternalAsmDiskGroupsFilterArgs']]]]] = None,
+                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExternalAsmDiskGroupsFilterArgs', 'GetExternalAsmDiskGroupsFilterArgsDict']]]]] = None,
                                         opc_named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalAsmDiskGroupsResult]:
     """

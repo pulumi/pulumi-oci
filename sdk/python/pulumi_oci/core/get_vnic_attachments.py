@@ -117,7 +117,7 @@ class AwaitableGetVnicAttachmentsResult(GetVnicAttachmentsResult):
 
 def get_vnic_attachments(availability_domain: Optional[str] = None,
                          compartment_id: Optional[str] = None,
-                         filters: Optional[Sequence[pulumi.InputType['GetVnicAttachmentsFilterArgs']]] = None,
+                         filters: Optional[Sequence[Union['GetVnicAttachmentsFilterArgs', 'GetVnicAttachmentsFilterArgsDict']]] = None,
                          instance_id: Optional[str] = None,
                          vnic_id: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVnicAttachmentsResult:
@@ -168,7 +168,7 @@ def get_vnic_attachments(availability_domain: Optional[str] = None,
 @_utilities.lift_output_func(get_vnic_attachments)
 def get_vnic_attachments_output(availability_domain: Optional[pulumi.Input[Optional[str]]] = None,
                                 compartment_id: Optional[pulumi.Input[str]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetVnicAttachmentsFilterArgs']]]]] = None,
+                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVnicAttachmentsFilterArgs', 'GetVnicAttachmentsFilterArgsDict']]]]] = None,
                                 instance_id: Optional[pulumi.Input[Optional[str]]] = None,
                                 vnic_id: Optional[pulumi.Input[Optional[str]]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVnicAttachmentsResult]:

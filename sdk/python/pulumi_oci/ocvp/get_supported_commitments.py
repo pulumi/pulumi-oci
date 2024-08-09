@@ -86,7 +86,7 @@ class AwaitableGetSupportedCommitmentsResult(GetSupportedCommitmentsResult):
 
 
 def get_supported_commitments(compartment_id: Optional[str] = None,
-                              filters: Optional[Sequence[pulumi.InputType['GetSupportedCommitmentsFilterArgs']]] = None,
+                              filters: Optional[Sequence[Union['GetSupportedCommitmentsFilterArgs', 'GetSupportedCommitmentsFilterArgsDict']]] = None,
                               host_shape_name: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSupportedCommitmentsResult:
     """
@@ -125,7 +125,7 @@ def get_supported_commitments(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_supported_commitments)
 def get_supported_commitments_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                     filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetSupportedCommitmentsFilterArgs']]]]] = None,
+                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSupportedCommitmentsFilterArgs', 'GetSupportedCommitmentsFilterArgsDict']]]]] = None,
                                      host_shape_name: Optional[pulumi.Input[Optional[str]]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSupportedCommitmentsResult]:
     """

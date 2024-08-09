@@ -997,7 +997,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public AutonomousContainerDatabase(String name) {
+    public AutonomousContainerDatabase(java.lang.String name) {
         this(name, AutonomousContainerDatabaseArgs.Empty);
     }
     /**
@@ -1005,7 +1005,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public AutonomousContainerDatabase(String name, AutonomousContainerDatabaseArgs args) {
+    public AutonomousContainerDatabase(java.lang.String name, AutonomousContainerDatabaseArgs args) {
         this(name, args, null);
     }
     /**
@@ -1014,12 +1014,12 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public AutonomousContainerDatabase(String name, AutonomousContainerDatabaseArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/autonomousContainerDatabase:AutonomousContainerDatabase", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public AutonomousContainerDatabase(java.lang.String name, AutonomousContainerDatabaseArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/autonomousContainerDatabase:AutonomousContainerDatabase", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private AutonomousContainerDatabase(String name, Output<String> id, @Nullable AutonomousContainerDatabaseState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/autonomousContainerDatabase:AutonomousContainerDatabase", name, state, makeResourceOptions(options, id));
+    private AutonomousContainerDatabase(java.lang.String name, Output<java.lang.String> id, @Nullable AutonomousContainerDatabaseState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/autonomousContainerDatabase:AutonomousContainerDatabase", name, state, makeResourceOptions(options, id), false);
     }
 
     private static AutonomousContainerDatabaseArgs makeArgs(AutonomousContainerDatabaseArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -1029,7 +1029,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
         return args == null ? AutonomousContainerDatabaseArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -1045,7 +1045,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static AutonomousContainerDatabase get(String name, Output<String> id, @Nullable AutonomousContainerDatabaseState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static AutonomousContainerDatabase get(java.lang.String name, Output<java.lang.String> id, @Nullable AutonomousContainerDatabaseState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new AutonomousContainerDatabase(name, id, state, options);
     }
 }

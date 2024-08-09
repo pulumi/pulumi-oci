@@ -671,7 +671,7 @@ class FusionEnvironment(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  additional_language_packs: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 create_fusion_environment_admin_user_details: Optional[pulumi.Input[pulumi.InputType['FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs']]] = None,
+                 create_fusion_environment_admin_user_details: Optional[pulumi.Input[Union['FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs', 'FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgsDict']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  dns_prefix: Optional[pulumi.Input[str]] = None,
@@ -679,8 +679,8 @@ class FusionEnvironment(pulumi.CustomResource):
                  fusion_environment_family_id: Optional[pulumi.Input[str]] = None,
                  fusion_environment_type: Optional[pulumi.Input[str]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
-                 maintenance_policy: Optional[pulumi.Input[pulumi.InputType['FusionEnvironmentMaintenancePolicyArgs']]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['FusionEnvironmentRuleArgs']]]]] = None,
+                 maintenance_policy: Optional[pulumi.Input[Union['FusionEnvironmentMaintenancePolicyArgs', 'FusionEnvironmentMaintenancePolicyArgsDict']]] = None,
+                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FusionEnvironmentRuleArgs', 'FusionEnvironmentRuleArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Fusion Environment resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -695,13 +695,13 @@ class FusionEnvironment(pulumi.CustomResource):
 
         test_fusion_environment = oci.fusion_apps.FusionEnvironment("test_fusion_environment",
             compartment_id=compartment_id,
-            create_fusion_environment_admin_user_details=oci.fusion_apps.FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs(
-                email_address=fusion_environment_create_fusion_environment_admin_user_details_email_address,
-                first_name=fusion_environment_create_fusion_environment_admin_user_details_first_name,
-                last_name=fusion_environment_create_fusion_environment_admin_user_details_last_name,
-                password=fusion_environment_create_fusion_environment_admin_user_details_password,
-                username=fusion_environment_create_fusion_environment_admin_user_details_username,
-            ),
+            create_fusion_environment_admin_user_details={
+                "email_address": fusion_environment_create_fusion_environment_admin_user_details_email_address,
+                "first_name": fusion_environment_create_fusion_environment_admin_user_details_first_name,
+                "last_name": fusion_environment_create_fusion_environment_admin_user_details_last_name,
+                "password": fusion_environment_create_fusion_environment_admin_user_details_password,
+                "username": fusion_environment_create_fusion_environment_admin_user_details_username,
+            },
             display_name=fusion_environment_display_name,
             fusion_environment_family_id=test_fusion_environment_family["id"],
             fusion_environment_type=fusion_environment_fusion_environment_type,
@@ -714,18 +714,18 @@ class FusionEnvironment(pulumi.CustomResource):
                 "bar-key": "value",
             },
             kms_key_id=test_key["id"],
-            maintenance_policy=oci.fusion_apps.FusionEnvironmentMaintenancePolicyArgs(
-                environment_maintenance_override=fusion_environment_maintenance_policy_environment_maintenance_override,
-                monthly_patching_override=fusion_environment_maintenance_policy_monthly_patching_override,
-            ),
-            rules=[oci.fusion_apps.FusionEnvironmentRuleArgs(
-                action=fusion_environment_rules_action,
-                conditions=[oci.fusion_apps.FusionEnvironmentRuleConditionArgs(
-                    attribute_name=fusion_environment_rules_conditions_attribute_name,
-                    attribute_value=fusion_environment_rules_conditions_attribute_value,
-                )],
-                description=fusion_environment_rules_description,
-            )])
+            maintenance_policy={
+                "environment_maintenance_override": fusion_environment_maintenance_policy_environment_maintenance_override,
+                "monthly_patching_override": fusion_environment_maintenance_policy_monthly_patching_override,
+            },
+            rules=[{
+                "action": fusion_environment_rules_action,
+                "conditions": [{
+                    "attribute_name": fusion_environment_rules_conditions_attribute_name,
+                    "attribute_value": fusion_environment_rules_conditions_attribute_value,
+                }],
+                "description": fusion_environment_rules_description,
+            }])
         ```
 
         ## Import
@@ -740,7 +740,7 @@ class FusionEnvironment(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] additional_language_packs: (Updatable) Language packs.
         :param pulumi.Input[str] compartment_id: (Updatable) The unique identifier (OCID) of the compartment where the Fusion Environment is located.
-        :param pulumi.Input[pulumi.InputType['FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs']] create_fusion_environment_admin_user_details: The credentials for the Fusion Applications service administrator.
+        :param pulumi.Input[Union['FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs', 'FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgsDict']] create_fusion_environment_admin_user_details: The credentials for the Fusion Applications service administrator.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) FusionEnvironment Identifier can be renamed.
         :param pulumi.Input[str] dns_prefix: DNS prefix.
@@ -748,8 +748,8 @@ class FusionEnvironment(pulumi.CustomResource):
         :param pulumi.Input[str] fusion_environment_family_id: The unique identifier (OCID) of the Fusion Environment Family that the Fusion Environment belongs to.
         :param pulumi.Input[str] fusion_environment_type: The type of environment. Valid values are Production, Test, or Development.
         :param pulumi.Input[str] kms_key_id: (Updatable) byok kms keyId
-        :param pulumi.Input[pulumi.InputType['FusionEnvironmentMaintenancePolicyArgs']] maintenance_policy: (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['FusionEnvironmentRuleArgs']]]] rules: (Updatable) Rules.
+        :param pulumi.Input[Union['FusionEnvironmentMaintenancePolicyArgs', 'FusionEnvironmentMaintenancePolicyArgsDict']] maintenance_policy: (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FusionEnvironmentRuleArgs', 'FusionEnvironmentRuleArgsDict']]]] rules: (Updatable) Rules.
         """
         ...
     @overload
@@ -770,13 +770,13 @@ class FusionEnvironment(pulumi.CustomResource):
 
         test_fusion_environment = oci.fusion_apps.FusionEnvironment("test_fusion_environment",
             compartment_id=compartment_id,
-            create_fusion_environment_admin_user_details=oci.fusion_apps.FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs(
-                email_address=fusion_environment_create_fusion_environment_admin_user_details_email_address,
-                first_name=fusion_environment_create_fusion_environment_admin_user_details_first_name,
-                last_name=fusion_environment_create_fusion_environment_admin_user_details_last_name,
-                password=fusion_environment_create_fusion_environment_admin_user_details_password,
-                username=fusion_environment_create_fusion_environment_admin_user_details_username,
-            ),
+            create_fusion_environment_admin_user_details={
+                "email_address": fusion_environment_create_fusion_environment_admin_user_details_email_address,
+                "first_name": fusion_environment_create_fusion_environment_admin_user_details_first_name,
+                "last_name": fusion_environment_create_fusion_environment_admin_user_details_last_name,
+                "password": fusion_environment_create_fusion_environment_admin_user_details_password,
+                "username": fusion_environment_create_fusion_environment_admin_user_details_username,
+            },
             display_name=fusion_environment_display_name,
             fusion_environment_family_id=test_fusion_environment_family["id"],
             fusion_environment_type=fusion_environment_fusion_environment_type,
@@ -789,18 +789,18 @@ class FusionEnvironment(pulumi.CustomResource):
                 "bar-key": "value",
             },
             kms_key_id=test_key["id"],
-            maintenance_policy=oci.fusion_apps.FusionEnvironmentMaintenancePolicyArgs(
-                environment_maintenance_override=fusion_environment_maintenance_policy_environment_maintenance_override,
-                monthly_patching_override=fusion_environment_maintenance_policy_monthly_patching_override,
-            ),
-            rules=[oci.fusion_apps.FusionEnvironmentRuleArgs(
-                action=fusion_environment_rules_action,
-                conditions=[oci.fusion_apps.FusionEnvironmentRuleConditionArgs(
-                    attribute_name=fusion_environment_rules_conditions_attribute_name,
-                    attribute_value=fusion_environment_rules_conditions_attribute_value,
-                )],
-                description=fusion_environment_rules_description,
-            )])
+            maintenance_policy={
+                "environment_maintenance_override": fusion_environment_maintenance_policy_environment_maintenance_override,
+                "monthly_patching_override": fusion_environment_maintenance_policy_monthly_patching_override,
+            },
+            rules=[{
+                "action": fusion_environment_rules_action,
+                "conditions": [{
+                    "attribute_name": fusion_environment_rules_conditions_attribute_name,
+                    "attribute_value": fusion_environment_rules_conditions_attribute_value,
+                }],
+                "description": fusion_environment_rules_description,
+            }])
         ```
 
         ## Import
@@ -828,7 +828,7 @@ class FusionEnvironment(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  additional_language_packs: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 create_fusion_environment_admin_user_details: Optional[pulumi.Input[pulumi.InputType['FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs']]] = None,
+                 create_fusion_environment_admin_user_details: Optional[pulumi.Input[Union['FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs', 'FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgsDict']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  dns_prefix: Optional[pulumi.Input[str]] = None,
@@ -836,8 +836,8 @@ class FusionEnvironment(pulumi.CustomResource):
                  fusion_environment_family_id: Optional[pulumi.Input[str]] = None,
                  fusion_environment_type: Optional[pulumi.Input[str]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
-                 maintenance_policy: Optional[pulumi.Input[pulumi.InputType['FusionEnvironmentMaintenancePolicyArgs']]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['FusionEnvironmentRuleArgs']]]]] = None,
+                 maintenance_policy: Optional[pulumi.Input[Union['FusionEnvironmentMaintenancePolicyArgs', 'FusionEnvironmentMaintenancePolicyArgsDict']]] = None,
+                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FusionEnvironmentRuleArgs', 'FusionEnvironmentRuleArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -898,7 +898,7 @@ class FusionEnvironment(pulumi.CustomResource):
             additional_language_packs: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             applied_patch_bundles: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            create_fusion_environment_admin_user_details: Optional[pulumi.Input[pulumi.InputType['FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs']]] = None,
+            create_fusion_environment_admin_user_details: Optional[pulumi.Input[Union['FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs', 'FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgsDict']]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             dns_prefix: Optional[pulumi.Input[str]] = None,
@@ -909,13 +909,13 @@ class FusionEnvironment(pulumi.CustomResource):
             idcs_domain_url: Optional[pulumi.Input[str]] = None,
             is_break_glass_enabled: Optional[pulumi.Input[bool]] = None,
             kms_key_id: Optional[pulumi.Input[str]] = None,
-            kms_key_infos: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['FusionEnvironmentKmsKeyInfoArgs']]]]] = None,
+            kms_key_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FusionEnvironmentKmsKeyInfoArgs', 'FusionEnvironmentKmsKeyInfoArgsDict']]]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             lockbox_id: Optional[pulumi.Input[str]] = None,
-            maintenance_policy: Optional[pulumi.Input[pulumi.InputType['FusionEnvironmentMaintenancePolicyArgs']]] = None,
+            maintenance_policy: Optional[pulumi.Input[Union['FusionEnvironmentMaintenancePolicyArgs', 'FusionEnvironmentMaintenancePolicyArgsDict']]] = None,
             public_url: Optional[pulumi.Input[str]] = None,
-            refreshes: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['FusionEnvironmentRefreshArgs']]]]] = None,
-            rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['FusionEnvironmentRuleArgs']]]]] = None,
+            refreshes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FusionEnvironmentRefreshArgs', 'FusionEnvironmentRefreshArgsDict']]]]] = None,
+            rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FusionEnvironmentRuleArgs', 'FusionEnvironmentRuleArgsDict']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             subscription_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             system_name: Optional[pulumi.Input[str]] = None,
@@ -933,7 +933,7 @@ class FusionEnvironment(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] additional_language_packs: (Updatable) Language packs.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] applied_patch_bundles: Patch bundle names
         :param pulumi.Input[str] compartment_id: (Updatable) The unique identifier (OCID) of the compartment where the Fusion Environment is located.
-        :param pulumi.Input[pulumi.InputType['FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs']] create_fusion_environment_admin_user_details: The credentials for the Fusion Applications service administrator.
+        :param pulumi.Input[Union['FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs', 'FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgsDict']] create_fusion_environment_admin_user_details: The credentials for the Fusion Applications service administrator.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) FusionEnvironment Identifier can be renamed.
         :param pulumi.Input[str] dns_prefix: DNS prefix.
@@ -944,13 +944,13 @@ class FusionEnvironment(pulumi.CustomResource):
         :param pulumi.Input[str] idcs_domain_url: The IDCS Domain URL
         :param pulumi.Input[bool] is_break_glass_enabled: If it's true, then the Break Glass feature is enabled
         :param pulumi.Input[str] kms_key_id: (Updatable) byok kms keyId
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['FusionEnvironmentKmsKeyInfoArgs']]]] kms_key_infos: BYOK key info
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FusionEnvironmentKmsKeyInfoArgs', 'FusionEnvironmentKmsKeyInfoArgsDict']]]] kms_key_infos: BYOK key info
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] lockbox_id: The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
-        :param pulumi.Input[pulumi.InputType['FusionEnvironmentMaintenancePolicyArgs']] maintenance_policy: (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
+        :param pulumi.Input[Union['FusionEnvironmentMaintenancePolicyArgs', 'FusionEnvironmentMaintenancePolicyArgsDict']] maintenance_policy: (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
         :param pulumi.Input[str] public_url: Public URL
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['FusionEnvironmentRefreshArgs']]]] refreshes: Describes a refresh of a fusion environment
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['FusionEnvironmentRuleArgs']]]] rules: (Updatable) Rules.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FusionEnvironmentRefreshArgs', 'FusionEnvironmentRefreshArgsDict']]]] refreshes: Describes a refresh of a fusion environment
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FusionEnvironmentRuleArgs', 'FusionEnvironmentRuleArgsDict']]]] rules: (Updatable) Rules.
         :param pulumi.Input[str] state: The current state of the ServiceInstance.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] subscription_ids: List of subscription IDs.
         :param pulumi.Input[str] system_name: Environment Specific Guid/ System Name

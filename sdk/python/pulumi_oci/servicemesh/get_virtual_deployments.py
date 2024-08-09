@@ -116,7 +116,7 @@ class AwaitableGetVirtualDeploymentsResult(GetVirtualDeploymentsResult):
 
 
 def get_virtual_deployments(compartment_id: Optional[str] = None,
-                            filters: Optional[Sequence[pulumi.InputType['GetVirtualDeploymentsFilterArgs']]] = None,
+                            filters: Optional[Sequence[Union['GetVirtualDeploymentsFilterArgs', 'GetVirtualDeploymentsFilterArgsDict']]] = None,
                             id: Optional[str] = None,
                             name: Optional[str] = None,
                             state: Optional[str] = None,
@@ -169,7 +169,7 @@ def get_virtual_deployments(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_virtual_deployments)
 def get_virtual_deployments_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetVirtualDeploymentsFilterArgs']]]]] = None,
+                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVirtualDeploymentsFilterArgs', 'GetVirtualDeploymentsFilterArgsDict']]]]] = None,
                                    id: Optional[pulumi.Input[Optional[str]]] = None,
                                    name: Optional[pulumi.Input[Optional[str]]] = None,
                                    state: Optional[pulumi.Input[Optional[str]]] = None,

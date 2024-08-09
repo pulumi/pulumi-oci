@@ -117,7 +117,7 @@ class AwaitableGetDrgRouteTablesResult(GetDrgRouteTablesResult):
 
 def get_drg_route_tables(display_name: Optional[str] = None,
                          drg_id: Optional[str] = None,
-                         filters: Optional[Sequence[pulumi.InputType['GetDrgRouteTablesFilterArgs']]] = None,
+                         filters: Optional[Sequence[Union['GetDrgRouteTablesFilterArgs', 'GetDrgRouteTablesFilterArgsDict']]] = None,
                          import_drg_route_distribution_id: Optional[str] = None,
                          state: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDrgRouteTablesResult:
@@ -168,7 +168,7 @@ def get_drg_route_tables(display_name: Optional[str] = None,
 @_utilities.lift_output_func(get_drg_route_tables)
 def get_drg_route_tables_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                 drg_id: Optional[pulumi.Input[str]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDrgRouteTablesFilterArgs']]]]] = None,
+                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDrgRouteTablesFilterArgs', 'GetDrgRouteTablesFilterArgsDict']]]]] = None,
                                 import_drg_route_distribution_id: Optional[pulumi.Input[Optional[str]]] = None,
                                 state: Optional[pulumi.Input[Optional[str]]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDrgRouteTablesResult]:

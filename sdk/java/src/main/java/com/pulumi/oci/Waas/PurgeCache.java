@@ -103,7 +103,7 @@ public class PurgeCache extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public PurgeCache(String name) {
+    public PurgeCache(java.lang.String name) {
         this(name, PurgeCacheArgs.Empty);
     }
     /**
@@ -111,7 +111,7 @@ public class PurgeCache extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public PurgeCache(String name, PurgeCacheArgs args) {
+    public PurgeCache(java.lang.String name, PurgeCacheArgs args) {
         this(name, args, null);
     }
     /**
@@ -120,12 +120,12 @@ public class PurgeCache extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public PurgeCache(String name, PurgeCacheArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Waas/purgeCache:PurgeCache", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public PurgeCache(java.lang.String name, PurgeCacheArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Waas/purgeCache:PurgeCache", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private PurgeCache(String name, Output<String> id, @Nullable PurgeCacheState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Waas/purgeCache:PurgeCache", name, state, makeResourceOptions(options, id));
+    private PurgeCache(java.lang.String name, Output<java.lang.String> id, @Nullable PurgeCacheState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Waas/purgeCache:PurgeCache", name, state, makeResourceOptions(options, id), false);
     }
 
     private static PurgeCacheArgs makeArgs(PurgeCacheArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -135,7 +135,7 @@ public class PurgeCache extends com.pulumi.resources.CustomResource {
         return args == null ? PurgeCacheArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -151,7 +151,7 @@ public class PurgeCache extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static PurgeCache get(String name, Output<String> id, @Nullable PurgeCacheState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static PurgeCache get(java.lang.String name, Output<java.lang.String> id, @Nullable PurgeCacheState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new PurgeCache(name, id, state, options);
     }
 }

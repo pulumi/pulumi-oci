@@ -289,7 +289,7 @@ public class LocalPeeringGateway extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public LocalPeeringGateway(String name) {
+    public LocalPeeringGateway(java.lang.String name) {
         this(name, LocalPeeringGatewayArgs.Empty);
     }
     /**
@@ -297,7 +297,7 @@ public class LocalPeeringGateway extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public LocalPeeringGateway(String name, LocalPeeringGatewayArgs args) {
+    public LocalPeeringGateway(java.lang.String name, LocalPeeringGatewayArgs args) {
         this(name, args, null);
     }
     /**
@@ -306,12 +306,12 @@ public class LocalPeeringGateway extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public LocalPeeringGateway(String name, LocalPeeringGatewayArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/localPeeringGateway:LocalPeeringGateway", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public LocalPeeringGateway(java.lang.String name, LocalPeeringGatewayArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Core/localPeeringGateway:LocalPeeringGateway", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private LocalPeeringGateway(String name, Output<String> id, @Nullable LocalPeeringGatewayState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/localPeeringGateway:LocalPeeringGateway", name, state, makeResourceOptions(options, id));
+    private LocalPeeringGateway(java.lang.String name, Output<java.lang.String> id, @Nullable LocalPeeringGatewayState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Core/localPeeringGateway:LocalPeeringGateway", name, state, makeResourceOptions(options, id), false);
     }
 
     private static LocalPeeringGatewayArgs makeArgs(LocalPeeringGatewayArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -321,7 +321,7 @@ public class LocalPeeringGateway extends com.pulumi.resources.CustomResource {
         return args == null ? LocalPeeringGatewayArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -337,7 +337,7 @@ public class LocalPeeringGateway extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static LocalPeeringGateway get(String name, Output<String> id, @Nullable LocalPeeringGatewayState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static LocalPeeringGateway get(java.lang.String name, Output<java.lang.String> id, @Nullable LocalPeeringGatewayState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new LocalPeeringGateway(name, id, state, options);
     }
 }

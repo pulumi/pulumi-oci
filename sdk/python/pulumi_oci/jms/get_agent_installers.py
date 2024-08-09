@@ -110,7 +110,7 @@ class AwaitableGetAgentInstallersResult(GetAgentInstallersResult):
 
 
 def get_agent_installers(compartment_id: Optional[str] = None,
-                         filters: Optional[Sequence[pulumi.InputType['GetAgentInstallersFilterArgs']]] = None,
+                         filters: Optional[Sequence[Union['GetAgentInstallersFilterArgs', 'GetAgentInstallersFilterArgsDict']]] = None,
                          fleet_id: Optional[str] = None,
                          os_family: Optional[str] = None,
                          platform_architecture: Optional[str] = None,
@@ -159,7 +159,7 @@ def get_agent_installers(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_agent_installers)
 def get_agent_installers_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAgentInstallersFilterArgs']]]]] = None,
+                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAgentInstallersFilterArgs', 'GetAgentInstallersFilterArgsDict']]]]] = None,
                                 fleet_id: Optional[pulumi.Input[Optional[str]]] = None,
                                 os_family: Optional[pulumi.Input[Optional[str]]] = None,
                                 platform_architecture: Optional[pulumi.Input[Optional[str]]] = None,

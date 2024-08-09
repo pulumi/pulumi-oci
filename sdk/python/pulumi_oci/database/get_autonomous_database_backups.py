@@ -130,7 +130,7 @@ class AwaitableGetAutonomousDatabaseBackupsResult(GetAutonomousDatabaseBackupsRe
 def get_autonomous_database_backups(autonomous_database_id: Optional[str] = None,
                                     compartment_id: Optional[str] = None,
                                     display_name: Optional[str] = None,
-                                    filters: Optional[Sequence[pulumi.InputType['GetAutonomousDatabaseBackupsFilterArgs']]] = None,
+                                    filters: Optional[Sequence[Union['GetAutonomousDatabaseBackupsFilterArgs', 'GetAutonomousDatabaseBackupsFilterArgsDict']]] = None,
                                     state: Optional[str] = None,
                                     type: Optional[str] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousDatabaseBackupsResult:
@@ -184,7 +184,7 @@ def get_autonomous_database_backups(autonomous_database_id: Optional[str] = None
 def get_autonomous_database_backups_output(autonomous_database_id: Optional[pulumi.Input[Optional[str]]] = None,
                                            compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                            display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                           filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAutonomousDatabaseBackupsFilterArgs']]]]] = None,
+                                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutonomousDatabaseBackupsFilterArgs', 'GetAutonomousDatabaseBackupsFilterArgsDict']]]]] = None,
                                            state: Optional[pulumi.Input[Optional[str]]] = None,
                                            type: Optional[pulumi.Input[Optional[str]]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousDatabaseBackupsResult]:

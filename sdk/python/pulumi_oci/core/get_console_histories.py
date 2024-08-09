@@ -117,7 +117,7 @@ class AwaitableGetConsoleHistoriesResult(GetConsoleHistoriesResult):
 
 def get_console_histories(availability_domain: Optional[str] = None,
                           compartment_id: Optional[str] = None,
-                          filters: Optional[Sequence[pulumi.InputType['GetConsoleHistoriesFilterArgs']]] = None,
+                          filters: Optional[Sequence[Union['GetConsoleHistoriesFilterArgs', 'GetConsoleHistoriesFilterArgsDict']]] = None,
                           instance_id: Optional[str] = None,
                           state: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetConsoleHistoriesResult:
@@ -166,7 +166,7 @@ def get_console_histories(availability_domain: Optional[str] = None,
 @_utilities.lift_output_func(get_console_histories)
 def get_console_histories_output(availability_domain: Optional[pulumi.Input[Optional[str]]] = None,
                                  compartment_id: Optional[pulumi.Input[str]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetConsoleHistoriesFilterArgs']]]]] = None,
+                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetConsoleHistoriesFilterArgs', 'GetConsoleHistoriesFilterArgsDict']]]]] = None,
                                  instance_id: Optional[pulumi.Input[Optional[str]]] = None,
                                  state: Optional[pulumi.Input[Optional[str]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConsoleHistoriesResult]:

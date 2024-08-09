@@ -113,7 +113,7 @@ class AwaitableGetRepositoryPathsResult(GetRepositoryPathsResult):
 
 
 def get_repository_paths(display_name: Optional[str] = None,
-                         filters: Optional[Sequence[pulumi.InputType['GetRepositoryPathsFilterArgs']]] = None,
+                         filters: Optional[Sequence[Union['GetRepositoryPathsFilterArgs', 'GetRepositoryPathsFilterArgsDict']]] = None,
                          folder_path: Optional[str] = None,
                          paths_in_subtree: Optional[bool] = None,
                          ref: Optional[str] = None,
@@ -167,7 +167,7 @@ def get_repository_paths(display_name: Optional[str] = None,
 
 @_utilities.lift_output_func(get_repository_paths)
 def get_repository_paths_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetRepositoryPathsFilterArgs']]]]] = None,
+                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRepositoryPathsFilterArgs', 'GetRepositoryPathsFilterArgsDict']]]]] = None,
                                 folder_path: Optional[pulumi.Input[Optional[str]]] = None,
                                 paths_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                                 ref: Optional[pulumi.Input[Optional[str]]] = None,

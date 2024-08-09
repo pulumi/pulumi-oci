@@ -218,7 +218,7 @@ public class UsageCarbonEmission extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public UsageCarbonEmission(String name) {
+    public UsageCarbonEmission(java.lang.String name) {
         this(name, UsageCarbonEmissionArgs.Empty);
     }
     /**
@@ -226,7 +226,7 @@ public class UsageCarbonEmission extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public UsageCarbonEmission(String name, UsageCarbonEmissionArgs args) {
+    public UsageCarbonEmission(java.lang.String name, UsageCarbonEmissionArgs args) {
         this(name, args, null);
     }
     /**
@@ -235,12 +235,12 @@ public class UsageCarbonEmission extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public UsageCarbonEmission(String name, UsageCarbonEmissionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:MeteringComputation/usageCarbonEmission:UsageCarbonEmission", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public UsageCarbonEmission(java.lang.String name, UsageCarbonEmissionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:MeteringComputation/usageCarbonEmission:UsageCarbonEmission", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private UsageCarbonEmission(String name, Output<String> id, @Nullable UsageCarbonEmissionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:MeteringComputation/usageCarbonEmission:UsageCarbonEmission", name, state, makeResourceOptions(options, id));
+    private UsageCarbonEmission(java.lang.String name, Output<java.lang.String> id, @Nullable UsageCarbonEmissionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:MeteringComputation/usageCarbonEmission:UsageCarbonEmission", name, state, makeResourceOptions(options, id), false);
     }
 
     private static UsageCarbonEmissionArgs makeArgs(UsageCarbonEmissionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -250,7 +250,7 @@ public class UsageCarbonEmission extends com.pulumi.resources.CustomResource {
         return args == null ? UsageCarbonEmissionArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -266,7 +266,7 @@ public class UsageCarbonEmission extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static UsageCarbonEmission get(String name, Output<String> id, @Nullable UsageCarbonEmissionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static UsageCarbonEmission get(java.lang.String name, Output<java.lang.String> id, @Nullable UsageCarbonEmissionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new UsageCarbonEmission(name, id, state, options);
     }
 }

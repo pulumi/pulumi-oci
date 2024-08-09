@@ -104,7 +104,7 @@ class AwaitableGetDynamicGroupsResult(GetDynamicGroupsResult):
 
 
 def get_dynamic_groups(compartment_id: Optional[str] = None,
-                       filters: Optional[Sequence[pulumi.InputType['GetDynamicGroupsFilterArgs']]] = None,
+                       filters: Optional[Sequence[Union['GetDynamicGroupsFilterArgs', 'GetDynamicGroupsFilterArgsDict']]] = None,
                        name: Optional[str] = None,
                        state: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDynamicGroupsResult:
@@ -150,7 +150,7 @@ def get_dynamic_groups(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_dynamic_groups)
 def get_dynamic_groups_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                              filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDynamicGroupsFilterArgs']]]]] = None,
+                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDynamicGroupsFilterArgs', 'GetDynamicGroupsFilterArgsDict']]]]] = None,
                               name: Optional[pulumi.Input[Optional[str]]] = None,
                               state: Optional[pulumi.Input[Optional[str]]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDynamicGroupsResult]:

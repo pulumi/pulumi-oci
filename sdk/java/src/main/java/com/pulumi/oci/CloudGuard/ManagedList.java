@@ -266,7 +266,7 @@ public class ManagedList extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ManagedList(String name) {
+    public ManagedList(java.lang.String name) {
         this(name, ManagedListArgs.Empty);
     }
     /**
@@ -274,7 +274,7 @@ public class ManagedList extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ManagedList(String name, ManagedListArgs args) {
+    public ManagedList(java.lang.String name, ManagedListArgs args) {
         this(name, args, null);
     }
     /**
@@ -283,12 +283,12 @@ public class ManagedList extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ManagedList(String name, ManagedListArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:CloudGuard/managedList:ManagedList", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ManagedList(java.lang.String name, ManagedListArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:CloudGuard/managedList:ManagedList", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ManagedList(String name, Output<String> id, @Nullable ManagedListState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:CloudGuard/managedList:ManagedList", name, state, makeResourceOptions(options, id));
+    private ManagedList(java.lang.String name, Output<java.lang.String> id, @Nullable ManagedListState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:CloudGuard/managedList:ManagedList", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ManagedListArgs makeArgs(ManagedListArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -298,7 +298,7 @@ public class ManagedList extends com.pulumi.resources.CustomResource {
         return args == null ? ManagedListArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -314,7 +314,7 @@ public class ManagedList extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ManagedList get(String name, Output<String> id, @Nullable ManagedListState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ManagedList get(java.lang.String name, Output<java.lang.String> id, @Nullable ManagedListState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ManagedList(name, id, state, options);
     }
 }

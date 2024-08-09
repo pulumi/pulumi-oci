@@ -751,7 +751,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public InvokeRun(String name) {
+    public InvokeRun(java.lang.String name) {
         this(name, InvokeRunArgs.Empty);
     }
     /**
@@ -759,7 +759,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public InvokeRun(String name, InvokeRunArgs args) {
+    public InvokeRun(java.lang.String name, InvokeRunArgs args) {
         this(name, args, null);
     }
     /**
@@ -768,12 +768,12 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public InvokeRun(String name, InvokeRunArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataFlow/invokeRun:InvokeRun", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public InvokeRun(java.lang.String name, InvokeRunArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataFlow/invokeRun:InvokeRun", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private InvokeRun(String name, Output<String> id, @Nullable InvokeRunState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataFlow/invokeRun:InvokeRun", name, state, makeResourceOptions(options, id));
+    private InvokeRun(java.lang.String name, Output<java.lang.String> id, @Nullable InvokeRunState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataFlow/invokeRun:InvokeRun", name, state, makeResourceOptions(options, id), false);
     }
 
     private static InvokeRunArgs makeArgs(InvokeRunArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -783,7 +783,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
         return args == null ? InvokeRunArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -799,7 +799,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static InvokeRun get(String name, Output<String> id, @Nullable InvokeRunState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static InvokeRun get(java.lang.String name, Output<java.lang.String> id, @Nullable InvokeRunState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new InvokeRun(name, id, state, options);
     }
 }

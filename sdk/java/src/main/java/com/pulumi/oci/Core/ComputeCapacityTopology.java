@@ -218,7 +218,7 @@ public class ComputeCapacityTopology extends com.pulumi.resources.CustomResource
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ComputeCapacityTopology(String name) {
+    public ComputeCapacityTopology(java.lang.String name) {
         this(name, ComputeCapacityTopologyArgs.Empty);
     }
     /**
@@ -226,7 +226,7 @@ public class ComputeCapacityTopology extends com.pulumi.resources.CustomResource
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ComputeCapacityTopology(String name, ComputeCapacityTopologyArgs args) {
+    public ComputeCapacityTopology(java.lang.String name, ComputeCapacityTopologyArgs args) {
         this(name, args, null);
     }
     /**
@@ -235,12 +235,12 @@ public class ComputeCapacityTopology extends com.pulumi.resources.CustomResource
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ComputeCapacityTopology(String name, ComputeCapacityTopologyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/computeCapacityTopology:ComputeCapacityTopology", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ComputeCapacityTopology(java.lang.String name, ComputeCapacityTopologyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Core/computeCapacityTopology:ComputeCapacityTopology", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ComputeCapacityTopology(String name, Output<String> id, @Nullable ComputeCapacityTopologyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/computeCapacityTopology:ComputeCapacityTopology", name, state, makeResourceOptions(options, id));
+    private ComputeCapacityTopology(java.lang.String name, Output<java.lang.String> id, @Nullable ComputeCapacityTopologyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Core/computeCapacityTopology:ComputeCapacityTopology", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ComputeCapacityTopologyArgs makeArgs(ComputeCapacityTopologyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -250,7 +250,7 @@ public class ComputeCapacityTopology extends com.pulumi.resources.CustomResource
         return args == null ? ComputeCapacityTopologyArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -266,7 +266,7 @@ public class ComputeCapacityTopology extends com.pulumi.resources.CustomResource
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ComputeCapacityTopology get(String name, Output<String> id, @Nullable ComputeCapacityTopologyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ComputeCapacityTopology get(java.lang.String name, Output<java.lang.String> id, @Nullable ComputeCapacityTopologyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ComputeCapacityTopology(name, id, state, options);
     }
 }

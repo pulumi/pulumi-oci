@@ -337,7 +337,7 @@ public class NewsReport extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public NewsReport(String name) {
+    public NewsReport(java.lang.String name) {
         this(name, NewsReportArgs.Empty);
     }
     /**
@@ -345,7 +345,7 @@ public class NewsReport extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public NewsReport(String name, NewsReportArgs args) {
+    public NewsReport(java.lang.String name, NewsReportArgs args) {
         this(name, args, null);
     }
     /**
@@ -354,12 +354,12 @@ public class NewsReport extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public NewsReport(String name, NewsReportArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Opsi/newsReport:NewsReport", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public NewsReport(java.lang.String name, NewsReportArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Opsi/newsReport:NewsReport", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private NewsReport(String name, Output<String> id, @Nullable NewsReportState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Opsi/newsReport:NewsReport", name, state, makeResourceOptions(options, id));
+    private NewsReport(java.lang.String name, Output<java.lang.String> id, @Nullable NewsReportState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Opsi/newsReport:NewsReport", name, state, makeResourceOptions(options, id), false);
     }
 
     private static NewsReportArgs makeArgs(NewsReportArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -369,7 +369,7 @@ public class NewsReport extends com.pulumi.resources.CustomResource {
         return args == null ? NewsReportArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -385,7 +385,7 @@ public class NewsReport extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static NewsReport get(String name, Output<String> id, @Nullable NewsReportState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static NewsReport get(java.lang.String name, Output<java.lang.String> id, @Nullable NewsReportState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new NewsReport(name, id, state, options);
     }
 }

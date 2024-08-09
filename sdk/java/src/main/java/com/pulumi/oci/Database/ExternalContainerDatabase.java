@@ -335,7 +335,7 @@ public class ExternalContainerDatabase extends com.pulumi.resources.CustomResour
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ExternalContainerDatabase(String name) {
+    public ExternalContainerDatabase(java.lang.String name) {
         this(name, ExternalContainerDatabaseArgs.Empty);
     }
     /**
@@ -343,7 +343,7 @@ public class ExternalContainerDatabase extends com.pulumi.resources.CustomResour
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ExternalContainerDatabase(String name, ExternalContainerDatabaseArgs args) {
+    public ExternalContainerDatabase(java.lang.String name, ExternalContainerDatabaseArgs args) {
         this(name, args, null);
     }
     /**
@@ -352,12 +352,12 @@ public class ExternalContainerDatabase extends com.pulumi.resources.CustomResour
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ExternalContainerDatabase(String name, ExternalContainerDatabaseArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/externalContainerDatabase:ExternalContainerDatabase", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ExternalContainerDatabase(java.lang.String name, ExternalContainerDatabaseArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/externalContainerDatabase:ExternalContainerDatabase", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ExternalContainerDatabase(String name, Output<String> id, @Nullable ExternalContainerDatabaseState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/externalContainerDatabase:ExternalContainerDatabase", name, state, makeResourceOptions(options, id));
+    private ExternalContainerDatabase(java.lang.String name, Output<java.lang.String> id, @Nullable ExternalContainerDatabaseState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/externalContainerDatabase:ExternalContainerDatabase", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ExternalContainerDatabaseArgs makeArgs(ExternalContainerDatabaseArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -367,7 +367,7 @@ public class ExternalContainerDatabase extends com.pulumi.resources.CustomResour
         return args == null ? ExternalContainerDatabaseArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -383,7 +383,7 @@ public class ExternalContainerDatabase extends com.pulumi.resources.CustomResour
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ExternalContainerDatabase get(String name, Output<String> id, @Nullable ExternalContainerDatabaseState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ExternalContainerDatabase get(java.lang.String name, Output<java.lang.String> id, @Nullable ExternalContainerDatabaseState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ExternalContainerDatabase(name, id, state, options);
     }
 }

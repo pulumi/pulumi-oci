@@ -472,7 +472,7 @@ class NamespaceScheduledTask(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action: Optional[pulumi.Input[pulumi.InputType['NamespaceScheduledTaskActionArgs']]] = None,
+                 action: Optional[pulumi.Input[Union['NamespaceScheduledTaskActionArgs', 'NamespaceScheduledTaskActionArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -480,7 +480,7 @@ class NamespaceScheduledTask(pulumi.CustomResource):
                  kind: Optional[pulumi.Input[str]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  saved_search_id: Optional[pulumi.Input[str]] = None,
-                 schedules: Optional[pulumi.Input[pulumi.InputType['NamespaceScheduledTaskSchedulesArgs']]] = None,
+                 schedules: Optional[pulumi.Input[Union['NamespaceScheduledTaskSchedulesArgs', 'NamespaceScheduledTaskSchedulesArgsDict']]] = None,
                  task_type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -498,7 +498,7 @@ class NamespaceScheduledTask(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['NamespaceScheduledTaskActionArgs']] action: Action for scheduled task.
+        :param pulumi.Input[Union['NamespaceScheduledTaskActionArgs', 'NamespaceScheduledTaskActionArgsDict']] action: Action for scheduled task.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
@@ -506,7 +506,7 @@ class NamespaceScheduledTask(pulumi.CustomResource):
         :param pulumi.Input[str] kind: (Updatable) Discriminator.
         :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
         :param pulumi.Input[str] saved_search_id: The ManagementSavedSearch id [OCID] to be accelerated.
-        :param pulumi.Input[pulumi.InputType['NamespaceScheduledTaskSchedulesArgs']] schedules: (Updatable) Schedules, typically a single schedule. Note there may only be a single schedule for SAVED_SEARCH and PURGE scheduled tasks.
+        :param pulumi.Input[Union['NamespaceScheduledTaskSchedulesArgs', 'NamespaceScheduledTaskSchedulesArgsDict']] schedules: (Updatable) Schedules, typically a single schedule. Note there may only be a single schedule for SAVED_SEARCH and PURGE scheduled tasks.
         :param pulumi.Input[str] task_type: Task type.
                
                
@@ -547,7 +547,7 @@ class NamespaceScheduledTask(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action: Optional[pulumi.Input[pulumi.InputType['NamespaceScheduledTaskActionArgs']]] = None,
+                 action: Optional[pulumi.Input[Union['NamespaceScheduledTaskActionArgs', 'NamespaceScheduledTaskActionArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -555,7 +555,7 @@ class NamespaceScheduledTask(pulumi.CustomResource):
                  kind: Optional[pulumi.Input[str]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  saved_search_id: Optional[pulumi.Input[str]] = None,
-                 schedules: Optional[pulumi.Input[pulumi.InputType['NamespaceScheduledTaskSchedulesArgs']]] = None,
+                 schedules: Optional[pulumi.Input[Union['NamespaceScheduledTaskSchedulesArgs', 'NamespaceScheduledTaskSchedulesArgsDict']]] = None,
                  task_type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -605,7 +605,7 @@ class NamespaceScheduledTask(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            action: Optional[pulumi.Input[pulumi.InputType['NamespaceScheduledTaskActionArgs']]] = None,
+            action: Optional[pulumi.Input[Union['NamespaceScheduledTaskActionArgs', 'NamespaceScheduledTaskActionArgsDict']]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
@@ -615,7 +615,7 @@ class NamespaceScheduledTask(pulumi.CustomResource):
             num_occurrences: Optional[pulumi.Input[str]] = None,
             saved_search_id: Optional[pulumi.Input[str]] = None,
             scheduled_task_id: Optional[pulumi.Input[str]] = None,
-            schedules: Optional[pulumi.Input[pulumi.InputType['NamespaceScheduledTaskSchedulesArgs']]] = None,
+            schedules: Optional[pulumi.Input[Union['NamespaceScheduledTaskSchedulesArgs', 'NamespaceScheduledTaskSchedulesArgsDict']]] = None,
             state: Optional[pulumi.Input[str]] = None,
             task_status: Optional[pulumi.Input[str]] = None,
             task_type: Optional[pulumi.Input[str]] = None,
@@ -629,7 +629,7 @@ class NamespaceScheduledTask(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['NamespaceScheduledTaskActionArgs']] action: Action for scheduled task.
+        :param pulumi.Input[Union['NamespaceScheduledTaskActionArgs', 'NamespaceScheduledTaskActionArgsDict']] action: Action for scheduled task.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
@@ -638,7 +638,7 @@ class NamespaceScheduledTask(pulumi.CustomResource):
         :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
         :param pulumi.Input[str] num_occurrences: Number of execution occurrences.
         :param pulumi.Input[str] saved_search_id: The ManagementSavedSearch id [OCID] to be accelerated.
-        :param pulumi.Input[pulumi.InputType['NamespaceScheduledTaskSchedulesArgs']] schedules: (Updatable) Schedules, typically a single schedule. Note there may only be a single schedule for SAVED_SEARCH and PURGE scheduled tasks.
+        :param pulumi.Input[Union['NamespaceScheduledTaskSchedulesArgs', 'NamespaceScheduledTaskSchedulesArgsDict']] schedules: (Updatable) Schedules, typically a single schedule. Note there may only be a single schedule for SAVED_SEARCH and PURGE scheduled tasks.
         :param pulumi.Input[str] state: The current state of the scheduled task.
         :param pulumi.Input[str] task_status: Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
         :param pulumi.Input[str] task_type: Task type.

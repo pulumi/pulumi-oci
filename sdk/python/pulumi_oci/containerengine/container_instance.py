@@ -663,19 +663,19 @@ class ContainerInstance(pulumi.CustomResource):
                  availability_domain: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  container_restart_policy: Optional[pulumi.Input[str]] = None,
-                 containers: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ContainerInstanceContainerArgs']]]]] = None,
+                 containers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceContainerArgs', 'ContainerInstanceContainerArgsDict']]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 dns_config: Optional[pulumi.Input[pulumi.InputType['ContainerInstanceDnsConfigArgs']]] = None,
+                 dns_config: Optional[pulumi.Input[Union['ContainerInstanceDnsConfigArgs', 'ContainerInstanceDnsConfigArgsDict']]] = None,
                  fault_domain: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  graceful_shutdown_timeout_in_seconds: Optional[pulumi.Input[str]] = None,
-                 image_pull_secrets: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ContainerInstanceImagePullSecretArgs']]]]] = None,
+                 image_pull_secrets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceImagePullSecretArgs', 'ContainerInstanceImagePullSecretArgsDict']]]]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
-                 shape_config: Optional[pulumi.Input[pulumi.InputType['ContainerInstanceShapeConfigArgs']]] = None,
+                 shape_config: Optional[pulumi.Input[Union['ContainerInstanceShapeConfigArgs', 'ContainerInstanceShapeConfigArgsDict']]] = None,
                  state: Optional[pulumi.Input[str]] = None,
-                 vnics: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ContainerInstanceVnicArgs']]]]] = None,
-                 volumes: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ContainerInstanceVolumeArgs']]]]] = None,
+                 vnics: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceVnicArgs', 'ContainerInstanceVnicArgsDict']]]]] = None,
+                 volumes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceVolumeArgs', 'ContainerInstanceVolumeArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Container Instance resource in Oracle Cloud Infrastructure Container Instances service.
@@ -691,104 +691,104 @@ class ContainerInstance(pulumi.CustomResource):
         test_container_instance = oci.container_engine.ContainerInstance("test_container_instance",
             availability_domain=container_instance_availability_domain,
             compartment_id=compartment_id,
-            containers=[oci.container_engine.ContainerInstanceContainerArgs(
-                image_url=container_instance_containers_image_url,
-                arguments=container_instance_containers_arguments,
-                commands=container_instance_containers_command,
-                defined_tags=container_instance_containers_defined_tags,
-                display_name=container_instance_containers_display_name,
-                environment_variables=container_instance_containers_environment_variables,
-                freeform_tags=container_instance_containers_freeform_tags,
-                health_checks=[oci.container_engine.ContainerInstanceContainerHealthCheckArgs(
-                    health_check_type=container_instance_containers_health_checks_health_check_type,
-                    commands=container_instance_containers_health_checks_command,
-                    failure_action=container_instance_containers_health_checks_failure_action,
-                    failure_threshold=container_instance_containers_health_checks_failure_threshold,
-                    headers=[oci.container_engine.ContainerInstanceContainerHealthCheckHeaderArgs(
-                        name=container_instance_containers_health_checks_headers_name,
-                        value=container_instance_containers_health_checks_headers_value,
-                    )],
-                    initial_delay_in_seconds=container_instance_containers_health_checks_initial_delay_in_seconds,
-                    interval_in_seconds=container_instance_containers_health_checks_interval_in_seconds,
-                    name=container_instance_containers_health_checks_name,
-                    path=container_instance_containers_health_checks_path,
-                    port=container_instance_containers_health_checks_port,
-                    success_threshold=container_instance_containers_health_checks_success_threshold,
-                    timeout_in_seconds=container_instance_containers_health_checks_timeout_in_seconds,
-                )],
-                is_resource_principal_disabled=container_instance_containers_is_resource_principal_disabled,
-                resource_config=oci.container_engine.ContainerInstanceContainerResourceConfigArgs(
-                    memory_limit_in_gbs=container_instance_containers_resource_config_memory_limit_in_gbs,
-                    vcpus_limit=container_instance_containers_resource_config_vcpus_limit,
-                ),
-                security_context=oci.container_engine.ContainerInstanceContainerSecurityContextArgs(
-                    capabilities=oci.container_engine.ContainerInstanceContainerSecurityContextCapabilitiesArgs(
-                        add_capabilities=container_instance_containers_security_context_capabilities_add_capabilities,
-                        drop_capabilities=container_instance_containers_security_context_capabilities_drop_capabilities,
-                    ),
-                    is_non_root_user_check_enabled=container_instance_containers_security_context_is_non_root_user_check_enabled,
-                    is_root_file_system_readonly=container_instance_containers_security_context_is_root_file_system_readonly,
-                    run_as_group=container_instance_containers_security_context_run_as_group,
-                    run_as_user=container_instance_containers_security_context_run_as_user,
-                    security_context_type=container_instance_containers_security_context_security_context_type,
-                ),
-                volume_mounts=[oci.container_engine.ContainerInstanceContainerVolumeMountArgs(
-                    mount_path=container_instance_containers_volume_mounts_mount_path,
-                    volume_name=container_instance_containers_volume_mounts_volume_name,
-                    is_read_only=container_instance_containers_volume_mounts_is_read_only,
-                    partition=container_instance_containers_volume_mounts_partition,
-                    sub_path=container_instance_containers_volume_mounts_sub_path,
-                )],
-                working_directory=container_instance_containers_working_directory,
-            )],
+            containers=[{
+                "image_url": container_instance_containers_image_url,
+                "arguments": container_instance_containers_arguments,
+                "commands": container_instance_containers_command,
+                "defined_tags": container_instance_containers_defined_tags,
+                "display_name": container_instance_containers_display_name,
+                "environment_variables": container_instance_containers_environment_variables,
+                "freeform_tags": container_instance_containers_freeform_tags,
+                "health_checks": [{
+                    "health_check_type": container_instance_containers_health_checks_health_check_type,
+                    "commands": container_instance_containers_health_checks_command,
+                    "failure_action": container_instance_containers_health_checks_failure_action,
+                    "failure_threshold": container_instance_containers_health_checks_failure_threshold,
+                    "headers": [{
+                        "name": container_instance_containers_health_checks_headers_name,
+                        "value": container_instance_containers_health_checks_headers_value,
+                    }],
+                    "initial_delay_in_seconds": container_instance_containers_health_checks_initial_delay_in_seconds,
+                    "interval_in_seconds": container_instance_containers_health_checks_interval_in_seconds,
+                    "name": container_instance_containers_health_checks_name,
+                    "path": container_instance_containers_health_checks_path,
+                    "port": container_instance_containers_health_checks_port,
+                    "success_threshold": container_instance_containers_health_checks_success_threshold,
+                    "timeout_in_seconds": container_instance_containers_health_checks_timeout_in_seconds,
+                }],
+                "is_resource_principal_disabled": container_instance_containers_is_resource_principal_disabled,
+                "resource_config": {
+                    "memory_limit_in_gbs": container_instance_containers_resource_config_memory_limit_in_gbs,
+                    "vcpus_limit": container_instance_containers_resource_config_vcpus_limit,
+                },
+                "security_context": {
+                    "capabilities": {
+                        "add_capabilities": container_instance_containers_security_context_capabilities_add_capabilities,
+                        "drop_capabilities": container_instance_containers_security_context_capabilities_drop_capabilities,
+                    },
+                    "is_non_root_user_check_enabled": container_instance_containers_security_context_is_non_root_user_check_enabled,
+                    "is_root_file_system_readonly": container_instance_containers_security_context_is_root_file_system_readonly,
+                    "run_as_group": container_instance_containers_security_context_run_as_group,
+                    "run_as_user": container_instance_containers_security_context_run_as_user,
+                    "security_context_type": container_instance_containers_security_context_security_context_type,
+                },
+                "volume_mounts": [{
+                    "mount_path": container_instance_containers_volume_mounts_mount_path,
+                    "volume_name": container_instance_containers_volume_mounts_volume_name,
+                    "is_read_only": container_instance_containers_volume_mounts_is_read_only,
+                    "partition": container_instance_containers_volume_mounts_partition,
+                    "sub_path": container_instance_containers_volume_mounts_sub_path,
+                }],
+                "working_directory": container_instance_containers_working_directory,
+            }],
             shape=container_instance_shape,
-            shape_config=oci.container_engine.ContainerInstanceShapeConfigArgs(
-                ocpus=container_instance_shape_config_ocpus,
-                memory_in_gbs=container_instance_shape_config_memory_in_gbs,
-            ),
-            vnics=[oci.container_engine.ContainerInstanceVnicArgs(
-                subnet_id=test_subnet["id"],
-                defined_tags=container_instance_vnics_defined_tags,
-                display_name=container_instance_vnics_display_name,
-                freeform_tags=container_instance_vnics_freeform_tags,
-                hostname_label=container_instance_vnics_hostname_label,
-                is_public_ip_assigned=container_instance_vnics_is_public_ip_assigned,
-                nsg_ids=container_instance_vnics_nsg_ids,
-                private_ip=container_instance_vnics_private_ip,
-                skip_source_dest_check=container_instance_vnics_skip_source_dest_check,
-            )],
+            shape_config={
+                "ocpus": container_instance_shape_config_ocpus,
+                "memory_in_gbs": container_instance_shape_config_memory_in_gbs,
+            },
+            vnics=[{
+                "subnet_id": test_subnet["id"],
+                "defined_tags": container_instance_vnics_defined_tags,
+                "display_name": container_instance_vnics_display_name,
+                "freeform_tags": container_instance_vnics_freeform_tags,
+                "hostname_label": container_instance_vnics_hostname_label,
+                "is_public_ip_assigned": container_instance_vnics_is_public_ip_assigned,
+                "nsg_ids": container_instance_vnics_nsg_ids,
+                "private_ip": container_instance_vnics_private_ip,
+                "skip_source_dest_check": container_instance_vnics_skip_source_dest_check,
+            }],
             container_restart_policy=container_instance_container_restart_policy,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             display_name=container_instance_display_name,
-            dns_config=oci.container_engine.ContainerInstanceDnsConfigArgs(
-                nameservers=container_instance_dns_config_nameservers,
-                options=container_instance_dns_config_options,
-                searches=container_instance_dns_config_searches,
-            ),
+            dns_config={
+                "nameservers": container_instance_dns_config_nameservers,
+                "options": container_instance_dns_config_options,
+                "searches": container_instance_dns_config_searches,
+            },
             fault_domain=container_instance_fault_domain,
             freeform_tags={
                 "bar-key": "value",
             },
             graceful_shutdown_timeout_in_seconds=container_instance_graceful_shutdown_timeout_in_seconds,
-            image_pull_secrets=[oci.container_engine.ContainerInstanceImagePullSecretArgs(
-                registry_endpoint=container_instance_image_pull_secrets_registry_endpoint,
-                secret_type=container_instance_image_pull_secrets_secret_type,
-                password=container_instance_image_pull_secrets_password,
-                secret_id=test_secret["id"],
-                username=container_instance_image_pull_secrets_username,
-            )],
-            volumes=[oci.container_engine.ContainerInstanceVolumeArgs(
-                name=container_instance_volumes_name,
-                volume_type=container_instance_volumes_volume_type,
-                backing_store=container_instance_volumes_backing_store,
-                configs=[oci.container_engine.ContainerInstanceVolumeConfigArgs(
-                    data=container_instance_volumes_configs_data,
-                    file_name=container_instance_volumes_configs_file_name,
-                    path=container_instance_volumes_configs_path,
-                )],
-            )])
+            image_pull_secrets=[{
+                "registry_endpoint": container_instance_image_pull_secrets_registry_endpoint,
+                "secret_type": container_instance_image_pull_secrets_secret_type,
+                "password": container_instance_image_pull_secrets_password,
+                "secret_id": test_secret["id"],
+                "username": container_instance_image_pull_secrets_username,
+            }],
+            volumes=[{
+                "name": container_instance_volumes_name,
+                "volume_type": container_instance_volumes_volume_type,
+                "backing_store": container_instance_volumes_backing_store,
+                "configs": [{
+                    "data": container_instance_volumes_configs_data,
+                    "file_name": container_instance_volumes_configs_file_name,
+                    "path": container_instance_volumes_configs_path,
+                }],
+            }])
         ```
 
         ## Import
@@ -804,23 +804,23 @@ class ContainerInstance(pulumi.CustomResource):
         :param pulumi.Input[str] availability_domain: The availability domain where the container instance runs.
         :param pulumi.Input[str] compartment_id: (Updatable) The compartment OCID.
         :param pulumi.Input[str] container_restart_policy: Container restart policy
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ContainerInstanceContainerArgs']]]] containers: The containers to create on this container instance.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceContainerArgs', 'ContainerInstanceContainerArgsDict']]]] containers: The containers to create on this container instance.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. If you don't provide a name, a name is generated automatically.
-        :param pulumi.Input[pulumi.InputType['ContainerInstanceDnsConfigArgs']] dns_config: Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
+        :param pulumi.Input[Union['ContainerInstanceDnsConfigArgs', 'ContainerInstanceDnsConfigArgsDict']] dns_config: Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
         :param pulumi.Input[str] fault_domain: The fault domain where the container instance runs.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] graceful_shutdown_timeout_in_seconds: The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ContainerInstanceImagePullSecretArgs']]]] image_pull_secrets: The image pulls secrets so you can access private registry to pull container images.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceImagePullSecretArgs', 'ContainerInstanceImagePullSecretArgsDict']]]] image_pull_secrets: The image pulls secrets so you can access private registry to pull container images.
         :param pulumi.Input[str] shape: The shape of the container instance. The shape determines the resources available to the container instance.
-        :param pulumi.Input[pulumi.InputType['ContainerInstanceShapeConfigArgs']] shape_config: The size and amount of resources available to the container instance.
+        :param pulumi.Input[Union['ContainerInstanceShapeConfigArgs', 'ContainerInstanceShapeConfigArgsDict']] shape_config: The size and amount of resources available to the container instance.
         :param pulumi.Input[str] state: (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ContainerInstanceVnicArgs']]]] vnics: The networks available to containers on this container instance.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ContainerInstanceVolumeArgs']]]] volumes: A volume is a directory with data that is accessible across multiple containers in a container instance.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceVnicArgs', 'ContainerInstanceVnicArgsDict']]]] vnics: The networks available to containers on this container instance.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceVolumeArgs', 'ContainerInstanceVolumeArgsDict']]]] volumes: A volume is a directory with data that is accessible across multiple containers in a container instance.
                
                You can attach up to 32 volumes to single container instance.
         """
@@ -844,104 +844,104 @@ class ContainerInstance(pulumi.CustomResource):
         test_container_instance = oci.container_engine.ContainerInstance("test_container_instance",
             availability_domain=container_instance_availability_domain,
             compartment_id=compartment_id,
-            containers=[oci.container_engine.ContainerInstanceContainerArgs(
-                image_url=container_instance_containers_image_url,
-                arguments=container_instance_containers_arguments,
-                commands=container_instance_containers_command,
-                defined_tags=container_instance_containers_defined_tags,
-                display_name=container_instance_containers_display_name,
-                environment_variables=container_instance_containers_environment_variables,
-                freeform_tags=container_instance_containers_freeform_tags,
-                health_checks=[oci.container_engine.ContainerInstanceContainerHealthCheckArgs(
-                    health_check_type=container_instance_containers_health_checks_health_check_type,
-                    commands=container_instance_containers_health_checks_command,
-                    failure_action=container_instance_containers_health_checks_failure_action,
-                    failure_threshold=container_instance_containers_health_checks_failure_threshold,
-                    headers=[oci.container_engine.ContainerInstanceContainerHealthCheckHeaderArgs(
-                        name=container_instance_containers_health_checks_headers_name,
-                        value=container_instance_containers_health_checks_headers_value,
-                    )],
-                    initial_delay_in_seconds=container_instance_containers_health_checks_initial_delay_in_seconds,
-                    interval_in_seconds=container_instance_containers_health_checks_interval_in_seconds,
-                    name=container_instance_containers_health_checks_name,
-                    path=container_instance_containers_health_checks_path,
-                    port=container_instance_containers_health_checks_port,
-                    success_threshold=container_instance_containers_health_checks_success_threshold,
-                    timeout_in_seconds=container_instance_containers_health_checks_timeout_in_seconds,
-                )],
-                is_resource_principal_disabled=container_instance_containers_is_resource_principal_disabled,
-                resource_config=oci.container_engine.ContainerInstanceContainerResourceConfigArgs(
-                    memory_limit_in_gbs=container_instance_containers_resource_config_memory_limit_in_gbs,
-                    vcpus_limit=container_instance_containers_resource_config_vcpus_limit,
-                ),
-                security_context=oci.container_engine.ContainerInstanceContainerSecurityContextArgs(
-                    capabilities=oci.container_engine.ContainerInstanceContainerSecurityContextCapabilitiesArgs(
-                        add_capabilities=container_instance_containers_security_context_capabilities_add_capabilities,
-                        drop_capabilities=container_instance_containers_security_context_capabilities_drop_capabilities,
-                    ),
-                    is_non_root_user_check_enabled=container_instance_containers_security_context_is_non_root_user_check_enabled,
-                    is_root_file_system_readonly=container_instance_containers_security_context_is_root_file_system_readonly,
-                    run_as_group=container_instance_containers_security_context_run_as_group,
-                    run_as_user=container_instance_containers_security_context_run_as_user,
-                    security_context_type=container_instance_containers_security_context_security_context_type,
-                ),
-                volume_mounts=[oci.container_engine.ContainerInstanceContainerVolumeMountArgs(
-                    mount_path=container_instance_containers_volume_mounts_mount_path,
-                    volume_name=container_instance_containers_volume_mounts_volume_name,
-                    is_read_only=container_instance_containers_volume_mounts_is_read_only,
-                    partition=container_instance_containers_volume_mounts_partition,
-                    sub_path=container_instance_containers_volume_mounts_sub_path,
-                )],
-                working_directory=container_instance_containers_working_directory,
-            )],
+            containers=[{
+                "image_url": container_instance_containers_image_url,
+                "arguments": container_instance_containers_arguments,
+                "commands": container_instance_containers_command,
+                "defined_tags": container_instance_containers_defined_tags,
+                "display_name": container_instance_containers_display_name,
+                "environment_variables": container_instance_containers_environment_variables,
+                "freeform_tags": container_instance_containers_freeform_tags,
+                "health_checks": [{
+                    "health_check_type": container_instance_containers_health_checks_health_check_type,
+                    "commands": container_instance_containers_health_checks_command,
+                    "failure_action": container_instance_containers_health_checks_failure_action,
+                    "failure_threshold": container_instance_containers_health_checks_failure_threshold,
+                    "headers": [{
+                        "name": container_instance_containers_health_checks_headers_name,
+                        "value": container_instance_containers_health_checks_headers_value,
+                    }],
+                    "initial_delay_in_seconds": container_instance_containers_health_checks_initial_delay_in_seconds,
+                    "interval_in_seconds": container_instance_containers_health_checks_interval_in_seconds,
+                    "name": container_instance_containers_health_checks_name,
+                    "path": container_instance_containers_health_checks_path,
+                    "port": container_instance_containers_health_checks_port,
+                    "success_threshold": container_instance_containers_health_checks_success_threshold,
+                    "timeout_in_seconds": container_instance_containers_health_checks_timeout_in_seconds,
+                }],
+                "is_resource_principal_disabled": container_instance_containers_is_resource_principal_disabled,
+                "resource_config": {
+                    "memory_limit_in_gbs": container_instance_containers_resource_config_memory_limit_in_gbs,
+                    "vcpus_limit": container_instance_containers_resource_config_vcpus_limit,
+                },
+                "security_context": {
+                    "capabilities": {
+                        "add_capabilities": container_instance_containers_security_context_capabilities_add_capabilities,
+                        "drop_capabilities": container_instance_containers_security_context_capabilities_drop_capabilities,
+                    },
+                    "is_non_root_user_check_enabled": container_instance_containers_security_context_is_non_root_user_check_enabled,
+                    "is_root_file_system_readonly": container_instance_containers_security_context_is_root_file_system_readonly,
+                    "run_as_group": container_instance_containers_security_context_run_as_group,
+                    "run_as_user": container_instance_containers_security_context_run_as_user,
+                    "security_context_type": container_instance_containers_security_context_security_context_type,
+                },
+                "volume_mounts": [{
+                    "mount_path": container_instance_containers_volume_mounts_mount_path,
+                    "volume_name": container_instance_containers_volume_mounts_volume_name,
+                    "is_read_only": container_instance_containers_volume_mounts_is_read_only,
+                    "partition": container_instance_containers_volume_mounts_partition,
+                    "sub_path": container_instance_containers_volume_mounts_sub_path,
+                }],
+                "working_directory": container_instance_containers_working_directory,
+            }],
             shape=container_instance_shape,
-            shape_config=oci.container_engine.ContainerInstanceShapeConfigArgs(
-                ocpus=container_instance_shape_config_ocpus,
-                memory_in_gbs=container_instance_shape_config_memory_in_gbs,
-            ),
-            vnics=[oci.container_engine.ContainerInstanceVnicArgs(
-                subnet_id=test_subnet["id"],
-                defined_tags=container_instance_vnics_defined_tags,
-                display_name=container_instance_vnics_display_name,
-                freeform_tags=container_instance_vnics_freeform_tags,
-                hostname_label=container_instance_vnics_hostname_label,
-                is_public_ip_assigned=container_instance_vnics_is_public_ip_assigned,
-                nsg_ids=container_instance_vnics_nsg_ids,
-                private_ip=container_instance_vnics_private_ip,
-                skip_source_dest_check=container_instance_vnics_skip_source_dest_check,
-            )],
+            shape_config={
+                "ocpus": container_instance_shape_config_ocpus,
+                "memory_in_gbs": container_instance_shape_config_memory_in_gbs,
+            },
+            vnics=[{
+                "subnet_id": test_subnet["id"],
+                "defined_tags": container_instance_vnics_defined_tags,
+                "display_name": container_instance_vnics_display_name,
+                "freeform_tags": container_instance_vnics_freeform_tags,
+                "hostname_label": container_instance_vnics_hostname_label,
+                "is_public_ip_assigned": container_instance_vnics_is_public_ip_assigned,
+                "nsg_ids": container_instance_vnics_nsg_ids,
+                "private_ip": container_instance_vnics_private_ip,
+                "skip_source_dest_check": container_instance_vnics_skip_source_dest_check,
+            }],
             container_restart_policy=container_instance_container_restart_policy,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             display_name=container_instance_display_name,
-            dns_config=oci.container_engine.ContainerInstanceDnsConfigArgs(
-                nameservers=container_instance_dns_config_nameservers,
-                options=container_instance_dns_config_options,
-                searches=container_instance_dns_config_searches,
-            ),
+            dns_config={
+                "nameservers": container_instance_dns_config_nameservers,
+                "options": container_instance_dns_config_options,
+                "searches": container_instance_dns_config_searches,
+            },
             fault_domain=container_instance_fault_domain,
             freeform_tags={
                 "bar-key": "value",
             },
             graceful_shutdown_timeout_in_seconds=container_instance_graceful_shutdown_timeout_in_seconds,
-            image_pull_secrets=[oci.container_engine.ContainerInstanceImagePullSecretArgs(
-                registry_endpoint=container_instance_image_pull_secrets_registry_endpoint,
-                secret_type=container_instance_image_pull_secrets_secret_type,
-                password=container_instance_image_pull_secrets_password,
-                secret_id=test_secret["id"],
-                username=container_instance_image_pull_secrets_username,
-            )],
-            volumes=[oci.container_engine.ContainerInstanceVolumeArgs(
-                name=container_instance_volumes_name,
-                volume_type=container_instance_volumes_volume_type,
-                backing_store=container_instance_volumes_backing_store,
-                configs=[oci.container_engine.ContainerInstanceVolumeConfigArgs(
-                    data=container_instance_volumes_configs_data,
-                    file_name=container_instance_volumes_configs_file_name,
-                    path=container_instance_volumes_configs_path,
-                )],
-            )])
+            image_pull_secrets=[{
+                "registry_endpoint": container_instance_image_pull_secrets_registry_endpoint,
+                "secret_type": container_instance_image_pull_secrets_secret_type,
+                "password": container_instance_image_pull_secrets_password,
+                "secret_id": test_secret["id"],
+                "username": container_instance_image_pull_secrets_username,
+            }],
+            volumes=[{
+                "name": container_instance_volumes_name,
+                "volume_type": container_instance_volumes_volume_type,
+                "backing_store": container_instance_volumes_backing_store,
+                "configs": [{
+                    "data": container_instance_volumes_configs_data,
+                    "file_name": container_instance_volumes_configs_file_name,
+                    "path": container_instance_volumes_configs_path,
+                }],
+            }])
         ```
 
         ## Import
@@ -970,19 +970,19 @@ class ContainerInstance(pulumi.CustomResource):
                  availability_domain: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  container_restart_policy: Optional[pulumi.Input[str]] = None,
-                 containers: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ContainerInstanceContainerArgs']]]]] = None,
+                 containers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceContainerArgs', 'ContainerInstanceContainerArgsDict']]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 dns_config: Optional[pulumi.Input[pulumi.InputType['ContainerInstanceDnsConfigArgs']]] = None,
+                 dns_config: Optional[pulumi.Input[Union['ContainerInstanceDnsConfigArgs', 'ContainerInstanceDnsConfigArgsDict']]] = None,
                  fault_domain: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  graceful_shutdown_timeout_in_seconds: Optional[pulumi.Input[str]] = None,
-                 image_pull_secrets: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ContainerInstanceImagePullSecretArgs']]]]] = None,
+                 image_pull_secrets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceImagePullSecretArgs', 'ContainerInstanceImagePullSecretArgsDict']]]]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
-                 shape_config: Optional[pulumi.Input[pulumi.InputType['ContainerInstanceShapeConfigArgs']]] = None,
+                 shape_config: Optional[pulumi.Input[Union['ContainerInstanceShapeConfigArgs', 'ContainerInstanceShapeConfigArgsDict']]] = None,
                  state: Optional[pulumi.Input[str]] = None,
-                 vnics: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ContainerInstanceVnicArgs']]]]] = None,
-                 volumes: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ContainerInstanceVolumeArgs']]]]] = None,
+                 vnics: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceVnicArgs', 'ContainerInstanceVnicArgsDict']]]]] = None,
+                 volumes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceVolumeArgs', 'ContainerInstanceVolumeArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1040,24 +1040,24 @@ class ContainerInstance(pulumi.CustomResource):
             compartment_id: Optional[pulumi.Input[str]] = None,
             container_count: Optional[pulumi.Input[int]] = None,
             container_restart_policy: Optional[pulumi.Input[str]] = None,
-            containers: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ContainerInstanceContainerArgs']]]]] = None,
+            containers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceContainerArgs', 'ContainerInstanceContainerArgsDict']]]]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
-            dns_config: Optional[pulumi.Input[pulumi.InputType['ContainerInstanceDnsConfigArgs']]] = None,
+            dns_config: Optional[pulumi.Input[Union['ContainerInstanceDnsConfigArgs', 'ContainerInstanceDnsConfigArgsDict']]] = None,
             fault_domain: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             graceful_shutdown_timeout_in_seconds: Optional[pulumi.Input[str]] = None,
-            image_pull_secrets: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ContainerInstanceImagePullSecretArgs']]]]] = None,
+            image_pull_secrets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceImagePullSecretArgs', 'ContainerInstanceImagePullSecretArgsDict']]]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             shape: Optional[pulumi.Input[str]] = None,
-            shape_config: Optional[pulumi.Input[pulumi.InputType['ContainerInstanceShapeConfigArgs']]] = None,
+            shape_config: Optional[pulumi.Input[Union['ContainerInstanceShapeConfigArgs', 'ContainerInstanceShapeConfigArgsDict']]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
-            vnics: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ContainerInstanceVnicArgs']]]]] = None,
+            vnics: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceVnicArgs', 'ContainerInstanceVnicArgsDict']]]]] = None,
             volume_count: Optional[pulumi.Input[int]] = None,
-            volumes: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ContainerInstanceVolumeArgs']]]]] = None) -> 'ContainerInstance':
+            volumes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceVolumeArgs', 'ContainerInstanceVolumeArgsDict']]]]] = None) -> 'ContainerInstance':
         """
         Get an existing ContainerInstance resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -1069,17 +1069,17 @@ class ContainerInstance(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The compartment OCID.
         :param pulumi.Input[int] container_count: The number of containers on the container instance.
         :param pulumi.Input[str] container_restart_policy: Container restart policy
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ContainerInstanceContainerArgs']]]] containers: The containers to create on this container instance.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceContainerArgs', 'ContainerInstanceContainerArgsDict']]]] containers: The containers to create on this container instance.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. If you don't provide a name, a name is generated automatically.
-        :param pulumi.Input[pulumi.InputType['ContainerInstanceDnsConfigArgs']] dns_config: Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
+        :param pulumi.Input[Union['ContainerInstanceDnsConfigArgs', 'ContainerInstanceDnsConfigArgsDict']] dns_config: Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
         :param pulumi.Input[str] fault_domain: The fault domain where the container instance runs.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] graceful_shutdown_timeout_in_seconds: The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ContainerInstanceImagePullSecretArgs']]]] image_pull_secrets: The image pulls secrets so you can access private registry to pull container images.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceImagePullSecretArgs', 'ContainerInstanceImagePullSecretArgsDict']]]] image_pull_secrets: The image pulls secrets so you can access private registry to pull container images.
         :param pulumi.Input[str] lifecycle_details: A message that describes the current state of the container in more detail. Can be used to provide actionable information.
         :param pulumi.Input[str] shape: The shape of the container instance. The shape determines the resources available to the container instance.
-        :param pulumi.Input[pulumi.InputType['ContainerInstanceShapeConfigArgs']] shape_config: The size and amount of resources available to the container instance.
+        :param pulumi.Input[Union['ContainerInstanceShapeConfigArgs', 'ContainerInstanceShapeConfigArgsDict']] shape_config: The size and amount of resources available to the container instance.
         :param pulumi.Input[str] state: (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
                
                
@@ -1088,9 +1088,9 @@ class ContainerInstance(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
         :param pulumi.Input[str] time_created: The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param pulumi.Input[str] time_updated: The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ContainerInstanceVnicArgs']]]] vnics: The networks available to containers on this container instance.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceVnicArgs', 'ContainerInstanceVnicArgsDict']]]] vnics: The networks available to containers on this container instance.
         :param pulumi.Input[int] volume_count: The number of volumes that are attached to the container instance.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ContainerInstanceVolumeArgs']]]] volumes: A volume is a directory with data that is accessible across multiple containers in a container instance.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceVolumeArgs', 'ContainerInstanceVolumeArgsDict']]]] volumes: A volume is a directory with data that is accessible across multiple containers in a container instance.
                
                You can attach up to 32 volumes to single container instance.
         """

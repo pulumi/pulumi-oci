@@ -98,7 +98,7 @@ class AwaitableGetSupportedVmwareSoftwareVersionsResult(GetSupportedVmwareSoftwa
 
 
 def get_supported_vmware_software_versions(compartment_id: Optional[str] = None,
-                                           filters: Optional[Sequence[pulumi.InputType['GetSupportedVmwareSoftwareVersionsFilterArgs']]] = None,
+                                           filters: Optional[Sequence[Union['GetSupportedVmwareSoftwareVersionsFilterArgs', 'GetSupportedVmwareSoftwareVersionsFilterArgsDict']]] = None,
                                            host_shape_name: Optional[str] = None,
                                            version: Optional[str] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSupportedVmwareSoftwareVersionsResult:
@@ -143,7 +143,7 @@ def get_supported_vmware_software_versions(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_supported_vmware_software_versions)
 def get_supported_vmware_software_versions_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                                  filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetSupportedVmwareSoftwareVersionsFilterArgs']]]]] = None,
+                                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSupportedVmwareSoftwareVersionsFilterArgs', 'GetSupportedVmwareSoftwareVersionsFilterArgsDict']]]]] = None,
                                                   host_shape_name: Optional[pulumi.Input[Optional[str]]] = None,
                                                   version: Optional[pulumi.Input[Optional[str]]] = None,
                                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSupportedVmwareSoftwareVersionsResult]:

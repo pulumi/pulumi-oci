@@ -131,7 +131,7 @@ class LifecycleStagePromoteSoftwareSourceManagement(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  lifecycle_stage_id: Optional[pulumi.Input[str]] = None,
                  software_source_id: Optional[pulumi.Input[str]] = None,
-                 work_request_details: Optional[pulumi.Input[pulumi.InputType['LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs']]] = None,
+                 work_request_details: Optional[pulumi.Input[Union['LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs', 'LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Lifecycle Stage Promote Software Source Management resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -149,10 +149,10 @@ class LifecycleStagePromoteSoftwareSourceManagement(pulumi.CustomResource):
         test_lifecycle_stage_promote_software_source_management = oci.os_management_hub.LifecycleStagePromoteSoftwareSourceManagement("test_lifecycle_stage_promote_software_source_management",
             lifecycle_stage_id=test_lifecycle_stage["id"],
             software_source_id=test_software_source["id"],
-            work_request_details=oci.os_management_hub.LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs(
-                description=lifecycle_stage_promote_software_source_management_work_request_details_description,
-                display_name=lifecycle_stage_promote_software_source_management_work_request_details_display_name,
-            ))
+            work_request_details={
+                "description": lifecycle_stage_promote_software_source_management_work_request_details_description,
+                "display_name": lifecycle_stage_promote_software_source_management_work_request_details_display_name,
+            })
         ```
 
         ## Import
@@ -167,7 +167,7 @@ class LifecycleStagePromoteSoftwareSourceManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] lifecycle_stage_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
         :param pulumi.Input[str] software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
-        :param pulumi.Input[pulumi.InputType['LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs']] work_request_details: Provides the name and description of the job.
+        :param pulumi.Input[Union['LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs', 'LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgsDict']] work_request_details: Provides the name and description of the job.
         """
         ...
     @overload
@@ -191,10 +191,10 @@ class LifecycleStagePromoteSoftwareSourceManagement(pulumi.CustomResource):
         test_lifecycle_stage_promote_software_source_management = oci.os_management_hub.LifecycleStagePromoteSoftwareSourceManagement("test_lifecycle_stage_promote_software_source_management",
             lifecycle_stage_id=test_lifecycle_stage["id"],
             software_source_id=test_software_source["id"],
-            work_request_details=oci.os_management_hub.LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs(
-                description=lifecycle_stage_promote_software_source_management_work_request_details_description,
-                display_name=lifecycle_stage_promote_software_source_management_work_request_details_display_name,
-            ))
+            work_request_details={
+                "description": lifecycle_stage_promote_software_source_management_work_request_details_description,
+                "display_name": lifecycle_stage_promote_software_source_management_work_request_details_display_name,
+            })
         ```
 
         ## Import
@@ -222,7 +222,7 @@ class LifecycleStagePromoteSoftwareSourceManagement(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  lifecycle_stage_id: Optional[pulumi.Input[str]] = None,
                  software_source_id: Optional[pulumi.Input[str]] = None,
-                 work_request_details: Optional[pulumi.Input[pulumi.InputType['LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs']]] = None,
+                 work_request_details: Optional[pulumi.Input[Union['LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs', 'LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -249,7 +249,7 @@ class LifecycleStagePromoteSoftwareSourceManagement(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             lifecycle_stage_id: Optional[pulumi.Input[str]] = None,
             software_source_id: Optional[pulumi.Input[str]] = None,
-            work_request_details: Optional[pulumi.Input[pulumi.InputType['LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs']]] = None) -> 'LifecycleStagePromoteSoftwareSourceManagement':
+            work_request_details: Optional[pulumi.Input[Union['LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs', 'LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgsDict']]] = None) -> 'LifecycleStagePromoteSoftwareSourceManagement':
         """
         Get an existing LifecycleStagePromoteSoftwareSourceManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -259,7 +259,7 @@ class LifecycleStagePromoteSoftwareSourceManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] lifecycle_stage_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
         :param pulumi.Input[str] software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
-        :param pulumi.Input[pulumi.InputType['LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs']] work_request_details: Provides the name and description of the job.
+        :param pulumi.Input[Union['LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs', 'LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgsDict']] work_request_details: Provides the name and description of the job.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

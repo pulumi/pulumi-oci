@@ -123,7 +123,7 @@ class AwaitableGetNamespaceScheduledTasksResult(GetNamespaceScheduledTasksResult
 
 def get_namespace_scheduled_tasks(compartment_id: Optional[str] = None,
                                   display_name: Optional[str] = None,
-                                  filters: Optional[Sequence[pulumi.InputType['GetNamespaceScheduledTasksFilterArgs']]] = None,
+                                  filters: Optional[Sequence[Union['GetNamespaceScheduledTasksFilterArgs', 'GetNamespaceScheduledTasksFilterArgsDict']]] = None,
                                   namespace: Optional[str] = None,
                                   target_service: Optional[str] = None,
                                   task_type: Optional[str] = None,
@@ -177,7 +177,7 @@ def get_namespace_scheduled_tasks(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_namespace_scheduled_tasks)
 def get_namespace_scheduled_tasks_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                          display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                         filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetNamespaceScheduledTasksFilterArgs']]]]] = None,
+                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNamespaceScheduledTasksFilterArgs', 'GetNamespaceScheduledTasksFilterArgsDict']]]]] = None,
                                          namespace: Optional[pulumi.Input[str]] = None,
                                          target_service: Optional[pulumi.Input[Optional[str]]] = None,
                                          task_type: Optional[pulumi.Input[str]] = None,

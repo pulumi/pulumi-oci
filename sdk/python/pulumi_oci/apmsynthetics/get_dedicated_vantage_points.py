@@ -114,7 +114,7 @@ class AwaitableGetDedicatedVantagePointsResult(GetDedicatedVantagePointsResult):
 
 def get_dedicated_vantage_points(apm_domain_id: Optional[str] = None,
                                  display_name: Optional[str] = None,
-                                 filters: Optional[Sequence[pulumi.InputType['GetDedicatedVantagePointsFilterArgs']]] = None,
+                                 filters: Optional[Sequence[Union['GetDedicatedVantagePointsFilterArgs', 'GetDedicatedVantagePointsFilterArgsDict']]] = None,
                                  name: Optional[str] = None,
                                  status: Optional[str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDedicatedVantagePointsResult:
@@ -163,7 +163,7 @@ def get_dedicated_vantage_points(apm_domain_id: Optional[str] = None,
 @_utilities.lift_output_func(get_dedicated_vantage_points)
 def get_dedicated_vantage_points_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                                         display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                        filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDedicatedVantagePointsFilterArgs']]]]] = None,
+                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDedicatedVantagePointsFilterArgs', 'GetDedicatedVantagePointsFilterArgsDict']]]]] = None,
                                         name: Optional[pulumi.Input[Optional[str]]] = None,
                                         status: Optional[pulumi.Input[Optional[str]]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDedicatedVantagePointsResult]:

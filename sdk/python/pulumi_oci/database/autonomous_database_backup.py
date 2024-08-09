@@ -482,7 +482,7 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  autonomous_database_id: Optional[pulumi.Input[str]] = None,
-                 backup_destination_details: Optional[pulumi.Input[pulumi.InputType['AutonomousDatabaseBackupBackupDestinationDetailsArgs']]] = None,
+                 backup_destination_details: Optional[pulumi.Input[Union['AutonomousDatabaseBackupBackupDestinationDetailsArgs', 'AutonomousDatabaseBackupBackupDestinationDetailsArgsDict']]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  is_long_term_backup: Optional[pulumi.Input[bool]] = None,
                  retention_period_in_days: Optional[pulumi.Input[int]] = None,
@@ -516,7 +516,7 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
-        :param pulumi.Input[pulumi.InputType['AutonomousDatabaseBackupBackupDestinationDetailsArgs']] backup_destination_details: Backup destination details
+        :param pulumi.Input[Union['AutonomousDatabaseBackupBackupDestinationDetailsArgs', 'AutonomousDatabaseBackupBackupDestinationDetailsArgsDict']] backup_destination_details: Backup destination details
         :param pulumi.Input[str] display_name: The user-friendly name for the backup. The name does not have to be unique.
         :param pulumi.Input[bool] is_long_term_backup: Indicates whether the backup is long-term
         :param pulumi.Input[int] retention_period_in_days: (Updatable) Retention period, in days, for long-term backups
@@ -573,7 +573,7 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  autonomous_database_id: Optional[pulumi.Input[str]] = None,
-                 backup_destination_details: Optional[pulumi.Input[pulumi.InputType['AutonomousDatabaseBackupBackupDestinationDetailsArgs']]] = None,
+                 backup_destination_details: Optional[pulumi.Input[Union['AutonomousDatabaseBackupBackupDestinationDetailsArgs', 'AutonomousDatabaseBackupBackupDestinationDetailsArgsDict']]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  is_long_term_backup: Optional[pulumi.Input[bool]] = None,
                  retention_period_in_days: Optional[pulumi.Input[int]] = None,
@@ -621,7 +621,7 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             autonomous_database_id: Optional[pulumi.Input[str]] = None,
-            backup_destination_details: Optional[pulumi.Input[pulumi.InputType['AutonomousDatabaseBackupBackupDestinationDetailsArgs']]] = None,
+            backup_destination_details: Optional[pulumi.Input[Union['AutonomousDatabaseBackupBackupDestinationDetailsArgs', 'AutonomousDatabaseBackupBackupDestinationDetailsArgsDict']]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             database_size_in_tbs: Optional[pulumi.Input[float]] = None,
             db_version: Optional[pulumi.Input[str]] = None,
@@ -650,7 +650,7 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
-        :param pulumi.Input[pulumi.InputType['AutonomousDatabaseBackupBackupDestinationDetailsArgs']] backup_destination_details: Backup destination details
+        :param pulumi.Input[Union['AutonomousDatabaseBackupBackupDestinationDetailsArgs', 'AutonomousDatabaseBackupBackupDestinationDetailsArgsDict']] backup_destination_details: Backup destination details
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[float] database_size_in_tbs: The size of the database in terabytes at the time the backup was taken.
         :param pulumi.Input[str] db_version: A valid Oracle Database version for Autonomous Database.

@@ -132,7 +132,7 @@ class AwaitableGetUnifiedAgentConfigurationsResult(GetUnifiedAgentConfigurations
 
 def get_unified_agent_configurations(compartment_id: Optional[str] = None,
                                      display_name: Optional[str] = None,
-                                     filters: Optional[Sequence[pulumi.InputType['GetUnifiedAgentConfigurationsFilterArgs']]] = None,
+                                     filters: Optional[Sequence[Union['GetUnifiedAgentConfigurationsFilterArgs', 'GetUnifiedAgentConfigurationsFilterArgsDict']]] = None,
                                      group_id: Optional[str] = None,
                                      is_compartment_id_in_subtree: Optional[bool] = None,
                                      log_id: Optional[str] = None,
@@ -191,7 +191,7 @@ def get_unified_agent_configurations(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_unified_agent_configurations)
 def get_unified_agent_configurations_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                             display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                            filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetUnifiedAgentConfigurationsFilterArgs']]]]] = None,
+                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetUnifiedAgentConfigurationsFilterArgs', 'GetUnifiedAgentConfigurationsFilterArgsDict']]]]] = None,
                                             group_id: Optional[pulumi.Input[Optional[str]]] = None,
                                             is_compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                                             log_id: Optional[pulumi.Input[Optional[str]]] = None,

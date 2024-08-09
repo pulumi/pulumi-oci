@@ -98,7 +98,7 @@ class AwaitableGetProtectionCapabilityGroupTagsResult(GetProtectionCapabilityGro
 
 
 def get_protection_capability_group_tags(compartment_id: Optional[str] = None,
-                                         filters: Optional[Sequence[pulumi.InputType['GetProtectionCapabilityGroupTagsFilterArgs']]] = None,
+                                         filters: Optional[Sequence[Union['GetProtectionCapabilityGroupTagsFilterArgs', 'GetProtectionCapabilityGroupTagsFilterArgsDict']]] = None,
                                          name: Optional[str] = None,
                                          type: Optional[str] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetProtectionCapabilityGroupTagsResult:
@@ -142,7 +142,7 @@ def get_protection_capability_group_tags(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_protection_capability_group_tags)
 def get_protection_capability_group_tags_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                                filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetProtectionCapabilityGroupTagsFilterArgs']]]]] = None,
+                                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetProtectionCapabilityGroupTagsFilterArgs', 'GetProtectionCapabilityGroupTagsFilterArgsDict']]]]] = None,
                                                 name: Optional[pulumi.Input[Optional[str]]] = None,
                                                 type: Optional[pulumi.Input[Optional[str]]] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProtectionCapabilityGroupTagsResult]:

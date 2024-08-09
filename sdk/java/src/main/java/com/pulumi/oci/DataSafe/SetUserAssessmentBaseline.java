@@ -105,7 +105,7 @@ public class SetUserAssessmentBaseline extends com.pulumi.resources.CustomResour
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public SetUserAssessmentBaseline(String name) {
+    public SetUserAssessmentBaseline(java.lang.String name) {
         this(name, SetUserAssessmentBaselineArgs.Empty);
     }
     /**
@@ -113,7 +113,7 @@ public class SetUserAssessmentBaseline extends com.pulumi.resources.CustomResour
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public SetUserAssessmentBaseline(String name, SetUserAssessmentBaselineArgs args) {
+    public SetUserAssessmentBaseline(java.lang.String name, SetUserAssessmentBaselineArgs args) {
         this(name, args, null);
     }
     /**
@@ -122,12 +122,12 @@ public class SetUserAssessmentBaseline extends com.pulumi.resources.CustomResour
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public SetUserAssessmentBaseline(String name, SetUserAssessmentBaselineArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/setUserAssessmentBaseline:SetUserAssessmentBaseline", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public SetUserAssessmentBaseline(java.lang.String name, SetUserAssessmentBaselineArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataSafe/setUserAssessmentBaseline:SetUserAssessmentBaseline", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private SetUserAssessmentBaseline(String name, Output<String> id, @Nullable SetUserAssessmentBaselineState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/setUserAssessmentBaseline:SetUserAssessmentBaseline", name, state, makeResourceOptions(options, id));
+    private SetUserAssessmentBaseline(java.lang.String name, Output<java.lang.String> id, @Nullable SetUserAssessmentBaselineState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataSafe/setUserAssessmentBaseline:SetUserAssessmentBaseline", name, state, makeResourceOptions(options, id), false);
     }
 
     private static SetUserAssessmentBaselineArgs makeArgs(SetUserAssessmentBaselineArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -137,7 +137,7 @@ public class SetUserAssessmentBaseline extends com.pulumi.resources.CustomResour
         return args == null ? SetUserAssessmentBaselineArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -153,7 +153,7 @@ public class SetUserAssessmentBaseline extends com.pulumi.resources.CustomResour
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static SetUserAssessmentBaseline get(String name, Output<String> id, @Nullable SetUserAssessmentBaselineState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static SetUserAssessmentBaseline get(java.lang.String name, Output<java.lang.String> id, @Nullable SetUserAssessmentBaselineState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new SetUserAssessmentBaseline(name, id, state, options);
     }
 }

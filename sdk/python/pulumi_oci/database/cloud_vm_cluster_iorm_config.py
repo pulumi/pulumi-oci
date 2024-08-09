@@ -161,7 +161,7 @@ class CloudVmClusterIormConfig(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  cloud_vm_cluster_id: Optional[pulumi.Input[str]] = None,
-                 db_plans: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudVmClusterIormConfigDbPlanArgs']]]]] = None,
+                 db_plans: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CloudVmClusterIormConfigDbPlanArgs', 'CloudVmClusterIormConfigDbPlanArgsDict']]]]] = None,
                  objective: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -178,10 +178,10 @@ class CloudVmClusterIormConfig(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_cloud_vm_cluster_iorm_config = oci.database.CloudVmClusterIormConfig("test_cloud_vm_cluster_iorm_config",
-            db_plans=[oci.database.CloudVmClusterIormConfigDbPlanArgs(
-                db_name=cloud_vm_cluster_iorm_config_db_plans_db_name,
-                share=cloud_vm_cluster_iorm_config_db_plans_share,
-            )],
+            db_plans=[{
+                "db_name": cloud_vm_cluster_iorm_config_db_plans_db_name,
+                "share": cloud_vm_cluster_iorm_config_db_plans_share,
+            }],
             cloud_vm_cluster_id=test_cloud_vm_cluster["id"],
             objective="AUTO")
         ```
@@ -197,7 +197,7 @@ class CloudVmClusterIormConfig(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] cloud_vm_cluster_id: The Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudVmClusterIormConfigDbPlanArgs']]]] db_plans: (Updatable) Array of IORM Setting for all the database in this Cloud Vm Cluster
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudVmClusterIormConfigDbPlanArgs', 'CloudVmClusterIormConfigDbPlanArgsDict']]]] db_plans: (Updatable) Array of IORM Setting for all the database in this Cloud Vm Cluster
         :param pulumi.Input[str] objective: (Updatable) Value for the IORM objective Default is "Auto"
         """
         ...
@@ -220,10 +220,10 @@ class CloudVmClusterIormConfig(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_cloud_vm_cluster_iorm_config = oci.database.CloudVmClusterIormConfig("test_cloud_vm_cluster_iorm_config",
-            db_plans=[oci.database.CloudVmClusterIormConfigDbPlanArgs(
-                db_name=cloud_vm_cluster_iorm_config_db_plans_db_name,
-                share=cloud_vm_cluster_iorm_config_db_plans_share,
-            )],
+            db_plans=[{
+                "db_name": cloud_vm_cluster_iorm_config_db_plans_db_name,
+                "share": cloud_vm_cluster_iorm_config_db_plans_share,
+            }],
             cloud_vm_cluster_id=test_cloud_vm_cluster["id"],
             objective="AUTO")
         ```
@@ -252,7 +252,7 @@ class CloudVmClusterIormConfig(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  cloud_vm_cluster_id: Optional[pulumi.Input[str]] = None,
-                 db_plans: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudVmClusterIormConfigDbPlanArgs']]]]] = None,
+                 db_plans: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CloudVmClusterIormConfigDbPlanArgs', 'CloudVmClusterIormConfigDbPlanArgsDict']]]]] = None,
                  objective: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -283,7 +283,7 @@ class CloudVmClusterIormConfig(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             cloud_vm_cluster_id: Optional[pulumi.Input[str]] = None,
-            db_plans: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudVmClusterIormConfigDbPlanArgs']]]]] = None,
+            db_plans: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CloudVmClusterIormConfigDbPlanArgs', 'CloudVmClusterIormConfigDbPlanArgsDict']]]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             objective: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None) -> 'CloudVmClusterIormConfig':
@@ -295,7 +295,7 @@ class CloudVmClusterIormConfig(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] cloud_vm_cluster_id: The Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudVmClusterIormConfigDbPlanArgs']]]] db_plans: (Updatable) Array of IORM Setting for all the database in this Cloud Vm Cluster
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudVmClusterIormConfigDbPlanArgs', 'CloudVmClusterIormConfigDbPlanArgsDict']]]] db_plans: (Updatable) Array of IORM Setting for all the database in this Cloud Vm Cluster
         :param pulumi.Input[str] lifecycle_details: Additional information about the current `lifecycleState`.
         :param pulumi.Input[str] objective: (Updatable) Value for the IORM objective Default is "Auto"
         :param pulumi.Input[str] state: The current state of IORM configuration for the Exadata DB system.

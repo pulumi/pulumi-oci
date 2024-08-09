@@ -295,7 +295,7 @@ public class MonitoredResourceType extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public MonitoredResourceType(String name) {
+    public MonitoredResourceType(java.lang.String name) {
         this(name, MonitoredResourceTypeArgs.Empty);
     }
     /**
@@ -303,7 +303,7 @@ public class MonitoredResourceType extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public MonitoredResourceType(String name, MonitoredResourceTypeArgs args) {
+    public MonitoredResourceType(java.lang.String name, MonitoredResourceTypeArgs args) {
         this(name, args, null);
     }
     /**
@@ -312,12 +312,12 @@ public class MonitoredResourceType extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public MonitoredResourceType(String name, MonitoredResourceTypeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:StackMonitoring/monitoredResourceType:MonitoredResourceType", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public MonitoredResourceType(java.lang.String name, MonitoredResourceTypeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:StackMonitoring/monitoredResourceType:MonitoredResourceType", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private MonitoredResourceType(String name, Output<String> id, @Nullable MonitoredResourceTypeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:StackMonitoring/monitoredResourceType:MonitoredResourceType", name, state, makeResourceOptions(options, id));
+    private MonitoredResourceType(java.lang.String name, Output<java.lang.String> id, @Nullable MonitoredResourceTypeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:StackMonitoring/monitoredResourceType:MonitoredResourceType", name, state, makeResourceOptions(options, id), false);
     }
 
     private static MonitoredResourceTypeArgs makeArgs(MonitoredResourceTypeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -327,7 +327,7 @@ public class MonitoredResourceType extends com.pulumi.resources.CustomResource {
         return args == null ? MonitoredResourceTypeArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -343,7 +343,7 @@ public class MonitoredResourceType extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static MonitoredResourceType get(String name, Output<String> id, @Nullable MonitoredResourceTypeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static MonitoredResourceType get(java.lang.String name, Output<java.lang.String> id, @Nullable MonitoredResourceTypeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new MonitoredResourceType(name, id, state, options);
     }
 }

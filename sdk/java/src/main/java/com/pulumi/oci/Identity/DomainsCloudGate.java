@@ -975,7 +975,7 @@ public class DomainsCloudGate extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DomainsCloudGate(String name) {
+    public DomainsCloudGate(java.lang.String name) {
         this(name, DomainsCloudGateArgs.Empty);
     }
     /**
@@ -983,7 +983,7 @@ public class DomainsCloudGate extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DomainsCloudGate(String name, DomainsCloudGateArgs args) {
+    public DomainsCloudGate(java.lang.String name, DomainsCloudGateArgs args) {
         this(name, args, null);
     }
     /**
@@ -992,12 +992,12 @@ public class DomainsCloudGate extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DomainsCloudGate(String name, DomainsCloudGateArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsCloudGate:DomainsCloudGate", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DomainsCloudGate(java.lang.String name, DomainsCloudGateArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/domainsCloudGate:DomainsCloudGate", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DomainsCloudGate(String name, Output<String> id, @Nullable DomainsCloudGateState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsCloudGate:DomainsCloudGate", name, state, makeResourceOptions(options, id));
+    private DomainsCloudGate(java.lang.String name, Output<java.lang.String> id, @Nullable DomainsCloudGateState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/domainsCloudGate:DomainsCloudGate", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DomainsCloudGateArgs makeArgs(DomainsCloudGateArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -1007,7 +1007,7 @@ public class DomainsCloudGate extends com.pulumi.resources.CustomResource {
         return args == null ? DomainsCloudGateArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -1023,7 +1023,7 @@ public class DomainsCloudGate extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DomainsCloudGate get(String name, Output<String> id, @Nullable DomainsCloudGateState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DomainsCloudGate get(java.lang.String name, Output<java.lang.String> id, @Nullable DomainsCloudGateState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DomainsCloudGate(name, id, state, options);
     }
 }

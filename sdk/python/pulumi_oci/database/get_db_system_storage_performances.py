@@ -88,7 +88,7 @@ class AwaitableGetDbSystemStoragePerformancesResult(GetDbSystemStoragePerformanc
             storage_management=self.storage_management)
 
 
-def get_db_system_storage_performances(filters: Optional[Sequence[pulumi.InputType['GetDbSystemStoragePerformancesFilterArgs']]] = None,
+def get_db_system_storage_performances(filters: Optional[Sequence[Union['GetDbSystemStoragePerformancesFilterArgs', 'GetDbSystemStoragePerformancesFilterArgsDict']]] = None,
                                        shape_type: Optional[str] = None,
                                        storage_management: Optional[str] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbSystemStoragePerformancesResult:
@@ -129,7 +129,7 @@ def get_db_system_storage_performances(filters: Optional[Sequence[pulumi.InputTy
 
 
 @_utilities.lift_output_func(get_db_system_storage_performances)
-def get_db_system_storage_performances_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDbSystemStoragePerformancesFilterArgs']]]]] = None,
+def get_db_system_storage_performances_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbSystemStoragePerformancesFilterArgs', 'GetDbSystemStoragePerformancesFilterArgsDict']]]]] = None,
                                               shape_type: Optional[pulumi.Input[Optional[str]]] = None,
                                               storage_management: Optional[pulumi.Input[str]] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbSystemStoragePerformancesResult]:

@@ -197,7 +197,7 @@ class AwaitableGetZonesResult(GetZonesResult):
 
 
 def get_zones(compartment_id: Optional[str] = None,
-              filters: Optional[Sequence[pulumi.InputType['GetZonesFilterArgs']]] = None,
+              filters: Optional[Sequence[Union['GetZonesFilterArgs', 'GetZonesFilterArgsDict']]] = None,
               name: Optional[str] = None,
               name_contains: Optional[str] = None,
               scope: Optional[str] = None,
@@ -288,7 +288,7 @@ def get_zones(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_zones)
 def get_zones_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                     filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetZonesFilterArgs']]]]] = None,
+                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetZonesFilterArgs', 'GetZonesFilterArgsDict']]]]] = None,
                      name: Optional[pulumi.Input[Optional[str]]] = None,
                      name_contains: Optional[pulumi.Input[Optional[str]]] = None,
                      scope: Optional[pulumi.Input[Optional[str]]] = None,

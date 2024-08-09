@@ -134,7 +134,7 @@ class AwaitableGetFusionEnvironmentScheduledActivitiesResult(GetFusionEnvironmen
 
 
 def get_fusion_environment_scheduled_activities(display_name: Optional[str] = None,
-                                                filters: Optional[Sequence[pulumi.InputType['GetFusionEnvironmentScheduledActivitiesFilterArgs']]] = None,
+                                                filters: Optional[Sequence[Union['GetFusionEnvironmentScheduledActivitiesFilterArgs', 'GetFusionEnvironmentScheduledActivitiesFilterArgsDict']]] = None,
                                                 fusion_environment_id: Optional[str] = None,
                                                 run_cycle: Optional[str] = None,
                                                 state: Optional[str] = None,
@@ -193,7 +193,7 @@ def get_fusion_environment_scheduled_activities(display_name: Optional[str] = No
 
 @_utilities.lift_output_func(get_fusion_environment_scheduled_activities)
 def get_fusion_environment_scheduled_activities_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                                       filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetFusionEnvironmentScheduledActivitiesFilterArgs']]]]] = None,
+                                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFusionEnvironmentScheduledActivitiesFilterArgs', 'GetFusionEnvironmentScheduledActivitiesFilterArgsDict']]]]] = None,
                                                        fusion_environment_id: Optional[pulumi.Input[str]] = None,
                                                        run_cycle: Optional[pulumi.Input[Optional[str]]] = None,
                                                        state: Optional[pulumi.Input[Optional[str]]] = None,

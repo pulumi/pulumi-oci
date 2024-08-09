@@ -105,7 +105,7 @@ class AwaitableGetInstancePoolsResult(GetInstancePoolsResult):
 
 def get_instance_pools(compartment_id: Optional[str] = None,
                        display_name: Optional[str] = None,
-                       filters: Optional[Sequence[pulumi.InputType['GetInstancePoolsFilterArgs']]] = None,
+                       filters: Optional[Sequence[Union['GetInstancePoolsFilterArgs', 'GetInstancePoolsFilterArgsDict']]] = None,
                        state: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetInstancePoolsResult:
     """
@@ -149,7 +149,7 @@ def get_instance_pools(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_instance_pools)
 def get_instance_pools_output(compartment_id: Optional[pulumi.Input[str]] = None,
                               display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                              filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetInstancePoolsFilterArgs']]]]] = None,
+                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetInstancePoolsFilterArgs', 'GetInstancePoolsFilterArgsDict']]]]] = None,
                               state: Optional[pulumi.Input[Optional[str]]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInstancePoolsResult]:
     """

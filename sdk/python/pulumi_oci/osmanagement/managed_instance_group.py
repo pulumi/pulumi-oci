@@ -476,7 +476,7 @@ class ManagedInstanceGroup(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             managed_instance_count: Optional[pulumi.Input[int]] = None,
             managed_instance_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            managed_instances: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceGroupManagedInstanceArgs']]]]] = None,
+            managed_instances: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceGroupManagedInstanceArgs', 'ManagedInstanceGroupManagedInstanceArgsDict']]]]] = None,
             os_family: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None) -> 'ManagedInstanceGroup':
         """
@@ -496,7 +496,7 @@ class ManagedInstanceGroup(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceGroupManagedInstanceArgs']]]] managed_instances: list of Managed Instances in the group
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceGroupManagedInstanceArgs', 'ManagedInstanceGroupManagedInstanceArgsDict']]]] managed_instances: list of Managed Instances in the group
         :param pulumi.Input[str] os_family: The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
         :param pulumi.Input[str] state: The current state of the Software Source.
         """

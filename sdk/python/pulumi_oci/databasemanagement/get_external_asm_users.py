@@ -86,7 +86,7 @@ class AwaitableGetExternalAsmUsersResult(GetExternalAsmUsersResult):
 
 
 def get_external_asm_users(external_asm_id: Optional[str] = None,
-                           filters: Optional[Sequence[pulumi.InputType['GetExternalAsmUsersFilterArgs']]] = None,
+                           filters: Optional[Sequence[Union['GetExternalAsmUsersFilterArgs', 'GetExternalAsmUsersFilterArgsDict']]] = None,
                            opc_named_credential_id: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalAsmUsersResult:
     """
@@ -125,7 +125,7 @@ def get_external_asm_users(external_asm_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_external_asm_users)
 def get_external_asm_users_output(external_asm_id: Optional[pulumi.Input[str]] = None,
-                                  filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetExternalAsmUsersFilterArgs']]]]] = None,
+                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExternalAsmUsersFilterArgs', 'GetExternalAsmUsersFilterArgsDict']]]]] = None,
                                   opc_named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalAsmUsersResult]:
     """

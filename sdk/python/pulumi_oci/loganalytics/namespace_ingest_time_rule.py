@@ -377,9 +377,9 @@ class NamespaceIngestTimeRule(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 actions: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NamespaceIngestTimeRuleActionArgs']]]]] = None,
+                 actions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NamespaceIngestTimeRuleActionArgs', 'NamespaceIngestTimeRuleActionArgsDict']]]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 conditions: Optional[pulumi.Input[pulumi.InputType['NamespaceIngestTimeRuleConditionsArgs']]] = None,
+                 conditions: Optional[pulumi.Input[Union['NamespaceIngestTimeRuleConditionsArgs', 'NamespaceIngestTimeRuleConditionsArgsDict']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -398,26 +398,26 @@ class NamespaceIngestTimeRule(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_namespace_ingest_time_rule = oci.log_analytics.NamespaceIngestTimeRule("test_namespace_ingest_time_rule",
-            actions=[oci.log_analytics.NamespaceIngestTimeRuleActionArgs(
-                compartment_id=compartment_id,
-                metric_name=test_metric["name"],
-                namespace=namespace_ingest_time_rule_actions_namespace,
-                type=namespace_ingest_time_rule_actions_type,
-                dimensions=namespace_ingest_time_rule_actions_dimensions,
-                resource_group=namespace_ingest_time_rule_actions_resource_group,
-            )],
+            actions=[{
+                "compartment_id": compartment_id,
+                "metric_name": test_metric["name"],
+                "namespace": namespace_ingest_time_rule_actions_namespace,
+                "type": namespace_ingest_time_rule_actions_type,
+                "dimensions": namespace_ingest_time_rule_actions_dimensions,
+                "resource_group": namespace_ingest_time_rule_actions_resource_group,
+            }],
             compartment_id=compartment_id,
-            conditions=oci.log_analytics.NamespaceIngestTimeRuleConditionsArgs(
-                field_name=namespace_ingest_time_rule_conditions_field_name,
-                field_operator=namespace_ingest_time_rule_conditions_field_operator,
-                field_value=namespace_ingest_time_rule_conditions_field_value,
-                kind=namespace_ingest_time_rule_conditions_kind,
-                additional_conditions=[oci.log_analytics.NamespaceIngestTimeRuleConditionsAdditionalConditionArgs(
-                    condition_field=namespace_ingest_time_rule_conditions_additional_conditions_condition_field,
-                    condition_operator=namespace_ingest_time_rule_conditions_additional_conditions_condition_operator,
-                    condition_value=namespace_ingest_time_rule_conditions_additional_conditions_condition_value,
-                )],
-            ),
+            conditions={
+                "field_name": namespace_ingest_time_rule_conditions_field_name,
+                "field_operator": namespace_ingest_time_rule_conditions_field_operator,
+                "field_value": namespace_ingest_time_rule_conditions_field_value,
+                "kind": namespace_ingest_time_rule_conditions_kind,
+                "additional_conditions": [{
+                    "condition_field": namespace_ingest_time_rule_conditions_additional_conditions_condition_field,
+                    "condition_operator": namespace_ingest_time_rule_conditions_additional_conditions_condition_operator,
+                    "condition_value": namespace_ingest_time_rule_conditions_additional_conditions_condition_value,
+                }],
+            },
             display_name=namespace_ingest_time_rule_display_name,
             namespace=namespace_ingest_time_rule_namespace,
             defined_tags={
@@ -439,9 +439,9 @@ class NamespaceIngestTimeRule(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NamespaceIngestTimeRuleActionArgs']]]] actions: (Updatable) The action(s) to be performed if the ingest time rule condition(s) are satisfied.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NamespaceIngestTimeRuleActionArgs', 'NamespaceIngestTimeRuleActionArgsDict']]]] actions: (Updatable) The action(s) to be performed if the ingest time rule condition(s) are satisfied.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[pulumi.InputType['NamespaceIngestTimeRuleConditionsArgs']] conditions: (Updatable) The condition(s) to evaluate for an ingest time rule.
+        :param pulumi.Input[Union['NamespaceIngestTimeRuleConditionsArgs', 'NamespaceIngestTimeRuleConditionsArgsDict']] conditions: (Updatable) The condition(s) to evaluate for an ingest time rule.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Description for this resource.
         :param pulumi.Input[str] display_name: (Updatable) The ingest time rule display name.
@@ -470,26 +470,26 @@ class NamespaceIngestTimeRule(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_namespace_ingest_time_rule = oci.log_analytics.NamespaceIngestTimeRule("test_namespace_ingest_time_rule",
-            actions=[oci.log_analytics.NamespaceIngestTimeRuleActionArgs(
-                compartment_id=compartment_id,
-                metric_name=test_metric["name"],
-                namespace=namespace_ingest_time_rule_actions_namespace,
-                type=namespace_ingest_time_rule_actions_type,
-                dimensions=namespace_ingest_time_rule_actions_dimensions,
-                resource_group=namespace_ingest_time_rule_actions_resource_group,
-            )],
+            actions=[{
+                "compartment_id": compartment_id,
+                "metric_name": test_metric["name"],
+                "namespace": namespace_ingest_time_rule_actions_namespace,
+                "type": namespace_ingest_time_rule_actions_type,
+                "dimensions": namespace_ingest_time_rule_actions_dimensions,
+                "resource_group": namespace_ingest_time_rule_actions_resource_group,
+            }],
             compartment_id=compartment_id,
-            conditions=oci.log_analytics.NamespaceIngestTimeRuleConditionsArgs(
-                field_name=namespace_ingest_time_rule_conditions_field_name,
-                field_operator=namespace_ingest_time_rule_conditions_field_operator,
-                field_value=namespace_ingest_time_rule_conditions_field_value,
-                kind=namespace_ingest_time_rule_conditions_kind,
-                additional_conditions=[oci.log_analytics.NamespaceIngestTimeRuleConditionsAdditionalConditionArgs(
-                    condition_field=namespace_ingest_time_rule_conditions_additional_conditions_condition_field,
-                    condition_operator=namespace_ingest_time_rule_conditions_additional_conditions_condition_operator,
-                    condition_value=namespace_ingest_time_rule_conditions_additional_conditions_condition_value,
-                )],
-            ),
+            conditions={
+                "field_name": namespace_ingest_time_rule_conditions_field_name,
+                "field_operator": namespace_ingest_time_rule_conditions_field_operator,
+                "field_value": namespace_ingest_time_rule_conditions_field_value,
+                "kind": namespace_ingest_time_rule_conditions_kind,
+                "additional_conditions": [{
+                    "condition_field": namespace_ingest_time_rule_conditions_additional_conditions_condition_field,
+                    "condition_operator": namespace_ingest_time_rule_conditions_additional_conditions_condition_operator,
+                    "condition_value": namespace_ingest_time_rule_conditions_additional_conditions_condition_value,
+                }],
+            },
             display_name=namespace_ingest_time_rule_display_name,
             namespace=namespace_ingest_time_rule_namespace,
             defined_tags={
@@ -524,9 +524,9 @@ class NamespaceIngestTimeRule(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 actions: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NamespaceIngestTimeRuleActionArgs']]]]] = None,
+                 actions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NamespaceIngestTimeRuleActionArgs', 'NamespaceIngestTimeRuleActionArgsDict']]]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 conditions: Optional[pulumi.Input[pulumi.InputType['NamespaceIngestTimeRuleConditionsArgs']]] = None,
+                 conditions: Optional[pulumi.Input[Union['NamespaceIngestTimeRuleConditionsArgs', 'NamespaceIngestTimeRuleConditionsArgsDict']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -574,9 +574,9 @@ class NamespaceIngestTimeRule(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            actions: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NamespaceIngestTimeRuleActionArgs']]]]] = None,
+            actions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NamespaceIngestTimeRuleActionArgs', 'NamespaceIngestTimeRuleActionArgsDict']]]]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            conditions: Optional[pulumi.Input[pulumi.InputType['NamespaceIngestTimeRuleConditionsArgs']]] = None,
+            conditions: Optional[pulumi.Input[Union['NamespaceIngestTimeRuleConditionsArgs', 'NamespaceIngestTimeRuleConditionsArgsDict']]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
@@ -594,9 +594,9 @@ class NamespaceIngestTimeRule(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NamespaceIngestTimeRuleActionArgs']]]] actions: (Updatable) The action(s) to be performed if the ingest time rule condition(s) are satisfied.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NamespaceIngestTimeRuleActionArgs', 'NamespaceIngestTimeRuleActionArgsDict']]]] actions: (Updatable) The action(s) to be performed if the ingest time rule condition(s) are satisfied.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[pulumi.InputType['NamespaceIngestTimeRuleConditionsArgs']] conditions: (Updatable) The condition(s) to evaluate for an ingest time rule.
+        :param pulumi.Input[Union['NamespaceIngestTimeRuleConditionsArgs', 'NamespaceIngestTimeRuleConditionsArgsDict']] conditions: (Updatable) The condition(s) to evaluate for an ingest time rule.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Description for this resource.
         :param pulumi.Input[str] display_name: (Updatable) The ingest time rule display name.

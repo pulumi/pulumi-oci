@@ -146,7 +146,7 @@ class AwaitableGetWorkspaceApplicationTaskSchedulesResult(GetWorkspaceApplicatio
 
 
 def get_workspace_application_task_schedules(application_key: Optional[str] = None,
-                                             filters: Optional[Sequence[pulumi.InputType['GetWorkspaceApplicationTaskSchedulesFilterArgs']]] = None,
+                                             filters: Optional[Sequence[Union['GetWorkspaceApplicationTaskSchedulesFilterArgs', 'GetWorkspaceApplicationTaskSchedulesFilterArgsDict']]] = None,
                                              identifiers: Optional[Sequence[str]] = None,
                                              is_enabled: Optional[bool] = None,
                                              keys: Optional[Sequence[str]] = None,
@@ -210,7 +210,7 @@ def get_workspace_application_task_schedules(application_key: Optional[str] = No
 
 @_utilities.lift_output_func(get_workspace_application_task_schedules)
 def get_workspace_application_task_schedules_output(application_key: Optional[pulumi.Input[str]] = None,
-                                                    filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetWorkspaceApplicationTaskSchedulesFilterArgs']]]]] = None,
+                                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetWorkspaceApplicationTaskSchedulesFilterArgs', 'GetWorkspaceApplicationTaskSchedulesFilterArgsDict']]]]] = None,
                                                     identifiers: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                                     is_enabled: Optional[pulumi.Input[Optional[bool]]] = None,
                                                     keys: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,

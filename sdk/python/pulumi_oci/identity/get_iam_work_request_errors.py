@@ -76,7 +76,7 @@ class AwaitableGetIamWorkRequestErrorsResult(GetIamWorkRequestErrorsResult):
             id=self.id)
 
 
-def get_iam_work_request_errors(filters: Optional[Sequence[pulumi.InputType['GetIamWorkRequestErrorsFilterArgs']]] = None,
+def get_iam_work_request_errors(filters: Optional[Sequence[Union['GetIamWorkRequestErrorsFilterArgs', 'GetIamWorkRequestErrorsFilterArgsDict']]] = None,
                                 iam_work_request_id: Optional[str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIamWorkRequestErrorsResult:
     """
@@ -114,7 +114,7 @@ def get_iam_work_request_errors(filters: Optional[Sequence[pulumi.InputType['Get
 
 
 @_utilities.lift_output_func(get_iam_work_request_errors)
-def get_iam_work_request_errors_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetIamWorkRequestErrorsFilterArgs']]]]] = None,
+def get_iam_work_request_errors_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetIamWorkRequestErrorsFilterArgs', 'GetIamWorkRequestErrorsFilterArgsDict']]]]] = None,
                                        iam_work_request_id: Optional[pulumi.Input[str]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIamWorkRequestErrorsResult]:
     """

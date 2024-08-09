@@ -80,7 +80,7 @@ class AwaitableGetCostTrackingTagsResult(GetCostTrackingTagsResult):
 
 
 def get_cost_tracking_tags(compartment_id: Optional[str] = None,
-                           filters: Optional[Sequence[pulumi.InputType['GetCostTrackingTagsFilterArgs']]] = None,
+                           filters: Optional[Sequence[Union['GetCostTrackingTagsFilterArgs', 'GetCostTrackingTagsFilterArgsDict']]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCostTrackingTagsResult:
     """
     This data source provides the list of Cost Tracking Tags in Oracle Cloud Infrastructure Identity service.
@@ -115,7 +115,7 @@ def get_cost_tracking_tags(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_cost_tracking_tags)
 def get_cost_tracking_tags_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                  filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetCostTrackingTagsFilterArgs']]]]] = None,
+                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCostTrackingTagsFilterArgs', 'GetCostTrackingTagsFilterArgsDict']]]]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCostTrackingTagsResult]:
     """
     This data source provides the list of Cost Tracking Tags in Oracle Cloud Infrastructure Identity service.

@@ -231,7 +231,7 @@ class AwaitableGetMaskingPoliciesMaskingColumnsResult(GetMaskingPoliciesMaskingC
 
 def get_masking_policies_masking_columns(column_names: Optional[Sequence[str]] = None,
                                          data_types: Optional[Sequence[str]] = None,
-                                         filters: Optional[Sequence[pulumi.InputType['GetMaskingPoliciesMaskingColumnsFilterArgs']]] = None,
+                                         filters: Optional[Sequence[Union['GetMaskingPoliciesMaskingColumnsFilterArgs', 'GetMaskingPoliciesMaskingColumnsFilterArgsDict']]] = None,
                                          is_masking_enabled: Optional[bool] = None,
                                          is_seed_required: Optional[bool] = None,
                                          masking_column_groups: Optional[Sequence[str]] = None,
@@ -339,7 +339,7 @@ def get_masking_policies_masking_columns(column_names: Optional[Sequence[str]] =
 @_utilities.lift_output_func(get_masking_policies_masking_columns)
 def get_masking_policies_masking_columns_output(column_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                                 data_types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                                                filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetMaskingPoliciesMaskingColumnsFilterArgs']]]]] = None,
+                                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMaskingPoliciesMaskingColumnsFilterArgs', 'GetMaskingPoliciesMaskingColumnsFilterArgsDict']]]]] = None,
                                                 is_masking_enabled: Optional[pulumi.Input[Optional[bool]]] = None,
                                                 is_seed_required: Optional[pulumi.Input[Optional[bool]]] = None,
                                                 masking_column_groups: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,

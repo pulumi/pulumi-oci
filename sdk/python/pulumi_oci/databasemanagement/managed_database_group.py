@@ -293,7 +293,7 @@ class ManagedDatabaseGroup(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 managed_databases: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedDatabaseGroupManagedDatabaseArgs']]]]] = None,
+                 managed_databases: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagedDatabaseGroupManagedDatabaseArgs', 'ManagedDatabaseGroupManagedDatabaseArgsDict']]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -318,9 +318,9 @@ class ManagedDatabaseGroup(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            managed_databases=[oci.database_management.ManagedDatabaseGroupManagedDatabaseArgs(
-                id=managed_database_id,
-            )])
+            managed_databases=[{
+                "id": managed_database_id,
+            }])
         ```
 
         ## Import
@@ -337,7 +337,7 @@ class ManagedDatabaseGroup(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The information specified by the user about the Managed Database Group.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedDatabaseGroupManagedDatabaseArgs']]]] managed_databases: (Updatable) Set of Managed Databases that the user wants to add to the Managed Database Group. Specifying a block will add the Managed Database to Managed Database Group and removing the block will remove Managed Database from the Managed Database Group.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedDatabaseGroupManagedDatabaseArgs', 'ManagedDatabaseGroupManagedDatabaseArgsDict']]]] managed_databases: (Updatable) Set of Managed Databases that the user wants to add to the Managed Database Group. Specifying a block will add the Managed Database to Managed Database Group and removing the block will remove Managed Database from the Managed Database Group.
         :param pulumi.Input[str] name: The name of the Managed Database Group. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the Managed Database Group cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
         """
         ...
@@ -368,9 +368,9 @@ class ManagedDatabaseGroup(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            managed_databases=[oci.database_management.ManagedDatabaseGroupManagedDatabaseArgs(
-                id=managed_database_id,
-            )])
+            managed_databases=[{
+                "id": managed_database_id,
+            }])
         ```
 
         ## Import
@@ -400,7 +400,7 @@ class ManagedDatabaseGroup(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 managed_databases: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedDatabaseGroupManagedDatabaseArgs']]]]] = None,
+                 managed_databases: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagedDatabaseGroupManagedDatabaseArgs', 'ManagedDatabaseGroupManagedDatabaseArgsDict']]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -437,7 +437,7 @@ class ManagedDatabaseGroup(pulumi.CustomResource):
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             description: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            managed_databases: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedDatabaseGroupManagedDatabaseArgs']]]]] = None,
+            managed_databases: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagedDatabaseGroupManagedDatabaseArgs', 'ManagedDatabaseGroupManagedDatabaseArgsDict']]]]] = None,
             name: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -454,7 +454,7 @@ class ManagedDatabaseGroup(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The information specified by the user about the Managed Database Group.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedDatabaseGroupManagedDatabaseArgs']]]] managed_databases: (Updatable) Set of Managed Databases that the user wants to add to the Managed Database Group. Specifying a block will add the Managed Database to Managed Database Group and removing the block will remove Managed Database from the Managed Database Group.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedDatabaseGroupManagedDatabaseArgs', 'ManagedDatabaseGroupManagedDatabaseArgsDict']]]] managed_databases: (Updatable) Set of Managed Databases that the user wants to add to the Managed Database Group. Specifying a block will add the Managed Database to Managed Database Group and removing the block will remove Managed Database from the Managed Database Group.
         :param pulumi.Input[str] name: The name of the Managed Database Group. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the Managed Database Group cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
         :param pulumi.Input[str] state: The current lifecycle state of the Managed Database Group.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`

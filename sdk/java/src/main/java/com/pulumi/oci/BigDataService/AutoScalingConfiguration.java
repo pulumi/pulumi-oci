@@ -275,7 +275,7 @@ public class AutoScalingConfiguration extends com.pulumi.resources.CustomResourc
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public AutoScalingConfiguration(String name) {
+    public AutoScalingConfiguration(java.lang.String name) {
         this(name, AutoScalingConfigurationArgs.Empty);
     }
     /**
@@ -283,7 +283,7 @@ public class AutoScalingConfiguration extends com.pulumi.resources.CustomResourc
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public AutoScalingConfiguration(String name, AutoScalingConfigurationArgs args) {
+    public AutoScalingConfiguration(java.lang.String name, AutoScalingConfigurationArgs args) {
         this(name, args, null);
     }
     /**
@@ -292,12 +292,12 @@ public class AutoScalingConfiguration extends com.pulumi.resources.CustomResourc
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public AutoScalingConfiguration(String name, AutoScalingConfigurationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:BigDataService/autoScalingConfiguration:AutoScalingConfiguration", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public AutoScalingConfiguration(java.lang.String name, AutoScalingConfigurationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:BigDataService/autoScalingConfiguration:AutoScalingConfiguration", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private AutoScalingConfiguration(String name, Output<String> id, @Nullable AutoScalingConfigurationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:BigDataService/autoScalingConfiguration:AutoScalingConfiguration", name, state, makeResourceOptions(options, id));
+    private AutoScalingConfiguration(java.lang.String name, Output<java.lang.String> id, @Nullable AutoScalingConfigurationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:BigDataService/autoScalingConfiguration:AutoScalingConfiguration", name, state, makeResourceOptions(options, id), false);
     }
 
     private static AutoScalingConfigurationArgs makeArgs(AutoScalingConfigurationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -307,7 +307,7 @@ public class AutoScalingConfiguration extends com.pulumi.resources.CustomResourc
         return args == null ? AutoScalingConfigurationArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .additionalSecretOutputs(List.of(
@@ -326,7 +326,7 @@ public class AutoScalingConfiguration extends com.pulumi.resources.CustomResourc
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static AutoScalingConfiguration get(String name, Output<String> id, @Nullable AutoScalingConfigurationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static AutoScalingConfiguration get(java.lang.String name, Output<java.lang.String> id, @Nullable AutoScalingConfigurationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new AutoScalingConfiguration(name, id, state, options);
     }
 }

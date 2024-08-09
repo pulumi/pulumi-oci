@@ -104,7 +104,7 @@ class AwaitableGetTsigKeysResult(GetTsigKeysResult):
 
 
 def get_tsig_keys(compartment_id: Optional[str] = None,
-                  filters: Optional[Sequence[pulumi.InputType['GetTsigKeysFilterArgs']]] = None,
+                  filters: Optional[Sequence[Union['GetTsigKeysFilterArgs', 'GetTsigKeysFilterArgsDict']]] = None,
                   id: Optional[str] = None,
                   name: Optional[str] = None,
                   state: Optional[str] = None,
@@ -152,7 +152,7 @@ def get_tsig_keys(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_tsig_keys)
 def get_tsig_keys_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                         filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetTsigKeysFilterArgs']]]]] = None,
+                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetTsigKeysFilterArgs', 'GetTsigKeysFilterArgsDict']]]]] = None,
                          id: Optional[pulumi.Input[Optional[str]]] = None,
                          name: Optional[pulumi.Input[Optional[str]]] = None,
                          state: Optional[pulumi.Input[Optional[str]]] = None,

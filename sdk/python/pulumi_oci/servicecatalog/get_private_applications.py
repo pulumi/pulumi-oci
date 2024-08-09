@@ -102,7 +102,7 @@ class AwaitableGetPrivateApplicationsResult(GetPrivateApplicationsResult):
 
 def get_private_applications(compartment_id: Optional[str] = None,
                              display_name: Optional[str] = None,
-                             filters: Optional[Sequence[pulumi.InputType['GetPrivateApplicationsFilterArgs']]] = None,
+                             filters: Optional[Sequence[Union['GetPrivateApplicationsFilterArgs', 'GetPrivateApplicationsFilterArgsDict']]] = None,
                              private_application_id: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPrivateApplicationsResult:
     """
@@ -146,7 +146,7 @@ def get_private_applications(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_private_applications)
 def get_private_applications_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                     display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                    filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetPrivateApplicationsFilterArgs']]]]] = None,
+                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPrivateApplicationsFilterArgs', 'GetPrivateApplicationsFilterArgsDict']]]]] = None,
                                     private_application_id: Optional[pulumi.Input[Optional[str]]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPrivateApplicationsResult]:
     """

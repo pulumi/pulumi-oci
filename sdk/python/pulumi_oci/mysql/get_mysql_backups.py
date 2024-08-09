@@ -141,7 +141,7 @@ def get_mysql_backups(backup_id: Optional[str] = None,
                       creation_type: Optional[str] = None,
                       db_system_id: Optional[str] = None,
                       display_name: Optional[str] = None,
-                      filters: Optional[Sequence[pulumi.InputType['GetMysqlBackupsFilterArgs']]] = None,
+                      filters: Optional[Sequence[Union['GetMysqlBackupsFilterArgs', 'GetMysqlBackupsFilterArgsDict']]] = None,
                       state: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMysqlBackupsResult:
     """
@@ -200,7 +200,7 @@ def get_mysql_backups_output(backup_id: Optional[pulumi.Input[Optional[str]]] = 
                              creation_type: Optional[pulumi.Input[Optional[str]]] = None,
                              db_system_id: Optional[pulumi.Input[Optional[str]]] = None,
                              display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                             filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetMysqlBackupsFilterArgs']]]]] = None,
+                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMysqlBackupsFilterArgs', 'GetMysqlBackupsFilterArgsDict']]]]] = None,
                              state: Optional[pulumi.Input[Optional[str]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMysqlBackupsResult]:
     """

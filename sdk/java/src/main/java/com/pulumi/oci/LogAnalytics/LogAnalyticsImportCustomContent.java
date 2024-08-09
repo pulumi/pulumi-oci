@@ -203,7 +203,7 @@ public class LogAnalyticsImportCustomContent extends com.pulumi.resources.Custom
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public LogAnalyticsImportCustomContent(String name) {
+    public LogAnalyticsImportCustomContent(java.lang.String name) {
         this(name, LogAnalyticsImportCustomContentArgs.Empty);
     }
     /**
@@ -211,7 +211,7 @@ public class LogAnalyticsImportCustomContent extends com.pulumi.resources.Custom
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public LogAnalyticsImportCustomContent(String name, LogAnalyticsImportCustomContentArgs args) {
+    public LogAnalyticsImportCustomContent(java.lang.String name, LogAnalyticsImportCustomContentArgs args) {
         this(name, args, null);
     }
     /**
@@ -220,12 +220,12 @@ public class LogAnalyticsImportCustomContent extends com.pulumi.resources.Custom
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public LogAnalyticsImportCustomContent(String name, LogAnalyticsImportCustomContentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:LogAnalytics/logAnalyticsImportCustomContent:LogAnalyticsImportCustomContent", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public LogAnalyticsImportCustomContent(java.lang.String name, LogAnalyticsImportCustomContentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:LogAnalytics/logAnalyticsImportCustomContent:LogAnalyticsImportCustomContent", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private LogAnalyticsImportCustomContent(String name, Output<String> id, @Nullable LogAnalyticsImportCustomContentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:LogAnalytics/logAnalyticsImportCustomContent:LogAnalyticsImportCustomContent", name, state, makeResourceOptions(options, id));
+    private LogAnalyticsImportCustomContent(java.lang.String name, Output<java.lang.String> id, @Nullable LogAnalyticsImportCustomContentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:LogAnalytics/logAnalyticsImportCustomContent:LogAnalyticsImportCustomContent", name, state, makeResourceOptions(options, id), false);
     }
 
     private static LogAnalyticsImportCustomContentArgs makeArgs(LogAnalyticsImportCustomContentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -235,7 +235,7 @@ public class LogAnalyticsImportCustomContent extends com.pulumi.resources.Custom
         return args == null ? LogAnalyticsImportCustomContentArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -251,7 +251,7 @@ public class LogAnalyticsImportCustomContent extends com.pulumi.resources.Custom
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static LogAnalyticsImportCustomContent get(String name, Output<String> id, @Nullable LogAnalyticsImportCustomContentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static LogAnalyticsImportCustomContent get(java.lang.String name, Output<java.lang.String> id, @Nullable LogAnalyticsImportCustomContentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new LogAnalyticsImportCustomContent(name, id, state, options);
     }
 }

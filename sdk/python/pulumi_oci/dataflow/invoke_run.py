@@ -1178,7 +1178,7 @@ class InvokeRun(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  application_id: Optional[pulumi.Input[str]] = None,
-                 application_log_config: Optional[pulumi.Input[pulumi.InputType['InvokeRunApplicationLogConfigArgs']]] = None,
+                 application_log_config: Optional[pulumi.Input[Union['InvokeRunApplicationLogConfigArgs', 'InvokeRunApplicationLogConfigArgsDict']]] = None,
                  archive_uri: Optional[pulumi.Input[str]] = None,
                  arguments: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  asynchronous: Optional[pulumi.Input[bool]] = None,
@@ -1187,10 +1187,10 @@ class InvokeRun(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  driver_shape: Optional[pulumi.Input[str]] = None,
-                 driver_shape_config: Optional[pulumi.Input[pulumi.InputType['InvokeRunDriverShapeConfigArgs']]] = None,
+                 driver_shape_config: Optional[pulumi.Input[Union['InvokeRunDriverShapeConfigArgs', 'InvokeRunDriverShapeConfigArgsDict']]] = None,
                  execute: Optional[pulumi.Input[str]] = None,
                  executor_shape: Optional[pulumi.Input[str]] = None,
-                 executor_shape_config: Optional[pulumi.Input[pulumi.InputType['InvokeRunExecutorShapeConfigArgs']]] = None,
+                 executor_shape_config: Optional[pulumi.Input[Union['InvokeRunExecutorShapeConfigArgs', 'InvokeRunExecutorShapeConfigArgsDict']]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  idle_timeout_in_minutes: Optional[pulumi.Input[str]] = None,
                  logs_bucket_uri: Optional[pulumi.Input[str]] = None,
@@ -1198,7 +1198,7 @@ class InvokeRun(pulumi.CustomResource):
                  metastore_id: Optional[pulumi.Input[str]] = None,
                  num_executors: Optional[pulumi.Input[int]] = None,
                  opc_parent_rpt_url: Optional[pulumi.Input[str]] = None,
-                 parameters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InvokeRunParameterArgs']]]]] = None,
+                 parameters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InvokeRunParameterArgs', 'InvokeRunParameterArgsDict']]]]] = None,
                  pool_id: Optional[pulumi.Input[str]] = None,
                  spark_version: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None,
@@ -1218,10 +1218,10 @@ class InvokeRun(pulumi.CustomResource):
         test_invoke_run = oci.data_flow.InvokeRun("test_invoke_run",
             compartment_id=compartment_id,
             application_id=test_application["id"],
-            application_log_config=oci.data_flow.InvokeRunApplicationLogConfigArgs(
-                log_group_id=test_log_group["id"],
-                log_id=test_log["id"],
-            ),
+            application_log_config={
+                "log_group_id": test_log_group["id"],
+                "log_id": test_log["id"],
+            },
             archive_uri=invoke_run_archive_uri,
             arguments=invoke_run_arguments,
             configuration=invoke_run_configuration,
@@ -1230,16 +1230,16 @@ class InvokeRun(pulumi.CustomResource):
             },
             display_name=invoke_run_display_name,
             driver_shape=invoke_run_driver_shape,
-            driver_shape_config=oci.data_flow.InvokeRunDriverShapeConfigArgs(
-                memory_in_gbs=invoke_run_driver_shape_config_memory_in_gbs,
-                ocpus=invoke_run_driver_shape_config_ocpus,
-            ),
+            driver_shape_config={
+                "memory_in_gbs": invoke_run_driver_shape_config_memory_in_gbs,
+                "ocpus": invoke_run_driver_shape_config_ocpus,
+            },
             execute=invoke_run_execute,
             executor_shape=invoke_run_executor_shape,
-            executor_shape_config=oci.data_flow.InvokeRunExecutorShapeConfigArgs(
-                memory_in_gbs=invoke_run_executor_shape_config_memory_in_gbs,
-                ocpus=invoke_run_executor_shape_config_ocpus,
-            ),
+            executor_shape_config={
+                "memory_in_gbs": invoke_run_executor_shape_config_memory_in_gbs,
+                "ocpus": invoke_run_executor_shape_config_ocpus,
+            },
             freeform_tags={
                 "Department": "Finance",
             },
@@ -1249,10 +1249,10 @@ class InvokeRun(pulumi.CustomResource):
             metastore_id=metastore_id,
             num_executors=invoke_run_num_executors,
             opc_parent_rpt_url=invoke_run_opc_parent_rpt_url,
-            parameters=[oci.data_flow.InvokeRunParameterArgs(
-                name=invoke_run_parameters_name,
-                value=invoke_run_parameters_value,
-            )],
+            parameters=[{
+                "name": invoke_run_parameters_name,
+                "value": invoke_run_parameters_value,
+            }],
             pool_id=test_pool["id"],
             spark_version=invoke_run_spark_version,
             type=invoke_run_type,
@@ -1274,7 +1274,7 @@ class InvokeRun(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] application_id: The OCID of the associated application. If this value is set, then no value for the execute parameter is required. If this value is not set, then a value for the execute parameter is required, and a new application is created and associated with the new run.
-        :param pulumi.Input[pulumi.InputType['InvokeRunApplicationLogConfigArgs']] application_log_config: Logging details of Application logs for Data Flow Run.
+        :param pulumi.Input[Union['InvokeRunApplicationLogConfigArgs', 'InvokeRunApplicationLogConfigArgsDict']] application_log_config: Logging details of Application logs for Data Flow Run.
         :param pulumi.Input[str] archive_uri: A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] arguments: The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "input_file" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of a compartment.
@@ -1282,10 +1282,10 @@ class InvokeRun(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: A user-friendly name that does not have to be unique. Avoid entering confidential information. If this value is not specified, it will be derived from the associated application's displayName or set by API using fileUri's application file name.
         :param pulumi.Input[str] driver_shape: The VM shape for the driver. Sets the driver cores and memory.
-        :param pulumi.Input[pulumi.InputType['InvokeRunDriverShapeConfigArgs']] driver_shape_config: This is used to configure the shape of the driver or executor if a flexible shape is used.
+        :param pulumi.Input[Union['InvokeRunDriverShapeConfigArgs', 'InvokeRunDriverShapeConfigArgsDict']] driver_shape_config: This is used to configure the shape of the driver or executor if a flexible shape is used.
         :param pulumi.Input[str] execute: The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
         :param pulumi.Input[str] executor_shape: The VM shape for the executors. Sets the executor cores and memory.
-        :param pulumi.Input[pulumi.InputType['InvokeRunExecutorShapeConfigArgs']] executor_shape_config: This is used to configure the shape of the driver or executor if a flexible shape is used.
+        :param pulumi.Input[Union['InvokeRunExecutorShapeConfigArgs', 'InvokeRunExecutorShapeConfigArgsDict']] executor_shape_config: This is used to configure the shape of the driver or executor if a flexible shape is used.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] idle_timeout_in_minutes: (Updatable) The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
         :param pulumi.Input[str] logs_bucket_uri: An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
@@ -1293,7 +1293,7 @@ class InvokeRun(pulumi.CustomResource):
         :param pulumi.Input[str] metastore_id: The OCID of Oracle Cloud Infrastructure Hive Metastore.
         :param pulumi.Input[int] num_executors: The number of executor VMs requested.
         :param pulumi.Input[str] opc_parent_rpt_url: (Optional header param, required for Resource Principal version 3.0+) Parent resource control plane endpoint used to exchange for upper level resource principal token.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InvokeRunParameterArgs']]]] parameters: An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "input_file", value: "mydata.xml" }, { name: "variable_x", value: "${x}"} ]
+        :param pulumi.Input[Sequence[pulumi.Input[Union['InvokeRunParameterArgs', 'InvokeRunParameterArgsDict']]]] parameters: An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "input_file", value: "mydata.xml" }, { name: "variable_x", value: "${x}"} ]
         :param pulumi.Input[str] pool_id: The OCID of a pool. Unique Id to indentify a dataflow pool resource.
         :param pulumi.Input[str] spark_version: The Spark version utilized to run the application. This value may be set if applicationId is not since the Spark version will be taken from the associated application.
         :param pulumi.Input[str] type: The Spark application processing type.
@@ -1323,10 +1323,10 @@ class InvokeRun(pulumi.CustomResource):
         test_invoke_run = oci.data_flow.InvokeRun("test_invoke_run",
             compartment_id=compartment_id,
             application_id=test_application["id"],
-            application_log_config=oci.data_flow.InvokeRunApplicationLogConfigArgs(
-                log_group_id=test_log_group["id"],
-                log_id=test_log["id"],
-            ),
+            application_log_config={
+                "log_group_id": test_log_group["id"],
+                "log_id": test_log["id"],
+            },
             archive_uri=invoke_run_archive_uri,
             arguments=invoke_run_arguments,
             configuration=invoke_run_configuration,
@@ -1335,16 +1335,16 @@ class InvokeRun(pulumi.CustomResource):
             },
             display_name=invoke_run_display_name,
             driver_shape=invoke_run_driver_shape,
-            driver_shape_config=oci.data_flow.InvokeRunDriverShapeConfigArgs(
-                memory_in_gbs=invoke_run_driver_shape_config_memory_in_gbs,
-                ocpus=invoke_run_driver_shape_config_ocpus,
-            ),
+            driver_shape_config={
+                "memory_in_gbs": invoke_run_driver_shape_config_memory_in_gbs,
+                "ocpus": invoke_run_driver_shape_config_ocpus,
+            },
             execute=invoke_run_execute,
             executor_shape=invoke_run_executor_shape,
-            executor_shape_config=oci.data_flow.InvokeRunExecutorShapeConfigArgs(
-                memory_in_gbs=invoke_run_executor_shape_config_memory_in_gbs,
-                ocpus=invoke_run_executor_shape_config_ocpus,
-            ),
+            executor_shape_config={
+                "memory_in_gbs": invoke_run_executor_shape_config_memory_in_gbs,
+                "ocpus": invoke_run_executor_shape_config_ocpus,
+            },
             freeform_tags={
                 "Department": "Finance",
             },
@@ -1354,10 +1354,10 @@ class InvokeRun(pulumi.CustomResource):
             metastore_id=metastore_id,
             num_executors=invoke_run_num_executors,
             opc_parent_rpt_url=invoke_run_opc_parent_rpt_url,
-            parameters=[oci.data_flow.InvokeRunParameterArgs(
-                name=invoke_run_parameters_name,
-                value=invoke_run_parameters_value,
-            )],
+            parameters=[{
+                "name": invoke_run_parameters_name,
+                "value": invoke_run_parameters_value,
+            }],
             pool_id=test_pool["id"],
             spark_version=invoke_run_spark_version,
             type=invoke_run_type,
@@ -1392,7 +1392,7 @@ class InvokeRun(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  application_id: Optional[pulumi.Input[str]] = None,
-                 application_log_config: Optional[pulumi.Input[pulumi.InputType['InvokeRunApplicationLogConfigArgs']]] = None,
+                 application_log_config: Optional[pulumi.Input[Union['InvokeRunApplicationLogConfigArgs', 'InvokeRunApplicationLogConfigArgsDict']]] = None,
                  archive_uri: Optional[pulumi.Input[str]] = None,
                  arguments: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  asynchronous: Optional[pulumi.Input[bool]] = None,
@@ -1401,10 +1401,10 @@ class InvokeRun(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  driver_shape: Optional[pulumi.Input[str]] = None,
-                 driver_shape_config: Optional[pulumi.Input[pulumi.InputType['InvokeRunDriverShapeConfigArgs']]] = None,
+                 driver_shape_config: Optional[pulumi.Input[Union['InvokeRunDriverShapeConfigArgs', 'InvokeRunDriverShapeConfigArgsDict']]] = None,
                  execute: Optional[pulumi.Input[str]] = None,
                  executor_shape: Optional[pulumi.Input[str]] = None,
-                 executor_shape_config: Optional[pulumi.Input[pulumi.InputType['InvokeRunExecutorShapeConfigArgs']]] = None,
+                 executor_shape_config: Optional[pulumi.Input[Union['InvokeRunExecutorShapeConfigArgs', 'InvokeRunExecutorShapeConfigArgsDict']]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  idle_timeout_in_minutes: Optional[pulumi.Input[str]] = None,
                  logs_bucket_uri: Optional[pulumi.Input[str]] = None,
@@ -1412,7 +1412,7 @@ class InvokeRun(pulumi.CustomResource):
                  metastore_id: Optional[pulumi.Input[str]] = None,
                  num_executors: Optional[pulumi.Input[int]] = None,
                  opc_parent_rpt_url: Optional[pulumi.Input[str]] = None,
-                 parameters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InvokeRunParameterArgs']]]]] = None,
+                 parameters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InvokeRunParameterArgs', 'InvokeRunParameterArgsDict']]]]] = None,
                  pool_id: Optional[pulumi.Input[str]] = None,
                  spark_version: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None,
@@ -1484,7 +1484,7 @@ class InvokeRun(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             application_id: Optional[pulumi.Input[str]] = None,
-            application_log_config: Optional[pulumi.Input[pulumi.InputType['InvokeRunApplicationLogConfigArgs']]] = None,
+            application_log_config: Optional[pulumi.Input[Union['InvokeRunApplicationLogConfigArgs', 'InvokeRunApplicationLogConfigArgsDict']]] = None,
             archive_uri: Optional[pulumi.Input[str]] = None,
             arguments: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             asynchronous: Optional[pulumi.Input[bool]] = None,
@@ -1496,10 +1496,10 @@ class InvokeRun(pulumi.CustomResource):
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             driver_shape: Optional[pulumi.Input[str]] = None,
-            driver_shape_config: Optional[pulumi.Input[pulumi.InputType['InvokeRunDriverShapeConfigArgs']]] = None,
+            driver_shape_config: Optional[pulumi.Input[Union['InvokeRunDriverShapeConfigArgs', 'InvokeRunDriverShapeConfigArgsDict']]] = None,
             execute: Optional[pulumi.Input[str]] = None,
             executor_shape: Optional[pulumi.Input[str]] = None,
-            executor_shape_config: Optional[pulumi.Input[pulumi.InputType['InvokeRunExecutorShapeConfigArgs']]] = None,
+            executor_shape_config: Optional[pulumi.Input[Union['InvokeRunExecutorShapeConfigArgs', 'InvokeRunExecutorShapeConfigArgsDict']]] = None,
             file_uri: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             idle_timeout_in_minutes: Optional[pulumi.Input[str]] = None,
@@ -1513,7 +1513,7 @@ class InvokeRun(pulumi.CustomResource):
             opc_request_id: Optional[pulumi.Input[str]] = None,
             owner_principal_id: Optional[pulumi.Input[str]] = None,
             owner_user_name: Optional[pulumi.Input[str]] = None,
-            parameters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InvokeRunParameterArgs']]]]] = None,
+            parameters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InvokeRunParameterArgs', 'InvokeRunParameterArgsDict']]]]] = None,
             pool_id: Optional[pulumi.Input[str]] = None,
             private_endpoint_dns_zones: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             private_endpoint_id: Optional[pulumi.Input[str]] = None,
@@ -1536,7 +1536,7 @@ class InvokeRun(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] application_id: The OCID of the associated application. If this value is set, then no value for the execute parameter is required. If this value is not set, then a value for the execute parameter is required, and a new application is created and associated with the new run.
-        :param pulumi.Input[pulumi.InputType['InvokeRunApplicationLogConfigArgs']] application_log_config: Logging details of Application logs for Data Flow Run.
+        :param pulumi.Input[Union['InvokeRunApplicationLogConfigArgs', 'InvokeRunApplicationLogConfigArgsDict']] application_log_config: Logging details of Application logs for Data Flow Run.
         :param pulumi.Input[str] archive_uri: A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] arguments: The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "input_file" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
         :param pulumi.Input[str] class_name: The class for the application.
@@ -1547,10 +1547,10 @@ class InvokeRun(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: A user-friendly name that does not have to be unique. Avoid entering confidential information. If this value is not specified, it will be derived from the associated application's displayName or set by API using fileUri's application file name.
         :param pulumi.Input[str] driver_shape: The VM shape for the driver. Sets the driver cores and memory.
-        :param pulumi.Input[pulumi.InputType['InvokeRunDriverShapeConfigArgs']] driver_shape_config: This is used to configure the shape of the driver or executor if a flexible shape is used.
+        :param pulumi.Input[Union['InvokeRunDriverShapeConfigArgs', 'InvokeRunDriverShapeConfigArgsDict']] driver_shape_config: This is used to configure the shape of the driver or executor if a flexible shape is used.
         :param pulumi.Input[str] execute: The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
         :param pulumi.Input[str] executor_shape: The VM shape for the executors. Sets the executor cores and memory.
-        :param pulumi.Input[pulumi.InputType['InvokeRunExecutorShapeConfigArgs']] executor_shape_config: This is used to configure the shape of the driver or executor if a flexible shape is used.
+        :param pulumi.Input[Union['InvokeRunExecutorShapeConfigArgs', 'InvokeRunExecutorShapeConfigArgsDict']] executor_shape_config: This is used to configure the shape of the driver or executor if a flexible shape is used.
         :param pulumi.Input[str] file_uri: An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] idle_timeout_in_minutes: (Updatable) The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
@@ -1564,7 +1564,7 @@ class InvokeRun(pulumi.CustomResource):
         :param pulumi.Input[str] opc_request_id: Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
         :param pulumi.Input[str] owner_principal_id: The OCID of the user who created the resource.
         :param pulumi.Input[str] owner_user_name: The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InvokeRunParameterArgs']]]] parameters: An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "input_file", value: "mydata.xml" }, { name: "variable_x", value: "${x}"} ]
+        :param pulumi.Input[Sequence[pulumi.Input[Union['InvokeRunParameterArgs', 'InvokeRunParameterArgsDict']]]] parameters: An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "input_file", value: "mydata.xml" }, { name: "variable_x", value: "${x}"} ]
         :param pulumi.Input[str] pool_id: The OCID of a pool. Unique Id to indentify a dataflow pool resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] private_endpoint_dns_zones: An array of DNS zone names. Example: `[ "app.examplecorp.com", "app.examplecorp2.com" ]`
         :param pulumi.Input[str] private_endpoint_id: The OCID of a private endpoint.

@@ -499,7 +499,7 @@ class RemediationRun(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             remediation_recipe_id: Optional[pulumi.Input[str]] = None,
             remediation_run_source: Optional[pulumi.Input[str]] = None,
-            stages: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['RemediationRunStageArgs']]]]] = None,
+            stages: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RemediationRunStageArgs', 'RemediationRunStageArgsDict']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
@@ -524,7 +524,7 @@ class RemediationRun(pulumi.CustomResource):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] remediation_run_source: The source that triggered the Remediation Recipe.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['RemediationRunStageArgs']]]] stages: The list of remediation run stage summaries.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RemediationRunStageArgs', 'RemediationRunStageArgsDict']]]] stages: The list of remediation run stage summaries.
         :param pulumi.Input[str] state: The current lifecycle state of the remediation run.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The creation date and time of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).

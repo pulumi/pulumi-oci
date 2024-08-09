@@ -115,7 +115,7 @@ class AwaitableGetPrivateIpsResult(GetPrivateIpsResult):
             vnic_id=self.vnic_id)
 
 
-def get_private_ips(filters: Optional[Sequence[pulumi.InputType['GetPrivateIpsFilterArgs']]] = None,
+def get_private_ips(filters: Optional[Sequence[Union['GetPrivateIpsFilterArgs', 'GetPrivateIpsFilterArgsDict']]] = None,
                     ip_address: Optional[str] = None,
                     subnet_id: Optional[str] = None,
                     vlan_id: Optional[str] = None,
@@ -194,7 +194,7 @@ def get_private_ips(filters: Optional[Sequence[pulumi.InputType['GetPrivateIpsFi
 
 
 @_utilities.lift_output_func(get_private_ips)
-def get_private_ips_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetPrivateIpsFilterArgs']]]]] = None,
+def get_private_ips_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPrivateIpsFilterArgs', 'GetPrivateIpsFilterArgsDict']]]]] = None,
                            ip_address: Optional[pulumi.Input[Optional[str]]] = None,
                            subnet_id: Optional[pulumi.Input[Optional[str]]] = None,
                            vlan_id: Optional[pulumi.Input[Optional[str]]] = None,

@@ -809,7 +809,7 @@ public class DomainsPolicy extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DomainsPolicy(String name) {
+    public DomainsPolicy(java.lang.String name) {
         this(name, DomainsPolicyArgs.Empty);
     }
     /**
@@ -817,7 +817,7 @@ public class DomainsPolicy extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DomainsPolicy(String name, DomainsPolicyArgs args) {
+    public DomainsPolicy(java.lang.String name, DomainsPolicyArgs args) {
         this(name, args, null);
     }
     /**
@@ -826,12 +826,12 @@ public class DomainsPolicy extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DomainsPolicy(String name, DomainsPolicyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsPolicy:DomainsPolicy", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DomainsPolicy(java.lang.String name, DomainsPolicyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/domainsPolicy:DomainsPolicy", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DomainsPolicy(String name, Output<String> id, @Nullable DomainsPolicyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsPolicy:DomainsPolicy", name, state, makeResourceOptions(options, id));
+    private DomainsPolicy(java.lang.String name, Output<java.lang.String> id, @Nullable DomainsPolicyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/domainsPolicy:DomainsPolicy", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DomainsPolicyArgs makeArgs(DomainsPolicyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -841,7 +841,7 @@ public class DomainsPolicy extends com.pulumi.resources.CustomResource {
         return args == null ? DomainsPolicyArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -857,7 +857,7 @@ public class DomainsPolicy extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DomainsPolicy get(String name, Output<String> id, @Nullable DomainsPolicyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DomainsPolicy get(java.lang.String name, Output<java.lang.String> id, @Nullable DomainsPolicyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DomainsPolicy(name, id, state, options);
     }
 }

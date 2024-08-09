@@ -105,7 +105,7 @@ class AwaitableGetDrgRouteDistributionsResult(GetDrgRouteDistributionsResult):
 
 def get_drg_route_distributions(display_name: Optional[str] = None,
                                 drg_id: Optional[str] = None,
-                                filters: Optional[Sequence[pulumi.InputType['GetDrgRouteDistributionsFilterArgs']]] = None,
+                                filters: Optional[Sequence[Union['GetDrgRouteDistributionsFilterArgs', 'GetDrgRouteDistributionsFilterArgsDict']]] = None,
                                 state: Optional[str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDrgRouteDistributionsResult:
     """
@@ -152,7 +152,7 @@ def get_drg_route_distributions(display_name: Optional[str] = None,
 @_utilities.lift_output_func(get_drg_route_distributions)
 def get_drg_route_distributions_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                        drg_id: Optional[pulumi.Input[str]] = None,
-                                       filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDrgRouteDistributionsFilterArgs']]]]] = None,
+                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDrgRouteDistributionsFilterArgs', 'GetDrgRouteDistributionsFilterArgsDict']]]]] = None,
                                        state: Optional[pulumi.Input[Optional[str]]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDrgRouteDistributionsResult]:
     """

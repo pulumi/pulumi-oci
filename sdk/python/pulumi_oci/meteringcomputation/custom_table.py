@@ -144,7 +144,7 @@ class CustomTable(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 saved_custom_table: Optional[pulumi.Input[pulumi.InputType['CustomTableSavedCustomTableArgs']]] = None,
+                 saved_custom_table: Optional[pulumi.Input[Union['CustomTableSavedCustomTableArgs', 'CustomTableSavedCustomTableArgsDict']]] = None,
                  saved_report_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -160,18 +160,18 @@ class CustomTable(pulumi.CustomResource):
 
         test_custom_table = oci.metering_computation.CustomTable("test_custom_table",
             compartment_id=compartment_id,
-            saved_custom_table=oci.metering_computation.CustomTableSavedCustomTableArgs(
-                display_name=custom_table_saved_custom_table_display_name,
-                column_group_bies=custom_table_saved_custom_table_column_group_by,
-                compartment_depth=custom_table_saved_custom_table_compartment_depth,
-                group_by_tags=[oci.metering_computation.CustomTableSavedCustomTableGroupByTagArgs(
-                    key=custom_table_saved_custom_table_group_by_tag_key,
-                    namespace=custom_table_saved_custom_table_group_by_tag_namespace,
-                    value=custom_table_saved_custom_table_group_by_tag_value,
-                )],
-                row_group_bies=custom_table_saved_custom_table_row_group_by,
-                version=custom_table_saved_custom_table_version,
-            ),
+            saved_custom_table={
+                "display_name": custom_table_saved_custom_table_display_name,
+                "column_group_bies": custom_table_saved_custom_table_column_group_by,
+                "compartment_depth": custom_table_saved_custom_table_compartment_depth,
+                "group_by_tags": [{
+                    "key": custom_table_saved_custom_table_group_by_tag_key,
+                    "namespace": custom_table_saved_custom_table_group_by_tag_namespace,
+                    "value": custom_table_saved_custom_table_group_by_tag_value,
+                }],
+                "row_group_bies": custom_table_saved_custom_table_row_group_by,
+                "version": custom_table_saved_custom_table_version,
+            },
             saved_report_id=test_saved_report["id"])
         ```
 
@@ -186,7 +186,7 @@ class CustomTable(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: The compartment OCID.
-        :param pulumi.Input[pulumi.InputType['CustomTableSavedCustomTableArgs']] saved_custom_table: (Updatable) The custom table for Cost Analysis UI rendering.
+        :param pulumi.Input[Union['CustomTableSavedCustomTableArgs', 'CustomTableSavedCustomTableArgsDict']] saved_custom_table: (Updatable) The custom table for Cost Analysis UI rendering.
         :param pulumi.Input[str] saved_report_id: The associated saved report OCID.
                
                
@@ -212,18 +212,18 @@ class CustomTable(pulumi.CustomResource):
 
         test_custom_table = oci.metering_computation.CustomTable("test_custom_table",
             compartment_id=compartment_id,
-            saved_custom_table=oci.metering_computation.CustomTableSavedCustomTableArgs(
-                display_name=custom_table_saved_custom_table_display_name,
-                column_group_bies=custom_table_saved_custom_table_column_group_by,
-                compartment_depth=custom_table_saved_custom_table_compartment_depth,
-                group_by_tags=[oci.metering_computation.CustomTableSavedCustomTableGroupByTagArgs(
-                    key=custom_table_saved_custom_table_group_by_tag_key,
-                    namespace=custom_table_saved_custom_table_group_by_tag_namespace,
-                    value=custom_table_saved_custom_table_group_by_tag_value,
-                )],
-                row_group_bies=custom_table_saved_custom_table_row_group_by,
-                version=custom_table_saved_custom_table_version,
-            ),
+            saved_custom_table={
+                "display_name": custom_table_saved_custom_table_display_name,
+                "column_group_bies": custom_table_saved_custom_table_column_group_by,
+                "compartment_depth": custom_table_saved_custom_table_compartment_depth,
+                "group_by_tags": [{
+                    "key": custom_table_saved_custom_table_group_by_tag_key,
+                    "namespace": custom_table_saved_custom_table_group_by_tag_namespace,
+                    "value": custom_table_saved_custom_table_group_by_tag_value,
+                }],
+                "row_group_bies": custom_table_saved_custom_table_row_group_by,
+                "version": custom_table_saved_custom_table_version,
+            },
             saved_report_id=test_saved_report["id"])
         ```
 
@@ -251,7 +251,7 @@ class CustomTable(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 saved_custom_table: Optional[pulumi.Input[pulumi.InputType['CustomTableSavedCustomTableArgs']]] = None,
+                 saved_custom_table: Optional[pulumi.Input[Union['CustomTableSavedCustomTableArgs', 'CustomTableSavedCustomTableArgsDict']]] = None,
                  saved_report_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -282,7 +282,7 @@ class CustomTable(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            saved_custom_table: Optional[pulumi.Input[pulumi.InputType['CustomTableSavedCustomTableArgs']]] = None,
+            saved_custom_table: Optional[pulumi.Input[Union['CustomTableSavedCustomTableArgs', 'CustomTableSavedCustomTableArgsDict']]] = None,
             saved_report_id: Optional[pulumi.Input[str]] = None) -> 'CustomTable':
         """
         Get an existing CustomTable resource's state with the given name, id, and optional extra
@@ -292,7 +292,7 @@ class CustomTable(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: The compartment OCID.
-        :param pulumi.Input[pulumi.InputType['CustomTableSavedCustomTableArgs']] saved_custom_table: (Updatable) The custom table for Cost Analysis UI rendering.
+        :param pulumi.Input[Union['CustomTableSavedCustomTableArgs', 'CustomTableSavedCustomTableArgsDict']] saved_custom_table: (Updatable) The custom table for Cost Analysis UI rendering.
         :param pulumi.Input[str] saved_report_id: The associated saved report OCID.
                
                

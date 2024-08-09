@@ -77,7 +77,7 @@ class AwaitableGetQueryQuickPicksResult(GetQueryQuickPicksResult):
 
 
 def get_query_quick_picks(apm_domain_id: Optional[str] = None,
-                          filters: Optional[Sequence[pulumi.InputType['GetQueryQuickPicksFilterArgs']]] = None,
+                          filters: Optional[Sequence[Union['GetQueryQuickPicksFilterArgs', 'GetQueryQuickPicksFilterArgsDict']]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetQueryQuickPicksResult:
     """
     This data source provides the list of Query Quick Picks in Oracle Cloud Infrastructure Apm Traces service.
@@ -112,7 +112,7 @@ def get_query_quick_picks(apm_domain_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_query_quick_picks)
 def get_query_quick_picks_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetQueryQuickPicksFilterArgs']]]]] = None,
+                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetQueryQuickPicksFilterArgs', 'GetQueryQuickPicksFilterArgsDict']]]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetQueryQuickPicksResult]:
     """
     This data source provides the list of Query Quick Picks in Oracle Cloud Infrastructure Apm Traces service.

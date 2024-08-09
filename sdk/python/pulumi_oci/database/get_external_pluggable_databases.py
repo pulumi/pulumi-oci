@@ -118,7 +118,7 @@ class AwaitableGetExternalPluggableDatabasesResult(GetExternalPluggableDatabases
 def get_external_pluggable_databases(compartment_id: Optional[str] = None,
                                      display_name: Optional[str] = None,
                                      external_container_database_id: Optional[str] = None,
-                                     filters: Optional[Sequence[pulumi.InputType['GetExternalPluggableDatabasesFilterArgs']]] = None,
+                                     filters: Optional[Sequence[Union['GetExternalPluggableDatabasesFilterArgs', 'GetExternalPluggableDatabasesFilterArgsDict']]] = None,
                                      state: Optional[str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalPluggableDatabasesResult:
     """
@@ -168,7 +168,7 @@ def get_external_pluggable_databases(compartment_id: Optional[str] = None,
 def get_external_pluggable_databases_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                             display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                             external_container_database_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                            filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetExternalPluggableDatabasesFilterArgs']]]]] = None,
+                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExternalPluggableDatabasesFilterArgs', 'GetExternalPluggableDatabasesFilterArgsDict']]]]] = None,
                                             state: Optional[pulumi.Input[Optional[str]]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalPluggableDatabasesResult]:
     """

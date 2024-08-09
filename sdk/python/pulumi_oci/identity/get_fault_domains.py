@@ -93,7 +93,7 @@ class AwaitableGetFaultDomainsResult(GetFaultDomainsResult):
 
 def get_fault_domains(availability_domain: Optional[str] = None,
                       compartment_id: Optional[str] = None,
-                      filters: Optional[Sequence[pulumi.InputType['GetFaultDomainsFilterArgs']]] = None,
+                      filters: Optional[Sequence[Union['GetFaultDomainsFilterArgs', 'GetFaultDomainsFilterArgsDict']]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFaultDomainsResult:
     """
     This data source provides the list of Fault Domains in Oracle Cloud Infrastructure Identity service.
@@ -134,7 +134,7 @@ def get_fault_domains(availability_domain: Optional[str] = None,
 @_utilities.lift_output_func(get_fault_domains)
 def get_fault_domains_output(availability_domain: Optional[pulumi.Input[str]] = None,
                              compartment_id: Optional[pulumi.Input[str]] = None,
-                             filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetFaultDomainsFilterArgs']]]]] = None,
+                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFaultDomainsFilterArgs', 'GetFaultDomainsFilterArgsDict']]]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFaultDomainsResult]:
     """
     This data source provides the list of Fault Domains in Oracle Cloud Infrastructure Identity service.

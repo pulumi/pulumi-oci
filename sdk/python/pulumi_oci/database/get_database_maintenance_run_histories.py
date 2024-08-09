@@ -138,7 +138,7 @@ class AwaitableGetDatabaseMaintenanceRunHistoriesResult(GetDatabaseMaintenanceRu
 
 def get_database_maintenance_run_histories(availability_domain: Optional[str] = None,
                                            compartment_id: Optional[str] = None,
-                                           filters: Optional[Sequence[pulumi.InputType['GetDatabaseMaintenanceRunHistoriesFilterArgs']]] = None,
+                                           filters: Optional[Sequence[Union['GetDatabaseMaintenanceRunHistoriesFilterArgs', 'GetDatabaseMaintenanceRunHistoriesFilterArgsDict']]] = None,
                                            maintenance_type: Optional[str] = None,
                                            state: Optional[str] = None,
                                            target_resource_id: Optional[str] = None,
@@ -197,7 +197,7 @@ def get_database_maintenance_run_histories(availability_domain: Optional[str] = 
 @_utilities.lift_output_func(get_database_maintenance_run_histories)
 def get_database_maintenance_run_histories_output(availability_domain: Optional[pulumi.Input[Optional[str]]] = None,
                                                   compartment_id: Optional[pulumi.Input[str]] = None,
-                                                  filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDatabaseMaintenanceRunHistoriesFilterArgs']]]]] = None,
+                                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDatabaseMaintenanceRunHistoriesFilterArgs', 'GetDatabaseMaintenanceRunHistoriesFilterArgsDict']]]]] = None,
                                                   maintenance_type: Optional[pulumi.Input[Optional[str]]] = None,
                                                   state: Optional[pulumi.Input[Optional[str]]] = None,
                                                   target_resource_id: Optional[pulumi.Input[Optional[str]]] = None,

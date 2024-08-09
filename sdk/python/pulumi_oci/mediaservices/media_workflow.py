@@ -413,10 +413,10 @@ class MediaWorkflow(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_lock_override: Optional[pulumi.Input[bool]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MediaWorkflowLockArgs']]]]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MediaWorkflowLockArgs', 'MediaWorkflowLockArgsDict']]]]] = None,
                  media_workflow_configuration_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  parameters: Optional[pulumi.Input[str]] = None,
-                 tasks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MediaWorkflowTaskArgs']]]]] = None,
+                 tasks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MediaWorkflowTaskArgs', 'MediaWorkflowTaskArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Media Workflow resource in Oracle Cloud Infrastructure Media Services service.
@@ -438,24 +438,24 @@ class MediaWorkflow(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            locks=[oci.media_services.MediaWorkflowLockArgs(
-                compartment_id=compartment_id,
-                type=media_workflow_locks_type,
-                message=media_workflow_locks_message,
-                related_resource_id=test_resource["id"],
-                time_created=media_workflow_locks_time_created,
-            )],
+            locks=[{
+                "compartment_id": compartment_id,
+                "type": media_workflow_locks_type,
+                "message": media_workflow_locks_message,
+                "related_resource_id": test_resource["id"],
+                "time_created": media_workflow_locks_time_created,
+            }],
             media_workflow_configuration_ids=media_workflow_media_workflow_configuration_ids,
             parameters=media_workflow_parameters,
-            tasks=[oci.media_services.MediaWorkflowTaskArgs(
-                key=media_workflow_tasks_key,
-                parameters=media_workflow_tasks_parameters,
-                type=media_workflow_tasks_type,
-                version=media_workflow_tasks_version,
-                enable_parameter_reference=media_workflow_tasks_enable_parameter_reference,
-                enable_when_referenced_parameter_equals=media_workflow_tasks_enable_when_referenced_parameter_equals,
-                prerequisites=media_workflow_tasks_prerequisites,
-            )])
+            tasks=[{
+                "key": media_workflow_tasks_key,
+                "parameters": media_workflow_tasks_parameters,
+                "type": media_workflow_tasks_type,
+                "version": media_workflow_tasks_version,
+                "enable_parameter_reference": media_workflow_tasks_enable_parameter_reference,
+                "enable_when_referenced_parameter_equals": media_workflow_tasks_enable_when_referenced_parameter_equals,
+                "prerequisites": media_workflow_tasks_prerequisites,
+            }])
         ```
 
         ## Import
@@ -472,10 +472,10 @@ class MediaWorkflow(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Name for the MediaWorkflow. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MediaWorkflowLockArgs']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MediaWorkflowLockArgs', 'MediaWorkflowLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] media_workflow_configuration_ids: (Updatable) Configurations to be applied to all the jobs for this workflow. Parameters in these configurations are overridden by parameters in the MediaWorkflowConfigurations of the MediaWorkflowJob and the parameters of the MediaWorkflowJob.
         :param pulumi.Input[str] parameters: (Updatable) JSON object representing named parameters and their default values that can be referenced throughout this workflow. The values declared here can be overridden by the MediaWorkflowConfigurations or parameters supplied when creating MediaWorkflowJobs from this MediaWorkflow.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MediaWorkflowTaskArgs']]]] tasks: (Updatable) The processing to be done in this workflow. Each key of the MediaWorkflowTasks in this array must be unique within the array. The order of tasks given here will be preserved.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MediaWorkflowTaskArgs', 'MediaWorkflowTaskArgsDict']]]] tasks: (Updatable) The processing to be done in this workflow. Each key of the MediaWorkflowTasks in this array must be unique within the array. The order of tasks given here will be preserved.
         """
         ...
     @overload
@@ -503,24 +503,24 @@ class MediaWorkflow(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            locks=[oci.media_services.MediaWorkflowLockArgs(
-                compartment_id=compartment_id,
-                type=media_workflow_locks_type,
-                message=media_workflow_locks_message,
-                related_resource_id=test_resource["id"],
-                time_created=media_workflow_locks_time_created,
-            )],
+            locks=[{
+                "compartment_id": compartment_id,
+                "type": media_workflow_locks_type,
+                "message": media_workflow_locks_message,
+                "related_resource_id": test_resource["id"],
+                "time_created": media_workflow_locks_time_created,
+            }],
             media_workflow_configuration_ids=media_workflow_media_workflow_configuration_ids,
             parameters=media_workflow_parameters,
-            tasks=[oci.media_services.MediaWorkflowTaskArgs(
-                key=media_workflow_tasks_key,
-                parameters=media_workflow_tasks_parameters,
-                type=media_workflow_tasks_type,
-                version=media_workflow_tasks_version,
-                enable_parameter_reference=media_workflow_tasks_enable_parameter_reference,
-                enable_when_referenced_parameter_equals=media_workflow_tasks_enable_when_referenced_parameter_equals,
-                prerequisites=media_workflow_tasks_prerequisites,
-            )])
+            tasks=[{
+                "key": media_workflow_tasks_key,
+                "parameters": media_workflow_tasks_parameters,
+                "type": media_workflow_tasks_type,
+                "version": media_workflow_tasks_version,
+                "enable_parameter_reference": media_workflow_tasks_enable_parameter_reference,
+                "enable_when_referenced_parameter_equals": media_workflow_tasks_enable_when_referenced_parameter_equals,
+                "prerequisites": media_workflow_tasks_prerequisites,
+            }])
         ```
 
         ## Import
@@ -551,10 +551,10 @@ class MediaWorkflow(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_lock_override: Optional[pulumi.Input[bool]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MediaWorkflowLockArgs']]]]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MediaWorkflowLockArgs', 'MediaWorkflowLockArgsDict']]]]] = None,
                  media_workflow_configuration_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  parameters: Optional[pulumi.Input[str]] = None,
-                 tasks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MediaWorkflowTaskArgs']]]]] = None,
+                 tasks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MediaWorkflowTaskArgs', 'MediaWorkflowTaskArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -599,12 +599,12 @@ class MediaWorkflow(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             is_lock_override: Optional[pulumi.Input[bool]] = None,
             lifecyle_details: Optional[pulumi.Input[str]] = None,
-            locks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MediaWorkflowLockArgs']]]]] = None,
+            locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MediaWorkflowLockArgs', 'MediaWorkflowLockArgsDict']]]]] = None,
             media_workflow_configuration_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             parameters: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            tasks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MediaWorkflowTaskArgs']]]]] = None,
+            tasks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MediaWorkflowTaskArgs', 'MediaWorkflowTaskArgsDict']]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
             version: Optional[pulumi.Input[str]] = None) -> 'MediaWorkflow':
@@ -620,12 +620,12 @@ class MediaWorkflow(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) Name for the MediaWorkflow. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecyle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MediaWorkflowLockArgs']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MediaWorkflowLockArgs', 'MediaWorkflowLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] media_workflow_configuration_ids: (Updatable) Configurations to be applied to all the jobs for this workflow. Parameters in these configurations are overridden by parameters in the MediaWorkflowConfigurations of the MediaWorkflowJob and the parameters of the MediaWorkflowJob.
         :param pulumi.Input[str] parameters: (Updatable) JSON object representing named parameters and their default values that can be referenced throughout this workflow. The values declared here can be overridden by the MediaWorkflowConfigurations or parameters supplied when creating MediaWorkflowJobs from this MediaWorkflow.
         :param pulumi.Input[str] state: The current state of the MediaWorkflow.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MediaWorkflowTaskArgs']]]] tasks: (Updatable) The processing to be done in this workflow. Each key of the MediaWorkflowTasks in this array must be unique within the array. The order of tasks given here will be preserved.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MediaWorkflowTaskArgs', 'MediaWorkflowTaskArgsDict']]]] tasks: (Updatable) The processing to be done in this workflow. Each key of the MediaWorkflowTasks in this array must be unique within the array. The order of tasks given here will be preserved.
         :param pulumi.Input[str] time_created: The time when the MediaWorkflow was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time when the MediaWorkflow was updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] version: The version of the MediaWorkflow.

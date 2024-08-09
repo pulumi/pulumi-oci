@@ -126,7 +126,7 @@ class AwaitableGetHttpRedirectsResult(GetHttpRedirectsResult):
 
 def get_http_redirects(compartment_id: Optional[str] = None,
                        display_names: Optional[Sequence[str]] = None,
-                       filters: Optional[Sequence[pulumi.InputType['GetHttpRedirectsFilterArgs']]] = None,
+                       filters: Optional[Sequence[Union['GetHttpRedirectsFilterArgs', 'GetHttpRedirectsFilterArgsDict']]] = None,
                        ids: Optional[Sequence[str]] = None,
                        states: Optional[Sequence[str]] = None,
                        time_created_greater_than_or_equal_to: Optional[str] = None,
@@ -185,7 +185,7 @@ def get_http_redirects(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_http_redirects)
 def get_http_redirects_output(compartment_id: Optional[pulumi.Input[str]] = None,
                               display_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                              filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetHttpRedirectsFilterArgs']]]]] = None,
+                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetHttpRedirectsFilterArgs', 'GetHttpRedirectsFilterArgsDict']]]]] = None,
                               ids: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                               states: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                               time_created_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,

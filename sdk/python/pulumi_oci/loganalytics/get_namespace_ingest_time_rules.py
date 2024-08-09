@@ -153,7 +153,7 @@ def get_namespace_ingest_time_rules(compartment_id: Optional[str] = None,
                                     display_name: Optional[str] = None,
                                     field_name: Optional[str] = None,
                                     field_value: Optional[str] = None,
-                                    filters: Optional[Sequence[pulumi.InputType['GetNamespaceIngestTimeRulesFilterArgs']]] = None,
+                                    filters: Optional[Sequence[Union['GetNamespaceIngestTimeRulesFilterArgs', 'GetNamespaceIngestTimeRulesFilterArgsDict']]] = None,
                                     namespace: Optional[str] = None,
                                     state: Optional[str] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNamespaceIngestTimeRulesResult:
@@ -217,7 +217,7 @@ def get_namespace_ingest_time_rules_output(compartment_id: Optional[pulumi.Input
                                            display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                            field_name: Optional[pulumi.Input[Optional[str]]] = None,
                                            field_value: Optional[pulumi.Input[Optional[str]]] = None,
-                                           filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetNamespaceIngestTimeRulesFilterArgs']]]]] = None,
+                                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNamespaceIngestTimeRulesFilterArgs', 'GetNamespaceIngestTimeRulesFilterArgsDict']]]]] = None,
                                            namespace: Optional[pulumi.Input[str]] = None,
                                            state: Optional[pulumi.Input[Optional[str]]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNamespaceIngestTimeRulesResult]:

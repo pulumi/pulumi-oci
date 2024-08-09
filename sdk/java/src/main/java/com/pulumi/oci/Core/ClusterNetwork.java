@@ -301,7 +301,7 @@ public class ClusterNetwork extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ClusterNetwork(String name) {
+    public ClusterNetwork(java.lang.String name) {
         this(name, ClusterNetworkArgs.Empty);
     }
     /**
@@ -309,7 +309,7 @@ public class ClusterNetwork extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ClusterNetwork(String name, ClusterNetworkArgs args) {
+    public ClusterNetwork(java.lang.String name, ClusterNetworkArgs args) {
         this(name, args, null);
     }
     /**
@@ -318,12 +318,12 @@ public class ClusterNetwork extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ClusterNetwork(String name, ClusterNetworkArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/clusterNetwork:ClusterNetwork", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ClusterNetwork(java.lang.String name, ClusterNetworkArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Core/clusterNetwork:ClusterNetwork", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ClusterNetwork(String name, Output<String> id, @Nullable ClusterNetworkState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/clusterNetwork:ClusterNetwork", name, state, makeResourceOptions(options, id));
+    private ClusterNetwork(java.lang.String name, Output<java.lang.String> id, @Nullable ClusterNetworkState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Core/clusterNetwork:ClusterNetwork", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ClusterNetworkArgs makeArgs(ClusterNetworkArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -333,7 +333,7 @@ public class ClusterNetwork extends com.pulumi.resources.CustomResource {
         return args == null ? ClusterNetworkArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -349,7 +349,7 @@ public class ClusterNetwork extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ClusterNetwork get(String name, Output<String> id, @Nullable ClusterNetworkState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ClusterNetwork get(java.lang.String name, Output<java.lang.String> id, @Nullable ClusterNetworkState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ClusterNetwork(name, id, state, options);
     }
 }

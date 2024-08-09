@@ -1586,7 +1586,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  autonomous_exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
                  autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
-                 backup_config: Optional[pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseBackupConfigArgs']]] = None,
+                 backup_config: Optional[pulumi.Input[Union['AutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseBackupConfigArgsDict']]] = None,
                  cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  database_software_image_id: Optional[pulumi.Input[str]] = None,
@@ -1603,10 +1603,10 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
                  is_dst_file_update_enabled: Optional[pulumi.Input[bool]] = None,
                  key_store_id: Optional[pulumi.Input[str]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
-                 maintenance_window_details: Optional[pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs']]] = None,
+                 maintenance_window_details: Optional[pulumi.Input[Union['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs', 'AutonomousContainerDatabaseMaintenanceWindowDetailsArgsDict']]] = None,
                  net_services_architecture: Optional[pulumi.Input[str]] = None,
                  patch_model: Optional[pulumi.Input[str]] = None,
-                 peer_autonomous_container_database_backup_config: Optional[pulumi.Input[pulumi.InputType['AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs']]] = None,
+                 peer_autonomous_container_database_backup_config: Optional[pulumi.Input[Union['AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgsDict']]] = None,
                  peer_autonomous_container_database_compartment_id: Optional[pulumi.Input[str]] = None,
                  peer_autonomous_container_database_display_name: Optional[pulumi.Input[str]] = None,
                  peer_autonomous_exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
@@ -1638,7 +1638,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] autonomous_exadata_infrastructure_id: **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
         :param pulumi.Input[str] autonomous_vm_cluster_id: The OCID of the Autonomous VM Cluster.
-        :param pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseBackupConfigArgs']] backup_config: (Updatable) Backup options for the Autonomous Container Database.
+        :param pulumi.Input[Union['AutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseBackupConfigArgsDict']] backup_config: (Updatable) Backup options for the Autonomous Container Database.
         :param pulumi.Input[str] cloud_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
         :param pulumi.Input[str] database_software_image_id: The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -1654,7 +1654,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         :param pulumi.Input[bool] is_dst_file_update_enabled: (Updatable) Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
         :param pulumi.Input[str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs']] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        :param pulumi.Input[Union['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs', 'AutonomousContainerDatabaseMaintenanceWindowDetailsArgsDict']] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[str] net_services_architecture: Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
         :param pulumi.Input[str] patch_model: (Updatable) Database Patch model preference.
         :param pulumi.Input[str] peer_autonomous_container_database_compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database will be created.
@@ -1710,7 +1710,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  autonomous_exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
                  autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
-                 backup_config: Optional[pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseBackupConfigArgs']]] = None,
+                 backup_config: Optional[pulumi.Input[Union['AutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseBackupConfigArgsDict']]] = None,
                  cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  database_software_image_id: Optional[pulumi.Input[str]] = None,
@@ -1727,10 +1727,10 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
                  is_dst_file_update_enabled: Optional[pulumi.Input[bool]] = None,
                  key_store_id: Optional[pulumi.Input[str]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
-                 maintenance_window_details: Optional[pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs']]] = None,
+                 maintenance_window_details: Optional[pulumi.Input[Union['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs', 'AutonomousContainerDatabaseMaintenanceWindowDetailsArgsDict']]] = None,
                  net_services_architecture: Optional[pulumi.Input[str]] = None,
                  patch_model: Optional[pulumi.Input[str]] = None,
-                 peer_autonomous_container_database_backup_config: Optional[pulumi.Input[pulumi.InputType['AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs']]] = None,
+                 peer_autonomous_container_database_backup_config: Optional[pulumi.Input[Union['AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgsDict']]] = None,
                  peer_autonomous_container_database_compartment_id: Optional[pulumi.Input[str]] = None,
                  peer_autonomous_container_database_display_name: Optional[pulumi.Input[str]] = None,
                  peer_autonomous_exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
@@ -1832,7 +1832,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
             availability_domain: Optional[pulumi.Input[str]] = None,
             available_cpus: Optional[pulumi.Input[float]] = None,
-            backup_config: Optional[pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseBackupConfigArgs']]] = None,
+            backup_config: Optional[pulumi.Input[Union['AutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseBackupConfigArgsDict']]] = None,
             cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             compute_model: Optional[pulumi.Input[str]] = None,
@@ -1850,7 +1850,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             infrastructure_type: Optional[pulumi.Input[str]] = None,
             is_automatic_failover_enabled: Optional[pulumi.Input[bool]] = None,
             is_dst_file_update_enabled: Optional[pulumi.Input[bool]] = None,
-            key_history_entries: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseKeyHistoryEntryArgs']]]]] = None,
+            key_history_entries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseKeyHistoryEntryArgs', 'AutonomousContainerDatabaseKeyHistoryEntryArgsDict']]]]] = None,
             key_store_id: Optional[pulumi.Input[str]] = None,
             key_store_wallet_name: Optional[pulumi.Input[str]] = None,
             kms_key_id: Optional[pulumi.Input[str]] = None,
@@ -1858,14 +1858,14 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             last_maintenance_run_id: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             list_one_off_patches: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            maintenance_window_details: Optional[pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs']]] = None,
-            maintenance_windows: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseMaintenanceWindowArgs']]]]] = None,
+            maintenance_window_details: Optional[pulumi.Input[Union['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs', 'AutonomousContainerDatabaseMaintenanceWindowDetailsArgsDict']]] = None,
+            maintenance_windows: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseMaintenanceWindowArgs', 'AutonomousContainerDatabaseMaintenanceWindowArgsDict']]]]] = None,
             memory_per_oracle_compute_unit_in_gbs: Optional[pulumi.Input[int]] = None,
             net_services_architecture: Optional[pulumi.Input[str]] = None,
             next_maintenance_run_id: Optional[pulumi.Input[str]] = None,
             patch_id: Optional[pulumi.Input[str]] = None,
             patch_model: Optional[pulumi.Input[str]] = None,
-            peer_autonomous_container_database_backup_config: Optional[pulumi.Input[pulumi.InputType['AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs']]] = None,
+            peer_autonomous_container_database_backup_config: Optional[pulumi.Input[Union['AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgsDict']]] = None,
             peer_autonomous_container_database_compartment_id: Optional[pulumi.Input[str]] = None,
             peer_autonomous_container_database_display_name: Optional[pulumi.Input[str]] = None,
             peer_autonomous_exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
@@ -1900,7 +1900,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] autonomous_vm_cluster_id: The OCID of the Autonomous VM Cluster.
         :param pulumi.Input[str] availability_domain: The availability domain of the Autonomous Container Database
         :param pulumi.Input[float] available_cpus: Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
-        :param pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseBackupConfigArgs']] backup_config: (Updatable) Backup options for the Autonomous Container Database.
+        :param pulumi.Input[Union['AutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseBackupConfigArgsDict']] backup_config: (Updatable) Backup options for the Autonomous Container Database.
         :param pulumi.Input[str] cloud_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
         :param pulumi.Input[str] compute_model: The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
@@ -1917,7 +1917,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] infrastructure_type: The infrastructure type this resource belongs to.
         :param pulumi.Input[bool] is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
         :param pulumi.Input[bool] is_dst_file_update_enabled: (Updatable) Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseKeyHistoryEntryArgs']]]] key_history_entries: Key History Entry.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseKeyHistoryEntryArgs', 'AutonomousContainerDatabaseKeyHistoryEntryArgsDict']]]] key_history_entries: Key History Entry.
         :param pulumi.Input[str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
         :param pulumi.Input[str] key_store_wallet_name: The wallet name for Oracle Key Vault.
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
@@ -1925,8 +1925,8 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] list_one_off_patches: List of One-Off patches that has been successfully applied to Autonomous Container Database
-        :param pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs']] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseMaintenanceWindowArgs']]]] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        :param pulumi.Input[Union['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs', 'AutonomousContainerDatabaseMaintenanceWindowDetailsArgsDict']] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseMaintenanceWindowArgs', 'AutonomousContainerDatabaseMaintenanceWindowArgsDict']]]] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
         :param pulumi.Input[str] net_services_architecture: Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
         :param pulumi.Input[str] next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.

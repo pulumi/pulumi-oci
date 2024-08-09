@@ -142,7 +142,7 @@ class AwaitableGetManagedDatabaseAttentionLogCountsResult(GetManagedDatabaseAtte
             urgency_filter=self.urgency_filter)
 
 
-def get_managed_database_attention_log_counts(filters: Optional[Sequence[pulumi.InputType['GetManagedDatabaseAttentionLogCountsFilterArgs']]] = None,
+def get_managed_database_attention_log_counts(filters: Optional[Sequence[Union['GetManagedDatabaseAttentionLogCountsFilterArgs', 'GetManagedDatabaseAttentionLogCountsFilterArgsDict']]] = None,
                                               group_by: Optional[str] = None,
                                               is_regular_expression: Optional[bool] = None,
                                               log_search_text: Optional[str] = None,
@@ -211,7 +211,7 @@ def get_managed_database_attention_log_counts(filters: Optional[Sequence[pulumi.
 
 
 @_utilities.lift_output_func(get_managed_database_attention_log_counts)
-def get_managed_database_attention_log_counts_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetManagedDatabaseAttentionLogCountsFilterArgs']]]]] = None,
+def get_managed_database_attention_log_counts_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedDatabaseAttentionLogCountsFilterArgs', 'GetManagedDatabaseAttentionLogCountsFilterArgsDict']]]]] = None,
                                                      group_by: Optional[pulumi.Input[Optional[str]]] = None,
                                                      is_regular_expression: Optional[pulumi.Input[Optional[bool]]] = None,
                                                      log_search_text: Optional[pulumi.Input[Optional[str]]] = None,

@@ -179,7 +179,7 @@ class AwaitableGetInstallationSitesResult(GetInstallationSitesResult):
 
 
 def get_installation_sites(application_id: Optional[str] = None,
-                           filters: Optional[Sequence[pulumi.InputType['GetInstallationSitesFilterArgs']]] = None,
+                           filters: Optional[Sequence[Union['GetInstallationSitesFilterArgs', 'GetInstallationSitesFilterArgsDict']]] = None,
                            fleet_id: Optional[str] = None,
                            installation_path: Optional[str] = None,
                            jre_distribution: Optional[str] = None,
@@ -268,7 +268,7 @@ def get_installation_sites(application_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_installation_sites)
 def get_installation_sites_output(application_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                  filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetInstallationSitesFilterArgs']]]]] = None,
+                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetInstallationSitesFilterArgs', 'GetInstallationSitesFilterArgsDict']]]]] = None,
                                   fleet_id: Optional[pulumi.Input[str]] = None,
                                   installation_path: Optional[pulumi.Input[Optional[str]]] = None,
                                   jre_distribution: Optional[pulumi.Input[Optional[str]]] = None,

@@ -127,7 +127,7 @@ class AwaitableGetBootVolumeReplicasResult(GetBootVolumeReplicasResult):
 def get_boot_volume_replicas(availability_domain: Optional[str] = None,
                              compartment_id: Optional[str] = None,
                              display_name: Optional[str] = None,
-                             filters: Optional[Sequence[pulumi.InputType['GetBootVolumeReplicasFilterArgs']]] = None,
+                             filters: Optional[Sequence[Union['GetBootVolumeReplicasFilterArgs', 'GetBootVolumeReplicasFilterArgsDict']]] = None,
                              state: Optional[str] = None,
                              volume_group_replica_id: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBootVolumeReplicasResult:
@@ -181,7 +181,7 @@ def get_boot_volume_replicas(availability_domain: Optional[str] = None,
 def get_boot_volume_replicas_output(availability_domain: Optional[pulumi.Input[Optional[str]]] = None,
                                     compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                     display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                    filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetBootVolumeReplicasFilterArgs']]]]] = None,
+                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBootVolumeReplicasFilterArgs', 'GetBootVolumeReplicasFilterArgsDict']]]]] = None,
                                     state: Optional[pulumi.Input[Optional[str]]] = None,
                                     volume_group_replica_id: Optional[pulumi.Input[Optional[str]]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBootVolumeReplicasResult]:

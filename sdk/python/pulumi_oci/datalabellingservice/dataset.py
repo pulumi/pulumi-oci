@@ -527,15 +527,15 @@ class Dataset(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  annotation_format: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 dataset_format_details: Optional[pulumi.Input[pulumi.InputType['DatasetDatasetFormatDetailsArgs']]] = None,
-                 dataset_source_details: Optional[pulumi.Input[pulumi.InputType['DatasetDatasetSourceDetailsArgs']]] = None,
+                 dataset_format_details: Optional[pulumi.Input[Union['DatasetDatasetFormatDetailsArgs', 'DatasetDatasetFormatDetailsArgsDict']]] = None,
+                 dataset_source_details: Optional[pulumi.Input[Union['DatasetDatasetSourceDetailsArgs', 'DatasetDatasetSourceDetailsArgsDict']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 initial_import_dataset_configuration: Optional[pulumi.Input[pulumi.InputType['DatasetInitialImportDatasetConfigurationArgs']]] = None,
-                 initial_record_generation_configuration: Optional[pulumi.Input[pulumi.InputType['DatasetInitialRecordGenerationConfigurationArgs']]] = None,
-                 label_set: Optional[pulumi.Input[pulumi.InputType['DatasetLabelSetArgs']]] = None,
+                 initial_import_dataset_configuration: Optional[pulumi.Input[Union['DatasetInitialImportDatasetConfigurationArgs', 'DatasetInitialImportDatasetConfigurationArgsDict']]] = None,
+                 initial_record_generation_configuration: Optional[pulumi.Input[Union['DatasetInitialRecordGenerationConfigurationArgs', 'DatasetInitialRecordGenerationConfigurationArgsDict']]] = None,
+                 label_set: Optional[pulumi.Input[Union['DatasetLabelSetArgs', 'DatasetLabelSetArgsDict']]] = None,
                  labeling_instructions: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -552,45 +552,45 @@ class Dataset(pulumi.CustomResource):
         test_dataset = oci.data_labelling_service.Dataset("test_dataset",
             annotation_format=dataset_annotation_format,
             compartment_id=compartment_id,
-            dataset_format_details=oci.data_labelling_service.DatasetDatasetFormatDetailsArgs(
-                format_type=dataset_dataset_format_details_format_type,
-                text_file_type_metadata=oci.data_labelling_service.DatasetDatasetFormatDetailsTextFileTypeMetadataArgs(
-                    column_index=dataset_dataset_format_details_text_file_type_metadata_column_index,
-                    format_type=dataset_dataset_format_details_text_file_type_metadata_format_type,
-                    column_delimiter=dataset_dataset_format_details_text_file_type_metadata_column_delimiter,
-                    column_name=dataset_dataset_format_details_text_file_type_metadata_column_name,
-                    escape_character=dataset_dataset_format_details_text_file_type_metadata_escape_character,
-                    line_delimiter=dataset_dataset_format_details_text_file_type_metadata_line_delimiter,
-                ),
-            ),
-            dataset_source_details=oci.data_labelling_service.DatasetDatasetSourceDetailsArgs(
-                bucket=dataset_dataset_source_details_bucket,
-                namespace=dataset_dataset_source_details_namespace,
-                source_type=dataset_dataset_source_details_source_type,
-                prefix=dataset_dataset_source_details_prefix,
-            ),
-            label_set=oci.data_labelling_service.DatasetLabelSetArgs(
-                items=[oci.data_labelling_service.DatasetLabelSetItemArgs(
-                    name=dataset_label_set_items_name,
-                )],
-            ),
+            dataset_format_details={
+                "format_type": dataset_dataset_format_details_format_type,
+                "text_file_type_metadata": {
+                    "column_index": dataset_dataset_format_details_text_file_type_metadata_column_index,
+                    "format_type": dataset_dataset_format_details_text_file_type_metadata_format_type,
+                    "column_delimiter": dataset_dataset_format_details_text_file_type_metadata_column_delimiter,
+                    "column_name": dataset_dataset_format_details_text_file_type_metadata_column_name,
+                    "escape_character": dataset_dataset_format_details_text_file_type_metadata_escape_character,
+                    "line_delimiter": dataset_dataset_format_details_text_file_type_metadata_line_delimiter,
+                },
+            },
+            dataset_source_details={
+                "bucket": dataset_dataset_source_details_bucket,
+                "namespace": dataset_dataset_source_details_namespace,
+                "source_type": dataset_dataset_source_details_source_type,
+                "prefix": dataset_dataset_source_details_prefix,
+            },
+            label_set={
+                "items": [{
+                    "name": dataset_label_set_items_name,
+                }],
+            },
             defined_tags=dataset_defined_tags,
             description=dataset_description,
             display_name=dataset_display_name,
             freeform_tags=dataset_freeform_tags,
-            initial_import_dataset_configuration=oci.data_labelling_service.DatasetInitialImportDatasetConfigurationArgs(
-                import_format=oci.data_labelling_service.DatasetInitialImportDatasetConfigurationImportFormatArgs(
-                    name=dataset_initial_import_dataset_configuration_import_format_name,
-                    version=dataset_initial_import_dataset_configuration_import_format_version,
-                ),
-                import_metadata_path=oci.data_labelling_service.DatasetInitialImportDatasetConfigurationImportMetadataPathArgs(
-                    bucket=dataset_initial_import_dataset_configuration_import_metadata_path_bucket,
-                    namespace=dataset_initial_import_dataset_configuration_import_metadata_path_namespace,
-                    path=dataset_initial_import_dataset_configuration_import_metadata_path_path,
-                    source_type=dataset_initial_import_dataset_configuration_import_metadata_path_source_type,
-                ),
-            ),
-            initial_record_generation_configuration=oci.data_labelling_service.DatasetInitialRecordGenerationConfigurationArgs(),
+            initial_import_dataset_configuration={
+                "import_format": {
+                    "name": dataset_initial_import_dataset_configuration_import_format_name,
+                    "version": dataset_initial_import_dataset_configuration_import_format_version,
+                },
+                "import_metadata_path": {
+                    "bucket": dataset_initial_import_dataset_configuration_import_metadata_path_bucket,
+                    "namespace": dataset_initial_import_dataset_configuration_import_metadata_path_namespace,
+                    "path": dataset_initial_import_dataset_configuration_import_metadata_path_path,
+                    "source_type": dataset_initial_import_dataset_configuration_import_metadata_path_source_type,
+                },
+            },
+            initial_record_generation_configuration={},
             labeling_instructions=dataset_labeling_instructions)
         ```
 
@@ -606,15 +606,15 @@ class Dataset(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] annotation_format: The annotation format name required for labeling records.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment of the resource.
-        :param pulumi.Input[pulumi.InputType['DatasetDatasetFormatDetailsArgs']] dataset_format_details: It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
-        :param pulumi.Input[pulumi.InputType['DatasetDatasetSourceDetailsArgs']] dataset_source_details: This allows the customer to specify the source of the dataset.
+        :param pulumi.Input[Union['DatasetDatasetFormatDetailsArgs', 'DatasetDatasetFormatDetailsArgsDict']] dataset_format_details: It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
+        :param pulumi.Input[Union['DatasetDatasetSourceDetailsArgs', 'DatasetDatasetSourceDetailsArgsDict']] dataset_source_details: This allows the customer to specify the source of the dataset.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         :param pulumi.Input[str] description: (Updatable) A user provided description of the dataset
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
-        :param pulumi.Input[pulumi.InputType['DatasetInitialImportDatasetConfigurationArgs']] initial_import_dataset_configuration: Initial import dataset configuration. Allows user to create dataset from existing dataset files.
-        :param pulumi.Input[pulumi.InputType['DatasetInitialRecordGenerationConfigurationArgs']] initial_record_generation_configuration: The initial generate records configuration. It generates records from the dataset's source.
-        :param pulumi.Input[pulumi.InputType['DatasetLabelSetArgs']] label_set: An ordered collection of labels that are unique by name.
+        :param pulumi.Input[Union['DatasetInitialImportDatasetConfigurationArgs', 'DatasetInitialImportDatasetConfigurationArgsDict']] initial_import_dataset_configuration: Initial import dataset configuration. Allows user to create dataset from existing dataset files.
+        :param pulumi.Input[Union['DatasetInitialRecordGenerationConfigurationArgs', 'DatasetInitialRecordGenerationConfigurationArgsDict']] initial_record_generation_configuration: The initial generate records configuration. It generates records from the dataset's source.
+        :param pulumi.Input[Union['DatasetLabelSetArgs', 'DatasetLabelSetArgsDict']] label_set: An ordered collection of labels that are unique by name.
         :param pulumi.Input[str] labeling_instructions: (Updatable) The labeling instructions for human labelers in rich text format
                
                
@@ -641,45 +641,45 @@ class Dataset(pulumi.CustomResource):
         test_dataset = oci.data_labelling_service.Dataset("test_dataset",
             annotation_format=dataset_annotation_format,
             compartment_id=compartment_id,
-            dataset_format_details=oci.data_labelling_service.DatasetDatasetFormatDetailsArgs(
-                format_type=dataset_dataset_format_details_format_type,
-                text_file_type_metadata=oci.data_labelling_service.DatasetDatasetFormatDetailsTextFileTypeMetadataArgs(
-                    column_index=dataset_dataset_format_details_text_file_type_metadata_column_index,
-                    format_type=dataset_dataset_format_details_text_file_type_metadata_format_type,
-                    column_delimiter=dataset_dataset_format_details_text_file_type_metadata_column_delimiter,
-                    column_name=dataset_dataset_format_details_text_file_type_metadata_column_name,
-                    escape_character=dataset_dataset_format_details_text_file_type_metadata_escape_character,
-                    line_delimiter=dataset_dataset_format_details_text_file_type_metadata_line_delimiter,
-                ),
-            ),
-            dataset_source_details=oci.data_labelling_service.DatasetDatasetSourceDetailsArgs(
-                bucket=dataset_dataset_source_details_bucket,
-                namespace=dataset_dataset_source_details_namespace,
-                source_type=dataset_dataset_source_details_source_type,
-                prefix=dataset_dataset_source_details_prefix,
-            ),
-            label_set=oci.data_labelling_service.DatasetLabelSetArgs(
-                items=[oci.data_labelling_service.DatasetLabelSetItemArgs(
-                    name=dataset_label_set_items_name,
-                )],
-            ),
+            dataset_format_details={
+                "format_type": dataset_dataset_format_details_format_type,
+                "text_file_type_metadata": {
+                    "column_index": dataset_dataset_format_details_text_file_type_metadata_column_index,
+                    "format_type": dataset_dataset_format_details_text_file_type_metadata_format_type,
+                    "column_delimiter": dataset_dataset_format_details_text_file_type_metadata_column_delimiter,
+                    "column_name": dataset_dataset_format_details_text_file_type_metadata_column_name,
+                    "escape_character": dataset_dataset_format_details_text_file_type_metadata_escape_character,
+                    "line_delimiter": dataset_dataset_format_details_text_file_type_metadata_line_delimiter,
+                },
+            },
+            dataset_source_details={
+                "bucket": dataset_dataset_source_details_bucket,
+                "namespace": dataset_dataset_source_details_namespace,
+                "source_type": dataset_dataset_source_details_source_type,
+                "prefix": dataset_dataset_source_details_prefix,
+            },
+            label_set={
+                "items": [{
+                    "name": dataset_label_set_items_name,
+                }],
+            },
             defined_tags=dataset_defined_tags,
             description=dataset_description,
             display_name=dataset_display_name,
             freeform_tags=dataset_freeform_tags,
-            initial_import_dataset_configuration=oci.data_labelling_service.DatasetInitialImportDatasetConfigurationArgs(
-                import_format=oci.data_labelling_service.DatasetInitialImportDatasetConfigurationImportFormatArgs(
-                    name=dataset_initial_import_dataset_configuration_import_format_name,
-                    version=dataset_initial_import_dataset_configuration_import_format_version,
-                ),
-                import_metadata_path=oci.data_labelling_service.DatasetInitialImportDatasetConfigurationImportMetadataPathArgs(
-                    bucket=dataset_initial_import_dataset_configuration_import_metadata_path_bucket,
-                    namespace=dataset_initial_import_dataset_configuration_import_metadata_path_namespace,
-                    path=dataset_initial_import_dataset_configuration_import_metadata_path_path,
-                    source_type=dataset_initial_import_dataset_configuration_import_metadata_path_source_type,
-                ),
-            ),
-            initial_record_generation_configuration=oci.data_labelling_service.DatasetInitialRecordGenerationConfigurationArgs(),
+            initial_import_dataset_configuration={
+                "import_format": {
+                    "name": dataset_initial_import_dataset_configuration_import_format_name,
+                    "version": dataset_initial_import_dataset_configuration_import_format_version,
+                },
+                "import_metadata_path": {
+                    "bucket": dataset_initial_import_dataset_configuration_import_metadata_path_bucket,
+                    "namespace": dataset_initial_import_dataset_configuration_import_metadata_path_namespace,
+                    "path": dataset_initial_import_dataset_configuration_import_metadata_path_path,
+                    "source_type": dataset_initial_import_dataset_configuration_import_metadata_path_source_type,
+                },
+            },
+            initial_record_generation_configuration={},
             labeling_instructions=dataset_labeling_instructions)
         ```
 
@@ -708,15 +708,15 @@ class Dataset(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  annotation_format: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 dataset_format_details: Optional[pulumi.Input[pulumi.InputType['DatasetDatasetFormatDetailsArgs']]] = None,
-                 dataset_source_details: Optional[pulumi.Input[pulumi.InputType['DatasetDatasetSourceDetailsArgs']]] = None,
+                 dataset_format_details: Optional[pulumi.Input[Union['DatasetDatasetFormatDetailsArgs', 'DatasetDatasetFormatDetailsArgsDict']]] = None,
+                 dataset_source_details: Optional[pulumi.Input[Union['DatasetDatasetSourceDetailsArgs', 'DatasetDatasetSourceDetailsArgsDict']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 initial_import_dataset_configuration: Optional[pulumi.Input[pulumi.InputType['DatasetInitialImportDatasetConfigurationArgs']]] = None,
-                 initial_record_generation_configuration: Optional[pulumi.Input[pulumi.InputType['DatasetInitialRecordGenerationConfigurationArgs']]] = None,
-                 label_set: Optional[pulumi.Input[pulumi.InputType['DatasetLabelSetArgs']]] = None,
+                 initial_import_dataset_configuration: Optional[pulumi.Input[Union['DatasetInitialImportDatasetConfigurationArgs', 'DatasetInitialImportDatasetConfigurationArgsDict']]] = None,
+                 initial_record_generation_configuration: Optional[pulumi.Input[Union['DatasetInitialRecordGenerationConfigurationArgs', 'DatasetInitialRecordGenerationConfigurationArgsDict']]] = None,
+                 label_set: Optional[pulumi.Input[Union['DatasetLabelSetArgs', 'DatasetLabelSetArgsDict']]] = None,
                  labeling_instructions: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -768,15 +768,15 @@ class Dataset(pulumi.CustomResource):
             additional_properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             annotation_format: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            dataset_format_details: Optional[pulumi.Input[pulumi.InputType['DatasetDatasetFormatDetailsArgs']]] = None,
-            dataset_source_details: Optional[pulumi.Input[pulumi.InputType['DatasetDatasetSourceDetailsArgs']]] = None,
+            dataset_format_details: Optional[pulumi.Input[Union['DatasetDatasetFormatDetailsArgs', 'DatasetDatasetFormatDetailsArgsDict']]] = None,
+            dataset_source_details: Optional[pulumi.Input[Union['DatasetDatasetSourceDetailsArgs', 'DatasetDatasetSourceDetailsArgsDict']]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            initial_import_dataset_configuration: Optional[pulumi.Input[pulumi.InputType['DatasetInitialImportDatasetConfigurationArgs']]] = None,
-            initial_record_generation_configuration: Optional[pulumi.Input[pulumi.InputType['DatasetInitialRecordGenerationConfigurationArgs']]] = None,
-            label_set: Optional[pulumi.Input[pulumi.InputType['DatasetLabelSetArgs']]] = None,
+            initial_import_dataset_configuration: Optional[pulumi.Input[Union['DatasetInitialImportDatasetConfigurationArgs', 'DatasetInitialImportDatasetConfigurationArgsDict']]] = None,
+            initial_record_generation_configuration: Optional[pulumi.Input[Union['DatasetInitialRecordGenerationConfigurationArgs', 'DatasetInitialRecordGenerationConfigurationArgsDict']]] = None,
+            label_set: Optional[pulumi.Input[Union['DatasetLabelSetArgs', 'DatasetLabelSetArgsDict']]] = None,
             labeling_instructions: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             lifecycle_substate: Optional[pulumi.Input[str]] = None,
@@ -793,15 +793,15 @@ class Dataset(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] additional_properties: A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         :param pulumi.Input[str] annotation_format: The annotation format name required for labeling records.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment of the resource.
-        :param pulumi.Input[pulumi.InputType['DatasetDatasetFormatDetailsArgs']] dataset_format_details: It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
-        :param pulumi.Input[pulumi.InputType['DatasetDatasetSourceDetailsArgs']] dataset_source_details: This allows the customer to specify the source of the dataset.
+        :param pulumi.Input[Union['DatasetDatasetFormatDetailsArgs', 'DatasetDatasetFormatDetailsArgsDict']] dataset_format_details: It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
+        :param pulumi.Input[Union['DatasetDatasetSourceDetailsArgs', 'DatasetDatasetSourceDetailsArgsDict']] dataset_source_details: This allows the customer to specify the source of the dataset.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         :param pulumi.Input[str] description: (Updatable) A user provided description of the dataset
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
-        :param pulumi.Input[pulumi.InputType['DatasetInitialImportDatasetConfigurationArgs']] initial_import_dataset_configuration: Initial import dataset configuration. Allows user to create dataset from existing dataset files.
-        :param pulumi.Input[pulumi.InputType['DatasetInitialRecordGenerationConfigurationArgs']] initial_record_generation_configuration: The initial generate records configuration. It generates records from the dataset's source.
-        :param pulumi.Input[pulumi.InputType['DatasetLabelSetArgs']] label_set: An ordered collection of labels that are unique by name.
+        :param pulumi.Input[Union['DatasetInitialImportDatasetConfigurationArgs', 'DatasetInitialImportDatasetConfigurationArgsDict']] initial_import_dataset_configuration: Initial import dataset configuration. Allows user to create dataset from existing dataset files.
+        :param pulumi.Input[Union['DatasetInitialRecordGenerationConfigurationArgs', 'DatasetInitialRecordGenerationConfigurationArgsDict']] initial_record_generation_configuration: The initial generate records configuration. It generates records from the dataset's source.
+        :param pulumi.Input[Union['DatasetLabelSetArgs', 'DatasetLabelSetArgsDict']] label_set: An ordered collection of labels that are unique by name.
         :param pulumi.Input[str] labeling_instructions: (Updatable) The labeling instructions for human labelers in rich text format
                
                

@@ -156,7 +156,7 @@ class RuleSet(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 items: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['RuleSetItemArgs']]]]] = None,
+                 items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RuleSetItemArgs', 'RuleSetItemArgsDict']]]]] = None,
                  load_balancer_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -173,36 +173,36 @@ class RuleSet(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_rule_set = oci.load_balancer.RuleSet("test_rule_set",
-            items=[oci.load_balancer.RuleSetItemArgs(
-                action=rule_set_items_action,
-                allowed_methods=rule_set_items_allowed_methods,
-                are_invalid_characters_allowed=rule_set_items_are_invalid_characters_allowed,
-                conditions=[oci.load_balancer.RuleSetItemConditionArgs(
-                    attribute_name=rule_set_items_conditions_attribute_name,
-                    attribute_value=rule_set_items_conditions_attribute_value,
-                    operator=rule_set_items_conditions_operator,
-                )],
-                default_max_connections=rule_set_items_default_max_connections,
-                description=rule_set_items_description,
-                header=rule_set_items_header,
-                http_large_header_size_in_kb=rule_set_items_http_large_header_size_in_kb,
-                ip_max_connections=[oci.load_balancer.RuleSetItemIpMaxConnectionArgs(
-                    ip_addresses=rule_set_items_ip_max_connections_ip_addresses,
-                    max_connections=rule_set_items_ip_max_connections_max_connections,
-                )],
-                prefix=rule_set_items_prefix,
-                redirect_uri=oci.load_balancer.RuleSetItemRedirectUriArgs(
-                    host=rule_set_items_redirect_uri_host,
-                    path=rule_set_items_redirect_uri_path,
-                    port=rule_set_items_redirect_uri_port,
-                    protocol=rule_set_items_redirect_uri_protocol,
-                    query=rule_set_items_redirect_uri_query,
-                ),
-                response_code=rule_set_items_response_code,
-                status_code=rule_set_items_status_code,
-                suffix=rule_set_items_suffix,
-                value=rule_set_items_value,
-            )],
+            items=[{
+                "action": rule_set_items_action,
+                "allowed_methods": rule_set_items_allowed_methods,
+                "are_invalid_characters_allowed": rule_set_items_are_invalid_characters_allowed,
+                "conditions": [{
+                    "attribute_name": rule_set_items_conditions_attribute_name,
+                    "attribute_value": rule_set_items_conditions_attribute_value,
+                    "operator": rule_set_items_conditions_operator,
+                }],
+                "default_max_connections": rule_set_items_default_max_connections,
+                "description": rule_set_items_description,
+                "header": rule_set_items_header,
+                "http_large_header_size_in_kb": rule_set_items_http_large_header_size_in_kb,
+                "ip_max_connections": [{
+                    "ip_addresses": rule_set_items_ip_max_connections_ip_addresses,
+                    "max_connections": rule_set_items_ip_max_connections_max_connections,
+                }],
+                "prefix": rule_set_items_prefix,
+                "redirect_uri": {
+                    "host": rule_set_items_redirect_uri_host,
+                    "path": rule_set_items_redirect_uri_path,
+                    "port": rule_set_items_redirect_uri_port,
+                    "protocol": rule_set_items_redirect_uri_protocol,
+                    "query": rule_set_items_redirect_uri_query,
+                },
+                "response_code": rule_set_items_response_code,
+                "status_code": rule_set_items_status_code,
+                "suffix": rule_set_items_suffix,
+                "value": rule_set_items_value,
+            }],
             load_balancer_id=test_load_balancer["id"],
             name=rule_set_name)
         ```
@@ -217,7 +217,7 @@ class RuleSet(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['RuleSetItemArgs']]]] items: (Updatable) An array of rules that compose the rule set. For more information, see [Managing Rule Sets](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm)
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RuleSetItemArgs', 'RuleSetItemArgsDict']]]] items: (Updatable) An array of rules that compose the rule set. For more information, see [Managing Rule Sets](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm)
         :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the specified load balancer.
         :param pulumi.Input[str] name: The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set` 
                
@@ -244,36 +244,36 @@ class RuleSet(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_rule_set = oci.load_balancer.RuleSet("test_rule_set",
-            items=[oci.load_balancer.RuleSetItemArgs(
-                action=rule_set_items_action,
-                allowed_methods=rule_set_items_allowed_methods,
-                are_invalid_characters_allowed=rule_set_items_are_invalid_characters_allowed,
-                conditions=[oci.load_balancer.RuleSetItemConditionArgs(
-                    attribute_name=rule_set_items_conditions_attribute_name,
-                    attribute_value=rule_set_items_conditions_attribute_value,
-                    operator=rule_set_items_conditions_operator,
-                )],
-                default_max_connections=rule_set_items_default_max_connections,
-                description=rule_set_items_description,
-                header=rule_set_items_header,
-                http_large_header_size_in_kb=rule_set_items_http_large_header_size_in_kb,
-                ip_max_connections=[oci.load_balancer.RuleSetItemIpMaxConnectionArgs(
-                    ip_addresses=rule_set_items_ip_max_connections_ip_addresses,
-                    max_connections=rule_set_items_ip_max_connections_max_connections,
-                )],
-                prefix=rule_set_items_prefix,
-                redirect_uri=oci.load_balancer.RuleSetItemRedirectUriArgs(
-                    host=rule_set_items_redirect_uri_host,
-                    path=rule_set_items_redirect_uri_path,
-                    port=rule_set_items_redirect_uri_port,
-                    protocol=rule_set_items_redirect_uri_protocol,
-                    query=rule_set_items_redirect_uri_query,
-                ),
-                response_code=rule_set_items_response_code,
-                status_code=rule_set_items_status_code,
-                suffix=rule_set_items_suffix,
-                value=rule_set_items_value,
-            )],
+            items=[{
+                "action": rule_set_items_action,
+                "allowed_methods": rule_set_items_allowed_methods,
+                "are_invalid_characters_allowed": rule_set_items_are_invalid_characters_allowed,
+                "conditions": [{
+                    "attribute_name": rule_set_items_conditions_attribute_name,
+                    "attribute_value": rule_set_items_conditions_attribute_value,
+                    "operator": rule_set_items_conditions_operator,
+                }],
+                "default_max_connections": rule_set_items_default_max_connections,
+                "description": rule_set_items_description,
+                "header": rule_set_items_header,
+                "http_large_header_size_in_kb": rule_set_items_http_large_header_size_in_kb,
+                "ip_max_connections": [{
+                    "ip_addresses": rule_set_items_ip_max_connections_ip_addresses,
+                    "max_connections": rule_set_items_ip_max_connections_max_connections,
+                }],
+                "prefix": rule_set_items_prefix,
+                "redirect_uri": {
+                    "host": rule_set_items_redirect_uri_host,
+                    "path": rule_set_items_redirect_uri_path,
+                    "port": rule_set_items_redirect_uri_port,
+                    "protocol": rule_set_items_redirect_uri_protocol,
+                    "query": rule_set_items_redirect_uri_query,
+                },
+                "response_code": rule_set_items_response_code,
+                "status_code": rule_set_items_status_code,
+                "suffix": rule_set_items_suffix,
+                "value": rule_set_items_value,
+            }],
             load_balancer_id=test_load_balancer["id"],
             name=rule_set_name)
         ```
@@ -301,7 +301,7 @@ class RuleSet(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 items: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['RuleSetItemArgs']]]]] = None,
+                 items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RuleSetItemArgs', 'RuleSetItemArgsDict']]]]] = None,
                  load_balancer_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -331,7 +331,7 @@ class RuleSet(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            items: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['RuleSetItemArgs']]]]] = None,
+            items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RuleSetItemArgs', 'RuleSetItemArgsDict']]]]] = None,
             load_balancer_id: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None) -> 'RuleSet':
@@ -342,7 +342,7 @@ class RuleSet(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['RuleSetItemArgs']]]] items: (Updatable) An array of rules that compose the rule set. For more information, see [Managing Rule Sets](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm)
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RuleSetItemArgs', 'RuleSetItemArgsDict']]]] items: (Updatable) An array of rules that compose the rule set. For more information, see [Managing Rule Sets](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm)
         :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the specified load balancer.
         :param pulumi.Input[str] name: The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set` 
                

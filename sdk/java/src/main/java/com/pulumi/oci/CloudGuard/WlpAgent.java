@@ -255,7 +255,7 @@ public class WlpAgent extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public WlpAgent(String name) {
+    public WlpAgent(java.lang.String name) {
         this(name, WlpAgentArgs.Empty);
     }
     /**
@@ -263,7 +263,7 @@ public class WlpAgent extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public WlpAgent(String name, WlpAgentArgs args) {
+    public WlpAgent(java.lang.String name, WlpAgentArgs args) {
         this(name, args, null);
     }
     /**
@@ -272,12 +272,12 @@ public class WlpAgent extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public WlpAgent(String name, WlpAgentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:CloudGuard/wlpAgent:WlpAgent", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public WlpAgent(java.lang.String name, WlpAgentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:CloudGuard/wlpAgent:WlpAgent", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private WlpAgent(String name, Output<String> id, @Nullable WlpAgentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:CloudGuard/wlpAgent:WlpAgent", name, state, makeResourceOptions(options, id));
+    private WlpAgent(java.lang.String name, Output<java.lang.String> id, @Nullable WlpAgentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:CloudGuard/wlpAgent:WlpAgent", name, state, makeResourceOptions(options, id), false);
     }
 
     private static WlpAgentArgs makeArgs(WlpAgentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -287,7 +287,7 @@ public class WlpAgent extends com.pulumi.resources.CustomResource {
         return args == null ? WlpAgentArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -303,7 +303,7 @@ public class WlpAgent extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static WlpAgent get(String name, Output<String> id, @Nullable WlpAgentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static WlpAgent get(java.lang.String name, Output<java.lang.String> id, @Nullable WlpAgentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new WlpAgent(name, id, state, options);
     }
 }

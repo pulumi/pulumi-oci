@@ -116,7 +116,7 @@ class AwaitableGetVirtualServicesResult(GetVirtualServicesResult):
 
 
 def get_virtual_services(compartment_id: Optional[str] = None,
-                         filters: Optional[Sequence[pulumi.InputType['GetVirtualServicesFilterArgs']]] = None,
+                         filters: Optional[Sequence[Union['GetVirtualServicesFilterArgs', 'GetVirtualServicesFilterArgsDict']]] = None,
                          id: Optional[str] = None,
                          mesh_id: Optional[str] = None,
                          name: Optional[str] = None,
@@ -169,7 +169,7 @@ def get_virtual_services(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_virtual_services)
 def get_virtual_services_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetVirtualServicesFilterArgs']]]]] = None,
+                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVirtualServicesFilterArgs', 'GetVirtualServicesFilterArgsDict']]]]] = None,
                                 id: Optional[pulumi.Input[Optional[str]]] = None,
                                 mesh_id: Optional[pulumi.Input[Optional[str]]] = None,
                                 name: Optional[pulumi.Input[Optional[str]]] = None,

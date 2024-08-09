@@ -294,7 +294,7 @@ class CrossConnectGroup(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 macsec_properties: Optional[pulumi.Input[pulumi.InputType['CrossConnectGroupMacsecPropertiesArgs']]] = None,
+                 macsec_properties: Optional[pulumi.Input[Union['CrossConnectGroupMacsecPropertiesArgs', 'CrossConnectGroupMacsecPropertiesArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Cross Connect Group resource in Oracle Cloud Infrastructure Core service.
@@ -331,15 +331,15 @@ class CrossConnectGroup(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            macsec_properties=oci.core.CrossConnectGroupMacsecPropertiesArgs(
-                state=cross_connect_group_macsec_properties_state,
-                encryption_cipher=cross_connect_group_macsec_properties_encryption_cipher,
-                is_unprotected_traffic_allowed=cross_connect_group_macsec_properties_is_unprotected_traffic_allowed,
-                primary_key=oci.core.CrossConnectGroupMacsecPropertiesPrimaryKeyArgs(
-                    connectivity_association_key_secret_id=test_secret["id"],
-                    connectivity_association_name_secret_id=test_secret["id"],
-                ),
-            ))
+            macsec_properties={
+                "state": cross_connect_group_macsec_properties_state,
+                "encryption_cipher": cross_connect_group_macsec_properties_encryption_cipher,
+                "is_unprotected_traffic_allowed": cross_connect_group_macsec_properties_is_unprotected_traffic_allowed,
+                "primary_key": {
+                    "connectivity_association_key_secret_id": test_secret["id"],
+                    "connectivity_association_name_secret_id": test_secret["id"],
+                },
+            })
         ```
 
         ## Import
@@ -357,7 +357,7 @@ class CrossConnectGroup(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[pulumi.InputType['CrossConnectGroupMacsecPropertiesArgs']] macsec_properties: (Updatable) Properties used to configure MACsec (if capable).
+        :param pulumi.Input[Union['CrossConnectGroupMacsecPropertiesArgs', 'CrossConnectGroupMacsecPropertiesArgsDict']] macsec_properties: (Updatable) Properties used to configure MACsec (if capable).
         """
         ...
     @overload
@@ -400,15 +400,15 @@ class CrossConnectGroup(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            macsec_properties=oci.core.CrossConnectGroupMacsecPropertiesArgs(
-                state=cross_connect_group_macsec_properties_state,
-                encryption_cipher=cross_connect_group_macsec_properties_encryption_cipher,
-                is_unprotected_traffic_allowed=cross_connect_group_macsec_properties_is_unprotected_traffic_allowed,
-                primary_key=oci.core.CrossConnectGroupMacsecPropertiesPrimaryKeyArgs(
-                    connectivity_association_key_secret_id=test_secret["id"],
-                    connectivity_association_name_secret_id=test_secret["id"],
-                ),
-            ))
+            macsec_properties={
+                "state": cross_connect_group_macsec_properties_state,
+                "encryption_cipher": cross_connect_group_macsec_properties_encryption_cipher,
+                "is_unprotected_traffic_allowed": cross_connect_group_macsec_properties_is_unprotected_traffic_allowed,
+                "primary_key": {
+                    "connectivity_association_key_secret_id": test_secret["id"],
+                    "connectivity_association_name_secret_id": test_secret["id"],
+                },
+            })
         ```
 
         ## Import
@@ -439,7 +439,7 @@ class CrossConnectGroup(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 macsec_properties: Optional[pulumi.Input[pulumi.InputType['CrossConnectGroupMacsecPropertiesArgs']]] = None,
+                 macsec_properties: Optional[pulumi.Input[Union['CrossConnectGroupMacsecPropertiesArgs', 'CrossConnectGroupMacsecPropertiesArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -476,7 +476,7 @@ class CrossConnectGroup(pulumi.CustomResource):
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            macsec_properties: Optional[pulumi.Input[pulumi.InputType['CrossConnectGroupMacsecPropertiesArgs']]] = None,
+            macsec_properties: Optional[pulumi.Input[Union['CrossConnectGroupMacsecPropertiesArgs', 'CrossConnectGroupMacsecPropertiesArgsDict']]] = None,
             oci_logical_device_name: Optional[pulumi.Input[str]] = None,
             oci_physical_device_name: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -493,7 +493,7 @@ class CrossConnectGroup(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[pulumi.InputType['CrossConnectGroupMacsecPropertiesArgs']] macsec_properties: (Updatable) Properties used to configure MACsec (if capable).
+        :param pulumi.Input[Union['CrossConnectGroupMacsecPropertiesArgs', 'CrossConnectGroupMacsecPropertiesArgsDict']] macsec_properties: (Updatable) Properties used to configure MACsec (if capable).
         :param pulumi.Input[str] oci_logical_device_name: The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
         :param pulumi.Input[str] oci_physical_device_name: The FastConnect device that terminates the physical connection.
         :param pulumi.Input[str] state: The cross-connect group's current state.

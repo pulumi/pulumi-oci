@@ -358,8 +358,8 @@ class Channel(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_enabled: Optional[pulumi.Input[bool]] = None,
-                 source: Optional[pulumi.Input[pulumi.InputType['ChannelSourceArgs']]] = None,
-                 target: Optional[pulumi.Input[pulumi.InputType['ChannelTargetArgs']]] = None,
+                 source: Optional[pulumi.Input[Union['ChannelSourceArgs', 'ChannelSourceArgsDict']]] = None,
+                 target: Optional[pulumi.Input[Union['ChannelTargetArgs', 'ChannelTargetArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Channel resource in Oracle Cloud Infrastructure MySQL Database service.
@@ -382,8 +382,8 @@ class Channel(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the Channel. It does not have to be unique.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether the Channel should be enabled upon creation. If set to true, the Channel will be asynchronously started as a result of the create Channel operation.
-        :param pulumi.Input[pulumi.InputType['ChannelSourceArgs']] source: (Updatable) Parameters detailing how to provision the source for the given Channel.
-        :param pulumi.Input[pulumi.InputType['ChannelTargetArgs']] target: (Updatable) Parameters detailing how to provision the target for the given Channel.
+        :param pulumi.Input[Union['ChannelSourceArgs', 'ChannelSourceArgsDict']] source: (Updatable) Parameters detailing how to provision the source for the given Channel.
+        :param pulumi.Input[Union['ChannelTargetArgs', 'ChannelTargetArgsDict']] target: (Updatable) Parameters detailing how to provision the target for the given Channel.
         """
         ...
     @overload
@@ -425,8 +425,8 @@ class Channel(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_enabled: Optional[pulumi.Input[bool]] = None,
-                 source: Optional[pulumi.Input[pulumi.InputType['ChannelSourceArgs']]] = None,
-                 target: Optional[pulumi.Input[pulumi.InputType['ChannelTargetArgs']]] = None,
+                 source: Optional[pulumi.Input[Union['ChannelSourceArgs', 'ChannelSourceArgsDict']]] = None,
+                 target: Optional[pulumi.Input[Union['ChannelTargetArgs', 'ChannelTargetArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -469,9 +469,9 @@ class Channel(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             is_enabled: Optional[pulumi.Input[bool]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
-            source: Optional[pulumi.Input[pulumi.InputType['ChannelSourceArgs']]] = None,
+            source: Optional[pulumi.Input[Union['ChannelSourceArgs', 'ChannelSourceArgsDict']]] = None,
             state: Optional[pulumi.Input[str]] = None,
-            target: Optional[pulumi.Input[pulumi.InputType['ChannelTargetArgs']]] = None,
+            target: Optional[pulumi.Input[Union['ChannelTargetArgs', 'ChannelTargetArgsDict']]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None) -> 'Channel':
         """
@@ -488,9 +488,9 @@ class Channel(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether the Channel should be enabled upon creation. If set to true, the Channel will be asynchronously started as a result of the create Channel operation.
         :param pulumi.Input[str] lifecycle_details: A message describing the state of the Channel.
-        :param pulumi.Input[pulumi.InputType['ChannelSourceArgs']] source: (Updatable) Parameters detailing how to provision the source for the given Channel.
+        :param pulumi.Input[Union['ChannelSourceArgs', 'ChannelSourceArgsDict']] source: (Updatable) Parameters detailing how to provision the source for the given Channel.
         :param pulumi.Input[str] state: The state of the Channel.
-        :param pulumi.Input[pulumi.InputType['ChannelTargetArgs']] target: (Updatable) Parameters detailing how to provision the target for the given Channel.
+        :param pulumi.Input[Union['ChannelTargetArgs', 'ChannelTargetArgsDict']] target: (Updatable) Parameters detailing how to provision the target for the given Channel.
         :param pulumi.Input[str] time_created: The date and time the Channel was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param pulumi.Input[str] time_updated: The time the Channel was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """

@@ -289,7 +289,7 @@ public class JavaDownloadsJavaDownloadReport extends com.pulumi.resources.Custom
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public JavaDownloadsJavaDownloadReport(String name) {
+    public JavaDownloadsJavaDownloadReport(java.lang.String name) {
         this(name, JavaDownloadsJavaDownloadReportArgs.Empty);
     }
     /**
@@ -297,7 +297,7 @@ public class JavaDownloadsJavaDownloadReport extends com.pulumi.resources.Custom
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public JavaDownloadsJavaDownloadReport(String name, JavaDownloadsJavaDownloadReportArgs args) {
+    public JavaDownloadsJavaDownloadReport(java.lang.String name, JavaDownloadsJavaDownloadReportArgs args) {
         this(name, args, null);
     }
     /**
@@ -306,12 +306,12 @@ public class JavaDownloadsJavaDownloadReport extends com.pulumi.resources.Custom
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public JavaDownloadsJavaDownloadReport(String name, JavaDownloadsJavaDownloadReportArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Jms/javaDownloadsJavaDownloadReport:JavaDownloadsJavaDownloadReport", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public JavaDownloadsJavaDownloadReport(java.lang.String name, JavaDownloadsJavaDownloadReportArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Jms/javaDownloadsJavaDownloadReport:JavaDownloadsJavaDownloadReport", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private JavaDownloadsJavaDownloadReport(String name, Output<String> id, @Nullable JavaDownloadsJavaDownloadReportState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Jms/javaDownloadsJavaDownloadReport:JavaDownloadsJavaDownloadReport", name, state, makeResourceOptions(options, id));
+    private JavaDownloadsJavaDownloadReport(java.lang.String name, Output<java.lang.String> id, @Nullable JavaDownloadsJavaDownloadReportState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Jms/javaDownloadsJavaDownloadReport:JavaDownloadsJavaDownloadReport", name, state, makeResourceOptions(options, id), false);
     }
 
     private static JavaDownloadsJavaDownloadReportArgs makeArgs(JavaDownloadsJavaDownloadReportArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -321,7 +321,7 @@ public class JavaDownloadsJavaDownloadReport extends com.pulumi.resources.Custom
         return args == null ? JavaDownloadsJavaDownloadReportArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -337,7 +337,7 @@ public class JavaDownloadsJavaDownloadReport extends com.pulumi.resources.Custom
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static JavaDownloadsJavaDownloadReport get(String name, Output<String> id, @Nullable JavaDownloadsJavaDownloadReportState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static JavaDownloadsJavaDownloadReport get(java.lang.String name, Output<java.lang.String> id, @Nullable JavaDownloadsJavaDownloadReportState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new JavaDownloadsJavaDownloadReport(name, id, state, options);
     }
 }

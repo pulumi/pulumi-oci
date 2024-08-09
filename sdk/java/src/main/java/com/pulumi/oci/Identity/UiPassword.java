@@ -151,7 +151,7 @@ public class UiPassword extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public UiPassword(String name) {
+    public UiPassword(java.lang.String name) {
         this(name, UiPasswordArgs.Empty);
     }
     /**
@@ -159,7 +159,7 @@ public class UiPassword extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public UiPassword(String name, UiPasswordArgs args) {
+    public UiPassword(java.lang.String name, UiPasswordArgs args) {
         this(name, args, null);
     }
     /**
@@ -168,12 +168,12 @@ public class UiPassword extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public UiPassword(String name, UiPasswordArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/uiPassword:UiPassword", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public UiPassword(java.lang.String name, UiPasswordArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/uiPassword:UiPassword", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private UiPassword(String name, Output<String> id, @Nullable UiPasswordState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/uiPassword:UiPassword", name, state, makeResourceOptions(options, id));
+    private UiPassword(java.lang.String name, Output<java.lang.String> id, @Nullable UiPasswordState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/uiPassword:UiPassword", name, state, makeResourceOptions(options, id), false);
     }
 
     private static UiPasswordArgs makeArgs(UiPasswordArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -183,7 +183,7 @@ public class UiPassword extends com.pulumi.resources.CustomResource {
         return args == null ? UiPasswordArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -199,7 +199,7 @@ public class UiPassword extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static UiPassword get(String name, Output<String> id, @Nullable UiPasswordState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static UiPassword get(java.lang.String name, Output<java.lang.String> id, @Nullable UiPasswordState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new UiPassword(name, id, state, options);
     }
 }

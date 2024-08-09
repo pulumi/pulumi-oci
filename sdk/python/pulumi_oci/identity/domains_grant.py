@@ -1288,20 +1288,20 @@ class DomainsGrant(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 app: Optional[pulumi.Input[pulumi.InputType['DomainsGrantAppArgs']]] = None,
-                 app_entitlement_collection: Optional[pulumi.Input[pulumi.InputType['DomainsGrantAppEntitlementCollectionArgs']]] = None,
+                 app: Optional[pulumi.Input[Union['DomainsGrantAppArgs', 'DomainsGrantAppArgsDict']]] = None,
+                 app_entitlement_collection: Optional[pulumi.Input[Union['DomainsGrantAppEntitlementCollectionArgs', 'DomainsGrantAppEntitlementCollectionArgsDict']]] = None,
                  attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  attributes: Optional[pulumi.Input[str]] = None,
                  authorization: Optional[pulumi.Input[str]] = None,
-                 entitlement: Optional[pulumi.Input[pulumi.InputType['DomainsGrantEntitlementArgs']]] = None,
+                 entitlement: Optional[pulumi.Input[Union['DomainsGrantEntitlementArgs', 'DomainsGrantEntitlementArgsDict']]] = None,
                  grant_mechanism: Optional[pulumi.Input[str]] = None,
                  granted_attribute_values_json: Optional[pulumi.Input[str]] = None,
-                 grantee: Optional[pulumi.Input[pulumi.InputType['DomainsGrantGranteeArgs']]] = None,
+                 grantee: Optional[pulumi.Input[Union['DomainsGrantGranteeArgs', 'DomainsGrantGranteeArgsDict']]] = None,
                  idcs_endpoint: Optional[pulumi.Input[str]] = None,
                  ocid: Optional[pulumi.Input[str]] = None,
                  resource_type_schema_version: Optional[pulumi.Input[str]] = None,
                  schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGrantTagArgs']]]]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsGrantTagArgs', 'DomainsGrantTagArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Grant resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -1318,7 +1318,7 @@ class DomainsGrant(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['DomainsGrantAppArgs']] app: Application that is being granted. Each Grant must grant either an App or an App-Entitlement-Collection.
+        :param pulumi.Input[Union['DomainsGrantAppArgs', 'DomainsGrantAppArgsDict']] app: Application that is being granted. Each Grant must grant either an App or an App-Entitlement-Collection.
                
                **SCIM++ Properties:**
                * idcsCsvAttributeNameMappings: [[columnHeaderName:App Name, defaultValue:jobParam:appDisplayName, mapsTo:app.value]]
@@ -1329,7 +1329,7 @@ class DomainsGrant(pulumi.CustomResource):
                * returned: default
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsGrantAppEntitlementCollectionArgs']] app_entitlement_collection: Application-Entitlement-Collection that is being granted. Each Grant must grant either an App or an App-Entitlement-Collection.
+        :param pulumi.Input[Union['DomainsGrantAppEntitlementCollectionArgs', 'DomainsGrantAppEntitlementCollectionArgsDict']] app_entitlement_collection: Application-Entitlement-Collection that is being granted. Each Grant must grant either an App or an App-Entitlement-Collection.
                
                **Added In:** 18.2.4
                
@@ -1344,7 +1344,7 @@ class DomainsGrant(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
         :param pulumi.Input[str] attributes: A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
         :param pulumi.Input[str] authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        :param pulumi.Input[pulumi.InputType['DomainsGrantEntitlementArgs']] entitlement: The entitlement or privilege that is being granted
+        :param pulumi.Input[Union['DomainsGrantEntitlementArgs', 'DomainsGrantEntitlementArgsDict']] entitlement: The entitlement or privilege that is being granted
                
                **SCIM++ Properties:**
                * idcsCsvAttributeNameMappings: [[columnHeaderName:Entitlement Value, csvColumnForResolvingResourceType:Entitlement Name, mapsTo:entitlement.attributeValue, referencedResourceTypeUniqueAttributeNameMappings:[[mapsFromColumnName:Entitlement Value, resourceTypeAttributeName:displayName], [mapsFromColumnName:App Name, resourceTypeAttributeName:app.display]], resolveValueUsingResourceType:[[resolveBy:AppRole, valueToBeResolved:appRoles]]], [columnHeaderName:Entitlement Name, defaultValue:appRoles, mapsTo:entitlement.attributeName]]
@@ -1381,7 +1381,7 @@ class DomainsGrant(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsGrantGranteeArgs']] grantee: Grantee beneficiary. The grantee may be a User, Group, App or DynamicResourceGroup.
+        :param pulumi.Input[Union['DomainsGrantGranteeArgs', 'DomainsGrantGranteeArgsDict']] grantee: Grantee beneficiary. The grantee may be a User, Group, App or DynamicResourceGroup.
                
                **SCIM++ Properties:**
                * idcsCsvAttributeNameMappings: [[columnHeaderName:Grantee Name, csvColumnForResolvingResourceType:Grantee Type, mapsTo:grantee.value], [columnHeaderName:Grantee Type, mapsTo:grantee.type]]
@@ -1416,7 +1416,7 @@ class DomainsGrant(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGrantTagArgs']]]] tags: A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsGrantTagArgs', 'DomainsGrantTagArgsDict']]]] tags: A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -1462,20 +1462,20 @@ class DomainsGrant(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 app: Optional[pulumi.Input[pulumi.InputType['DomainsGrantAppArgs']]] = None,
-                 app_entitlement_collection: Optional[pulumi.Input[pulumi.InputType['DomainsGrantAppEntitlementCollectionArgs']]] = None,
+                 app: Optional[pulumi.Input[Union['DomainsGrantAppArgs', 'DomainsGrantAppArgsDict']]] = None,
+                 app_entitlement_collection: Optional[pulumi.Input[Union['DomainsGrantAppEntitlementCollectionArgs', 'DomainsGrantAppEntitlementCollectionArgsDict']]] = None,
                  attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  attributes: Optional[pulumi.Input[str]] = None,
                  authorization: Optional[pulumi.Input[str]] = None,
-                 entitlement: Optional[pulumi.Input[pulumi.InputType['DomainsGrantEntitlementArgs']]] = None,
+                 entitlement: Optional[pulumi.Input[Union['DomainsGrantEntitlementArgs', 'DomainsGrantEntitlementArgsDict']]] = None,
                  grant_mechanism: Optional[pulumi.Input[str]] = None,
                  granted_attribute_values_json: Optional[pulumi.Input[str]] = None,
-                 grantee: Optional[pulumi.Input[pulumi.InputType['DomainsGrantGranteeArgs']]] = None,
+                 grantee: Optional[pulumi.Input[Union['DomainsGrantGranteeArgs', 'DomainsGrantGranteeArgsDict']]] = None,
                  idcs_endpoint: Optional[pulumi.Input[str]] = None,
                  ocid: Optional[pulumi.Input[str]] = None,
                  resource_type_schema_version: Optional[pulumi.Input[str]] = None,
                  schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGrantTagArgs']]]]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsGrantTagArgs', 'DomainsGrantTagArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1529,8 +1529,8 @@ class DomainsGrant(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            app: Optional[pulumi.Input[pulumi.InputType['DomainsGrantAppArgs']]] = None,
-            app_entitlement_collection: Optional[pulumi.Input[pulumi.InputType['DomainsGrantAppEntitlementCollectionArgs']]] = None,
+            app: Optional[pulumi.Input[Union['DomainsGrantAppArgs', 'DomainsGrantAppArgsDict']]] = None,
+            app_entitlement_collection: Optional[pulumi.Input[Union['DomainsGrantAppEntitlementCollectionArgs', 'DomainsGrantAppEntitlementCollectionArgsDict']]] = None,
             attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             attributes: Optional[pulumi.Input[str]] = None,
             authorization: Optional[pulumi.Input[str]] = None,
@@ -1538,22 +1538,22 @@ class DomainsGrant(pulumi.CustomResource):
             composite_key: Optional[pulumi.Input[str]] = None,
             delete_in_progress: Optional[pulumi.Input[bool]] = None,
             domain_ocid: Optional[pulumi.Input[str]] = None,
-            entitlement: Optional[pulumi.Input[pulumi.InputType['DomainsGrantEntitlementArgs']]] = None,
+            entitlement: Optional[pulumi.Input[Union['DomainsGrantEntitlementArgs', 'DomainsGrantEntitlementArgsDict']]] = None,
             grant_mechanism: Optional[pulumi.Input[str]] = None,
             granted_attribute_values_json: Optional[pulumi.Input[str]] = None,
-            grantee: Optional[pulumi.Input[pulumi.InputType['DomainsGrantGranteeArgs']]] = None,
-            grantors: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGrantGrantorArgs']]]]] = None,
-            idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGrantIdcsCreatedByArgs']]]]] = None,
+            grantee: Optional[pulumi.Input[Union['DomainsGrantGranteeArgs', 'DomainsGrantGranteeArgsDict']]] = None,
+            grantors: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsGrantGrantorArgs', 'DomainsGrantGrantorArgsDict']]]]] = None,
+            idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsGrantIdcsCreatedByArgs', 'DomainsGrantIdcsCreatedByArgsDict']]]]] = None,
             idcs_endpoint: Optional[pulumi.Input[str]] = None,
-            idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGrantIdcsLastModifiedByArgs']]]]] = None,
+            idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsGrantIdcsLastModifiedByArgs', 'DomainsGrantIdcsLastModifiedByArgsDict']]]]] = None,
             idcs_last_upgraded_in_release: Optional[pulumi.Input[str]] = None,
             idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             is_fulfilled: Optional[pulumi.Input[bool]] = None,
-            metas: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGrantMetaArgs']]]]] = None,
+            metas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsGrantMetaArgs', 'DomainsGrantMetaArgsDict']]]]] = None,
             ocid: Optional[pulumi.Input[str]] = None,
             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGrantTagArgs']]]]] = None,
+            tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsGrantTagArgs', 'DomainsGrantTagArgsDict']]]]] = None,
             tenancy_ocid: Optional[pulumi.Input[str]] = None) -> 'DomainsGrant':
         """
         Get an existing DomainsGrant resource's state with the given name, id, and optional extra
@@ -1562,7 +1562,7 @@ class DomainsGrant(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['DomainsGrantAppArgs']] app: Application that is being granted. Each Grant must grant either an App or an App-Entitlement-Collection.
+        :param pulumi.Input[Union['DomainsGrantAppArgs', 'DomainsGrantAppArgsDict']] app: Application that is being granted. Each Grant must grant either an App or an App-Entitlement-Collection.
                
                **SCIM++ Properties:**
                * idcsCsvAttributeNameMappings: [[columnHeaderName:App Name, defaultValue:jobParam:appDisplayName, mapsTo:app.value]]
@@ -1573,7 +1573,7 @@ class DomainsGrant(pulumi.CustomResource):
                * returned: default
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsGrantAppEntitlementCollectionArgs']] app_entitlement_collection: Application-Entitlement-Collection that is being granted. Each Grant must grant either an App or an App-Entitlement-Collection.
+        :param pulumi.Input[Union['DomainsGrantAppEntitlementCollectionArgs', 'DomainsGrantAppEntitlementCollectionArgsDict']] app_entitlement_collection: Application-Entitlement-Collection that is being granted. Each Grant must grant either an App or an App-Entitlement-Collection.
                
                **Added In:** 18.2.4
                
@@ -1634,7 +1634,7 @@ class DomainsGrant(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsGrantEntitlementArgs']] entitlement: The entitlement or privilege that is being granted
+        :param pulumi.Input[Union['DomainsGrantEntitlementArgs', 'DomainsGrantEntitlementArgsDict']] entitlement: The entitlement or privilege that is being granted
                
                **SCIM++ Properties:**
                * idcsCsvAttributeNameMappings: [[columnHeaderName:Entitlement Value, csvColumnForResolvingResourceType:Entitlement Name, mapsTo:entitlement.attributeValue, referencedResourceTypeUniqueAttributeNameMappings:[[mapsFromColumnName:Entitlement Value, resourceTypeAttributeName:displayName], [mapsFromColumnName:App Name, resourceTypeAttributeName:app.display]], resolveValueUsingResourceType:[[resolveBy:AppRole, valueToBeResolved:appRoles]]], [columnHeaderName:Entitlement Name, defaultValue:appRoles, mapsTo:entitlement.attributeName]]
@@ -1671,7 +1671,7 @@ class DomainsGrant(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsGrantGranteeArgs']] grantee: Grantee beneficiary. The grantee may be a User, Group, App or DynamicResourceGroup.
+        :param pulumi.Input[Union['DomainsGrantGranteeArgs', 'DomainsGrantGranteeArgsDict']] grantee: Grantee beneficiary. The grantee may be a User, Group, App or DynamicResourceGroup.
                
                **SCIM++ Properties:**
                * idcsCsvAttributeNameMappings: [[columnHeaderName:Grantee Name, csvColumnForResolvingResourceType:Grantee Type, mapsTo:grantee.value], [columnHeaderName:Grantee Type, mapsTo:grantee.type]]
@@ -1682,7 +1682,7 @@ class DomainsGrant(pulumi.CustomResource):
                * returned: default
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGrantGrantorArgs']]]] grantors: (Updatable) User conferring the grant to the beneficiary
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsGrantGrantorArgs', 'DomainsGrantGrantorArgsDict']]]] grantors: (Updatable) User conferring the grant to the beneficiary
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1692,7 +1692,7 @@ class DomainsGrant(pulumi.CustomResource):
                * required: false
                * returned: default
                * type: complex
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGrantIdcsCreatedByArgs']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsGrantIdcsCreatedByArgs', 'DomainsGrantIdcsCreatedByArgsDict']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1702,7 +1702,7 @@ class DomainsGrant(pulumi.CustomResource):
                * returned: default
                * type: complex
         :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGrantIdcsLastModifiedByArgs']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsGrantIdcsLastModifiedByArgs', 'DomainsGrantIdcsLastModifiedByArgsDict']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1742,7 +1742,7 @@ class DomainsGrant(pulumi.CustomResource):
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGrantMetaArgs']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsGrantMetaArgs', 'DomainsGrantMetaArgsDict']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1776,7 +1776,7 @@ class DomainsGrant(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGrantTagArgs']]]] tags: A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsGrantTagArgs', 'DomainsGrantTagArgsDict']]]] tags: A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]

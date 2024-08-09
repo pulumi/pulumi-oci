@@ -77,7 +77,7 @@ class AwaitableGetAutonomousDatabaseRefreshableClonesResult(GetAutonomousDatabas
 
 
 def get_autonomous_database_refreshable_clones(autonomous_database_id: Optional[str] = None,
-                                               filters: Optional[Sequence[pulumi.InputType['GetAutonomousDatabaseRefreshableClonesFilterArgs']]] = None,
+                                               filters: Optional[Sequence[Union['GetAutonomousDatabaseRefreshableClonesFilterArgs', 'GetAutonomousDatabaseRefreshableClonesFilterArgsDict']]] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousDatabaseRefreshableClonesResult:
     """
     This data source provides the list of Autonomous Database Refreshable Clones in Oracle Cloud Infrastructure Database service.
@@ -111,7 +111,7 @@ def get_autonomous_database_refreshable_clones(autonomous_database_id: Optional[
 
 @_utilities.lift_output_func(get_autonomous_database_refreshable_clones)
 def get_autonomous_database_refreshable_clones_output(autonomous_database_id: Optional[pulumi.Input[str]] = None,
-                                                      filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAutonomousDatabaseRefreshableClonesFilterArgs']]]]] = None,
+                                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutonomousDatabaseRefreshableClonesFilterArgs', 'GetAutonomousDatabaseRefreshableClonesFilterArgsDict']]]]] = None,
                                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousDatabaseRefreshableClonesResult]:
     """
     This data source provides the list of Autonomous Database Refreshable Clones in Oracle Cloud Infrastructure Database service.

@@ -107,7 +107,7 @@ class AwaitableGetManagementAgentImagesResult(GetManagementAgentImagesResult):
 
 
 def get_management_agent_images(compartment_id: Optional[str] = None,
-                                filters: Optional[Sequence[pulumi.InputType['GetManagementAgentImagesFilterArgs']]] = None,
+                                filters: Optional[Sequence[Union['GetManagementAgentImagesFilterArgs', 'GetManagementAgentImagesFilterArgsDict']]] = None,
                                 install_type: Optional[str] = None,
                                 name: Optional[str] = None,
                                 state: Optional[str] = None,
@@ -156,7 +156,7 @@ def get_management_agent_images(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_management_agent_images)
 def get_management_agent_images_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                       filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetManagementAgentImagesFilterArgs']]]]] = None,
+                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagementAgentImagesFilterArgs', 'GetManagementAgentImagesFilterArgsDict']]]]] = None,
                                        install_type: Optional[pulumi.Input[Optional[str]]] = None,
                                        name: Optional[pulumi.Input[Optional[str]]] = None,
                                        state: Optional[pulumi.Input[Optional[str]]] = None,

@@ -80,7 +80,7 @@ class AwaitableGetDbNodeConsoleConnectionsResult(GetDbNodeConsoleConnectionsResu
 
 
 def get_db_node_console_connections(db_node_id: Optional[str] = None,
-                                    filters: Optional[Sequence[pulumi.InputType['GetDbNodeConsoleConnectionsFilterArgs']]] = None,
+                                    filters: Optional[Sequence[Union['GetDbNodeConsoleConnectionsFilterArgs', 'GetDbNodeConsoleConnectionsFilterArgsDict']]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbNodeConsoleConnectionsResult:
     """
     This data source provides the list of Db Node Console Connections in Oracle Cloud Infrastructure Database service.
@@ -114,7 +114,7 @@ def get_db_node_console_connections(db_node_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_db_node_console_connections)
 def get_db_node_console_connections_output(db_node_id: Optional[pulumi.Input[str]] = None,
-                                           filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDbNodeConsoleConnectionsFilterArgs']]]]] = None,
+                                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbNodeConsoleConnectionsFilterArgs', 'GetDbNodeConsoleConnectionsFilterArgsDict']]]]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbNodeConsoleConnectionsResult]:
     """
     This data source provides the list of Db Node Console Connections in Oracle Cloud Infrastructure Database service.

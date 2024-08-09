@@ -95,7 +95,7 @@ class AwaitableGetOrganizationSubscriptionsResult(GetOrganizationSubscriptionsRe
 
 
 def get_organization_subscriptions(compartment_id: Optional[str] = None,
-                                   filters: Optional[Sequence[pulumi.InputType['GetOrganizationSubscriptionsFilterArgs']]] = None,
+                                   filters: Optional[Sequence[Union['GetOrganizationSubscriptionsFilterArgs', 'GetOrganizationSubscriptionsFilterArgsDict']]] = None,
                                    subscription_ids: Optional[str] = None,
                                    x_one_origin_region: Optional[str] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOrganizationSubscriptionsResult:
@@ -139,7 +139,7 @@ def get_organization_subscriptions(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_organization_subscriptions)
 def get_organization_subscriptions_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                          filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetOrganizationSubscriptionsFilterArgs']]]]] = None,
+                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOrganizationSubscriptionsFilterArgs', 'GetOrganizationSubscriptionsFilterArgsDict']]]]] = None,
                                           subscription_ids: Optional[pulumi.Input[str]] = None,
                                           x_one_origin_region: Optional[pulumi.Input[Optional[str]]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOrganizationSubscriptionsResult]:

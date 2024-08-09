@@ -447,14 +447,14 @@ class DrProtectionGroup(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 association: Optional[pulumi.Input[pulumi.InputType['DrProtectionGroupAssociationArgs']]] = None,
+                 association: Optional[pulumi.Input[Union['DrProtectionGroupAssociationArgs', 'DrProtectionGroupAssociationArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  disassociate_trigger: Optional[pulumi.Input[int]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 log_location: Optional[pulumi.Input[pulumi.InputType['DrProtectionGroupLogLocationArgs']]] = None,
-                 members: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DrProtectionGroupMemberArgs']]]]] = None,
+                 log_location: Optional[pulumi.Input[Union['DrProtectionGroupLogLocationArgs', 'DrProtectionGroupLogLocationArgsDict']]] = None,
+                 members: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DrProtectionGroupMemberArgs', 'DrProtectionGroupMemberArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Dr Protection Group resource in Oracle Cloud Infrastructure Disaster Recovery service.
@@ -474,15 +474,15 @@ class DrProtectionGroup(pulumi.CustomResource):
         test_dr_protection_group = oci.disaster_recovery.DrProtectionGroup("test_dr_protection_group",
             compartment_id=compartment_id,
             display_name=dr_protection_group_display_name,
-            log_location=oci.disaster_recovery.DrProtectionGroupLogLocationArgs(
-                bucket=dr_protection_group_log_location_bucket,
-                namespace=dr_protection_group_log_location_namespace,
-            ),
-            association=oci.disaster_recovery.DrProtectionGroupAssociationArgs(
-                role=dr_protection_group_association_role,
-                peer_id=dr_protection_group_association_peer_id,
-                peer_region=dr_protection_group_association_peer_region,
-            ),
+            log_location={
+                "bucket": dr_protection_group_log_location_bucket,
+                "namespace": dr_protection_group_log_location_namespace,
+            },
+            association={
+                "role": dr_protection_group_association_role,
+                "peer_id": dr_protection_group_association_peer_id,
+                "peer_region": dr_protection_group_association_peer_region,
+            },
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -490,65 +490,65 @@ class DrProtectionGroup(pulumi.CustomResource):
                 "Department": "Finance",
             },
             disassociate_trigger=disassociate_trigger,
-            members=[oci.disaster_recovery.DrProtectionGroupMemberArgs(
-                member_id=dr_protection_group_members_member_id,
-                member_type=dr_protection_group_members_member_type,
-                backend_set_mappings=[oci.disaster_recovery.DrProtectionGroupMemberBackendSetMappingArgs(
-                    destination_backend_set_name=test_backend_set["name"],
-                    is_backend_set_for_non_movable=dr_protection_group_members_backend_set_mappings_is_backend_set_for_non_movable,
-                    source_backend_set_name=test_backend_set["name"],
-                )],
-                block_volume_operations=[oci.disaster_recovery.DrProtectionGroupMemberBlockVolumeOperationArgs(
-                    attachment_details=oci.disaster_recovery.DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs(
-                        volume_attachment_reference_instance_id=test_instance["id"],
-                    ),
-                    block_volume_id=test_volume["id"],
-                    mount_details=oci.disaster_recovery.DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs(
-                        mount_point=dr_protection_group_members_block_volume_operations_mount_details_mount_point,
-                    ),
-                )],
-                destination_availability_domain=dr_protection_group_members_destination_availability_domain,
-                destination_capacity_reservation_id=destination_capacity_reservation_id,
-                destination_compartment_id=test_compartment["id"],
-                destination_dedicated_vm_host_id=test_dedicated_vm_host["id"],
-                destination_load_balancer_id=test_load_balancer["id"],
-                destination_network_load_balancer_id=test_network_load_balancer["id"],
-                export_mappings=[oci.disaster_recovery.DrProtectionGroupMemberExportMappingArgs(
-                    destination_mount_target_id=test_mount_target["id"],
-                    export_id=test_export["id"],
-                )],
-                file_system_operations=[oci.disaster_recovery.DrProtectionGroupMemberFileSystemOperationArgs(
-                    export_path=dr_protection_group_members_file_system_operations_export_path,
-                    mount_details=oci.disaster_recovery.DrProtectionGroupMemberFileSystemOperationMountDetailsArgs(
-                        mount_target_id=test_mount_target["id"],
-                    ),
-                    mount_point=dr_protection_group_members_file_system_operations_mount_point,
-                    mount_target_id=test_mount_target["id"],
-                    unmount_details=oci.disaster_recovery.DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs(
-                        mount_target_id=test_mount_target["id"],
-                    ),
-                )],
-                is_movable=dr_protection_group_members_is_movable,
-                is_retain_fault_domain=dr_protection_group_members_is_retain_fault_domain,
-                is_start_stop_enabled=dr_protection_group_members_is_start_stop_enabled,
-                password_vault_secret_id=password_vault_secret_id,
-                vnic_mappings=[
-                    oci.disaster_recovery.DrProtectionGroupMemberVnicMappingArgs(
-                        destination_nsg_id_lists=dr_protection_group_members_vnic_mapping_destination_nsg_id_list,
-                        destination_primary_private_ip_address=dr_protection_group_members_vnic_mapping_destination_primary_private_ip_address,
-                        destination_primary_private_ip_hostname_label=dr_protection_group_members_vnic_mapping_destination_primary_private_ip_hostname_label,
-                        destination_subnet_id=test_subnet["id"],
-                        source_vnic_id=test_vnic["id"],
-                    ),
-                    oci.disaster_recovery.DrProtectionGroupMemberVnicMappingArgs(
-                        destination_nsg_id_lists=dr_protection_group_members_vnic_mappings_destination_nsg_id_list,
-                        destination_primary_private_ip_address=dr_protection_group_members_vnic_mappings_destination_primary_private_ip_address,
-                        destination_primary_private_ip_hostname_label=dr_protection_group_members_vnic_mappings_destination_primary_private_ip_hostname_label,
-                        destination_subnet_id=test_subnet["id"],
-                        source_vnic_id=test_vnic["id"],
-                    ),
+            members=[{
+                "member_id": dr_protection_group_members_member_id,
+                "member_type": dr_protection_group_members_member_type,
+                "backend_set_mappings": [{
+                    "destination_backend_set_name": test_backend_set["name"],
+                    "is_backend_set_for_non_movable": dr_protection_group_members_backend_set_mappings_is_backend_set_for_non_movable,
+                    "source_backend_set_name": test_backend_set["name"],
+                }],
+                "block_volume_operations": [{
+                    "attachment_details": {
+                        "volume_attachment_reference_instance_id": test_instance["id"],
+                    },
+                    "block_volume_id": test_volume["id"],
+                    "mount_details": {
+                        "mount_point": dr_protection_group_members_block_volume_operations_mount_details_mount_point,
+                    },
+                }],
+                "destination_availability_domain": dr_protection_group_members_destination_availability_domain,
+                "destination_capacity_reservation_id": destination_capacity_reservation_id,
+                "destination_compartment_id": test_compartment["id"],
+                "destination_dedicated_vm_host_id": test_dedicated_vm_host["id"],
+                "destination_load_balancer_id": test_load_balancer["id"],
+                "destination_network_load_balancer_id": test_network_load_balancer["id"],
+                "export_mappings": [{
+                    "destination_mount_target_id": test_mount_target["id"],
+                    "export_id": test_export["id"],
+                }],
+                "file_system_operations": [{
+                    "export_path": dr_protection_group_members_file_system_operations_export_path,
+                    "mount_details": {
+                        "mount_target_id": test_mount_target["id"],
+                    },
+                    "mount_point": dr_protection_group_members_file_system_operations_mount_point,
+                    "mount_target_id": test_mount_target["id"],
+                    "unmount_details": {
+                        "mount_target_id": test_mount_target["id"],
+                    },
+                }],
+                "is_movable": dr_protection_group_members_is_movable,
+                "is_retain_fault_domain": dr_protection_group_members_is_retain_fault_domain,
+                "is_start_stop_enabled": dr_protection_group_members_is_start_stop_enabled,
+                "password_vault_secret_id": password_vault_secret_id,
+                "vnic_mappings": [
+                    {
+                        "destination_nsg_id_lists": dr_protection_group_members_vnic_mapping_destination_nsg_id_list,
+                        "destination_primary_private_ip_address": dr_protection_group_members_vnic_mapping_destination_primary_private_ip_address,
+                        "destination_primary_private_ip_hostname_label": dr_protection_group_members_vnic_mapping_destination_primary_private_ip_hostname_label,
+                        "destination_subnet_id": test_subnet["id"],
+                        "source_vnic_id": test_vnic["id"],
+                    },
+                    {
+                        "destination_nsg_id_lists": dr_protection_group_members_vnic_mappings_destination_nsg_id_list,
+                        "destination_primary_private_ip_address": dr_protection_group_members_vnic_mappings_destination_primary_private_ip_address,
+                        "destination_primary_private_ip_hostname_label": dr_protection_group_members_vnic_mappings_destination_primary_private_ip_hostname_label,
+                        "destination_subnet_id": test_subnet["id"],
+                        "source_vnic_id": test_vnic["id"],
+                    },
                 ],
-            )])
+            }])
         ```
 
         ## Create
@@ -569,7 +569,7 @@ class DrProtectionGroup(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['DrProtectionGroupAssociationArgs']] association: The details for associating a DR protection group with a peer DR protection group.
+        :param pulumi.Input[Union['DrProtectionGroupAssociationArgs', 'DrProtectionGroupAssociationArgsDict']] association: The details for associating a DR protection group with a peer DR protection group.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment in which to create the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[int] disassociate_trigger: (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
@@ -579,8 +579,8 @@ class DrProtectionGroup(pulumi.CustomResource):
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] display_name: (Updatable) The display name of the DR protection group.  Example: `EBS PHX Group`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[pulumi.InputType['DrProtectionGroupLogLocationArgs']] log_location: (Updatable) The details for creating an object storage log location for a DR protection group.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DrProtectionGroupMemberArgs']]]] members: (Updatable) A list of DR protection group members.
+        :param pulumi.Input[Union['DrProtectionGroupLogLocationArgs', 'DrProtectionGroupLogLocationArgsDict']] log_location: (Updatable) The details for creating an object storage log location for a DR protection group.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DrProtectionGroupMemberArgs', 'DrProtectionGroupMemberArgsDict']]]] members: (Updatable) A list of DR protection group members.
         """
         ...
     @overload
@@ -606,15 +606,15 @@ class DrProtectionGroup(pulumi.CustomResource):
         test_dr_protection_group = oci.disaster_recovery.DrProtectionGroup("test_dr_protection_group",
             compartment_id=compartment_id,
             display_name=dr_protection_group_display_name,
-            log_location=oci.disaster_recovery.DrProtectionGroupLogLocationArgs(
-                bucket=dr_protection_group_log_location_bucket,
-                namespace=dr_protection_group_log_location_namespace,
-            ),
-            association=oci.disaster_recovery.DrProtectionGroupAssociationArgs(
-                role=dr_protection_group_association_role,
-                peer_id=dr_protection_group_association_peer_id,
-                peer_region=dr_protection_group_association_peer_region,
-            ),
+            log_location={
+                "bucket": dr_protection_group_log_location_bucket,
+                "namespace": dr_protection_group_log_location_namespace,
+            },
+            association={
+                "role": dr_protection_group_association_role,
+                "peer_id": dr_protection_group_association_peer_id,
+                "peer_region": dr_protection_group_association_peer_region,
+            },
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -622,65 +622,65 @@ class DrProtectionGroup(pulumi.CustomResource):
                 "Department": "Finance",
             },
             disassociate_trigger=disassociate_trigger,
-            members=[oci.disaster_recovery.DrProtectionGroupMemberArgs(
-                member_id=dr_protection_group_members_member_id,
-                member_type=dr_protection_group_members_member_type,
-                backend_set_mappings=[oci.disaster_recovery.DrProtectionGroupMemberBackendSetMappingArgs(
-                    destination_backend_set_name=test_backend_set["name"],
-                    is_backend_set_for_non_movable=dr_protection_group_members_backend_set_mappings_is_backend_set_for_non_movable,
-                    source_backend_set_name=test_backend_set["name"],
-                )],
-                block_volume_operations=[oci.disaster_recovery.DrProtectionGroupMemberBlockVolumeOperationArgs(
-                    attachment_details=oci.disaster_recovery.DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs(
-                        volume_attachment_reference_instance_id=test_instance["id"],
-                    ),
-                    block_volume_id=test_volume["id"],
-                    mount_details=oci.disaster_recovery.DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs(
-                        mount_point=dr_protection_group_members_block_volume_operations_mount_details_mount_point,
-                    ),
-                )],
-                destination_availability_domain=dr_protection_group_members_destination_availability_domain,
-                destination_capacity_reservation_id=destination_capacity_reservation_id,
-                destination_compartment_id=test_compartment["id"],
-                destination_dedicated_vm_host_id=test_dedicated_vm_host["id"],
-                destination_load_balancer_id=test_load_balancer["id"],
-                destination_network_load_balancer_id=test_network_load_balancer["id"],
-                export_mappings=[oci.disaster_recovery.DrProtectionGroupMemberExportMappingArgs(
-                    destination_mount_target_id=test_mount_target["id"],
-                    export_id=test_export["id"],
-                )],
-                file_system_operations=[oci.disaster_recovery.DrProtectionGroupMemberFileSystemOperationArgs(
-                    export_path=dr_protection_group_members_file_system_operations_export_path,
-                    mount_details=oci.disaster_recovery.DrProtectionGroupMemberFileSystemOperationMountDetailsArgs(
-                        mount_target_id=test_mount_target["id"],
-                    ),
-                    mount_point=dr_protection_group_members_file_system_operations_mount_point,
-                    mount_target_id=test_mount_target["id"],
-                    unmount_details=oci.disaster_recovery.DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs(
-                        mount_target_id=test_mount_target["id"],
-                    ),
-                )],
-                is_movable=dr_protection_group_members_is_movable,
-                is_retain_fault_domain=dr_protection_group_members_is_retain_fault_domain,
-                is_start_stop_enabled=dr_protection_group_members_is_start_stop_enabled,
-                password_vault_secret_id=password_vault_secret_id,
-                vnic_mappings=[
-                    oci.disaster_recovery.DrProtectionGroupMemberVnicMappingArgs(
-                        destination_nsg_id_lists=dr_protection_group_members_vnic_mapping_destination_nsg_id_list,
-                        destination_primary_private_ip_address=dr_protection_group_members_vnic_mapping_destination_primary_private_ip_address,
-                        destination_primary_private_ip_hostname_label=dr_protection_group_members_vnic_mapping_destination_primary_private_ip_hostname_label,
-                        destination_subnet_id=test_subnet["id"],
-                        source_vnic_id=test_vnic["id"],
-                    ),
-                    oci.disaster_recovery.DrProtectionGroupMemberVnicMappingArgs(
-                        destination_nsg_id_lists=dr_protection_group_members_vnic_mappings_destination_nsg_id_list,
-                        destination_primary_private_ip_address=dr_protection_group_members_vnic_mappings_destination_primary_private_ip_address,
-                        destination_primary_private_ip_hostname_label=dr_protection_group_members_vnic_mappings_destination_primary_private_ip_hostname_label,
-                        destination_subnet_id=test_subnet["id"],
-                        source_vnic_id=test_vnic["id"],
-                    ),
+            members=[{
+                "member_id": dr_protection_group_members_member_id,
+                "member_type": dr_protection_group_members_member_type,
+                "backend_set_mappings": [{
+                    "destination_backend_set_name": test_backend_set["name"],
+                    "is_backend_set_for_non_movable": dr_protection_group_members_backend_set_mappings_is_backend_set_for_non_movable,
+                    "source_backend_set_name": test_backend_set["name"],
+                }],
+                "block_volume_operations": [{
+                    "attachment_details": {
+                        "volume_attachment_reference_instance_id": test_instance["id"],
+                    },
+                    "block_volume_id": test_volume["id"],
+                    "mount_details": {
+                        "mount_point": dr_protection_group_members_block_volume_operations_mount_details_mount_point,
+                    },
+                }],
+                "destination_availability_domain": dr_protection_group_members_destination_availability_domain,
+                "destination_capacity_reservation_id": destination_capacity_reservation_id,
+                "destination_compartment_id": test_compartment["id"],
+                "destination_dedicated_vm_host_id": test_dedicated_vm_host["id"],
+                "destination_load_balancer_id": test_load_balancer["id"],
+                "destination_network_load_balancer_id": test_network_load_balancer["id"],
+                "export_mappings": [{
+                    "destination_mount_target_id": test_mount_target["id"],
+                    "export_id": test_export["id"],
+                }],
+                "file_system_operations": [{
+                    "export_path": dr_protection_group_members_file_system_operations_export_path,
+                    "mount_details": {
+                        "mount_target_id": test_mount_target["id"],
+                    },
+                    "mount_point": dr_protection_group_members_file_system_operations_mount_point,
+                    "mount_target_id": test_mount_target["id"],
+                    "unmount_details": {
+                        "mount_target_id": test_mount_target["id"],
+                    },
+                }],
+                "is_movable": dr_protection_group_members_is_movable,
+                "is_retain_fault_domain": dr_protection_group_members_is_retain_fault_domain,
+                "is_start_stop_enabled": dr_protection_group_members_is_start_stop_enabled,
+                "password_vault_secret_id": password_vault_secret_id,
+                "vnic_mappings": [
+                    {
+                        "destination_nsg_id_lists": dr_protection_group_members_vnic_mapping_destination_nsg_id_list,
+                        "destination_primary_private_ip_address": dr_protection_group_members_vnic_mapping_destination_primary_private_ip_address,
+                        "destination_primary_private_ip_hostname_label": dr_protection_group_members_vnic_mapping_destination_primary_private_ip_hostname_label,
+                        "destination_subnet_id": test_subnet["id"],
+                        "source_vnic_id": test_vnic["id"],
+                    },
+                    {
+                        "destination_nsg_id_lists": dr_protection_group_members_vnic_mappings_destination_nsg_id_list,
+                        "destination_primary_private_ip_address": dr_protection_group_members_vnic_mappings_destination_primary_private_ip_address,
+                        "destination_primary_private_ip_hostname_label": dr_protection_group_members_vnic_mappings_destination_primary_private_ip_hostname_label,
+                        "destination_subnet_id": test_subnet["id"],
+                        "source_vnic_id": test_vnic["id"],
+                    },
                 ],
-            )])
+            }])
         ```
 
         ## Create
@@ -714,14 +714,14 @@ class DrProtectionGroup(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 association: Optional[pulumi.Input[pulumi.InputType['DrProtectionGroupAssociationArgs']]] = None,
+                 association: Optional[pulumi.Input[Union['DrProtectionGroupAssociationArgs', 'DrProtectionGroupAssociationArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  disassociate_trigger: Optional[pulumi.Input[int]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 log_location: Optional[pulumi.Input[pulumi.InputType['DrProtectionGroupLogLocationArgs']]] = None,
-                 members: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DrProtectionGroupMemberArgs']]]]] = None,
+                 log_location: Optional[pulumi.Input[Union['DrProtectionGroupLogLocationArgs', 'DrProtectionGroupLogLocationArgsDict']]] = None,
+                 members: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DrProtectionGroupMemberArgs', 'DrProtectionGroupMemberArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -764,7 +764,7 @@ class DrProtectionGroup(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            association: Optional[pulumi.Input[pulumi.InputType['DrProtectionGroupAssociationArgs']]] = None,
+            association: Optional[pulumi.Input[Union['DrProtectionGroupAssociationArgs', 'DrProtectionGroupAssociationArgsDict']]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             disassociate_trigger: Optional[pulumi.Input[int]] = None,
@@ -772,8 +772,8 @@ class DrProtectionGroup(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             life_cycle_details: Optional[pulumi.Input[str]] = None,
             lifecycle_sub_state: Optional[pulumi.Input[str]] = None,
-            log_location: Optional[pulumi.Input[pulumi.InputType['DrProtectionGroupLogLocationArgs']]] = None,
-            members: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DrProtectionGroupMemberArgs']]]]] = None,
+            log_location: Optional[pulumi.Input[Union['DrProtectionGroupLogLocationArgs', 'DrProtectionGroupLogLocationArgsDict']]] = None,
+            members: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DrProtectionGroupMemberArgs', 'DrProtectionGroupMemberArgsDict']]]]] = None,
             peer_id: Optional[pulumi.Input[str]] = None,
             peer_region: Optional[pulumi.Input[str]] = None,
             role: Optional[pulumi.Input[str]] = None,
@@ -788,7 +788,7 @@ class DrProtectionGroup(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['DrProtectionGroupAssociationArgs']] association: The details for associating a DR protection group with a peer DR protection group.
+        :param pulumi.Input[Union['DrProtectionGroupAssociationArgs', 'DrProtectionGroupAssociationArgsDict']] association: The details for associating a DR protection group with a peer DR protection group.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment in which to create the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[int] disassociate_trigger: (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
@@ -800,8 +800,8 @@ class DrProtectionGroup(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] life_cycle_details: A message describing the DR protection group's current state in more detail.
         :param pulumi.Input[str] lifecycle_sub_state: The current sub-state of the DR protection group.
-        :param pulumi.Input[pulumi.InputType['DrProtectionGroupLogLocationArgs']] log_location: (Updatable) The details for creating an object storage log location for a DR protection group.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DrProtectionGroupMemberArgs']]]] members: (Updatable) A list of DR protection group members.
+        :param pulumi.Input[Union['DrProtectionGroupLogLocationArgs', 'DrProtectionGroupLogLocationArgsDict']] log_location: (Updatable) The details for creating an object storage log location for a DR protection group.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DrProtectionGroupMemberArgs', 'DrProtectionGroupMemberArgsDict']]]] members: (Updatable) A list of DR protection group members.
         :param pulumi.Input[str] peer_id: The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         :param pulumi.Input[str] peer_region: The region of the peer DR protection group.  Example: `us-ashburn-1`
         :param pulumi.Input[str] role: The role of the DR protection group.

@@ -179,7 +179,7 @@ public class PublicIpPool extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public PublicIpPool(String name) {
+    public PublicIpPool(java.lang.String name) {
         this(name, PublicIpPoolArgs.Empty);
     }
     /**
@@ -187,7 +187,7 @@ public class PublicIpPool extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public PublicIpPool(String name, PublicIpPoolArgs args) {
+    public PublicIpPool(java.lang.String name, PublicIpPoolArgs args) {
         this(name, args, null);
     }
     /**
@@ -196,12 +196,12 @@ public class PublicIpPool extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public PublicIpPool(String name, PublicIpPoolArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/publicIpPool:PublicIpPool", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public PublicIpPool(java.lang.String name, PublicIpPoolArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Core/publicIpPool:PublicIpPool", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private PublicIpPool(String name, Output<String> id, @Nullable PublicIpPoolState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/publicIpPool:PublicIpPool", name, state, makeResourceOptions(options, id));
+    private PublicIpPool(java.lang.String name, Output<java.lang.String> id, @Nullable PublicIpPoolState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Core/publicIpPool:PublicIpPool", name, state, makeResourceOptions(options, id), false);
     }
 
     private static PublicIpPoolArgs makeArgs(PublicIpPoolArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -211,7 +211,7 @@ public class PublicIpPool extends com.pulumi.resources.CustomResource {
         return args == null ? PublicIpPoolArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -227,7 +227,7 @@ public class PublicIpPool extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static PublicIpPool get(String name, Output<String> id, @Nullable PublicIpPoolState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static PublicIpPool get(java.lang.String name, Output<java.lang.String> id, @Nullable PublicIpPoolState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new PublicIpPool(name, id, state, options);
     }
 }

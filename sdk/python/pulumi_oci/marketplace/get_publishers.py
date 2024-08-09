@@ -86,7 +86,7 @@ class AwaitableGetPublishersResult(GetPublishersResult):
 
 
 def get_publishers(compartment_id: Optional[str] = None,
-                   filters: Optional[Sequence[pulumi.InputType['GetPublishersFilterArgs']]] = None,
+                   filters: Optional[Sequence[Union['GetPublishersFilterArgs', 'GetPublishersFilterArgsDict']]] = None,
                    publisher_id: Optional[str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPublishersResult:
     """
@@ -125,7 +125,7 @@ def get_publishers(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_publishers)
 def get_publishers_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
-                          filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetPublishersFilterArgs']]]]] = None,
+                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPublishersFilterArgs', 'GetPublishersFilterArgsDict']]]]] = None,
                           publisher_id: Optional[pulumi.Input[Optional[str]]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPublishersResult]:
     """

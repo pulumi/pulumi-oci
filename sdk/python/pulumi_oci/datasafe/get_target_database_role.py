@@ -110,7 +110,7 @@ class AwaitableGetTargetDatabaseRoleResult(GetTargetDatabaseRoleResult):
 
 
 def get_target_database_role(authentication_type: Optional[str] = None,
-                             filters: Optional[Sequence[pulumi.InputType['GetTargetDatabaseRoleFilterArgs']]] = None,
+                             filters: Optional[Sequence[Union['GetTargetDatabaseRoleFilterArgs', 'GetTargetDatabaseRoleFilterArgsDict']]] = None,
                              is_oracle_maintained: Optional[bool] = None,
                              role_name_contains: Optional[str] = None,
                              role_names: Optional[Sequence[str]] = None,
@@ -142,7 +142,7 @@ def get_target_database_role(authentication_type: Optional[str] = None,
 
 @_utilities.lift_output_func(get_target_database_role)
 def get_target_database_role_output(authentication_type: Optional[pulumi.Input[Optional[str]]] = None,
-                                    filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetTargetDatabaseRoleFilterArgs']]]]] = None,
+                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetTargetDatabaseRoleFilterArgs', 'GetTargetDatabaseRoleFilterArgsDict']]]]] = None,
                                     is_oracle_maintained: Optional[pulumi.Input[Optional[bool]]] = None,
                                     role_name_contains: Optional[pulumi.Input[Optional[str]]] = None,
                                     role_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,

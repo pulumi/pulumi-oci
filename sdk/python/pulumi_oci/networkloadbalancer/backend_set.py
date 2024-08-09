@@ -335,7 +335,7 @@ class BackendSet(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 health_checker: Optional[pulumi.Input[pulumi.InputType['BackendSetHealthCheckerArgs']]] = None,
+                 health_checker: Optional[pulumi.Input[Union['BackendSetHealthCheckerArgs', 'BackendSetHealthCheckerArgsDict']]] = None,
                  ip_version: Optional[pulumi.Input[str]] = None,
                  is_fail_open: Optional[pulumi.Input[bool]] = None,
                  is_instant_failover_enabled: Optional[pulumi.Input[bool]] = None,
@@ -356,25 +356,25 @@ class BackendSet(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_backend_set = oci.network_load_balancer.BackendSet("test_backend_set",
-            health_checker=oci.network_load_balancer.BackendSetHealthCheckerArgs(
-                protocol=backend_set_health_checker_protocol,
-                dns=oci.network_load_balancer.BackendSetHealthCheckerDnsArgs(
-                    domain_name=test_domain["name"],
-                    query_class=backend_set_health_checker_dns_query_class,
-                    query_type=backend_set_health_checker_dns_query_type,
-                    rcodes=backend_set_health_checker_dns_rcodes,
-                    transport_protocol=backend_set_health_checker_dns_transport_protocol,
-                ),
-                interval_in_millis=backend_set_health_checker_interval_in_millis,
-                port=backend_set_health_checker_port,
-                request_data=backend_set_health_checker_request_data,
-                response_body_regex=backend_set_health_checker_response_body_regex,
-                response_data=backend_set_health_checker_response_data,
-                retries=backend_set_health_checker_retries,
-                return_code=backend_set_health_checker_return_code,
-                timeout_in_millis=backend_set_health_checker_timeout_in_millis,
-                url_path=backend_set_health_checker_url_path,
-            ),
+            health_checker={
+                "protocol": backend_set_health_checker_protocol,
+                "dns": {
+                    "domain_name": test_domain["name"],
+                    "query_class": backend_set_health_checker_dns_query_class,
+                    "query_type": backend_set_health_checker_dns_query_type,
+                    "rcodes": backend_set_health_checker_dns_rcodes,
+                    "transport_protocol": backend_set_health_checker_dns_transport_protocol,
+                },
+                "interval_in_millis": backend_set_health_checker_interval_in_millis,
+                "port": backend_set_health_checker_port,
+                "request_data": backend_set_health_checker_request_data,
+                "response_body_regex": backend_set_health_checker_response_body_regex,
+                "response_data": backend_set_health_checker_response_data,
+                "retries": backend_set_health_checker_retries,
+                "return_code": backend_set_health_checker_return_code,
+                "timeout_in_millis": backend_set_health_checker_timeout_in_millis,
+                "url_path": backend_set_health_checker_url_path,
+            },
             name=backend_set_name,
             network_load_balancer_id=test_network_load_balancer["id"],
             policy=backend_set_policy,
@@ -394,7 +394,7 @@ class BackendSet(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['BackendSetHealthCheckerArgs']] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+        :param pulumi.Input[Union['BackendSetHealthCheckerArgs', 'BackendSetHealthCheckerArgsDict']] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
         :param pulumi.Input[str] ip_version: (Updatable) IP version associated with the backend set.
         :param pulumi.Input[bool] is_fail_open: (Updatable) If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
         :param pulumi.Input[bool] is_instant_failover_enabled: (Updatable) If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
@@ -429,25 +429,25 @@ class BackendSet(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_backend_set = oci.network_load_balancer.BackendSet("test_backend_set",
-            health_checker=oci.network_load_balancer.BackendSetHealthCheckerArgs(
-                protocol=backend_set_health_checker_protocol,
-                dns=oci.network_load_balancer.BackendSetHealthCheckerDnsArgs(
-                    domain_name=test_domain["name"],
-                    query_class=backend_set_health_checker_dns_query_class,
-                    query_type=backend_set_health_checker_dns_query_type,
-                    rcodes=backend_set_health_checker_dns_rcodes,
-                    transport_protocol=backend_set_health_checker_dns_transport_protocol,
-                ),
-                interval_in_millis=backend_set_health_checker_interval_in_millis,
-                port=backend_set_health_checker_port,
-                request_data=backend_set_health_checker_request_data,
-                response_body_regex=backend_set_health_checker_response_body_regex,
-                response_data=backend_set_health_checker_response_data,
-                retries=backend_set_health_checker_retries,
-                return_code=backend_set_health_checker_return_code,
-                timeout_in_millis=backend_set_health_checker_timeout_in_millis,
-                url_path=backend_set_health_checker_url_path,
-            ),
+            health_checker={
+                "protocol": backend_set_health_checker_protocol,
+                "dns": {
+                    "domain_name": test_domain["name"],
+                    "query_class": backend_set_health_checker_dns_query_class,
+                    "query_type": backend_set_health_checker_dns_query_type,
+                    "rcodes": backend_set_health_checker_dns_rcodes,
+                    "transport_protocol": backend_set_health_checker_dns_transport_protocol,
+                },
+                "interval_in_millis": backend_set_health_checker_interval_in_millis,
+                "port": backend_set_health_checker_port,
+                "request_data": backend_set_health_checker_request_data,
+                "response_body_regex": backend_set_health_checker_response_body_regex,
+                "response_data": backend_set_health_checker_response_data,
+                "retries": backend_set_health_checker_retries,
+                "return_code": backend_set_health_checker_return_code,
+                "timeout_in_millis": backend_set_health_checker_timeout_in_millis,
+                "url_path": backend_set_health_checker_url_path,
+            },
             name=backend_set_name,
             network_load_balancer_id=test_network_load_balancer["id"],
             policy=backend_set_policy,
@@ -480,7 +480,7 @@ class BackendSet(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 health_checker: Optional[pulumi.Input[pulumi.InputType['BackendSetHealthCheckerArgs']]] = None,
+                 health_checker: Optional[pulumi.Input[Union['BackendSetHealthCheckerArgs', 'BackendSetHealthCheckerArgsDict']]] = None,
                  ip_version: Optional[pulumi.Input[str]] = None,
                  is_fail_open: Optional[pulumi.Input[bool]] = None,
                  is_instant_failover_enabled: Optional[pulumi.Input[bool]] = None,
@@ -522,8 +522,8 @@ class BackendSet(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            backends: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BackendSetBackendArgs']]]]] = None,
-            health_checker: Optional[pulumi.Input[pulumi.InputType['BackendSetHealthCheckerArgs']]] = None,
+            backends: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BackendSetBackendArgs', 'BackendSetBackendArgsDict']]]]] = None,
+            health_checker: Optional[pulumi.Input[Union['BackendSetHealthCheckerArgs', 'BackendSetHealthCheckerArgsDict']]] = None,
             ip_version: Optional[pulumi.Input[str]] = None,
             is_fail_open: Optional[pulumi.Input[bool]] = None,
             is_instant_failover_enabled: Optional[pulumi.Input[bool]] = None,
@@ -538,8 +538,8 @@ class BackendSet(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BackendSetBackendArgs']]]] backends: (Updatable) An array of backends to be associated with the backend set.
-        :param pulumi.Input[pulumi.InputType['BackendSetHealthCheckerArgs']] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['BackendSetBackendArgs', 'BackendSetBackendArgsDict']]]] backends: (Updatable) An array of backends to be associated with the backend set.
+        :param pulumi.Input[Union['BackendSetHealthCheckerArgs', 'BackendSetHealthCheckerArgsDict']] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
         :param pulumi.Input[str] ip_version: (Updatable) IP version associated with the backend set.
         :param pulumi.Input[bool] is_fail_open: (Updatable) If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
         :param pulumi.Input[bool] is_instant_failover_enabled: (Updatable) If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.

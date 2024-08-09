@@ -145,7 +145,7 @@ public class LogAnalyticsUnprocessedDataBucketManagement extends com.pulumi.reso
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public LogAnalyticsUnprocessedDataBucketManagement(String name) {
+    public LogAnalyticsUnprocessedDataBucketManagement(java.lang.String name) {
         this(name, LogAnalyticsUnprocessedDataBucketManagementArgs.Empty);
     }
     /**
@@ -153,7 +153,7 @@ public class LogAnalyticsUnprocessedDataBucketManagement extends com.pulumi.reso
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public LogAnalyticsUnprocessedDataBucketManagement(String name, LogAnalyticsUnprocessedDataBucketManagementArgs args) {
+    public LogAnalyticsUnprocessedDataBucketManagement(java.lang.String name, LogAnalyticsUnprocessedDataBucketManagementArgs args) {
         this(name, args, null);
     }
     /**
@@ -162,12 +162,12 @@ public class LogAnalyticsUnprocessedDataBucketManagement extends com.pulumi.reso
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public LogAnalyticsUnprocessedDataBucketManagement(String name, LogAnalyticsUnprocessedDataBucketManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:LogAnalytics/logAnalyticsUnprocessedDataBucketManagement:LogAnalyticsUnprocessedDataBucketManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public LogAnalyticsUnprocessedDataBucketManagement(java.lang.String name, LogAnalyticsUnprocessedDataBucketManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:LogAnalytics/logAnalyticsUnprocessedDataBucketManagement:LogAnalyticsUnprocessedDataBucketManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private LogAnalyticsUnprocessedDataBucketManagement(String name, Output<String> id, @Nullable LogAnalyticsUnprocessedDataBucketManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:LogAnalytics/logAnalyticsUnprocessedDataBucketManagement:LogAnalyticsUnprocessedDataBucketManagement", name, state, makeResourceOptions(options, id));
+    private LogAnalyticsUnprocessedDataBucketManagement(java.lang.String name, Output<java.lang.String> id, @Nullable LogAnalyticsUnprocessedDataBucketManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:LogAnalytics/logAnalyticsUnprocessedDataBucketManagement:LogAnalyticsUnprocessedDataBucketManagement", name, state, makeResourceOptions(options, id), false);
     }
 
     private static LogAnalyticsUnprocessedDataBucketManagementArgs makeArgs(LogAnalyticsUnprocessedDataBucketManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -177,7 +177,7 @@ public class LogAnalyticsUnprocessedDataBucketManagement extends com.pulumi.reso
         return args == null ? LogAnalyticsUnprocessedDataBucketManagementArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -193,7 +193,7 @@ public class LogAnalyticsUnprocessedDataBucketManagement extends com.pulumi.reso
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static LogAnalyticsUnprocessedDataBucketManagement get(String name, Output<String> id, @Nullable LogAnalyticsUnprocessedDataBucketManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static LogAnalyticsUnprocessedDataBucketManagement get(java.lang.String name, Output<java.lang.String> id, @Nullable LogAnalyticsUnprocessedDataBucketManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new LogAnalyticsUnprocessedDataBucketManagement(name, id, state, options);
     }
 }

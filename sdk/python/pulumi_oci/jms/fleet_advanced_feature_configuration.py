@@ -337,15 +337,15 @@ class FleetAdvancedFeatureConfiguration(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 advanced_usage_tracking: Optional[pulumi.Input[pulumi.InputType['FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs']]] = None,
+                 advanced_usage_tracking: Optional[pulumi.Input[Union['FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs', 'FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgsDict']]] = None,
                  analytic_bucket_name: Optional[pulumi.Input[str]] = None,
                  analytic_namespace: Optional[pulumi.Input[str]] = None,
-                 crypto_event_analysis: Optional[pulumi.Input[pulumi.InputType['FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs']]] = None,
+                 crypto_event_analysis: Optional[pulumi.Input[Union['FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs', 'FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgsDict']]] = None,
                  fleet_id: Optional[pulumi.Input[str]] = None,
-                 java_migration_analysis: Optional[pulumi.Input[pulumi.InputType['FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs']]] = None,
-                 jfr_recording: Optional[pulumi.Input[pulumi.InputType['FleetAdvancedFeatureConfigurationJfrRecordingArgs']]] = None,
-                 lcm: Optional[pulumi.Input[pulumi.InputType['FleetAdvancedFeatureConfigurationLcmArgs']]] = None,
-                 performance_tuning_analysis: Optional[pulumi.Input[pulumi.InputType['FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs']]] = None,
+                 java_migration_analysis: Optional[pulumi.Input[Union['FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs', 'FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgsDict']]] = None,
+                 jfr_recording: Optional[pulumi.Input[Union['FleetAdvancedFeatureConfigurationJfrRecordingArgs', 'FleetAdvancedFeatureConfigurationJfrRecordingArgsDict']]] = None,
+                 lcm: Optional[pulumi.Input[Union['FleetAdvancedFeatureConfigurationLcmArgs', 'FleetAdvancedFeatureConfigurationLcmArgsDict']]] = None,
+                 performance_tuning_analysis: Optional[pulumi.Input[Union['FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs', 'FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Fleet Advanced Feature Configuration resource in Oracle Cloud Infrastructure Jms service.
@@ -361,61 +361,61 @@ class FleetAdvancedFeatureConfiguration(pulumi.CustomResource):
 
         test_fleet_advanced_feature_configuration = oci.jms.FleetAdvancedFeatureConfiguration("test_fleet_advanced_feature_configuration",
             fleet_id=test_fleet["id"],
-            advanced_usage_tracking=oci.jms.FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs(
-                is_enabled=fleet_advanced_feature_configuration_advanced_usage_tracking_is_enabled,
-            ),
+            advanced_usage_tracking={
+                "is_enabled": fleet_advanced_feature_configuration_advanced_usage_tracking_is_enabled,
+            },
             analytic_bucket_name=test_bucket["name"],
             analytic_namespace=fleet_advanced_feature_configuration_analytic_namespace,
-            crypto_event_analysis=oci.jms.FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs(
-                is_enabled=fleet_advanced_feature_configuration_crypto_event_analysis_is_enabled,
-                summarized_events_log=oci.jms.FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs(
-                    log_group_id=test_log_group["id"],
-                    log_id=test_log["id"],
-                ),
-            ),
-            java_migration_analysis=oci.jms.FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs(
-                is_enabled=fleet_advanced_feature_configuration_java_migration_analysis_is_enabled,
-            ),
-            jfr_recording=oci.jms.FleetAdvancedFeatureConfigurationJfrRecordingArgs(
-                is_enabled=fleet_advanced_feature_configuration_jfr_recording_is_enabled,
-            ),
-            lcm=oci.jms.FleetAdvancedFeatureConfigurationLcmArgs(
-                is_enabled=fleet_advanced_feature_configuration_lcm_is_enabled,
-                post_installation_actions=oci.jms.FleetAdvancedFeatureConfigurationLcmPostInstallationActionsArgs(
-                    add_logging_handler=fleet_advanced_feature_configuration_lcm_post_installation_actions_add_logging_handler,
-                    disabled_tls_versions=fleet_advanced_feature_configuration_lcm_post_installation_actions_disabled_tls_versions,
-                    global_logging_level=fleet_advanced_feature_configuration_lcm_post_installation_actions_global_logging_level,
-                    minimum_key_size_settings=oci.jms.FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsArgs(
-                        certpaths=[oci.jms.FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArgs(
-                            key_size=fleet_advanced_feature_configuration_lcm_post_installation_actions_minimum_key_size_settings_certpath_key_size,
-                            name=fleet_advanced_feature_configuration_lcm_post_installation_actions_minimum_key_size_settings_certpath_name,
-                        )],
-                        jars=[oci.jms.FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArgs(
-                            key_size=fleet_advanced_feature_configuration_lcm_post_installation_actions_minimum_key_size_settings_jar_key_size,
-                            name=fleet_advanced_feature_configuration_lcm_post_installation_actions_minimum_key_size_settings_jar_name,
-                        )],
-                        tls=[oci.jms.FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArgs(
-                            key_size=fleet_advanced_feature_configuration_lcm_post_installation_actions_minimum_key_size_settings_tls_key_size,
-                            name=fleet_advanced_feature_configuration_lcm_post_installation_actions_minimum_key_size_settings_tls_name,
-                        )],
-                    ),
-                    proxies=oci.jms.FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesArgs(
-                        ftp_proxy_host=fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_ftp_proxy_host,
-                        ftp_proxy_port=fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_ftp_proxy_port,
-                        http_proxy_host=fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_http_proxy_host,
-                        http_proxy_port=fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_http_proxy_port,
-                        https_proxy_host=fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_https_proxy_host,
-                        https_proxy_port=fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_https_proxy_port,
-                        socks_proxy_host=fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_socks_proxy_host,
-                        socks_proxy_port=fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_socks_proxy_port,
-                        use_system_proxies=fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_use_system_proxies,
-                    ),
-                    should_replace_certificates_operating_system=fleet_advanced_feature_configuration_lcm_post_installation_actions_should_replace_certificates_operating_system,
-                ),
-            ),
-            performance_tuning_analysis=oci.jms.FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs(
-                is_enabled=fleet_advanced_feature_configuration_performance_tuning_analysis_is_enabled,
-            ))
+            crypto_event_analysis={
+                "is_enabled": fleet_advanced_feature_configuration_crypto_event_analysis_is_enabled,
+                "summarized_events_log": {
+                    "log_group_id": test_log_group["id"],
+                    "log_id": test_log["id"],
+                },
+            },
+            java_migration_analysis={
+                "is_enabled": fleet_advanced_feature_configuration_java_migration_analysis_is_enabled,
+            },
+            jfr_recording={
+                "is_enabled": fleet_advanced_feature_configuration_jfr_recording_is_enabled,
+            },
+            lcm={
+                "is_enabled": fleet_advanced_feature_configuration_lcm_is_enabled,
+                "post_installation_actions": {
+                    "add_logging_handler": fleet_advanced_feature_configuration_lcm_post_installation_actions_add_logging_handler,
+                    "disabled_tls_versions": fleet_advanced_feature_configuration_lcm_post_installation_actions_disabled_tls_versions,
+                    "global_logging_level": fleet_advanced_feature_configuration_lcm_post_installation_actions_global_logging_level,
+                    "minimum_key_size_settings": {
+                        "certpaths": [{
+                            "key_size": fleet_advanced_feature_configuration_lcm_post_installation_actions_minimum_key_size_settings_certpath_key_size,
+                            "name": fleet_advanced_feature_configuration_lcm_post_installation_actions_minimum_key_size_settings_certpath_name,
+                        }],
+                        "jars": [{
+                            "key_size": fleet_advanced_feature_configuration_lcm_post_installation_actions_minimum_key_size_settings_jar_key_size,
+                            "name": fleet_advanced_feature_configuration_lcm_post_installation_actions_minimum_key_size_settings_jar_name,
+                        }],
+                        "tls": [{
+                            "key_size": fleet_advanced_feature_configuration_lcm_post_installation_actions_minimum_key_size_settings_tls_key_size,
+                            "name": fleet_advanced_feature_configuration_lcm_post_installation_actions_minimum_key_size_settings_tls_name,
+                        }],
+                    },
+                    "proxies": {
+                        "ftp_proxy_host": fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_ftp_proxy_host,
+                        "ftp_proxy_port": fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_ftp_proxy_port,
+                        "http_proxy_host": fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_http_proxy_host,
+                        "http_proxy_port": fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_http_proxy_port,
+                        "https_proxy_host": fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_https_proxy_host,
+                        "https_proxy_port": fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_https_proxy_port,
+                        "socks_proxy_host": fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_socks_proxy_host,
+                        "socks_proxy_port": fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_socks_proxy_port,
+                        "use_system_proxies": fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_use_system_proxies,
+                    },
+                    "should_replace_certificates_operating_system": fleet_advanced_feature_configuration_lcm_post_installation_actions_should_replace_certificates_operating_system,
+                },
+            },
+            performance_tuning_analysis={
+                "is_enabled": fleet_advanced_feature_configuration_performance_tuning_analysis_is_enabled,
+            })
         ```
 
         ## Import
@@ -428,15 +428,15 @@ class FleetAdvancedFeatureConfiguration(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs']] advanced_usage_tracking: (Updatable) AdvancedUsageTracking configuration
+        :param pulumi.Input[Union['FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs', 'FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgsDict']] advanced_usage_tracking: (Updatable) AdvancedUsageTracking configuration
         :param pulumi.Input[str] analytic_bucket_name: (Updatable) Bucket name required to store JFR and related data.
         :param pulumi.Input[str] analytic_namespace: (Updatable) Namespace for the Fleet advanced feature.
-        :param pulumi.Input[pulumi.InputType['FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs']] crypto_event_analysis: (Updatable) CryptoEventAnalysis configuration
+        :param pulumi.Input[Union['FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs', 'FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgsDict']] crypto_event_analysis: (Updatable) CryptoEventAnalysis configuration
         :param pulumi.Input[str] fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-        :param pulumi.Input[pulumi.InputType['FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs']] java_migration_analysis: (Updatable) JavaMigrationAnalysis configuration
-        :param pulumi.Input[pulumi.InputType['FleetAdvancedFeatureConfigurationJfrRecordingArgs']] jfr_recording: (Updatable) JfrRecording configuration
-        :param pulumi.Input[pulumi.InputType['FleetAdvancedFeatureConfigurationLcmArgs']] lcm: (Updatable) Enable lifecycle management and set post action configurations.
-        :param pulumi.Input[pulumi.InputType['FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs']] performance_tuning_analysis: (Updatable) Performance tuning analysis configuration
+        :param pulumi.Input[Union['FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs', 'FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgsDict']] java_migration_analysis: (Updatable) JavaMigrationAnalysis configuration
+        :param pulumi.Input[Union['FleetAdvancedFeatureConfigurationJfrRecordingArgs', 'FleetAdvancedFeatureConfigurationJfrRecordingArgsDict']] jfr_recording: (Updatable) JfrRecording configuration
+        :param pulumi.Input[Union['FleetAdvancedFeatureConfigurationLcmArgs', 'FleetAdvancedFeatureConfigurationLcmArgsDict']] lcm: (Updatable) Enable lifecycle management and set post action configurations.
+        :param pulumi.Input[Union['FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs', 'FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgsDict']] performance_tuning_analysis: (Updatable) Performance tuning analysis configuration
         """
         ...
     @overload
@@ -458,61 +458,61 @@ class FleetAdvancedFeatureConfiguration(pulumi.CustomResource):
 
         test_fleet_advanced_feature_configuration = oci.jms.FleetAdvancedFeatureConfiguration("test_fleet_advanced_feature_configuration",
             fleet_id=test_fleet["id"],
-            advanced_usage_tracking=oci.jms.FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs(
-                is_enabled=fleet_advanced_feature_configuration_advanced_usage_tracking_is_enabled,
-            ),
+            advanced_usage_tracking={
+                "is_enabled": fleet_advanced_feature_configuration_advanced_usage_tracking_is_enabled,
+            },
             analytic_bucket_name=test_bucket["name"],
             analytic_namespace=fleet_advanced_feature_configuration_analytic_namespace,
-            crypto_event_analysis=oci.jms.FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs(
-                is_enabled=fleet_advanced_feature_configuration_crypto_event_analysis_is_enabled,
-                summarized_events_log=oci.jms.FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs(
-                    log_group_id=test_log_group["id"],
-                    log_id=test_log["id"],
-                ),
-            ),
-            java_migration_analysis=oci.jms.FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs(
-                is_enabled=fleet_advanced_feature_configuration_java_migration_analysis_is_enabled,
-            ),
-            jfr_recording=oci.jms.FleetAdvancedFeatureConfigurationJfrRecordingArgs(
-                is_enabled=fleet_advanced_feature_configuration_jfr_recording_is_enabled,
-            ),
-            lcm=oci.jms.FleetAdvancedFeatureConfigurationLcmArgs(
-                is_enabled=fleet_advanced_feature_configuration_lcm_is_enabled,
-                post_installation_actions=oci.jms.FleetAdvancedFeatureConfigurationLcmPostInstallationActionsArgs(
-                    add_logging_handler=fleet_advanced_feature_configuration_lcm_post_installation_actions_add_logging_handler,
-                    disabled_tls_versions=fleet_advanced_feature_configuration_lcm_post_installation_actions_disabled_tls_versions,
-                    global_logging_level=fleet_advanced_feature_configuration_lcm_post_installation_actions_global_logging_level,
-                    minimum_key_size_settings=oci.jms.FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsArgs(
-                        certpaths=[oci.jms.FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArgs(
-                            key_size=fleet_advanced_feature_configuration_lcm_post_installation_actions_minimum_key_size_settings_certpath_key_size,
-                            name=fleet_advanced_feature_configuration_lcm_post_installation_actions_minimum_key_size_settings_certpath_name,
-                        )],
-                        jars=[oci.jms.FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArgs(
-                            key_size=fleet_advanced_feature_configuration_lcm_post_installation_actions_minimum_key_size_settings_jar_key_size,
-                            name=fleet_advanced_feature_configuration_lcm_post_installation_actions_minimum_key_size_settings_jar_name,
-                        )],
-                        tls=[oci.jms.FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArgs(
-                            key_size=fleet_advanced_feature_configuration_lcm_post_installation_actions_minimum_key_size_settings_tls_key_size,
-                            name=fleet_advanced_feature_configuration_lcm_post_installation_actions_minimum_key_size_settings_tls_name,
-                        )],
-                    ),
-                    proxies=oci.jms.FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesArgs(
-                        ftp_proxy_host=fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_ftp_proxy_host,
-                        ftp_proxy_port=fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_ftp_proxy_port,
-                        http_proxy_host=fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_http_proxy_host,
-                        http_proxy_port=fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_http_proxy_port,
-                        https_proxy_host=fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_https_proxy_host,
-                        https_proxy_port=fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_https_proxy_port,
-                        socks_proxy_host=fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_socks_proxy_host,
-                        socks_proxy_port=fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_socks_proxy_port,
-                        use_system_proxies=fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_use_system_proxies,
-                    ),
-                    should_replace_certificates_operating_system=fleet_advanced_feature_configuration_lcm_post_installation_actions_should_replace_certificates_operating_system,
-                ),
-            ),
-            performance_tuning_analysis=oci.jms.FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs(
-                is_enabled=fleet_advanced_feature_configuration_performance_tuning_analysis_is_enabled,
-            ))
+            crypto_event_analysis={
+                "is_enabled": fleet_advanced_feature_configuration_crypto_event_analysis_is_enabled,
+                "summarized_events_log": {
+                    "log_group_id": test_log_group["id"],
+                    "log_id": test_log["id"],
+                },
+            },
+            java_migration_analysis={
+                "is_enabled": fleet_advanced_feature_configuration_java_migration_analysis_is_enabled,
+            },
+            jfr_recording={
+                "is_enabled": fleet_advanced_feature_configuration_jfr_recording_is_enabled,
+            },
+            lcm={
+                "is_enabled": fleet_advanced_feature_configuration_lcm_is_enabled,
+                "post_installation_actions": {
+                    "add_logging_handler": fleet_advanced_feature_configuration_lcm_post_installation_actions_add_logging_handler,
+                    "disabled_tls_versions": fleet_advanced_feature_configuration_lcm_post_installation_actions_disabled_tls_versions,
+                    "global_logging_level": fleet_advanced_feature_configuration_lcm_post_installation_actions_global_logging_level,
+                    "minimum_key_size_settings": {
+                        "certpaths": [{
+                            "key_size": fleet_advanced_feature_configuration_lcm_post_installation_actions_minimum_key_size_settings_certpath_key_size,
+                            "name": fleet_advanced_feature_configuration_lcm_post_installation_actions_minimum_key_size_settings_certpath_name,
+                        }],
+                        "jars": [{
+                            "key_size": fleet_advanced_feature_configuration_lcm_post_installation_actions_minimum_key_size_settings_jar_key_size,
+                            "name": fleet_advanced_feature_configuration_lcm_post_installation_actions_minimum_key_size_settings_jar_name,
+                        }],
+                        "tls": [{
+                            "key_size": fleet_advanced_feature_configuration_lcm_post_installation_actions_minimum_key_size_settings_tls_key_size,
+                            "name": fleet_advanced_feature_configuration_lcm_post_installation_actions_minimum_key_size_settings_tls_name,
+                        }],
+                    },
+                    "proxies": {
+                        "ftp_proxy_host": fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_ftp_proxy_host,
+                        "ftp_proxy_port": fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_ftp_proxy_port,
+                        "http_proxy_host": fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_http_proxy_host,
+                        "http_proxy_port": fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_http_proxy_port,
+                        "https_proxy_host": fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_https_proxy_host,
+                        "https_proxy_port": fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_https_proxy_port,
+                        "socks_proxy_host": fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_socks_proxy_host,
+                        "socks_proxy_port": fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_socks_proxy_port,
+                        "use_system_proxies": fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_use_system_proxies,
+                    },
+                    "should_replace_certificates_operating_system": fleet_advanced_feature_configuration_lcm_post_installation_actions_should_replace_certificates_operating_system,
+                },
+            },
+            performance_tuning_analysis={
+                "is_enabled": fleet_advanced_feature_configuration_performance_tuning_analysis_is_enabled,
+            })
         ```
 
         ## Import
@@ -538,15 +538,15 @@ class FleetAdvancedFeatureConfiguration(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 advanced_usage_tracking: Optional[pulumi.Input[pulumi.InputType['FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs']]] = None,
+                 advanced_usage_tracking: Optional[pulumi.Input[Union['FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs', 'FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgsDict']]] = None,
                  analytic_bucket_name: Optional[pulumi.Input[str]] = None,
                  analytic_namespace: Optional[pulumi.Input[str]] = None,
-                 crypto_event_analysis: Optional[pulumi.Input[pulumi.InputType['FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs']]] = None,
+                 crypto_event_analysis: Optional[pulumi.Input[Union['FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs', 'FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgsDict']]] = None,
                  fleet_id: Optional[pulumi.Input[str]] = None,
-                 java_migration_analysis: Optional[pulumi.Input[pulumi.InputType['FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs']]] = None,
-                 jfr_recording: Optional[pulumi.Input[pulumi.InputType['FleetAdvancedFeatureConfigurationJfrRecordingArgs']]] = None,
-                 lcm: Optional[pulumi.Input[pulumi.InputType['FleetAdvancedFeatureConfigurationLcmArgs']]] = None,
-                 performance_tuning_analysis: Optional[pulumi.Input[pulumi.InputType['FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs']]] = None,
+                 java_migration_analysis: Optional[pulumi.Input[Union['FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs', 'FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgsDict']]] = None,
+                 jfr_recording: Optional[pulumi.Input[Union['FleetAdvancedFeatureConfigurationJfrRecordingArgs', 'FleetAdvancedFeatureConfigurationJfrRecordingArgsDict']]] = None,
+                 lcm: Optional[pulumi.Input[Union['FleetAdvancedFeatureConfigurationLcmArgs', 'FleetAdvancedFeatureConfigurationLcmArgsDict']]] = None,
+                 performance_tuning_analysis: Optional[pulumi.Input[Union['FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs', 'FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -578,15 +578,15 @@ class FleetAdvancedFeatureConfiguration(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            advanced_usage_tracking: Optional[pulumi.Input[pulumi.InputType['FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs']]] = None,
+            advanced_usage_tracking: Optional[pulumi.Input[Union['FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs', 'FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgsDict']]] = None,
             analytic_bucket_name: Optional[pulumi.Input[str]] = None,
             analytic_namespace: Optional[pulumi.Input[str]] = None,
-            crypto_event_analysis: Optional[pulumi.Input[pulumi.InputType['FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs']]] = None,
+            crypto_event_analysis: Optional[pulumi.Input[Union['FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs', 'FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgsDict']]] = None,
             fleet_id: Optional[pulumi.Input[str]] = None,
-            java_migration_analysis: Optional[pulumi.Input[pulumi.InputType['FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs']]] = None,
-            jfr_recording: Optional[pulumi.Input[pulumi.InputType['FleetAdvancedFeatureConfigurationJfrRecordingArgs']]] = None,
-            lcm: Optional[pulumi.Input[pulumi.InputType['FleetAdvancedFeatureConfigurationLcmArgs']]] = None,
-            performance_tuning_analysis: Optional[pulumi.Input[pulumi.InputType['FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs']]] = None,
+            java_migration_analysis: Optional[pulumi.Input[Union['FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs', 'FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgsDict']]] = None,
+            jfr_recording: Optional[pulumi.Input[Union['FleetAdvancedFeatureConfigurationJfrRecordingArgs', 'FleetAdvancedFeatureConfigurationJfrRecordingArgsDict']]] = None,
+            lcm: Optional[pulumi.Input[Union['FleetAdvancedFeatureConfigurationLcmArgs', 'FleetAdvancedFeatureConfigurationLcmArgsDict']]] = None,
+            performance_tuning_analysis: Optional[pulumi.Input[Union['FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs', 'FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgsDict']]] = None,
             time_last_modified: Optional[pulumi.Input[str]] = None) -> 'FleetAdvancedFeatureConfiguration':
         """
         Get an existing FleetAdvancedFeatureConfiguration resource's state with the given name, id, and optional extra
@@ -595,15 +595,15 @@ class FleetAdvancedFeatureConfiguration(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs']] advanced_usage_tracking: (Updatable) AdvancedUsageTracking configuration
+        :param pulumi.Input[Union['FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs', 'FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgsDict']] advanced_usage_tracking: (Updatable) AdvancedUsageTracking configuration
         :param pulumi.Input[str] analytic_bucket_name: (Updatable) Bucket name required to store JFR and related data.
         :param pulumi.Input[str] analytic_namespace: (Updatable) Namespace for the Fleet advanced feature.
-        :param pulumi.Input[pulumi.InputType['FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs']] crypto_event_analysis: (Updatable) CryptoEventAnalysis configuration
+        :param pulumi.Input[Union['FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs', 'FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgsDict']] crypto_event_analysis: (Updatable) CryptoEventAnalysis configuration
         :param pulumi.Input[str] fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-        :param pulumi.Input[pulumi.InputType['FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs']] java_migration_analysis: (Updatable) JavaMigrationAnalysis configuration
-        :param pulumi.Input[pulumi.InputType['FleetAdvancedFeatureConfigurationJfrRecordingArgs']] jfr_recording: (Updatable) JfrRecording configuration
-        :param pulumi.Input[pulumi.InputType['FleetAdvancedFeatureConfigurationLcmArgs']] lcm: (Updatable) Enable lifecycle management and set post action configurations.
-        :param pulumi.Input[pulumi.InputType['FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs']] performance_tuning_analysis: (Updatable) Performance tuning analysis configuration
+        :param pulumi.Input[Union['FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs', 'FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgsDict']] java_migration_analysis: (Updatable) JavaMigrationAnalysis configuration
+        :param pulumi.Input[Union['FleetAdvancedFeatureConfigurationJfrRecordingArgs', 'FleetAdvancedFeatureConfigurationJfrRecordingArgsDict']] jfr_recording: (Updatable) JfrRecording configuration
+        :param pulumi.Input[Union['FleetAdvancedFeatureConfigurationLcmArgs', 'FleetAdvancedFeatureConfigurationLcmArgsDict']] lcm: (Updatable) Enable lifecycle management and set post action configurations.
+        :param pulumi.Input[Union['FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs', 'FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgsDict']] performance_tuning_analysis: (Updatable) Performance tuning analysis configuration
         :param pulumi.Input[str] time_last_modified: The date and time of the last modification to the Fleet Agent Configuration (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

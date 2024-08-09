@@ -119,7 +119,7 @@ class AwaitableGetFusionEnvironmentRefreshActivitiesResult(GetFusionEnvironmentR
 
 
 def get_fusion_environment_refresh_activities(display_name: Optional[str] = None,
-                                              filters: Optional[Sequence[pulumi.InputType['GetFusionEnvironmentRefreshActivitiesFilterArgs']]] = None,
+                                              filters: Optional[Sequence[Union['GetFusionEnvironmentRefreshActivitiesFilterArgs', 'GetFusionEnvironmentRefreshActivitiesFilterArgsDict']]] = None,
                                               fusion_environment_id: Optional[str] = None,
                                               state: Optional[str] = None,
                                               time_expected_finish_less_than_or_equal_to: Optional[str] = None,
@@ -173,7 +173,7 @@ def get_fusion_environment_refresh_activities(display_name: Optional[str] = None
 
 @_utilities.lift_output_func(get_fusion_environment_refresh_activities)
 def get_fusion_environment_refresh_activities_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                                     filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetFusionEnvironmentRefreshActivitiesFilterArgs']]]]] = None,
+                                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFusionEnvironmentRefreshActivitiesFilterArgs', 'GetFusionEnvironmentRefreshActivitiesFilterArgsDict']]]]] = None,
                                                      fusion_environment_id: Optional[pulumi.Input[str]] = None,
                                                      state: Optional[pulumi.Input[Optional[str]]] = None,
                                                      time_expected_finish_less_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,

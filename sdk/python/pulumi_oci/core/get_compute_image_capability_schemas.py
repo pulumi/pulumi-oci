@@ -105,7 +105,7 @@ class AwaitableGetComputeImageCapabilitySchemasResult(GetComputeImageCapabilityS
 
 def get_compute_image_capability_schemas(compartment_id: Optional[str] = None,
                                          display_name: Optional[str] = None,
-                                         filters: Optional[Sequence[pulumi.InputType['GetComputeImageCapabilitySchemasFilterArgs']]] = None,
+                                         filters: Optional[Sequence[Union['GetComputeImageCapabilitySchemasFilterArgs', 'GetComputeImageCapabilitySchemasFilterArgsDict']]] = None,
                                          image_id: Optional[str] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetComputeImageCapabilitySchemasResult:
     """
@@ -149,7 +149,7 @@ def get_compute_image_capability_schemas(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_compute_image_capability_schemas)
 def get_compute_image_capability_schemas_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                 display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                                filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetComputeImageCapabilitySchemasFilterArgs']]]]] = None,
+                                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetComputeImageCapabilitySchemasFilterArgs', 'GetComputeImageCapabilitySchemasFilterArgsDict']]]]] = None,
                                                 image_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetComputeImageCapabilitySchemasResult]:
     """

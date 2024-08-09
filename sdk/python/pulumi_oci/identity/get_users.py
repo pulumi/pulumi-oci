@@ -129,7 +129,7 @@ class AwaitableGetUsersResult(GetUsersResult):
 
 def get_users(compartment_id: Optional[str] = None,
               external_identifier: Optional[str] = None,
-              filters: Optional[Sequence[pulumi.InputType['GetUsersFilterArgs']]] = None,
+              filters: Optional[Sequence[Union['GetUsersFilterArgs', 'GetUsersFilterArgsDict']]] = None,
               identity_provider_id: Optional[str] = None,
               name: Optional[str] = None,
               state: Optional[str] = None,
@@ -185,7 +185,7 @@ def get_users(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_users)
 def get_users_output(compartment_id: Optional[pulumi.Input[str]] = None,
                      external_identifier: Optional[pulumi.Input[Optional[str]]] = None,
-                     filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetUsersFilterArgs']]]]] = None,
+                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetUsersFilterArgs', 'GetUsersFilterArgsDict']]]]] = None,
                      identity_provider_id: Optional[pulumi.Input[Optional[str]]] = None,
                      name: Optional[pulumi.Input[Optional[str]]] = None,
                      state: Optional[pulumi.Input[Optional[str]]] = None,

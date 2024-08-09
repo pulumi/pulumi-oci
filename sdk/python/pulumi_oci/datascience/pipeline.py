@@ -496,17 +496,17 @@ class Pipeline(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 configuration_details: Optional[pulumi.Input[pulumi.InputType['PipelineConfigurationDetailsArgs']]] = None,
+                 configuration_details: Optional[pulumi.Input[Union['PipelineConfigurationDetailsArgs', 'PipelineConfigurationDetailsArgsDict']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  delete_related_pipeline_runs: Optional[pulumi.Input[bool]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 infrastructure_configuration_details: Optional[pulumi.Input[pulumi.InputType['PipelineInfrastructureConfigurationDetailsArgs']]] = None,
-                 log_configuration_details: Optional[pulumi.Input[pulumi.InputType['PipelineLogConfigurationDetailsArgs']]] = None,
+                 infrastructure_configuration_details: Optional[pulumi.Input[Union['PipelineInfrastructureConfigurationDetailsArgs', 'PipelineInfrastructureConfigurationDetailsArgsDict']]] = None,
+                 log_configuration_details: Optional[pulumi.Input[Union['PipelineLogConfigurationDetailsArgs', 'PipelineLogConfigurationDetailsArgsDict']]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
-                 step_artifacts: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PipelineStepArtifactArgs']]]]] = None,
-                 step_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PipelineStepDetailArgs']]]]] = None,
+                 step_artifacts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PipelineStepArtifactArgs', 'PipelineStepArtifactArgsDict']]]]] = None,
+                 step_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PipelineStepDetailArgs', 'PipelineStepDetailArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Pipeline resource in Oracle Cloud Infrastructure Data Science service.
@@ -522,42 +522,42 @@ class Pipeline(pulumi.CustomResource):
         test_pipeline = oci.data_science.Pipeline("test_pipeline",
             compartment_id=compartment_id,
             project_id=test_project["id"],
-            step_details=[oci.data_science.PipelineStepDetailArgs(
-                step_name=pipeline_step_details_step_name,
-                step_type=pipeline_step_details_step_type,
-                depends_ons=pipeline_step_details_depends_on,
-                description=pipeline_step_details_description,
-                is_artifact_uploaded=pipeline_step_details_is_artifact_uploaded,
-                job_id=test_job["id"],
-                step_configuration_details=oci.data_science.PipelineStepDetailStepConfigurationDetailsArgs(
-                    command_line_arguments=pipeline_step_details_step_configuration_details_command_line_arguments,
-                    environment_variables=pipeline_step_details_step_configuration_details_environment_variables,
-                    maximum_runtime_in_minutes=pipeline_step_details_step_configuration_details_maximum_runtime_in_minutes,
-                ),
-                step_container_configuration_details=oci.data_science.PipelineStepDetailStepContainerConfigurationDetailsArgs(
-                    container_type=pipeline_step_details_step_container_configuration_details_container_type,
-                    image=pipeline_step_details_step_container_configuration_details_image,
-                    cmds=pipeline_step_details_step_container_configuration_details_cmd,
-                    entrypoints=pipeline_step_details_step_container_configuration_details_entrypoint,
-                    image_digest=pipeline_step_details_step_container_configuration_details_image_digest,
-                    image_signature_id=test_image_signature["id"],
-                ),
-                step_infrastructure_configuration_details=oci.data_science.PipelineStepDetailStepInfrastructureConfigurationDetailsArgs(
-                    block_storage_size_in_gbs=pipeline_step_details_step_infrastructure_configuration_details_block_storage_size_in_gbs,
-                    shape_config_details=oci.data_science.PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs(
-                        memory_in_gbs=pipeline_step_details_step_infrastructure_configuration_details_shape_config_details_memory_in_gbs,
-                        ocpus=pipeline_step_details_step_infrastructure_configuration_details_shape_config_details_ocpus,
-                    ),
-                    shape_name=test_shape["name"],
-                    subnet_id=test_subnet["id"],
-                ),
-            )],
-            configuration_details=oci.data_science.PipelineConfigurationDetailsArgs(
-                type=pipeline_configuration_details_type,
-                command_line_arguments=pipeline_configuration_details_command_line_arguments,
-                environment_variables=pipeline_configuration_details_environment_variables,
-                maximum_runtime_in_minutes=pipeline_configuration_details_maximum_runtime_in_minutes,
-            ),
+            step_details=[{
+                "step_name": pipeline_step_details_step_name,
+                "step_type": pipeline_step_details_step_type,
+                "depends_ons": pipeline_step_details_depends_on,
+                "description": pipeline_step_details_description,
+                "is_artifact_uploaded": pipeline_step_details_is_artifact_uploaded,
+                "job_id": test_job["id"],
+                "step_configuration_details": {
+                    "command_line_arguments": pipeline_step_details_step_configuration_details_command_line_arguments,
+                    "environment_variables": pipeline_step_details_step_configuration_details_environment_variables,
+                    "maximum_runtime_in_minutes": pipeline_step_details_step_configuration_details_maximum_runtime_in_minutes,
+                },
+                "step_container_configuration_details": {
+                    "container_type": pipeline_step_details_step_container_configuration_details_container_type,
+                    "image": pipeline_step_details_step_container_configuration_details_image,
+                    "cmds": pipeline_step_details_step_container_configuration_details_cmd,
+                    "entrypoints": pipeline_step_details_step_container_configuration_details_entrypoint,
+                    "image_digest": pipeline_step_details_step_container_configuration_details_image_digest,
+                    "image_signature_id": test_image_signature["id"],
+                },
+                "step_infrastructure_configuration_details": {
+                    "block_storage_size_in_gbs": pipeline_step_details_step_infrastructure_configuration_details_block_storage_size_in_gbs,
+                    "shape_config_details": {
+                        "memory_in_gbs": pipeline_step_details_step_infrastructure_configuration_details_shape_config_details_memory_in_gbs,
+                        "ocpus": pipeline_step_details_step_infrastructure_configuration_details_shape_config_details_ocpus,
+                    },
+                    "shape_name": test_shape["name"],
+                    "subnet_id": test_subnet["id"],
+                },
+            }],
+            configuration_details={
+                "type": pipeline_configuration_details_type,
+                "command_line_arguments": pipeline_configuration_details_command_line_arguments,
+                "environment_variables": pipeline_configuration_details_environment_variables,
+                "maximum_runtime_in_minutes": pipeline_configuration_details_maximum_runtime_in_minutes,
+            },
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -566,21 +566,21 @@ class Pipeline(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            infrastructure_configuration_details=oci.data_science.PipelineInfrastructureConfigurationDetailsArgs(
-                block_storage_size_in_gbs=pipeline_infrastructure_configuration_details_block_storage_size_in_gbs,
-                shape_name=test_shape["name"],
-                shape_config_details=oci.data_science.PipelineInfrastructureConfigurationDetailsShapeConfigDetailsArgs(
-                    memory_in_gbs=pipeline_infrastructure_configuration_details_shape_config_details_memory_in_gbs,
-                    ocpus=pipeline_infrastructure_configuration_details_shape_config_details_ocpus,
-                ),
-                subnet_id=test_subnet["id"],
-            ),
-            log_configuration_details=oci.data_science.PipelineLogConfigurationDetailsArgs(
-                enable_auto_log_creation=pipeline_log_configuration_details_enable_auto_log_creation,
-                enable_logging=pipeline_log_configuration_details_enable_logging,
-                log_group_id=test_log_group["id"],
-                log_id=test_log["id"],
-            ))
+            infrastructure_configuration_details={
+                "block_storage_size_in_gbs": pipeline_infrastructure_configuration_details_block_storage_size_in_gbs,
+                "shape_name": test_shape["name"],
+                "shape_config_details": {
+                    "memory_in_gbs": pipeline_infrastructure_configuration_details_shape_config_details_memory_in_gbs,
+                    "ocpus": pipeline_infrastructure_configuration_details_shape_config_details_ocpus,
+                },
+                "subnet_id": test_subnet["id"],
+            },
+            log_configuration_details={
+                "enable_auto_log_creation": pipeline_log_configuration_details_enable_auto_log_creation,
+                "enable_logging": pipeline_log_configuration_details_enable_logging,
+                "log_group_id": test_log_group["id"],
+                "log_id": test_log["id"],
+            })
         ```
 
         ## Import
@@ -594,15 +594,15 @@ class Pipeline(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline.
-        :param pulumi.Input[pulumi.InputType['PipelineConfigurationDetailsArgs']] configuration_details: (Updatable) The configuration details of a pipeline.
+        :param pulumi.Input[Union['PipelineConfigurationDetailsArgs', 'PipelineConfigurationDetailsArgsDict']] configuration_details: (Updatable) The configuration details of a pipeline.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) A short description of the pipeline.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[pulumi.InputType['PipelineInfrastructureConfigurationDetailsArgs']] infrastructure_configuration_details: (Updatable) The infrastructure configuration details of a pipeline or a step.
-        :param pulumi.Input[pulumi.InputType['PipelineLogConfigurationDetailsArgs']] log_configuration_details: (Updatable) The pipeline log configuration details.
+        :param pulumi.Input[Union['PipelineInfrastructureConfigurationDetailsArgs', 'PipelineInfrastructureConfigurationDetailsArgsDict']] infrastructure_configuration_details: (Updatable) The infrastructure configuration details of a pipeline or a step.
+        :param pulumi.Input[Union['PipelineLogConfigurationDetailsArgs', 'PipelineLogConfigurationDetailsArgsDict']] log_configuration_details: (Updatable) The pipeline log configuration details.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PipelineStepDetailArgs']]]] step_details: (Updatable) Array of step details for each step.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PipelineStepDetailArgs', 'PipelineStepDetailArgsDict']]]] step_details: (Updatable) Array of step details for each step.
         """
         ...
     @overload
@@ -624,42 +624,42 @@ class Pipeline(pulumi.CustomResource):
         test_pipeline = oci.data_science.Pipeline("test_pipeline",
             compartment_id=compartment_id,
             project_id=test_project["id"],
-            step_details=[oci.data_science.PipelineStepDetailArgs(
-                step_name=pipeline_step_details_step_name,
-                step_type=pipeline_step_details_step_type,
-                depends_ons=pipeline_step_details_depends_on,
-                description=pipeline_step_details_description,
-                is_artifact_uploaded=pipeline_step_details_is_artifact_uploaded,
-                job_id=test_job["id"],
-                step_configuration_details=oci.data_science.PipelineStepDetailStepConfigurationDetailsArgs(
-                    command_line_arguments=pipeline_step_details_step_configuration_details_command_line_arguments,
-                    environment_variables=pipeline_step_details_step_configuration_details_environment_variables,
-                    maximum_runtime_in_minutes=pipeline_step_details_step_configuration_details_maximum_runtime_in_minutes,
-                ),
-                step_container_configuration_details=oci.data_science.PipelineStepDetailStepContainerConfigurationDetailsArgs(
-                    container_type=pipeline_step_details_step_container_configuration_details_container_type,
-                    image=pipeline_step_details_step_container_configuration_details_image,
-                    cmds=pipeline_step_details_step_container_configuration_details_cmd,
-                    entrypoints=pipeline_step_details_step_container_configuration_details_entrypoint,
-                    image_digest=pipeline_step_details_step_container_configuration_details_image_digest,
-                    image_signature_id=test_image_signature["id"],
-                ),
-                step_infrastructure_configuration_details=oci.data_science.PipelineStepDetailStepInfrastructureConfigurationDetailsArgs(
-                    block_storage_size_in_gbs=pipeline_step_details_step_infrastructure_configuration_details_block_storage_size_in_gbs,
-                    shape_config_details=oci.data_science.PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs(
-                        memory_in_gbs=pipeline_step_details_step_infrastructure_configuration_details_shape_config_details_memory_in_gbs,
-                        ocpus=pipeline_step_details_step_infrastructure_configuration_details_shape_config_details_ocpus,
-                    ),
-                    shape_name=test_shape["name"],
-                    subnet_id=test_subnet["id"],
-                ),
-            )],
-            configuration_details=oci.data_science.PipelineConfigurationDetailsArgs(
-                type=pipeline_configuration_details_type,
-                command_line_arguments=pipeline_configuration_details_command_line_arguments,
-                environment_variables=pipeline_configuration_details_environment_variables,
-                maximum_runtime_in_minutes=pipeline_configuration_details_maximum_runtime_in_minutes,
-            ),
+            step_details=[{
+                "step_name": pipeline_step_details_step_name,
+                "step_type": pipeline_step_details_step_type,
+                "depends_ons": pipeline_step_details_depends_on,
+                "description": pipeline_step_details_description,
+                "is_artifact_uploaded": pipeline_step_details_is_artifact_uploaded,
+                "job_id": test_job["id"],
+                "step_configuration_details": {
+                    "command_line_arguments": pipeline_step_details_step_configuration_details_command_line_arguments,
+                    "environment_variables": pipeline_step_details_step_configuration_details_environment_variables,
+                    "maximum_runtime_in_minutes": pipeline_step_details_step_configuration_details_maximum_runtime_in_minutes,
+                },
+                "step_container_configuration_details": {
+                    "container_type": pipeline_step_details_step_container_configuration_details_container_type,
+                    "image": pipeline_step_details_step_container_configuration_details_image,
+                    "cmds": pipeline_step_details_step_container_configuration_details_cmd,
+                    "entrypoints": pipeline_step_details_step_container_configuration_details_entrypoint,
+                    "image_digest": pipeline_step_details_step_container_configuration_details_image_digest,
+                    "image_signature_id": test_image_signature["id"],
+                },
+                "step_infrastructure_configuration_details": {
+                    "block_storage_size_in_gbs": pipeline_step_details_step_infrastructure_configuration_details_block_storage_size_in_gbs,
+                    "shape_config_details": {
+                        "memory_in_gbs": pipeline_step_details_step_infrastructure_configuration_details_shape_config_details_memory_in_gbs,
+                        "ocpus": pipeline_step_details_step_infrastructure_configuration_details_shape_config_details_ocpus,
+                    },
+                    "shape_name": test_shape["name"],
+                    "subnet_id": test_subnet["id"],
+                },
+            }],
+            configuration_details={
+                "type": pipeline_configuration_details_type,
+                "command_line_arguments": pipeline_configuration_details_command_line_arguments,
+                "environment_variables": pipeline_configuration_details_environment_variables,
+                "maximum_runtime_in_minutes": pipeline_configuration_details_maximum_runtime_in_minutes,
+            },
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -668,21 +668,21 @@ class Pipeline(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            infrastructure_configuration_details=oci.data_science.PipelineInfrastructureConfigurationDetailsArgs(
-                block_storage_size_in_gbs=pipeline_infrastructure_configuration_details_block_storage_size_in_gbs,
-                shape_name=test_shape["name"],
-                shape_config_details=oci.data_science.PipelineInfrastructureConfigurationDetailsShapeConfigDetailsArgs(
-                    memory_in_gbs=pipeline_infrastructure_configuration_details_shape_config_details_memory_in_gbs,
-                    ocpus=pipeline_infrastructure_configuration_details_shape_config_details_ocpus,
-                ),
-                subnet_id=test_subnet["id"],
-            ),
-            log_configuration_details=oci.data_science.PipelineLogConfigurationDetailsArgs(
-                enable_auto_log_creation=pipeline_log_configuration_details_enable_auto_log_creation,
-                enable_logging=pipeline_log_configuration_details_enable_logging,
-                log_group_id=test_log_group["id"],
-                log_id=test_log["id"],
-            ))
+            infrastructure_configuration_details={
+                "block_storage_size_in_gbs": pipeline_infrastructure_configuration_details_block_storage_size_in_gbs,
+                "shape_name": test_shape["name"],
+                "shape_config_details": {
+                    "memory_in_gbs": pipeline_infrastructure_configuration_details_shape_config_details_memory_in_gbs,
+                    "ocpus": pipeline_infrastructure_configuration_details_shape_config_details_ocpus,
+                },
+                "subnet_id": test_subnet["id"],
+            },
+            log_configuration_details={
+                "enable_auto_log_creation": pipeline_log_configuration_details_enable_auto_log_creation,
+                "enable_logging": pipeline_log_configuration_details_enable_logging,
+                "log_group_id": test_log_group["id"],
+                "log_id": test_log["id"],
+            })
         ```
 
         ## Import
@@ -709,17 +709,17 @@ class Pipeline(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 configuration_details: Optional[pulumi.Input[pulumi.InputType['PipelineConfigurationDetailsArgs']]] = None,
+                 configuration_details: Optional[pulumi.Input[Union['PipelineConfigurationDetailsArgs', 'PipelineConfigurationDetailsArgsDict']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  delete_related_pipeline_runs: Optional[pulumi.Input[bool]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 infrastructure_configuration_details: Optional[pulumi.Input[pulumi.InputType['PipelineInfrastructureConfigurationDetailsArgs']]] = None,
-                 log_configuration_details: Optional[pulumi.Input[pulumi.InputType['PipelineLogConfigurationDetailsArgs']]] = None,
+                 infrastructure_configuration_details: Optional[pulumi.Input[Union['PipelineInfrastructureConfigurationDetailsArgs', 'PipelineInfrastructureConfigurationDetailsArgsDict']]] = None,
+                 log_configuration_details: Optional[pulumi.Input[Union['PipelineLogConfigurationDetailsArgs', 'PipelineLogConfigurationDetailsArgsDict']]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
-                 step_artifacts: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PipelineStepArtifactArgs']]]]] = None,
-                 step_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PipelineStepDetailArgs']]]]] = None,
+                 step_artifacts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PipelineStepArtifactArgs', 'PipelineStepArtifactArgsDict']]]]] = None,
+                 step_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PipelineStepDetailArgs', 'PipelineStepDetailArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -764,20 +764,20 @@ class Pipeline(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            configuration_details: Optional[pulumi.Input[pulumi.InputType['PipelineConfigurationDetailsArgs']]] = None,
+            configuration_details: Optional[pulumi.Input[Union['PipelineConfigurationDetailsArgs', 'PipelineConfigurationDetailsArgsDict']]] = None,
             created_by: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             delete_related_pipeline_runs: Optional[pulumi.Input[bool]] = None,
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            infrastructure_configuration_details: Optional[pulumi.Input[pulumi.InputType['PipelineInfrastructureConfigurationDetailsArgs']]] = None,
+            infrastructure_configuration_details: Optional[pulumi.Input[Union['PipelineInfrastructureConfigurationDetailsArgs', 'PipelineInfrastructureConfigurationDetailsArgsDict']]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
-            log_configuration_details: Optional[pulumi.Input[pulumi.InputType['PipelineLogConfigurationDetailsArgs']]] = None,
+            log_configuration_details: Optional[pulumi.Input[Union['PipelineLogConfigurationDetailsArgs', 'PipelineLogConfigurationDetailsArgsDict']]] = None,
             project_id: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
-            step_artifacts: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PipelineStepArtifactArgs']]]]] = None,
-            step_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PipelineStepDetailArgs']]]]] = None,
+            step_artifacts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PipelineStepArtifactArgs', 'PipelineStepArtifactArgsDict']]]]] = None,
+            step_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PipelineStepDetailArgs', 'PipelineStepDetailArgsDict']]]]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None) -> 'Pipeline':
@@ -789,18 +789,18 @@ class Pipeline(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline.
-        :param pulumi.Input[pulumi.InputType['PipelineConfigurationDetailsArgs']] configuration_details: (Updatable) The configuration details of a pipeline.
+        :param pulumi.Input[Union['PipelineConfigurationDetailsArgs', 'PipelineConfigurationDetailsArgsDict']] configuration_details: (Updatable) The configuration details of a pipeline.
         :param pulumi.Input[str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) A short description of the pipeline.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[pulumi.InputType['PipelineInfrastructureConfigurationDetailsArgs']] infrastructure_configuration_details: (Updatable) The infrastructure configuration details of a pipeline or a step.
+        :param pulumi.Input[Union['PipelineInfrastructureConfigurationDetailsArgs', 'PipelineInfrastructureConfigurationDetailsArgsDict']] infrastructure_configuration_details: (Updatable) The infrastructure configuration details of a pipeline or a step.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-        :param pulumi.Input[pulumi.InputType['PipelineLogConfigurationDetailsArgs']] log_configuration_details: (Updatable) The pipeline log configuration details.
+        :param pulumi.Input[Union['PipelineLogConfigurationDetailsArgs', 'PipelineLogConfigurationDetailsArgsDict']] log_configuration_details: (Updatable) The pipeline log configuration details.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
         :param pulumi.Input[str] state: The current state of the pipeline.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PipelineStepDetailArgs']]]] step_details: (Updatable) Array of step details for each step.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PipelineStepDetailArgs', 'PipelineStepDetailArgsDict']]]] step_details: (Updatable) Array of step details for each step.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
         :param pulumi.Input[str] time_updated: The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z

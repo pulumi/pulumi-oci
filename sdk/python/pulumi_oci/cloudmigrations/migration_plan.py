@@ -421,8 +421,8 @@ class MigrationPlan(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  migration_id: Optional[pulumi.Input[str]] = None,
                  source_migration_plan_id: Optional[pulumi.Input[str]] = None,
-                 strategies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MigrationPlanStrategyArgs']]]]] = None,
-                 target_environments: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MigrationPlanTargetEnvironmentArgs']]]]] = None,
+                 strategies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationPlanStrategyArgs', 'MigrationPlanStrategyArgsDict']]]]] = None,
+                 target_environments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationPlanTargetEnvironmentArgs', 'MigrationPlanTargetEnvironmentArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Migration Plan resource in Oracle Cloud Infrastructure Cloud Migrations service.
@@ -445,8 +445,8 @@ class MigrationPlan(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] migration_id: The OCID of the associated migration.
         :param pulumi.Input[str] source_migration_plan_id: Source migraiton plan ID to be cloned.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MigrationPlanStrategyArgs']]]] strategies: (Updatable) List of strategies for the resources to be migrated.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MigrationPlanTargetEnvironmentArgs']]]] target_environments: (Updatable) List of target environments.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MigrationPlanStrategyArgs', 'MigrationPlanStrategyArgsDict']]]] strategies: (Updatable) List of strategies for the resources to be migrated.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MigrationPlanTargetEnvironmentArgs', 'MigrationPlanTargetEnvironmentArgsDict']]]] target_environments: (Updatable) List of target environments.
         """
         ...
     @overload
@@ -488,8 +488,8 @@ class MigrationPlan(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  migration_id: Optional[pulumi.Input[str]] = None,
                  source_migration_plan_id: Optional[pulumi.Input[str]] = None,
-                 strategies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MigrationPlanStrategyArgs']]]]] = None,
-                 target_environments: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MigrationPlanTargetEnvironmentArgs']]]]] = None,
+                 strategies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationPlanStrategyArgs', 'MigrationPlanStrategyArgsDict']]]]] = None,
+                 target_environments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationPlanTargetEnvironmentArgs', 'MigrationPlanTargetEnvironmentArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -538,13 +538,13 @@ class MigrationPlan(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             migration_id: Optional[pulumi.Input[str]] = None,
-            migration_plan_stats: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MigrationPlanMigrationPlanStatArgs']]]]] = None,
+            migration_plan_stats: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationPlanMigrationPlanStatArgs', 'MigrationPlanMigrationPlanStatArgsDict']]]]] = None,
             reference_to_rms_stack: Optional[pulumi.Input[str]] = None,
             source_migration_plan_id: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
-            strategies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MigrationPlanStrategyArgs']]]]] = None,
+            strategies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationPlanStrategyArgs', 'MigrationPlanStrategyArgsDict']]]]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            target_environments: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MigrationPlanTargetEnvironmentArgs']]]]] = None,
+            target_environments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationPlanTargetEnvironmentArgs', 'MigrationPlanTargetEnvironmentArgsDict']]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None) -> 'MigrationPlan':
         """
@@ -561,13 +561,13 @@ class MigrationPlan(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] migration_id: The OCID of the associated migration.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MigrationPlanMigrationPlanStatArgs']]]] migration_plan_stats: Status of the migration plan.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MigrationPlanMigrationPlanStatArgs', 'MigrationPlanMigrationPlanStatArgsDict']]]] migration_plan_stats: Status of the migration plan.
         :param pulumi.Input[str] reference_to_rms_stack: OCID of the referenced ORM job.
         :param pulumi.Input[str] source_migration_plan_id: Source migraiton plan ID to be cloned.
         :param pulumi.Input[str] state: The current state of the migration plan.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MigrationPlanStrategyArgs']]]] strategies: (Updatable) List of strategies for the resources to be migrated.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MigrationPlanStrategyArgs', 'MigrationPlanStrategyArgsDict']]]] strategies: (Updatable) List of strategies for the resources to be migrated.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MigrationPlanTargetEnvironmentArgs']]]] target_environments: (Updatable) List of target environments.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MigrationPlanTargetEnvironmentArgs', 'MigrationPlanTargetEnvironmentArgsDict']]]] target_environments: (Updatable) List of target environments.
         :param pulumi.Input[str] time_created: The time when the migration plan was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time when the migration plan was updated. An RFC3339 formatted datetime string.
         """

@@ -135,7 +135,7 @@ public class ManagedInstanceInstallWindowsUpdatesManagement extends com.pulumi.r
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ManagedInstanceInstallWindowsUpdatesManagement(String name) {
+    public ManagedInstanceInstallWindowsUpdatesManagement(java.lang.String name) {
         this(name, ManagedInstanceInstallWindowsUpdatesManagementArgs.Empty);
     }
     /**
@@ -143,7 +143,7 @@ public class ManagedInstanceInstallWindowsUpdatesManagement extends com.pulumi.r
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ManagedInstanceInstallWindowsUpdatesManagement(String name, ManagedInstanceInstallWindowsUpdatesManagementArgs args) {
+    public ManagedInstanceInstallWindowsUpdatesManagement(java.lang.String name, ManagedInstanceInstallWindowsUpdatesManagementArgs args) {
         this(name, args, null);
     }
     /**
@@ -152,12 +152,12 @@ public class ManagedInstanceInstallWindowsUpdatesManagement extends com.pulumi.r
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ManagedInstanceInstallWindowsUpdatesManagement(String name, ManagedInstanceInstallWindowsUpdatesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:OsManagementHub/managedInstanceInstallWindowsUpdatesManagement:ManagedInstanceInstallWindowsUpdatesManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ManagedInstanceInstallWindowsUpdatesManagement(java.lang.String name, ManagedInstanceInstallWindowsUpdatesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:OsManagementHub/managedInstanceInstallWindowsUpdatesManagement:ManagedInstanceInstallWindowsUpdatesManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ManagedInstanceInstallWindowsUpdatesManagement(String name, Output<String> id, @Nullable ManagedInstanceInstallWindowsUpdatesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:OsManagementHub/managedInstanceInstallWindowsUpdatesManagement:ManagedInstanceInstallWindowsUpdatesManagement", name, state, makeResourceOptions(options, id));
+    private ManagedInstanceInstallWindowsUpdatesManagement(java.lang.String name, Output<java.lang.String> id, @Nullable ManagedInstanceInstallWindowsUpdatesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:OsManagementHub/managedInstanceInstallWindowsUpdatesManagement:ManagedInstanceInstallWindowsUpdatesManagement", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ManagedInstanceInstallWindowsUpdatesManagementArgs makeArgs(ManagedInstanceInstallWindowsUpdatesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -167,7 +167,7 @@ public class ManagedInstanceInstallWindowsUpdatesManagement extends com.pulumi.r
         return args == null ? ManagedInstanceInstallWindowsUpdatesManagementArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -183,7 +183,7 @@ public class ManagedInstanceInstallWindowsUpdatesManagement extends com.pulumi.r
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ManagedInstanceInstallWindowsUpdatesManagement get(String name, Output<String> id, @Nullable ManagedInstanceInstallWindowsUpdatesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ManagedInstanceInstallWindowsUpdatesManagement get(java.lang.String name, Output<java.lang.String> id, @Nullable ManagedInstanceInstallWindowsUpdatesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ManagedInstanceInstallWindowsUpdatesManagement(name, id, state, options);
     }
 }

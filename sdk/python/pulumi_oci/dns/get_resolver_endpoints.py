@@ -109,7 +109,7 @@ class AwaitableGetResolverEndpointsResult(GetResolverEndpointsResult):
             state=self.state)
 
 
-def get_resolver_endpoints(filters: Optional[Sequence[pulumi.InputType['GetResolverEndpointsFilterArgs']]] = None,
+def get_resolver_endpoints(filters: Optional[Sequence[Union['GetResolverEndpointsFilterArgs', 'GetResolverEndpointsFilterArgsDict']]] = None,
                            name: Optional[str] = None,
                            resolver_id: Optional[str] = None,
                            scope: Optional[str] = None,
@@ -161,7 +161,7 @@ def get_resolver_endpoints(filters: Optional[Sequence[pulumi.InputType['GetResol
 
 
 @_utilities.lift_output_func(get_resolver_endpoints)
-def get_resolver_endpoints_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetResolverEndpointsFilterArgs']]]]] = None,
+def get_resolver_endpoints_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetResolverEndpointsFilterArgs', 'GetResolverEndpointsFilterArgsDict']]]]] = None,
                                   name: Optional[pulumi.Input[Optional[str]]] = None,
                                   resolver_id: Optional[pulumi.Input[str]] = None,
                                   scope: Optional[pulumi.Input[str]] = None,

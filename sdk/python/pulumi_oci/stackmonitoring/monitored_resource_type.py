@@ -438,7 +438,7 @@ class MonitoredResourceType(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 metadata: Optional[pulumi.Input[pulumi.InputType['MonitoredResourceTypeMetadataArgs']]] = None,
+                 metadata: Optional[pulumi.Input[Union['MonitoredResourceTypeMetadataArgs', 'MonitoredResourceTypeMetadataArgsDict']]] = None,
                  metric_namespace: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  resource_category: Optional[pulumi.Input[str]] = None,
@@ -466,17 +466,17 @@ class MonitoredResourceType(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            metadata=oci.stack_monitoring.MonitoredResourceTypeMetadataArgs(
-                format=monitored_resource_type_metadata_format,
-                agent_properties=monitored_resource_type_metadata_agent_properties,
-                required_properties=monitored_resource_type_metadata_required_properties,
-                unique_property_sets=[oci.stack_monitoring.MonitoredResourceTypeMetadataUniquePropertySetArgs(
-                    properties=monitored_resource_type_metadata_unique_property_sets_properties,
-                )],
-                valid_properties_for_creates=monitored_resource_type_metadata_valid_properties_for_create,
-                valid_properties_for_updates=monitored_resource_type_metadata_valid_properties_for_update,
-                valid_property_values=monitored_resource_type_metadata_valid_property_values,
-            ),
+            metadata={
+                "format": monitored_resource_type_metadata_format,
+                "agent_properties": monitored_resource_type_metadata_agent_properties,
+                "required_properties": monitored_resource_type_metadata_required_properties,
+                "unique_property_sets": [{
+                    "properties": monitored_resource_type_metadata_unique_property_sets_properties,
+                }],
+                "valid_properties_for_creates": monitored_resource_type_metadata_valid_properties_for_create,
+                "valid_properties_for_updates": monitored_resource_type_metadata_valid_properties_for_update,
+                "valid_property_values": monitored_resource_type_metadata_valid_property_values,
+            },
             metric_namespace=monitored_resource_type_metric_namespace,
             resource_category=monitored_resource_type_resource_category,
             source_type=monitored_resource_type_source_type)
@@ -497,7 +497,7 @@ class MonitoredResourceType(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) A friendly description.
         :param pulumi.Input[str] display_name: (Updatable) Monitored resource type display name.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[pulumi.InputType['MonitoredResourceTypeMetadataArgs']] metadata: (Updatable) The metadata details for resource type.
+        :param pulumi.Input[Union['MonitoredResourceTypeMetadataArgs', 'MonitoredResourceTypeMetadataArgsDict']] metadata: (Updatable) The metadata details for resource type.
         :param pulumi.Input[str] metric_namespace: (Updatable) Metric namespace for resource type.
         :param pulumi.Input[str] name: A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
         :param pulumi.Input[str] resource_category: (Updatable) Resource Category to indicate the kind of resource type.
@@ -535,17 +535,17 @@ class MonitoredResourceType(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            metadata=oci.stack_monitoring.MonitoredResourceTypeMetadataArgs(
-                format=monitored_resource_type_metadata_format,
-                agent_properties=monitored_resource_type_metadata_agent_properties,
-                required_properties=monitored_resource_type_metadata_required_properties,
-                unique_property_sets=[oci.stack_monitoring.MonitoredResourceTypeMetadataUniquePropertySetArgs(
-                    properties=monitored_resource_type_metadata_unique_property_sets_properties,
-                )],
-                valid_properties_for_creates=monitored_resource_type_metadata_valid_properties_for_create,
-                valid_properties_for_updates=monitored_resource_type_metadata_valid_properties_for_update,
-                valid_property_values=monitored_resource_type_metadata_valid_property_values,
-            ),
+            metadata={
+                "format": monitored_resource_type_metadata_format,
+                "agent_properties": monitored_resource_type_metadata_agent_properties,
+                "required_properties": monitored_resource_type_metadata_required_properties,
+                "unique_property_sets": [{
+                    "properties": monitored_resource_type_metadata_unique_property_sets_properties,
+                }],
+                "valid_properties_for_creates": monitored_resource_type_metadata_valid_properties_for_create,
+                "valid_properties_for_updates": monitored_resource_type_metadata_valid_properties_for_update,
+                "valid_property_values": monitored_resource_type_metadata_valid_property_values,
+            },
             metric_namespace=monitored_resource_type_metric_namespace,
             resource_category=monitored_resource_type_resource_category,
             source_type=monitored_resource_type_source_type)
@@ -579,7 +579,7 @@ class MonitoredResourceType(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 metadata: Optional[pulumi.Input[pulumi.InputType['MonitoredResourceTypeMetadataArgs']]] = None,
+                 metadata: Optional[pulumi.Input[Union['MonitoredResourceTypeMetadataArgs', 'MonitoredResourceTypeMetadataArgsDict']]] = None,
                  metric_namespace: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  resource_category: Optional[pulumi.Input[str]] = None,
@@ -624,7 +624,7 @@ class MonitoredResourceType(pulumi.CustomResource):
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            metadata: Optional[pulumi.Input[pulumi.InputType['MonitoredResourceTypeMetadataArgs']]] = None,
+            metadata: Optional[pulumi.Input[Union['MonitoredResourceTypeMetadataArgs', 'MonitoredResourceTypeMetadataArgsDict']]] = None,
             metric_namespace: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             resource_category: Optional[pulumi.Input[str]] = None,
@@ -645,7 +645,7 @@ class MonitoredResourceType(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) A friendly description.
         :param pulumi.Input[str] display_name: (Updatable) Monitored resource type display name.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[pulumi.InputType['MonitoredResourceTypeMetadataArgs']] metadata: (Updatable) The metadata details for resource type.
+        :param pulumi.Input[Union['MonitoredResourceTypeMetadataArgs', 'MonitoredResourceTypeMetadataArgsDict']] metadata: (Updatable) The metadata details for resource type.
         :param pulumi.Input[str] metric_namespace: (Updatable) Metric namespace for resource type.
         :param pulumi.Input[str] name: A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
         :param pulumi.Input[str] resource_category: (Updatable) Resource Category to indicate the kind of resource type.

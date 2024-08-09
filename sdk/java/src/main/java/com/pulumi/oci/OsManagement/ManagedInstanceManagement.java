@@ -292,7 +292,7 @@ public class ManagedInstanceManagement extends com.pulumi.resources.CustomResour
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ManagedInstanceManagement(String name) {
+    public ManagedInstanceManagement(java.lang.String name) {
         this(name, ManagedInstanceManagementArgs.Empty);
     }
     /**
@@ -300,7 +300,7 @@ public class ManagedInstanceManagement extends com.pulumi.resources.CustomResour
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ManagedInstanceManagement(String name, ManagedInstanceManagementArgs args) {
+    public ManagedInstanceManagement(java.lang.String name, ManagedInstanceManagementArgs args) {
         this(name, args, null);
     }
     /**
@@ -309,12 +309,12 @@ public class ManagedInstanceManagement extends com.pulumi.resources.CustomResour
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ManagedInstanceManagement(String name, ManagedInstanceManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:OsManagement/managedInstanceManagement:ManagedInstanceManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ManagedInstanceManagement(java.lang.String name, ManagedInstanceManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:OsManagement/managedInstanceManagement:ManagedInstanceManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ManagedInstanceManagement(String name, Output<String> id, @Nullable ManagedInstanceManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:OsManagement/managedInstanceManagement:ManagedInstanceManagement", name, state, makeResourceOptions(options, id));
+    private ManagedInstanceManagement(java.lang.String name, Output<java.lang.String> id, @Nullable ManagedInstanceManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:OsManagement/managedInstanceManagement:ManagedInstanceManagement", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ManagedInstanceManagementArgs makeArgs(ManagedInstanceManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -324,7 +324,7 @@ public class ManagedInstanceManagement extends com.pulumi.resources.CustomResour
         return args == null ? ManagedInstanceManagementArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -340,7 +340,7 @@ public class ManagedInstanceManagement extends com.pulumi.resources.CustomResour
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ManagedInstanceManagement get(String name, Output<String> id, @Nullable ManagedInstanceManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ManagedInstanceManagement get(java.lang.String name, Output<java.lang.String> id, @Nullable ManagedInstanceManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ManagedInstanceManagement(name, id, state, options);
     }
 }

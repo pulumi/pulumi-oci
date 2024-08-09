@@ -572,7 +572,7 @@ class SensitiveDataModel(pulumi.CustomResource):
                  is_sample_data_collection_enabled: Optional[pulumi.Input[bool]] = None,
                  schemas_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  sensitive_type_ids_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 tables_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SensitiveDataModelTablesForDiscoveryArgs']]]]] = None,
+                 tables_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SensitiveDataModelTablesForDiscoveryArgs', 'SensitiveDataModelTablesForDiscoveryArgsDict']]]]] = None,
                  target_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -606,10 +606,10 @@ class SensitiveDataModel(pulumi.CustomResource):
             is_sample_data_collection_enabled=sensitive_data_model_is_sample_data_collection_enabled,
             schemas_for_discoveries=sensitive_data_model_schemas_for_discovery,
             sensitive_type_ids_for_discoveries=sensitive_data_model_sensitive_type_ids_for_discovery,
-            tables_for_discoveries=[oci.data_safe.SensitiveDataModelTablesForDiscoveryArgs(
-                schema_name=sensitive_data_model_tables_for_discovery_schema_name,
-                table_names=sensitive_data_model_tables_for_discovery_table_names,
-            )])
+            tables_for_discoveries=[{
+                "schema_name": sensitive_data_model_tables_for_discovery_schema_name,
+                "table_names": sensitive_data_model_tables_for_discovery_table_names,
+            }])
         ```
 
         ## Import
@@ -634,7 +634,7 @@ class SensitiveDataModel(pulumi.CustomResource):
         :param pulumi.Input[bool] is_sample_data_collection_enabled: (Updatable) Indicates if data discovery jobs should collect and store sample data values for the discovered columns. Sample data helps review the discovered columns and ensure that they actually contain sensitive data. As it collects original data from the target database, it's disabled by default and should be used only if it's acceptable to store sample data in Data Safe's repository in Oracle Cloud. Note that sample data values are not collected for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas_for_discoveries: (Updatable) The schemas to be scanned by data discovery jobs.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] sensitive_type_ids_for_discoveries: (Updatable) The OCIDs of the sensitive types to be used by data discovery jobs. If OCID of a sensitive category is provided, all its child sensitive types are used for data discovery.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SensitiveDataModelTablesForDiscoveryArgs']]]] tables_for_discoveries: (Updatable) The data discovery jobs will scan the tables specified here, including both schemas and tables. For instance, the input could be in the format: [{schemaName: "HR", tableName: ["T1", "T2"]}, {schemaName:  "OE", tableName : ["T3", "T4"]}].
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SensitiveDataModelTablesForDiscoveryArgs', 'SensitiveDataModelTablesForDiscoveryArgsDict']]]] tables_for_discoveries: (Updatable) The data discovery jobs will scan the tables specified here, including both schemas and tables. For instance, the input could be in the format: [{schemaName: "HR", tableName: ["T1", "T2"]}, {schemaName:  "OE", tableName : ["T3", "T4"]}].
         :param pulumi.Input[str] target_id: (Updatable) The OCID of the reference target database to be associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database. 
                
                
@@ -678,10 +678,10 @@ class SensitiveDataModel(pulumi.CustomResource):
             is_sample_data_collection_enabled=sensitive_data_model_is_sample_data_collection_enabled,
             schemas_for_discoveries=sensitive_data_model_schemas_for_discovery,
             sensitive_type_ids_for_discoveries=sensitive_data_model_sensitive_type_ids_for_discovery,
-            tables_for_discoveries=[oci.data_safe.SensitiveDataModelTablesForDiscoveryArgs(
-                schema_name=sensitive_data_model_tables_for_discovery_schema_name,
-                table_names=sensitive_data_model_tables_for_discovery_table_names,
-            )])
+            tables_for_discoveries=[{
+                "schema_name": sensitive_data_model_tables_for_discovery_schema_name,
+                "table_names": sensitive_data_model_tables_for_discovery_table_names,
+            }])
         ```
 
         ## Import
@@ -719,7 +719,7 @@ class SensitiveDataModel(pulumi.CustomResource):
                  is_sample_data_collection_enabled: Optional[pulumi.Input[bool]] = None,
                  schemas_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  sensitive_type_ids_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 tables_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SensitiveDataModelTablesForDiscoveryArgs']]]]] = None,
+                 tables_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SensitiveDataModelTablesForDiscoveryArgs', 'SensitiveDataModelTablesForDiscoveryArgsDict']]]]] = None,
                  target_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -776,7 +776,7 @@ class SensitiveDataModel(pulumi.CustomResource):
             sensitive_type_ids_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            tables_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SensitiveDataModelTablesForDiscoveryArgs']]]]] = None,
+            tables_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SensitiveDataModelTablesForDiscoveryArgs', 'SensitiveDataModelTablesForDiscoveryArgsDict']]]]] = None,
             target_id: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None) -> 'SensitiveDataModel':
@@ -801,7 +801,7 @@ class SensitiveDataModel(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] sensitive_type_ids_for_discoveries: (Updatable) The OCIDs of the sensitive types to be used by data discovery jobs. If OCID of a sensitive category is provided, all its child sensitive types are used for data discovery.
         :param pulumi.Input[str] state: The current state of the sensitive data model.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SensitiveDataModelTablesForDiscoveryArgs']]]] tables_for_discoveries: (Updatable) The data discovery jobs will scan the tables specified here, including both schemas and tables. For instance, the input could be in the format: [{schemaName: "HR", tableName: ["T1", "T2"]}, {schemaName:  "OE", tableName : ["T3", "T4"]}].
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SensitiveDataModelTablesForDiscoveryArgs', 'SensitiveDataModelTablesForDiscoveryArgsDict']]]] tables_for_discoveries: (Updatable) The data discovery jobs will scan the tables specified here, including both schemas and tables. For instance, the input could be in the format: [{schemaName: "HR", tableName: ["T1", "T2"]}, {schemaName:  "OE", tableName : ["T3", "T4"]}].
         :param pulumi.Input[str] target_id: (Updatable) The OCID of the reference target database to be associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database. 
                
                

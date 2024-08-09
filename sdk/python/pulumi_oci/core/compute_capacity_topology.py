@@ -288,7 +288,7 @@ class ComputeCapacityTopology(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  availability_domain: Optional[pulumi.Input[str]] = None,
-                 capacity_source: Optional[pulumi.Input[pulumi.InputType['ComputeCapacityTopologyCapacitySourceArgs']]] = None,
+                 capacity_source: Optional[pulumi.Input[Union['ComputeCapacityTopologyCapacitySourceArgs', 'ComputeCapacityTopologyCapacitySourceArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -312,10 +312,10 @@ class ComputeCapacityTopology(pulumi.CustomResource):
 
         test_compute_capacity_topology = oci.core.ComputeCapacityTopology("test_compute_capacity_topology",
             availability_domain=compute_capacity_topology_availability_domain,
-            capacity_source=oci.core.ComputeCapacityTopologyCapacitySourceArgs(
-                capacity_type=compute_capacity_topology_capacity_source_capacity_type,
-                compartment_id=compartment_id,
-            ),
+            capacity_source={
+                "capacity_type": compute_capacity_topology_capacity_source_capacity_type,
+                "compartment_id": compartment_id,
+            },
             compartment_id=compartment_id,
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -337,7 +337,7 @@ class ComputeCapacityTopology(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] availability_domain: The availability domain of this compute capacity topology.  Example: `Uocm:US-CHICAGO-1-AD-2`
-        :param pulumi.Input[pulumi.InputType['ComputeCapacityTopologyCapacitySourceArgs']] capacity_source: (Updatable) A capacity source of bare metal hosts.
+        :param pulumi.Input[Union['ComputeCapacityTopologyCapacitySourceArgs', 'ComputeCapacityTopologyCapacitySourceArgsDict']] capacity_source: (Updatable) A capacity source of bare metal hosts.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this compute capacity topology.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -371,10 +371,10 @@ class ComputeCapacityTopology(pulumi.CustomResource):
 
         test_compute_capacity_topology = oci.core.ComputeCapacityTopology("test_compute_capacity_topology",
             availability_domain=compute_capacity_topology_availability_domain,
-            capacity_source=oci.core.ComputeCapacityTopologyCapacitySourceArgs(
-                capacity_type=compute_capacity_topology_capacity_source_capacity_type,
-                compartment_id=compartment_id,
-            ),
+            capacity_source={
+                "capacity_type": compute_capacity_topology_capacity_source_capacity_type,
+                "compartment_id": compartment_id,
+            },
             compartment_id=compartment_id,
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -409,7 +409,7 @@ class ComputeCapacityTopology(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  availability_domain: Optional[pulumi.Input[str]] = None,
-                 capacity_source: Optional[pulumi.Input[pulumi.InputType['ComputeCapacityTopologyCapacitySourceArgs']]] = None,
+                 capacity_source: Optional[pulumi.Input[Union['ComputeCapacityTopologyCapacitySourceArgs', 'ComputeCapacityTopologyCapacitySourceArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -449,7 +449,7 @@ class ComputeCapacityTopology(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             availability_domain: Optional[pulumi.Input[str]] = None,
-            capacity_source: Optional[pulumi.Input[pulumi.InputType['ComputeCapacityTopologyCapacitySourceArgs']]] = None,
+            capacity_source: Optional[pulumi.Input[Union['ComputeCapacityTopologyCapacitySourceArgs', 'ComputeCapacityTopologyCapacitySourceArgsDict']]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
@@ -465,7 +465,7 @@ class ComputeCapacityTopology(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] availability_domain: The availability domain of this compute capacity topology.  Example: `Uocm:US-CHICAGO-1-AD-2`
-        :param pulumi.Input[pulumi.InputType['ComputeCapacityTopologyCapacitySourceArgs']] capacity_source: (Updatable) A capacity source of bare metal hosts.
+        :param pulumi.Input[Union['ComputeCapacityTopologyCapacitySourceArgs', 'ComputeCapacityTopologyCapacitySourceArgsDict']] capacity_source: (Updatable) A capacity source of bare metal hosts.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this compute capacity topology.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.

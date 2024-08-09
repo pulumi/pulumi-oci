@@ -321,7 +321,7 @@ class UsageCarbonEmission(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_depth: Optional[pulumi.Input[int]] = None,
                  group_bies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 group_by_tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['UsageCarbonEmissionGroupByTagArgs']]]]] = None,
+                 group_by_tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['UsageCarbonEmissionGroupByTagArgs', 'UsageCarbonEmissionGroupByTagArgsDict']]]]] = None,
                  is_aggregate_by_time: Optional[pulumi.Input[bool]] = None,
                  tenant_id: Optional[pulumi.Input[str]] = None,
                  time_usage_ended: Optional[pulumi.Input[str]] = None,
@@ -345,11 +345,11 @@ class UsageCarbonEmission(pulumi.CustomResource):
             time_usage_started=usage_carbon_emission_time_usage_started,
             compartment_depth=usage_carbon_emission_compartment_depth,
             group_bies=usage_carbon_emission_group_by,
-            group_by_tags=[oci.metering_computation.UsageCarbonEmissionGroupByTagArgs(
-                key=usage_carbon_emission_group_by_tag_key,
-                namespace=usage_carbon_emission_group_by_tag_namespace,
-                value=usage_carbon_emission_group_by_tag_value,
-            )],
+            group_by_tags=[{
+                "key": usage_carbon_emission_group_by_tag_key,
+                "namespace": usage_carbon_emission_group_by_tag_namespace,
+                "value": usage_carbon_emission_group_by_tag_value,
+            }],
             is_aggregate_by_time=usage_carbon_emission_is_aggregate_by_time,
             usage_carbon_emission_filter=usage_carbon_emission_usage_carbon_emission_filter)
         ```
@@ -366,7 +366,7 @@ class UsageCarbonEmission(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] compartment_depth: The compartment depth level.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] group_bies: Aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "resourceName", "tenantId", "tenantName", "subscriptionId"]`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['UsageCarbonEmissionGroupByTagArgs']]]] group_by_tags: GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
+        :param pulumi.Input[Sequence[pulumi.Input[Union['UsageCarbonEmissionGroupByTagArgs', 'UsageCarbonEmissionGroupByTagArgsDict']]]] group_by_tags: GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
         :param pulumi.Input[bool] is_aggregate_by_time: Specifies whether aggregated by time. If isAggregateByTime is true, all usage carbon emissions over the query time period will be added up.
         :param pulumi.Input[str] tenant_id: Tenant ID.
         :param pulumi.Input[str] time_usage_ended: The usage end time.
@@ -400,11 +400,11 @@ class UsageCarbonEmission(pulumi.CustomResource):
             time_usage_started=usage_carbon_emission_time_usage_started,
             compartment_depth=usage_carbon_emission_compartment_depth,
             group_bies=usage_carbon_emission_group_by,
-            group_by_tags=[oci.metering_computation.UsageCarbonEmissionGroupByTagArgs(
-                key=usage_carbon_emission_group_by_tag_key,
-                namespace=usage_carbon_emission_group_by_tag_namespace,
-                value=usage_carbon_emission_group_by_tag_value,
-            )],
+            group_by_tags=[{
+                "key": usage_carbon_emission_group_by_tag_key,
+                "namespace": usage_carbon_emission_group_by_tag_namespace,
+                "value": usage_carbon_emission_group_by_tag_value,
+            }],
             is_aggregate_by_time=usage_carbon_emission_is_aggregate_by_time,
             usage_carbon_emission_filter=usage_carbon_emission_usage_carbon_emission_filter)
         ```
@@ -434,7 +434,7 @@ class UsageCarbonEmission(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_depth: Optional[pulumi.Input[int]] = None,
                  group_bies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 group_by_tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['UsageCarbonEmissionGroupByTagArgs']]]]] = None,
+                 group_by_tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['UsageCarbonEmissionGroupByTagArgs', 'UsageCarbonEmissionGroupByTagArgsDict']]]]] = None,
                  is_aggregate_by_time: Optional[pulumi.Input[bool]] = None,
                  tenant_id: Optional[pulumi.Input[str]] = None,
                  time_usage_ended: Optional[pulumi.Input[str]] = None,
@@ -476,9 +476,9 @@ class UsageCarbonEmission(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_depth: Optional[pulumi.Input[int]] = None,
             group_bies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            group_by_tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['UsageCarbonEmissionGroupByTagArgs']]]]] = None,
+            group_by_tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['UsageCarbonEmissionGroupByTagArgs', 'UsageCarbonEmissionGroupByTagArgsDict']]]]] = None,
             is_aggregate_by_time: Optional[pulumi.Input[bool]] = None,
-            items: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['UsageCarbonEmissionItemArgs']]]]] = None,
+            items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['UsageCarbonEmissionItemArgs', 'UsageCarbonEmissionItemArgsDict']]]]] = None,
             tenant_id: Optional[pulumi.Input[str]] = None,
             time_usage_ended: Optional[pulumi.Input[str]] = None,
             time_usage_started: Optional[pulumi.Input[str]] = None,
@@ -492,9 +492,9 @@ class UsageCarbonEmission(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] compartment_depth: The compartment depth level.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] group_bies: Aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "resourceName", "tenantId", "tenantName", "subscriptionId"]`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['UsageCarbonEmissionGroupByTagArgs']]]] group_by_tags: GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
+        :param pulumi.Input[Sequence[pulumi.Input[Union['UsageCarbonEmissionGroupByTagArgs', 'UsageCarbonEmissionGroupByTagArgsDict']]]] group_by_tags: GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
         :param pulumi.Input[bool] is_aggregate_by_time: Specifies whether aggregated by time. If isAggregateByTime is true, all usage carbon emissions over the query time period will be added up.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['UsageCarbonEmissionItemArgs']]]] items: A list of usage carbon emission items.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['UsageCarbonEmissionItemArgs', 'UsageCarbonEmissionItemArgsDict']]]] items: A list of usage carbon emission items.
         :param pulumi.Input[str] tenant_id: Tenant ID.
         :param pulumi.Input[str] time_usage_ended: The usage end time.
         :param pulumi.Input[str] time_usage_started: The usage start time.

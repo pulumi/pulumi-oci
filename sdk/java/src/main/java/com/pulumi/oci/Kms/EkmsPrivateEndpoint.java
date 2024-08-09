@@ -267,7 +267,7 @@ public class EkmsPrivateEndpoint extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public EkmsPrivateEndpoint(String name) {
+    public EkmsPrivateEndpoint(java.lang.String name) {
         this(name, EkmsPrivateEndpointArgs.Empty);
     }
     /**
@@ -275,7 +275,7 @@ public class EkmsPrivateEndpoint extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public EkmsPrivateEndpoint(String name, EkmsPrivateEndpointArgs args) {
+    public EkmsPrivateEndpoint(java.lang.String name, EkmsPrivateEndpointArgs args) {
         this(name, args, null);
     }
     /**
@@ -284,12 +284,12 @@ public class EkmsPrivateEndpoint extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public EkmsPrivateEndpoint(String name, EkmsPrivateEndpointArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Kms/ekmsPrivateEndpoint:EkmsPrivateEndpoint", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public EkmsPrivateEndpoint(java.lang.String name, EkmsPrivateEndpointArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Kms/ekmsPrivateEndpoint:EkmsPrivateEndpoint", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private EkmsPrivateEndpoint(String name, Output<String> id, @Nullable EkmsPrivateEndpointState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Kms/ekmsPrivateEndpoint:EkmsPrivateEndpoint", name, state, makeResourceOptions(options, id));
+    private EkmsPrivateEndpoint(java.lang.String name, Output<java.lang.String> id, @Nullable EkmsPrivateEndpointState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Kms/ekmsPrivateEndpoint:EkmsPrivateEndpoint", name, state, makeResourceOptions(options, id), false);
     }
 
     private static EkmsPrivateEndpointArgs makeArgs(EkmsPrivateEndpointArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -299,7 +299,7 @@ public class EkmsPrivateEndpoint extends com.pulumi.resources.CustomResource {
         return args == null ? EkmsPrivateEndpointArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -315,7 +315,7 @@ public class EkmsPrivateEndpoint extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static EkmsPrivateEndpoint get(String name, Output<String> id, @Nullable EkmsPrivateEndpointState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static EkmsPrivateEndpoint get(java.lang.String name, Output<java.lang.String> id, @Nullable EkmsPrivateEndpointState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new EkmsPrivateEndpoint(name, id, state, options);
     }
 }

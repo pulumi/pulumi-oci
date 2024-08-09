@@ -630,7 +630,7 @@ class LogAnalyticsEntity(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  hostname: Optional[pulumi.Input[str]] = None,
                  management_agent_id: Optional[pulumi.Input[str]] = None,
-                 metadata: Optional[pulumi.Input[pulumi.InputType['LogAnalyticsEntityMetadataArgs']]] = None,
+                 metadata: Optional[pulumi.Input[Union['LogAnalyticsEntityMetadataArgs', 'LogAnalyticsEntityMetadataArgsDict']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -663,13 +663,13 @@ class LogAnalyticsEntity(pulumi.CustomResource):
             },
             hostname=log_analytics_entity_hostname,
             management_agent_id=test_management_agent["id"],
-            metadata=oci.log_analytics.LogAnalyticsEntityMetadataArgs(
-                items=[oci.log_analytics.LogAnalyticsEntityMetadataItemArgs(
-                    name=log_analytics_entity_metadata_items_name,
-                    type=log_analytics_entity_metadata_items_type,
-                    value=log_analytics_entity_metadata_items_value,
-                )],
-            ),
+            metadata={
+                "items": [{
+                    "name": log_analytics_entity_metadata_items_name,
+                    "type": log_analytics_entity_metadata_items_type,
+                    "value": log_analytics_entity_metadata_items_value,
+                }],
+            },
             properties=log_analytics_entity_properties,
             source_id=test_source["id"],
             time_last_discovered=log_analytics_entity_time_last_discovered,
@@ -693,7 +693,7 @@ class LogAnalyticsEntity(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] hostname: (Updatable) The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
         :param pulumi.Input[str] management_agent_id: (Updatable) The OCID of the Management Agent.
-        :param pulumi.Input[pulumi.InputType['LogAnalyticsEntityMetadataArgs']] metadata: (Updatable) Details of Entity Metadata.
+        :param pulumi.Input[Union['LogAnalyticsEntityMetadataArgs', 'LogAnalyticsEntityMetadataArgsDict']] metadata: (Updatable) Details of Entity Metadata.
         :param pulumi.Input[str] name: (Updatable) Log analytics entity name.
         :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
         :param pulumi.Input[Mapping[str, Any]] properties: (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
@@ -736,13 +736,13 @@ class LogAnalyticsEntity(pulumi.CustomResource):
             },
             hostname=log_analytics_entity_hostname,
             management_agent_id=test_management_agent["id"],
-            metadata=oci.log_analytics.LogAnalyticsEntityMetadataArgs(
-                items=[oci.log_analytics.LogAnalyticsEntityMetadataItemArgs(
-                    name=log_analytics_entity_metadata_items_name,
-                    type=log_analytics_entity_metadata_items_type,
-                    value=log_analytics_entity_metadata_items_value,
-                )],
-            ),
+            metadata={
+                "items": [{
+                    "name": log_analytics_entity_metadata_items_name,
+                    "type": log_analytics_entity_metadata_items_type,
+                    "value": log_analytics_entity_metadata_items_value,
+                }],
+            },
             properties=log_analytics_entity_properties,
             source_id=test_source["id"],
             time_last_discovered=log_analytics_entity_time_last_discovered,
@@ -779,7 +779,7 @@ class LogAnalyticsEntity(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  hostname: Optional[pulumi.Input[str]] = None,
                  management_agent_id: Optional[pulumi.Input[str]] = None,
-                 metadata: Optional[pulumi.Input[pulumi.InputType['LogAnalyticsEntityMetadataArgs']]] = None,
+                 metadata: Optional[pulumi.Input[Union['LogAnalyticsEntityMetadataArgs', 'LogAnalyticsEntityMetadataArgsDict']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -845,7 +845,7 @@ class LogAnalyticsEntity(pulumi.CustomResource):
             management_agent_compartment_id: Optional[pulumi.Input[str]] = None,
             management_agent_display_name: Optional[pulumi.Input[str]] = None,
             management_agent_id: Optional[pulumi.Input[str]] = None,
-            metadata: Optional[pulumi.Input[pulumi.InputType['LogAnalyticsEntityMetadataArgs']]] = None,
+            metadata: Optional[pulumi.Input[Union['LogAnalyticsEntityMetadataArgs', 'LogAnalyticsEntityMetadataArgsDict']]] = None,
             name: Optional[pulumi.Input[str]] = None,
             namespace: Optional[pulumi.Input[str]] = None,
             properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -874,7 +874,7 @@ class LogAnalyticsEntity(pulumi.CustomResource):
         :param pulumi.Input[str] management_agent_compartment_id: Management agent (management-agents resource kind) compartment OCID
         :param pulumi.Input[str] management_agent_display_name: Management agent (management-agents resource kind) display name
         :param pulumi.Input[str] management_agent_id: (Updatable) The OCID of the Management Agent.
-        :param pulumi.Input[pulumi.InputType['LogAnalyticsEntityMetadataArgs']] metadata: (Updatable) Details of Entity Metadata.
+        :param pulumi.Input[Union['LogAnalyticsEntityMetadataArgs', 'LogAnalyticsEntityMetadataArgsDict']] metadata: (Updatable) Details of Entity Metadata.
         :param pulumi.Input[str] name: (Updatable) Log analytics entity name.
         :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
         :param pulumi.Input[Mapping[str, Any]] properties: (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.

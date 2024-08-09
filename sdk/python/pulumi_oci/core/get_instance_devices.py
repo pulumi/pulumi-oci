@@ -100,7 +100,7 @@ class AwaitableGetInstanceDevicesResult(GetInstanceDevicesResult):
             name=self.name)
 
 
-def get_instance_devices(filters: Optional[Sequence[pulumi.InputType['GetInstanceDevicesFilterArgs']]] = None,
+def get_instance_devices(filters: Optional[Sequence[Union['GetInstanceDevicesFilterArgs', 'GetInstanceDevicesFilterArgsDict']]] = None,
                          instance_id: Optional[str] = None,
                          is_available: Optional[bool] = None,
                          name: Optional[str] = None,
@@ -144,7 +144,7 @@ def get_instance_devices(filters: Optional[Sequence[pulumi.InputType['GetInstanc
 
 
 @_utilities.lift_output_func(get_instance_devices)
-def get_instance_devices_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetInstanceDevicesFilterArgs']]]]] = None,
+def get_instance_devices_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetInstanceDevicesFilterArgs', 'GetInstanceDevicesFilterArgsDict']]]]] = None,
                                 instance_id: Optional[pulumi.Input[str]] = None,
                                 is_available: Optional[pulumi.Input[Optional[bool]]] = None,
                                 name: Optional[pulumi.Input[Optional[str]]] = None,

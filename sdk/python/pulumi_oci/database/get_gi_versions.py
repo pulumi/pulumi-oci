@@ -96,7 +96,7 @@ class AwaitableGetGiVersionsResult(GetGiVersionsResult):
 
 def get_gi_versions(availability_domain: Optional[str] = None,
                     compartment_id: Optional[str] = None,
-                    filters: Optional[Sequence[pulumi.InputType['GetGiVersionsFilterArgs']]] = None,
+                    filters: Optional[Sequence[Union['GetGiVersionsFilterArgs', 'GetGiVersionsFilterArgsDict']]] = None,
                     shape: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetGiVersionsResult:
     """
@@ -140,7 +140,7 @@ def get_gi_versions(availability_domain: Optional[str] = None,
 @_utilities.lift_output_func(get_gi_versions)
 def get_gi_versions_output(availability_domain: Optional[pulumi.Input[Optional[str]]] = None,
                            compartment_id: Optional[pulumi.Input[str]] = None,
-                           filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetGiVersionsFilterArgs']]]]] = None,
+                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetGiVersionsFilterArgs', 'GetGiVersionsFilterArgsDict']]]]] = None,
                            shape: Optional[pulumi.Input[Optional[str]]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetGiVersionsResult]:
     """

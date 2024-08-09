@@ -325,7 +325,7 @@ class Project(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 notification_config: Optional[pulumi.Input[pulumi.InputType['ProjectNotificationConfigArgs']]] = None,
+                 notification_config: Optional[pulumi.Input[Union['ProjectNotificationConfigArgs', 'ProjectNotificationConfigArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Project resource in Oracle Cloud Infrastructure Devops service.
@@ -341,9 +341,9 @@ class Project(pulumi.CustomResource):
         test_project = oci.dev_ops.Project("test_project",
             compartment_id=compartment_id,
             name=project_name,
-            notification_config=oci.dev_ops.ProjectNotificationConfigArgs(
-                topic_id=test_notification_topic["id"],
-            ),
+            notification_config={
+                "topic_id": test_notification_topic["id"],
+            },
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -368,7 +368,7 @@ class Project(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) Project description.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] name: Project name (case-sensitive).
-        :param pulumi.Input[pulumi.InputType['ProjectNotificationConfigArgs']] notification_config: (Updatable) Notification configuration for the project.
+        :param pulumi.Input[Union['ProjectNotificationConfigArgs', 'ProjectNotificationConfigArgsDict']] notification_config: (Updatable) Notification configuration for the project.
         """
         ...
     @overload
@@ -390,9 +390,9 @@ class Project(pulumi.CustomResource):
         test_project = oci.dev_ops.Project("test_project",
             compartment_id=compartment_id,
             name=project_name,
-            notification_config=oci.dev_ops.ProjectNotificationConfigArgs(
-                topic_id=test_notification_topic["id"],
-            ),
+            notification_config={
+                "topic_id": test_notification_topic["id"],
+            },
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -430,7 +430,7 @@ class Project(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 notification_config: Optional[pulumi.Input[pulumi.InputType['ProjectNotificationConfigArgs']]] = None,
+                 notification_config: Optional[pulumi.Input[Union['ProjectNotificationConfigArgs', 'ProjectNotificationConfigArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -473,7 +473,7 @@ class Project(pulumi.CustomResource):
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             namespace: Optional[pulumi.Input[str]] = None,
-            notification_config: Optional[pulumi.Input[pulumi.InputType['ProjectNotificationConfigArgs']]] = None,
+            notification_config: Optional[pulumi.Input[Union['ProjectNotificationConfigArgs', 'ProjectNotificationConfigArgsDict']]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
@@ -492,7 +492,7 @@ class Project(pulumi.CustomResource):
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] name: Project name (case-sensitive).
         :param pulumi.Input[str] namespace: Namespace associated with the project.
-        :param pulumi.Input[pulumi.InputType['ProjectNotificationConfigArgs']] notification_config: (Updatable) Notification configuration for the project.
+        :param pulumi.Input[Union['ProjectNotificationConfigArgs', 'ProjectNotificationConfigArgsDict']] notification_config: (Updatable) Notification configuration for the project.
         :param pulumi.Input[str] state: The current state of the project.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: Time the project was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).

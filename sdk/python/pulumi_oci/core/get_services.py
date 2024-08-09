@@ -67,7 +67,7 @@ class AwaitableGetServicesResult(GetServicesResult):
             services=self.services)
 
 
-def get_services(filters: Optional[Sequence[pulumi.InputType['GetServicesFilterArgs']]] = None,
+def get_services(filters: Optional[Sequence[Union['GetServicesFilterArgs', 'GetServicesFilterArgsDict']]] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetServicesResult:
     """
     This data source provides the list of Services in Oracle Cloud Infrastructure Core service.
@@ -96,7 +96,7 @@ def get_services(filters: Optional[Sequence[pulumi.InputType['GetServicesFilterA
 
 
 @_utilities.lift_output_func(get_services)
-def get_services_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetServicesFilterArgs']]]]] = None,
+def get_services_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetServicesFilterArgs', 'GetServicesFilterArgsDict']]]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetServicesResult]:
     """
     This data source provides the list of Services in Oracle Cloud Infrastructure Core service.

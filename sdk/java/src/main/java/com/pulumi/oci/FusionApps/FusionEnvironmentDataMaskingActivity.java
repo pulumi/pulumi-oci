@@ -147,7 +147,7 @@ public class FusionEnvironmentDataMaskingActivity extends com.pulumi.resources.C
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public FusionEnvironmentDataMaskingActivity(String name) {
+    public FusionEnvironmentDataMaskingActivity(java.lang.String name) {
         this(name, FusionEnvironmentDataMaskingActivityArgs.Empty);
     }
     /**
@@ -155,7 +155,7 @@ public class FusionEnvironmentDataMaskingActivity extends com.pulumi.resources.C
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public FusionEnvironmentDataMaskingActivity(String name, FusionEnvironmentDataMaskingActivityArgs args) {
+    public FusionEnvironmentDataMaskingActivity(java.lang.String name, FusionEnvironmentDataMaskingActivityArgs args) {
         this(name, args, null);
     }
     /**
@@ -164,12 +164,12 @@ public class FusionEnvironmentDataMaskingActivity extends com.pulumi.resources.C
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public FusionEnvironmentDataMaskingActivity(String name, FusionEnvironmentDataMaskingActivityArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:FusionApps/fusionEnvironmentDataMaskingActivity:FusionEnvironmentDataMaskingActivity", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public FusionEnvironmentDataMaskingActivity(java.lang.String name, FusionEnvironmentDataMaskingActivityArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:FusionApps/fusionEnvironmentDataMaskingActivity:FusionEnvironmentDataMaskingActivity", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private FusionEnvironmentDataMaskingActivity(String name, Output<String> id, @Nullable FusionEnvironmentDataMaskingActivityState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:FusionApps/fusionEnvironmentDataMaskingActivity:FusionEnvironmentDataMaskingActivity", name, state, makeResourceOptions(options, id));
+    private FusionEnvironmentDataMaskingActivity(java.lang.String name, Output<java.lang.String> id, @Nullable FusionEnvironmentDataMaskingActivityState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:FusionApps/fusionEnvironmentDataMaskingActivity:FusionEnvironmentDataMaskingActivity", name, state, makeResourceOptions(options, id), false);
     }
 
     private static FusionEnvironmentDataMaskingActivityArgs makeArgs(FusionEnvironmentDataMaskingActivityArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -179,7 +179,7 @@ public class FusionEnvironmentDataMaskingActivity extends com.pulumi.resources.C
         return args == null ? FusionEnvironmentDataMaskingActivityArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -195,7 +195,7 @@ public class FusionEnvironmentDataMaskingActivity extends com.pulumi.resources.C
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static FusionEnvironmentDataMaskingActivity get(String name, Output<String> id, @Nullable FusionEnvironmentDataMaskingActivityState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static FusionEnvironmentDataMaskingActivity get(java.lang.String name, Output<java.lang.String> id, @Nullable FusionEnvironmentDataMaskingActivityState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new FusionEnvironmentDataMaskingActivity(name, id, state, options);
     }
 }

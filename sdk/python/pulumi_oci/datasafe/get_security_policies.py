@@ -134,7 +134,7 @@ def get_security_policies(access_level: Optional[str] = None,
                           compartment_id: Optional[str] = None,
                           compartment_id_in_subtree: Optional[bool] = None,
                           display_name: Optional[str] = None,
-                          filters: Optional[Sequence[pulumi.InputType['GetSecurityPoliciesFilterArgs']]] = None,
+                          filters: Optional[Sequence[Union['GetSecurityPoliciesFilterArgs', 'GetSecurityPoliciesFilterArgsDict']]] = None,
                           security_policy_id: Optional[str] = None,
                           state: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSecurityPoliciesResult:
@@ -206,7 +206,7 @@ def get_security_policies_output(access_level: Optional[pulumi.Input[Optional[st
                                  compartment_id: Optional[pulumi.Input[str]] = None,
                                  compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                                  display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetSecurityPoliciesFilterArgs']]]]] = None,
+                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSecurityPoliciesFilterArgs', 'GetSecurityPoliciesFilterArgsDict']]]]] = None,
                                  security_policy_id: Optional[pulumi.Input[Optional[str]]] = None,
                                  state: Optional[pulumi.Input[Optional[str]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityPoliciesResult]:

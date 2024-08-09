@@ -100,7 +100,7 @@ class AwaitableGetDedicatedVmHostInstanceShapesResult(GetDedicatedVmHostInstance
 def get_dedicated_vm_host_instance_shapes(availability_domain: Optional[str] = None,
                                           compartment_id: Optional[str] = None,
                                           dedicated_vm_host_shape: Optional[str] = None,
-                                          filters: Optional[Sequence[pulumi.InputType['GetDedicatedVmHostInstanceShapesFilterArgs']]] = None,
+                                          filters: Optional[Sequence[Union['GetDedicatedVmHostInstanceShapesFilterArgs', 'GetDedicatedVmHostInstanceShapesFilterArgsDict']]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDedicatedVmHostInstanceShapesResult:
     """
     This data source provides the list of Dedicated Vm Host Instance Shapes in Oracle Cloud Infrastructure Core service.
@@ -145,7 +145,7 @@ def get_dedicated_vm_host_instance_shapes(availability_domain: Optional[str] = N
 def get_dedicated_vm_host_instance_shapes_output(availability_domain: Optional[pulumi.Input[Optional[str]]] = None,
                                                  compartment_id: Optional[pulumi.Input[str]] = None,
                                                  dedicated_vm_host_shape: Optional[pulumi.Input[Optional[str]]] = None,
-                                                 filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDedicatedVmHostInstanceShapesFilterArgs']]]]] = None,
+                                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDedicatedVmHostInstanceShapesFilterArgs', 'GetDedicatedVmHostInstanceShapesFilterArgsDict']]]]] = None,
                                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDedicatedVmHostInstanceShapesResult]:
     """
     This data source provides the list of Dedicated Vm Host Instance Shapes in Oracle Cloud Infrastructure Core service.

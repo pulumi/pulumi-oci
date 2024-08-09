@@ -338,12 +338,12 @@ class StreamPool(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 custom_encryption_key: Optional[pulumi.Input[pulumi.InputType['StreamPoolCustomEncryptionKeyArgs']]] = None,
+                 custom_encryption_key: Optional[pulumi.Input[Union['StreamPoolCustomEncryptionKeyArgs', 'StreamPoolCustomEncryptionKeyArgsDict']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 kafka_settings: Optional[pulumi.Input[pulumi.InputType['StreamPoolKafkaSettingsArgs']]] = None,
+                 kafka_settings: Optional[pulumi.Input[Union['StreamPoolKafkaSettingsArgs', 'StreamPoolKafkaSettingsArgsDict']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 private_endpoint_settings: Optional[pulumi.Input[pulumi.InputType['StreamPoolPrivateEndpointSettingsArgs']]] = None,
+                 private_endpoint_settings: Optional[pulumi.Input[Union['StreamPoolPrivateEndpointSettingsArgs', 'StreamPoolPrivateEndpointSettingsArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Stream Pool resource in Oracle Cloud Infrastructure Streaming service.
@@ -361,24 +361,24 @@ class StreamPool(pulumi.CustomResource):
         test_stream_pool = oci.streaming.StreamPool("test_stream_pool",
             compartment_id=compartment_id,
             name=stream_pool_name,
-            custom_encryption_key=oci.streaming.StreamPoolCustomEncryptionKeyArgs(
-                kms_key_id=test_key["id"],
-            ),
+            custom_encryption_key={
+                "kms_key_id": test_key["id"],
+            },
             defined_tags=stream_pool_defined_tags,
             freeform_tags={
                 "Department": "Finance",
             },
-            kafka_settings=oci.streaming.StreamPoolKafkaSettingsArgs(
-                auto_create_topics_enable=stream_pool_kafka_settings_auto_create_topics_enable,
-                bootstrap_servers=stream_pool_kafka_settings_bootstrap_servers,
-                log_retention_hours=stream_pool_kafka_settings_log_retention_hours,
-                num_partitions=stream_pool_kafka_settings_num_partitions,
-            ),
-            private_endpoint_settings=oci.streaming.StreamPoolPrivateEndpointSettingsArgs(
-                nsg_ids=stream_pool_private_endpoint_settings_nsg_ids,
-                private_endpoint_ip=stream_pool_private_endpoint_settings_private_endpoint_ip,
-                subnet_id=test_subnet["id"],
-            ))
+            kafka_settings={
+                "auto_create_topics_enable": stream_pool_kafka_settings_auto_create_topics_enable,
+                "bootstrap_servers": stream_pool_kafka_settings_bootstrap_servers,
+                "log_retention_hours": stream_pool_kafka_settings_log_retention_hours,
+                "num_partitions": stream_pool_kafka_settings_num_partitions,
+            },
+            private_endpoint_settings={
+                "nsg_ids": stream_pool_private_endpoint_settings_nsg_ids,
+                "private_endpoint_ip": stream_pool_private_endpoint_settings_private_endpoint_ip,
+                "subnet_id": test_subnet["id"],
+            })
         ```
 
         ## Import
@@ -392,12 +392,12 @@ class StreamPool(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the stream.
-        :param pulumi.Input[pulumi.InputType['StreamPoolCustomEncryptionKeyArgs']] custom_encryption_key: (Updatable) The OCID of the custom encryption key to be used or deleted if currently being used.
+        :param pulumi.Input[Union['StreamPoolCustomEncryptionKeyArgs', 'StreamPoolCustomEncryptionKeyArgsDict']] custom_encryption_key: (Updatable) The OCID of the custom encryption key to be used or deleted if currently being used.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[pulumi.InputType['StreamPoolKafkaSettingsArgs']] kafka_settings: (Updatable) Settings for the Kafka compatibility layer.
+        :param pulumi.Input[Union['StreamPoolKafkaSettingsArgs', 'StreamPoolKafkaSettingsArgsDict']] kafka_settings: (Updatable) Settings for the Kafka compatibility layer.
         :param pulumi.Input[str] name: (Updatable) The name of the stream pool. Avoid entering confidential information.  Example: `MyStreamPool`
-        :param pulumi.Input[pulumi.InputType['StreamPoolPrivateEndpointSettingsArgs']] private_endpoint_settings: Optional parameters if a private stream pool is requested.
+        :param pulumi.Input[Union['StreamPoolPrivateEndpointSettingsArgs', 'StreamPoolPrivateEndpointSettingsArgsDict']] private_endpoint_settings: Optional parameters if a private stream pool is requested.
         """
         ...
     @overload
@@ -421,24 +421,24 @@ class StreamPool(pulumi.CustomResource):
         test_stream_pool = oci.streaming.StreamPool("test_stream_pool",
             compartment_id=compartment_id,
             name=stream_pool_name,
-            custom_encryption_key=oci.streaming.StreamPoolCustomEncryptionKeyArgs(
-                kms_key_id=test_key["id"],
-            ),
+            custom_encryption_key={
+                "kms_key_id": test_key["id"],
+            },
             defined_tags=stream_pool_defined_tags,
             freeform_tags={
                 "Department": "Finance",
             },
-            kafka_settings=oci.streaming.StreamPoolKafkaSettingsArgs(
-                auto_create_topics_enable=stream_pool_kafka_settings_auto_create_topics_enable,
-                bootstrap_servers=stream_pool_kafka_settings_bootstrap_servers,
-                log_retention_hours=stream_pool_kafka_settings_log_retention_hours,
-                num_partitions=stream_pool_kafka_settings_num_partitions,
-            ),
-            private_endpoint_settings=oci.streaming.StreamPoolPrivateEndpointSettingsArgs(
-                nsg_ids=stream_pool_private_endpoint_settings_nsg_ids,
-                private_endpoint_ip=stream_pool_private_endpoint_settings_private_endpoint_ip,
-                subnet_id=test_subnet["id"],
-            ))
+            kafka_settings={
+                "auto_create_topics_enable": stream_pool_kafka_settings_auto_create_topics_enable,
+                "bootstrap_servers": stream_pool_kafka_settings_bootstrap_servers,
+                "log_retention_hours": stream_pool_kafka_settings_log_retention_hours,
+                "num_partitions": stream_pool_kafka_settings_num_partitions,
+            },
+            private_endpoint_settings={
+                "nsg_ids": stream_pool_private_endpoint_settings_nsg_ids,
+                "private_endpoint_ip": stream_pool_private_endpoint_settings_private_endpoint_ip,
+                "subnet_id": test_subnet["id"],
+            })
         ```
 
         ## Import
@@ -465,12 +465,12 @@ class StreamPool(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 custom_encryption_key: Optional[pulumi.Input[pulumi.InputType['StreamPoolCustomEncryptionKeyArgs']]] = None,
+                 custom_encryption_key: Optional[pulumi.Input[Union['StreamPoolCustomEncryptionKeyArgs', 'StreamPoolCustomEncryptionKeyArgsDict']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 kafka_settings: Optional[pulumi.Input[pulumi.InputType['StreamPoolKafkaSettingsArgs']]] = None,
+                 kafka_settings: Optional[pulumi.Input[Union['StreamPoolKafkaSettingsArgs', 'StreamPoolKafkaSettingsArgsDict']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 private_endpoint_settings: Optional[pulumi.Input[pulumi.InputType['StreamPoolPrivateEndpointSettingsArgs']]] = None,
+                 private_endpoint_settings: Optional[pulumi.Input[Union['StreamPoolPrivateEndpointSettingsArgs', 'StreamPoolPrivateEndpointSettingsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -505,15 +505,15 @@ class StreamPool(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            custom_encryption_key: Optional[pulumi.Input[pulumi.InputType['StreamPoolCustomEncryptionKeyArgs']]] = None,
+            custom_encryption_key: Optional[pulumi.Input[Union['StreamPoolCustomEncryptionKeyArgs', 'StreamPoolCustomEncryptionKeyArgsDict']]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             endpoint_fqdn: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             is_private: Optional[pulumi.Input[bool]] = None,
-            kafka_settings: Optional[pulumi.Input[pulumi.InputType['StreamPoolKafkaSettingsArgs']]] = None,
+            kafka_settings: Optional[pulumi.Input[Union['StreamPoolKafkaSettingsArgs', 'StreamPoolKafkaSettingsArgsDict']]] = None,
             lifecycle_state_details: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
-            private_endpoint_settings: Optional[pulumi.Input[pulumi.InputType['StreamPoolPrivateEndpointSettingsArgs']]] = None,
+            private_endpoint_settings: Optional[pulumi.Input[Union['StreamPoolPrivateEndpointSettingsArgs', 'StreamPoolPrivateEndpointSettingsArgsDict']]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None) -> 'StreamPool':
         """
@@ -524,15 +524,15 @@ class StreamPool(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the stream.
-        :param pulumi.Input[pulumi.InputType['StreamPoolCustomEncryptionKeyArgs']] custom_encryption_key: (Updatable) The OCID of the custom encryption key to be used or deleted if currently being used.
+        :param pulumi.Input[Union['StreamPoolCustomEncryptionKeyArgs', 'StreamPoolCustomEncryptionKeyArgsDict']] custom_encryption_key: (Updatable) The OCID of the custom encryption key to be used or deleted if currently being used.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] endpoint_fqdn: The FQDN used to access the streams inside the stream pool (same FQDN as the messagesEndpoint attribute of a [Stream](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/Stream) object). If the stream pool is private, the FQDN is customized and can only be accessed from inside the associated subnetId, otherwise the FQDN is publicly resolvable. Depending on which protocol you attempt to use, you need to either prepend https or append the Kafka port.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_private: True if the stream pool is private, false otherwise. The associated endpoint and subnetId of a private stream pool can be retrieved through the [GetStreamPool](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/GetStreamPool) API.
-        :param pulumi.Input[pulumi.InputType['StreamPoolKafkaSettingsArgs']] kafka_settings: (Updatable) Settings for the Kafka compatibility layer.
+        :param pulumi.Input[Union['StreamPoolKafkaSettingsArgs', 'StreamPoolKafkaSettingsArgsDict']] kafka_settings: (Updatable) Settings for the Kafka compatibility layer.
         :param pulumi.Input[str] lifecycle_state_details: Any additional details about the current state of the stream.
         :param pulumi.Input[str] name: (Updatable) The name of the stream pool. Avoid entering confidential information.  Example: `MyStreamPool`
-        :param pulumi.Input[pulumi.InputType['StreamPoolPrivateEndpointSettingsArgs']] private_endpoint_settings: Optional parameters if a private stream pool is requested.
+        :param pulumi.Input[Union['StreamPoolPrivateEndpointSettingsArgs', 'StreamPoolPrivateEndpointSettingsArgsDict']] private_endpoint_settings: Optional parameters if a private stream pool is requested.
         :param pulumi.Input[str] state: The current state of the stream pool.
         :param pulumi.Input[str] time_created: The date and time the stream pool was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
         """

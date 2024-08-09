@@ -78,7 +78,7 @@ public class DefaultDhcpOptions extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DefaultDhcpOptions(String name) {
+    public DefaultDhcpOptions(java.lang.String name) {
         this(name, DefaultDhcpOptionsArgs.Empty);
     }
     /**
@@ -86,7 +86,7 @@ public class DefaultDhcpOptions extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DefaultDhcpOptions(String name, DefaultDhcpOptionsArgs args) {
+    public DefaultDhcpOptions(java.lang.String name, DefaultDhcpOptionsArgs args) {
         this(name, args, null);
     }
     /**
@@ -95,12 +95,12 @@ public class DefaultDhcpOptions extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DefaultDhcpOptions(String name, DefaultDhcpOptionsArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/defaultDhcpOptions:DefaultDhcpOptions", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DefaultDhcpOptions(java.lang.String name, DefaultDhcpOptionsArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Core/defaultDhcpOptions:DefaultDhcpOptions", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DefaultDhcpOptions(String name, Output<String> id, @Nullable DefaultDhcpOptionsState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/defaultDhcpOptions:DefaultDhcpOptions", name, state, makeResourceOptions(options, id));
+    private DefaultDhcpOptions(java.lang.String name, Output<java.lang.String> id, @Nullable DefaultDhcpOptionsState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Core/defaultDhcpOptions:DefaultDhcpOptions", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DefaultDhcpOptionsArgs makeArgs(DefaultDhcpOptionsArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -110,7 +110,7 @@ public class DefaultDhcpOptions extends com.pulumi.resources.CustomResource {
         return args == null ? DefaultDhcpOptionsArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -126,7 +126,7 @@ public class DefaultDhcpOptions extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DefaultDhcpOptions get(String name, Output<String> id, @Nullable DefaultDhcpOptionsState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DefaultDhcpOptions get(java.lang.String name, Output<java.lang.String> id, @Nullable DefaultDhcpOptionsState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DefaultDhcpOptions(name, id, state, options);
     }
 }

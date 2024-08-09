@@ -130,7 +130,7 @@ public class PathRouteSet extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public PathRouteSet(String name) {
+    public PathRouteSet(java.lang.String name) {
         this(name, PathRouteSetArgs.Empty);
     }
     /**
@@ -138,7 +138,7 @@ public class PathRouteSet extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public PathRouteSet(String name, PathRouteSetArgs args) {
+    public PathRouteSet(java.lang.String name, PathRouteSetArgs args) {
         this(name, args, null);
     }
     /**
@@ -147,12 +147,12 @@ public class PathRouteSet extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public PathRouteSet(String name, PathRouteSetArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:LoadBalancer/pathRouteSet:PathRouteSet", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public PathRouteSet(java.lang.String name, PathRouteSetArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:LoadBalancer/pathRouteSet:PathRouteSet", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private PathRouteSet(String name, Output<String> id, @Nullable PathRouteSetState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:LoadBalancer/pathRouteSet:PathRouteSet", name, state, makeResourceOptions(options, id));
+    private PathRouteSet(java.lang.String name, Output<java.lang.String> id, @Nullable PathRouteSetState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:LoadBalancer/pathRouteSet:PathRouteSet", name, state, makeResourceOptions(options, id), false);
     }
 
     private static PathRouteSetArgs makeArgs(PathRouteSetArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -162,7 +162,7 @@ public class PathRouteSet extends com.pulumi.resources.CustomResource {
         return args == null ? PathRouteSetArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -178,7 +178,7 @@ public class PathRouteSet extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static PathRouteSet get(String name, Output<String> id, @Nullable PathRouteSetState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static PathRouteSet get(java.lang.String name, Output<java.lang.String> id, @Nullable PathRouteSetState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new PathRouteSet(name, id, state, options);
     }
 }

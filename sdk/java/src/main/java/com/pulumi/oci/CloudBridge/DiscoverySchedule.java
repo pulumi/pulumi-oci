@@ -221,7 +221,7 @@ public class DiscoverySchedule extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DiscoverySchedule(String name) {
+    public DiscoverySchedule(java.lang.String name) {
         this(name, DiscoveryScheduleArgs.Empty);
     }
     /**
@@ -229,7 +229,7 @@ public class DiscoverySchedule extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DiscoverySchedule(String name, DiscoveryScheduleArgs args) {
+    public DiscoverySchedule(java.lang.String name, DiscoveryScheduleArgs args) {
         this(name, args, null);
     }
     /**
@@ -238,12 +238,12 @@ public class DiscoverySchedule extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DiscoverySchedule(String name, DiscoveryScheduleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:CloudBridge/discoverySchedule:DiscoverySchedule", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DiscoverySchedule(java.lang.String name, DiscoveryScheduleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:CloudBridge/discoverySchedule:DiscoverySchedule", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DiscoverySchedule(String name, Output<String> id, @Nullable DiscoveryScheduleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:CloudBridge/discoverySchedule:DiscoverySchedule", name, state, makeResourceOptions(options, id));
+    private DiscoverySchedule(java.lang.String name, Output<java.lang.String> id, @Nullable DiscoveryScheduleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:CloudBridge/discoverySchedule:DiscoverySchedule", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DiscoveryScheduleArgs makeArgs(DiscoveryScheduleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -253,7 +253,7 @@ public class DiscoverySchedule extends com.pulumi.resources.CustomResource {
         return args == null ? DiscoveryScheduleArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -269,7 +269,7 @@ public class DiscoverySchedule extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DiscoverySchedule get(String name, Output<String> id, @Nullable DiscoveryScheduleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DiscoverySchedule get(java.lang.String name, Output<java.lang.String> id, @Nullable DiscoveryScheduleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DiscoverySchedule(name, id, state, options);
     }
 }

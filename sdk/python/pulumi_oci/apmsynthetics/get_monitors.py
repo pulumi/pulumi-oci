@@ -153,7 +153,7 @@ class AwaitableGetMonitorsResult(GetMonitorsResult):
 
 def get_monitors(apm_domain_id: Optional[str] = None,
                  display_name: Optional[str] = None,
-                 filters: Optional[Sequence[pulumi.InputType['GetMonitorsFilterArgs']]] = None,
+                 filters: Optional[Sequence[Union['GetMonitorsFilterArgs', 'GetMonitorsFilterArgsDict']]] = None,
                  is_maintenance_window_active: Optional[bool] = None,
                  is_maintenance_window_set: Optional[bool] = None,
                  monitor_type: Optional[str] = None,
@@ -222,7 +222,7 @@ def get_monitors(apm_domain_id: Optional[str] = None,
 @_utilities.lift_output_func(get_monitors)
 def get_monitors_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                         display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                        filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetMonitorsFilterArgs']]]]] = None,
+                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMonitorsFilterArgs', 'GetMonitorsFilterArgsDict']]]]] = None,
                         is_maintenance_window_active: Optional[pulumi.Input[Optional[bool]]] = None,
                         is_maintenance_window_set: Optional[pulumi.Input[Optional[bool]]] = None,
                         monitor_type: Optional[pulumi.Input[Optional[str]]] = None,

@@ -275,7 +275,7 @@ class ProcessSet(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 specification: Optional[pulumi.Input[pulumi.InputType['ProcessSetSpecificationArgs']]] = None,
+                 specification: Optional[pulumi.Input[Union['ProcessSetSpecificationArgs', 'ProcessSetSpecificationArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Process Set resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -291,14 +291,14 @@ class ProcessSet(pulumi.CustomResource):
         test_process_set = oci.stack_monitoring.ProcessSet("test_process_set",
             compartment_id=compartment_id,
             display_name=process_set_display_name,
-            specification=oci.stack_monitoring.ProcessSetSpecificationArgs(
-                items=[oci.stack_monitoring.ProcessSetSpecificationItemArgs(
-                    label=process_set_specification_items_label,
-                    process_command=process_set_specification_items_process_command,
-                    process_line_regex_pattern=process_set_specification_items_process_line_regex_pattern,
-                    process_user=process_set_specification_items_process_user,
-                )],
-            ),
+            specification={
+                "items": [{
+                    "label": process_set_specification_items_label,
+                    "process_command": process_set_specification_items_process_command,
+                    "process_line_regex_pattern": process_set_specification_items_process_line_regex_pattern,
+                    "process_user": process_set_specification_items_process_user,
+                }],
+            },
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -321,7 +321,7 @@ class ProcessSet(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Name of the Process Set.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[pulumi.InputType['ProcessSetSpecificationArgs']] specification: (Updatable) Collection of regular expression specifications used to identify the processes to be monitored.
+        :param pulumi.Input[Union['ProcessSetSpecificationArgs', 'ProcessSetSpecificationArgsDict']] specification: (Updatable) Collection of regular expression specifications used to identify the processes to be monitored.
         """
         ...
     @overload
@@ -343,14 +343,14 @@ class ProcessSet(pulumi.CustomResource):
         test_process_set = oci.stack_monitoring.ProcessSet("test_process_set",
             compartment_id=compartment_id,
             display_name=process_set_display_name,
-            specification=oci.stack_monitoring.ProcessSetSpecificationArgs(
-                items=[oci.stack_monitoring.ProcessSetSpecificationItemArgs(
-                    label=process_set_specification_items_label,
-                    process_command=process_set_specification_items_process_command,
-                    process_line_regex_pattern=process_set_specification_items_process_line_regex_pattern,
-                    process_user=process_set_specification_items_process_user,
-                )],
-            ),
+            specification={
+                "items": [{
+                    "label": process_set_specification_items_label,
+                    "process_command": process_set_specification_items_process_command,
+                    "process_line_regex_pattern": process_set_specification_items_process_line_regex_pattern,
+                    "process_user": process_set_specification_items_process_user,
+                }],
+            },
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -386,7 +386,7 @@ class ProcessSet(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 specification: Optional[pulumi.Input[pulumi.InputType['ProcessSetSpecificationArgs']]] = None,
+                 specification: Optional[pulumi.Input[Union['ProcessSetSpecificationArgs', 'ProcessSetSpecificationArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -427,7 +427,7 @@ class ProcessSet(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             revision: Optional[pulumi.Input[str]] = None,
-            specification: Optional[pulumi.Input[pulumi.InputType['ProcessSetSpecificationArgs']]] = None,
+            specification: Optional[pulumi.Input[Union['ProcessSetSpecificationArgs', 'ProcessSetSpecificationArgsDict']]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
@@ -444,7 +444,7 @@ class ProcessSet(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) Name of the Process Set.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] revision: The current revision of the Process Set.
-        :param pulumi.Input[pulumi.InputType['ProcessSetSpecificationArgs']] specification: (Updatable) Collection of regular expression specifications used to identify the processes to be monitored.
+        :param pulumi.Input[Union['ProcessSetSpecificationArgs', 'ProcessSetSpecificationArgsDict']] specification: (Updatable) Collection of regular expression specifications used to identify the processes to be monitored.
         :param pulumi.Input[str] state: The current state of the Resource.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time the process set was created. An RFC3339 formatted datetime string.

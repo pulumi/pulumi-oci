@@ -101,7 +101,7 @@ class AwaitableGetExadbVmClusterUpdatesResult(GetExadbVmClusterUpdatesResult):
 
 
 def get_exadb_vm_cluster_updates(exadb_vm_cluster_id: Optional[str] = None,
-                                 filters: Optional[Sequence[pulumi.InputType['GetExadbVmClusterUpdatesFilterArgs']]] = None,
+                                 filters: Optional[Sequence[Union['GetExadbVmClusterUpdatesFilterArgs', 'GetExadbVmClusterUpdatesFilterArgsDict']]] = None,
                                  update_type: Optional[str] = None,
                                  version: Optional[str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExadbVmClusterUpdatesResult:
@@ -145,7 +145,7 @@ def get_exadb_vm_cluster_updates(exadb_vm_cluster_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_exadb_vm_cluster_updates)
 def get_exadb_vm_cluster_updates_output(exadb_vm_cluster_id: Optional[pulumi.Input[str]] = None,
-                                        filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetExadbVmClusterUpdatesFilterArgs']]]]] = None,
+                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExadbVmClusterUpdatesFilterArgs', 'GetExadbVmClusterUpdatesFilterArgsDict']]]]] = None,
                                         update_type: Optional[pulumi.Input[Optional[str]]] = None,
                                         version: Optional[pulumi.Input[Optional[str]]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExadbVmClusterUpdatesResult]:

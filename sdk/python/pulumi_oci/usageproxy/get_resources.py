@@ -96,7 +96,7 @@ class AwaitableGetResourcesResult(GetResourcesResult):
 
 def get_resources(compartment_id: Optional[str] = None,
                   entitlement_id: Optional[str] = None,
-                  filters: Optional[Sequence[pulumi.InputType['GetResourcesFilterArgs']]] = None,
+                  filters: Optional[Sequence[Union['GetResourcesFilterArgs', 'GetResourcesFilterArgsDict']]] = None,
                   service_name: Optional[str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetResourcesResult:
     """
@@ -141,7 +141,7 @@ def get_resources(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_resources)
 def get_resources_output(compartment_id: Optional[pulumi.Input[str]] = None,
                          entitlement_id: Optional[pulumi.Input[Optional[str]]] = None,
-                         filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetResourcesFilterArgs']]]]] = None,
+                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetResourcesFilterArgs', 'GetResourcesFilterArgsDict']]]]] = None,
                          service_name: Optional[pulumi.Input[str]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetResourcesResult]:
     """

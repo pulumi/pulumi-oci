@@ -1416,7 +1416,7 @@ class CloudVmCluster(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  cpu_core_count: Optional[pulumi.Input[int]] = None,
                  create_async: Optional[pulumi.Input[bool]] = None,
-                 data_collection_options: Optional[pulumi.Input[pulumi.InputType['CloudVmClusterDataCollectionOptionsArgs']]] = None,
+                 data_collection_options: Optional[pulumi.Input[Union['CloudVmClusterDataCollectionOptionsArgs', 'CloudVmClusterDataCollectionOptionsArgsDict']]] = None,
                  data_storage_percentage: Optional[pulumi.Input[int]] = None,
                  data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
                  db_node_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
@@ -1424,7 +1424,7 @@ class CloudVmCluster(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  domain: Optional[pulumi.Input[str]] = None,
-                 file_system_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudVmClusterFileSystemConfigurationDetailArgs']]]]] = None,
+                 file_system_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CloudVmClusterFileSystemConfigurationDetailArgs', 'CloudVmClusterFileSystemConfigurationDetailArgsDict']]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  gi_version: Optional[pulumi.Input[str]] = None,
                  hostname: Optional[pulumi.Input[str]] = None,
@@ -1466,21 +1466,21 @@ class CloudVmCluster(pulumi.CustomResource):
             subnet_id=test_subnet["id"],
             backup_network_nsg_ids=cloud_vm_cluster_backup_network_nsg_ids,
             cluster_name=cloud_vm_cluster_cluster_name,
-            data_collection_options=oci.database.CloudVmClusterDataCollectionOptionsArgs(
-                is_diagnostics_events_enabled=cloud_vm_cluster_data_collection_options_is_diagnostics_events_enabled,
-                is_health_monitoring_enabled=cloud_vm_cluster_data_collection_options_is_health_monitoring_enabled,
-                is_incident_logs_enabled=cloud_vm_cluster_data_collection_options_is_incident_logs_enabled,
-            ),
+            data_collection_options={
+                "is_diagnostics_events_enabled": cloud_vm_cluster_data_collection_options_is_diagnostics_events_enabled,
+                "is_health_monitoring_enabled": cloud_vm_cluster_data_collection_options_is_health_monitoring_enabled,
+                "is_incident_logs_enabled": cloud_vm_cluster_data_collection_options_is_incident_logs_enabled,
+            },
             data_storage_percentage=cloud_vm_cluster_data_storage_percentage,
             data_storage_size_in_tbs=cloud_vm_cluster_data_storage_size_in_tbs,
             db_node_storage_size_in_gbs=cloud_vm_cluster_db_node_storage_size_in_gbs,
             db_servers=cloud_vm_cluster_db_servers,
             defined_tags=cloud_vm_cluster_defined_tags,
             domain=cloud_vm_cluster_domain,
-            file_system_configuration_details=[oci.database.CloudVmClusterFileSystemConfigurationDetailArgs(
-                file_system_size_gb=cloud_vm_cluster_file_system_configuration_details_file_system_size_gb,
-                mount_point=cloud_vm_cluster_file_system_configuration_details_mount_point,
-            )],
+            file_system_configuration_details=[{
+                "file_system_size_gb": cloud_vm_cluster_file_system_configuration_details_file_system_size_gb,
+                "mount_point": cloud_vm_cluster_file_system_configuration_details_mount_point,
+            }],
             freeform_tags={
                 "Department": "Finance",
             },
@@ -1521,7 +1521,7 @@ class CloudVmCluster(pulumi.CustomResource):
                * Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.
                * Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
                * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
-        :param pulumi.Input[pulumi.InputType['CloudVmClusterDataCollectionOptionsArgs']] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+        :param pulumi.Input[Union['CloudVmClusterDataCollectionOptionsArgs', 'CloudVmClusterDataCollectionOptionsArgsDict']] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[int] data_storage_percentage: The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
         :param pulumi.Input[float] data_storage_size_in_tbs: (Updatable) The data disk group size to be allocated in TBs.
         :param pulumi.Input[int] db_node_storage_size_in_gbs: (Updatable) The local node storage to be allocated in GBs.
@@ -1529,7 +1529,7 @@ class CloudVmCluster(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the cloud VM cluster. The name does not need to be unique.
         :param pulumi.Input[str] domain: A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to Exadata Cloud Service instances only.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudVmClusterFileSystemConfigurationDetailArgs']]]] file_system_configuration_details: (Updatable) Details of the file system configuration of the VM cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudVmClusterFileSystemConfigurationDetailArgs', 'CloudVmClusterFileSystemConfigurationDetailArgsDict']]]] file_system_configuration_details: (Updatable) Details of the file system configuration of the VM cluster.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] gi_version: A valid Oracle Grid Infrastructure (GI) software version.
         :param pulumi.Input[str] hostname: The hostname for the cloud VM cluster. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata systems.
@@ -1586,21 +1586,21 @@ class CloudVmCluster(pulumi.CustomResource):
             subnet_id=test_subnet["id"],
             backup_network_nsg_ids=cloud_vm_cluster_backup_network_nsg_ids,
             cluster_name=cloud_vm_cluster_cluster_name,
-            data_collection_options=oci.database.CloudVmClusterDataCollectionOptionsArgs(
-                is_diagnostics_events_enabled=cloud_vm_cluster_data_collection_options_is_diagnostics_events_enabled,
-                is_health_monitoring_enabled=cloud_vm_cluster_data_collection_options_is_health_monitoring_enabled,
-                is_incident_logs_enabled=cloud_vm_cluster_data_collection_options_is_incident_logs_enabled,
-            ),
+            data_collection_options={
+                "is_diagnostics_events_enabled": cloud_vm_cluster_data_collection_options_is_diagnostics_events_enabled,
+                "is_health_monitoring_enabled": cloud_vm_cluster_data_collection_options_is_health_monitoring_enabled,
+                "is_incident_logs_enabled": cloud_vm_cluster_data_collection_options_is_incident_logs_enabled,
+            },
             data_storage_percentage=cloud_vm_cluster_data_storage_percentage,
             data_storage_size_in_tbs=cloud_vm_cluster_data_storage_size_in_tbs,
             db_node_storage_size_in_gbs=cloud_vm_cluster_db_node_storage_size_in_gbs,
             db_servers=cloud_vm_cluster_db_servers,
             defined_tags=cloud_vm_cluster_defined_tags,
             domain=cloud_vm_cluster_domain,
-            file_system_configuration_details=[oci.database.CloudVmClusterFileSystemConfigurationDetailArgs(
-                file_system_size_gb=cloud_vm_cluster_file_system_configuration_details_file_system_size_gb,
-                mount_point=cloud_vm_cluster_file_system_configuration_details_mount_point,
-            )],
+            file_system_configuration_details=[{
+                "file_system_size_gb": cloud_vm_cluster_file_system_configuration_details_file_system_size_gb,
+                "mount_point": cloud_vm_cluster_file_system_configuration_details_mount_point,
+            }],
             freeform_tags={
                 "Department": "Finance",
             },
@@ -1648,7 +1648,7 @@ class CloudVmCluster(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  cpu_core_count: Optional[pulumi.Input[int]] = None,
                  create_async: Optional[pulumi.Input[bool]] = None,
-                 data_collection_options: Optional[pulumi.Input[pulumi.InputType['CloudVmClusterDataCollectionOptionsArgs']]] = None,
+                 data_collection_options: Optional[pulumi.Input[Union['CloudVmClusterDataCollectionOptionsArgs', 'CloudVmClusterDataCollectionOptionsArgsDict']]] = None,
                  data_storage_percentage: Optional[pulumi.Input[int]] = None,
                  data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
                  db_node_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
@@ -1656,7 +1656,7 @@ class CloudVmCluster(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  domain: Optional[pulumi.Input[str]] = None,
-                 file_system_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudVmClusterFileSystemConfigurationDetailArgs']]]]] = None,
+                 file_system_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CloudVmClusterFileSystemConfigurationDetailArgs', 'CloudVmClusterFileSystemConfigurationDetailArgsDict']]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  gi_version: Optional[pulumi.Input[str]] = None,
                  hostname: Optional[pulumi.Input[str]] = None,
@@ -1769,7 +1769,7 @@ class CloudVmCluster(pulumi.CustomResource):
             compartment_id: Optional[pulumi.Input[str]] = None,
             cpu_core_count: Optional[pulumi.Input[int]] = None,
             create_async: Optional[pulumi.Input[bool]] = None,
-            data_collection_options: Optional[pulumi.Input[pulumi.InputType['CloudVmClusterDataCollectionOptionsArgs']]] = None,
+            data_collection_options: Optional[pulumi.Input[Union['CloudVmClusterDataCollectionOptionsArgs', 'CloudVmClusterDataCollectionOptionsArgsDict']]] = None,
             data_storage_percentage: Optional[pulumi.Input[int]] = None,
             data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
             db_node_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
@@ -1778,11 +1778,11 @@ class CloudVmCluster(pulumi.CustomResource):
             disk_redundancy: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             domain: Optional[pulumi.Input[str]] = None,
-            file_system_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudVmClusterFileSystemConfigurationDetailArgs']]]]] = None,
+            file_system_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CloudVmClusterFileSystemConfigurationDetailArgs', 'CloudVmClusterFileSystemConfigurationDetailArgsDict']]]]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             gi_version: Optional[pulumi.Input[str]] = None,
             hostname: Optional[pulumi.Input[str]] = None,
-            iorm_config_caches: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudVmClusterIormConfigCachArgs']]]]] = None,
+            iorm_config_caches: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CloudVmClusterIormConfigCachArgs', 'CloudVmClusterIormConfigCachArgsDict']]]]] = None,
             is_local_backup_enabled: Optional[pulumi.Input[bool]] = None,
             is_sparse_diskgroup_enabled: Optional[pulumi.Input[bool]] = None,
             last_update_history_entry_id: Optional[pulumi.Input[str]] = None,
@@ -1832,7 +1832,7 @@ class CloudVmCluster(pulumi.CustomResource):
                * Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.
                * Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
                * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
-        :param pulumi.Input[pulumi.InputType['CloudVmClusterDataCollectionOptionsArgs']] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+        :param pulumi.Input[Union['CloudVmClusterDataCollectionOptionsArgs', 'CloudVmClusterDataCollectionOptionsArgsDict']] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[int] data_storage_percentage: The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
         :param pulumi.Input[float] data_storage_size_in_tbs: (Updatable) The data disk group size to be allocated in TBs.
         :param pulumi.Input[int] db_node_storage_size_in_gbs: (Updatable) The local node storage to be allocated in GBs.
@@ -1841,7 +1841,7 @@ class CloudVmCluster(pulumi.CustomResource):
         :param pulumi.Input[str] disk_redundancy: The type of redundancy configured for the cloud Vm cluster. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the cloud VM cluster. The name does not need to be unique.
         :param pulumi.Input[str] domain: A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to Exadata Cloud Service instances only.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudVmClusterFileSystemConfigurationDetailArgs']]]] file_system_configuration_details: (Updatable) Details of the file system configuration of the VM cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudVmClusterFileSystemConfigurationDetailArgs', 'CloudVmClusterFileSystemConfigurationDetailArgsDict']]]] file_system_configuration_details: (Updatable) Details of the file system configuration of the VM cluster.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] gi_version: A valid Oracle Grid Infrastructure (GI) software version.
         :param pulumi.Input[str] hostname: The hostname for the cloud VM cluster. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata systems.
@@ -1849,7 +1849,7 @@ class CloudVmCluster(pulumi.CustomResource):
                The maximum length of the combined hostname and domain is 63 characters.
                
                **Note:** The hostname must be unique within the subnet. If it is not unique, the cloud VM Cluster will fail to provision.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudVmClusterIormConfigCachArgs']]]] iorm_config_caches: The IORM settings of the Exadata DB system.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudVmClusterIormConfigCachArgs', 'CloudVmClusterIormConfigCachArgsDict']]]] iorm_config_caches: The IORM settings of the Exadata DB system.
         :param pulumi.Input[bool] is_local_backup_enabled: If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
         :param pulumi.Input[bool] is_sparse_diskgroup_enabled: If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
         :param pulumi.Input[str] last_update_history_entry_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.

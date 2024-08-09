@@ -105,7 +105,7 @@ public class CompareUserAssessment extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public CompareUserAssessment(String name) {
+    public CompareUserAssessment(java.lang.String name) {
         this(name, CompareUserAssessmentArgs.Empty);
     }
     /**
@@ -113,7 +113,7 @@ public class CompareUserAssessment extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public CompareUserAssessment(String name, CompareUserAssessmentArgs args) {
+    public CompareUserAssessment(java.lang.String name, CompareUserAssessmentArgs args) {
         this(name, args, null);
     }
     /**
@@ -122,12 +122,12 @@ public class CompareUserAssessment extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public CompareUserAssessment(String name, CompareUserAssessmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/compareUserAssessment:CompareUserAssessment", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public CompareUserAssessment(java.lang.String name, CompareUserAssessmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataSafe/compareUserAssessment:CompareUserAssessment", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private CompareUserAssessment(String name, Output<String> id, @Nullable CompareUserAssessmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/compareUserAssessment:CompareUserAssessment", name, state, makeResourceOptions(options, id));
+    private CompareUserAssessment(java.lang.String name, Output<java.lang.String> id, @Nullable CompareUserAssessmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataSafe/compareUserAssessment:CompareUserAssessment", name, state, makeResourceOptions(options, id), false);
     }
 
     private static CompareUserAssessmentArgs makeArgs(CompareUserAssessmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -137,7 +137,7 @@ public class CompareUserAssessment extends com.pulumi.resources.CustomResource {
         return args == null ? CompareUserAssessmentArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -153,7 +153,7 @@ public class CompareUserAssessment extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static CompareUserAssessment get(String name, Output<String> id, @Nullable CompareUserAssessmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static CompareUserAssessment get(java.lang.String name, Output<java.lang.String> id, @Nullable CompareUserAssessmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new CompareUserAssessment(name, id, state, options);
     }
 }

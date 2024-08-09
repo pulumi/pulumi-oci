@@ -134,7 +134,7 @@ class AwaitableGetFleetJavaMigrationAnalysisResultsResult(GetFleetJavaMigrationA
 
 
 def get_fleet_java_migration_analysis_results(application_name: Optional[str] = None,
-                                              filters: Optional[Sequence[pulumi.InputType['GetFleetJavaMigrationAnalysisResultsFilterArgs']]] = None,
+                                              filters: Optional[Sequence[Union['GetFleetJavaMigrationAnalysisResultsFilterArgs', 'GetFleetJavaMigrationAnalysisResultsFilterArgsDict']]] = None,
                                               fleet_id: Optional[str] = None,
                                               host_name: Optional[str] = None,
                                               managed_instance_id: Optional[str] = None,
@@ -193,7 +193,7 @@ def get_fleet_java_migration_analysis_results(application_name: Optional[str] = 
 
 @_utilities.lift_output_func(get_fleet_java_migration_analysis_results)
 def get_fleet_java_migration_analysis_results_output(application_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                                     filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetFleetJavaMigrationAnalysisResultsFilterArgs']]]]] = None,
+                                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFleetJavaMigrationAnalysisResultsFilterArgs', 'GetFleetJavaMigrationAnalysisResultsFilterArgsDict']]]]] = None,
                                                      fleet_id: Optional[pulumi.Input[str]] = None,
                                                      host_name: Optional[pulumi.Input[Optional[str]]] = None,
                                                      managed_instance_id: Optional[pulumi.Input[Optional[str]]] = None,

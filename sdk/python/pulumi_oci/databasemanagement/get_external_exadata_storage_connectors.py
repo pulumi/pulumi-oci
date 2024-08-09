@@ -100,7 +100,7 @@ class AwaitableGetExternalExadataStorageConnectorsResult(GetExternalExadataStora
 def get_external_exadata_storage_connectors(compartment_id: Optional[str] = None,
                                             display_name: Optional[str] = None,
                                             external_exadata_infrastructure_id: Optional[str] = None,
-                                            filters: Optional[Sequence[pulumi.InputType['GetExternalExadataStorageConnectorsFilterArgs']]] = None,
+                                            filters: Optional[Sequence[Union['GetExternalExadataStorageConnectorsFilterArgs', 'GetExternalExadataStorageConnectorsFilterArgsDict']]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalExadataStorageConnectorsResult:
     """
     This data source provides the list of External Exadata Storage Connectors in Oracle Cloud Infrastructure Database Management service.
@@ -144,7 +144,7 @@ def get_external_exadata_storage_connectors(compartment_id: Optional[str] = None
 def get_external_exadata_storage_connectors_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                                    display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                                    external_exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
-                                                   filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetExternalExadataStorageConnectorsFilterArgs']]]]] = None,
+                                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExternalExadataStorageConnectorsFilterArgs', 'GetExternalExadataStorageConnectorsFilterArgsDict']]]]] = None,
                                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalExadataStorageConnectorsResult]:
     """
     This data source provides the list of External Exadata Storage Connectors in Oracle Cloud Infrastructure Database Management service.

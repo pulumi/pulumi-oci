@@ -87,7 +87,7 @@ class AwaitableGetDataKeysResult(GetDataKeysResult):
 
 def get_data_keys(apm_domain_id: Optional[str] = None,
                   data_key_type: Optional[str] = None,
-                  filters: Optional[Sequence[pulumi.InputType['GetDataKeysFilterArgs']]] = None,
+                  filters: Optional[Sequence[Union['GetDataKeysFilterArgs', 'GetDataKeysFilterArgsDict']]] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDataKeysResult:
     """
     This data source provides the list of Data Keys in Oracle Cloud Infrastructure Apm service.
@@ -127,7 +127,7 @@ def get_data_keys(apm_domain_id: Optional[str] = None,
 @_utilities.lift_output_func(get_data_keys)
 def get_data_keys_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                          data_key_type: Optional[pulumi.Input[Optional[str]]] = None,
-                         filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDataKeysFilterArgs']]]]] = None,
+                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDataKeysFilterArgs', 'GetDataKeysFilterArgsDict']]]]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDataKeysResult]:
     """
     This data source provides the list of Data Keys in Oracle Cloud Infrastructure Apm service.

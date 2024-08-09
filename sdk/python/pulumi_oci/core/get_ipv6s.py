@@ -103,7 +103,7 @@ class AwaitableGetIpv6sResult(GetIpv6sResult):
             vnic_id=self.vnic_id)
 
 
-def get_ipv6s(filters: Optional[Sequence[pulumi.InputType['GetIpv6sFilterArgs']]] = None,
+def get_ipv6s(filters: Optional[Sequence[Union['GetIpv6sFilterArgs', 'GetIpv6sFilterArgsDict']]] = None,
               ip_address: Optional[str] = None,
               subnet_id: Optional[str] = None,
               vnic_id: Optional[str] = None,
@@ -154,7 +154,7 @@ def get_ipv6s(filters: Optional[Sequence[pulumi.InputType['GetIpv6sFilterArgs']]
 
 
 @_utilities.lift_output_func(get_ipv6s)
-def get_ipv6s_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetIpv6sFilterArgs']]]]] = None,
+def get_ipv6s_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetIpv6sFilterArgs', 'GetIpv6sFilterArgsDict']]]]] = None,
                      ip_address: Optional[pulumi.Input[Optional[str]]] = None,
                      subnet_id: Optional[pulumi.Input[Optional[str]]] = None,
                      vnic_id: Optional[pulumi.Input[Optional[str]]] = None,

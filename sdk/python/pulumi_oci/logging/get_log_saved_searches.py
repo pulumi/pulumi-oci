@@ -101,7 +101,7 @@ class AwaitableGetLogSavedSearchesResult(GetLogSavedSearchesResult):
 
 
 def get_log_saved_searches(compartment_id: Optional[str] = None,
-                           filters: Optional[Sequence[pulumi.InputType['GetLogSavedSearchesFilterArgs']]] = None,
+                           filters: Optional[Sequence[Union['GetLogSavedSearchesFilterArgs', 'GetLogSavedSearchesFilterArgsDict']]] = None,
                            log_saved_search_id: Optional[str] = None,
                            name: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLogSavedSearchesResult:
@@ -145,7 +145,7 @@ def get_log_saved_searches(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_log_saved_searches)
 def get_log_saved_searches_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                  filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetLogSavedSearchesFilterArgs']]]]] = None,
+                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetLogSavedSearchesFilterArgs', 'GetLogSavedSearchesFilterArgsDict']]]]] = None,
                                   log_saved_search_id: Optional[pulumi.Input[Optional[str]]] = None,
                                   name: Optional[pulumi.Input[Optional[str]]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLogSavedSearchesResult]:

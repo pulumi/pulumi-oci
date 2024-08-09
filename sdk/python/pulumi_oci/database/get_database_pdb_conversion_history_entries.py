@@ -98,7 +98,7 @@ class AwaitableGetDatabasePdbConversionHistoryEntriesResult(GetDatabasePdbConver
 
 
 def get_database_pdb_conversion_history_entries(database_id: Optional[str] = None,
-                                                filters: Optional[Sequence[pulumi.InputType['GetDatabasePdbConversionHistoryEntriesFilterArgs']]] = None,
+                                                filters: Optional[Sequence[Union['GetDatabasePdbConversionHistoryEntriesFilterArgs', 'GetDatabasePdbConversionHistoryEntriesFilterArgsDict']]] = None,
                                                 pdb_conversion_action: Optional[str] = None,
                                                 state: Optional[str] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDatabasePdbConversionHistoryEntriesResult:
@@ -142,7 +142,7 @@ def get_database_pdb_conversion_history_entries(database_id: Optional[str] = Non
 
 @_utilities.lift_output_func(get_database_pdb_conversion_history_entries)
 def get_database_pdb_conversion_history_entries_output(database_id: Optional[pulumi.Input[str]] = None,
-                                                       filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDatabasePdbConversionHistoryEntriesFilterArgs']]]]] = None,
+                                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDatabasePdbConversionHistoryEntriesFilterArgs', 'GetDatabasePdbConversionHistoryEntriesFilterArgsDict']]]]] = None,
                                                        pdb_conversion_action: Optional[pulumi.Input[Optional[str]]] = None,
                                                        state: Optional[pulumi.Input[Optional[str]]] = None,
                                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabasePdbConversionHistoryEntriesResult]:

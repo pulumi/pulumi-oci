@@ -106,7 +106,7 @@ class AwaitableGetManagedDatabaseUserDataAccessContainersResult(GetManagedDataba
             user_name=self.user_name)
 
 
-def get_managed_database_user_data_access_containers(filters: Optional[Sequence[pulumi.InputType['GetManagedDatabaseUserDataAccessContainersFilterArgs']]] = None,
+def get_managed_database_user_data_access_containers(filters: Optional[Sequence[Union['GetManagedDatabaseUserDataAccessContainersFilterArgs', 'GetManagedDatabaseUserDataAccessContainersFilterArgsDict']]] = None,
                                                      managed_database_id: Optional[str] = None,
                                                      name: Optional[str] = None,
                                                      opc_named_credential_id: Optional[str] = None,
@@ -155,7 +155,7 @@ def get_managed_database_user_data_access_containers(filters: Optional[Sequence[
 
 
 @_utilities.lift_output_func(get_managed_database_user_data_access_containers)
-def get_managed_database_user_data_access_containers_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetManagedDatabaseUserDataAccessContainersFilterArgs']]]]] = None,
+def get_managed_database_user_data_access_containers_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedDatabaseUserDataAccessContainersFilterArgs', 'GetManagedDatabaseUserDataAccessContainersFilterArgsDict']]]]] = None,
                                                             managed_database_id: Optional[pulumi.Input[str]] = None,
                                                             name: Optional[pulumi.Input[Optional[str]]] = None,
                                                             opc_named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,

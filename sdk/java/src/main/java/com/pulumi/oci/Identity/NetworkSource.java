@@ -256,7 +256,7 @@ public class NetworkSource extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public NetworkSource(String name) {
+    public NetworkSource(java.lang.String name) {
         this(name, NetworkSourceArgs.Empty);
     }
     /**
@@ -264,7 +264,7 @@ public class NetworkSource extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public NetworkSource(String name, NetworkSourceArgs args) {
+    public NetworkSource(java.lang.String name, NetworkSourceArgs args) {
         this(name, args, null);
     }
     /**
@@ -273,12 +273,12 @@ public class NetworkSource extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public NetworkSource(String name, NetworkSourceArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/networkSource:NetworkSource", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public NetworkSource(java.lang.String name, NetworkSourceArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/networkSource:NetworkSource", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private NetworkSource(String name, Output<String> id, @Nullable NetworkSourceState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/networkSource:NetworkSource", name, state, makeResourceOptions(options, id));
+    private NetworkSource(java.lang.String name, Output<java.lang.String> id, @Nullable NetworkSourceState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/networkSource:NetworkSource", name, state, makeResourceOptions(options, id), false);
     }
 
     private static NetworkSourceArgs makeArgs(NetworkSourceArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -288,7 +288,7 @@ public class NetworkSource extends com.pulumi.resources.CustomResource {
         return args == null ? NetworkSourceArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -304,7 +304,7 @@ public class NetworkSource extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static NetworkSource get(String name, Output<String> id, @Nullable NetworkSourceState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static NetworkSource get(java.lang.String name, Output<java.lang.String> id, @Nullable NetworkSourceState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new NetworkSource(name, id, state, options);
     }
 }

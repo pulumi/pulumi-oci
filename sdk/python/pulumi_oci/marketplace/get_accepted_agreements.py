@@ -127,7 +127,7 @@ class AwaitableGetAcceptedAgreementsResult(GetAcceptedAgreementsResult):
 def get_accepted_agreements(accepted_agreement_id: Optional[str] = None,
                             compartment_id: Optional[str] = None,
                             display_name: Optional[str] = None,
-                            filters: Optional[Sequence[pulumi.InputType['GetAcceptedAgreementsFilterArgs']]] = None,
+                            filters: Optional[Sequence[Union['GetAcceptedAgreementsFilterArgs', 'GetAcceptedAgreementsFilterArgsDict']]] = None,
                             listing_id: Optional[str] = None,
                             package_version: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAcceptedAgreementsResult:
@@ -182,7 +182,7 @@ def get_accepted_agreements(accepted_agreement_id: Optional[str] = None,
 def get_accepted_agreements_output(accepted_agreement_id: Optional[pulumi.Input[Optional[str]]] = None,
                                    compartment_id: Optional[pulumi.Input[str]] = None,
                                    display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAcceptedAgreementsFilterArgs']]]]] = None,
+                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAcceptedAgreementsFilterArgs', 'GetAcceptedAgreementsFilterArgsDict']]]]] = None,
                                    listing_id: Optional[pulumi.Input[Optional[str]]] = None,
                                    package_version: Optional[pulumi.Input[Optional[str]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAcceptedAgreementsResult]:

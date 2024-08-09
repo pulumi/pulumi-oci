@@ -116,7 +116,7 @@ class AwaitableGetIngressGatewaysResult(GetIngressGatewaysResult):
 
 
 def get_ingress_gateways(compartment_id: Optional[str] = None,
-                         filters: Optional[Sequence[pulumi.InputType['GetIngressGatewaysFilterArgs']]] = None,
+                         filters: Optional[Sequence[Union['GetIngressGatewaysFilterArgs', 'GetIngressGatewaysFilterArgsDict']]] = None,
                          id: Optional[str] = None,
                          mesh_id: Optional[str] = None,
                          name: Optional[str] = None,
@@ -169,7 +169,7 @@ def get_ingress_gateways(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_ingress_gateways)
 def get_ingress_gateways_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetIngressGatewaysFilterArgs']]]]] = None,
+                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetIngressGatewaysFilterArgs', 'GetIngressGatewaysFilterArgsDict']]]]] = None,
                                 id: Optional[pulumi.Input[Optional[str]]] = None,
                                 mesh_id: Optional[pulumi.Input[Optional[str]]] = None,
                                 name: Optional[pulumi.Input[Optional[str]]] = None,

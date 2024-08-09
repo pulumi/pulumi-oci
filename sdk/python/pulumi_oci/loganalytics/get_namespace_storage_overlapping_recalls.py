@@ -100,7 +100,7 @@ class AwaitableGetNamespaceStorageOverlappingRecallsResult(GetNamespaceStorageOv
             time_data_started=self.time_data_started)
 
 
-def get_namespace_storage_overlapping_recalls(filters: Optional[Sequence[pulumi.InputType['GetNamespaceStorageOverlappingRecallsFilterArgs']]] = None,
+def get_namespace_storage_overlapping_recalls(filters: Optional[Sequence[Union['GetNamespaceStorageOverlappingRecallsFilterArgs', 'GetNamespaceStorageOverlappingRecallsFilterArgsDict']]] = None,
                                               namespace: Optional[str] = None,
                                               time_data_ended: Optional[str] = None,
                                               time_data_started: Optional[str] = None,
@@ -144,7 +144,7 @@ def get_namespace_storage_overlapping_recalls(filters: Optional[Sequence[pulumi.
 
 
 @_utilities.lift_output_func(get_namespace_storage_overlapping_recalls)
-def get_namespace_storage_overlapping_recalls_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetNamespaceStorageOverlappingRecallsFilterArgs']]]]] = None,
+def get_namespace_storage_overlapping_recalls_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNamespaceStorageOverlappingRecallsFilterArgs', 'GetNamespaceStorageOverlappingRecallsFilterArgsDict']]]]] = None,
                                                      namespace: Optional[pulumi.Input[str]] = None,
                                                      time_data_ended: Optional[pulumi.Input[Optional[str]]] = None,
                                                      time_data_started: Optional[pulumi.Input[Optional[str]]] = None,

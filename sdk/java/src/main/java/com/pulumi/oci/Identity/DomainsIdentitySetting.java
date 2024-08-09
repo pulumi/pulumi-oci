@@ -863,7 +863,7 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DomainsIdentitySetting(String name) {
+    public DomainsIdentitySetting(java.lang.String name) {
         this(name, DomainsIdentitySettingArgs.Empty);
     }
     /**
@@ -871,7 +871,7 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DomainsIdentitySetting(String name, DomainsIdentitySettingArgs args) {
+    public DomainsIdentitySetting(java.lang.String name, DomainsIdentitySettingArgs args) {
         this(name, args, null);
     }
     /**
@@ -880,12 +880,12 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DomainsIdentitySetting(String name, DomainsIdentitySettingArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsIdentitySetting:DomainsIdentitySetting", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DomainsIdentitySetting(java.lang.String name, DomainsIdentitySettingArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/domainsIdentitySetting:DomainsIdentitySetting", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DomainsIdentitySetting(String name, Output<String> id, @Nullable DomainsIdentitySettingState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsIdentitySetting:DomainsIdentitySetting", name, state, makeResourceOptions(options, id));
+    private DomainsIdentitySetting(java.lang.String name, Output<java.lang.String> id, @Nullable DomainsIdentitySettingState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/domainsIdentitySetting:DomainsIdentitySetting", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DomainsIdentitySettingArgs makeArgs(DomainsIdentitySettingArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -895,7 +895,7 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
         return args == null ? DomainsIdentitySettingArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -911,7 +911,7 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DomainsIdentitySetting get(String name, Output<String> id, @Nullable DomainsIdentitySettingState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DomainsIdentitySetting get(java.lang.String name, Output<java.lang.String> id, @Nullable DomainsIdentitySettingState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DomainsIdentitySetting(name, id, state, options);
     }
 }

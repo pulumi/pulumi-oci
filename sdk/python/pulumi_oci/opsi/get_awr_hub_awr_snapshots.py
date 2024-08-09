@@ -105,7 +105,7 @@ class AwaitableGetAwrHubAwrSnapshotsResult(GetAwrHubAwrSnapshotsResult):
 
 def get_awr_hub_awr_snapshots(awr_hub_id: Optional[str] = None,
                               awr_source_database_identifier: Optional[str] = None,
-                              filters: Optional[Sequence[pulumi.InputType['GetAwrHubAwrSnapshotsFilterArgs']]] = None,
+                              filters: Optional[Sequence[Union['GetAwrHubAwrSnapshotsFilterArgs', 'GetAwrHubAwrSnapshotsFilterArgsDict']]] = None,
                               time_greater_than_or_equal_to: Optional[str] = None,
                               time_less_than_or_equal_to: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAwrHubAwrSnapshotsResult:
@@ -155,7 +155,7 @@ def get_awr_hub_awr_snapshots(awr_hub_id: Optional[str] = None,
 @_utilities.lift_output_func(get_awr_hub_awr_snapshots)
 def get_awr_hub_awr_snapshots_output(awr_hub_id: Optional[pulumi.Input[str]] = None,
                                      awr_source_database_identifier: Optional[pulumi.Input[str]] = None,
-                                     filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAwrHubAwrSnapshotsFilterArgs']]]]] = None,
+                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAwrHubAwrSnapshotsFilterArgs', 'GetAwrHubAwrSnapshotsFilterArgsDict']]]]] = None,
                                      time_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                                      time_less_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAwrHubAwrSnapshotsResult]:

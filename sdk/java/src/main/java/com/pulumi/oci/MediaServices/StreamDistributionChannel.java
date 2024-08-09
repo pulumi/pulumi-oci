@@ -231,7 +231,7 @@ public class StreamDistributionChannel extends com.pulumi.resources.CustomResour
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public StreamDistributionChannel(String name) {
+    public StreamDistributionChannel(java.lang.String name) {
         this(name, StreamDistributionChannelArgs.Empty);
     }
     /**
@@ -239,7 +239,7 @@ public class StreamDistributionChannel extends com.pulumi.resources.CustomResour
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public StreamDistributionChannel(String name, StreamDistributionChannelArgs args) {
+    public StreamDistributionChannel(java.lang.String name, StreamDistributionChannelArgs args) {
         this(name, args, null);
     }
     /**
@@ -248,12 +248,12 @@ public class StreamDistributionChannel extends com.pulumi.resources.CustomResour
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public StreamDistributionChannel(String name, StreamDistributionChannelArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:MediaServices/streamDistributionChannel:StreamDistributionChannel", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public StreamDistributionChannel(java.lang.String name, StreamDistributionChannelArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:MediaServices/streamDistributionChannel:StreamDistributionChannel", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private StreamDistributionChannel(String name, Output<String> id, @Nullable StreamDistributionChannelState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:MediaServices/streamDistributionChannel:StreamDistributionChannel", name, state, makeResourceOptions(options, id));
+    private StreamDistributionChannel(java.lang.String name, Output<java.lang.String> id, @Nullable StreamDistributionChannelState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:MediaServices/streamDistributionChannel:StreamDistributionChannel", name, state, makeResourceOptions(options, id), false);
     }
 
     private static StreamDistributionChannelArgs makeArgs(StreamDistributionChannelArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -263,7 +263,7 @@ public class StreamDistributionChannel extends com.pulumi.resources.CustomResour
         return args == null ? StreamDistributionChannelArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -279,7 +279,7 @@ public class StreamDistributionChannel extends com.pulumi.resources.CustomResour
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static StreamDistributionChannel get(String name, Output<String> id, @Nullable StreamDistributionChannelState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static StreamDistributionChannel get(java.lang.String name, Output<java.lang.String> id, @Nullable StreamDistributionChannelState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new StreamDistributionChannel(name, id, state, options);
     }
 }

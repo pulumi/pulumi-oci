@@ -118,7 +118,7 @@ class AwaitableGetCloudExadataInfrastructuresResult(GetCloudExadataInfrastructur
 def get_cloud_exadata_infrastructures(cluster_placement_group_id: Optional[str] = None,
                                       compartment_id: Optional[str] = None,
                                       display_name: Optional[str] = None,
-                                      filters: Optional[Sequence[pulumi.InputType['GetCloudExadataInfrastructuresFilterArgs']]] = None,
+                                      filters: Optional[Sequence[Union['GetCloudExadataInfrastructuresFilterArgs', 'GetCloudExadataInfrastructuresFilterArgsDict']]] = None,
                                       state: Optional[str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudExadataInfrastructuresResult:
     """
@@ -167,7 +167,7 @@ def get_cloud_exadata_infrastructures(cluster_placement_group_id: Optional[str] 
 def get_cloud_exadata_infrastructures_output(cluster_placement_group_id: Optional[pulumi.Input[Optional[str]]] = None,
                                              compartment_id: Optional[pulumi.Input[str]] = None,
                                              display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                             filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetCloudExadataInfrastructuresFilterArgs']]]]] = None,
+                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCloudExadataInfrastructuresFilterArgs', 'GetCloudExadataInfrastructuresFilterArgsDict']]]]] = None,
                                              state: Optional[pulumi.Input[Optional[str]]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudExadataInfrastructuresResult]:
     """

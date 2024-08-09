@@ -67,7 +67,7 @@ class AwaitableGetRegionsResult(GetRegionsResult):
             regions=self.regions)
 
 
-def get_regions(filters: Optional[Sequence[pulumi.InputType['GetRegionsFilterArgs']]] = None,
+def get_regions(filters: Optional[Sequence[Union['GetRegionsFilterArgs', 'GetRegionsFilterArgsDict']]] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRegionsResult:
     """
     This data source provides the list of Regions in Oracle Cloud Infrastructure Identity service.
@@ -95,7 +95,7 @@ def get_regions(filters: Optional[Sequence[pulumi.InputType['GetRegionsFilterArg
 
 
 @_utilities.lift_output_func(get_regions)
-def get_regions_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetRegionsFilterArgs']]]]] = None,
+def get_regions_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRegionsFilterArgs', 'GetRegionsFilterArgsDict']]]]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRegionsResult]:
     """
     This data source provides the list of Regions in Oracle Cloud Infrastructure Identity service.

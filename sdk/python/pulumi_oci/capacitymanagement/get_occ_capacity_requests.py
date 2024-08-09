@@ -117,7 +117,7 @@ class AwaitableGetOccCapacityRequestsResult(GetOccCapacityRequestsResult):
 
 def get_occ_capacity_requests(compartment_id: Optional[str] = None,
                               display_name: Optional[str] = None,
-                              filters: Optional[Sequence[pulumi.InputType['GetOccCapacityRequestsFilterArgs']]] = None,
+                              filters: Optional[Sequence[Union['GetOccCapacityRequestsFilterArgs', 'GetOccCapacityRequestsFilterArgsDict']]] = None,
                               id: Optional[str] = None,
                               namespace: Optional[str] = None,
                               occ_availability_catalog_id: Optional[str] = None,
@@ -170,7 +170,7 @@ def get_occ_capacity_requests(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_occ_capacity_requests)
 def get_occ_capacity_requests_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                      display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                     filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetOccCapacityRequestsFilterArgs']]]]] = None,
+                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOccCapacityRequestsFilterArgs', 'GetOccCapacityRequestsFilterArgsDict']]]]] = None,
                                      id: Optional[pulumi.Input[Optional[str]]] = None,
                                      namespace: Optional[pulumi.Input[Optional[str]]] = None,
                                      occ_availability_catalog_id: Optional[pulumi.Input[Optional[str]]] = None,

@@ -114,7 +114,7 @@ class AwaitableGetJavaDownloadsJavaDownloadReportsResult(GetJavaDownloadsJavaDow
 
 def get_java_downloads_java_download_reports(compartment_id: Optional[str] = None,
                                              display_name: Optional[str] = None,
-                                             filters: Optional[Sequence[pulumi.InputType['GetJavaDownloadsJavaDownloadReportsFilterArgs']]] = None,
+                                             filters: Optional[Sequence[Union['GetJavaDownloadsJavaDownloadReportsFilterArgs', 'GetJavaDownloadsJavaDownloadReportsFilterArgsDict']]] = None,
                                              java_download_report_id: Optional[str] = None,
                                              state: Optional[str] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetJavaDownloadsJavaDownloadReportsResult:
@@ -163,7 +163,7 @@ def get_java_downloads_java_download_reports(compartment_id: Optional[str] = Non
 @_utilities.lift_output_func(get_java_downloads_java_download_reports)
 def get_java_downloads_java_download_reports_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                                     display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                                    filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetJavaDownloadsJavaDownloadReportsFilterArgs']]]]] = None,
+                                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetJavaDownloadsJavaDownloadReportsFilterArgs', 'GetJavaDownloadsJavaDownloadReportsFilterArgsDict']]]]] = None,
                                                     java_download_report_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                     state: Optional[pulumi.Input[Optional[str]]] = None,
                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetJavaDownloadsJavaDownloadReportsResult]:

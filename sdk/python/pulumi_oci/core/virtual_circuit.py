@@ -815,7 +815,7 @@ class VirtualCircuit(pulumi.CustomResource):
                  bandwidth_shape_name: Optional[pulumi.Input[str]] = None,
                  bgp_admin_state: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 cross_connect_mappings: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualCircuitCrossConnectMappingArgs']]]]] = None,
+                 cross_connect_mappings: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualCircuitCrossConnectMappingArgs', 'VirtualCircuitCrossConnectMappingArgsDict']]]]] = None,
                  customer_asn: Optional[pulumi.Input[str]] = None,
                  customer_bgp_asn: Optional[pulumi.Input[int]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -827,7 +827,7 @@ class VirtualCircuit(pulumi.CustomResource):
                  is_transport_mode: Optional[pulumi.Input[bool]] = None,
                  provider_service_id: Optional[pulumi.Input[str]] = None,
                  provider_service_key_name: Optional[pulumi.Input[str]] = None,
-                 public_prefixes: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualCircuitPublicPrefixArgs']]]]] = None,
+                 public_prefixes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualCircuitPublicPrefixArgs', 'VirtualCircuitPublicPrefixArgsDict']]]]] = None,
                  region: Optional[pulumi.Input[str]] = None,
                  routing_policies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  type: Optional[pulumi.Input[str]] = None,
@@ -868,15 +868,15 @@ class VirtualCircuit(pulumi.CustomResource):
             type=virtual_circuit_type,
             bandwidth_shape_name=virtual_circuit_bandwidth_shape_name,
             bgp_admin_state=virtual_circuit_bgp_admin_state,
-            cross_connect_mappings=[oci.core.VirtualCircuitCrossConnectMappingArgs(
-                bgp_md5auth_key=virtual_circuit_cross_connect_mappings_bgp_md5auth_key,
-                cross_connect_or_cross_connect_group_id=test_cross_connect_or_cross_connect_group["id"],
-                customer_bgp_peering_ip=virtual_circuit_cross_connect_mappings_customer_bgp_peering_ip,
-                customer_bgp_peering_ipv6=virtual_circuit_cross_connect_mappings_customer_bgp_peering_ipv6,
-                oracle_bgp_peering_ip=virtual_circuit_cross_connect_mappings_oracle_bgp_peering_ip,
-                oracle_bgp_peering_ipv6=virtual_circuit_cross_connect_mappings_oracle_bgp_peering_ipv6,
-                vlan=virtual_circuit_cross_connect_mappings_vlan,
-            )],
+            cross_connect_mappings=[{
+                "bgp_md5auth_key": virtual_circuit_cross_connect_mappings_bgp_md5auth_key,
+                "cross_connect_or_cross_connect_group_id": test_cross_connect_or_cross_connect_group["id"],
+                "customer_bgp_peering_ip": virtual_circuit_cross_connect_mappings_customer_bgp_peering_ip,
+                "customer_bgp_peering_ipv6": virtual_circuit_cross_connect_mappings_customer_bgp_peering_ipv6,
+                "oracle_bgp_peering_ip": virtual_circuit_cross_connect_mappings_oracle_bgp_peering_ip,
+                "oracle_bgp_peering_ipv6": virtual_circuit_cross_connect_mappings_oracle_bgp_peering_ipv6,
+                "vlan": virtual_circuit_cross_connect_mappings_vlan,
+            }],
             customer_asn=virtual_circuit_customer_asn,
             customer_bgp_asn=virtual_circuit_customer_bgp_asn,
             defined_tags={
@@ -892,9 +892,9 @@ class VirtualCircuit(pulumi.CustomResource):
             gateway_id=test_gateway["id"],
             provider_service_id=test_fast_connect_provider_services["fastConnectProviderServices"][0]["id"],
             provider_service_key_name=virtual_circuit_provider_service_key_name,
-            public_prefixes=[oci.core.VirtualCircuitPublicPrefixArgs(
-                cidr_block=virtual_circuit_public_prefixes_cidr_block,
-            )],
+            public_prefixes=[{
+                "cidr_block": virtual_circuit_public_prefixes_cidr_block,
+            }],
             region=virtual_circuit_region,
             routing_policies=virtual_circuit_routing_policy)
         ```
@@ -912,7 +912,7 @@ class VirtualCircuit(pulumi.CustomResource):
         :param pulumi.Input[str] bandwidth_shape_name: (Updatable) The provisioned data rate of the connection. To get a list of the available bandwidth levels (that is, shapes), see [ListFastConnectProviderServiceVirtualCircuitBandwidthShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes).  Example: `10 Gbps`
         :param pulumi.Input[str] bgp_admin_state: (Updatable) Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the virtual circuit.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualCircuitCrossConnectMappingArgs']]]] cross_connect_mappings: (Updatable) Create a `CrossConnectMapping` for each cross-connect or cross-connect group this virtual circuit will run on.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualCircuitCrossConnectMappingArgs', 'VirtualCircuitCrossConnectMappingArgsDict']]]] cross_connect_mappings: (Updatable) Create a `CrossConnectMapping` for each cross-connect or cross-connect group this virtual circuit will run on.
         :param pulumi.Input[str] customer_asn: (Updatable) Your BGP ASN (either public or private). Provide this value only if there's a BGP session that goes from your edge router to Oracle. Otherwise, leave this empty or null. Can be a 2-byte or 4-byte ASN. Uses "asplain" format.  Example: `12345` (2-byte) or `1587232876` (4-byte)
         :param pulumi.Input[int] customer_bgp_asn: (Updatable) Deprecated. Instead use `customerAsn`. If you specify values for both, the request will be rejected.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -924,7 +924,7 @@ class VirtualCircuit(pulumi.CustomResource):
         :param pulumi.Input[bool] is_transport_mode: (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
         :param pulumi.Input[str] provider_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
         :param pulumi.Input[str] provider_service_key_name: (Updatable) The service key name offered by the provider (if the customer is connecting via a provider).
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualCircuitPublicPrefixArgs']]]] public_prefixes: (Updatable) For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to advertise across the connection.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualCircuitPublicPrefixArgs', 'VirtualCircuitPublicPrefixArgsDict']]]] public_prefixes: (Updatable) For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to advertise across the connection.
         :param pulumi.Input[str] region: The Oracle Cloud Infrastructure region where this virtual circuit is located. Example: `phx`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] routing_policies: (Updatable) The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
         :param pulumi.Input[str] type: The type of IP addresses used in this virtual circuit. PRIVATE means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses (10.0.0.0/8, 172.16/12, and 192.168/16). 
@@ -975,15 +975,15 @@ class VirtualCircuit(pulumi.CustomResource):
             type=virtual_circuit_type,
             bandwidth_shape_name=virtual_circuit_bandwidth_shape_name,
             bgp_admin_state=virtual_circuit_bgp_admin_state,
-            cross_connect_mappings=[oci.core.VirtualCircuitCrossConnectMappingArgs(
-                bgp_md5auth_key=virtual_circuit_cross_connect_mappings_bgp_md5auth_key,
-                cross_connect_or_cross_connect_group_id=test_cross_connect_or_cross_connect_group["id"],
-                customer_bgp_peering_ip=virtual_circuit_cross_connect_mappings_customer_bgp_peering_ip,
-                customer_bgp_peering_ipv6=virtual_circuit_cross_connect_mappings_customer_bgp_peering_ipv6,
-                oracle_bgp_peering_ip=virtual_circuit_cross_connect_mappings_oracle_bgp_peering_ip,
-                oracle_bgp_peering_ipv6=virtual_circuit_cross_connect_mappings_oracle_bgp_peering_ipv6,
-                vlan=virtual_circuit_cross_connect_mappings_vlan,
-            )],
+            cross_connect_mappings=[{
+                "bgp_md5auth_key": virtual_circuit_cross_connect_mappings_bgp_md5auth_key,
+                "cross_connect_or_cross_connect_group_id": test_cross_connect_or_cross_connect_group["id"],
+                "customer_bgp_peering_ip": virtual_circuit_cross_connect_mappings_customer_bgp_peering_ip,
+                "customer_bgp_peering_ipv6": virtual_circuit_cross_connect_mappings_customer_bgp_peering_ipv6,
+                "oracle_bgp_peering_ip": virtual_circuit_cross_connect_mappings_oracle_bgp_peering_ip,
+                "oracle_bgp_peering_ipv6": virtual_circuit_cross_connect_mappings_oracle_bgp_peering_ipv6,
+                "vlan": virtual_circuit_cross_connect_mappings_vlan,
+            }],
             customer_asn=virtual_circuit_customer_asn,
             customer_bgp_asn=virtual_circuit_customer_bgp_asn,
             defined_tags={
@@ -999,9 +999,9 @@ class VirtualCircuit(pulumi.CustomResource):
             gateway_id=test_gateway["id"],
             provider_service_id=test_fast_connect_provider_services["fastConnectProviderServices"][0]["id"],
             provider_service_key_name=virtual_circuit_provider_service_key_name,
-            public_prefixes=[oci.core.VirtualCircuitPublicPrefixArgs(
-                cidr_block=virtual_circuit_public_prefixes_cidr_block,
-            )],
+            public_prefixes=[{
+                "cidr_block": virtual_circuit_public_prefixes_cidr_block,
+            }],
             region=virtual_circuit_region,
             routing_policies=virtual_circuit_routing_policy)
         ```
@@ -1032,7 +1032,7 @@ class VirtualCircuit(pulumi.CustomResource):
                  bandwidth_shape_name: Optional[pulumi.Input[str]] = None,
                  bgp_admin_state: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 cross_connect_mappings: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualCircuitCrossConnectMappingArgs']]]]] = None,
+                 cross_connect_mappings: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualCircuitCrossConnectMappingArgs', 'VirtualCircuitCrossConnectMappingArgsDict']]]]] = None,
                  customer_asn: Optional[pulumi.Input[str]] = None,
                  customer_bgp_asn: Optional[pulumi.Input[int]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -1044,7 +1044,7 @@ class VirtualCircuit(pulumi.CustomResource):
                  is_transport_mode: Optional[pulumi.Input[bool]] = None,
                  provider_service_id: Optional[pulumi.Input[str]] = None,
                  provider_service_key_name: Optional[pulumi.Input[str]] = None,
-                 public_prefixes: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualCircuitPublicPrefixArgs']]]]] = None,
+                 public_prefixes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualCircuitPublicPrefixArgs', 'VirtualCircuitPublicPrefixArgsDict']]]]] = None,
                  region: Optional[pulumi.Input[str]] = None,
                  routing_policies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  type: Optional[pulumi.Input[str]] = None,
@@ -1105,7 +1105,7 @@ class VirtualCircuit(pulumi.CustomResource):
             bgp_management: Optional[pulumi.Input[str]] = None,
             bgp_session_state: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            cross_connect_mappings: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualCircuitCrossConnectMappingArgs']]]]] = None,
+            cross_connect_mappings: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualCircuitCrossConnectMappingArgs', 'VirtualCircuitCrossConnectMappingArgsDict']]]]] = None,
             customer_asn: Optional[pulumi.Input[str]] = None,
             customer_bgp_asn: Optional[pulumi.Input[int]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -1119,7 +1119,7 @@ class VirtualCircuit(pulumi.CustomResource):
             provider_service_id: Optional[pulumi.Input[str]] = None,
             provider_service_key_name: Optional[pulumi.Input[str]] = None,
             provider_state: Optional[pulumi.Input[str]] = None,
-            public_prefixes: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualCircuitPublicPrefixArgs']]]]] = None,
+            public_prefixes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualCircuitPublicPrefixArgs', 'VirtualCircuitPublicPrefixArgsDict']]]]] = None,
             reference_comment: Optional[pulumi.Input[str]] = None,
             region: Optional[pulumi.Input[str]] = None,
             routing_policies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -1140,7 +1140,7 @@ class VirtualCircuit(pulumi.CustomResource):
         :param pulumi.Input[str] bgp_management: Deprecated. Instead use the information in [FastConnectProviderService](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/).
         :param pulumi.Input[str] bgp_session_state: The state of the Ipv4 BGP session associated with the virtual circuit.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the virtual circuit.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualCircuitCrossConnectMappingArgs']]]] cross_connect_mappings: (Updatable) Create a `CrossConnectMapping` for each cross-connect or cross-connect group this virtual circuit will run on.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualCircuitCrossConnectMappingArgs', 'VirtualCircuitCrossConnectMappingArgsDict']]]] cross_connect_mappings: (Updatable) Create a `CrossConnectMapping` for each cross-connect or cross-connect group this virtual circuit will run on.
         :param pulumi.Input[str] customer_asn: (Updatable) Your BGP ASN (either public or private). Provide this value only if there's a BGP session that goes from your edge router to Oracle. Otherwise, leave this empty or null. Can be a 2-byte or 4-byte ASN. Uses "asplain" format.  Example: `12345` (2-byte) or `1587232876` (4-byte)
         :param pulumi.Input[int] customer_bgp_asn: (Updatable) Deprecated. Instead use `customerAsn`. If you specify values for both, the request will be rejected.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -1154,7 +1154,7 @@ class VirtualCircuit(pulumi.CustomResource):
         :param pulumi.Input[str] provider_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
         :param pulumi.Input[str] provider_service_key_name: (Updatable) The service key name offered by the provider (if the customer is connecting via a provider).
         :param pulumi.Input[str] provider_state: The provider's state in relation to this virtual circuit (if the customer is connecting via a provider). ACTIVE means the provider has provisioned the virtual circuit from their end. INACTIVE means the provider has not yet provisioned the virtual circuit, or has de-provisioned it.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualCircuitPublicPrefixArgs']]]] public_prefixes: (Updatable) For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to advertise across the connection.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualCircuitPublicPrefixArgs', 'VirtualCircuitPublicPrefixArgsDict']]]] public_prefixes: (Updatable) For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to advertise across the connection.
         :param pulumi.Input[str] reference_comment: Provider-supplied reference information about this virtual circuit (if the customer is connecting via a provider).
         :param pulumi.Input[str] region: The Oracle Cloud Infrastructure region where this virtual circuit is located. Example: `phx`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] routing_policies: (Updatable) The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.

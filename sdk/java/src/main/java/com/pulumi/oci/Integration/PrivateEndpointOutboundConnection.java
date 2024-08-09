@@ -46,7 +46,7 @@ public class PrivateEndpointOutboundConnection extends com.pulumi.resources.Cust
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public PrivateEndpointOutboundConnection(String name) {
+    public PrivateEndpointOutboundConnection(java.lang.String name) {
         this(name, PrivateEndpointOutboundConnectionArgs.Empty);
     }
     /**
@@ -54,7 +54,7 @@ public class PrivateEndpointOutboundConnection extends com.pulumi.resources.Cust
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public PrivateEndpointOutboundConnection(String name, PrivateEndpointOutboundConnectionArgs args) {
+    public PrivateEndpointOutboundConnection(java.lang.String name, PrivateEndpointOutboundConnectionArgs args) {
         this(name, args, null);
     }
     /**
@@ -63,12 +63,12 @@ public class PrivateEndpointOutboundConnection extends com.pulumi.resources.Cust
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public PrivateEndpointOutboundConnection(String name, PrivateEndpointOutboundConnectionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Integration/privateEndpointOutboundConnection:PrivateEndpointOutboundConnection", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public PrivateEndpointOutboundConnection(java.lang.String name, PrivateEndpointOutboundConnectionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Integration/privateEndpointOutboundConnection:PrivateEndpointOutboundConnection", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private PrivateEndpointOutboundConnection(String name, Output<String> id, @Nullable PrivateEndpointOutboundConnectionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Integration/privateEndpointOutboundConnection:PrivateEndpointOutboundConnection", name, state, makeResourceOptions(options, id));
+    private PrivateEndpointOutboundConnection(java.lang.String name, Output<java.lang.String> id, @Nullable PrivateEndpointOutboundConnectionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Integration/privateEndpointOutboundConnection:PrivateEndpointOutboundConnection", name, state, makeResourceOptions(options, id), false);
     }
 
     private static PrivateEndpointOutboundConnectionArgs makeArgs(PrivateEndpointOutboundConnectionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -78,7 +78,7 @@ public class PrivateEndpointOutboundConnection extends com.pulumi.resources.Cust
         return args == null ? PrivateEndpointOutboundConnectionArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -94,7 +94,7 @@ public class PrivateEndpointOutboundConnection extends com.pulumi.resources.Cust
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static PrivateEndpointOutboundConnection get(String name, Output<String> id, @Nullable PrivateEndpointOutboundConnectionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static PrivateEndpointOutboundConnection get(java.lang.String name, Output<java.lang.String> id, @Nullable PrivateEndpointOutboundConnectionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new PrivateEndpointOutboundConnection(name, id, state, options);
     }
 }

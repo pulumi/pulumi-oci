@@ -739,18 +739,18 @@ class NodePool(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 initial_node_labels: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NodePoolInitialNodeLabelArgs']]]]] = None,
+                 initial_node_labels: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NodePoolInitialNodeLabelArgs', 'NodePoolInitialNodeLabelArgsDict']]]]] = None,
                  kubernetes_version: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 node_config_details: Optional[pulumi.Input[pulumi.InputType['NodePoolNodeConfigDetailsArgs']]] = None,
-                 node_eviction_node_pool_settings: Optional[pulumi.Input[pulumi.InputType['NodePoolNodeEvictionNodePoolSettingsArgs']]] = None,
+                 node_config_details: Optional[pulumi.Input[Union['NodePoolNodeConfigDetailsArgs', 'NodePoolNodeConfigDetailsArgsDict']]] = None,
+                 node_eviction_node_pool_settings: Optional[pulumi.Input[Union['NodePoolNodeEvictionNodePoolSettingsArgs', 'NodePoolNodeEvictionNodePoolSettingsArgsDict']]] = None,
                  node_image_id: Optional[pulumi.Input[str]] = None,
                  node_image_name: Optional[pulumi.Input[str]] = None,
                  node_metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 node_pool_cycling_details: Optional[pulumi.Input[pulumi.InputType['NodePoolNodePoolCyclingDetailsArgs']]] = None,
+                 node_pool_cycling_details: Optional[pulumi.Input[Union['NodePoolNodePoolCyclingDetailsArgs', 'NodePoolNodePoolCyclingDetailsArgsDict']]] = None,
                  node_shape: Optional[pulumi.Input[str]] = None,
-                 node_shape_config: Optional[pulumi.Input[pulumi.InputType['NodePoolNodeShapeConfigArgs']]] = None,
-                 node_source_details: Optional[pulumi.Input[pulumi.InputType['NodePoolNodeSourceDetailsArgs']]] = None,
+                 node_shape_config: Optional[pulumi.Input[Union['NodePoolNodeShapeConfigArgs', 'NodePoolNodeShapeConfigArgsDict']]] = None,
+                 node_source_details: Optional[pulumi.Input[Union['NodePoolNodeSourceDetailsArgs', 'NodePoolNodeSourceDetailsArgsDict']]] = None,
                  quantity_per_subnet: Optional[pulumi.Input[int]] = None,
                  ssh_public_key: Optional[pulumi.Input[str]] = None,
                  subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -777,61 +777,61 @@ class NodePool(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            initial_node_labels=[oci.container_engine.NodePoolInitialNodeLabelArgs(
-                key=node_pool_initial_node_labels_key,
-                value=node_pool_initial_node_labels_value,
-            )],
+            initial_node_labels=[{
+                "key": node_pool_initial_node_labels_key,
+                "value": node_pool_initial_node_labels_value,
+            }],
             kubernetes_version=node_pool_kubernetes_version,
-            node_config_details=oci.container_engine.NodePoolNodeConfigDetailsArgs(
-                placement_configs=[oci.container_engine.NodePoolNodeConfigDetailsPlacementConfigArgs(
-                    availability_domain=node_pool_node_config_details_placement_configs_availability_domain,
-                    subnet_id=test_subnet["id"],
-                    capacity_reservation_id=test_capacity_reservation["id"],
-                    fault_domains=node_pool_node_config_details_placement_configs_fault_domains,
-                    preemptible_node_config=oci.container_engine.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs(
-                        preemption_action=oci.container_engine.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs(
-                            type=node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_type,
-                            is_preserve_boot_volume=node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_is_preserve_boot_volume,
-                        ),
-                    ),
-                )],
-                size=node_pool_node_config_details_size,
-                is_pv_encryption_in_transit_enabled=node_pool_node_config_details_is_pv_encryption_in_transit_enabled,
-                kms_key_id=test_key["id"],
-                node_pool_pod_network_option_details=oci.container_engine.NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs(
-                    cni_type=node_pool_node_config_details_node_pool_pod_network_option_details_cni_type,
-                    max_pods_per_node=node_pool_node_config_details_node_pool_pod_network_option_details_max_pods_per_node,
-                    pod_nsg_ids=node_pool_node_config_details_node_pool_pod_network_option_details_pod_nsg_ids,
-                    pod_subnet_ids=node_pool_node_config_details_node_pool_pod_network_option_details_pod_subnet_ids,
-                ),
-                defined_tags={
-                    "Operations.CostCenter": "42",
+            node_config_details={
+                "placement_configs": [{
+                    "availability_domain": node_pool_node_config_details_placement_configs_availability_domain,
+                    "subnet_id": test_subnet["id"],
+                    "capacity_reservation_id": test_capacity_reservation["id"],
+                    "fault_domains": node_pool_node_config_details_placement_configs_fault_domains,
+                    "preemptible_node_config": {
+                        "preemption_action": {
+                            "type": node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_type,
+                            "is_preserve_boot_volume": node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_is_preserve_boot_volume,
+                        },
+                    },
+                }],
+                "size": node_pool_node_config_details_size,
+                "is_pv_encryption_in_transit_enabled": node_pool_node_config_details_is_pv_encryption_in_transit_enabled,
+                "kms_key_id": test_key["id"],
+                "node_pool_pod_network_option_details": {
+                    "cni_type": node_pool_node_config_details_node_pool_pod_network_option_details_cni_type,
+                    "max_pods_per_node": node_pool_node_config_details_node_pool_pod_network_option_details_max_pods_per_node,
+                    "pod_nsg_ids": node_pool_node_config_details_node_pool_pod_network_option_details_pod_nsg_ids,
+                    "pod_subnet_ids": node_pool_node_config_details_node_pool_pod_network_option_details_pod_subnet_ids,
                 },
-                freeform_tags={
-                    "Department": "Finance",
+                "defined_tags": {
+                    "operations__cost_center": "42",
                 },
-                nsg_ids=node_pool_node_config_details_nsg_ids,
-            ),
-            node_eviction_node_pool_settings=oci.container_engine.NodePoolNodeEvictionNodePoolSettingsArgs(
-                eviction_grace_duration=node_pool_node_eviction_node_pool_settings_eviction_grace_duration,
-                is_force_delete_after_grace_duration=node_pool_node_eviction_node_pool_settings_is_force_delete_after_grace_duration,
-            ),
+                "freeform_tags": {
+                    "department": "Finance",
+                },
+                "nsg_ids": node_pool_node_config_details_nsg_ids,
+            },
+            node_eviction_node_pool_settings={
+                "eviction_grace_duration": node_pool_node_eviction_node_pool_settings_eviction_grace_duration,
+                "is_force_delete_after_grace_duration": node_pool_node_eviction_node_pool_settings_is_force_delete_after_grace_duration,
+            },
             node_image_name=test_image["name"],
             node_metadata=node_pool_node_metadata,
-            node_pool_cycling_details=oci.container_engine.NodePoolNodePoolCyclingDetailsArgs(
-                is_node_cycling_enabled=node_pool_node_pool_cycling_details_is_node_cycling_enabled,
-                maximum_surge=node_pool_node_pool_cycling_details_maximum_surge,
-                maximum_unavailable=node_pool_node_pool_cycling_details_maximum_unavailable,
-            ),
-            node_shape_config=oci.container_engine.NodePoolNodeShapeConfigArgs(
-                memory_in_gbs=node_pool_node_shape_config_memory_in_gbs,
-                ocpus=node_pool_node_shape_config_ocpus,
-            ),
-            node_source_details=oci.container_engine.NodePoolNodeSourceDetailsArgs(
-                image_id=test_image["id"],
-                source_type=node_pool_node_source_details_source_type,
-                boot_volume_size_in_gbs=node_pool_node_source_details_boot_volume_size_in_gbs,
-            ),
+            node_pool_cycling_details={
+                "is_node_cycling_enabled": node_pool_node_pool_cycling_details_is_node_cycling_enabled,
+                "maximum_surge": node_pool_node_pool_cycling_details_maximum_surge,
+                "maximum_unavailable": node_pool_node_pool_cycling_details_maximum_unavailable,
+            },
+            node_shape_config={
+                "memory_in_gbs": node_pool_node_shape_config_memory_in_gbs,
+                "ocpus": node_pool_node_shape_config_ocpus,
+            },
+            node_source_details={
+                "image_id": test_image["id"],
+                "source_type": node_pool_node_source_details_source_type,
+                "boot_volume_size_in_gbs": node_pool_node_source_details_boot_volume_size_in_gbs,
+            },
             quantity_per_subnet=node_pool_quantity_per_subnet,
             ssh_public_key=node_pool_ssh_public_key,
             subnet_ids=node_pool_subnet_ids)
@@ -851,18 +851,18 @@ class NodePool(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: The OCID of the compartment in which the node pool exists.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NodePoolInitialNodeLabelArgs']]]] initial_node_labels: (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NodePoolInitialNodeLabelArgs', 'NodePoolInitialNodeLabelArgsDict']]]] initial_node_labels: (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
         :param pulumi.Input[str] kubernetes_version: (Updatable) The version of Kubernetes to install on the nodes in the node pool.
         :param pulumi.Input[str] name: (Updatable) The name of the node pool. Avoid entering confidential information.
-        :param pulumi.Input[pulumi.InputType['NodePoolNodeConfigDetailsArgs']] node_config_details: (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
-        :param pulumi.Input[pulumi.InputType['NodePoolNodeEvictionNodePoolSettingsArgs']] node_eviction_node_pool_settings: (Updatable) Node Eviction Details configuration
+        :param pulumi.Input[Union['NodePoolNodeConfigDetailsArgs', 'NodePoolNodeConfigDetailsArgsDict']] node_config_details: (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
+        :param pulumi.Input[Union['NodePoolNodeEvictionNodePoolSettingsArgs', 'NodePoolNodeEvictionNodePoolSettingsArgsDict']] node_eviction_node_pool_settings: (Updatable) Node Eviction Details configuration
         :param pulumi.Input[str] node_image_id: Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
         :param pulumi.Input[str] node_image_name: Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `node_image_id` is specified.
         :param pulumi.Input[Mapping[str, Any]] node_metadata: (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
-        :param pulumi.Input[pulumi.InputType['NodePoolNodePoolCyclingDetailsArgs']] node_pool_cycling_details: (Updatable) Node Pool Cycling Details
+        :param pulumi.Input[Union['NodePoolNodePoolCyclingDetailsArgs', 'NodePoolNodePoolCyclingDetailsArgsDict']] node_pool_cycling_details: (Updatable) Node Pool Cycling Details
         :param pulumi.Input[str] node_shape: (Updatable) The name of the node shape of the nodes in the node pool.
-        :param pulumi.Input[pulumi.InputType['NodePoolNodeShapeConfigArgs']] node_shape_config: (Updatable) Specify the configuration of the shape to launch nodes in the node pool.
-        :param pulumi.Input[pulumi.InputType['NodePoolNodeSourceDetailsArgs']] node_source_details: (Updatable) Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
+        :param pulumi.Input[Union['NodePoolNodeShapeConfigArgs', 'NodePoolNodeShapeConfigArgsDict']] node_shape_config: (Updatable) Specify the configuration of the shape to launch nodes in the node pool.
+        :param pulumi.Input[Union['NodePoolNodeSourceDetailsArgs', 'NodePoolNodeSourceDetailsArgsDict']] node_source_details: (Updatable) Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
         :param pulumi.Input[int] quantity_per_subnet: (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
         :param pulumi.Input[str] ssh_public_key: (Updatable) The SSH public key on each node in the node pool on launch.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] subnet_ids: (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified. 
@@ -899,61 +899,61 @@ class NodePool(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            initial_node_labels=[oci.container_engine.NodePoolInitialNodeLabelArgs(
-                key=node_pool_initial_node_labels_key,
-                value=node_pool_initial_node_labels_value,
-            )],
+            initial_node_labels=[{
+                "key": node_pool_initial_node_labels_key,
+                "value": node_pool_initial_node_labels_value,
+            }],
             kubernetes_version=node_pool_kubernetes_version,
-            node_config_details=oci.container_engine.NodePoolNodeConfigDetailsArgs(
-                placement_configs=[oci.container_engine.NodePoolNodeConfigDetailsPlacementConfigArgs(
-                    availability_domain=node_pool_node_config_details_placement_configs_availability_domain,
-                    subnet_id=test_subnet["id"],
-                    capacity_reservation_id=test_capacity_reservation["id"],
-                    fault_domains=node_pool_node_config_details_placement_configs_fault_domains,
-                    preemptible_node_config=oci.container_engine.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs(
-                        preemption_action=oci.container_engine.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs(
-                            type=node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_type,
-                            is_preserve_boot_volume=node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_is_preserve_boot_volume,
-                        ),
-                    ),
-                )],
-                size=node_pool_node_config_details_size,
-                is_pv_encryption_in_transit_enabled=node_pool_node_config_details_is_pv_encryption_in_transit_enabled,
-                kms_key_id=test_key["id"],
-                node_pool_pod_network_option_details=oci.container_engine.NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs(
-                    cni_type=node_pool_node_config_details_node_pool_pod_network_option_details_cni_type,
-                    max_pods_per_node=node_pool_node_config_details_node_pool_pod_network_option_details_max_pods_per_node,
-                    pod_nsg_ids=node_pool_node_config_details_node_pool_pod_network_option_details_pod_nsg_ids,
-                    pod_subnet_ids=node_pool_node_config_details_node_pool_pod_network_option_details_pod_subnet_ids,
-                ),
-                defined_tags={
-                    "Operations.CostCenter": "42",
+            node_config_details={
+                "placement_configs": [{
+                    "availability_domain": node_pool_node_config_details_placement_configs_availability_domain,
+                    "subnet_id": test_subnet["id"],
+                    "capacity_reservation_id": test_capacity_reservation["id"],
+                    "fault_domains": node_pool_node_config_details_placement_configs_fault_domains,
+                    "preemptible_node_config": {
+                        "preemption_action": {
+                            "type": node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_type,
+                            "is_preserve_boot_volume": node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_is_preserve_boot_volume,
+                        },
+                    },
+                }],
+                "size": node_pool_node_config_details_size,
+                "is_pv_encryption_in_transit_enabled": node_pool_node_config_details_is_pv_encryption_in_transit_enabled,
+                "kms_key_id": test_key["id"],
+                "node_pool_pod_network_option_details": {
+                    "cni_type": node_pool_node_config_details_node_pool_pod_network_option_details_cni_type,
+                    "max_pods_per_node": node_pool_node_config_details_node_pool_pod_network_option_details_max_pods_per_node,
+                    "pod_nsg_ids": node_pool_node_config_details_node_pool_pod_network_option_details_pod_nsg_ids,
+                    "pod_subnet_ids": node_pool_node_config_details_node_pool_pod_network_option_details_pod_subnet_ids,
                 },
-                freeform_tags={
-                    "Department": "Finance",
+                "defined_tags": {
+                    "operations__cost_center": "42",
                 },
-                nsg_ids=node_pool_node_config_details_nsg_ids,
-            ),
-            node_eviction_node_pool_settings=oci.container_engine.NodePoolNodeEvictionNodePoolSettingsArgs(
-                eviction_grace_duration=node_pool_node_eviction_node_pool_settings_eviction_grace_duration,
-                is_force_delete_after_grace_duration=node_pool_node_eviction_node_pool_settings_is_force_delete_after_grace_duration,
-            ),
+                "freeform_tags": {
+                    "department": "Finance",
+                },
+                "nsg_ids": node_pool_node_config_details_nsg_ids,
+            },
+            node_eviction_node_pool_settings={
+                "eviction_grace_duration": node_pool_node_eviction_node_pool_settings_eviction_grace_duration,
+                "is_force_delete_after_grace_duration": node_pool_node_eviction_node_pool_settings_is_force_delete_after_grace_duration,
+            },
             node_image_name=test_image["name"],
             node_metadata=node_pool_node_metadata,
-            node_pool_cycling_details=oci.container_engine.NodePoolNodePoolCyclingDetailsArgs(
-                is_node_cycling_enabled=node_pool_node_pool_cycling_details_is_node_cycling_enabled,
-                maximum_surge=node_pool_node_pool_cycling_details_maximum_surge,
-                maximum_unavailable=node_pool_node_pool_cycling_details_maximum_unavailable,
-            ),
-            node_shape_config=oci.container_engine.NodePoolNodeShapeConfigArgs(
-                memory_in_gbs=node_pool_node_shape_config_memory_in_gbs,
-                ocpus=node_pool_node_shape_config_ocpus,
-            ),
-            node_source_details=oci.container_engine.NodePoolNodeSourceDetailsArgs(
-                image_id=test_image["id"],
-                source_type=node_pool_node_source_details_source_type,
-                boot_volume_size_in_gbs=node_pool_node_source_details_boot_volume_size_in_gbs,
-            ),
+            node_pool_cycling_details={
+                "is_node_cycling_enabled": node_pool_node_pool_cycling_details_is_node_cycling_enabled,
+                "maximum_surge": node_pool_node_pool_cycling_details_maximum_surge,
+                "maximum_unavailable": node_pool_node_pool_cycling_details_maximum_unavailable,
+            },
+            node_shape_config={
+                "memory_in_gbs": node_pool_node_shape_config_memory_in_gbs,
+                "ocpus": node_pool_node_shape_config_ocpus,
+            },
+            node_source_details={
+                "image_id": test_image["id"],
+                "source_type": node_pool_node_source_details_source_type,
+                "boot_volume_size_in_gbs": node_pool_node_source_details_boot_volume_size_in_gbs,
+            },
             quantity_per_subnet=node_pool_quantity_per_subnet,
             ssh_public_key=node_pool_ssh_public_key,
             subnet_ids=node_pool_subnet_ids)
@@ -986,18 +986,18 @@ class NodePool(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 initial_node_labels: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NodePoolInitialNodeLabelArgs']]]]] = None,
+                 initial_node_labels: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NodePoolInitialNodeLabelArgs', 'NodePoolInitialNodeLabelArgsDict']]]]] = None,
                  kubernetes_version: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 node_config_details: Optional[pulumi.Input[pulumi.InputType['NodePoolNodeConfigDetailsArgs']]] = None,
-                 node_eviction_node_pool_settings: Optional[pulumi.Input[pulumi.InputType['NodePoolNodeEvictionNodePoolSettingsArgs']]] = None,
+                 node_config_details: Optional[pulumi.Input[Union['NodePoolNodeConfigDetailsArgs', 'NodePoolNodeConfigDetailsArgsDict']]] = None,
+                 node_eviction_node_pool_settings: Optional[pulumi.Input[Union['NodePoolNodeEvictionNodePoolSettingsArgs', 'NodePoolNodeEvictionNodePoolSettingsArgsDict']]] = None,
                  node_image_id: Optional[pulumi.Input[str]] = None,
                  node_image_name: Optional[pulumi.Input[str]] = None,
                  node_metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 node_pool_cycling_details: Optional[pulumi.Input[pulumi.InputType['NodePoolNodePoolCyclingDetailsArgs']]] = None,
+                 node_pool_cycling_details: Optional[pulumi.Input[Union['NodePoolNodePoolCyclingDetailsArgs', 'NodePoolNodePoolCyclingDetailsArgsDict']]] = None,
                  node_shape: Optional[pulumi.Input[str]] = None,
-                 node_shape_config: Optional[pulumi.Input[pulumi.InputType['NodePoolNodeShapeConfigArgs']]] = None,
-                 node_source_details: Optional[pulumi.Input[pulumi.InputType['NodePoolNodeSourceDetailsArgs']]] = None,
+                 node_shape_config: Optional[pulumi.Input[Union['NodePoolNodeShapeConfigArgs', 'NodePoolNodeShapeConfigArgsDict']]] = None,
+                 node_source_details: Optional[pulumi.Input[Union['NodePoolNodeSourceDetailsArgs', 'NodePoolNodeSourceDetailsArgsDict']]] = None,
                  quantity_per_subnet: Optional[pulumi.Input[int]] = None,
                  ssh_public_key: Optional[pulumi.Input[str]] = None,
                  subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -1053,21 +1053,21 @@ class NodePool(pulumi.CustomResource):
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            initial_node_labels: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NodePoolInitialNodeLabelArgs']]]]] = None,
+            initial_node_labels: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NodePoolInitialNodeLabelArgs', 'NodePoolInitialNodeLabelArgsDict']]]]] = None,
             kubernetes_version: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
-            node_config_details: Optional[pulumi.Input[pulumi.InputType['NodePoolNodeConfigDetailsArgs']]] = None,
-            node_eviction_node_pool_settings: Optional[pulumi.Input[pulumi.InputType['NodePoolNodeEvictionNodePoolSettingsArgs']]] = None,
+            node_config_details: Optional[pulumi.Input[Union['NodePoolNodeConfigDetailsArgs', 'NodePoolNodeConfigDetailsArgsDict']]] = None,
+            node_eviction_node_pool_settings: Optional[pulumi.Input[Union['NodePoolNodeEvictionNodePoolSettingsArgs', 'NodePoolNodeEvictionNodePoolSettingsArgsDict']]] = None,
             node_image_id: Optional[pulumi.Input[str]] = None,
             node_image_name: Optional[pulumi.Input[str]] = None,
             node_metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            node_pool_cycling_details: Optional[pulumi.Input[pulumi.InputType['NodePoolNodePoolCyclingDetailsArgs']]] = None,
+            node_pool_cycling_details: Optional[pulumi.Input[Union['NodePoolNodePoolCyclingDetailsArgs', 'NodePoolNodePoolCyclingDetailsArgsDict']]] = None,
             node_shape: Optional[pulumi.Input[str]] = None,
-            node_shape_config: Optional[pulumi.Input[pulumi.InputType['NodePoolNodeShapeConfigArgs']]] = None,
-            node_source_details: Optional[pulumi.Input[pulumi.InputType['NodePoolNodeSourceDetailsArgs']]] = None,
-            node_sources: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NodePoolNodeSourceArgs']]]]] = None,
-            nodes: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NodePoolNodeArgs']]]]] = None,
+            node_shape_config: Optional[pulumi.Input[Union['NodePoolNodeShapeConfigArgs', 'NodePoolNodeShapeConfigArgsDict']]] = None,
+            node_source_details: Optional[pulumi.Input[Union['NodePoolNodeSourceDetailsArgs', 'NodePoolNodeSourceDetailsArgsDict']]] = None,
+            node_sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NodePoolNodeSourceArgs', 'NodePoolNodeSourceArgsDict']]]]] = None,
+            nodes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NodePoolNodeArgs', 'NodePoolNodeArgsDict']]]]] = None,
             quantity_per_subnet: Optional[pulumi.Input[int]] = None,
             ssh_public_key: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -1083,21 +1083,21 @@ class NodePool(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: The OCID of the compartment in which the node pool exists.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NodePoolInitialNodeLabelArgs']]]] initial_node_labels: (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NodePoolInitialNodeLabelArgs', 'NodePoolInitialNodeLabelArgsDict']]]] initial_node_labels: (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
         :param pulumi.Input[str] kubernetes_version: (Updatable) The version of Kubernetes to install on the nodes in the node pool.
         :param pulumi.Input[str] lifecycle_details: Details about the state of the node.
         :param pulumi.Input[str] name: (Updatable) The name of the node pool. Avoid entering confidential information.
-        :param pulumi.Input[pulumi.InputType['NodePoolNodeConfigDetailsArgs']] node_config_details: (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
-        :param pulumi.Input[pulumi.InputType['NodePoolNodeEvictionNodePoolSettingsArgs']] node_eviction_node_pool_settings: (Updatable) Node Eviction Details configuration
+        :param pulumi.Input[Union['NodePoolNodeConfigDetailsArgs', 'NodePoolNodeConfigDetailsArgsDict']] node_config_details: (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
+        :param pulumi.Input[Union['NodePoolNodeEvictionNodePoolSettingsArgs', 'NodePoolNodeEvictionNodePoolSettingsArgsDict']] node_eviction_node_pool_settings: (Updatable) Node Eviction Details configuration
         :param pulumi.Input[str] node_image_id: Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
         :param pulumi.Input[str] node_image_name: Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `node_image_id` is specified.
         :param pulumi.Input[Mapping[str, Any]] node_metadata: (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
-        :param pulumi.Input[pulumi.InputType['NodePoolNodePoolCyclingDetailsArgs']] node_pool_cycling_details: (Updatable) Node Pool Cycling Details
+        :param pulumi.Input[Union['NodePoolNodePoolCyclingDetailsArgs', 'NodePoolNodePoolCyclingDetailsArgsDict']] node_pool_cycling_details: (Updatable) Node Pool Cycling Details
         :param pulumi.Input[str] node_shape: (Updatable) The name of the node shape of the nodes in the node pool.
-        :param pulumi.Input[pulumi.InputType['NodePoolNodeShapeConfigArgs']] node_shape_config: (Updatable) Specify the configuration of the shape to launch nodes in the node pool.
-        :param pulumi.Input[pulumi.InputType['NodePoolNodeSourceDetailsArgs']] node_source_details: (Updatable) Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NodePoolNodeSourceArgs']]]] node_sources: Deprecated. see `nodeSourceDetails`. Source running on the nodes in the node pool.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NodePoolNodeArgs']]]] nodes: The nodes in the node pool.
+        :param pulumi.Input[Union['NodePoolNodeShapeConfigArgs', 'NodePoolNodeShapeConfigArgsDict']] node_shape_config: (Updatable) Specify the configuration of the shape to launch nodes in the node pool.
+        :param pulumi.Input[Union['NodePoolNodeSourceDetailsArgs', 'NodePoolNodeSourceDetailsArgsDict']] node_source_details: (Updatable) Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NodePoolNodeSourceArgs', 'NodePoolNodeSourceArgsDict']]]] node_sources: Deprecated. see `nodeSourceDetails`. Source running on the nodes in the node pool.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NodePoolNodeArgs', 'NodePoolNodeArgsDict']]]] nodes: The nodes in the node pool.
         :param pulumi.Input[int] quantity_per_subnet: (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
         :param pulumi.Input[str] ssh_public_key: (Updatable) The SSH public key on each node in the node pool on launch.
         :param pulumi.Input[str] state: The state of the nodepool.

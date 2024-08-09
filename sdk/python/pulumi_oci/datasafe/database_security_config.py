@@ -424,7 +424,7 @@ class DatabaseSecurityConfig(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  refresh_trigger: Optional[pulumi.Input[int]] = None,
-                 sql_firewall_config: Optional[pulumi.Input[pulumi.InputType['DatabaseSecurityConfigSqlFirewallConfigArgs']]] = None,
+                 sql_firewall_config: Optional[pulumi.Input[Union['DatabaseSecurityConfigSqlFirewallConfigArgs', 'DatabaseSecurityConfigSqlFirewallConfigArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Database Security Config resource in Oracle Cloud Infrastructure Data Safe service.
@@ -452,7 +452,7 @@ class DatabaseSecurityConfig(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[pulumi.InputType['DatabaseSecurityConfigSqlFirewallConfigArgs']] sql_firewall_config: (Updatable) Details to update the SQL Firewall config.
+        :param pulumi.Input[Union['DatabaseSecurityConfigSqlFirewallConfigArgs', 'DatabaseSecurityConfigSqlFirewallConfigArgsDict']] sql_firewall_config: (Updatable) Details to update the SQL Firewall config.
         """
         ...
     @overload
@@ -495,7 +495,7 @@ class DatabaseSecurityConfig(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  refresh_trigger: Optional[pulumi.Input[int]] = None,
-                 sql_firewall_config: Optional[pulumi.Input[pulumi.InputType['DatabaseSecurityConfigSqlFirewallConfigArgs']]] = None,
+                 sql_firewall_config: Optional[pulumi.Input[Union['DatabaseSecurityConfigSqlFirewallConfigArgs', 'DatabaseSecurityConfigSqlFirewallConfigArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -540,7 +540,7 @@ class DatabaseSecurityConfig(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             refresh_trigger: Optional[pulumi.Input[int]] = None,
-            sql_firewall_config: Optional[pulumi.Input[pulumi.InputType['DatabaseSecurityConfigSqlFirewallConfigArgs']]] = None,
+            sql_firewall_config: Optional[pulumi.Input[Union['DatabaseSecurityConfigSqlFirewallConfigArgs', 'DatabaseSecurityConfigSqlFirewallConfigArgsDict']]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             target_id: Optional[pulumi.Input[str]] = None,
@@ -566,7 +566,7 @@ class DatabaseSecurityConfig(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[pulumi.InputType['DatabaseSecurityConfigSqlFirewallConfigArgs']] sql_firewall_config: (Updatable) Details to update the SQL Firewall config.
+        :param pulumi.Input[Union['DatabaseSecurityConfigSqlFirewallConfigArgs', 'DatabaseSecurityConfigSqlFirewallConfigArgsDict']] sql_firewall_config: (Updatable) Details to update the SQL Firewall config.
         :param pulumi.Input[str] state: The current state of the database security config.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] target_id: The target OCID corresponding to the database security config.

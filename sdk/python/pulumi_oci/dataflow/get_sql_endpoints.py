@@ -114,7 +114,7 @@ class AwaitableGetSqlEndpointsResult(GetSqlEndpointsResult):
 
 def get_sql_endpoints(compartment_id: Optional[str] = None,
                       display_name: Optional[str] = None,
-                      filters: Optional[Sequence[pulumi.InputType['GetSqlEndpointsFilterArgs']]] = None,
+                      filters: Optional[Sequence[Union['GetSqlEndpointsFilterArgs', 'GetSqlEndpointsFilterArgsDict']]] = None,
                       sql_endpoint_id: Optional[str] = None,
                       state: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSqlEndpointsResult:
@@ -165,7 +165,7 @@ def get_sql_endpoints(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_sql_endpoints)
 def get_sql_endpoints_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                              display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                             filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetSqlEndpointsFilterArgs']]]]] = None,
+                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSqlEndpointsFilterArgs', 'GetSqlEndpointsFilterArgsDict']]]]] = None,
                              sql_endpoint_id: Optional[pulumi.Input[Optional[str]]] = None,
                              state: Optional[pulumi.Input[Optional[str]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSqlEndpointsResult]:

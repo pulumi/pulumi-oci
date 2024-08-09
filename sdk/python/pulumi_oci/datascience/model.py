@@ -561,8 +561,8 @@ class Model(pulumi.CustomResource):
                  artifact_content_disposition: Optional[pulumi.Input[str]] = None,
                  artifact_content_length: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 custom_metadata_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ModelCustomMetadataListArgs']]]]] = None,
-                 defined_metadata_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ModelDefinedMetadataListArgs']]]]] = None,
+                 custom_metadata_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ModelCustomMetadataListArgs', 'ModelCustomMetadataListArgsDict']]]]] = None,
+                 defined_metadata_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ModelDefinedMetadataListArgs', 'ModelDefinedMetadataListArgsDict']]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -587,18 +587,18 @@ class Model(pulumi.CustomResource):
         test_model = oci.data_science.Model("test_model",
             compartment_id=compartment_id,
             project_id=test_project["id"],
-            custom_metadata_lists=[oci.data_science.ModelCustomMetadataListArgs(
-                category=model_custom_metadata_list_category,
-                description=model_custom_metadata_list_description,
-                key=model_custom_metadata_list_key,
-                value=model_custom_metadata_list_value,
-            )],
-            defined_metadata_lists=[oci.data_science.ModelDefinedMetadataListArgs(
-                category=model_defined_metadata_list_category,
-                description=model_defined_metadata_list_description,
-                key=model_defined_metadata_list_key,
-                value=model_defined_metadata_list_value,
-            )],
+            custom_metadata_lists=[{
+                "category": model_custom_metadata_list_category,
+                "description": model_custom_metadata_list_description,
+                "key": model_custom_metadata_list_key,
+                "value": model_custom_metadata_list_value,
+            }],
+            defined_metadata_lists=[{
+                "category": model_defined_metadata_list_category,
+                "description": model_defined_metadata_list_description,
+                "key": model_defined_metadata_list_key,
+                "value": model_defined_metadata_list_value,
+            }],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -627,8 +627,8 @@ class Model(pulumi.CustomResource):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ModelCustomMetadataListArgs']]]] custom_metadata_lists: (Updatable) An array of custom metadata details for the model.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ModelDefinedMetadataListArgs']]]] defined_metadata_lists: (Updatable) An array of defined metadata details for the model.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ModelCustomMetadataListArgs', 'ModelCustomMetadataListArgsDict']]]] custom_metadata_lists: (Updatable) An array of custom metadata details for the model.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ModelDefinedMetadataListArgs', 'ModelDefinedMetadataListArgsDict']]]] defined_metadata_lists: (Updatable) An array of defined metadata details for the model.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) A short description of the model.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My Model`
@@ -659,18 +659,18 @@ class Model(pulumi.CustomResource):
         test_model = oci.data_science.Model("test_model",
             compartment_id=compartment_id,
             project_id=test_project["id"],
-            custom_metadata_lists=[oci.data_science.ModelCustomMetadataListArgs(
-                category=model_custom_metadata_list_category,
-                description=model_custom_metadata_list_description,
-                key=model_custom_metadata_list_key,
-                value=model_custom_metadata_list_value,
-            )],
-            defined_metadata_lists=[oci.data_science.ModelDefinedMetadataListArgs(
-                category=model_defined_metadata_list_category,
-                description=model_defined_metadata_list_description,
-                key=model_defined_metadata_list_key,
-                value=model_defined_metadata_list_value,
-            )],
+            custom_metadata_lists=[{
+                "category": model_custom_metadata_list_category,
+                "description": model_custom_metadata_list_description,
+                "key": model_custom_metadata_list_key,
+                "value": model_custom_metadata_list_value,
+            }],
+            defined_metadata_lists=[{
+                "category": model_defined_metadata_list_category,
+                "description": model_defined_metadata_list_description,
+                "key": model_defined_metadata_list_key,
+                "value": model_defined_metadata_list_value,
+            }],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -709,8 +709,8 @@ class Model(pulumi.CustomResource):
                  artifact_content_disposition: Optional[pulumi.Input[str]] = None,
                  artifact_content_length: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 custom_metadata_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ModelCustomMetadataListArgs']]]]] = None,
-                 defined_metadata_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ModelDefinedMetadataListArgs']]]]] = None,
+                 custom_metadata_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ModelCustomMetadataListArgs', 'ModelCustomMetadataListArgsDict']]]]] = None,
+                 defined_metadata_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ModelDefinedMetadataListArgs', 'ModelDefinedMetadataListArgsDict']]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -772,8 +772,8 @@ class Model(pulumi.CustomResource):
             artifact_last_modified: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             created_by: Optional[pulumi.Input[str]] = None,
-            custom_metadata_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ModelCustomMetadataListArgs']]]]] = None,
-            defined_metadata_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ModelDefinedMetadataListArgs']]]]] = None,
+            custom_metadata_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ModelCustomMetadataListArgs', 'ModelCustomMetadataListArgsDict']]]]] = None,
+            defined_metadata_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ModelDefinedMetadataListArgs', 'ModelDefinedMetadataListArgsDict']]]]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
@@ -799,8 +799,8 @@ class Model(pulumi.CustomResource):
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
         :param pulumi.Input[str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ModelCustomMetadataListArgs']]]] custom_metadata_lists: (Updatable) An array of custom metadata details for the model.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ModelDefinedMetadataListArgs']]]] defined_metadata_lists: (Updatable) An array of defined metadata details for the model.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ModelCustomMetadataListArgs', 'ModelCustomMetadataListArgsDict']]]] custom_metadata_lists: (Updatable) An array of custom metadata details for the model.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ModelDefinedMetadataListArgs', 'ModelDefinedMetadataListArgsDict']]]] defined_metadata_lists: (Updatable) An array of defined metadata details for the model.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) A short description of the model.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My Model`

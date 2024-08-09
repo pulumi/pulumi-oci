@@ -474,13 +474,13 @@ class VmClusterNetwork(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  dns: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 dr_scans: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterNetworkDrScanArgs']]]]] = None,
+                 dr_scans: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VmClusterNetworkDrScanArgs', 'VmClusterNetworkDrScanArgsDict']]]]] = None,
                  exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  ntps: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 scans: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterNetworkScanArgs']]]]] = None,
+                 scans: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VmClusterNetworkScanArgs', 'VmClusterNetworkScanArgsDict']]]]] = None,
                  validate_vm_cluster_network: Optional[pulumi.Input[bool]] = None,
-                 vm_networks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterNetworkVmNetworkArgs']]]]] = None,
+                 vm_networks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VmClusterNetworkVmNetworkArgs', 'VmClusterNetworkVmNetworkArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Vm Cluster Network resource in Oracle Cloud Infrastructure Database service.
@@ -498,35 +498,35 @@ class VmClusterNetwork(pulumi.CustomResource):
             compartment_id=compartment_id,
             display_name=vm_cluster_network_display_name,
             exadata_infrastructure_id=test_exadata_infrastructure["id"],
-            scans=[oci.database.VmClusterNetworkScanArgs(
-                hostname=vm_cluster_network_scans_hostname,
-                ips=vm_cluster_network_scans_ips,
-                port=vm_cluster_network_scans_port,
-                scan_listener_port_tcp=vm_cluster_network_scans_scan_listener_port_tcp,
-                scan_listener_port_tcp_ssl=vm_cluster_network_scans_scan_listener_port_tcp_ssl,
-            )],
-            vm_networks=[oci.database.VmClusterNetworkVmNetworkArgs(
-                network_type=vm_cluster_network_vm_networks_network_type,
-                nodes=[oci.database.VmClusterNetworkVmNetworkNodeArgs(
-                    hostname=vm_cluster_network_vm_networks_nodes_hostname,
-                    ip=vm_cluster_network_vm_networks_nodes_ip,
-                    db_server_id=test_db_server["id"],
-                    state=vm_cluster_network_vm_networks_nodes_state,
-                    vip=vm_cluster_network_vm_networks_nodes_vip,
-                    vip_hostname=vm_cluster_network_vm_networks_nodes_vip_hostname,
-                )],
-                domain_name=test_domain["name"],
-                gateway=vm_cluster_network_vm_networks_gateway,
-                netmask=vm_cluster_network_vm_networks_netmask,
-                vlan_id=vm_cluster_network_vm_networks_vlan_id,
-            )],
+            scans=[{
+                "hostname": vm_cluster_network_scans_hostname,
+                "ips": vm_cluster_network_scans_ips,
+                "port": vm_cluster_network_scans_port,
+                "scan_listener_port_tcp": vm_cluster_network_scans_scan_listener_port_tcp,
+                "scan_listener_port_tcp_ssl": vm_cluster_network_scans_scan_listener_port_tcp_ssl,
+            }],
+            vm_networks=[{
+                "network_type": vm_cluster_network_vm_networks_network_type,
+                "nodes": [{
+                    "hostname": vm_cluster_network_vm_networks_nodes_hostname,
+                    "ip": vm_cluster_network_vm_networks_nodes_ip,
+                    "db_server_id": test_db_server["id"],
+                    "state": vm_cluster_network_vm_networks_nodes_state,
+                    "vip": vm_cluster_network_vm_networks_nodes_vip,
+                    "vip_hostname": vm_cluster_network_vm_networks_nodes_vip_hostname,
+                }],
+                "domain_name": test_domain["name"],
+                "gateway": vm_cluster_network_vm_networks_gateway,
+                "netmask": vm_cluster_network_vm_networks_netmask,
+                "vlan_id": vm_cluster_network_vm_networks_vlan_id,
+            }],
             defined_tags=vm_cluster_network_defined_tags,
             dns=vm_cluster_network_dns,
-            dr_scans=[oci.database.VmClusterNetworkDrScanArgs(
-                hostname=vm_cluster_network_dr_scans_hostname,
-                ips=vm_cluster_network_dr_scans_ips,
-                scan_listener_port_tcp=vm_cluster_network_dr_scans_scan_listener_port_tcp,
-            )],
+            dr_scans=[{
+                "hostname": vm_cluster_network_dr_scans_hostname,
+                "ips": vm_cluster_network_dr_scans_ips,
+                "scan_listener_port_tcp": vm_cluster_network_dr_scans_scan_listener_port_tcp,
+            }],
             freeform_tags={
                 "Department": "Finance",
             },
@@ -548,13 +548,13 @@ class VmClusterNetwork(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] dns: (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterNetworkDrScanArgs']]]] dr_scans: (Updatable) The SCAN details for DR network
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmClusterNetworkDrScanArgs', 'VmClusterNetworkDrScanArgsDict']]]] dr_scans: (Updatable) The SCAN details for DR network
         :param pulumi.Input[str] exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ntps: (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterNetworkScanArgs']]]] scans: (Updatable) The SCAN details.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmClusterNetworkScanArgs', 'VmClusterNetworkScanArgsDict']]]] scans: (Updatable) The SCAN details.
         :param pulumi.Input[bool] validate_vm_cluster_network: (Updatable) A boolean flag indicating whether or not to validate VM cluster network after creation. Updates are not allowed on validated exadata VM cluster network. Note: Deleting a VM Cluster (Updatable) Details of the client and backup networks.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterNetworkVmNetworkArgs']]]] vm_networks: Details of the client and backup networks.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmClusterNetworkVmNetworkArgs', 'VmClusterNetworkVmNetworkArgsDict']]]] vm_networks: Details of the client and backup networks.
         """
         ...
     @overload
@@ -578,35 +578,35 @@ class VmClusterNetwork(pulumi.CustomResource):
             compartment_id=compartment_id,
             display_name=vm_cluster_network_display_name,
             exadata_infrastructure_id=test_exadata_infrastructure["id"],
-            scans=[oci.database.VmClusterNetworkScanArgs(
-                hostname=vm_cluster_network_scans_hostname,
-                ips=vm_cluster_network_scans_ips,
-                port=vm_cluster_network_scans_port,
-                scan_listener_port_tcp=vm_cluster_network_scans_scan_listener_port_tcp,
-                scan_listener_port_tcp_ssl=vm_cluster_network_scans_scan_listener_port_tcp_ssl,
-            )],
-            vm_networks=[oci.database.VmClusterNetworkVmNetworkArgs(
-                network_type=vm_cluster_network_vm_networks_network_type,
-                nodes=[oci.database.VmClusterNetworkVmNetworkNodeArgs(
-                    hostname=vm_cluster_network_vm_networks_nodes_hostname,
-                    ip=vm_cluster_network_vm_networks_nodes_ip,
-                    db_server_id=test_db_server["id"],
-                    state=vm_cluster_network_vm_networks_nodes_state,
-                    vip=vm_cluster_network_vm_networks_nodes_vip,
-                    vip_hostname=vm_cluster_network_vm_networks_nodes_vip_hostname,
-                )],
-                domain_name=test_domain["name"],
-                gateway=vm_cluster_network_vm_networks_gateway,
-                netmask=vm_cluster_network_vm_networks_netmask,
-                vlan_id=vm_cluster_network_vm_networks_vlan_id,
-            )],
+            scans=[{
+                "hostname": vm_cluster_network_scans_hostname,
+                "ips": vm_cluster_network_scans_ips,
+                "port": vm_cluster_network_scans_port,
+                "scan_listener_port_tcp": vm_cluster_network_scans_scan_listener_port_tcp,
+                "scan_listener_port_tcp_ssl": vm_cluster_network_scans_scan_listener_port_tcp_ssl,
+            }],
+            vm_networks=[{
+                "network_type": vm_cluster_network_vm_networks_network_type,
+                "nodes": [{
+                    "hostname": vm_cluster_network_vm_networks_nodes_hostname,
+                    "ip": vm_cluster_network_vm_networks_nodes_ip,
+                    "db_server_id": test_db_server["id"],
+                    "state": vm_cluster_network_vm_networks_nodes_state,
+                    "vip": vm_cluster_network_vm_networks_nodes_vip,
+                    "vip_hostname": vm_cluster_network_vm_networks_nodes_vip_hostname,
+                }],
+                "domain_name": test_domain["name"],
+                "gateway": vm_cluster_network_vm_networks_gateway,
+                "netmask": vm_cluster_network_vm_networks_netmask,
+                "vlan_id": vm_cluster_network_vm_networks_vlan_id,
+            }],
             defined_tags=vm_cluster_network_defined_tags,
             dns=vm_cluster_network_dns,
-            dr_scans=[oci.database.VmClusterNetworkDrScanArgs(
-                hostname=vm_cluster_network_dr_scans_hostname,
-                ips=vm_cluster_network_dr_scans_ips,
-                scan_listener_port_tcp=vm_cluster_network_dr_scans_scan_listener_port_tcp,
-            )],
+            dr_scans=[{
+                "hostname": vm_cluster_network_dr_scans_hostname,
+                "ips": vm_cluster_network_dr_scans_ips,
+                "scan_listener_port_tcp": vm_cluster_network_dr_scans_scan_listener_port_tcp,
+            }],
             freeform_tags={
                 "Department": "Finance",
             },
@@ -642,13 +642,13 @@ class VmClusterNetwork(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  dns: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 dr_scans: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterNetworkDrScanArgs']]]]] = None,
+                 dr_scans: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VmClusterNetworkDrScanArgs', 'VmClusterNetworkDrScanArgsDict']]]]] = None,
                  exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  ntps: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 scans: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterNetworkScanArgs']]]]] = None,
+                 scans: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VmClusterNetworkScanArgs', 'VmClusterNetworkScanArgsDict']]]]] = None,
                  validate_vm_cluster_network: Optional[pulumi.Input[bool]] = None,
-                 vm_networks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterNetworkVmNetworkArgs']]]]] = None,
+                 vm_networks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VmClusterNetworkVmNetworkArgs', 'VmClusterNetworkVmNetworkArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -699,17 +699,17 @@ class VmClusterNetwork(pulumi.CustomResource):
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             dns: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            dr_scans: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterNetworkDrScanArgs']]]]] = None,
+            dr_scans: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VmClusterNetworkDrScanArgs', 'VmClusterNetworkDrScanArgsDict']]]]] = None,
             exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             ntps: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            scans: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterNetworkScanArgs']]]]] = None,
+            scans: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VmClusterNetworkScanArgs', 'VmClusterNetworkScanArgsDict']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             validate_vm_cluster_network: Optional[pulumi.Input[bool]] = None,
             vm_cluster_id: Optional[pulumi.Input[str]] = None,
-            vm_networks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterNetworkVmNetworkArgs']]]]] = None) -> 'VmClusterNetwork':
+            vm_networks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VmClusterNetworkVmNetworkArgs', 'VmClusterNetworkVmNetworkArgsDict']]]]] = None) -> 'VmClusterNetwork':
         """
         Get an existing VmClusterNetwork resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -721,17 +721,17 @@ class VmClusterNetwork(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] dns: (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterNetworkDrScanArgs']]]] dr_scans: (Updatable) The SCAN details for DR network
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmClusterNetworkDrScanArgs', 'VmClusterNetworkDrScanArgsDict']]]] dr_scans: (Updatable) The SCAN details for DR network
         :param pulumi.Input[str] exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ntps: (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterNetworkScanArgs']]]] scans: (Updatable) The SCAN details.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmClusterNetworkScanArgs', 'VmClusterNetworkScanArgsDict']]]] scans: (Updatable) The SCAN details.
         :param pulumi.Input[str] state: The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
         :param pulumi.Input[str] time_created: The date and time when the VM cluster network was created.
         :param pulumi.Input[bool] validate_vm_cluster_network: (Updatable) A boolean flag indicating whether or not to validate VM cluster network after creation. Updates are not allowed on validated exadata VM cluster network. Note: Deleting a VM Cluster (Updatable) Details of the client and backup networks.
         :param pulumi.Input[str] vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated VM Cluster.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterNetworkVmNetworkArgs']]]] vm_networks: Details of the client and backup networks.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmClusterNetworkVmNetworkArgs', 'VmClusterNetworkVmNetworkArgsDict']]]] vm_networks: Details of the client and backup networks.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

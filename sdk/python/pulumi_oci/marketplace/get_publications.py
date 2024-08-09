@@ -122,7 +122,7 @@ class AwaitableGetPublicationsResult(GetPublicationsResult):
 
 
 def get_publications(compartment_id: Optional[str] = None,
-                     filters: Optional[Sequence[pulumi.InputType['GetPublicationsFilterArgs']]] = None,
+                     filters: Optional[Sequence[Union['GetPublicationsFilterArgs', 'GetPublicationsFilterArgsDict']]] = None,
                      listing_type: Optional[str] = None,
                      names: Optional[Sequence[str]] = None,
                      operating_systems: Optional[Sequence[str]] = None,
@@ -176,7 +176,7 @@ def get_publications(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_publications)
 def get_publications_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                            filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetPublicationsFilterArgs']]]]] = None,
+                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPublicationsFilterArgs', 'GetPublicationsFilterArgsDict']]]]] = None,
                             listing_type: Optional[pulumi.Input[str]] = None,
                             names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                             operating_systems: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,

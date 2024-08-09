@@ -76,7 +76,7 @@ class AwaitableGetCertificatesResult(GetCertificatesResult):
             load_balancer_id=self.load_balancer_id)
 
 
-def get_certificates(filters: Optional[Sequence[pulumi.InputType['GetCertificatesFilterArgs']]] = None,
+def get_certificates(filters: Optional[Sequence[Union['GetCertificatesFilterArgs', 'GetCertificatesFilterArgsDict']]] = None,
                      load_balancer_id: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCertificatesResult:
     """
@@ -110,7 +110,7 @@ def get_certificates(filters: Optional[Sequence[pulumi.InputType['GetCertificate
 
 
 @_utilities.lift_output_func(get_certificates)
-def get_certificates_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetCertificatesFilterArgs']]]]] = None,
+def get_certificates_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCertificatesFilterArgs', 'GetCertificatesFilterArgsDict']]]]] = None,
                             load_balancer_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCertificatesResult]:
     """

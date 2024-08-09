@@ -146,7 +146,7 @@ public class DatabaseDbmFeaturesManagement extends com.pulumi.resources.CustomRe
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DatabaseDbmFeaturesManagement(String name) {
+    public DatabaseDbmFeaturesManagement(java.lang.String name) {
         this(name, DatabaseDbmFeaturesManagementArgs.Empty);
     }
     /**
@@ -154,7 +154,7 @@ public class DatabaseDbmFeaturesManagement extends com.pulumi.resources.CustomRe
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DatabaseDbmFeaturesManagement(String name, DatabaseDbmFeaturesManagementArgs args) {
+    public DatabaseDbmFeaturesManagement(java.lang.String name, DatabaseDbmFeaturesManagementArgs args) {
         this(name, args, null);
     }
     /**
@@ -163,12 +163,12 @@ public class DatabaseDbmFeaturesManagement extends com.pulumi.resources.CustomRe
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DatabaseDbmFeaturesManagement(String name, DatabaseDbmFeaturesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseManagement/databaseDbmFeaturesManagement:DatabaseDbmFeaturesManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DatabaseDbmFeaturesManagement(java.lang.String name, DatabaseDbmFeaturesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DatabaseManagement/databaseDbmFeaturesManagement:DatabaseDbmFeaturesManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DatabaseDbmFeaturesManagement(String name, Output<String> id, @Nullable DatabaseDbmFeaturesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseManagement/databaseDbmFeaturesManagement:DatabaseDbmFeaturesManagement", name, state, makeResourceOptions(options, id));
+    private DatabaseDbmFeaturesManagement(java.lang.String name, Output<java.lang.String> id, @Nullable DatabaseDbmFeaturesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DatabaseManagement/databaseDbmFeaturesManagement:DatabaseDbmFeaturesManagement", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DatabaseDbmFeaturesManagementArgs makeArgs(DatabaseDbmFeaturesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -178,7 +178,7 @@ public class DatabaseDbmFeaturesManagement extends com.pulumi.resources.CustomRe
         return args == null ? DatabaseDbmFeaturesManagementArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -194,7 +194,7 @@ public class DatabaseDbmFeaturesManagement extends com.pulumi.resources.CustomRe
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DatabaseDbmFeaturesManagement get(String name, Output<String> id, @Nullable DatabaseDbmFeaturesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DatabaseDbmFeaturesManagement get(java.lang.String name, Output<java.lang.String> id, @Nullable DatabaseDbmFeaturesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DatabaseDbmFeaturesManagement(name, id, state, options);
     }
 }

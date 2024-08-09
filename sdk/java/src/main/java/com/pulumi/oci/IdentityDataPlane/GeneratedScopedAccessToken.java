@@ -118,7 +118,7 @@ public class GeneratedScopedAccessToken extends com.pulumi.resources.CustomResou
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public GeneratedScopedAccessToken(String name) {
+    public GeneratedScopedAccessToken(java.lang.String name) {
         this(name, GeneratedScopedAccessTokenArgs.Empty);
     }
     /**
@@ -126,7 +126,7 @@ public class GeneratedScopedAccessToken extends com.pulumi.resources.CustomResou
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public GeneratedScopedAccessToken(String name, GeneratedScopedAccessTokenArgs args) {
+    public GeneratedScopedAccessToken(java.lang.String name, GeneratedScopedAccessTokenArgs args) {
         this(name, args, null);
     }
     /**
@@ -135,12 +135,12 @@ public class GeneratedScopedAccessToken extends com.pulumi.resources.CustomResou
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public GeneratedScopedAccessToken(String name, GeneratedScopedAccessTokenArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:IdentityDataPlane/generatedScopedAccessToken:GeneratedScopedAccessToken", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public GeneratedScopedAccessToken(java.lang.String name, GeneratedScopedAccessTokenArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:IdentityDataPlane/generatedScopedAccessToken:GeneratedScopedAccessToken", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private GeneratedScopedAccessToken(String name, Output<String> id, @Nullable GeneratedScopedAccessTokenState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:IdentityDataPlane/generatedScopedAccessToken:GeneratedScopedAccessToken", name, state, makeResourceOptions(options, id));
+    private GeneratedScopedAccessToken(java.lang.String name, Output<java.lang.String> id, @Nullable GeneratedScopedAccessTokenState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:IdentityDataPlane/generatedScopedAccessToken:GeneratedScopedAccessToken", name, state, makeResourceOptions(options, id), false);
     }
 
     private static GeneratedScopedAccessTokenArgs makeArgs(GeneratedScopedAccessTokenArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -150,7 +150,7 @@ public class GeneratedScopedAccessToken extends com.pulumi.resources.CustomResou
         return args == null ? GeneratedScopedAccessTokenArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -166,7 +166,7 @@ public class GeneratedScopedAccessToken extends com.pulumi.resources.CustomResou
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static GeneratedScopedAccessToken get(String name, Output<String> id, @Nullable GeneratedScopedAccessTokenState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static GeneratedScopedAccessToken get(java.lang.String name, Output<java.lang.String> id, @Nullable GeneratedScopedAccessTokenState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new GeneratedScopedAccessToken(name, id, state, options);
     }
 }

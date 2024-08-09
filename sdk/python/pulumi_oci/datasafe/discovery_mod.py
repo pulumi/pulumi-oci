@@ -636,7 +636,7 @@ class DiscoveryMod(pulumi.CustomResource):
                  schemas_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  sensitive_data_model_id: Optional[pulumi.Input[str]] = None,
                  sensitive_type_ids_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 tables_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DiscoveryModTablesForDiscoveryArgs']]]]] = None,
+                 tables_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DiscoveryModTablesForDiscoveryArgs', 'DiscoveryModTablesForDiscoveryArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Discovery Job resource in Oracle Cloud Infrastructure Data Safe service.
@@ -670,10 +670,10 @@ class DiscoveryMod(pulumi.CustomResource):
             is_sample_data_collection_enabled=discovery_job_is_sample_data_collection_enabled,
             schemas_for_discoveries=discovery_job_schemas_for_discovery,
             sensitive_type_ids_for_discoveries=discovery_job_sensitive_type_ids_for_discovery,
-            tables_for_discoveries=[oci.data_safe.DiscoveryModTablesForDiscoveryArgs(
-                schema_name=discovery_job_tables_for_discovery_schema_name,
-                table_names=discovery_job_tables_for_discovery_table_names,
-            )])
+            tables_for_discoveries=[{
+                "schema_name": discovery_job_tables_for_discovery_schema_name,
+                "table_names": discovery_job_tables_for_discovery_table_names,
+            }])
         ```
 
         ## Import
@@ -698,7 +698,7 @@ class DiscoveryMod(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas_for_discoveries: The schemas to be scanned by the discovery job. If not provided, the schemasForDiscovery attribute of the sensitive data model is used to get the list of schemas.
         :param pulumi.Input[str] sensitive_data_model_id: The OCID of the sensitive data model.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] sensitive_type_ids_for_discoveries: The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DiscoveryModTablesForDiscoveryArgs']]]] tables_for_discoveries: The data discovery jobs will scan the tables specified here, including both schemas and tables. In the absence  of explicit input, the list of tables is obtained from the tablesForDiscovery attribute of the sensitive data model.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DiscoveryModTablesForDiscoveryArgs', 'DiscoveryModTablesForDiscoveryArgsDict']]]] tables_for_discoveries: The data discovery jobs will scan the tables specified here, including both schemas and tables. In the absence  of explicit input, the list of tables is obtained from the tablesForDiscovery attribute of the sensitive data model.
         """
         ...
     @overload
@@ -738,10 +738,10 @@ class DiscoveryMod(pulumi.CustomResource):
             is_sample_data_collection_enabled=discovery_job_is_sample_data_collection_enabled,
             schemas_for_discoveries=discovery_job_schemas_for_discovery,
             sensitive_type_ids_for_discoveries=discovery_job_sensitive_type_ids_for_discovery,
-            tables_for_discoveries=[oci.data_safe.DiscoveryModTablesForDiscoveryArgs(
-                schema_name=discovery_job_tables_for_discovery_schema_name,
-                table_names=discovery_job_tables_for_discovery_table_names,
-            )])
+            tables_for_discoveries=[{
+                "schema_name": discovery_job_tables_for_discovery_schema_name,
+                "table_names": discovery_job_tables_for_discovery_table_names,
+            }])
         ```
 
         ## Import
@@ -779,7 +779,7 @@ class DiscoveryMod(pulumi.CustomResource):
                  schemas_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  sensitive_data_model_id: Optional[pulumi.Input[str]] = None,
                  sensitive_type_ids_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 tables_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DiscoveryModTablesForDiscoveryArgs']]]]] = None,
+                 tables_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DiscoveryModTablesForDiscoveryArgs', 'DiscoveryModTablesForDiscoveryArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -841,7 +841,7 @@ class DiscoveryMod(pulumi.CustomResource):
             sensitive_type_ids_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            tables_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DiscoveryModTablesForDiscoveryArgs']]]]] = None,
+            tables_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DiscoveryModTablesForDiscoveryArgs', 'DiscoveryModTablesForDiscoveryArgsDict']]]]] = None,
             target_id: Optional[pulumi.Input[str]] = None,
             time_finished: Optional[pulumi.Input[str]] = None,
             time_started: Optional[pulumi.Input[str]] = None,
@@ -872,7 +872,7 @@ class DiscoveryMod(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] sensitive_type_ids_for_discoveries: The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
         :param pulumi.Input[str] state: The current state of the discovery job.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DiscoveryModTablesForDiscoveryArgs']]]] tables_for_discoveries: The data discovery jobs will scan the tables specified here, including both schemas and tables. In the absence  of explicit input, the list of tables is obtained from the tablesForDiscovery attribute of the sensitive data model.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DiscoveryModTablesForDiscoveryArgs', 'DiscoveryModTablesForDiscoveryArgsDict']]]] tables_for_discoveries: The data discovery jobs will scan the tables specified here, including both schemas and tables. In the absence  of explicit input, the list of tables is obtained from the tablesForDiscovery attribute of the sensitive data model.
         :param pulumi.Input[str] target_id: The OCID of the target database associated with the discovery job.
         :param pulumi.Input[str] time_finished: The date and time the discovery job finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)..
         :param pulumi.Input[str] time_started: The date and time the discovery job started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).

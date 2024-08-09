@@ -215,8 +215,8 @@ class ManagedDatabasesResetDatabaseParameter(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 credentials: Optional[pulumi.Input[pulumi.InputType['ManagedDatabasesResetDatabaseParameterCredentialsArgs']]] = None,
-                 database_credential: Optional[pulumi.Input[pulumi.InputType['ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs']]] = None,
+                 credentials: Optional[pulumi.Input[Union['ManagedDatabasesResetDatabaseParameterCredentialsArgs', 'ManagedDatabasesResetDatabaseParameterCredentialsArgsDict']]] = None,
+                 database_credential: Optional[pulumi.Input[Union['ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs', 'ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgsDict']]] = None,
                  managed_database_id: Optional[pulumi.Input[str]] = None,
                  parameters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
@@ -236,20 +236,20 @@ class ManagedDatabasesResetDatabaseParameter(pulumi.CustomResource):
             managed_database_id=test_managed_database["id"],
             parameters=managed_databases_reset_database_parameter_parameters,
             scope=managed_databases_reset_database_parameter_scope,
-            credentials=oci.database_management.ManagedDatabasesResetDatabaseParameterCredentialsArgs(
-                password=managed_databases_reset_database_parameter_credentials_password,
-                role=managed_databases_reset_database_parameter_credentials_role,
-                secret_id=test_secret["id"],
-                user_name=test_user["name"],
-            ),
-            database_credential=oci.database_management.ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs(
-                credential_type=managed_databases_reset_database_parameter_database_credential_credential_type,
-                named_credential_id=test_named_credential["id"],
-                password=managed_databases_reset_database_parameter_database_credential_password,
-                password_secret_id=test_secret["id"],
-                role=managed_databases_reset_database_parameter_database_credential_role,
-                username=managed_databases_reset_database_parameter_database_credential_username,
-            ))
+            credentials={
+                "password": managed_databases_reset_database_parameter_credentials_password,
+                "role": managed_databases_reset_database_parameter_credentials_role,
+                "secret_id": test_secret["id"],
+                "user_name": test_user["name"],
+            },
+            database_credential={
+                "credential_type": managed_databases_reset_database_parameter_database_credential_credential_type,
+                "named_credential_id": test_named_credential["id"],
+                "password": managed_databases_reset_database_parameter_database_credential_password,
+                "password_secret_id": test_secret["id"],
+                "role": managed_databases_reset_database_parameter_database_credential_role,
+                "username": managed_databases_reset_database_parameter_database_credential_username,
+            })
         ```
 
         ## Import
@@ -258,8 +258,8 @@ class ManagedDatabasesResetDatabaseParameter(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['ManagedDatabasesResetDatabaseParameterCredentialsArgs']] credentials: The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
-        :param pulumi.Input[pulumi.InputType['ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs']] database_credential: The credential to connect to the database to perform tablespace administration tasks.
+        :param pulumi.Input[Union['ManagedDatabasesResetDatabaseParameterCredentialsArgs', 'ManagedDatabasesResetDatabaseParameterCredentialsArgsDict']] credentials: The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
+        :param pulumi.Input[Union['ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs', 'ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgsDict']] database_credential: The credential to connect to the database to perform tablespace administration tasks.
         :param pulumi.Input[str] managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] parameters: A list of database parameter names.
         :param pulumi.Input[str] scope: The clause used to specify when the parameter change takes effect.
@@ -291,20 +291,20 @@ class ManagedDatabasesResetDatabaseParameter(pulumi.CustomResource):
             managed_database_id=test_managed_database["id"],
             parameters=managed_databases_reset_database_parameter_parameters,
             scope=managed_databases_reset_database_parameter_scope,
-            credentials=oci.database_management.ManagedDatabasesResetDatabaseParameterCredentialsArgs(
-                password=managed_databases_reset_database_parameter_credentials_password,
-                role=managed_databases_reset_database_parameter_credentials_role,
-                secret_id=test_secret["id"],
-                user_name=test_user["name"],
-            ),
-            database_credential=oci.database_management.ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs(
-                credential_type=managed_databases_reset_database_parameter_database_credential_credential_type,
-                named_credential_id=test_named_credential["id"],
-                password=managed_databases_reset_database_parameter_database_credential_password,
-                password_secret_id=test_secret["id"],
-                role=managed_databases_reset_database_parameter_database_credential_role,
-                username=managed_databases_reset_database_parameter_database_credential_username,
-            ))
+            credentials={
+                "password": managed_databases_reset_database_parameter_credentials_password,
+                "role": managed_databases_reset_database_parameter_credentials_role,
+                "secret_id": test_secret["id"],
+                "user_name": test_user["name"],
+            },
+            database_credential={
+                "credential_type": managed_databases_reset_database_parameter_database_credential_credential_type,
+                "named_credential_id": test_named_credential["id"],
+                "password": managed_databases_reset_database_parameter_database_credential_password,
+                "password_secret_id": test_secret["id"],
+                "role": managed_databases_reset_database_parameter_database_credential_role,
+                "username": managed_databases_reset_database_parameter_database_credential_username,
+            })
         ```
 
         ## Import
@@ -326,8 +326,8 @@ class ManagedDatabasesResetDatabaseParameter(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 credentials: Optional[pulumi.Input[pulumi.InputType['ManagedDatabasesResetDatabaseParameterCredentialsArgs']]] = None,
-                 database_credential: Optional[pulumi.Input[pulumi.InputType['ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs']]] = None,
+                 credentials: Optional[pulumi.Input[Union['ManagedDatabasesResetDatabaseParameterCredentialsArgs', 'ManagedDatabasesResetDatabaseParameterCredentialsArgsDict']]] = None,
+                 database_credential: Optional[pulumi.Input[Union['ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs', 'ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgsDict']]] = None,
                  managed_database_id: Optional[pulumi.Input[str]] = None,
                  parameters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
@@ -361,8 +361,8 @@ class ManagedDatabasesResetDatabaseParameter(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            credentials: Optional[pulumi.Input[pulumi.InputType['ManagedDatabasesResetDatabaseParameterCredentialsArgs']]] = None,
-            database_credential: Optional[pulumi.Input[pulumi.InputType['ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs']]] = None,
+            credentials: Optional[pulumi.Input[Union['ManagedDatabasesResetDatabaseParameterCredentialsArgs', 'ManagedDatabasesResetDatabaseParameterCredentialsArgsDict']]] = None,
+            database_credential: Optional[pulumi.Input[Union['ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs', 'ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgsDict']]] = None,
             managed_database_id: Optional[pulumi.Input[str]] = None,
             parameters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             scope: Optional[pulumi.Input[str]] = None) -> 'ManagedDatabasesResetDatabaseParameter':
@@ -373,8 +373,8 @@ class ManagedDatabasesResetDatabaseParameter(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['ManagedDatabasesResetDatabaseParameterCredentialsArgs']] credentials: The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
-        :param pulumi.Input[pulumi.InputType['ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs']] database_credential: The credential to connect to the database to perform tablespace administration tasks.
+        :param pulumi.Input[Union['ManagedDatabasesResetDatabaseParameterCredentialsArgs', 'ManagedDatabasesResetDatabaseParameterCredentialsArgsDict']] credentials: The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
+        :param pulumi.Input[Union['ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs', 'ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgsDict']] database_credential: The credential to connect to the database to perform tablespace administration tasks.
         :param pulumi.Input[str] managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] parameters: A list of database parameter names.
         :param pulumi.Input[str] scope: The clause used to specify when the parameter change takes effect.

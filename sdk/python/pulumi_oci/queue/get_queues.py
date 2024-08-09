@@ -105,7 +105,7 @@ class AwaitableGetQueuesResult(GetQueuesResult):
 
 def get_queues(compartment_id: Optional[str] = None,
                display_name: Optional[str] = None,
-               filters: Optional[Sequence[pulumi.InputType['GetQueuesFilterArgs']]] = None,
+               filters: Optional[Sequence[Union['GetQueuesFilterArgs', 'GetQueuesFilterArgsDict']]] = None,
                id: Optional[str] = None,
                state: Optional[str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetQueuesResult:
@@ -153,7 +153,7 @@ def get_queues(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_queues)
 def get_queues_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                       display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                      filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetQueuesFilterArgs']]]]] = None,
+                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetQueuesFilterArgs', 'GetQueuesFilterArgsDict']]]]] = None,
                       id: Optional[pulumi.Input[Optional[str]]] = None,
                       state: Optional[pulumi.Input[Optional[str]]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetQueuesResult]:

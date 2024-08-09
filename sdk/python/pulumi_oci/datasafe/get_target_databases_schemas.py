@@ -109,7 +109,7 @@ class AwaitableGetTargetDatabasesSchemasResult(GetTargetDatabasesSchemasResult):
             target_database_id=self.target_database_id)
 
 
-def get_target_databases_schemas(filters: Optional[Sequence[pulumi.InputType['GetTargetDatabasesSchemasFilterArgs']]] = None,
+def get_target_databases_schemas(filters: Optional[Sequence[Union['GetTargetDatabasesSchemasFilterArgs', 'GetTargetDatabasesSchemasFilterArgsDict']]] = None,
                                  is_oracle_maintained: Optional[bool] = None,
                                  schema_name_contains: Optional[str] = None,
                                  schema_names: Optional[Sequence[str]] = None,
@@ -158,7 +158,7 @@ def get_target_databases_schemas(filters: Optional[Sequence[pulumi.InputType['Ge
 
 
 @_utilities.lift_output_func(get_target_databases_schemas)
-def get_target_databases_schemas_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetTargetDatabasesSchemasFilterArgs']]]]] = None,
+def get_target_databases_schemas_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetTargetDatabasesSchemasFilterArgs', 'GetTargetDatabasesSchemasFilterArgsDict']]]]] = None,
                                         is_oracle_maintained: Optional[pulumi.Input[Optional[bool]]] = None,
                                         schema_name_contains: Optional[pulumi.Input[Optional[str]]] = None,
                                         schema_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,

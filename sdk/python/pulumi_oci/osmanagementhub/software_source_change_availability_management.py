@@ -65,7 +65,7 @@ class SoftwareSourceChangeAvailabilityManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 software_source_availabilities: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgs']]]]] = None,
+                 software_source_availabilities: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgs', 'SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Software Source Change Availability Management resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -78,11 +78,11 @@ class SoftwareSourceChangeAvailabilityManagement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_software_source_change_availability_management = oci.os_management_hub.SoftwareSourceChangeAvailabilityManagement("test_software_source_change_availability_management", software_source_availabilities=[oci.os_management_hub.SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgs(
-            software_source_id=test_software_source["id"],
-            availability=software_source_change_availability_management_software_source_availabilities_availability,
-            availability_at_oci=software_source_change_availability_management_software_source_availabilities_availability_at_oci,
-        )])
+        test_software_source_change_availability_management = oci.os_management_hub.SoftwareSourceChangeAvailabilityManagement("test_software_source_change_availability_management", software_source_availabilities=[{
+            "software_source_id": test_software_source["id"],
+            "availability": software_source_change_availability_management_software_source_availabilities_availability,
+            "availability_at_oci": software_source_change_availability_management_software_source_availabilities_availability_at_oci,
+        }])
         ```
 
         ## Import
@@ -95,7 +95,7 @@ class SoftwareSourceChangeAvailabilityManagement(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgs']]]] software_source_availabilities: List of vendor software sources and their availability statuses.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgs', 'SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgsDict']]]] software_source_availabilities: List of vendor software sources and their availability statuses.
         """
         ...
     @overload
@@ -114,11 +114,11 @@ class SoftwareSourceChangeAvailabilityManagement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_software_source_change_availability_management = oci.os_management_hub.SoftwareSourceChangeAvailabilityManagement("test_software_source_change_availability_management", software_source_availabilities=[oci.os_management_hub.SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgs(
-            software_source_id=test_software_source["id"],
-            availability=software_source_change_availability_management_software_source_availabilities_availability,
-            availability_at_oci=software_source_change_availability_management_software_source_availabilities_availability_at_oci,
-        )])
+        test_software_source_change_availability_management = oci.os_management_hub.SoftwareSourceChangeAvailabilityManagement("test_software_source_change_availability_management", software_source_availabilities=[{
+            "software_source_id": test_software_source["id"],
+            "availability": software_source_change_availability_management_software_source_availabilities_availability,
+            "availability_at_oci": software_source_change_availability_management_software_source_availabilities_availability_at_oci,
+        }])
         ```
 
         ## Import
@@ -144,7 +144,7 @@ class SoftwareSourceChangeAvailabilityManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 software_source_availabilities: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgs']]]]] = None,
+                 software_source_availabilities: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgs', 'SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -167,7 +167,7 @@ class SoftwareSourceChangeAvailabilityManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            software_source_availabilities: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgs']]]]] = None) -> 'SoftwareSourceChangeAvailabilityManagement':
+            software_source_availabilities: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgs', 'SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgsDict']]]]] = None) -> 'SoftwareSourceChangeAvailabilityManagement':
         """
         Get an existing SoftwareSourceChangeAvailabilityManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -175,7 +175,7 @@ class SoftwareSourceChangeAvailabilityManagement(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgs']]]] software_source_availabilities: List of vendor software sources and their availability statuses.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgs', 'SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgsDict']]]] software_source_availabilities: List of vendor software sources and their availability statuses.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

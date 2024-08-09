@@ -145,7 +145,7 @@ public class AutonomousVmClusterOrdsCertificateManagement extends com.pulumi.res
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public AutonomousVmClusterOrdsCertificateManagement(String name) {
+    public AutonomousVmClusterOrdsCertificateManagement(java.lang.String name) {
         this(name, AutonomousVmClusterOrdsCertificateManagementArgs.Empty);
     }
     /**
@@ -153,7 +153,7 @@ public class AutonomousVmClusterOrdsCertificateManagement extends com.pulumi.res
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public AutonomousVmClusterOrdsCertificateManagement(String name, AutonomousVmClusterOrdsCertificateManagementArgs args) {
+    public AutonomousVmClusterOrdsCertificateManagement(java.lang.String name, AutonomousVmClusterOrdsCertificateManagementArgs args) {
         this(name, args, null);
     }
     /**
@@ -162,12 +162,12 @@ public class AutonomousVmClusterOrdsCertificateManagement extends com.pulumi.res
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public AutonomousVmClusterOrdsCertificateManagement(String name, AutonomousVmClusterOrdsCertificateManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/autonomousVmClusterOrdsCertificateManagement:AutonomousVmClusterOrdsCertificateManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public AutonomousVmClusterOrdsCertificateManagement(java.lang.String name, AutonomousVmClusterOrdsCertificateManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/autonomousVmClusterOrdsCertificateManagement:AutonomousVmClusterOrdsCertificateManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private AutonomousVmClusterOrdsCertificateManagement(String name, Output<String> id, @Nullable AutonomousVmClusterOrdsCertificateManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/autonomousVmClusterOrdsCertificateManagement:AutonomousVmClusterOrdsCertificateManagement", name, state, makeResourceOptions(options, id));
+    private AutonomousVmClusterOrdsCertificateManagement(java.lang.String name, Output<java.lang.String> id, @Nullable AutonomousVmClusterOrdsCertificateManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/autonomousVmClusterOrdsCertificateManagement:AutonomousVmClusterOrdsCertificateManagement", name, state, makeResourceOptions(options, id), false);
     }
 
     private static AutonomousVmClusterOrdsCertificateManagementArgs makeArgs(AutonomousVmClusterOrdsCertificateManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -177,7 +177,7 @@ public class AutonomousVmClusterOrdsCertificateManagement extends com.pulumi.res
         return args == null ? AutonomousVmClusterOrdsCertificateManagementArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -193,7 +193,7 @@ public class AutonomousVmClusterOrdsCertificateManagement extends com.pulumi.res
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static AutonomousVmClusterOrdsCertificateManagement get(String name, Output<String> id, @Nullable AutonomousVmClusterOrdsCertificateManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static AutonomousVmClusterOrdsCertificateManagement get(java.lang.String name, Output<java.lang.String> id, @Nullable AutonomousVmClusterOrdsCertificateManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new AutonomousVmClusterOrdsCertificateManagement(name, id, state, options);
     }
 }

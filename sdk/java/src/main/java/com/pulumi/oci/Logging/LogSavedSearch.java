@@ -208,7 +208,7 @@ public class LogSavedSearch extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public LogSavedSearch(String name) {
+    public LogSavedSearch(java.lang.String name) {
         this(name, LogSavedSearchArgs.Empty);
     }
     /**
@@ -216,7 +216,7 @@ public class LogSavedSearch extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public LogSavedSearch(String name, LogSavedSearchArgs args) {
+    public LogSavedSearch(java.lang.String name, LogSavedSearchArgs args) {
         this(name, args, null);
     }
     /**
@@ -225,12 +225,12 @@ public class LogSavedSearch extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public LogSavedSearch(String name, LogSavedSearchArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Logging/logSavedSearch:LogSavedSearch", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public LogSavedSearch(java.lang.String name, LogSavedSearchArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Logging/logSavedSearch:LogSavedSearch", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private LogSavedSearch(String name, Output<String> id, @Nullable LogSavedSearchState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Logging/logSavedSearch:LogSavedSearch", name, state, makeResourceOptions(options, id));
+    private LogSavedSearch(java.lang.String name, Output<java.lang.String> id, @Nullable LogSavedSearchState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Logging/logSavedSearch:LogSavedSearch", name, state, makeResourceOptions(options, id), false);
     }
 
     private static LogSavedSearchArgs makeArgs(LogSavedSearchArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -240,7 +240,7 @@ public class LogSavedSearch extends com.pulumi.resources.CustomResource {
         return args == null ? LogSavedSearchArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -256,7 +256,7 @@ public class LogSavedSearch extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static LogSavedSearch get(String name, Output<String> id, @Nullable LogSavedSearchState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static LogSavedSearch get(java.lang.String name, Output<java.lang.String> id, @Nullable LogSavedSearchState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new LogSavedSearch(name, id, state, options);
     }
 }

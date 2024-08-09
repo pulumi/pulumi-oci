@@ -101,7 +101,7 @@ class AwaitableGetAppCatalogListingsResult(GetAppCatalogListingsResult):
 
 
 def get_app_catalog_listings(display_name: Optional[str] = None,
-                             filters: Optional[Sequence[pulumi.InputType['GetAppCatalogListingsFilterArgs']]] = None,
+                             filters: Optional[Sequence[Union['GetAppCatalogListingsFilterArgs', 'GetAppCatalogListingsFilterArgsDict']]] = None,
                              publisher_name: Optional[str] = None,
                              publisher_type: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppCatalogListingsResult:
@@ -145,7 +145,7 @@ def get_app_catalog_listings(display_name: Optional[str] = None,
 
 @_utilities.lift_output_func(get_app_catalog_listings)
 def get_app_catalog_listings_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                    filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAppCatalogListingsFilterArgs']]]]] = None,
+                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAppCatalogListingsFilterArgs', 'GetAppCatalogListingsFilterArgsDict']]]]] = None,
                                     publisher_name: Optional[pulumi.Input[Optional[str]]] = None,
                                     publisher_type: Optional[pulumi.Input[Optional[str]]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppCatalogListingsResult]:

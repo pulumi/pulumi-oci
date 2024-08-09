@@ -275,7 +275,7 @@ class MonitoredResourcesListMember(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             destination_resource_id: Optional[pulumi.Input[str]] = None,
-            items: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MonitoredResourcesListMemberItemArgs']]]]] = None,
+            items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourcesListMemberItemArgs', 'MonitoredResourcesListMemberItemArgsDict']]]]] = None,
             limit_level: Optional[pulumi.Input[int]] = None,
             monitored_resource_id: Optional[pulumi.Input[str]] = None) -> 'MonitoredResourcesListMember':
         """
@@ -286,7 +286,7 @@ class MonitoredResourcesListMember(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] destination_resource_id: Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MonitoredResourcesListMemberItemArgs']]]] items: List of member resources.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourcesListMemberItemArgs', 'MonitoredResourcesListMemberItemArgsDict']]]] items: List of member resources.
         :param pulumi.Input[int] limit_level: The field which determines the depth of hierarchy while searching for members.
         :param pulumi.Input[str] monitored_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
                

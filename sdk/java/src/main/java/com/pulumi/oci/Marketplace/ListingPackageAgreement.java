@@ -181,7 +181,7 @@ public class ListingPackageAgreement extends com.pulumi.resources.CustomResource
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ListingPackageAgreement(String name) {
+    public ListingPackageAgreement(java.lang.String name) {
         this(name, ListingPackageAgreementArgs.Empty);
     }
     /**
@@ -189,7 +189,7 @@ public class ListingPackageAgreement extends com.pulumi.resources.CustomResource
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ListingPackageAgreement(String name, ListingPackageAgreementArgs args) {
+    public ListingPackageAgreement(java.lang.String name, ListingPackageAgreementArgs args) {
         this(name, args, null);
     }
     /**
@@ -198,12 +198,12 @@ public class ListingPackageAgreement extends com.pulumi.resources.CustomResource
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ListingPackageAgreement(String name, ListingPackageAgreementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Marketplace/listingPackageAgreement:ListingPackageAgreement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ListingPackageAgreement(java.lang.String name, ListingPackageAgreementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Marketplace/listingPackageAgreement:ListingPackageAgreement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ListingPackageAgreement(String name, Output<String> id, @Nullable ListingPackageAgreementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Marketplace/listingPackageAgreement:ListingPackageAgreement", name, state, makeResourceOptions(options, id));
+    private ListingPackageAgreement(java.lang.String name, Output<java.lang.String> id, @Nullable ListingPackageAgreementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Marketplace/listingPackageAgreement:ListingPackageAgreement", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ListingPackageAgreementArgs makeArgs(ListingPackageAgreementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -213,7 +213,7 @@ public class ListingPackageAgreement extends com.pulumi.resources.CustomResource
         return args == null ? ListingPackageAgreementArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -229,7 +229,7 @@ public class ListingPackageAgreement extends com.pulumi.resources.CustomResource
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ListingPackageAgreement get(String name, Output<String> id, @Nullable ListingPackageAgreementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ListingPackageAgreement get(java.lang.String name, Output<java.lang.String> id, @Nullable ListingPackageAgreementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ListingPackageAgreement(name, id, state, options);
     }
 }

@@ -110,7 +110,7 @@ class AwaitableGetInstanceAgentPluginsResult(GetInstanceAgentPluginsResult):
 
 
 def get_instance_agent_plugins(compartment_id: Optional[str] = None,
-                               filters: Optional[Sequence[pulumi.InputType['GetInstanceAgentPluginsFilterArgs']]] = None,
+                               filters: Optional[Sequence[Union['GetInstanceAgentPluginsFilterArgs', 'GetInstanceAgentPluginsFilterArgsDict']]] = None,
                                instanceagent_id: Optional[str] = None,
                                name: Optional[str] = None,
                                status: Optional[str] = None,
@@ -157,7 +157,7 @@ def get_instance_agent_plugins(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_instance_agent_plugins)
 def get_instance_agent_plugins_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                      filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetInstanceAgentPluginsFilterArgs']]]]] = None,
+                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetInstanceAgentPluginsFilterArgs', 'GetInstanceAgentPluginsFilterArgsDict']]]]] = None,
                                       instanceagent_id: Optional[pulumi.Input[str]] = None,
                                       name: Optional[pulumi.Input[Optional[str]]] = None,
                                       status: Optional[pulumi.Input[Optional[str]]] = None,

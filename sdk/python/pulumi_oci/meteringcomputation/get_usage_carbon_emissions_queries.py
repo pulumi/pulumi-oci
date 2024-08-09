@@ -80,7 +80,7 @@ class AwaitableGetUsageCarbonEmissionsQueriesResult(GetUsageCarbonEmissionsQueri
 
 
 def get_usage_carbon_emissions_queries(compartment_id: Optional[str] = None,
-                                       filters: Optional[Sequence[pulumi.InputType['GetUsageCarbonEmissionsQueriesFilterArgs']]] = None,
+                                       filters: Optional[Sequence[Union['GetUsageCarbonEmissionsQueriesFilterArgs', 'GetUsageCarbonEmissionsQueriesFilterArgsDict']]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetUsageCarbonEmissionsQueriesResult:
     """
     This data source provides the list of Usage Carbon Emissions Queries in Oracle Cloud Infrastructure Metering Computation service.
@@ -114,7 +114,7 @@ def get_usage_carbon_emissions_queries(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_usage_carbon_emissions_queries)
 def get_usage_carbon_emissions_queries_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                              filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetUsageCarbonEmissionsQueriesFilterArgs']]]]] = None,
+                                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetUsageCarbonEmissionsQueriesFilterArgs', 'GetUsageCarbonEmissionsQueriesFilterArgsDict']]]]] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUsageCarbonEmissionsQueriesResult]:
     """
     This data source provides the list of Usage Carbon Emissions Queries in Oracle Cloud Infrastructure Metering Computation service.

@@ -372,7 +372,7 @@ class Model(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 model_training_details: Optional[pulumi.Input[pulumi.InputType['ModelModelTrainingDetailsArgs']]] = None,
+                 model_training_details: Optional[pulumi.Input[Union['ModelModelTrainingDetailsArgs', 'ModelModelTrainingDetailsArgsDict']]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -388,13 +388,13 @@ class Model(pulumi.CustomResource):
 
         test_model = oci.ai_anomaly_detection.Model("test_model",
             compartment_id=compartment_id,
-            model_training_details=oci.ai_anomaly_detection.ModelModelTrainingDetailsArgs(
-                data_asset_ids=model_model_training_details_data_asset_ids,
-                algorithm_hint=model_model_training_details_algorithm_hint,
-                target_fap=model_model_training_details_target_fap,
-                training_fraction=model_model_training_details_training_fraction,
-                window_size=model_model_training_details_window_size,
-            ),
+            model_training_details={
+                "data_asset_ids": model_model_training_details_data_asset_ids,
+                "algorithm_hint": model_model_training_details_algorithm_hint,
+                "target_fap": model_model_training_details_target_fap,
+                "training_fraction": model_model_training_details_training_fraction,
+                "window_size": model_model_training_details_window_size,
+            },
             project_id=test_project["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -421,7 +421,7 @@ class Model(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) A short description of the ai model.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[pulumi.InputType['ModelModelTrainingDetailsArgs']] model_training_details: Specifies the details of the MSET model during the create call.
+        :param pulumi.Input[Union['ModelModelTrainingDetailsArgs', 'ModelModelTrainingDetailsArgsDict']] model_training_details: Specifies the details of the MSET model during the create call.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
                
                
@@ -447,13 +447,13 @@ class Model(pulumi.CustomResource):
 
         test_model = oci.ai_anomaly_detection.Model("test_model",
             compartment_id=compartment_id,
-            model_training_details=oci.ai_anomaly_detection.ModelModelTrainingDetailsArgs(
-                data_asset_ids=model_model_training_details_data_asset_ids,
-                algorithm_hint=model_model_training_details_algorithm_hint,
-                target_fap=model_model_training_details_target_fap,
-                training_fraction=model_model_training_details_training_fraction,
-                window_size=model_model_training_details_window_size,
-            ),
+            model_training_details={
+                "data_asset_ids": model_model_training_details_data_asset_ids,
+                "algorithm_hint": model_model_training_details_algorithm_hint,
+                "target_fap": model_model_training_details_target_fap,
+                "training_fraction": model_model_training_details_training_fraction,
+                "window_size": model_model_training_details_window_size,
+            },
             project_id=test_project["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -493,7 +493,7 @@ class Model(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 model_training_details: Optional[pulumi.Input[pulumi.InputType['ModelModelTrainingDetailsArgs']]] = None,
+                 model_training_details: Optional[pulumi.Input[Union['ModelModelTrainingDetailsArgs', 'ModelModelTrainingDetailsArgsDict']]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -539,8 +539,8 @@ class Model(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
-            model_training_details: Optional[pulumi.Input[pulumi.InputType['ModelModelTrainingDetailsArgs']]] = None,
-            model_training_results: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ModelModelTrainingResultArgs']]]]] = None,
+            model_training_details: Optional[pulumi.Input[Union['ModelModelTrainingDetailsArgs', 'ModelModelTrainingDetailsArgsDict']]] = None,
+            model_training_results: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ModelModelTrainingResultArgs', 'ModelModelTrainingResultArgsDict']]]]] = None,
             project_id: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -559,8 +559,8 @@ class Model(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[pulumi.InputType['ModelModelTrainingDetailsArgs']] model_training_details: Specifies the details of the MSET model during the create call.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ModelModelTrainingResultArgs']]]] model_training_results: Specifies the details for an Anomaly Detection model trained with MSET.
+        :param pulumi.Input[Union['ModelModelTrainingDetailsArgs', 'ModelModelTrainingDetailsArgsDict']] model_training_details: Specifies the details of the MSET model during the create call.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ModelModelTrainingResultArgs', 'ModelModelTrainingResultArgsDict']]]] model_training_results: Specifies the details for an Anomaly Detection model trained with MSET.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
                
                

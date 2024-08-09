@@ -132,7 +132,7 @@ public class Query extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public Query(String name) {
+    public Query(java.lang.String name) {
         this(name, QueryArgs.Empty);
     }
     /**
@@ -140,7 +140,7 @@ public class Query extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public Query(String name, QueryArgs args) {
+    public Query(java.lang.String name, QueryArgs args) {
         this(name, args, null);
     }
     /**
@@ -149,12 +149,12 @@ public class Query extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public Query(String name, QueryArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:MeteringComputation/query:Query", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public Query(java.lang.String name, QueryArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:MeteringComputation/query:Query", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private Query(String name, Output<String> id, @Nullable QueryState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:MeteringComputation/query:Query", name, state, makeResourceOptions(options, id));
+    private Query(java.lang.String name, Output<java.lang.String> id, @Nullable QueryState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:MeteringComputation/query:Query", name, state, makeResourceOptions(options, id), false);
     }
 
     private static QueryArgs makeArgs(QueryArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -164,7 +164,7 @@ public class Query extends com.pulumi.resources.CustomResource {
         return args == null ? QueryArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -180,7 +180,7 @@ public class Query extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static Query get(String name, Output<String> id, @Nullable QueryState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static Query get(java.lang.String name, Output<java.lang.String> id, @Nullable QueryState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new Query(name, id, state, options);
     }
 }

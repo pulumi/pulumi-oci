@@ -77,7 +77,7 @@ class AwaitableGetTagStandardTagNamespaceTemplatesResult(GetTagStandardTagNamesp
 
 
 def get_tag_standard_tag_namespace_templates(compartment_id: Optional[str] = None,
-                                             filters: Optional[Sequence[pulumi.InputType['GetTagStandardTagNamespaceTemplatesFilterArgs']]] = None,
+                                             filters: Optional[Sequence[Union['GetTagStandardTagNamespaceTemplatesFilterArgs', 'GetTagStandardTagNamespaceTemplatesFilterArgsDict']]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetTagStandardTagNamespaceTemplatesResult:
     """
     This data source provides the list of Tag Standard Tag Namespace Templates in Oracle Cloud Infrastructure Identity service.
@@ -111,7 +111,7 @@ def get_tag_standard_tag_namespace_templates(compartment_id: Optional[str] = Non
 
 @_utilities.lift_output_func(get_tag_standard_tag_namespace_templates)
 def get_tag_standard_tag_namespace_templates_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                                    filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetTagStandardTagNamespaceTemplatesFilterArgs']]]]] = None,
+                                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetTagStandardTagNamespaceTemplatesFilterArgs', 'GetTagStandardTagNamespaceTemplatesFilterArgsDict']]]]] = None,
                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTagStandardTagNamespaceTemplatesResult]:
     """
     This data source provides the list of Tag Standard Tag Namespace Templates in Oracle Cloud Infrastructure Identity service.

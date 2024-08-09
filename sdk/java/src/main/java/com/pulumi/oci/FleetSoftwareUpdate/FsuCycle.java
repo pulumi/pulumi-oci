@@ -181,7 +181,7 @@ public class FsuCycle extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public FsuCycle(String name) {
+    public FsuCycle(java.lang.String name) {
         this(name, FsuCycleArgs.Empty);
     }
     /**
@@ -189,7 +189,7 @@ public class FsuCycle extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public FsuCycle(String name, FsuCycleArgs args) {
+    public FsuCycle(java.lang.String name, FsuCycleArgs args) {
         this(name, args, null);
     }
     /**
@@ -198,12 +198,12 @@ public class FsuCycle extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public FsuCycle(String name, FsuCycleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:FleetSoftwareUpdate/fsuCycle:FsuCycle", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public FsuCycle(java.lang.String name, FsuCycleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:FleetSoftwareUpdate/fsuCycle:FsuCycle", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private FsuCycle(String name, Output<String> id, @Nullable FsuCycleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:FleetSoftwareUpdate/fsuCycle:FsuCycle", name, state, makeResourceOptions(options, id));
+    private FsuCycle(java.lang.String name, Output<java.lang.String> id, @Nullable FsuCycleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:FleetSoftwareUpdate/fsuCycle:FsuCycle", name, state, makeResourceOptions(options, id), false);
     }
 
     private static FsuCycleArgs makeArgs(FsuCycleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -213,7 +213,7 @@ public class FsuCycle extends com.pulumi.resources.CustomResource {
         return args == null ? FsuCycleArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -229,7 +229,7 @@ public class FsuCycle extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static FsuCycle get(String name, Output<String> id, @Nullable FsuCycleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static FsuCycle get(java.lang.String name, Output<java.lang.String> id, @Nullable FsuCycleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new FsuCycle(name, id, state, options);
     }
 }

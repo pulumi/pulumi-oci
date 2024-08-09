@@ -130,7 +130,7 @@ class AwaitableGetAnalyticsInstancesResult(GetAnalyticsInstancesResult):
 def get_analytics_instances(capacity_type: Optional[str] = None,
                             compartment_id: Optional[str] = None,
                             feature_set: Optional[str] = None,
-                            filters: Optional[Sequence[pulumi.InputType['GetAnalyticsInstancesFilterArgs']]] = None,
+                            filters: Optional[Sequence[Union['GetAnalyticsInstancesFilterArgs', 'GetAnalyticsInstancesFilterArgsDict']]] = None,
                             name: Optional[str] = None,
                             state: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAnalyticsInstancesResult:
@@ -184,7 +184,7 @@ def get_analytics_instances(capacity_type: Optional[str] = None,
 def get_analytics_instances_output(capacity_type: Optional[pulumi.Input[Optional[str]]] = None,
                                    compartment_id: Optional[pulumi.Input[str]] = None,
                                    feature_set: Optional[pulumi.Input[Optional[str]]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAnalyticsInstancesFilterArgs']]]]] = None,
+                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAnalyticsInstancesFilterArgs', 'GetAnalyticsInstancesFilterArgsDict']]]]] = None,
                                    name: Optional[pulumi.Input[Optional[str]]] = None,
                                    state: Optional[pulumi.Input[Optional[str]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAnalyticsInstancesResult]:

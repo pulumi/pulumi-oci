@@ -921,11 +921,11 @@ class WorkspaceApplicationTaskSchedule(pulumi.CustomResource):
                  number_of_retries: Optional[pulumi.Input[int]] = None,
                  object_status: Optional[pulumi.Input[int]] = None,
                  object_version: Optional[pulumi.Input[int]] = None,
-                 parent_ref: Optional[pulumi.Input[pulumi.InputType['WorkspaceApplicationTaskScheduleParentRefArgs']]] = None,
-                 registry_metadata: Optional[pulumi.Input[pulumi.InputType['WorkspaceApplicationTaskScheduleRegistryMetadataArgs']]] = None,
+                 parent_ref: Optional[pulumi.Input[Union['WorkspaceApplicationTaskScheduleParentRefArgs', 'WorkspaceApplicationTaskScheduleParentRefArgsDict']]] = None,
+                 registry_metadata: Optional[pulumi.Input[Union['WorkspaceApplicationTaskScheduleRegistryMetadataArgs', 'WorkspaceApplicationTaskScheduleRegistryMetadataArgsDict']]] = None,
                  retry_delay: Optional[pulumi.Input[float]] = None,
                  retry_delay_unit: Optional[pulumi.Input[str]] = None,
-                 schedule_ref: Optional[pulumi.Input[pulumi.InputType['WorkspaceApplicationTaskScheduleScheduleRefArgs']]] = None,
+                 schedule_ref: Optional[pulumi.Input[Union['WorkspaceApplicationTaskScheduleScheduleRefArgs', 'WorkspaceApplicationTaskScheduleScheduleRefArgsDict']]] = None,
                  start_time_millis: Optional[pulumi.Input[str]] = None,
                  workspace_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -959,76 +959,76 @@ class WorkspaceApplicationTaskSchedule(pulumi.CustomResource):
             number_of_retries=workspace_application_task_schedule_number_of_retries,
             object_status=workspace_application_task_schedule_object_status,
             object_version=workspace_application_task_schedule_object_version,
-            parent_ref=oci.data_integration.WorkspaceApplicationTaskScheduleParentRefArgs(
-                parent=workspace_application_task_schedule_parent_ref_parent,
-                root_doc_id=test_root_doc["id"],
-            ),
-            registry_metadata=oci.data_integration.WorkspaceApplicationTaskScheduleRegistryMetadataArgs(
-                aggregator_key=workspace_application_task_schedule_registry_metadata_aggregator_key,
-                is_favorite=workspace_application_task_schedule_registry_metadata_is_favorite,
-                key=workspace_application_task_schedule_registry_metadata_key,
-                labels=workspace_application_task_schedule_registry_metadata_labels,
-                registry_version=workspace_application_task_schedule_registry_metadata_registry_version,
-            ),
+            parent_ref={
+                "parent": workspace_application_task_schedule_parent_ref_parent,
+                "root_doc_id": test_root_doc["id"],
+            },
+            registry_metadata={
+                "aggregator_key": workspace_application_task_schedule_registry_metadata_aggregator_key,
+                "is_favorite": workspace_application_task_schedule_registry_metadata_is_favorite,
+                "key": workspace_application_task_schedule_registry_metadata_key,
+                "labels": workspace_application_task_schedule_registry_metadata_labels,
+                "registry_version": workspace_application_task_schedule_registry_metadata_registry_version,
+            },
             retry_delay=workspace_application_task_schedule_retry_delay,
             retry_delay_unit=workspace_application_task_schedule_retry_delay_unit,
-            schedule_ref=oci.data_integration.WorkspaceApplicationTaskScheduleScheduleRefArgs(
-                description=workspace_application_task_schedule_schedule_ref_description,
-                frequency_details=oci.data_integration.WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsArgs(
-                    model_type=workspace_application_task_schedule_schedule_ref_frequency_details_model_type,
-                    custom_expression=workspace_application_task_schedule_schedule_ref_frequency_details_custom_expression,
-                    day_of_week=workspace_application_task_schedule_schedule_ref_frequency_details_day_of_week,
-                    days=workspace_application_task_schedule_schedule_ref_frequency_details_days,
-                    frequency=workspace_application_task_schedule_schedule_ref_frequency_details_frequency,
-                    interval=workspace_application_task_schedule_schedule_ref_frequency_details_interval,
-                    time=oci.data_integration.WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsTimeArgs(
-                        hour=workspace_application_task_schedule_schedule_ref_frequency_details_time_hour,
-                        minute=workspace_application_task_schedule_schedule_ref_frequency_details_time_minute,
-                        second=workspace_application_task_schedule_schedule_ref_frequency_details_time_second,
-                    ),
-                    week_of_month=workspace_application_task_schedule_schedule_ref_frequency_details_week_of_month,
-                ),
-                identifier=workspace_application_task_schedule_schedule_ref_identifier,
-                is_daylight_adjustment_enabled=workspace_application_task_schedule_schedule_ref_is_daylight_adjustment_enabled,
-                key=workspace_application_task_schedule_schedule_ref_key,
-                metadata=oci.data_integration.WorkspaceApplicationTaskScheduleScheduleRefMetadataArgs(
-                    aggregator=oci.data_integration.WorkspaceApplicationTaskScheduleScheduleRefMetadataAggregatorArgs(
-                        description=workspace_application_task_schedule_schedule_ref_metadata_aggregator_description,
-                        identifier=workspace_application_task_schedule_schedule_ref_metadata_aggregator_identifier,
-                        key=workspace_application_task_schedule_schedule_ref_metadata_aggregator_key,
-                        name=workspace_application_task_schedule_schedule_ref_metadata_aggregator_name,
-                        type=workspace_application_task_schedule_schedule_ref_metadata_aggregator_type,
-                    ),
-                    aggregator_key=workspace_application_task_schedule_schedule_ref_metadata_aggregator_key,
-                    count_statistics=oci.data_integration.WorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticsArgs(
-                        object_type_count_lists=[oci.data_integration.WorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticsObjectTypeCountListArgs(
-                            object_count=workspace_application_task_schedule_schedule_ref_metadata_count_statistics_object_type_count_list_object_count,
-                            object_type=workspace_application_task_schedule_schedule_ref_metadata_count_statistics_object_type_count_list_object_type,
-                        )],
-                    ),
-                    created_by=workspace_application_task_schedule_schedule_ref_metadata_created_by,
-                    created_by_name=workspace_application_task_schedule_schedule_ref_metadata_created_by_name,
-                    identifier_path=workspace_application_task_schedule_schedule_ref_metadata_identifier_path,
-                    info_fields=workspace_application_task_schedule_schedule_ref_metadata_info_fields,
-                    is_favorite=workspace_application_task_schedule_schedule_ref_metadata_is_favorite,
-                    labels=workspace_application_task_schedule_schedule_ref_metadata_labels,
-                    registry_version=workspace_application_task_schedule_schedule_ref_metadata_registry_version,
-                    time_created=workspace_application_task_schedule_schedule_ref_metadata_time_created,
-                    time_updated=workspace_application_task_schedule_schedule_ref_metadata_time_updated,
-                    updated_by=workspace_application_task_schedule_schedule_ref_metadata_updated_by,
-                    updated_by_name=workspace_application_task_schedule_schedule_ref_metadata_updated_by_name,
-                ),
-                model_type=workspace_application_task_schedule_schedule_ref_model_type,
-                model_version=workspace_application_task_schedule_schedule_ref_model_version,
-                name=workspace_application_task_schedule_schedule_ref_name,
-                object_status=workspace_application_task_schedule_schedule_ref_object_status,
-                object_version=workspace_application_task_schedule_schedule_ref_object_version,
-                parent_ref=oci.data_integration.WorkspaceApplicationTaskScheduleScheduleRefParentRefArgs(
-                    parent=workspace_application_task_schedule_schedule_ref_parent_ref_parent,
-                    root_doc_id=test_root_doc["id"],
-                ),
-                timezone=workspace_application_task_schedule_schedule_ref_timezone,
-            ),
+            schedule_ref={
+                "description": workspace_application_task_schedule_schedule_ref_description,
+                "frequency_details": {
+                    "model_type": workspace_application_task_schedule_schedule_ref_frequency_details_model_type,
+                    "custom_expression": workspace_application_task_schedule_schedule_ref_frequency_details_custom_expression,
+                    "day_of_week": workspace_application_task_schedule_schedule_ref_frequency_details_day_of_week,
+                    "days": workspace_application_task_schedule_schedule_ref_frequency_details_days,
+                    "frequency": workspace_application_task_schedule_schedule_ref_frequency_details_frequency,
+                    "interval": workspace_application_task_schedule_schedule_ref_frequency_details_interval,
+                    "time": {
+                        "hour": workspace_application_task_schedule_schedule_ref_frequency_details_time_hour,
+                        "minute": workspace_application_task_schedule_schedule_ref_frequency_details_time_minute,
+                        "second": workspace_application_task_schedule_schedule_ref_frequency_details_time_second,
+                    },
+                    "week_of_month": workspace_application_task_schedule_schedule_ref_frequency_details_week_of_month,
+                },
+                "identifier": workspace_application_task_schedule_schedule_ref_identifier,
+                "is_daylight_adjustment_enabled": workspace_application_task_schedule_schedule_ref_is_daylight_adjustment_enabled,
+                "key": workspace_application_task_schedule_schedule_ref_key,
+                "metadata": {
+                    "aggregator": {
+                        "description": workspace_application_task_schedule_schedule_ref_metadata_aggregator_description,
+                        "identifier": workspace_application_task_schedule_schedule_ref_metadata_aggregator_identifier,
+                        "key": workspace_application_task_schedule_schedule_ref_metadata_aggregator_key,
+                        "name": workspace_application_task_schedule_schedule_ref_metadata_aggregator_name,
+                        "type": workspace_application_task_schedule_schedule_ref_metadata_aggregator_type,
+                    },
+                    "aggregator_key": workspace_application_task_schedule_schedule_ref_metadata_aggregator_key,
+                    "count_statistics": {
+                        "object_type_count_lists": [{
+                            "object_count": workspace_application_task_schedule_schedule_ref_metadata_count_statistics_object_type_count_list_object_count,
+                            "object_type": workspace_application_task_schedule_schedule_ref_metadata_count_statistics_object_type_count_list_object_type,
+                        }],
+                    },
+                    "created_by": workspace_application_task_schedule_schedule_ref_metadata_created_by,
+                    "created_by_name": workspace_application_task_schedule_schedule_ref_metadata_created_by_name,
+                    "identifier_path": workspace_application_task_schedule_schedule_ref_metadata_identifier_path,
+                    "info_fields": workspace_application_task_schedule_schedule_ref_metadata_info_fields,
+                    "is_favorite": workspace_application_task_schedule_schedule_ref_metadata_is_favorite,
+                    "labels": workspace_application_task_schedule_schedule_ref_metadata_labels,
+                    "registry_version": workspace_application_task_schedule_schedule_ref_metadata_registry_version,
+                    "time_created": workspace_application_task_schedule_schedule_ref_metadata_time_created,
+                    "time_updated": workspace_application_task_schedule_schedule_ref_metadata_time_updated,
+                    "updated_by": workspace_application_task_schedule_schedule_ref_metadata_updated_by,
+                    "updated_by_name": workspace_application_task_schedule_schedule_ref_metadata_updated_by_name,
+                },
+                "model_type": workspace_application_task_schedule_schedule_ref_model_type,
+                "model_version": workspace_application_task_schedule_schedule_ref_model_version,
+                "name": workspace_application_task_schedule_schedule_ref_name,
+                "object_status": workspace_application_task_schedule_schedule_ref_object_status,
+                "object_version": workspace_application_task_schedule_schedule_ref_object_version,
+                "parent_ref": {
+                    "parent": workspace_application_task_schedule_schedule_ref_parent_ref_parent,
+                    "root_doc_id": test_root_doc["id"],
+                },
+                "timezone": workspace_application_task_schedule_schedule_ref_timezone,
+            },
             start_time_millis=workspace_application_task_schedule_start_time_millis)
         ```
 
@@ -1059,11 +1059,11 @@ class WorkspaceApplicationTaskSchedule(pulumi.CustomResource):
         :param pulumi.Input[int] number_of_retries: (Updatable) The number of retries.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param pulumi.Input[int] object_version: (Updatable) This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
-        :param pulumi.Input[pulumi.InputType['WorkspaceApplicationTaskScheduleParentRefArgs']] parent_ref: (Updatable) A reference to the object's parent.
-        :param pulumi.Input[pulumi.InputType['WorkspaceApplicationTaskScheduleRegistryMetadataArgs']] registry_metadata: (Updatable) Information about the object and its parent.
+        :param pulumi.Input[Union['WorkspaceApplicationTaskScheduleParentRefArgs', 'WorkspaceApplicationTaskScheduleParentRefArgsDict']] parent_ref: (Updatable) A reference to the object's parent.
+        :param pulumi.Input[Union['WorkspaceApplicationTaskScheduleRegistryMetadataArgs', 'WorkspaceApplicationTaskScheduleRegistryMetadataArgsDict']] registry_metadata: (Updatable) Information about the object and its parent.
         :param pulumi.Input[float] retry_delay: (Updatable) The retry delay, the unit for measurement is in the property retry delay unit.
         :param pulumi.Input[str] retry_delay_unit: (Updatable) The unit for the retry delay.
-        :param pulumi.Input[pulumi.InputType['WorkspaceApplicationTaskScheduleScheduleRefArgs']] schedule_ref: (Updatable) The schedule object
+        :param pulumi.Input[Union['WorkspaceApplicationTaskScheduleScheduleRefArgs', 'WorkspaceApplicationTaskScheduleScheduleRefArgsDict']] schedule_ref: (Updatable) The schedule object
         :param pulumi.Input[str] start_time_millis: (Updatable) The start time in milliseconds.
         :param pulumi.Input[str] workspace_id: The workspace ID.
                
@@ -1107,76 +1107,76 @@ class WorkspaceApplicationTaskSchedule(pulumi.CustomResource):
             number_of_retries=workspace_application_task_schedule_number_of_retries,
             object_status=workspace_application_task_schedule_object_status,
             object_version=workspace_application_task_schedule_object_version,
-            parent_ref=oci.data_integration.WorkspaceApplicationTaskScheduleParentRefArgs(
-                parent=workspace_application_task_schedule_parent_ref_parent,
-                root_doc_id=test_root_doc["id"],
-            ),
-            registry_metadata=oci.data_integration.WorkspaceApplicationTaskScheduleRegistryMetadataArgs(
-                aggregator_key=workspace_application_task_schedule_registry_metadata_aggregator_key,
-                is_favorite=workspace_application_task_schedule_registry_metadata_is_favorite,
-                key=workspace_application_task_schedule_registry_metadata_key,
-                labels=workspace_application_task_schedule_registry_metadata_labels,
-                registry_version=workspace_application_task_schedule_registry_metadata_registry_version,
-            ),
+            parent_ref={
+                "parent": workspace_application_task_schedule_parent_ref_parent,
+                "root_doc_id": test_root_doc["id"],
+            },
+            registry_metadata={
+                "aggregator_key": workspace_application_task_schedule_registry_metadata_aggregator_key,
+                "is_favorite": workspace_application_task_schedule_registry_metadata_is_favorite,
+                "key": workspace_application_task_schedule_registry_metadata_key,
+                "labels": workspace_application_task_schedule_registry_metadata_labels,
+                "registry_version": workspace_application_task_schedule_registry_metadata_registry_version,
+            },
             retry_delay=workspace_application_task_schedule_retry_delay,
             retry_delay_unit=workspace_application_task_schedule_retry_delay_unit,
-            schedule_ref=oci.data_integration.WorkspaceApplicationTaskScheduleScheduleRefArgs(
-                description=workspace_application_task_schedule_schedule_ref_description,
-                frequency_details=oci.data_integration.WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsArgs(
-                    model_type=workspace_application_task_schedule_schedule_ref_frequency_details_model_type,
-                    custom_expression=workspace_application_task_schedule_schedule_ref_frequency_details_custom_expression,
-                    day_of_week=workspace_application_task_schedule_schedule_ref_frequency_details_day_of_week,
-                    days=workspace_application_task_schedule_schedule_ref_frequency_details_days,
-                    frequency=workspace_application_task_schedule_schedule_ref_frequency_details_frequency,
-                    interval=workspace_application_task_schedule_schedule_ref_frequency_details_interval,
-                    time=oci.data_integration.WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsTimeArgs(
-                        hour=workspace_application_task_schedule_schedule_ref_frequency_details_time_hour,
-                        minute=workspace_application_task_schedule_schedule_ref_frequency_details_time_minute,
-                        second=workspace_application_task_schedule_schedule_ref_frequency_details_time_second,
-                    ),
-                    week_of_month=workspace_application_task_schedule_schedule_ref_frequency_details_week_of_month,
-                ),
-                identifier=workspace_application_task_schedule_schedule_ref_identifier,
-                is_daylight_adjustment_enabled=workspace_application_task_schedule_schedule_ref_is_daylight_adjustment_enabled,
-                key=workspace_application_task_schedule_schedule_ref_key,
-                metadata=oci.data_integration.WorkspaceApplicationTaskScheduleScheduleRefMetadataArgs(
-                    aggregator=oci.data_integration.WorkspaceApplicationTaskScheduleScheduleRefMetadataAggregatorArgs(
-                        description=workspace_application_task_schedule_schedule_ref_metadata_aggregator_description,
-                        identifier=workspace_application_task_schedule_schedule_ref_metadata_aggregator_identifier,
-                        key=workspace_application_task_schedule_schedule_ref_metadata_aggregator_key,
-                        name=workspace_application_task_schedule_schedule_ref_metadata_aggregator_name,
-                        type=workspace_application_task_schedule_schedule_ref_metadata_aggregator_type,
-                    ),
-                    aggregator_key=workspace_application_task_schedule_schedule_ref_metadata_aggregator_key,
-                    count_statistics=oci.data_integration.WorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticsArgs(
-                        object_type_count_lists=[oci.data_integration.WorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticsObjectTypeCountListArgs(
-                            object_count=workspace_application_task_schedule_schedule_ref_metadata_count_statistics_object_type_count_list_object_count,
-                            object_type=workspace_application_task_schedule_schedule_ref_metadata_count_statistics_object_type_count_list_object_type,
-                        )],
-                    ),
-                    created_by=workspace_application_task_schedule_schedule_ref_metadata_created_by,
-                    created_by_name=workspace_application_task_schedule_schedule_ref_metadata_created_by_name,
-                    identifier_path=workspace_application_task_schedule_schedule_ref_metadata_identifier_path,
-                    info_fields=workspace_application_task_schedule_schedule_ref_metadata_info_fields,
-                    is_favorite=workspace_application_task_schedule_schedule_ref_metadata_is_favorite,
-                    labels=workspace_application_task_schedule_schedule_ref_metadata_labels,
-                    registry_version=workspace_application_task_schedule_schedule_ref_metadata_registry_version,
-                    time_created=workspace_application_task_schedule_schedule_ref_metadata_time_created,
-                    time_updated=workspace_application_task_schedule_schedule_ref_metadata_time_updated,
-                    updated_by=workspace_application_task_schedule_schedule_ref_metadata_updated_by,
-                    updated_by_name=workspace_application_task_schedule_schedule_ref_metadata_updated_by_name,
-                ),
-                model_type=workspace_application_task_schedule_schedule_ref_model_type,
-                model_version=workspace_application_task_schedule_schedule_ref_model_version,
-                name=workspace_application_task_schedule_schedule_ref_name,
-                object_status=workspace_application_task_schedule_schedule_ref_object_status,
-                object_version=workspace_application_task_schedule_schedule_ref_object_version,
-                parent_ref=oci.data_integration.WorkspaceApplicationTaskScheduleScheduleRefParentRefArgs(
-                    parent=workspace_application_task_schedule_schedule_ref_parent_ref_parent,
-                    root_doc_id=test_root_doc["id"],
-                ),
-                timezone=workspace_application_task_schedule_schedule_ref_timezone,
-            ),
+            schedule_ref={
+                "description": workspace_application_task_schedule_schedule_ref_description,
+                "frequency_details": {
+                    "model_type": workspace_application_task_schedule_schedule_ref_frequency_details_model_type,
+                    "custom_expression": workspace_application_task_schedule_schedule_ref_frequency_details_custom_expression,
+                    "day_of_week": workspace_application_task_schedule_schedule_ref_frequency_details_day_of_week,
+                    "days": workspace_application_task_schedule_schedule_ref_frequency_details_days,
+                    "frequency": workspace_application_task_schedule_schedule_ref_frequency_details_frequency,
+                    "interval": workspace_application_task_schedule_schedule_ref_frequency_details_interval,
+                    "time": {
+                        "hour": workspace_application_task_schedule_schedule_ref_frequency_details_time_hour,
+                        "minute": workspace_application_task_schedule_schedule_ref_frequency_details_time_minute,
+                        "second": workspace_application_task_schedule_schedule_ref_frequency_details_time_second,
+                    },
+                    "week_of_month": workspace_application_task_schedule_schedule_ref_frequency_details_week_of_month,
+                },
+                "identifier": workspace_application_task_schedule_schedule_ref_identifier,
+                "is_daylight_adjustment_enabled": workspace_application_task_schedule_schedule_ref_is_daylight_adjustment_enabled,
+                "key": workspace_application_task_schedule_schedule_ref_key,
+                "metadata": {
+                    "aggregator": {
+                        "description": workspace_application_task_schedule_schedule_ref_metadata_aggregator_description,
+                        "identifier": workspace_application_task_schedule_schedule_ref_metadata_aggregator_identifier,
+                        "key": workspace_application_task_schedule_schedule_ref_metadata_aggregator_key,
+                        "name": workspace_application_task_schedule_schedule_ref_metadata_aggregator_name,
+                        "type": workspace_application_task_schedule_schedule_ref_metadata_aggregator_type,
+                    },
+                    "aggregator_key": workspace_application_task_schedule_schedule_ref_metadata_aggregator_key,
+                    "count_statistics": {
+                        "object_type_count_lists": [{
+                            "object_count": workspace_application_task_schedule_schedule_ref_metadata_count_statistics_object_type_count_list_object_count,
+                            "object_type": workspace_application_task_schedule_schedule_ref_metadata_count_statistics_object_type_count_list_object_type,
+                        }],
+                    },
+                    "created_by": workspace_application_task_schedule_schedule_ref_metadata_created_by,
+                    "created_by_name": workspace_application_task_schedule_schedule_ref_metadata_created_by_name,
+                    "identifier_path": workspace_application_task_schedule_schedule_ref_metadata_identifier_path,
+                    "info_fields": workspace_application_task_schedule_schedule_ref_metadata_info_fields,
+                    "is_favorite": workspace_application_task_schedule_schedule_ref_metadata_is_favorite,
+                    "labels": workspace_application_task_schedule_schedule_ref_metadata_labels,
+                    "registry_version": workspace_application_task_schedule_schedule_ref_metadata_registry_version,
+                    "time_created": workspace_application_task_schedule_schedule_ref_metadata_time_created,
+                    "time_updated": workspace_application_task_schedule_schedule_ref_metadata_time_updated,
+                    "updated_by": workspace_application_task_schedule_schedule_ref_metadata_updated_by,
+                    "updated_by_name": workspace_application_task_schedule_schedule_ref_metadata_updated_by_name,
+                },
+                "model_type": workspace_application_task_schedule_schedule_ref_model_type,
+                "model_version": workspace_application_task_schedule_schedule_ref_model_version,
+                "name": workspace_application_task_schedule_schedule_ref_name,
+                "object_status": workspace_application_task_schedule_schedule_ref_object_status,
+                "object_version": workspace_application_task_schedule_schedule_ref_object_version,
+                "parent_ref": {
+                    "parent": workspace_application_task_schedule_schedule_ref_parent_ref_parent,
+                    "root_doc_id": test_root_doc["id"],
+                },
+                "timezone": workspace_application_task_schedule_schedule_ref_timezone,
+            },
             start_time_millis=workspace_application_task_schedule_start_time_millis)
         ```
 
@@ -1221,11 +1221,11 @@ class WorkspaceApplicationTaskSchedule(pulumi.CustomResource):
                  number_of_retries: Optional[pulumi.Input[int]] = None,
                  object_status: Optional[pulumi.Input[int]] = None,
                  object_version: Optional[pulumi.Input[int]] = None,
-                 parent_ref: Optional[pulumi.Input[pulumi.InputType['WorkspaceApplicationTaskScheduleParentRefArgs']]] = None,
-                 registry_metadata: Optional[pulumi.Input[pulumi.InputType['WorkspaceApplicationTaskScheduleRegistryMetadataArgs']]] = None,
+                 parent_ref: Optional[pulumi.Input[Union['WorkspaceApplicationTaskScheduleParentRefArgs', 'WorkspaceApplicationTaskScheduleParentRefArgsDict']]] = None,
+                 registry_metadata: Optional[pulumi.Input[Union['WorkspaceApplicationTaskScheduleRegistryMetadataArgs', 'WorkspaceApplicationTaskScheduleRegistryMetadataArgsDict']]] = None,
                  retry_delay: Optional[pulumi.Input[float]] = None,
                  retry_delay_unit: Optional[pulumi.Input[str]] = None,
-                 schedule_ref: Optional[pulumi.Input[pulumi.InputType['WorkspaceApplicationTaskScheduleScheduleRefArgs']]] = None,
+                 schedule_ref: Optional[pulumi.Input[Union['WorkspaceApplicationTaskScheduleScheduleRefArgs', 'WorkspaceApplicationTaskScheduleScheduleRefArgsDict']]] = None,
                  start_time_millis: Optional[pulumi.Input[str]] = None,
                  workspace_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -1294,8 +1294,8 @@ class WorkspaceApplicationTaskSchedule(pulumi.CustomResource):
             is_concurrent_allowed: Optional[pulumi.Input[bool]] = None,
             is_enabled: Optional[pulumi.Input[bool]] = None,
             key: Optional[pulumi.Input[str]] = None,
-            last_run_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WorkspaceApplicationTaskScheduleLastRunDetailArgs']]]]] = None,
-            metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WorkspaceApplicationTaskScheduleMetadataArgs']]]]] = None,
+            last_run_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceApplicationTaskScheduleLastRunDetailArgs', 'WorkspaceApplicationTaskScheduleLastRunDetailArgsDict']]]]] = None,
+            metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceApplicationTaskScheduleMetadataArgs', 'WorkspaceApplicationTaskScheduleMetadataArgsDict']]]]] = None,
             model_type: Optional[pulumi.Input[str]] = None,
             model_version: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
@@ -1303,12 +1303,12 @@ class WorkspaceApplicationTaskSchedule(pulumi.CustomResource):
             number_of_retries: Optional[pulumi.Input[int]] = None,
             object_status: Optional[pulumi.Input[int]] = None,
             object_version: Optional[pulumi.Input[int]] = None,
-            parent_ref: Optional[pulumi.Input[pulumi.InputType['WorkspaceApplicationTaskScheduleParentRefArgs']]] = None,
-            registry_metadata: Optional[pulumi.Input[pulumi.InputType['WorkspaceApplicationTaskScheduleRegistryMetadataArgs']]] = None,
+            parent_ref: Optional[pulumi.Input[Union['WorkspaceApplicationTaskScheduleParentRefArgs', 'WorkspaceApplicationTaskScheduleParentRefArgsDict']]] = None,
+            registry_metadata: Optional[pulumi.Input[Union['WorkspaceApplicationTaskScheduleRegistryMetadataArgs', 'WorkspaceApplicationTaskScheduleRegistryMetadataArgsDict']]] = None,
             retry_attempts: Optional[pulumi.Input[int]] = None,
             retry_delay: Optional[pulumi.Input[float]] = None,
             retry_delay_unit: Optional[pulumi.Input[str]] = None,
-            schedule_ref: Optional[pulumi.Input[pulumi.InputType['WorkspaceApplicationTaskScheduleScheduleRefArgs']]] = None,
+            schedule_ref: Optional[pulumi.Input[Union['WorkspaceApplicationTaskScheduleScheduleRefArgs', 'WorkspaceApplicationTaskScheduleScheduleRefArgsDict']]] = None,
             start_time_millis: Optional[pulumi.Input[str]] = None,
             workspace_id: Optional[pulumi.Input[str]] = None) -> 'WorkspaceApplicationTaskSchedule':
         """
@@ -1330,20 +1330,20 @@ class WorkspaceApplicationTaskSchedule(pulumi.CustomResource):
         :param pulumi.Input[bool] is_concurrent_allowed: (Updatable) Whether the same task can be executed concurrently.
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether the task schedule is enabled.
         :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WorkspaceApplicationTaskScheduleLastRunDetailArgs']]]] last_run_details: The last run details for the task run.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WorkspaceApplicationTaskScheduleMetadataArgs']]]] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceApplicationTaskScheduleLastRunDetailArgs', 'WorkspaceApplicationTaskScheduleLastRunDetailArgsDict']]]] last_run_details: The last run details for the task run.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceApplicationTaskScheduleMetadataArgs', 'WorkspaceApplicationTaskScheduleMetadataArgsDict']]]] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
         :param pulumi.Input[str] model_type: The type of the object.
         :param pulumi.Input[str] model_version: (Updatable) This is a version number that is used by the service to upgrade objects if needed through releases of the service.
         :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[int] number_of_retries: (Updatable) The number of retries.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param pulumi.Input[int] object_version: (Updatable) This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
-        :param pulumi.Input[pulumi.InputType['WorkspaceApplicationTaskScheduleParentRefArgs']] parent_ref: (Updatable) A reference to the object's parent.
-        :param pulumi.Input[pulumi.InputType['WorkspaceApplicationTaskScheduleRegistryMetadataArgs']] registry_metadata: (Updatable) Information about the object and its parent.
+        :param pulumi.Input[Union['WorkspaceApplicationTaskScheduleParentRefArgs', 'WorkspaceApplicationTaskScheduleParentRefArgsDict']] parent_ref: (Updatable) A reference to the object's parent.
+        :param pulumi.Input[Union['WorkspaceApplicationTaskScheduleRegistryMetadataArgs', 'WorkspaceApplicationTaskScheduleRegistryMetadataArgsDict']] registry_metadata: (Updatable) Information about the object and its parent.
         :param pulumi.Input[int] retry_attempts: The number of retry attempts.
         :param pulumi.Input[float] retry_delay: (Updatable) The retry delay, the unit for measurement is in the property retry delay unit.
         :param pulumi.Input[str] retry_delay_unit: (Updatable) The unit for the retry delay.
-        :param pulumi.Input[pulumi.InputType['WorkspaceApplicationTaskScheduleScheduleRefArgs']] schedule_ref: (Updatable) The schedule object
+        :param pulumi.Input[Union['WorkspaceApplicationTaskScheduleScheduleRefArgs', 'WorkspaceApplicationTaskScheduleScheduleRefArgsDict']] schedule_ref: (Updatable) The schedule object
         :param pulumi.Input[str] start_time_millis: (Updatable) The start time in milliseconds.
         :param pulumi.Input[str] workspace_id: The workspace ID.
                

@@ -208,7 +208,7 @@ public class CaBundle extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public CaBundle(String name) {
+    public CaBundle(java.lang.String name) {
         this(name, CaBundleArgs.Empty);
     }
     /**
@@ -216,7 +216,7 @@ public class CaBundle extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public CaBundle(String name, CaBundleArgs args) {
+    public CaBundle(java.lang.String name, CaBundleArgs args) {
         this(name, args, null);
     }
     /**
@@ -225,12 +225,12 @@ public class CaBundle extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public CaBundle(String name, CaBundleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:CertificatesManagement/caBundle:CaBundle", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public CaBundle(java.lang.String name, CaBundleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:CertificatesManagement/caBundle:CaBundle", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private CaBundle(String name, Output<String> id, @Nullable CaBundleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:CertificatesManagement/caBundle:CaBundle", name, state, makeResourceOptions(options, id));
+    private CaBundle(java.lang.String name, Output<java.lang.String> id, @Nullable CaBundleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:CertificatesManagement/caBundle:CaBundle", name, state, makeResourceOptions(options, id), false);
     }
 
     private static CaBundleArgs makeArgs(CaBundleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -240,7 +240,7 @@ public class CaBundle extends com.pulumi.resources.CustomResource {
         return args == null ? CaBundleArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -256,7 +256,7 @@ public class CaBundle extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static CaBundle get(String name, Output<String> id, @Nullable CaBundleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static CaBundle get(java.lang.String name, Output<java.lang.String> id, @Nullable CaBundleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new CaBundle(name, id, state, options);
     }
 }

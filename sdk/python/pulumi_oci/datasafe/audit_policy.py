@@ -600,9 +600,9 @@ class AuditPolicy(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            audit_conditions: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AuditPolicyAuditConditionArgs']]]]] = None,
+            audit_conditions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AuditPolicyAuditConditionArgs', 'AuditPolicyAuditConditionArgsDict']]]]] = None,
             audit_policy_id: Optional[pulumi.Input[str]] = None,
-            audit_specifications: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AuditPolicyAuditSpecificationArgs']]]]] = None,
+            audit_specifications: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AuditPolicyAuditSpecificationArgs', 'AuditPolicyAuditSpecificationArgsDict']]]]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             description: Optional[pulumi.Input[str]] = None,
@@ -626,9 +626,9 @@ class AuditPolicy(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AuditPolicyAuditConditionArgs']]]] audit_conditions: Lists the audit policy provisioning conditions for the target database.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AuditPolicyAuditConditionArgs', 'AuditPolicyAuditConditionArgsDict']]]] audit_conditions: Lists the audit policy provisioning conditions for the target database.
         :param pulumi.Input[str] audit_policy_id: Unique audit policy identifier.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AuditPolicyAuditSpecificationArgs']]]] audit_specifications: Represents all available audit policy specifications relevant for the target database. For more details on available audit polcies, refer to [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AuditPolicyAuditSpecificationArgs', 'AuditPolicyAuditSpecificationArgsDict']]]] audit_specifications: Represents all available audit policy specifications relevant for the target database. For more details on available audit polcies, refer to [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827).
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing the audit policy.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the audit policy.

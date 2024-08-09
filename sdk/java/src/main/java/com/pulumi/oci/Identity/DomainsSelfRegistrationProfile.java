@@ -1185,7 +1185,7 @@ public class DomainsSelfRegistrationProfile extends com.pulumi.resources.CustomR
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DomainsSelfRegistrationProfile(String name) {
+    public DomainsSelfRegistrationProfile(java.lang.String name) {
         this(name, DomainsSelfRegistrationProfileArgs.Empty);
     }
     /**
@@ -1193,7 +1193,7 @@ public class DomainsSelfRegistrationProfile extends com.pulumi.resources.CustomR
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DomainsSelfRegistrationProfile(String name, DomainsSelfRegistrationProfileArgs args) {
+    public DomainsSelfRegistrationProfile(java.lang.String name, DomainsSelfRegistrationProfileArgs args) {
         this(name, args, null);
     }
     /**
@@ -1202,12 +1202,12 @@ public class DomainsSelfRegistrationProfile extends com.pulumi.resources.CustomR
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DomainsSelfRegistrationProfile(String name, DomainsSelfRegistrationProfileArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsSelfRegistrationProfile:DomainsSelfRegistrationProfile", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DomainsSelfRegistrationProfile(java.lang.String name, DomainsSelfRegistrationProfileArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/domainsSelfRegistrationProfile:DomainsSelfRegistrationProfile", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DomainsSelfRegistrationProfile(String name, Output<String> id, @Nullable DomainsSelfRegistrationProfileState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsSelfRegistrationProfile:DomainsSelfRegistrationProfile", name, state, makeResourceOptions(options, id));
+    private DomainsSelfRegistrationProfile(java.lang.String name, Output<java.lang.String> id, @Nullable DomainsSelfRegistrationProfileState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/domainsSelfRegistrationProfile:DomainsSelfRegistrationProfile", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DomainsSelfRegistrationProfileArgs makeArgs(DomainsSelfRegistrationProfileArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -1217,7 +1217,7 @@ public class DomainsSelfRegistrationProfile extends com.pulumi.resources.CustomR
         return args == null ? DomainsSelfRegistrationProfileArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -1233,7 +1233,7 @@ public class DomainsSelfRegistrationProfile extends com.pulumi.resources.CustomR
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DomainsSelfRegistrationProfile get(String name, Output<String> id, @Nullable DomainsSelfRegistrationProfileState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DomainsSelfRegistrationProfile get(java.lang.String name, Output<java.lang.String> id, @Nullable DomainsSelfRegistrationProfileState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DomainsSelfRegistrationProfile(name, id, state, options);
     }
 }

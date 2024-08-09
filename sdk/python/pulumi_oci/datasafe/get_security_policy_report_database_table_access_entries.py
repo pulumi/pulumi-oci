@@ -85,7 +85,7 @@ class AwaitableGetSecurityPolicyReportDatabaseTableAccessEntriesResult(GetSecuri
             security_policy_report_id=self.security_policy_report_id)
 
 
-def get_security_policy_report_database_table_access_entries(filters: Optional[Sequence[pulumi.InputType['GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArgs']]] = None,
+def get_security_policy_report_database_table_access_entries(filters: Optional[Sequence[Union['GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArgs', 'GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArgsDict']]] = None,
                                                              scim_query: Optional[str] = None,
                                                              security_policy_report_id: Optional[str] = None,
                                                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSecurityPolicyReportDatabaseTableAccessEntriesResult:
@@ -128,7 +128,7 @@ def get_security_policy_report_database_table_access_entries(filters: Optional[S
 
 
 @_utilities.lift_output_func(get_security_policy_report_database_table_access_entries)
-def get_security_policy_report_database_table_access_entries_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArgs']]]]] = None,
+def get_security_policy_report_database_table_access_entries_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArgs', 'GetSecurityPolicyReportDatabaseTableAccessEntriesFilterArgsDict']]]]] = None,
                                                                     scim_query: Optional[pulumi.Input[Optional[str]]] = None,
                                                                     security_policy_report_id: Optional[pulumi.Input[str]] = None,
                                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityPolicyReportDatabaseTableAccessEntriesResult]:

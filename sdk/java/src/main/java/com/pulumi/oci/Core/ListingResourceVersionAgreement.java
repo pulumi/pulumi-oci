@@ -144,7 +144,7 @@ public class ListingResourceVersionAgreement extends com.pulumi.resources.Custom
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ListingResourceVersionAgreement(String name) {
+    public ListingResourceVersionAgreement(java.lang.String name) {
         this(name, ListingResourceVersionAgreementArgs.Empty);
     }
     /**
@@ -152,7 +152,7 @@ public class ListingResourceVersionAgreement extends com.pulumi.resources.Custom
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ListingResourceVersionAgreement(String name, ListingResourceVersionAgreementArgs args) {
+    public ListingResourceVersionAgreement(java.lang.String name, ListingResourceVersionAgreementArgs args) {
         this(name, args, null);
     }
     /**
@@ -161,12 +161,12 @@ public class ListingResourceVersionAgreement extends com.pulumi.resources.Custom
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ListingResourceVersionAgreement(String name, ListingResourceVersionAgreementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/listingResourceVersionAgreement:ListingResourceVersionAgreement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ListingResourceVersionAgreement(java.lang.String name, ListingResourceVersionAgreementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Core/listingResourceVersionAgreement:ListingResourceVersionAgreement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ListingResourceVersionAgreement(String name, Output<String> id, @Nullable ListingResourceVersionAgreementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/listingResourceVersionAgreement:ListingResourceVersionAgreement", name, state, makeResourceOptions(options, id));
+    private ListingResourceVersionAgreement(java.lang.String name, Output<java.lang.String> id, @Nullable ListingResourceVersionAgreementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Core/listingResourceVersionAgreement:ListingResourceVersionAgreement", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ListingResourceVersionAgreementArgs makeArgs(ListingResourceVersionAgreementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -176,7 +176,7 @@ public class ListingResourceVersionAgreement extends com.pulumi.resources.Custom
         return args == null ? ListingResourceVersionAgreementArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -192,7 +192,7 @@ public class ListingResourceVersionAgreement extends com.pulumi.resources.Custom
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ListingResourceVersionAgreement get(String name, Output<String> id, @Nullable ListingResourceVersionAgreementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ListingResourceVersionAgreement get(java.lang.String name, Output<java.lang.String> id, @Nullable ListingResourceVersionAgreementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ListingResourceVersionAgreement(name, id, state, options);
     }
 }

@@ -118,7 +118,7 @@ class AwaitableGetVmClustersResult(GetVmClustersResult):
 def get_vm_clusters(compartment_id: Optional[str] = None,
                     display_name: Optional[str] = None,
                     exadata_infrastructure_id: Optional[str] = None,
-                    filters: Optional[Sequence[pulumi.InputType['GetVmClustersFilterArgs']]] = None,
+                    filters: Optional[Sequence[Union['GetVmClustersFilterArgs', 'GetVmClustersFilterArgsDict']]] = None,
                     state: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVmClustersResult:
     """
@@ -168,7 +168,7 @@ def get_vm_clusters(compartment_id: Optional[str] = None,
 def get_vm_clusters_output(compartment_id: Optional[pulumi.Input[str]] = None,
                            display_name: Optional[pulumi.Input[Optional[str]]] = None,
                            exadata_infrastructure_id: Optional[pulumi.Input[Optional[str]]] = None,
-                           filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetVmClustersFilterArgs']]]]] = None,
+                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVmClustersFilterArgs', 'GetVmClustersFilterArgsDict']]]]] = None,
                            state: Optional[pulumi.Input[Optional[str]]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVmClustersResult]:
     """

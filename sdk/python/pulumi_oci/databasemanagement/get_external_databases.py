@@ -113,7 +113,7 @@ def get_external_databases(compartment_id: Optional[str] = None,
                            display_name: Optional[str] = None,
                            external_database_id: Optional[str] = None,
                            external_db_system_id: Optional[str] = None,
-                           filters: Optional[Sequence[pulumi.InputType['GetExternalDatabasesFilterArgs']]] = None,
+                           filters: Optional[Sequence[Union['GetExternalDatabasesFilterArgs', 'GetExternalDatabasesFilterArgsDict']]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalDatabasesResult:
     """
     This data source provides the list of External Databases in Oracle Cloud Infrastructure Database Management service.
@@ -162,7 +162,7 @@ def get_external_databases_output(compartment_id: Optional[pulumi.Input[Optional
                                   display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                   external_database_id: Optional[pulumi.Input[Optional[str]]] = None,
                                   external_db_system_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                  filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetExternalDatabasesFilterArgs']]]]] = None,
+                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExternalDatabasesFilterArgs', 'GetExternalDatabasesFilterArgsDict']]]]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalDatabasesResult]:
     """
     This data source provides the list of External Databases in Oracle Cloud Infrastructure Database Management service.

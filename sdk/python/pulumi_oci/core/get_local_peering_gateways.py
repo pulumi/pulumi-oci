@@ -92,7 +92,7 @@ class AwaitableGetLocalPeeringGatewaysResult(GetLocalPeeringGatewaysResult):
 
 
 def get_local_peering_gateways(compartment_id: Optional[str] = None,
-                               filters: Optional[Sequence[pulumi.InputType['GetLocalPeeringGatewaysFilterArgs']]] = None,
+                               filters: Optional[Sequence[Union['GetLocalPeeringGatewaysFilterArgs', 'GetLocalPeeringGatewaysFilterArgsDict']]] = None,
                                vcn_id: Optional[str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLocalPeeringGatewaysResult:
     """
@@ -132,7 +132,7 @@ def get_local_peering_gateways(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_local_peering_gateways)
 def get_local_peering_gateways_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                      filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetLocalPeeringGatewaysFilterArgs']]]]] = None,
+                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetLocalPeeringGatewaysFilterArgs', 'GetLocalPeeringGatewaysFilterArgsDict']]]]] = None,
                                       vcn_id: Optional[pulumi.Input[Optional[str]]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLocalPeeringGatewaysResult]:
     """

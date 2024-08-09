@@ -177,9 +177,9 @@ class RepositorySetting(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 approval_rules: Optional[pulumi.Input[pulumi.InputType['RepositorySettingApprovalRulesArgs']]] = None,
-                 merge_checks: Optional[pulumi.Input[pulumi.InputType['RepositorySettingMergeChecksArgs']]] = None,
-                 merge_settings: Optional[pulumi.Input[pulumi.InputType['RepositorySettingMergeSettingsArgs']]] = None,
+                 approval_rules: Optional[pulumi.Input[Union['RepositorySettingApprovalRulesArgs', 'RepositorySettingApprovalRulesArgsDict']]] = None,
+                 merge_checks: Optional[pulumi.Input[Union['RepositorySettingMergeChecksArgs', 'RepositorySettingMergeChecksArgsDict']]] = None,
+                 merge_settings: Optional[pulumi.Input[Union['RepositorySettingMergeSettingsArgs', 'RepositorySettingMergeSettingsArgsDict']]] = None,
                  repository_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -195,23 +195,23 @@ class RepositorySetting(pulumi.CustomResource):
 
         test_repository_setting = oci.dev_ops.RepositorySetting("test_repository_setting",
             repository_id=test_repository["id"],
-            approval_rules=oci.dev_ops.RepositorySettingApprovalRulesArgs(
-                items=[oci.dev_ops.RepositorySettingApprovalRulesItemArgs(
-                    min_approvals_count=repository_setting_approval_rules_items_min_approvals_count,
-                    name=repository_setting_approval_rules_items_name,
-                    destination_branch=repository_setting_approval_rules_items_destination_branch,
-                    reviewers=[oci.dev_ops.RepositorySettingApprovalRulesItemReviewerArgs(
-                        principal_id=test_principal["id"],
-                    )],
-                )],
-            ),
-            merge_checks=oci.dev_ops.RepositorySettingMergeChecksArgs(
-                last_build_succeeded=repository_setting_merge_checks_last_build_succeeded,
-            ),
-            merge_settings=oci.dev_ops.RepositorySettingMergeSettingsArgs(
-                allowed_merge_strategies=repository_setting_merge_settings_allowed_merge_strategies,
-                default_merge_strategy=repository_setting_merge_settings_default_merge_strategy,
-            ))
+            approval_rules={
+                "items": [{
+                    "min_approvals_count": repository_setting_approval_rules_items_min_approvals_count,
+                    "name": repository_setting_approval_rules_items_name,
+                    "destination_branch": repository_setting_approval_rules_items_destination_branch,
+                    "reviewers": [{
+                        "principal_id": test_principal["id"],
+                    }],
+                }],
+            },
+            merge_checks={
+                "last_build_succeeded": repository_setting_merge_checks_last_build_succeeded,
+            },
+            merge_settings={
+                "allowed_merge_strategies": repository_setting_merge_settings_allowed_merge_strategies,
+                "default_merge_strategy": repository_setting_merge_settings_default_merge_strategy,
+            })
         ```
 
         ## Import
@@ -224,9 +224,9 @@ class RepositorySetting(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['RepositorySettingApprovalRulesArgs']] approval_rules: (Updatable) List of approval rules which must be statisfied before pull requests which match the rules can be merged
-        :param pulumi.Input[pulumi.InputType['RepositorySettingMergeChecksArgs']] merge_checks: (Updatable) Criteria which must be satisfied to merge a pull request.
-        :param pulumi.Input[pulumi.InputType['RepositorySettingMergeSettingsArgs']] merge_settings: (Updatable) Enabled and disabled merge strategies for a project or repository, also contains a default strategy.
+        :param pulumi.Input[Union['RepositorySettingApprovalRulesArgs', 'RepositorySettingApprovalRulesArgsDict']] approval_rules: (Updatable) List of approval rules which must be statisfied before pull requests which match the rules can be merged
+        :param pulumi.Input[Union['RepositorySettingMergeChecksArgs', 'RepositorySettingMergeChecksArgsDict']] merge_checks: (Updatable) Criteria which must be satisfied to merge a pull request.
+        :param pulumi.Input[Union['RepositorySettingMergeSettingsArgs', 'RepositorySettingMergeSettingsArgsDict']] merge_settings: (Updatable) Enabled and disabled merge strategies for a project or repository, also contains a default strategy.
         :param pulumi.Input[str] repository_id: Unique repository identifier.
                
                
@@ -252,23 +252,23 @@ class RepositorySetting(pulumi.CustomResource):
 
         test_repository_setting = oci.dev_ops.RepositorySetting("test_repository_setting",
             repository_id=test_repository["id"],
-            approval_rules=oci.dev_ops.RepositorySettingApprovalRulesArgs(
-                items=[oci.dev_ops.RepositorySettingApprovalRulesItemArgs(
-                    min_approvals_count=repository_setting_approval_rules_items_min_approvals_count,
-                    name=repository_setting_approval_rules_items_name,
-                    destination_branch=repository_setting_approval_rules_items_destination_branch,
-                    reviewers=[oci.dev_ops.RepositorySettingApprovalRulesItemReviewerArgs(
-                        principal_id=test_principal["id"],
-                    )],
-                )],
-            ),
-            merge_checks=oci.dev_ops.RepositorySettingMergeChecksArgs(
-                last_build_succeeded=repository_setting_merge_checks_last_build_succeeded,
-            ),
-            merge_settings=oci.dev_ops.RepositorySettingMergeSettingsArgs(
-                allowed_merge_strategies=repository_setting_merge_settings_allowed_merge_strategies,
-                default_merge_strategy=repository_setting_merge_settings_default_merge_strategy,
-            ))
+            approval_rules={
+                "items": [{
+                    "min_approvals_count": repository_setting_approval_rules_items_min_approvals_count,
+                    "name": repository_setting_approval_rules_items_name,
+                    "destination_branch": repository_setting_approval_rules_items_destination_branch,
+                    "reviewers": [{
+                        "principal_id": test_principal["id"],
+                    }],
+                }],
+            },
+            merge_checks={
+                "last_build_succeeded": repository_setting_merge_checks_last_build_succeeded,
+            },
+            merge_settings={
+                "allowed_merge_strategies": repository_setting_merge_settings_allowed_merge_strategies,
+                "default_merge_strategy": repository_setting_merge_settings_default_merge_strategy,
+            })
         ```
 
         ## Import
@@ -294,9 +294,9 @@ class RepositorySetting(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 approval_rules: Optional[pulumi.Input[pulumi.InputType['RepositorySettingApprovalRulesArgs']]] = None,
-                 merge_checks: Optional[pulumi.Input[pulumi.InputType['RepositorySettingMergeChecksArgs']]] = None,
-                 merge_settings: Optional[pulumi.Input[pulumi.InputType['RepositorySettingMergeSettingsArgs']]] = None,
+                 approval_rules: Optional[pulumi.Input[Union['RepositorySettingApprovalRulesArgs', 'RepositorySettingApprovalRulesArgsDict']]] = None,
+                 merge_checks: Optional[pulumi.Input[Union['RepositorySettingMergeChecksArgs', 'RepositorySettingMergeChecksArgsDict']]] = None,
+                 merge_settings: Optional[pulumi.Input[Union['RepositorySettingMergeSettingsArgs', 'RepositorySettingMergeSettingsArgsDict']]] = None,
                  repository_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -323,9 +323,9 @@ class RepositorySetting(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            approval_rules: Optional[pulumi.Input[pulumi.InputType['RepositorySettingApprovalRulesArgs']]] = None,
-            merge_checks: Optional[pulumi.Input[pulumi.InputType['RepositorySettingMergeChecksArgs']]] = None,
-            merge_settings: Optional[pulumi.Input[pulumi.InputType['RepositorySettingMergeSettingsArgs']]] = None,
+            approval_rules: Optional[pulumi.Input[Union['RepositorySettingApprovalRulesArgs', 'RepositorySettingApprovalRulesArgsDict']]] = None,
+            merge_checks: Optional[pulumi.Input[Union['RepositorySettingMergeChecksArgs', 'RepositorySettingMergeChecksArgsDict']]] = None,
+            merge_settings: Optional[pulumi.Input[Union['RepositorySettingMergeSettingsArgs', 'RepositorySettingMergeSettingsArgsDict']]] = None,
             repository_id: Optional[pulumi.Input[str]] = None) -> 'RepositorySetting':
         """
         Get an existing RepositorySetting resource's state with the given name, id, and optional extra
@@ -334,9 +334,9 @@ class RepositorySetting(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['RepositorySettingApprovalRulesArgs']] approval_rules: (Updatable) List of approval rules which must be statisfied before pull requests which match the rules can be merged
-        :param pulumi.Input[pulumi.InputType['RepositorySettingMergeChecksArgs']] merge_checks: (Updatable) Criteria which must be satisfied to merge a pull request.
-        :param pulumi.Input[pulumi.InputType['RepositorySettingMergeSettingsArgs']] merge_settings: (Updatable) Enabled and disabled merge strategies for a project or repository, also contains a default strategy.
+        :param pulumi.Input[Union['RepositorySettingApprovalRulesArgs', 'RepositorySettingApprovalRulesArgsDict']] approval_rules: (Updatable) List of approval rules which must be statisfied before pull requests which match the rules can be merged
+        :param pulumi.Input[Union['RepositorySettingMergeChecksArgs', 'RepositorySettingMergeChecksArgsDict']] merge_checks: (Updatable) Criteria which must be satisfied to merge a pull request.
+        :param pulumi.Input[Union['RepositorySettingMergeSettingsArgs', 'RepositorySettingMergeSettingsArgsDict']] merge_settings: (Updatable) Enabled and disabled merge strategies for a project or repository, also contains a default strategy.
         :param pulumi.Input[str] repository_id: Unique repository identifier.
                
                

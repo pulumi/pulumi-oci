@@ -528,7 +528,7 @@ class Subscription(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  email: Optional[pulumi.Input[str]] = None,
                  osp_home_region: Optional[pulumi.Input[str]] = None,
-                 subscription: Optional[pulumi.Input[pulumi.InputType['SubscriptionSubscriptionArgs']]] = None,
+                 subscription: Optional[pulumi.Input[Union['SubscriptionSubscriptionArgs', 'SubscriptionSubscriptionArgsDict']]] = None,
                  subscription_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -549,7 +549,7 @@ class Subscription(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[str] email: (Updatable) User email
         :param pulumi.Input[str] osp_home_region: (Updatable) The home region's public name of the logged in user.
-        :param pulumi.Input[pulumi.InputType['SubscriptionSubscriptionArgs']] subscription: (Updatable) Subscription details object which extends the SubscriptionSummary
+        :param pulumi.Input[Union['SubscriptionSubscriptionArgs', 'SubscriptionSubscriptionArgsDict']] subscription: (Updatable) Subscription details object which extends the SubscriptionSummary
         :param pulumi.Input[str] subscription_id: Subscription id(OCID).
                
                
@@ -593,7 +593,7 @@ class Subscription(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  email: Optional[pulumi.Input[str]] = None,
                  osp_home_region: Optional[pulumi.Input[str]] = None,
-                 subscription: Optional[pulumi.Input[pulumi.InputType['SubscriptionSubscriptionArgs']]] = None,
+                 subscription: Optional[pulumi.Input[Union['SubscriptionSubscriptionArgs', 'SubscriptionSubscriptionArgsDict']]] = None,
                  subscription_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -651,7 +651,7 @@ class Subscription(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             account_type: Optional[pulumi.Input[str]] = None,
             bill_to_cust_account_id: Optional[pulumi.Input[str]] = None,
-            billing_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SubscriptionBillingAddressArgs']]]]] = None,
+            billing_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SubscriptionBillingAddressArgs', 'SubscriptionBillingAddressArgsDict']]]]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             currency_code: Optional[pulumi.Input[str]] = None,
             email: Optional[pulumi.Input[str]] = None,
@@ -660,15 +660,15 @@ class Subscription(pulumi.CustomResource):
             language_code: Optional[pulumi.Input[str]] = None,
             organization_id: Optional[pulumi.Input[str]] = None,
             osp_home_region: Optional[pulumi.Input[str]] = None,
-            payment_gateways: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SubscriptionPaymentGatewayArgs']]]]] = None,
-            payment_options: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SubscriptionPaymentOptionArgs']]]]] = None,
+            payment_gateways: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SubscriptionPaymentGatewayArgs', 'SubscriptionPaymentGatewayArgsDict']]]]] = None,
+            payment_options: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SubscriptionPaymentOptionArgs', 'SubscriptionPaymentOptionArgsDict']]]]] = None,
             plan_type: Optional[pulumi.Input[str]] = None,
             ship_to_cust_acct_role_id: Optional[pulumi.Input[str]] = None,
             ship_to_cust_acct_site_id: Optional[pulumi.Input[str]] = None,
-            subscription: Optional[pulumi.Input[pulumi.InputType['SubscriptionSubscriptionArgs']]] = None,
+            subscription: Optional[pulumi.Input[Union['SubscriptionSubscriptionArgs', 'SubscriptionSubscriptionArgsDict']]] = None,
             subscription_id: Optional[pulumi.Input[str]] = None,
             subscription_plan_number: Optional[pulumi.Input[str]] = None,
-            tax_infos: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SubscriptionTaxInfoArgs']]]]] = None,
+            tax_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SubscriptionTaxInfoArgs', 'SubscriptionTaxInfoArgsDict']]]]] = None,
             time_personal_to_corporate_conv: Optional[pulumi.Input[str]] = None,
             time_plan_upgrade: Optional[pulumi.Input[str]] = None,
             time_start: Optional[pulumi.Input[str]] = None,
@@ -683,7 +683,7 @@ class Subscription(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] account_type: Account type.
         :param pulumi.Input[str] bill_to_cust_account_id: Bill to customer Account id.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SubscriptionBillingAddressArgs']]]] billing_addresses: Address details model.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SubscriptionBillingAddressArgs', 'SubscriptionBillingAddressArgsDict']]]] billing_addresses: Address details model.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[str] currency_code: Currency code
         :param pulumi.Input[str] email: (Updatable) User email
@@ -692,19 +692,19 @@ class Subscription(pulumi.CustomResource):
         :param pulumi.Input[str] language_code: Language short code (en, de, hu, etc)
         :param pulumi.Input[str] organization_id: GSI organization external identifier.
         :param pulumi.Input[str] osp_home_region: (Updatable) The home region's public name of the logged in user.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SubscriptionPaymentGatewayArgs']]]] payment_gateways: Payment gateway details.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SubscriptionPaymentOptionArgs']]]] payment_options: Payment option list of a subscription.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SubscriptionPaymentGatewayArgs', 'SubscriptionPaymentGatewayArgsDict']]]] payment_gateways: Payment gateway details.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SubscriptionPaymentOptionArgs', 'SubscriptionPaymentOptionArgsDict']]]] payment_options: Payment option list of a subscription.
         :param pulumi.Input[str] plan_type: Subscription plan type.
         :param pulumi.Input[str] ship_to_cust_acct_role_id: Ship to customer account role.
         :param pulumi.Input[str] ship_to_cust_acct_site_id: Ship to customer account site address id.
-        :param pulumi.Input[pulumi.InputType['SubscriptionSubscriptionArgs']] subscription: (Updatable) Subscription details object which extends the SubscriptionSummary
+        :param pulumi.Input[Union['SubscriptionSubscriptionArgs', 'SubscriptionSubscriptionArgsDict']] subscription: (Updatable) Subscription details object which extends the SubscriptionSummary
         :param pulumi.Input[str] subscription_id: Subscription id(OCID).
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] subscription_plan_number: Subscription plan number.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SubscriptionTaxInfoArgs']]]] tax_infos: Tax details.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SubscriptionTaxInfoArgs', 'SubscriptionTaxInfoArgsDict']]]] tax_infos: Tax details.
         :param pulumi.Input[str] time_personal_to_corporate_conv: Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
         :param pulumi.Input[str] time_plan_upgrade: Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
         :param pulumi.Input[str] time_start: Start date of the subscription.

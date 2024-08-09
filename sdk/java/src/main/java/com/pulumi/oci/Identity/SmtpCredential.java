@@ -191,7 +191,7 @@ public class SmtpCredential extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public SmtpCredential(String name) {
+    public SmtpCredential(java.lang.String name) {
         this(name, SmtpCredentialArgs.Empty);
     }
     /**
@@ -199,7 +199,7 @@ public class SmtpCredential extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public SmtpCredential(String name, SmtpCredentialArgs args) {
+    public SmtpCredential(java.lang.String name, SmtpCredentialArgs args) {
         this(name, args, null);
     }
     /**
@@ -208,12 +208,12 @@ public class SmtpCredential extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public SmtpCredential(String name, SmtpCredentialArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/smtpCredential:SmtpCredential", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public SmtpCredential(java.lang.String name, SmtpCredentialArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/smtpCredential:SmtpCredential", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private SmtpCredential(String name, Output<String> id, @Nullable SmtpCredentialState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/smtpCredential:SmtpCredential", name, state, makeResourceOptions(options, id));
+    private SmtpCredential(java.lang.String name, Output<java.lang.String> id, @Nullable SmtpCredentialState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/smtpCredential:SmtpCredential", name, state, makeResourceOptions(options, id), false);
     }
 
     private static SmtpCredentialArgs makeArgs(SmtpCredentialArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -223,7 +223,7 @@ public class SmtpCredential extends com.pulumi.resources.CustomResource {
         return args == null ? SmtpCredentialArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -239,7 +239,7 @@ public class SmtpCredential extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static SmtpCredential get(String name, Output<String> id, @Nullable SmtpCredentialState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static SmtpCredential get(java.lang.String name, Output<java.lang.String> id, @Nullable SmtpCredentialState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new SmtpCredential(name, id, state, options);
     }
 }

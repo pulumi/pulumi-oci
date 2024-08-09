@@ -105,7 +105,7 @@ public class ManagedInstanceAttachProfileManagement extends com.pulumi.resources
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ManagedInstanceAttachProfileManagement(String name) {
+    public ManagedInstanceAttachProfileManagement(java.lang.String name) {
         this(name, ManagedInstanceAttachProfileManagementArgs.Empty);
     }
     /**
@@ -113,7 +113,7 @@ public class ManagedInstanceAttachProfileManagement extends com.pulumi.resources
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ManagedInstanceAttachProfileManagement(String name, ManagedInstanceAttachProfileManagementArgs args) {
+    public ManagedInstanceAttachProfileManagement(java.lang.String name, ManagedInstanceAttachProfileManagementArgs args) {
         this(name, args, null);
     }
     /**
@@ -122,12 +122,12 @@ public class ManagedInstanceAttachProfileManagement extends com.pulumi.resources
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ManagedInstanceAttachProfileManagement(String name, ManagedInstanceAttachProfileManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:OsManagementHub/managedInstanceAttachProfileManagement:ManagedInstanceAttachProfileManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ManagedInstanceAttachProfileManagement(java.lang.String name, ManagedInstanceAttachProfileManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:OsManagementHub/managedInstanceAttachProfileManagement:ManagedInstanceAttachProfileManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ManagedInstanceAttachProfileManagement(String name, Output<String> id, @Nullable ManagedInstanceAttachProfileManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:OsManagementHub/managedInstanceAttachProfileManagement:ManagedInstanceAttachProfileManagement", name, state, makeResourceOptions(options, id));
+    private ManagedInstanceAttachProfileManagement(java.lang.String name, Output<java.lang.String> id, @Nullable ManagedInstanceAttachProfileManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:OsManagementHub/managedInstanceAttachProfileManagement:ManagedInstanceAttachProfileManagement", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ManagedInstanceAttachProfileManagementArgs makeArgs(ManagedInstanceAttachProfileManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -137,7 +137,7 @@ public class ManagedInstanceAttachProfileManagement extends com.pulumi.resources
         return args == null ? ManagedInstanceAttachProfileManagementArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -153,7 +153,7 @@ public class ManagedInstanceAttachProfileManagement extends com.pulumi.resources
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ManagedInstanceAttachProfileManagement get(String name, Output<String> id, @Nullable ManagedInstanceAttachProfileManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ManagedInstanceAttachProfileManagement get(java.lang.String name, Output<java.lang.String> id, @Nullable ManagedInstanceAttachProfileManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ManagedInstanceAttachProfileManagement(name, id, state, options);
     }
 }

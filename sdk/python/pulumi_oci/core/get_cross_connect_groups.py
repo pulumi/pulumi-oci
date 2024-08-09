@@ -105,7 +105,7 @@ class AwaitableGetCrossConnectGroupsResult(GetCrossConnectGroupsResult):
 
 def get_cross_connect_groups(compartment_id: Optional[str] = None,
                              display_name: Optional[str] = None,
-                             filters: Optional[Sequence[pulumi.InputType['GetCrossConnectGroupsFilterArgs']]] = None,
+                             filters: Optional[Sequence[Union['GetCrossConnectGroupsFilterArgs', 'GetCrossConnectGroupsFilterArgsDict']]] = None,
                              state: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCrossConnectGroupsResult:
     """
@@ -149,7 +149,7 @@ def get_cross_connect_groups(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_cross_connect_groups)
 def get_cross_connect_groups_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                     display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                    filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetCrossConnectGroupsFilterArgs']]]]] = None,
+                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCrossConnectGroupsFilterArgs', 'GetCrossConnectGroupsFilterArgsDict']]]]] = None,
                                     state: Optional[pulumi.Input[Optional[str]]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCrossConnectGroupsResult]:
     """

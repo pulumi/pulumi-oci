@@ -594,7 +594,7 @@ class DatabaseUpgrade(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  action: Optional[pulumi.Input[str]] = None,
                  database_id: Optional[pulumi.Input[str]] = None,
-                 database_upgrade_source_details: Optional[pulumi.Input[pulumi.InputType['DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs']]] = None,
+                 database_upgrade_source_details: Optional[pulumi.Input[Union['DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs', 'DatabaseUpgradeDatabaseUpgradeSourceDetailsArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Database Upgrade resource in Oracle Cloud Infrastructure Database service.
@@ -615,7 +615,7 @@ class DatabaseUpgrade(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] action: The database upgrade action.
         :param pulumi.Input[str] database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[pulumi.InputType['DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs']] database_upgrade_source_details: Details for the database upgrade source.
+        :param pulumi.Input[Union['DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs', 'DatabaseUpgradeDatabaseUpgradeSourceDetailsArgsDict']] database_upgrade_source_details: Details for the database upgrade source.
         """
         ...
     @overload
@@ -655,7 +655,7 @@ class DatabaseUpgrade(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  action: Optional[pulumi.Input[str]] = None,
                  database_id: Optional[pulumi.Input[str]] = None,
-                 database_upgrade_source_details: Optional[pulumi.Input[pulumi.InputType['DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs']]] = None,
+                 database_upgrade_source_details: Optional[pulumi.Input[Union['DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs', 'DatabaseUpgradeDatabaseUpgradeSourceDetailsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -714,11 +714,11 @@ class DatabaseUpgrade(pulumi.CustomResource):
             action: Optional[pulumi.Input[str]] = None,
             character_set: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DatabaseUpgradeConnectionStringArgs']]]]] = None,
+            connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DatabaseUpgradeConnectionStringArgs', 'DatabaseUpgradeConnectionStringArgsDict']]]]] = None,
             database_id: Optional[pulumi.Input[str]] = None,
             database_software_image_id: Optional[pulumi.Input[str]] = None,
-            database_upgrade_source_details: Optional[pulumi.Input[pulumi.InputType['DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs']]] = None,
-            db_backup_configs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DatabaseUpgradeDbBackupConfigArgs']]]]] = None,
+            database_upgrade_source_details: Optional[pulumi.Input[Union['DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs', 'DatabaseUpgradeDatabaseUpgradeSourceDetailsArgsDict']]] = None,
+            db_backup_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DatabaseUpgradeDbBackupConfigArgs', 'DatabaseUpgradeDbBackupConfigArgsDict']]]]] = None,
             db_home_id: Optional[pulumi.Input[str]] = None,
             db_name: Optional[pulumi.Input[str]] = None,
             db_system_id: Optional[pulumi.Input[str]] = None,
@@ -753,11 +753,11 @@ class DatabaseUpgrade(pulumi.CustomResource):
         :param pulumi.Input[str] action: The database upgrade action.
         :param pulumi.Input[str] character_set: The character set for the database.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DatabaseUpgradeConnectionStringArgs']]]] connection_strings: The Connection strings used to connect to the Oracle Database.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseUpgradeConnectionStringArgs', 'DatabaseUpgradeConnectionStringArgsDict']]]] connection_strings: The Connection strings used to connect to the Oracle Database.
         :param pulumi.Input[str] database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-        :param pulumi.Input[pulumi.InputType['DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs']] database_upgrade_source_details: Details for the database upgrade source.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DatabaseUpgradeDbBackupConfigArgs']]]] db_backup_configs: Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+        :param pulumi.Input[Union['DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs', 'DatabaseUpgradeDatabaseUpgradeSourceDetailsArgsDict']] database_upgrade_source_details: Details for the database upgrade source.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseUpgradeDbBackupConfigArgs', 'DatabaseUpgradeDbBackupConfigArgsDict']]]] db_backup_configs: Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
         :param pulumi.Input[str] db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
         :param pulumi.Input[str] db_name: The database name.
         :param pulumi.Input[str] db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.

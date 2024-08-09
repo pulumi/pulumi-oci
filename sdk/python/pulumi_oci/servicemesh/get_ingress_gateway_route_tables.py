@@ -116,7 +116,7 @@ class AwaitableGetIngressGatewayRouteTablesResult(GetIngressGatewayRouteTablesRe
 
 
 def get_ingress_gateway_route_tables(compartment_id: Optional[str] = None,
-                                     filters: Optional[Sequence[pulumi.InputType['GetIngressGatewayRouteTablesFilterArgs']]] = None,
+                                     filters: Optional[Sequence[Union['GetIngressGatewayRouteTablesFilterArgs', 'GetIngressGatewayRouteTablesFilterArgsDict']]] = None,
                                      id: Optional[str] = None,
                                      ingress_gateway_id: Optional[str] = None,
                                      name: Optional[str] = None,
@@ -169,7 +169,7 @@ def get_ingress_gateway_route_tables(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_ingress_gateway_route_tables)
 def get_ingress_gateway_route_tables_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                            filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetIngressGatewayRouteTablesFilterArgs']]]]] = None,
+                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetIngressGatewayRouteTablesFilterArgs', 'GetIngressGatewayRouteTablesFilterArgsDict']]]]] = None,
                                             id: Optional[pulumi.Input[Optional[str]]] = None,
                                             ingress_gateway_id: Optional[pulumi.Input[Optional[str]]] = None,
                                             name: Optional[pulumi.Input[Optional[str]]] = None,

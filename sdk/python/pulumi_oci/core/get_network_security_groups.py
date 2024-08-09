@@ -126,7 +126,7 @@ class AwaitableGetNetworkSecurityGroupsResult(GetNetworkSecurityGroupsResult):
 
 def get_network_security_groups(compartment_id: Optional[str] = None,
                                 display_name: Optional[str] = None,
-                                filters: Optional[Sequence[pulumi.InputType['GetNetworkSecurityGroupsFilterArgs']]] = None,
+                                filters: Optional[Sequence[Union['GetNetworkSecurityGroupsFilterArgs', 'GetNetworkSecurityGroupsFilterArgsDict']]] = None,
                                 state: Optional[str] = None,
                                 vcn_id: Optional[str] = None,
                                 vlan_id: Optional[str] = None,
@@ -181,7 +181,7 @@ def get_network_security_groups(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_network_security_groups)
 def get_network_security_groups_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                        display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                       filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetNetworkSecurityGroupsFilterArgs']]]]] = None,
+                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNetworkSecurityGroupsFilterArgs', 'GetNetworkSecurityGroupsFilterArgsDict']]]]] = None,
                                        state: Optional[pulumi.Input[Optional[str]]] = None,
                                        vcn_id: Optional[pulumi.Input[Optional[str]]] = None,
                                        vlan_id: Optional[pulumi.Input[Optional[str]]] = None,

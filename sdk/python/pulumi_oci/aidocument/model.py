@@ -664,7 +664,7 @@ class Model(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 component_models: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ModelComponentModelArgs']]]]] = None,
+                 component_models: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ModelComponentModelArgs', 'ModelComponentModelArgsDict']]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -675,9 +675,9 @@ class Model(pulumi.CustomResource):
                  model_type: Optional[pulumi.Input[str]] = None,
                  model_version: Optional[pulumi.Input[str]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
-                 testing_dataset: Optional[pulumi.Input[pulumi.InputType['ModelTestingDatasetArgs']]] = None,
-                 training_dataset: Optional[pulumi.Input[pulumi.InputType['ModelTrainingDatasetArgs']]] = None,
-                 validation_dataset: Optional[pulumi.Input[pulumi.InputType['ModelValidationDatasetArgs']]] = None,
+                 testing_dataset: Optional[pulumi.Input[Union['ModelTestingDatasetArgs', 'ModelTestingDatasetArgsDict']]] = None,
+                 training_dataset: Optional[pulumi.Input[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict']]] = None,
+                 validation_dataset: Optional[pulumi.Input[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Model resource in Oracle Cloud Infrastructure Ai Document service.
@@ -697,7 +697,7 @@ class Model(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The compartment identifier.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ModelComponentModelArgs']]]] component_models: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ModelComponentModelArgs', 'ModelComponentModelArgsDict']]]] component_models: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         :param pulumi.Input[str] description: (Updatable) An optional description of the model.
         :param pulumi.Input[str] display_name: (Updatable) A human-friendly name for the model, which can be changed.
@@ -707,9 +707,9 @@ class Model(pulumi.CustomResource):
         :param pulumi.Input[str] model_type: The type of the Document model.
         :param pulumi.Input[str] model_version: The model version
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
-        :param pulumi.Input[pulumi.InputType['ModelTestingDatasetArgs']] testing_dataset: The base entity which is the input for creating and training a model.
-        :param pulumi.Input[pulumi.InputType['ModelTrainingDatasetArgs']] training_dataset: The base entity which is the input for creating and training a model.
-        :param pulumi.Input[pulumi.InputType['ModelValidationDatasetArgs']] validation_dataset: The base entity which is the input for creating and training a model.
+        :param pulumi.Input[Union['ModelTestingDatasetArgs', 'ModelTestingDatasetArgsDict']] testing_dataset: The base entity which is the input for creating and training a model.
+        :param pulumi.Input[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict']] training_dataset: The base entity which is the input for creating and training a model.
+        :param pulumi.Input[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict']] validation_dataset: The base entity which is the input for creating and training a model.
         """
         ...
     @overload
@@ -748,7 +748,7 @@ class Model(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 component_models: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ModelComponentModelArgs']]]]] = None,
+                 component_models: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ModelComponentModelArgs', 'ModelComponentModelArgsDict']]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -759,9 +759,9 @@ class Model(pulumi.CustomResource):
                  model_type: Optional[pulumi.Input[str]] = None,
                  model_version: Optional[pulumi.Input[str]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
-                 testing_dataset: Optional[pulumi.Input[pulumi.InputType['ModelTestingDatasetArgs']]] = None,
-                 training_dataset: Optional[pulumi.Input[pulumi.InputType['ModelTrainingDatasetArgs']]] = None,
-                 validation_dataset: Optional[pulumi.Input[pulumi.InputType['ModelValidationDatasetArgs']]] = None,
+                 testing_dataset: Optional[pulumi.Input[Union['ModelTestingDatasetArgs', 'ModelTestingDatasetArgsDict']]] = None,
+                 training_dataset: Optional[pulumi.Input[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict']]] = None,
+                 validation_dataset: Optional[pulumi.Input[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -813,7 +813,7 @@ class Model(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            component_models: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ModelComponentModelArgs']]]]] = None,
+            component_models: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ModelComponentModelArgs', 'ModelComponentModelArgsDict']]]]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
@@ -823,7 +823,7 @@ class Model(pulumi.CustomResource):
             labels: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             max_training_time_in_hours: Optional[pulumi.Input[float]] = None,
-            metrics: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ModelMetricArgs']]]]] = None,
+            metrics: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ModelMetricArgs', 'ModelMetricArgsDict']]]]] = None,
             model_id: Optional[pulumi.Input[str]] = None,
             model_type: Optional[pulumi.Input[str]] = None,
             model_version: Optional[pulumi.Input[str]] = None,
@@ -831,12 +831,12 @@ class Model(pulumi.CustomResource):
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             tenancy_id: Optional[pulumi.Input[str]] = None,
-            testing_dataset: Optional[pulumi.Input[pulumi.InputType['ModelTestingDatasetArgs']]] = None,
+            testing_dataset: Optional[pulumi.Input[Union['ModelTestingDatasetArgs', 'ModelTestingDatasetArgsDict']]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
             trained_time_in_hours: Optional[pulumi.Input[float]] = None,
-            training_dataset: Optional[pulumi.Input[pulumi.InputType['ModelTrainingDatasetArgs']]] = None,
-            validation_dataset: Optional[pulumi.Input[pulumi.InputType['ModelValidationDatasetArgs']]] = None) -> 'Model':
+            training_dataset: Optional[pulumi.Input[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict']]] = None,
+            validation_dataset: Optional[pulumi.Input[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict']]] = None) -> 'Model':
         """
         Get an existing Model resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -845,7 +845,7 @@ class Model(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The compartment identifier.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ModelComponentModelArgs']]]] component_models: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ModelComponentModelArgs', 'ModelComponentModelArgsDict']]]] component_models: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         :param pulumi.Input[str] description: (Updatable) An optional description of the model.
         :param pulumi.Input[str] display_name: (Updatable) A human-friendly name for the model, which can be changed.
@@ -855,19 +855,19 @@ class Model(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: The collection of labels used to train the custom model.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail, that can provide actionable information if training failed.
         :param pulumi.Input[float] max_training_time_in_hours: The maximum model training time in hours, expressed as a decimal fraction.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ModelMetricArgs']]]] metrics: Trained Model Metrics.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ModelMetricArgs', 'ModelMetricArgsDict']]]] metrics: Trained Model Metrics.
         :param pulumi.Input[str] model_type: The type of the Document model.
         :param pulumi.Input[str] model_version: The model version
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
         :param pulumi.Input[str] state: The current state of the model.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
         :param pulumi.Input[str] tenancy_id: The tenancy id of the model.
-        :param pulumi.Input[pulumi.InputType['ModelTestingDatasetArgs']] testing_dataset: The base entity which is the input for creating and training a model.
+        :param pulumi.Input[Union['ModelTestingDatasetArgs', 'ModelTestingDatasetArgsDict']] testing_dataset: The base entity which is the input for creating and training a model.
         :param pulumi.Input[str] time_created: When the model was created, as an RFC3339 datetime string.
         :param pulumi.Input[str] time_updated: When the model was updated, as an RFC3339 datetime string.
         :param pulumi.Input[float] trained_time_in_hours: The total hours actually used for model training.
-        :param pulumi.Input[pulumi.InputType['ModelTrainingDatasetArgs']] training_dataset: The base entity which is the input for creating and training a model.
-        :param pulumi.Input[pulumi.InputType['ModelValidationDatasetArgs']] validation_dataset: The base entity which is the input for creating and training a model.
+        :param pulumi.Input[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict']] training_dataset: The base entity which is the input for creating and training a model.
+        :param pulumi.Input[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict']] validation_dataset: The base entity which is the input for creating and training a model.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

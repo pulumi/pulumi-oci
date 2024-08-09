@@ -76,7 +76,7 @@ class AwaitableGetFusionEnvironmentTimeAvailableForRefreshsResult(GetFusionEnvir
             time_available_for_refresh_collections=self.time_available_for_refresh_collections)
 
 
-def get_fusion_environment_time_available_for_refreshs(filters: Optional[Sequence[pulumi.InputType['GetFusionEnvironmentTimeAvailableForRefreshsFilterArgs']]] = None,
+def get_fusion_environment_time_available_for_refreshs(filters: Optional[Sequence[Union['GetFusionEnvironmentTimeAvailableForRefreshsFilterArgs', 'GetFusionEnvironmentTimeAvailableForRefreshsFilterArgsDict']]] = None,
                                                        fusion_environment_id: Optional[str] = None,
                                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFusionEnvironmentTimeAvailableForRefreshsResult:
     """
@@ -110,7 +110,7 @@ def get_fusion_environment_time_available_for_refreshs(filters: Optional[Sequenc
 
 
 @_utilities.lift_output_func(get_fusion_environment_time_available_for_refreshs)
-def get_fusion_environment_time_available_for_refreshs_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetFusionEnvironmentTimeAvailableForRefreshsFilterArgs']]]]] = None,
+def get_fusion_environment_time_available_for_refreshs_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFusionEnvironmentTimeAvailableForRefreshsFilterArgs', 'GetFusionEnvironmentTimeAvailableForRefreshsFilterArgsDict']]]]] = None,
                                                               fusion_environment_id: Optional[pulumi.Input[str]] = None,
                                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFusionEnvironmentTimeAvailableForRefreshsResult]:
     """

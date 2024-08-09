@@ -802,11 +802,11 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
                  cluster_placement_group_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  compute_count: Optional[pulumi.Input[int]] = None,
-                 customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudExadataInfrastructureCustomerContactArgs']]]]] = None,
+                 customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CloudExadataInfrastructureCustomerContactArgs', 'CloudExadataInfrastructureCustomerContactArgsDict']]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 maintenance_window: Optional[pulumi.Input[pulumi.InputType['CloudExadataInfrastructureMaintenanceWindowArgs']]] = None,
+                 maintenance_window: Optional[pulumi.Input[Union['CloudExadataInfrastructureMaintenanceWindowArgs', 'CloudExadataInfrastructureMaintenanceWindowArgsDict']]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  storage_count: Optional[pulumi.Input[int]] = None,
                  subscription_id: Optional[pulumi.Input[str]] = None,
@@ -829,29 +829,29 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
             shape=cloud_exadata_infrastructure_shape,
             cluster_placement_group_id=cloud_exadata_infrastructure_cluster_placement_group_id,
             compute_count=cloud_exadata_infrastructure_compute_count,
-            customer_contacts=[oci.database.CloudExadataInfrastructureCustomerContactArgs(
-                email=cloud_exadata_infrastructure_customer_contacts_email,
-            )],
+            customer_contacts=[{
+                "email": cloud_exadata_infrastructure_customer_contacts_email,
+            }],
             defined_tags=cloud_exadata_infrastructure_defined_tags,
             freeform_tags={
                 "Department": "Finance",
             },
-            maintenance_window=oci.database.CloudExadataInfrastructureMaintenanceWindowArgs(
-                custom_action_timeout_in_mins=cloud_exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins,
-                days_of_weeks=[oci.database.CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs(
-                    name=cloud_exadata_infrastructure_maintenance_window_days_of_week_name,
-                )],
-                hours_of_days=cloud_exadata_infrastructure_maintenance_window_hours_of_day,
-                is_custom_action_timeout_enabled=cloud_exadata_infrastructure_maintenance_window_is_custom_action_timeout_enabled,
-                is_monthly_patching_enabled=cloud_exadata_infrastructure_maintenance_window_is_monthly_patching_enabled,
-                lead_time_in_weeks=cloud_exadata_infrastructure_maintenance_window_lead_time_in_weeks,
-                months=[oci.database.CloudExadataInfrastructureMaintenanceWindowMonthArgs(
-                    name=cloud_exadata_infrastructure_maintenance_window_months_name,
-                )],
-                patching_mode=cloud_exadata_infrastructure_maintenance_window_patching_mode,
-                preference=cloud_exadata_infrastructure_maintenance_window_preference,
-                weeks_of_months=cloud_exadata_infrastructure_maintenance_window_weeks_of_month,
-            ),
+            maintenance_window={
+                "custom_action_timeout_in_mins": cloud_exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins,
+                "days_of_weeks": [{
+                    "name": cloud_exadata_infrastructure_maintenance_window_days_of_week_name,
+                }],
+                "hours_of_days": cloud_exadata_infrastructure_maintenance_window_hours_of_day,
+                "is_custom_action_timeout_enabled": cloud_exadata_infrastructure_maintenance_window_is_custom_action_timeout_enabled,
+                "is_monthly_patching_enabled": cloud_exadata_infrastructure_maintenance_window_is_monthly_patching_enabled,
+                "lead_time_in_weeks": cloud_exadata_infrastructure_maintenance_window_lead_time_in_weeks,
+                "months": [{
+                    "name": cloud_exadata_infrastructure_maintenance_window_months_name,
+                }],
+                "patching_mode": cloud_exadata_infrastructure_maintenance_window_patching_mode,
+                "preference": cloud_exadata_infrastructure_maintenance_window_preference,
+                "weeks_of_months": cloud_exadata_infrastructure_maintenance_window_weeks_of_month,
+            },
             storage_count=cloud_exadata_infrastructure_storage_count,
             subscription_id=tenant_subscription_id)
         ```
@@ -870,11 +870,11 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[str] cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[int] compute_count: (Updatable) The number of compute servers for the cloud Exadata infrastructure.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudExadataInfrastructureCustomerContactArgs']]]] customer_contacts: (Updatable) Customer contacts.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudExadataInfrastructureCustomerContactArgs', 'CloudExadataInfrastructureCustomerContactArgsDict']]]] customer_contacts: (Updatable) Customer contacts.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[pulumi.InputType['CloudExadataInfrastructureMaintenanceWindowArgs']] maintenance_window: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        :param pulumi.Input[Union['CloudExadataInfrastructureMaintenanceWindowArgs', 'CloudExadataInfrastructureMaintenanceWindowArgsDict']] maintenance_window: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[str] shape: The shape of the cloud Exadata infrastructure resource.
         :param pulumi.Input[int] storage_count: (Updatable) The number of storage servers for the cloud Exadata infrastructure.
         :param pulumi.Input[str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
@@ -907,29 +907,29 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
             shape=cloud_exadata_infrastructure_shape,
             cluster_placement_group_id=cloud_exadata_infrastructure_cluster_placement_group_id,
             compute_count=cloud_exadata_infrastructure_compute_count,
-            customer_contacts=[oci.database.CloudExadataInfrastructureCustomerContactArgs(
-                email=cloud_exadata_infrastructure_customer_contacts_email,
-            )],
+            customer_contacts=[{
+                "email": cloud_exadata_infrastructure_customer_contacts_email,
+            }],
             defined_tags=cloud_exadata_infrastructure_defined_tags,
             freeform_tags={
                 "Department": "Finance",
             },
-            maintenance_window=oci.database.CloudExadataInfrastructureMaintenanceWindowArgs(
-                custom_action_timeout_in_mins=cloud_exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins,
-                days_of_weeks=[oci.database.CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs(
-                    name=cloud_exadata_infrastructure_maintenance_window_days_of_week_name,
-                )],
-                hours_of_days=cloud_exadata_infrastructure_maintenance_window_hours_of_day,
-                is_custom_action_timeout_enabled=cloud_exadata_infrastructure_maintenance_window_is_custom_action_timeout_enabled,
-                is_monthly_patching_enabled=cloud_exadata_infrastructure_maintenance_window_is_monthly_patching_enabled,
-                lead_time_in_weeks=cloud_exadata_infrastructure_maintenance_window_lead_time_in_weeks,
-                months=[oci.database.CloudExadataInfrastructureMaintenanceWindowMonthArgs(
-                    name=cloud_exadata_infrastructure_maintenance_window_months_name,
-                )],
-                patching_mode=cloud_exadata_infrastructure_maintenance_window_patching_mode,
-                preference=cloud_exadata_infrastructure_maintenance_window_preference,
-                weeks_of_months=cloud_exadata_infrastructure_maintenance_window_weeks_of_month,
-            ),
+            maintenance_window={
+                "custom_action_timeout_in_mins": cloud_exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins,
+                "days_of_weeks": [{
+                    "name": cloud_exadata_infrastructure_maintenance_window_days_of_week_name,
+                }],
+                "hours_of_days": cloud_exadata_infrastructure_maintenance_window_hours_of_day,
+                "is_custom_action_timeout_enabled": cloud_exadata_infrastructure_maintenance_window_is_custom_action_timeout_enabled,
+                "is_monthly_patching_enabled": cloud_exadata_infrastructure_maintenance_window_is_monthly_patching_enabled,
+                "lead_time_in_weeks": cloud_exadata_infrastructure_maintenance_window_lead_time_in_weeks,
+                "months": [{
+                    "name": cloud_exadata_infrastructure_maintenance_window_months_name,
+                }],
+                "patching_mode": cloud_exadata_infrastructure_maintenance_window_patching_mode,
+                "preference": cloud_exadata_infrastructure_maintenance_window_preference,
+                "weeks_of_months": cloud_exadata_infrastructure_maintenance_window_weeks_of_month,
+            },
             storage_count=cloud_exadata_infrastructure_storage_count,
             subscription_id=tenant_subscription_id)
         ```
@@ -961,11 +961,11 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
                  cluster_placement_group_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  compute_count: Optional[pulumi.Input[int]] = None,
-                 customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudExadataInfrastructureCustomerContactArgs']]]]] = None,
+                 customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CloudExadataInfrastructureCustomerContactArgs', 'CloudExadataInfrastructureCustomerContactArgsDict']]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 maintenance_window: Optional[pulumi.Input[pulumi.InputType['CloudExadataInfrastructureMaintenanceWindowArgs']]] = None,
+                 maintenance_window: Optional[pulumi.Input[Union['CloudExadataInfrastructureMaintenanceWindowArgs', 'CloudExadataInfrastructureMaintenanceWindowArgsDict']]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  storage_count: Optional[pulumi.Input[int]] = None,
                  subscription_id: Optional[pulumi.Input[str]] = None,
@@ -1039,17 +1039,17 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
             compartment_id: Optional[pulumi.Input[str]] = None,
             compute_count: Optional[pulumi.Input[int]] = None,
             cpu_count: Optional[pulumi.Input[int]] = None,
-            customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudExadataInfrastructureCustomerContactArgs']]]]] = None,
+            customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CloudExadataInfrastructureCustomerContactArgs', 'CloudExadataInfrastructureCustomerContactArgsDict']]]]] = None,
             data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
             db_node_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
             db_server_version: Optional[pulumi.Input[str]] = None,
-            defined_file_system_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudExadataInfrastructureDefinedFileSystemConfigurationArgs']]]]] = None,
+            defined_file_system_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CloudExadataInfrastructureDefinedFileSystemConfigurationArgs', 'CloudExadataInfrastructureDefinedFileSystemConfigurationArgsDict']]]]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             last_maintenance_run_id: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
-            maintenance_window: Optional[pulumi.Input[pulumi.InputType['CloudExadataInfrastructureMaintenanceWindowArgs']]] = None,
+            maintenance_window: Optional[pulumi.Input[Union['CloudExadataInfrastructureMaintenanceWindowArgs', 'CloudExadataInfrastructureMaintenanceWindowArgsDict']]] = None,
             max_cpu_count: Optional[pulumi.Input[int]] = None,
             max_data_storage_in_tbs: Optional[pulumi.Input[float]] = None,
             max_db_node_storage_in_gbs: Optional[pulumi.Input[int]] = None,
@@ -1081,17 +1081,17 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[int] compute_count: (Updatable) The number of compute servers for the cloud Exadata infrastructure.
         :param pulumi.Input[int] cpu_count: The total number of CPU cores allocated.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudExadataInfrastructureCustomerContactArgs']]]] customer_contacts: (Updatable) Customer contacts.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudExadataInfrastructureCustomerContactArgs', 'CloudExadataInfrastructureCustomerContactArgsDict']]]] customer_contacts: (Updatable) Customer contacts.
         :param pulumi.Input[float] data_storage_size_in_tbs: Size, in terabytes, of the DATA disk group.
         :param pulumi.Input[int] db_node_storage_size_in_gbs: The local node storage allocated in GBs.
         :param pulumi.Input[str] db_server_version: The software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudExadataInfrastructureDefinedFileSystemConfigurationArgs']]]] defined_file_system_configurations: Details of the file system configuration of the Exadata infrastructure.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudExadataInfrastructureDefinedFileSystemConfigurationArgs', 'CloudExadataInfrastructureDefinedFileSystemConfigurationArgsDict']]]] defined_file_system_configurations: Details of the file system configuration of the Exadata infrastructure.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[pulumi.InputType['CloudExadataInfrastructureMaintenanceWindowArgs']] maintenance_window: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        :param pulumi.Input[Union['CloudExadataInfrastructureMaintenanceWindowArgs', 'CloudExadataInfrastructureMaintenanceWindowArgsDict']] maintenance_window: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[int] max_cpu_count: The total number of CPU cores available.
         :param pulumi.Input[float] max_data_storage_in_tbs: The total available DATA disk group size.
         :param pulumi.Input[int] max_db_node_storage_in_gbs: The total local node storage available in GBs.

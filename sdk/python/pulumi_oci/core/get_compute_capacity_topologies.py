@@ -106,7 +106,7 @@ class AwaitableGetComputeCapacityTopologiesResult(GetComputeCapacityTopologiesRe
 def get_compute_capacity_topologies(availability_domain: Optional[str] = None,
                                     compartment_id: Optional[str] = None,
                                     display_name: Optional[str] = None,
-                                    filters: Optional[Sequence[pulumi.InputType['GetComputeCapacityTopologiesFilterArgs']]] = None,
+                                    filters: Optional[Sequence[Union['GetComputeCapacityTopologiesFilterArgs', 'GetComputeCapacityTopologiesFilterArgsDict']]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetComputeCapacityTopologiesResult:
     """
     This data source provides the list of Compute Capacity Topologies in Oracle Cloud Infrastructure Core service.
@@ -151,7 +151,7 @@ def get_compute_capacity_topologies(availability_domain: Optional[str] = None,
 def get_compute_capacity_topologies_output(availability_domain: Optional[pulumi.Input[Optional[str]]] = None,
                                            compartment_id: Optional[pulumi.Input[str]] = None,
                                            display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                           filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetComputeCapacityTopologiesFilterArgs']]]]] = None,
+                                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetComputeCapacityTopologiesFilterArgs', 'GetComputeCapacityTopologiesFilterArgsDict']]]]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetComputeCapacityTopologiesResult]:
     """
     This data source provides the list of Compute Capacity Topologies in Oracle Cloud Infrastructure Core service.

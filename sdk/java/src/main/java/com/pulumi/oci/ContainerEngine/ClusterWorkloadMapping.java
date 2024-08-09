@@ -193,7 +193,7 @@ public class ClusterWorkloadMapping extends com.pulumi.resources.CustomResource 
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ClusterWorkloadMapping(String name) {
+    public ClusterWorkloadMapping(java.lang.String name) {
         this(name, ClusterWorkloadMappingArgs.Empty);
     }
     /**
@@ -201,7 +201,7 @@ public class ClusterWorkloadMapping extends com.pulumi.resources.CustomResource 
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ClusterWorkloadMapping(String name, ClusterWorkloadMappingArgs args) {
+    public ClusterWorkloadMapping(java.lang.String name, ClusterWorkloadMappingArgs args) {
         this(name, args, null);
     }
     /**
@@ -210,12 +210,12 @@ public class ClusterWorkloadMapping extends com.pulumi.resources.CustomResource 
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ClusterWorkloadMapping(String name, ClusterWorkloadMappingArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:ContainerEngine/clusterWorkloadMapping:ClusterWorkloadMapping", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ClusterWorkloadMapping(java.lang.String name, ClusterWorkloadMappingArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:ContainerEngine/clusterWorkloadMapping:ClusterWorkloadMapping", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ClusterWorkloadMapping(String name, Output<String> id, @Nullable ClusterWorkloadMappingState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:ContainerEngine/clusterWorkloadMapping:ClusterWorkloadMapping", name, state, makeResourceOptions(options, id));
+    private ClusterWorkloadMapping(java.lang.String name, Output<java.lang.String> id, @Nullable ClusterWorkloadMappingState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:ContainerEngine/clusterWorkloadMapping:ClusterWorkloadMapping", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ClusterWorkloadMappingArgs makeArgs(ClusterWorkloadMappingArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -225,7 +225,7 @@ public class ClusterWorkloadMapping extends com.pulumi.resources.CustomResource 
         return args == null ? ClusterWorkloadMappingArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -241,7 +241,7 @@ public class ClusterWorkloadMapping extends com.pulumi.resources.CustomResource 
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ClusterWorkloadMapping get(String name, Output<String> id, @Nullable ClusterWorkloadMappingState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ClusterWorkloadMapping get(java.lang.String name, Output<java.lang.String> id, @Nullable ClusterWorkloadMappingState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ClusterWorkloadMapping(name, id, state, options);
     }
 }

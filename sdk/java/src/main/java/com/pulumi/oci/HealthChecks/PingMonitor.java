@@ -288,7 +288,7 @@ public class PingMonitor extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public PingMonitor(String name) {
+    public PingMonitor(java.lang.String name) {
         this(name, PingMonitorArgs.Empty);
     }
     /**
@@ -296,7 +296,7 @@ public class PingMonitor extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public PingMonitor(String name, PingMonitorArgs args) {
+    public PingMonitor(java.lang.String name, PingMonitorArgs args) {
         this(name, args, null);
     }
     /**
@@ -305,12 +305,12 @@ public class PingMonitor extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public PingMonitor(String name, PingMonitorArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:HealthChecks/pingMonitor:PingMonitor", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public PingMonitor(java.lang.String name, PingMonitorArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:HealthChecks/pingMonitor:PingMonitor", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private PingMonitor(String name, Output<String> id, @Nullable PingMonitorState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:HealthChecks/pingMonitor:PingMonitor", name, state, makeResourceOptions(options, id));
+    private PingMonitor(java.lang.String name, Output<java.lang.String> id, @Nullable PingMonitorState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:HealthChecks/pingMonitor:PingMonitor", name, state, makeResourceOptions(options, id), false);
     }
 
     private static PingMonitorArgs makeArgs(PingMonitorArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -320,7 +320,7 @@ public class PingMonitor extends com.pulumi.resources.CustomResource {
         return args == null ? PingMonitorArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -336,7 +336,7 @@ public class PingMonitor extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static PingMonitor get(String name, Output<String> id, @Nullable PingMonitorState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static PingMonitor get(java.lang.String name, Output<java.lang.String> id, @Nullable PingMonitorState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new PingMonitor(name, id, state, options);
     }
 }

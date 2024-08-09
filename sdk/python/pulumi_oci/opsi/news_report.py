@@ -510,7 +510,7 @@ class NewsReport(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  are_child_compartments_included: Optional[pulumi.Input[bool]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 content_types: Optional[pulumi.Input[pulumi.InputType['NewsReportContentTypesArgs']]] = None,
+                 content_types: Optional[pulumi.Input[Union['NewsReportContentTypesArgs', 'NewsReportContentTypesArgsDict']]] = None,
                  day_of_week: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
@@ -534,15 +534,15 @@ class NewsReport(pulumi.CustomResource):
 
         test_news_report = oci.opsi.NewsReport("test_news_report",
             compartment_id=compartment_id,
-            content_types=oci.opsi.NewsReportContentTypesArgs(
-                capacity_planning_resources=news_report_content_types_capacity_planning_resources,
-                sql_insights_fleet_analysis_resources=news_report_content_types_sql_insights_fleet_analysis_resources,
-                sql_insights_performance_degradation_resources=news_report_content_types_sql_insights_performance_degradation_resources,
-                sql_insights_plan_changes_resources=news_report_content_types_sql_insights_plan_changes_resources,
-                sql_insights_top_databases_resources=news_report_content_types_sql_insights_top_databases_resources,
-                sql_insights_top_sql_by_insights_resources=news_report_content_types_sql_insights_top_sql_by_insights_resources,
-                sql_insights_top_sql_resources=news_report_content_types_sql_insights_top_sql_resources,
-            ),
+            content_types={
+                "capacity_planning_resources": news_report_content_types_capacity_planning_resources,
+                "sql_insights_fleet_analysis_resources": news_report_content_types_sql_insights_fleet_analysis_resources,
+                "sql_insights_performance_degradation_resources": news_report_content_types_sql_insights_performance_degradation_resources,
+                "sql_insights_plan_changes_resources": news_report_content_types_sql_insights_plan_changes_resources,
+                "sql_insights_top_databases_resources": news_report_content_types_sql_insights_top_databases_resources,
+                "sql_insights_top_sql_by_insights_resources": news_report_content_types_sql_insights_top_sql_by_insights_resources,
+                "sql_insights_top_sql_resources": news_report_content_types_sql_insights_top_sql_resources,
+            },
             description=news_report_description,
             locale=news_report_locale,
             name=news_report_name,
@@ -571,7 +571,7 @@ class NewsReport(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] are_child_compartments_included: (Updatable) A flag to consider the resources within a given compartment and all sub-compartments.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier where the news report will be created.
-        :param pulumi.Input[pulumi.InputType['NewsReportContentTypesArgs']] content_types: (Updatable) Content types that the news report can handle.
+        :param pulumi.Input[Union['NewsReportContentTypesArgs', 'NewsReportContentTypesArgsDict']] content_types: (Updatable) Content types that the news report can handle.
         :param pulumi.Input[str] day_of_week: (Updatable) Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) The description of the news report.
@@ -605,15 +605,15 @@ class NewsReport(pulumi.CustomResource):
 
         test_news_report = oci.opsi.NewsReport("test_news_report",
             compartment_id=compartment_id,
-            content_types=oci.opsi.NewsReportContentTypesArgs(
-                capacity_planning_resources=news_report_content_types_capacity_planning_resources,
-                sql_insights_fleet_analysis_resources=news_report_content_types_sql_insights_fleet_analysis_resources,
-                sql_insights_performance_degradation_resources=news_report_content_types_sql_insights_performance_degradation_resources,
-                sql_insights_plan_changes_resources=news_report_content_types_sql_insights_plan_changes_resources,
-                sql_insights_top_databases_resources=news_report_content_types_sql_insights_top_databases_resources,
-                sql_insights_top_sql_by_insights_resources=news_report_content_types_sql_insights_top_sql_by_insights_resources,
-                sql_insights_top_sql_resources=news_report_content_types_sql_insights_top_sql_resources,
-            ),
+            content_types={
+                "capacity_planning_resources": news_report_content_types_capacity_planning_resources,
+                "sql_insights_fleet_analysis_resources": news_report_content_types_sql_insights_fleet_analysis_resources,
+                "sql_insights_performance_degradation_resources": news_report_content_types_sql_insights_performance_degradation_resources,
+                "sql_insights_plan_changes_resources": news_report_content_types_sql_insights_plan_changes_resources,
+                "sql_insights_top_databases_resources": news_report_content_types_sql_insights_top_databases_resources,
+                "sql_insights_top_sql_by_insights_resources": news_report_content_types_sql_insights_top_sql_by_insights_resources,
+                "sql_insights_top_sql_resources": news_report_content_types_sql_insights_top_sql_resources,
+            },
             description=news_report_description,
             locale=news_report_locale,
             name=news_report_name,
@@ -655,7 +655,7 @@ class NewsReport(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  are_child_compartments_included: Optional[pulumi.Input[bool]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 content_types: Optional[pulumi.Input[pulumi.InputType['NewsReportContentTypesArgs']]] = None,
+                 content_types: Optional[pulumi.Input[Union['NewsReportContentTypesArgs', 'NewsReportContentTypesArgsDict']]] = None,
                  day_of_week: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
@@ -715,7 +715,7 @@ class NewsReport(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             are_child_compartments_included: Optional[pulumi.Input[bool]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            content_types: Optional[pulumi.Input[pulumi.InputType['NewsReportContentTypesArgs']]] = None,
+            content_types: Optional[pulumi.Input[Union['NewsReportContentTypesArgs', 'NewsReportContentTypesArgsDict']]] = None,
             day_of_week: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             description: Optional[pulumi.Input[str]] = None,
@@ -739,7 +739,7 @@ class NewsReport(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] are_child_compartments_included: (Updatable) A flag to consider the resources within a given compartment and all sub-compartments.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier where the news report will be created.
-        :param pulumi.Input[pulumi.InputType['NewsReportContentTypesArgs']] content_types: (Updatable) Content types that the news report can handle.
+        :param pulumi.Input[Union['NewsReportContentTypesArgs', 'NewsReportContentTypesArgsDict']] content_types: (Updatable) Content types that the news report can handle.
         :param pulumi.Input[str] day_of_week: (Updatable) Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) The description of the news report.

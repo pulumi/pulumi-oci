@@ -407,7 +407,7 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
             fusion_environment_id: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             refresh_activity_id: Optional[pulumi.Input[str]] = None,
-            refresh_issue_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs']]]]] = None,
+            refresh_issue_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs', 'FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgsDict']]]]] = None,
             service_availability: Optional[pulumi.Input[str]] = None,
             source_fusion_environment_id: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -426,7 +426,7 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: A friendly name for the refresh activity. Can be changed later.
         :param pulumi.Input[str] fusion_environment_id: unique FusionEnvironment identifier
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs']]]] refresh_issue_details_lists: Details of refresh investigation information, each item represents a different issue.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs', 'FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgsDict']]]] refresh_issue_details_lists: Details of refresh investigation information, each item represents a different issue.
         :param pulumi.Input[str] service_availability: Service availability / impact during refresh activity execution up down
         :param pulumi.Input[str] source_fusion_environment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
                

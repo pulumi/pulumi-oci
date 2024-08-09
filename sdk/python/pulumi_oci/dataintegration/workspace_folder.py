@@ -447,7 +447,7 @@ class WorkspaceFolder(pulumi.CustomResource):
                  model_version: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  object_status: Optional[pulumi.Input[int]] = None,
-                 registry_metadata: Optional[pulumi.Input[pulumi.InputType['WorkspaceFolderRegistryMetadataArgs']]] = None,
+                 registry_metadata: Optional[pulumi.Input[Union['WorkspaceFolderRegistryMetadataArgs', 'WorkspaceFolderRegistryMetadataArgsDict']]] = None,
                  workspace_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -465,13 +465,13 @@ class WorkspaceFolder(pulumi.CustomResource):
         test_workspace_folder = oci.data_integration.WorkspaceFolder("test_workspace_folder",
             identifier=workspace_folder_identifier,
             name=workspace_folder_name,
-            registry_metadata=oci.data_integration.WorkspaceFolderRegistryMetadataArgs(
-                aggregator_key=workspace_folder_registry_metadata_aggregator_key,
-                is_favorite=workspace_folder_registry_metadata_is_favorite,
-                key=workspace_folder_registry_metadata_key,
-                labels=workspace_folder_registry_metadata_labels,
-                registry_version=workspace_folder_registry_metadata_registry_version,
-            ),
+            registry_metadata={
+                "aggregator_key": workspace_folder_registry_metadata_aggregator_key,
+                "is_favorite": workspace_folder_registry_metadata_is_favorite,
+                "key": workspace_folder_registry_metadata_key,
+                "labels": workspace_folder_registry_metadata_labels,
+                "registry_version": workspace_folder_registry_metadata_registry_version,
+            },
             workspace_id=test_workspace["id"],
             category_name=test_category["name"],
             description=workspace_folder_description,
@@ -497,7 +497,7 @@ class WorkspaceFolder(pulumi.CustomResource):
         :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
         :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        :param pulumi.Input[pulumi.InputType['WorkspaceFolderRegistryMetadataArgs']] registry_metadata: (Updatable) Information about the object and its parent.
+        :param pulumi.Input[Union['WorkspaceFolderRegistryMetadataArgs', 'WorkspaceFolderRegistryMetadataArgsDict']] registry_metadata: (Updatable) Information about the object and its parent.
         :param pulumi.Input[str] workspace_id: The workspace ID.
                
                
@@ -525,13 +525,13 @@ class WorkspaceFolder(pulumi.CustomResource):
         test_workspace_folder = oci.data_integration.WorkspaceFolder("test_workspace_folder",
             identifier=workspace_folder_identifier,
             name=workspace_folder_name,
-            registry_metadata=oci.data_integration.WorkspaceFolderRegistryMetadataArgs(
-                aggregator_key=workspace_folder_registry_metadata_aggregator_key,
-                is_favorite=workspace_folder_registry_metadata_is_favorite,
-                key=workspace_folder_registry_metadata_key,
-                labels=workspace_folder_registry_metadata_labels,
-                registry_version=workspace_folder_registry_metadata_registry_version,
-            ),
+            registry_metadata={
+                "aggregator_key": workspace_folder_registry_metadata_aggregator_key,
+                "is_favorite": workspace_folder_registry_metadata_is_favorite,
+                "key": workspace_folder_registry_metadata_key,
+                "labels": workspace_folder_registry_metadata_labels,
+                "registry_version": workspace_folder_registry_metadata_registry_version,
+            },
             workspace_id=test_workspace["id"],
             category_name=test_category["name"],
             description=workspace_folder_description,
@@ -571,7 +571,7 @@ class WorkspaceFolder(pulumi.CustomResource):
                  model_version: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  object_status: Optional[pulumi.Input[int]] = None,
-                 registry_metadata: Optional[pulumi.Input[pulumi.InputType['WorkspaceFolderRegistryMetadataArgs']]] = None,
+                 registry_metadata: Optional[pulumi.Input[Union['WorkspaceFolderRegistryMetadataArgs', 'WorkspaceFolderRegistryMetadataArgsDict']]] = None,
                  workspace_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -619,14 +619,14 @@ class WorkspaceFolder(pulumi.CustomResource):
             identifier: Optional[pulumi.Input[str]] = None,
             key: Optional[pulumi.Input[str]] = None,
             key_map: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WorkspaceFolderMetadataArgs']]]]] = None,
+            metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceFolderMetadataArgs', 'WorkspaceFolderMetadataArgsDict']]]]] = None,
             model_type: Optional[pulumi.Input[str]] = None,
             model_version: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             object_status: Optional[pulumi.Input[int]] = None,
             object_version: Optional[pulumi.Input[int]] = None,
-            parent_reves: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WorkspaceFolderParentRefArgs']]]]] = None,
-            registry_metadata: Optional[pulumi.Input[pulumi.InputType['WorkspaceFolderRegistryMetadataArgs']]] = None,
+            parent_reves: Optional[pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceFolderParentRefArgs', 'WorkspaceFolderParentRefArgsDict']]]]] = None,
+            registry_metadata: Optional[pulumi.Input[Union['WorkspaceFolderRegistryMetadataArgs', 'WorkspaceFolderRegistryMetadataArgsDict']]] = None,
             workspace_id: Optional[pulumi.Input[str]] = None) -> 'WorkspaceFolder':
         """
         Get an existing WorkspaceFolder resource's state with the given name, id, and optional extra
@@ -640,14 +640,14 @@ class WorkspaceFolder(pulumi.CustomResource):
         :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         :param pulumi.Input[str] key: (Updatable) Currently not used on folder creation. Reserved for future.
         :param pulumi.Input[Mapping[str, Any]] key_map: A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WorkspaceFolderMetadataArgs']]]] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceFolderMetadataArgs', 'WorkspaceFolderMetadataArgsDict']]]] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
         :param pulumi.Input[str] model_type: The type of the object.
         :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
         :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param pulumi.Input[int] object_version: The version of the object that is used to track changes in the object instance.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WorkspaceFolderParentRefArgs']]]] parent_reves: A reference to the object's parent.
-        :param pulumi.Input[pulumi.InputType['WorkspaceFolderRegistryMetadataArgs']] registry_metadata: (Updatable) Information about the object and its parent.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceFolderParentRefArgs', 'WorkspaceFolderParentRefArgsDict']]]] parent_reves: A reference to the object's parent.
+        :param pulumi.Input[Union['WorkspaceFolderRegistryMetadataArgs', 'WorkspaceFolderRegistryMetadataArgsDict']] registry_metadata: (Updatable) Information about the object and its parent.
         :param pulumi.Input[str] workspace_id: The workspace ID.
                
                

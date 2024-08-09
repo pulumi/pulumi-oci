@@ -488,7 +488,7 @@ public class VmClusterAddVirtualNetwork extends com.pulumi.resources.CustomResou
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public VmClusterAddVirtualNetwork(String name) {
+    public VmClusterAddVirtualNetwork(java.lang.String name) {
         this(name, VmClusterAddVirtualNetworkArgs.Empty);
     }
     /**
@@ -496,7 +496,7 @@ public class VmClusterAddVirtualNetwork extends com.pulumi.resources.CustomResou
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public VmClusterAddVirtualNetwork(String name, VmClusterAddVirtualNetworkArgs args) {
+    public VmClusterAddVirtualNetwork(java.lang.String name, VmClusterAddVirtualNetworkArgs args) {
         this(name, args, null);
     }
     /**
@@ -505,12 +505,12 @@ public class VmClusterAddVirtualNetwork extends com.pulumi.resources.CustomResou
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public VmClusterAddVirtualNetwork(String name, VmClusterAddVirtualNetworkArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/vmClusterAddVirtualNetwork:VmClusterAddVirtualNetwork", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public VmClusterAddVirtualNetwork(java.lang.String name, VmClusterAddVirtualNetworkArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/vmClusterAddVirtualNetwork:VmClusterAddVirtualNetwork", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private VmClusterAddVirtualNetwork(String name, Output<String> id, @Nullable VmClusterAddVirtualNetworkState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/vmClusterAddVirtualNetwork:VmClusterAddVirtualNetwork", name, state, makeResourceOptions(options, id));
+    private VmClusterAddVirtualNetwork(java.lang.String name, Output<java.lang.String> id, @Nullable VmClusterAddVirtualNetworkState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/vmClusterAddVirtualNetwork:VmClusterAddVirtualNetwork", name, state, makeResourceOptions(options, id), false);
     }
 
     private static VmClusterAddVirtualNetworkArgs makeArgs(VmClusterAddVirtualNetworkArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -520,7 +520,7 @@ public class VmClusterAddVirtualNetwork extends com.pulumi.resources.CustomResou
         return args == null ? VmClusterAddVirtualNetworkArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -536,7 +536,7 @@ public class VmClusterAddVirtualNetwork extends com.pulumi.resources.CustomResou
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static VmClusterAddVirtualNetwork get(String name, Output<String> id, @Nullable VmClusterAddVirtualNetworkState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static VmClusterAddVirtualNetwork get(java.lang.String name, Output<java.lang.String> id, @Nullable VmClusterAddVirtualNetworkState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new VmClusterAddVirtualNetwork(name, id, state, options);
     }
 }

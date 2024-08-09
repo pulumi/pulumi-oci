@@ -263,7 +263,7 @@ public class TargetDatabasePeerTargetDatabase extends com.pulumi.resources.Custo
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public TargetDatabasePeerTargetDatabase(String name) {
+    public TargetDatabasePeerTargetDatabase(java.lang.String name) {
         this(name, TargetDatabasePeerTargetDatabaseArgs.Empty);
     }
     /**
@@ -271,7 +271,7 @@ public class TargetDatabasePeerTargetDatabase extends com.pulumi.resources.Custo
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public TargetDatabasePeerTargetDatabase(String name, TargetDatabasePeerTargetDatabaseArgs args) {
+    public TargetDatabasePeerTargetDatabase(java.lang.String name, TargetDatabasePeerTargetDatabaseArgs args) {
         this(name, args, null);
     }
     /**
@@ -280,12 +280,12 @@ public class TargetDatabasePeerTargetDatabase extends com.pulumi.resources.Custo
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public TargetDatabasePeerTargetDatabase(String name, TargetDatabasePeerTargetDatabaseArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/targetDatabasePeerTargetDatabase:TargetDatabasePeerTargetDatabase", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public TargetDatabasePeerTargetDatabase(java.lang.String name, TargetDatabasePeerTargetDatabaseArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataSafe/targetDatabasePeerTargetDatabase:TargetDatabasePeerTargetDatabase", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private TargetDatabasePeerTargetDatabase(String name, Output<String> id, @Nullable TargetDatabasePeerTargetDatabaseState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/targetDatabasePeerTargetDatabase:TargetDatabasePeerTargetDatabase", name, state, makeResourceOptions(options, id));
+    private TargetDatabasePeerTargetDatabase(java.lang.String name, Output<java.lang.String> id, @Nullable TargetDatabasePeerTargetDatabaseState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataSafe/targetDatabasePeerTargetDatabase:TargetDatabasePeerTargetDatabase", name, state, makeResourceOptions(options, id), false);
     }
 
     private static TargetDatabasePeerTargetDatabaseArgs makeArgs(TargetDatabasePeerTargetDatabaseArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -295,7 +295,7 @@ public class TargetDatabasePeerTargetDatabase extends com.pulumi.resources.Custo
         return args == null ? TargetDatabasePeerTargetDatabaseArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -311,7 +311,7 @@ public class TargetDatabasePeerTargetDatabase extends com.pulumi.resources.Custo
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static TargetDatabasePeerTargetDatabase get(String name, Output<String> id, @Nullable TargetDatabasePeerTargetDatabaseState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static TargetDatabasePeerTargetDatabase get(java.lang.String name, Output<java.lang.String> id, @Nullable TargetDatabasePeerTargetDatabaseState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new TargetDatabasePeerTargetDatabase(name, id, state, options);
     }
 }

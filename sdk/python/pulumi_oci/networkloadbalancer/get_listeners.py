@@ -76,7 +76,7 @@ class AwaitableGetListenersResult(GetListenersResult):
             network_load_balancer_id=self.network_load_balancer_id)
 
 
-def get_listeners(filters: Optional[Sequence[pulumi.InputType['GetListenersFilterArgs']]] = None,
+def get_listeners(filters: Optional[Sequence[Union['GetListenersFilterArgs', 'GetListenersFilterArgsDict']]] = None,
                   network_load_balancer_id: Optional[str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetListenersResult:
     """
@@ -110,7 +110,7 @@ def get_listeners(filters: Optional[Sequence[pulumi.InputType['GetListenersFilte
 
 
 @_utilities.lift_output_func(get_listeners)
-def get_listeners_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetListenersFilterArgs']]]]] = None,
+def get_listeners_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetListenersFilterArgs', 'GetListenersFilterArgsDict']]]]] = None,
                          network_load_balancer_id: Optional[pulumi.Input[str]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetListenersResult]:
     """

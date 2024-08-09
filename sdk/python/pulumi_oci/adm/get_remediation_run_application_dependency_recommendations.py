@@ -100,7 +100,7 @@ class AwaitableGetRemediationRunApplicationDependencyRecommendationsResult(GetRe
             remediation_run_id=self.remediation_run_id)
 
 
-def get_remediation_run_application_dependency_recommendations(filters: Optional[Sequence[pulumi.InputType['GetRemediationRunApplicationDependencyRecommendationsFilterArgs']]] = None,
+def get_remediation_run_application_dependency_recommendations(filters: Optional[Sequence[Union['GetRemediationRunApplicationDependencyRecommendationsFilterArgs', 'GetRemediationRunApplicationDependencyRecommendationsFilterArgsDict']]] = None,
                                                                gav: Optional[str] = None,
                                                                purl: Optional[str] = None,
                                                                remediation_run_id: Optional[str] = None,
@@ -144,7 +144,7 @@ def get_remediation_run_application_dependency_recommendations(filters: Optional
 
 
 @_utilities.lift_output_func(get_remediation_run_application_dependency_recommendations)
-def get_remediation_run_application_dependency_recommendations_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetRemediationRunApplicationDependencyRecommendationsFilterArgs']]]]] = None,
+def get_remediation_run_application_dependency_recommendations_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRemediationRunApplicationDependencyRecommendationsFilterArgs', 'GetRemediationRunApplicationDependencyRecommendationsFilterArgsDict']]]]] = None,
                                                                       gav: Optional[pulumi.Input[Optional[str]]] = None,
                                                                       purl: Optional[pulumi.Input[Optional[str]]] = None,
                                                                       remediation_run_id: Optional[pulumi.Input[str]] = None,

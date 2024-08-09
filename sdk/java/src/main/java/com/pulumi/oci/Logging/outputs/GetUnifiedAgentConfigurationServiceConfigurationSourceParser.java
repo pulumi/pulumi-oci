@@ -164,7 +164,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
      */
     private Integer timeoutInMilliseconds;
     /**
-     * @return Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt;{@literal @}type csv keys time,host,req_id,user time_key time &lt;/parse&gt;
+     * @return Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt; {@literal @}type csv keys time,host,req_id,user time_key time &lt;/parse&gt;
      * 
      */
     private Map<String,Object> types;
@@ -374,7 +374,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
         return this.timeoutInMilliseconds;
     }
     /**
-     * @return Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt;{@literal @}type csv keys time,host,req_id,user time_key time &lt;/parse&gt;
+     * @return Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt; {@literal @}type csv keys time,host,req_id,user time_key time &lt;/parse&gt;
      * 
      */
     public Map<String,Object> types() {

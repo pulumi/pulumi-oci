@@ -680,7 +680,7 @@ public class ExadbVmCluster extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ExadbVmCluster(String name) {
+    public ExadbVmCluster(java.lang.String name) {
         this(name, ExadbVmClusterArgs.Empty);
     }
     /**
@@ -688,7 +688,7 @@ public class ExadbVmCluster extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ExadbVmCluster(String name, ExadbVmClusterArgs args) {
+    public ExadbVmCluster(java.lang.String name, ExadbVmClusterArgs args) {
         this(name, args, null);
     }
     /**
@@ -697,12 +697,12 @@ public class ExadbVmCluster extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ExadbVmCluster(String name, ExadbVmClusterArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/exadbVmCluster:ExadbVmCluster", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ExadbVmCluster(java.lang.String name, ExadbVmClusterArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/exadbVmCluster:ExadbVmCluster", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ExadbVmCluster(String name, Output<String> id, @Nullable ExadbVmClusterState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/exadbVmCluster:ExadbVmCluster", name, state, makeResourceOptions(options, id));
+    private ExadbVmCluster(java.lang.String name, Output<java.lang.String> id, @Nullable ExadbVmClusterState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/exadbVmCluster:ExadbVmCluster", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ExadbVmClusterArgs makeArgs(ExadbVmClusterArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -712,7 +712,7 @@ public class ExadbVmCluster extends com.pulumi.resources.CustomResource {
         return args == null ? ExadbVmClusterArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -728,7 +728,7 @@ public class ExadbVmCluster extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ExadbVmCluster get(String name, Output<String> id, @Nullable ExadbVmClusterState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ExadbVmCluster get(java.lang.String name, Output<java.lang.String> id, @Nullable ExadbVmClusterState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ExadbVmCluster(name, id, state, options);
     }
 }

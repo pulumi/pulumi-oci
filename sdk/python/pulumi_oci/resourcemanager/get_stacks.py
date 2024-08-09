@@ -105,7 +105,7 @@ class AwaitableGetStacksResult(GetStacksResult):
 
 def get_stacks(compartment_id: Optional[str] = None,
                display_name: Optional[str] = None,
-               filters: Optional[Sequence[pulumi.InputType['GetStacksFilterArgs']]] = None,
+               filters: Optional[Sequence[Union['GetStacksFilterArgs', 'GetStacksFilterArgsDict']]] = None,
                id: Optional[str] = None,
                state: Optional[str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetStacksResult:
@@ -161,7 +161,7 @@ def get_stacks(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_stacks)
 def get_stacks_output(compartment_id: Optional[pulumi.Input[str]] = None,
                       display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                      filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetStacksFilterArgs']]]]] = None,
+                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetStacksFilterArgs', 'GetStacksFilterArgsDict']]]]] = None,
                       id: Optional[pulumi.Input[Optional[str]]] = None,
                       state: Optional[pulumi.Input[Optional[str]]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetStacksResult]:

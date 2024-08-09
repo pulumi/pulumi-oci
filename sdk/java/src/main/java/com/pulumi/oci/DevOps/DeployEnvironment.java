@@ -325,7 +325,7 @@ public class DeployEnvironment extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DeployEnvironment(String name) {
+    public DeployEnvironment(java.lang.String name) {
         this(name, DeployEnvironmentArgs.Empty);
     }
     /**
@@ -333,7 +333,7 @@ public class DeployEnvironment extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DeployEnvironment(String name, DeployEnvironmentArgs args) {
+    public DeployEnvironment(java.lang.String name, DeployEnvironmentArgs args) {
         this(name, args, null);
     }
     /**
@@ -342,12 +342,12 @@ public class DeployEnvironment extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DeployEnvironment(String name, DeployEnvironmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DevOps/deployEnvironment:DeployEnvironment", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DeployEnvironment(java.lang.String name, DeployEnvironmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DevOps/deployEnvironment:DeployEnvironment", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DeployEnvironment(String name, Output<String> id, @Nullable DeployEnvironmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DevOps/deployEnvironment:DeployEnvironment", name, state, makeResourceOptions(options, id));
+    private DeployEnvironment(java.lang.String name, Output<java.lang.String> id, @Nullable DeployEnvironmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DevOps/deployEnvironment:DeployEnvironment", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DeployEnvironmentArgs makeArgs(DeployEnvironmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -357,7 +357,7 @@ public class DeployEnvironment extends com.pulumi.resources.CustomResource {
         return args == null ? DeployEnvironmentArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -373,7 +373,7 @@ public class DeployEnvironment extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DeployEnvironment get(String name, Output<String> id, @Nullable DeployEnvironmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DeployEnvironment get(java.lang.String name, Output<java.lang.String> id, @Nullable DeployEnvironmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DeployEnvironment(name, id, state, options);
     }
 }

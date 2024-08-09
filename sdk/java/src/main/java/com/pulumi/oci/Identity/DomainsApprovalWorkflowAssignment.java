@@ -624,7 +624,7 @@ public class DomainsApprovalWorkflowAssignment extends com.pulumi.resources.Cust
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DomainsApprovalWorkflowAssignment(String name) {
+    public DomainsApprovalWorkflowAssignment(java.lang.String name) {
         this(name, DomainsApprovalWorkflowAssignmentArgs.Empty);
     }
     /**
@@ -632,7 +632,7 @@ public class DomainsApprovalWorkflowAssignment extends com.pulumi.resources.Cust
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DomainsApprovalWorkflowAssignment(String name, DomainsApprovalWorkflowAssignmentArgs args) {
+    public DomainsApprovalWorkflowAssignment(java.lang.String name, DomainsApprovalWorkflowAssignmentArgs args) {
         this(name, args, null);
     }
     /**
@@ -641,12 +641,12 @@ public class DomainsApprovalWorkflowAssignment extends com.pulumi.resources.Cust
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DomainsApprovalWorkflowAssignment(String name, DomainsApprovalWorkflowAssignmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsApprovalWorkflowAssignment:DomainsApprovalWorkflowAssignment", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DomainsApprovalWorkflowAssignment(java.lang.String name, DomainsApprovalWorkflowAssignmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/domainsApprovalWorkflowAssignment:DomainsApprovalWorkflowAssignment", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DomainsApprovalWorkflowAssignment(String name, Output<String> id, @Nullable DomainsApprovalWorkflowAssignmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsApprovalWorkflowAssignment:DomainsApprovalWorkflowAssignment", name, state, makeResourceOptions(options, id));
+    private DomainsApprovalWorkflowAssignment(java.lang.String name, Output<java.lang.String> id, @Nullable DomainsApprovalWorkflowAssignmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/domainsApprovalWorkflowAssignment:DomainsApprovalWorkflowAssignment", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DomainsApprovalWorkflowAssignmentArgs makeArgs(DomainsApprovalWorkflowAssignmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -656,7 +656,7 @@ public class DomainsApprovalWorkflowAssignment extends com.pulumi.resources.Cust
         return args == null ? DomainsApprovalWorkflowAssignmentArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -672,7 +672,7 @@ public class DomainsApprovalWorkflowAssignment extends com.pulumi.resources.Cust
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DomainsApprovalWorkflowAssignment get(String name, Output<String> id, @Nullable DomainsApprovalWorkflowAssignmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DomainsApprovalWorkflowAssignment get(java.lang.String name, Output<java.lang.String> id, @Nullable DomainsApprovalWorkflowAssignmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DomainsApprovalWorkflowAssignment(name, id, state, options);
     }
 }

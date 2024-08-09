@@ -336,7 +336,7 @@ public class DatabaseToolsConnection extends com.pulumi.resources.CustomResource
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DatabaseToolsConnection(String name) {
+    public DatabaseToolsConnection(java.lang.String name) {
         this(name, DatabaseToolsConnectionArgs.Empty);
     }
     /**
@@ -344,7 +344,7 @@ public class DatabaseToolsConnection extends com.pulumi.resources.CustomResource
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DatabaseToolsConnection(String name, DatabaseToolsConnectionArgs args) {
+    public DatabaseToolsConnection(java.lang.String name, DatabaseToolsConnectionArgs args) {
         this(name, args, null);
     }
     /**
@@ -353,12 +353,12 @@ public class DatabaseToolsConnection extends com.pulumi.resources.CustomResource
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DatabaseToolsConnection(String name, DatabaseToolsConnectionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseTools/databaseToolsConnection:DatabaseToolsConnection", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DatabaseToolsConnection(java.lang.String name, DatabaseToolsConnectionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DatabaseTools/databaseToolsConnection:DatabaseToolsConnection", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DatabaseToolsConnection(String name, Output<String> id, @Nullable DatabaseToolsConnectionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseTools/databaseToolsConnection:DatabaseToolsConnection", name, state, makeResourceOptions(options, id));
+    private DatabaseToolsConnection(java.lang.String name, Output<java.lang.String> id, @Nullable DatabaseToolsConnectionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DatabaseTools/databaseToolsConnection:DatabaseToolsConnection", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DatabaseToolsConnectionArgs makeArgs(DatabaseToolsConnectionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -368,7 +368,7 @@ public class DatabaseToolsConnection extends com.pulumi.resources.CustomResource
         return args == null ? DatabaseToolsConnectionArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -384,7 +384,7 @@ public class DatabaseToolsConnection extends com.pulumi.resources.CustomResource
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DatabaseToolsConnection get(String name, Output<String> id, @Nullable DatabaseToolsConnectionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DatabaseToolsConnection get(java.lang.String name, Output<java.lang.String> id, @Nullable DatabaseToolsConnectionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DatabaseToolsConnection(name, id, state, options);
     }
 }

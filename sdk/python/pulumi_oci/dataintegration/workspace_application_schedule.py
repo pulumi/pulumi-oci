@@ -513,7 +513,7 @@ class WorkspaceApplicationSchedule(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  application_key: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
-                 frequency_details: Optional[pulumi.Input[pulumi.InputType['WorkspaceApplicationScheduleFrequencyDetailsArgs']]] = None,
+                 frequency_details: Optional[pulumi.Input[Union['WorkspaceApplicationScheduleFrequencyDetailsArgs', 'WorkspaceApplicationScheduleFrequencyDetailsArgsDict']]] = None,
                  identifier: Optional[pulumi.Input[str]] = None,
                  is_daylight_adjustment_enabled: Optional[pulumi.Input[bool]] = None,
                  key: Optional[pulumi.Input[str]] = None,
@@ -521,7 +521,7 @@ class WorkspaceApplicationSchedule(pulumi.CustomResource):
                  name: Optional[pulumi.Input[str]] = None,
                  object_status: Optional[pulumi.Input[int]] = None,
                  object_version: Optional[pulumi.Input[int]] = None,
-                 registry_metadata: Optional[pulumi.Input[pulumi.InputType['WorkspaceApplicationScheduleRegistryMetadataArgs']]] = None,
+                 registry_metadata: Optional[pulumi.Input[Union['WorkspaceApplicationScheduleRegistryMetadataArgs', 'WorkspaceApplicationScheduleRegistryMetadataArgsDict']]] = None,
                  timezone: Optional[pulumi.Input[str]] = None,
                  workspace_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -542,32 +542,32 @@ class WorkspaceApplicationSchedule(pulumi.CustomResource):
             name=workspace_application_schedule_name,
             workspace_id=test_workspace["id"],
             description=workspace_application_schedule_description,
-            frequency_details=oci.data_integration.WorkspaceApplicationScheduleFrequencyDetailsArgs(
-                model_type=workspace_application_schedule_frequency_details_model_type,
-                custom_expression=workspace_application_schedule_frequency_details_custom_expression,
-                day_of_week=workspace_application_schedule_frequency_details_day_of_week,
-                days=workspace_application_schedule_frequency_details_days,
-                frequency=workspace_application_schedule_frequency_details_frequency,
-                interval=workspace_application_schedule_frequency_details_interval,
-                time=oci.data_integration.WorkspaceApplicationScheduleFrequencyDetailsTimeArgs(
-                    hour=workspace_application_schedule_frequency_details_time_hour,
-                    minute=workspace_application_schedule_frequency_details_time_minute,
-                    second=workspace_application_schedule_frequency_details_time_second,
-                ),
-                week_of_month=workspace_application_schedule_frequency_details_week_of_month,
-            ),
+            frequency_details={
+                "model_type": workspace_application_schedule_frequency_details_model_type,
+                "custom_expression": workspace_application_schedule_frequency_details_custom_expression,
+                "day_of_week": workspace_application_schedule_frequency_details_day_of_week,
+                "days": workspace_application_schedule_frequency_details_days,
+                "frequency": workspace_application_schedule_frequency_details_frequency,
+                "interval": workspace_application_schedule_frequency_details_interval,
+                "time": {
+                    "hour": workspace_application_schedule_frequency_details_time_hour,
+                    "minute": workspace_application_schedule_frequency_details_time_minute,
+                    "second": workspace_application_schedule_frequency_details_time_second,
+                },
+                "week_of_month": workspace_application_schedule_frequency_details_week_of_month,
+            },
             is_daylight_adjustment_enabled=workspace_application_schedule_is_daylight_adjustment_enabled,
             key=workspace_application_schedule_key,
             model_version=workspace_application_schedule_model_version,
             object_status=workspace_application_schedule_object_status,
             object_version=workspace_application_schedule_object_version,
-            registry_metadata=oci.data_integration.WorkspaceApplicationScheduleRegistryMetadataArgs(
-                aggregator_key=workspace_application_schedule_registry_metadata_aggregator_key,
-                is_favorite=workspace_application_schedule_registry_metadata_is_favorite,
-                key=workspace_application_schedule_registry_metadata_key,
-                labels=workspace_application_schedule_registry_metadata_labels,
-                registry_version=workspace_application_schedule_registry_metadata_registry_version,
-            ),
+            registry_metadata={
+                "aggregator_key": workspace_application_schedule_registry_metadata_aggregator_key,
+                "is_favorite": workspace_application_schedule_registry_metadata_is_favorite,
+                "key": workspace_application_schedule_registry_metadata_key,
+                "labels": workspace_application_schedule_registry_metadata_labels,
+                "registry_version": workspace_application_schedule_registry_metadata_registry_version,
+            },
             timezone=workspace_application_schedule_timezone)
         ```
 
@@ -583,7 +583,7 @@ class WorkspaceApplicationSchedule(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] application_key: The application key.
         :param pulumi.Input[str] description: (Updatable) Detailed description for the object.
-        :param pulumi.Input[pulumi.InputType['WorkspaceApplicationScheduleFrequencyDetailsArgs']] frequency_details: (Updatable) The model that holds the frequency details.
+        :param pulumi.Input[Union['WorkspaceApplicationScheduleFrequencyDetailsArgs', 'WorkspaceApplicationScheduleFrequencyDetailsArgsDict']] frequency_details: (Updatable) The model that holds the frequency details.
         :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         :param pulumi.Input[bool] is_daylight_adjustment_enabled: (Updatable) A flag to indicate whether daylight adjustment should be considered or not.
         :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
@@ -591,7 +591,7 @@ class WorkspaceApplicationSchedule(pulumi.CustomResource):
         :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param pulumi.Input[int] object_version: (Updatable) This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
-        :param pulumi.Input[pulumi.InputType['WorkspaceApplicationScheduleRegistryMetadataArgs']] registry_metadata: (Updatable) Information about the object and its parent.
+        :param pulumi.Input[Union['WorkspaceApplicationScheduleRegistryMetadataArgs', 'WorkspaceApplicationScheduleRegistryMetadataArgsDict']] registry_metadata: (Updatable) Information about the object and its parent.
         :param pulumi.Input[str] timezone: (Updatable) The timezone for the schedule.
         :param pulumi.Input[str] workspace_id: The workspace ID.
                
@@ -622,32 +622,32 @@ class WorkspaceApplicationSchedule(pulumi.CustomResource):
             name=workspace_application_schedule_name,
             workspace_id=test_workspace["id"],
             description=workspace_application_schedule_description,
-            frequency_details=oci.data_integration.WorkspaceApplicationScheduleFrequencyDetailsArgs(
-                model_type=workspace_application_schedule_frequency_details_model_type,
-                custom_expression=workspace_application_schedule_frequency_details_custom_expression,
-                day_of_week=workspace_application_schedule_frequency_details_day_of_week,
-                days=workspace_application_schedule_frequency_details_days,
-                frequency=workspace_application_schedule_frequency_details_frequency,
-                interval=workspace_application_schedule_frequency_details_interval,
-                time=oci.data_integration.WorkspaceApplicationScheduleFrequencyDetailsTimeArgs(
-                    hour=workspace_application_schedule_frequency_details_time_hour,
-                    minute=workspace_application_schedule_frequency_details_time_minute,
-                    second=workspace_application_schedule_frequency_details_time_second,
-                ),
-                week_of_month=workspace_application_schedule_frequency_details_week_of_month,
-            ),
+            frequency_details={
+                "model_type": workspace_application_schedule_frequency_details_model_type,
+                "custom_expression": workspace_application_schedule_frequency_details_custom_expression,
+                "day_of_week": workspace_application_schedule_frequency_details_day_of_week,
+                "days": workspace_application_schedule_frequency_details_days,
+                "frequency": workspace_application_schedule_frequency_details_frequency,
+                "interval": workspace_application_schedule_frequency_details_interval,
+                "time": {
+                    "hour": workspace_application_schedule_frequency_details_time_hour,
+                    "minute": workspace_application_schedule_frequency_details_time_minute,
+                    "second": workspace_application_schedule_frequency_details_time_second,
+                },
+                "week_of_month": workspace_application_schedule_frequency_details_week_of_month,
+            },
             is_daylight_adjustment_enabled=workspace_application_schedule_is_daylight_adjustment_enabled,
             key=workspace_application_schedule_key,
             model_version=workspace_application_schedule_model_version,
             object_status=workspace_application_schedule_object_status,
             object_version=workspace_application_schedule_object_version,
-            registry_metadata=oci.data_integration.WorkspaceApplicationScheduleRegistryMetadataArgs(
-                aggregator_key=workspace_application_schedule_registry_metadata_aggregator_key,
-                is_favorite=workspace_application_schedule_registry_metadata_is_favorite,
-                key=workspace_application_schedule_registry_metadata_key,
-                labels=workspace_application_schedule_registry_metadata_labels,
-                registry_version=workspace_application_schedule_registry_metadata_registry_version,
-            ),
+            registry_metadata={
+                "aggregator_key": workspace_application_schedule_registry_metadata_aggregator_key,
+                "is_favorite": workspace_application_schedule_registry_metadata_is_favorite,
+                "key": workspace_application_schedule_registry_metadata_key,
+                "labels": workspace_application_schedule_registry_metadata_labels,
+                "registry_version": workspace_application_schedule_registry_metadata_registry_version,
+            },
             timezone=workspace_application_schedule_timezone)
         ```
 
@@ -676,7 +676,7 @@ class WorkspaceApplicationSchedule(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  application_key: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
-                 frequency_details: Optional[pulumi.Input[pulumi.InputType['WorkspaceApplicationScheduleFrequencyDetailsArgs']]] = None,
+                 frequency_details: Optional[pulumi.Input[Union['WorkspaceApplicationScheduleFrequencyDetailsArgs', 'WorkspaceApplicationScheduleFrequencyDetailsArgsDict']]] = None,
                  identifier: Optional[pulumi.Input[str]] = None,
                  is_daylight_adjustment_enabled: Optional[pulumi.Input[bool]] = None,
                  key: Optional[pulumi.Input[str]] = None,
@@ -684,7 +684,7 @@ class WorkspaceApplicationSchedule(pulumi.CustomResource):
                  name: Optional[pulumi.Input[str]] = None,
                  object_status: Optional[pulumi.Input[int]] = None,
                  object_version: Optional[pulumi.Input[int]] = None,
-                 registry_metadata: Optional[pulumi.Input[pulumi.InputType['WorkspaceApplicationScheduleRegistryMetadataArgs']]] = None,
+                 registry_metadata: Optional[pulumi.Input[Union['WorkspaceApplicationScheduleRegistryMetadataArgs', 'WorkspaceApplicationScheduleRegistryMetadataArgsDict']]] = None,
                  timezone: Optional[pulumi.Input[str]] = None,
                  workspace_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -730,18 +730,18 @@ class WorkspaceApplicationSchedule(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             application_key: Optional[pulumi.Input[str]] = None,
             description: Optional[pulumi.Input[str]] = None,
-            frequency_details: Optional[pulumi.Input[pulumi.InputType['WorkspaceApplicationScheduleFrequencyDetailsArgs']]] = None,
+            frequency_details: Optional[pulumi.Input[Union['WorkspaceApplicationScheduleFrequencyDetailsArgs', 'WorkspaceApplicationScheduleFrequencyDetailsArgsDict']]] = None,
             identifier: Optional[pulumi.Input[str]] = None,
             is_daylight_adjustment_enabled: Optional[pulumi.Input[bool]] = None,
             key: Optional[pulumi.Input[str]] = None,
-            metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WorkspaceApplicationScheduleMetadataArgs']]]]] = None,
+            metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceApplicationScheduleMetadataArgs', 'WorkspaceApplicationScheduleMetadataArgsDict']]]]] = None,
             model_type: Optional[pulumi.Input[str]] = None,
             model_version: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             object_status: Optional[pulumi.Input[int]] = None,
             object_version: Optional[pulumi.Input[int]] = None,
-            parent_reves: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WorkspaceApplicationScheduleParentRefArgs']]]]] = None,
-            registry_metadata: Optional[pulumi.Input[pulumi.InputType['WorkspaceApplicationScheduleRegistryMetadataArgs']]] = None,
+            parent_reves: Optional[pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceApplicationScheduleParentRefArgs', 'WorkspaceApplicationScheduleParentRefArgsDict']]]]] = None,
+            registry_metadata: Optional[pulumi.Input[Union['WorkspaceApplicationScheduleRegistryMetadataArgs', 'WorkspaceApplicationScheduleRegistryMetadataArgsDict']]] = None,
             timezone: Optional[pulumi.Input[str]] = None,
             workspace_id: Optional[pulumi.Input[str]] = None) -> 'WorkspaceApplicationSchedule':
         """
@@ -753,18 +753,18 @@ class WorkspaceApplicationSchedule(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] application_key: The application key.
         :param pulumi.Input[str] description: (Updatable) Detailed description for the object.
-        :param pulumi.Input[pulumi.InputType['WorkspaceApplicationScheduleFrequencyDetailsArgs']] frequency_details: (Updatable) The model that holds the frequency details.
+        :param pulumi.Input[Union['WorkspaceApplicationScheduleFrequencyDetailsArgs', 'WorkspaceApplicationScheduleFrequencyDetailsArgsDict']] frequency_details: (Updatable) The model that holds the frequency details.
         :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         :param pulumi.Input[bool] is_daylight_adjustment_enabled: (Updatable) A flag to indicate whether daylight adjustment should be considered or not.
         :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WorkspaceApplicationScheduleMetadataArgs']]]] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceApplicationScheduleMetadataArgs', 'WorkspaceApplicationScheduleMetadataArgsDict']]]] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
         :param pulumi.Input[str] model_type: The type of the object.
         :param pulumi.Input[str] model_version: (Updatable) This is a version number that is used by the service to upgrade objects if needed through releases of the service.
         :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param pulumi.Input[int] object_version: (Updatable) This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WorkspaceApplicationScheduleParentRefArgs']]]] parent_reves: A reference to the object's parent.
-        :param pulumi.Input[pulumi.InputType['WorkspaceApplicationScheduleRegistryMetadataArgs']] registry_metadata: (Updatable) Information about the object and its parent.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceApplicationScheduleParentRefArgs', 'WorkspaceApplicationScheduleParentRefArgsDict']]]] parent_reves: A reference to the object's parent.
+        :param pulumi.Input[Union['WorkspaceApplicationScheduleRegistryMetadataArgs', 'WorkspaceApplicationScheduleRegistryMetadataArgsDict']] registry_metadata: (Updatable) Information about the object and its parent.
         :param pulumi.Input[str] timezone: (Updatable) The timezone for the schedule.
         :param pulumi.Input[str] workspace_id: The workspace ID.
                

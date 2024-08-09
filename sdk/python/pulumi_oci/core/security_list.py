@@ -307,9 +307,9 @@ class SecurityList(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 egress_security_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SecurityListEgressSecurityRuleArgs']]]]] = None,
+                 egress_security_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SecurityListEgressSecurityRuleArgs', 'SecurityListEgressSecurityRuleArgsDict']]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 ingress_security_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SecurityListIngressSecurityRuleArgs']]]]] = None,
+                 ingress_security_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SecurityListIngressSecurityRuleArgs', 'SecurityListIngressSecurityRuleArgsDict']]]]] = None,
                  vcn_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -345,63 +345,63 @@ class SecurityList(pulumi.CustomResource):
                 "Operations.CostCenter": "42",
             },
             display_name=security_list_display_name,
-            egress_security_rules=[oci.core.SecurityListEgressSecurityRuleArgs(
-                destination=security_list_egress_security_rules_destination,
-                protocol=security_list_egress_security_rules_protocol,
-                description=security_list_egress_security_rules_description,
-                destination_type=security_list_egress_security_rules_destination_type,
-                icmp_options=oci.core.SecurityListEgressSecurityRuleIcmpOptionsArgs(
-                    type=security_list_egress_security_rules_icmp_options_type,
-                    code=security_list_egress_security_rules_icmp_options_code,
-                ),
-                stateless=security_list_egress_security_rules_stateless,
-                tcp_options=oci.core.SecurityListEgressSecurityRuleTcpOptionsArgs(
-                    max=security_list_egress_security_rules_tcp_options_destination_port_range_max,
-                    min=security_list_egress_security_rules_tcp_options_destination_port_range_min,
-                    source_port_range=oci.core.SecurityListEgressSecurityRuleTcpOptionsSourcePortRangeArgs(
-                        max=security_list_egress_security_rules_tcp_options_source_port_range_max,
-                        min=security_list_egress_security_rules_tcp_options_source_port_range_min,
-                    ),
-                ),
-                udp_options=oci.core.SecurityListEgressSecurityRuleUdpOptionsArgs(
-                    max=security_list_egress_security_rules_udp_options_destination_port_range_max,
-                    min=security_list_egress_security_rules_udp_options_destination_port_range_min,
-                    source_port_range=oci.core.SecurityListEgressSecurityRuleUdpOptionsSourcePortRangeArgs(
-                        max=security_list_egress_security_rules_udp_options_source_port_range_max,
-                        min=security_list_egress_security_rules_udp_options_source_port_range_min,
-                    ),
-                ),
-            )],
+            egress_security_rules=[{
+                "destination": security_list_egress_security_rules_destination,
+                "protocol": security_list_egress_security_rules_protocol,
+                "description": security_list_egress_security_rules_description,
+                "destination_type": security_list_egress_security_rules_destination_type,
+                "icmp_options": {
+                    "type": security_list_egress_security_rules_icmp_options_type,
+                    "code": security_list_egress_security_rules_icmp_options_code,
+                },
+                "stateless": security_list_egress_security_rules_stateless,
+                "tcp_options": {
+                    "max": security_list_egress_security_rules_tcp_options_destination_port_range_max,
+                    "min": security_list_egress_security_rules_tcp_options_destination_port_range_min,
+                    "source_port_range": {
+                        "max": security_list_egress_security_rules_tcp_options_source_port_range_max,
+                        "min": security_list_egress_security_rules_tcp_options_source_port_range_min,
+                    },
+                },
+                "udp_options": {
+                    "max": security_list_egress_security_rules_udp_options_destination_port_range_max,
+                    "min": security_list_egress_security_rules_udp_options_destination_port_range_min,
+                    "source_port_range": {
+                        "max": security_list_egress_security_rules_udp_options_source_port_range_max,
+                        "min": security_list_egress_security_rules_udp_options_source_port_range_min,
+                    },
+                },
+            }],
             freeform_tags={
                 "Department": "Finance",
             },
-            ingress_security_rules=[oci.core.SecurityListIngressSecurityRuleArgs(
-                protocol=security_list_ingress_security_rules_protocol,
-                source=security_list_ingress_security_rules_source,
-                description=security_list_ingress_security_rules_description,
-                icmp_options=oci.core.SecurityListIngressSecurityRuleIcmpOptionsArgs(
-                    type=security_list_ingress_security_rules_icmp_options_type,
-                    code=security_list_ingress_security_rules_icmp_options_code,
-                ),
-                source_type=security_list_ingress_security_rules_source_type,
-                stateless=security_list_ingress_security_rules_stateless,
-                tcp_options=oci.core.SecurityListIngressSecurityRuleTcpOptionsArgs(
-                    max=security_list_ingress_security_rules_tcp_options_destination_port_range_max,
-                    min=security_list_ingress_security_rules_tcp_options_destination_port_range_min,
-                    source_port_range=oci.core.SecurityListIngressSecurityRuleTcpOptionsSourcePortRangeArgs(
-                        max=security_list_ingress_security_rules_tcp_options_source_port_range_max,
-                        min=security_list_ingress_security_rules_tcp_options_source_port_range_min,
-                    ),
-                ),
-                udp_options=oci.core.SecurityListIngressSecurityRuleUdpOptionsArgs(
-                    max=security_list_ingress_security_rules_udp_options_destination_port_range_max,
-                    min=security_list_ingress_security_rules_udp_options_destination_port_range_min,
-                    source_port_range=oci.core.SecurityListIngressSecurityRuleUdpOptionsSourcePortRangeArgs(
-                        max=security_list_ingress_security_rules_udp_options_source_port_range_max,
-                        min=security_list_ingress_security_rules_udp_options_source_port_range_min,
-                    ),
-                ),
-            )])
+            ingress_security_rules=[{
+                "protocol": security_list_ingress_security_rules_protocol,
+                "source": security_list_ingress_security_rules_source,
+                "description": security_list_ingress_security_rules_description,
+                "icmp_options": {
+                    "type": security_list_ingress_security_rules_icmp_options_type,
+                    "code": security_list_ingress_security_rules_icmp_options_code,
+                },
+                "source_type": security_list_ingress_security_rules_source_type,
+                "stateless": security_list_ingress_security_rules_stateless,
+                "tcp_options": {
+                    "max": security_list_ingress_security_rules_tcp_options_destination_port_range_max,
+                    "min": security_list_ingress_security_rules_tcp_options_destination_port_range_min,
+                    "source_port_range": {
+                        "max": security_list_ingress_security_rules_tcp_options_source_port_range_max,
+                        "min": security_list_ingress_security_rules_tcp_options_source_port_range_min,
+                    },
+                },
+                "udp_options": {
+                    "max": security_list_ingress_security_rules_udp_options_destination_port_range_max,
+                    "min": security_list_ingress_security_rules_udp_options_destination_port_range_min,
+                    "source_port_range": {
+                        "max": security_list_ingress_security_rules_udp_options_source_port_range_max,
+                        "min": security_list_ingress_security_rules_udp_options_source_port_range_min,
+                    },
+                },
+            }])
         ```
 
         ## Import
@@ -417,9 +417,9 @@ class SecurityList(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the security list.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SecurityListEgressSecurityRuleArgs']]]] egress_security_rules: (Updatable) Rules for allowing egress IP packets.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SecurityListEgressSecurityRuleArgs', 'SecurityListEgressSecurityRuleArgsDict']]]] egress_security_rules: (Updatable) Rules for allowing egress IP packets.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SecurityListIngressSecurityRuleArgs']]]] ingress_security_rules: (Updatable) Rules for allowing ingress IP packets.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SecurityListIngressSecurityRuleArgs', 'SecurityListIngressSecurityRuleArgsDict']]]] ingress_security_rules: (Updatable) Rules for allowing ingress IP packets.
         :param pulumi.Input[str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the security list belongs to.
                
                
@@ -465,63 +465,63 @@ class SecurityList(pulumi.CustomResource):
                 "Operations.CostCenter": "42",
             },
             display_name=security_list_display_name,
-            egress_security_rules=[oci.core.SecurityListEgressSecurityRuleArgs(
-                destination=security_list_egress_security_rules_destination,
-                protocol=security_list_egress_security_rules_protocol,
-                description=security_list_egress_security_rules_description,
-                destination_type=security_list_egress_security_rules_destination_type,
-                icmp_options=oci.core.SecurityListEgressSecurityRuleIcmpOptionsArgs(
-                    type=security_list_egress_security_rules_icmp_options_type,
-                    code=security_list_egress_security_rules_icmp_options_code,
-                ),
-                stateless=security_list_egress_security_rules_stateless,
-                tcp_options=oci.core.SecurityListEgressSecurityRuleTcpOptionsArgs(
-                    max=security_list_egress_security_rules_tcp_options_destination_port_range_max,
-                    min=security_list_egress_security_rules_tcp_options_destination_port_range_min,
-                    source_port_range=oci.core.SecurityListEgressSecurityRuleTcpOptionsSourcePortRangeArgs(
-                        max=security_list_egress_security_rules_tcp_options_source_port_range_max,
-                        min=security_list_egress_security_rules_tcp_options_source_port_range_min,
-                    ),
-                ),
-                udp_options=oci.core.SecurityListEgressSecurityRuleUdpOptionsArgs(
-                    max=security_list_egress_security_rules_udp_options_destination_port_range_max,
-                    min=security_list_egress_security_rules_udp_options_destination_port_range_min,
-                    source_port_range=oci.core.SecurityListEgressSecurityRuleUdpOptionsSourcePortRangeArgs(
-                        max=security_list_egress_security_rules_udp_options_source_port_range_max,
-                        min=security_list_egress_security_rules_udp_options_source_port_range_min,
-                    ),
-                ),
-            )],
+            egress_security_rules=[{
+                "destination": security_list_egress_security_rules_destination,
+                "protocol": security_list_egress_security_rules_protocol,
+                "description": security_list_egress_security_rules_description,
+                "destination_type": security_list_egress_security_rules_destination_type,
+                "icmp_options": {
+                    "type": security_list_egress_security_rules_icmp_options_type,
+                    "code": security_list_egress_security_rules_icmp_options_code,
+                },
+                "stateless": security_list_egress_security_rules_stateless,
+                "tcp_options": {
+                    "max": security_list_egress_security_rules_tcp_options_destination_port_range_max,
+                    "min": security_list_egress_security_rules_tcp_options_destination_port_range_min,
+                    "source_port_range": {
+                        "max": security_list_egress_security_rules_tcp_options_source_port_range_max,
+                        "min": security_list_egress_security_rules_tcp_options_source_port_range_min,
+                    },
+                },
+                "udp_options": {
+                    "max": security_list_egress_security_rules_udp_options_destination_port_range_max,
+                    "min": security_list_egress_security_rules_udp_options_destination_port_range_min,
+                    "source_port_range": {
+                        "max": security_list_egress_security_rules_udp_options_source_port_range_max,
+                        "min": security_list_egress_security_rules_udp_options_source_port_range_min,
+                    },
+                },
+            }],
             freeform_tags={
                 "Department": "Finance",
             },
-            ingress_security_rules=[oci.core.SecurityListIngressSecurityRuleArgs(
-                protocol=security_list_ingress_security_rules_protocol,
-                source=security_list_ingress_security_rules_source,
-                description=security_list_ingress_security_rules_description,
-                icmp_options=oci.core.SecurityListIngressSecurityRuleIcmpOptionsArgs(
-                    type=security_list_ingress_security_rules_icmp_options_type,
-                    code=security_list_ingress_security_rules_icmp_options_code,
-                ),
-                source_type=security_list_ingress_security_rules_source_type,
-                stateless=security_list_ingress_security_rules_stateless,
-                tcp_options=oci.core.SecurityListIngressSecurityRuleTcpOptionsArgs(
-                    max=security_list_ingress_security_rules_tcp_options_destination_port_range_max,
-                    min=security_list_ingress_security_rules_tcp_options_destination_port_range_min,
-                    source_port_range=oci.core.SecurityListIngressSecurityRuleTcpOptionsSourcePortRangeArgs(
-                        max=security_list_ingress_security_rules_tcp_options_source_port_range_max,
-                        min=security_list_ingress_security_rules_tcp_options_source_port_range_min,
-                    ),
-                ),
-                udp_options=oci.core.SecurityListIngressSecurityRuleUdpOptionsArgs(
-                    max=security_list_ingress_security_rules_udp_options_destination_port_range_max,
-                    min=security_list_ingress_security_rules_udp_options_destination_port_range_min,
-                    source_port_range=oci.core.SecurityListIngressSecurityRuleUdpOptionsSourcePortRangeArgs(
-                        max=security_list_ingress_security_rules_udp_options_source_port_range_max,
-                        min=security_list_ingress_security_rules_udp_options_source_port_range_min,
-                    ),
-                ),
-            )])
+            ingress_security_rules=[{
+                "protocol": security_list_ingress_security_rules_protocol,
+                "source": security_list_ingress_security_rules_source,
+                "description": security_list_ingress_security_rules_description,
+                "icmp_options": {
+                    "type": security_list_ingress_security_rules_icmp_options_type,
+                    "code": security_list_ingress_security_rules_icmp_options_code,
+                },
+                "source_type": security_list_ingress_security_rules_source_type,
+                "stateless": security_list_ingress_security_rules_stateless,
+                "tcp_options": {
+                    "max": security_list_ingress_security_rules_tcp_options_destination_port_range_max,
+                    "min": security_list_ingress_security_rules_tcp_options_destination_port_range_min,
+                    "source_port_range": {
+                        "max": security_list_ingress_security_rules_tcp_options_source_port_range_max,
+                        "min": security_list_ingress_security_rules_tcp_options_source_port_range_min,
+                    },
+                },
+                "udp_options": {
+                    "max": security_list_ingress_security_rules_udp_options_destination_port_range_max,
+                    "min": security_list_ingress_security_rules_udp_options_destination_port_range_min,
+                    "source_port_range": {
+                        "max": security_list_ingress_security_rules_udp_options_source_port_range_max,
+                        "min": security_list_ingress_security_rules_udp_options_source_port_range_min,
+                    },
+                },
+            }])
         ```
 
         ## Import
@@ -550,9 +550,9 @@ class SecurityList(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 egress_security_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SecurityListEgressSecurityRuleArgs']]]]] = None,
+                 egress_security_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SecurityListEgressSecurityRuleArgs', 'SecurityListEgressSecurityRuleArgsDict']]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 ingress_security_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SecurityListIngressSecurityRuleArgs']]]]] = None,
+                 ingress_security_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SecurityListIngressSecurityRuleArgs', 'SecurityListIngressSecurityRuleArgsDict']]]]] = None,
                  vcn_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -589,9 +589,9 @@ class SecurityList(pulumi.CustomResource):
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
-            egress_security_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SecurityListEgressSecurityRuleArgs']]]]] = None,
+            egress_security_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SecurityListEgressSecurityRuleArgs', 'SecurityListEgressSecurityRuleArgsDict']]]]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            ingress_security_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SecurityListIngressSecurityRuleArgs']]]]] = None,
+            ingress_security_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SecurityListIngressSecurityRuleArgs', 'SecurityListIngressSecurityRuleArgsDict']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             vcn_id: Optional[pulumi.Input[str]] = None) -> 'SecurityList':
@@ -605,9 +605,9 @@ class SecurityList(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the security list.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SecurityListEgressSecurityRuleArgs']]]] egress_security_rules: (Updatable) Rules for allowing egress IP packets.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SecurityListEgressSecurityRuleArgs', 'SecurityListEgressSecurityRuleArgsDict']]]] egress_security_rules: (Updatable) Rules for allowing egress IP packets.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SecurityListIngressSecurityRuleArgs']]]] ingress_security_rules: (Updatable) Rules for allowing ingress IP packets.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SecurityListIngressSecurityRuleArgs', 'SecurityListIngressSecurityRuleArgsDict']]]] ingress_security_rules: (Updatable) Rules for allowing ingress IP packets.
         :param pulumi.Input[str] state: The security list's current state.
         :param pulumi.Input[str] time_created: The date and time the security list was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the security list belongs to.

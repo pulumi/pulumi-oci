@@ -87,7 +87,7 @@ class AwaitableGetCloudAutonomousVmClusterAcdResourceUsagesResult(GetCloudAutono
 
 def get_cloud_autonomous_vm_cluster_acd_resource_usages(cloud_autonomous_vm_cluster_id: Optional[str] = None,
                                                         compartment_id: Optional[str] = None,
-                                                        filters: Optional[Sequence[pulumi.InputType['GetCloudAutonomousVmClusterAcdResourceUsagesFilterArgs']]] = None,
+                                                        filters: Optional[Sequence[Union['GetCloudAutonomousVmClusterAcdResourceUsagesFilterArgs', 'GetCloudAutonomousVmClusterAcdResourceUsagesFilterArgsDict']]] = None,
                                                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudAutonomousVmClusterAcdResourceUsagesResult:
     """
     This data source provides the list of Cloud Autonomous Vm Cluster Acd Resource Usages in Oracle Cloud Infrastructure Database service.
@@ -127,7 +127,7 @@ def get_cloud_autonomous_vm_cluster_acd_resource_usages(cloud_autonomous_vm_clus
 @_utilities.lift_output_func(get_cloud_autonomous_vm_cluster_acd_resource_usages)
 def get_cloud_autonomous_vm_cluster_acd_resource_usages_output(cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
                                                                compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                                               filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetCloudAutonomousVmClusterAcdResourceUsagesFilterArgs']]]]] = None,
+                                                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCloudAutonomousVmClusterAcdResourceUsagesFilterArgs', 'GetCloudAutonomousVmClusterAcdResourceUsagesFilterArgsDict']]]]] = None,
                                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudAutonomousVmClusterAcdResourceUsagesResult]:
     """
     This data source provides the list of Cloud Autonomous Vm Cluster Acd Resource Usages in Oracle Cloud Infrastructure Database service.

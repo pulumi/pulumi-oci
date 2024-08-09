@@ -397,8 +397,8 @@ class ExternalDatabaseConnector(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 connection_credentials: Optional[pulumi.Input[pulumi.InputType['ExternalDatabaseConnectorConnectionCredentialsArgs']]] = None,
-                 connection_string: Optional[pulumi.Input[pulumi.InputType['ExternalDatabaseConnectorConnectionStringArgs']]] = None,
+                 connection_credentials: Optional[pulumi.Input[Union['ExternalDatabaseConnectorConnectionCredentialsArgs', 'ExternalDatabaseConnectorConnectionCredentialsArgsDict']]] = None,
+                 connection_string: Optional[pulumi.Input[Union['ExternalDatabaseConnectorConnectionStringArgs', 'ExternalDatabaseConnectorConnectionStringArgsDict']]] = None,
                  connector_agent_id: Optional[pulumi.Input[str]] = None,
                  connector_type: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -418,20 +418,20 @@ class ExternalDatabaseConnector(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_external_database_connector = oci.database.ExternalDatabaseConnector("test_external_database_connector",
-            connection_credentials=oci.database.ExternalDatabaseConnectorConnectionCredentialsArgs(
-                credential_name=external_database_connector_connection_credentials_credential_name,
-                credential_type=external_database_connector_connection_credentials_credential_type,
-                password=external_database_connector_connection_credentials_password,
-                role=external_database_connector_connection_credentials_role,
-                ssl_secret_id=test_secret["id"],
-                username=external_database_connector_connection_credentials_username,
-            ),
-            connection_string=oci.database.ExternalDatabaseConnectorConnectionStringArgs(
-                hostname=external_database_connector_connection_string_hostname,
-                port=external_database_connector_connection_string_port,
-                protocol=external_database_connector_connection_string_protocol,
-                service=external_database_connector_connection_string_service,
-            ),
+            connection_credentials={
+                "credential_name": external_database_connector_connection_credentials_credential_name,
+                "credential_type": external_database_connector_connection_credentials_credential_type,
+                "password": external_database_connector_connection_credentials_password,
+                "role": external_database_connector_connection_credentials_role,
+                "ssl_secret_id": test_secret["id"],
+                "username": external_database_connector_connection_credentials_username,
+            },
+            connection_string={
+                "hostname": external_database_connector_connection_string_hostname,
+                "port": external_database_connector_connection_string_port,
+                "protocol": external_database_connector_connection_string_protocol,
+                "service": external_database_connector_connection_string_service,
+            },
             connector_agent_id=test_connector_agent["id"],
             display_name=external_database_connector_display_name,
             external_database_id=test_database["id"],
@@ -452,8 +452,8 @@ class ExternalDatabaseConnector(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['ExternalDatabaseConnectorConnectionCredentialsArgs']] connection_credentials: (Updatable) Credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector crendentials.
-        :param pulumi.Input[pulumi.InputType['ExternalDatabaseConnectorConnectionStringArgs']] connection_string: (Updatable) The Oracle Database connection string.
+        :param pulumi.Input[Union['ExternalDatabaseConnectorConnectionCredentialsArgs', 'ExternalDatabaseConnectorConnectionCredentialsArgsDict']] connection_credentials: (Updatable) Credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector crendentials.
+        :param pulumi.Input[Union['ExternalDatabaseConnectorConnectionStringArgs', 'ExternalDatabaseConnectorConnectionStringArgsDict']] connection_string: (Updatable) The Oracle Database connection string.
         :param pulumi.Input[str] connector_agent_id: The ID of the agent used for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
         :param pulumi.Input[str] connector_type: (Updatable) The type of connector used by the external database resource.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -483,20 +483,20 @@ class ExternalDatabaseConnector(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_external_database_connector = oci.database.ExternalDatabaseConnector("test_external_database_connector",
-            connection_credentials=oci.database.ExternalDatabaseConnectorConnectionCredentialsArgs(
-                credential_name=external_database_connector_connection_credentials_credential_name,
-                credential_type=external_database_connector_connection_credentials_credential_type,
-                password=external_database_connector_connection_credentials_password,
-                role=external_database_connector_connection_credentials_role,
-                ssl_secret_id=test_secret["id"],
-                username=external_database_connector_connection_credentials_username,
-            ),
-            connection_string=oci.database.ExternalDatabaseConnectorConnectionStringArgs(
-                hostname=external_database_connector_connection_string_hostname,
-                port=external_database_connector_connection_string_port,
-                protocol=external_database_connector_connection_string_protocol,
-                service=external_database_connector_connection_string_service,
-            ),
+            connection_credentials={
+                "credential_name": external_database_connector_connection_credentials_credential_name,
+                "credential_type": external_database_connector_connection_credentials_credential_type,
+                "password": external_database_connector_connection_credentials_password,
+                "role": external_database_connector_connection_credentials_role,
+                "ssl_secret_id": test_secret["id"],
+                "username": external_database_connector_connection_credentials_username,
+            },
+            connection_string={
+                "hostname": external_database_connector_connection_string_hostname,
+                "port": external_database_connector_connection_string_port,
+                "protocol": external_database_connector_connection_string_protocol,
+                "service": external_database_connector_connection_string_service,
+            },
             connector_agent_id=test_connector_agent["id"],
             display_name=external_database_connector_display_name,
             external_database_id=test_database["id"],
@@ -530,8 +530,8 @@ class ExternalDatabaseConnector(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 connection_credentials: Optional[pulumi.Input[pulumi.InputType['ExternalDatabaseConnectorConnectionCredentialsArgs']]] = None,
-                 connection_string: Optional[pulumi.Input[pulumi.InputType['ExternalDatabaseConnectorConnectionStringArgs']]] = None,
+                 connection_credentials: Optional[pulumi.Input[Union['ExternalDatabaseConnectorConnectionCredentialsArgs', 'ExternalDatabaseConnectorConnectionCredentialsArgsDict']]] = None,
+                 connection_string: Optional[pulumi.Input[Union['ExternalDatabaseConnectorConnectionStringArgs', 'ExternalDatabaseConnectorConnectionStringArgsDict']]] = None,
                  connector_agent_id: Optional[pulumi.Input[str]] = None,
                  connector_type: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -582,9 +582,9 @@ class ExternalDatabaseConnector(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            connection_credentials: Optional[pulumi.Input[pulumi.InputType['ExternalDatabaseConnectorConnectionCredentialsArgs']]] = None,
+            connection_credentials: Optional[pulumi.Input[Union['ExternalDatabaseConnectorConnectionCredentialsArgs', 'ExternalDatabaseConnectorConnectionCredentialsArgsDict']]] = None,
             connection_status: Optional[pulumi.Input[str]] = None,
-            connection_string: Optional[pulumi.Input[pulumi.InputType['ExternalDatabaseConnectorConnectionStringArgs']]] = None,
+            connection_string: Optional[pulumi.Input[Union['ExternalDatabaseConnectorConnectionStringArgs', 'ExternalDatabaseConnectorConnectionStringArgsDict']]] = None,
             connector_agent_id: Optional[pulumi.Input[str]] = None,
             connector_type: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -603,9 +603,9 @@ class ExternalDatabaseConnector(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[pulumi.InputType['ExternalDatabaseConnectorConnectionCredentialsArgs']] connection_credentials: (Updatable) Credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector crendentials.
+        :param pulumi.Input[Union['ExternalDatabaseConnectorConnectionCredentialsArgs', 'ExternalDatabaseConnectorConnectionCredentialsArgsDict']] connection_credentials: (Updatable) Credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector crendentials.
         :param pulumi.Input[str] connection_status: The status of connectivity to the external database.
-        :param pulumi.Input[pulumi.InputType['ExternalDatabaseConnectorConnectionStringArgs']] connection_string: (Updatable) The Oracle Database connection string.
+        :param pulumi.Input[Union['ExternalDatabaseConnectorConnectionStringArgs', 'ExternalDatabaseConnectorConnectionStringArgsDict']] connection_string: (Updatable) The Oracle Database connection string.
         :param pulumi.Input[str] connector_agent_id: The ID of the agent used for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
         :param pulumi.Input[str] connector_type: (Updatable) The type of connector used by the external database resource.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).

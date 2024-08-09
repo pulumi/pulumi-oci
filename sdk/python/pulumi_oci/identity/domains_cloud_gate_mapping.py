@@ -1412,9 +1412,9 @@ class DomainsCloudGateMapping(pulumi.CustomResource):
                  attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  attributes: Optional[pulumi.Input[str]] = None,
                  authorization: Optional[pulumi.Input[str]] = None,
-                 cloud_gate: Optional[pulumi.Input[pulumi.InputType['DomainsCloudGateMappingCloudGateArgs']]] = None,
+                 cloud_gate: Optional[pulumi.Input[Union['DomainsCloudGateMappingCloudGateArgs', 'DomainsCloudGateMappingCloudGateArgsDict']]] = None,
                  description: Optional[pulumi.Input[str]] = None,
-                 gateway_app: Optional[pulumi.Input[pulumi.InputType['DomainsCloudGateMappingGatewayAppArgs']]] = None,
+                 gateway_app: Optional[pulumi.Input[Union['DomainsCloudGateMappingGatewayAppArgs', 'DomainsCloudGateMappingGatewayAppArgsDict']]] = None,
                  idcs_endpoint: Optional[pulumi.Input[str]] = None,
                  nginx_settings: Optional[pulumi.Input[str]] = None,
                  ocid: Optional[pulumi.Input[str]] = None,
@@ -1423,9 +1423,9 @@ class DomainsCloudGateMapping(pulumi.CustomResource):
                  resource_prefix: Optional[pulumi.Input[str]] = None,
                  resource_type_schema_version: Optional[pulumi.Input[str]] = None,
                  schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 server: Optional[pulumi.Input[pulumi.InputType['DomainsCloudGateMappingServerArgs']]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsCloudGateMappingTagArgs']]]]] = None,
-                 upstream_server_group: Optional[pulumi.Input[pulumi.InputType['DomainsCloudGateMappingUpstreamServerGroupArgs']]] = None,
+                 server: Optional[pulumi.Input[Union['DomainsCloudGateMappingServerArgs', 'DomainsCloudGateMappingServerArgsDict']]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsCloudGateMappingTagArgs', 'DomainsCloudGateMappingTagArgsDict']]]]] = None,
+                 upstream_server_group: Optional[pulumi.Input[Union['DomainsCloudGateMappingUpstreamServerGroupArgs', 'DomainsCloudGateMappingUpstreamServerGroupArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Cloud Gate Mapping resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -1445,7 +1445,7 @@ class DomainsCloudGateMapping(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] attribute_sets: (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
         :param pulumi.Input[str] attributes: (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
         :param pulumi.Input[str] authorization: (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        :param pulumi.Input[pulumi.InputType['DomainsCloudGateMappingCloudGateArgs']] cloud_gate: (Updatable) Reference to owning Cloud Gate
+        :param pulumi.Input[Union['DomainsCloudGateMappingCloudGateArgs', 'DomainsCloudGateMappingCloudGateArgsDict']] cloud_gate: (Updatable) Reference to owning Cloud Gate
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1467,7 +1467,7 @@ class DomainsCloudGateMapping(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsCloudGateMappingGatewayAppArgs']] gateway_app: (Updatable) Reference to gateway application protected by this Cloud Gate
+        :param pulumi.Input[Union['DomainsCloudGateMappingGatewayAppArgs', 'DomainsCloudGateMappingGatewayAppArgsDict']] gateway_app: (Updatable) Reference to gateway application protected by this Cloud Gate
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1546,7 +1546,7 @@ class DomainsCloudGateMapping(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsCloudGateMappingServerArgs']] server: (Updatable) Reference to server block for this mapping
+        :param pulumi.Input[Union['DomainsCloudGateMappingServerArgs', 'DomainsCloudGateMappingServerArgsDict']] server: (Updatable) Reference to server block for this mapping
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1557,7 +1557,7 @@ class DomainsCloudGateMapping(pulumi.CustomResource):
                * returned: default
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsCloudGateMappingTagArgs']]]] tags: (Updatable) A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsCloudGateMappingTagArgs', 'DomainsCloudGateMappingTagArgsDict']]]] tags: (Updatable) A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -1568,7 +1568,7 @@ class DomainsCloudGateMapping(pulumi.CustomResource):
                * returned: request
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsCloudGateMappingUpstreamServerGroupArgs']] upstream_server_group: (Updatable) Reference to upstream block for this mapping
+        :param pulumi.Input[Union['DomainsCloudGateMappingUpstreamServerGroupArgs', 'DomainsCloudGateMappingUpstreamServerGroupArgsDict']] upstream_server_group: (Updatable) Reference to upstream block for this mapping
                
                **Added In:** 20.1.3
                
@@ -1618,9 +1618,9 @@ class DomainsCloudGateMapping(pulumi.CustomResource):
                  attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  attributes: Optional[pulumi.Input[str]] = None,
                  authorization: Optional[pulumi.Input[str]] = None,
-                 cloud_gate: Optional[pulumi.Input[pulumi.InputType['DomainsCloudGateMappingCloudGateArgs']]] = None,
+                 cloud_gate: Optional[pulumi.Input[Union['DomainsCloudGateMappingCloudGateArgs', 'DomainsCloudGateMappingCloudGateArgsDict']]] = None,
                  description: Optional[pulumi.Input[str]] = None,
-                 gateway_app: Optional[pulumi.Input[pulumi.InputType['DomainsCloudGateMappingGatewayAppArgs']]] = None,
+                 gateway_app: Optional[pulumi.Input[Union['DomainsCloudGateMappingGatewayAppArgs', 'DomainsCloudGateMappingGatewayAppArgsDict']]] = None,
                  idcs_endpoint: Optional[pulumi.Input[str]] = None,
                  nginx_settings: Optional[pulumi.Input[str]] = None,
                  ocid: Optional[pulumi.Input[str]] = None,
@@ -1629,9 +1629,9 @@ class DomainsCloudGateMapping(pulumi.CustomResource):
                  resource_prefix: Optional[pulumi.Input[str]] = None,
                  resource_type_schema_version: Optional[pulumi.Input[str]] = None,
                  schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 server: Optional[pulumi.Input[pulumi.InputType['DomainsCloudGateMappingServerArgs']]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsCloudGateMappingTagArgs']]]]] = None,
-                 upstream_server_group: Optional[pulumi.Input[pulumi.InputType['DomainsCloudGateMappingUpstreamServerGroupArgs']]] = None,
+                 server: Optional[pulumi.Input[Union['DomainsCloudGateMappingServerArgs', 'DomainsCloudGateMappingServerArgsDict']]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsCloudGateMappingTagArgs', 'DomainsCloudGateMappingTagArgsDict']]]]] = None,
+                 upstream_server_group: Optional[pulumi.Input[Union['DomainsCloudGateMappingUpstreamServerGroupArgs', 'DomainsCloudGateMappingUpstreamServerGroupArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1695,19 +1695,19 @@ class DomainsCloudGateMapping(pulumi.CustomResource):
             attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             attributes: Optional[pulumi.Input[str]] = None,
             authorization: Optional[pulumi.Input[str]] = None,
-            cloud_gate: Optional[pulumi.Input[pulumi.InputType['DomainsCloudGateMappingCloudGateArgs']]] = None,
+            cloud_gate: Optional[pulumi.Input[Union['DomainsCloudGateMappingCloudGateArgs', 'DomainsCloudGateMappingCloudGateArgsDict']]] = None,
             compartment_ocid: Optional[pulumi.Input[str]] = None,
             delete_in_progress: Optional[pulumi.Input[bool]] = None,
             description: Optional[pulumi.Input[str]] = None,
             domain_ocid: Optional[pulumi.Input[str]] = None,
-            gateway_app: Optional[pulumi.Input[pulumi.InputType['DomainsCloudGateMappingGatewayAppArgs']]] = None,
-            idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsCloudGateMappingIdcsCreatedByArgs']]]]] = None,
+            gateway_app: Optional[pulumi.Input[Union['DomainsCloudGateMappingGatewayAppArgs', 'DomainsCloudGateMappingGatewayAppArgsDict']]] = None,
+            idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsCloudGateMappingIdcsCreatedByArgs', 'DomainsCloudGateMappingIdcsCreatedByArgsDict']]]]] = None,
             idcs_endpoint: Optional[pulumi.Input[str]] = None,
-            idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsCloudGateMappingIdcsLastModifiedByArgs']]]]] = None,
+            idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsCloudGateMappingIdcsLastModifiedByArgs', 'DomainsCloudGateMappingIdcsLastModifiedByArgsDict']]]]] = None,
             idcs_last_upgraded_in_release: Optional[pulumi.Input[str]] = None,
             idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             is_opc_service: Optional[pulumi.Input[bool]] = None,
-            metas: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsCloudGateMappingMetaArgs']]]]] = None,
+            metas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsCloudGateMappingMetaArgs', 'DomainsCloudGateMappingMetaArgsDict']]]]] = None,
             nginx_settings: Optional[pulumi.Input[str]] = None,
             ocid: Optional[pulumi.Input[str]] = None,
             policy_name: Optional[pulumi.Input[str]] = None,
@@ -1715,10 +1715,10 @@ class DomainsCloudGateMapping(pulumi.CustomResource):
             resource_prefix: Optional[pulumi.Input[str]] = None,
             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            server: Optional[pulumi.Input[pulumi.InputType['DomainsCloudGateMappingServerArgs']]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsCloudGateMappingTagArgs']]]]] = None,
+            server: Optional[pulumi.Input[Union['DomainsCloudGateMappingServerArgs', 'DomainsCloudGateMappingServerArgsDict']]] = None,
+            tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsCloudGateMappingTagArgs', 'DomainsCloudGateMappingTagArgsDict']]]]] = None,
             tenancy_ocid: Optional[pulumi.Input[str]] = None,
-            upstream_server_group: Optional[pulumi.Input[pulumi.InputType['DomainsCloudGateMappingUpstreamServerGroupArgs']]] = None) -> 'DomainsCloudGateMapping':
+            upstream_server_group: Optional[pulumi.Input[Union['DomainsCloudGateMappingUpstreamServerGroupArgs', 'DomainsCloudGateMappingUpstreamServerGroupArgsDict']]] = None) -> 'DomainsCloudGateMapping':
         """
         Get an existing DomainsCloudGateMapping resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -1729,7 +1729,7 @@ class DomainsCloudGateMapping(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] attribute_sets: (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
         :param pulumi.Input[str] attributes: (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
         :param pulumi.Input[str] authorization: (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        :param pulumi.Input[pulumi.InputType['DomainsCloudGateMappingCloudGateArgs']] cloud_gate: (Updatable) Reference to owning Cloud Gate
+        :param pulumi.Input[Union['DomainsCloudGateMappingCloudGateArgs', 'DomainsCloudGateMappingCloudGateArgsDict']] cloud_gate: (Updatable) Reference to owning Cloud Gate
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1784,7 +1784,7 @@ class DomainsCloudGateMapping(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsCloudGateMappingGatewayAppArgs']] gateway_app: (Updatable) Reference to gateway application protected by this Cloud Gate
+        :param pulumi.Input[Union['DomainsCloudGateMappingGatewayAppArgs', 'DomainsCloudGateMappingGatewayAppArgsDict']] gateway_app: (Updatable) Reference to gateway application protected by this Cloud Gate
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1795,7 +1795,7 @@ class DomainsCloudGateMapping(pulumi.CustomResource):
                * returned: default
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsCloudGateMappingIdcsCreatedByArgs']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsCloudGateMappingIdcsCreatedByArgs', 'DomainsCloudGateMappingIdcsCreatedByArgsDict']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1805,7 +1805,7 @@ class DomainsCloudGateMapping(pulumi.CustomResource):
                * returned: default
                * type: complex
         :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsCloudGateMappingIdcsLastModifiedByArgs']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsCloudGateMappingIdcsLastModifiedByArgs', 'DomainsCloudGateMappingIdcsLastModifiedByArgsDict']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1848,7 +1848,7 @@ class DomainsCloudGateMapping(pulumi.CustomResource):
                * returned: always
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsCloudGateMappingMetaArgs']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsCloudGateMappingMetaArgs', 'DomainsCloudGateMappingMetaArgsDict']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1926,7 +1926,7 @@ class DomainsCloudGateMapping(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsCloudGateMappingServerArgs']] server: (Updatable) Reference to server block for this mapping
+        :param pulumi.Input[Union['DomainsCloudGateMappingServerArgs', 'DomainsCloudGateMappingServerArgsDict']] server: (Updatable) Reference to server block for this mapping
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1937,7 +1937,7 @@ class DomainsCloudGateMapping(pulumi.CustomResource):
                * returned: default
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsCloudGateMappingTagArgs']]]] tags: (Updatable) A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsCloudGateMappingTagArgs', 'DomainsCloudGateMappingTagArgsDict']]]] tags: (Updatable) A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -1959,7 +1959,7 @@ class DomainsCloudGateMapping(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsCloudGateMappingUpstreamServerGroupArgs']] upstream_server_group: (Updatable) Reference to upstream block for this mapping
+        :param pulumi.Input[Union['DomainsCloudGateMappingUpstreamServerGroupArgs', 'DomainsCloudGateMappingUpstreamServerGroupArgsDict']] upstream_server_group: (Updatable) Reference to upstream block for this mapping
                
                **Added In:** 20.1.3
                

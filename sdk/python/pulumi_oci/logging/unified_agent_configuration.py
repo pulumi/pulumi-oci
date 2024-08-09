@@ -354,9 +354,9 @@ class UnifiedAgentConfiguration(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 group_association: Optional[pulumi.Input[pulumi.InputType['UnifiedAgentConfigurationGroupAssociationArgs']]] = None,
+                 group_association: Optional[pulumi.Input[Union['UnifiedAgentConfigurationGroupAssociationArgs', 'UnifiedAgentConfigurationGroupAssociationArgsDict']]] = None,
                  is_enabled: Optional[pulumi.Input[bool]] = None,
-                 service_configuration: Optional[pulumi.Input[pulumi.InputType['UnifiedAgentConfigurationServiceConfigurationArgs']]] = None,
+                 service_configuration: Optional[pulumi.Input[Union['UnifiedAgentConfigurationServiceConfigurationArgs', 'UnifiedAgentConfigurationServiceConfigurationArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Unified Agent Configuration resource in Oracle Cloud Infrastructure Logging service.
@@ -378,9 +378,9 @@ class UnifiedAgentConfiguration(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) Description for this resource.
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[pulumi.InputType['UnifiedAgentConfigurationGroupAssociationArgs']] group_association: (Updatable) Groups using the configuration.
+        :param pulumi.Input[Union['UnifiedAgentConfigurationGroupAssociationArgs', 'UnifiedAgentConfigurationGroupAssociationArgsDict']] group_association: (Updatable) Groups using the configuration.
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether or not this resource is currently enabled.
-        :param pulumi.Input[pulumi.InputType['UnifiedAgentConfigurationServiceConfigurationArgs']] service_configuration: (Updatable) Top level Unified Agent service configuration object.
+        :param pulumi.Input[Union['UnifiedAgentConfigurationServiceConfigurationArgs', 'UnifiedAgentConfigurationServiceConfigurationArgsDict']] service_configuration: (Updatable) Top level Unified Agent service configuration object.
         """
         ...
     @overload
@@ -421,9 +421,9 @@ class UnifiedAgentConfiguration(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 group_association: Optional[pulumi.Input[pulumi.InputType['UnifiedAgentConfigurationGroupAssociationArgs']]] = None,
+                 group_association: Optional[pulumi.Input[Union['UnifiedAgentConfigurationGroupAssociationArgs', 'UnifiedAgentConfigurationGroupAssociationArgsDict']]] = None,
                  is_enabled: Optional[pulumi.Input[bool]] = None,
-                 service_configuration: Optional[pulumi.Input[pulumi.InputType['UnifiedAgentConfigurationServiceConfigurationArgs']]] = None,
+                 service_configuration: Optional[pulumi.Input[Union['UnifiedAgentConfigurationServiceConfigurationArgs', 'UnifiedAgentConfigurationServiceConfigurationArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -471,9 +471,9 @@ class UnifiedAgentConfiguration(pulumi.CustomResource):
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            group_association: Optional[pulumi.Input[pulumi.InputType['UnifiedAgentConfigurationGroupAssociationArgs']]] = None,
+            group_association: Optional[pulumi.Input[Union['UnifiedAgentConfigurationGroupAssociationArgs', 'UnifiedAgentConfigurationGroupAssociationArgsDict']]] = None,
             is_enabled: Optional[pulumi.Input[bool]] = None,
-            service_configuration: Optional[pulumi.Input[pulumi.InputType['UnifiedAgentConfigurationServiceConfigurationArgs']]] = None,
+            service_configuration: Optional[pulumi.Input[Union['UnifiedAgentConfigurationServiceConfigurationArgs', 'UnifiedAgentConfigurationServiceConfigurationArgsDict']]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_last_modified: Optional[pulumi.Input[str]] = None) -> 'UnifiedAgentConfiguration':
@@ -490,9 +490,9 @@ class UnifiedAgentConfiguration(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) Description for this resource.
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[pulumi.InputType['UnifiedAgentConfigurationGroupAssociationArgs']] group_association: (Updatable) Groups using the configuration.
+        :param pulumi.Input[Union['UnifiedAgentConfigurationGroupAssociationArgs', 'UnifiedAgentConfigurationGroupAssociationArgsDict']] group_association: (Updatable) Groups using the configuration.
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether or not this resource is currently enabled.
-        :param pulumi.Input[pulumi.InputType['UnifiedAgentConfigurationServiceConfigurationArgs']] service_configuration: (Updatable) Top level Unified Agent service configuration object.
+        :param pulumi.Input[Union['UnifiedAgentConfigurationServiceConfigurationArgs', 'UnifiedAgentConfigurationServiceConfigurationArgsDict']] service_configuration: (Updatable) Top level Unified Agent service configuration object.
         :param pulumi.Input[str] state: The pipeline state.
         :param pulumi.Input[str] time_created: Time the resource was created.
         :param pulumi.Input[str] time_last_modified: Time the resource was last modified.

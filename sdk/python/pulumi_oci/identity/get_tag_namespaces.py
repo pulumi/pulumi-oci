@@ -101,7 +101,7 @@ class AwaitableGetTagNamespacesResult(GetTagNamespacesResult):
 
 
 def get_tag_namespaces(compartment_id: Optional[str] = None,
-                       filters: Optional[Sequence[pulumi.InputType['GetTagNamespacesFilterArgs']]] = None,
+                       filters: Optional[Sequence[Union['GetTagNamespacesFilterArgs', 'GetTagNamespacesFilterArgsDict']]] = None,
                        include_subcompartments: Optional[bool] = None,
                        state: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetTagNamespacesResult:
@@ -145,7 +145,7 @@ def get_tag_namespaces(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_tag_namespaces)
 def get_tag_namespaces_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                              filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetTagNamespacesFilterArgs']]]]] = None,
+                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetTagNamespacesFilterArgs', 'GetTagNamespacesFilterArgsDict']]]]] = None,
                               include_subcompartments: Optional[pulumi.Input[Optional[bool]]] = None,
                               state: Optional[pulumi.Input[Optional[str]]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTagNamespacesResult]:

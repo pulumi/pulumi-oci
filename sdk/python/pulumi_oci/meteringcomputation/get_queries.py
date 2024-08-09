@@ -83,7 +83,7 @@ class AwaitableGetQueriesResult(GetQueriesResult):
 
 
 def get_queries(compartment_id: Optional[str] = None,
-                filters: Optional[Sequence[pulumi.InputType['GetQueriesFilterArgs']]] = None,
+                filters: Optional[Sequence[Union['GetQueriesFilterArgs', 'GetQueriesFilterArgsDict']]] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetQueriesResult:
     """
     This data source provides the list of Queries in Oracle Cloud Infrastructure Metering Computation service.
@@ -101,7 +101,7 @@ def get_queries(compartment_id: Optional[str] = None,
 
 
     :param str compartment_id: The compartment ID in which to list resources.
-    :param Sequence[pulumi.InputType['GetQueriesFilterArgs']] filters: The filter object for query usage.
+    :param Sequence[Union['GetQueriesFilterArgs', 'GetQueriesFilterArgsDict']] filters: The filter object for query usage.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -118,7 +118,7 @@ def get_queries(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_queries)
 def get_queries_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                       filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetQueriesFilterArgs']]]]] = None,
+                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetQueriesFilterArgs', 'GetQueriesFilterArgsDict']]]]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetQueriesResult]:
     """
     This data source provides the list of Queries in Oracle Cloud Infrastructure Metering Computation service.
@@ -136,6 +136,6 @@ def get_queries_output(compartment_id: Optional[pulumi.Input[str]] = None,
 
 
     :param str compartment_id: The compartment ID in which to list resources.
-    :param Sequence[pulumi.InputType['GetQueriesFilterArgs']] filters: The filter object for query usage.
+    :param Sequence[Union['GetQueriesFilterArgs', 'GetQueriesFilterArgsDict']] filters: The filter object for query usage.
     """
     ...

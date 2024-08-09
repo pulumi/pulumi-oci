@@ -267,7 +267,7 @@ public class TargetAlertPolicyAssociation extends com.pulumi.resources.CustomRes
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public TargetAlertPolicyAssociation(String name) {
+    public TargetAlertPolicyAssociation(java.lang.String name) {
         this(name, TargetAlertPolicyAssociationArgs.Empty);
     }
     /**
@@ -275,7 +275,7 @@ public class TargetAlertPolicyAssociation extends com.pulumi.resources.CustomRes
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public TargetAlertPolicyAssociation(String name, TargetAlertPolicyAssociationArgs args) {
+    public TargetAlertPolicyAssociation(java.lang.String name, TargetAlertPolicyAssociationArgs args) {
         this(name, args, null);
     }
     /**
@@ -284,12 +284,12 @@ public class TargetAlertPolicyAssociation extends com.pulumi.resources.CustomRes
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public TargetAlertPolicyAssociation(String name, TargetAlertPolicyAssociationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/targetAlertPolicyAssociation:TargetAlertPolicyAssociation", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public TargetAlertPolicyAssociation(java.lang.String name, TargetAlertPolicyAssociationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataSafe/targetAlertPolicyAssociation:TargetAlertPolicyAssociation", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private TargetAlertPolicyAssociation(String name, Output<String> id, @Nullable TargetAlertPolicyAssociationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/targetAlertPolicyAssociation:TargetAlertPolicyAssociation", name, state, makeResourceOptions(options, id));
+    private TargetAlertPolicyAssociation(java.lang.String name, Output<java.lang.String> id, @Nullable TargetAlertPolicyAssociationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataSafe/targetAlertPolicyAssociation:TargetAlertPolicyAssociation", name, state, makeResourceOptions(options, id), false);
     }
 
     private static TargetAlertPolicyAssociationArgs makeArgs(TargetAlertPolicyAssociationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -299,7 +299,7 @@ public class TargetAlertPolicyAssociation extends com.pulumi.resources.CustomRes
         return args == null ? TargetAlertPolicyAssociationArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -315,7 +315,7 @@ public class TargetAlertPolicyAssociation extends com.pulumi.resources.CustomRes
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static TargetAlertPolicyAssociation get(String name, Output<String> id, @Nullable TargetAlertPolicyAssociationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static TargetAlertPolicyAssociation get(java.lang.String name, Output<java.lang.String> id, @Nullable TargetAlertPolicyAssociationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new TargetAlertPolicyAssociation(name, id, state, options);
     }
 }

@@ -207,7 +207,7 @@ public class UnifiedAgentConfiguration extends com.pulumi.resources.CustomResour
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public UnifiedAgentConfiguration(String name) {
+    public UnifiedAgentConfiguration(java.lang.String name) {
         this(name, UnifiedAgentConfigurationArgs.Empty);
     }
     /**
@@ -215,7 +215,7 @@ public class UnifiedAgentConfiguration extends com.pulumi.resources.CustomResour
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public UnifiedAgentConfiguration(String name, UnifiedAgentConfigurationArgs args) {
+    public UnifiedAgentConfiguration(java.lang.String name, UnifiedAgentConfigurationArgs args) {
         this(name, args, null);
     }
     /**
@@ -224,12 +224,12 @@ public class UnifiedAgentConfiguration extends com.pulumi.resources.CustomResour
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public UnifiedAgentConfiguration(String name, UnifiedAgentConfigurationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Logging/unifiedAgentConfiguration:UnifiedAgentConfiguration", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public UnifiedAgentConfiguration(java.lang.String name, UnifiedAgentConfigurationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Logging/unifiedAgentConfiguration:UnifiedAgentConfiguration", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private UnifiedAgentConfiguration(String name, Output<String> id, @Nullable UnifiedAgentConfigurationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Logging/unifiedAgentConfiguration:UnifiedAgentConfiguration", name, state, makeResourceOptions(options, id));
+    private UnifiedAgentConfiguration(java.lang.String name, Output<java.lang.String> id, @Nullable UnifiedAgentConfigurationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Logging/unifiedAgentConfiguration:UnifiedAgentConfiguration", name, state, makeResourceOptions(options, id), false);
     }
 
     private static UnifiedAgentConfigurationArgs makeArgs(UnifiedAgentConfigurationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -239,7 +239,7 @@ public class UnifiedAgentConfiguration extends com.pulumi.resources.CustomResour
         return args == null ? UnifiedAgentConfigurationArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -255,7 +255,7 @@ public class UnifiedAgentConfiguration extends com.pulumi.resources.CustomResour
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static UnifiedAgentConfiguration get(String name, Output<String> id, @Nullable UnifiedAgentConfigurationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static UnifiedAgentConfiguration get(java.lang.String name, Output<java.lang.String> id, @Nullable UnifiedAgentConfigurationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new UnifiedAgentConfiguration(name, id, state, options);
     }
 }

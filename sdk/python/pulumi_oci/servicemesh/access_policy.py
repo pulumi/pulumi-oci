@@ -341,7 +341,7 @@ class AccessPolicy(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  mesh_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AccessPolicyRuleArgs']]]]] = None,
+                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AccessPolicyRuleArgs', 'AccessPolicyRuleArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Access Policy resource in Oracle Cloud Infrastructure Service Mesh service.
@@ -358,27 +358,27 @@ class AccessPolicy(pulumi.CustomResource):
             compartment_id=compartment_id,
             mesh_id=test_mesh["id"],
             name=access_policy_name,
-            rules=[oci.service_mesh.AccessPolicyRuleArgs(
-                action=access_policy_rules_action,
-                destination=oci.service_mesh.AccessPolicyRuleDestinationArgs(
-                    type=access_policy_rules_destination_type,
-                    hostnames=access_policy_rules_destination_hostnames,
-                    ingress_gateway_id=test_ingress_gateway["id"],
-                    ip_addresses=access_policy_rules_destination_ip_addresses,
-                    ports=access_policy_rules_destination_ports,
-                    protocol=access_policy_rules_destination_protocol,
-                    virtual_service_id=test_virtual_service["id"],
-                ),
-                source=oci.service_mesh.AccessPolicyRuleSourceArgs(
-                    type=access_policy_rules_source_type,
-                    hostnames=access_policy_rules_source_hostnames,
-                    ingress_gateway_id=test_ingress_gateway["id"],
-                    ip_addresses=access_policy_rules_source_ip_addresses,
-                    ports=access_policy_rules_source_ports,
-                    protocol=access_policy_rules_source_protocol,
-                    virtual_service_id=test_virtual_service["id"],
-                ),
-            )],
+            rules=[{
+                "action": access_policy_rules_action,
+                "destination": {
+                    "type": access_policy_rules_destination_type,
+                    "hostnames": access_policy_rules_destination_hostnames,
+                    "ingress_gateway_id": test_ingress_gateway["id"],
+                    "ip_addresses": access_policy_rules_destination_ip_addresses,
+                    "ports": access_policy_rules_destination_ports,
+                    "protocol": access_policy_rules_destination_protocol,
+                    "virtual_service_id": test_virtual_service["id"],
+                },
+                "source": {
+                    "type": access_policy_rules_source_type,
+                    "hostnames": access_policy_rules_source_hostnames,
+                    "ingress_gateway_id": test_ingress_gateway["id"],
+                    "ip_addresses": access_policy_rules_source_ip_addresses,
+                    "ports": access_policy_rules_source_ports,
+                    "protocol": access_policy_rules_source_protocol,
+                    "virtual_service_id": test_virtual_service["id"],
+                },
+            }],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -404,7 +404,7 @@ class AccessPolicy(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] mesh_id: The OCID of the service mesh in which this access policy is created.
         :param pulumi.Input[str] name: A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AccessPolicyRuleArgs']]]] rules: (Updatable) List of applicable rules
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AccessPolicyRuleArgs', 'AccessPolicyRuleArgsDict']]]] rules: (Updatable) List of applicable rules
         """
         ...
     @overload
@@ -427,27 +427,27 @@ class AccessPolicy(pulumi.CustomResource):
             compartment_id=compartment_id,
             mesh_id=test_mesh["id"],
             name=access_policy_name,
-            rules=[oci.service_mesh.AccessPolicyRuleArgs(
-                action=access_policy_rules_action,
-                destination=oci.service_mesh.AccessPolicyRuleDestinationArgs(
-                    type=access_policy_rules_destination_type,
-                    hostnames=access_policy_rules_destination_hostnames,
-                    ingress_gateway_id=test_ingress_gateway["id"],
-                    ip_addresses=access_policy_rules_destination_ip_addresses,
-                    ports=access_policy_rules_destination_ports,
-                    protocol=access_policy_rules_destination_protocol,
-                    virtual_service_id=test_virtual_service["id"],
-                ),
-                source=oci.service_mesh.AccessPolicyRuleSourceArgs(
-                    type=access_policy_rules_source_type,
-                    hostnames=access_policy_rules_source_hostnames,
-                    ingress_gateway_id=test_ingress_gateway["id"],
-                    ip_addresses=access_policy_rules_source_ip_addresses,
-                    ports=access_policy_rules_source_ports,
-                    protocol=access_policy_rules_source_protocol,
-                    virtual_service_id=test_virtual_service["id"],
-                ),
-            )],
+            rules=[{
+                "action": access_policy_rules_action,
+                "destination": {
+                    "type": access_policy_rules_destination_type,
+                    "hostnames": access_policy_rules_destination_hostnames,
+                    "ingress_gateway_id": test_ingress_gateway["id"],
+                    "ip_addresses": access_policy_rules_destination_ip_addresses,
+                    "ports": access_policy_rules_destination_ports,
+                    "protocol": access_policy_rules_destination_protocol,
+                    "virtual_service_id": test_virtual_service["id"],
+                },
+                "source": {
+                    "type": access_policy_rules_source_type,
+                    "hostnames": access_policy_rules_source_hostnames,
+                    "ingress_gateway_id": test_ingress_gateway["id"],
+                    "ip_addresses": access_policy_rules_source_ip_addresses,
+                    "ports": access_policy_rules_source_ports,
+                    "protocol": access_policy_rules_source_protocol,
+                    "virtual_service_id": test_virtual_service["id"],
+                },
+            }],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -486,7 +486,7 @@ class AccessPolicy(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  mesh_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AccessPolicyRuleArgs']]]]] = None,
+                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AccessPolicyRuleArgs', 'AccessPolicyRuleArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -531,7 +531,7 @@ class AccessPolicy(pulumi.CustomResource):
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             mesh_id: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
-            rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AccessPolicyRuleArgs']]]]] = None,
+            rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AccessPolicyRuleArgs', 'AccessPolicyRuleArgsDict']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
@@ -550,7 +550,7 @@ class AccessPolicy(pulumi.CustomResource):
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
         :param pulumi.Input[str] mesh_id: The OCID of the service mesh in which this access policy is created.
         :param pulumi.Input[str] name: A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AccessPolicyRuleArgs']]]] rules: (Updatable) List of applicable rules
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AccessPolicyRuleArgs', 'AccessPolicyRuleArgsDict']]]] rules: (Updatable) List of applicable rules
         :param pulumi.Input[str] state: The current state of the Resource.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time when this resource was created in an RFC3339 formatted datetime string.

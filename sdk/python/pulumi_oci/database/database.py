@@ -783,7 +783,7 @@ class Database(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 database: Optional[pulumi.Input[pulumi.InputType['DatabaseDatabaseArgs']]] = None,
+                 database: Optional[pulumi.Input[Union['DatabaseDatabaseArgs', 'DatabaseDatabaseArgsDict']]] = None,
                  db_home_id: Optional[pulumi.Input[str]] = None,
                  db_version: Optional[pulumi.Input[str]] = None,
                  key_store_id: Optional[pulumi.Input[str]] = None,
@@ -811,7 +811,7 @@ class Database(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['DatabaseDatabaseArgs']] database: (Updatable) Details for creating a database.
+        :param pulumi.Input[Union['DatabaseDatabaseArgs', 'DatabaseDatabaseArgsDict']] database: (Updatable) Details for creating a database.
                
                **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         :param pulumi.Input[str] db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
@@ -866,7 +866,7 @@ class Database(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 database: Optional[pulumi.Input[pulumi.InputType['DatabaseDatabaseArgs']]] = None,
+                 database: Optional[pulumi.Input[Union['DatabaseDatabaseArgs', 'DatabaseDatabaseArgsDict']]] = None,
                  db_home_id: Optional[pulumi.Input[str]] = None,
                  db_version: Optional[pulumi.Input[str]] = None,
                  key_store_id: Optional[pulumi.Input[str]] = None,
@@ -938,11 +938,11 @@ class Database(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             character_set: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DatabaseConnectionStringArgs']]]]] = None,
-            database: Optional[pulumi.Input[pulumi.InputType['DatabaseDatabaseArgs']]] = None,
-            database_management_configs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DatabaseDatabaseManagementConfigArgs']]]]] = None,
+            connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DatabaseConnectionStringArgs', 'DatabaseConnectionStringArgsDict']]]]] = None,
+            database: Optional[pulumi.Input[Union['DatabaseDatabaseArgs', 'DatabaseDatabaseArgsDict']]] = None,
+            database_management_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DatabaseDatabaseManagementConfigArgs', 'DatabaseDatabaseManagementConfigArgsDict']]]]] = None,
             database_software_image_id: Optional[pulumi.Input[str]] = None,
-            db_backup_configs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DatabaseDbBackupConfigArgs']]]]] = None,
+            db_backup_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DatabaseDbBackupConfigArgs', 'DatabaseDbBackupConfigArgsDict']]]]] = None,
             db_home_id: Optional[pulumi.Input[str]] = None,
             db_name: Optional[pulumi.Input[str]] = None,
             db_system_id: Optional[pulumi.Input[str]] = None,
@@ -980,13 +980,13 @@ class Database(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] character_set: The character set for the database.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DatabaseConnectionStringArgs']]]] connection_strings: The Connection strings used to connect to the Oracle Database.
-        :param pulumi.Input[pulumi.InputType['DatabaseDatabaseArgs']] database: (Updatable) Details for creating a database.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseConnectionStringArgs', 'DatabaseConnectionStringArgsDict']]]] connection_strings: The Connection strings used to connect to the Oracle Database.
+        :param pulumi.Input[Union['DatabaseDatabaseArgs', 'DatabaseDatabaseArgsDict']] database: (Updatable) Details for creating a database.
                
                **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DatabaseDatabaseManagementConfigArgs']]]] database_management_configs: The configuration of the Database Management service.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseDatabaseManagementConfigArgs', 'DatabaseDatabaseManagementConfigArgsDict']]]] database_management_configs: The configuration of the Database Management service.
         :param pulumi.Input[str] database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DatabaseDbBackupConfigArgs']]]] db_backup_configs: Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseDbBackupConfigArgs', 'DatabaseDbBackupConfigArgsDict']]]] db_backup_configs: Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
         :param pulumi.Input[str] db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
         :param pulumi.Input[str] db_name: The database name.
         :param pulumi.Input[str] db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.

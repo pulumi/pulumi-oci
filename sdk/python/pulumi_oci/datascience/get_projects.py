@@ -118,7 +118,7 @@ class AwaitableGetProjectsResult(GetProjectsResult):
 def get_projects(compartment_id: Optional[str] = None,
                  created_by: Optional[str] = None,
                  display_name: Optional[str] = None,
-                 filters: Optional[Sequence[pulumi.InputType['GetProjectsFilterArgs']]] = None,
+                 filters: Optional[Sequence[Union['GetProjectsFilterArgs', 'GetProjectsFilterArgsDict']]] = None,
                  id: Optional[str] = None,
                  state: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetProjectsResult:
@@ -171,7 +171,7 @@ def get_projects(compartment_id: Optional[str] = None,
 def get_projects_output(compartment_id: Optional[pulumi.Input[str]] = None,
                         created_by: Optional[pulumi.Input[Optional[str]]] = None,
                         display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                        filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetProjectsFilterArgs']]]]] = None,
+                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetProjectsFilterArgs', 'GetProjectsFilterArgsDict']]]]] = None,
                         id: Optional[pulumi.Input[Optional[str]]] = None,
                         state: Optional[pulumi.Input[Optional[str]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProjectsResult]:

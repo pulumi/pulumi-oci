@@ -77,7 +77,7 @@ class AwaitableGetAllowedDomainLicenseTypesResult(GetAllowedDomainLicenseTypesRe
 
 
 def get_allowed_domain_license_types(current_license_type_name: Optional[str] = None,
-                                     filters: Optional[Sequence[pulumi.InputType['GetAllowedDomainLicenseTypesFilterArgs']]] = None,
+                                     filters: Optional[Sequence[Union['GetAllowedDomainLicenseTypesFilterArgs', 'GetAllowedDomainLicenseTypesFilterArgsDict']]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAllowedDomainLicenseTypesResult:
     """
     This data source provides the list of Allowed Domain License Types in Oracle Cloud Infrastructure Identity service.
@@ -116,7 +116,7 @@ def get_allowed_domain_license_types(current_license_type_name: Optional[str] = 
 
 @_utilities.lift_output_func(get_allowed_domain_license_types)
 def get_allowed_domain_license_types_output(current_license_type_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                            filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAllowedDomainLicenseTypesFilterArgs']]]]] = None,
+                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAllowedDomainLicenseTypesFilterArgs', 'GetAllowedDomainLicenseTypesFilterArgsDict']]]]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAllowedDomainLicenseTypesResult]:
     """
     This data source provides the list of Allowed Domain License Types in Oracle Cloud Infrastructure Identity service.

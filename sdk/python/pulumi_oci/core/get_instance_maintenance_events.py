@@ -147,7 +147,7 @@ class AwaitableGetInstanceMaintenanceEventsResult(GetInstanceMaintenanceEventsRe
 
 def get_instance_maintenance_events(compartment_id: Optional[str] = None,
                                     correlation_token: Optional[str] = None,
-                                    filters: Optional[Sequence[pulumi.InputType['GetInstanceMaintenanceEventsFilterArgs']]] = None,
+                                    filters: Optional[Sequence[Union['GetInstanceMaintenanceEventsFilterArgs', 'GetInstanceMaintenanceEventsFilterArgsDict']]] = None,
                                     instance_action: Optional[str] = None,
                                     instance_id: Optional[str] = None,
                                     state: Optional[str] = None,
@@ -211,7 +211,7 @@ def get_instance_maintenance_events(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_instance_maintenance_events)
 def get_instance_maintenance_events_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                            correlation_token: Optional[pulumi.Input[Optional[str]]] = None,
-                                           filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetInstanceMaintenanceEventsFilterArgs']]]]] = None,
+                                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetInstanceMaintenanceEventsFilterArgs', 'GetInstanceMaintenanceEventsFilterArgsDict']]]]] = None,
                                            instance_action: Optional[pulumi.Input[Optional[str]]] = None,
                                            instance_id: Optional[pulumi.Input[Optional[str]]] = None,
                                            state: Optional[pulumi.Input[Optional[str]]] = None,

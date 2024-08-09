@@ -103,7 +103,7 @@ class AwaitableGetComputeCapacityReservationInstancesResult(GetComputeCapacityRe
 def get_compute_capacity_reservation_instances(availability_domain: Optional[str] = None,
                                                capacity_reservation_id: Optional[str] = None,
                                                compartment_id: Optional[str] = None,
-                                               filters: Optional[Sequence[pulumi.InputType['GetComputeCapacityReservationInstancesFilterArgs']]] = None,
+                                               filters: Optional[Sequence[Union['GetComputeCapacityReservationInstancesFilterArgs', 'GetComputeCapacityReservationInstancesFilterArgsDict']]] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetComputeCapacityReservationInstancesResult:
     """
     This data source provides the list of Compute Capacity Reservation Instances in Oracle Cloud Infrastructure Core service.
@@ -147,7 +147,7 @@ def get_compute_capacity_reservation_instances(availability_domain: Optional[str
 def get_compute_capacity_reservation_instances_output(availability_domain: Optional[pulumi.Input[Optional[str]]] = None,
                                                       capacity_reservation_id: Optional[pulumi.Input[str]] = None,
                                                       compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                                      filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetComputeCapacityReservationInstancesFilterArgs']]]]] = None,
+                                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetComputeCapacityReservationInstancesFilterArgs', 'GetComputeCapacityReservationInstancesFilterArgsDict']]]]] = None,
                                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetComputeCapacityReservationInstancesResult]:
     """
     This data source provides the list of Compute Capacity Reservation Instances in Oracle Cloud Infrastructure Core service.

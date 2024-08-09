@@ -1357,7 +1357,7 @@ class DataGuardAssociation(pulumi.CustomResource):
                  cpu_core_count: Optional[pulumi.Input[int]] = None,
                  create_async: Optional[pulumi.Input[bool]] = None,
                  creation_type: Optional[pulumi.Input[str]] = None,
-                 data_collection_options: Optional[pulumi.Input[pulumi.InputType['DataGuardAssociationDataCollectionOptionsArgs']]] = None,
+                 data_collection_options: Optional[pulumi.Input[Union['DataGuardAssociationDataCollectionOptionsArgs', 'DataGuardAssociationDataCollectionOptionsArgsDict']]] = None,
                  database_admin_password: Optional[pulumi.Input[str]] = None,
                  database_defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  database_freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -1416,11 +1416,11 @@ class DataGuardAssociation(pulumi.CustomResource):
             cpu_core_count=data_guard_association_cpu_core_count,
             database_defined_tags=data_guard_association_database_defined_tags,
             database_freeform_tags=data_guard_association_database_freeform_tags,
-            data_collection_options=oci.database.DataGuardAssociationDataCollectionOptionsArgs(
-                is_diagnostics_events_enabled=data_guard_association_data_collection_options_is_diagnostics_events_enabled,
-                is_health_monitoring_enabled=data_guard_association_data_collection_options_is_health_monitoring_enabled,
-                is_incident_logs_enabled=data_guard_association_data_collection_options_is_incident_logs_enabled,
-            ),
+            data_collection_options={
+                "is_diagnostics_events_enabled": data_guard_association_data_collection_options_is_diagnostics_events_enabled,
+                "is_health_monitoring_enabled": data_guard_association_data_collection_options_is_health_monitoring_enabled,
+                "is_incident_logs_enabled": data_guard_association_data_collection_options_is_incident_logs_enabled,
+            },
             database_software_image_id=test_database_software_image["id"],
             db_system_defined_tags=data_guard_association_db_system_defined_tags,
             db_system_freeform_tags=data_guard_association_db_system_freeform_tags,
@@ -1453,7 +1453,7 @@ class DataGuardAssociation(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] backup_network_nsg_ids: A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
         :param pulumi.Input[int] cpu_core_count: The number of CPU cores available for AMD-based virtual machine DB systems.
         :param pulumi.Input[str] creation_type: Specifies whether to create the peer database in an existing DB system or in a new DB system.
-        :param pulumi.Input[pulumi.InputType['DataGuardAssociationDataCollectionOptionsArgs']] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+        :param pulumi.Input[Union['DataGuardAssociationDataCollectionOptionsArgs', 'DataGuardAssociationDataCollectionOptionsArgsDict']] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[str] database_admin_password: (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
                
                The password must contain no fewer than nine characters and include:
@@ -1552,11 +1552,11 @@ class DataGuardAssociation(pulumi.CustomResource):
             cpu_core_count=data_guard_association_cpu_core_count,
             database_defined_tags=data_guard_association_database_defined_tags,
             database_freeform_tags=data_guard_association_database_freeform_tags,
-            data_collection_options=oci.database.DataGuardAssociationDataCollectionOptionsArgs(
-                is_diagnostics_events_enabled=data_guard_association_data_collection_options_is_diagnostics_events_enabled,
-                is_health_monitoring_enabled=data_guard_association_data_collection_options_is_health_monitoring_enabled,
-                is_incident_logs_enabled=data_guard_association_data_collection_options_is_incident_logs_enabled,
-            ),
+            data_collection_options={
+                "is_diagnostics_events_enabled": data_guard_association_data_collection_options_is_diagnostics_events_enabled,
+                "is_health_monitoring_enabled": data_guard_association_data_collection_options_is_health_monitoring_enabled,
+                "is_incident_logs_enabled": data_guard_association_data_collection_options_is_incident_logs_enabled,
+            },
             database_software_image_id=test_database_software_image["id"],
             db_system_defined_tags=data_guard_association_db_system_defined_tags,
             db_system_freeform_tags=data_guard_association_db_system_freeform_tags,
@@ -1603,7 +1603,7 @@ class DataGuardAssociation(pulumi.CustomResource):
                  cpu_core_count: Optional[pulumi.Input[int]] = None,
                  create_async: Optional[pulumi.Input[bool]] = None,
                  creation_type: Optional[pulumi.Input[str]] = None,
-                 data_collection_options: Optional[pulumi.Input[pulumi.InputType['DataGuardAssociationDataCollectionOptionsArgs']]] = None,
+                 data_collection_options: Optional[pulumi.Input[Union['DataGuardAssociationDataCollectionOptionsArgs', 'DataGuardAssociationDataCollectionOptionsArgsDict']]] = None,
                  database_admin_password: Optional[pulumi.Input[str]] = None,
                  database_defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  database_freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -1713,7 +1713,7 @@ class DataGuardAssociation(pulumi.CustomResource):
             cpu_core_count: Optional[pulumi.Input[int]] = None,
             create_async: Optional[pulumi.Input[bool]] = None,
             creation_type: Optional[pulumi.Input[str]] = None,
-            data_collection_options: Optional[pulumi.Input[pulumi.InputType['DataGuardAssociationDataCollectionOptionsArgs']]] = None,
+            data_collection_options: Optional[pulumi.Input[Union['DataGuardAssociationDataCollectionOptionsArgs', 'DataGuardAssociationDataCollectionOptionsArgsDict']]] = None,
             database_admin_password: Optional[pulumi.Input[str]] = None,
             database_defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             database_freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -1761,7 +1761,7 @@ class DataGuardAssociation(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] backup_network_nsg_ids: A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
         :param pulumi.Input[int] cpu_core_count: The number of CPU cores available for AMD-based virtual machine DB systems.
         :param pulumi.Input[str] creation_type: Specifies whether to create the peer database in an existing DB system or in a new DB system.
-        :param pulumi.Input[pulumi.InputType['DataGuardAssociationDataCollectionOptionsArgs']] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+        :param pulumi.Input[Union['DataGuardAssociationDataCollectionOptionsArgs', 'DataGuardAssociationDataCollectionOptionsArgsDict']] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[str] database_admin_password: (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
                
                The password must contain no fewer than nine characters and include:

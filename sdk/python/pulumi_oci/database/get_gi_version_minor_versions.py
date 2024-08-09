@@ -126,7 +126,7 @@ class AwaitableGetGiVersionMinorVersionsResult(GetGiVersionMinorVersionsResult):
 
 def get_gi_version_minor_versions(availability_domain: Optional[str] = None,
                                   compartment_id: Optional[str] = None,
-                                  filters: Optional[Sequence[pulumi.InputType['GetGiVersionMinorVersionsFilterArgs']]] = None,
+                                  filters: Optional[Sequence[Union['GetGiVersionMinorVersionsFilterArgs', 'GetGiVersionMinorVersionsFilterArgsDict']]] = None,
                                   is_gi_version_for_provisioning: Optional[bool] = None,
                                   shape: Optional[str] = None,
                                   shape_family: Optional[str] = None,
@@ -185,7 +185,7 @@ def get_gi_version_minor_versions(availability_domain: Optional[str] = None,
 @_utilities.lift_output_func(get_gi_version_minor_versions)
 def get_gi_version_minor_versions_output(availability_domain: Optional[pulumi.Input[Optional[str]]] = None,
                                          compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                         filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetGiVersionMinorVersionsFilterArgs']]]]] = None,
+                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetGiVersionMinorVersionsFilterArgs', 'GetGiVersionMinorVersionsFilterArgsDict']]]]] = None,
                                          is_gi_version_for_provisioning: Optional[pulumi.Input[Optional[bool]]] = None,
                                          shape: Optional[pulumi.Input[Optional[str]]] = None,
                                          shape_family: Optional[pulumi.Input[Optional[str]]] = None,

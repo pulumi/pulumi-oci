@@ -417,13 +417,13 @@ class VirtualService(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 default_routing_policy: Optional[pulumi.Input[pulumi.InputType['VirtualServiceDefaultRoutingPolicyArgs']]] = None,
+                 default_routing_policy: Optional[pulumi.Input[Union['VirtualServiceDefaultRoutingPolicyArgs', 'VirtualServiceDefaultRoutingPolicyArgsDict']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  hosts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  mesh_id: Optional[pulumi.Input[str]] = None,
-                 mtls: Optional[pulumi.Input[pulumi.InputType['VirtualServiceMtlsArgs']]] = None,
+                 mtls: Optional[pulumi.Input[Union['VirtualServiceMtlsArgs', 'VirtualServiceMtlsArgsDict']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -441,9 +441,9 @@ class VirtualService(pulumi.CustomResource):
             compartment_id=compartment_id,
             mesh_id=test_mesh["id"],
             name=virtual_service_name,
-            default_routing_policy=oci.service_mesh.VirtualServiceDefaultRoutingPolicyArgs(
-                type=virtual_service_default_routing_policy_type,
-            ),
+            default_routing_policy={
+                "type": virtual_service_default_routing_policy_type,
+            },
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -452,10 +452,10 @@ class VirtualService(pulumi.CustomResource):
                 "bar-key": "value",
             },
             hosts=virtual_service_hosts,
-            mtls=oci.service_mesh.VirtualServiceMtlsArgs(
-                mode=virtual_service_mtls_mode,
-                maximum_validity=virtual_service_mtls_maximum_validity,
-            ))
+            mtls={
+                "mode": virtual_service_mtls_mode,
+                "maximum_validity": virtual_service_mtls_maximum_validity,
+            })
         ```
 
         ## Import
@@ -469,13 +469,13 @@ class VirtualService(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[pulumi.InputType['VirtualServiceDefaultRoutingPolicyArgs']] default_routing_policy: (Updatable) Routing policy for the virtual service.
+        :param pulumi.Input[Union['VirtualServiceDefaultRoutingPolicyArgs', 'VirtualServiceDefaultRoutingPolicyArgsDict']] default_routing_policy: (Updatable) Routing policy for the virtual service.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] hosts: (Updatable) The DNS hostnames of the virtual service that is used by its callers. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com". Can be omitted if the virtual service will only have TCP virtual deployments.
         :param pulumi.Input[str] mesh_id: The OCID of the service mesh in which this virtual service is created.
-        :param pulumi.Input[pulumi.InputType['VirtualServiceMtlsArgs']] mtls: (Updatable) The mTLS authentication mode to use when receiving requests from other virtual services or ingress gateways within the mesh.
+        :param pulumi.Input[Union['VirtualServiceMtlsArgs', 'VirtualServiceMtlsArgsDict']] mtls: (Updatable) The mTLS authentication mode to use when receiving requests from other virtual services or ingress gateways within the mesh.
         :param pulumi.Input[str] name: A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name` 
                
                
@@ -503,9 +503,9 @@ class VirtualService(pulumi.CustomResource):
             compartment_id=compartment_id,
             mesh_id=test_mesh["id"],
             name=virtual_service_name,
-            default_routing_policy=oci.service_mesh.VirtualServiceDefaultRoutingPolicyArgs(
-                type=virtual_service_default_routing_policy_type,
-            ),
+            default_routing_policy={
+                "type": virtual_service_default_routing_policy_type,
+            },
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -514,10 +514,10 @@ class VirtualService(pulumi.CustomResource):
                 "bar-key": "value",
             },
             hosts=virtual_service_hosts,
-            mtls=oci.service_mesh.VirtualServiceMtlsArgs(
-                mode=virtual_service_mtls_mode,
-                maximum_validity=virtual_service_mtls_maximum_validity,
-            ))
+            mtls={
+                "mode": virtual_service_mtls_mode,
+                "maximum_validity": virtual_service_mtls_maximum_validity,
+            })
         ```
 
         ## Import
@@ -544,13 +544,13 @@ class VirtualService(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 default_routing_policy: Optional[pulumi.Input[pulumi.InputType['VirtualServiceDefaultRoutingPolicyArgs']]] = None,
+                 default_routing_policy: Optional[pulumi.Input[Union['VirtualServiceDefaultRoutingPolicyArgs', 'VirtualServiceDefaultRoutingPolicyArgsDict']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  hosts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  mesh_id: Optional[pulumi.Input[str]] = None,
-                 mtls: Optional[pulumi.Input[pulumi.InputType['VirtualServiceMtlsArgs']]] = None,
+                 mtls: Optional[pulumi.Input[Union['VirtualServiceMtlsArgs', 'VirtualServiceMtlsArgsDict']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -590,14 +590,14 @@ class VirtualService(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            default_routing_policy: Optional[pulumi.Input[pulumi.InputType['VirtualServiceDefaultRoutingPolicyArgs']]] = None,
+            default_routing_policy: Optional[pulumi.Input[Union['VirtualServiceDefaultRoutingPolicyArgs', 'VirtualServiceDefaultRoutingPolicyArgsDict']]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             description: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             hosts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             mesh_id: Optional[pulumi.Input[str]] = None,
-            mtls: Optional[pulumi.Input[pulumi.InputType['VirtualServiceMtlsArgs']]] = None,
+            mtls: Optional[pulumi.Input[Union['VirtualServiceMtlsArgs', 'VirtualServiceMtlsArgsDict']]] = None,
             name: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -611,14 +611,14 @@ class VirtualService(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[pulumi.InputType['VirtualServiceDefaultRoutingPolicyArgs']] default_routing_policy: (Updatable) Routing policy for the virtual service.
+        :param pulumi.Input[Union['VirtualServiceDefaultRoutingPolicyArgs', 'VirtualServiceDefaultRoutingPolicyArgsDict']] default_routing_policy: (Updatable) Routing policy for the virtual service.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] hosts: (Updatable) The DNS hostnames of the virtual service that is used by its callers. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com". Can be omitted if the virtual service will only have TCP virtual deployments.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
         :param pulumi.Input[str] mesh_id: The OCID of the service mesh in which this virtual service is created.
-        :param pulumi.Input[pulumi.InputType['VirtualServiceMtlsArgs']] mtls: (Updatable) The mTLS authentication mode to use when receiving requests from other virtual services or ingress gateways within the mesh.
+        :param pulumi.Input[Union['VirtualServiceMtlsArgs', 'VirtualServiceMtlsArgsDict']] mtls: (Updatable) The mTLS authentication mode to use when receiving requests from other virtual services or ingress gateways within the mesh.
         :param pulumi.Input[str] name: A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name` 
                
                

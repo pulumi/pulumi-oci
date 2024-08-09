@@ -137,7 +137,7 @@ class AwaitableGetProtectionCapabilitiesResult(GetProtectionCapabilitiesResult):
 
 def get_protection_capabilities(compartment_id: Optional[str] = None,
                                 display_name: Optional[str] = None,
-                                filters: Optional[Sequence[pulumi.InputType['GetProtectionCapabilitiesFilterArgs']]] = None,
+                                filters: Optional[Sequence[Union['GetProtectionCapabilitiesFilterArgs', 'GetProtectionCapabilitiesFilterArgsDict']]] = None,
                                 group_tags: Optional[Sequence[str]] = None,
                                 is_latest_versions: Optional[Sequence[bool]] = None,
                                 key: Optional[str] = None,
@@ -196,7 +196,7 @@ def get_protection_capabilities(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_protection_capabilities)
 def get_protection_capabilities_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                        display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                       filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetProtectionCapabilitiesFilterArgs']]]]] = None,
+                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetProtectionCapabilitiesFilterArgs', 'GetProtectionCapabilitiesFilterArgsDict']]]]] = None,
                                        group_tags: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                        is_latest_versions: Optional[pulumi.Input[Optional[Sequence[bool]]]] = None,
                                        key: Optional[pulumi.Input[Optional[str]]] = None,

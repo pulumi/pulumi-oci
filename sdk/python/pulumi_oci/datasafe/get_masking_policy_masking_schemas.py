@@ -88,7 +88,7 @@ class AwaitableGetMaskingPolicyMaskingSchemasResult(GetMaskingPolicyMaskingSchem
             schema_names=self.schema_names)
 
 
-def get_masking_policy_masking_schemas(filters: Optional[Sequence[pulumi.InputType['GetMaskingPolicyMaskingSchemasFilterArgs']]] = None,
+def get_masking_policy_masking_schemas(filters: Optional[Sequence[Union['GetMaskingPolicyMaskingSchemasFilterArgs', 'GetMaskingPolicyMaskingSchemasFilterArgsDict']]] = None,
                                        masking_policy_id: Optional[str] = None,
                                        schema_names: Optional[Sequence[str]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMaskingPolicyMaskingSchemasResult:
@@ -127,7 +127,7 @@ def get_masking_policy_masking_schemas(filters: Optional[Sequence[pulumi.InputTy
 
 
 @_utilities.lift_output_func(get_masking_policy_masking_schemas)
-def get_masking_policy_masking_schemas_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetMaskingPolicyMaskingSchemasFilterArgs']]]]] = None,
+def get_masking_policy_masking_schemas_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMaskingPolicyMaskingSchemasFilterArgs', 'GetMaskingPolicyMaskingSchemasFilterArgsDict']]]]] = None,
                                               masking_policy_id: Optional[pulumi.Input[str]] = None,
                                               schema_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMaskingPolicyMaskingSchemasResult]:

@@ -107,7 +107,7 @@ public class LogAnalyticsPreferencesManagement extends com.pulumi.resources.Cust
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public LogAnalyticsPreferencesManagement(String name) {
+    public LogAnalyticsPreferencesManagement(java.lang.String name) {
         this(name, LogAnalyticsPreferencesManagementArgs.Empty);
     }
     /**
@@ -115,7 +115,7 @@ public class LogAnalyticsPreferencesManagement extends com.pulumi.resources.Cust
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public LogAnalyticsPreferencesManagement(String name, LogAnalyticsPreferencesManagementArgs args) {
+    public LogAnalyticsPreferencesManagement(java.lang.String name, LogAnalyticsPreferencesManagementArgs args) {
         this(name, args, null);
     }
     /**
@@ -124,12 +124,12 @@ public class LogAnalyticsPreferencesManagement extends com.pulumi.resources.Cust
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public LogAnalyticsPreferencesManagement(String name, LogAnalyticsPreferencesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:LogAnalytics/logAnalyticsPreferencesManagement:LogAnalyticsPreferencesManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public LogAnalyticsPreferencesManagement(java.lang.String name, LogAnalyticsPreferencesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:LogAnalytics/logAnalyticsPreferencesManagement:LogAnalyticsPreferencesManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private LogAnalyticsPreferencesManagement(String name, Output<String> id, @Nullable LogAnalyticsPreferencesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:LogAnalytics/logAnalyticsPreferencesManagement:LogAnalyticsPreferencesManagement", name, state, makeResourceOptions(options, id));
+    private LogAnalyticsPreferencesManagement(java.lang.String name, Output<java.lang.String> id, @Nullable LogAnalyticsPreferencesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:LogAnalytics/logAnalyticsPreferencesManagement:LogAnalyticsPreferencesManagement", name, state, makeResourceOptions(options, id), false);
     }
 
     private static LogAnalyticsPreferencesManagementArgs makeArgs(LogAnalyticsPreferencesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -139,7 +139,7 @@ public class LogAnalyticsPreferencesManagement extends com.pulumi.resources.Cust
         return args == null ? LogAnalyticsPreferencesManagementArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -155,7 +155,7 @@ public class LogAnalyticsPreferencesManagement extends com.pulumi.resources.Cust
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static LogAnalyticsPreferencesManagement get(String name, Output<String> id, @Nullable LogAnalyticsPreferencesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static LogAnalyticsPreferencesManagement get(java.lang.String name, Output<java.lang.String> id, @Nullable LogAnalyticsPreferencesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new LogAnalyticsPreferencesManagement(name, id, state, options);
     }
 }

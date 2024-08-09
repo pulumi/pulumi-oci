@@ -413,10 +413,10 @@ class JavaDownloadsJavaLicenseAcceptanceRecord(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgs']]]]] = None,
+            created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgs', 'JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgsDict']]]]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            last_updated_bies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgs']]]]] = None,
+            last_updated_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgs', 'JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgsDict']]]]] = None,
             license_acceptance_status: Optional[pulumi.Input[str]] = None,
             license_type: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -431,10 +431,10 @@ class JavaDownloadsJavaLicenseAcceptanceRecord(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: The tenancy [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user accepting the license.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgs']]]] created_bies: An authorized principal.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgs', 'JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgsDict']]]] created_bies: An authorized principal.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgs']]]] last_updated_bies: An authorized principal.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgs', 'JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgsDict']]]] last_updated_bies: An authorized principal.
         :param pulumi.Input[str] license_acceptance_status: (Updatable) Status of license acceptance.
         :param pulumi.Input[str] license_type: License type for the Java version.
                

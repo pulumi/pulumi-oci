@@ -102,7 +102,7 @@ class AwaitableGetLogGroupsResult(GetLogGroupsResult):
 
 def get_log_groups(compartment_id: Optional[str] = None,
                    display_name: Optional[str] = None,
-                   filters: Optional[Sequence[pulumi.InputType['GetLogGroupsFilterArgs']]] = None,
+                   filters: Optional[Sequence[Union['GetLogGroupsFilterArgs', 'GetLogGroupsFilterArgsDict']]] = None,
                    is_compartment_id_in_subtree: Optional[bool] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLogGroupsResult:
     """
@@ -146,7 +146,7 @@ def get_log_groups(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_log_groups)
 def get_log_groups_output(compartment_id: Optional[pulumi.Input[str]] = None,
                           display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                          filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetLogGroupsFilterArgs']]]]] = None,
+                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetLogGroupsFilterArgs', 'GetLogGroupsFilterArgsDict']]]]] = None,
                           is_compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLogGroupsResult]:
     """

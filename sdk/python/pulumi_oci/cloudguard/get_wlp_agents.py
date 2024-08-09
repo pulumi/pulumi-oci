@@ -80,7 +80,7 @@ class AwaitableGetWlpAgentsResult(GetWlpAgentsResult):
 
 
 def get_wlp_agents(compartment_id: Optional[str] = None,
-                   filters: Optional[Sequence[pulumi.InputType['GetWlpAgentsFilterArgs']]] = None,
+                   filters: Optional[Sequence[Union['GetWlpAgentsFilterArgs', 'GetWlpAgentsFilterArgsDict']]] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetWlpAgentsResult:
     """
     This data source provides the list of Wlp Agents in Oracle Cloud Infrastructure Cloud Guard service.
@@ -114,7 +114,7 @@ def get_wlp_agents(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_wlp_agents)
 def get_wlp_agents_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                          filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetWlpAgentsFilterArgs']]]]] = None,
+                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetWlpAgentsFilterArgs', 'GetWlpAgentsFilterArgsDict']]]]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetWlpAgentsResult]:
     """
     This data source provides the list of Wlp Agents in Oracle Cloud Infrastructure Cloud Guard service.

@@ -167,7 +167,7 @@ public class UserCapabilitiesManagement extends com.pulumi.resources.CustomResou
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public UserCapabilitiesManagement(String name) {
+    public UserCapabilitiesManagement(java.lang.String name) {
         this(name, UserCapabilitiesManagementArgs.Empty);
     }
     /**
@@ -175,7 +175,7 @@ public class UserCapabilitiesManagement extends com.pulumi.resources.CustomResou
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public UserCapabilitiesManagement(String name, UserCapabilitiesManagementArgs args) {
+    public UserCapabilitiesManagement(java.lang.String name, UserCapabilitiesManagementArgs args) {
         this(name, args, null);
     }
     /**
@@ -184,12 +184,12 @@ public class UserCapabilitiesManagement extends com.pulumi.resources.CustomResou
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public UserCapabilitiesManagement(String name, UserCapabilitiesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/userCapabilitiesManagement:UserCapabilitiesManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public UserCapabilitiesManagement(java.lang.String name, UserCapabilitiesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/userCapabilitiesManagement:UserCapabilitiesManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private UserCapabilitiesManagement(String name, Output<String> id, @Nullable UserCapabilitiesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/userCapabilitiesManagement:UserCapabilitiesManagement", name, state, makeResourceOptions(options, id));
+    private UserCapabilitiesManagement(java.lang.String name, Output<java.lang.String> id, @Nullable UserCapabilitiesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/userCapabilitiesManagement:UserCapabilitiesManagement", name, state, makeResourceOptions(options, id), false);
     }
 
     private static UserCapabilitiesManagementArgs makeArgs(UserCapabilitiesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -199,7 +199,7 @@ public class UserCapabilitiesManagement extends com.pulumi.resources.CustomResou
         return args == null ? UserCapabilitiesManagementArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -215,7 +215,7 @@ public class UserCapabilitiesManagement extends com.pulumi.resources.CustomResou
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static UserCapabilitiesManagement get(String name, Output<String> id, @Nullable UserCapabilitiesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static UserCapabilitiesManagement get(java.lang.String name, Output<java.lang.String> id, @Nullable UserCapabilitiesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new UserCapabilitiesManagement(name, id, state, options);
     }
 }

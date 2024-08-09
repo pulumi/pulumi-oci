@@ -102,7 +102,7 @@ class AwaitableGetVantagePointsResult(GetVantagePointsResult):
 
 def get_vantage_points(apm_domain_id: Optional[str] = None,
                        display_name: Optional[str] = None,
-                       filters: Optional[Sequence[pulumi.InputType['GetVantagePointsFilterArgs']]] = None,
+                       filters: Optional[Sequence[Union['GetVantagePointsFilterArgs', 'GetVantagePointsFilterArgsDict']]] = None,
                        name: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVantagePointsResult:
     """
@@ -146,7 +146,7 @@ def get_vantage_points(apm_domain_id: Optional[str] = None,
 @_utilities.lift_output_func(get_vantage_points)
 def get_vantage_points_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                               display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                              filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetVantagePointsFilterArgs']]]]] = None,
+                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVantagePointsFilterArgs', 'GetVantagePointsFilterArgsDict']]]]] = None,
                               name: Optional[pulumi.Input[Optional[str]]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVantagePointsResult]:
     """

@@ -700,7 +700,7 @@ public class DomainsApprovalWorkflowStep extends com.pulumi.resources.CustomReso
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DomainsApprovalWorkflowStep(String name) {
+    public DomainsApprovalWorkflowStep(java.lang.String name) {
         this(name, DomainsApprovalWorkflowStepArgs.Empty);
     }
     /**
@@ -708,7 +708,7 @@ public class DomainsApprovalWorkflowStep extends com.pulumi.resources.CustomReso
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DomainsApprovalWorkflowStep(String name, DomainsApprovalWorkflowStepArgs args) {
+    public DomainsApprovalWorkflowStep(java.lang.String name, DomainsApprovalWorkflowStepArgs args) {
         this(name, args, null);
     }
     /**
@@ -717,12 +717,12 @@ public class DomainsApprovalWorkflowStep extends com.pulumi.resources.CustomReso
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DomainsApprovalWorkflowStep(String name, DomainsApprovalWorkflowStepArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsApprovalWorkflowStep:DomainsApprovalWorkflowStep", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DomainsApprovalWorkflowStep(java.lang.String name, DomainsApprovalWorkflowStepArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/domainsApprovalWorkflowStep:DomainsApprovalWorkflowStep", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DomainsApprovalWorkflowStep(String name, Output<String> id, @Nullable DomainsApprovalWorkflowStepState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsApprovalWorkflowStep:DomainsApprovalWorkflowStep", name, state, makeResourceOptions(options, id));
+    private DomainsApprovalWorkflowStep(java.lang.String name, Output<java.lang.String> id, @Nullable DomainsApprovalWorkflowStepState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/domainsApprovalWorkflowStep:DomainsApprovalWorkflowStep", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DomainsApprovalWorkflowStepArgs makeArgs(DomainsApprovalWorkflowStepArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -732,7 +732,7 @@ public class DomainsApprovalWorkflowStep extends com.pulumi.resources.CustomReso
         return args == null ? DomainsApprovalWorkflowStepArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -748,7 +748,7 @@ public class DomainsApprovalWorkflowStep extends com.pulumi.resources.CustomReso
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DomainsApprovalWorkflowStep get(String name, Output<String> id, @Nullable DomainsApprovalWorkflowStepState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DomainsApprovalWorkflowStep get(java.lang.String name, Output<java.lang.String> id, @Nullable DomainsApprovalWorkflowStepState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DomainsApprovalWorkflowStep(name, id, state, options);
     }
 }

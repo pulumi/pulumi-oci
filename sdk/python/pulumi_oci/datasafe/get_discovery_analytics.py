@@ -141,7 +141,7 @@ class AwaitableGetDiscoveryAnalyticsResult(GetDiscoveryAnalyticsResult):
 
 def get_discovery_analytics(compartment_id: Optional[str] = None,
                             compartment_id_in_subtree: Optional[bool] = None,
-                            filters: Optional[Sequence[pulumi.InputType['GetDiscoveryAnalyticsFilterArgs']]] = None,
+                            filters: Optional[Sequence[Union['GetDiscoveryAnalyticsFilterArgs', 'GetDiscoveryAnalyticsFilterArgsDict']]] = None,
                             group_by: Optional[str] = None,
                             is_common: Optional[bool] = None,
                             sensitive_data_model_id: Optional[str] = None,
@@ -207,7 +207,7 @@ def get_discovery_analytics(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_discovery_analytics)
 def get_discovery_analytics_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                    compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDiscoveryAnalyticsFilterArgs']]]]] = None,
+                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDiscoveryAnalyticsFilterArgs', 'GetDiscoveryAnalyticsFilterArgsDict']]]]] = None,
                                    group_by: Optional[pulumi.Input[Optional[str]]] = None,
                                    is_common: Optional[pulumi.Input[Optional[bool]]] = None,
                                    sensitive_data_model_id: Optional[pulumi.Input[Optional[str]]] = None,

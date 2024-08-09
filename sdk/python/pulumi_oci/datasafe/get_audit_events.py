@@ -109,7 +109,7 @@ class AwaitableGetAuditEventsResult(GetAuditEventsResult):
 def get_audit_events(access_level: Optional[str] = None,
                      compartment_id: Optional[str] = None,
                      compartment_id_in_subtree: Optional[bool] = None,
-                     filters: Optional[Sequence[pulumi.InputType['GetAuditEventsFilterArgs']]] = None,
+                     filters: Optional[Sequence[Union['GetAuditEventsFilterArgs', 'GetAuditEventsFilterArgsDict']]] = None,
                      scim_query: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAuditEventsResult:
     """
@@ -172,7 +172,7 @@ def get_audit_events(access_level: Optional[str] = None,
 def get_audit_events_output(access_level: Optional[pulumi.Input[Optional[str]]] = None,
                             compartment_id: Optional[pulumi.Input[str]] = None,
                             compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
-                            filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAuditEventsFilterArgs']]]]] = None,
+                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAuditEventsFilterArgs', 'GetAuditEventsFilterArgsDict']]]]] = None,
                             scim_query: Optional[pulumi.Input[Optional[str]]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAuditEventsResult]:
     """

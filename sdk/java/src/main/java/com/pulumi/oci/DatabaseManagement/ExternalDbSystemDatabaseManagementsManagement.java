@@ -113,7 +113,7 @@ public class ExternalDbSystemDatabaseManagementsManagement extends com.pulumi.re
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ExternalDbSystemDatabaseManagementsManagement(String name) {
+    public ExternalDbSystemDatabaseManagementsManagement(java.lang.String name) {
         this(name, ExternalDbSystemDatabaseManagementsManagementArgs.Empty);
     }
     /**
@@ -121,7 +121,7 @@ public class ExternalDbSystemDatabaseManagementsManagement extends com.pulumi.re
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ExternalDbSystemDatabaseManagementsManagement(String name, ExternalDbSystemDatabaseManagementsManagementArgs args) {
+    public ExternalDbSystemDatabaseManagementsManagement(java.lang.String name, ExternalDbSystemDatabaseManagementsManagementArgs args) {
         this(name, args, null);
     }
     /**
@@ -130,12 +130,12 @@ public class ExternalDbSystemDatabaseManagementsManagement extends com.pulumi.re
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ExternalDbSystemDatabaseManagementsManagement(String name, ExternalDbSystemDatabaseManagementsManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseManagement/externalDbSystemDatabaseManagementsManagement:ExternalDbSystemDatabaseManagementsManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ExternalDbSystemDatabaseManagementsManagement(java.lang.String name, ExternalDbSystemDatabaseManagementsManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DatabaseManagement/externalDbSystemDatabaseManagementsManagement:ExternalDbSystemDatabaseManagementsManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ExternalDbSystemDatabaseManagementsManagement(String name, Output<String> id, @Nullable ExternalDbSystemDatabaseManagementsManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseManagement/externalDbSystemDatabaseManagementsManagement:ExternalDbSystemDatabaseManagementsManagement", name, state, makeResourceOptions(options, id));
+    private ExternalDbSystemDatabaseManagementsManagement(java.lang.String name, Output<java.lang.String> id, @Nullable ExternalDbSystemDatabaseManagementsManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DatabaseManagement/externalDbSystemDatabaseManagementsManagement:ExternalDbSystemDatabaseManagementsManagement", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ExternalDbSystemDatabaseManagementsManagementArgs makeArgs(ExternalDbSystemDatabaseManagementsManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -145,7 +145,7 @@ public class ExternalDbSystemDatabaseManagementsManagement extends com.pulumi.re
         return args == null ? ExternalDbSystemDatabaseManagementsManagementArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -161,7 +161,7 @@ public class ExternalDbSystemDatabaseManagementsManagement extends com.pulumi.re
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ExternalDbSystemDatabaseManagementsManagement get(String name, Output<String> id, @Nullable ExternalDbSystemDatabaseManagementsManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ExternalDbSystemDatabaseManagementsManagement get(java.lang.String name, Output<java.lang.String> id, @Nullable ExternalDbSystemDatabaseManagementsManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ExternalDbSystemDatabaseManagementsManagement(name, id, state, options);
     }
 }

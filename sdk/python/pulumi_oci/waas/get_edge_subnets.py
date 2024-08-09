@@ -67,7 +67,7 @@ class AwaitableGetEdgeSubnetsResult(GetEdgeSubnetsResult):
             id=self.id)
 
 
-def get_edge_subnets(filters: Optional[Sequence[pulumi.InputType['GetEdgeSubnetsFilterArgs']]] = None,
+def get_edge_subnets(filters: Optional[Sequence[Union['GetEdgeSubnetsFilterArgs', 'GetEdgeSubnetsFilterArgsDict']]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetEdgeSubnetsResult:
     """
     This data source provides the list of Edge Subnets in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -95,7 +95,7 @@ def get_edge_subnets(filters: Optional[Sequence[pulumi.InputType['GetEdgeSubnets
 
 
 @_utilities.lift_output_func(get_edge_subnets)
-def get_edge_subnets_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetEdgeSubnetsFilterArgs']]]]] = None,
+def get_edge_subnets_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetEdgeSubnetsFilterArgs', 'GetEdgeSubnetsFilterArgsDict']]]]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEdgeSubnetsResult]:
     """
     This data source provides the list of Edge Subnets in Oracle Cloud Infrastructure Web Application Acceleration and Security service.

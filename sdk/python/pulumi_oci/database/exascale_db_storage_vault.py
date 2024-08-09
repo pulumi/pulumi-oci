@@ -437,7 +437,7 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 high_capacity_database_storage: Optional[pulumi.Input[pulumi.InputType['ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs']]] = None,
+                 high_capacity_database_storage: Optional[pulumi.Input[Union['ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs', 'ExascaleDbStorageVaultHighCapacityDatabaseStorageArgsDict']]] = None,
                  time_zone: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -455,9 +455,9 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
             availability_domain=exascale_db_storage_vault_availability_domain,
             compartment_id=compartment_id,
             display_name=exascale_db_storage_vault_display_name,
-            high_capacity_database_storage=oci.database.ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs(
-                total_size_in_gbs=exascale_db_storage_vault_high_capacity_database_storage_total_size_in_gbs,
-            ),
+            high_capacity_database_storage={
+                "total_size_in_gbs": exascale_db_storage_vault_high_capacity_database_storage_total_size_in_gbs,
+            },
             additional_flash_cache_in_percent=exascale_db_storage_vault_additional_flash_cache_in_percent,
             defined_tags=exascale_db_storage_vault_defined_tags,
             description=exascale_db_storage_vault_description,
@@ -484,7 +484,7 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) Exadata Database Storage Vault description.
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the Exadata Database Storage Vault. The name does not need to be unique.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[pulumi.InputType['ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs']] high_capacity_database_storage: (Updatable) Create exadata Database Storage Details
+        :param pulumi.Input[Union['ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs', 'ExascaleDbStorageVaultHighCapacityDatabaseStorageArgsDict']] high_capacity_database_storage: (Updatable) Create exadata Database Storage Details
         :param pulumi.Input[str] time_zone: The time zone that you want to use for the Exadata Database Storage Vault. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
                
                
@@ -512,9 +512,9 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
             availability_domain=exascale_db_storage_vault_availability_domain,
             compartment_id=compartment_id,
             display_name=exascale_db_storage_vault_display_name,
-            high_capacity_database_storage=oci.database.ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs(
-                total_size_in_gbs=exascale_db_storage_vault_high_capacity_database_storage_total_size_in_gbs,
-            ),
+            high_capacity_database_storage={
+                "total_size_in_gbs": exascale_db_storage_vault_high_capacity_database_storage_total_size_in_gbs,
+            },
             additional_flash_cache_in_percent=exascale_db_storage_vault_additional_flash_cache_in_percent,
             defined_tags=exascale_db_storage_vault_defined_tags,
             description=exascale_db_storage_vault_description,
@@ -554,7 +554,7 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 high_capacity_database_storage: Optional[pulumi.Input[pulumi.InputType['ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs']]] = None,
+                 high_capacity_database_storage: Optional[pulumi.Input[Union['ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs', 'ExascaleDbStorageVaultHighCapacityDatabaseStorageArgsDict']]] = None,
                  time_zone: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -605,7 +605,7 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            high_capacity_database_storage: Optional[pulumi.Input[pulumi.InputType['ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs']]] = None,
+            high_capacity_database_storage: Optional[pulumi.Input[Union['ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs', 'ExascaleDbStorageVaultHighCapacityDatabaseStorageArgsDict']]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -627,7 +627,7 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) Exadata Database Storage Vault description.
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the Exadata Database Storage Vault. The name does not need to be unique.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[pulumi.InputType['ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs']] high_capacity_database_storage: (Updatable) Create exadata Database Storage Details
+        :param pulumi.Input[Union['ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs', 'ExascaleDbStorageVaultHighCapacityDatabaseStorageArgsDict']] high_capacity_database_storage: (Updatable) Create exadata Database Storage Details
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[str] state: The current state of the Exadata Database Storage Vault.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).

@@ -316,11 +316,11 @@ class NetworkFirewallPolicyTunnelInspectionRule(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  action: Optional[pulumi.Input[str]] = None,
-                 condition: Optional[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyTunnelInspectionRuleConditionArgs']]] = None,
+                 condition: Optional[pulumi.Input[Union['NetworkFirewallPolicyTunnelInspectionRuleConditionArgs', 'NetworkFirewallPolicyTunnelInspectionRuleConditionArgsDict']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
-                 position: Optional[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyTunnelInspectionRulePositionArgs']]] = None,
-                 profile: Optional[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyTunnelInspectionRuleProfileArgs']]] = None,
+                 position: Optional[pulumi.Input[Union['NetworkFirewallPolicyTunnelInspectionRulePositionArgs', 'NetworkFirewallPolicyTunnelInspectionRulePositionArgsDict']]] = None,
+                 profile: Optional[pulumi.Input[Union['NetworkFirewallPolicyTunnelInspectionRuleProfileArgs', 'NetworkFirewallPolicyTunnelInspectionRuleProfileArgsDict']]] = None,
                  protocol: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -335,21 +335,21 @@ class NetworkFirewallPolicyTunnelInspectionRule(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_network_firewall_policy_tunnel_inspection_rule = oci.network_firewall.NetworkFirewallPolicyTunnelInspectionRule("test_network_firewall_policy_tunnel_inspection_rule",
-            condition=oci.network_firewall.NetworkFirewallPolicyTunnelInspectionRuleConditionArgs(
-                destination_addresses=network_firewall_policy_tunnel_inspection_rule_condition_destination_address,
-                source_addresses=network_firewall_policy_tunnel_inspection_rule_condition_source_address,
-            ),
+            condition={
+                "destination_addresses": network_firewall_policy_tunnel_inspection_rule_condition_destination_address,
+                "source_addresses": network_firewall_policy_tunnel_inspection_rule_condition_source_address,
+            },
             name=network_firewall_policy_tunnel_inspection_rule_name,
             network_firewall_policy_id=test_network_firewall_policy["id"],
             protocol=network_firewall_policy_tunnel_inspection_rule_protocol,
             action=network_firewall_policy_tunnel_inspection_rule_action,
-            position=oci.network_firewall.NetworkFirewallPolicyTunnelInspectionRulePositionArgs(
-                after_rule=network_firewall_policy_tunnel_inspection_rule_position_after_rule,
-                before_rule=network_firewall_policy_tunnel_inspection_rule_position_before_rule,
-            ),
-            profile=oci.network_firewall.NetworkFirewallPolicyTunnelInspectionRuleProfileArgs(
-                must_return_traffic_to_source=network_firewall_policy_tunnel_inspection_rule_profile_must_return_traffic_to_source,
-            ))
+            position={
+                "after_rule": network_firewall_policy_tunnel_inspection_rule_position_after_rule,
+                "before_rule": network_firewall_policy_tunnel_inspection_rule_position_before_rule,
+            },
+            profile={
+                "must_return_traffic_to_source": network_firewall_policy_tunnel_inspection_rule_profile_must_return_traffic_to_source,
+            })
         ```
 
         ## Import
@@ -365,11 +365,11 @@ class NetworkFirewallPolicyTunnelInspectionRule(pulumi.CustomResource):
         :param pulumi.Input[str] action: (Updatable) Types of Inspect Action on the traffic flow.
                * INSPECT - Inspect the traffic.
                * INSPECT_AND_CAPTURE_LOG - Inspect and capture logs for the traffic.
-        :param pulumi.Input[pulumi.InputType['NetworkFirewallPolicyTunnelInspectionRuleConditionArgs']] condition: (Updatable) Criteria to evaluate against incoming network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
+        :param pulumi.Input[Union['NetworkFirewallPolicyTunnelInspectionRuleConditionArgs', 'NetworkFirewallPolicyTunnelInspectionRuleConditionArgsDict']] condition: (Updatable) Criteria to evaluate against incoming network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
         :param pulumi.Input[str] name: Name for the Tunnel Inspection Rule, must be unique within the policy.
         :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
-        :param pulumi.Input[pulumi.InputType['NetworkFirewallPolicyTunnelInspectionRulePositionArgs']] position: (Updatable) An object which defines the position of the rule.
-        :param pulumi.Input[pulumi.InputType['NetworkFirewallPolicyTunnelInspectionRuleProfileArgs']] profile: (Updatable) Vxlan Inspect profile used in Vxlan Tunnel Inspection Rules.
+        :param pulumi.Input[Union['NetworkFirewallPolicyTunnelInspectionRulePositionArgs', 'NetworkFirewallPolicyTunnelInspectionRulePositionArgsDict']] position: (Updatable) An object which defines the position of the rule.
+        :param pulumi.Input[Union['NetworkFirewallPolicyTunnelInspectionRuleProfileArgs', 'NetworkFirewallPolicyTunnelInspectionRuleProfileArgsDict']] profile: (Updatable) Vxlan Inspect profile used in Vxlan Tunnel Inspection Rules.
         :param pulumi.Input[str] protocol: (Updatable) Types of Tunnel Inspection Protocol to be applied on the traffic.
                * VXLAN - VXLAN Tunnel Inspection Protocol will be applied on the traffic.
                
@@ -395,21 +395,21 @@ class NetworkFirewallPolicyTunnelInspectionRule(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_network_firewall_policy_tunnel_inspection_rule = oci.network_firewall.NetworkFirewallPolicyTunnelInspectionRule("test_network_firewall_policy_tunnel_inspection_rule",
-            condition=oci.network_firewall.NetworkFirewallPolicyTunnelInspectionRuleConditionArgs(
-                destination_addresses=network_firewall_policy_tunnel_inspection_rule_condition_destination_address,
-                source_addresses=network_firewall_policy_tunnel_inspection_rule_condition_source_address,
-            ),
+            condition={
+                "destination_addresses": network_firewall_policy_tunnel_inspection_rule_condition_destination_address,
+                "source_addresses": network_firewall_policy_tunnel_inspection_rule_condition_source_address,
+            },
             name=network_firewall_policy_tunnel_inspection_rule_name,
             network_firewall_policy_id=test_network_firewall_policy["id"],
             protocol=network_firewall_policy_tunnel_inspection_rule_protocol,
             action=network_firewall_policy_tunnel_inspection_rule_action,
-            position=oci.network_firewall.NetworkFirewallPolicyTunnelInspectionRulePositionArgs(
-                after_rule=network_firewall_policy_tunnel_inspection_rule_position_after_rule,
-                before_rule=network_firewall_policy_tunnel_inspection_rule_position_before_rule,
-            ),
-            profile=oci.network_firewall.NetworkFirewallPolicyTunnelInspectionRuleProfileArgs(
-                must_return_traffic_to_source=network_firewall_policy_tunnel_inspection_rule_profile_must_return_traffic_to_source,
-            ))
+            position={
+                "after_rule": network_firewall_policy_tunnel_inspection_rule_position_after_rule,
+                "before_rule": network_firewall_policy_tunnel_inspection_rule_position_before_rule,
+            },
+            profile={
+                "must_return_traffic_to_source": network_firewall_policy_tunnel_inspection_rule_profile_must_return_traffic_to_source,
+            })
         ```
 
         ## Import
@@ -436,11 +436,11 @@ class NetworkFirewallPolicyTunnelInspectionRule(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  action: Optional[pulumi.Input[str]] = None,
-                 condition: Optional[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyTunnelInspectionRuleConditionArgs']]] = None,
+                 condition: Optional[pulumi.Input[Union['NetworkFirewallPolicyTunnelInspectionRuleConditionArgs', 'NetworkFirewallPolicyTunnelInspectionRuleConditionArgsDict']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
-                 position: Optional[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyTunnelInspectionRulePositionArgs']]] = None,
-                 profile: Optional[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyTunnelInspectionRuleProfileArgs']]] = None,
+                 position: Optional[pulumi.Input[Union['NetworkFirewallPolicyTunnelInspectionRulePositionArgs', 'NetworkFirewallPolicyTunnelInspectionRulePositionArgsDict']]] = None,
+                 profile: Optional[pulumi.Input[Union['NetworkFirewallPolicyTunnelInspectionRuleProfileArgs', 'NetworkFirewallPolicyTunnelInspectionRuleProfileArgsDict']]] = None,
                  protocol: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -477,13 +477,13 @@ class NetworkFirewallPolicyTunnelInspectionRule(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             action: Optional[pulumi.Input[str]] = None,
-            condition: Optional[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyTunnelInspectionRuleConditionArgs']]] = None,
+            condition: Optional[pulumi.Input[Union['NetworkFirewallPolicyTunnelInspectionRuleConditionArgs', 'NetworkFirewallPolicyTunnelInspectionRuleConditionArgsDict']]] = None,
             name: Optional[pulumi.Input[str]] = None,
             network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
             parent_resource_id: Optional[pulumi.Input[str]] = None,
-            position: Optional[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyTunnelInspectionRulePositionArgs']]] = None,
+            position: Optional[pulumi.Input[Union['NetworkFirewallPolicyTunnelInspectionRulePositionArgs', 'NetworkFirewallPolicyTunnelInspectionRulePositionArgsDict']]] = None,
             priority_order: Optional[pulumi.Input[str]] = None,
-            profile: Optional[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyTunnelInspectionRuleProfileArgs']]] = None,
+            profile: Optional[pulumi.Input[Union['NetworkFirewallPolicyTunnelInspectionRuleProfileArgs', 'NetworkFirewallPolicyTunnelInspectionRuleProfileArgsDict']]] = None,
             protocol: Optional[pulumi.Input[str]] = None) -> 'NetworkFirewallPolicyTunnelInspectionRule':
         """
         Get an existing NetworkFirewallPolicyTunnelInspectionRule resource's state with the given name, id, and optional extra
@@ -495,13 +495,13 @@ class NetworkFirewallPolicyTunnelInspectionRule(pulumi.CustomResource):
         :param pulumi.Input[str] action: (Updatable) Types of Inspect Action on the traffic flow.
                * INSPECT - Inspect the traffic.
                * INSPECT_AND_CAPTURE_LOG - Inspect and capture logs for the traffic.
-        :param pulumi.Input[pulumi.InputType['NetworkFirewallPolicyTunnelInspectionRuleConditionArgs']] condition: (Updatable) Criteria to evaluate against incoming network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
+        :param pulumi.Input[Union['NetworkFirewallPolicyTunnelInspectionRuleConditionArgs', 'NetworkFirewallPolicyTunnelInspectionRuleConditionArgsDict']] condition: (Updatable) Criteria to evaluate against incoming network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
         :param pulumi.Input[str] name: Name for the Tunnel Inspection Rule, must be unique within the policy.
         :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[str] parent_resource_id: OCID of the Network Firewall Policy this Tunnel Inspection Rule belongs to.
-        :param pulumi.Input[pulumi.InputType['NetworkFirewallPolicyTunnelInspectionRulePositionArgs']] position: (Updatable) An object which defines the position of the rule.
+        :param pulumi.Input[Union['NetworkFirewallPolicyTunnelInspectionRulePositionArgs', 'NetworkFirewallPolicyTunnelInspectionRulePositionArgsDict']] position: (Updatable) An object which defines the position of the rule.
         :param pulumi.Input[str] priority_order: The priority order in which this rule should be evaluated
-        :param pulumi.Input[pulumi.InputType['NetworkFirewallPolicyTunnelInspectionRuleProfileArgs']] profile: (Updatable) Vxlan Inspect profile used in Vxlan Tunnel Inspection Rules.
+        :param pulumi.Input[Union['NetworkFirewallPolicyTunnelInspectionRuleProfileArgs', 'NetworkFirewallPolicyTunnelInspectionRuleProfileArgsDict']] profile: (Updatable) Vxlan Inspect profile used in Vxlan Tunnel Inspection Rules.
         :param pulumi.Input[str] protocol: (Updatable) Types of Tunnel Inspection Protocol to be applied on the traffic.
                * VXLAN - VXLAN Tunnel Inspection Protocol will be applied on the traffic.
                

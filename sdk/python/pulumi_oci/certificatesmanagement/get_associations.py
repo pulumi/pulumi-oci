@@ -141,7 +141,7 @@ def get_associations(associated_resource_id: Optional[str] = None,
                      association_type: Optional[str] = None,
                      certificates_resource_id: Optional[str] = None,
                      compartment_id: Optional[str] = None,
-                     filters: Optional[Sequence[pulumi.InputType['GetAssociationsFilterArgs']]] = None,
+                     filters: Optional[Sequence[Union['GetAssociationsFilterArgs', 'GetAssociationsFilterArgsDict']]] = None,
                      name: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAssociationsResult:
     """
@@ -201,7 +201,7 @@ def get_associations_output(associated_resource_id: Optional[pulumi.Input[Option
                             association_type: Optional[pulumi.Input[Optional[str]]] = None,
                             certificates_resource_id: Optional[pulumi.Input[Optional[str]]] = None,
                             compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
-                            filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAssociationsFilterArgs']]]]] = None,
+                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAssociationsFilterArgs', 'GetAssociationsFilterArgsDict']]]]] = None,
                             name: Optional[pulumi.Input[Optional[str]]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAssociationsResult]:
     """

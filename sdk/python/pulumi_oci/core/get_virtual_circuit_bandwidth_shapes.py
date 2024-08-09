@@ -76,7 +76,7 @@ class AwaitableGetVirtualCircuitBandwidthShapesResult(GetVirtualCircuitBandwidth
             virtual_circuit_bandwidth_shapes=self.virtual_circuit_bandwidth_shapes)
 
 
-def get_virtual_circuit_bandwidth_shapes(filters: Optional[Sequence[pulumi.InputType['GetVirtualCircuitBandwidthShapesFilterArgs']]] = None,
+def get_virtual_circuit_bandwidth_shapes(filters: Optional[Sequence[Union['GetVirtualCircuitBandwidthShapesFilterArgs', 'GetVirtualCircuitBandwidthShapesFilterArgsDict']]] = None,
                                          provider_service_id: Optional[str] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVirtualCircuitBandwidthShapesResult:
     """
@@ -113,7 +113,7 @@ def get_virtual_circuit_bandwidth_shapes(filters: Optional[Sequence[pulumi.Input
 
 
 @_utilities.lift_output_func(get_virtual_circuit_bandwidth_shapes)
-def get_virtual_circuit_bandwidth_shapes_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetVirtualCircuitBandwidthShapesFilterArgs']]]]] = None,
+def get_virtual_circuit_bandwidth_shapes_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVirtualCircuitBandwidthShapesFilterArgs', 'GetVirtualCircuitBandwidthShapesFilterArgsDict']]]]] = None,
                                                 provider_service_id: Optional[pulumi.Input[str]] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVirtualCircuitBandwidthShapesResult]:
     """

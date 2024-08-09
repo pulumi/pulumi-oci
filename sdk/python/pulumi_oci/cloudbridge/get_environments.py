@@ -115,7 +115,7 @@ class AwaitableGetEnvironmentsResult(GetEnvironmentsResult):
 def get_environments(compartment_id: Optional[str] = None,
                      display_name: Optional[str] = None,
                      environment_id: Optional[str] = None,
-                     filters: Optional[Sequence[pulumi.InputType['GetEnvironmentsFilterArgs']]] = None,
+                     filters: Optional[Sequence[Union['GetEnvironmentsFilterArgs', 'GetEnvironmentsFilterArgsDict']]] = None,
                      state: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetEnvironmentsResult:
     """
@@ -164,7 +164,7 @@ def get_environments(compartment_id: Optional[str] = None,
 def get_environments_output(compartment_id: Optional[pulumi.Input[str]] = None,
                             display_name: Optional[pulumi.Input[Optional[str]]] = None,
                             environment_id: Optional[pulumi.Input[Optional[str]]] = None,
-                            filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetEnvironmentsFilterArgs']]]]] = None,
+                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetEnvironmentsFilterArgs', 'GetEnvironmentsFilterArgsDict']]]]] = None,
                             state: Optional[pulumi.Input[Optional[str]]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEnvironmentsResult]:
     """

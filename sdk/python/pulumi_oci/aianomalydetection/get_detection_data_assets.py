@@ -117,7 +117,7 @@ class AwaitableGetDetectionDataAssetsResult(GetDetectionDataAssetsResult):
 
 def get_detection_data_assets(compartment_id: Optional[str] = None,
                               display_name: Optional[str] = None,
-                              filters: Optional[Sequence[pulumi.InputType['GetDetectionDataAssetsFilterArgs']]] = None,
+                              filters: Optional[Sequence[Union['GetDetectionDataAssetsFilterArgs', 'GetDetectionDataAssetsFilterArgsDict']]] = None,
                               project_id: Optional[str] = None,
                               state: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDetectionDataAssetsResult:
@@ -166,7 +166,7 @@ def get_detection_data_assets(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_detection_data_assets)
 def get_detection_data_assets_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                      display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                     filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDetectionDataAssetsFilterArgs']]]]] = None,
+                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDetectionDataAssetsFilterArgs', 'GetDetectionDataAssetsFilterArgsDict']]]]] = None,
                                      project_id: Optional[pulumi.Input[Optional[str]]] = None,
                                      state: Optional[pulumi.Input[Optional[str]]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDetectionDataAssetsResult]:

@@ -664,9 +664,9 @@ class Model(pulumi.CustomResource):
                  model_type: Optional[pulumi.Input[str]] = None,
                  model_version: Optional[pulumi.Input[str]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
-                 testing_dataset: Optional[pulumi.Input[pulumi.InputType['ModelTestingDatasetArgs']]] = None,
-                 training_dataset: Optional[pulumi.Input[pulumi.InputType['ModelTrainingDatasetArgs']]] = None,
-                 validation_dataset: Optional[pulumi.Input[pulumi.InputType['ModelValidationDatasetArgs']]] = None,
+                 testing_dataset: Optional[pulumi.Input[Union['ModelTestingDatasetArgs', 'ModelTestingDatasetArgsDict']]] = None,
+                 training_dataset: Optional[pulumi.Input[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict']]] = None,
+                 validation_dataset: Optional[pulumi.Input[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Model resource in Oracle Cloud Infrastructure Ai Vision service.
@@ -683,13 +683,13 @@ class Model(pulumi.CustomResource):
             compartment_id=compartment_id,
             model_type=model_model_type,
             project_id=test_project["id"],
-            training_dataset=oci.ai_vision.ModelTrainingDatasetArgs(
-                dataset_type=model_training_dataset_dataset_type,
-                bucket=model_training_dataset_bucket,
-                dataset_id=test_dataset["id"],
-                namespace_name=model_training_dataset_namespace,
-                object=model_training_dataset_object,
-            ),
+            training_dataset={
+                "dataset_type": model_training_dataset_dataset_type,
+                "bucket": model_training_dataset_bucket,
+                "dataset_id": test_dataset["id"],
+                "namespace_name": model_training_dataset_namespace,
+                "object": model_training_dataset_object,
+            },
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -701,20 +701,20 @@ class Model(pulumi.CustomResource):
             is_quick_mode=model_is_quick_mode,
             max_training_duration_in_hours=model_max_training_duration_in_hours,
             model_version=model_model_version,
-            testing_dataset=oci.ai_vision.ModelTestingDatasetArgs(
-                dataset_type=model_testing_dataset_dataset_type,
-                bucket=model_testing_dataset_bucket,
-                dataset_id=test_dataset["id"],
-                namespace_name=model_testing_dataset_namespace,
-                object=model_testing_dataset_object,
-            ),
-            validation_dataset=oci.ai_vision.ModelValidationDatasetArgs(
-                dataset_type=model_validation_dataset_dataset_type,
-                bucket=model_validation_dataset_bucket,
-                dataset_id=test_dataset["id"],
-                namespace_name=model_validation_dataset_namespace,
-                object=model_validation_dataset_object,
-            ))
+            testing_dataset={
+                "dataset_type": model_testing_dataset_dataset_type,
+                "bucket": model_testing_dataset_bucket,
+                "dataset_id": test_dataset["id"],
+                "namespace_name": model_testing_dataset_namespace,
+                "object": model_testing_dataset_object,
+            },
+            validation_dataset={
+                "dataset_type": model_validation_dataset_dataset_type,
+                "bucket": model_validation_dataset_bucket,
+                "dataset_id": test_dataset["id"],
+                "namespace_name": model_validation_dataset_namespace,
+                "object": model_validation_dataset_object,
+            })
         ```
 
         ## Import
@@ -737,9 +737,9 @@ class Model(pulumi.CustomResource):
         :param pulumi.Input[str] model_type: The  type of the model.
         :param pulumi.Input[str] model_version: Model version.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
-        :param pulumi.Input[pulumi.InputType['ModelTestingDatasetArgs']] testing_dataset: The base entity for a Dataset, which is the input for Model creation.
-        :param pulumi.Input[pulumi.InputType['ModelTrainingDatasetArgs']] training_dataset: The base entity for a Dataset, which is the input for Model creation.
-        :param pulumi.Input[pulumi.InputType['ModelValidationDatasetArgs']] validation_dataset: The base entity for a Dataset, which is the input for Model creation.
+        :param pulumi.Input[Union['ModelTestingDatasetArgs', 'ModelTestingDatasetArgsDict']] testing_dataset: The base entity for a Dataset, which is the input for Model creation.
+        :param pulumi.Input[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict']] training_dataset: The base entity for a Dataset, which is the input for Model creation.
+        :param pulumi.Input[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict']] validation_dataset: The base entity for a Dataset, which is the input for Model creation.
         """
         ...
     @overload
@@ -762,13 +762,13 @@ class Model(pulumi.CustomResource):
             compartment_id=compartment_id,
             model_type=model_model_type,
             project_id=test_project["id"],
-            training_dataset=oci.ai_vision.ModelTrainingDatasetArgs(
-                dataset_type=model_training_dataset_dataset_type,
-                bucket=model_training_dataset_bucket,
-                dataset_id=test_dataset["id"],
-                namespace_name=model_training_dataset_namespace,
-                object=model_training_dataset_object,
-            ),
+            training_dataset={
+                "dataset_type": model_training_dataset_dataset_type,
+                "bucket": model_training_dataset_bucket,
+                "dataset_id": test_dataset["id"],
+                "namespace_name": model_training_dataset_namespace,
+                "object": model_training_dataset_object,
+            },
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -780,20 +780,20 @@ class Model(pulumi.CustomResource):
             is_quick_mode=model_is_quick_mode,
             max_training_duration_in_hours=model_max_training_duration_in_hours,
             model_version=model_model_version,
-            testing_dataset=oci.ai_vision.ModelTestingDatasetArgs(
-                dataset_type=model_testing_dataset_dataset_type,
-                bucket=model_testing_dataset_bucket,
-                dataset_id=test_dataset["id"],
-                namespace_name=model_testing_dataset_namespace,
-                object=model_testing_dataset_object,
-            ),
-            validation_dataset=oci.ai_vision.ModelValidationDatasetArgs(
-                dataset_type=model_validation_dataset_dataset_type,
-                bucket=model_validation_dataset_bucket,
-                dataset_id=test_dataset["id"],
-                namespace_name=model_validation_dataset_namespace,
-                object=model_validation_dataset_object,
-            ))
+            testing_dataset={
+                "dataset_type": model_testing_dataset_dataset_type,
+                "bucket": model_testing_dataset_bucket,
+                "dataset_id": test_dataset["id"],
+                "namespace_name": model_testing_dataset_namespace,
+                "object": model_testing_dataset_object,
+            },
+            validation_dataset={
+                "dataset_type": model_validation_dataset_dataset_type,
+                "bucket": model_validation_dataset_bucket,
+                "dataset_id": test_dataset["id"],
+                "namespace_name": model_validation_dataset_namespace,
+                "object": model_validation_dataset_object,
+            })
         ```
 
         ## Import
@@ -829,9 +829,9 @@ class Model(pulumi.CustomResource):
                  model_type: Optional[pulumi.Input[str]] = None,
                  model_version: Optional[pulumi.Input[str]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
-                 testing_dataset: Optional[pulumi.Input[pulumi.InputType['ModelTestingDatasetArgs']]] = None,
-                 training_dataset: Optional[pulumi.Input[pulumi.InputType['ModelTrainingDatasetArgs']]] = None,
-                 validation_dataset: Optional[pulumi.Input[pulumi.InputType['ModelValidationDatasetArgs']]] = None,
+                 testing_dataset: Optional[pulumi.Input[Union['ModelTestingDatasetArgs', 'ModelTestingDatasetArgsDict']]] = None,
+                 training_dataset: Optional[pulumi.Input[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict']]] = None,
+                 validation_dataset: Optional[pulumi.Input[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -904,13 +904,13 @@ class Model(pulumi.CustomResource):
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             test_image_count: Optional[pulumi.Input[int]] = None,
-            testing_dataset: Optional[pulumi.Input[pulumi.InputType['ModelTestingDatasetArgs']]] = None,
+            testing_dataset: Optional[pulumi.Input[Union['ModelTestingDatasetArgs', 'ModelTestingDatasetArgsDict']]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
             total_image_count: Optional[pulumi.Input[int]] = None,
             trained_duration_in_hours: Optional[pulumi.Input[float]] = None,
-            training_dataset: Optional[pulumi.Input[pulumi.InputType['ModelTrainingDatasetArgs']]] = None,
-            validation_dataset: Optional[pulumi.Input[pulumi.InputType['ModelValidationDatasetArgs']]] = None) -> 'Model':
+            training_dataset: Optional[pulumi.Input[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict']]] = None,
+            validation_dataset: Optional[pulumi.Input[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict']]] = None) -> 'Model':
         """
         Get an existing Model resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -937,13 +937,13 @@ class Model(pulumi.CustomResource):
         :param pulumi.Input[str] state: The current state of the Model.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[int] test_image_count: Total number of testing Images
-        :param pulumi.Input[pulumi.InputType['ModelTestingDatasetArgs']] testing_dataset: The base entity for a Dataset, which is the input for Model creation.
+        :param pulumi.Input[Union['ModelTestingDatasetArgs', 'ModelTestingDatasetArgsDict']] testing_dataset: The base entity for a Dataset, which is the input for Model creation.
         :param pulumi.Input[str] time_created: The time the Model was created. An RFC3339 formatted datetime string
         :param pulumi.Input[str] time_updated: The time the Model was updated. An RFC3339 formatted datetime string
         :param pulumi.Input[int] total_image_count: Total number of training Images
         :param pulumi.Input[float] trained_duration_in_hours: Total hours actually used for training
-        :param pulumi.Input[pulumi.InputType['ModelTrainingDatasetArgs']] training_dataset: The base entity for a Dataset, which is the input for Model creation.
-        :param pulumi.Input[pulumi.InputType['ModelValidationDatasetArgs']] validation_dataset: The base entity for a Dataset, which is the input for Model creation.
+        :param pulumi.Input[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict']] training_dataset: The base entity for a Dataset, which is the input for Model creation.
+        :param pulumi.Input[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict']] validation_dataset: The base entity for a Dataset, which is the input for Model creation.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

@@ -125,7 +125,7 @@ class AwaitableGetAddressListsResult(GetAddressListsResult):
 
 
 def get_address_lists(compartment_id: Optional[str] = None,
-                      filters: Optional[Sequence[pulumi.InputType['GetAddressListsFilterArgs']]] = None,
+                      filters: Optional[Sequence[Union['GetAddressListsFilterArgs', 'GetAddressListsFilterArgsDict']]] = None,
                       ids: Optional[Sequence[str]] = None,
                       names: Optional[Sequence[str]] = None,
                       states: Optional[Sequence[str]] = None,
@@ -184,7 +184,7 @@ def get_address_lists(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_address_lists)
 def get_address_lists_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                             filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAddressListsFilterArgs']]]]] = None,
+                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAddressListsFilterArgs', 'GetAddressListsFilterArgsDict']]]]] = None,
                              ids: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                              names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                              states: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,

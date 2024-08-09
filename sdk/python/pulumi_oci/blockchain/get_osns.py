@@ -87,7 +87,7 @@ class AwaitableGetOsnsResult(GetOsnsResult):
 
 def get_osns(blockchain_platform_id: Optional[str] = None,
              display_name: Optional[str] = None,
-             filters: Optional[Sequence[pulumi.InputType['GetOsnsFilterArgs']]] = None,
+             filters: Optional[Sequence[Union['GetOsnsFilterArgs', 'GetOsnsFilterArgsDict']]] = None,
              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOsnsResult:
     """
     This data source provides the list of Osns in Oracle Cloud Infrastructure Blockchain service.
@@ -126,7 +126,7 @@ def get_osns(blockchain_platform_id: Optional[str] = None,
 @_utilities.lift_output_func(get_osns)
 def get_osns_output(blockchain_platform_id: Optional[pulumi.Input[str]] = None,
                     display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                    filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetOsnsFilterArgs']]]]] = None,
+                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOsnsFilterArgs', 'GetOsnsFilterArgsDict']]]]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOsnsResult]:
     """
     This data source provides the list of Osns in Oracle Cloud Infrastructure Blockchain service.

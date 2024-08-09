@@ -125,7 +125,7 @@ def get_management_agent_install_keys(access_level: Optional[str] = None,
                                       compartment_id: Optional[str] = None,
                                       compartment_id_in_subtree: Optional[bool] = None,
                                       display_name: Optional[str] = None,
-                                      filters: Optional[Sequence[pulumi.InputType['GetManagementAgentInstallKeysFilterArgs']]] = None,
+                                      filters: Optional[Sequence[Union['GetManagementAgentInstallKeysFilterArgs', 'GetManagementAgentInstallKeysFilterArgsDict']]] = None,
                                       state: Optional[str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagementAgentInstallKeysResult:
     """
@@ -179,7 +179,7 @@ def get_management_agent_install_keys_output(access_level: Optional[pulumi.Input
                                              compartment_id: Optional[pulumi.Input[str]] = None,
                                              compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                                              display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                             filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetManagementAgentInstallKeysFilterArgs']]]]] = None,
+                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagementAgentInstallKeysFilterArgs', 'GetManagementAgentInstallKeysFilterArgsDict']]]]] = None,
                                              state: Optional[pulumi.Input[Optional[str]]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagementAgentInstallKeysResult]:
     """

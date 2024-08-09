@@ -295,7 +295,7 @@ class Export(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 export_options: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExportExportOptionArgs']]]]] = None,
+                 export_options: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExportExportOptionArgs', 'ExportExportOptionArgsDict']]]]] = None,
                  export_set_id: Optional[pulumi.Input[str]] = None,
                  file_system_id: Optional[pulumi.Input[str]] = None,
                  is_idmap_groups_for_sys_auth: Optional[pulumi.Input[bool]] = None,
@@ -317,16 +317,16 @@ class Export(pulumi.CustomResource):
             export_set_id=test_export_set["id"],
             file_system_id=test_file_system["id"],
             path=export_path,
-            export_options=[oci.file_storage.ExportExportOptionArgs(
-                source=export_export_options_source,
-                access=export_export_options_access,
-                allowed_auths=export_export_options_allowed_auth,
-                anonymous_gid=export_export_options_anonymous_gid,
-                anonymous_uid=export_export_options_anonymous_uid,
-                identity_squash=export_export_options_identity_squash,
-                is_anonymous_access_allowed=export_export_options_is_anonymous_access_allowed,
-                require_privileged_source_port=export_export_options_require_privileged_source_port,
-            )],
+            export_options=[{
+                "source": export_export_options_source,
+                "access": export_export_options_access,
+                "allowed_auths": export_export_options_allowed_auth,
+                "anonymous_gid": export_export_options_anonymous_gid,
+                "anonymous_uid": export_export_options_anonymous_uid,
+                "identity_squash": export_export_options_identity_squash,
+                "is_anonymous_access_allowed": export_export_options_is_anonymous_access_allowed,
+                "require_privileged_source_port": export_export_options_require_privileged_source_port,
+            }],
             is_idmap_groups_for_sys_auth=export_is_idmap_groups_for_sys_auth)
         ```
 
@@ -340,7 +340,7 @@ class Export(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExportExportOptionArgs']]]] export_options: (Updatable) Export options for the new export. For exports of mount targets with IPv4 address, if client options are left unspecified, client options would default to:
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExportExportOptionArgs', 'ExportExportOptionArgsDict']]]] export_options: (Updatable) Export options for the new export. For exports of mount targets with IPv4 address, if client options are left unspecified, client options would default to:
                
                [ { "source" : "0.0.0.0/0", "requirePrivilegedSourcePort" : false, "access": "READ_WRITE", "identitySquash": "NONE", "anonymousUid": 65534, "anonymousGid": 65534, "isAnonymousAccessAllowed": false, "allowedAuth": ["SYS"] } ]
                
@@ -386,16 +386,16 @@ class Export(pulumi.CustomResource):
             export_set_id=test_export_set["id"],
             file_system_id=test_file_system["id"],
             path=export_path,
-            export_options=[oci.file_storage.ExportExportOptionArgs(
-                source=export_export_options_source,
-                access=export_export_options_access,
-                allowed_auths=export_export_options_allowed_auth,
-                anonymous_gid=export_export_options_anonymous_gid,
-                anonymous_uid=export_export_options_anonymous_uid,
-                identity_squash=export_export_options_identity_squash,
-                is_anonymous_access_allowed=export_export_options_is_anonymous_access_allowed,
-                require_privileged_source_port=export_export_options_require_privileged_source_port,
-            )],
+            export_options=[{
+                "source": export_export_options_source,
+                "access": export_export_options_access,
+                "allowed_auths": export_export_options_allowed_auth,
+                "anonymous_gid": export_export_options_anonymous_gid,
+                "anonymous_uid": export_export_options_anonymous_uid,
+                "identity_squash": export_export_options_identity_squash,
+                "is_anonymous_access_allowed": export_export_options_is_anonymous_access_allowed,
+                "require_privileged_source_port": export_export_options_require_privileged_source_port,
+            }],
             is_idmap_groups_for_sys_auth=export_is_idmap_groups_for_sys_auth)
         ```
 
@@ -422,7 +422,7 @@ class Export(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 export_options: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExportExportOptionArgs']]]]] = None,
+                 export_options: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExportExportOptionArgs', 'ExportExportOptionArgsDict']]]]] = None,
                  export_set_id: Optional[pulumi.Input[str]] = None,
                  file_system_id: Optional[pulumi.Input[str]] = None,
                  is_idmap_groups_for_sys_auth: Optional[pulumi.Input[bool]] = None,
@@ -459,7 +459,7 @@ class Export(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            export_options: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExportExportOptionArgs']]]]] = None,
+            export_options: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExportExportOptionArgs', 'ExportExportOptionArgsDict']]]]] = None,
             export_set_id: Optional[pulumi.Input[str]] = None,
             file_system_id: Optional[pulumi.Input[str]] = None,
             is_idmap_groups_for_sys_auth: Optional[pulumi.Input[bool]] = None,
@@ -473,7 +473,7 @@ class Export(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExportExportOptionArgs']]]] export_options: (Updatable) Export options for the new export. For exports of mount targets with IPv4 address, if client options are left unspecified, client options would default to:
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExportExportOptionArgs', 'ExportExportOptionArgsDict']]]] export_options: (Updatable) Export options for the new export. For exports of mount targets with IPv4 address, if client options are left unspecified, client options would default to:
                
                [ { "source" : "0.0.0.0/0", "requirePrivilegedSourcePort" : false, "access": "READ_WRITE", "identitySquash": "NONE", "anonymousUid": 65534, "anonymousGid": 65534, "isAnonymousAccessAllowed": false, "allowedAuth": ["SYS"] } ]
                

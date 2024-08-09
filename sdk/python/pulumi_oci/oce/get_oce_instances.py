@@ -114,7 +114,7 @@ class AwaitableGetOceInstancesResult(GetOceInstancesResult):
 
 def get_oce_instances(compartment_id: Optional[str] = None,
                       display_name: Optional[str] = None,
-                      filters: Optional[Sequence[pulumi.InputType['GetOceInstancesFilterArgs']]] = None,
+                      filters: Optional[Sequence[Union['GetOceInstancesFilterArgs', 'GetOceInstancesFilterArgsDict']]] = None,
                       state: Optional[str] = None,
                       tenancy_id: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOceInstancesResult:
@@ -163,7 +163,7 @@ def get_oce_instances(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_oce_instances)
 def get_oce_instances_output(compartment_id: Optional[pulumi.Input[str]] = None,
                              display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                             filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetOceInstancesFilterArgs']]]]] = None,
+                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOceInstancesFilterArgs', 'GetOceInstancesFilterArgsDict']]]]] = None,
                              state: Optional[pulumi.Input[Optional[str]]] = None,
                              tenancy_id: Optional[pulumi.Input[Optional[str]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOceInstancesResult]:

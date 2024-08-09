@@ -100,7 +100,7 @@ class AwaitableGetExternalExadataStorageServersResult(GetExternalExadataStorageS
 def get_external_exadata_storage_servers(compartment_id: Optional[str] = None,
                                          display_name: Optional[str] = None,
                                          external_exadata_infrastructure_id: Optional[str] = None,
-                                         filters: Optional[Sequence[pulumi.InputType['GetExternalExadataStorageServersFilterArgs']]] = None,
+                                         filters: Optional[Sequence[Union['GetExternalExadataStorageServersFilterArgs', 'GetExternalExadataStorageServersFilterArgsDict']]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalExadataStorageServersResult:
     """
     This data source provides the list of External Exadata Storage Servers in Oracle Cloud Infrastructure Database Management service.
@@ -144,7 +144,7 @@ def get_external_exadata_storage_servers(compartment_id: Optional[str] = None,
 def get_external_exadata_storage_servers_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                                 display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                                 external_exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
-                                                filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetExternalExadataStorageServersFilterArgs']]]]] = None,
+                                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExternalExadataStorageServersFilterArgs', 'GetExternalExadataStorageServersFilterArgsDict']]]]] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalExadataStorageServersResult]:
     """
     This data source provides the list of External Exadata Storage Servers in Oracle Cloud Infrastructure Database Management service.

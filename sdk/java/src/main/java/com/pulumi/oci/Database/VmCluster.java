@@ -507,7 +507,7 @@ public class VmCluster extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public VmCluster(String name) {
+    public VmCluster(java.lang.String name) {
         this(name, VmClusterArgs.Empty);
     }
     /**
@@ -515,7 +515,7 @@ public class VmCluster extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public VmCluster(String name, VmClusterArgs args) {
+    public VmCluster(java.lang.String name, VmClusterArgs args) {
         this(name, args, null);
     }
     /**
@@ -524,12 +524,12 @@ public class VmCluster extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public VmCluster(String name, VmClusterArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/vmCluster:VmCluster", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public VmCluster(java.lang.String name, VmClusterArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/vmCluster:VmCluster", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private VmCluster(String name, Output<String> id, @Nullable VmClusterState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/vmCluster:VmCluster", name, state, makeResourceOptions(options, id));
+    private VmCluster(java.lang.String name, Output<java.lang.String> id, @Nullable VmClusterState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/vmCluster:VmCluster", name, state, makeResourceOptions(options, id), false);
     }
 
     private static VmClusterArgs makeArgs(VmClusterArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -539,7 +539,7 @@ public class VmCluster extends com.pulumi.resources.CustomResource {
         return args == null ? VmClusterArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -555,7 +555,7 @@ public class VmCluster extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static VmCluster get(String name, Output<String> id, @Nullable VmClusterState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static VmCluster get(java.lang.String name, Output<java.lang.String> id, @Nullable VmClusterState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new VmCluster(name, id, state, options);
     }
 }

@@ -106,7 +106,7 @@ class AwaitableGetIpsecConnectionsResult(GetIpsecConnectionsResult):
 def get_ipsec_connections(compartment_id: Optional[str] = None,
                           cpe_id: Optional[str] = None,
                           drg_id: Optional[str] = None,
-                          filters: Optional[Sequence[pulumi.InputType['GetIpsecConnectionsFilterArgs']]] = None,
+                          filters: Optional[Sequence[Union['GetIpsecConnectionsFilterArgs', 'GetIpsecConnectionsFilterArgsDict']]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIpsecConnectionsResult:
     """
     This data source provides the list of Ip Sec Connections in Oracle Cloud Infrastructure Core service.
@@ -151,7 +151,7 @@ def get_ipsec_connections(compartment_id: Optional[str] = None,
 def get_ipsec_connections_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                  cpe_id: Optional[pulumi.Input[Optional[str]]] = None,
                                  drg_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetIpsecConnectionsFilterArgs']]]]] = None,
+                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetIpsecConnectionsFilterArgs', 'GetIpsecConnectionsFilterArgsDict']]]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIpsecConnectionsResult]:
     """
     This data source provides the list of Ip Sec Connections in Oracle Cloud Infrastructure Core service.

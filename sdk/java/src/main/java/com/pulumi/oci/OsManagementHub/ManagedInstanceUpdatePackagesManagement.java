@@ -135,7 +135,7 @@ public class ManagedInstanceUpdatePackagesManagement extends com.pulumi.resource
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ManagedInstanceUpdatePackagesManagement(String name) {
+    public ManagedInstanceUpdatePackagesManagement(java.lang.String name) {
         this(name, ManagedInstanceUpdatePackagesManagementArgs.Empty);
     }
     /**
@@ -143,7 +143,7 @@ public class ManagedInstanceUpdatePackagesManagement extends com.pulumi.resource
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ManagedInstanceUpdatePackagesManagement(String name, ManagedInstanceUpdatePackagesManagementArgs args) {
+    public ManagedInstanceUpdatePackagesManagement(java.lang.String name, ManagedInstanceUpdatePackagesManagementArgs args) {
         this(name, args, null);
     }
     /**
@@ -152,12 +152,12 @@ public class ManagedInstanceUpdatePackagesManagement extends com.pulumi.resource
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ManagedInstanceUpdatePackagesManagement(String name, ManagedInstanceUpdatePackagesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:OsManagementHub/managedInstanceUpdatePackagesManagement:ManagedInstanceUpdatePackagesManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ManagedInstanceUpdatePackagesManagement(java.lang.String name, ManagedInstanceUpdatePackagesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:OsManagementHub/managedInstanceUpdatePackagesManagement:ManagedInstanceUpdatePackagesManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ManagedInstanceUpdatePackagesManagement(String name, Output<String> id, @Nullable ManagedInstanceUpdatePackagesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:OsManagementHub/managedInstanceUpdatePackagesManagement:ManagedInstanceUpdatePackagesManagement", name, state, makeResourceOptions(options, id));
+    private ManagedInstanceUpdatePackagesManagement(java.lang.String name, Output<java.lang.String> id, @Nullable ManagedInstanceUpdatePackagesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:OsManagementHub/managedInstanceUpdatePackagesManagement:ManagedInstanceUpdatePackagesManagement", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ManagedInstanceUpdatePackagesManagementArgs makeArgs(ManagedInstanceUpdatePackagesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -167,7 +167,7 @@ public class ManagedInstanceUpdatePackagesManagement extends com.pulumi.resource
         return args == null ? ManagedInstanceUpdatePackagesManagementArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -183,7 +183,7 @@ public class ManagedInstanceUpdatePackagesManagement extends com.pulumi.resource
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ManagedInstanceUpdatePackagesManagement get(String name, Output<String> id, @Nullable ManagedInstanceUpdatePackagesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ManagedInstanceUpdatePackagesManagement get(java.lang.String name, Output<java.lang.String> id, @Nullable ManagedInstanceUpdatePackagesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ManagedInstanceUpdatePackagesManagement(name, id, state, options);
     }
 }

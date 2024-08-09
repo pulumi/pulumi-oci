@@ -447,7 +447,7 @@ class Trigger(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 actions: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TriggerActionArgs']]]]] = None,
+                 actions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TriggerActionArgs', 'TriggerActionArgsDict']]]]] = None,
                  connection_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
@@ -469,19 +469,19 @@ class Trigger(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_trigger = oci.dev_ops.Trigger("test_trigger",
-            actions=[oci.dev_ops.TriggerActionArgs(
-                build_pipeline_id=test_build_pipeline["id"],
-                type=trigger_actions_type,
-                filter=oci.dev_ops.TriggerActionFilterArgs(
-                    trigger_source=trigger_actions_filter_trigger_source,
-                    events=trigger_actions_filter_events,
-                    include=oci.dev_ops.TriggerActionFilterIncludeArgs(
-                        base_ref=trigger_actions_filter_include_base_ref,
-                        head_ref=trigger_actions_filter_include_head_ref,
-                        repository_name=test_repository["name"],
-                    ),
-                ),
-            )],
+            actions=[{
+                "build_pipeline_id": test_build_pipeline["id"],
+                "type": trigger_actions_type,
+                "filter": {
+                    "trigger_source": trigger_actions_filter_trigger_source,
+                    "events": trigger_actions_filter_events,
+                    "include": {
+                        "base_ref": trigger_actions_filter_include_base_ref,
+                        "head_ref": trigger_actions_filter_include_head_ref,
+                        "repository_name": test_repository["name"],
+                    },
+                },
+            }],
             project_id=test_project["id"],
             trigger_source=trigger_trigger_source,
             defined_tags={
@@ -505,7 +505,7 @@ class Trigger(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TriggerActionArgs']]]] actions: (Updatable) The list of actions that are to be performed for this trigger.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['TriggerActionArgs', 'TriggerActionArgsDict']]]] actions: (Updatable) The list of actions that are to be performed for this trigger.
         :param pulumi.Input[str] connection_id: (Updatable) The OCID of the connection resource used to get details for triggered events.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Optional description about the trigger.
@@ -537,19 +537,19 @@ class Trigger(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_trigger = oci.dev_ops.Trigger("test_trigger",
-            actions=[oci.dev_ops.TriggerActionArgs(
-                build_pipeline_id=test_build_pipeline["id"],
-                type=trigger_actions_type,
-                filter=oci.dev_ops.TriggerActionFilterArgs(
-                    trigger_source=trigger_actions_filter_trigger_source,
-                    events=trigger_actions_filter_events,
-                    include=oci.dev_ops.TriggerActionFilterIncludeArgs(
-                        base_ref=trigger_actions_filter_include_base_ref,
-                        head_ref=trigger_actions_filter_include_head_ref,
-                        repository_name=test_repository["name"],
-                    ),
-                ),
-            )],
+            actions=[{
+                "build_pipeline_id": test_build_pipeline["id"],
+                "type": trigger_actions_type,
+                "filter": {
+                    "trigger_source": trigger_actions_filter_trigger_source,
+                    "events": trigger_actions_filter_events,
+                    "include": {
+                        "base_ref": trigger_actions_filter_include_base_ref,
+                        "head_ref": trigger_actions_filter_include_head_ref,
+                        "repository_name": test_repository["name"],
+                    },
+                },
+            }],
             project_id=test_project["id"],
             trigger_source=trigger_trigger_source,
             defined_tags={
@@ -586,7 +586,7 @@ class Trigger(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 actions: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TriggerActionArgs']]]]] = None,
+                 actions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TriggerActionArgs', 'TriggerActionArgsDict']]]]] = None,
                  connection_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
@@ -636,7 +636,7 @@ class Trigger(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            actions: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TriggerActionArgs']]]]] = None,
+            actions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TriggerActionArgs', 'TriggerActionArgsDict']]]]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             connection_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -659,7 +659,7 @@ class Trigger(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TriggerActionArgs']]]] actions: (Updatable) The list of actions that are to be performed for this trigger.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['TriggerActionArgs', 'TriggerActionArgsDict']]]] actions: (Updatable) The list of actions that are to be performed for this trigger.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment that contains the trigger.
         :param pulumi.Input[str] connection_id: (Updatable) The OCID of the connection resource used to get details for triggered events.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`

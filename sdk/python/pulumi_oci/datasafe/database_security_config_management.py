@@ -304,7 +304,7 @@ class DatabaseSecurityConfigManagement(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  refresh_trigger: Optional[pulumi.Input[bool]] = None,
-                 sql_firewall_config: Optional[pulumi.Input[pulumi.InputType['DatabaseSecurityConfigManagementSqlFirewallConfigArgs']]] = None,
+                 sql_firewall_config: Optional[pulumi.Input[Union['DatabaseSecurityConfigManagementSqlFirewallConfigArgs', 'DatabaseSecurityConfigManagementSqlFirewallConfigArgsDict']]] = None,
                  target_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -341,7 +341,7 @@ class DatabaseSecurityConfigManagement(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  refresh_trigger: Optional[pulumi.Input[bool]] = None,
-                 sql_firewall_config: Optional[pulumi.Input[pulumi.InputType['DatabaseSecurityConfigManagementSqlFirewallConfigArgs']]] = None,
+                 sql_firewall_config: Optional[pulumi.Input[Union['DatabaseSecurityConfigManagementSqlFirewallConfigArgs', 'DatabaseSecurityConfigManagementSqlFirewallConfigArgsDict']]] = None,
                  target_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -383,7 +383,7 @@ class DatabaseSecurityConfigManagement(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             refresh_trigger: Optional[pulumi.Input[bool]] = None,
-            sql_firewall_config: Optional[pulumi.Input[pulumi.InputType['DatabaseSecurityConfigManagementSqlFirewallConfigArgs']]] = None,
+            sql_firewall_config: Optional[pulumi.Input[Union['DatabaseSecurityConfigManagementSqlFirewallConfigArgs', 'DatabaseSecurityConfigManagementSqlFirewallConfigArgsDict']]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             target_id: Optional[pulumi.Input[str]] = None,

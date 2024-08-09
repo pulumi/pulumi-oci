@@ -771,7 +771,7 @@ public class DomainsOauth2clientCredential extends com.pulumi.resources.CustomRe
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DomainsOauth2clientCredential(String name) {
+    public DomainsOauth2clientCredential(java.lang.String name) {
         this(name, DomainsOauth2clientCredentialArgs.Empty);
     }
     /**
@@ -779,7 +779,7 @@ public class DomainsOauth2clientCredential extends com.pulumi.resources.CustomRe
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DomainsOauth2clientCredential(String name, DomainsOauth2clientCredentialArgs args) {
+    public DomainsOauth2clientCredential(java.lang.String name, DomainsOauth2clientCredentialArgs args) {
         this(name, args, null);
     }
     /**
@@ -788,12 +788,12 @@ public class DomainsOauth2clientCredential extends com.pulumi.resources.CustomRe
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DomainsOauth2clientCredential(String name, DomainsOauth2clientCredentialArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsOauth2clientCredential:DomainsOauth2clientCredential", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DomainsOauth2clientCredential(java.lang.String name, DomainsOauth2clientCredentialArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/domainsOauth2clientCredential:DomainsOauth2clientCredential", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DomainsOauth2clientCredential(String name, Output<String> id, @Nullable DomainsOauth2clientCredentialState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsOauth2clientCredential:DomainsOauth2clientCredential", name, state, makeResourceOptions(options, id));
+    private DomainsOauth2clientCredential(java.lang.String name, Output<java.lang.String> id, @Nullable DomainsOauth2clientCredentialState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/domainsOauth2clientCredential:DomainsOauth2clientCredential", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DomainsOauth2clientCredentialArgs makeArgs(DomainsOauth2clientCredentialArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -803,7 +803,7 @@ public class DomainsOauth2clientCredential extends com.pulumi.resources.CustomRe
         return args == null ? DomainsOauth2clientCredentialArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -819,7 +819,7 @@ public class DomainsOauth2clientCredential extends com.pulumi.resources.CustomRe
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DomainsOauth2clientCredential get(String name, Output<String> id, @Nullable DomainsOauth2clientCredentialState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DomainsOauth2clientCredential get(java.lang.String name, Output<java.lang.String> id, @Nullable DomainsOauth2clientCredentialState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DomainsOauth2clientCredential(name, id, state, options);
     }
 }

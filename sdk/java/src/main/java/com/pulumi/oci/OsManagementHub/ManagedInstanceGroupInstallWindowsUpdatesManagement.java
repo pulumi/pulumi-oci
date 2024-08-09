@@ -119,7 +119,7 @@ public class ManagedInstanceGroupInstallWindowsUpdatesManagement extends com.pul
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ManagedInstanceGroupInstallWindowsUpdatesManagement(String name) {
+    public ManagedInstanceGroupInstallWindowsUpdatesManagement(java.lang.String name) {
         this(name, ManagedInstanceGroupInstallWindowsUpdatesManagementArgs.Empty);
     }
     /**
@@ -127,7 +127,7 @@ public class ManagedInstanceGroupInstallWindowsUpdatesManagement extends com.pul
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ManagedInstanceGroupInstallWindowsUpdatesManagement(String name, ManagedInstanceGroupInstallWindowsUpdatesManagementArgs args) {
+    public ManagedInstanceGroupInstallWindowsUpdatesManagement(java.lang.String name, ManagedInstanceGroupInstallWindowsUpdatesManagementArgs args) {
         this(name, args, null);
     }
     /**
@@ -136,12 +136,12 @@ public class ManagedInstanceGroupInstallWindowsUpdatesManagement extends com.pul
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ManagedInstanceGroupInstallWindowsUpdatesManagement(String name, ManagedInstanceGroupInstallWindowsUpdatesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:OsManagementHub/managedInstanceGroupInstallWindowsUpdatesManagement:ManagedInstanceGroupInstallWindowsUpdatesManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ManagedInstanceGroupInstallWindowsUpdatesManagement(java.lang.String name, ManagedInstanceGroupInstallWindowsUpdatesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:OsManagementHub/managedInstanceGroupInstallWindowsUpdatesManagement:ManagedInstanceGroupInstallWindowsUpdatesManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ManagedInstanceGroupInstallWindowsUpdatesManagement(String name, Output<String> id, @Nullable ManagedInstanceGroupInstallWindowsUpdatesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:OsManagementHub/managedInstanceGroupInstallWindowsUpdatesManagement:ManagedInstanceGroupInstallWindowsUpdatesManagement", name, state, makeResourceOptions(options, id));
+    private ManagedInstanceGroupInstallWindowsUpdatesManagement(java.lang.String name, Output<java.lang.String> id, @Nullable ManagedInstanceGroupInstallWindowsUpdatesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:OsManagementHub/managedInstanceGroupInstallWindowsUpdatesManagement:ManagedInstanceGroupInstallWindowsUpdatesManagement", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ManagedInstanceGroupInstallWindowsUpdatesManagementArgs makeArgs(ManagedInstanceGroupInstallWindowsUpdatesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -151,7 +151,7 @@ public class ManagedInstanceGroupInstallWindowsUpdatesManagement extends com.pul
         return args == null ? ManagedInstanceGroupInstallWindowsUpdatesManagementArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -167,7 +167,7 @@ public class ManagedInstanceGroupInstallWindowsUpdatesManagement extends com.pul
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ManagedInstanceGroupInstallWindowsUpdatesManagement get(String name, Output<String> id, @Nullable ManagedInstanceGroupInstallWindowsUpdatesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ManagedInstanceGroupInstallWindowsUpdatesManagement get(java.lang.String name, Output<java.lang.String> id, @Nullable ManagedInstanceGroupInstallWindowsUpdatesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ManagedInstanceGroupInstallWindowsUpdatesManagement(name, id, state, options);
     }
 }

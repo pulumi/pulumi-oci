@@ -128,7 +128,7 @@ def get_db_systems(availability_domain: Optional[str] = None,
                    backup_id: Optional[str] = None,
                    compartment_id: Optional[str] = None,
                    display_name: Optional[str] = None,
-                   filters: Optional[Sequence[pulumi.InputType['GetDbSystemsFilterArgs']]] = None,
+                   filters: Optional[Sequence[Union['GetDbSystemsFilterArgs', 'GetDbSystemsFilterArgsDict']]] = None,
                    state: Optional[str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbSystemsResult:
     """
@@ -186,7 +186,7 @@ def get_db_systems_output(availability_domain: Optional[pulumi.Input[Optional[st
                           backup_id: Optional[pulumi.Input[Optional[str]]] = None,
                           compartment_id: Optional[pulumi.Input[str]] = None,
                           display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                          filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDbSystemsFilterArgs']]]]] = None,
+                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbSystemsFilterArgs', 'GetDbSystemsFilterArgsDict']]]]] = None,
                           state: Optional[pulumi.Input[Optional[str]]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbSystemsResult]:
     """

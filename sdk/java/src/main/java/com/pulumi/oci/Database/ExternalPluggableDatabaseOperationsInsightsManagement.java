@@ -117,7 +117,7 @@ public class ExternalPluggableDatabaseOperationsInsightsManagement extends com.p
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ExternalPluggableDatabaseOperationsInsightsManagement(String name) {
+    public ExternalPluggableDatabaseOperationsInsightsManagement(java.lang.String name) {
         this(name, ExternalPluggableDatabaseOperationsInsightsManagementArgs.Empty);
     }
     /**
@@ -125,7 +125,7 @@ public class ExternalPluggableDatabaseOperationsInsightsManagement extends com.p
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ExternalPluggableDatabaseOperationsInsightsManagement(String name, ExternalPluggableDatabaseOperationsInsightsManagementArgs args) {
+    public ExternalPluggableDatabaseOperationsInsightsManagement(java.lang.String name, ExternalPluggableDatabaseOperationsInsightsManagementArgs args) {
         this(name, args, null);
     }
     /**
@@ -134,12 +134,12 @@ public class ExternalPluggableDatabaseOperationsInsightsManagement extends com.p
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ExternalPluggableDatabaseOperationsInsightsManagement(String name, ExternalPluggableDatabaseOperationsInsightsManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/externalPluggableDatabaseOperationsInsightsManagement:ExternalPluggableDatabaseOperationsInsightsManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ExternalPluggableDatabaseOperationsInsightsManagement(java.lang.String name, ExternalPluggableDatabaseOperationsInsightsManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/externalPluggableDatabaseOperationsInsightsManagement:ExternalPluggableDatabaseOperationsInsightsManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ExternalPluggableDatabaseOperationsInsightsManagement(String name, Output<String> id, @Nullable ExternalPluggableDatabaseOperationsInsightsManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/externalPluggableDatabaseOperationsInsightsManagement:ExternalPluggableDatabaseOperationsInsightsManagement", name, state, makeResourceOptions(options, id));
+    private ExternalPluggableDatabaseOperationsInsightsManagement(java.lang.String name, Output<java.lang.String> id, @Nullable ExternalPluggableDatabaseOperationsInsightsManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/externalPluggableDatabaseOperationsInsightsManagement:ExternalPluggableDatabaseOperationsInsightsManagement", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ExternalPluggableDatabaseOperationsInsightsManagementArgs makeArgs(ExternalPluggableDatabaseOperationsInsightsManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -149,7 +149,7 @@ public class ExternalPluggableDatabaseOperationsInsightsManagement extends com.p
         return args == null ? ExternalPluggableDatabaseOperationsInsightsManagementArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -165,7 +165,7 @@ public class ExternalPluggableDatabaseOperationsInsightsManagement extends com.p
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ExternalPluggableDatabaseOperationsInsightsManagement get(String name, Output<String> id, @Nullable ExternalPluggableDatabaseOperationsInsightsManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ExternalPluggableDatabaseOperationsInsightsManagement get(java.lang.String name, Output<java.lang.String> id, @Nullable ExternalPluggableDatabaseOperationsInsightsManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ExternalPluggableDatabaseOperationsInsightsManagement(name, id, state, options);
     }
 }

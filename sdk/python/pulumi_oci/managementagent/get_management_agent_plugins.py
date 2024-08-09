@@ -121,7 +121,7 @@ class AwaitableGetManagementAgentPluginsResult(GetManagementAgentPluginsResult):
 def get_management_agent_plugins(agent_id: Optional[str] = None,
                                  compartment_id: Optional[str] = None,
                                  display_name: Optional[str] = None,
-                                 filters: Optional[Sequence[pulumi.InputType['GetManagementAgentPluginsFilterArgs']]] = None,
+                                 filters: Optional[Sequence[Union['GetManagementAgentPluginsFilterArgs', 'GetManagementAgentPluginsFilterArgsDict']]] = None,
                                  platform_types: Optional[Sequence[str]] = None,
                                  state: Optional[str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagementAgentPluginsResult:
@@ -175,7 +175,7 @@ def get_management_agent_plugins(agent_id: Optional[str] = None,
 def get_management_agent_plugins_output(agent_id: Optional[pulumi.Input[Optional[str]]] = None,
                                         compartment_id: Optional[pulumi.Input[str]] = None,
                                         display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                        filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetManagementAgentPluginsFilterArgs']]]]] = None,
+                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagementAgentPluginsFilterArgs', 'GetManagementAgentPluginsFilterArgsDict']]]]] = None,
                                         platform_types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                         state: Optional[pulumi.Input[Optional[str]]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagementAgentPluginsResult]:

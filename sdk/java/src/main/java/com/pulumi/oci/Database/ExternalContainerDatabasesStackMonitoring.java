@@ -116,7 +116,7 @@ public class ExternalContainerDatabasesStackMonitoring extends com.pulumi.resour
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ExternalContainerDatabasesStackMonitoring(String name) {
+    public ExternalContainerDatabasesStackMonitoring(java.lang.String name) {
         this(name, ExternalContainerDatabasesStackMonitoringArgs.Empty);
     }
     /**
@@ -124,7 +124,7 @@ public class ExternalContainerDatabasesStackMonitoring extends com.pulumi.resour
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ExternalContainerDatabasesStackMonitoring(String name, ExternalContainerDatabasesStackMonitoringArgs args) {
+    public ExternalContainerDatabasesStackMonitoring(java.lang.String name, ExternalContainerDatabasesStackMonitoringArgs args) {
         this(name, args, null);
     }
     /**
@@ -133,12 +133,12 @@ public class ExternalContainerDatabasesStackMonitoring extends com.pulumi.resour
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ExternalContainerDatabasesStackMonitoring(String name, ExternalContainerDatabasesStackMonitoringArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/externalContainerDatabasesStackMonitoring:ExternalContainerDatabasesStackMonitoring", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ExternalContainerDatabasesStackMonitoring(java.lang.String name, ExternalContainerDatabasesStackMonitoringArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/externalContainerDatabasesStackMonitoring:ExternalContainerDatabasesStackMonitoring", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ExternalContainerDatabasesStackMonitoring(String name, Output<String> id, @Nullable ExternalContainerDatabasesStackMonitoringState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/externalContainerDatabasesStackMonitoring:ExternalContainerDatabasesStackMonitoring", name, state, makeResourceOptions(options, id));
+    private ExternalContainerDatabasesStackMonitoring(java.lang.String name, Output<java.lang.String> id, @Nullable ExternalContainerDatabasesStackMonitoringState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/externalContainerDatabasesStackMonitoring:ExternalContainerDatabasesStackMonitoring", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ExternalContainerDatabasesStackMonitoringArgs makeArgs(ExternalContainerDatabasesStackMonitoringArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -148,7 +148,7 @@ public class ExternalContainerDatabasesStackMonitoring extends com.pulumi.resour
         return args == null ? ExternalContainerDatabasesStackMonitoringArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -164,7 +164,7 @@ public class ExternalContainerDatabasesStackMonitoring extends com.pulumi.resour
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ExternalContainerDatabasesStackMonitoring get(String name, Output<String> id, @Nullable ExternalContainerDatabasesStackMonitoringState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ExternalContainerDatabasesStackMonitoring get(java.lang.String name, Output<java.lang.String> id, @Nullable ExternalContainerDatabasesStackMonitoringState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ExternalContainerDatabasesStackMonitoring(name, id, state, options);
     }
 }

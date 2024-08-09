@@ -1112,7 +1112,7 @@ class DomainsApprovalWorkflowStep(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 approvers: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsApprovalWorkflowStepApproverArgs']]]]] = None,
+                 approvers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsApprovalWorkflowStepApproverArgs', 'DomainsApprovalWorkflowStepApproverArgsDict']]]]] = None,
                  approvers_expressions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  attributes: Optional[pulumi.Input[str]] = None,
@@ -1123,7 +1123,7 @@ class DomainsApprovalWorkflowStep(pulumi.CustomResource):
                  order: Optional[pulumi.Input[int]] = None,
                  resource_type_schema_version: Optional[pulumi.Input[str]] = None,
                  schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsApprovalWorkflowStepTagArgs']]]]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsApprovalWorkflowStepTagArgs', 'DomainsApprovalWorkflowStepTagArgsDict']]]]] = None,
                  type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -1141,7 +1141,7 @@ class DomainsApprovalWorkflowStep(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsApprovalWorkflowStepApproverArgs']]]] approvers: Approvers of the ApprovalWorkflowStep.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsApprovalWorkflowStepApproverArgs', 'DomainsApprovalWorkflowStepApproverArgsDict']]]] approvers: Approvers of the ApprovalWorkflowStep.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -1216,7 +1216,7 @@ class DomainsApprovalWorkflowStep(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsApprovalWorkflowStepTagArgs']]]] tags: A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsApprovalWorkflowStepTagArgs', 'DomainsApprovalWorkflowStepTagArgsDict']]]] tags: A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -1277,7 +1277,7 @@ class DomainsApprovalWorkflowStep(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 approvers: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsApprovalWorkflowStepApproverArgs']]]]] = None,
+                 approvers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsApprovalWorkflowStepApproverArgs', 'DomainsApprovalWorkflowStepApproverArgsDict']]]]] = None,
                  approvers_expressions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  attributes: Optional[pulumi.Input[str]] = None,
@@ -1288,7 +1288,7 @@ class DomainsApprovalWorkflowStep(pulumi.CustomResource):
                  order: Optional[pulumi.Input[int]] = None,
                  resource_type_schema_version: Optional[pulumi.Input[str]] = None,
                  schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsApprovalWorkflowStepTagArgs']]]]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsApprovalWorkflowStepTagArgs', 'DomainsApprovalWorkflowStepTagArgsDict']]]]] = None,
                  type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -1339,7 +1339,7 @@ class DomainsApprovalWorkflowStep(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            approvers: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsApprovalWorkflowStepApproverArgs']]]]] = None,
+            approvers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsApprovalWorkflowStepApproverArgs', 'DomainsApprovalWorkflowStepApproverArgsDict']]]]] = None,
             approvers_expressions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             attributes: Optional[pulumi.Input[str]] = None,
@@ -1347,18 +1347,18 @@ class DomainsApprovalWorkflowStep(pulumi.CustomResource):
             compartment_ocid: Optional[pulumi.Input[str]] = None,
             delete_in_progress: Optional[pulumi.Input[bool]] = None,
             domain_ocid: Optional[pulumi.Input[str]] = None,
-            idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsApprovalWorkflowStepIdcsCreatedByArgs']]]]] = None,
+            idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsApprovalWorkflowStepIdcsCreatedByArgs', 'DomainsApprovalWorkflowStepIdcsCreatedByArgsDict']]]]] = None,
             idcs_endpoint: Optional[pulumi.Input[str]] = None,
-            idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsApprovalWorkflowStepIdcsLastModifiedByArgs']]]]] = None,
+            idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsApprovalWorkflowStepIdcsLastModifiedByArgs', 'DomainsApprovalWorkflowStepIdcsLastModifiedByArgsDict']]]]] = None,
             idcs_last_upgraded_in_release: Optional[pulumi.Input[str]] = None,
             idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            metas: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsApprovalWorkflowStepMetaArgs']]]]] = None,
+            metas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsApprovalWorkflowStepMetaArgs', 'DomainsApprovalWorkflowStepMetaArgsDict']]]]] = None,
             minimum_approvals: Optional[pulumi.Input[int]] = None,
             ocid: Optional[pulumi.Input[str]] = None,
             order: Optional[pulumi.Input[int]] = None,
             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsApprovalWorkflowStepTagArgs']]]]] = None,
+            tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsApprovalWorkflowStepTagArgs', 'DomainsApprovalWorkflowStepTagArgsDict']]]]] = None,
             tenancy_ocid: Optional[pulumi.Input[str]] = None,
             type: Optional[pulumi.Input[str]] = None) -> 'DomainsApprovalWorkflowStep':
         """
@@ -1368,7 +1368,7 @@ class DomainsApprovalWorkflowStep(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsApprovalWorkflowStepApproverArgs']]]] approvers: Approvers of the ApprovalWorkflowStep.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsApprovalWorkflowStepApproverArgs', 'DomainsApprovalWorkflowStepApproverArgsDict']]]] approvers: Approvers of the ApprovalWorkflowStep.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -1427,7 +1427,7 @@ class DomainsApprovalWorkflowStep(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsApprovalWorkflowStepIdcsCreatedByArgs']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsApprovalWorkflowStepIdcsCreatedByArgs', 'DomainsApprovalWorkflowStepIdcsCreatedByArgsDict']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1437,7 +1437,7 @@ class DomainsApprovalWorkflowStep(pulumi.CustomResource):
                * returned: default
                * type: complex
         :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsApprovalWorkflowStepIdcsLastModifiedByArgs']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsApprovalWorkflowStepIdcsLastModifiedByArgs', 'DomainsApprovalWorkflowStepIdcsLastModifiedByArgsDict']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1467,7 +1467,7 @@ class DomainsApprovalWorkflowStep(pulumi.CustomResource):
                * returned: request
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsApprovalWorkflowStepMetaArgs']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsApprovalWorkflowStepMetaArgs', 'DomainsApprovalWorkflowStepMetaArgsDict']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1526,7 +1526,7 @@ class DomainsApprovalWorkflowStep(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsApprovalWorkflowStepTagArgs']]]] tags: A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsApprovalWorkflowStepTagArgs', 'DomainsApprovalWorkflowStepTagArgsDict']]]] tags: A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]

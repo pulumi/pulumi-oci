@@ -281,7 +281,7 @@ public class ContainerImageSignature extends com.pulumi.resources.CustomResource
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ContainerImageSignature(String name) {
+    public ContainerImageSignature(java.lang.String name) {
         this(name, ContainerImageSignatureArgs.Empty);
     }
     /**
@@ -289,7 +289,7 @@ public class ContainerImageSignature extends com.pulumi.resources.CustomResource
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ContainerImageSignature(String name, ContainerImageSignatureArgs args) {
+    public ContainerImageSignature(java.lang.String name, ContainerImageSignatureArgs args) {
         this(name, args, null);
     }
     /**
@@ -298,12 +298,12 @@ public class ContainerImageSignature extends com.pulumi.resources.CustomResource
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ContainerImageSignature(String name, ContainerImageSignatureArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Artifacts/containerImageSignature:ContainerImageSignature", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ContainerImageSignature(java.lang.String name, ContainerImageSignatureArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Artifacts/containerImageSignature:ContainerImageSignature", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ContainerImageSignature(String name, Output<String> id, @Nullable ContainerImageSignatureState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Artifacts/containerImageSignature:ContainerImageSignature", name, state, makeResourceOptions(options, id));
+    private ContainerImageSignature(java.lang.String name, Output<java.lang.String> id, @Nullable ContainerImageSignatureState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Artifacts/containerImageSignature:ContainerImageSignature", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ContainerImageSignatureArgs makeArgs(ContainerImageSignatureArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -313,7 +313,7 @@ public class ContainerImageSignature extends com.pulumi.resources.CustomResource
         return args == null ? ContainerImageSignatureArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -329,7 +329,7 @@ public class ContainerImageSignature extends com.pulumi.resources.CustomResource
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ContainerImageSignature get(String name, Output<String> id, @Nullable ContainerImageSignatureState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ContainerImageSignature get(java.lang.String name, Output<java.lang.String> id, @Nullable ContainerImageSignatureState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ContainerImageSignature(name, id, state, options);
     }
 }

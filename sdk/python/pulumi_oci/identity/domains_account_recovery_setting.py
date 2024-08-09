@@ -1062,7 +1062,7 @@ class DomainsAccountRecoverySetting(pulumi.CustomResource):
                  ocid: Optional[pulumi.Input[str]] = None,
                  resource_type_schema_version: Optional[pulumi.Input[str]] = None,
                  schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAccountRecoverySettingTagArgs']]]]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAccountRecoverySettingTagArgs', 'DomainsAccountRecoverySettingTagArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Account Recovery Setting resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -1152,7 +1152,7 @@ class DomainsAccountRecoverySetting(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAccountRecoverySettingTagArgs']]]] tags: (Updatable) A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAccountRecoverySettingTagArgs', 'DomainsAccountRecoverySettingTagArgsDict']]]] tags: (Updatable) A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -1210,7 +1210,7 @@ class DomainsAccountRecoverySetting(pulumi.CustomResource):
                  ocid: Optional[pulumi.Input[str]] = None,
                  resource_type_schema_version: Optional[pulumi.Input[str]] = None,
                  schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAccountRecoverySettingTagArgs']]]]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAccountRecoverySettingTagArgs', 'DomainsAccountRecoverySettingTagArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1273,18 +1273,18 @@ class DomainsAccountRecoverySetting(pulumi.CustomResource):
             domain_ocid: Optional[pulumi.Input[str]] = None,
             external_id: Optional[pulumi.Input[str]] = None,
             factors: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAccountRecoverySettingIdcsCreatedByArgs']]]]] = None,
+            idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAccountRecoverySettingIdcsCreatedByArgs', 'DomainsAccountRecoverySettingIdcsCreatedByArgsDict']]]]] = None,
             idcs_endpoint: Optional[pulumi.Input[str]] = None,
-            idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAccountRecoverySettingIdcsLastModifiedByArgs']]]]] = None,
+            idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAccountRecoverySettingIdcsLastModifiedByArgs', 'DomainsAccountRecoverySettingIdcsLastModifiedByArgsDict']]]]] = None,
             idcs_last_upgraded_in_release: Optional[pulumi.Input[str]] = None,
             idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             lockout_duration: Optional[pulumi.Input[int]] = None,
             max_incorrect_attempts: Optional[pulumi.Input[int]] = None,
-            metas: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAccountRecoverySettingMetaArgs']]]]] = None,
+            metas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAccountRecoverySettingMetaArgs', 'DomainsAccountRecoverySettingMetaArgsDict']]]]] = None,
             ocid: Optional[pulumi.Input[str]] = None,
             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAccountRecoverySettingTagArgs']]]]] = None,
+            tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAccountRecoverySettingTagArgs', 'DomainsAccountRecoverySettingTagArgsDict']]]]] = None,
             tenancy_ocid: Optional[pulumi.Input[str]] = None) -> 'DomainsAccountRecoverySetting':
         """
         Get an existing DomainsAccountRecoverySetting resource's state with the given name, id, and optional extra
@@ -1351,7 +1351,7 @@ class DomainsAccountRecoverySetting(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAccountRecoverySettingIdcsCreatedByArgs']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAccountRecoverySettingIdcsCreatedByArgs', 'DomainsAccountRecoverySettingIdcsCreatedByArgsDict']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1361,7 +1361,7 @@ class DomainsAccountRecoverySetting(pulumi.CustomResource):
                * returned: default
                * type: complex
         :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAccountRecoverySettingIdcsLastModifiedByArgs']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAccountRecoverySettingIdcsLastModifiedByArgs', 'DomainsAccountRecoverySettingIdcsLastModifiedByArgsDict']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1415,7 +1415,7 @@ class DomainsAccountRecoverySetting(pulumi.CustomResource):
                * uniqueness: none
                * idcsMinValue: 1
                * idcsMaxValue: 99
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAccountRecoverySettingMetaArgs']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAccountRecoverySettingMetaArgs', 'DomainsAccountRecoverySettingMetaArgsDict']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1449,7 +1449,7 @@ class DomainsAccountRecoverySetting(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAccountRecoverySettingTagArgs']]]] tags: (Updatable) A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAccountRecoverySettingTagArgs', 'DomainsAccountRecoverySettingTagArgsDict']]]] tags: (Updatable) A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]

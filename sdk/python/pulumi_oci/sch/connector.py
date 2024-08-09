@@ -403,10 +403,10 @@ class Connector(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 source: Optional[pulumi.Input[pulumi.InputType['ConnectorSourceArgs']]] = None,
+                 source: Optional[pulumi.Input[Union['ConnectorSourceArgs', 'ConnectorSourceArgsDict']]] = None,
                  state: Optional[pulumi.Input[str]] = None,
-                 target: Optional[pulumi.Input[pulumi.InputType['ConnectorTargetArgs']]] = None,
-                 tasks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConnectorTaskArgs']]]]] = None,
+                 target: Optional[pulumi.Input[Union['ConnectorTargetArgs', 'ConnectorTargetArgsDict']]] = None,
+                 tasks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConnectorTaskArgs', 'ConnectorTaskArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Service Connector resource in Oracle Cloud Infrastructure Service Connector Hub service.
@@ -441,60 +441,60 @@ class Connector(pulumi.CustomResource):
         test_service_connector = oci.sch.Connector("test_service_connector",
             compartment_id=compartment_id,
             display_name=service_connector_display_name,
-            source=oci.sch.ConnectorSourceArgs(
-                kind=service_connector_source_kind,
-                config_map=service_connector_source_config_map,
-                cursor=oci.sch.ConnectorSourceCursorArgs(
-                    kind=service_connector_source_cursor_kind,
-                ),
-                log_sources=[oci.sch.ConnectorSourceLogSourceArgs(
-                    compartment_id=compartment_id,
-                    log_group_id=test_log_group["id"],
-                    log_id=test_log["id"],
-                )],
-                monitoring_sources=[oci.sch.ConnectorSourceMonitoringSourceArgs(
-                    compartment_id=compartment_id,
-                    namespace_details=oci.sch.ConnectorSourceMonitoringSourceNamespaceDetailsArgs(
-                        kind=service_connector_source_monitoring_sources_namespace_details_kind,
-                        namespaces=[oci.sch.ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs(
-                            metrics=oci.sch.ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs(
-                                kind=service_connector_source_monitoring_sources_namespace_details_namespaces_metrics_kind,
-                            ),
-                            namespace=service_connector_source_monitoring_sources_namespace_details_namespaces_namespace,
-                        )],
-                    ),
-                )],
-                plugin_name=service_connector_source_plugin_name,
-                stream_id=test_stream["id"],
-            ),
-            target=oci.sch.ConnectorTargetArgs(
-                kind=service_connector_target_kind,
-                batch_rollover_size_in_mbs=service_connector_target_batch_rollover_size_in_mbs,
-                batch_rollover_time_in_ms=service_connector_target_batch_rollover_time_in_ms,
-                batch_size_in_kbs=service_connector_target_batch_size_in_kbs,
-                batch_size_in_num=service_connector_target_batch_size_in_num,
-                batch_time_in_sec=service_connector_target_batch_time_in_sec,
-                bucket=service_connector_target_bucket,
-                compartment_id=compartment_id,
-                dimensions=[oci.sch.ConnectorTargetDimensionArgs(
-                    dimension_value=oci.sch.ConnectorTargetDimensionDimensionValueArgs(
-                        kind=service_connector_target_dimensions_dimension_value_kind,
-                        path=service_connector_target_dimensions_dimension_value_path,
-                        value=service_connector_target_dimensions_dimension_value_value,
-                    ),
-                    name=service_connector_target_dimensions_name,
-                )],
-                enable_formatted_messaging=service_connector_target_enable_formatted_messaging,
-                function_id=test_function["id"],
-                log_group_id=test_log_group["id"],
-                log_source_identifier=service_connector_target_log_source_identifier,
-                metric=service_connector_target_metric,
-                metric_namespace=service_connector_target_metric_namespace,
-                namespace=service_connector_target_namespace,
-                object_name_prefix=service_connector_target_object_name_prefix,
-                stream_id=test_stream["id"],
-                topic_id=test_notification_topic["id"],
-            ),
+            source={
+                "kind": service_connector_source_kind,
+                "config_map": service_connector_source_config_map,
+                "cursor": {
+                    "kind": service_connector_source_cursor_kind,
+                },
+                "log_sources": [{
+                    "compartment_id": compartment_id,
+                    "log_group_id": test_log_group["id"],
+                    "log_id": test_log["id"],
+                }],
+                "monitoring_sources": [{
+                    "compartment_id": compartment_id,
+                    "namespace_details": {
+                        "kind": service_connector_source_monitoring_sources_namespace_details_kind,
+                        "namespaces": [{
+                            "metrics": {
+                                "kind": service_connector_source_monitoring_sources_namespace_details_namespaces_metrics_kind,
+                            },
+                            "namespace": service_connector_source_monitoring_sources_namespace_details_namespaces_namespace,
+                        }],
+                    },
+                }],
+                "plugin_name": service_connector_source_plugin_name,
+                "stream_id": test_stream["id"],
+            },
+            target={
+                "kind": service_connector_target_kind,
+                "batch_rollover_size_in_mbs": service_connector_target_batch_rollover_size_in_mbs,
+                "batch_rollover_time_in_ms": service_connector_target_batch_rollover_time_in_ms,
+                "batch_size_in_kbs": service_connector_target_batch_size_in_kbs,
+                "batch_size_in_num": service_connector_target_batch_size_in_num,
+                "batch_time_in_sec": service_connector_target_batch_time_in_sec,
+                "bucket": service_connector_target_bucket,
+                "compartment_id": compartment_id,
+                "dimensions": [{
+                    "dimension_value": {
+                        "kind": service_connector_target_dimensions_dimension_value_kind,
+                        "path": service_connector_target_dimensions_dimension_value_path,
+                        "value": service_connector_target_dimensions_dimension_value_value,
+                    },
+                    "name": service_connector_target_dimensions_name,
+                }],
+                "enable_formatted_messaging": service_connector_target_enable_formatted_messaging,
+                "function_id": test_function["id"],
+                "log_group_id": test_log_group["id"],
+                "log_source_identifier": service_connector_target_log_source_identifier,
+                "metric": service_connector_target_metric,
+                "metric_namespace": service_connector_target_metric_namespace,
+                "namespace": service_connector_target_namespace,
+                "object_name_prefix": service_connector_target_object_name_prefix,
+                "stream_id": test_stream["id"],
+                "topic_id": test_notification_topic["id"],
+            },
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -502,13 +502,13 @@ class Connector(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            tasks=[oci.sch.ConnectorTaskArgs(
-                kind=service_connector_tasks_kind,
-                batch_size_in_kbs=service_connector_tasks_batch_size_in_kbs,
-                batch_time_in_sec=service_connector_tasks_batch_time_in_sec,
-                condition=service_connector_tasks_condition,
-                function_id=test_function["id"],
-            )])
+            tasks=[{
+                "kind": service_connector_tasks_kind,
+                "batch_size_in_kbs": service_connector_tasks_batch_size_in_kbs,
+                "batch_time_in_sec": service_connector_tasks_batch_time_in_sec,
+                "condition": service_connector_tasks_condition,
+                "function_id": test_function["id"],
+            }])
         ```
 
         ## Import
@@ -526,14 +526,14 @@ class Connector(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) The description of the resource. Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[pulumi.InputType['ConnectorSourceArgs']] source: (Updatable) An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+        :param pulumi.Input[Union['ConnectorSourceArgs', 'ConnectorSourceArgsDict']] source: (Updatable) An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
         :param pulumi.Input[str] state: (Updatable) The target state for the service connector. Could be set to `ACTIVE` or `INACTIVE`.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[pulumi.InputType['ConnectorTargetArgs']] target: (Updatable) An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConnectorTaskArgs']]]] tasks: (Updatable) The list of tasks.
+        :param pulumi.Input[Union['ConnectorTargetArgs', 'ConnectorTargetArgsDict']] target: (Updatable) An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ConnectorTaskArgs', 'ConnectorTaskArgsDict']]]] tasks: (Updatable) The list of tasks.
         """
         ...
     @overload
@@ -574,60 +574,60 @@ class Connector(pulumi.CustomResource):
         test_service_connector = oci.sch.Connector("test_service_connector",
             compartment_id=compartment_id,
             display_name=service_connector_display_name,
-            source=oci.sch.ConnectorSourceArgs(
-                kind=service_connector_source_kind,
-                config_map=service_connector_source_config_map,
-                cursor=oci.sch.ConnectorSourceCursorArgs(
-                    kind=service_connector_source_cursor_kind,
-                ),
-                log_sources=[oci.sch.ConnectorSourceLogSourceArgs(
-                    compartment_id=compartment_id,
-                    log_group_id=test_log_group["id"],
-                    log_id=test_log["id"],
-                )],
-                monitoring_sources=[oci.sch.ConnectorSourceMonitoringSourceArgs(
-                    compartment_id=compartment_id,
-                    namespace_details=oci.sch.ConnectorSourceMonitoringSourceNamespaceDetailsArgs(
-                        kind=service_connector_source_monitoring_sources_namespace_details_kind,
-                        namespaces=[oci.sch.ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs(
-                            metrics=oci.sch.ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs(
-                                kind=service_connector_source_monitoring_sources_namespace_details_namespaces_metrics_kind,
-                            ),
-                            namespace=service_connector_source_monitoring_sources_namespace_details_namespaces_namespace,
-                        )],
-                    ),
-                )],
-                plugin_name=service_connector_source_plugin_name,
-                stream_id=test_stream["id"],
-            ),
-            target=oci.sch.ConnectorTargetArgs(
-                kind=service_connector_target_kind,
-                batch_rollover_size_in_mbs=service_connector_target_batch_rollover_size_in_mbs,
-                batch_rollover_time_in_ms=service_connector_target_batch_rollover_time_in_ms,
-                batch_size_in_kbs=service_connector_target_batch_size_in_kbs,
-                batch_size_in_num=service_connector_target_batch_size_in_num,
-                batch_time_in_sec=service_connector_target_batch_time_in_sec,
-                bucket=service_connector_target_bucket,
-                compartment_id=compartment_id,
-                dimensions=[oci.sch.ConnectorTargetDimensionArgs(
-                    dimension_value=oci.sch.ConnectorTargetDimensionDimensionValueArgs(
-                        kind=service_connector_target_dimensions_dimension_value_kind,
-                        path=service_connector_target_dimensions_dimension_value_path,
-                        value=service_connector_target_dimensions_dimension_value_value,
-                    ),
-                    name=service_connector_target_dimensions_name,
-                )],
-                enable_formatted_messaging=service_connector_target_enable_formatted_messaging,
-                function_id=test_function["id"],
-                log_group_id=test_log_group["id"],
-                log_source_identifier=service_connector_target_log_source_identifier,
-                metric=service_connector_target_metric,
-                metric_namespace=service_connector_target_metric_namespace,
-                namespace=service_connector_target_namespace,
-                object_name_prefix=service_connector_target_object_name_prefix,
-                stream_id=test_stream["id"],
-                topic_id=test_notification_topic["id"],
-            ),
+            source={
+                "kind": service_connector_source_kind,
+                "config_map": service_connector_source_config_map,
+                "cursor": {
+                    "kind": service_connector_source_cursor_kind,
+                },
+                "log_sources": [{
+                    "compartment_id": compartment_id,
+                    "log_group_id": test_log_group["id"],
+                    "log_id": test_log["id"],
+                }],
+                "monitoring_sources": [{
+                    "compartment_id": compartment_id,
+                    "namespace_details": {
+                        "kind": service_connector_source_monitoring_sources_namespace_details_kind,
+                        "namespaces": [{
+                            "metrics": {
+                                "kind": service_connector_source_monitoring_sources_namespace_details_namespaces_metrics_kind,
+                            },
+                            "namespace": service_connector_source_monitoring_sources_namespace_details_namespaces_namespace,
+                        }],
+                    },
+                }],
+                "plugin_name": service_connector_source_plugin_name,
+                "stream_id": test_stream["id"],
+            },
+            target={
+                "kind": service_connector_target_kind,
+                "batch_rollover_size_in_mbs": service_connector_target_batch_rollover_size_in_mbs,
+                "batch_rollover_time_in_ms": service_connector_target_batch_rollover_time_in_ms,
+                "batch_size_in_kbs": service_connector_target_batch_size_in_kbs,
+                "batch_size_in_num": service_connector_target_batch_size_in_num,
+                "batch_time_in_sec": service_connector_target_batch_time_in_sec,
+                "bucket": service_connector_target_bucket,
+                "compartment_id": compartment_id,
+                "dimensions": [{
+                    "dimension_value": {
+                        "kind": service_connector_target_dimensions_dimension_value_kind,
+                        "path": service_connector_target_dimensions_dimension_value_path,
+                        "value": service_connector_target_dimensions_dimension_value_value,
+                    },
+                    "name": service_connector_target_dimensions_name,
+                }],
+                "enable_formatted_messaging": service_connector_target_enable_formatted_messaging,
+                "function_id": test_function["id"],
+                "log_group_id": test_log_group["id"],
+                "log_source_identifier": service_connector_target_log_source_identifier,
+                "metric": service_connector_target_metric,
+                "metric_namespace": service_connector_target_metric_namespace,
+                "namespace": service_connector_target_namespace,
+                "object_name_prefix": service_connector_target_object_name_prefix,
+                "stream_id": test_stream["id"],
+                "topic_id": test_notification_topic["id"],
+            },
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -635,13 +635,13 @@ class Connector(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            tasks=[oci.sch.ConnectorTaskArgs(
-                kind=service_connector_tasks_kind,
-                batch_size_in_kbs=service_connector_tasks_batch_size_in_kbs,
-                batch_time_in_sec=service_connector_tasks_batch_time_in_sec,
-                condition=service_connector_tasks_condition,
-                function_id=test_function["id"],
-            )])
+            tasks=[{
+                "kind": service_connector_tasks_kind,
+                "batch_size_in_kbs": service_connector_tasks_batch_size_in_kbs,
+                "batch_time_in_sec": service_connector_tasks_batch_time_in_sec,
+                "condition": service_connector_tasks_condition,
+                "function_id": test_function["id"],
+            }])
         ```
 
         ## Import
@@ -672,10 +672,10 @@ class Connector(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 source: Optional[pulumi.Input[pulumi.InputType['ConnectorSourceArgs']]] = None,
+                 source: Optional[pulumi.Input[Union['ConnectorSourceArgs', 'ConnectorSourceArgsDict']]] = None,
                  state: Optional[pulumi.Input[str]] = None,
-                 target: Optional[pulumi.Input[pulumi.InputType['ConnectorTargetArgs']]] = None,
-                 tasks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConnectorTaskArgs']]]]] = None,
+                 target: Optional[pulumi.Input[Union['ConnectorTargetArgs', 'ConnectorTargetArgsDict']]] = None,
+                 tasks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConnectorTaskArgs', 'ConnectorTaskArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -722,11 +722,11 @@ class Connector(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             lifecyle_details: Optional[pulumi.Input[str]] = None,
-            source: Optional[pulumi.Input[pulumi.InputType['ConnectorSourceArgs']]] = None,
+            source: Optional[pulumi.Input[Union['ConnectorSourceArgs', 'ConnectorSourceArgsDict']]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            target: Optional[pulumi.Input[pulumi.InputType['ConnectorTargetArgs']]] = None,
-            tasks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConnectorTaskArgs']]]]] = None,
+            target: Optional[pulumi.Input[Union['ConnectorTargetArgs', 'ConnectorTargetArgsDict']]] = None,
+            tasks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConnectorTaskArgs', 'ConnectorTaskArgsDict']]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None) -> 'Connector':
         """
@@ -742,15 +742,15 @@ class Connector(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecyle_details: A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
-        :param pulumi.Input[pulumi.InputType['ConnectorSourceArgs']] source: (Updatable) An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+        :param pulumi.Input[Union['ConnectorSourceArgs', 'ConnectorSourceArgsDict']] source: (Updatable) An object that represents the source of the flow defined by the connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
         :param pulumi.Input[str] state: (Updatable) The target state for the service connector. Could be set to `ACTIVE` or `INACTIVE`.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-        :param pulumi.Input[pulumi.InputType['ConnectorTargetArgs']] target: (Updatable) An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConnectorTaskArgs']]]] tasks: (Updatable) The list of tasks.
+        :param pulumi.Input[Union['ConnectorTargetArgs', 'ConnectorTargetArgsDict']] target: (Updatable) An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ConnectorTaskArgs', 'ConnectorTaskArgsDict']]]] tasks: (Updatable) The list of tasks.
         :param pulumi.Input[str] time_created: The date and time when the connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         :param pulumi.Input[str] time_updated: The date and time when the connector was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         """

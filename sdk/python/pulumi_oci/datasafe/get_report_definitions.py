@@ -163,7 +163,7 @@ def get_report_definitions(access_level: Optional[str] = None,
                            compartment_id_in_subtree: Optional[bool] = None,
                            data_source: Optional[str] = None,
                            display_name: Optional[str] = None,
-                           filters: Optional[Sequence[pulumi.InputType['GetReportDefinitionsFilterArgs']]] = None,
+                           filters: Optional[Sequence[Union['GetReportDefinitionsFilterArgs', 'GetReportDefinitionsFilterArgsDict']]] = None,
                            is_seeded: Optional[bool] = None,
                            state: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetReportDefinitionsResult:
@@ -234,7 +234,7 @@ def get_report_definitions_output(access_level: Optional[pulumi.Input[Optional[s
                                   compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                                   data_source: Optional[pulumi.Input[Optional[str]]] = None,
                                   display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                  filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetReportDefinitionsFilterArgs']]]]] = None,
+                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetReportDefinitionsFilterArgs', 'GetReportDefinitionsFilterArgsDict']]]]] = None,
                                   is_seeded: Optional[pulumi.Input[Optional[bool]]] = None,
                                   state: Optional[pulumi.Input[Optional[str]]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetReportDefinitionsResult]:

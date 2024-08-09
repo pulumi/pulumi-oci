@@ -103,7 +103,7 @@ class AwaitableGetFleetBlocklistsResult(GetFleetBlocklistsResult):
             operation=self.operation)
 
 
-def get_fleet_blocklists(filters: Optional[Sequence[pulumi.InputType['GetFleetBlocklistsFilterArgs']]] = None,
+def get_fleet_blocklists(filters: Optional[Sequence[Union['GetFleetBlocklistsFilterArgs', 'GetFleetBlocklistsFilterArgsDict']]] = None,
                          fleet_id: Optional[str] = None,
                          managed_instance_id: Optional[str] = None,
                          operation: Optional[str] = None,
@@ -147,7 +147,7 @@ def get_fleet_blocklists(filters: Optional[Sequence[pulumi.InputType['GetFleetBl
 
 
 @_utilities.lift_output_func(get_fleet_blocklists)
-def get_fleet_blocklists_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetFleetBlocklistsFilterArgs']]]]] = None,
+def get_fleet_blocklists_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFleetBlocklistsFilterArgs', 'GetFleetBlocklistsFilterArgsDict']]]]] = None,
                                 fleet_id: Optional[pulumi.Input[str]] = None,
                                 managed_instance_id: Optional[pulumi.Input[Optional[str]]] = None,
                                 operation: Optional[pulumi.Input[Optional[str]]] = None,

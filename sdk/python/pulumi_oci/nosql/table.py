@@ -438,7 +438,7 @@ class Table(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_auto_reclaimable: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 table_limits: Optional[pulumi.Input[pulumi.InputType['TableTableLimitsArgs']]] = None,
+                 table_limits: Optional[pulumi.Input[Union['TableTableLimitsArgs', 'TableTableLimitsArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Table resource in Oracle Cloud Infrastructure NoSQL Database service.
@@ -460,12 +460,12 @@ class Table(pulumi.CustomResource):
                 "bar-key": "value",
             },
             is_auto_reclaimable=table_is_auto_reclaimable,
-            table_limits=oci.nosql.TableTableLimitsArgs(
-                max_read_units=table_table_limits_max_read_units,
-                max_storage_in_gbs=table_table_limits_max_storage_in_gbs,
-                max_write_units=table_table_limits_max_write_units,
-                capacity_mode=table_table_limits_capacity_mode,
-            ))
+            table_limits={
+                "max_read_units": table_table_limits_max_read_units,
+                "max_storage_in_gbs": table_table_limits_max_storage_in_gbs,
+                "max_write_units": table_table_limits_max_write_units,
+                "capacity_mode": table_table_limits_capacity_mode,
+            })
         ```
 
         ## Import
@@ -484,7 +484,7 @@ class Table(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_auto_reclaimable: True if table can be reclaimed after an idle period.
         :param pulumi.Input[str] name: Table name.
-        :param pulumi.Input[pulumi.InputType['TableTableLimitsArgs']] table_limits: (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table's limits.
+        :param pulumi.Input[Union['TableTableLimitsArgs', 'TableTableLimitsArgsDict']] table_limits: (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table's limits.
         """
         ...
     @overload
@@ -512,12 +512,12 @@ class Table(pulumi.CustomResource):
                 "bar-key": "value",
             },
             is_auto_reclaimable=table_is_auto_reclaimable,
-            table_limits=oci.nosql.TableTableLimitsArgs(
-                max_read_units=table_table_limits_max_read_units,
-                max_storage_in_gbs=table_table_limits_max_storage_in_gbs,
-                max_write_units=table_table_limits_max_write_units,
-                capacity_mode=table_table_limits_capacity_mode,
-            ))
+            table_limits={
+                "max_read_units": table_table_limits_max_read_units,
+                "max_storage_in_gbs": table_table_limits_max_storage_in_gbs,
+                "max_write_units": table_table_limits_max_write_units,
+                "capacity_mode": table_table_limits_capacity_mode,
+            })
         ```
 
         ## Import
@@ -549,7 +549,7 @@ class Table(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_auto_reclaimable: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 table_limits: Optional[pulumi.Input[pulumi.InputType['TableTableLimitsArgs']]] = None,
+                 table_limits: Optional[pulumi.Input[Union['TableTableLimitsArgs', 'TableTableLimitsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -600,12 +600,12 @@ class Table(pulumi.CustomResource):
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             local_replica_initialization_in_percent: Optional[pulumi.Input[int]] = None,
             name: Optional[pulumi.Input[str]] = None,
-            replicas: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TableReplicaArgs']]]]] = None,
+            replicas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TableReplicaArgs', 'TableReplicaArgsDict']]]]] = None,
             schema_state: Optional[pulumi.Input[str]] = None,
-            schemas: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TableSchemaArgs']]]]] = None,
+            schemas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TableSchemaArgs', 'TableSchemaArgsDict']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            table_limits: Optional[pulumi.Input[pulumi.InputType['TableTableLimitsArgs']]] = None,
+            table_limits: Optional[pulumi.Input[Union['TableTableLimitsArgs', 'TableTableLimitsArgsDict']]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_of_expiration: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None) -> 'Table':
@@ -625,12 +625,12 @@ class Table(pulumi.CustomResource):
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail.
         :param pulumi.Input[int] local_replica_initialization_in_percent: If this table is in a replication set, this value represents the progress of the initialization of the replica's data.  A value of 100 indicates that initialization has completed.
         :param pulumi.Input[str] name: Table name.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TableReplicaArgs']]]] replicas: An array of Replica listing this table's replicas, if any
+        :param pulumi.Input[Sequence[pulumi.Input[Union['TableReplicaArgs', 'TableReplicaArgsDict']]]] replicas: An array of Replica listing this table's replicas, if any
         :param pulumi.Input[str] schema_state: The current state of this table's schema. Available states are MUTABLE - The schema can be changed. The table is not eligible for replication. FROZEN - The schema is immutable. The table is eligible for replication.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TableSchemaArgs']]]] schemas: The table schema information as a JSON object.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['TableSchemaArgs', 'TableSchemaArgsDict']]]] schemas: The table schema information as a JSON object.
         :param pulumi.Input[str] state: The state of a table.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Read-only system tag. These predefined keys are scoped to namespaces.  At present the only supported namespace is `"orcl-cloud"`; and the only key in that namespace is `"free-tier-retained"`. Example: `{"orcl-cloud"": {"free-tier-retained": "true"}}`
-        :param pulumi.Input[pulumi.InputType['TableTableLimitsArgs']] table_limits: (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table's limits.
+        :param pulumi.Input[Union['TableTableLimitsArgs', 'TableTableLimitsArgsDict']] table_limits: (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table's limits.
         :param pulumi.Input[str] time_created: The time the the table was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_of_expiration: If lifecycleState is INACTIVE, indicates when this table will be automatically removed. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time the the table's metadata was last updated. An RFC3339 formatted datetime string.

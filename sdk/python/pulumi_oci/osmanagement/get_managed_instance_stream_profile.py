@@ -131,7 +131,7 @@ class AwaitableGetManagedInstanceStreamProfileResult(GetManagedInstanceStreamPro
 
 
 def get_managed_instance_stream_profile(compartment_id: Optional[str] = None,
-                                        filters: Optional[Sequence[pulumi.InputType['GetManagedInstanceStreamProfileFilterArgs']]] = None,
+                                        filters: Optional[Sequence[Union['GetManagedInstanceStreamProfileFilterArgs', 'GetManagedInstanceStreamProfileFilterArgsDict']]] = None,
                                         managed_instance_id: Optional[str] = None,
                                         module_name: Optional[str] = None,
                                         profile_name: Optional[str] = None,
@@ -217,7 +217,7 @@ def get_managed_instance_stream_profile(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_managed_instance_stream_profile)
 def get_managed_instance_stream_profile_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                               filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetManagedInstanceStreamProfileFilterArgs']]]]] = None,
+                                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedInstanceStreamProfileFilterArgs', 'GetManagedInstanceStreamProfileFilterArgsDict']]]]] = None,
                                                managed_instance_id: Optional[pulumi.Input[str]] = None,
                                                module_name: Optional[pulumi.Input[Optional[str]]] = None,
                                                profile_name: Optional[pulumi.Input[Optional[str]]] = None,

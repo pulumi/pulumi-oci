@@ -85,7 +85,7 @@ class AwaitableGetListenerRulesResult(GetListenerRulesResult):
             load_balancer_id=self.load_balancer_id)
 
 
-def get_listener_rules(filters: Optional[Sequence[pulumi.InputType['GetListenerRulesFilterArgs']]] = None,
+def get_listener_rules(filters: Optional[Sequence[Union['GetListenerRulesFilterArgs', 'GetListenerRulesFilterArgsDict']]] = None,
                        listener_name: Optional[str] = None,
                        load_balancer_id: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetListenerRulesResult:
@@ -130,7 +130,7 @@ def get_listener_rules(filters: Optional[Sequence[pulumi.InputType['GetListenerR
 
 
 @_utilities.lift_output_func(get_listener_rules)
-def get_listener_rules_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetListenerRulesFilterArgs']]]]] = None,
+def get_listener_rules_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetListenerRulesFilterArgs', 'GetListenerRulesFilterArgsDict']]]]] = None,
                               listener_name: Optional[pulumi.Input[str]] = None,
                               load_balancer_id: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetListenerRulesResult]:

@@ -80,7 +80,7 @@ class AwaitableGetCpesResult(GetCpesResult):
 
 
 def get_cpes(compartment_id: Optional[str] = None,
-             filters: Optional[Sequence[pulumi.InputType['GetCpesFilterArgs']]] = None,
+             filters: Optional[Sequence[Union['GetCpesFilterArgs', 'GetCpesFilterArgsDict']]] = None,
              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCpesResult:
     """
     This data source provides the list of Cpes in Oracle Cloud Infrastructure Core service.
@@ -114,7 +114,7 @@ def get_cpes(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_cpes)
 def get_cpes_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                    filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetCpesFilterArgs']]]]] = None,
+                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCpesFilterArgs', 'GetCpesFilterArgsDict']]]]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCpesResult]:
     """
     This data source provides the list of Cpes in Oracle Cloud Infrastructure Core service.

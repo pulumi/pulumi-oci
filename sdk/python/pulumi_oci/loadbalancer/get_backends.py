@@ -86,7 +86,7 @@ class AwaitableGetBackendsResult(GetBackendsResult):
 
 
 def get_backends(backendset_name: Optional[str] = None,
-                 filters: Optional[Sequence[pulumi.InputType['GetBackendsFilterArgs']]] = None,
+                 filters: Optional[Sequence[Union['GetBackendsFilterArgs', 'GetBackendsFilterArgsDict']]] = None,
                  load_balancer_id: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBackendsResult:
     """
@@ -125,7 +125,7 @@ def get_backends(backendset_name: Optional[str] = None,
 
 @_utilities.lift_output_func(get_backends)
 def get_backends_output(backendset_name: Optional[pulumi.Input[str]] = None,
-                        filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetBackendsFilterArgs']]]]] = None,
+                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBackendsFilterArgs', 'GetBackendsFilterArgsDict']]]]] = None,
                         load_balancer_id: Optional[pulumi.Input[str]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBackendsResult]:
     """

@@ -258,7 +258,7 @@ public class ProcessorJob extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ProcessorJob(String name) {
+    public ProcessorJob(java.lang.String name) {
         this(name, ProcessorJobArgs.Empty);
     }
     /**
@@ -266,7 +266,7 @@ public class ProcessorJob extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ProcessorJob(String name, ProcessorJobArgs args) {
+    public ProcessorJob(java.lang.String name, ProcessorJobArgs args) {
         this(name, args, null);
     }
     /**
@@ -275,12 +275,12 @@ public class ProcessorJob extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ProcessorJob(String name, ProcessorJobArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:AiDocument/processorJob:ProcessorJob", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ProcessorJob(java.lang.String name, ProcessorJobArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:AiDocument/processorJob:ProcessorJob", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ProcessorJob(String name, Output<String> id, @Nullable ProcessorJobState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:AiDocument/processorJob:ProcessorJob", name, state, makeResourceOptions(options, id));
+    private ProcessorJob(java.lang.String name, Output<java.lang.String> id, @Nullable ProcessorJobState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:AiDocument/processorJob:ProcessorJob", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ProcessorJobArgs makeArgs(ProcessorJobArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -290,7 +290,7 @@ public class ProcessorJob extends com.pulumi.resources.CustomResource {
         return args == null ? ProcessorJobArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -306,7 +306,7 @@ public class ProcessorJob extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ProcessorJob get(String name, Output<String> id, @Nullable ProcessorJobState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ProcessorJob get(java.lang.String name, Output<java.lang.String> id, @Nullable ProcessorJobState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ProcessorJob(name, id, state, options);
     }
 }

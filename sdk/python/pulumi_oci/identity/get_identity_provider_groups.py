@@ -100,7 +100,7 @@ class AwaitableGetIdentityProviderGroupsResult(GetIdentityProviderGroupsResult):
             state=self.state)
 
 
-def get_identity_provider_groups(filters: Optional[Sequence[pulumi.InputType['GetIdentityProviderGroupsFilterArgs']]] = None,
+def get_identity_provider_groups(filters: Optional[Sequence[Union['GetIdentityProviderGroupsFilterArgs', 'GetIdentityProviderGroupsFilterArgsDict']]] = None,
                                  identity_provider_id: Optional[str] = None,
                                  name: Optional[str] = None,
                                  state: Optional[str] = None,
@@ -146,7 +146,7 @@ def get_identity_provider_groups(filters: Optional[Sequence[pulumi.InputType['Ge
 
 
 @_utilities.lift_output_func(get_identity_provider_groups)
-def get_identity_provider_groups_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetIdentityProviderGroupsFilterArgs']]]]] = None,
+def get_identity_provider_groups_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetIdentityProviderGroupsFilterArgs', 'GetIdentityProviderGroupsFilterArgsDict']]]]] = None,
                                         identity_provider_id: Optional[pulumi.Input[str]] = None,
                                         name: Optional[pulumi.Input[Optional[str]]] = None,
                                         state: Optional[pulumi.Input[Optional[str]]] = None,

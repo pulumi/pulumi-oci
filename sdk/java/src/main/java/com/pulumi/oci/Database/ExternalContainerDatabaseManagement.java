@@ -92,7 +92,7 @@ public class ExternalContainerDatabaseManagement extends com.pulumi.resources.Cu
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ExternalContainerDatabaseManagement(String name) {
+    public ExternalContainerDatabaseManagement(java.lang.String name) {
         this(name, ExternalContainerDatabaseManagementArgs.Empty);
     }
     /**
@@ -100,7 +100,7 @@ public class ExternalContainerDatabaseManagement extends com.pulumi.resources.Cu
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ExternalContainerDatabaseManagement(String name, ExternalContainerDatabaseManagementArgs args) {
+    public ExternalContainerDatabaseManagement(java.lang.String name, ExternalContainerDatabaseManagementArgs args) {
         this(name, args, null);
     }
     /**
@@ -109,12 +109,12 @@ public class ExternalContainerDatabaseManagement extends com.pulumi.resources.Cu
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ExternalContainerDatabaseManagement(String name, ExternalContainerDatabaseManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/externalContainerDatabaseManagement:ExternalContainerDatabaseManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ExternalContainerDatabaseManagement(java.lang.String name, ExternalContainerDatabaseManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/externalContainerDatabaseManagement:ExternalContainerDatabaseManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ExternalContainerDatabaseManagement(String name, Output<String> id, @Nullable ExternalContainerDatabaseManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/externalContainerDatabaseManagement:ExternalContainerDatabaseManagement", name, state, makeResourceOptions(options, id));
+    private ExternalContainerDatabaseManagement(java.lang.String name, Output<java.lang.String> id, @Nullable ExternalContainerDatabaseManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/externalContainerDatabaseManagement:ExternalContainerDatabaseManagement", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ExternalContainerDatabaseManagementArgs makeArgs(ExternalContainerDatabaseManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -124,7 +124,7 @@ public class ExternalContainerDatabaseManagement extends com.pulumi.resources.Cu
         return args == null ? ExternalContainerDatabaseManagementArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -140,7 +140,7 @@ public class ExternalContainerDatabaseManagement extends com.pulumi.resources.Cu
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ExternalContainerDatabaseManagement get(String name, Output<String> id, @Nullable ExternalContainerDatabaseManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ExternalContainerDatabaseManagement get(java.lang.String name, Output<java.lang.String> id, @Nullable ExternalContainerDatabaseManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ExternalContainerDatabaseManagement(name, id, state, options);
     }
 }

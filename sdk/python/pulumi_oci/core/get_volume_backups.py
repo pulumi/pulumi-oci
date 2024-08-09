@@ -129,7 +129,7 @@ class AwaitableGetVolumeBackupsResult(GetVolumeBackupsResult):
 
 def get_volume_backups(compartment_id: Optional[str] = None,
                        display_name: Optional[str] = None,
-                       filters: Optional[Sequence[pulumi.InputType['GetVolumeBackupsFilterArgs']]] = None,
+                       filters: Optional[Sequence[Union['GetVolumeBackupsFilterArgs', 'GetVolumeBackupsFilterArgsDict']]] = None,
                        source_volume_backup_id: Optional[str] = None,
                        state: Optional[str] = None,
                        volume_id: Optional[str] = None,
@@ -183,7 +183,7 @@ def get_volume_backups(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_volume_backups)
 def get_volume_backups_output(compartment_id: Optional[pulumi.Input[str]] = None,
                               display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                              filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetVolumeBackupsFilterArgs']]]]] = None,
+                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVolumeBackupsFilterArgs', 'GetVolumeBackupsFilterArgsDict']]]]] = None,
                               source_volume_backup_id: Optional[pulumi.Input[Optional[str]]] = None,
                               state: Optional[pulumi.Input[Optional[str]]] = None,
                               volume_id: Optional[pulumi.Input[Optional[str]]] = None,

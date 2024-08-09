@@ -227,7 +227,7 @@ public class NetworkFirewallPolicyTunnelInspectionRule extends com.pulumi.resour
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public NetworkFirewallPolicyTunnelInspectionRule(String name) {
+    public NetworkFirewallPolicyTunnelInspectionRule(java.lang.String name) {
         this(name, NetworkFirewallPolicyTunnelInspectionRuleArgs.Empty);
     }
     /**
@@ -235,7 +235,7 @@ public class NetworkFirewallPolicyTunnelInspectionRule extends com.pulumi.resour
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public NetworkFirewallPolicyTunnelInspectionRule(String name, NetworkFirewallPolicyTunnelInspectionRuleArgs args) {
+    public NetworkFirewallPolicyTunnelInspectionRule(java.lang.String name, NetworkFirewallPolicyTunnelInspectionRuleArgs args) {
         this(name, args, null);
     }
     /**
@@ -244,12 +244,12 @@ public class NetworkFirewallPolicyTunnelInspectionRule extends com.pulumi.resour
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public NetworkFirewallPolicyTunnelInspectionRule(String name, NetworkFirewallPolicyTunnelInspectionRuleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:NetworkFirewall/networkFirewallPolicyTunnelInspectionRule:NetworkFirewallPolicyTunnelInspectionRule", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public NetworkFirewallPolicyTunnelInspectionRule(java.lang.String name, NetworkFirewallPolicyTunnelInspectionRuleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:NetworkFirewall/networkFirewallPolicyTunnelInspectionRule:NetworkFirewallPolicyTunnelInspectionRule", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private NetworkFirewallPolicyTunnelInspectionRule(String name, Output<String> id, @Nullable NetworkFirewallPolicyTunnelInspectionRuleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:NetworkFirewall/networkFirewallPolicyTunnelInspectionRule:NetworkFirewallPolicyTunnelInspectionRule", name, state, makeResourceOptions(options, id));
+    private NetworkFirewallPolicyTunnelInspectionRule(java.lang.String name, Output<java.lang.String> id, @Nullable NetworkFirewallPolicyTunnelInspectionRuleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:NetworkFirewall/networkFirewallPolicyTunnelInspectionRule:NetworkFirewallPolicyTunnelInspectionRule", name, state, makeResourceOptions(options, id), false);
     }
 
     private static NetworkFirewallPolicyTunnelInspectionRuleArgs makeArgs(NetworkFirewallPolicyTunnelInspectionRuleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -259,7 +259,7 @@ public class NetworkFirewallPolicyTunnelInspectionRule extends com.pulumi.resour
         return args == null ? NetworkFirewallPolicyTunnelInspectionRuleArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -275,7 +275,7 @@ public class NetworkFirewallPolicyTunnelInspectionRule extends com.pulumi.resour
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static NetworkFirewallPolicyTunnelInspectionRule get(String name, Output<String> id, @Nullable NetworkFirewallPolicyTunnelInspectionRuleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static NetworkFirewallPolicyTunnelInspectionRule get(java.lang.String name, Output<java.lang.String> id, @Nullable NetworkFirewallPolicyTunnelInspectionRuleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new NetworkFirewallPolicyTunnelInspectionRule(name, id, state, options);
     }
 }

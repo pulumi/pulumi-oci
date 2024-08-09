@@ -222,7 +222,7 @@ public class Cpe extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public Cpe(String name) {
+    public Cpe(java.lang.String name) {
         this(name, CpeArgs.Empty);
     }
     /**
@@ -230,7 +230,7 @@ public class Cpe extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public Cpe(String name, CpeArgs args) {
+    public Cpe(java.lang.String name, CpeArgs args) {
         this(name, args, null);
     }
     /**
@@ -239,12 +239,12 @@ public class Cpe extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public Cpe(String name, CpeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/cpe:Cpe", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public Cpe(java.lang.String name, CpeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Core/cpe:Cpe", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private Cpe(String name, Output<String> id, @Nullable CpeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/cpe:Cpe", name, state, makeResourceOptions(options, id));
+    private Cpe(java.lang.String name, Output<java.lang.String> id, @Nullable CpeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Core/cpe:Cpe", name, state, makeResourceOptions(options, id), false);
     }
 
     private static CpeArgs makeArgs(CpeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -254,7 +254,7 @@ public class Cpe extends com.pulumi.resources.CustomResource {
         return args == null ? CpeArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -270,7 +270,7 @@ public class Cpe extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static Cpe get(String name, Output<String> id, @Nullable CpeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static Cpe get(java.lang.String name, Output<java.lang.String> id, @Nullable CpeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new Cpe(name, id, state, options);
     }
 }

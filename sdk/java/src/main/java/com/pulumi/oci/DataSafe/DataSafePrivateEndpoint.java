@@ -282,7 +282,7 @@ public class DataSafePrivateEndpoint extends com.pulumi.resources.CustomResource
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DataSafePrivateEndpoint(String name) {
+    public DataSafePrivateEndpoint(java.lang.String name) {
         this(name, DataSafePrivateEndpointArgs.Empty);
     }
     /**
@@ -290,7 +290,7 @@ public class DataSafePrivateEndpoint extends com.pulumi.resources.CustomResource
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DataSafePrivateEndpoint(String name, DataSafePrivateEndpointArgs args) {
+    public DataSafePrivateEndpoint(java.lang.String name, DataSafePrivateEndpointArgs args) {
         this(name, args, null);
     }
     /**
@@ -299,12 +299,12 @@ public class DataSafePrivateEndpoint extends com.pulumi.resources.CustomResource
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DataSafePrivateEndpoint(String name, DataSafePrivateEndpointArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/dataSafePrivateEndpoint:DataSafePrivateEndpoint", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DataSafePrivateEndpoint(java.lang.String name, DataSafePrivateEndpointArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataSafe/dataSafePrivateEndpoint:DataSafePrivateEndpoint", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DataSafePrivateEndpoint(String name, Output<String> id, @Nullable DataSafePrivateEndpointState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/dataSafePrivateEndpoint:DataSafePrivateEndpoint", name, state, makeResourceOptions(options, id));
+    private DataSafePrivateEndpoint(java.lang.String name, Output<java.lang.String> id, @Nullable DataSafePrivateEndpointState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataSafe/dataSafePrivateEndpoint:DataSafePrivateEndpoint", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DataSafePrivateEndpointArgs makeArgs(DataSafePrivateEndpointArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -314,7 +314,7 @@ public class DataSafePrivateEndpoint extends com.pulumi.resources.CustomResource
         return args == null ? DataSafePrivateEndpointArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -330,7 +330,7 @@ public class DataSafePrivateEndpoint extends com.pulumi.resources.CustomResource
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DataSafePrivateEndpoint get(String name, Output<String> id, @Nullable DataSafePrivateEndpointState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DataSafePrivateEndpoint get(java.lang.String name, Output<java.lang.String> id, @Nullable DataSafePrivateEndpointState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DataSafePrivateEndpoint(name, id, state, options);
     }
 }

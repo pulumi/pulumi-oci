@@ -105,7 +105,7 @@ class AwaitableGetMediaWorkflowConfigurationsResult(GetMediaWorkflowConfiguratio
 
 def get_media_workflow_configurations(compartment_id: Optional[str] = None,
                                       display_name: Optional[str] = None,
-                                      filters: Optional[Sequence[pulumi.InputType['GetMediaWorkflowConfigurationsFilterArgs']]] = None,
+                                      filters: Optional[Sequence[Union['GetMediaWorkflowConfigurationsFilterArgs', 'GetMediaWorkflowConfigurationsFilterArgsDict']]] = None,
                                       id: Optional[str] = None,
                                       state: Optional[str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMediaWorkflowConfigurationsResult:
@@ -153,7 +153,7 @@ def get_media_workflow_configurations(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_media_workflow_configurations)
 def get_media_workflow_configurations_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                              display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                             filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetMediaWorkflowConfigurationsFilterArgs']]]]] = None,
+                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMediaWorkflowConfigurationsFilterArgs', 'GetMediaWorkflowConfigurationsFilterArgsDict']]]]] = None,
                                              id: Optional[pulumi.Input[Optional[str]]] = None,
                                              state: Optional[pulumi.Input[Optional[str]]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMediaWorkflowConfigurationsResult]:

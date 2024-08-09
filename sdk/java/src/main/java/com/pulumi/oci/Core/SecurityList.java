@@ -292,7 +292,7 @@ public class SecurityList extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public SecurityList(String name) {
+    public SecurityList(java.lang.String name) {
         this(name, SecurityListArgs.Empty);
     }
     /**
@@ -300,7 +300,7 @@ public class SecurityList extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public SecurityList(String name, SecurityListArgs args) {
+    public SecurityList(java.lang.String name, SecurityListArgs args) {
         this(name, args, null);
     }
     /**
@@ -309,12 +309,12 @@ public class SecurityList extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public SecurityList(String name, SecurityListArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/securityList:SecurityList", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public SecurityList(java.lang.String name, SecurityListArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Core/securityList:SecurityList", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private SecurityList(String name, Output<String> id, @Nullable SecurityListState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/securityList:SecurityList", name, state, makeResourceOptions(options, id));
+    private SecurityList(java.lang.String name, Output<java.lang.String> id, @Nullable SecurityListState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Core/securityList:SecurityList", name, state, makeResourceOptions(options, id), false);
     }
 
     private static SecurityListArgs makeArgs(SecurityListArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -324,7 +324,7 @@ public class SecurityList extends com.pulumi.resources.CustomResource {
         return args == null ? SecurityListArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -340,7 +340,7 @@ public class SecurityList extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static SecurityList get(String name, Output<String> id, @Nullable SecurityListState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static SecurityList get(java.lang.String name, Output<java.lang.String> id, @Nullable SecurityListState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new SecurityList(name, id, state, options);
     }
 }

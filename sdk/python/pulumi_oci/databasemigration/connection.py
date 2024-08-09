@@ -1226,7 +1226,7 @@ class Connection(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 additional_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConnectionAdditionalAttributeArgs']]]]] = None,
+                 additional_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConnectionAdditionalAttributeArgs', 'ConnectionAdditionalAttributeArgsDict']]]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  connection_string: Optional[pulumi.Input[str]] = None,
                  connection_type: Optional[pulumi.Input[str]] = None,
@@ -1276,10 +1276,10 @@ class Connection(pulumi.CustomResource):
             technology_type=connection_technology_type,
             username=connection_username,
             vault_id=test_vault["id"],
-            additional_attributes=[oci.database_migration.ConnectionAdditionalAttributeArgs(
-                name=connection_additional_attributes_name,
-                value=connection_additional_attributes_value,
-            )],
+            additional_attributes=[{
+                "name": connection_additional_attributes_name,
+                "value": connection_additional_attributes_value,
+            }],
             connection_string=connection_connection_string,
             database_id=test_database["id"],
             database_name=test_database["name"],
@@ -1318,7 +1318,7 @@ class Connection(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConnectionAdditionalAttributeArgs']]]] additional_attributes: (Updatable) An array of name-value pair attribute entries.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ConnectionAdditionalAttributeArgs', 'ConnectionAdditionalAttributeArgsDict']]]] additional_attributes: (Updatable) An array of name-value pair attribute entries.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment.
         :param pulumi.Input[str] connection_string: (Updatable) Connect descriptor or Easy Connect Naming method used to connect to a database.
         :param pulumi.Input[str] connection_type: (Updatable) Defines the type of connection. For example, ORACLE.
@@ -1378,10 +1378,10 @@ class Connection(pulumi.CustomResource):
             technology_type=connection_technology_type,
             username=connection_username,
             vault_id=test_vault["id"],
-            additional_attributes=[oci.database_migration.ConnectionAdditionalAttributeArgs(
-                name=connection_additional_attributes_name,
-                value=connection_additional_attributes_value,
-            )],
+            additional_attributes=[{
+                "name": connection_additional_attributes_name,
+                "value": connection_additional_attributes_value,
+            }],
             connection_string=connection_connection_string,
             database_id=test_database["id"],
             database_name=test_database["name"],
@@ -1433,7 +1433,7 @@ class Connection(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 additional_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConnectionAdditionalAttributeArgs']]]]] = None,
+                 additional_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConnectionAdditionalAttributeArgs', 'ConnectionAdditionalAttributeArgsDict']]]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  connection_string: Optional[pulumi.Input[str]] = None,
                  connection_type: Optional[pulumi.Input[str]] = None,
@@ -1544,7 +1544,7 @@ class Connection(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            additional_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConnectionAdditionalAttributeArgs']]]]] = None,
+            additional_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConnectionAdditionalAttributeArgs', 'ConnectionAdditionalAttributeArgsDict']]]]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             connection_string: Optional[pulumi.Input[str]] = None,
             connection_type: Optional[pulumi.Input[str]] = None,
@@ -1556,7 +1556,7 @@ class Connection(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             host: Optional[pulumi.Input[str]] = None,
-            ingress_ips: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConnectionIngressIpArgs']]]]] = None,
+            ingress_ips: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConnectionIngressIpArgs', 'ConnectionIngressIpArgsDict']]]]] = None,
             key_id: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -1592,7 +1592,7 @@ class Connection(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConnectionAdditionalAttributeArgs']]]] additional_attributes: (Updatable) An array of name-value pair attribute entries.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ConnectionAdditionalAttributeArgs', 'ConnectionAdditionalAttributeArgsDict']]]] additional_attributes: (Updatable) An array of name-value pair attribute entries.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment.
         :param pulumi.Input[str] connection_string: (Updatable) Connect descriptor or Easy Connect Naming method used to connect to a database.
         :param pulumi.Input[str] connection_type: (Updatable) Defines the type of connection. For example, ORACLE.
@@ -1604,7 +1604,7 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
         :param pulumi.Input[str] host: (Updatable) The IP Address of the host.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConnectionIngressIpArgs']]]] ingress_ips: List of ingress IP addresses from where to connect to this connection's privateIp.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ConnectionIngressIpArgs', 'ConnectionIngressIpArgsDict']]]] ingress_ips: List of ingress IP addresses from where to connect to this connection's privateIp.
         :param pulumi.Input[str] key_id: (Updatable) The OCID of the key used in cryptographic operations.
         :param pulumi.Input[str] lifecycle_details: The message describing the current state of the connection's lifecycle in detail. For example, can be used to provide actionable information for a connection in a Failed state.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.

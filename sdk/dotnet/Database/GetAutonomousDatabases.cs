@@ -15,7 +15,8 @@ namespace Pulumi.Oci.Database
         /// ## 
         /// 
         /// ---
-        /// subcategory: "Database"
+        /// ## subcategory: "Database"
+        /// 
         /// layout: "oci"
         /// page_title: "Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabases"
         /// sidebar_current: "docs-oci-datasource-database-autonomous_databases"
@@ -65,7 +66,8 @@ namespace Pulumi.Oci.Database
         /// ## 
         /// 
         /// ---
-        /// subcategory: "Database"
+        /// ## subcategory: "Database"
+        /// 
         /// layout: "oci"
         /// page_title: "Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabases"
         /// sidebar_current: "docs-oci-datasource-database-autonomous_databases"

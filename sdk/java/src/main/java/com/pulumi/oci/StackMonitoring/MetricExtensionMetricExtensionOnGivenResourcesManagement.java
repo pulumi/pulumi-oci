@@ -112,7 +112,7 @@ public class MetricExtensionMetricExtensionOnGivenResourcesManagement extends co
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public MetricExtensionMetricExtensionOnGivenResourcesManagement(String name) {
+    public MetricExtensionMetricExtensionOnGivenResourcesManagement(java.lang.String name) {
         this(name, MetricExtensionMetricExtensionOnGivenResourcesManagementArgs.Empty);
     }
     /**
@@ -120,7 +120,7 @@ public class MetricExtensionMetricExtensionOnGivenResourcesManagement extends co
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public MetricExtensionMetricExtensionOnGivenResourcesManagement(String name, MetricExtensionMetricExtensionOnGivenResourcesManagementArgs args) {
+    public MetricExtensionMetricExtensionOnGivenResourcesManagement(java.lang.String name, MetricExtensionMetricExtensionOnGivenResourcesManagementArgs args) {
         this(name, args, null);
     }
     /**
@@ -129,12 +129,12 @@ public class MetricExtensionMetricExtensionOnGivenResourcesManagement extends co
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public MetricExtensionMetricExtensionOnGivenResourcesManagement(String name, MetricExtensionMetricExtensionOnGivenResourcesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:StackMonitoring/metricExtensionMetricExtensionOnGivenResourcesManagement:MetricExtensionMetricExtensionOnGivenResourcesManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public MetricExtensionMetricExtensionOnGivenResourcesManagement(java.lang.String name, MetricExtensionMetricExtensionOnGivenResourcesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:StackMonitoring/metricExtensionMetricExtensionOnGivenResourcesManagement:MetricExtensionMetricExtensionOnGivenResourcesManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private MetricExtensionMetricExtensionOnGivenResourcesManagement(String name, Output<String> id, @Nullable MetricExtensionMetricExtensionOnGivenResourcesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:StackMonitoring/metricExtensionMetricExtensionOnGivenResourcesManagement:MetricExtensionMetricExtensionOnGivenResourcesManagement", name, state, makeResourceOptions(options, id));
+    private MetricExtensionMetricExtensionOnGivenResourcesManagement(java.lang.String name, Output<java.lang.String> id, @Nullable MetricExtensionMetricExtensionOnGivenResourcesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:StackMonitoring/metricExtensionMetricExtensionOnGivenResourcesManagement:MetricExtensionMetricExtensionOnGivenResourcesManagement", name, state, makeResourceOptions(options, id), false);
     }
 
     private static MetricExtensionMetricExtensionOnGivenResourcesManagementArgs makeArgs(MetricExtensionMetricExtensionOnGivenResourcesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -144,7 +144,7 @@ public class MetricExtensionMetricExtensionOnGivenResourcesManagement extends co
         return args == null ? MetricExtensionMetricExtensionOnGivenResourcesManagementArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -160,7 +160,7 @@ public class MetricExtensionMetricExtensionOnGivenResourcesManagement extends co
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static MetricExtensionMetricExtensionOnGivenResourcesManagement get(String name, Output<String> id, @Nullable MetricExtensionMetricExtensionOnGivenResourcesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static MetricExtensionMetricExtensionOnGivenResourcesManagement get(java.lang.String name, Output<java.lang.String> id, @Nullable MetricExtensionMetricExtensionOnGivenResourcesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new MetricExtensionMetricExtensionOnGivenResourcesManagement(name, id, state, options);
     }
 }

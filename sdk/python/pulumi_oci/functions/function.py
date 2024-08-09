@@ -527,10 +527,10 @@ class Function(pulumi.CustomResource):
                  image: Optional[pulumi.Input[str]] = None,
                  image_digest: Optional[pulumi.Input[str]] = None,
                  memory_in_mbs: Optional[pulumi.Input[str]] = None,
-                 provisioned_concurrency_config: Optional[pulumi.Input[pulumi.InputType['FunctionProvisionedConcurrencyConfigArgs']]] = None,
-                 source_details: Optional[pulumi.Input[pulumi.InputType['FunctionSourceDetailsArgs']]] = None,
+                 provisioned_concurrency_config: Optional[pulumi.Input[Union['FunctionProvisionedConcurrencyConfigArgs', 'FunctionProvisionedConcurrencyConfigArgsDict']]] = None,
+                 source_details: Optional[pulumi.Input[Union['FunctionSourceDetailsArgs', 'FunctionSourceDetailsArgsDict']]] = None,
                  timeout_in_seconds: Optional[pulumi.Input[int]] = None,
-                 trace_config: Optional[pulumi.Input[pulumi.InputType['FunctionTraceConfigArgs']]] = None,
+                 trace_config: Optional[pulumi.Input[Union['FunctionTraceConfigArgs', 'FunctionTraceConfigArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Function resource in Oracle Cloud Infrastructure Functions service.
@@ -556,18 +556,18 @@ class Function(pulumi.CustomResource):
             },
             image=function_image,
             image_digest=function_image_digest,
-            provisioned_concurrency_config=oci.functions.FunctionProvisionedConcurrencyConfigArgs(
-                strategy=function_provisioned_concurrency_config_strategy,
-                count=function_provisioned_concurrency_config_count,
-            ),
-            source_details=oci.functions.FunctionSourceDetailsArgs(
-                pbf_listing_id=test_pbf_listing["id"],
-                source_type=function_source_details_source_type,
-            ),
+            provisioned_concurrency_config={
+                "strategy": function_provisioned_concurrency_config_strategy,
+                "count": function_provisioned_concurrency_config_count,
+            },
+            source_details={
+                "pbf_listing_id": test_pbf_listing["id"],
+                "source_type": function_source_details_source_type,
+            },
             timeout_in_seconds=function_timeout_in_seconds,
-            trace_config=oci.functions.FunctionTraceConfigArgs(
-                is_enabled=function_trace_config_is_enabled,
-            ))
+            trace_config={
+                "is_enabled": function_trace_config_is_enabled,
+            })
         ```
 
         ## Import
@@ -590,10 +590,10 @@ class Function(pulumi.CustomResource):
         :param pulumi.Input[str] image: (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if image_digest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
         :param pulumi.Input[str] image_digest: (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
         :param pulumi.Input[str] memory_in_mbs: (Updatable) Maximum usable memory for the function (MiB).
-        :param pulumi.Input[pulumi.InputType['FunctionProvisionedConcurrencyConfigArgs']] provisioned_concurrency_config: (Updatable) Define the strategy for provisioned concurrency for the function.
-        :param pulumi.Input[pulumi.InputType['FunctionSourceDetailsArgs']] source_details: The source details for the Function. The function can be created from various sources.
+        :param pulumi.Input[Union['FunctionProvisionedConcurrencyConfigArgs', 'FunctionProvisionedConcurrencyConfigArgsDict']] provisioned_concurrency_config: (Updatable) Define the strategy for provisioned concurrency for the function.
+        :param pulumi.Input[Union['FunctionSourceDetailsArgs', 'FunctionSourceDetailsArgsDict']] source_details: The source details for the Function. The function can be created from various sources.
         :param pulumi.Input[int] timeout_in_seconds: (Updatable) Timeout for executions of the function. Value in seconds.
-        :param pulumi.Input[pulumi.InputType['FunctionTraceConfigArgs']] trace_config: (Updatable) Define the tracing configuration for a function.
+        :param pulumi.Input[Union['FunctionTraceConfigArgs', 'FunctionTraceConfigArgsDict']] trace_config: (Updatable) Define the tracing configuration for a function.
         """
         ...
     @overload
@@ -625,18 +625,18 @@ class Function(pulumi.CustomResource):
             },
             image=function_image,
             image_digest=function_image_digest,
-            provisioned_concurrency_config=oci.functions.FunctionProvisionedConcurrencyConfigArgs(
-                strategy=function_provisioned_concurrency_config_strategy,
-                count=function_provisioned_concurrency_config_count,
-            ),
-            source_details=oci.functions.FunctionSourceDetailsArgs(
-                pbf_listing_id=test_pbf_listing["id"],
-                source_type=function_source_details_source_type,
-            ),
+            provisioned_concurrency_config={
+                "strategy": function_provisioned_concurrency_config_strategy,
+                "count": function_provisioned_concurrency_config_count,
+            },
+            source_details={
+                "pbf_listing_id": test_pbf_listing["id"],
+                "source_type": function_source_details_source_type,
+            },
             timeout_in_seconds=function_timeout_in_seconds,
-            trace_config=oci.functions.FunctionTraceConfigArgs(
-                is_enabled=function_trace_config_is_enabled,
-            ))
+            trace_config={
+                "is_enabled": function_trace_config_is_enabled,
+            })
         ```
 
         ## Import
@@ -670,10 +670,10 @@ class Function(pulumi.CustomResource):
                  image: Optional[pulumi.Input[str]] = None,
                  image_digest: Optional[pulumi.Input[str]] = None,
                  memory_in_mbs: Optional[pulumi.Input[str]] = None,
-                 provisioned_concurrency_config: Optional[pulumi.Input[pulumi.InputType['FunctionProvisionedConcurrencyConfigArgs']]] = None,
-                 source_details: Optional[pulumi.Input[pulumi.InputType['FunctionSourceDetailsArgs']]] = None,
+                 provisioned_concurrency_config: Optional[pulumi.Input[Union['FunctionProvisionedConcurrencyConfigArgs', 'FunctionProvisionedConcurrencyConfigArgsDict']]] = None,
+                 source_details: Optional[pulumi.Input[Union['FunctionSourceDetailsArgs', 'FunctionSourceDetailsArgsDict']]] = None,
                  timeout_in_seconds: Optional[pulumi.Input[int]] = None,
-                 trace_config: Optional[pulumi.Input[pulumi.InputType['FunctionTraceConfigArgs']]] = None,
+                 trace_config: Optional[pulumi.Input[Union['FunctionTraceConfigArgs', 'FunctionTraceConfigArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -727,14 +727,14 @@ class Function(pulumi.CustomResource):
             image_digest: Optional[pulumi.Input[str]] = None,
             invoke_endpoint: Optional[pulumi.Input[str]] = None,
             memory_in_mbs: Optional[pulumi.Input[str]] = None,
-            provisioned_concurrency_config: Optional[pulumi.Input[pulumi.InputType['FunctionProvisionedConcurrencyConfigArgs']]] = None,
+            provisioned_concurrency_config: Optional[pulumi.Input[Union['FunctionProvisionedConcurrencyConfigArgs', 'FunctionProvisionedConcurrencyConfigArgsDict']]] = None,
             shape: Optional[pulumi.Input[str]] = None,
-            source_details: Optional[pulumi.Input[pulumi.InputType['FunctionSourceDetailsArgs']]] = None,
+            source_details: Optional[pulumi.Input[Union['FunctionSourceDetailsArgs', 'FunctionSourceDetailsArgsDict']]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
             timeout_in_seconds: Optional[pulumi.Input[int]] = None,
-            trace_config: Optional[pulumi.Input[pulumi.InputType['FunctionTraceConfigArgs']]] = None) -> 'Function':
+            trace_config: Optional[pulumi.Input[Union['FunctionTraceConfigArgs', 'FunctionTraceConfigArgsDict']]] = None) -> 'Function':
         """
         Get an existing Function resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -754,14 +754,14 @@ class Function(pulumi.CustomResource):
         :param pulumi.Input[str] image_digest: (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
         :param pulumi.Input[str] invoke_endpoint: The base https invoke URL to set on a client in order to invoke a function. This URL will never change over the lifetime of the function and can be cached.
         :param pulumi.Input[str] memory_in_mbs: (Updatable) Maximum usable memory for the function (MiB).
-        :param pulumi.Input[pulumi.InputType['FunctionProvisionedConcurrencyConfigArgs']] provisioned_concurrency_config: (Updatable) Define the strategy for provisioned concurrency for the function.
+        :param pulumi.Input[Union['FunctionProvisionedConcurrencyConfigArgs', 'FunctionProvisionedConcurrencyConfigArgsDict']] provisioned_concurrency_config: (Updatable) Define the strategy for provisioned concurrency for the function.
         :param pulumi.Input[str] shape: The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
-        :param pulumi.Input[pulumi.InputType['FunctionSourceDetailsArgs']] source_details: The source details for the Function. The function can be created from various sources.
+        :param pulumi.Input[Union['FunctionSourceDetailsArgs', 'FunctionSourceDetailsArgsDict']] source_details: The source details for the Function. The function can be created from various sources.
         :param pulumi.Input[str] state: The current state of the function.
         :param pulumi.Input[str] time_created: The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
         :param pulumi.Input[str] time_updated: The time the function was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
         :param pulumi.Input[int] timeout_in_seconds: (Updatable) Timeout for executions of the function. Value in seconds.
-        :param pulumi.Input[pulumi.InputType['FunctionTraceConfigArgs']] trace_config: (Updatable) Define the tracing configuration for a function.
+        :param pulumi.Input[Union['FunctionTraceConfigArgs', 'FunctionTraceConfigArgsDict']] trace_config: (Updatable) Define the tracing configuration for a function.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

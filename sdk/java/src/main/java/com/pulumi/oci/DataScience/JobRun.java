@@ -396,7 +396,7 @@ public class JobRun extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public JobRun(String name) {
+    public JobRun(java.lang.String name) {
         this(name, JobRunArgs.Empty);
     }
     /**
@@ -404,7 +404,7 @@ public class JobRun extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public JobRun(String name, JobRunArgs args) {
+    public JobRun(java.lang.String name, JobRunArgs args) {
         this(name, args, null);
     }
     /**
@@ -413,12 +413,12 @@ public class JobRun extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public JobRun(String name, JobRunArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataScience/jobRun:JobRun", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public JobRun(java.lang.String name, JobRunArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataScience/jobRun:JobRun", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private JobRun(String name, Output<String> id, @Nullable JobRunState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataScience/jobRun:JobRun", name, state, makeResourceOptions(options, id));
+    private JobRun(java.lang.String name, Output<java.lang.String> id, @Nullable JobRunState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataScience/jobRun:JobRun", name, state, makeResourceOptions(options, id), false);
     }
 
     private static JobRunArgs makeArgs(JobRunArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -428,7 +428,7 @@ public class JobRun extends com.pulumi.resources.CustomResource {
         return args == null ? JobRunArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -444,7 +444,7 @@ public class JobRun extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static JobRun get(String name, Output<String> id, @Nullable JobRunState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static JobRun get(java.lang.String name, Output<java.lang.String> id, @Nullable JobRunState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new JobRun(name, id, state, options);
     }
 }

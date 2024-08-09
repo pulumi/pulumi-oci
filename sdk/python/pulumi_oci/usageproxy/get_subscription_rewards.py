@@ -91,7 +91,7 @@ class AwaitableGetSubscriptionRewardsResult(GetSubscriptionRewardsResult):
             tenancy_id=self.tenancy_id)
 
 
-def get_subscription_rewards(filters: Optional[Sequence[pulumi.InputType['GetSubscriptionRewardsFilterArgs']]] = None,
+def get_subscription_rewards(filters: Optional[Sequence[Union['GetSubscriptionRewardsFilterArgs', 'GetSubscriptionRewardsFilterArgsDict']]] = None,
                              subscription_id: Optional[str] = None,
                              tenancy_id: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSubscriptionRewardsResult:
@@ -130,7 +130,7 @@ def get_subscription_rewards(filters: Optional[Sequence[pulumi.InputType['GetSub
 
 
 @_utilities.lift_output_func(get_subscription_rewards)
-def get_subscription_rewards_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetSubscriptionRewardsFilterArgs']]]]] = None,
+def get_subscription_rewards_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSubscriptionRewardsFilterArgs', 'GetSubscriptionRewardsFilterArgsDict']]]]] = None,
                                     subscription_id: Optional[pulumi.Input[str]] = None,
                                     tenancy_id: Optional[pulumi.Input[str]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSubscriptionRewardsResult]:

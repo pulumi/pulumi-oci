@@ -105,7 +105,7 @@ class AwaitableGetEntitlementsResult(GetEntitlementsResult):
 
 def get_entitlements(compartment_id: Optional[str] = None,
                      csi: Optional[str] = None,
-                     filters: Optional[Sequence[pulumi.InputType['GetEntitlementsFilterArgs']]] = None,
+                     filters: Optional[Sequence[Union['GetEntitlementsFilterArgs', 'GetEntitlementsFilterArgsDict']]] = None,
                      vendor_name: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetEntitlementsResult:
     """
@@ -150,7 +150,7 @@ def get_entitlements(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_entitlements)
 def get_entitlements_output(compartment_id: Optional[pulumi.Input[str]] = None,
                             csi: Optional[pulumi.Input[Optional[str]]] = None,
-                            filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetEntitlementsFilterArgs']]]]] = None,
+                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetEntitlementsFilterArgs', 'GetEntitlementsFilterArgsDict']]]]] = None,
                             vendor_name: Optional[pulumi.Input[Optional[str]]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEntitlementsResult]:
     """

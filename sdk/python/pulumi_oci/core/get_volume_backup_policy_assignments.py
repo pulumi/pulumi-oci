@@ -80,7 +80,7 @@ class AwaitableGetVolumeBackupPolicyAssignmentsResult(GetVolumeBackupPolicyAssig
 
 
 def get_volume_backup_policy_assignments(asset_id: Optional[str] = None,
-                                         filters: Optional[Sequence[pulumi.InputType['GetVolumeBackupPolicyAssignmentsFilterArgs']]] = None,
+                                         filters: Optional[Sequence[Union['GetVolumeBackupPolicyAssignmentsFilterArgs', 'GetVolumeBackupPolicyAssignmentsFilterArgsDict']]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVolumeBackupPolicyAssignmentsResult:
     """
     This data source provides the list of Volume Backup Policy Assignments in Oracle Cloud Infrastructure Core service.
@@ -116,7 +116,7 @@ def get_volume_backup_policy_assignments(asset_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_volume_backup_policy_assignments)
 def get_volume_backup_policy_assignments_output(asset_id: Optional[pulumi.Input[str]] = None,
-                                                filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetVolumeBackupPolicyAssignmentsFilterArgs']]]]] = None,
+                                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVolumeBackupPolicyAssignmentsFilterArgs', 'GetVolumeBackupPolicyAssignmentsFilterArgsDict']]]]] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVolumeBackupPolicyAssignmentsResult]:
     """
     This data source provides the list of Volume Backup Policy Assignments in Oracle Cloud Infrastructure Core service.

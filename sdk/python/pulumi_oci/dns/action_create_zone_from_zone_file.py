@@ -541,12 +541,12 @@ class ActionCreateZoneFromZoneFile(pulumi.CustomResource):
             compartment_id: Optional[pulumi.Input[str]] = None,
             create_zone_from_zone_file_details: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            external_downstreams: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ActionCreateZoneFromZoneFileExternalDownstreamArgs']]]]] = None,
-            external_masters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ActionCreateZoneFromZoneFileExternalMasterArgs']]]]] = None,
+            external_downstreams: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ActionCreateZoneFromZoneFileExternalDownstreamArgs', 'ActionCreateZoneFromZoneFileExternalDownstreamArgsDict']]]]] = None,
+            external_masters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ActionCreateZoneFromZoneFileExternalMasterArgs', 'ActionCreateZoneFromZoneFileExternalMasterArgsDict']]]]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             is_protected: Optional[pulumi.Input[bool]] = None,
             name: Optional[pulumi.Input[str]] = None,
-            nameservers: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ActionCreateZoneFromZoneFileNameserverArgs']]]]] = None,
+            nameservers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ActionCreateZoneFromZoneFileNameserverArgs', 'ActionCreateZoneFromZoneFileNameserverArgsDict']]]]] = None,
             scope: Optional[pulumi.Input[str]] = None,
             self: Optional[pulumi.Input[str]] = None,
             serial: Optional[pulumi.Input[str]] = None,
@@ -554,7 +554,7 @@ class ActionCreateZoneFromZoneFile(pulumi.CustomResource):
             time_created: Optional[pulumi.Input[str]] = None,
             version: Optional[pulumi.Input[str]] = None,
             view_id: Optional[pulumi.Input[str]] = None,
-            zone_transfer_servers: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ActionCreateZoneFromZoneFileZoneTransferServerArgs']]]]] = None,
+            zone_transfer_servers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ActionCreateZoneFromZoneFileZoneTransferServerArgs', 'ActionCreateZoneFromZoneFileZoneTransferServerArgsDict']]]]] = None,
             zone_type: Optional[pulumi.Input[str]] = None) -> 'ActionCreateZoneFromZoneFile':
         """
         Get an existing ActionCreateZoneFromZoneFile resource's state with the given name, id, and optional extra
@@ -566,12 +566,12 @@ class ActionCreateZoneFromZoneFile(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: The OCID of the compartment the resource belongs to.
         :param pulumi.Input[str] create_zone_from_zone_file_details: The zone file contents.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ActionCreateZoneFromZoneFileExternalDownstreamArgs']]]] external_downstreams: External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ActionCreateZoneFromZoneFileExternalMasterArgs']]]] external_masters: External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ActionCreateZoneFromZoneFileExternalDownstreamArgs', 'ActionCreateZoneFromZoneFileExternalDownstreamArgsDict']]]] external_downstreams: External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ActionCreateZoneFromZoneFileExternalMasterArgs', 'ActionCreateZoneFromZoneFileExternalMasterArgsDict']]]] external_masters: External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[bool] is_protected: A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
         :param pulumi.Input[str] name: The name of the zone.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ActionCreateZoneFromZoneFileNameserverArgs']]]] nameservers: The authoritative nameservers for the zone.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ActionCreateZoneFromZoneFileNameserverArgs', 'ActionCreateZoneFromZoneFileNameserverArgsDict']]]] nameservers: The authoritative nameservers for the zone.
         :param pulumi.Input[str] scope: Specifies to operate only on resources that have a matching DNS scope.
         :param pulumi.Input[str] self: The canonical absolute URL of the resource.
         :param pulumi.Input[str] serial: The current serial of the zone. As seen in the zone's SOA record.
@@ -583,7 +583,7 @@ class ActionCreateZoneFromZoneFile(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ActionCreateZoneFromZoneFileZoneTransferServerArgs']]]] zone_transfer_servers: The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ActionCreateZoneFromZoneFileZoneTransferServerArgs', 'ActionCreateZoneFromZoneFileZoneTransferServerArgsDict']]]] zone_transfer_servers: The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
         :param pulumi.Input[str] zone_type: The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

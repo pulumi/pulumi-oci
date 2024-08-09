@@ -127,7 +127,7 @@ class AwaitableGetPbfListingsResult(GetPbfListingsResult):
             triggers=self.triggers)
 
 
-def get_pbf_listings(filters: Optional[Sequence[pulumi.InputType['GetPbfListingsFilterArgs']]] = None,
+def get_pbf_listings(filters: Optional[Sequence[Union['GetPbfListingsFilterArgs', 'GetPbfListingsFilterArgsDict']]] = None,
                      name: Optional[str] = None,
                      name_contains: Optional[str] = None,
                      name_starts_with: Optional[str] = None,
@@ -187,7 +187,7 @@ def get_pbf_listings(filters: Optional[Sequence[pulumi.InputType['GetPbfListings
 
 
 @_utilities.lift_output_func(get_pbf_listings)
-def get_pbf_listings_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetPbfListingsFilterArgs']]]]] = None,
+def get_pbf_listings_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPbfListingsFilterArgs', 'GetPbfListingsFilterArgsDict']]]]] = None,
                             name: Optional[pulumi.Input[Optional[str]]] = None,
                             name_contains: Optional[pulumi.Input[Optional[str]]] = None,
                             name_starts_with: Optional[pulumi.Input[Optional[str]]] = None,

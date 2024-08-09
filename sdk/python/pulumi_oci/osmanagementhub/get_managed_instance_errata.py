@@ -117,7 +117,7 @@ class AwaitableGetManagedInstanceErrataResult(GetManagedInstanceErrataResult):
 
 def get_managed_instance_errata(classification_types: Optional[Sequence[str]] = None,
                                 compartment_id: Optional[str] = None,
-                                filters: Optional[Sequence[pulumi.InputType['GetManagedInstanceErrataFilterArgs']]] = None,
+                                filters: Optional[Sequence[Union['GetManagedInstanceErrataFilterArgs', 'GetManagedInstanceErrataFilterArgsDict']]] = None,
                                 managed_instance_id: Optional[str] = None,
                                 name_contains: Optional[str] = None,
                                 names: Optional[Sequence[str]] = None,
@@ -171,7 +171,7 @@ def get_managed_instance_errata(classification_types: Optional[Sequence[str]] = 
 @_utilities.lift_output_func(get_managed_instance_errata)
 def get_managed_instance_errata_output(classification_types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                        compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                       filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetManagedInstanceErrataFilterArgs']]]]] = None,
+                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedInstanceErrataFilterArgs', 'GetManagedInstanceErrataFilterArgsDict']]]]] = None,
                                        managed_instance_id: Optional[pulumi.Input[str]] = None,
                                        name_contains: Optional[pulumi.Input[Optional[str]]] = None,
                                        names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,

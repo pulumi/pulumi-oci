@@ -120,7 +120,7 @@ class AwaitableGetNamespacePropertiesMetadataResult(GetNamespacePropertiesMetada
 
 def get_namespace_properties_metadata(constraints: Optional[str] = None,
                                       display_text: Optional[str] = None,
-                                      filters: Optional[Sequence[pulumi.InputType['GetNamespacePropertiesMetadataFilterArgs']]] = None,
+                                      filters: Optional[Sequence[Union['GetNamespacePropertiesMetadataFilterArgs', 'GetNamespacePropertiesMetadataFilterArgsDict']]] = None,
                                       level: Optional[str] = None,
                                       name: Optional[str] = None,
                                       namespace: Optional[str] = None,
@@ -174,7 +174,7 @@ def get_namespace_properties_metadata(constraints: Optional[str] = None,
 @_utilities.lift_output_func(get_namespace_properties_metadata)
 def get_namespace_properties_metadata_output(constraints: Optional[pulumi.Input[Optional[str]]] = None,
                                              display_text: Optional[pulumi.Input[Optional[str]]] = None,
-                                             filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetNamespacePropertiesMetadataFilterArgs']]]]] = None,
+                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNamespacePropertiesMetadataFilterArgs', 'GetNamespacePropertiesMetadataFilterArgsDict']]]]] = None,
                                              level: Optional[pulumi.Input[Optional[str]]] = None,
                                              name: Optional[pulumi.Input[Optional[str]]] = None,
                                              namespace: Optional[pulumi.Input[str]] = None,

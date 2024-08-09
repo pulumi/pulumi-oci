@@ -533,7 +533,7 @@ class ManagedDatabase(pulumi.CustomResource):
             deployment_type: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             is_cluster: Optional[pulumi.Input[bool]] = None,
-            managed_database_groups: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedDatabaseManagedDatabaseGroupArgs']]]]] = None,
+            managed_database_groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagedDatabaseManagedDatabaseGroupArgs', 'ManagedDatabaseManagedDatabaseGroupArgsDict']]]]] = None,
             managed_database_id: Optional[pulumi.Input[str]] = None,
             management_option: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
@@ -560,7 +560,7 @@ class ManagedDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] deployment_type: The infrastructure used to deploy the Oracle Database.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_cluster: Indicates whether the Oracle Database is part of a cluster.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedDatabaseManagedDatabaseGroupArgs']]]] managed_database_groups: A list of Managed Database Groups that the Managed Database belongs to.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedDatabaseManagedDatabaseGroupArgs', 'ManagedDatabaseManagedDatabaseGroupArgsDict']]]] managed_database_groups: A list of Managed Database Groups that the Managed Database belongs to.
         :param pulumi.Input[str] managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
                
                

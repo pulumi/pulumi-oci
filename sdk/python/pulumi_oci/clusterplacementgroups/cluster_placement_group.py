@@ -463,7 +463,7 @@ class ClusterPlacementGroup(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  availability_domain: Optional[pulumi.Input[str]] = None,
-                 capabilities: Optional[pulumi.Input[pulumi.InputType['ClusterPlacementGroupCapabilitiesArgs']]] = None,
+                 capabilities: Optional[pulumi.Input[Union['ClusterPlacementGroupCapabilitiesArgs', 'ClusterPlacementGroupCapabilitiesArgsDict']]] = None,
                  cluster_placement_group_type: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -471,7 +471,7 @@ class ClusterPlacementGroup(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  opc_dry_run: Optional[pulumi.Input[bool]] = None,
-                 placement_instruction: Optional[pulumi.Input[pulumi.InputType['ClusterPlacementGroupPlacementInstructionArgs']]] = None,
+                 placement_instruction: Optional[pulumi.Input[Union['ClusterPlacementGroupPlacementInstructionArgs', 'ClusterPlacementGroupPlacementInstructionArgsDict']]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -491,12 +491,12 @@ class ClusterPlacementGroup(pulumi.CustomResource):
             compartment_id=compartment_id,
             description=cluster_placement_group_description,
             name=cluster_placement_group_name,
-            capabilities=oci.cluster_placement_groups.ClusterPlacementGroupCapabilitiesArgs(
-                items=[oci.cluster_placement_groups.ClusterPlacementGroupCapabilitiesItemArgs(
-                    name=cluster_placement_group_capabilities_items_name,
-                    service=cluster_placement_group_capabilities_items_service,
-                )],
-            ),
+            capabilities={
+                "items": [{
+                    "name": cluster_placement_group_capabilities_items_name,
+                    "service": cluster_placement_group_capabilities_items_service,
+                }],
+            },
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -504,10 +504,10 @@ class ClusterPlacementGroup(pulumi.CustomResource):
                 "bar-key": "value",
             },
             opc_dry_run=cluster_placement_group_opc_dry_run,
-            placement_instruction=oci.cluster_placement_groups.ClusterPlacementGroupPlacementInstructionArgs(
-                type=cluster_placement_group_placement_instruction_type,
-                value=cluster_placement_group_placement_instruction_value,
-            ))
+            placement_instruction={
+                "type": cluster_placement_group_placement_instruction_type,
+                "value": cluster_placement_group_placement_instruction_value,
+            })
         ```
 
         ## Import
@@ -521,7 +521,7 @@ class ClusterPlacementGroup(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] availability_domain: The availability domain where you want to create the cluster placement group.
-        :param pulumi.Input[pulumi.InputType['ClusterPlacementGroupCapabilitiesArgs']] capabilities: A list of resources that you can create in a cluster placement group.
+        :param pulumi.Input[Union['ClusterPlacementGroupCapabilitiesArgs', 'ClusterPlacementGroupCapabilitiesArgsDict']] capabilities: A list of resources that you can create in a cluster placement group.
         :param pulumi.Input[str] cluster_placement_group_type: ClusterPlacementGroup Identifier.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the cluster placement group.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -529,7 +529,7 @@ class ClusterPlacementGroup(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] name: The friendly name of the cluster placement group.
         :param pulumi.Input[bool] opc_dry_run: When set to `true`, the request performs validation on the submitted data without modifying configuration item details.
-        :param pulumi.Input[pulumi.InputType['ClusterPlacementGroupPlacementInstructionArgs']] placement_instruction: Details that inform cluster placement group provisioning.
+        :param pulumi.Input[Union['ClusterPlacementGroupPlacementInstructionArgs', 'ClusterPlacementGroupPlacementInstructionArgsDict']] placement_instruction: Details that inform cluster placement group provisioning.
         :param pulumi.Input[str] state: (Updatable) The target state for the Cluster Placement Group. Could be set to `ACTIVE` or `INACTIVE`. 
                
                
@@ -559,12 +559,12 @@ class ClusterPlacementGroup(pulumi.CustomResource):
             compartment_id=compartment_id,
             description=cluster_placement_group_description,
             name=cluster_placement_group_name,
-            capabilities=oci.cluster_placement_groups.ClusterPlacementGroupCapabilitiesArgs(
-                items=[oci.cluster_placement_groups.ClusterPlacementGroupCapabilitiesItemArgs(
-                    name=cluster_placement_group_capabilities_items_name,
-                    service=cluster_placement_group_capabilities_items_service,
-                )],
-            ),
+            capabilities={
+                "items": [{
+                    "name": cluster_placement_group_capabilities_items_name,
+                    "service": cluster_placement_group_capabilities_items_service,
+                }],
+            },
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -572,10 +572,10 @@ class ClusterPlacementGroup(pulumi.CustomResource):
                 "bar-key": "value",
             },
             opc_dry_run=cluster_placement_group_opc_dry_run,
-            placement_instruction=oci.cluster_placement_groups.ClusterPlacementGroupPlacementInstructionArgs(
-                type=cluster_placement_group_placement_instruction_type,
-                value=cluster_placement_group_placement_instruction_value,
-            ))
+            placement_instruction={
+                "type": cluster_placement_group_placement_instruction_type,
+                "value": cluster_placement_group_placement_instruction_value,
+            })
         ```
 
         ## Import
@@ -602,7 +602,7 @@ class ClusterPlacementGroup(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  availability_domain: Optional[pulumi.Input[str]] = None,
-                 capabilities: Optional[pulumi.Input[pulumi.InputType['ClusterPlacementGroupCapabilitiesArgs']]] = None,
+                 capabilities: Optional[pulumi.Input[Union['ClusterPlacementGroupCapabilitiesArgs', 'ClusterPlacementGroupCapabilitiesArgsDict']]] = None,
                  cluster_placement_group_type: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -610,7 +610,7 @@ class ClusterPlacementGroup(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  opc_dry_run: Optional[pulumi.Input[bool]] = None,
-                 placement_instruction: Optional[pulumi.Input[pulumi.InputType['ClusterPlacementGroupPlacementInstructionArgs']]] = None,
+                 placement_instruction: Optional[pulumi.Input[Union['ClusterPlacementGroupPlacementInstructionArgs', 'ClusterPlacementGroupPlacementInstructionArgsDict']]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -655,7 +655,7 @@ class ClusterPlacementGroup(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             availability_domain: Optional[pulumi.Input[str]] = None,
-            capabilities: Optional[pulumi.Input[pulumi.InputType['ClusterPlacementGroupCapabilitiesArgs']]] = None,
+            capabilities: Optional[pulumi.Input[Union['ClusterPlacementGroupCapabilitiesArgs', 'ClusterPlacementGroupCapabilitiesArgsDict']]] = None,
             cluster_placement_group_type: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -664,7 +664,7 @@ class ClusterPlacementGroup(pulumi.CustomResource):
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             opc_dry_run: Optional[pulumi.Input[bool]] = None,
-            placement_instruction: Optional[pulumi.Input[pulumi.InputType['ClusterPlacementGroupPlacementInstructionArgs']]] = None,
+            placement_instruction: Optional[pulumi.Input[Union['ClusterPlacementGroupPlacementInstructionArgs', 'ClusterPlacementGroupPlacementInstructionArgsDict']]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
@@ -677,7 +677,7 @@ class ClusterPlacementGroup(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] availability_domain: The availability domain where you want to create the cluster placement group.
-        :param pulumi.Input[pulumi.InputType['ClusterPlacementGroupCapabilitiesArgs']] capabilities: A list of resources that you can create in a cluster placement group.
+        :param pulumi.Input[Union['ClusterPlacementGroupCapabilitiesArgs', 'ClusterPlacementGroupCapabilitiesArgsDict']] capabilities: A list of resources that you can create in a cluster placement group.
         :param pulumi.Input[str] cluster_placement_group_type: ClusterPlacementGroup Identifier.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the cluster placement group.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -686,7 +686,7 @@ class ClusterPlacementGroup(pulumi.CustomResource):
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, lifecycle details for a resource in a Failed state might include information to act on.
         :param pulumi.Input[str] name: The friendly name of the cluster placement group.
         :param pulumi.Input[bool] opc_dry_run: When set to `true`, the request performs validation on the submitted data without modifying configuration item details.
-        :param pulumi.Input[pulumi.InputType['ClusterPlacementGroupPlacementInstructionArgs']] placement_instruction: Details that inform cluster placement group provisioning.
+        :param pulumi.Input[Union['ClusterPlacementGroupPlacementInstructionArgs', 'ClusterPlacementGroupPlacementInstructionArgsDict']] placement_instruction: Details that inform cluster placement group provisioning.
         :param pulumi.Input[str] state: (Updatable) The target state for the Cluster Placement Group. Could be set to `ACTIVE` or `INACTIVE`. 
                
                

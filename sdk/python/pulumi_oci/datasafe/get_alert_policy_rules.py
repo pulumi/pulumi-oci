@@ -77,7 +77,7 @@ class AwaitableGetAlertPolicyRulesResult(GetAlertPolicyRulesResult):
 
 
 def get_alert_policy_rules(alert_policy_id: Optional[str] = None,
-                           filters: Optional[Sequence[pulumi.InputType['GetAlertPolicyRulesFilterArgs']]] = None,
+                           filters: Optional[Sequence[Union['GetAlertPolicyRulesFilterArgs', 'GetAlertPolicyRulesFilterArgsDict']]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAlertPolicyRulesResult:
     """
     This data source provides the list of Alert Policy Rules in Oracle Cloud Infrastructure Data Safe service.
@@ -112,7 +112,7 @@ def get_alert_policy_rules(alert_policy_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_alert_policy_rules)
 def get_alert_policy_rules_output(alert_policy_id: Optional[pulumi.Input[str]] = None,
-                                  filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAlertPolicyRulesFilterArgs']]]]] = None,
+                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAlertPolicyRulesFilterArgs', 'GetAlertPolicyRulesFilterArgsDict']]]]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAlertPolicyRulesResult]:
     """
     This data source provides the list of Alert Policy Rules in Oracle Cloud Infrastructure Data Safe service.

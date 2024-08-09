@@ -123,7 +123,7 @@ class AwaitableGetLimitValuesResult(GetLimitValuesResult):
 
 def get_limit_values(availability_domain: Optional[str] = None,
                      compartment_id: Optional[str] = None,
-                     filters: Optional[Sequence[pulumi.InputType['GetLimitValuesFilterArgs']]] = None,
+                     filters: Optional[Sequence[Union['GetLimitValuesFilterArgs', 'GetLimitValuesFilterArgsDict']]] = None,
                      name: Optional[str] = None,
                      scope_type: Optional[str] = None,
                      service_name: Optional[str] = None,
@@ -177,7 +177,7 @@ def get_limit_values(availability_domain: Optional[str] = None,
 @_utilities.lift_output_func(get_limit_values)
 def get_limit_values_output(availability_domain: Optional[pulumi.Input[Optional[str]]] = None,
                             compartment_id: Optional[pulumi.Input[str]] = None,
-                            filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetLimitValuesFilterArgs']]]]] = None,
+                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetLimitValuesFilterArgs', 'GetLimitValuesFilterArgsDict']]]]] = None,
                             name: Optional[pulumi.Input[Optional[str]]] = None,
                             scope_type: Optional[pulumi.Input[Optional[str]]] = None,
                             service_name: Optional[pulumi.Input[str]] = None,

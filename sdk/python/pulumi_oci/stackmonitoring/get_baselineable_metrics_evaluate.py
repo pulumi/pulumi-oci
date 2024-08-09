@@ -92,7 +92,7 @@ class AwaitableGetBaselineableMetricsEvaluateResult(GetBaselineableMetricsEvalua
 
 
 def get_baselineable_metrics_evaluate(baselineable_metric_id: Optional[str] = None,
-                                      items: Optional[Sequence[pulumi.InputType['GetBaselineableMetricsEvaluateItemArgs']]] = None,
+                                      items: Optional[Sequence[Union['GetBaselineableMetricsEvaluateItemArgs', 'GetBaselineableMetricsEvaluateItemArgsDict']]] = None,
                                       resource_id: Optional[str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBaselineableMetricsEvaluateResult:
     """
@@ -107,23 +107,23 @@ def get_baselineable_metrics_evaluate(baselineable_metric_id: Optional[str] = No
     import pulumi_oci as oci
 
     test_baselineable_metrics_evaluate = oci.StackMonitoring.get_baselineable_metrics_evaluate(baselineable_metric_id=test_baselineable_metric["id"],
-        items=[oci.stack_monitoring.GetBaselineableMetricsEvaluateItemArgs(
-            evaluation_data_points=[oci.stack_monitoring.GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs(
-                timestamp=baselineable_metrics_evaluate_items_evaluation_data_points_timestamp,
-                value=baselineable_metrics_evaluate_items_evaluation_data_points_value,
-            )],
-            training_data_points=[oci.stack_monitoring.GetBaselineableMetricsEvaluateItemTrainingDataPointArgs(
-                timestamp=baselineable_metrics_evaluate_items_training_data_points_timestamp,
-                value=baselineable_metrics_evaluate_items_training_data_points_value,
-            )],
-            dimensions=baselineable_metrics_evaluate_items_dimensions,
-        )],
+        items=[{
+            "evaluation_data_points": [{
+                "timestamp": baselineable_metrics_evaluate_items_evaluation_data_points_timestamp,
+                "value": baselineable_metrics_evaluate_items_evaluation_data_points_value,
+            }],
+            "training_data_points": [{
+                "timestamp": baselineable_metrics_evaluate_items_training_data_points_timestamp,
+                "value": baselineable_metrics_evaluate_items_training_data_points_value,
+            }],
+            "dimensions": baselineable_metrics_evaluate_items_dimensions,
+        }],
         resource_id=test_resource["id"])
     ```
 
 
     :param str baselineable_metric_id: Identifier for the metric
-    :param Sequence[pulumi.InputType['GetBaselineableMetricsEvaluateItemArgs']] items: List of Metric data
+    :param Sequence[Union['GetBaselineableMetricsEvaluateItemArgs', 'GetBaselineableMetricsEvaluateItemArgsDict']] items: List of Metric data
     :param str resource_id: OCID of the resource
     """
     __args__ = dict()
@@ -143,7 +143,7 @@ def get_baselineable_metrics_evaluate(baselineable_metric_id: Optional[str] = No
 
 @_utilities.lift_output_func(get_baselineable_metrics_evaluate)
 def get_baselineable_metrics_evaluate_output(baselineable_metric_id: Optional[pulumi.Input[str]] = None,
-                                             items: Optional[pulumi.Input[Sequence[pulumi.InputType['GetBaselineableMetricsEvaluateItemArgs']]]] = None,
+                                             items: Optional[pulumi.Input[Sequence[Union['GetBaselineableMetricsEvaluateItemArgs', 'GetBaselineableMetricsEvaluateItemArgsDict']]]] = None,
                                              resource_id: Optional[pulumi.Input[str]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBaselineableMetricsEvaluateResult]:
     """
@@ -158,23 +158,23 @@ def get_baselineable_metrics_evaluate_output(baselineable_metric_id: Optional[pu
     import pulumi_oci as oci
 
     test_baselineable_metrics_evaluate = oci.StackMonitoring.get_baselineable_metrics_evaluate(baselineable_metric_id=test_baselineable_metric["id"],
-        items=[oci.stack_monitoring.GetBaselineableMetricsEvaluateItemArgs(
-            evaluation_data_points=[oci.stack_monitoring.GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs(
-                timestamp=baselineable_metrics_evaluate_items_evaluation_data_points_timestamp,
-                value=baselineable_metrics_evaluate_items_evaluation_data_points_value,
-            )],
-            training_data_points=[oci.stack_monitoring.GetBaselineableMetricsEvaluateItemTrainingDataPointArgs(
-                timestamp=baselineable_metrics_evaluate_items_training_data_points_timestamp,
-                value=baselineable_metrics_evaluate_items_training_data_points_value,
-            )],
-            dimensions=baselineable_metrics_evaluate_items_dimensions,
-        )],
+        items=[{
+            "evaluation_data_points": [{
+                "timestamp": baselineable_metrics_evaluate_items_evaluation_data_points_timestamp,
+                "value": baselineable_metrics_evaluate_items_evaluation_data_points_value,
+            }],
+            "training_data_points": [{
+                "timestamp": baselineable_metrics_evaluate_items_training_data_points_timestamp,
+                "value": baselineable_metrics_evaluate_items_training_data_points_value,
+            }],
+            "dimensions": baselineable_metrics_evaluate_items_dimensions,
+        }],
         resource_id=test_resource["id"])
     ```
 
 
     :param str baselineable_metric_id: Identifier for the metric
-    :param Sequence[pulumi.InputType['GetBaselineableMetricsEvaluateItemArgs']] items: List of Metric data
+    :param Sequence[Union['GetBaselineableMetricsEvaluateItemArgs', 'GetBaselineableMetricsEvaluateItemArgsDict']] items: List of Metric data
     :param str resource_id: OCID of the resource
     """
     ...

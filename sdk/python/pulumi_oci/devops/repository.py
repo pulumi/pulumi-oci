@@ -564,7 +564,7 @@ class Repository(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 mirror_repository_config: Optional[pulumi.Input[pulumi.InputType['RepositoryMirrorRepositoryConfigArgs']]] = None,
+                 mirror_repository_config: Optional[pulumi.Input[Union['RepositoryMirrorRepositoryConfigArgs', 'RepositoryMirrorRepositoryConfigArgsDict']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  parent_repository_id: Optional[pulumi.Input[str]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
@@ -589,7 +589,7 @@ class Repository(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Details of the repository. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-        :param pulumi.Input[pulumi.InputType['RepositoryMirrorRepositoryConfigArgs']] mirror_repository_config: (Updatable) Configuration information for mirroring the repository.
+        :param pulumi.Input[Union['RepositoryMirrorRepositoryConfigArgs', 'RepositoryMirrorRepositoryConfigArgsDict']] mirror_repository_config: (Updatable) Configuration information for mirroring the repository.
         :param pulumi.Input[str] name: (Updatable) Name of the repository. Should be unique within the project.
         :param pulumi.Input[str] parent_repository_id: The OCID of the parent repository.
         :param pulumi.Input[str] project_id: The OCID of the DevOps project containing the repository.
@@ -637,7 +637,7 @@ class Repository(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 mirror_repository_config: Optional[pulumi.Input[pulumi.InputType['RepositoryMirrorRepositoryConfigArgs']]] = None,
+                 mirror_repository_config: Optional[pulumi.Input[Union['RepositoryMirrorRepositoryConfigArgs', 'RepositoryMirrorRepositoryConfigArgsDict']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  parent_repository_id: Optional[pulumi.Input[str]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
@@ -697,7 +697,7 @@ class Repository(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             http_url: Optional[pulumi.Input[str]] = None,
             lifecyle_details: Optional[pulumi.Input[str]] = None,
-            mirror_repository_config: Optional[pulumi.Input[pulumi.InputType['RepositoryMirrorRepositoryConfigArgs']]] = None,
+            mirror_repository_config: Optional[pulumi.Input[Union['RepositoryMirrorRepositoryConfigArgs', 'RepositoryMirrorRepositoryConfigArgsDict']]] = None,
             name: Optional[pulumi.Input[str]] = None,
             namespace: Optional[pulumi.Input[str]] = None,
             parent_repository_id: Optional[pulumi.Input[str]] = None,
@@ -727,7 +727,7 @@ class Repository(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] http_url: HTTP URL that you use to git clone, pull and push.
         :param pulumi.Input[str] lifecyle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[pulumi.InputType['RepositoryMirrorRepositoryConfigArgs']] mirror_repository_config: (Updatable) Configuration information for mirroring the repository.
+        :param pulumi.Input[Union['RepositoryMirrorRepositoryConfigArgs', 'RepositoryMirrorRepositoryConfigArgsDict']] mirror_repository_config: (Updatable) Configuration information for mirroring the repository.
         :param pulumi.Input[str] name: (Updatable) Name of the repository. Should be unique within the project.
         :param pulumi.Input[str] namespace: Tenancy unique namespace.
         :param pulumi.Input[str] parent_repository_id: The OCID of the parent repository.

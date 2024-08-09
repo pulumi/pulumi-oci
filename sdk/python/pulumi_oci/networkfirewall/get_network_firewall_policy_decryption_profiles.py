@@ -86,7 +86,7 @@ class AwaitableGetNetworkFirewallPolicyDecryptionProfilesResult(GetNetworkFirewa
 
 
 def get_network_firewall_policy_decryption_profiles(display_name: Optional[str] = None,
-                                                    filters: Optional[Sequence[pulumi.InputType['GetNetworkFirewallPolicyDecryptionProfilesFilterArgs']]] = None,
+                                                    filters: Optional[Sequence[Union['GetNetworkFirewallPolicyDecryptionProfilesFilterArgs', 'GetNetworkFirewallPolicyDecryptionProfilesFilterArgsDict']]] = None,
                                                     network_firewall_policy_id: Optional[str] = None,
                                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkFirewallPolicyDecryptionProfilesResult:
     """
@@ -125,7 +125,7 @@ def get_network_firewall_policy_decryption_profiles(display_name: Optional[str] 
 
 @_utilities.lift_output_func(get_network_firewall_policy_decryption_profiles)
 def get_network_firewall_policy_decryption_profiles_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                                           filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetNetworkFirewallPolicyDecryptionProfilesFilterArgs']]]]] = None,
+                                                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNetworkFirewallPolicyDecryptionProfilesFilterArgs', 'GetNetworkFirewallPolicyDecryptionProfilesFilterArgsDict']]]]] = None,
                                                            network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
                                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkFirewallPolicyDecryptionProfilesResult]:
     """

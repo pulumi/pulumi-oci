@@ -179,7 +179,7 @@ public class ModelProvenance extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ModelProvenance(String name) {
+    public ModelProvenance(java.lang.String name) {
         this(name, ModelProvenanceArgs.Empty);
     }
     /**
@@ -187,7 +187,7 @@ public class ModelProvenance extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ModelProvenance(String name, ModelProvenanceArgs args) {
+    public ModelProvenance(java.lang.String name, ModelProvenanceArgs args) {
         this(name, args, null);
     }
     /**
@@ -196,12 +196,12 @@ public class ModelProvenance extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ModelProvenance(String name, ModelProvenanceArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataScience/modelProvenance:ModelProvenance", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ModelProvenance(java.lang.String name, ModelProvenanceArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataScience/modelProvenance:ModelProvenance", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ModelProvenance(String name, Output<String> id, @Nullable ModelProvenanceState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataScience/modelProvenance:ModelProvenance", name, state, makeResourceOptions(options, id));
+    private ModelProvenance(java.lang.String name, Output<java.lang.String> id, @Nullable ModelProvenanceState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataScience/modelProvenance:ModelProvenance", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ModelProvenanceArgs makeArgs(ModelProvenanceArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -211,7 +211,7 @@ public class ModelProvenance extends com.pulumi.resources.CustomResource {
         return args == null ? ModelProvenanceArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -227,7 +227,7 @@ public class ModelProvenance extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ModelProvenance get(String name, Output<String> id, @Nullable ModelProvenanceState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ModelProvenance get(java.lang.String name, Output<java.lang.String> id, @Nullable ModelProvenanceState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ModelProvenance(name, id, state, options);
     }
 }

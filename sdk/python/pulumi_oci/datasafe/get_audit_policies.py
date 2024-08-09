@@ -147,7 +147,7 @@ def get_audit_policies(access_level: Optional[str] = None,
                        compartment_id: Optional[str] = None,
                        compartment_id_in_subtree: Optional[bool] = None,
                        display_name: Optional[str] = None,
-                       filters: Optional[Sequence[pulumi.InputType['GetAuditPoliciesFilterArgs']]] = None,
+                       filters: Optional[Sequence[Union['GetAuditPoliciesFilterArgs', 'GetAuditPoliciesFilterArgsDict']]] = None,
                        state: Optional[str] = None,
                        target_id: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAuditPoliciesResult:
@@ -225,7 +225,7 @@ def get_audit_policies_output(access_level: Optional[pulumi.Input[Optional[str]]
                               compartment_id: Optional[pulumi.Input[str]] = None,
                               compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                               display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                              filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAuditPoliciesFilterArgs']]]]] = None,
+                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAuditPoliciesFilterArgs', 'GetAuditPoliciesFilterArgsDict']]]]] = None,
                               state: Optional[pulumi.Input[Optional[str]]] = None,
                               target_id: Optional[pulumi.Input[Optional[str]]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAuditPoliciesResult]:

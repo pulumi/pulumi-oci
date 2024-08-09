@@ -105,7 +105,7 @@ class AwaitableGetPathAnalyzerTestsResult(GetPathAnalyzerTestsResult):
 
 def get_path_analyzer_tests(compartment_id: Optional[str] = None,
                             display_name: Optional[str] = None,
-                            filters: Optional[Sequence[pulumi.InputType['GetPathAnalyzerTestsFilterArgs']]] = None,
+                            filters: Optional[Sequence[Union['GetPathAnalyzerTestsFilterArgs', 'GetPathAnalyzerTestsFilterArgsDict']]] = None,
                             state: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPathAnalyzerTestsResult:
     """
@@ -149,7 +149,7 @@ def get_path_analyzer_tests(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_path_analyzer_tests)
 def get_path_analyzer_tests_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                    display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetPathAnalyzerTestsFilterArgs']]]]] = None,
+                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPathAnalyzerTestsFilterArgs', 'GetPathAnalyzerTestsFilterArgsDict']]]]] = None,
                                    state: Optional[pulumi.Input[Optional[str]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPathAnalyzerTestsResult]:
     """

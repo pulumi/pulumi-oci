@@ -77,7 +77,7 @@ class AwaitableGetBlockchainPlatformPatchesResult(GetBlockchainPlatformPatchesRe
 
 
 def get_blockchain_platform_patches(blockchain_platform_id: Optional[str] = None,
-                                    filters: Optional[Sequence[pulumi.InputType['GetBlockchainPlatformPatchesFilterArgs']]] = None,
+                                    filters: Optional[Sequence[Union['GetBlockchainPlatformPatchesFilterArgs', 'GetBlockchainPlatformPatchesFilterArgsDict']]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBlockchainPlatformPatchesResult:
     """
     This data source provides the list of Blockchain Platform Patches in Oracle Cloud Infrastructure Blockchain service.
@@ -111,7 +111,7 @@ def get_blockchain_platform_patches(blockchain_platform_id: Optional[str] = None
 
 @_utilities.lift_output_func(get_blockchain_platform_patches)
 def get_blockchain_platform_patches_output(blockchain_platform_id: Optional[pulumi.Input[str]] = None,
-                                           filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetBlockchainPlatformPatchesFilterArgs']]]]] = None,
+                                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBlockchainPlatformPatchesFilterArgs', 'GetBlockchainPlatformPatchesFilterArgsDict']]]]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBlockchainPlatformPatchesResult]:
     """
     This data source provides the list of Blockchain Platform Patches in Oracle Cloud Infrastructure Blockchain service.

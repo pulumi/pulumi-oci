@@ -108,7 +108,7 @@ class AwaitableGetBdsInstanceApiKeysResult(GetBdsInstanceApiKeysResult):
 
 def get_bds_instance_api_keys(bds_instance_id: Optional[str] = None,
                               display_name: Optional[str] = None,
-                              filters: Optional[Sequence[pulumi.InputType['GetBdsInstanceApiKeysFilterArgs']]] = None,
+                              filters: Optional[Sequence[Union['GetBdsInstanceApiKeysFilterArgs', 'GetBdsInstanceApiKeysFilterArgsDict']]] = None,
                               state: Optional[str] = None,
                               user_id: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBdsInstanceApiKeysResult:
@@ -154,7 +154,7 @@ def get_bds_instance_api_keys(bds_instance_id: Optional[str] = None,
 @_utilities.lift_output_func(get_bds_instance_api_keys)
 def get_bds_instance_api_keys_output(bds_instance_id: Optional[pulumi.Input[str]] = None,
                                      display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                     filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetBdsInstanceApiKeysFilterArgs']]]]] = None,
+                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBdsInstanceApiKeysFilterArgs', 'GetBdsInstanceApiKeysFilterArgsDict']]]]] = None,
                                      state: Optional[pulumi.Input[Optional[str]]] = None,
                                      user_id: Optional[pulumi.Input[Optional[str]]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBdsInstanceApiKeysResult]:

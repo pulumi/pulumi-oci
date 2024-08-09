@@ -89,7 +89,7 @@ class AwaitableGetDiscoveryJobLogsResult(GetDiscoveryJobLogsResult):
 
 
 def get_discovery_job_logs(discovery_job_id: Optional[str] = None,
-                           filters: Optional[Sequence[pulumi.InputType['GetDiscoveryJobLogsFilterArgs']]] = None,
+                           filters: Optional[Sequence[Union['GetDiscoveryJobLogsFilterArgs', 'GetDiscoveryJobLogsFilterArgsDict']]] = None,
                            log_type: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDiscoveryJobLogsResult:
     """
@@ -128,7 +128,7 @@ def get_discovery_job_logs(discovery_job_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_discovery_job_logs)
 def get_discovery_job_logs_output(discovery_job_id: Optional[pulumi.Input[str]] = None,
-                                  filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDiscoveryJobLogsFilterArgs']]]]] = None,
+                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDiscoveryJobLogsFilterArgs', 'GetDiscoveryJobLogsFilterArgsDict']]]]] = None,
                                   log_type: Optional[pulumi.Input[Optional[str]]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDiscoveryJobLogsResult]:
     """

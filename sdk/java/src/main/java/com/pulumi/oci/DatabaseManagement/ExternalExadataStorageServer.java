@@ -396,7 +396,7 @@ public class ExternalExadataStorageServer extends com.pulumi.resources.CustomRes
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ExternalExadataStorageServer(String name) {
+    public ExternalExadataStorageServer(java.lang.String name) {
         this(name, ExternalExadataStorageServerArgs.Empty);
     }
     /**
@@ -404,7 +404,7 @@ public class ExternalExadataStorageServer extends com.pulumi.resources.CustomRes
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ExternalExadataStorageServer(String name, ExternalExadataStorageServerArgs args) {
+    public ExternalExadataStorageServer(java.lang.String name, ExternalExadataStorageServerArgs args) {
         this(name, args, null);
     }
     /**
@@ -413,12 +413,12 @@ public class ExternalExadataStorageServer extends com.pulumi.resources.CustomRes
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ExternalExadataStorageServer(String name, ExternalExadataStorageServerArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseManagement/externalExadataStorageServer:ExternalExadataStorageServer", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ExternalExadataStorageServer(java.lang.String name, ExternalExadataStorageServerArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DatabaseManagement/externalExadataStorageServer:ExternalExadataStorageServer", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ExternalExadataStorageServer(String name, Output<String> id, @Nullable ExternalExadataStorageServerState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseManagement/externalExadataStorageServer:ExternalExadataStorageServer", name, state, makeResourceOptions(options, id));
+    private ExternalExadataStorageServer(java.lang.String name, Output<java.lang.String> id, @Nullable ExternalExadataStorageServerState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DatabaseManagement/externalExadataStorageServer:ExternalExadataStorageServer", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ExternalExadataStorageServerArgs makeArgs(ExternalExadataStorageServerArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -428,7 +428,7 @@ public class ExternalExadataStorageServer extends com.pulumi.resources.CustomRes
         return args == null ? ExternalExadataStorageServerArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -444,7 +444,7 @@ public class ExternalExadataStorageServer extends com.pulumi.resources.CustomRes
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ExternalExadataStorageServer get(String name, Output<String> id, @Nullable ExternalExadataStorageServerState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ExternalExadataStorageServer get(java.lang.String name, Output<java.lang.String> id, @Nullable ExternalExadataStorageServerState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ExternalExadataStorageServer(name, id, state, options);
     }
 }

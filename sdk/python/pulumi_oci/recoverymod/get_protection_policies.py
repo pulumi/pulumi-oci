@@ -123,7 +123,7 @@ class AwaitableGetProtectionPoliciesResult(GetProtectionPoliciesResult):
 
 def get_protection_policies(compartment_id: Optional[str] = None,
                             display_name: Optional[str] = None,
-                            filters: Optional[Sequence[pulumi.InputType['GetProtectionPoliciesFilterArgs']]] = None,
+                            filters: Optional[Sequence[Union['GetProtectionPoliciesFilterArgs', 'GetProtectionPoliciesFilterArgsDict']]] = None,
                             owner: Optional[str] = None,
                             protection_policy_id: Optional[str] = None,
                             state: Optional[str] = None,
@@ -177,7 +177,7 @@ def get_protection_policies(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_protection_policies)
 def get_protection_policies_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                    display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetProtectionPoliciesFilterArgs']]]]] = None,
+                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetProtectionPoliciesFilterArgs', 'GetProtectionPoliciesFilterArgsDict']]]]] = None,
                                    owner: Optional[pulumi.Input[Optional[str]]] = None,
                                    protection_policy_id: Optional[pulumi.Input[Optional[str]]] = None,
                                    state: Optional[pulumi.Input[Optional[str]]] = None,

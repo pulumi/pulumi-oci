@@ -77,7 +77,7 @@ class AwaitableGetCrossConnectLocationsResult(GetCrossConnectLocationsResult):
 
 
 def get_cross_connect_locations(compartment_id: Optional[str] = None,
-                                filters: Optional[Sequence[pulumi.InputType['GetCrossConnectLocationsFilterArgs']]] = None,
+                                filters: Optional[Sequence[Union['GetCrossConnectLocationsFilterArgs', 'GetCrossConnectLocationsFilterArgsDict']]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCrossConnectLocationsResult:
     """
     This data source provides the list of Cross Connect Locations in Oracle Cloud Infrastructure Core service.
@@ -112,7 +112,7 @@ def get_cross_connect_locations(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_cross_connect_locations)
 def get_cross_connect_locations_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                       filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetCrossConnectLocationsFilterArgs']]]]] = None,
+                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCrossConnectLocationsFilterArgs', 'GetCrossConnectLocationsFilterArgsDict']]]]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCrossConnectLocationsResult]:
     """
     This data source provides the list of Cross Connect Locations in Oracle Cloud Infrastructure Core service.

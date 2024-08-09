@@ -42,7 +42,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConf
      */
     private @Nullable List<UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyList> denyLists;
     /**
-     * @return (Updatable) If true, emit invalid record to{@literal @}ERROR label. Invalid cases are: 1) key does not exist; 2) the format does not match; or 3) an unexpected error. You can rescue unexpected format logs in the{@literal @}ERROR lable. If you want to ignore these errors, set this to false.
+     * @return (Updatable) If true, emit invalid record to {@literal @}ERROR label. Invalid cases are: 1) key does not exist; 2) the format does not match; or 3) an unexpected error. You can rescue unexpected format logs in the {@literal @}ERROR lable. If you want to ignore these errors, set this to false.
      * 
      */
     private @Nullable Boolean emitInvalidRecordToError;
@@ -170,7 +170,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConf
         return this.denyLists == null ? List.of() : this.denyLists;
     }
     /**
-     * @return (Updatable) If true, emit invalid record to{@literal @}ERROR label. Invalid cases are: 1) key does not exist; 2) the format does not match; or 3) an unexpected error. You can rescue unexpected format logs in the{@literal @}ERROR lable. If you want to ignore these errors, set this to false.
+     * @return (Updatable) If true, emit invalid record to {@literal @}ERROR label. Invalid cases are: 1) key does not exist; 2) the format does not match; or 3) an unexpected error. You can rescue unexpected format logs in the {@literal @}ERROR lable. If you want to ignore these errors, set this to false.
      * 
      */
     public Optional<Boolean> emitInvalidRecordToError() {

@@ -468,8 +468,8 @@ class Schedule(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  output_file_format: Optional[pulumi.Input[str]] = None,
-                 query_properties: Optional[pulumi.Input[pulumi.InputType['ScheduleQueryPropertiesArgs']]] = None,
-                 result_location: Optional[pulumi.Input[pulumi.InputType['ScheduleResultLocationArgs']]] = None,
+                 query_properties: Optional[pulumi.Input[Union['ScheduleQueryPropertiesArgs', 'ScheduleQueryPropertiesArgsDict']]] = None,
+                 result_location: Optional[pulumi.Input[Union['ScheduleResultLocationArgs', 'ScheduleResultLocationArgsDict']]] = None,
                  saved_report_id: Optional[pulumi.Input[str]] = None,
                  schedule_recurrences: Optional[pulumi.Input[str]] = None,
                  time_scheduled: Optional[pulumi.Input[str]] = None,
@@ -488,12 +488,12 @@ class Schedule(pulumi.CustomResource):
         test_schedule = oci.metering_computation.Schedule("test_schedule",
             compartment_id=compartment_id,
             name=schedule_name,
-            result_location=oci.metering_computation.ScheduleResultLocationArgs(
-                bucket=schedule_result_location_bucket,
-                location_type=schedule_result_location_location_type,
-                namespace=schedule_result_location_namespace,
-                region=schedule_result_location_region,
-            ),
+            result_location={
+                "bucket": schedule_result_location_bucket,
+                "location_type": schedule_result_location_location_type,
+                "namespace": schedule_result_location_namespace,
+                "region": schedule_result_location_region,
+            },
             schedule_recurrences=schedule_schedule_recurrences,
             time_scheduled=schedule_time_scheduled,
             defined_tags={
@@ -504,25 +504,25 @@ class Schedule(pulumi.CustomResource):
                 "bar-key": "value",
             },
             output_file_format=schedule_output_file_format,
-            query_properties=oci.metering_computation.ScheduleQueryPropertiesArgs(
-                date_range=oci.metering_computation.ScheduleQueryPropertiesDateRangeArgs(
-                    date_range_type=schedule_query_properties_date_range_date_range_type,
-                    dynamic_date_range_type=schedule_query_properties_date_range_dynamic_date_range_type,
-                    time_usage_ended=schedule_query_properties_date_range_time_usage_ended,
-                    time_usage_started=schedule_query_properties_date_range_time_usage_started,
-                ),
-                granularity=schedule_query_properties_granularity,
-                compartment_depth=schedule_query_properties_compartment_depth,
-                filter=schedule_query_properties_filter,
-                group_bies=schedule_query_properties_group_by,
-                group_by_tags=[oci.metering_computation.ScheduleQueryPropertiesGroupByTagArgs(
-                    key=schedule_query_properties_group_by_tag_key,
-                    namespace=schedule_query_properties_group_by_tag_namespace,
-                    value=schedule_query_properties_group_by_tag_value,
-                )],
-                is_aggregate_by_time=schedule_query_properties_is_aggregate_by_time,
-                query_type=schedule_query_properties_query_type,
-            ),
+            query_properties={
+                "date_range": {
+                    "date_range_type": schedule_query_properties_date_range_date_range_type,
+                    "dynamic_date_range_type": schedule_query_properties_date_range_dynamic_date_range_type,
+                    "time_usage_ended": schedule_query_properties_date_range_time_usage_ended,
+                    "time_usage_started": schedule_query_properties_date_range_time_usage_started,
+                },
+                "granularity": schedule_query_properties_granularity,
+                "compartment_depth": schedule_query_properties_compartment_depth,
+                "filter": schedule_query_properties_filter,
+                "group_bies": schedule_query_properties_group_by,
+                "group_by_tags": [{
+                    "key": schedule_query_properties_group_by_tag_key,
+                    "namespace": schedule_query_properties_group_by_tag_namespace,
+                    "value": schedule_query_properties_group_by_tag_value,
+                }],
+                "is_aggregate_by_time": schedule_query_properties_is_aggregate_by_time,
+                "query_type": schedule_query_properties_query_type,
+            },
             saved_report_id=test_report["id"])
         ```
 
@@ -542,8 +542,8 @@ class Schedule(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] name: The unique name of the user-created schedule.
         :param pulumi.Input[str] output_file_format: (Updatable) Specifies the supported output file format.
-        :param pulumi.Input[pulumi.InputType['ScheduleQueryPropertiesArgs']] query_properties: The query properties.
-        :param pulumi.Input[pulumi.InputType['ScheduleResultLocationArgs']] result_location: (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
+        :param pulumi.Input[Union['ScheduleQueryPropertiesArgs', 'ScheduleQueryPropertiesArgsDict']] query_properties: The query properties.
+        :param pulumi.Input[Union['ScheduleResultLocationArgs', 'ScheduleResultLocationArgsDict']] result_location: (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
         :param pulumi.Input[str] saved_report_id: The saved report ID which can also be used to generate a query.
         :param pulumi.Input[str] schedule_recurrences: Specifies the frequency according to when the schedule will be run, in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
         :param pulumi.Input[str] time_scheduled: The date and time of the first time job execution.
@@ -572,12 +572,12 @@ class Schedule(pulumi.CustomResource):
         test_schedule = oci.metering_computation.Schedule("test_schedule",
             compartment_id=compartment_id,
             name=schedule_name,
-            result_location=oci.metering_computation.ScheduleResultLocationArgs(
-                bucket=schedule_result_location_bucket,
-                location_type=schedule_result_location_location_type,
-                namespace=schedule_result_location_namespace,
-                region=schedule_result_location_region,
-            ),
+            result_location={
+                "bucket": schedule_result_location_bucket,
+                "location_type": schedule_result_location_location_type,
+                "namespace": schedule_result_location_namespace,
+                "region": schedule_result_location_region,
+            },
             schedule_recurrences=schedule_schedule_recurrences,
             time_scheduled=schedule_time_scheduled,
             defined_tags={
@@ -588,25 +588,25 @@ class Schedule(pulumi.CustomResource):
                 "bar-key": "value",
             },
             output_file_format=schedule_output_file_format,
-            query_properties=oci.metering_computation.ScheduleQueryPropertiesArgs(
-                date_range=oci.metering_computation.ScheduleQueryPropertiesDateRangeArgs(
-                    date_range_type=schedule_query_properties_date_range_date_range_type,
-                    dynamic_date_range_type=schedule_query_properties_date_range_dynamic_date_range_type,
-                    time_usage_ended=schedule_query_properties_date_range_time_usage_ended,
-                    time_usage_started=schedule_query_properties_date_range_time_usage_started,
-                ),
-                granularity=schedule_query_properties_granularity,
-                compartment_depth=schedule_query_properties_compartment_depth,
-                filter=schedule_query_properties_filter,
-                group_bies=schedule_query_properties_group_by,
-                group_by_tags=[oci.metering_computation.ScheduleQueryPropertiesGroupByTagArgs(
-                    key=schedule_query_properties_group_by_tag_key,
-                    namespace=schedule_query_properties_group_by_tag_namespace,
-                    value=schedule_query_properties_group_by_tag_value,
-                )],
-                is_aggregate_by_time=schedule_query_properties_is_aggregate_by_time,
-                query_type=schedule_query_properties_query_type,
-            ),
+            query_properties={
+                "date_range": {
+                    "date_range_type": schedule_query_properties_date_range_date_range_type,
+                    "dynamic_date_range_type": schedule_query_properties_date_range_dynamic_date_range_type,
+                    "time_usage_ended": schedule_query_properties_date_range_time_usage_ended,
+                    "time_usage_started": schedule_query_properties_date_range_time_usage_started,
+                },
+                "granularity": schedule_query_properties_granularity,
+                "compartment_depth": schedule_query_properties_compartment_depth,
+                "filter": schedule_query_properties_filter,
+                "group_bies": schedule_query_properties_group_by,
+                "group_by_tags": [{
+                    "key": schedule_query_properties_group_by_tag_key,
+                    "namespace": schedule_query_properties_group_by_tag_namespace,
+                    "value": schedule_query_properties_group_by_tag_value,
+                }],
+                "is_aggregate_by_time": schedule_query_properties_is_aggregate_by_time,
+                "query_type": schedule_query_properties_query_type,
+            },
             saved_report_id=test_report["id"])
         ```
 
@@ -639,8 +639,8 @@ class Schedule(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  output_file_format: Optional[pulumi.Input[str]] = None,
-                 query_properties: Optional[pulumi.Input[pulumi.InputType['ScheduleQueryPropertiesArgs']]] = None,
-                 result_location: Optional[pulumi.Input[pulumi.InputType['ScheduleResultLocationArgs']]] = None,
+                 query_properties: Optional[pulumi.Input[Union['ScheduleQueryPropertiesArgs', 'ScheduleQueryPropertiesArgsDict']]] = None,
+                 result_location: Optional[pulumi.Input[Union['ScheduleResultLocationArgs', 'ScheduleResultLocationArgsDict']]] = None,
                  saved_report_id: Optional[pulumi.Input[str]] = None,
                  schedule_recurrences: Optional[pulumi.Input[str]] = None,
                  time_scheduled: Optional[pulumi.Input[str]] = None,
@@ -692,8 +692,8 @@ class Schedule(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             name: Optional[pulumi.Input[str]] = None,
             output_file_format: Optional[pulumi.Input[str]] = None,
-            query_properties: Optional[pulumi.Input[pulumi.InputType['ScheduleQueryPropertiesArgs']]] = None,
-            result_location: Optional[pulumi.Input[pulumi.InputType['ScheduleResultLocationArgs']]] = None,
+            query_properties: Optional[pulumi.Input[Union['ScheduleQueryPropertiesArgs', 'ScheduleQueryPropertiesArgsDict']]] = None,
+            result_location: Optional[pulumi.Input[Union['ScheduleResultLocationArgs', 'ScheduleResultLocationArgsDict']]] = None,
             saved_report_id: Optional[pulumi.Input[str]] = None,
             schedule_recurrences: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -714,8 +714,8 @@ class Schedule(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] name: The unique name of the user-created schedule.
         :param pulumi.Input[str] output_file_format: (Updatable) Specifies the supported output file format.
-        :param pulumi.Input[pulumi.InputType['ScheduleQueryPropertiesArgs']] query_properties: The query properties.
-        :param pulumi.Input[pulumi.InputType['ScheduleResultLocationArgs']] result_location: (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
+        :param pulumi.Input[Union['ScheduleQueryPropertiesArgs', 'ScheduleQueryPropertiesArgsDict']] query_properties: The query properties.
+        :param pulumi.Input[Union['ScheduleResultLocationArgs', 'ScheduleResultLocationArgsDict']] result_location: (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
         :param pulumi.Input[str] saved_report_id: The saved report ID which can also be used to generate a query.
         :param pulumi.Input[str] schedule_recurrences: Specifies the frequency according to when the schedule will be run, in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
         :param pulumi.Input[str] state: The schedule lifecycle state.

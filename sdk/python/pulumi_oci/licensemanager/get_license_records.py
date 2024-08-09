@@ -79,7 +79,7 @@ class AwaitableGetLicenseRecordsResult(GetLicenseRecordsResult):
             product_license_id=self.product_license_id)
 
 
-def get_license_records(filters: Optional[Sequence[pulumi.InputType['GetLicenseRecordsFilterArgs']]] = None,
+def get_license_records(filters: Optional[Sequence[Union['GetLicenseRecordsFilterArgs', 'GetLicenseRecordsFilterArgsDict']]] = None,
                         product_license_id: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLicenseRecordsResult:
     """
@@ -113,7 +113,7 @@ def get_license_records(filters: Optional[Sequence[pulumi.InputType['GetLicenseR
 
 
 @_utilities.lift_output_func(get_license_records)
-def get_license_records_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetLicenseRecordsFilterArgs']]]]] = None,
+def get_license_records_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetLicenseRecordsFilterArgs', 'GetLicenseRecordsFilterArgsDict']]]]] = None,
                                product_license_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLicenseRecordsResult]:
     """

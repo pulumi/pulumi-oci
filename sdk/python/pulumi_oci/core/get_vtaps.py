@@ -164,7 +164,7 @@ class AwaitableGetVtapsResult(GetVtapsResult):
 
 def get_vtaps(compartment_id: Optional[str] = None,
               display_name: Optional[str] = None,
-              filters: Optional[Sequence[pulumi.InputType['GetVtapsFilterArgs']]] = None,
+              filters: Optional[Sequence[Union['GetVtapsFilterArgs', 'GetVtapsFilterArgsDict']]] = None,
               is_vtap_enabled: Optional[bool] = None,
               source: Optional[str] = None,
               state: Optional[str] = None,
@@ -235,7 +235,7 @@ def get_vtaps(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_vtaps)
 def get_vtaps_output(compartment_id: Optional[pulumi.Input[str]] = None,
                      display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                     filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetVtapsFilterArgs']]]]] = None,
+                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVtapsFilterArgs', 'GetVtapsFilterArgsDict']]]]] = None,
                      is_vtap_enabled: Optional[pulumi.Input[Optional[bool]]] = None,
                      source: Optional[pulumi.Input[Optional[str]]] = None,
                      state: Optional[pulumi.Input[Optional[str]]] = None,

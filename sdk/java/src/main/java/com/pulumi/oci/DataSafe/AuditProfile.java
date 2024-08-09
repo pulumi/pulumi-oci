@@ -313,7 +313,7 @@ public class AuditProfile extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public AuditProfile(String name) {
+    public AuditProfile(java.lang.String name) {
         this(name, AuditProfileArgs.Empty);
     }
     /**
@@ -321,7 +321,7 @@ public class AuditProfile extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public AuditProfile(String name, AuditProfileArgs args) {
+    public AuditProfile(java.lang.String name, AuditProfileArgs args) {
         this(name, args, null);
     }
     /**
@@ -330,12 +330,12 @@ public class AuditProfile extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public AuditProfile(String name, AuditProfileArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/auditProfile:AuditProfile", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public AuditProfile(java.lang.String name, AuditProfileArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataSafe/auditProfile:AuditProfile", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private AuditProfile(String name, Output<String> id, @Nullable AuditProfileState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/auditProfile:AuditProfile", name, state, makeResourceOptions(options, id));
+    private AuditProfile(java.lang.String name, Output<java.lang.String> id, @Nullable AuditProfileState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataSafe/auditProfile:AuditProfile", name, state, makeResourceOptions(options, id), false);
     }
 
     private static AuditProfileArgs makeArgs(AuditProfileArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -345,7 +345,7 @@ public class AuditProfile extends com.pulumi.resources.CustomResource {
         return args == null ? AuditProfileArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -361,7 +361,7 @@ public class AuditProfile extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static AuditProfile get(String name, Output<String> id, @Nullable AuditProfileState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static AuditProfile get(java.lang.String name, Output<java.lang.String> id, @Nullable AuditProfileState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new AuditProfile(name, id, state, options);
     }
 }

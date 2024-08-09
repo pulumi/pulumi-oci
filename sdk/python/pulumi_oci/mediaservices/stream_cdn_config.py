@@ -375,14 +375,14 @@ class StreamCdnConfig(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config: Optional[pulumi.Input[pulumi.InputType['StreamCdnConfigConfigArgs']]] = None,
+                 config: Optional[pulumi.Input[Union['StreamCdnConfigConfigArgs', 'StreamCdnConfigConfigArgsDict']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  distribution_channel_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_enabled: Optional[pulumi.Input[bool]] = None,
                  is_lock_override: Optional[pulumi.Input[bool]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['StreamCdnConfigLockArgs']]]]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['StreamCdnConfigLockArgs', 'StreamCdnConfigLockArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Stream Cdn Config resource in Oracle Cloud Infrastructure Media Services service.
@@ -396,20 +396,20 @@ class StreamCdnConfig(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_stream_cdn_config = oci.media_services.StreamCdnConfig("test_stream_cdn_config",
-            config=oci.media_services.StreamCdnConfigConfigArgs(
-                type=stream_cdn_config_config_type,
-                edge_hostname=stream_cdn_config_config_edge_hostname,
-                edge_path_prefix=stream_cdn_config_config_edge_path_prefix,
-                edge_token_key=stream_cdn_config_config_edge_token_key,
-                edge_token_salt=stream_cdn_config_config_edge_token_salt,
-                is_edge_token_auth=stream_cdn_config_config_is_edge_token_auth,
-                origin_auth_secret_key_a=stream_cdn_config_config_origin_auth_secret_key_a,
-                origin_auth_secret_key_b=stream_cdn_config_config_origin_auth_secret_key_b,
-                origin_auth_secret_key_nonce_a=stream_cdn_config_config_origin_auth_secret_key_nonce_a,
-                origin_auth_secret_key_nonce_b=stream_cdn_config_config_origin_auth_secret_key_nonce_b,
-                origin_auth_sign_encryption=stream_cdn_config_config_origin_auth_sign_encryption,
-                origin_auth_sign_type=stream_cdn_config_config_origin_auth_sign_type,
-            ),
+            config={
+                "type": stream_cdn_config_config_type,
+                "edge_hostname": stream_cdn_config_config_edge_hostname,
+                "edge_path_prefix": stream_cdn_config_config_edge_path_prefix,
+                "edge_token_key": stream_cdn_config_config_edge_token_key,
+                "edge_token_salt": stream_cdn_config_config_edge_token_salt,
+                "is_edge_token_auth": stream_cdn_config_config_is_edge_token_auth,
+                "origin_auth_secret_key_a": stream_cdn_config_config_origin_auth_secret_key_a,
+                "origin_auth_secret_key_b": stream_cdn_config_config_origin_auth_secret_key_b,
+                "origin_auth_secret_key_nonce_a": stream_cdn_config_config_origin_auth_secret_key_nonce_a,
+                "origin_auth_secret_key_nonce_b": stream_cdn_config_config_origin_auth_secret_key_nonce_b,
+                "origin_auth_sign_encryption": stream_cdn_config_config_origin_auth_sign_encryption,
+                "origin_auth_sign_type": stream_cdn_config_config_origin_auth_sign_type,
+            },
             display_name=stream_cdn_config_display_name,
             distribution_channel_id=test_channel["id"],
             defined_tags={
@@ -419,13 +419,13 @@ class StreamCdnConfig(pulumi.CustomResource):
                 "bar-key": "value",
             },
             is_enabled=stream_cdn_config_is_enabled,
-            locks=[oci.media_services.StreamCdnConfigLockArgs(
-                compartment_id=compartment_id,
-                type=stream_cdn_config_locks_type,
-                message=stream_cdn_config_locks_message,
-                related_resource_id=test_resource["id"],
-                time_created=stream_cdn_config_locks_time_created,
-            )])
+            locks=[{
+                "compartment_id": compartment_id,
+                "type": stream_cdn_config_locks_type,
+                "message": stream_cdn_config_locks_message,
+                "related_resource_id": test_resource["id"],
+                "time_created": stream_cdn_config_locks_time_created,
+            }])
         ```
 
         ## Import
@@ -438,13 +438,13 @@ class StreamCdnConfig(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['StreamCdnConfigConfigArgs']] config: (Updatable) Base fields of the StreamCdnConfig configuration object.
+        :param pulumi.Input[Union['StreamCdnConfigConfigArgs', 'StreamCdnConfigConfigArgsDict']] config: (Updatable) Base fields of the StreamCdnConfig configuration object.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) CDN Config display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
         :param pulumi.Input[str] distribution_channel_id: Distribution Channel Identifier.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether publishing to CDN is enabled.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['StreamCdnConfigLockArgs']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['StreamCdnConfigLockArgs', 'StreamCdnConfigLockArgsDict']]]] locks: Locks associated with this resource.
         """
         ...
     @overload
@@ -464,20 +464,20 @@ class StreamCdnConfig(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_stream_cdn_config = oci.media_services.StreamCdnConfig("test_stream_cdn_config",
-            config=oci.media_services.StreamCdnConfigConfigArgs(
-                type=stream_cdn_config_config_type,
-                edge_hostname=stream_cdn_config_config_edge_hostname,
-                edge_path_prefix=stream_cdn_config_config_edge_path_prefix,
-                edge_token_key=stream_cdn_config_config_edge_token_key,
-                edge_token_salt=stream_cdn_config_config_edge_token_salt,
-                is_edge_token_auth=stream_cdn_config_config_is_edge_token_auth,
-                origin_auth_secret_key_a=stream_cdn_config_config_origin_auth_secret_key_a,
-                origin_auth_secret_key_b=stream_cdn_config_config_origin_auth_secret_key_b,
-                origin_auth_secret_key_nonce_a=stream_cdn_config_config_origin_auth_secret_key_nonce_a,
-                origin_auth_secret_key_nonce_b=stream_cdn_config_config_origin_auth_secret_key_nonce_b,
-                origin_auth_sign_encryption=stream_cdn_config_config_origin_auth_sign_encryption,
-                origin_auth_sign_type=stream_cdn_config_config_origin_auth_sign_type,
-            ),
+            config={
+                "type": stream_cdn_config_config_type,
+                "edge_hostname": stream_cdn_config_config_edge_hostname,
+                "edge_path_prefix": stream_cdn_config_config_edge_path_prefix,
+                "edge_token_key": stream_cdn_config_config_edge_token_key,
+                "edge_token_salt": stream_cdn_config_config_edge_token_salt,
+                "is_edge_token_auth": stream_cdn_config_config_is_edge_token_auth,
+                "origin_auth_secret_key_a": stream_cdn_config_config_origin_auth_secret_key_a,
+                "origin_auth_secret_key_b": stream_cdn_config_config_origin_auth_secret_key_b,
+                "origin_auth_secret_key_nonce_a": stream_cdn_config_config_origin_auth_secret_key_nonce_a,
+                "origin_auth_secret_key_nonce_b": stream_cdn_config_config_origin_auth_secret_key_nonce_b,
+                "origin_auth_sign_encryption": stream_cdn_config_config_origin_auth_sign_encryption,
+                "origin_auth_sign_type": stream_cdn_config_config_origin_auth_sign_type,
+            },
             display_name=stream_cdn_config_display_name,
             distribution_channel_id=test_channel["id"],
             defined_tags={
@@ -487,13 +487,13 @@ class StreamCdnConfig(pulumi.CustomResource):
                 "bar-key": "value",
             },
             is_enabled=stream_cdn_config_is_enabled,
-            locks=[oci.media_services.StreamCdnConfigLockArgs(
-                compartment_id=compartment_id,
-                type=stream_cdn_config_locks_type,
-                message=stream_cdn_config_locks_message,
-                related_resource_id=test_resource["id"],
-                time_created=stream_cdn_config_locks_time_created,
-            )])
+            locks=[{
+                "compartment_id": compartment_id,
+                "type": stream_cdn_config_locks_type,
+                "message": stream_cdn_config_locks_message,
+                "related_resource_id": test_resource["id"],
+                "time_created": stream_cdn_config_locks_time_created,
+            }])
         ```
 
         ## Import
@@ -519,14 +519,14 @@ class StreamCdnConfig(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config: Optional[pulumi.Input[pulumi.InputType['StreamCdnConfigConfigArgs']]] = None,
+                 config: Optional[pulumi.Input[Union['StreamCdnConfigConfigArgs', 'StreamCdnConfigConfigArgsDict']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  distribution_channel_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_enabled: Optional[pulumi.Input[bool]] = None,
                  is_lock_override: Optional[pulumi.Input[bool]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['StreamCdnConfigLockArgs']]]]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['StreamCdnConfigLockArgs', 'StreamCdnConfigLockArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -567,7 +567,7 @@ class StreamCdnConfig(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            config: Optional[pulumi.Input[pulumi.InputType['StreamCdnConfigConfigArgs']]] = None,
+            config: Optional[pulumi.Input[Union['StreamCdnConfigConfigArgs', 'StreamCdnConfigConfigArgsDict']]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             distribution_channel_id: Optional[pulumi.Input[str]] = None,
@@ -575,7 +575,7 @@ class StreamCdnConfig(pulumi.CustomResource):
             is_enabled: Optional[pulumi.Input[bool]] = None,
             is_lock_override: Optional[pulumi.Input[bool]] = None,
             lifecyle_details: Optional[pulumi.Input[str]] = None,
-            locks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['StreamCdnConfigLockArgs']]]]] = None,
+            locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['StreamCdnConfigLockArgs', 'StreamCdnConfigLockArgsDict']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
@@ -588,14 +588,14 @@ class StreamCdnConfig(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: The compartment ID of the lock.
-        :param pulumi.Input[pulumi.InputType['StreamCdnConfigConfigArgs']] config: (Updatable) Base fields of the StreamCdnConfig configuration object.
+        :param pulumi.Input[Union['StreamCdnConfigConfigArgs', 'StreamCdnConfigConfigArgsDict']] config: (Updatable) Base fields of the StreamCdnConfig configuration object.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) CDN Config display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
         :param pulumi.Input[str] distribution_channel_id: Distribution Channel Identifier.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether publishing to CDN is enabled.
         :param pulumi.Input[str] lifecyle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['StreamCdnConfigLockArgs']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['StreamCdnConfigLockArgs', 'StreamCdnConfigLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[str] state: The current state of the CDN Configuration.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time when the CDN Config was created. An RFC3339 formatted datetime string.

@@ -77,7 +77,7 @@ class AwaitableGetByoipAllocatedRangesResult(GetByoipAllocatedRangesResult):
 
 
 def get_byoip_allocated_ranges(byoip_range_id: Optional[str] = None,
-                               filters: Optional[Sequence[pulumi.InputType['GetByoipAllocatedRangesFilterArgs']]] = None,
+                               filters: Optional[Sequence[Union['GetByoipAllocatedRangesFilterArgs', 'GetByoipAllocatedRangesFilterArgsDict']]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetByoipAllocatedRangesResult:
     """
     This data source provides the list of Byoip Allocated Ranges in Oracle Cloud Infrastructure Core service.
@@ -112,7 +112,7 @@ def get_byoip_allocated_ranges(byoip_range_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_byoip_allocated_ranges)
 def get_byoip_allocated_ranges_output(byoip_range_id: Optional[pulumi.Input[str]] = None,
-                                      filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetByoipAllocatedRangesFilterArgs']]]]] = None,
+                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetByoipAllocatedRangesFilterArgs', 'GetByoipAllocatedRangesFilterArgsDict']]]]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetByoipAllocatedRangesResult]:
     """
     This data source provides the list of Byoip Allocated Ranges in Oracle Cloud Infrastructure Core service.

@@ -124,7 +124,7 @@ class AwaitableGetDbNodesResult(GetDbNodesResult):
 def get_db_nodes(compartment_id: Optional[str] = None,
                  db_server_id: Optional[str] = None,
                  db_system_id: Optional[str] = None,
-                 filters: Optional[Sequence[pulumi.InputType['GetDbNodesFilterArgs']]] = None,
+                 filters: Optional[Sequence[Union['GetDbNodesFilterArgs', 'GetDbNodesFilterArgsDict']]] = None,
                  state: Optional[str] = None,
                  vm_cluster_id: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbNodesResult:
@@ -178,7 +178,7 @@ def get_db_nodes(compartment_id: Optional[str] = None,
 def get_db_nodes_output(compartment_id: Optional[pulumi.Input[str]] = None,
                         db_server_id: Optional[pulumi.Input[Optional[str]]] = None,
                         db_system_id: Optional[pulumi.Input[Optional[str]]] = None,
-                        filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDbNodesFilterArgs']]]]] = None,
+                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbNodesFilterArgs', 'GetDbNodesFilterArgsDict']]]]] = None,
                         state: Optional[pulumi.Input[Optional[str]]] = None,
                         vm_cluster_id: Optional[pulumi.Input[Optional[str]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbNodesResult]:

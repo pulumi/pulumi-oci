@@ -100,7 +100,7 @@ class AwaitableGetComputeCapacityReservationInstanceShapesResult(GetComputeCapac
 def get_compute_capacity_reservation_instance_shapes(availability_domain: Optional[str] = None,
                                                      compartment_id: Optional[str] = None,
                                                      display_name: Optional[str] = None,
-                                                     filters: Optional[Sequence[pulumi.InputType['GetComputeCapacityReservationInstanceShapesFilterArgs']]] = None,
+                                                     filters: Optional[Sequence[Union['GetComputeCapacityReservationInstanceShapesFilterArgs', 'GetComputeCapacityReservationInstanceShapesFilterArgsDict']]] = None,
                                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetComputeCapacityReservationInstanceShapesResult:
     """
     This data source provides the list of Compute Capacity Reservation Instance Shapes in Oracle Cloud Infrastructure Core service.
@@ -144,7 +144,7 @@ def get_compute_capacity_reservation_instance_shapes(availability_domain: Option
 def get_compute_capacity_reservation_instance_shapes_output(availability_domain: Optional[pulumi.Input[Optional[str]]] = None,
                                                             compartment_id: Optional[pulumi.Input[str]] = None,
                                                             display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                                            filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetComputeCapacityReservationInstanceShapesFilterArgs']]]]] = None,
+                                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetComputeCapacityReservationInstanceShapesFilterArgs', 'GetComputeCapacityReservationInstanceShapesFilterArgsDict']]]]] = None,
                                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetComputeCapacityReservationInstanceShapesResult]:
     """
     This data source provides the list of Compute Capacity Reservation Instance Shapes in Oracle Cloud Infrastructure Core service.

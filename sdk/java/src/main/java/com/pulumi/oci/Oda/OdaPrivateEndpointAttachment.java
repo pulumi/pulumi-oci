@@ -163,7 +163,7 @@ public class OdaPrivateEndpointAttachment extends com.pulumi.resources.CustomRes
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public OdaPrivateEndpointAttachment(String name) {
+    public OdaPrivateEndpointAttachment(java.lang.String name) {
         this(name, OdaPrivateEndpointAttachmentArgs.Empty);
     }
     /**
@@ -171,7 +171,7 @@ public class OdaPrivateEndpointAttachment extends com.pulumi.resources.CustomRes
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public OdaPrivateEndpointAttachment(String name, OdaPrivateEndpointAttachmentArgs args) {
+    public OdaPrivateEndpointAttachment(java.lang.String name, OdaPrivateEndpointAttachmentArgs args) {
         this(name, args, null);
     }
     /**
@@ -180,12 +180,12 @@ public class OdaPrivateEndpointAttachment extends com.pulumi.resources.CustomRes
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public OdaPrivateEndpointAttachment(String name, OdaPrivateEndpointAttachmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Oda/odaPrivateEndpointAttachment:OdaPrivateEndpointAttachment", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public OdaPrivateEndpointAttachment(java.lang.String name, OdaPrivateEndpointAttachmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Oda/odaPrivateEndpointAttachment:OdaPrivateEndpointAttachment", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private OdaPrivateEndpointAttachment(String name, Output<String> id, @Nullable OdaPrivateEndpointAttachmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Oda/odaPrivateEndpointAttachment:OdaPrivateEndpointAttachment", name, state, makeResourceOptions(options, id));
+    private OdaPrivateEndpointAttachment(java.lang.String name, Output<java.lang.String> id, @Nullable OdaPrivateEndpointAttachmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Oda/odaPrivateEndpointAttachment:OdaPrivateEndpointAttachment", name, state, makeResourceOptions(options, id), false);
     }
 
     private static OdaPrivateEndpointAttachmentArgs makeArgs(OdaPrivateEndpointAttachmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -195,7 +195,7 @@ public class OdaPrivateEndpointAttachment extends com.pulumi.resources.CustomRes
         return args == null ? OdaPrivateEndpointAttachmentArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -211,7 +211,7 @@ public class OdaPrivateEndpointAttachment extends com.pulumi.resources.CustomRes
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static OdaPrivateEndpointAttachment get(String name, Output<String> id, @Nullable OdaPrivateEndpointAttachmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static OdaPrivateEndpointAttachment get(java.lang.String name, Output<java.lang.String> id, @Nullable OdaPrivateEndpointAttachmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new OdaPrivateEndpointAttachment(name, id, state, options);
     }
 }

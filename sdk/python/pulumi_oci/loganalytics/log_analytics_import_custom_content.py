@@ -373,7 +373,7 @@ class LogAnalyticsImportCustomContent(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            change_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['LogAnalyticsImportCustomContentChangeListArgs']]]]] = None,
+            change_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['LogAnalyticsImportCustomContentChangeListArgs', 'LogAnalyticsImportCustomContentChangeListArgsDict']]]]] = None,
             content_name: Optional[pulumi.Input[str]] = None,
             expect: Optional[pulumi.Input[str]] = None,
             field_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -389,7 +389,7 @@ class LogAnalyticsImportCustomContent(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['LogAnalyticsImportCustomContentChangeListArgs']]]] change_lists: LogAnalyticsImportCustomChangeList
+        :param pulumi.Input[Sequence[pulumi.Input[Union['LogAnalyticsImportCustomContentChangeListArgs', 'LogAnalyticsImportCustomContentChangeListArgsDict']]]] change_lists: LogAnalyticsImportCustomChangeList
         :param pulumi.Input[str] content_name: The content name.
         :param pulumi.Input[str] expect: A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
                

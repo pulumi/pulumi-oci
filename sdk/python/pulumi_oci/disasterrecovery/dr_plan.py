@@ -504,7 +504,7 @@ class DrPlan(pulumi.CustomResource):
             life_cycle_details: Optional[pulumi.Input[str]] = None,
             peer_dr_protection_group_id: Optional[pulumi.Input[str]] = None,
             peer_region: Optional[pulumi.Input[str]] = None,
-            plan_groups: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DrPlanPlanGroupArgs']]]]] = None,
+            plan_groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DrPlanPlanGroupArgs', 'DrPlanPlanGroupArgsDict']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
@@ -525,7 +525,7 @@ class DrPlan(pulumi.CustomResource):
         :param pulumi.Input[str] life_cycle_details: A message describing the DR plan's current state in more detail.
         :param pulumi.Input[str] peer_dr_protection_group_id: The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         :param pulumi.Input[str] peer_region: The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DrPlanPlanGroupArgs']]]] plan_groups: The list of groups in this DR plan.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DrPlanPlanGroupArgs', 'DrPlanPlanGroupArgsDict']]]] plan_groups: The list of groups in this DR plan.
         :param pulumi.Input[str] state: The current state of the DR plan.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`

@@ -650,7 +650,7 @@ class PluggableDatabasesRemoteClone(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             cloned_pdb_name: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PluggableDatabasesRemoteCloneConnectionStringArgs']]]]] = None,
+            connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PluggableDatabasesRemoteCloneConnectionStringArgs', 'PluggableDatabasesRemoteCloneConnectionStringArgsDict']]]]] = None,
             container_database_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -659,10 +659,10 @@ class PluggableDatabasesRemoteClone(pulumi.CustomResource):
             open_mode: Optional[pulumi.Input[str]] = None,
             pdb_admin_password: Optional[pulumi.Input[str]] = None,
             pdb_name: Optional[pulumi.Input[str]] = None,
-            pdb_node_level_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PluggableDatabasesRemoteClonePdbNodeLevelDetailArgs']]]]] = None,
+            pdb_node_level_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PluggableDatabasesRemoteClonePdbNodeLevelDetailArgs', 'PluggableDatabasesRemoteClonePdbNodeLevelDetailArgsDict']]]]] = None,
             pluggable_database_id: Optional[pulumi.Input[str]] = None,
-            pluggable_database_management_configs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PluggableDatabasesRemoteClonePluggableDatabaseManagementConfigArgs']]]]] = None,
-            refreshable_clone_configs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PluggableDatabasesRemoteCloneRefreshableCloneConfigArgs']]]]] = None,
+            pluggable_database_management_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PluggableDatabasesRemoteClonePluggableDatabaseManagementConfigArgs', 'PluggableDatabasesRemoteClonePluggableDatabaseManagementConfigArgsDict']]]]] = None,
+            refreshable_clone_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PluggableDatabasesRemoteCloneRefreshableCloneConfigArgs', 'PluggableDatabasesRemoteCloneRefreshableCloneConfigArgsDict']]]]] = None,
             should_pdb_admin_account_be_locked: Optional[pulumi.Input[bool]] = None,
             source_container_db_admin_password: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -678,7 +678,7 @@ class PluggableDatabasesRemoteClone(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] cloned_pdb_name: The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PluggableDatabasesRemoteCloneConnectionStringArgs']]]] connection_strings: Connection strings to connect to an Oracle Pluggable Database.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PluggableDatabasesRemoteCloneConnectionStringArgs', 'PluggableDatabasesRemoteCloneConnectionStringArgsDict']]]] connection_strings: Connection strings to connect to an Oracle Pluggable Database.
         :param pulumi.Input[str] container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -687,10 +687,10 @@ class PluggableDatabasesRemoteClone(pulumi.CustomResource):
         :param pulumi.Input[str] open_mode: The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
         :param pulumi.Input[str] pdb_admin_password: A strong password for PDB Admin of the newly cloned PDB. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
         :param pulumi.Input[str] pdb_name: The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PluggableDatabasesRemoteClonePdbNodeLevelDetailArgs']]]] pdb_node_level_details: Pluggable Database Node Level Details. Example: [{"nodeName" : "node1", "openMode" : "READ_WRITE"}, {"nodeName" : "node2", "openMode" : "READ_ONLY"}]
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PluggableDatabasesRemoteClonePdbNodeLevelDetailArgs', 'PluggableDatabasesRemoteClonePdbNodeLevelDetailArgsDict']]]] pdb_node_level_details: Pluggable Database Node Level Details. Example: [{"nodeName" : "node1", "openMode" : "READ_WRITE"}, {"nodeName" : "node2", "openMode" : "READ_ONLY"}]
         :param pulumi.Input[str] pluggable_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PluggableDatabasesRemoteClonePluggableDatabaseManagementConfigArgs']]]] pluggable_database_management_configs: The configuration of the Pluggable Database Management service.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PluggableDatabasesRemoteCloneRefreshableCloneConfigArgs']]]] refreshable_clone_configs: Pluggable Database Refreshable Clone Configuration.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PluggableDatabasesRemoteClonePluggableDatabaseManagementConfigArgs', 'PluggableDatabasesRemoteClonePluggableDatabaseManagementConfigArgsDict']]]] pluggable_database_management_configs: The configuration of the Pluggable Database Management service.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PluggableDatabasesRemoteCloneRefreshableCloneConfigArgs', 'PluggableDatabasesRemoteCloneRefreshableCloneConfigArgsDict']]]] refreshable_clone_configs: Pluggable Database Refreshable Clone Configuration.
         :param pulumi.Input[bool] should_pdb_admin_account_be_locked: The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
         :param pulumi.Input[str] source_container_db_admin_password: The DB system administrator password of the source CDB.
         :param pulumi.Input[str] state: The current state of the pluggable database.

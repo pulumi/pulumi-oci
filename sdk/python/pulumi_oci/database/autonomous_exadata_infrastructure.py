@@ -606,7 +606,7 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
                  domain: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  license_model: Optional[pulumi.Input[str]] = None,
-                 maintenance_window_details: Optional[pulumi.Input[pulumi.InputType['AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs']]] = None,
+                 maintenance_window_details: Optional[pulumi.Input[Union['AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs', 'AutonomousExadataInfrastructureMaintenanceWindowDetailsArgsDict']]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
@@ -636,22 +636,22 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
                 "Department": "Finance",
             },
             license_model=autonomous_exadata_infrastructure_license_model,
-            maintenance_window_details=oci.database.AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs(
-                custom_action_timeout_in_mins=autonomous_exadata_infrastructure_maintenance_window_details_custom_action_timeout_in_mins,
-                days_of_weeks=[oci.database.AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArgs(
-                    name=autonomous_exadata_infrastructure_maintenance_window_details_days_of_week_name,
-                )],
-                hours_of_days=autonomous_exadata_infrastructure_maintenance_window_details_hours_of_day,
-                is_custom_action_timeout_enabled=autonomous_exadata_infrastructure_maintenance_window_details_is_custom_action_timeout_enabled,
-                is_monthly_patching_enabled=autonomous_exadata_infrastructure_maintenance_window_details_is_monthly_patching_enabled,
-                lead_time_in_weeks=autonomous_exadata_infrastructure_maintenance_window_details_lead_time_in_weeks,
-                months=[oci.database.AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArgs(
-                    name=autonomous_exadata_infrastructure_maintenance_window_details_months_name,
-                )],
-                patching_mode=autonomous_exadata_infrastructure_maintenance_window_details_patching_mode,
-                preference=autonomous_exadata_infrastructure_maintenance_window_details_preference,
-                weeks_of_months=autonomous_exadata_infrastructure_maintenance_window_details_weeks_of_month,
-            ),
+            maintenance_window_details={
+                "custom_action_timeout_in_mins": autonomous_exadata_infrastructure_maintenance_window_details_custom_action_timeout_in_mins,
+                "days_of_weeks": [{
+                    "name": autonomous_exadata_infrastructure_maintenance_window_details_days_of_week_name,
+                }],
+                "hours_of_days": autonomous_exadata_infrastructure_maintenance_window_details_hours_of_day,
+                "is_custom_action_timeout_enabled": autonomous_exadata_infrastructure_maintenance_window_details_is_custom_action_timeout_enabled,
+                "is_monthly_patching_enabled": autonomous_exadata_infrastructure_maintenance_window_details_is_monthly_patching_enabled,
+                "lead_time_in_weeks": autonomous_exadata_infrastructure_maintenance_window_details_lead_time_in_weeks,
+                "months": [{
+                    "name": autonomous_exadata_infrastructure_maintenance_window_details_months_name,
+                }],
+                "patching_mode": autonomous_exadata_infrastructure_maintenance_window_details_patching_mode,
+                "preference": autonomous_exadata_infrastructure_maintenance_window_details_preference,
+                "weeks_of_months": autonomous_exadata_infrastructure_maintenance_window_details_weeks_of_month,
+            },
             nsg_ids=autonomous_exadata_infrastructure_nsg_ids)
         ```
 
@@ -672,7 +672,7 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[str] domain: A domain name used for the Autonomous Exadata Infrastructure. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (don't provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] license_model: The Oracle license model that applies to all the databases in the Autonomous Exadata Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
-        :param pulumi.Input[pulumi.InputType['AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs']] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        :param pulumi.Input[Union['AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs', 'AutonomousExadataInfrastructureMaintenanceWindowDetailsArgsDict']] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[str] shape: The shape of the Autonomous Exadata Infrastructure. The shape determines resources allocated to the Autonomous Exadata Infrastructure (CPU cores, memory and storage). To get a list of shapes, use the ListDbSystemShapes operation.
@@ -718,22 +718,22 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
                 "Department": "Finance",
             },
             license_model=autonomous_exadata_infrastructure_license_model,
-            maintenance_window_details=oci.database.AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs(
-                custom_action_timeout_in_mins=autonomous_exadata_infrastructure_maintenance_window_details_custom_action_timeout_in_mins,
-                days_of_weeks=[oci.database.AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArgs(
-                    name=autonomous_exadata_infrastructure_maintenance_window_details_days_of_week_name,
-                )],
-                hours_of_days=autonomous_exadata_infrastructure_maintenance_window_details_hours_of_day,
-                is_custom_action_timeout_enabled=autonomous_exadata_infrastructure_maintenance_window_details_is_custom_action_timeout_enabled,
-                is_monthly_patching_enabled=autonomous_exadata_infrastructure_maintenance_window_details_is_monthly_patching_enabled,
-                lead_time_in_weeks=autonomous_exadata_infrastructure_maintenance_window_details_lead_time_in_weeks,
-                months=[oci.database.AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArgs(
-                    name=autonomous_exadata_infrastructure_maintenance_window_details_months_name,
-                )],
-                patching_mode=autonomous_exadata_infrastructure_maintenance_window_details_patching_mode,
-                preference=autonomous_exadata_infrastructure_maintenance_window_details_preference,
-                weeks_of_months=autonomous_exadata_infrastructure_maintenance_window_details_weeks_of_month,
-            ),
+            maintenance_window_details={
+                "custom_action_timeout_in_mins": autonomous_exadata_infrastructure_maintenance_window_details_custom_action_timeout_in_mins,
+                "days_of_weeks": [{
+                    "name": autonomous_exadata_infrastructure_maintenance_window_details_days_of_week_name,
+                }],
+                "hours_of_days": autonomous_exadata_infrastructure_maintenance_window_details_hours_of_day,
+                "is_custom_action_timeout_enabled": autonomous_exadata_infrastructure_maintenance_window_details_is_custom_action_timeout_enabled,
+                "is_monthly_patching_enabled": autonomous_exadata_infrastructure_maintenance_window_details_is_monthly_patching_enabled,
+                "lead_time_in_weeks": autonomous_exadata_infrastructure_maintenance_window_details_lead_time_in_weeks,
+                "months": [{
+                    "name": autonomous_exadata_infrastructure_maintenance_window_details_months_name,
+                }],
+                "patching_mode": autonomous_exadata_infrastructure_maintenance_window_details_patching_mode,
+                "preference": autonomous_exadata_infrastructure_maintenance_window_details_preference,
+                "weeks_of_months": autonomous_exadata_infrastructure_maintenance_window_details_weeks_of_month,
+            },
             nsg_ids=autonomous_exadata_infrastructure_nsg_ids)
         ```
 
@@ -768,7 +768,7 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
                  domain: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  license_model: Optional[pulumi.Input[str]] = None,
-                 maintenance_window_details: Optional[pulumi.Input[pulumi.InputType['AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs']]] = None,
+                 maintenance_window_details: Optional[pulumi.Input[Union['AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs', 'AutonomousExadataInfrastructureMaintenanceWindowDetailsArgsDict']]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
@@ -831,8 +831,8 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
             last_maintenance_run_id: Optional[pulumi.Input[str]] = None,
             license_model: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
-            maintenance_window_details: Optional[pulumi.Input[pulumi.InputType['AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs']]] = None,
-            maintenance_windows: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousExadataInfrastructureMaintenanceWindowArgs']]]]] = None,
+            maintenance_window_details: Optional[pulumi.Input[Union['AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs', 'AutonomousExadataInfrastructureMaintenanceWindowDetailsArgsDict']]] = None,
+            maintenance_windows: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousExadataInfrastructureMaintenanceWindowArgs', 'AutonomousExadataInfrastructureMaintenanceWindowArgsDict']]]]] = None,
             next_maintenance_run_id: Optional[pulumi.Input[str]] = None,
             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             scan_dns_name: Optional[pulumi.Input[str]] = None,
@@ -858,8 +858,8 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[str] last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         :param pulumi.Input[str] license_model: The Oracle license model that applies to all the databases in the Autonomous Exadata Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state of the Autonomous Exadata Infrastructure.
-        :param pulumi.Input[pulumi.InputType['AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs']] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousExadataInfrastructureMaintenanceWindowArgs']]]] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        :param pulumi.Input[Union['AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs', 'AutonomousExadataInfrastructureMaintenanceWindowDetailsArgsDict']] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousExadataInfrastructureMaintenanceWindowArgs', 'AutonomousExadataInfrastructureMaintenanceWindowArgsDict']]]] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[str] next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.

@@ -146,7 +146,7 @@ class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement(pulu
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enable_external_non_container_dbm_feature: Optional[pulumi.Input[bool]] = None,
                  external_non_container_database_id: Optional[pulumi.Input[str]] = None,
-                 feature_details: Optional[pulumi.Input[pulumi.InputType['ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsArgs']]] = None,
+                 feature_details: Optional[pulumi.Input[Union['ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsArgs', 'ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Externalnoncontainerdatabase External Non Container Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
@@ -161,7 +161,7 @@ class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement(pulu
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] external_non_container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external non-container database.
-        :param pulumi.Input[pulumi.InputType['ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsArgs']] feature_details: The details required to enable the specified Database Management feature.
+        :param pulumi.Input[Union['ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsArgs', 'ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsArgsDict']] feature_details: The details required to enable the specified Database Management feature.
         """
         ...
     @overload
@@ -191,7 +191,7 @@ class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement(pulu
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enable_external_non_container_dbm_feature: Optional[pulumi.Input[bool]] = None,
                  external_non_container_database_id: Optional[pulumi.Input[str]] = None,
-                 feature_details: Optional[pulumi.Input[pulumi.InputType['ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsArgs']]] = None,
+                 feature_details: Optional[pulumi.Input[Union['ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsArgs', 'ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -220,7 +220,7 @@ class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement(pulu
             opts: Optional[pulumi.ResourceOptions] = None,
             enable_external_non_container_dbm_feature: Optional[pulumi.Input[bool]] = None,
             external_non_container_database_id: Optional[pulumi.Input[str]] = None,
-            feature_details: Optional[pulumi.Input[pulumi.InputType['ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsArgs']]] = None) -> 'ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement':
+            feature_details: Optional[pulumi.Input[Union['ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsArgs', 'ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsArgsDict']]] = None) -> 'ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement':
         """
         Get an existing ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -234,7 +234,7 @@ class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement(pulu
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] external_non_container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external non-container database.
-        :param pulumi.Input[pulumi.InputType['ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsArgs']] feature_details: The details required to enable the specified Database Management feature.
+        :param pulumi.Input[Union['ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsArgs', 'ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsArgsDict']] feature_details: The details required to enable the specified Database Management feature.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

@@ -87,7 +87,7 @@ class AwaitableGetAutonomousExadataInfrastructureShapesResult(GetAutonomousExada
 
 def get_autonomous_exadata_infrastructure_shapes(availability_domain: Optional[str] = None,
                                                  compartment_id: Optional[str] = None,
-                                                 filters: Optional[Sequence[pulumi.InputType['GetAutonomousExadataInfrastructureShapesFilterArgs']]] = None,
+                                                 filters: Optional[Sequence[Union['GetAutonomousExadataInfrastructureShapesFilterArgs', 'GetAutonomousExadataInfrastructureShapesFilterArgsDict']]] = None,
                                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousExadataInfrastructureShapesResult:
     """
     This data source provides the list of Autonomous Exadata Infrastructure Shapes in Oracle Cloud Infrastructure Database service.
@@ -126,7 +126,7 @@ def get_autonomous_exadata_infrastructure_shapes(availability_domain: Optional[s
 @_utilities.lift_output_func(get_autonomous_exadata_infrastructure_shapes)
 def get_autonomous_exadata_infrastructure_shapes_output(availability_domain: Optional[pulumi.Input[str]] = None,
                                                         compartment_id: Optional[pulumi.Input[str]] = None,
-                                                        filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAutonomousExadataInfrastructureShapesFilterArgs']]]]] = None,
+                                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutonomousExadataInfrastructureShapesFilterArgs', 'GetAutonomousExadataInfrastructureShapesFilterArgsDict']]]]] = None,
                                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousExadataInfrastructureShapesResult]:
     """
     This data source provides the list of Autonomous Exadata Infrastructure Shapes in Oracle Cloud Infrastructure Database service.

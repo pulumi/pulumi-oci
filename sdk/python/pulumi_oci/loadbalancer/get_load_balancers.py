@@ -115,7 +115,7 @@ class AwaitableGetLoadBalancersResult(GetLoadBalancersResult):
 def get_load_balancers(compartment_id: Optional[str] = None,
                        detail: Optional[str] = None,
                        display_name: Optional[str] = None,
-                       filters: Optional[Sequence[pulumi.InputType['GetLoadBalancersFilterArgs']]] = None,
+                       filters: Optional[Sequence[Union['GetLoadBalancersFilterArgs', 'GetLoadBalancersFilterArgsDict']]] = None,
                        state: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLoadBalancersResult:
     """
@@ -168,7 +168,7 @@ def get_load_balancers(compartment_id: Optional[str] = None,
 def get_load_balancers_output(compartment_id: Optional[pulumi.Input[str]] = None,
                               detail: Optional[pulumi.Input[Optional[str]]] = None,
                               display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                              filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetLoadBalancersFilterArgs']]]]] = None,
+                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetLoadBalancersFilterArgs', 'GetLoadBalancersFilterArgsDict']]]]] = None,
                               state: Optional[pulumi.Input[Optional[str]]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLoadBalancersResult]:
     """

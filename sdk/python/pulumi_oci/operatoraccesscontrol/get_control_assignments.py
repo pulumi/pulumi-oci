@@ -125,7 +125,7 @@ class AwaitableGetControlAssignmentsResult(GetControlAssignmentsResult):
 
 
 def get_control_assignments(compartment_id: Optional[str] = None,
-                            filters: Optional[Sequence[pulumi.InputType['GetControlAssignmentsFilterArgs']]] = None,
+                            filters: Optional[Sequence[Union['GetControlAssignmentsFilterArgs', 'GetControlAssignmentsFilterArgsDict']]] = None,
                             operator_control_name: Optional[str] = None,
                             resource_name: Optional[str] = None,
                             resource_type: Optional[str] = None,
@@ -179,7 +179,7 @@ def get_control_assignments(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_control_assignments)
 def get_control_assignments_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetControlAssignmentsFilterArgs']]]]] = None,
+                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetControlAssignmentsFilterArgs', 'GetControlAssignmentsFilterArgsDict']]]]] = None,
                                    operator_control_name: Optional[pulumi.Input[Optional[str]]] = None,
                                    resource_name: Optional[pulumi.Input[Optional[str]]] = None,
                                    resource_type: Optional[pulumi.Input[Optional[str]]] = None,

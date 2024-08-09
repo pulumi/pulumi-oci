@@ -128,7 +128,7 @@ class AwaitableGetAggregatedComputedUsagesResult(GetAggregatedComputedUsagesResu
 
 
 def get_aggregated_computed_usages(compartment_id: Optional[str] = None,
-                                   filters: Optional[Sequence[pulumi.InputType['GetAggregatedComputedUsagesFilterArgs']]] = None,
+                                   filters: Optional[Sequence[Union['GetAggregatedComputedUsagesFilterArgs', 'GetAggregatedComputedUsagesFilterArgsDict']]] = None,
                                    grouping: Optional[str] = None,
                                    parent_product: Optional[str] = None,
                                    subscription_id: Optional[str] = None,
@@ -173,7 +173,7 @@ def get_aggregated_computed_usages(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_aggregated_computed_usages)
 def get_aggregated_computed_usages_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                          filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAggregatedComputedUsagesFilterArgs']]]]] = None,
+                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAggregatedComputedUsagesFilterArgs', 'GetAggregatedComputedUsagesFilterArgsDict']]]]] = None,
                                           grouping: Optional[pulumi.Input[Optional[str]]] = None,
                                           parent_product: Optional[pulumi.Input[Optional[str]]] = None,
                                           subscription_id: Optional[pulumi.Input[str]] = None,

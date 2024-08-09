@@ -79,7 +79,7 @@ class AwaitableGetSmtpCredentialsResult(GetSmtpCredentialsResult):
             user_id=self.user_id)
 
 
-def get_smtp_credentials(filters: Optional[Sequence[pulumi.InputType['GetSmtpCredentialsFilterArgs']]] = None,
+def get_smtp_credentials(filters: Optional[Sequence[Union['GetSmtpCredentialsFilterArgs', 'GetSmtpCredentialsFilterArgsDict']]] = None,
                          user_id: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSmtpCredentialsResult:
     """
@@ -114,7 +114,7 @@ def get_smtp_credentials(filters: Optional[Sequence[pulumi.InputType['GetSmtpCre
 
 
 @_utilities.lift_output_func(get_smtp_credentials)
-def get_smtp_credentials_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetSmtpCredentialsFilterArgs']]]]] = None,
+def get_smtp_credentials_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSmtpCredentialsFilterArgs', 'GetSmtpCredentialsFilterArgsDict']]]]] = None,
                                 user_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSmtpCredentialsResult]:
     """

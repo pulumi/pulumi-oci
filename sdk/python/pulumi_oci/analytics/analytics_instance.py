@@ -509,7 +509,7 @@ class AnalyticsInstance(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 capacity: Optional[pulumi.Input[pulumi.InputType['AnalyticsInstanceCapacityArgs']]] = None,
+                 capacity: Optional[pulumi.Input[Union['AnalyticsInstanceCapacityArgs', 'AnalyticsInstanceCapacityArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
@@ -520,7 +520,7 @@ class AnalyticsInstance(pulumi.CustomResource):
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  license_type: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 network_endpoint_details: Optional[pulumi.Input[pulumi.InputType['AnalyticsInstanceNetworkEndpointDetailsArgs']]] = None,
+                 network_endpoint_details: Optional[pulumi.Input[Union['AnalyticsInstanceNetworkEndpointDetailsArgs', 'AnalyticsInstanceNetworkEndpointDetailsArgsDict']]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -536,10 +536,10 @@ class AnalyticsInstance(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_analytics_instance = oci.analytics.AnalyticsInstance("test_analytics_instance",
-            capacity=oci.analytics.AnalyticsInstanceCapacityArgs(
-                capacity_type=analytics_instance_capacity_capacity_type,
-                capacity_value=analytics_instance_capacity_capacity_value,
-            ),
+            capacity={
+                "capacity_type": analytics_instance_capacity_capacity_type,
+                "capacity_value": analytics_instance_capacity_capacity_value,
+            },
             compartment_id=compartment_id,
             feature_set=analytics_instance_feature_set,
             idcs_access_token=analytics_instance_idcs_access_token,
@@ -554,18 +554,18 @@ class AnalyticsInstance(pulumi.CustomResource):
                 "Department": "Finance",
             },
             kms_key_id=test_key["id"],
-            network_endpoint_details=oci.analytics.AnalyticsInstanceNetworkEndpointDetailsArgs(
-                network_endpoint_type=analytics_instance_network_endpoint_details_network_endpoint_type,
-                network_security_group_ids=analytics_instance_network_endpoint_details_network_security_group_ids,
-                subnet_id=test_subnet["id"],
-                vcn_id=test_vcn["id"],
-                whitelisted_ips=analytics_instance_network_endpoint_details_whitelisted_ips,
-                whitelisted_services=analytics_instance_network_endpoint_details_whitelisted_services,
-                whitelisted_vcns=[oci.analytics.AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs(
-                    id=analytics_instance_network_endpoint_details_whitelisted_vcns_id,
-                    whitelisted_ips=analytics_instance_network_endpoint_details_whitelisted_vcns_whitelisted_ips,
-                )],
-            ))
+            network_endpoint_details={
+                "network_endpoint_type": analytics_instance_network_endpoint_details_network_endpoint_type,
+                "network_security_group_ids": analytics_instance_network_endpoint_details_network_security_group_ids,
+                "subnet_id": test_subnet["id"],
+                "vcn_id": test_vcn["id"],
+                "whitelisted_ips": analytics_instance_network_endpoint_details_whitelisted_ips,
+                "whitelisted_services": analytics_instance_network_endpoint_details_whitelisted_services,
+                "whitelisted_vcns": [{
+                    "id": analytics_instance_network_endpoint_details_whitelisted_vcns_id,
+                    "whitelisted_ips": analytics_instance_network_endpoint_details_whitelisted_vcns_whitelisted_ips,
+                }],
+            })
         ```
 
         ## Import
@@ -578,7 +578,7 @@ class AnalyticsInstance(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['AnalyticsInstanceCapacityArgs']] capacity: Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
+        :param pulumi.Input[Union['AnalyticsInstanceCapacityArgs', 'AnalyticsInstanceCapacityArgsDict']] capacity: Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) Optional description.
@@ -589,7 +589,7 @@ class AnalyticsInstance(pulumi.CustomResource):
         :param pulumi.Input[str] kms_key_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. "") indicates to use Oracle managed default encryption.
         :param pulumi.Input[str] license_type: (Updatable) The license used for the service.
         :param pulumi.Input[str] name: The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
-        :param pulumi.Input[pulumi.InputType['AnalyticsInstanceNetworkEndpointDetailsArgs']] network_endpoint_details: Base representation of a network endpoint.
+        :param pulumi.Input[Union['AnalyticsInstanceNetworkEndpointDetailsArgs', 'AnalyticsInstanceNetworkEndpointDetailsArgsDict']] network_endpoint_details: Base representation of a network endpoint.
         :param pulumi.Input[str] state: (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`. 
                
                
@@ -615,10 +615,10 @@ class AnalyticsInstance(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_analytics_instance = oci.analytics.AnalyticsInstance("test_analytics_instance",
-            capacity=oci.analytics.AnalyticsInstanceCapacityArgs(
-                capacity_type=analytics_instance_capacity_capacity_type,
-                capacity_value=analytics_instance_capacity_capacity_value,
-            ),
+            capacity={
+                "capacity_type": analytics_instance_capacity_capacity_type,
+                "capacity_value": analytics_instance_capacity_capacity_value,
+            },
             compartment_id=compartment_id,
             feature_set=analytics_instance_feature_set,
             idcs_access_token=analytics_instance_idcs_access_token,
@@ -633,18 +633,18 @@ class AnalyticsInstance(pulumi.CustomResource):
                 "Department": "Finance",
             },
             kms_key_id=test_key["id"],
-            network_endpoint_details=oci.analytics.AnalyticsInstanceNetworkEndpointDetailsArgs(
-                network_endpoint_type=analytics_instance_network_endpoint_details_network_endpoint_type,
-                network_security_group_ids=analytics_instance_network_endpoint_details_network_security_group_ids,
-                subnet_id=test_subnet["id"],
-                vcn_id=test_vcn["id"],
-                whitelisted_ips=analytics_instance_network_endpoint_details_whitelisted_ips,
-                whitelisted_services=analytics_instance_network_endpoint_details_whitelisted_services,
-                whitelisted_vcns=[oci.analytics.AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs(
-                    id=analytics_instance_network_endpoint_details_whitelisted_vcns_id,
-                    whitelisted_ips=analytics_instance_network_endpoint_details_whitelisted_vcns_whitelisted_ips,
-                )],
-            ))
+            network_endpoint_details={
+                "network_endpoint_type": analytics_instance_network_endpoint_details_network_endpoint_type,
+                "network_security_group_ids": analytics_instance_network_endpoint_details_network_security_group_ids,
+                "subnet_id": test_subnet["id"],
+                "vcn_id": test_vcn["id"],
+                "whitelisted_ips": analytics_instance_network_endpoint_details_whitelisted_ips,
+                "whitelisted_services": analytics_instance_network_endpoint_details_whitelisted_services,
+                "whitelisted_vcns": [{
+                    "id": analytics_instance_network_endpoint_details_whitelisted_vcns_id,
+                    "whitelisted_ips": analytics_instance_network_endpoint_details_whitelisted_vcns_whitelisted_ips,
+                }],
+            })
         ```
 
         ## Import
@@ -670,7 +670,7 @@ class AnalyticsInstance(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 capacity: Optional[pulumi.Input[pulumi.InputType['AnalyticsInstanceCapacityArgs']]] = None,
+                 capacity: Optional[pulumi.Input[Union['AnalyticsInstanceCapacityArgs', 'AnalyticsInstanceCapacityArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
@@ -681,7 +681,7 @@ class AnalyticsInstance(pulumi.CustomResource):
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  license_type: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 network_endpoint_details: Optional[pulumi.Input[pulumi.InputType['AnalyticsInstanceNetworkEndpointDetailsArgs']]] = None,
+                 network_endpoint_details: Optional[pulumi.Input[Union['AnalyticsInstanceNetworkEndpointDetailsArgs', 'AnalyticsInstanceNetworkEndpointDetailsArgsDict']]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -730,7 +730,7 @@ class AnalyticsInstance(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            capacity: Optional[pulumi.Input[pulumi.InputType['AnalyticsInstanceCapacityArgs']]] = None,
+            capacity: Optional[pulumi.Input[Union['AnalyticsInstanceCapacityArgs', 'AnalyticsInstanceCapacityArgsDict']]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             description: Optional[pulumi.Input[str]] = None,
@@ -741,7 +741,7 @@ class AnalyticsInstance(pulumi.CustomResource):
             kms_key_id: Optional[pulumi.Input[str]] = None,
             license_type: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
-            network_endpoint_details: Optional[pulumi.Input[pulumi.InputType['AnalyticsInstanceNetworkEndpointDetailsArgs']]] = None,
+            network_endpoint_details: Optional[pulumi.Input[Union['AnalyticsInstanceNetworkEndpointDetailsArgs', 'AnalyticsInstanceNetworkEndpointDetailsArgsDict']]] = None,
             service_url: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
@@ -753,7 +753,7 @@ class AnalyticsInstance(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['AnalyticsInstanceCapacityArgs']] capacity: Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
+        :param pulumi.Input[Union['AnalyticsInstanceCapacityArgs', 'AnalyticsInstanceCapacityArgsDict']] capacity: Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) Optional description.
@@ -764,7 +764,7 @@ class AnalyticsInstance(pulumi.CustomResource):
         :param pulumi.Input[str] kms_key_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. "") indicates to use Oracle managed default encryption.
         :param pulumi.Input[str] license_type: (Updatable) The license used for the service.
         :param pulumi.Input[str] name: The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
-        :param pulumi.Input[pulumi.InputType['AnalyticsInstanceNetworkEndpointDetailsArgs']] network_endpoint_details: Base representation of a network endpoint.
+        :param pulumi.Input[Union['AnalyticsInstanceNetworkEndpointDetailsArgs', 'AnalyticsInstanceNetworkEndpointDetailsArgsDict']] network_endpoint_details: Base representation of a network endpoint.
         :param pulumi.Input[str] service_url: URL of the Analytics service.
         :param pulumi.Input[str] state: (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`. 
                

@@ -313,7 +313,7 @@ public class DrgAttachmentManagement extends com.pulumi.resources.CustomResource
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DrgAttachmentManagement(String name) {
+    public DrgAttachmentManagement(java.lang.String name) {
         this(name, DrgAttachmentManagementArgs.Empty);
     }
     /**
@@ -321,7 +321,7 @@ public class DrgAttachmentManagement extends com.pulumi.resources.CustomResource
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DrgAttachmentManagement(String name, DrgAttachmentManagementArgs args) {
+    public DrgAttachmentManagement(java.lang.String name, DrgAttachmentManagementArgs args) {
         this(name, args, null);
     }
     /**
@@ -330,12 +330,12 @@ public class DrgAttachmentManagement extends com.pulumi.resources.CustomResource
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DrgAttachmentManagement(String name, DrgAttachmentManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/drgAttachmentManagement:DrgAttachmentManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DrgAttachmentManagement(java.lang.String name, DrgAttachmentManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Core/drgAttachmentManagement:DrgAttachmentManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DrgAttachmentManagement(String name, Output<String> id, @Nullable DrgAttachmentManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/drgAttachmentManagement:DrgAttachmentManagement", name, state, makeResourceOptions(options, id));
+    private DrgAttachmentManagement(java.lang.String name, Output<java.lang.String> id, @Nullable DrgAttachmentManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Core/drgAttachmentManagement:DrgAttachmentManagement", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DrgAttachmentManagementArgs makeArgs(DrgAttachmentManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -345,7 +345,7 @@ public class DrgAttachmentManagement extends com.pulumi.resources.CustomResource
         return args == null ? DrgAttachmentManagementArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -361,7 +361,7 @@ public class DrgAttachmentManagement extends com.pulumi.resources.CustomResource
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DrgAttachmentManagement get(String name, Output<String> id, @Nullable DrgAttachmentManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DrgAttachmentManagement get(java.lang.String name, Output<java.lang.String> id, @Nullable DrgAttachmentManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DrgAttachmentManagement(name, id, state, options);
     }
 }

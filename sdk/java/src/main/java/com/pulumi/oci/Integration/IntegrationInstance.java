@@ -462,7 +462,7 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public IntegrationInstance(String name) {
+    public IntegrationInstance(java.lang.String name) {
         this(name, IntegrationInstanceArgs.Empty);
     }
     /**
@@ -470,7 +470,7 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public IntegrationInstance(String name, IntegrationInstanceArgs args) {
+    public IntegrationInstance(java.lang.String name, IntegrationInstanceArgs args) {
         this(name, args, null);
     }
     /**
@@ -479,12 +479,12 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public IntegrationInstance(String name, IntegrationInstanceArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Integration/integrationInstance:IntegrationInstance", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public IntegrationInstance(java.lang.String name, IntegrationInstanceArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Integration/integrationInstance:IntegrationInstance", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private IntegrationInstance(String name, Output<String> id, @Nullable IntegrationInstanceState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Integration/integrationInstance:IntegrationInstance", name, state, makeResourceOptions(options, id));
+    private IntegrationInstance(java.lang.String name, Output<java.lang.String> id, @Nullable IntegrationInstanceState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Integration/integrationInstance:IntegrationInstance", name, state, makeResourceOptions(options, id), false);
     }
 
     private static IntegrationInstanceArgs makeArgs(IntegrationInstanceArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -494,7 +494,7 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
         return args == null ? IntegrationInstanceArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .additionalSecretOutputs(List.of(
@@ -513,7 +513,7 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static IntegrationInstance get(String name, Output<String> id, @Nullable IntegrationInstanceState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static IntegrationInstance get(java.lang.String name, Output<java.lang.String> id, @Nullable IntegrationInstanceState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new IntegrationInstance(name, id, state, options);
     }
 }

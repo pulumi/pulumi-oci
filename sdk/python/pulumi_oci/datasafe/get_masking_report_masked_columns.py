@@ -149,7 +149,7 @@ class AwaitableGetMaskingReportMaskedColumnsResult(GetMaskingReportMaskedColumns
 
 
 def get_masking_report_masked_columns(column_names: Optional[Sequence[str]] = None,
-                                      filters: Optional[Sequence[pulumi.InputType['GetMaskingReportMaskedColumnsFilterArgs']]] = None,
+                                      filters: Optional[Sequence[Union['GetMaskingReportMaskedColumnsFilterArgs', 'GetMaskingReportMaskedColumnsFilterArgsDict']]] = None,
                                       masking_column_groups: Optional[Sequence[str]] = None,
                                       masking_report_id: Optional[str] = None,
                                       object_types: Optional[Sequence[str]] = None,
@@ -213,7 +213,7 @@ def get_masking_report_masked_columns(column_names: Optional[Sequence[str]] = No
 
 @_utilities.lift_output_func(get_masking_report_masked_columns)
 def get_masking_report_masked_columns_output(column_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                                             filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetMaskingReportMaskedColumnsFilterArgs']]]]] = None,
+                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMaskingReportMaskedColumnsFilterArgs', 'GetMaskingReportMaskedColumnsFilterArgsDict']]]]] = None,
                                              masking_column_groups: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                              masking_report_id: Optional[pulumi.Input[str]] = None,
                                              object_types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,

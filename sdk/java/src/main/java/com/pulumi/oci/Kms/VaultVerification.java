@@ -96,7 +96,7 @@ public class VaultVerification extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public VaultVerification(String name) {
+    public VaultVerification(java.lang.String name) {
         this(name, VaultVerificationArgs.Empty);
     }
     /**
@@ -104,7 +104,7 @@ public class VaultVerification extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public VaultVerification(String name, VaultVerificationArgs args) {
+    public VaultVerification(java.lang.String name, VaultVerificationArgs args) {
         this(name, args, null);
     }
     /**
@@ -113,12 +113,12 @@ public class VaultVerification extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public VaultVerification(String name, VaultVerificationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Kms/vaultVerification:VaultVerification", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public VaultVerification(java.lang.String name, VaultVerificationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Kms/vaultVerification:VaultVerification", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private VaultVerification(String name, Output<String> id, @Nullable VaultVerificationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Kms/vaultVerification:VaultVerification", name, state, makeResourceOptions(options, id));
+    private VaultVerification(java.lang.String name, Output<java.lang.String> id, @Nullable VaultVerificationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Kms/vaultVerification:VaultVerification", name, state, makeResourceOptions(options, id), false);
     }
 
     private static VaultVerificationArgs makeArgs(VaultVerificationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -128,7 +128,7 @@ public class VaultVerification extends com.pulumi.resources.CustomResource {
         return args == null ? VaultVerificationArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -144,7 +144,7 @@ public class VaultVerification extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static VaultVerification get(String name, Output<String> id, @Nullable VaultVerificationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static VaultVerification get(java.lang.String name, Output<java.lang.String> id, @Nullable VaultVerificationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new VaultVerification(name, id, state, options);
     }
 }

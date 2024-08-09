@@ -515,8 +515,8 @@ class ManagementStation(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  hostname: Optional[pulumi.Input[str]] = None,
-                 mirror: Optional[pulumi.Input[pulumi.InputType['ManagementStationMirrorArgs']]] = None,
-                 proxy: Optional[pulumi.Input[pulumi.InputType['ManagementStationProxyArgs']]] = None,
+                 mirror: Optional[pulumi.Input[Union['ManagementStationMirrorArgs', 'ManagementStationMirrorArgsDict']]] = None,
+                 proxy: Optional[pulumi.Input[Union['ManagementStationProxyArgs', 'ManagementStationProxyArgsDict']]] = None,
                  refresh_trigger: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
@@ -534,18 +534,18 @@ class ManagementStation(pulumi.CustomResource):
             compartment_id=compartment_id,
             display_name=management_station_display_name,
             hostname=management_station_hostname,
-            mirror=oci.os_management_hub.ManagementStationMirrorArgs(
-                directory=management_station_mirror_directory,
-                port=management_station_mirror_port,
-                sslport=management_station_mirror_sslport,
-                sslcert=management_station_mirror_sslcert,
-            ),
-            proxy=oci.os_management_hub.ManagementStationProxyArgs(
-                is_enabled=management_station_proxy_is_enabled,
-                forward=management_station_proxy_forward,
-                hosts=management_station_proxy_hosts,
-                port=management_station_proxy_port,
-            ),
+            mirror={
+                "directory": management_station_mirror_directory,
+                "port": management_station_mirror_port,
+                "sslport": management_station_mirror_sslport,
+                "sslcert": management_station_mirror_sslcert,
+            },
+            proxy={
+                "is_enabled": management_station_proxy_is_enabled,
+                "forward": management_station_proxy_forward,
+                "hosts": management_station_proxy_hosts,
+                "port": management_station_proxy_port,
+            },
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -571,8 +571,8 @@ class ManagementStation(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) User-friendly name for the management station. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] hostname: (Updatable) Hostname of the management station.
-        :param pulumi.Input[pulumi.InputType['ManagementStationMirrorArgs']] mirror: (Updatable) Information used to create the mirror configuration for a management station.
-        :param pulumi.Input[pulumi.InputType['ManagementStationProxyArgs']] proxy: (Updatable) Information used to create the proxy configuration for a management station.
+        :param pulumi.Input[Union['ManagementStationMirrorArgs', 'ManagementStationMirrorArgsDict']] mirror: (Updatable) Information used to create the mirror configuration for a management station.
+        :param pulumi.Input[Union['ManagementStationProxyArgs', 'ManagementStationProxyArgsDict']] proxy: (Updatable) Information used to create the proxy configuration for a management station.
         :param pulumi.Input[int] refresh_trigger: (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
                
                
@@ -600,18 +600,18 @@ class ManagementStation(pulumi.CustomResource):
             compartment_id=compartment_id,
             display_name=management_station_display_name,
             hostname=management_station_hostname,
-            mirror=oci.os_management_hub.ManagementStationMirrorArgs(
-                directory=management_station_mirror_directory,
-                port=management_station_mirror_port,
-                sslport=management_station_mirror_sslport,
-                sslcert=management_station_mirror_sslcert,
-            ),
-            proxy=oci.os_management_hub.ManagementStationProxyArgs(
-                is_enabled=management_station_proxy_is_enabled,
-                forward=management_station_proxy_forward,
-                hosts=management_station_proxy_hosts,
-                port=management_station_proxy_port,
-            ),
+            mirror={
+                "directory": management_station_mirror_directory,
+                "port": management_station_mirror_port,
+                "sslport": management_station_mirror_sslport,
+                "sslcert": management_station_mirror_sslcert,
+            },
+            proxy={
+                "is_enabled": management_station_proxy_is_enabled,
+                "forward": management_station_proxy_forward,
+                "hosts": management_station_proxy_hosts,
+                "port": management_station_proxy_port,
+            },
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -650,8 +650,8 @@ class ManagementStation(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  hostname: Optional[pulumi.Input[str]] = None,
-                 mirror: Optional[pulumi.Input[pulumi.InputType['ManagementStationMirrorArgs']]] = None,
-                 proxy: Optional[pulumi.Input[pulumi.InputType['ManagementStationProxyArgs']]] = None,
+                 mirror: Optional[pulumi.Input[Union['ManagementStationMirrorArgs', 'ManagementStationMirrorArgsDict']]] = None,
+                 proxy: Optional[pulumi.Input[Union['ManagementStationProxyArgs', 'ManagementStationProxyArgsDict']]] = None,
                  refresh_trigger: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -707,16 +707,16 @@ class ManagementStation(pulumi.CustomResource):
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            healths: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagementStationHealthArgs']]]]] = None,
+            healths: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagementStationHealthArgs', 'ManagementStationHealthArgsDict']]]]] = None,
             hostname: Optional[pulumi.Input[str]] = None,
             managed_instance_id: Optional[pulumi.Input[str]] = None,
-            mirror: Optional[pulumi.Input[pulumi.InputType['ManagementStationMirrorArgs']]] = None,
+            mirror: Optional[pulumi.Input[Union['ManagementStationMirrorArgs', 'ManagementStationMirrorArgsDict']]] = None,
             mirror_capacity: Optional[pulumi.Input[int]] = None,
-            mirror_sync_statuses: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagementStationMirrorSyncStatusArgs']]]]] = None,
+            mirror_sync_statuses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagementStationMirrorSyncStatusArgs', 'ManagementStationMirrorSyncStatusArgsDict']]]]] = None,
             overall_percentage: Optional[pulumi.Input[int]] = None,
             overall_state: Optional[pulumi.Input[str]] = None,
             profile_id: Optional[pulumi.Input[str]] = None,
-            proxy: Optional[pulumi.Input[pulumi.InputType['ManagementStationProxyArgs']]] = None,
+            proxy: Optional[pulumi.Input[Union['ManagementStationProxyArgs', 'ManagementStationProxyArgsDict']]] = None,
             refresh_trigger: Optional[pulumi.Input[int]] = None,
             scheduled_job_id: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -734,16 +734,16 @@ class ManagementStation(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) User-specified description of the management station. Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) User-friendly name for the management station. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagementStationHealthArgs']]]] healths: Overall health information of the management station.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagementStationHealthArgs', 'ManagementStationHealthArgsDict']]]] healths: Overall health information of the management station.
         :param pulumi.Input[str] hostname: (Updatable) Hostname of the management station.
         :param pulumi.Input[str] managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
-        :param pulumi.Input[pulumi.InputType['ManagementStationMirrorArgs']] mirror: (Updatable) Information used to create the mirror configuration for a management station.
+        :param pulumi.Input[Union['ManagementStationMirrorArgs', 'ManagementStationMirrorArgsDict']] mirror: (Updatable) Information used to create the mirror configuration for a management station.
         :param pulumi.Input[int] mirror_capacity: A decimal number representing the amount of mirror capacity used by the sync.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagementStationMirrorSyncStatusArgs']]]] mirror_sync_statuses: Status summary of the mirror sync.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagementStationMirrorSyncStatusArgs', 'ManagementStationMirrorSyncStatusArgsDict']]]] mirror_sync_statuses: Status summary of the mirror sync.
         :param pulumi.Input[int] overall_percentage: A decimal number representing the progress of the current mirror sync.
         :param pulumi.Input[str] overall_state: Current state of the mirror sync for the management station.
         :param pulumi.Input[str] profile_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile used for the management station.
-        :param pulumi.Input[pulumi.InputType['ManagementStationProxyArgs']] proxy: (Updatable) Information used to create the proxy configuration for a management station.
+        :param pulumi.Input[Union['ManagementStationProxyArgs', 'ManagementStationProxyArgsDict']] proxy: (Updatable) Information used to create the proxy configuration for a management station.
         :param pulumi.Input[int] refresh_trigger: (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
                
                

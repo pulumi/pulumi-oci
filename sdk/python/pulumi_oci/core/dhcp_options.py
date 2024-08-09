@@ -308,7 +308,7 @@ class DhcpOptions(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  domain_name_type: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 options: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DhcpOptionsOptionArgs']]]]] = None,
+                 options: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DhcpOptionsOptionArgs', 'DhcpOptionsOptionArgsDict']]]]] = None,
                  vcn_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -340,14 +340,14 @@ class DhcpOptions(pulumi.CustomResource):
         test_dhcp_options = oci.core.DhcpOptions("test_dhcp_options",
             compartment_id=compartment_id,
             options=[
-                oci.core.DhcpOptionsOptionArgs(
-                    type="DomainNameServer",
-                    server_type="VcnLocalPlusInternet",
-                ),
-                oci.core.DhcpOptionsOptionArgs(
-                    type="SearchDomain",
-                    search_domain_names=["test.com"],
-                ),
+                {
+                    "type": "DomainNameServer",
+                    "server_type": "VcnLocalPlusInternet",
+                },
+                {
+                    "type": "SearchDomain",
+                    "search_domain_names": ["test.com"],
+                },
             ],
             vcn_id=test_vcn["id"],
             display_name=dhcp_options_display_name)
@@ -362,19 +362,19 @@ class DhcpOptions(pulumi.CustomResource):
         test_dhcp_options = oci.core.DhcpOptions("test_dhcp_options",
             compartment_id=compartment_id,
             options=[
-                oci.core.DhcpOptionsOptionArgs(
-                    type="DomainNameServer",
-                    server_type="CustomDnsServer",
-                    custom_dns_servers=[
+                {
+                    "type": "DomainNameServer",
+                    "server_type": "CustomDnsServer",
+                    "custom_dns_servers": [
                         "192.168.0.2",
                         "192.168.0.11",
                         "192.168.0.19",
                     ],
-                ),
-                oci.core.DhcpOptionsOptionArgs(
-                    type="SearchDomain",
-                    search_domain_names=["test.com"],
-                ),
+                },
+                {
+                    "type": "SearchDomain",
+                    "search_domain_names": ["test.com"],
+                },
             ],
             vcn_id=test_vcn["id"],
             defined_tags={
@@ -402,7 +402,7 @@ class DhcpOptions(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[str] domain_name_type: (Updatable) The search domain name type of DHCP options
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DhcpOptionsOptionArgs']]]] options: (Updatable) A set of DHCP options.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DhcpOptionsOptionArgs', 'DhcpOptionsOptionArgsDict']]]] options: (Updatable) A set of DHCP options.
         :param pulumi.Input[str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the set of DHCP options belongs to.
                
                
@@ -444,14 +444,14 @@ class DhcpOptions(pulumi.CustomResource):
         test_dhcp_options = oci.core.DhcpOptions("test_dhcp_options",
             compartment_id=compartment_id,
             options=[
-                oci.core.DhcpOptionsOptionArgs(
-                    type="DomainNameServer",
-                    server_type="VcnLocalPlusInternet",
-                ),
-                oci.core.DhcpOptionsOptionArgs(
-                    type="SearchDomain",
-                    search_domain_names=["test.com"],
-                ),
+                {
+                    "type": "DomainNameServer",
+                    "server_type": "VcnLocalPlusInternet",
+                },
+                {
+                    "type": "SearchDomain",
+                    "search_domain_names": ["test.com"],
+                },
             ],
             vcn_id=test_vcn["id"],
             display_name=dhcp_options_display_name)
@@ -466,19 +466,19 @@ class DhcpOptions(pulumi.CustomResource):
         test_dhcp_options = oci.core.DhcpOptions("test_dhcp_options",
             compartment_id=compartment_id,
             options=[
-                oci.core.DhcpOptionsOptionArgs(
-                    type="DomainNameServer",
-                    server_type="CustomDnsServer",
-                    custom_dns_servers=[
+                {
+                    "type": "DomainNameServer",
+                    "server_type": "CustomDnsServer",
+                    "custom_dns_servers": [
                         "192.168.0.2",
                         "192.168.0.11",
                         "192.168.0.19",
                     ],
-                ),
-                oci.core.DhcpOptionsOptionArgs(
-                    type="SearchDomain",
-                    search_domain_names=["test.com"],
-                ),
+                },
+                {
+                    "type": "SearchDomain",
+                    "search_domain_names": ["test.com"],
+                },
             ],
             vcn_id=test_vcn["id"],
             defined_tags={
@@ -519,7 +519,7 @@ class DhcpOptions(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  domain_name_type: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 options: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DhcpOptionsOptionArgs']]]]] = None,
+                 options: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DhcpOptionsOptionArgs', 'DhcpOptionsOptionArgsDict']]]]] = None,
                  vcn_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -560,7 +560,7 @@ class DhcpOptions(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[str]] = None,
             domain_name_type: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            options: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DhcpOptionsOptionArgs']]]]] = None,
+            options: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DhcpOptionsOptionArgs', 'DhcpOptionsOptionArgsDict']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             vcn_id: Optional[pulumi.Input[str]] = None) -> 'DhcpOptions':
@@ -576,7 +576,7 @@ class DhcpOptions(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[str] domain_name_type: (Updatable) The search domain name type of DHCP options
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DhcpOptionsOptionArgs']]]] options: (Updatable) A set of DHCP options.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DhcpOptionsOptionArgs', 'DhcpOptionsOptionArgsDict']]]] options: (Updatable) A set of DHCP options.
         :param pulumi.Input[str] state: The current state of the set of DHCP options.
         :param pulumi.Input[str] time_created: Date and time the set of DHCP options was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the set of DHCP options belongs to.

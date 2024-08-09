@@ -121,7 +121,7 @@ class AwaitableGetPbfListingVersionsResult(GetPbfListingVersionsResult):
             state=self.state)
 
 
-def get_pbf_listing_versions(filters: Optional[Sequence[pulumi.InputType['GetPbfListingVersionsFilterArgs']]] = None,
+def get_pbf_listing_versions(filters: Optional[Sequence[Union['GetPbfListingVersionsFilterArgs', 'GetPbfListingVersionsFilterArgsDict']]] = None,
                              is_current_version: Optional[bool] = None,
                              name: Optional[str] = None,
                              pbf_listing_id: Optional[str] = None,
@@ -179,7 +179,7 @@ def get_pbf_listing_versions(filters: Optional[Sequence[pulumi.InputType['GetPbf
 
 
 @_utilities.lift_output_func(get_pbf_listing_versions)
-def get_pbf_listing_versions_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetPbfListingVersionsFilterArgs']]]]] = None,
+def get_pbf_listing_versions_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPbfListingVersionsFilterArgs', 'GetPbfListingVersionsFilterArgsDict']]]]] = None,
                                     is_current_version: Optional[pulumi.Input[Optional[bool]]] = None,
                                     name: Optional[pulumi.Input[Optional[str]]] = None,
                                     pbf_listing_id: Optional[pulumi.Input[str]] = None,

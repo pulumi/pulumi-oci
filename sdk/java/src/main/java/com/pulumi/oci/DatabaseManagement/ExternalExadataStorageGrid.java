@@ -283,7 +283,7 @@ public class ExternalExadataStorageGrid extends com.pulumi.resources.CustomResou
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ExternalExadataStorageGrid(String name) {
+    public ExternalExadataStorageGrid(java.lang.String name) {
         this(name, ExternalExadataStorageGridArgs.Empty);
     }
     /**
@@ -291,7 +291,7 @@ public class ExternalExadataStorageGrid extends com.pulumi.resources.CustomResou
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ExternalExadataStorageGrid(String name, ExternalExadataStorageGridArgs args) {
+    public ExternalExadataStorageGrid(java.lang.String name, ExternalExadataStorageGridArgs args) {
         this(name, args, null);
     }
     /**
@@ -300,12 +300,12 @@ public class ExternalExadataStorageGrid extends com.pulumi.resources.CustomResou
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ExternalExadataStorageGrid(String name, ExternalExadataStorageGridArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseManagement/externalExadataStorageGrid:ExternalExadataStorageGrid", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ExternalExadataStorageGrid(java.lang.String name, ExternalExadataStorageGridArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DatabaseManagement/externalExadataStorageGrid:ExternalExadataStorageGrid", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ExternalExadataStorageGrid(String name, Output<String> id, @Nullable ExternalExadataStorageGridState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseManagement/externalExadataStorageGrid:ExternalExadataStorageGrid", name, state, makeResourceOptions(options, id));
+    private ExternalExadataStorageGrid(java.lang.String name, Output<java.lang.String> id, @Nullable ExternalExadataStorageGridState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DatabaseManagement/externalExadataStorageGrid:ExternalExadataStorageGrid", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ExternalExadataStorageGridArgs makeArgs(ExternalExadataStorageGridArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -315,7 +315,7 @@ public class ExternalExadataStorageGrid extends com.pulumi.resources.CustomResou
         return args == null ? ExternalExadataStorageGridArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -331,7 +331,7 @@ public class ExternalExadataStorageGrid extends com.pulumi.resources.CustomResou
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ExternalExadataStorageGrid get(String name, Output<String> id, @Nullable ExternalExadataStorageGridState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ExternalExadataStorageGrid get(java.lang.String name, Output<java.lang.String> id, @Nullable ExternalExadataStorageGridState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ExternalExadataStorageGrid(name, id, state, options);
     }
 }

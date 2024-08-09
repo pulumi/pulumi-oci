@@ -127,7 +127,7 @@ class AwaitableGetDatabasesResult(GetDatabasesResult):
 def get_databases(compartment_id: Optional[str] = None,
                   db_home_id: Optional[str] = None,
                   db_name: Optional[str] = None,
-                  filters: Optional[Sequence[pulumi.InputType['GetDatabasesFilterArgs']]] = None,
+                  filters: Optional[Sequence[Union['GetDatabasesFilterArgs', 'GetDatabasesFilterArgsDict']]] = None,
                   state: Optional[str] = None,
                   system_id: Optional[str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDatabasesResult:
@@ -181,7 +181,7 @@ def get_databases(compartment_id: Optional[str] = None,
 def get_databases_output(compartment_id: Optional[pulumi.Input[str]] = None,
                          db_home_id: Optional[pulumi.Input[Optional[str]]] = None,
                          db_name: Optional[pulumi.Input[Optional[str]]] = None,
-                         filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDatabasesFilterArgs']]]]] = None,
+                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDatabasesFilterArgs', 'GetDatabasesFilterArgsDict']]]]] = None,
                          state: Optional[pulumi.Input[Optional[str]]] = None,
                          system_id: Optional[pulumi.Input[Optional[str]]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabasesResult]:

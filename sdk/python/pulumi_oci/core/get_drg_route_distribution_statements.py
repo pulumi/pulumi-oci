@@ -77,7 +77,7 @@ class AwaitableGetDrgRouteDistributionStatementsResult(GetDrgRouteDistributionSt
 
 
 def get_drg_route_distribution_statements(drg_route_distribution_id: Optional[str] = None,
-                                          filters: Optional[Sequence[pulumi.InputType['GetDrgRouteDistributionStatementsFilterArgs']]] = None,
+                                          filters: Optional[Sequence[Union['GetDrgRouteDistributionStatementsFilterArgs', 'GetDrgRouteDistributionStatementsFilterArgsDict']]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDrgRouteDistributionStatementsResult:
     """
     This data source provides the list of Drg Route Distribution Statements in Oracle Cloud Infrastructure Core service.
@@ -111,7 +111,7 @@ def get_drg_route_distribution_statements(drg_route_distribution_id: Optional[st
 
 @_utilities.lift_output_func(get_drg_route_distribution_statements)
 def get_drg_route_distribution_statements_output(drg_route_distribution_id: Optional[pulumi.Input[str]] = None,
-                                                 filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDrgRouteDistributionStatementsFilterArgs']]]]] = None,
+                                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDrgRouteDistributionStatementsFilterArgs', 'GetDrgRouteDistributionStatementsFilterArgsDict']]]]] = None,
                                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDrgRouteDistributionStatementsResult]:
     """
     This data source provides the list of Drg Route Distribution Statements in Oracle Cloud Infrastructure Core service.

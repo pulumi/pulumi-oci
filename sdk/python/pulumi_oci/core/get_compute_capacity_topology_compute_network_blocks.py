@@ -113,7 +113,7 @@ def get_compute_capacity_topology_compute_network_blocks(availability_domain: Op
                                                          compartment_id: Optional[str] = None,
                                                          compute_capacity_topology_id: Optional[str] = None,
                                                          compute_hpc_island_id: Optional[str] = None,
-                                                         filters: Optional[Sequence[pulumi.InputType['GetComputeCapacityTopologyComputeNetworkBlocksFilterArgs']]] = None,
+                                                         filters: Optional[Sequence[Union['GetComputeCapacityTopologyComputeNetworkBlocksFilterArgs', 'GetComputeCapacityTopologyComputeNetworkBlocksFilterArgsDict']]] = None,
                                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetComputeCapacityTopologyComputeNetworkBlocksResult:
     """
     This data source provides the list of Compute Capacity Topology Compute Network Blocks in Oracle Cloud Infrastructure Core service.
@@ -162,7 +162,7 @@ def get_compute_capacity_topology_compute_network_blocks_output(availability_dom
                                                                 compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                                 compute_capacity_topology_id: Optional[pulumi.Input[str]] = None,
                                                                 compute_hpc_island_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                                                filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetComputeCapacityTopologyComputeNetworkBlocksFilterArgs']]]]] = None,
+                                                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetComputeCapacityTopologyComputeNetworkBlocksFilterArgs', 'GetComputeCapacityTopologyComputeNetworkBlocksFilterArgsDict']]]]] = None,
                                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetComputeCapacityTopologyComputeNetworkBlocksResult]:
     """
     This data source provides the list of Compute Capacity Topology Compute Network Blocks in Oracle Cloud Infrastructure Core service.

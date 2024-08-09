@@ -79,7 +79,7 @@ class AwaitableGetPbfListingTriggersResult(GetPbfListingTriggersResult):
             triggers_collections=self.triggers_collections)
 
 
-def get_pbf_listing_triggers(filters: Optional[Sequence[pulumi.InputType['GetPbfListingTriggersFilterArgs']]] = None,
+def get_pbf_listing_triggers(filters: Optional[Sequence[Union['GetPbfListingTriggersFilterArgs', 'GetPbfListingTriggersFilterArgsDict']]] = None,
                              name: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPbfListingTriggersResult:
     """
@@ -113,7 +113,7 @@ def get_pbf_listing_triggers(filters: Optional[Sequence[pulumi.InputType['GetPbf
 
 
 @_utilities.lift_output_func(get_pbf_listing_triggers)
-def get_pbf_listing_triggers_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetPbfListingTriggersFilterArgs']]]]] = None,
+def get_pbf_listing_triggers_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPbfListingTriggersFilterArgs', 'GetPbfListingTriggersFilterArgsDict']]]]] = None,
                                     name: Optional[pulumi.Input[Optional[str]]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPbfListingTriggersResult]:
     """

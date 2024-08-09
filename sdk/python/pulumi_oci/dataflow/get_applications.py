@@ -127,7 +127,7 @@ class AwaitableGetApplicationsResult(GetApplicationsResult):
 def get_applications(compartment_id: Optional[str] = None,
                      display_name: Optional[str] = None,
                      display_name_starts_with: Optional[str] = None,
-                     filters: Optional[Sequence[pulumi.InputType['GetApplicationsFilterArgs']]] = None,
+                     filters: Optional[Sequence[Union['GetApplicationsFilterArgs', 'GetApplicationsFilterArgsDict']]] = None,
                      owner_principal_id: Optional[str] = None,
                      spark_version: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetApplicationsResult:
@@ -181,7 +181,7 @@ def get_applications(compartment_id: Optional[str] = None,
 def get_applications_output(compartment_id: Optional[pulumi.Input[str]] = None,
                             display_name: Optional[pulumi.Input[Optional[str]]] = None,
                             display_name_starts_with: Optional[pulumi.Input[Optional[str]]] = None,
-                            filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetApplicationsFilterArgs']]]]] = None,
+                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetApplicationsFilterArgs', 'GetApplicationsFilterArgsDict']]]]] = None,
                             owner_principal_id: Optional[pulumi.Input[Optional[str]]] = None,
                             spark_version: Optional[pulumi.Input[Optional[str]]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetApplicationsResult]:

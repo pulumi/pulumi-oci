@@ -208,7 +208,7 @@ public class HeatWaveCluster extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public HeatWaveCluster(String name) {
+    public HeatWaveCluster(java.lang.String name) {
         this(name, HeatWaveClusterArgs.Empty);
     }
     /**
@@ -216,7 +216,7 @@ public class HeatWaveCluster extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public HeatWaveCluster(String name, HeatWaveClusterArgs args) {
+    public HeatWaveCluster(java.lang.String name, HeatWaveClusterArgs args) {
         this(name, args, null);
     }
     /**
@@ -225,12 +225,12 @@ public class HeatWaveCluster extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public HeatWaveCluster(String name, HeatWaveClusterArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Mysql/heatWaveCluster:HeatWaveCluster", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public HeatWaveCluster(java.lang.String name, HeatWaveClusterArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Mysql/heatWaveCluster:HeatWaveCluster", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private HeatWaveCluster(String name, Output<String> id, @Nullable HeatWaveClusterState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Mysql/heatWaveCluster:HeatWaveCluster", name, state, makeResourceOptions(options, id));
+    private HeatWaveCluster(java.lang.String name, Output<java.lang.String> id, @Nullable HeatWaveClusterState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Mysql/heatWaveCluster:HeatWaveCluster", name, state, makeResourceOptions(options, id), false);
     }
 
     private static HeatWaveClusterArgs makeArgs(HeatWaveClusterArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -240,7 +240,7 @@ public class HeatWaveCluster extends com.pulumi.resources.CustomResource {
         return args == null ? HeatWaveClusterArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -256,7 +256,7 @@ public class HeatWaveCluster extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static HeatWaveCluster get(String name, Output<String> id, @Nullable HeatWaveClusterState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static HeatWaveCluster get(java.lang.String name, Output<java.lang.String> id, @Nullable HeatWaveClusterState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new HeatWaveCluster(name, id, state, options);
     }
 }

@@ -174,7 +174,7 @@ class AwaitableGetDomainsResult(GetDomainsResult):
 
 def get_domains(compartment_id: Optional[str] = None,
                 display_name: Optional[str] = None,
-                filters: Optional[Sequence[pulumi.InputType['GetDomainsFilterArgs']]] = None,
+                filters: Optional[Sequence[Union['GetDomainsFilterArgs', 'GetDomainsFilterArgsDict']]] = None,
                 home_region_url: Optional[str] = None,
                 is_hidden_on_login: Optional[bool] = None,
                 license_type: Optional[str] = None,
@@ -249,7 +249,7 @@ def get_domains(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_domains)
 def get_domains_output(compartment_id: Optional[pulumi.Input[str]] = None,
                        display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                       filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDomainsFilterArgs']]]]] = None,
+                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDomainsFilterArgs', 'GetDomainsFilterArgsDict']]]]] = None,
                        home_region_url: Optional[pulumi.Input[Optional[str]]] = None,
                        is_hidden_on_login: Optional[pulumi.Input[Optional[bool]]] = None,
                        license_type: Optional[pulumi.Input[Optional[str]]] = None,

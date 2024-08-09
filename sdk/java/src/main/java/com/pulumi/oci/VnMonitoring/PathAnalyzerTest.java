@@ -298,7 +298,7 @@ public class PathAnalyzerTest extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public PathAnalyzerTest(String name) {
+    public PathAnalyzerTest(java.lang.String name) {
         this(name, PathAnalyzerTestArgs.Empty);
     }
     /**
@@ -306,7 +306,7 @@ public class PathAnalyzerTest extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public PathAnalyzerTest(String name, PathAnalyzerTestArgs args) {
+    public PathAnalyzerTest(java.lang.String name, PathAnalyzerTestArgs args) {
         this(name, args, null);
     }
     /**
@@ -315,12 +315,12 @@ public class PathAnalyzerTest extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public PathAnalyzerTest(String name, PathAnalyzerTestArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:VnMonitoring/pathAnalyzerTest:PathAnalyzerTest", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public PathAnalyzerTest(java.lang.String name, PathAnalyzerTestArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:VnMonitoring/pathAnalyzerTest:PathAnalyzerTest", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private PathAnalyzerTest(String name, Output<String> id, @Nullable PathAnalyzerTestState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:VnMonitoring/pathAnalyzerTest:PathAnalyzerTest", name, state, makeResourceOptions(options, id));
+    private PathAnalyzerTest(java.lang.String name, Output<java.lang.String> id, @Nullable PathAnalyzerTestState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:VnMonitoring/pathAnalyzerTest:PathAnalyzerTest", name, state, makeResourceOptions(options, id), false);
     }
 
     private static PathAnalyzerTestArgs makeArgs(PathAnalyzerTestArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -330,7 +330,7 @@ public class PathAnalyzerTest extends com.pulumi.resources.CustomResource {
         return args == null ? PathAnalyzerTestArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -346,7 +346,7 @@ public class PathAnalyzerTest extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static PathAnalyzerTest get(String name, Output<String> id, @Nullable PathAnalyzerTestState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static PathAnalyzerTest get(java.lang.String name, Output<java.lang.String> id, @Nullable PathAnalyzerTestState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new PathAnalyzerTest(name, id, state, options);
     }
 }

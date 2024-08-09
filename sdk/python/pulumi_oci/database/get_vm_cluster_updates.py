@@ -100,7 +100,7 @@ class AwaitableGetVmClusterUpdatesResult(GetVmClusterUpdatesResult):
             vm_cluster_updates=self.vm_cluster_updates)
 
 
-def get_vm_cluster_updates(filters: Optional[Sequence[pulumi.InputType['GetVmClusterUpdatesFilterArgs']]] = None,
+def get_vm_cluster_updates(filters: Optional[Sequence[Union['GetVmClusterUpdatesFilterArgs', 'GetVmClusterUpdatesFilterArgsDict']]] = None,
                            state: Optional[str] = None,
                            update_type: Optional[str] = None,
                            vm_cluster_id: Optional[str] = None,
@@ -144,7 +144,7 @@ def get_vm_cluster_updates(filters: Optional[Sequence[pulumi.InputType['GetVmClu
 
 
 @_utilities.lift_output_func(get_vm_cluster_updates)
-def get_vm_cluster_updates_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetVmClusterUpdatesFilterArgs']]]]] = None,
+def get_vm_cluster_updates_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVmClusterUpdatesFilterArgs', 'GetVmClusterUpdatesFilterArgsDict']]]]] = None,
                                   state: Optional[pulumi.Input[Optional[str]]] = None,
                                   update_type: Optional[pulumi.Input[Optional[str]]] = None,
                                   vm_cluster_id: Optional[pulumi.Input[str]] = None,

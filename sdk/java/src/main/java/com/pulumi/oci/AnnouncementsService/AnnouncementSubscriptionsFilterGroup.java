@@ -127,7 +127,7 @@ public class AnnouncementSubscriptionsFilterGroup extends com.pulumi.resources.C
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public AnnouncementSubscriptionsFilterGroup(String name) {
+    public AnnouncementSubscriptionsFilterGroup(java.lang.String name) {
         this(name, AnnouncementSubscriptionsFilterGroupArgs.Empty);
     }
     /**
@@ -135,7 +135,7 @@ public class AnnouncementSubscriptionsFilterGroup extends com.pulumi.resources.C
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public AnnouncementSubscriptionsFilterGroup(String name, AnnouncementSubscriptionsFilterGroupArgs args) {
+    public AnnouncementSubscriptionsFilterGroup(java.lang.String name, AnnouncementSubscriptionsFilterGroupArgs args) {
         this(name, args, null);
     }
     /**
@@ -144,12 +144,12 @@ public class AnnouncementSubscriptionsFilterGroup extends com.pulumi.resources.C
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public AnnouncementSubscriptionsFilterGroup(String name, AnnouncementSubscriptionsFilterGroupArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:AnnouncementsService/announcementSubscriptionsFilterGroup:AnnouncementSubscriptionsFilterGroup", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public AnnouncementSubscriptionsFilterGroup(java.lang.String name, AnnouncementSubscriptionsFilterGroupArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:AnnouncementsService/announcementSubscriptionsFilterGroup:AnnouncementSubscriptionsFilterGroup", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private AnnouncementSubscriptionsFilterGroup(String name, Output<String> id, @Nullable AnnouncementSubscriptionsFilterGroupState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:AnnouncementsService/announcementSubscriptionsFilterGroup:AnnouncementSubscriptionsFilterGroup", name, state, makeResourceOptions(options, id));
+    private AnnouncementSubscriptionsFilterGroup(java.lang.String name, Output<java.lang.String> id, @Nullable AnnouncementSubscriptionsFilterGroupState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:AnnouncementsService/announcementSubscriptionsFilterGroup:AnnouncementSubscriptionsFilterGroup", name, state, makeResourceOptions(options, id), false);
     }
 
     private static AnnouncementSubscriptionsFilterGroupArgs makeArgs(AnnouncementSubscriptionsFilterGroupArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -159,7 +159,7 @@ public class AnnouncementSubscriptionsFilterGroup extends com.pulumi.resources.C
         return args == null ? AnnouncementSubscriptionsFilterGroupArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -175,7 +175,7 @@ public class AnnouncementSubscriptionsFilterGroup extends com.pulumi.resources.C
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static AnnouncementSubscriptionsFilterGroup get(String name, Output<String> id, @Nullable AnnouncementSubscriptionsFilterGroupState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static AnnouncementSubscriptionsFilterGroup get(java.lang.String name, Output<java.lang.String> id, @Nullable AnnouncementSubscriptionsFilterGroupState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new AnnouncementSubscriptionsFilterGroup(name, id, state, options);
     }
 }

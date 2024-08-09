@@ -444,7 +444,7 @@ public class HostInsight extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public HostInsight(String name) {
+    public HostInsight(java.lang.String name) {
         this(name, HostInsightArgs.Empty);
     }
     /**
@@ -452,7 +452,7 @@ public class HostInsight extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public HostInsight(String name, HostInsightArgs args) {
+    public HostInsight(java.lang.String name, HostInsightArgs args) {
         this(name, args, null);
     }
     /**
@@ -461,12 +461,12 @@ public class HostInsight extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public HostInsight(String name, HostInsightArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Opsi/hostInsight:HostInsight", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public HostInsight(java.lang.String name, HostInsightArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Opsi/hostInsight:HostInsight", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private HostInsight(String name, Output<String> id, @Nullable HostInsightState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Opsi/hostInsight:HostInsight", name, state, makeResourceOptions(options, id));
+    private HostInsight(java.lang.String name, Output<java.lang.String> id, @Nullable HostInsightState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Opsi/hostInsight:HostInsight", name, state, makeResourceOptions(options, id), false);
     }
 
     private static HostInsightArgs makeArgs(HostInsightArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -476,7 +476,7 @@ public class HostInsight extends com.pulumi.resources.CustomResource {
         return args == null ? HostInsightArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -492,7 +492,7 @@ public class HostInsight extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static HostInsight get(String name, Output<String> id, @Nullable HostInsightState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static HostInsight get(java.lang.String name, Output<java.lang.String> id, @Nullable HostInsightState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new HostInsight(name, id, state, options);
     }
 }

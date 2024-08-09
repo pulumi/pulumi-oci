@@ -118,7 +118,7 @@ class AwaitableGetDeploymentUpgradesResult(GetDeploymentUpgradesResult):
 def get_deployment_upgrades(compartment_id: Optional[str] = None,
                             deployment_id: Optional[str] = None,
                             display_name: Optional[str] = None,
-                            filters: Optional[Sequence[pulumi.InputType['GetDeploymentUpgradesFilterArgs']]] = None,
+                            filters: Optional[Sequence[Union['GetDeploymentUpgradesFilterArgs', 'GetDeploymentUpgradesFilterArgsDict']]] = None,
                             state: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDeploymentUpgradesResult:
     """
@@ -167,7 +167,7 @@ def get_deployment_upgrades(compartment_id: Optional[str] = None,
 def get_deployment_upgrades_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                    deployment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                    display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDeploymentUpgradesFilterArgs']]]]] = None,
+                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDeploymentUpgradesFilterArgs', 'GetDeploymentUpgradesFilterArgsDict']]]]] = None,
                                    state: Optional[pulumi.Input[Optional[str]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDeploymentUpgradesResult]:
     """

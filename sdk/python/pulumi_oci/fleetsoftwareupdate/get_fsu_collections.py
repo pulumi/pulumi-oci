@@ -102,7 +102,7 @@ class AwaitableGetFsuCollectionsResult(GetFsuCollectionsResult):
 
 def get_fsu_collections(compartment_id: Optional[str] = None,
                         display_name: Optional[str] = None,
-                        filters: Optional[Sequence[pulumi.InputType['GetFsuCollectionsFilterArgs']]] = None,
+                        filters: Optional[Sequence[Union['GetFsuCollectionsFilterArgs', 'GetFsuCollectionsFilterArgsDict']]] = None,
                         state: Optional[str] = None,
                         type: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFsuCollectionsResult:
@@ -131,7 +131,7 @@ def get_fsu_collections(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_fsu_collections)
 def get_fsu_collections_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                               filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetFsuCollectionsFilterArgs']]]]] = None,
+                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFsuCollectionsFilterArgs', 'GetFsuCollectionsFilterArgsDict']]]]] = None,
                                state: Optional[pulumi.Input[Optional[str]]] = None,
                                type: Optional[pulumi.Input[Optional[str]]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFsuCollectionsResult]:

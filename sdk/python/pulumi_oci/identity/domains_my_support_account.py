@@ -894,9 +894,9 @@ class DomainsMySupportAccount(pulumi.CustomResource):
                  ocid: Optional[pulumi.Input[str]] = None,
                  resource_type_schema_version: Optional[pulumi.Input[str]] = None,
                  schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMySupportAccountTagArgs']]]]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsMySupportAccountTagArgs', 'DomainsMySupportAccountTagArgsDict']]]]] = None,
                  token: Optional[pulumi.Input[str]] = None,
-                 user: Optional[pulumi.Input[pulumi.InputType['DomainsMySupportAccountUserArgs']]] = None,
+                 user: Optional[pulumi.Input[Union['DomainsMySupportAccountUserArgs', 'DomainsMySupportAccountUserArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the My Support Account resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -938,7 +938,7 @@ class DomainsMySupportAccount(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMySupportAccountTagArgs']]]] tags: A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMySupportAccountTagArgs', 'DomainsMySupportAccountTagArgsDict']]]] tags: A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -960,7 +960,7 @@ class DomainsMySupportAccount(pulumi.CustomResource):
                * returned: never
                * type: string
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsMySupportAccountUserArgs']] user: User linked to Support Account
+        :param pulumi.Input[Union['DomainsMySupportAccountUserArgs', 'DomainsMySupportAccountUserArgsDict']] user: User linked to Support Account
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1011,9 +1011,9 @@ class DomainsMySupportAccount(pulumi.CustomResource):
                  ocid: Optional[pulumi.Input[str]] = None,
                  resource_type_schema_version: Optional[pulumi.Input[str]] = None,
                  schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMySupportAccountTagArgs']]]]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsMySupportAccountTagArgs', 'DomainsMySupportAccountTagArgsDict']]]]] = None,
                  token: Optional[pulumi.Input[str]] = None,
-                 user: Optional[pulumi.Input[pulumi.InputType['DomainsMySupportAccountUserArgs']]] = None,
+                 user: Optional[pulumi.Input[Union['DomainsMySupportAccountUserArgs', 'DomainsMySupportAccountUserArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1062,20 +1062,20 @@ class DomainsMySupportAccount(pulumi.CustomResource):
             compartment_ocid: Optional[pulumi.Input[str]] = None,
             delete_in_progress: Optional[pulumi.Input[bool]] = None,
             domain_ocid: Optional[pulumi.Input[str]] = None,
-            idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMySupportAccountIdcsCreatedByArgs']]]]] = None,
+            idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsMySupportAccountIdcsCreatedByArgs', 'DomainsMySupportAccountIdcsCreatedByArgsDict']]]]] = None,
             idcs_endpoint: Optional[pulumi.Input[str]] = None,
-            idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMySupportAccountIdcsLastModifiedByArgs']]]]] = None,
+            idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsMySupportAccountIdcsLastModifiedByArgs', 'DomainsMySupportAccountIdcsLastModifiedByArgsDict']]]]] = None,
             idcs_last_upgraded_in_release: Optional[pulumi.Input[str]] = None,
             idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            metas: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMySupportAccountMetaArgs']]]]] = None,
+            metas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsMySupportAccountMetaArgs', 'DomainsMySupportAccountMetaArgsDict']]]]] = None,
             my_support_account_provider: Optional[pulumi.Input[str]] = None,
             ocid: Optional[pulumi.Input[str]] = None,
             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMySupportAccountTagArgs']]]]] = None,
+            tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsMySupportAccountTagArgs', 'DomainsMySupportAccountTagArgsDict']]]]] = None,
             tenancy_ocid: Optional[pulumi.Input[str]] = None,
             token: Optional[pulumi.Input[str]] = None,
-            user: Optional[pulumi.Input[pulumi.InputType['DomainsMySupportAccountUserArgs']]] = None,
+            user: Optional[pulumi.Input[Union['DomainsMySupportAccountUserArgs', 'DomainsMySupportAccountUserArgsDict']]] = None,
             user_id: Optional[pulumi.Input[str]] = None) -> 'DomainsMySupportAccount':
         """
         Get an existing DomainsMySupportAccount resource's state with the given name, id, and optional extra
@@ -1118,7 +1118,7 @@ class DomainsMySupportAccount(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMySupportAccountIdcsCreatedByArgs']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMySupportAccountIdcsCreatedByArgs', 'DomainsMySupportAccountIdcsCreatedByArgsDict']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1128,7 +1128,7 @@ class DomainsMySupportAccount(pulumi.CustomResource):
                * returned: default
                * type: complex
         :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMySupportAccountIdcsLastModifiedByArgs']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMySupportAccountIdcsLastModifiedByArgs', 'DomainsMySupportAccountIdcsLastModifiedByArgsDict']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1158,7 +1158,7 @@ class DomainsMySupportAccount(pulumi.CustomResource):
                * returned: request
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMySupportAccountMetaArgs']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMySupportAccountMetaArgs', 'DomainsMySupportAccountMetaArgsDict']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1205,7 +1205,7 @@ class DomainsMySupportAccount(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMySupportAccountTagArgs']]]] tags: A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMySupportAccountTagArgs', 'DomainsMySupportAccountTagArgsDict']]]] tags: A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -1238,7 +1238,7 @@ class DomainsMySupportAccount(pulumi.CustomResource):
                * returned: never
                * type: string
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsMySupportAccountUserArgs']] user: User linked to Support Account
+        :param pulumi.Input[Union['DomainsMySupportAccountUserArgs', 'DomainsMySupportAccountUserArgsDict']] user: User linked to Support Account
                
                **SCIM++ Properties:**
                * caseExact: false

@@ -247,7 +247,7 @@ public class AgentPlugin extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public AgentPlugin(String name) {
+    public AgentPlugin(java.lang.String name) {
         this(name, AgentPluginArgs.Empty);
     }
     /**
@@ -255,7 +255,7 @@ public class AgentPlugin extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public AgentPlugin(String name, AgentPluginArgs args) {
+    public AgentPlugin(java.lang.String name, AgentPluginArgs args) {
         this(name, args, null);
     }
     /**
@@ -264,12 +264,12 @@ public class AgentPlugin extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public AgentPlugin(String name, AgentPluginArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:CloudBridge/agentPlugin:AgentPlugin", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public AgentPlugin(java.lang.String name, AgentPluginArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:CloudBridge/agentPlugin:AgentPlugin", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private AgentPlugin(String name, Output<String> id, @Nullable AgentPluginState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:CloudBridge/agentPlugin:AgentPlugin", name, state, makeResourceOptions(options, id));
+    private AgentPlugin(java.lang.String name, Output<java.lang.String> id, @Nullable AgentPluginState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:CloudBridge/agentPlugin:AgentPlugin", name, state, makeResourceOptions(options, id), false);
     }
 
     private static AgentPluginArgs makeArgs(AgentPluginArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -279,7 +279,7 @@ public class AgentPlugin extends com.pulumi.resources.CustomResource {
         return args == null ? AgentPluginArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -295,7 +295,7 @@ public class AgentPlugin extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static AgentPlugin get(String name, Output<String> id, @Nullable AgentPluginState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static AgentPlugin get(java.lang.String name, Output<java.lang.String> id, @Nullable AgentPluginState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new AgentPlugin(name, id, state, options);
     }
 }

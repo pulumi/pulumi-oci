@@ -276,7 +276,7 @@ public class AlarmSuppression extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public AlarmSuppression(String name) {
+    public AlarmSuppression(java.lang.String name) {
         this(name, AlarmSuppressionArgs.Empty);
     }
     /**
@@ -284,7 +284,7 @@ public class AlarmSuppression extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public AlarmSuppression(String name, AlarmSuppressionArgs args) {
+    public AlarmSuppression(java.lang.String name, AlarmSuppressionArgs args) {
         this(name, args, null);
     }
     /**
@@ -293,12 +293,12 @@ public class AlarmSuppression extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public AlarmSuppression(String name, AlarmSuppressionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Monitoring/alarmSuppression:AlarmSuppression", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public AlarmSuppression(java.lang.String name, AlarmSuppressionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Monitoring/alarmSuppression:AlarmSuppression", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private AlarmSuppression(String name, Output<String> id, @Nullable AlarmSuppressionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Monitoring/alarmSuppression:AlarmSuppression", name, state, makeResourceOptions(options, id));
+    private AlarmSuppression(java.lang.String name, Output<java.lang.String> id, @Nullable AlarmSuppressionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Monitoring/alarmSuppression:AlarmSuppression", name, state, makeResourceOptions(options, id), false);
     }
 
     private static AlarmSuppressionArgs makeArgs(AlarmSuppressionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -308,7 +308,7 @@ public class AlarmSuppression extends com.pulumi.resources.CustomResource {
         return args == null ? AlarmSuppressionArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -324,7 +324,7 @@ public class AlarmSuppression extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static AlarmSuppression get(String name, Output<String> id, @Nullable AlarmSuppressionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static AlarmSuppression get(java.lang.String name, Output<java.lang.String> id, @Nullable AlarmSuppressionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new AlarmSuppression(name, id, state, options);
     }
 }

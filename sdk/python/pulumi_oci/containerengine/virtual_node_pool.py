@@ -513,13 +513,13 @@ class VirtualNodePool(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 initial_virtual_node_labels: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualNodePoolInitialVirtualNodeLabelArgs']]]]] = None,
+                 initial_virtual_node_labels: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualNodePoolInitialVirtualNodeLabelArgs', 'VirtualNodePoolInitialVirtualNodeLabelArgsDict']]]]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 placement_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualNodePoolPlacementConfigurationArgs']]]]] = None,
-                 pod_configuration: Optional[pulumi.Input[pulumi.InputType['VirtualNodePoolPodConfigurationArgs']]] = None,
+                 placement_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualNodePoolPlacementConfigurationArgs', 'VirtualNodePoolPlacementConfigurationArgsDict']]]]] = None,
+                 pod_configuration: Optional[pulumi.Input[Union['VirtualNodePoolPodConfigurationArgs', 'VirtualNodePoolPodConfigurationArgsDict']]] = None,
                  size: Optional[pulumi.Input[int]] = None,
-                 taints: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualNodePoolTaintArgs']]]]] = None,
-                 virtual_node_tags: Optional[pulumi.Input[pulumi.InputType['VirtualNodePoolVirtualNodeTagsArgs']]] = None,
+                 taints: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualNodePoolTaintArgs', 'VirtualNodePoolTaintArgsDict']]]]] = None,
+                 virtual_node_tags: Optional[pulumi.Input[Union['VirtualNodePoolVirtualNodeTagsArgs', 'VirtualNodePoolVirtualNodeTagsArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Virtual Node Pool resource in Oracle Cloud Infrastructure Container Engine service.
@@ -536,41 +536,41 @@ class VirtualNodePool(pulumi.CustomResource):
             cluster_id=test_cluster["id"],
             compartment_id=compartment_id,
             display_name=virtual_node_pool_display_name,
-            placement_configurations=[oci.container_engine.VirtualNodePoolPlacementConfigurationArgs(
-                availability_domain=virtual_node_pool_placement_configurations_availability_domain,
-                fault_domains=virtual_node_pool_placement_configurations_fault_domain,
-                subnet_id=test_subnet["id"],
-            )],
+            placement_configurations=[{
+                "availability_domain": virtual_node_pool_placement_configurations_availability_domain,
+                "fault_domains": virtual_node_pool_placement_configurations_fault_domain,
+                "subnet_id": test_subnet["id"],
+            }],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
             freeform_tags={
                 "Department": "Finance",
             },
-            initial_virtual_node_labels=[oci.container_engine.VirtualNodePoolInitialVirtualNodeLabelArgs(
-                key=virtual_node_pool_initial_virtual_node_labels_key,
-                value=virtual_node_pool_initial_virtual_node_labels_value,
-            )],
+            initial_virtual_node_labels=[{
+                "key": virtual_node_pool_initial_virtual_node_labels_key,
+                "value": virtual_node_pool_initial_virtual_node_labels_value,
+            }],
             nsg_ids=virtual_node_pool_nsg_ids,
-            pod_configuration=oci.container_engine.VirtualNodePoolPodConfigurationArgs(
-                shape=virtual_node_pool_pod_configuration_shape,
-                subnet_id=test_subnet["id"],
-                nsg_ids=virtual_node_pool_pod_configuration_nsg_ids,
-            ),
+            pod_configuration={
+                "shape": virtual_node_pool_pod_configuration_shape,
+                "subnet_id": test_subnet["id"],
+                "nsg_ids": virtual_node_pool_pod_configuration_nsg_ids,
+            },
             size=virtual_node_pool_size,
-            taints=[oci.container_engine.VirtualNodePoolTaintArgs(
-                effect=virtual_node_pool_taints_effect,
-                key=virtual_node_pool_taints_key,
-                value=virtual_node_pool_taints_value,
-            )],
-            virtual_node_tags=oci.container_engine.VirtualNodePoolVirtualNodeTagsArgs(
-                defined_tags={
-                    "Operations.CostCenter": "42",
+            taints=[{
+                "effect": virtual_node_pool_taints_effect,
+                "key": virtual_node_pool_taints_key,
+                "value": virtual_node_pool_taints_value,
+            }],
+            virtual_node_tags={
+                "defined_tags": {
+                    "operations__cost_center": "42",
                 },
-                freeform_tags={
-                    "Department": "Finance",
+                "freeform_tags": {
+                    "department": "Finance",
                 },
-            ))
+            })
         ```
 
         ## Import
@@ -588,13 +588,13 @@ class VirtualNodePool(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) Display name of the virtual node pool. This is a non-unique value.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualNodePoolInitialVirtualNodeLabelArgs']]]] initial_virtual_node_labels: (Updatable) Initial labels that will be added to the Kubernetes Virtual Node object when it registers.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualNodePoolInitialVirtualNodeLabelArgs', 'VirtualNodePoolInitialVirtualNodeLabelArgsDict']]]] initial_virtual_node_labels: (Updatable) Initial labels that will be added to the Kubernetes Virtual Node object when it registers.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) List of network security group id's applied to the Virtual Node VNIC.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualNodePoolPlacementConfigurationArgs']]]] placement_configurations: (Updatable) The list of placement configurations which determines where Virtual Nodes will be provisioned across as it relates to the subnet and availability domains. The size attribute determines how many we evenly spread across these placement configurations
-        :param pulumi.Input[pulumi.InputType['VirtualNodePoolPodConfigurationArgs']] pod_configuration: (Updatable) The pod configuration for pods run on virtual nodes of this virtual node pool.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualNodePoolPlacementConfigurationArgs', 'VirtualNodePoolPlacementConfigurationArgsDict']]]] placement_configurations: (Updatable) The list of placement configurations which determines where Virtual Nodes will be provisioned across as it relates to the subnet and availability domains. The size attribute determines how many we evenly spread across these placement configurations
+        :param pulumi.Input[Union['VirtualNodePoolPodConfigurationArgs', 'VirtualNodePoolPodConfigurationArgsDict']] pod_configuration: (Updatable) The pod configuration for pods run on virtual nodes of this virtual node pool.
         :param pulumi.Input[int] size: (Updatable) The number of Virtual Nodes that should be in the Virtual Node Pool. The placement configurations determine where these virtual nodes are placed.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualNodePoolTaintArgs']]]] taints: (Updatable) A taint is a collection of <key, value, effect>. These taints will be applied to the Virtual Nodes of this Virtual Node Pool for Kubernetes scheduling.
-        :param pulumi.Input[pulumi.InputType['VirtualNodePoolVirtualNodeTagsArgs']] virtual_node_tags: (Updatable) The tags associated to the virtual nodes in this virtual node pool.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualNodePoolTaintArgs', 'VirtualNodePoolTaintArgsDict']]]] taints: (Updatable) A taint is a collection of <key, value, effect>. These taints will be applied to the Virtual Nodes of this Virtual Node Pool for Kubernetes scheduling.
+        :param pulumi.Input[Union['VirtualNodePoolVirtualNodeTagsArgs', 'VirtualNodePoolVirtualNodeTagsArgsDict']] virtual_node_tags: (Updatable) The tags associated to the virtual nodes in this virtual node pool.
         """
         ...
     @overload
@@ -617,41 +617,41 @@ class VirtualNodePool(pulumi.CustomResource):
             cluster_id=test_cluster["id"],
             compartment_id=compartment_id,
             display_name=virtual_node_pool_display_name,
-            placement_configurations=[oci.container_engine.VirtualNodePoolPlacementConfigurationArgs(
-                availability_domain=virtual_node_pool_placement_configurations_availability_domain,
-                fault_domains=virtual_node_pool_placement_configurations_fault_domain,
-                subnet_id=test_subnet["id"],
-            )],
+            placement_configurations=[{
+                "availability_domain": virtual_node_pool_placement_configurations_availability_domain,
+                "fault_domains": virtual_node_pool_placement_configurations_fault_domain,
+                "subnet_id": test_subnet["id"],
+            }],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
             freeform_tags={
                 "Department": "Finance",
             },
-            initial_virtual_node_labels=[oci.container_engine.VirtualNodePoolInitialVirtualNodeLabelArgs(
-                key=virtual_node_pool_initial_virtual_node_labels_key,
-                value=virtual_node_pool_initial_virtual_node_labels_value,
-            )],
+            initial_virtual_node_labels=[{
+                "key": virtual_node_pool_initial_virtual_node_labels_key,
+                "value": virtual_node_pool_initial_virtual_node_labels_value,
+            }],
             nsg_ids=virtual_node_pool_nsg_ids,
-            pod_configuration=oci.container_engine.VirtualNodePoolPodConfigurationArgs(
-                shape=virtual_node_pool_pod_configuration_shape,
-                subnet_id=test_subnet["id"],
-                nsg_ids=virtual_node_pool_pod_configuration_nsg_ids,
-            ),
+            pod_configuration={
+                "shape": virtual_node_pool_pod_configuration_shape,
+                "subnet_id": test_subnet["id"],
+                "nsg_ids": virtual_node_pool_pod_configuration_nsg_ids,
+            },
             size=virtual_node_pool_size,
-            taints=[oci.container_engine.VirtualNodePoolTaintArgs(
-                effect=virtual_node_pool_taints_effect,
-                key=virtual_node_pool_taints_key,
-                value=virtual_node_pool_taints_value,
-            )],
-            virtual_node_tags=oci.container_engine.VirtualNodePoolVirtualNodeTagsArgs(
-                defined_tags={
-                    "Operations.CostCenter": "42",
+            taints=[{
+                "effect": virtual_node_pool_taints_effect,
+                "key": virtual_node_pool_taints_key,
+                "value": virtual_node_pool_taints_value,
+            }],
+            virtual_node_tags={
+                "defined_tags": {
+                    "operations__cost_center": "42",
                 },
-                freeform_tags={
-                    "Department": "Finance",
+                "freeform_tags": {
+                    "department": "Finance",
                 },
-            ))
+            })
         ```
 
         ## Import
@@ -682,13 +682,13 @@ class VirtualNodePool(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 initial_virtual_node_labels: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualNodePoolInitialVirtualNodeLabelArgs']]]]] = None,
+                 initial_virtual_node_labels: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualNodePoolInitialVirtualNodeLabelArgs', 'VirtualNodePoolInitialVirtualNodeLabelArgsDict']]]]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 placement_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualNodePoolPlacementConfigurationArgs']]]]] = None,
-                 pod_configuration: Optional[pulumi.Input[pulumi.InputType['VirtualNodePoolPodConfigurationArgs']]] = None,
+                 placement_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualNodePoolPlacementConfigurationArgs', 'VirtualNodePoolPlacementConfigurationArgsDict']]]]] = None,
+                 pod_configuration: Optional[pulumi.Input[Union['VirtualNodePoolPodConfigurationArgs', 'VirtualNodePoolPodConfigurationArgsDict']]] = None,
                  size: Optional[pulumi.Input[int]] = None,
-                 taints: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualNodePoolTaintArgs']]]]] = None,
-                 virtual_node_tags: Optional[pulumi.Input[pulumi.InputType['VirtualNodePoolVirtualNodeTagsArgs']]] = None,
+                 taints: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualNodePoolTaintArgs', 'VirtualNodePoolTaintArgsDict']]]]] = None,
+                 virtual_node_tags: Optional[pulumi.Input[Union['VirtualNodePoolVirtualNodeTagsArgs', 'VirtualNodePoolVirtualNodeTagsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -743,19 +743,19 @@ class VirtualNodePool(pulumi.CustomResource):
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            initial_virtual_node_labels: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualNodePoolInitialVirtualNodeLabelArgs']]]]] = None,
+            initial_virtual_node_labels: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualNodePoolInitialVirtualNodeLabelArgs', 'VirtualNodePoolInitialVirtualNodeLabelArgsDict']]]]] = None,
             kubernetes_version: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            placement_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualNodePoolPlacementConfigurationArgs']]]]] = None,
-            pod_configuration: Optional[pulumi.Input[pulumi.InputType['VirtualNodePoolPodConfigurationArgs']]] = None,
+            placement_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualNodePoolPlacementConfigurationArgs', 'VirtualNodePoolPlacementConfigurationArgsDict']]]]] = None,
+            pod_configuration: Optional[pulumi.Input[Union['VirtualNodePoolPodConfigurationArgs', 'VirtualNodePoolPodConfigurationArgsDict']]] = None,
             size: Optional[pulumi.Input[int]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            taints: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualNodePoolTaintArgs']]]]] = None,
+            taints: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualNodePoolTaintArgs', 'VirtualNodePoolTaintArgsDict']]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
-            virtual_node_tags: Optional[pulumi.Input[pulumi.InputType['VirtualNodePoolVirtualNodeTagsArgs']]] = None) -> 'VirtualNodePool':
+            virtual_node_tags: Optional[pulumi.Input[Union['VirtualNodePoolVirtualNodeTagsArgs', 'VirtualNodePoolVirtualNodeTagsArgsDict']]] = None) -> 'VirtualNodePool':
         """
         Get an existing VirtualNodePool resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -768,19 +768,19 @@ class VirtualNodePool(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) Display name of the virtual node pool. This is a non-unique value.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualNodePoolInitialVirtualNodeLabelArgs']]]] initial_virtual_node_labels: (Updatable) Initial labels that will be added to the Kubernetes Virtual Node object when it registers.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualNodePoolInitialVirtualNodeLabelArgs', 'VirtualNodePoolInitialVirtualNodeLabelArgsDict']]]] initial_virtual_node_labels: (Updatable) Initial labels that will be added to the Kubernetes Virtual Node object when it registers.
         :param pulumi.Input[str] kubernetes_version: The version of Kubernetes running on the nodes in the node pool.
         :param pulumi.Input[str] lifecycle_details: Details about the state of the Virtual Node Pool.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) List of network security group id's applied to the Virtual Node VNIC.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualNodePoolPlacementConfigurationArgs']]]] placement_configurations: (Updatable) The list of placement configurations which determines where Virtual Nodes will be provisioned across as it relates to the subnet and availability domains. The size attribute determines how many we evenly spread across these placement configurations
-        :param pulumi.Input[pulumi.InputType['VirtualNodePoolPodConfigurationArgs']] pod_configuration: (Updatable) The pod configuration for pods run on virtual nodes of this virtual node pool.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualNodePoolPlacementConfigurationArgs', 'VirtualNodePoolPlacementConfigurationArgsDict']]]] placement_configurations: (Updatable) The list of placement configurations which determines where Virtual Nodes will be provisioned across as it relates to the subnet and availability domains. The size attribute determines how many we evenly spread across these placement configurations
+        :param pulumi.Input[Union['VirtualNodePoolPodConfigurationArgs', 'VirtualNodePoolPodConfigurationArgsDict']] pod_configuration: (Updatable) The pod configuration for pods run on virtual nodes of this virtual node pool.
         :param pulumi.Input[int] size: (Updatable) The number of Virtual Nodes that should be in the Virtual Node Pool. The placement configurations determine where these virtual nodes are placed.
         :param pulumi.Input[str] state: The state of the Virtual Node Pool.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualNodePoolTaintArgs']]]] taints: (Updatable) A taint is a collection of <key, value, effect>. These taints will be applied to the Virtual Nodes of this Virtual Node Pool for Kubernetes scheduling.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualNodePoolTaintArgs', 'VirtualNodePoolTaintArgsDict']]]] taints: (Updatable) A taint is a collection of <key, value, effect>. These taints will be applied to the Virtual Nodes of this Virtual Node Pool for Kubernetes scheduling.
         :param pulumi.Input[str] time_created: The time the virtual node pool was created.
         :param pulumi.Input[str] time_updated: The time the virtual node pool was updated.
-        :param pulumi.Input[pulumi.InputType['VirtualNodePoolVirtualNodeTagsArgs']] virtual_node_tags: (Updatable) The tags associated to the virtual nodes in this virtual node pool.
+        :param pulumi.Input[Union['VirtualNodePoolVirtualNodeTagsArgs', 'VirtualNodePoolVirtualNodeTagsArgsDict']] virtual_node_tags: (Updatable) The tags associated to the virtual nodes in this virtual node pool.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

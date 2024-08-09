@@ -608,7 +608,7 @@ class ExternalExadataStorageServer(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             additional_details: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            connectors: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalExadataStorageServerConnectorArgs']]]]] = None,
+            connectors: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExternalExadataStorageServerConnectorArgs', 'ExternalExadataStorageServerConnectorArgsDict']]]]] = None,
             cpu_count: Optional[pulumi.Input[float]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
@@ -640,7 +640,7 @@ class ExternalExadataStorageServer(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, Any]] additional_details: The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalExadataStorageServerConnectorArgs']]]] connectors: The connector of the Exadata storage server.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExternalExadataStorageServerConnectorArgs', 'ExternalExadataStorageServerConnectorArgsDict']]]] connectors: The connector of the Exadata storage server.
         :param pulumi.Input[float] cpu_count: The CPU count of the Exadata storage server.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.

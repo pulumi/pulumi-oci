@@ -577,7 +577,7 @@ class MaskingPolicy(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  add_masking_columns_from_sdm_trigger: Optional[pulumi.Input[int]] = None,
-                 column_sources: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MaskingPolicyColumnSourceArgs']]]]] = None,
+                 column_sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MaskingPolicyColumnSourceArgs', 'MaskingPolicyColumnSourceArgsDict']]]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
@@ -620,11 +620,11 @@ class MaskingPolicy(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_masking_policy = oci.data_safe.MaskingPolicy("test_masking_policy",
-            column_sources=[oci.data_safe.MaskingPolicyColumnSourceArgs(
-                column_source=masking_policy_column_source_column_source,
-                sensitive_data_model_id=test_sensitive_data_model["id"],
-                target_id=test_target["id"],
-            )],
+            column_sources=[{
+                "column_source": masking_policy_column_source_column_source,
+                "sensitive_data_model_id": test_sensitive_data_model["id"],
+                "target_id": test_target["id"],
+            }],
             compartment_id=compartment_id,
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -654,7 +654,7 @@ class MaskingPolicy(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] add_masking_columns_from_sdm_trigger: (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MaskingPolicyColumnSourceArgs']]]] column_sources: (Updatable) Details to associate a column source with a masking policy.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MaskingPolicyColumnSourceArgs', 'MaskingPolicyColumnSourceArgsDict']]]] column_sources: (Updatable) Details to associate a column source with a masking policy.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where the masking policy should be created.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the masking policy.
@@ -707,11 +707,11 @@ class MaskingPolicy(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_masking_policy = oci.data_safe.MaskingPolicy("test_masking_policy",
-            column_sources=[oci.data_safe.MaskingPolicyColumnSourceArgs(
-                column_source=masking_policy_column_source_column_source,
-                sensitive_data_model_id=test_sensitive_data_model["id"],
-                target_id=test_target["id"],
-            )],
+            column_sources=[{
+                "column_source": masking_policy_column_source_column_source,
+                "sensitive_data_model_id": test_sensitive_data_model["id"],
+                "target_id": test_target["id"],
+            }],
             compartment_id=compartment_id,
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -754,7 +754,7 @@ class MaskingPolicy(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  add_masking_columns_from_sdm_trigger: Optional[pulumi.Input[int]] = None,
-                 column_sources: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MaskingPolicyColumnSourceArgs']]]]] = None,
+                 column_sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MaskingPolicyColumnSourceArgs', 'MaskingPolicyColumnSourceArgsDict']]]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
@@ -810,7 +810,7 @@ class MaskingPolicy(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             add_masking_columns_from_sdm_trigger: Optional[pulumi.Input[int]] = None,
-            column_sources: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MaskingPolicyColumnSourceArgs']]]]] = None,
+            column_sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MaskingPolicyColumnSourceArgs', 'MaskingPolicyColumnSourceArgsDict']]]]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             description: Optional[pulumi.Input[str]] = None,
@@ -835,7 +835,7 @@ class MaskingPolicy(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] add_masking_columns_from_sdm_trigger: (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MaskingPolicyColumnSourceArgs']]]] column_sources: (Updatable) Details to associate a column source with a masking policy.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MaskingPolicyColumnSourceArgs', 'MaskingPolicyColumnSourceArgsDict']]]] column_sources: (Updatable) Details to associate a column source with a masking policy.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where the masking policy should be created.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the masking policy.

@@ -14,7 +14,8 @@ import (
 // ##
 //
 // ***
-// subcategory: "Database"
+// ## subcategory: "Database"
+//
 // layout: "oci"
 // page_title: "Oracle Cloud Infrastructure: Database.getAutonomousDatabases"
 // sidebar_current: "docs-oci-datasource-database-autonomous_databases"

@@ -88,7 +88,7 @@ class AwaitableGetKeyVersionsResult(GetKeyVersionsResult):
             management_endpoint=self.management_endpoint)
 
 
-def get_key_versions(filters: Optional[Sequence[pulumi.InputType['GetKeyVersionsFilterArgs']]] = None,
+def get_key_versions(filters: Optional[Sequence[Union['GetKeyVersionsFilterArgs', 'GetKeyVersionsFilterArgsDict']]] = None,
                      key_id: Optional[str] = None,
                      management_endpoint: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetKeyVersionsResult:
@@ -133,7 +133,7 @@ def get_key_versions(filters: Optional[Sequence[pulumi.InputType['GetKeyVersions
 
 
 @_utilities.lift_output_func(get_key_versions)
-def get_key_versions_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetKeyVersionsFilterArgs']]]]] = None,
+def get_key_versions_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetKeyVersionsFilterArgs', 'GetKeyVersionsFilterArgsDict']]]]] = None,
                             key_id: Optional[pulumi.Input[str]] = None,
                             management_endpoint: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetKeyVersionsResult]:

@@ -106,7 +106,7 @@ class AwaitableGetExternalAsmInstancesResult(GetExternalAsmInstancesResult):
 def get_external_asm_instances(compartment_id: Optional[str] = None,
                                display_name: Optional[str] = None,
                                external_asm_id: Optional[str] = None,
-                               filters: Optional[Sequence[pulumi.InputType['GetExternalAsmInstancesFilterArgs']]] = None,
+                               filters: Optional[Sequence[Union['GetExternalAsmInstancesFilterArgs', 'GetExternalAsmInstancesFilterArgsDict']]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalAsmInstancesResult:
     """
     This data source provides the list of External Asm Instances in Oracle Cloud Infrastructure Database Management service.
@@ -150,7 +150,7 @@ def get_external_asm_instances(compartment_id: Optional[str] = None,
 def get_external_asm_instances_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                       display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                       external_asm_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                      filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetExternalAsmInstancesFilterArgs']]]]] = None,
+                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExternalAsmInstancesFilterArgs', 'GetExternalAsmInstancesFilterArgsDict']]]]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalAsmInstancesResult]:
     """
     This data source provides the list of External Asm Instances in Oracle Cloud Infrastructure Database Management service.

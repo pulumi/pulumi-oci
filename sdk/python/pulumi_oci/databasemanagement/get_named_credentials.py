@@ -129,7 +129,7 @@ class AwaitableGetNamedCredentialsResult(GetNamedCredentialsResult):
 
 def get_named_credentials(associated_resource: Optional[str] = None,
                           compartment_id: Optional[str] = None,
-                          filters: Optional[Sequence[pulumi.InputType['GetNamedCredentialsFilterArgs']]] = None,
+                          filters: Optional[Sequence[Union['GetNamedCredentialsFilterArgs', 'GetNamedCredentialsFilterArgsDict']]] = None,
                           name: Optional[str] = None,
                           scope: Optional[str] = None,
                           type: Optional[str] = None,
@@ -183,7 +183,7 @@ def get_named_credentials(associated_resource: Optional[str] = None,
 @_utilities.lift_output_func(get_named_credentials)
 def get_named_credentials_output(associated_resource: Optional[pulumi.Input[Optional[str]]] = None,
                                  compartment_id: Optional[pulumi.Input[str]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetNamedCredentialsFilterArgs']]]]] = None,
+                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNamedCredentialsFilterArgs', 'GetNamedCredentialsFilterArgsDict']]]]] = None,
                                  name: Optional[pulumi.Input[Optional[str]]] = None,
                                  scope: Optional[pulumi.Input[Optional[str]]] = None,
                                  type: Optional[pulumi.Input[Optional[str]]] = None,

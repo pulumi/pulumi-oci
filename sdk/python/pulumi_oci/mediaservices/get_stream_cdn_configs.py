@@ -105,7 +105,7 @@ class AwaitableGetStreamCdnConfigsResult(GetStreamCdnConfigsResult):
 
 def get_stream_cdn_configs(display_name: Optional[str] = None,
                            distribution_channel_id: Optional[str] = None,
-                           filters: Optional[Sequence[pulumi.InputType['GetStreamCdnConfigsFilterArgs']]] = None,
+                           filters: Optional[Sequence[Union['GetStreamCdnConfigsFilterArgs', 'GetStreamCdnConfigsFilterArgsDict']]] = None,
                            id: Optional[str] = None,
                            state: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetStreamCdnConfigsResult:
@@ -153,7 +153,7 @@ def get_stream_cdn_configs(display_name: Optional[str] = None,
 @_utilities.lift_output_func(get_stream_cdn_configs)
 def get_stream_cdn_configs_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                   distribution_channel_id: Optional[pulumi.Input[str]] = None,
-                                  filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetStreamCdnConfigsFilterArgs']]]]] = None,
+                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetStreamCdnConfigsFilterArgs', 'GetStreamCdnConfigsFilterArgsDict']]]]] = None,
                                   id: Optional[pulumi.Input[Optional[str]]] = None,
                                   state: Optional[pulumi.Input[Optional[str]]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetStreamCdnConfigsResult]:

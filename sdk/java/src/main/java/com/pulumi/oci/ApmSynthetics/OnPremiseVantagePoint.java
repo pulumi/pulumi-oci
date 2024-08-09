@@ -224,7 +224,7 @@ public class OnPremiseVantagePoint extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public OnPremiseVantagePoint(String name) {
+    public OnPremiseVantagePoint(java.lang.String name) {
         this(name, OnPremiseVantagePointArgs.Empty);
     }
     /**
@@ -232,7 +232,7 @@ public class OnPremiseVantagePoint extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public OnPremiseVantagePoint(String name, OnPremiseVantagePointArgs args) {
+    public OnPremiseVantagePoint(java.lang.String name, OnPremiseVantagePointArgs args) {
         this(name, args, null);
     }
     /**
@@ -241,12 +241,12 @@ public class OnPremiseVantagePoint extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public OnPremiseVantagePoint(String name, OnPremiseVantagePointArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:ApmSynthetics/onPremiseVantagePoint:OnPremiseVantagePoint", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public OnPremiseVantagePoint(java.lang.String name, OnPremiseVantagePointArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:ApmSynthetics/onPremiseVantagePoint:OnPremiseVantagePoint", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private OnPremiseVantagePoint(String name, Output<String> id, @Nullable OnPremiseVantagePointState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:ApmSynthetics/onPremiseVantagePoint:OnPremiseVantagePoint", name, state, makeResourceOptions(options, id));
+    private OnPremiseVantagePoint(java.lang.String name, Output<java.lang.String> id, @Nullable OnPremiseVantagePointState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:ApmSynthetics/onPremiseVantagePoint:OnPremiseVantagePoint", name, state, makeResourceOptions(options, id), false);
     }
 
     private static OnPremiseVantagePointArgs makeArgs(OnPremiseVantagePointArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -256,7 +256,7 @@ public class OnPremiseVantagePoint extends com.pulumi.resources.CustomResource {
         return args == null ? OnPremiseVantagePointArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -272,7 +272,7 @@ public class OnPremiseVantagePoint extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static OnPremiseVantagePoint get(String name, Output<String> id, @Nullable OnPremiseVantagePointState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static OnPremiseVantagePoint get(java.lang.String name, Output<java.lang.String> id, @Nullable OnPremiseVantagePointState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new OnPremiseVantagePoint(name, id, state, options);
     }
 }

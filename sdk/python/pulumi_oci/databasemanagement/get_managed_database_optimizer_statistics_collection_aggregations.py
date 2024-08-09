@@ -122,7 +122,7 @@ class AwaitableGetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult
 
 
 def get_managed_database_optimizer_statistics_collection_aggregations(end_time_less_than_or_equal_to: Optional[str] = None,
-                                                                      filters: Optional[Sequence[pulumi.InputType['GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArgs']]] = None,
+                                                                      filters: Optional[Sequence[Union['GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArgs', 'GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArgsDict']]] = None,
                                                                       group_type: Optional[str] = None,
                                                                       limit: Optional[int] = None,
                                                                       managed_database_id: Optional[str] = None,
@@ -184,7 +184,7 @@ def get_managed_database_optimizer_statistics_collection_aggregations(end_time_l
 
 @_utilities.lift_output_func(get_managed_database_optimizer_statistics_collection_aggregations)
 def get_managed_database_optimizer_statistics_collection_aggregations_output(end_time_less_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
-                                                                             filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArgs']]]]] = None,
+                                                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArgs', 'GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArgsDict']]]]] = None,
                                                                              group_type: Optional[pulumi.Input[str]] = None,
                                                                              limit: Optional[pulumi.Input[Optional[int]]] = None,
                                                                              managed_database_id: Optional[pulumi.Input[str]] = None,

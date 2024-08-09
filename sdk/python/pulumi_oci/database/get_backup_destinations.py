@@ -92,7 +92,7 @@ class AwaitableGetBackupDestinationsResult(GetBackupDestinationsResult):
 
 
 def get_backup_destinations(compartment_id: Optional[str] = None,
-                            filters: Optional[Sequence[pulumi.InputType['GetBackupDestinationsFilterArgs']]] = None,
+                            filters: Optional[Sequence[Union['GetBackupDestinationsFilterArgs', 'GetBackupDestinationsFilterArgsDict']]] = None,
                             type: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBackupDestinationsResult:
     """
@@ -131,7 +131,7 @@ def get_backup_destinations(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_backup_destinations)
 def get_backup_destinations_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetBackupDestinationsFilterArgs']]]]] = None,
+                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBackupDestinationsFilterArgs', 'GetBackupDestinationsFilterArgsDict']]]]] = None,
                                    type: Optional[pulumi.Input[Optional[str]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBackupDestinationsResult]:
     """

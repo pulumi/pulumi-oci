@@ -86,7 +86,7 @@ class AwaitableGetNetworkFirewallPolicyUrlListsResult(GetNetworkFirewallPolicyUr
 
 
 def get_network_firewall_policy_url_lists(display_name: Optional[str] = None,
-                                          filters: Optional[Sequence[pulumi.InputType['GetNetworkFirewallPolicyUrlListsFilterArgs']]] = None,
+                                          filters: Optional[Sequence[Union['GetNetworkFirewallPolicyUrlListsFilterArgs', 'GetNetworkFirewallPolicyUrlListsFilterArgsDict']]] = None,
                                           network_firewall_policy_id: Optional[str] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkFirewallPolicyUrlListsResult:
     """
@@ -125,7 +125,7 @@ def get_network_firewall_policy_url_lists(display_name: Optional[str] = None,
 
 @_utilities.lift_output_func(get_network_firewall_policy_url_lists)
 def get_network_firewall_policy_url_lists_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                                 filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetNetworkFirewallPolicyUrlListsFilterArgs']]]]] = None,
+                                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNetworkFirewallPolicyUrlListsFilterArgs', 'GetNetworkFirewallPolicyUrlListsFilterArgsDict']]]]] = None,
                                                  network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
                                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkFirewallPolicyUrlListsResult]:
     """

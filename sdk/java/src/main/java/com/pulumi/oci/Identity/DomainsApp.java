@@ -3852,7 +3852,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DomainsApp(String name) {
+    public DomainsApp(java.lang.String name) {
         this(name, DomainsAppArgs.Empty);
     }
     /**
@@ -3860,7 +3860,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DomainsApp(String name, DomainsAppArgs args) {
+    public DomainsApp(java.lang.String name, DomainsAppArgs args) {
         this(name, args, null);
     }
     /**
@@ -3869,12 +3869,12 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DomainsApp(String name, DomainsAppArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsApp:DomainsApp", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DomainsApp(java.lang.String name, DomainsAppArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/domainsApp:DomainsApp", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DomainsApp(String name, Output<String> id, @Nullable DomainsAppState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsApp:DomainsApp", name, state, makeResourceOptions(options, id));
+    private DomainsApp(java.lang.String name, Output<java.lang.String> id, @Nullable DomainsAppState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/domainsApp:DomainsApp", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DomainsAppArgs makeArgs(DomainsAppArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -3884,7 +3884,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
         return args == null ? DomainsAppArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -3900,7 +3900,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DomainsApp get(String name, Output<String> id, @Nullable DomainsAppState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DomainsApp get(java.lang.String name, Output<java.lang.String> id, @Nullable DomainsAppState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DomainsApp(name, id, state, options);
     }
 }

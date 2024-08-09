@@ -105,7 +105,7 @@ class AwaitableGetOpensearchClustersResult(GetOpensearchClustersResult):
 
 def get_opensearch_clusters(compartment_id: Optional[str] = None,
                             display_name: Optional[str] = None,
-                            filters: Optional[Sequence[pulumi.InputType['GetOpensearchClustersFilterArgs']]] = None,
+                            filters: Optional[Sequence[Union['GetOpensearchClustersFilterArgs', 'GetOpensearchClustersFilterArgsDict']]] = None,
                             id: Optional[str] = None,
                             state: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOpensearchClustersResult:
@@ -162,7 +162,7 @@ def get_opensearch_clusters(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_opensearch_clusters)
 def get_opensearch_clusters_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                    display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetOpensearchClustersFilterArgs']]]]] = None,
+                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOpensearchClustersFilterArgs', 'GetOpensearchClustersFilterArgsDict']]]]] = None,
                                    id: Optional[pulumi.Input[Optional[str]]] = None,
                                    state: Optional[pulumi.Input[Optional[str]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOpensearchClustersResult]:

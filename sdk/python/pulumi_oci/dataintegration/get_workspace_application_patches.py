@@ -120,7 +120,7 @@ class AwaitableGetWorkspaceApplicationPatchesResult(GetWorkspaceApplicationPatch
 
 def get_workspace_application_patches(application_key: Optional[str] = None,
                                       fields: Optional[Sequence[str]] = None,
-                                      filters: Optional[Sequence[pulumi.InputType['GetWorkspaceApplicationPatchesFilterArgs']]] = None,
+                                      filters: Optional[Sequence[Union['GetWorkspaceApplicationPatchesFilterArgs', 'GetWorkspaceApplicationPatchesFilterArgsDict']]] = None,
                                       identifiers: Optional[Sequence[str]] = None,
                                       name: Optional[str] = None,
                                       workspace_id: Optional[str] = None,
@@ -174,7 +174,7 @@ def get_workspace_application_patches(application_key: Optional[str] = None,
 @_utilities.lift_output_func(get_workspace_application_patches)
 def get_workspace_application_patches_output(application_key: Optional[pulumi.Input[str]] = None,
                                              fields: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                                             filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetWorkspaceApplicationPatchesFilterArgs']]]]] = None,
+                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetWorkspaceApplicationPatchesFilterArgs', 'GetWorkspaceApplicationPatchesFilterArgsDict']]]]] = None,
                                              identifiers: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                              name: Optional[pulumi.Input[Optional[str]]] = None,
                                              workspace_id: Optional[pulumi.Input[str]] = None,

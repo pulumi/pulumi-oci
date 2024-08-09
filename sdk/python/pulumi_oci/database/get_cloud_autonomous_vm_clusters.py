@@ -131,7 +131,7 @@ def get_cloud_autonomous_vm_clusters(availability_domain: Optional[str] = None,
                                      cloud_exadata_infrastructure_id: Optional[str] = None,
                                      compartment_id: Optional[str] = None,
                                      display_name: Optional[str] = None,
-                                     filters: Optional[Sequence[pulumi.InputType['GetCloudAutonomousVmClustersFilterArgs']]] = None,
+                                     filters: Optional[Sequence[Union['GetCloudAutonomousVmClustersFilterArgs', 'GetCloudAutonomousVmClustersFilterArgsDict']]] = None,
                                      state: Optional[str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudAutonomousVmClustersResult:
     """
@@ -185,7 +185,7 @@ def get_cloud_autonomous_vm_clusters_output(availability_domain: Optional[pulumi
                                             cloud_exadata_infrastructure_id: Optional[pulumi.Input[Optional[str]]] = None,
                                             compartment_id: Optional[pulumi.Input[str]] = None,
                                             display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                            filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetCloudAutonomousVmClustersFilterArgs']]]]] = None,
+                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCloudAutonomousVmClustersFilterArgs', 'GetCloudAutonomousVmClustersFilterArgsDict']]]]] = None,
                                             state: Optional[pulumi.Input[Optional[str]]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudAutonomousVmClustersResult]:
     """

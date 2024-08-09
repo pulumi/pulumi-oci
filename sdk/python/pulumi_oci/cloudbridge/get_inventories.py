@@ -92,7 +92,7 @@ class AwaitableGetInventoriesResult(GetInventoriesResult):
 
 
 def get_inventories(compartment_id: Optional[str] = None,
-                    filters: Optional[Sequence[pulumi.InputType['GetInventoriesFilterArgs']]] = None,
+                    filters: Optional[Sequence[Union['GetInventoriesFilterArgs', 'GetInventoriesFilterArgsDict']]] = None,
                     state: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetInventoriesResult:
     """
@@ -131,7 +131,7 @@ def get_inventories(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_inventories)
 def get_inventories_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                           filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetInventoriesFilterArgs']]]]] = None,
+                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetInventoriesFilterArgs', 'GetInventoriesFilterArgsDict']]]]] = None,
                            state: Optional[pulumi.Input[Optional[str]]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInventoriesResult]:
     """

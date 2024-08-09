@@ -333,7 +333,7 @@ public class Replication extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public Replication(String name) {
+    public Replication(java.lang.String name) {
         this(name, ReplicationArgs.Empty);
     }
     /**
@@ -341,7 +341,7 @@ public class Replication extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public Replication(String name, ReplicationArgs args) {
+    public Replication(java.lang.String name, ReplicationArgs args) {
         this(name, args, null);
     }
     /**
@@ -350,12 +350,12 @@ public class Replication extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public Replication(String name, ReplicationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:FileStorage/replication:Replication", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public Replication(java.lang.String name, ReplicationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:FileStorage/replication:Replication", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private Replication(String name, Output<String> id, @Nullable ReplicationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:FileStorage/replication:Replication", name, state, makeResourceOptions(options, id));
+    private Replication(java.lang.String name, Output<java.lang.String> id, @Nullable ReplicationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:FileStorage/replication:Replication", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ReplicationArgs makeArgs(ReplicationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -365,7 +365,7 @@ public class Replication extends com.pulumi.resources.CustomResource {
         return args == null ? ReplicationArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -381,7 +381,7 @@ public class Replication extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static Replication get(String name, Output<String> id, @Nullable ReplicationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static Replication get(java.lang.String name, Output<java.lang.String> id, @Nullable ReplicationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new Replication(name, id, state, options);
     }
 }

@@ -116,7 +116,7 @@ public class FsuCollection extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public FsuCollection(String name) {
+    public FsuCollection(java.lang.String name) {
         this(name, FsuCollectionArgs.Empty);
     }
     /**
@@ -124,7 +124,7 @@ public class FsuCollection extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public FsuCollection(String name, FsuCollectionArgs args) {
+    public FsuCollection(java.lang.String name, FsuCollectionArgs args) {
         this(name, args, null);
     }
     /**
@@ -133,12 +133,12 @@ public class FsuCollection extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public FsuCollection(String name, FsuCollectionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:FleetSoftwareUpdate/fsuCollection:FsuCollection", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public FsuCollection(java.lang.String name, FsuCollectionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:FleetSoftwareUpdate/fsuCollection:FsuCollection", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private FsuCollection(String name, Output<String> id, @Nullable FsuCollectionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:FleetSoftwareUpdate/fsuCollection:FsuCollection", name, state, makeResourceOptions(options, id));
+    private FsuCollection(java.lang.String name, Output<java.lang.String> id, @Nullable FsuCollectionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:FleetSoftwareUpdate/fsuCollection:FsuCollection", name, state, makeResourceOptions(options, id), false);
     }
 
     private static FsuCollectionArgs makeArgs(FsuCollectionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -148,7 +148,7 @@ public class FsuCollection extends com.pulumi.resources.CustomResource {
         return args == null ? FsuCollectionArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -164,7 +164,7 @@ public class FsuCollection extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static FsuCollection get(String name, Output<String> id, @Nullable FsuCollectionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static FsuCollection get(java.lang.String name, Output<java.lang.String> id, @Nullable FsuCollectionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new FsuCollection(name, id, state, options);
     }
 }

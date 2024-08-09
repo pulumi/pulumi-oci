@@ -374,7 +374,7 @@ class IngressGatewayRouteTable(pulumi.CustomResource):
                  ingress_gateway_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  priority: Optional[pulumi.Input[int]] = None,
-                 route_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IngressGatewayRouteTableRouteRuleArgs']]]]] = None,
+                 route_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IngressGatewayRouteTableRouteRuleArgs', 'IngressGatewayRouteTableRouteRuleArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Ingress Gateway Route Table resource in Oracle Cloud Infrastructure Service Mesh service.
@@ -391,24 +391,24 @@ class IngressGatewayRouteTable(pulumi.CustomResource):
             compartment_id=compartment_id,
             ingress_gateway_id=test_ingress_gateway["id"],
             name=ingress_gateway_route_table_name,
-            route_rules=[oci.service_mesh.IngressGatewayRouteTableRouteRuleArgs(
-                destinations=[oci.service_mesh.IngressGatewayRouteTableRouteRuleDestinationArgs(
-                    virtual_service_id=test_virtual_service["id"],
-                    port=ingress_gateway_route_table_route_rules_destinations_port,
-                    weight=ingress_gateway_route_table_route_rules_destinations_weight,
-                )],
-                type=ingress_gateway_route_table_route_rules_type,
-                ingress_gateway_host=oci.service_mesh.IngressGatewayRouteTableRouteRuleIngressGatewayHostArgs(
-                    name=ingress_gateway_route_table_route_rules_ingress_gateway_host_name,
-                    port=ingress_gateway_route_table_route_rules_ingress_gateway_host_port,
-                ),
-                is_grpc=ingress_gateway_route_table_route_rules_is_grpc,
-                is_host_rewrite_enabled=ingress_gateway_route_table_route_rules_is_host_rewrite_enabled,
-                is_path_rewrite_enabled=ingress_gateway_route_table_route_rules_is_path_rewrite_enabled,
-                path=ingress_gateway_route_table_route_rules_path,
-                path_type=ingress_gateway_route_table_route_rules_path_type,
-                request_timeout_in_ms=ingress_gateway_route_table_route_rules_request_timeout_in_ms,
-            )],
+            route_rules=[{
+                "destinations": [{
+                    "virtual_service_id": test_virtual_service["id"],
+                    "port": ingress_gateway_route_table_route_rules_destinations_port,
+                    "weight": ingress_gateway_route_table_route_rules_destinations_weight,
+                }],
+                "type": ingress_gateway_route_table_route_rules_type,
+                "ingress_gateway_host": {
+                    "name": ingress_gateway_route_table_route_rules_ingress_gateway_host_name,
+                    "port": ingress_gateway_route_table_route_rules_ingress_gateway_host_port,
+                },
+                "is_grpc": ingress_gateway_route_table_route_rules_is_grpc,
+                "is_host_rewrite_enabled": ingress_gateway_route_table_route_rules_is_host_rewrite_enabled,
+                "is_path_rewrite_enabled": ingress_gateway_route_table_route_rules_is_path_rewrite_enabled,
+                "path": ingress_gateway_route_table_route_rules_path,
+                "path_type": ingress_gateway_route_table_route_rules_path_type,
+                "request_timeout_in_ms": ingress_gateway_route_table_route_rules_request_timeout_in_ms,
+            }],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -436,7 +436,7 @@ class IngressGatewayRouteTable(pulumi.CustomResource):
         :param pulumi.Input[str] ingress_gateway_id: The OCID of the service mesh in which this access policy is created.
         :param pulumi.Input[str] name: A user-friendly name. The name must be unique within the same ingress gateway and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
         :param pulumi.Input[int] priority: (Updatable) The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IngressGatewayRouteTableRouteRuleArgs']]]] route_rules: (Updatable) The route rules for the ingress gateway.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IngressGatewayRouteTableRouteRuleArgs', 'IngressGatewayRouteTableRouteRuleArgsDict']]]] route_rules: (Updatable) The route rules for the ingress gateway.
         """
         ...
     @overload
@@ -459,24 +459,24 @@ class IngressGatewayRouteTable(pulumi.CustomResource):
             compartment_id=compartment_id,
             ingress_gateway_id=test_ingress_gateway["id"],
             name=ingress_gateway_route_table_name,
-            route_rules=[oci.service_mesh.IngressGatewayRouteTableRouteRuleArgs(
-                destinations=[oci.service_mesh.IngressGatewayRouteTableRouteRuleDestinationArgs(
-                    virtual_service_id=test_virtual_service["id"],
-                    port=ingress_gateway_route_table_route_rules_destinations_port,
-                    weight=ingress_gateway_route_table_route_rules_destinations_weight,
-                )],
-                type=ingress_gateway_route_table_route_rules_type,
-                ingress_gateway_host=oci.service_mesh.IngressGatewayRouteTableRouteRuleIngressGatewayHostArgs(
-                    name=ingress_gateway_route_table_route_rules_ingress_gateway_host_name,
-                    port=ingress_gateway_route_table_route_rules_ingress_gateway_host_port,
-                ),
-                is_grpc=ingress_gateway_route_table_route_rules_is_grpc,
-                is_host_rewrite_enabled=ingress_gateway_route_table_route_rules_is_host_rewrite_enabled,
-                is_path_rewrite_enabled=ingress_gateway_route_table_route_rules_is_path_rewrite_enabled,
-                path=ingress_gateway_route_table_route_rules_path,
-                path_type=ingress_gateway_route_table_route_rules_path_type,
-                request_timeout_in_ms=ingress_gateway_route_table_route_rules_request_timeout_in_ms,
-            )],
+            route_rules=[{
+                "destinations": [{
+                    "virtual_service_id": test_virtual_service["id"],
+                    "port": ingress_gateway_route_table_route_rules_destinations_port,
+                    "weight": ingress_gateway_route_table_route_rules_destinations_weight,
+                }],
+                "type": ingress_gateway_route_table_route_rules_type,
+                "ingress_gateway_host": {
+                    "name": ingress_gateway_route_table_route_rules_ingress_gateway_host_name,
+                    "port": ingress_gateway_route_table_route_rules_ingress_gateway_host_port,
+                },
+                "is_grpc": ingress_gateway_route_table_route_rules_is_grpc,
+                "is_host_rewrite_enabled": ingress_gateway_route_table_route_rules_is_host_rewrite_enabled,
+                "is_path_rewrite_enabled": ingress_gateway_route_table_route_rules_is_path_rewrite_enabled,
+                "path": ingress_gateway_route_table_route_rules_path,
+                "path_type": ingress_gateway_route_table_route_rules_path_type,
+                "request_timeout_in_ms": ingress_gateway_route_table_route_rules_request_timeout_in_ms,
+            }],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -517,7 +517,7 @@ class IngressGatewayRouteTable(pulumi.CustomResource):
                  ingress_gateway_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  priority: Optional[pulumi.Input[int]] = None,
-                 route_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IngressGatewayRouteTableRouteRuleArgs']]]]] = None,
+                 route_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IngressGatewayRouteTableRouteRuleArgs', 'IngressGatewayRouteTableRouteRuleArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -564,7 +564,7 @@ class IngressGatewayRouteTable(pulumi.CustomResource):
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             priority: Optional[pulumi.Input[int]] = None,
-            route_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IngressGatewayRouteTableRouteRuleArgs']]]]] = None,
+            route_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IngressGatewayRouteTableRouteRuleArgs', 'IngressGatewayRouteTableRouteRuleArgsDict']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
@@ -584,7 +584,7 @@ class IngressGatewayRouteTable(pulumi.CustomResource):
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
         :param pulumi.Input[str] name: A user-friendly name. The name must be unique within the same ingress gateway and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
         :param pulumi.Input[int] priority: (Updatable) The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IngressGatewayRouteTableRouteRuleArgs']]]] route_rules: (Updatable) The route rules for the ingress gateway.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IngressGatewayRouteTableRouteRuleArgs', 'IngressGatewayRouteTableRouteRuleArgsDict']]]] route_rules: (Updatable) The route rules for the ingress gateway.
         :param pulumi.Input[str] state: The current state of the Resource.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time when this resource was created in an RFC3339 formatted datetime string.

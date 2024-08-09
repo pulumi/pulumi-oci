@@ -1115,7 +1115,7 @@ class ShardedDatabase(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 catalog_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ShardedDatabaseCatalogDetailArgs']]]]] = None,
+                 catalog_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ShardedDatabaseCatalogDetailArgs', 'ShardedDatabaseCatalogDetailArgsDict']]]]] = None,
                  character_set: Optional[pulumi.Input[str]] = None,
                  chunks: Optional[pulumi.Input[int]] = None,
                  cluster_certificate_common_name: Optional[pulumi.Input[str]] = None,
@@ -1135,9 +1135,9 @@ class ShardedDatabase(pulumi.CustomResource):
                  ncharacter_set: Optional[pulumi.Input[str]] = None,
                  ons_port_local: Optional[pulumi.Input[int]] = None,
                  ons_port_remote: Optional[pulumi.Input[int]] = None,
-                 patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ShardedDatabasePatchOperationArgs']]]]] = None,
+                 patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ShardedDatabasePatchOperationArgs', 'ShardedDatabasePatchOperationArgsDict']]]]] = None,
                  prefix: Optional[pulumi.Input[str]] = None,
-                 shard_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ShardedDatabaseShardDetailArgs']]]]] = None,
+                 shard_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ShardedDatabaseShardDetailArgs', 'ShardedDatabaseShardDetailArgsDict']]]]] = None,
                  sharding_method: Optional[pulumi.Input[str]] = None,
                  start_database_trigger: Optional[pulumi.Input[int]] = None,
                  stop_database_trigger: Optional[pulumi.Input[int]] = None,
@@ -1162,7 +1162,7 @@ class ShardedDatabase(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ShardedDatabaseCatalogDetailArgs']]]] catalog_details: Collection of ATP-Dedicated catalogs that needs to be created.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ShardedDatabaseCatalogDetailArgs', 'ShardedDatabaseCatalogDetailArgsDict']]]] catalog_details: Collection of ATP-Dedicated catalogs that needs to be created.
         :param pulumi.Input[str] character_set: The character set for the new shard database being created. Use database api ListAutonomousDatabaseCharacterSets to get the list of allowed character set for autonomous dedicated database. See documentation: https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/AutonomousDatabaseCharacterSets/ListAutonomousDatabaseCharacterSets
         :param pulumi.Input[int] chunks: The default number of unique chunks in a shardspace. The value of chunks must be greater than 2 times the size of the largest shardgroup in any shardspace.
         :param pulumi.Input[str] cluster_certificate_common_name: The certificate common name used in all cloudAutonomousVmClusters for the sharded database topology. Eg. Production. All the clusters used in one sharded database topology shall have same CABundle setup. Valid characterset for clusterCertificateCommonName include uppercase or lowercase letters, numbers, hyphens, underscores, and period.
@@ -1182,9 +1182,9 @@ class ShardedDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] ncharacter_set: The national character set for the new shard database being created. Use database api ListAutonomousDatabaseCharacterSets to get the list of allowed national character set for autonomous dedicated database. See documentation: https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/AutonomousDatabaseCharacterSets/ListAutonomousDatabaseCharacterSets
         :param pulumi.Input[int] ons_port_local: Ons port local for sharded database.
         :param pulumi.Input[int] ons_port_remote: Ons remote port for sharded database.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ShardedDatabasePatchOperationArgs']]]] patch_operations: (Updatable)
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ShardedDatabasePatchOperationArgs', 'ShardedDatabasePatchOperationArgsDict']]]] patch_operations: (Updatable)
         :param pulumi.Input[str] prefix: Unique name prefix for the sharded databases. Only alpha-numeric values are allowed. First character has to be a letter followed by any combination of letter and number.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ShardedDatabaseShardDetailArgs']]]] shard_details: Collection of ATP-Dedicated shards that needs to be created.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ShardedDatabaseShardDetailArgs', 'ShardedDatabaseShardDetailArgsDict']]]] shard_details: Collection of ATP-Dedicated shards that needs to be created.
         :param pulumi.Input[str] sharding_method: Sharding Method.
         :param pulumi.Input[int] start_database_trigger: (Updatable) An optional property when incremented triggers Start Database. Could be set to any integer value.
         :param pulumi.Input[int] stop_database_trigger: (Updatable) An optional property when incremented triggers Stop Database. Could be set to any integer value.
@@ -1232,7 +1232,7 @@ class ShardedDatabase(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 catalog_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ShardedDatabaseCatalogDetailArgs']]]]] = None,
+                 catalog_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ShardedDatabaseCatalogDetailArgs', 'ShardedDatabaseCatalogDetailArgsDict']]]]] = None,
                  character_set: Optional[pulumi.Input[str]] = None,
                  chunks: Optional[pulumi.Input[int]] = None,
                  cluster_certificate_common_name: Optional[pulumi.Input[str]] = None,
@@ -1252,9 +1252,9 @@ class ShardedDatabase(pulumi.CustomResource):
                  ncharacter_set: Optional[pulumi.Input[str]] = None,
                  ons_port_local: Optional[pulumi.Input[int]] = None,
                  ons_port_remote: Optional[pulumi.Input[int]] = None,
-                 patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ShardedDatabasePatchOperationArgs']]]]] = None,
+                 patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ShardedDatabasePatchOperationArgs', 'ShardedDatabasePatchOperationArgsDict']]]]] = None,
                  prefix: Optional[pulumi.Input[str]] = None,
-                 shard_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ShardedDatabaseShardDetailArgs']]]]] = None,
+                 shard_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ShardedDatabaseShardDetailArgs', 'ShardedDatabaseShardDetailArgsDict']]]]] = None,
                  sharding_method: Optional[pulumi.Input[str]] = None,
                  start_database_trigger: Optional[pulumi.Input[int]] = None,
                  stop_database_trigger: Optional[pulumi.Input[int]] = None,
@@ -1349,14 +1349,14 @@ class ShardedDatabase(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            catalog_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ShardedDatabaseCatalogDetailArgs']]]]] = None,
+            catalog_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ShardedDatabaseCatalogDetailArgs', 'ShardedDatabaseCatalogDetailArgsDict']]]]] = None,
             character_set: Optional[pulumi.Input[str]] = None,
             chunks: Optional[pulumi.Input[int]] = None,
             cluster_certificate_common_name: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             configure_gsms_trigger: Optional[pulumi.Input[int]] = None,
             configure_sharding_trigger: Optional[pulumi.Input[int]] = None,
-            connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ShardedDatabaseConnectionStringArgs']]]]] = None,
+            connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ShardedDatabaseConnectionStringArgs', 'ShardedDatabaseConnectionStringArgsDict']]]]] = None,
             db_deployment_type: Optional[pulumi.Input[str]] = None,
             db_version: Optional[pulumi.Input[str]] = None,
             db_workload: Optional[pulumi.Input[str]] = None,
@@ -1367,7 +1367,7 @@ class ShardedDatabase(pulumi.CustomResource):
             generate_gsm_certificate_signing_request_trigger: Optional[pulumi.Input[int]] = None,
             generate_wallet_trigger: Optional[pulumi.Input[int]] = None,
             get_connection_string_trigger: Optional[pulumi.Input[int]] = None,
-            gsms: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ShardedDatabaseGsmArgs']]]]] = None,
+            gsms: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ShardedDatabaseGsmArgs', 'ShardedDatabaseGsmArgsDict']]]]] = None,
             lifecycle_state: Optional[pulumi.Input[str]] = None,
             lifecycle_state_details: Optional[pulumi.Input[str]] = None,
             listener_port: Optional[pulumi.Input[int]] = None,
@@ -1375,10 +1375,10 @@ class ShardedDatabase(pulumi.CustomResource):
             ncharacter_set: Optional[pulumi.Input[str]] = None,
             ons_port_local: Optional[pulumi.Input[int]] = None,
             ons_port_remote: Optional[pulumi.Input[int]] = None,
-            patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ShardedDatabasePatchOperationArgs']]]]] = None,
+            patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ShardedDatabasePatchOperationArgs', 'ShardedDatabasePatchOperationArgsDict']]]]] = None,
             prefix: Optional[pulumi.Input[str]] = None,
             private_endpoint: Optional[pulumi.Input[str]] = None,
-            shard_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ShardedDatabaseShardDetailArgs']]]]] = None,
+            shard_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ShardedDatabaseShardDetailArgs', 'ShardedDatabaseShardDetailArgsDict']]]]] = None,
             sharded_database_id: Optional[pulumi.Input[str]] = None,
             sharding_method: Optional[pulumi.Input[str]] = None,
             start_database_trigger: Optional[pulumi.Input[int]] = None,
@@ -1397,14 +1397,14 @@ class ShardedDatabase(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ShardedDatabaseCatalogDetailArgs']]]] catalog_details: Collection of ATP-Dedicated catalogs that needs to be created.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ShardedDatabaseCatalogDetailArgs', 'ShardedDatabaseCatalogDetailArgsDict']]]] catalog_details: Collection of ATP-Dedicated catalogs that needs to be created.
         :param pulumi.Input[str] character_set: The character set for the new shard database being created. Use database api ListAutonomousDatabaseCharacterSets to get the list of allowed character set for autonomous dedicated database. See documentation: https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/AutonomousDatabaseCharacterSets/ListAutonomousDatabaseCharacterSets
         :param pulumi.Input[int] chunks: The default number of unique chunks in a shardspace. The value of chunks must be greater than 2 times the size of the largest shardgroup in any shardspace.
         :param pulumi.Input[str] cluster_certificate_common_name: The certificate common name used in all cloudAutonomousVmClusters for the sharded database topology. Eg. Production. All the clusters used in one sharded database topology shall have same CABundle setup. Valid characterset for clusterCertificateCommonName include uppercase or lowercase letters, numbers, hyphens, underscores, and period.
         :param pulumi.Input[str] compartment_id: (Updatable) Identifier of the compartment where sharded database is to be created.
         :param pulumi.Input[int] configure_gsms_trigger: (Updatable) An optional property when incremented triggers Configure Gsms. Could be set to any integer value.
         :param pulumi.Input[int] configure_sharding_trigger: (Updatable) An optional property when incremented triggers Configure Sharding. Could be set to any integer value.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ShardedDatabaseConnectionStringArgs']]]] connection_strings: Details of sharded database connection String.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ShardedDatabaseConnectionStringArgs', 'ShardedDatabaseConnectionStringArgsDict']]]] connection_strings: Details of sharded database connection String.
         :param pulumi.Input[str] db_deployment_type: The database deployment type.
         :param pulumi.Input[str] db_version: Oracle Database version of the Autonomous Container Database.
         :param pulumi.Input[str] db_workload: Possible workload types.
@@ -1415,17 +1415,17 @@ class ShardedDatabase(pulumi.CustomResource):
         :param pulumi.Input[int] generate_gsm_certificate_signing_request_trigger: (Updatable) An optional property when incremented triggers Generate Gsm Certificate Signing Request. Could be set to any integer value.
         :param pulumi.Input[int] generate_wallet_trigger: (Updatable) An optional property when incremented triggers Generate Wallet. Could be set to any integer value.
         :param pulumi.Input[int] get_connection_string_trigger: (Updatable) An optional property when incremented triggers Get Connection String. Could be set to any integer value.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ShardedDatabaseGsmArgs']]]] gsms: Details of GSM instances for the sharded database.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ShardedDatabaseGsmArgs', 'ShardedDatabaseGsmArgsDict']]]] gsms: Details of GSM instances for the sharded database.
         :param pulumi.Input[str] lifecycle_state_details: Detailed message for the lifecycle state.
         :param pulumi.Input[int] listener_port: The listener port number for sharded database.
         :param pulumi.Input[int] listener_port_tls: The TLS listener port number for sharded database.
         :param pulumi.Input[str] ncharacter_set: The national character set for the new shard database being created. Use database api ListAutonomousDatabaseCharacterSets to get the list of allowed national character set for autonomous dedicated database. See documentation: https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/AutonomousDatabaseCharacterSets/ListAutonomousDatabaseCharacterSets
         :param pulumi.Input[int] ons_port_local: Ons port local for sharded database.
         :param pulumi.Input[int] ons_port_remote: Ons remote port for sharded database.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ShardedDatabasePatchOperationArgs']]]] patch_operations: (Updatable)
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ShardedDatabasePatchOperationArgs', 'ShardedDatabasePatchOperationArgsDict']]]] patch_operations: (Updatable)
         :param pulumi.Input[str] prefix: Unique name prefix for the sharded databases. Only alpha-numeric values are allowed. First character has to be a letter followed by any combination of letter and number.
         :param pulumi.Input[str] private_endpoint: The OCID of private endpoint being used by the sharded database.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ShardedDatabaseShardDetailArgs']]]] shard_details: Collection of ATP-Dedicated shards that needs to be created.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ShardedDatabaseShardDetailArgs', 'ShardedDatabaseShardDetailArgsDict']]]] shard_details: Collection of ATP-Dedicated shards that needs to be created.
         :param pulumi.Input[str] sharding_method: Sharding Method.
         :param pulumi.Input[int] start_database_trigger: (Updatable) An optional property when incremented triggers Start Database. Could be set to any integer value.
         :param pulumi.Input[str] state: Lifecycle states for sharded databases.

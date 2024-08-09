@@ -641,7 +641,7 @@ class Agent(pulumi.CustomResource):
             heart_beat_status: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             os_version: Optional[pulumi.Input[str]] = None,
-            plugin_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AgentPluginListArgs']]]]] = None,
+            plugin_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AgentPluginListArgs', 'AgentPluginListArgsDict']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
@@ -670,7 +670,7 @@ class Agent(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AgentPluginListArgs']]]] plugin_lists: List of plugins associated with the agent.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AgentPluginListArgs', 'AgentPluginListArgsDict']]]] plugin_lists: List of plugins associated with the agent.
         :param pulumi.Input[str] state: The current state of the Agent.
         :param pulumi.Input[Mapping[str, Any]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param pulumi.Input[str] time_created: The time when the Agent was created. An RFC3339 formatted datetime string.

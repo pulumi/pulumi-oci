@@ -79,7 +79,7 @@ class AwaitableGetSecretbundleVersionsResult(GetSecretbundleVersionsResult):
             secret_id=self.secret_id)
 
 
-def get_secretbundle_versions(filters: Optional[Sequence[pulumi.InputType['GetSecretbundleVersionsFilterArgs']]] = None,
+def get_secretbundle_versions(filters: Optional[Sequence[Union['GetSecretbundleVersionsFilterArgs', 'GetSecretbundleVersionsFilterArgsDict']]] = None,
                               secret_id: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSecretbundleVersionsResult:
     """
@@ -113,7 +113,7 @@ def get_secretbundle_versions(filters: Optional[Sequence[pulumi.InputType['GetSe
 
 
 @_utilities.lift_output_func(get_secretbundle_versions)
-def get_secretbundle_versions_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetSecretbundleVersionsFilterArgs']]]]] = None,
+def get_secretbundle_versions_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSecretbundleVersionsFilterArgs', 'GetSecretbundleVersionsFilterArgsDict']]]]] = None,
                                      secret_id: Optional[pulumi.Input[str]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecretbundleVersionsResult]:
     """

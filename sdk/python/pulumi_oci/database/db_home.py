@@ -602,7 +602,7 @@ class DbHome(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 database: Optional[pulumi.Input[pulumi.InputType['DbHomeDatabaseArgs']]] = None,
+                 database: Optional[pulumi.Input[Union['DbHomeDatabaseArgs', 'DbHomeDatabaseArgsDict']]] = None,
                  database_software_image_id: Optional[pulumi.Input[str]] = None,
                  db_system_id: Optional[pulumi.Input[str]] = None,
                  db_version: Optional[pulumi.Input[str]] = None,
@@ -642,7 +642,7 @@ class DbHome(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['DbHomeDatabaseArgs']] database: (Updatable) Details for creating a database.
+        :param pulumi.Input[Union['DbHomeDatabaseArgs', 'DbHomeDatabaseArgsDict']] database: (Updatable) Details for creating a database.
                
                **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         :param pulumi.Input[str] database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
@@ -708,7 +708,7 @@ class DbHome(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 database: Optional[pulumi.Input[pulumi.InputType['DbHomeDatabaseArgs']]] = None,
+                 database: Optional[pulumi.Input[Union['DbHomeDatabaseArgs', 'DbHomeDatabaseArgsDict']]] = None,
                  database_software_image_id: Optional[pulumi.Input[str]] = None,
                  db_system_id: Optional[pulumi.Input[str]] = None,
                  db_version: Optional[pulumi.Input[str]] = None,
@@ -762,7 +762,7 @@ class DbHome(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            database: Optional[pulumi.Input[pulumi.InputType['DbHomeDatabaseArgs']]] = None,
+            database: Optional[pulumi.Input[Union['DbHomeDatabaseArgs', 'DbHomeDatabaseArgsDict']]] = None,
             database_software_image_id: Optional[pulumi.Input[str]] = None,
             db_home_location: Optional[pulumi.Input[str]] = None,
             db_system_id: Optional[pulumi.Input[str]] = None,
@@ -789,7 +789,7 @@ class DbHome(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[pulumi.InputType['DbHomeDatabaseArgs']] database: (Updatable) Details for creating a database.
+        :param pulumi.Input[Union['DbHomeDatabaseArgs', 'DbHomeDatabaseArgsDict']] database: (Updatable) Details for creating a database.
                
                **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         :param pulumi.Input[str] database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)

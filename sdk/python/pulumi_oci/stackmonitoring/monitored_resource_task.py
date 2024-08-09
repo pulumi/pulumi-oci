@@ -292,7 +292,7 @@ class MonitoredResourceTask(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 task_details: Optional[pulumi.Input[pulumi.InputType['MonitoredResourceTaskTaskDetailsArgs']]] = None,
+                 task_details: Optional[pulumi.Input[Union['MonitoredResourceTaskTaskDetailsArgs', 'MonitoredResourceTaskTaskDetailsArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Monitored Resource Task resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -307,23 +307,23 @@ class MonitoredResourceTask(pulumi.CustomResource):
 
         test_monitored_resource_task = oci.stack_monitoring.MonitoredResourceTask("test_monitored_resource_task",
             compartment_id=compartment_id,
-            task_details=oci.stack_monitoring.MonitoredResourceTaskTaskDetailsArgs(
-                namespace=monitored_resource_task_task_details_namespace,
-                source=monitored_resource_task_task_details_source,
-                type=monitored_resource_task_task_details_type,
-                availability_proxy_metric_collection_interval=monitored_resource_task_task_details_availability_proxy_metric_collection_interval,
-                availability_proxy_metrics=monitored_resource_task_task_details_availability_proxy_metrics,
-                console_path_prefix=monitored_resource_task_task_details_console_path_prefix,
-                external_id_mapping=monitored_resource_task_task_details_external_id_mapping,
-                lifecycle_status_mappings_for_up_statuses=monitored_resource_task_task_details_lifecycle_status_mappings_for_up_status,
-                resource_group=monitored_resource_task_task_details_resource_group,
-                resource_name_filter=monitored_resource_task_task_details_resource_name_filter,
-                resource_name_mapping=monitored_resource_task_task_details_resource_name_mapping,
-                resource_type_filter=monitored_resource_task_task_details_resource_type_filter,
-                resource_type_mapping=monitored_resource_task_task_details_resource_type_mapping,
-                service_base_url=monitored_resource_task_task_details_service_base_url,
-                should_use_metrics_flow_for_status=monitored_resource_task_task_details_should_use_metrics_flow_for_status,
-            ),
+            task_details={
+                "namespace": monitored_resource_task_task_details_namespace,
+                "source": monitored_resource_task_task_details_source,
+                "type": monitored_resource_task_task_details_type,
+                "availability_proxy_metric_collection_interval": monitored_resource_task_task_details_availability_proxy_metric_collection_interval,
+                "availability_proxy_metrics": monitored_resource_task_task_details_availability_proxy_metrics,
+                "console_path_prefix": monitored_resource_task_task_details_console_path_prefix,
+                "external_id_mapping": monitored_resource_task_task_details_external_id_mapping,
+                "lifecycle_status_mappings_for_up_statuses": monitored_resource_task_task_details_lifecycle_status_mappings_for_up_status,
+                "resource_group": monitored_resource_task_task_details_resource_group,
+                "resource_name_filter": monitored_resource_task_task_details_resource_name_filter,
+                "resource_name_mapping": monitored_resource_task_task_details_resource_name_mapping,
+                "resource_type_filter": monitored_resource_task_task_details_resource_type_filter,
+                "resource_type_mapping": monitored_resource_task_task_details_resource_type_mapping,
+                "service_base_url": monitored_resource_task_task_details_service_base_url,
+                "should_use_metrics_flow_for_status": monitored_resource_task_task_details_should_use_metrics_flow_for_status,
+            },
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -347,7 +347,7 @@ class MonitoredResourceTask(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] name: Name of the task. If not provided by default the following names will be taken Oracle Cloud Infrastructure tasks - namespace plus timestamp.
-        :param pulumi.Input[pulumi.InputType['MonitoredResourceTaskTaskDetailsArgs']] task_details: The request details for the performing the task.
+        :param pulumi.Input[Union['MonitoredResourceTaskTaskDetailsArgs', 'MonitoredResourceTaskTaskDetailsArgsDict']] task_details: The request details for the performing the task.
         """
         ...
     @overload
@@ -368,23 +368,23 @@ class MonitoredResourceTask(pulumi.CustomResource):
 
         test_monitored_resource_task = oci.stack_monitoring.MonitoredResourceTask("test_monitored_resource_task",
             compartment_id=compartment_id,
-            task_details=oci.stack_monitoring.MonitoredResourceTaskTaskDetailsArgs(
-                namespace=monitored_resource_task_task_details_namespace,
-                source=monitored_resource_task_task_details_source,
-                type=monitored_resource_task_task_details_type,
-                availability_proxy_metric_collection_interval=monitored_resource_task_task_details_availability_proxy_metric_collection_interval,
-                availability_proxy_metrics=monitored_resource_task_task_details_availability_proxy_metrics,
-                console_path_prefix=monitored_resource_task_task_details_console_path_prefix,
-                external_id_mapping=monitored_resource_task_task_details_external_id_mapping,
-                lifecycle_status_mappings_for_up_statuses=monitored_resource_task_task_details_lifecycle_status_mappings_for_up_status,
-                resource_group=monitored_resource_task_task_details_resource_group,
-                resource_name_filter=monitored_resource_task_task_details_resource_name_filter,
-                resource_name_mapping=monitored_resource_task_task_details_resource_name_mapping,
-                resource_type_filter=monitored_resource_task_task_details_resource_type_filter,
-                resource_type_mapping=monitored_resource_task_task_details_resource_type_mapping,
-                service_base_url=monitored_resource_task_task_details_service_base_url,
-                should_use_metrics_flow_for_status=monitored_resource_task_task_details_should_use_metrics_flow_for_status,
-            ),
+            task_details={
+                "namespace": monitored_resource_task_task_details_namespace,
+                "source": monitored_resource_task_task_details_source,
+                "type": monitored_resource_task_task_details_type,
+                "availability_proxy_metric_collection_interval": monitored_resource_task_task_details_availability_proxy_metric_collection_interval,
+                "availability_proxy_metrics": monitored_resource_task_task_details_availability_proxy_metrics,
+                "console_path_prefix": monitored_resource_task_task_details_console_path_prefix,
+                "external_id_mapping": monitored_resource_task_task_details_external_id_mapping,
+                "lifecycle_status_mappings_for_up_statuses": monitored_resource_task_task_details_lifecycle_status_mappings_for_up_status,
+                "resource_group": monitored_resource_task_task_details_resource_group,
+                "resource_name_filter": monitored_resource_task_task_details_resource_name_filter,
+                "resource_name_mapping": monitored_resource_task_task_details_resource_name_mapping,
+                "resource_type_filter": monitored_resource_task_task_details_resource_type_filter,
+                "resource_type_mapping": monitored_resource_task_task_details_resource_type_mapping,
+                "service_base_url": monitored_resource_task_task_details_service_base_url,
+                "should_use_metrics_flow_for_status": monitored_resource_task_task_details_should_use_metrics_flow_for_status,
+            },
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -421,7 +421,7 @@ class MonitoredResourceTask(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 task_details: Optional[pulumi.Input[pulumi.InputType['MonitoredResourceTaskTaskDetailsArgs']]] = None,
+                 task_details: Optional[pulumi.Input[Union['MonitoredResourceTaskTaskDetailsArgs', 'MonitoredResourceTaskTaskDetailsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -462,7 +462,7 @@ class MonitoredResourceTask(pulumi.CustomResource):
             name: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            task_details: Optional[pulumi.Input[pulumi.InputType['MonitoredResourceTaskTaskDetailsArgs']]] = None,
+            task_details: Optional[pulumi.Input[Union['MonitoredResourceTaskTaskDetailsArgs', 'MonitoredResourceTaskTaskDetailsArgsDict']]] = None,
             tenant_id: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
@@ -480,7 +480,7 @@ class MonitoredResourceTask(pulumi.CustomResource):
         :param pulumi.Input[str] name: Name of the task. If not provided by default the following names will be taken Oracle Cloud Infrastructure tasks - namespace plus timestamp.
         :param pulumi.Input[str] state: The current state of the stack monitoring resource task.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[pulumi.InputType['MonitoredResourceTaskTaskDetailsArgs']] task_details: The request details for the performing the task.
+        :param pulumi.Input[Union['MonitoredResourceTaskTaskDetailsArgs', 'MonitoredResourceTaskTaskDetailsArgsDict']] task_details: The request details for the performing the task.
         :param pulumi.Input[str] tenant_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.
         :param pulumi.Input[str] time_created: The date and time when the stack monitoring resource task was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
         :param pulumi.Input[str] time_updated: The date and time when the stack monitoring resource task was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.

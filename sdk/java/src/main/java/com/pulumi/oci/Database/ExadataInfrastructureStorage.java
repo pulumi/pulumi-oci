@@ -244,7 +244,7 @@ public class ExadataInfrastructureStorage extends com.pulumi.resources.CustomRes
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ExadataInfrastructureStorage(String name) {
+    public ExadataInfrastructureStorage(java.lang.String name) {
         this(name, ExadataInfrastructureStorageArgs.Empty);
     }
     /**
@@ -252,7 +252,7 @@ public class ExadataInfrastructureStorage extends com.pulumi.resources.CustomRes
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ExadataInfrastructureStorage(String name, ExadataInfrastructureStorageArgs args) {
+    public ExadataInfrastructureStorage(java.lang.String name, ExadataInfrastructureStorageArgs args) {
         this(name, args, null);
     }
     /**
@@ -261,12 +261,12 @@ public class ExadataInfrastructureStorage extends com.pulumi.resources.CustomRes
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ExadataInfrastructureStorage(String name, ExadataInfrastructureStorageArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/exadataInfrastructureStorage:ExadataInfrastructureStorage", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ExadataInfrastructureStorage(java.lang.String name, ExadataInfrastructureStorageArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/exadataInfrastructureStorage:ExadataInfrastructureStorage", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ExadataInfrastructureStorage(String name, Output<String> id, @Nullable ExadataInfrastructureStorageState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/exadataInfrastructureStorage:ExadataInfrastructureStorage", name, state, makeResourceOptions(options, id));
+    private ExadataInfrastructureStorage(java.lang.String name, Output<java.lang.String> id, @Nullable ExadataInfrastructureStorageState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/exadataInfrastructureStorage:ExadataInfrastructureStorage", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ExadataInfrastructureStorageArgs makeArgs(ExadataInfrastructureStorageArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -276,7 +276,7 @@ public class ExadataInfrastructureStorage extends com.pulumi.resources.CustomRes
         return args == null ? ExadataInfrastructureStorageArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -292,7 +292,7 @@ public class ExadataInfrastructureStorage extends com.pulumi.resources.CustomRes
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ExadataInfrastructureStorage get(String name, Output<String> id, @Nullable ExadataInfrastructureStorageState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ExadataInfrastructureStorage get(java.lang.String name, Output<java.lang.String> id, @Nullable ExadataInfrastructureStorageState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ExadataInfrastructureStorage(name, id, state, options);
     }
 }

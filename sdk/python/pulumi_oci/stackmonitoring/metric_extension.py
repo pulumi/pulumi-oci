@@ -512,10 +512,10 @@ class MetricExtension(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 metric_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MetricExtensionMetricListArgs']]]]] = None,
+                 metric_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MetricExtensionMetricListArgs', 'MetricExtensionMetricListArgsDict']]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  publish_trigger: Optional[pulumi.Input[bool]] = None,
-                 query_properties: Optional[pulumi.Input[pulumi.InputType['MetricExtensionQueryPropertiesArgs']]] = None,
+                 query_properties: Optional[pulumi.Input[Union['MetricExtensionQueryPropertiesArgs', 'MetricExtensionQueryPropertiesArgsDict']]] = None,
                  resource_type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -533,46 +533,46 @@ class MetricExtension(pulumi.CustomResource):
             collection_recurrences=metric_extension_collection_recurrences,
             compartment_id=compartment_id,
             display_name=metric_extension_display_name,
-            metric_lists=[oci.stack_monitoring.MetricExtensionMetricListArgs(
-                data_type=metric_extension_metric_list_data_type,
-                name=metric_extension_metric_list_name,
-                compute_expression=metric_extension_metric_list_compute_expression,
-                display_name=metric_extension_metric_list_display_name,
-                is_dimension=metric_extension_metric_list_is_dimension,
-                is_hidden=metric_extension_metric_list_is_hidden,
-                metric_category=metric_extension_metric_list_metric_category,
-                unit=metric_extension_metric_list_unit,
-            )],
+            metric_lists=[{
+                "data_type": metric_extension_metric_list_data_type,
+                "name": metric_extension_metric_list_name,
+                "compute_expression": metric_extension_metric_list_compute_expression,
+                "display_name": metric_extension_metric_list_display_name,
+                "is_dimension": metric_extension_metric_list_is_dimension,
+                "is_hidden": metric_extension_metric_list_is_hidden,
+                "metric_category": metric_extension_metric_list_metric_category,
+                "unit": metric_extension_metric_list_unit,
+            }],
             name=metric_extension_name,
-            query_properties=oci.stack_monitoring.MetricExtensionQueryPropertiesArgs(
-                collection_method=metric_extension_query_properties_collection_method,
-                arguments=metric_extension_query_properties_arguments,
-                auto_row_prefix=metric_extension_query_properties_auto_row_prefix,
-                command=metric_extension_query_properties_command,
-                delimiter=metric_extension_query_properties_delimiter,
-                identity_metric=metric_extension_query_properties_identity_metric,
-                in_param_details=[oci.stack_monitoring.MetricExtensionQueryPropertiesInParamDetailArgs(
-                    in_param_position=metric_extension_query_properties_in_param_details_in_param_position,
-                    in_param_value=metric_extension_query_properties_in_param_details_in_param_value,
-                )],
-                is_metric_service_enabled=metric_extension_query_properties_is_metric_service_enabled,
-                jmx_attributes=metric_extension_query_properties_jmx_attributes,
-                managed_bean_query=metric_extension_query_properties_managed_bean_query,
-                out_param_details=oci.stack_monitoring.MetricExtensionQueryPropertiesOutParamDetailsArgs(
-                    out_param_position=metric_extension_query_properties_out_param_details_out_param_position,
-                    out_param_type=metric_extension_query_properties_out_param_details_out_param_type,
-                ),
-                script_details=oci.stack_monitoring.MetricExtensionQueryPropertiesScriptDetailsArgs(
-                    content=metric_extension_query_properties_script_details_content,
-                    name=metric_extension_query_properties_script_details_name,
-                ),
-                sql_details=oci.stack_monitoring.MetricExtensionQueryPropertiesSqlDetailsArgs(
-                    content=metric_extension_query_properties_sql_details_content,
-                    script_file_name=metric_extension_query_properties_sql_details_script_file_name,
-                ),
-                sql_type=metric_extension_query_properties_sql_type,
-                starts_with=metric_extension_query_properties_starts_with,
-            ),
+            query_properties={
+                "collection_method": metric_extension_query_properties_collection_method,
+                "arguments": metric_extension_query_properties_arguments,
+                "auto_row_prefix": metric_extension_query_properties_auto_row_prefix,
+                "command": metric_extension_query_properties_command,
+                "delimiter": metric_extension_query_properties_delimiter,
+                "identity_metric": metric_extension_query_properties_identity_metric,
+                "in_param_details": [{
+                    "in_param_position": metric_extension_query_properties_in_param_details_in_param_position,
+                    "in_param_value": metric_extension_query_properties_in_param_details_in_param_value,
+                }],
+                "is_metric_service_enabled": metric_extension_query_properties_is_metric_service_enabled,
+                "jmx_attributes": metric_extension_query_properties_jmx_attributes,
+                "managed_bean_query": metric_extension_query_properties_managed_bean_query,
+                "out_param_details": {
+                    "out_param_position": metric_extension_query_properties_out_param_details_out_param_position,
+                    "out_param_type": metric_extension_query_properties_out_param_details_out_param_type,
+                },
+                "script_details": {
+                    "content": metric_extension_query_properties_script_details_content,
+                    "name": metric_extension_query_properties_script_details_name,
+                },
+                "sql_details": {
+                    "content": metric_extension_query_properties_sql_details_content,
+                    "script_file_name": metric_extension_query_properties_sql_details_script_file_name,
+                },
+                "sql_type": metric_extension_query_properties_sql_type,
+                "starts_with": metric_extension_query_properties_starts_with,
+            },
             resource_type=metric_extension_resource_type,
             description=metric_extension_description)
         ```
@@ -591,14 +591,14 @@ class MetricExtension(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         :param pulumi.Input[str] description: (Updatable) Description of the metric extension.
         :param pulumi.Input[str] display_name: (Updatable) Metric Extension display name.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MetricExtensionMetricListArgs']]]] metric_lists: (Updatable) List of metrics which are part of this metric extension
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MetricExtensionMetricListArgs', 'MetricExtensionMetricListArgsDict']]]] metric_lists: (Updatable) List of metrics which are part of this metric extension
         :param pulumi.Input[str] name: Metric Extension Resource name.
         :param pulumi.Input[bool] publish_trigger: (Updatable) An optional property when set to `true` triggers Publish of a metric extension. Once set to `true`, it cannot be changed back to `false`. Update of publish_trigger cannot be combined with other updates in the same request. A metric extension cannot be tested and its definition cannot be updated once it is marked published or publish_trigger is updated to `true`.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[pulumi.InputType['MetricExtensionQueryPropertiesArgs']] query_properties: (Updatable) Collection method and query properties details of metric extension
+        :param pulumi.Input[Union['MetricExtensionQueryPropertiesArgs', 'MetricExtensionQueryPropertiesArgsDict']] query_properties: (Updatable) Collection method and query properties details of metric extension
         :param pulumi.Input[str] resource_type: Resource type to which Metric Extension applies
         """
         ...
@@ -622,46 +622,46 @@ class MetricExtension(pulumi.CustomResource):
             collection_recurrences=metric_extension_collection_recurrences,
             compartment_id=compartment_id,
             display_name=metric_extension_display_name,
-            metric_lists=[oci.stack_monitoring.MetricExtensionMetricListArgs(
-                data_type=metric_extension_metric_list_data_type,
-                name=metric_extension_metric_list_name,
-                compute_expression=metric_extension_metric_list_compute_expression,
-                display_name=metric_extension_metric_list_display_name,
-                is_dimension=metric_extension_metric_list_is_dimension,
-                is_hidden=metric_extension_metric_list_is_hidden,
-                metric_category=metric_extension_metric_list_metric_category,
-                unit=metric_extension_metric_list_unit,
-            )],
+            metric_lists=[{
+                "data_type": metric_extension_metric_list_data_type,
+                "name": metric_extension_metric_list_name,
+                "compute_expression": metric_extension_metric_list_compute_expression,
+                "display_name": metric_extension_metric_list_display_name,
+                "is_dimension": metric_extension_metric_list_is_dimension,
+                "is_hidden": metric_extension_metric_list_is_hidden,
+                "metric_category": metric_extension_metric_list_metric_category,
+                "unit": metric_extension_metric_list_unit,
+            }],
             name=metric_extension_name,
-            query_properties=oci.stack_monitoring.MetricExtensionQueryPropertiesArgs(
-                collection_method=metric_extension_query_properties_collection_method,
-                arguments=metric_extension_query_properties_arguments,
-                auto_row_prefix=metric_extension_query_properties_auto_row_prefix,
-                command=metric_extension_query_properties_command,
-                delimiter=metric_extension_query_properties_delimiter,
-                identity_metric=metric_extension_query_properties_identity_metric,
-                in_param_details=[oci.stack_monitoring.MetricExtensionQueryPropertiesInParamDetailArgs(
-                    in_param_position=metric_extension_query_properties_in_param_details_in_param_position,
-                    in_param_value=metric_extension_query_properties_in_param_details_in_param_value,
-                )],
-                is_metric_service_enabled=metric_extension_query_properties_is_metric_service_enabled,
-                jmx_attributes=metric_extension_query_properties_jmx_attributes,
-                managed_bean_query=metric_extension_query_properties_managed_bean_query,
-                out_param_details=oci.stack_monitoring.MetricExtensionQueryPropertiesOutParamDetailsArgs(
-                    out_param_position=metric_extension_query_properties_out_param_details_out_param_position,
-                    out_param_type=metric_extension_query_properties_out_param_details_out_param_type,
-                ),
-                script_details=oci.stack_monitoring.MetricExtensionQueryPropertiesScriptDetailsArgs(
-                    content=metric_extension_query_properties_script_details_content,
-                    name=metric_extension_query_properties_script_details_name,
-                ),
-                sql_details=oci.stack_monitoring.MetricExtensionQueryPropertiesSqlDetailsArgs(
-                    content=metric_extension_query_properties_sql_details_content,
-                    script_file_name=metric_extension_query_properties_sql_details_script_file_name,
-                ),
-                sql_type=metric_extension_query_properties_sql_type,
-                starts_with=metric_extension_query_properties_starts_with,
-            ),
+            query_properties={
+                "collection_method": metric_extension_query_properties_collection_method,
+                "arguments": metric_extension_query_properties_arguments,
+                "auto_row_prefix": metric_extension_query_properties_auto_row_prefix,
+                "command": metric_extension_query_properties_command,
+                "delimiter": metric_extension_query_properties_delimiter,
+                "identity_metric": metric_extension_query_properties_identity_metric,
+                "in_param_details": [{
+                    "in_param_position": metric_extension_query_properties_in_param_details_in_param_position,
+                    "in_param_value": metric_extension_query_properties_in_param_details_in_param_value,
+                }],
+                "is_metric_service_enabled": metric_extension_query_properties_is_metric_service_enabled,
+                "jmx_attributes": metric_extension_query_properties_jmx_attributes,
+                "managed_bean_query": metric_extension_query_properties_managed_bean_query,
+                "out_param_details": {
+                    "out_param_position": metric_extension_query_properties_out_param_details_out_param_position,
+                    "out_param_type": metric_extension_query_properties_out_param_details_out_param_type,
+                },
+                "script_details": {
+                    "content": metric_extension_query_properties_script_details_content,
+                    "name": metric_extension_query_properties_script_details_name,
+                },
+                "sql_details": {
+                    "content": metric_extension_query_properties_sql_details_content,
+                    "script_file_name": metric_extension_query_properties_sql_details_script_file_name,
+                },
+                "sql_type": metric_extension_query_properties_sql_type,
+                "starts_with": metric_extension_query_properties_starts_with,
+            },
             resource_type=metric_extension_resource_type,
             description=metric_extension_description)
         ```
@@ -693,10 +693,10 @@ class MetricExtension(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 metric_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MetricExtensionMetricListArgs']]]]] = None,
+                 metric_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MetricExtensionMetricListArgs', 'MetricExtensionMetricListArgsDict']]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  publish_trigger: Optional[pulumi.Input[bool]] = None,
-                 query_properties: Optional[pulumi.Input[pulumi.InputType['MetricExtensionQueryPropertiesArgs']]] = None,
+                 query_properties: Optional[pulumi.Input[Union['MetricExtensionQueryPropertiesArgs', 'MetricExtensionQueryPropertiesArgsDict']]] = None,
                  resource_type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -755,13 +755,13 @@ class MetricExtension(pulumi.CustomResource):
             created_by: Optional[pulumi.Input[str]] = None,
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
-            enabled_on_resources: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MetricExtensionEnabledOnResourceArgs']]]]] = None,
+            enabled_on_resources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MetricExtensionEnabledOnResourceArgs', 'MetricExtensionEnabledOnResourceArgsDict']]]]] = None,
             enabled_on_resources_count: Optional[pulumi.Input[int]] = None,
             last_updated_by: Optional[pulumi.Input[str]] = None,
-            metric_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MetricExtensionMetricListArgs']]]]] = None,
+            metric_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MetricExtensionMetricListArgs', 'MetricExtensionMetricListArgsDict']]]]] = None,
             name: Optional[pulumi.Input[str]] = None,
             publish_trigger: Optional[pulumi.Input[bool]] = None,
-            query_properties: Optional[pulumi.Input[pulumi.InputType['MetricExtensionQueryPropertiesArgs']]] = None,
+            query_properties: Optional[pulumi.Input[Union['MetricExtensionQueryPropertiesArgs', 'MetricExtensionQueryPropertiesArgsDict']]] = None,
             resource_type: Optional[pulumi.Input[str]] = None,
             resource_uri: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -782,17 +782,17 @@ class MetricExtension(pulumi.CustomResource):
         :param pulumi.Input[str] created_by: Created by user
         :param pulumi.Input[str] description: (Updatable) Description of the metric extension.
         :param pulumi.Input[str] display_name: (Updatable) Metric Extension display name.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MetricExtensionEnabledOnResourceArgs']]]] enabled_on_resources: List of resource objects on which this metric extension is enabled.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MetricExtensionEnabledOnResourceArgs', 'MetricExtensionEnabledOnResourceArgsDict']]]] enabled_on_resources: List of resource objects on which this metric extension is enabled.
         :param pulumi.Input[int] enabled_on_resources_count: Count of resources on which this metric extension is enabled.
         :param pulumi.Input[str] last_updated_by: Last updated by user
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MetricExtensionMetricListArgs']]]] metric_lists: (Updatable) List of metrics which are part of this metric extension
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MetricExtensionMetricListArgs', 'MetricExtensionMetricListArgsDict']]]] metric_lists: (Updatable) List of metrics which are part of this metric extension
         :param pulumi.Input[str] name: Metric Extension Resource name.
         :param pulumi.Input[bool] publish_trigger: (Updatable) An optional property when set to `true` triggers Publish of a metric extension. Once set to `true`, it cannot be changed back to `false`. Update of publish_trigger cannot be combined with other updates in the same request. A metric extension cannot be tested and its definition cannot be updated once it is marked published or publish_trigger is updated to `true`.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[pulumi.InputType['MetricExtensionQueryPropertiesArgs']] query_properties: (Updatable) Collection method and query properties details of metric extension
+        :param pulumi.Input[Union['MetricExtensionQueryPropertiesArgs', 'MetricExtensionQueryPropertiesArgsDict']] query_properties: (Updatable) Collection method and query properties details of metric extension
         :param pulumi.Input[str] resource_type: Resource type to which Metric Extension applies
         :param pulumi.Input[str] resource_uri: The URI path that the user can do a GET on to access the metric extension metadata
         :param pulumi.Input[str] state: The current lifecycle state of the metric extension

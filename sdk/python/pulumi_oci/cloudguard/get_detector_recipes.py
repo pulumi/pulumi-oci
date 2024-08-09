@@ -134,7 +134,7 @@ def get_detector_recipes(access_level: Optional[str] = None,
                          compartment_id: Optional[str] = None,
                          compartment_id_in_subtree: Optional[bool] = None,
                          display_name: Optional[str] = None,
-                         filters: Optional[Sequence[pulumi.InputType['GetDetectorRecipesFilterArgs']]] = None,
+                         filters: Optional[Sequence[Union['GetDetectorRecipesFilterArgs', 'GetDetectorRecipesFilterArgsDict']]] = None,
                          resource_metadata_only: Optional[bool] = None,
                          state: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDetectorRecipesResult:
@@ -207,7 +207,7 @@ def get_detector_recipes_output(access_level: Optional[pulumi.Input[Optional[str
                                 compartment_id: Optional[pulumi.Input[str]] = None,
                                 compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                                 display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDetectorRecipesFilterArgs']]]]] = None,
+                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDetectorRecipesFilterArgs', 'GetDetectorRecipesFilterArgsDict']]]]] = None,
                                 resource_metadata_only: Optional[pulumi.Input[Optional[bool]]] = None,
                                 state: Optional[pulumi.Input[Optional[str]]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDetectorRecipesResult]:

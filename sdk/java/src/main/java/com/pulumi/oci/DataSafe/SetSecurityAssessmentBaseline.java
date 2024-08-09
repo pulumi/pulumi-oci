@@ -105,7 +105,7 @@ public class SetSecurityAssessmentBaseline extends com.pulumi.resources.CustomRe
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public SetSecurityAssessmentBaseline(String name) {
+    public SetSecurityAssessmentBaseline(java.lang.String name) {
         this(name, SetSecurityAssessmentBaselineArgs.Empty);
     }
     /**
@@ -113,7 +113,7 @@ public class SetSecurityAssessmentBaseline extends com.pulumi.resources.CustomRe
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public SetSecurityAssessmentBaseline(String name, SetSecurityAssessmentBaselineArgs args) {
+    public SetSecurityAssessmentBaseline(java.lang.String name, SetSecurityAssessmentBaselineArgs args) {
         this(name, args, null);
     }
     /**
@@ -122,12 +122,12 @@ public class SetSecurityAssessmentBaseline extends com.pulumi.resources.CustomRe
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public SetSecurityAssessmentBaseline(String name, SetSecurityAssessmentBaselineArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/setSecurityAssessmentBaseline:SetSecurityAssessmentBaseline", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public SetSecurityAssessmentBaseline(java.lang.String name, SetSecurityAssessmentBaselineArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataSafe/setSecurityAssessmentBaseline:SetSecurityAssessmentBaseline", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private SetSecurityAssessmentBaseline(String name, Output<String> id, @Nullable SetSecurityAssessmentBaselineState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/setSecurityAssessmentBaseline:SetSecurityAssessmentBaseline", name, state, makeResourceOptions(options, id));
+    private SetSecurityAssessmentBaseline(java.lang.String name, Output<java.lang.String> id, @Nullable SetSecurityAssessmentBaselineState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataSafe/setSecurityAssessmentBaseline:SetSecurityAssessmentBaseline", name, state, makeResourceOptions(options, id), false);
     }
 
     private static SetSecurityAssessmentBaselineArgs makeArgs(SetSecurityAssessmentBaselineArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -137,7 +137,7 @@ public class SetSecurityAssessmentBaseline extends com.pulumi.resources.CustomRe
         return args == null ? SetSecurityAssessmentBaselineArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -153,7 +153,7 @@ public class SetSecurityAssessmentBaseline extends com.pulumi.resources.CustomRe
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static SetSecurityAssessmentBaseline get(String name, Output<String> id, @Nullable SetSecurityAssessmentBaselineState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static SetSecurityAssessmentBaseline get(java.lang.String name, Output<java.lang.String> id, @Nullable SetSecurityAssessmentBaselineState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new SetSecurityAssessmentBaseline(name, id, state, options);
     }
 }

@@ -193,7 +193,7 @@ public class EncryptedData extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public EncryptedData(String name) {
+    public EncryptedData(java.lang.String name) {
         this(name, EncryptedDataArgs.Empty);
     }
     /**
@@ -201,7 +201,7 @@ public class EncryptedData extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public EncryptedData(String name, EncryptedDataArgs args) {
+    public EncryptedData(java.lang.String name, EncryptedDataArgs args) {
         this(name, args, null);
     }
     /**
@@ -210,12 +210,12 @@ public class EncryptedData extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public EncryptedData(String name, EncryptedDataArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Kms/encryptedData:EncryptedData", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public EncryptedData(java.lang.String name, EncryptedDataArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Kms/encryptedData:EncryptedData", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private EncryptedData(String name, Output<String> id, @Nullable EncryptedDataState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Kms/encryptedData:EncryptedData", name, state, makeResourceOptions(options, id));
+    private EncryptedData(java.lang.String name, Output<java.lang.String> id, @Nullable EncryptedDataState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Kms/encryptedData:EncryptedData", name, state, makeResourceOptions(options, id), false);
     }
 
     private static EncryptedDataArgs makeArgs(EncryptedDataArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -225,7 +225,7 @@ public class EncryptedData extends com.pulumi.resources.CustomResource {
         return args == null ? EncryptedDataArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -241,7 +241,7 @@ public class EncryptedData extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static EncryptedData get(String name, Output<String> id, @Nullable EncryptedDataState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static EncryptedData get(java.lang.String name, Output<java.lang.String> id, @Nullable EncryptedDataState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new EncryptedData(name, id, state, options);
     }
 }

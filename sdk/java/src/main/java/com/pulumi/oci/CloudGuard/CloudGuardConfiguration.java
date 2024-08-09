@@ -99,7 +99,7 @@ public class CloudGuardConfiguration extends com.pulumi.resources.CustomResource
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public CloudGuardConfiguration(String name) {
+    public CloudGuardConfiguration(java.lang.String name) {
         this(name, CloudGuardConfigurationArgs.Empty);
     }
     /**
@@ -107,7 +107,7 @@ public class CloudGuardConfiguration extends com.pulumi.resources.CustomResource
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public CloudGuardConfiguration(String name, CloudGuardConfigurationArgs args) {
+    public CloudGuardConfiguration(java.lang.String name, CloudGuardConfigurationArgs args) {
         this(name, args, null);
     }
     /**
@@ -116,12 +116,12 @@ public class CloudGuardConfiguration extends com.pulumi.resources.CustomResource
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public CloudGuardConfiguration(String name, CloudGuardConfigurationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:CloudGuard/cloudGuardConfiguration:CloudGuardConfiguration", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public CloudGuardConfiguration(java.lang.String name, CloudGuardConfigurationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:CloudGuard/cloudGuardConfiguration:CloudGuardConfiguration", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private CloudGuardConfiguration(String name, Output<String> id, @Nullable CloudGuardConfigurationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:CloudGuard/cloudGuardConfiguration:CloudGuardConfiguration", name, state, makeResourceOptions(options, id));
+    private CloudGuardConfiguration(java.lang.String name, Output<java.lang.String> id, @Nullable CloudGuardConfigurationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:CloudGuard/cloudGuardConfiguration:CloudGuardConfiguration", name, state, makeResourceOptions(options, id), false);
     }
 
     private static CloudGuardConfigurationArgs makeArgs(CloudGuardConfigurationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -131,7 +131,7 @@ public class CloudGuardConfiguration extends com.pulumi.resources.CustomResource
         return args == null ? CloudGuardConfigurationArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -147,7 +147,7 @@ public class CloudGuardConfiguration extends com.pulumi.resources.CustomResource
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static CloudGuardConfiguration get(String name, Output<String> id, @Nullable CloudGuardConfigurationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static CloudGuardConfiguration get(java.lang.String name, Output<java.lang.String> id, @Nullable CloudGuardConfigurationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new CloudGuardConfiguration(name, id, state, options);
     }
 }

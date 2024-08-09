@@ -660,7 +660,7 @@ class WorkspaceExportRequest(pulumi.CustomResource):
             bucket: Optional[pulumi.Input[str]] = None,
             created_by: Optional[pulumi.Input[str]] = None,
             error_messages: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            exported_items: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WorkspaceExportRequestExportedItemArgs']]]]] = None,
+            exported_items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceExportRequestExportedItemArgs', 'WorkspaceExportRequestExportedItemArgsDict']]]]] = None,
             file_name: Optional[pulumi.Input[str]] = None,
             filters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             is_object_overwrite_enabled: Optional[pulumi.Input[bool]] = None,
@@ -686,7 +686,7 @@ class WorkspaceExportRequest(pulumi.CustomResource):
         :param pulumi.Input[str] bucket: Name of the Object Storage bucket where the object will be exported.
         :param pulumi.Input[str] created_by: Name of the user who initiated export request.
         :param pulumi.Input[Mapping[str, Any]] error_messages: Contains key of the error
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WorkspaceExportRequestExportedItemArgs']]]] exported_items: The array of exported object details.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceExportRequestExportedItemArgs', 'WorkspaceExportRequestExportedItemArgsDict']]]] exported_items: The array of exported object details.
         :param pulumi.Input[str] file_name: Name of the exported zip file.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] filters: Filters for exported objects
         :param pulumi.Input[bool] is_object_overwrite_enabled: Flag to control whether to overwrite the object if it is already present at the provided object storage location.

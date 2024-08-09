@@ -79,7 +79,7 @@ class AwaitableGetApiKeysResult(GetApiKeysResult):
             user_id=self.user_id)
 
 
-def get_api_keys(filters: Optional[Sequence[pulumi.InputType['GetApiKeysFilterArgs']]] = None,
+def get_api_keys(filters: Optional[Sequence[Union['GetApiKeysFilterArgs', 'GetApiKeysFilterArgsDict']]] = None,
                  user_id: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetApiKeysResult:
     """
@@ -116,7 +116,7 @@ def get_api_keys(filters: Optional[Sequence[pulumi.InputType['GetApiKeysFilterAr
 
 
 @_utilities.lift_output_func(get_api_keys)
-def get_api_keys_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetApiKeysFilterArgs']]]]] = None,
+def get_api_keys_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetApiKeysFilterArgs', 'GetApiKeysFilterArgsDict']]]]] = None,
                         user_id: Optional[pulumi.Input[str]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetApiKeysResult]:
     """

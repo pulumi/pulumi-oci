@@ -1219,17 +1219,17 @@ class DomainsGroup(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  external_id: Optional[pulumi.Input[str]] = None,
                  idcs_endpoint: Optional[pulumi.Input[str]] = None,
-                 members: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGroupMemberArgs']]]]] = None,
+                 members: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsGroupMemberArgs', 'DomainsGroupMemberArgsDict']]]]] = None,
                  non_unique_display_name: Optional[pulumi.Input[str]] = None,
                  ocid: Optional[pulumi.Input[str]] = None,
                  resource_type_schema_version: Optional[pulumi.Input[str]] = None,
                  schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGroupTagArgs']]]]] = None,
-                 urnietfparamsscimschemasoracleidcsextension_oci_tags: Optional[pulumi.Input[pulumi.InputType['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensiondynamic_group: Optional[pulumi.Input[pulumi.InputType['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupArgs']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensiongroup_group: Optional[pulumi.Input[pulumi.InputType['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgs']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionposix_group: Optional[pulumi.Input[pulumi.InputType['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupArgs']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionrequestable_group: Optional[pulumi.Input[pulumi.InputType['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgs']]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsGroupTagArgs', 'DomainsGroupTagArgsDict']]]]] = None,
+                 urnietfparamsscimschemasoracleidcsextension_oci_tags: Optional[pulumi.Input[Union['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs', 'DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensiondynamic_group: Optional[pulumi.Input[Union['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupArgs', 'DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensiongroup_group: Optional[pulumi.Input[Union['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgs', 'DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionposix_group: Optional[pulumi.Input[Union['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupArgs', 'DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionrequestable_group: Optional[pulumi.Input[Union['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgs', 'DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Group resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -1274,7 +1274,7 @@ class DomainsGroup(pulumi.CustomResource):
                * type: string
                * uniqueness: none
         :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGroupMemberArgs']]]] members: (Updatable) The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsGroupMemberArgs', 'DomainsGroupMemberArgsDict']]]] members: (Updatable) The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1324,7 +1324,7 @@ class DomainsGroup(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGroupTagArgs']]]] tags: (Updatable) A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsGroupTagArgs', 'DomainsGroupTagArgsDict']]]] tags: (Updatable) A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -1335,11 +1335,11 @@ class DomainsGroup(pulumi.CustomResource):
                * returned: request
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']] urnietfparamsscimschemasoracleidcsextension_oci_tags: (Updatable) Oracle Cloud Infrastructure Tags.
-        :param pulumi.Input[pulumi.InputType['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupArgs']] urnietfparamsscimschemasoracleidcsextensiondynamic_group: (Updatable) Dynamic Group
-        :param pulumi.Input[pulumi.InputType['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgs']] urnietfparamsscimschemasoracleidcsextensiongroup_group: (Updatable) Oracle Identity Cloud Service Group
-        :param pulumi.Input[pulumi.InputType['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupArgs']] urnietfparamsscimschemasoracleidcsextensionposix_group: (Updatable) POSIX Group extension
-        :param pulumi.Input[pulumi.InputType['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgs']] urnietfparamsscimschemasoracleidcsextensionrequestable_group: (Updatable) Requestable Group
+        :param pulumi.Input[Union['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs', 'DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict']] urnietfparamsscimschemasoracleidcsextension_oci_tags: (Updatable) Oracle Cloud Infrastructure Tags.
+        :param pulumi.Input[Union['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupArgs', 'DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupArgsDict']] urnietfparamsscimschemasoracleidcsextensiondynamic_group: (Updatable) Dynamic Group
+        :param pulumi.Input[Union['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgs', 'DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgsDict']] urnietfparamsscimschemasoracleidcsextensiongroup_group: (Updatable) Oracle Identity Cloud Service Group
+        :param pulumi.Input[Union['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupArgs', 'DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupArgsDict']] urnietfparamsscimschemasoracleidcsextensionposix_group: (Updatable) POSIX Group extension
+        :param pulumi.Input[Union['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgs', 'DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgsDict']] urnietfparamsscimschemasoracleidcsextensionrequestable_group: (Updatable) Requestable Group
         """
         ...
     @overload
@@ -1381,17 +1381,17 @@ class DomainsGroup(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  external_id: Optional[pulumi.Input[str]] = None,
                  idcs_endpoint: Optional[pulumi.Input[str]] = None,
-                 members: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGroupMemberArgs']]]]] = None,
+                 members: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsGroupMemberArgs', 'DomainsGroupMemberArgsDict']]]]] = None,
                  non_unique_display_name: Optional[pulumi.Input[str]] = None,
                  ocid: Optional[pulumi.Input[str]] = None,
                  resource_type_schema_version: Optional[pulumi.Input[str]] = None,
                  schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGroupTagArgs']]]]] = None,
-                 urnietfparamsscimschemasoracleidcsextension_oci_tags: Optional[pulumi.Input[pulumi.InputType['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensiondynamic_group: Optional[pulumi.Input[pulumi.InputType['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupArgs']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensiongroup_group: Optional[pulumi.Input[pulumi.InputType['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgs']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionposix_group: Optional[pulumi.Input[pulumi.InputType['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupArgs']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionrequestable_group: Optional[pulumi.Input[pulumi.InputType['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgs']]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsGroupTagArgs', 'DomainsGroupTagArgsDict']]]]] = None,
+                 urnietfparamsscimschemasoracleidcsextension_oci_tags: Optional[pulumi.Input[Union['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs', 'DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensiondynamic_group: Optional[pulumi.Input[Union['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupArgs', 'DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensiongroup_group: Optional[pulumi.Input[Union['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgs', 'DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionposix_group: Optional[pulumi.Input[Union['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupArgs', 'DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionrequestable_group: Optional[pulumi.Input[Union['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgs', 'DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1452,25 +1452,25 @@ class DomainsGroup(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[str]] = None,
             domain_ocid: Optional[pulumi.Input[str]] = None,
             external_id: Optional[pulumi.Input[str]] = None,
-            idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGroupIdcsCreatedByArgs']]]]] = None,
+            idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsGroupIdcsCreatedByArgs', 'DomainsGroupIdcsCreatedByArgsDict']]]]] = None,
             idcs_endpoint: Optional[pulumi.Input[str]] = None,
-            idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGroupIdcsLastModifiedByArgs']]]]] = None,
+            idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsGroupIdcsLastModifiedByArgs', 'DomainsGroupIdcsLastModifiedByArgsDict']]]]] = None,
             idcs_last_upgraded_in_release: Optional[pulumi.Input[str]] = None,
             idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            members: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGroupMemberArgs']]]]] = None,
-            metas: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGroupMetaArgs']]]]] = None,
+            members: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsGroupMemberArgs', 'DomainsGroupMemberArgsDict']]]]] = None,
+            metas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsGroupMetaArgs', 'DomainsGroupMetaArgsDict']]]]] = None,
             non_unique_display_name: Optional[pulumi.Input[str]] = None,
             ocid: Optional[pulumi.Input[str]] = None,
             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGroupTagArgs']]]]] = None,
+            tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsGroupTagArgs', 'DomainsGroupTagArgsDict']]]]] = None,
             tenancy_ocid: Optional[pulumi.Input[str]] = None,
-            urnietfparamsscimschemasoracleidcsextension_oci_tags: Optional[pulumi.Input[pulumi.InputType['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']]] = None,
-            urnietfparamsscimschemasoracleidcsextensiondbcs_groups: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupArgs']]]]] = None,
-            urnietfparamsscimschemasoracleidcsextensiondynamic_group: Optional[pulumi.Input[pulumi.InputType['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupArgs']]] = None,
-            urnietfparamsscimschemasoracleidcsextensiongroup_group: Optional[pulumi.Input[pulumi.InputType['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgs']]] = None,
-            urnietfparamsscimschemasoracleidcsextensionposix_group: Optional[pulumi.Input[pulumi.InputType['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupArgs']]] = None,
-            urnietfparamsscimschemasoracleidcsextensionrequestable_group: Optional[pulumi.Input[pulumi.InputType['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgs']]] = None) -> 'DomainsGroup':
+            urnietfparamsscimschemasoracleidcsextension_oci_tags: Optional[pulumi.Input[Union['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs', 'DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict']]] = None,
+            urnietfparamsscimschemasoracleidcsextensiondbcs_groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupArgs', 'DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupArgsDict']]]]] = None,
+            urnietfparamsscimschemasoracleidcsextensiondynamic_group: Optional[pulumi.Input[Union['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupArgs', 'DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupArgsDict']]] = None,
+            urnietfparamsscimschemasoracleidcsextensiongroup_group: Optional[pulumi.Input[Union['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgs', 'DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgsDict']]] = None,
+            urnietfparamsscimschemasoracleidcsextensionposix_group: Optional[pulumi.Input[Union['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupArgs', 'DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupArgsDict']]] = None,
+            urnietfparamsscimschemasoracleidcsextensionrequestable_group: Optional[pulumi.Input[Union['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgs', 'DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgsDict']]] = None) -> 'DomainsGroup':
         """
         Get an existing DomainsGroup resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -1538,7 +1538,7 @@ class DomainsGroup(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGroupIdcsCreatedByArgs']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsGroupIdcsCreatedByArgs', 'DomainsGroupIdcsCreatedByArgsDict']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1548,7 +1548,7 @@ class DomainsGroup(pulumi.CustomResource):
                * returned: default
                * type: complex
         :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGroupIdcsLastModifiedByArgs']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsGroupIdcsLastModifiedByArgs', 'DomainsGroupIdcsLastModifiedByArgsDict']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1578,7 +1578,7 @@ class DomainsGroup(pulumi.CustomResource):
                * returned: request
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGroupMemberArgs']]]] members: (Updatable) The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsGroupMemberArgs', 'DomainsGroupMemberArgsDict']]]] members: (Updatable) The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1592,7 +1592,7 @@ class DomainsGroup(pulumi.CustomResource):
                * idcsPaginateResponse: true
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGroupMetaArgs']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsGroupMetaArgs', 'DomainsGroupMetaArgsDict']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1639,7 +1639,7 @@ class DomainsGroup(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGroupTagArgs']]]] tags: (Updatable) A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsGroupTagArgs', 'DomainsGroupTagArgsDict']]]] tags: (Updatable) A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -1661,12 +1661,12 @@ class DomainsGroup(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']] urnietfparamsscimschemasoracleidcsextension_oci_tags: (Updatable) Oracle Cloud Infrastructure Tags.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupArgs']]]] urnietfparamsscimschemasoracleidcsextensiondbcs_groups: (Updatable) Schema for Database Service  Resource
-        :param pulumi.Input[pulumi.InputType['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupArgs']] urnietfparamsscimschemasoracleidcsextensiondynamic_group: (Updatable) Dynamic Group
-        :param pulumi.Input[pulumi.InputType['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgs']] urnietfparamsscimschemasoracleidcsextensiongroup_group: (Updatable) Oracle Identity Cloud Service Group
-        :param pulumi.Input[pulumi.InputType['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupArgs']] urnietfparamsscimschemasoracleidcsextensionposix_group: (Updatable) POSIX Group extension
-        :param pulumi.Input[pulumi.InputType['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgs']] urnietfparamsscimschemasoracleidcsextensionrequestable_group: (Updatable) Requestable Group
+        :param pulumi.Input[Union['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs', 'DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict']] urnietfparamsscimschemasoracleidcsextension_oci_tags: (Updatable) Oracle Cloud Infrastructure Tags.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupArgs', 'DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupArgsDict']]]] urnietfparamsscimschemasoracleidcsextensiondbcs_groups: (Updatable) Schema for Database Service  Resource
+        :param pulumi.Input[Union['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupArgs', 'DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupArgsDict']] urnietfparamsscimschemasoracleidcsextensiondynamic_group: (Updatable) Dynamic Group
+        :param pulumi.Input[Union['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgs', 'DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgsDict']] urnietfparamsscimschemasoracleidcsextensiongroup_group: (Updatable) Oracle Identity Cloud Service Group
+        :param pulumi.Input[Union['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupArgs', 'DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupArgsDict']] urnietfparamsscimschemasoracleidcsextensionposix_group: (Updatable) POSIX Group extension
+        :param pulumi.Input[Union['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgs', 'DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgsDict']] urnietfparamsscimschemasoracleidcsextensionrequestable_group: (Updatable) Requestable Group
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

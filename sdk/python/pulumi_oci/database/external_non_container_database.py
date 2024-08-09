@@ -559,7 +559,7 @@ class ExternalNonContainerDatabase(pulumi.CustomResource):
             compartment_id: Optional[pulumi.Input[str]] = None,
             database_configuration: Optional[pulumi.Input[str]] = None,
             database_edition: Optional[pulumi.Input[str]] = None,
-            database_management_configs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalNonContainerDatabaseDatabaseManagementConfigArgs']]]]] = None,
+            database_management_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExternalNonContainerDatabaseDatabaseManagementConfigArgs', 'ExternalNonContainerDatabaseDatabaseManagementConfigArgsDict']]]]] = None,
             database_version: Optional[pulumi.Input[str]] = None,
             db_id: Optional[pulumi.Input[str]] = None,
             db_packs: Optional[pulumi.Input[str]] = None,
@@ -569,8 +569,8 @@ class ExternalNonContainerDatabase(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             ncharacter_set: Optional[pulumi.Input[str]] = None,
-            operations_insights_configs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalNonContainerDatabaseOperationsInsightsConfigArgs']]]]] = None,
-            stack_monitoring_configs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalNonContainerDatabaseStackMonitoringConfigArgs']]]]] = None,
+            operations_insights_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExternalNonContainerDatabaseOperationsInsightsConfigArgs', 'ExternalNonContainerDatabaseOperationsInsightsConfigArgsDict']]]]] = None,
+            stack_monitoring_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExternalNonContainerDatabaseStackMonitoringConfigArgs', 'ExternalNonContainerDatabaseStackMonitoringConfigArgsDict']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_zone: Optional[pulumi.Input[str]] = None) -> 'ExternalNonContainerDatabase':
@@ -585,7 +585,7 @@ class ExternalNonContainerDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[str] database_configuration: The Oracle Database configuration
         :param pulumi.Input[str] database_edition: The Oracle Database edition.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalNonContainerDatabaseDatabaseManagementConfigArgs']]]] database_management_configs: The configuration of the Database Management service.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExternalNonContainerDatabaseDatabaseManagementConfigArgs', 'ExternalNonContainerDatabaseDatabaseManagementConfigArgsDict']]]] database_management_configs: The configuration of the Database Management service.
         :param pulumi.Input[str] database_version: The Oracle Database version.
         :param pulumi.Input[str] db_id: The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
         :param pulumi.Input[str] db_packs: The database packs licensed for the external Oracle Database.
@@ -599,8 +599,8 @@ class ExternalNonContainerDatabase(pulumi.CustomResource):
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[str] ncharacter_set: The national character of the external database.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalNonContainerDatabaseOperationsInsightsConfigArgs']]]] operations_insights_configs: The configuration of Operations Insights for the external database
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalNonContainerDatabaseStackMonitoringConfigArgs']]]] stack_monitoring_configs: The configuration of Stack Monitoring for the external database.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExternalNonContainerDatabaseOperationsInsightsConfigArgs', 'ExternalNonContainerDatabaseOperationsInsightsConfigArgsDict']]]] operations_insights_configs: The configuration of Operations Insights for the external database
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExternalNonContainerDatabaseStackMonitoringConfigArgs', 'ExternalNonContainerDatabaseStackMonitoringConfigArgsDict']]]] stack_monitoring_configs: The configuration of Stack Monitoring for the external database.
         :param pulumi.Input[str] state: The current state of the Oracle Cloud Infrastructure external database resource.
         :param pulumi.Input[str] time_created: The date and time the database was created.
         :param pulumi.Input[str] time_zone: The time zone of the external database. It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.

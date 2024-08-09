@@ -103,7 +103,7 @@ class AwaitableGetRemediationRunStagesResult(GetRemediationRunStagesResult):
             type=self.type)
 
 
-def get_remediation_run_stages(filters: Optional[Sequence[pulumi.InputType['GetRemediationRunStagesFilterArgs']]] = None,
+def get_remediation_run_stages(filters: Optional[Sequence[Union['GetRemediationRunStagesFilterArgs', 'GetRemediationRunStagesFilterArgsDict']]] = None,
                                remediation_run_id: Optional[str] = None,
                                status: Optional[str] = None,
                                type: Optional[str] = None,
@@ -147,7 +147,7 @@ def get_remediation_run_stages(filters: Optional[Sequence[pulumi.InputType['GetR
 
 
 @_utilities.lift_output_func(get_remediation_run_stages)
-def get_remediation_run_stages_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetRemediationRunStagesFilterArgs']]]]] = None,
+def get_remediation_run_stages_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRemediationRunStagesFilterArgs', 'GetRemediationRunStagesFilterArgsDict']]]]] = None,
                                       remediation_run_id: Optional[pulumi.Input[str]] = None,
                                       status: Optional[pulumi.Input[Optional[str]]] = None,
                                       type: Optional[pulumi.Input[Optional[str]]] = None,

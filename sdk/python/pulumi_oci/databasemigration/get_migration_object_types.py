@@ -77,7 +77,7 @@ class AwaitableGetMigrationObjectTypesResult(GetMigrationObjectTypesResult):
 
 
 def get_migration_object_types(connection_type: Optional[str] = None,
-                               filters: Optional[Sequence[pulumi.InputType['GetMigrationObjectTypesFilterArgs']]] = None,
+                               filters: Optional[Sequence[Union['GetMigrationObjectTypesFilterArgs', 'GetMigrationObjectTypesFilterArgsDict']]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMigrationObjectTypesResult:
     """
     ## Example Usage
@@ -107,7 +107,7 @@ def get_migration_object_types(connection_type: Optional[str] = None,
 
 @_utilities.lift_output_func(get_migration_object_types)
 def get_migration_object_types_output(connection_type: Optional[pulumi.Input[str]] = None,
-                                      filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetMigrationObjectTypesFilterArgs']]]]] = None,
+                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMigrationObjectTypesFilterArgs', 'GetMigrationObjectTypesFilterArgsDict']]]]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMigrationObjectTypesResult]:
     """
     ## Example Usage

@@ -95,7 +95,7 @@ class AwaitableGetNetworkFirewallPolicyTunnelInspectionRulesResult(GetNetworkFir
 
 
 def get_network_firewall_policy_tunnel_inspection_rules(display_name: Optional[str] = None,
-                                                        filters: Optional[Sequence[pulumi.InputType['GetNetworkFirewallPolicyTunnelInspectionRulesFilterArgs']]] = None,
+                                                        filters: Optional[Sequence[Union['GetNetworkFirewallPolicyTunnelInspectionRulesFilterArgs', 'GetNetworkFirewallPolicyTunnelInspectionRulesFilterArgsDict']]] = None,
                                                         network_firewall_policy_id: Optional[str] = None,
                                                         tunnel_inspection_rule_priority_order: Optional[int] = None,
                                                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkFirewallPolicyTunnelInspectionRulesResult:
@@ -139,7 +139,7 @@ def get_network_firewall_policy_tunnel_inspection_rules(display_name: Optional[s
 
 @_utilities.lift_output_func(get_network_firewall_policy_tunnel_inspection_rules)
 def get_network_firewall_policy_tunnel_inspection_rules_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                                               filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetNetworkFirewallPolicyTunnelInspectionRulesFilterArgs']]]]] = None,
+                                                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNetworkFirewallPolicyTunnelInspectionRulesFilterArgs', 'GetNetworkFirewallPolicyTunnelInspectionRulesFilterArgsDict']]]]] = None,
                                                                network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
                                                                tunnel_inspection_rule_priority_order: Optional[pulumi.Input[Optional[int]]] = None,
                                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkFirewallPolicyTunnelInspectionRulesResult]:

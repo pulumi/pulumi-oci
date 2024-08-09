@@ -858,7 +858,7 @@ public class DomainsUserDbCredential extends com.pulumi.resources.CustomResource
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DomainsUserDbCredential(String name) {
+    public DomainsUserDbCredential(java.lang.String name) {
         this(name, DomainsUserDbCredentialArgs.Empty);
     }
     /**
@@ -866,7 +866,7 @@ public class DomainsUserDbCredential extends com.pulumi.resources.CustomResource
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DomainsUserDbCredential(String name, DomainsUserDbCredentialArgs args) {
+    public DomainsUserDbCredential(java.lang.String name, DomainsUserDbCredentialArgs args) {
         this(name, args, null);
     }
     /**
@@ -875,12 +875,12 @@ public class DomainsUserDbCredential extends com.pulumi.resources.CustomResource
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DomainsUserDbCredential(String name, DomainsUserDbCredentialArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsUserDbCredential:DomainsUserDbCredential", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DomainsUserDbCredential(java.lang.String name, DomainsUserDbCredentialArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/domainsUserDbCredential:DomainsUserDbCredential", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DomainsUserDbCredential(String name, Output<String> id, @Nullable DomainsUserDbCredentialState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsUserDbCredential:DomainsUserDbCredential", name, state, makeResourceOptions(options, id));
+    private DomainsUserDbCredential(java.lang.String name, Output<java.lang.String> id, @Nullable DomainsUserDbCredentialState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/domainsUserDbCredential:DomainsUserDbCredential", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DomainsUserDbCredentialArgs makeArgs(DomainsUserDbCredentialArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -890,7 +890,7 @@ public class DomainsUserDbCredential extends com.pulumi.resources.CustomResource
         return args == null ? DomainsUserDbCredentialArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .additionalSecretOutputs(List.of(
@@ -909,7 +909,7 @@ public class DomainsUserDbCredential extends com.pulumi.resources.CustomResource
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DomainsUserDbCredential get(String name, Output<String> id, @Nullable DomainsUserDbCredentialState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DomainsUserDbCredential get(java.lang.String name, Output<java.lang.String> id, @Nullable DomainsUserDbCredentialState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DomainsUserDbCredential(name, id, state, options);
     }
 }

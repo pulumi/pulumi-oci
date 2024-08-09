@@ -109,7 +109,7 @@ class AwaitableGetManagedDatabaseSqlTuningSetsResult(GetManagedDatabaseSqlTuning
             sql_tuning_set_collections=self.sql_tuning_set_collections)
 
 
-def get_managed_database_sql_tuning_sets(filters: Optional[Sequence[pulumi.InputType['GetManagedDatabaseSqlTuningSetsFilterArgs']]] = None,
+def get_managed_database_sql_tuning_sets(filters: Optional[Sequence[Union['GetManagedDatabaseSqlTuningSetsFilterArgs', 'GetManagedDatabaseSqlTuningSetsFilterArgsDict']]] = None,
                                          managed_database_id: Optional[str] = None,
                                          name_contains: Optional[str] = None,
                                          opc_named_credential_id: Optional[str] = None,
@@ -158,7 +158,7 @@ def get_managed_database_sql_tuning_sets(filters: Optional[Sequence[pulumi.Input
 
 
 @_utilities.lift_output_func(get_managed_database_sql_tuning_sets)
-def get_managed_database_sql_tuning_sets_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetManagedDatabaseSqlTuningSetsFilterArgs']]]]] = None,
+def get_managed_database_sql_tuning_sets_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedDatabaseSqlTuningSetsFilterArgs', 'GetManagedDatabaseSqlTuningSetsFilterArgsDict']]]]] = None,
                                                 managed_database_id: Optional[pulumi.Input[str]] = None,
                                                 name_contains: Optional[pulumi.Input[Optional[str]]] = None,
                                                 opc_named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,

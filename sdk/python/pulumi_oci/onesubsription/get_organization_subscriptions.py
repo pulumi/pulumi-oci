@@ -77,7 +77,7 @@ class AwaitableGetOrganizationSubscriptionsResult(GetOrganizationSubscriptionsRe
 
 
 def get_organization_subscriptions(compartment_id: Optional[str] = None,
-                                   filters: Optional[Sequence[pulumi.InputType['GetOrganizationSubscriptionsFilterArgs']]] = None,
+                                   filters: Optional[Sequence[Union['GetOrganizationSubscriptionsFilterArgs', 'GetOrganizationSubscriptionsFilterArgsDict']]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOrganizationSubscriptionsResult:
     """
     This data source provides the list of Organization Subscriptions in Oracle Cloud Infrastructure Onesubscription service.
@@ -111,7 +111,7 @@ def get_organization_subscriptions(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_organization_subscriptions)
 def get_organization_subscriptions_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                          filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetOrganizationSubscriptionsFilterArgs']]]]] = None,
+                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOrganizationSubscriptionsFilterArgs', 'GetOrganizationSubscriptionsFilterArgsDict']]]]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOrganizationSubscriptionsResult]:
     """
     This data source provides the list of Organization Subscriptions in Oracle Cloud Infrastructure Onesubscription service.

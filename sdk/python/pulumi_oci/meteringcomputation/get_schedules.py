@@ -95,7 +95,7 @@ class AwaitableGetSchedulesResult(GetSchedulesResult):
 
 
 def get_schedules(compartment_id: Optional[str] = None,
-                  filters: Optional[Sequence[pulumi.InputType['GetSchedulesFilterArgs']]] = None,
+                  filters: Optional[Sequence[Union['GetSchedulesFilterArgs', 'GetSchedulesFilterArgsDict']]] = None,
                   name: Optional[str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSchedulesResult:
     """
@@ -115,7 +115,7 @@ def get_schedules(compartment_id: Optional[str] = None,
 
 
     :param str compartment_id: The compartment ID in which to list resources.
-    :param Sequence[pulumi.InputType['GetSchedulesFilterArgs']] filters: The filter object for query usage.
+    :param Sequence[Union['GetSchedulesFilterArgs', 'GetSchedulesFilterArgsDict']] filters: The filter object for query usage.
     :param str name: Query parameter for filtering by name
     """
     __args__ = dict()
@@ -135,7 +135,7 @@ def get_schedules(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_schedules)
 def get_schedules_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                         filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetSchedulesFilterArgs']]]]] = None,
+                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSchedulesFilterArgs', 'GetSchedulesFilterArgsDict']]]]] = None,
                          name: Optional[pulumi.Input[Optional[str]]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSchedulesResult]:
     """
@@ -155,7 +155,7 @@ def get_schedules_output(compartment_id: Optional[pulumi.Input[str]] = None,
 
 
     :param str compartment_id: The compartment ID in which to list resources.
-    :param Sequence[pulumi.InputType['GetSchedulesFilterArgs']] filters: The filter object for query usage.
+    :param Sequence[Union['GetSchedulesFilterArgs', 'GetSchedulesFilterArgsDict']] filters: The filter object for query usage.
     :param str name: Query parameter for filtering by name
     """
     ...

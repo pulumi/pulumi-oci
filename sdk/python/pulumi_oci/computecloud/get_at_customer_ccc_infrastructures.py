@@ -145,7 +145,7 @@ def get_at_customer_ccc_infrastructures(access_level: Optional[str] = None,
                                         compartment_id_in_subtree: Optional[bool] = None,
                                         display_name: Optional[str] = None,
                                         display_name_contains: Optional[str] = None,
-                                        filters: Optional[Sequence[pulumi.InputType['GetAtCustomerCccInfrastructuresFilterArgs']]] = None,
+                                        filters: Optional[Sequence[Union['GetAtCustomerCccInfrastructuresFilterArgs', 'GetAtCustomerCccInfrastructuresFilterArgsDict']]] = None,
                                         state: Optional[str] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAtCustomerCccInfrastructuresResult:
     """
@@ -209,7 +209,7 @@ def get_at_customer_ccc_infrastructures_output(access_level: Optional[pulumi.Inp
                                                compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                                                display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                                display_name_contains: Optional[pulumi.Input[Optional[str]]] = None,
-                                               filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAtCustomerCccInfrastructuresFilterArgs']]]]] = None,
+                                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAtCustomerCccInfrastructuresFilterArgs', 'GetAtCustomerCccInfrastructuresFilterArgsDict']]]]] = None,
                                                state: Optional[pulumi.Input[Optional[str]]] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAtCustomerCccInfrastructuresResult]:
     """

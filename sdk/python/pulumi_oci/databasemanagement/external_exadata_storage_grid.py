@@ -483,7 +483,7 @@ class ExternalExadataStorageGrid(pulumi.CustomResource):
             server_count: Optional[pulumi.Input[float]] = None,
             state: Optional[pulumi.Input[str]] = None,
             status: Optional[pulumi.Input[str]] = None,
-            storage_servers: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalExadataStorageGridStorageServerArgs']]]]] = None,
+            storage_servers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExternalExadataStorageGridStorageServerArgs', 'ExternalExadataStorageGridStorageServerArgsDict']]]]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
@@ -511,7 +511,7 @@ class ExternalExadataStorageGrid(pulumi.CustomResource):
         :param pulumi.Input[float] server_count: The number of Exadata storage servers in the Exadata infrastructure.
         :param pulumi.Input[str] state: The current lifecycle state of the database resource.
         :param pulumi.Input[str] status: The status of the Exadata resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalExadataStorageGridStorageServerArgs']]]] storage_servers: A list of monitored Exadata storage servers.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExternalExadataStorageGridStorageServerArgs', 'ExternalExadataStorageGridStorageServerArgsDict']]]] storage_servers: A list of monitored Exadata storage servers.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The timestamp of the creation of the Exadata resource.
         :param pulumi.Input[str] time_updated: The timestamp of the last update of the Exadata resource.

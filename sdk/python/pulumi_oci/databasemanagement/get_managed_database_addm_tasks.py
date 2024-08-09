@@ -97,7 +97,7 @@ class AwaitableGetManagedDatabaseAddmTasksResult(GetManagedDatabaseAddmTasksResu
             time_start=self.time_start)
 
 
-def get_managed_database_addm_tasks(filters: Optional[Sequence[pulumi.InputType['GetManagedDatabaseAddmTasksFilterArgs']]] = None,
+def get_managed_database_addm_tasks(filters: Optional[Sequence[Union['GetManagedDatabaseAddmTasksFilterArgs', 'GetManagedDatabaseAddmTasksFilterArgsDict']]] = None,
                                     managed_database_id: Optional[str] = None,
                                     time_end: Optional[str] = None,
                                     time_start: Optional[str] = None,
@@ -142,7 +142,7 @@ def get_managed_database_addm_tasks(filters: Optional[Sequence[pulumi.InputType[
 
 
 @_utilities.lift_output_func(get_managed_database_addm_tasks)
-def get_managed_database_addm_tasks_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetManagedDatabaseAddmTasksFilterArgs']]]]] = None,
+def get_managed_database_addm_tasks_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedDatabaseAddmTasksFilterArgs', 'GetManagedDatabaseAddmTasksFilterArgsDict']]]]] = None,
                                            managed_database_id: Optional[pulumi.Input[str]] = None,
                                            time_end: Optional[pulumi.Input[str]] = None,
                                            time_start: Optional[pulumi.Input[str]] = None,

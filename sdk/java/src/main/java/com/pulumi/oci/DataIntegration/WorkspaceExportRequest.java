@@ -355,7 +355,7 @@ public class WorkspaceExportRequest extends com.pulumi.resources.CustomResource 
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public WorkspaceExportRequest(String name) {
+    public WorkspaceExportRequest(java.lang.String name) {
         this(name, WorkspaceExportRequestArgs.Empty);
     }
     /**
@@ -363,7 +363,7 @@ public class WorkspaceExportRequest extends com.pulumi.resources.CustomResource 
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public WorkspaceExportRequest(String name, WorkspaceExportRequestArgs args) {
+    public WorkspaceExportRequest(java.lang.String name, WorkspaceExportRequestArgs args) {
         this(name, args, null);
     }
     /**
@@ -372,12 +372,12 @@ public class WorkspaceExportRequest extends com.pulumi.resources.CustomResource 
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public WorkspaceExportRequest(String name, WorkspaceExportRequestArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataIntegration/workspaceExportRequest:WorkspaceExportRequest", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public WorkspaceExportRequest(java.lang.String name, WorkspaceExportRequestArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataIntegration/workspaceExportRequest:WorkspaceExportRequest", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private WorkspaceExportRequest(String name, Output<String> id, @Nullable WorkspaceExportRequestState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataIntegration/workspaceExportRequest:WorkspaceExportRequest", name, state, makeResourceOptions(options, id));
+    private WorkspaceExportRequest(java.lang.String name, Output<java.lang.String> id, @Nullable WorkspaceExportRequestState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataIntegration/workspaceExportRequest:WorkspaceExportRequest", name, state, makeResourceOptions(options, id), false);
     }
 
     private static WorkspaceExportRequestArgs makeArgs(WorkspaceExportRequestArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -387,7 +387,7 @@ public class WorkspaceExportRequest extends com.pulumi.resources.CustomResource 
         return args == null ? WorkspaceExportRequestArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -403,7 +403,7 @@ public class WorkspaceExportRequest extends com.pulumi.resources.CustomResource 
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static WorkspaceExportRequest get(String name, Output<String> id, @Nullable WorkspaceExportRequestState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static WorkspaceExportRequest get(java.lang.String name, Output<java.lang.String> id, @Nullable WorkspaceExportRequestState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new WorkspaceExportRequest(name, id, state, options);
     }
 }

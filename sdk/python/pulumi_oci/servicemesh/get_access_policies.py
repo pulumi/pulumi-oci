@@ -116,7 +116,7 @@ class AwaitableGetAccessPoliciesResult(GetAccessPoliciesResult):
 
 
 def get_access_policies(compartment_id: Optional[str] = None,
-                        filters: Optional[Sequence[pulumi.InputType['GetAccessPoliciesFilterArgs']]] = None,
+                        filters: Optional[Sequence[Union['GetAccessPoliciesFilterArgs', 'GetAccessPoliciesFilterArgsDict']]] = None,
                         id: Optional[str] = None,
                         mesh_id: Optional[str] = None,
                         name: Optional[str] = None,
@@ -169,7 +169,7 @@ def get_access_policies(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_access_policies)
 def get_access_policies_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                               filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAccessPoliciesFilterArgs']]]]] = None,
+                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAccessPoliciesFilterArgs', 'GetAccessPoliciesFilterArgsDict']]]]] = None,
                                id: Optional[pulumi.Input[Optional[str]]] = None,
                                mesh_id: Optional[pulumi.Input[Optional[str]]] = None,
                                name: Optional[pulumi.Input[Optional[str]]] = None,

@@ -659,7 +659,7 @@ public class DomainsMySmtpCredential extends com.pulumi.resources.CustomResource
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DomainsMySmtpCredential(String name) {
+    public DomainsMySmtpCredential(java.lang.String name) {
         this(name, DomainsMySmtpCredentialArgs.Empty);
     }
     /**
@@ -667,7 +667,7 @@ public class DomainsMySmtpCredential extends com.pulumi.resources.CustomResource
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DomainsMySmtpCredential(String name, DomainsMySmtpCredentialArgs args) {
+    public DomainsMySmtpCredential(java.lang.String name, DomainsMySmtpCredentialArgs args) {
         this(name, args, null);
     }
     /**
@@ -676,12 +676,12 @@ public class DomainsMySmtpCredential extends com.pulumi.resources.CustomResource
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DomainsMySmtpCredential(String name, DomainsMySmtpCredentialArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsMySmtpCredential:DomainsMySmtpCredential", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DomainsMySmtpCredential(java.lang.String name, DomainsMySmtpCredentialArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/domainsMySmtpCredential:DomainsMySmtpCredential", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DomainsMySmtpCredential(String name, Output<String> id, @Nullable DomainsMySmtpCredentialState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsMySmtpCredential:DomainsMySmtpCredential", name, state, makeResourceOptions(options, id));
+    private DomainsMySmtpCredential(java.lang.String name, Output<java.lang.String> id, @Nullable DomainsMySmtpCredentialState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/domainsMySmtpCredential:DomainsMySmtpCredential", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DomainsMySmtpCredentialArgs makeArgs(DomainsMySmtpCredentialArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -691,7 +691,7 @@ public class DomainsMySmtpCredential extends com.pulumi.resources.CustomResource
         return args == null ? DomainsMySmtpCredentialArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -707,7 +707,7 @@ public class DomainsMySmtpCredential extends com.pulumi.resources.CustomResource
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DomainsMySmtpCredential get(String name, Output<String> id, @Nullable DomainsMySmtpCredentialState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DomainsMySmtpCredential get(java.lang.String name, Output<java.lang.String> id, @Nullable DomainsMySmtpCredentialState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DomainsMySmtpCredential(name, id, state, options);
     }
 }

@@ -396,7 +396,7 @@ public class SensitiveDataModelsSensitiveColumn extends com.pulumi.resources.Cus
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public SensitiveDataModelsSensitiveColumn(String name) {
+    public SensitiveDataModelsSensitiveColumn(java.lang.String name) {
         this(name, SensitiveDataModelsSensitiveColumnArgs.Empty);
     }
     /**
@@ -404,7 +404,7 @@ public class SensitiveDataModelsSensitiveColumn extends com.pulumi.resources.Cus
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public SensitiveDataModelsSensitiveColumn(String name, SensitiveDataModelsSensitiveColumnArgs args) {
+    public SensitiveDataModelsSensitiveColumn(java.lang.String name, SensitiveDataModelsSensitiveColumnArgs args) {
         this(name, args, null);
     }
     /**
@@ -413,12 +413,12 @@ public class SensitiveDataModelsSensitiveColumn extends com.pulumi.resources.Cus
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public SensitiveDataModelsSensitiveColumn(String name, SensitiveDataModelsSensitiveColumnArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/sensitiveDataModelsSensitiveColumn:SensitiveDataModelsSensitiveColumn", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public SensitiveDataModelsSensitiveColumn(java.lang.String name, SensitiveDataModelsSensitiveColumnArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataSafe/sensitiveDataModelsSensitiveColumn:SensitiveDataModelsSensitiveColumn", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private SensitiveDataModelsSensitiveColumn(String name, Output<String> id, @Nullable SensitiveDataModelsSensitiveColumnState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/sensitiveDataModelsSensitiveColumn:SensitiveDataModelsSensitiveColumn", name, state, makeResourceOptions(options, id));
+    private SensitiveDataModelsSensitiveColumn(java.lang.String name, Output<java.lang.String> id, @Nullable SensitiveDataModelsSensitiveColumnState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataSafe/sensitiveDataModelsSensitiveColumn:SensitiveDataModelsSensitiveColumn", name, state, makeResourceOptions(options, id), false);
     }
 
     private static SensitiveDataModelsSensitiveColumnArgs makeArgs(SensitiveDataModelsSensitiveColumnArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -428,7 +428,7 @@ public class SensitiveDataModelsSensitiveColumn extends com.pulumi.resources.Cus
         return args == null ? SensitiveDataModelsSensitiveColumnArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -444,7 +444,7 @@ public class SensitiveDataModelsSensitiveColumn extends com.pulumi.resources.Cus
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static SensitiveDataModelsSensitiveColumn get(String name, Output<String> id, @Nullable SensitiveDataModelsSensitiveColumnState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static SensitiveDataModelsSensitiveColumn get(java.lang.String name, Output<java.lang.String> id, @Nullable SensitiveDataModelsSensitiveColumnState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new SensitiveDataModelsSensitiveColumn(name, id, state, options);
     }
 }

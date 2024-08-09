@@ -102,7 +102,7 @@ class AwaitableGetTrailFilesResult(GetTrailFilesResult):
 
 def get_trail_files(deployment_id: Optional[str] = None,
                     display_name: Optional[str] = None,
-                    filters: Optional[Sequence[pulumi.InputType['GetTrailFilesFilterArgs']]] = None,
+                    filters: Optional[Sequence[Union['GetTrailFilesFilterArgs', 'GetTrailFilesFilterArgsDict']]] = None,
                     trail_file_id: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetTrailFilesResult:
     """
@@ -146,7 +146,7 @@ def get_trail_files(deployment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_trail_files)
 def get_trail_files_output(deployment_id: Optional[pulumi.Input[str]] = None,
                            display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                           filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetTrailFilesFilterArgs']]]]] = None,
+                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetTrailFilesFilterArgs', 'GetTrailFilesFilterArgsDict']]]]] = None,
                            trail_file_id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTrailFilesResult]:
     """

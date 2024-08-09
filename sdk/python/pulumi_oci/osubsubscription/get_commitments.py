@@ -104,7 +104,7 @@ class AwaitableGetCommitmentsResult(GetCommitmentsResult):
 
 
 def get_commitments(compartment_id: Optional[str] = None,
-                    filters: Optional[Sequence[pulumi.InputType['GetCommitmentsFilterArgs']]] = None,
+                    filters: Optional[Sequence[Union['GetCommitmentsFilterArgs', 'GetCommitmentsFilterArgsDict']]] = None,
                     subscribed_service_id: Optional[str] = None,
                     x_one_gateway_subscription_id: Optional[str] = None,
                     x_one_origin_region: Optional[str] = None,
@@ -153,7 +153,7 @@ def get_commitments(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_commitments)
 def get_commitments_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                           filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetCommitmentsFilterArgs']]]]] = None,
+                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCommitmentsFilterArgs', 'GetCommitmentsFilterArgsDict']]]]] = None,
                            subscribed_service_id: Optional[pulumi.Input[str]] = None,
                            x_one_gateway_subscription_id: Optional[pulumi.Input[Optional[str]]] = None,
                            x_one_origin_region: Optional[pulumi.Input[Optional[str]]] = None,

@@ -115,7 +115,7 @@ class AwaitableGetDeploymentTypesResult(GetDeploymentTypesResult):
 def get_deployment_types(compartment_id: Optional[str] = None,
                          deployment_type: Optional[str] = None,
                          display_name: Optional[str] = None,
-                         filters: Optional[Sequence[pulumi.InputType['GetDeploymentTypesFilterArgs']]] = None,
+                         filters: Optional[Sequence[Union['GetDeploymentTypesFilterArgs', 'GetDeploymentTypesFilterArgsDict']]] = None,
                          ogg_version: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDeploymentTypesResult:
     """
@@ -164,7 +164,7 @@ def get_deployment_types(compartment_id: Optional[str] = None,
 def get_deployment_types_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                 deployment_type: Optional[pulumi.Input[Optional[str]]] = None,
                                 display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDeploymentTypesFilterArgs']]]]] = None,
+                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDeploymentTypesFilterArgs', 'GetDeploymentTypesFilterArgsDict']]]]] = None,
                                 ogg_version: Optional[pulumi.Input[Optional[str]]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDeploymentTypesResult]:
     """

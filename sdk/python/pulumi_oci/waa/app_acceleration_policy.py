@@ -357,8 +357,8 @@ class AppAccelerationPolicy(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 response_caching_policy: Optional[pulumi.Input[pulumi.InputType['AppAccelerationPolicyResponseCachingPolicyArgs']]] = None,
-                 response_compression_policy: Optional[pulumi.Input[pulumi.InputType['AppAccelerationPolicyResponseCompressionPolicyArgs']]] = None,
+                 response_caching_policy: Optional[pulumi.Input[Union['AppAccelerationPolicyResponseCachingPolicyArgs', 'AppAccelerationPolicyResponseCachingPolicyArgsDict']]] = None,
+                 response_compression_policy: Optional[pulumi.Input[Union['AppAccelerationPolicyResponseCompressionPolicyArgs', 'AppAccelerationPolicyResponseCompressionPolicyArgsDict']]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  __props__=None):
         """
@@ -381,14 +381,14 @@ class AppAccelerationPolicy(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            response_caching_policy=oci.waa.AppAccelerationPolicyResponseCachingPolicyArgs(
-                is_response_header_based_caching_enabled=web_app_acceleration_policy_response_caching_policy_is_response_header_based_caching_enabled,
-            ),
-            response_compression_policy=oci.waa.AppAccelerationPolicyResponseCompressionPolicyArgs(
-                gzip_compression=oci.waa.AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs(
-                    is_enabled=web_app_acceleration_policy_response_compression_policy_gzip_compression_is_enabled,
-                ),
-            ),
+            response_caching_policy={
+                "is_response_header_based_caching_enabled": web_app_acceleration_policy_response_caching_policy_is_response_header_based_caching_enabled,
+            },
+            response_compression_policy={
+                "gzip_compression": {
+                    "is_enabled": web_app_acceleration_policy_response_compression_policy_gzip_compression_is_enabled,
+                },
+            },
             system_tags=web_app_acceleration_policy_system_tags)
         ```
 
@@ -406,8 +406,8 @@ class AppAccelerationPolicy(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) WebAppAccelerationPolicy display name, can be renamed.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[pulumi.InputType['AppAccelerationPolicyResponseCachingPolicyArgs']] response_caching_policy: (Updatable) An object that specifies an HTTP response caching policy.
-        :param pulumi.Input[pulumi.InputType['AppAccelerationPolicyResponseCompressionPolicyArgs']] response_compression_policy: (Updatable) An object that specifies a compression policy for HTTP response from ENABLEMENT POINT to the client.
+        :param pulumi.Input[Union['AppAccelerationPolicyResponseCachingPolicyArgs', 'AppAccelerationPolicyResponseCachingPolicyArgsDict']] response_caching_policy: (Updatable) An object that specifies an HTTP response caching policy.
+        :param pulumi.Input[Union['AppAccelerationPolicyResponseCompressionPolicyArgs', 'AppAccelerationPolicyResponseCompressionPolicyArgsDict']] response_compression_policy: (Updatable) An object that specifies a compression policy for HTTP response from ENABLEMENT POINT to the client.
                
                This compression policy can be used to enable support for HTTP response compression algorithms like gzip and configure the conditions of when a compression algorithm will be used.
                
@@ -444,14 +444,14 @@ class AppAccelerationPolicy(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            response_caching_policy=oci.waa.AppAccelerationPolicyResponseCachingPolicyArgs(
-                is_response_header_based_caching_enabled=web_app_acceleration_policy_response_caching_policy_is_response_header_based_caching_enabled,
-            ),
-            response_compression_policy=oci.waa.AppAccelerationPolicyResponseCompressionPolicyArgs(
-                gzip_compression=oci.waa.AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs(
-                    is_enabled=web_app_acceleration_policy_response_compression_policy_gzip_compression_is_enabled,
-                ),
-            ),
+            response_caching_policy={
+                "is_response_header_based_caching_enabled": web_app_acceleration_policy_response_caching_policy_is_response_header_based_caching_enabled,
+            },
+            response_compression_policy={
+                "gzip_compression": {
+                    "is_enabled": web_app_acceleration_policy_response_compression_policy_gzip_compression_is_enabled,
+                },
+            },
             system_tags=web_app_acceleration_policy_system_tags)
         ```
 
@@ -482,8 +482,8 @@ class AppAccelerationPolicy(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 response_caching_policy: Optional[pulumi.Input[pulumi.InputType['AppAccelerationPolicyResponseCachingPolicyArgs']]] = None,
-                 response_compression_policy: Optional[pulumi.Input[pulumi.InputType['AppAccelerationPolicyResponseCompressionPolicyArgs']]] = None,
+                 response_caching_policy: Optional[pulumi.Input[Union['AppAccelerationPolicyResponseCachingPolicyArgs', 'AppAccelerationPolicyResponseCachingPolicyArgsDict']]] = None,
+                 response_compression_policy: Optional[pulumi.Input[Union['AppAccelerationPolicyResponseCompressionPolicyArgs', 'AppAccelerationPolicyResponseCompressionPolicyArgsDict']]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -522,8 +522,8 @@ class AppAccelerationPolicy(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
-            response_caching_policy: Optional[pulumi.Input[pulumi.InputType['AppAccelerationPolicyResponseCachingPolicyArgs']]] = None,
-            response_compression_policy: Optional[pulumi.Input[pulumi.InputType['AppAccelerationPolicyResponseCompressionPolicyArgs']]] = None,
+            response_caching_policy: Optional[pulumi.Input[Union['AppAccelerationPolicyResponseCachingPolicyArgs', 'AppAccelerationPolicyResponseCachingPolicyArgsDict']]] = None,
+            response_compression_policy: Optional[pulumi.Input[Union['AppAccelerationPolicyResponseCompressionPolicyArgs', 'AppAccelerationPolicyResponseCompressionPolicyArgsDict']]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
@@ -540,8 +540,8 @@ class AppAccelerationPolicy(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) WebAppAccelerationPolicy display name, can be renamed.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
-        :param pulumi.Input[pulumi.InputType['AppAccelerationPolicyResponseCachingPolicyArgs']] response_caching_policy: (Updatable) An object that specifies an HTTP response caching policy.
-        :param pulumi.Input[pulumi.InputType['AppAccelerationPolicyResponseCompressionPolicyArgs']] response_compression_policy: (Updatable) An object that specifies a compression policy for HTTP response from ENABLEMENT POINT to the client.
+        :param pulumi.Input[Union['AppAccelerationPolicyResponseCachingPolicyArgs', 'AppAccelerationPolicyResponseCachingPolicyArgsDict']] response_caching_policy: (Updatable) An object that specifies an HTTP response caching policy.
+        :param pulumi.Input[Union['AppAccelerationPolicyResponseCompressionPolicyArgs', 'AppAccelerationPolicyResponseCompressionPolicyArgsDict']] response_compression_policy: (Updatable) An object that specifies a compression policy for HTTP response from ENABLEMENT POINT to the client.
                
                This compression policy can be used to enable support for HTTP response compression algorithms like gzip and configure the conditions of when a compression algorithm will be used.
                

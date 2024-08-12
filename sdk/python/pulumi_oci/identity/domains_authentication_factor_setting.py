@@ -2461,18 +2461,18 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
                  authorization: Optional[pulumi.Input[str]] = None,
                  auto_enroll_email_factor_disabled: Optional[pulumi.Input[bool]] = None,
                  bypass_code_enabled: Optional[pulumi.Input[bool]] = None,
-                 bypass_code_settings: Optional[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingBypassCodeSettingsArgs']]] = None,
-                 client_app_settings: Optional[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingClientAppSettingsArgs']]] = None,
-                 compliance_policies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingCompliancePolicyArgs']]]]] = None,
+                 bypass_code_settings: Optional[pulumi.Input[Union['DomainsAuthenticationFactorSettingBypassCodeSettingsArgs', 'DomainsAuthenticationFactorSettingBypassCodeSettingsArgsDict']]] = None,
+                 client_app_settings: Optional[pulumi.Input[Union['DomainsAuthenticationFactorSettingClientAppSettingsArgs', 'DomainsAuthenticationFactorSettingClientAppSettingsArgsDict']]] = None,
+                 compliance_policies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAuthenticationFactorSettingCompliancePolicyArgs', 'DomainsAuthenticationFactorSettingCompliancePolicyArgsDict']]]]] = None,
                  email_enabled: Optional[pulumi.Input[bool]] = None,
-                 email_settings: Optional[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingEmailSettingsArgs']]] = None,
-                 endpoint_restrictions: Optional[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingEndpointRestrictionsArgs']]] = None,
+                 email_settings: Optional[pulumi.Input[Union['DomainsAuthenticationFactorSettingEmailSettingsArgs', 'DomainsAuthenticationFactorSettingEmailSettingsArgsDict']]] = None,
+                 endpoint_restrictions: Optional[pulumi.Input[Union['DomainsAuthenticationFactorSettingEndpointRestrictionsArgs', 'DomainsAuthenticationFactorSettingEndpointRestrictionsArgsDict']]] = None,
                  fido_authenticator_enabled: Optional[pulumi.Input[bool]] = None,
                  hide_backup_factor_enabled: Optional[pulumi.Input[bool]] = None,
                  idcs_endpoint: Optional[pulumi.Input[str]] = None,
-                 identity_store_settings: Optional[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingIdentityStoreSettingsArgs']]] = None,
+                 identity_store_settings: Optional[pulumi.Input[Union['DomainsAuthenticationFactorSettingIdentityStoreSettingsArgs', 'DomainsAuthenticationFactorSettingIdentityStoreSettingsArgsDict']]] = None,
                  mfa_enrollment_type: Optional[pulumi.Input[str]] = None,
-                 notification_settings: Optional[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingNotificationSettingsArgs']]] = None,
+                 notification_settings: Optional[pulumi.Input[Union['DomainsAuthenticationFactorSettingNotificationSettingsArgs', 'DomainsAuthenticationFactorSettingNotificationSettingsArgsDict']]] = None,
                  ocid: Optional[pulumi.Input[str]] = None,
                  phone_call_enabled: Optional[pulumi.Input[bool]] = None,
                  push_enabled: Optional[pulumi.Input[bool]] = None,
@@ -2480,12 +2480,12 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
                  schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  security_questions_enabled: Optional[pulumi.Input[bool]] = None,
                  sms_enabled: Optional[pulumi.Input[bool]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingTagArgs']]]]] = None,
-                 third_party_factor: Optional[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingThirdPartyFactorArgs']]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAuthenticationFactorSettingTagArgs', 'DomainsAuthenticationFactorSettingTagArgsDict']]]]] = None,
+                 third_party_factor: Optional[pulumi.Input[Union['DomainsAuthenticationFactorSettingThirdPartyFactorArgs', 'DomainsAuthenticationFactorSettingThirdPartyFactorArgsDict']]] = None,
                  totp_enabled: Optional[pulumi.Input[bool]] = None,
-                 totp_settings: Optional[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingTotpSettingsArgs']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings: Optional[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingsArgs']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings: Optional[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsArgs']]] = None,
+                 totp_settings: Optional[pulumi.Input[Union['DomainsAuthenticationFactorSettingTotpSettingsArgs', 'DomainsAuthenticationFactorSettingTotpSettingsArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings: Optional[pulumi.Input[Union['DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingsArgs', 'DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingsArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings: Optional[pulumi.Input[Union['DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsArgs', 'DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsArgsDict']]] = None,
                  user_enrollment_disabled_factors: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  yubico_otp_enabled: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
@@ -2530,7 +2530,7 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingBypassCodeSettingsArgs']] bypass_code_settings: (Updatable) Settings related to the bypass code, such as bypass code length, bypass code expiry, max active bypass codes, and so on
+        :param pulumi.Input[Union['DomainsAuthenticationFactorSettingBypassCodeSettingsArgs', 'DomainsAuthenticationFactorSettingBypassCodeSettingsArgsDict']] bypass_code_settings: (Updatable) Settings related to the bypass code, such as bypass code length, bypass code expiry, max active bypass codes, and so on
                
                **SCIM++ Properties:**
                * idcsSearchable: false
@@ -2540,7 +2540,7 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
                * returned: default
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingClientAppSettingsArgs']] client_app_settings: (Updatable) Settings related to compliance, Personal Identification Number (PIN) policy, and so on
+        :param pulumi.Input[Union['DomainsAuthenticationFactorSettingClientAppSettingsArgs', 'DomainsAuthenticationFactorSettingClientAppSettingsArgsDict']] client_app_settings: (Updatable) Settings related to compliance, Personal Identification Number (PIN) policy, and so on
                
                **SCIM++ Properties:**
                * idcsSearchable: false
@@ -2550,7 +2550,7 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
                * returned: default
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingCompliancePolicyArgs']]]] compliance_policies: (Updatable) Compliance Policy that defines actions to be taken when a condition is violated
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAuthenticationFactorSettingCompliancePolicyArgs', 'DomainsAuthenticationFactorSettingCompliancePolicyArgsDict']]]] compliance_policies: (Updatable) Compliance Policy that defines actions to be taken when a condition is violated
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [name]
@@ -2573,7 +2573,7 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingEmailSettingsArgs']] email_settings: (Updatable) Settings related to Email Factor, such as enabled email magic link factor, custom url for Email Link
+        :param pulumi.Input[Union['DomainsAuthenticationFactorSettingEmailSettingsArgs', 'DomainsAuthenticationFactorSettingEmailSettingsArgsDict']] email_settings: (Updatable) Settings related to Email Factor, such as enabled email magic link factor, custom url for Email Link
                
                **Added In:** 20.1.3
                
@@ -2585,7 +2585,7 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
                * returned: default
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingEndpointRestrictionsArgs']] endpoint_restrictions: (Updatable) Settings that describe the set of restrictions that the system should apply to devices and trusted endpoints of a user
+        :param pulumi.Input[Union['DomainsAuthenticationFactorSettingEndpointRestrictionsArgs', 'DomainsAuthenticationFactorSettingEndpointRestrictionsArgsDict']] endpoint_restrictions: (Updatable) Settings that describe the set of restrictions that the system should apply to devices and trusted endpoints of a user
                
                **SCIM++ Properties:**
                * idcsSearchable: false
@@ -2620,7 +2620,7 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
                * type: boolean
                * uniqueness: none
         :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingIdentityStoreSettingsArgs']] identity_store_settings: (Updatable) Settings related to the use of a user's profile details from the identity store
+        :param pulumi.Input[Union['DomainsAuthenticationFactorSettingIdentityStoreSettingsArgs', 'DomainsAuthenticationFactorSettingIdentityStoreSettingsArgsDict']] identity_store_settings: (Updatable) Settings related to the use of a user's profile details from the identity store
                
                **SCIM++ Properties:**
                * idcsSearchable: false
@@ -2644,7 +2644,7 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingNotificationSettingsArgs']] notification_settings: (Updatable) Settings related to the Mobile App Notification channel, such as pull
+        :param pulumi.Input[Union['DomainsAuthenticationFactorSettingNotificationSettingsArgs', 'DomainsAuthenticationFactorSettingNotificationSettingsArgsDict']] notification_settings: (Updatable) Settings related to the Mobile App Notification channel, such as pull
                
                **Added In:** 17.4.2
                
@@ -2721,7 +2721,7 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingTagArgs']]]] tags: (Updatable) A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAuthenticationFactorSettingTagArgs', 'DomainsAuthenticationFactorSettingTagArgsDict']]]] tags: (Updatable) A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -2732,7 +2732,7 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
                * returned: request
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingThirdPartyFactorArgs']] third_party_factor: (Updatable) Settings related to third-party factor
+        :param pulumi.Input[Union['DomainsAuthenticationFactorSettingThirdPartyFactorArgs', 'DomainsAuthenticationFactorSettingThirdPartyFactorArgsDict']] third_party_factor: (Updatable) Settings related to third-party factor
                
                **Added In:** 19.2.1
                
@@ -2754,7 +2754,7 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingTotpSettingsArgs']] totp_settings: (Updatable) Settings related to Time-Based One-Time Passcodes (TOTP), such as hashing algo, totp time step, passcode length, and so on
+        :param pulumi.Input[Union['DomainsAuthenticationFactorSettingTotpSettingsArgs', 'DomainsAuthenticationFactorSettingTotpSettingsArgsDict']] totp_settings: (Updatable) Settings related to Time-Based One-Time Passcodes (TOTP), such as hashing algo, totp time step, passcode length, and so on
                
                **SCIM++ Properties:**
                * idcsSearchable: false
@@ -2764,8 +2764,8 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
                * returned: default
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingsArgs']] urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings: (Updatable) This extension defines attributes used to manage Multi-Factor Authentication settings of fido authentication
-        :param pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsArgs']] urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings: (Updatable) This extension defines attributes used to manage Multi-Factor Authentication settings of third party provider
+        :param pulumi.Input[Union['DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingsArgs', 'DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingsArgsDict']] urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings: (Updatable) This extension defines attributes used to manage Multi-Factor Authentication settings of fido authentication
+        :param pulumi.Input[Union['DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsArgs', 'DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsArgsDict']] urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings: (Updatable) This extension defines attributes used to manage Multi-Factor Authentication settings of third party provider
         :param pulumi.Input[Sequence[pulumi.Input[str]]] user_enrollment_disabled_factors: (Updatable) Factors for which enrollment should be blocked for End User
                
                **Added In:** 2012271618
@@ -2835,18 +2835,18 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
                  authorization: Optional[pulumi.Input[str]] = None,
                  auto_enroll_email_factor_disabled: Optional[pulumi.Input[bool]] = None,
                  bypass_code_enabled: Optional[pulumi.Input[bool]] = None,
-                 bypass_code_settings: Optional[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingBypassCodeSettingsArgs']]] = None,
-                 client_app_settings: Optional[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingClientAppSettingsArgs']]] = None,
-                 compliance_policies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingCompliancePolicyArgs']]]]] = None,
+                 bypass_code_settings: Optional[pulumi.Input[Union['DomainsAuthenticationFactorSettingBypassCodeSettingsArgs', 'DomainsAuthenticationFactorSettingBypassCodeSettingsArgsDict']]] = None,
+                 client_app_settings: Optional[pulumi.Input[Union['DomainsAuthenticationFactorSettingClientAppSettingsArgs', 'DomainsAuthenticationFactorSettingClientAppSettingsArgsDict']]] = None,
+                 compliance_policies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAuthenticationFactorSettingCompliancePolicyArgs', 'DomainsAuthenticationFactorSettingCompliancePolicyArgsDict']]]]] = None,
                  email_enabled: Optional[pulumi.Input[bool]] = None,
-                 email_settings: Optional[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingEmailSettingsArgs']]] = None,
-                 endpoint_restrictions: Optional[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingEndpointRestrictionsArgs']]] = None,
+                 email_settings: Optional[pulumi.Input[Union['DomainsAuthenticationFactorSettingEmailSettingsArgs', 'DomainsAuthenticationFactorSettingEmailSettingsArgsDict']]] = None,
+                 endpoint_restrictions: Optional[pulumi.Input[Union['DomainsAuthenticationFactorSettingEndpointRestrictionsArgs', 'DomainsAuthenticationFactorSettingEndpointRestrictionsArgsDict']]] = None,
                  fido_authenticator_enabled: Optional[pulumi.Input[bool]] = None,
                  hide_backup_factor_enabled: Optional[pulumi.Input[bool]] = None,
                  idcs_endpoint: Optional[pulumi.Input[str]] = None,
-                 identity_store_settings: Optional[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingIdentityStoreSettingsArgs']]] = None,
+                 identity_store_settings: Optional[pulumi.Input[Union['DomainsAuthenticationFactorSettingIdentityStoreSettingsArgs', 'DomainsAuthenticationFactorSettingIdentityStoreSettingsArgsDict']]] = None,
                  mfa_enrollment_type: Optional[pulumi.Input[str]] = None,
-                 notification_settings: Optional[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingNotificationSettingsArgs']]] = None,
+                 notification_settings: Optional[pulumi.Input[Union['DomainsAuthenticationFactorSettingNotificationSettingsArgs', 'DomainsAuthenticationFactorSettingNotificationSettingsArgsDict']]] = None,
                  ocid: Optional[pulumi.Input[str]] = None,
                  phone_call_enabled: Optional[pulumi.Input[bool]] = None,
                  push_enabled: Optional[pulumi.Input[bool]] = None,
@@ -2854,12 +2854,12 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
                  schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  security_questions_enabled: Optional[pulumi.Input[bool]] = None,
                  sms_enabled: Optional[pulumi.Input[bool]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingTagArgs']]]]] = None,
-                 third_party_factor: Optional[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingThirdPartyFactorArgs']]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAuthenticationFactorSettingTagArgs', 'DomainsAuthenticationFactorSettingTagArgsDict']]]]] = None,
+                 third_party_factor: Optional[pulumi.Input[Union['DomainsAuthenticationFactorSettingThirdPartyFactorArgs', 'DomainsAuthenticationFactorSettingThirdPartyFactorArgsDict']]] = None,
                  totp_enabled: Optional[pulumi.Input[bool]] = None,
-                 totp_settings: Optional[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingTotpSettingsArgs']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings: Optional[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingsArgs']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings: Optional[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsArgs']]] = None,
+                 totp_settings: Optional[pulumi.Input[Union['DomainsAuthenticationFactorSettingTotpSettingsArgs', 'DomainsAuthenticationFactorSettingTotpSettingsArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings: Optional[pulumi.Input[Union['DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingsArgs', 'DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingsArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings: Optional[pulumi.Input[Union['DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsArgs', 'DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsArgsDict']]] = None,
                  user_enrollment_disabled_factors: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  yubico_otp_enabled: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
@@ -2960,27 +2960,27 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
             authorization: Optional[pulumi.Input[str]] = None,
             auto_enroll_email_factor_disabled: Optional[pulumi.Input[bool]] = None,
             bypass_code_enabled: Optional[pulumi.Input[bool]] = None,
-            bypass_code_settings: Optional[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingBypassCodeSettingsArgs']]] = None,
-            client_app_settings: Optional[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingClientAppSettingsArgs']]] = None,
+            bypass_code_settings: Optional[pulumi.Input[Union['DomainsAuthenticationFactorSettingBypassCodeSettingsArgs', 'DomainsAuthenticationFactorSettingBypassCodeSettingsArgsDict']]] = None,
+            client_app_settings: Optional[pulumi.Input[Union['DomainsAuthenticationFactorSettingClientAppSettingsArgs', 'DomainsAuthenticationFactorSettingClientAppSettingsArgsDict']]] = None,
             compartment_ocid: Optional[pulumi.Input[str]] = None,
-            compliance_policies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingCompliancePolicyArgs']]]]] = None,
+            compliance_policies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAuthenticationFactorSettingCompliancePolicyArgs', 'DomainsAuthenticationFactorSettingCompliancePolicyArgsDict']]]]] = None,
             delete_in_progress: Optional[pulumi.Input[bool]] = None,
             domain_ocid: Optional[pulumi.Input[str]] = None,
             email_enabled: Optional[pulumi.Input[bool]] = None,
-            email_settings: Optional[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingEmailSettingsArgs']]] = None,
-            endpoint_restrictions: Optional[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingEndpointRestrictionsArgs']]] = None,
+            email_settings: Optional[pulumi.Input[Union['DomainsAuthenticationFactorSettingEmailSettingsArgs', 'DomainsAuthenticationFactorSettingEmailSettingsArgsDict']]] = None,
+            endpoint_restrictions: Optional[pulumi.Input[Union['DomainsAuthenticationFactorSettingEndpointRestrictionsArgs', 'DomainsAuthenticationFactorSettingEndpointRestrictionsArgsDict']]] = None,
             fido_authenticator_enabled: Optional[pulumi.Input[bool]] = None,
             hide_backup_factor_enabled: Optional[pulumi.Input[bool]] = None,
-            idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingIdcsCreatedByArgs']]]]] = None,
+            idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAuthenticationFactorSettingIdcsCreatedByArgs', 'DomainsAuthenticationFactorSettingIdcsCreatedByArgsDict']]]]] = None,
             idcs_endpoint: Optional[pulumi.Input[str]] = None,
-            idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingIdcsLastModifiedByArgs']]]]] = None,
+            idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAuthenticationFactorSettingIdcsLastModifiedByArgs', 'DomainsAuthenticationFactorSettingIdcsLastModifiedByArgsDict']]]]] = None,
             idcs_last_upgraded_in_release: Optional[pulumi.Input[str]] = None,
             idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            identity_store_settings: Optional[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingIdentityStoreSettingsArgs']]] = None,
-            metas: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingMetaArgs']]]]] = None,
+            identity_store_settings: Optional[pulumi.Input[Union['DomainsAuthenticationFactorSettingIdentityStoreSettingsArgs', 'DomainsAuthenticationFactorSettingIdentityStoreSettingsArgsDict']]] = None,
+            metas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAuthenticationFactorSettingMetaArgs', 'DomainsAuthenticationFactorSettingMetaArgsDict']]]]] = None,
             mfa_enabled_category: Optional[pulumi.Input[str]] = None,
             mfa_enrollment_type: Optional[pulumi.Input[str]] = None,
-            notification_settings: Optional[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingNotificationSettingsArgs']]] = None,
+            notification_settings: Optional[pulumi.Input[Union['DomainsAuthenticationFactorSettingNotificationSettingsArgs', 'DomainsAuthenticationFactorSettingNotificationSettingsArgsDict']]] = None,
             ocid: Optional[pulumi.Input[str]] = None,
             phone_call_enabled: Optional[pulumi.Input[bool]] = None,
             push_enabled: Optional[pulumi.Input[bool]] = None,
@@ -2988,13 +2988,13 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             security_questions_enabled: Optional[pulumi.Input[bool]] = None,
             sms_enabled: Optional[pulumi.Input[bool]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingTagArgs']]]]] = None,
+            tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAuthenticationFactorSettingTagArgs', 'DomainsAuthenticationFactorSettingTagArgsDict']]]]] = None,
             tenancy_ocid: Optional[pulumi.Input[str]] = None,
-            third_party_factor: Optional[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingThirdPartyFactorArgs']]] = None,
+            third_party_factor: Optional[pulumi.Input[Union['DomainsAuthenticationFactorSettingThirdPartyFactorArgs', 'DomainsAuthenticationFactorSettingThirdPartyFactorArgsDict']]] = None,
             totp_enabled: Optional[pulumi.Input[bool]] = None,
-            totp_settings: Optional[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingTotpSettingsArgs']]] = None,
-            urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings: Optional[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingsArgs']]] = None,
-            urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings: Optional[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsArgs']]] = None,
+            totp_settings: Optional[pulumi.Input[Union['DomainsAuthenticationFactorSettingTotpSettingsArgs', 'DomainsAuthenticationFactorSettingTotpSettingsArgsDict']]] = None,
+            urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings: Optional[pulumi.Input[Union['DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingsArgs', 'DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingsArgsDict']]] = None,
+            urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings: Optional[pulumi.Input[Union['DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsArgs', 'DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsArgsDict']]] = None,
             user_enrollment_disabled_factors: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             yubico_otp_enabled: Optional[pulumi.Input[bool]] = None) -> 'DomainsAuthenticationFactorSetting':
         """
@@ -3030,7 +3030,7 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingBypassCodeSettingsArgs']] bypass_code_settings: (Updatable) Settings related to the bypass code, such as bypass code length, bypass code expiry, max active bypass codes, and so on
+        :param pulumi.Input[Union['DomainsAuthenticationFactorSettingBypassCodeSettingsArgs', 'DomainsAuthenticationFactorSettingBypassCodeSettingsArgsDict']] bypass_code_settings: (Updatable) Settings related to the bypass code, such as bypass code length, bypass code expiry, max active bypass codes, and so on
                
                **SCIM++ Properties:**
                * idcsSearchable: false
@@ -3040,7 +3040,7 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
                * returned: default
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingClientAppSettingsArgs']] client_app_settings: (Updatable) Settings related to compliance, Personal Identification Number (PIN) policy, and so on
+        :param pulumi.Input[Union['DomainsAuthenticationFactorSettingClientAppSettingsArgs', 'DomainsAuthenticationFactorSettingClientAppSettingsArgsDict']] client_app_settings: (Updatable) Settings related to compliance, Personal Identification Number (PIN) policy, and so on
                
                **SCIM++ Properties:**
                * idcsSearchable: false
@@ -3061,7 +3061,7 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingCompliancePolicyArgs']]]] compliance_policies: (Updatable) Compliance Policy that defines actions to be taken when a condition is violated
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAuthenticationFactorSettingCompliancePolicyArgs', 'DomainsAuthenticationFactorSettingCompliancePolicyArgsDict']]]] compliance_policies: (Updatable) Compliance Policy that defines actions to be taken when a condition is violated
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [name]
@@ -3106,7 +3106,7 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingEmailSettingsArgs']] email_settings: (Updatable) Settings related to Email Factor, such as enabled email magic link factor, custom url for Email Link
+        :param pulumi.Input[Union['DomainsAuthenticationFactorSettingEmailSettingsArgs', 'DomainsAuthenticationFactorSettingEmailSettingsArgsDict']] email_settings: (Updatable) Settings related to Email Factor, such as enabled email magic link factor, custom url for Email Link
                
                **Added In:** 20.1.3
                
@@ -3118,7 +3118,7 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
                * returned: default
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingEndpointRestrictionsArgs']] endpoint_restrictions: (Updatable) Settings that describe the set of restrictions that the system should apply to devices and trusted endpoints of a user
+        :param pulumi.Input[Union['DomainsAuthenticationFactorSettingEndpointRestrictionsArgs', 'DomainsAuthenticationFactorSettingEndpointRestrictionsArgsDict']] endpoint_restrictions: (Updatable) Settings that describe the set of restrictions that the system should apply to devices and trusted endpoints of a user
                
                **SCIM++ Properties:**
                * idcsSearchable: false
@@ -3152,7 +3152,7 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingIdcsCreatedByArgs']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAuthenticationFactorSettingIdcsCreatedByArgs', 'DomainsAuthenticationFactorSettingIdcsCreatedByArgsDict']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -3162,7 +3162,7 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
                * returned: default
                * type: complex
         :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingIdcsLastModifiedByArgs']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAuthenticationFactorSettingIdcsLastModifiedByArgs', 'DomainsAuthenticationFactorSettingIdcsLastModifiedByArgsDict']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -3192,7 +3192,7 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
                * returned: request
                * type: string
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingIdentityStoreSettingsArgs']] identity_store_settings: (Updatable) Settings related to the use of a user's profile details from the identity store
+        :param pulumi.Input[Union['DomainsAuthenticationFactorSettingIdentityStoreSettingsArgs', 'DomainsAuthenticationFactorSettingIdentityStoreSettingsArgsDict']] identity_store_settings: (Updatable) Settings related to the use of a user's profile details from the identity store
                
                **SCIM++ Properties:**
                * idcsSearchable: false
@@ -3202,7 +3202,7 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
                * returned: default
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingMetaArgs']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAuthenticationFactorSettingMetaArgs', 'DomainsAuthenticationFactorSettingMetaArgsDict']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -3239,7 +3239,7 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingNotificationSettingsArgs']] notification_settings: (Updatable) Settings related to the Mobile App Notification channel, such as pull
+        :param pulumi.Input[Union['DomainsAuthenticationFactorSettingNotificationSettingsArgs', 'DomainsAuthenticationFactorSettingNotificationSettingsArgsDict']] notification_settings: (Updatable) Settings related to the Mobile App Notification channel, such as pull
                
                **Added In:** 17.4.2
                
@@ -3316,7 +3316,7 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingTagArgs']]]] tags: (Updatable) A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsAuthenticationFactorSettingTagArgs', 'DomainsAuthenticationFactorSettingTagArgsDict']]]] tags: (Updatable) A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -3338,7 +3338,7 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingThirdPartyFactorArgs']] third_party_factor: (Updatable) Settings related to third-party factor
+        :param pulumi.Input[Union['DomainsAuthenticationFactorSettingThirdPartyFactorArgs', 'DomainsAuthenticationFactorSettingThirdPartyFactorArgsDict']] third_party_factor: (Updatable) Settings related to third-party factor
                
                **Added In:** 19.2.1
                
@@ -3360,7 +3360,7 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingTotpSettingsArgs']] totp_settings: (Updatable) Settings related to Time-Based One-Time Passcodes (TOTP), such as hashing algo, totp time step, passcode length, and so on
+        :param pulumi.Input[Union['DomainsAuthenticationFactorSettingTotpSettingsArgs', 'DomainsAuthenticationFactorSettingTotpSettingsArgsDict']] totp_settings: (Updatable) Settings related to Time-Based One-Time Passcodes (TOTP), such as hashing algo, totp time step, passcode length, and so on
                
                **SCIM++ Properties:**
                * idcsSearchable: false
@@ -3370,8 +3370,8 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
                * returned: default
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingsArgs']] urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings: (Updatable) This extension defines attributes used to manage Multi-Factor Authentication settings of fido authentication
-        :param pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsArgs']] urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings: (Updatable) This extension defines attributes used to manage Multi-Factor Authentication settings of third party provider
+        :param pulumi.Input[Union['DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingsArgs', 'DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingsArgsDict']] urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings: (Updatable) This extension defines attributes used to manage Multi-Factor Authentication settings of fido authentication
+        :param pulumi.Input[Union['DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsArgs', 'DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsArgsDict']] urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings: (Updatable) This extension defines attributes used to manage Multi-Factor Authentication settings of third party provider
         :param pulumi.Input[Sequence[pulumi.Input[str]]] user_enrollment_disabled_factors: (Updatable) Factors for which enrollment should be blocked for End User
                
                **Added In:** 2012271618

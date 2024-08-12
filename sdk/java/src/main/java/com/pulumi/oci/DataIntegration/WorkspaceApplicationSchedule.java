@@ -340,7 +340,7 @@ public class WorkspaceApplicationSchedule extends com.pulumi.resources.CustomRes
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public WorkspaceApplicationSchedule(String name) {
+    public WorkspaceApplicationSchedule(java.lang.String name) {
         this(name, WorkspaceApplicationScheduleArgs.Empty);
     }
     /**
@@ -348,7 +348,7 @@ public class WorkspaceApplicationSchedule extends com.pulumi.resources.CustomRes
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public WorkspaceApplicationSchedule(String name, WorkspaceApplicationScheduleArgs args) {
+    public WorkspaceApplicationSchedule(java.lang.String name, WorkspaceApplicationScheduleArgs args) {
         this(name, args, null);
     }
     /**
@@ -357,12 +357,12 @@ public class WorkspaceApplicationSchedule extends com.pulumi.resources.CustomRes
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public WorkspaceApplicationSchedule(String name, WorkspaceApplicationScheduleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataIntegration/workspaceApplicationSchedule:WorkspaceApplicationSchedule", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public WorkspaceApplicationSchedule(java.lang.String name, WorkspaceApplicationScheduleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataIntegration/workspaceApplicationSchedule:WorkspaceApplicationSchedule", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private WorkspaceApplicationSchedule(String name, Output<String> id, @Nullable WorkspaceApplicationScheduleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataIntegration/workspaceApplicationSchedule:WorkspaceApplicationSchedule", name, state, makeResourceOptions(options, id));
+    private WorkspaceApplicationSchedule(java.lang.String name, Output<java.lang.String> id, @Nullable WorkspaceApplicationScheduleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataIntegration/workspaceApplicationSchedule:WorkspaceApplicationSchedule", name, state, makeResourceOptions(options, id), false);
     }
 
     private static WorkspaceApplicationScheduleArgs makeArgs(WorkspaceApplicationScheduleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -372,7 +372,7 @@ public class WorkspaceApplicationSchedule extends com.pulumi.resources.CustomRes
         return args == null ? WorkspaceApplicationScheduleArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -388,7 +388,7 @@ public class WorkspaceApplicationSchedule extends com.pulumi.resources.CustomRes
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static WorkspaceApplicationSchedule get(String name, Output<String> id, @Nullable WorkspaceApplicationScheduleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static WorkspaceApplicationSchedule get(java.lang.String name, Output<java.lang.String> id, @Nullable WorkspaceApplicationScheduleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new WorkspaceApplicationSchedule(name, id, state, options);
     }
 }

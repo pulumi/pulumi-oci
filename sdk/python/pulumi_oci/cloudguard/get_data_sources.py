@@ -150,7 +150,7 @@ def get_data_sources(access_level: Optional[str] = None,
                      compartment_id_in_subtree: Optional[bool] = None,
                      data_source_feed_provider: Optional[str] = None,
                      display_name: Optional[str] = None,
-                     filters: Optional[Sequence[pulumi.InputType['GetDataSourcesFilterArgs']]] = None,
+                     filters: Optional[Sequence[Union['GetDataSourcesFilterArgs', 'GetDataSourcesFilterArgsDict']]] = None,
                      logging_query_type: Optional[str] = None,
                      state: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDataSourcesResult:
@@ -230,7 +230,7 @@ def get_data_sources_output(access_level: Optional[pulumi.Input[Optional[str]]] 
                             compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                             data_source_feed_provider: Optional[pulumi.Input[Optional[str]]] = None,
                             display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                            filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDataSourcesFilterArgs']]]]] = None,
+                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDataSourcesFilterArgs', 'GetDataSourcesFilterArgsDict']]]]] = None,
                             logging_query_type: Optional[pulumi.Input[Optional[str]]] = None,
                             state: Optional[pulumi.Input[Optional[str]]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDataSourcesResult]:

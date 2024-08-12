@@ -346,7 +346,7 @@ class FusionEnvironmentFamily(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 family_maintenance_policy: Optional[pulumi.Input[pulumi.InputType['FusionEnvironmentFamilyFamilyMaintenancePolicyArgs']]] = None,
+                 family_maintenance_policy: Optional[pulumi.Input[Union['FusionEnvironmentFamilyFamilyMaintenancePolicyArgs', 'FusionEnvironmentFamilyFamilyMaintenancePolicyArgsDict']]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  subscription_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
@@ -369,11 +369,11 @@ class FusionEnvironmentFamily(pulumi.CustomResource):
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            family_maintenance_policy=oci.fusion_apps.FusionEnvironmentFamilyFamilyMaintenancePolicyArgs(
-                concurrent_maintenance=fusion_environment_family_family_maintenance_policy_concurrent_maintenance,
-                is_monthly_patching_enabled=fusion_environment_family_family_maintenance_policy_is_monthly_patching_enabled,
-                quarterly_upgrade_begin_times=fusion_environment_family_family_maintenance_policy_quarterly_upgrade_begin_times,
-            ),
+            family_maintenance_policy={
+                "concurrent_maintenance": fusion_environment_family_family_maintenance_policy_concurrent_maintenance,
+                "is_monthly_patching_enabled": fusion_environment_family_family_maintenance_policy_is_monthly_patching_enabled,
+                "quarterly_upgrade_begin_times": fusion_environment_family_family_maintenance_policy_quarterly_upgrade_begin_times,
+            },
             freeform_tags={
                 "bar-key": "value",
             })
@@ -392,7 +392,7 @@ class FusionEnvironmentFamily(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where the environment family is located.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) A friendly name for the environment family. The name must contain only letters, numbers, dashes, and underscores. Can be changed later.
-        :param pulumi.Input[pulumi.InputType['FusionEnvironmentFamilyFamilyMaintenancePolicyArgs']] family_maintenance_policy: (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
+        :param pulumi.Input[Union['FusionEnvironmentFamilyFamilyMaintenancePolicyArgs', 'FusionEnvironmentFamilyFamilyMaintenancePolicyArgsDict']] family_maintenance_policy: (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] subscription_ids: (Updatable) The list of the IDs of the applications subscriptions that are associated with the environment family.
                
@@ -424,11 +424,11 @@ class FusionEnvironmentFamily(pulumi.CustomResource):
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            family_maintenance_policy=oci.fusion_apps.FusionEnvironmentFamilyFamilyMaintenancePolicyArgs(
-                concurrent_maintenance=fusion_environment_family_family_maintenance_policy_concurrent_maintenance,
-                is_monthly_patching_enabled=fusion_environment_family_family_maintenance_policy_is_monthly_patching_enabled,
-                quarterly_upgrade_begin_times=fusion_environment_family_family_maintenance_policy_quarterly_upgrade_begin_times,
-            ),
+            family_maintenance_policy={
+                "concurrent_maintenance": fusion_environment_family_family_maintenance_policy_concurrent_maintenance,
+                "is_monthly_patching_enabled": fusion_environment_family_family_maintenance_policy_is_monthly_patching_enabled,
+                "quarterly_upgrade_begin_times": fusion_environment_family_family_maintenance_policy_quarterly_upgrade_begin_times,
+            },
             freeform_tags={
                 "bar-key": "value",
             })
@@ -460,7 +460,7 @@ class FusionEnvironmentFamily(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 family_maintenance_policy: Optional[pulumi.Input[pulumi.InputType['FusionEnvironmentFamilyFamilyMaintenancePolicyArgs']]] = None,
+                 family_maintenance_policy: Optional[pulumi.Input[Union['FusionEnvironmentFamilyFamilyMaintenancePolicyArgs', 'FusionEnvironmentFamilyFamilyMaintenancePolicyArgsDict']]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  subscription_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
@@ -504,7 +504,7 @@ class FusionEnvironmentFamily(pulumi.CustomResource):
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
-            family_maintenance_policy: Optional[pulumi.Input[pulumi.InputType['FusionEnvironmentFamilyFamilyMaintenancePolicyArgs']]] = None,
+            family_maintenance_policy: Optional[pulumi.Input[Union['FusionEnvironmentFamilyFamilyMaintenancePolicyArgs', 'FusionEnvironmentFamilyFamilyMaintenancePolicyArgsDict']]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             is_subscription_update_needed: Optional[pulumi.Input[bool]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
@@ -523,7 +523,7 @@ class FusionEnvironmentFamily(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where the environment family is located.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) A friendly name for the environment family. The name must contain only letters, numbers, dashes, and underscores. Can be changed later.
-        :param pulumi.Input[pulumi.InputType['FusionEnvironmentFamilyFamilyMaintenancePolicyArgs']] family_maintenance_policy: (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
+        :param pulumi.Input[Union['FusionEnvironmentFamilyFamilyMaintenancePolicyArgs', 'FusionEnvironmentFamilyFamilyMaintenancePolicyArgsDict']] family_maintenance_policy: (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_subscription_update_needed: When set to True, a subscription update is required for the environment family.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.

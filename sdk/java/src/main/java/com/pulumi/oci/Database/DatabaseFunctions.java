@@ -4666,7 +4666,8 @@ public final class DatabaseFunctions {
      * ## 
      * 
      * ***
-     * subcategory: &#34;Database&#34;
+     * ## subcategory: &#34;Database&#34;
+     * 
      * layout: &#34;oci&#34;
      * page_title: &#34;Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabases&#34;
      * sidebar_current: &#34;docs-oci-datasource-database-autonomous_databases&#34;
@@ -4733,7 +4734,8 @@ public final class DatabaseFunctions {
      * ## 
      * 
      * ***
-     * subcategory: &#34;Database&#34;
+     * ## subcategory: &#34;Database&#34;
+     * 
      * layout: &#34;oci&#34;
      * page_title: &#34;Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabases&#34;
      * sidebar_current: &#34;docs-oci-datasource-database-autonomous_databases&#34;
@@ -4800,7 +4802,8 @@ public final class DatabaseFunctions {
      * ## 
      * 
      * ***
-     * subcategory: &#34;Database&#34;
+     * ## subcategory: &#34;Database&#34;
+     * 
      * layout: &#34;oci&#34;
      * page_title: &#34;Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabases&#34;
      * sidebar_current: &#34;docs-oci-datasource-database-autonomous_databases&#34;
@@ -4867,7 +4870,8 @@ public final class DatabaseFunctions {
      * ## 
      * 
      * ***
-     * subcategory: &#34;Database&#34;
+     * ## subcategory: &#34;Database&#34;
+     * 
      * layout: &#34;oci&#34;
      * page_title: &#34;Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabases&#34;
      * sidebar_current: &#34;docs-oci-datasource-database-autonomous_databases&#34;

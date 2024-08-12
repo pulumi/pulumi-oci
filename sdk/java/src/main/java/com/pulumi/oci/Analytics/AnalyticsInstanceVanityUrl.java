@@ -182,7 +182,7 @@ public class AnalyticsInstanceVanityUrl extends com.pulumi.resources.CustomResou
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public AnalyticsInstanceVanityUrl(String name) {
+    public AnalyticsInstanceVanityUrl(java.lang.String name) {
         this(name, AnalyticsInstanceVanityUrlArgs.Empty);
     }
     /**
@@ -190,7 +190,7 @@ public class AnalyticsInstanceVanityUrl extends com.pulumi.resources.CustomResou
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public AnalyticsInstanceVanityUrl(String name, AnalyticsInstanceVanityUrlArgs args) {
+    public AnalyticsInstanceVanityUrl(java.lang.String name, AnalyticsInstanceVanityUrlArgs args) {
         this(name, args, null);
     }
     /**
@@ -199,12 +199,12 @@ public class AnalyticsInstanceVanityUrl extends com.pulumi.resources.CustomResou
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public AnalyticsInstanceVanityUrl(String name, AnalyticsInstanceVanityUrlArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Analytics/analyticsInstanceVanityUrl:AnalyticsInstanceVanityUrl", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public AnalyticsInstanceVanityUrl(java.lang.String name, AnalyticsInstanceVanityUrlArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Analytics/analyticsInstanceVanityUrl:AnalyticsInstanceVanityUrl", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private AnalyticsInstanceVanityUrl(String name, Output<String> id, @Nullable AnalyticsInstanceVanityUrlState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Analytics/analyticsInstanceVanityUrl:AnalyticsInstanceVanityUrl", name, state, makeResourceOptions(options, id));
+    private AnalyticsInstanceVanityUrl(java.lang.String name, Output<java.lang.String> id, @Nullable AnalyticsInstanceVanityUrlState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Analytics/analyticsInstanceVanityUrl:AnalyticsInstanceVanityUrl", name, state, makeResourceOptions(options, id), false);
     }
 
     private static AnalyticsInstanceVanityUrlArgs makeArgs(AnalyticsInstanceVanityUrlArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -214,7 +214,7 @@ public class AnalyticsInstanceVanityUrl extends com.pulumi.resources.CustomResou
         return args == null ? AnalyticsInstanceVanityUrlArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .additionalSecretOutputs(List.of(
@@ -234,7 +234,7 @@ public class AnalyticsInstanceVanityUrl extends com.pulumi.resources.CustomResou
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static AnalyticsInstanceVanityUrl get(String name, Output<String> id, @Nullable AnalyticsInstanceVanityUrlState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static AnalyticsInstanceVanityUrl get(java.lang.String name, Output<java.lang.String> id, @Nullable AnalyticsInstanceVanityUrlState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new AnalyticsInstanceVanityUrl(name, id, state, options);
     }
 }

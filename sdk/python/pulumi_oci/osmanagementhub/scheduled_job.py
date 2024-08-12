@@ -746,7 +746,7 @@ class ScheduledJob(pulumi.CustomResource):
                  managed_compartment_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  managed_instance_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  managed_instance_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 operations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ScheduledJobOperationArgs']]]]] = None,
+                 operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ScheduledJobOperationArgs', 'ScheduledJobOperationArgsDict']]]]] = None,
                  recurring_rule: Optional[pulumi.Input[str]] = None,
                  retry_intervals: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
                  schedule_type: Optional[pulumi.Input[str]] = None,
@@ -765,41 +765,41 @@ class ScheduledJob(pulumi.CustomResource):
 
         test_scheduled_job = oci.os_management_hub.ScheduledJob("test_scheduled_job",
             compartment_id=compartment_id,
-            operations=[oci.os_management_hub.ScheduledJobOperationArgs(
-                operation_type=scheduled_job_operations_operation_type,
-                manage_module_streams_details=oci.os_management_hub.ScheduledJobOperationManageModuleStreamsDetailsArgs(
-                    disables=[oci.os_management_hub.ScheduledJobOperationManageModuleStreamsDetailsDisableArgs(
-                        module_name=scheduled_job_operations_manage_module_streams_details_disable_module_name,
-                        stream_name=test_stream["name"],
-                        software_source_id=test_software_source["id"],
-                    )],
-                    enables=[oci.os_management_hub.ScheduledJobOperationManageModuleStreamsDetailsEnableArgs(
-                        module_name=scheduled_job_operations_manage_module_streams_details_enable_module_name,
-                        stream_name=test_stream["name"],
-                        software_source_id=test_software_source["id"],
-                    )],
-                    installs=[oci.os_management_hub.ScheduledJobOperationManageModuleStreamsDetailsInstallArgs(
-                        module_name=scheduled_job_operations_manage_module_streams_details_install_module_name,
-                        profile_name=test_profile["name"],
-                        stream_name=test_stream["name"],
-                        software_source_id=test_software_source["id"],
-                    )],
-                    removes=[oci.os_management_hub.ScheduledJobOperationManageModuleStreamsDetailsRemoveArgs(
-                        module_name=scheduled_job_operations_manage_module_streams_details_remove_module_name,
-                        profile_name=test_profile["name"],
-                        stream_name=test_stream["name"],
-                        software_source_id=test_software_source["id"],
-                    )],
-                ),
-                package_names=scheduled_job_operations_package_names,
-                software_source_ids=scheduled_job_operations_software_source_ids,
-                switch_module_streams_details=oci.os_management_hub.ScheduledJobOperationSwitchModuleStreamsDetailsArgs(
-                    module_name=scheduled_job_operations_switch_module_streams_details_module_name,
-                    stream_name=test_stream["name"],
-                    software_source_id=test_software_source["id"],
-                ),
-                windows_update_names=scheduled_job_operations_windows_update_names,
-            )],
+            operations=[{
+                "operation_type": scheduled_job_operations_operation_type,
+                "manage_module_streams_details": {
+                    "disables": [{
+                        "module_name": scheduled_job_operations_manage_module_streams_details_disable_module_name,
+                        "stream_name": test_stream["name"],
+                        "software_source_id": test_software_source["id"],
+                    }],
+                    "enables": [{
+                        "module_name": scheduled_job_operations_manage_module_streams_details_enable_module_name,
+                        "stream_name": test_stream["name"],
+                        "software_source_id": test_software_source["id"],
+                    }],
+                    "installs": [{
+                        "module_name": scheduled_job_operations_manage_module_streams_details_install_module_name,
+                        "profile_name": test_profile["name"],
+                        "stream_name": test_stream["name"],
+                        "software_source_id": test_software_source["id"],
+                    }],
+                    "removes": [{
+                        "module_name": scheduled_job_operations_manage_module_streams_details_remove_module_name,
+                        "profile_name": test_profile["name"],
+                        "stream_name": test_stream["name"],
+                        "software_source_id": test_software_source["id"],
+                    }],
+                },
+                "package_names": scheduled_job_operations_package_names,
+                "software_source_ids": scheduled_job_operations_software_source_ids,
+                "switch_module_streams_details": {
+                    "module_name": scheduled_job_operations_switch_module_streams_details_module_name,
+                    "stream_name": test_stream["name"],
+                    "software_source_id": test_software_source["id"],
+                },
+                "windows_update_names": scheduled_job_operations_windows_update_names,
+            }],
             schedule_type=scheduled_job_schedule_type,
             time_next_execution=scheduled_job_time_next_execution,
             defined_tags={
@@ -843,7 +843,7 @@ class ScheduledJob(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] managed_compartment_ids: The compartment [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  To apply the job to all compartments in the tenancy, set this to the tenancy OCID (root compartment) and set  isSubcompartmentIncluded to true. A scheduled job can only operate on one type of target, therefore you must  supply either this or managedInstanceIds, or managedInstanceGroupIds, or lifecycleStageIds.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] managed_instance_group_ids: The managed instance group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds, or managedCompartmentIds, or lifecycleStageIds.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] managed_instance_ids: The managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or  managedInstanceGroupIds, or managedCompartmentIds, or lifecycleStageIds.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ScheduledJobOperationArgs']]]] operations: (Updatable) The list of operations this scheduled job needs to perform. A scheduled job supports only one operation type, unless it is one of the following:
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ScheduledJobOperationArgs', 'ScheduledJobOperationArgsDict']]]] operations: (Updatable) The list of operations this scheduled job needs to perform. A scheduled job supports only one operation type, unless it is one of the following:
                * UPDATE_PACKAGES
                * UPDATE_ALL
                * UPDATE_SECURITY
@@ -880,41 +880,41 @@ class ScheduledJob(pulumi.CustomResource):
 
         test_scheduled_job = oci.os_management_hub.ScheduledJob("test_scheduled_job",
             compartment_id=compartment_id,
-            operations=[oci.os_management_hub.ScheduledJobOperationArgs(
-                operation_type=scheduled_job_operations_operation_type,
-                manage_module_streams_details=oci.os_management_hub.ScheduledJobOperationManageModuleStreamsDetailsArgs(
-                    disables=[oci.os_management_hub.ScheduledJobOperationManageModuleStreamsDetailsDisableArgs(
-                        module_name=scheduled_job_operations_manage_module_streams_details_disable_module_name,
-                        stream_name=test_stream["name"],
-                        software_source_id=test_software_source["id"],
-                    )],
-                    enables=[oci.os_management_hub.ScheduledJobOperationManageModuleStreamsDetailsEnableArgs(
-                        module_name=scheduled_job_operations_manage_module_streams_details_enable_module_name,
-                        stream_name=test_stream["name"],
-                        software_source_id=test_software_source["id"],
-                    )],
-                    installs=[oci.os_management_hub.ScheduledJobOperationManageModuleStreamsDetailsInstallArgs(
-                        module_name=scheduled_job_operations_manage_module_streams_details_install_module_name,
-                        profile_name=test_profile["name"],
-                        stream_name=test_stream["name"],
-                        software_source_id=test_software_source["id"],
-                    )],
-                    removes=[oci.os_management_hub.ScheduledJobOperationManageModuleStreamsDetailsRemoveArgs(
-                        module_name=scheduled_job_operations_manage_module_streams_details_remove_module_name,
-                        profile_name=test_profile["name"],
-                        stream_name=test_stream["name"],
-                        software_source_id=test_software_source["id"],
-                    )],
-                ),
-                package_names=scheduled_job_operations_package_names,
-                software_source_ids=scheduled_job_operations_software_source_ids,
-                switch_module_streams_details=oci.os_management_hub.ScheduledJobOperationSwitchModuleStreamsDetailsArgs(
-                    module_name=scheduled_job_operations_switch_module_streams_details_module_name,
-                    stream_name=test_stream["name"],
-                    software_source_id=test_software_source["id"],
-                ),
-                windows_update_names=scheduled_job_operations_windows_update_names,
-            )],
+            operations=[{
+                "operation_type": scheduled_job_operations_operation_type,
+                "manage_module_streams_details": {
+                    "disables": [{
+                        "module_name": scheduled_job_operations_manage_module_streams_details_disable_module_name,
+                        "stream_name": test_stream["name"],
+                        "software_source_id": test_software_source["id"],
+                    }],
+                    "enables": [{
+                        "module_name": scheduled_job_operations_manage_module_streams_details_enable_module_name,
+                        "stream_name": test_stream["name"],
+                        "software_source_id": test_software_source["id"],
+                    }],
+                    "installs": [{
+                        "module_name": scheduled_job_operations_manage_module_streams_details_install_module_name,
+                        "profile_name": test_profile["name"],
+                        "stream_name": test_stream["name"],
+                        "software_source_id": test_software_source["id"],
+                    }],
+                    "removes": [{
+                        "module_name": scheduled_job_operations_manage_module_streams_details_remove_module_name,
+                        "profile_name": test_profile["name"],
+                        "stream_name": test_stream["name"],
+                        "software_source_id": test_software_source["id"],
+                    }],
+                },
+                "package_names": scheduled_job_operations_package_names,
+                "software_source_ids": scheduled_job_operations_software_source_ids,
+                "switch_module_streams_details": {
+                    "module_name": scheduled_job_operations_switch_module_streams_details_module_name,
+                    "stream_name": test_stream["name"],
+                    "software_source_id": test_software_source["id"],
+                },
+                "windows_update_names": scheduled_job_operations_windows_update_names,
+            }],
             schedule_type=scheduled_job_schedule_type,
             time_next_execution=scheduled_job_time_next_execution,
             defined_tags={
@@ -971,7 +971,7 @@ class ScheduledJob(pulumi.CustomResource):
                  managed_compartment_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  managed_instance_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  managed_instance_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 operations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ScheduledJobOperationArgs']]]]] = None,
+                 operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ScheduledJobOperationArgs', 'ScheduledJobOperationArgsDict']]]]] = None,
                  recurring_rule: Optional[pulumi.Input[str]] = None,
                  retry_intervals: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
                  schedule_type: Optional[pulumi.Input[str]] = None,
@@ -1040,7 +1040,7 @@ class ScheduledJob(pulumi.CustomResource):
             managed_compartment_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             managed_instance_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             managed_instance_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            operations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ScheduledJobOperationArgs']]]]] = None,
+            operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ScheduledJobOperationArgs', 'ScheduledJobOperationArgsDict']]]]] = None,
             recurring_rule: Optional[pulumi.Input[str]] = None,
             retry_intervals: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
             schedule_type: Optional[pulumi.Input[str]] = None,
@@ -1071,7 +1071,7 @@ class ScheduledJob(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] managed_compartment_ids: The compartment [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  To apply the job to all compartments in the tenancy, set this to the tenancy OCID (root compartment) and set  isSubcompartmentIncluded to true. A scheduled job can only operate on one type of target, therefore you must  supply either this or managedInstanceIds, or managedInstanceGroupIds, or lifecycleStageIds.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] managed_instance_group_ids: The managed instance group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds, or managedCompartmentIds, or lifecycleStageIds.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] managed_instance_ids: The managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or  managedInstanceGroupIds, or managedCompartmentIds, or lifecycleStageIds.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ScheduledJobOperationArgs']]]] operations: (Updatable) The list of operations this scheduled job needs to perform. A scheduled job supports only one operation type, unless it is one of the following:
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ScheduledJobOperationArgs', 'ScheduledJobOperationArgsDict']]]] operations: (Updatable) The list of operations this scheduled job needs to perform. A scheduled job supports only one operation type, unless it is one of the following:
                * UPDATE_PACKAGES
                * UPDATE_ALL
                * UPDATE_SECURITY

@@ -300,7 +300,7 @@ public class MediaWorkflow extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public MediaWorkflow(String name) {
+    public MediaWorkflow(java.lang.String name) {
         this(name, MediaWorkflowArgs.Empty);
     }
     /**
@@ -308,7 +308,7 @@ public class MediaWorkflow extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public MediaWorkflow(String name, MediaWorkflowArgs args) {
+    public MediaWorkflow(java.lang.String name, MediaWorkflowArgs args) {
         this(name, args, null);
     }
     /**
@@ -317,12 +317,12 @@ public class MediaWorkflow extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public MediaWorkflow(String name, MediaWorkflowArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:MediaServices/mediaWorkflow:MediaWorkflow", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public MediaWorkflow(java.lang.String name, MediaWorkflowArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:MediaServices/mediaWorkflow:MediaWorkflow", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private MediaWorkflow(String name, Output<String> id, @Nullable MediaWorkflowState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:MediaServices/mediaWorkflow:MediaWorkflow", name, state, makeResourceOptions(options, id));
+    private MediaWorkflow(java.lang.String name, Output<java.lang.String> id, @Nullable MediaWorkflowState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:MediaServices/mediaWorkflow:MediaWorkflow", name, state, makeResourceOptions(options, id), false);
     }
 
     private static MediaWorkflowArgs makeArgs(MediaWorkflowArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -332,7 +332,7 @@ public class MediaWorkflow extends com.pulumi.resources.CustomResource {
         return args == null ? MediaWorkflowArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -348,7 +348,7 @@ public class MediaWorkflow extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static MediaWorkflow get(String name, Output<String> id, @Nullable MediaWorkflowState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static MediaWorkflow get(java.lang.String name, Output<java.lang.String> id, @Nullable MediaWorkflowState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new MediaWorkflow(name, id, state, options);
     }
 }

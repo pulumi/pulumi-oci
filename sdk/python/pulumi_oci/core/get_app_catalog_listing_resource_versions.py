@@ -79,7 +79,7 @@ class AwaitableGetAppCatalogListingResourceVersionsResult(GetAppCatalogListingRe
             listing_id=self.listing_id)
 
 
-def get_app_catalog_listing_resource_versions(filters: Optional[Sequence[pulumi.InputType['GetAppCatalogListingResourceVersionsFilterArgs']]] = None,
+def get_app_catalog_listing_resource_versions(filters: Optional[Sequence[Union['GetAppCatalogListingResourceVersionsFilterArgs', 'GetAppCatalogListingResourceVersionsFilterArgsDict']]] = None,
                                               listing_id: Optional[str] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppCatalogListingResourceVersionsResult:
     """
@@ -113,7 +113,7 @@ def get_app_catalog_listing_resource_versions(filters: Optional[Sequence[pulumi.
 
 
 @_utilities.lift_output_func(get_app_catalog_listing_resource_versions)
-def get_app_catalog_listing_resource_versions_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAppCatalogListingResourceVersionsFilterArgs']]]]] = None,
+def get_app_catalog_listing_resource_versions_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAppCatalogListingResourceVersionsFilterArgs', 'GetAppCatalogListingResourceVersionsFilterArgsDict']]]]] = None,
                                                      listing_id: Optional[pulumi.Input[str]] = None,
                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppCatalogListingResourceVersionsResult]:
     """

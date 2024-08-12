@@ -668,7 +668,7 @@ public class DomainsAccountRecoverySetting extends com.pulumi.resources.CustomRe
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DomainsAccountRecoverySetting(String name) {
+    public DomainsAccountRecoverySetting(java.lang.String name) {
         this(name, DomainsAccountRecoverySettingArgs.Empty);
     }
     /**
@@ -676,7 +676,7 @@ public class DomainsAccountRecoverySetting extends com.pulumi.resources.CustomRe
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DomainsAccountRecoverySetting(String name, DomainsAccountRecoverySettingArgs args) {
+    public DomainsAccountRecoverySetting(java.lang.String name, DomainsAccountRecoverySettingArgs args) {
         this(name, args, null);
     }
     /**
@@ -685,12 +685,12 @@ public class DomainsAccountRecoverySetting extends com.pulumi.resources.CustomRe
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DomainsAccountRecoverySetting(String name, DomainsAccountRecoverySettingArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsAccountRecoverySetting:DomainsAccountRecoverySetting", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DomainsAccountRecoverySetting(java.lang.String name, DomainsAccountRecoverySettingArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/domainsAccountRecoverySetting:DomainsAccountRecoverySetting", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DomainsAccountRecoverySetting(String name, Output<String> id, @Nullable DomainsAccountRecoverySettingState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsAccountRecoverySetting:DomainsAccountRecoverySetting", name, state, makeResourceOptions(options, id));
+    private DomainsAccountRecoverySetting(java.lang.String name, Output<java.lang.String> id, @Nullable DomainsAccountRecoverySettingState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/domainsAccountRecoverySetting:DomainsAccountRecoverySetting", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DomainsAccountRecoverySettingArgs makeArgs(DomainsAccountRecoverySettingArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -700,7 +700,7 @@ public class DomainsAccountRecoverySetting extends com.pulumi.resources.CustomRe
         return args == null ? DomainsAccountRecoverySettingArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -716,7 +716,7 @@ public class DomainsAccountRecoverySetting extends com.pulumi.resources.CustomRe
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DomainsAccountRecoverySetting get(String name, Output<String> id, @Nullable DomainsAccountRecoverySettingState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DomainsAccountRecoverySetting get(java.lang.String name, Output<java.lang.String> id, @Nullable DomainsAccountRecoverySettingState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DomainsAccountRecoverySetting(name, id, state, options);
     }
 }

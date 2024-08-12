@@ -125,7 +125,7 @@ public class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement ext
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement(String name) {
+    public ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement(java.lang.String name) {
         this(name, ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementArgs.Empty);
     }
     /**
@@ -133,7 +133,7 @@ public class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement ext
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement(String name, ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementArgs args) {
+    public ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement(java.lang.String name, ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementArgs args) {
         this(name, args, null);
     }
     /**
@@ -142,12 +142,12 @@ public class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement ext
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement(String name, ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseManagement/externalcontainerdatabaseExternalContainerDbmFeaturesManagement:ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement(java.lang.String name, ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DatabaseManagement/externalcontainerdatabaseExternalContainerDbmFeaturesManagement:ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement(String name, Output<String> id, @Nullable ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseManagement/externalcontainerdatabaseExternalContainerDbmFeaturesManagement:ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement", name, state, makeResourceOptions(options, id));
+    private ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement(java.lang.String name, Output<java.lang.String> id, @Nullable ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DatabaseManagement/externalcontainerdatabaseExternalContainerDbmFeaturesManagement:ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementArgs makeArgs(ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -157,7 +157,7 @@ public class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement ext
         return args == null ? ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -173,7 +173,7 @@ public class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement ext
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement get(String name, Output<String> id, @Nullable ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement get(java.lang.String name, Output<java.lang.String> id, @Nullable ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement(name, id, state, options);
     }
 }

@@ -93,7 +93,7 @@ class AwaitableGetExternalDbSystemDiscoveriesResult(GetExternalDbSystemDiscoveri
 
 def get_external_db_system_discoveries(compartment_id: Optional[str] = None,
                                        display_name: Optional[str] = None,
-                                       filters: Optional[Sequence[pulumi.InputType['GetExternalDbSystemDiscoveriesFilterArgs']]] = None,
+                                       filters: Optional[Sequence[Union['GetExternalDbSystemDiscoveriesFilterArgs', 'GetExternalDbSystemDiscoveriesFilterArgsDict']]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalDbSystemDiscoveriesResult:
     """
     This data source provides the list of External Db System Discoveries in Oracle Cloud Infrastructure Database Management service.
@@ -132,7 +132,7 @@ def get_external_db_system_discoveries(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_external_db_system_discoveries)
 def get_external_db_system_discoveries_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                               display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                              filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetExternalDbSystemDiscoveriesFilterArgs']]]]] = None,
+                                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExternalDbSystemDiscoveriesFilterArgs', 'GetExternalDbSystemDiscoveriesFilterArgsDict']]]]] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalDbSystemDiscoveriesResult]:
     """
     This data source provides the list of External Db System Discoveries in Oracle Cloud Infrastructure Database Management service.

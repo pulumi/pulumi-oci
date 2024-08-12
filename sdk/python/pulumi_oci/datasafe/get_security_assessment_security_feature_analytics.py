@@ -106,7 +106,7 @@ class AwaitableGetSecurityAssessmentSecurityFeatureAnalyticsResult(GetSecurityAs
 def get_security_assessment_security_feature_analytics(access_level: Optional[str] = None,
                                                        compartment_id: Optional[str] = None,
                                                        compartment_id_in_subtree: Optional[bool] = None,
-                                                       filters: Optional[Sequence[pulumi.InputType['GetSecurityAssessmentSecurityFeatureAnalyticsFilterArgs']]] = None,
+                                                       filters: Optional[Sequence[Union['GetSecurityAssessmentSecurityFeatureAnalyticsFilterArgs', 'GetSecurityAssessmentSecurityFeatureAnalyticsFilterArgsDict']]] = None,
                                                        target_id: Optional[str] = None,
                                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSecurityAssessmentSecurityFeatureAnalyticsResult:
     """
@@ -162,7 +162,7 @@ def get_security_assessment_security_feature_analytics(access_level: Optional[st
 def get_security_assessment_security_feature_analytics_output(access_level: Optional[pulumi.Input[Optional[str]]] = None,
                                                               compartment_id: Optional[pulumi.Input[str]] = None,
                                                               compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
-                                                              filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetSecurityAssessmentSecurityFeatureAnalyticsFilterArgs']]]]] = None,
+                                                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSecurityAssessmentSecurityFeatureAnalyticsFilterArgs', 'GetSecurityAssessmentSecurityFeatureAnalyticsFilterArgsDict']]]]] = None,
                                                               target_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityAssessmentSecurityFeatureAnalyticsResult]:
     """

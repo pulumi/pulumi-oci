@@ -133,7 +133,7 @@ public class DrgAttachmentsList extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DrgAttachmentsList(String name) {
+    public DrgAttachmentsList(java.lang.String name) {
         this(name, DrgAttachmentsListArgs.Empty);
     }
     /**
@@ -141,7 +141,7 @@ public class DrgAttachmentsList extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DrgAttachmentsList(String name, DrgAttachmentsListArgs args) {
+    public DrgAttachmentsList(java.lang.String name, DrgAttachmentsListArgs args) {
         this(name, args, null);
     }
     /**
@@ -150,12 +150,12 @@ public class DrgAttachmentsList extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DrgAttachmentsList(String name, DrgAttachmentsListArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/drgAttachmentsList:DrgAttachmentsList", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DrgAttachmentsList(java.lang.String name, DrgAttachmentsListArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Core/drgAttachmentsList:DrgAttachmentsList", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DrgAttachmentsList(String name, Output<String> id, @Nullable DrgAttachmentsListState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/drgAttachmentsList:DrgAttachmentsList", name, state, makeResourceOptions(options, id));
+    private DrgAttachmentsList(java.lang.String name, Output<java.lang.String> id, @Nullable DrgAttachmentsListState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Core/drgAttachmentsList:DrgAttachmentsList", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DrgAttachmentsListArgs makeArgs(DrgAttachmentsListArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -165,7 +165,7 @@ public class DrgAttachmentsList extends com.pulumi.resources.CustomResource {
         return args == null ? DrgAttachmentsListArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -181,7 +181,7 @@ public class DrgAttachmentsList extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DrgAttachmentsList get(String name, Output<String> id, @Nullable DrgAttachmentsListState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DrgAttachmentsList get(java.lang.String name, Output<java.lang.String> id, @Nullable DrgAttachmentsListState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DrgAttachmentsList(name, id, state, options);
     }
 }

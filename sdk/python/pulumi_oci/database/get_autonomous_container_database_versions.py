@@ -86,7 +86,7 @@ class AwaitableGetAutonomousContainerDatabaseVersionsResult(GetAutonomousContain
 
 
 def get_autonomous_container_database_versions(compartment_id: Optional[str] = None,
-                                               filters: Optional[Sequence[pulumi.InputType['GetAutonomousContainerDatabaseVersionsFilterArgs']]] = None,
+                                               filters: Optional[Sequence[Union['GetAutonomousContainerDatabaseVersionsFilterArgs', 'GetAutonomousContainerDatabaseVersionsFilterArgsDict']]] = None,
                                                service_component: Optional[str] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousContainerDatabaseVersionsResult:
     """
@@ -125,7 +125,7 @@ def get_autonomous_container_database_versions(compartment_id: Optional[str] = N
 
 @_utilities.lift_output_func(get_autonomous_container_database_versions)
 def get_autonomous_container_database_versions_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                                      filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAutonomousContainerDatabaseVersionsFilterArgs']]]]] = None,
+                                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutonomousContainerDatabaseVersionsFilterArgs', 'GetAutonomousContainerDatabaseVersionsFilterArgsDict']]]]] = None,
                                                       service_component: Optional[pulumi.Input[str]] = None,
                                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousContainerDatabaseVersionsResult]:
     """

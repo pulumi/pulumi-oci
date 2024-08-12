@@ -550,8 +550,8 @@ class Schedule(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  recurrence_details: Optional[pulumi.Input[str]] = None,
                  recurrence_type: Optional[pulumi.Input[str]] = None,
-                 resource_filters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ScheduleResourceFilterArgs']]]]] = None,
-                 resources: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ScheduleResourceArgs']]]]] = None,
+                 resource_filters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ScheduleResourceFilterArgs', 'ScheduleResourceFilterArgsDict']]]]] = None,
+                 resources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ScheduleResourceArgs', 'ScheduleResourceArgsDict']]]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_ends: Optional[pulumi.Input[str]] = None,
                  time_starts: Optional[pulumi.Input[str]] = None,
@@ -580,20 +580,20 @@ class Schedule(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            resource_filters=[oci.resource_scheduler.ScheduleResourceFilterArgs(
-                attribute=schedule_resource_filters_attribute,
-                condition=schedule_resource_filters_condition,
-                should_include_child_compartments=schedule_resource_filters_should_include_child_compartments,
-                values=[oci.resource_scheduler.ScheduleResourceFilterValueArgs(
-                    namespace=schedule_resource_filters_value_namespace,
-                    tag_key=schedule_resource_filters_value_tag_key,
-                    value=schedule_resource_filters_value_value,
-                )],
-            )],
-            resources=[oci.resource_scheduler.ScheduleResourceArgs(
-                id=schedule_resources_id,
-                metadata=schedule_resources_metadata,
-            )],
+            resource_filters=[{
+                "attribute": schedule_resource_filters_attribute,
+                "condition": schedule_resource_filters_condition,
+                "should_include_child_compartments": schedule_resource_filters_should_include_child_compartments,
+                "values": [{
+                    "namespace": schedule_resource_filters_value_namespace,
+                    "tag_key": schedule_resource_filters_value_tag_key,
+                    "value": schedule_resource_filters_value_value,
+                }],
+            }],
+            resources=[{
+                "id": schedule_resources_id,
+                "metadata": schedule_resources_metadata,
+            }],
             time_ends=schedule_time_ends,
             time_starts=schedule_time_starts)
         ```
@@ -616,8 +616,8 @@ class Schedule(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] recurrence_details: (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
         :param pulumi.Input[str] recurrence_type: (Updatable) Type of recurrence of a schedule
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ScheduleResourceFilterArgs']]]] resource_filters: (Updatable) This is a list of resources filters.  The schedule will be applied to resources matching all of them.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ScheduleResourceArgs']]]] resources: (Updatable) This is the list of resources to which the scheduled operation is applied.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ScheduleResourceFilterArgs', 'ScheduleResourceFilterArgsDict']]]] resource_filters: (Updatable) This is a list of resources filters.  The schedule will be applied to resources matching all of them.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ScheduleResourceArgs', 'ScheduleResourceArgsDict']]]] resources: (Updatable) This is the list of resources to which the scheduled operation is applied.
         :param pulumi.Input[str] state: (Updatable) The target state for the Schedule. Could be set to `ACTIVE` or `INACTIVE`. 
                
                
@@ -656,20 +656,20 @@ class Schedule(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            resource_filters=[oci.resource_scheduler.ScheduleResourceFilterArgs(
-                attribute=schedule_resource_filters_attribute,
-                condition=schedule_resource_filters_condition,
-                should_include_child_compartments=schedule_resource_filters_should_include_child_compartments,
-                values=[oci.resource_scheduler.ScheduleResourceFilterValueArgs(
-                    namespace=schedule_resource_filters_value_namespace,
-                    tag_key=schedule_resource_filters_value_tag_key,
-                    value=schedule_resource_filters_value_value,
-                )],
-            )],
-            resources=[oci.resource_scheduler.ScheduleResourceArgs(
-                id=schedule_resources_id,
-                metadata=schedule_resources_metadata,
-            )],
+            resource_filters=[{
+                "attribute": schedule_resource_filters_attribute,
+                "condition": schedule_resource_filters_condition,
+                "should_include_child_compartments": schedule_resource_filters_should_include_child_compartments,
+                "values": [{
+                    "namespace": schedule_resource_filters_value_namespace,
+                    "tag_key": schedule_resource_filters_value_tag_key,
+                    "value": schedule_resource_filters_value_value,
+                }],
+            }],
+            resources=[{
+                "id": schedule_resources_id,
+                "metadata": schedule_resources_metadata,
+            }],
             time_ends=schedule_time_ends,
             time_starts=schedule_time_starts)
         ```
@@ -705,8 +705,8 @@ class Schedule(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  recurrence_details: Optional[pulumi.Input[str]] = None,
                  recurrence_type: Optional[pulumi.Input[str]] = None,
-                 resource_filters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ScheduleResourceFilterArgs']]]]] = None,
-                 resources: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ScheduleResourceArgs']]]]] = None,
+                 resource_filters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ScheduleResourceFilterArgs', 'ScheduleResourceFilterArgsDict']]]]] = None,
+                 resources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ScheduleResourceArgs', 'ScheduleResourceArgsDict']]]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_ends: Optional[pulumi.Input[str]] = None,
                  time_starts: Optional[pulumi.Input[str]] = None,
@@ -763,8 +763,8 @@ class Schedule(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             recurrence_details: Optional[pulumi.Input[str]] = None,
             recurrence_type: Optional[pulumi.Input[str]] = None,
-            resource_filters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ScheduleResourceFilterArgs']]]]] = None,
-            resources: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ScheduleResourceArgs']]]]] = None,
+            resource_filters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ScheduleResourceFilterArgs', 'ScheduleResourceFilterArgsDict']]]]] = None,
+            resources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ScheduleResourceArgs', 'ScheduleResourceArgsDict']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
@@ -788,8 +788,8 @@ class Schedule(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] recurrence_details: (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
         :param pulumi.Input[str] recurrence_type: (Updatable) Type of recurrence of a schedule
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ScheduleResourceFilterArgs']]]] resource_filters: (Updatable) This is a list of resources filters.  The schedule will be applied to resources matching all of them.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ScheduleResourceArgs']]]] resources: (Updatable) This is the list of resources to which the scheduled operation is applied.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ScheduleResourceFilterArgs', 'ScheduleResourceFilterArgsDict']]]] resource_filters: (Updatable) This is a list of resources filters.  The schedule will be applied to resources matching all of them.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ScheduleResourceArgs', 'ScheduleResourceArgsDict']]]] resources: (Updatable) This is the list of resources to which the scheduled operation is applied.
         :param pulumi.Input[str] state: (Updatable) The target state for the Schedule. Could be set to `ACTIVE` or `INACTIVE`. 
                
                

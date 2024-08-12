@@ -225,7 +225,7 @@ public class DrgRouteTable extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DrgRouteTable(String name) {
+    public DrgRouteTable(java.lang.String name) {
         this(name, DrgRouteTableArgs.Empty);
     }
     /**
@@ -233,7 +233,7 @@ public class DrgRouteTable extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DrgRouteTable(String name, DrgRouteTableArgs args) {
+    public DrgRouteTable(java.lang.String name, DrgRouteTableArgs args) {
         this(name, args, null);
     }
     /**
@@ -242,12 +242,12 @@ public class DrgRouteTable extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DrgRouteTable(String name, DrgRouteTableArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/drgRouteTable:DrgRouteTable", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DrgRouteTable(java.lang.String name, DrgRouteTableArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Core/drgRouteTable:DrgRouteTable", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DrgRouteTable(String name, Output<String> id, @Nullable DrgRouteTableState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/drgRouteTable:DrgRouteTable", name, state, makeResourceOptions(options, id));
+    private DrgRouteTable(java.lang.String name, Output<java.lang.String> id, @Nullable DrgRouteTableState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Core/drgRouteTable:DrgRouteTable", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DrgRouteTableArgs makeArgs(DrgRouteTableArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -257,7 +257,7 @@ public class DrgRouteTable extends com.pulumi.resources.CustomResource {
         return args == null ? DrgRouteTableArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -273,7 +273,7 @@ public class DrgRouteTable extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DrgRouteTable get(String name, Output<String> id, @Nullable DrgRouteTableState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DrgRouteTable get(java.lang.String name, Output<java.lang.String> id, @Nullable DrgRouteTableState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DrgRouteTable(name, id, state, options);
     }
 }

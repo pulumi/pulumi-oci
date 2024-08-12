@@ -332,7 +332,7 @@ public class WorkspaceImportRequest extends com.pulumi.resources.CustomResource 
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public WorkspaceImportRequest(String name) {
+    public WorkspaceImportRequest(java.lang.String name) {
         this(name, WorkspaceImportRequestArgs.Empty);
     }
     /**
@@ -340,7 +340,7 @@ public class WorkspaceImportRequest extends com.pulumi.resources.CustomResource 
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public WorkspaceImportRequest(String name, WorkspaceImportRequestArgs args) {
+    public WorkspaceImportRequest(java.lang.String name, WorkspaceImportRequestArgs args) {
         this(name, args, null);
     }
     /**
@@ -349,12 +349,12 @@ public class WorkspaceImportRequest extends com.pulumi.resources.CustomResource 
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public WorkspaceImportRequest(String name, WorkspaceImportRequestArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataIntegration/workspaceImportRequest:WorkspaceImportRequest", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public WorkspaceImportRequest(java.lang.String name, WorkspaceImportRequestArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataIntegration/workspaceImportRequest:WorkspaceImportRequest", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private WorkspaceImportRequest(String name, Output<String> id, @Nullable WorkspaceImportRequestState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataIntegration/workspaceImportRequest:WorkspaceImportRequest", name, state, makeResourceOptions(options, id));
+    private WorkspaceImportRequest(java.lang.String name, Output<java.lang.String> id, @Nullable WorkspaceImportRequestState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataIntegration/workspaceImportRequest:WorkspaceImportRequest", name, state, makeResourceOptions(options, id), false);
     }
 
     private static WorkspaceImportRequestArgs makeArgs(WorkspaceImportRequestArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -364,7 +364,7 @@ public class WorkspaceImportRequest extends com.pulumi.resources.CustomResource 
         return args == null ? WorkspaceImportRequestArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -380,7 +380,7 @@ public class WorkspaceImportRequest extends com.pulumi.resources.CustomResource 
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static WorkspaceImportRequest get(String name, Output<String> id, @Nullable WorkspaceImportRequestState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static WorkspaceImportRequest get(java.lang.String name, Output<java.lang.String> id, @Nullable WorkspaceImportRequestState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new WorkspaceImportRequest(name, id, state, options);
     }
 }

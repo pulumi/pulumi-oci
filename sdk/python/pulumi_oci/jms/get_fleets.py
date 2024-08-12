@@ -115,7 +115,7 @@ class AwaitableGetFleetsResult(GetFleetsResult):
 def get_fleets(compartment_id: Optional[str] = None,
                display_name: Optional[str] = None,
                display_name_contains: Optional[str] = None,
-               filters: Optional[Sequence[pulumi.InputType['GetFleetsFilterArgs']]] = None,
+               filters: Optional[Sequence[Union['GetFleetsFilterArgs', 'GetFleetsFilterArgsDict']]] = None,
                id: Optional[str] = None,
                state: Optional[str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFleetsResult:
@@ -169,7 +169,7 @@ def get_fleets(compartment_id: Optional[str] = None,
 def get_fleets_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                       display_name: Optional[pulumi.Input[Optional[str]]] = None,
                       display_name_contains: Optional[pulumi.Input[Optional[str]]] = None,
-                      filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetFleetsFilterArgs']]]]] = None,
+                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFleetsFilterArgs', 'GetFleetsFilterArgsDict']]]]] = None,
                       id: Optional[pulumi.Input[Optional[str]]] = None,
                       state: Optional[pulumi.Input[Optional[str]]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFleetsResult]:

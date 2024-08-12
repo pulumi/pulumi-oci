@@ -279,7 +279,7 @@ public class Recommendation extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public Recommendation(String name) {
+    public Recommendation(java.lang.String name) {
         this(name, RecommendationArgs.Empty);
     }
     /**
@@ -287,7 +287,7 @@ public class Recommendation extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public Recommendation(String name, RecommendationArgs args) {
+    public Recommendation(java.lang.String name, RecommendationArgs args) {
         this(name, args, null);
     }
     /**
@@ -296,12 +296,12 @@ public class Recommendation extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public Recommendation(String name, RecommendationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Optimizer/recommendation:Recommendation", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public Recommendation(java.lang.String name, RecommendationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Optimizer/recommendation:Recommendation", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private Recommendation(String name, Output<String> id, @Nullable RecommendationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Optimizer/recommendation:Recommendation", name, state, makeResourceOptions(options, id));
+    private Recommendation(java.lang.String name, Output<java.lang.String> id, @Nullable RecommendationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Optimizer/recommendation:Recommendation", name, state, makeResourceOptions(options, id), false);
     }
 
     private static RecommendationArgs makeArgs(RecommendationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -311,7 +311,7 @@ public class Recommendation extends com.pulumi.resources.CustomResource {
         return args == null ? RecommendationArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -327,7 +327,7 @@ public class Recommendation extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static Recommendation get(String name, Output<String> id, @Nullable RecommendationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static Recommendation get(java.lang.String name, Output<java.lang.String> id, @Nullable RecommendationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new Recommendation(name, id, state, options);
     }
 }

@@ -286,7 +286,7 @@ public class Session extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public Session(String name) {
+    public Session(java.lang.String name) {
         this(name, SessionArgs.Empty);
     }
     /**
@@ -294,7 +294,7 @@ public class Session extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public Session(String name, SessionArgs args) {
+    public Session(java.lang.String name, SessionArgs args) {
         this(name, args, null);
     }
     /**
@@ -303,12 +303,12 @@ public class Session extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public Session(String name, SessionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Bastion/session:Session", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public Session(java.lang.String name, SessionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Bastion/session:Session", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private Session(String name, Output<String> id, @Nullable SessionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Bastion/session:Session", name, state, makeResourceOptions(options, id));
+    private Session(java.lang.String name, Output<java.lang.String> id, @Nullable SessionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Bastion/session:Session", name, state, makeResourceOptions(options, id), false);
     }
 
     private static SessionArgs makeArgs(SessionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -318,7 +318,7 @@ public class Session extends com.pulumi.resources.CustomResource {
         return args == null ? SessionArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -334,7 +334,7 @@ public class Session extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static Session get(String name, Output<String> id, @Nullable SessionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static Session get(java.lang.String name, Output<java.lang.String> id, @Nullable SessionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new Session(name, id, state, options);
     }
 }

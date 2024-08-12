@@ -130,7 +130,7 @@ class ManagedInstanceGroupDetachSoftwareSourcesManagement(pulumi.CustomResource)
                  opts: Optional[pulumi.ResourceOptions] = None,
                  managed_instance_group_id: Optional[pulumi.Input[str]] = None,
                  software_sources: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 work_request_details: Optional[pulumi.Input[pulumi.InputType['ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs']]] = None,
+                 work_request_details: Optional[pulumi.Input[Union['ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Managed Instance Group Detach Software Sources Management resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -146,10 +146,10 @@ class ManagedInstanceGroupDetachSoftwareSourcesManagement(pulumi.CustomResource)
         test_managed_instance_group_detach_software_sources_management = oci.os_management_hub.ManagedInstanceGroupDetachSoftwareSourcesManagement("test_managed_instance_group_detach_software_sources_management",
             managed_instance_group_id=test_managed_instance_group["id"],
             software_sources=managed_instance_group_detach_software_sources_management_software_sources,
-            work_request_details=oci.os_management_hub.ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs(
-                description=managed_instance_group_detach_software_sources_management_work_request_details_description,
-                display_name=managed_instance_group_detach_software_sources_management_work_request_details_display_name,
-            ))
+            work_request_details={
+                "description": managed_instance_group_detach_software_sources_management_work_request_details_description,
+                "display_name": managed_instance_group_detach_software_sources_management_work_request_details_display_name,
+            })
         ```
 
         ## Import
@@ -164,7 +164,7 @@ class ManagedInstanceGroupDetachSoftwareSourcesManagement(pulumi.CustomResource)
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] software_sources: List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to detach from the group.
-        :param pulumi.Input[pulumi.InputType['ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs']] work_request_details: Provides the name and description of the job.
+        :param pulumi.Input[Union['ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgsDict']] work_request_details: Provides the name and description of the job.
         """
         ...
     @overload
@@ -186,10 +186,10 @@ class ManagedInstanceGroupDetachSoftwareSourcesManagement(pulumi.CustomResource)
         test_managed_instance_group_detach_software_sources_management = oci.os_management_hub.ManagedInstanceGroupDetachSoftwareSourcesManagement("test_managed_instance_group_detach_software_sources_management",
             managed_instance_group_id=test_managed_instance_group["id"],
             software_sources=managed_instance_group_detach_software_sources_management_software_sources,
-            work_request_details=oci.os_management_hub.ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs(
-                description=managed_instance_group_detach_software_sources_management_work_request_details_description,
-                display_name=managed_instance_group_detach_software_sources_management_work_request_details_display_name,
-            ))
+            work_request_details={
+                "description": managed_instance_group_detach_software_sources_management_work_request_details_description,
+                "display_name": managed_instance_group_detach_software_sources_management_work_request_details_display_name,
+            })
         ```
 
         ## Import
@@ -217,7 +217,7 @@ class ManagedInstanceGroupDetachSoftwareSourcesManagement(pulumi.CustomResource)
                  opts: Optional[pulumi.ResourceOptions] = None,
                  managed_instance_group_id: Optional[pulumi.Input[str]] = None,
                  software_sources: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 work_request_details: Optional[pulumi.Input[pulumi.InputType['ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs']]] = None,
+                 work_request_details: Optional[pulumi.Input[Union['ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -246,7 +246,7 @@ class ManagedInstanceGroupDetachSoftwareSourcesManagement(pulumi.CustomResource)
             opts: Optional[pulumi.ResourceOptions] = None,
             managed_instance_group_id: Optional[pulumi.Input[str]] = None,
             software_sources: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            work_request_details: Optional[pulumi.Input[pulumi.InputType['ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs']]] = None) -> 'ManagedInstanceGroupDetachSoftwareSourcesManagement':
+            work_request_details: Optional[pulumi.Input[Union['ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgsDict']]] = None) -> 'ManagedInstanceGroupDetachSoftwareSourcesManagement':
         """
         Get an existing ManagedInstanceGroupDetachSoftwareSourcesManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -256,7 +256,7 @@ class ManagedInstanceGroupDetachSoftwareSourcesManagement(pulumi.CustomResource)
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] software_sources: List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to detach from the group.
-        :param pulumi.Input[pulumi.InputType['ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs']] work_request_details: Provides the name and description of the job.
+        :param pulumi.Input[Union['ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgsDict']] work_request_details: Provides the name and description of the job.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

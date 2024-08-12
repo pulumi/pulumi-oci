@@ -100,7 +100,7 @@ class AwaitableGetDbCredentialsResult(GetDbCredentialsResult):
             user_id=self.user_id)
 
 
-def get_db_credentials(filters: Optional[Sequence[pulumi.InputType['GetDbCredentialsFilterArgs']]] = None,
+def get_db_credentials(filters: Optional[Sequence[Union['GetDbCredentialsFilterArgs', 'GetDbCredentialsFilterArgsDict']]] = None,
                        name: Optional[str] = None,
                        state: Optional[str] = None,
                        user_id: Optional[str] = None,
@@ -144,7 +144,7 @@ def get_db_credentials(filters: Optional[Sequence[pulumi.InputType['GetDbCredent
 
 
 @_utilities.lift_output_func(get_db_credentials)
-def get_db_credentials_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDbCredentialsFilterArgs']]]]] = None,
+def get_db_credentials_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbCredentialsFilterArgs', 'GetDbCredentialsFilterArgsDict']]]]] = None,
                               name: Optional[pulumi.Input[Optional[str]]] = None,
                               state: Optional[pulumi.Input[Optional[str]]] = None,
                               user_id: Optional[pulumi.Input[str]] = None,

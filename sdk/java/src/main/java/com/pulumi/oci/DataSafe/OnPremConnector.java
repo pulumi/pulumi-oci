@@ -235,7 +235,7 @@ public class OnPremConnector extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public OnPremConnector(String name) {
+    public OnPremConnector(java.lang.String name) {
         this(name, OnPremConnectorArgs.Empty);
     }
     /**
@@ -243,7 +243,7 @@ public class OnPremConnector extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public OnPremConnector(String name, OnPremConnectorArgs args) {
+    public OnPremConnector(java.lang.String name, OnPremConnectorArgs args) {
         this(name, args, null);
     }
     /**
@@ -252,12 +252,12 @@ public class OnPremConnector extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public OnPremConnector(String name, OnPremConnectorArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/onPremConnector:OnPremConnector", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public OnPremConnector(java.lang.String name, OnPremConnectorArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataSafe/onPremConnector:OnPremConnector", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private OnPremConnector(String name, Output<String> id, @Nullable OnPremConnectorState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/onPremConnector:OnPremConnector", name, state, makeResourceOptions(options, id));
+    private OnPremConnector(java.lang.String name, Output<java.lang.String> id, @Nullable OnPremConnectorState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataSafe/onPremConnector:OnPremConnector", name, state, makeResourceOptions(options, id), false);
     }
 
     private static OnPremConnectorArgs makeArgs(OnPremConnectorArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -267,7 +267,7 @@ public class OnPremConnector extends com.pulumi.resources.CustomResource {
         return args == null ? OnPremConnectorArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -283,7 +283,7 @@ public class OnPremConnector extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static OnPremConnector get(String name, Output<String> id, @Nullable OnPremConnectorState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static OnPremConnector get(java.lang.String name, Output<java.lang.String> id, @Nullable OnPremConnectorState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new OnPremConnector(name, id, state, options);
     }
 }

@@ -177,7 +177,7 @@ class BdsInstancePatchAction(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  bds_instance_id: Optional[pulumi.Input[str]] = None,
                  cluster_admin_password: Optional[pulumi.Input[str]] = None,
-                 patching_config: Optional[pulumi.Input[pulumi.InputType['BdsInstancePatchActionPatchingConfigArgs']]] = None,
+                 patching_config: Optional[pulumi.Input[Union['BdsInstancePatchActionPatchingConfigArgs', 'BdsInstancePatchActionPatchingConfigArgsDict']]] = None,
                  version: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -195,12 +195,12 @@ class BdsInstancePatchAction(pulumi.CustomResource):
             bds_instance_id=test_bds_instance["id"],
             cluster_admin_password=bds_instance_patch_action_cluster_admin_password,
             version=bds_instance_patch_action_version,
-            patching_config=oci.big_data_service.BdsInstancePatchActionPatchingConfigArgs(
-                patching_config_strategy=bds_instance_patch_action_patching_config_patching_config_strategy,
-                batch_size=bds_instance_patch_action_patching_config_batch_size,
-                wait_time_between_batch_in_seconds=bds_instance_patch_action_patching_config_wait_time_between_batch_in_seconds,
-                wait_time_between_domain_in_seconds=bds_instance_patch_action_patching_config_wait_time_between_domain_in_seconds,
-            ))
+            patching_config={
+                "patching_config_strategy": bds_instance_patch_action_patching_config_patching_config_strategy,
+                "batch_size": bds_instance_patch_action_patching_config_batch_size,
+                "wait_time_between_batch_in_seconds": bds_instance_patch_action_patching_config_wait_time_between_batch_in_seconds,
+                "wait_time_between_domain_in_seconds": bds_instance_patch_action_patching_config_wait_time_between_domain_in_seconds,
+            })
         ```
 
         ## Import
@@ -211,7 +211,7 @@ class BdsInstancePatchAction(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] bds_instance_id: The OCID of the cluster.
         :param pulumi.Input[str] cluster_admin_password: Base-64 encoded password for the cluster admin user.
-        :param pulumi.Input[pulumi.InputType['BdsInstancePatchActionPatchingConfigArgs']] patching_config: Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
+        :param pulumi.Input[Union['BdsInstancePatchActionPatchingConfigArgs', 'BdsInstancePatchActionPatchingConfigArgsDict']] patching_config: Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
         :param pulumi.Input[str] version: The version of the patch to be installed.
                
                
@@ -239,12 +239,12 @@ class BdsInstancePatchAction(pulumi.CustomResource):
             bds_instance_id=test_bds_instance["id"],
             cluster_admin_password=bds_instance_patch_action_cluster_admin_password,
             version=bds_instance_patch_action_version,
-            patching_config=oci.big_data_service.BdsInstancePatchActionPatchingConfigArgs(
-                patching_config_strategy=bds_instance_patch_action_patching_config_patching_config_strategy,
-                batch_size=bds_instance_patch_action_patching_config_batch_size,
-                wait_time_between_batch_in_seconds=bds_instance_patch_action_patching_config_wait_time_between_batch_in_seconds,
-                wait_time_between_domain_in_seconds=bds_instance_patch_action_patching_config_wait_time_between_domain_in_seconds,
-            ))
+            patching_config={
+                "patching_config_strategy": bds_instance_patch_action_patching_config_patching_config_strategy,
+                "batch_size": bds_instance_patch_action_patching_config_batch_size,
+                "wait_time_between_batch_in_seconds": bds_instance_patch_action_patching_config_wait_time_between_batch_in_seconds,
+                "wait_time_between_domain_in_seconds": bds_instance_patch_action_patching_config_wait_time_between_domain_in_seconds,
+            })
         ```
 
         ## Import
@@ -268,7 +268,7 @@ class BdsInstancePatchAction(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  bds_instance_id: Optional[pulumi.Input[str]] = None,
                  cluster_admin_password: Optional[pulumi.Input[str]] = None,
-                 patching_config: Optional[pulumi.Input[pulumi.InputType['BdsInstancePatchActionPatchingConfigArgs']]] = None,
+                 patching_config: Optional[pulumi.Input[Union['BdsInstancePatchActionPatchingConfigArgs', 'BdsInstancePatchActionPatchingConfigArgsDict']]] = None,
                  version: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -303,7 +303,7 @@ class BdsInstancePatchAction(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             bds_instance_id: Optional[pulumi.Input[str]] = None,
             cluster_admin_password: Optional[pulumi.Input[str]] = None,
-            patching_config: Optional[pulumi.Input[pulumi.InputType['BdsInstancePatchActionPatchingConfigArgs']]] = None,
+            patching_config: Optional[pulumi.Input[Union['BdsInstancePatchActionPatchingConfigArgs', 'BdsInstancePatchActionPatchingConfigArgsDict']]] = None,
             version: Optional[pulumi.Input[str]] = None) -> 'BdsInstancePatchAction':
         """
         Get an existing BdsInstancePatchAction resource's state with the given name, id, and optional extra
@@ -314,7 +314,7 @@ class BdsInstancePatchAction(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] bds_instance_id: The OCID of the cluster.
         :param pulumi.Input[str] cluster_admin_password: Base-64 encoded password for the cluster admin user.
-        :param pulumi.Input[pulumi.InputType['BdsInstancePatchActionPatchingConfigArgs']] patching_config: Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
+        :param pulumi.Input[Union['BdsInstancePatchActionPatchingConfigArgs', 'BdsInstancePatchActionPatchingConfigArgsDict']] patching_config: Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
         :param pulumi.Input[str] version: The version of the patch to be installed.
                
                

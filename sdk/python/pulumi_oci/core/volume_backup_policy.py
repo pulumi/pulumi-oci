@@ -246,7 +246,7 @@ class VolumeBackupPolicy(pulumi.CustomResource):
                  destination_region: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 schedules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VolumeBackupPolicyScheduleArgs']]]]] = None,
+                 schedules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VolumeBackupPolicyScheduleArgs', 'VolumeBackupPolicyScheduleArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Volume Backup Policy resource in Oracle Cloud Infrastructure Core service.
@@ -272,18 +272,18 @@ class VolumeBackupPolicy(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            schedules=[oci.core.VolumeBackupPolicyScheduleArgs(
-                backup_type=volume_backup_policy_schedules_backup_type,
-                period=volume_backup_policy_schedules_period,
-                retention_seconds=volume_backup_policy_schedules_retention_seconds,
-                day_of_month=volume_backup_policy_schedules_day_of_month,
-                day_of_week=volume_backup_policy_schedules_day_of_week,
-                hour_of_day=volume_backup_policy_schedules_hour_of_day,
-                month=volume_backup_policy_schedules_month,
-                offset_seconds=volume_backup_policy_schedules_offset_seconds,
-                offset_type=volume_backup_policy_schedules_offset_type,
-                time_zone=volume_backup_policy_schedules_time_zone,
-            )])
+            schedules=[{
+                "backup_type": volume_backup_policy_schedules_backup_type,
+                "period": volume_backup_policy_schedules_period,
+                "retention_seconds": volume_backup_policy_schedules_retention_seconds,
+                "day_of_month": volume_backup_policy_schedules_day_of_month,
+                "day_of_week": volume_backup_policy_schedules_day_of_week,
+                "hour_of_day": volume_backup_policy_schedules_hour_of_day,
+                "month": volume_backup_policy_schedules_month,
+                "offset_seconds": volume_backup_policy_schedules_offset_seconds,
+                "offset_type": volume_backup_policy_schedules_offset_type,
+                "time_zone": volume_backup_policy_schedules_time_zone,
+            }])
         ```
 
         ## Import
@@ -301,7 +301,7 @@ class VolumeBackupPolicy(pulumi.CustomResource):
         :param pulumi.Input[str] destination_region: (Updatable) The paired destination region for copying scheduled backups to. Example: `us-ashburn-1`. See [Region Pairs](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#RegionPairs) for details about paired regions.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VolumeBackupPolicyScheduleArgs']]]] schedules: (Updatable) The collection of schedules for the volume backup policy. See see [Schedules](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#schedules) in [Policy-Based Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm) for more information.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VolumeBackupPolicyScheduleArgs', 'VolumeBackupPolicyScheduleArgsDict']]]] schedules: (Updatable) The collection of schedules for the volume backup policy. See see [Schedules](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#schedules) in [Policy-Based Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm) for more information.
         """
         ...
     @overload
@@ -333,18 +333,18 @@ class VolumeBackupPolicy(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            schedules=[oci.core.VolumeBackupPolicyScheduleArgs(
-                backup_type=volume_backup_policy_schedules_backup_type,
-                period=volume_backup_policy_schedules_period,
-                retention_seconds=volume_backup_policy_schedules_retention_seconds,
-                day_of_month=volume_backup_policy_schedules_day_of_month,
-                day_of_week=volume_backup_policy_schedules_day_of_week,
-                hour_of_day=volume_backup_policy_schedules_hour_of_day,
-                month=volume_backup_policy_schedules_month,
-                offset_seconds=volume_backup_policy_schedules_offset_seconds,
-                offset_type=volume_backup_policy_schedules_offset_type,
-                time_zone=volume_backup_policy_schedules_time_zone,
-            )])
+            schedules=[{
+                "backup_type": volume_backup_policy_schedules_backup_type,
+                "period": volume_backup_policy_schedules_period,
+                "retention_seconds": volume_backup_policy_schedules_retention_seconds,
+                "day_of_month": volume_backup_policy_schedules_day_of_month,
+                "day_of_week": volume_backup_policy_schedules_day_of_week,
+                "hour_of_day": volume_backup_policy_schedules_hour_of_day,
+                "month": volume_backup_policy_schedules_month,
+                "offset_seconds": volume_backup_policy_schedules_offset_seconds,
+                "offset_type": volume_backup_policy_schedules_offset_type,
+                "time_zone": volume_backup_policy_schedules_time_zone,
+            }])
         ```
 
         ## Import
@@ -375,7 +375,7 @@ class VolumeBackupPolicy(pulumi.CustomResource):
                  destination_region: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 schedules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VolumeBackupPolicyScheduleArgs']]]]] = None,
+                 schedules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VolumeBackupPolicyScheduleArgs', 'VolumeBackupPolicyScheduleArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -409,7 +409,7 @@ class VolumeBackupPolicy(pulumi.CustomResource):
             destination_region: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            schedules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VolumeBackupPolicyScheduleArgs']]]]] = None,
+            schedules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VolumeBackupPolicyScheduleArgs', 'VolumeBackupPolicyScheduleArgsDict']]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None) -> 'VolumeBackupPolicy':
         """
         Get an existing VolumeBackupPolicy resource's state with the given name, id, and optional extra
@@ -423,7 +423,7 @@ class VolumeBackupPolicy(pulumi.CustomResource):
         :param pulumi.Input[str] destination_region: (Updatable) The paired destination region for copying scheduled backups to. Example: `us-ashburn-1`. See [Region Pairs](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#RegionPairs) for details about paired regions.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VolumeBackupPolicyScheduleArgs']]]] schedules: (Updatable) The collection of schedules for the volume backup policy. See see [Schedules](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#schedules) in [Policy-Based Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm) for more information.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VolumeBackupPolicyScheduleArgs', 'VolumeBackupPolicyScheduleArgsDict']]]] schedules: (Updatable) The collection of schedules for the volume backup policy. See see [Schedules](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#schedules) in [Policy-Based Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm) for more information.
         :param pulumi.Input[str] time_created: The date and time the volume backup policy was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

@@ -1036,7 +1036,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DeployStage(String name) {
+    public DeployStage(java.lang.String name) {
         this(name, DeployStageArgs.Empty);
     }
     /**
@@ -1044,7 +1044,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DeployStage(String name, DeployStageArgs args) {
+    public DeployStage(java.lang.String name, DeployStageArgs args) {
         this(name, args, null);
     }
     /**
@@ -1053,12 +1053,12 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DeployStage(String name, DeployStageArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DevOps/deployStage:DeployStage", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DeployStage(java.lang.String name, DeployStageArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DevOps/deployStage:DeployStage", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DeployStage(String name, Output<String> id, @Nullable DeployStageState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DevOps/deployStage:DeployStage", name, state, makeResourceOptions(options, id));
+    private DeployStage(java.lang.String name, Output<java.lang.String> id, @Nullable DeployStageState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DevOps/deployStage:DeployStage", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DeployStageArgs makeArgs(DeployStageArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -1068,7 +1068,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
         return args == null ? DeployStageArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -1084,7 +1084,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DeployStage get(String name, Output<String> id, @Nullable DeployStageState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DeployStage get(java.lang.String name, Output<java.lang.String> id, @Nullable DeployStageState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DeployStage(name, id, state, options);
     }
 }

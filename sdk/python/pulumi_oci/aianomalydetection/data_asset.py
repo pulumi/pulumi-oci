@@ -368,7 +368,7 @@ class DataAsset(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 data_source_details: Optional[pulumi.Input[pulumi.InputType['DataAssetDataSourceDetailsArgs']]] = None,
+                 data_source_details: Optional[pulumi.Input[Union['DataAssetDataSourceDetailsArgs', 'DataAssetDataSourceDetailsArgsDict']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -389,34 +389,34 @@ class DataAsset(pulumi.CustomResource):
 
         test_data_asset = oci.ai_anomaly_detection.DataAsset("test_data_asset",
             compartment_id=compartment_id,
-            data_source_details=oci.ai_anomaly_detection.DataAssetDataSourceDetailsArgs(
-                data_source_type=data_asset_data_source_details_data_source_type,
-                atp_password_secret_id=test_secret["id"],
-                atp_user_name=test_user["name"],
-                bucket=data_asset_data_source_details_bucket,
-                cwallet_file_secret_id=test_secret["id"],
-                database_name=test_database["name"],
-                ewallet_file_secret_id=test_secret["id"],
-                key_store_file_secret_id=test_secret["id"],
-                measurement_name=data_asset_data_source_details_measurement_name,
-                namespace=data_asset_data_source_details_namespace,
-                object=data_asset_data_source_details_object,
-                ojdbc_file_secret_id=test_secret["id"],
-                password_secret_id=test_secret["id"],
-                table_name=test_table["name"],
-                tnsnames_file_secret_id=test_secret["id"],
-                truststore_file_secret_id=test_secret["id"],
-                url=data_asset_data_source_details_url,
-                user_name=test_user["name"],
-                version_specific_details=oci.ai_anomaly_detection.DataAssetDataSourceDetailsVersionSpecificDetailsArgs(
-                    influx_version=data_asset_data_source_details_version_specific_details_influx_version,
-                    bucket=data_asset_data_source_details_version_specific_details_bucket,
-                    database_name=test_database["name"],
-                    organization_name=data_asset_data_source_details_version_specific_details_organization_name,
-                    retention_policy_name=test_policy["name"],
-                ),
-                wallet_password_secret_id=test_secret["id"],
-            ),
+            data_source_details={
+                "data_source_type": data_asset_data_source_details_data_source_type,
+                "atp_password_secret_id": test_secret["id"],
+                "atp_user_name": test_user["name"],
+                "bucket": data_asset_data_source_details_bucket,
+                "cwallet_file_secret_id": test_secret["id"],
+                "database_name": test_database["name"],
+                "ewallet_file_secret_id": test_secret["id"],
+                "key_store_file_secret_id": test_secret["id"],
+                "measurement_name": data_asset_data_source_details_measurement_name,
+                "namespace": data_asset_data_source_details_namespace,
+                "object": data_asset_data_source_details_object,
+                "ojdbc_file_secret_id": test_secret["id"],
+                "password_secret_id": test_secret["id"],
+                "table_name": test_table["name"],
+                "tnsnames_file_secret_id": test_secret["id"],
+                "truststore_file_secret_id": test_secret["id"],
+                "url": data_asset_data_source_details_url,
+                "user_name": test_user["name"],
+                "version_specific_details": {
+                    "influx_version": data_asset_data_source_details_version_specific_details_influx_version,
+                    "bucket": data_asset_data_source_details_version_specific_details_bucket,
+                    "database_name": test_database["name"],
+                    "organization_name": data_asset_data_source_details_version_specific_details_organization_name,
+                    "retention_policy_name": test_policy["name"],
+                },
+                "wallet_password_secret_id": test_secret["id"],
+            },
             project_id=test_project["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -440,7 +440,7 @@ class DataAsset(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID for the data asset's compartment.
-        :param pulumi.Input[pulumi.InputType['DataAssetDataSourceDetailsArgs']] data_source_details: Possible data sources
+        :param pulumi.Input[Union['DataAssetDataSourceDetailsArgs', 'DataAssetDataSourceDetailsArgsDict']] data_source_details: Possible data sources
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) A short description of the Ai data asset
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
@@ -471,34 +471,34 @@ class DataAsset(pulumi.CustomResource):
 
         test_data_asset = oci.ai_anomaly_detection.DataAsset("test_data_asset",
             compartment_id=compartment_id,
-            data_source_details=oci.ai_anomaly_detection.DataAssetDataSourceDetailsArgs(
-                data_source_type=data_asset_data_source_details_data_source_type,
-                atp_password_secret_id=test_secret["id"],
-                atp_user_name=test_user["name"],
-                bucket=data_asset_data_source_details_bucket,
-                cwallet_file_secret_id=test_secret["id"],
-                database_name=test_database["name"],
-                ewallet_file_secret_id=test_secret["id"],
-                key_store_file_secret_id=test_secret["id"],
-                measurement_name=data_asset_data_source_details_measurement_name,
-                namespace=data_asset_data_source_details_namespace,
-                object=data_asset_data_source_details_object,
-                ojdbc_file_secret_id=test_secret["id"],
-                password_secret_id=test_secret["id"],
-                table_name=test_table["name"],
-                tnsnames_file_secret_id=test_secret["id"],
-                truststore_file_secret_id=test_secret["id"],
-                url=data_asset_data_source_details_url,
-                user_name=test_user["name"],
-                version_specific_details=oci.ai_anomaly_detection.DataAssetDataSourceDetailsVersionSpecificDetailsArgs(
-                    influx_version=data_asset_data_source_details_version_specific_details_influx_version,
-                    bucket=data_asset_data_source_details_version_specific_details_bucket,
-                    database_name=test_database["name"],
-                    organization_name=data_asset_data_source_details_version_specific_details_organization_name,
-                    retention_policy_name=test_policy["name"],
-                ),
-                wallet_password_secret_id=test_secret["id"],
-            ),
+            data_source_details={
+                "data_source_type": data_asset_data_source_details_data_source_type,
+                "atp_password_secret_id": test_secret["id"],
+                "atp_user_name": test_user["name"],
+                "bucket": data_asset_data_source_details_bucket,
+                "cwallet_file_secret_id": test_secret["id"],
+                "database_name": test_database["name"],
+                "ewallet_file_secret_id": test_secret["id"],
+                "key_store_file_secret_id": test_secret["id"],
+                "measurement_name": data_asset_data_source_details_measurement_name,
+                "namespace": data_asset_data_source_details_namespace,
+                "object": data_asset_data_source_details_object,
+                "ojdbc_file_secret_id": test_secret["id"],
+                "password_secret_id": test_secret["id"],
+                "table_name": test_table["name"],
+                "tnsnames_file_secret_id": test_secret["id"],
+                "truststore_file_secret_id": test_secret["id"],
+                "url": data_asset_data_source_details_url,
+                "user_name": test_user["name"],
+                "version_specific_details": {
+                    "influx_version": data_asset_data_source_details_version_specific_details_influx_version,
+                    "bucket": data_asset_data_source_details_version_specific_details_bucket,
+                    "database_name": test_database["name"],
+                    "organization_name": data_asset_data_source_details_version_specific_details_organization_name,
+                    "retention_policy_name": test_policy["name"],
+                },
+                "wallet_password_secret_id": test_secret["id"],
+            },
             project_id=test_project["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -535,7 +535,7 @@ class DataAsset(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 data_source_details: Optional[pulumi.Input[pulumi.InputType['DataAssetDataSourceDetailsArgs']]] = None,
+                 data_source_details: Optional[pulumi.Input[Union['DataAssetDataSourceDetailsArgs', 'DataAssetDataSourceDetailsArgsDict']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -580,7 +580,7 @@ class DataAsset(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            data_source_details: Optional[pulumi.Input[pulumi.InputType['DataAssetDataSourceDetailsArgs']]] = None,
+            data_source_details: Optional[pulumi.Input[Union['DataAssetDataSourceDetailsArgs', 'DataAssetDataSourceDetailsArgsDict']]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
@@ -599,7 +599,7 @@ class DataAsset(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID for the data asset's compartment.
-        :param pulumi.Input[pulumi.InputType['DataAssetDataSourceDetailsArgs']] data_source_details: Possible data sources
+        :param pulumi.Input[Union['DataAssetDataSourceDetailsArgs', 'DataAssetDataSourceDetailsArgsDict']] data_source_details: Possible data sources
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) A short description of the Ai data asset
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.

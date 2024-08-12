@@ -400,7 +400,7 @@ public class OnPremiseVantagePointWorker extends com.pulumi.resources.CustomReso
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public OnPremiseVantagePointWorker(String name) {
+    public OnPremiseVantagePointWorker(java.lang.String name) {
         this(name, OnPremiseVantagePointWorkerArgs.Empty);
     }
     /**
@@ -408,7 +408,7 @@ public class OnPremiseVantagePointWorker extends com.pulumi.resources.CustomReso
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public OnPremiseVantagePointWorker(String name, OnPremiseVantagePointWorkerArgs args) {
+    public OnPremiseVantagePointWorker(java.lang.String name, OnPremiseVantagePointWorkerArgs args) {
         this(name, args, null);
     }
     /**
@@ -417,12 +417,12 @@ public class OnPremiseVantagePointWorker extends com.pulumi.resources.CustomReso
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public OnPremiseVantagePointWorker(String name, OnPremiseVantagePointWorkerArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:ApmSynthetics/onPremiseVantagePointWorker:OnPremiseVantagePointWorker", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public OnPremiseVantagePointWorker(java.lang.String name, OnPremiseVantagePointWorkerArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:ApmSynthetics/onPremiseVantagePointWorker:OnPremiseVantagePointWorker", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private OnPremiseVantagePointWorker(String name, Output<String> id, @Nullable OnPremiseVantagePointWorkerState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:ApmSynthetics/onPremiseVantagePointWorker:OnPremiseVantagePointWorker", name, state, makeResourceOptions(options, id));
+    private OnPremiseVantagePointWorker(java.lang.String name, Output<java.lang.String> id, @Nullable OnPremiseVantagePointWorkerState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:ApmSynthetics/onPremiseVantagePointWorker:OnPremiseVantagePointWorker", name, state, makeResourceOptions(options, id), false);
     }
 
     private static OnPremiseVantagePointWorkerArgs makeArgs(OnPremiseVantagePointWorkerArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -432,7 +432,7 @@ public class OnPremiseVantagePointWorker extends com.pulumi.resources.CustomReso
         return args == null ? OnPremiseVantagePointWorkerArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -448,7 +448,7 @@ public class OnPremiseVantagePointWorker extends com.pulumi.resources.CustomReso
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static OnPremiseVantagePointWorker get(String name, Output<String> id, @Nullable OnPremiseVantagePointWorkerState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static OnPremiseVantagePointWorker get(java.lang.String name, Output<java.lang.String> id, @Nullable OnPremiseVantagePointWorkerState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new OnPremiseVantagePointWorker(name, id, state, options);
     }
 }

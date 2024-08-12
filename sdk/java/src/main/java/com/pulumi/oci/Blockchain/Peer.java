@@ -195,7 +195,7 @@ public class Peer extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public Peer(String name) {
+    public Peer(java.lang.String name) {
         this(name, PeerArgs.Empty);
     }
     /**
@@ -203,7 +203,7 @@ public class Peer extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public Peer(String name, PeerArgs args) {
+    public Peer(java.lang.String name, PeerArgs args) {
         this(name, args, null);
     }
     /**
@@ -212,12 +212,12 @@ public class Peer extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public Peer(String name, PeerArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Blockchain/peer:Peer", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public Peer(java.lang.String name, PeerArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Blockchain/peer:Peer", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private Peer(String name, Output<String> id, @Nullable PeerState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Blockchain/peer:Peer", name, state, makeResourceOptions(options, id));
+    private Peer(java.lang.String name, Output<java.lang.String> id, @Nullable PeerState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Blockchain/peer:Peer", name, state, makeResourceOptions(options, id), false);
     }
 
     private static PeerArgs makeArgs(PeerArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -227,7 +227,7 @@ public class Peer extends com.pulumi.resources.CustomResource {
         return args == null ? PeerArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -243,7 +243,7 @@ public class Peer extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static Peer get(String name, Output<String> id, @Nullable PeerState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static Peer get(java.lang.String name, Output<java.lang.String> id, @Nullable PeerState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new Peer(name, id, state, options);
     }
 }

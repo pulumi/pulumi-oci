@@ -130,7 +130,7 @@ class AwaitableGetDatabaseToolsPrivateEndpointsResult(GetDatabaseToolsPrivateEnd
 def get_database_tools_private_endpoints(compartment_id: Optional[str] = None,
                                          display_name: Optional[str] = None,
                                          endpoint_service_id: Optional[str] = None,
-                                         filters: Optional[Sequence[pulumi.InputType['GetDatabaseToolsPrivateEndpointsFilterArgs']]] = None,
+                                         filters: Optional[Sequence[Union['GetDatabaseToolsPrivateEndpointsFilterArgs', 'GetDatabaseToolsPrivateEndpointsFilterArgsDict']]] = None,
                                          state: Optional[str] = None,
                                          subnet_id: Optional[str] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDatabaseToolsPrivateEndpointsResult:
@@ -184,7 +184,7 @@ def get_database_tools_private_endpoints(compartment_id: Optional[str] = None,
 def get_database_tools_private_endpoints_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                                 display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                                 endpoint_service_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                                filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDatabaseToolsPrivateEndpointsFilterArgs']]]]] = None,
+                                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDatabaseToolsPrivateEndpointsFilterArgs', 'GetDatabaseToolsPrivateEndpointsFilterArgsDict']]]]] = None,
                                                 state: Optional[pulumi.Input[Optional[str]]] = None,
                                                 subnet_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabaseToolsPrivateEndpointsResult]:

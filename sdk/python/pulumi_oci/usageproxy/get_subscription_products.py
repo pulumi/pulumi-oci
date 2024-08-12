@@ -103,7 +103,7 @@ class AwaitableGetSubscriptionProductsResult(GetSubscriptionProductsResult):
             usage_period_key=self.usage_period_key)
 
 
-def get_subscription_products(filters: Optional[Sequence[pulumi.InputType['GetSubscriptionProductsFilterArgs']]] = None,
+def get_subscription_products(filters: Optional[Sequence[Union['GetSubscriptionProductsFilterArgs', 'GetSubscriptionProductsFilterArgsDict']]] = None,
                               producttype: Optional[str] = None,
                               subscription_id: Optional[str] = None,
                               tenancy_id: Optional[str] = None,
@@ -152,7 +152,7 @@ def get_subscription_products(filters: Optional[Sequence[pulumi.InputType['GetSu
 
 
 @_utilities.lift_output_func(get_subscription_products)
-def get_subscription_products_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetSubscriptionProductsFilterArgs']]]]] = None,
+def get_subscription_products_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSubscriptionProductsFilterArgs', 'GetSubscriptionProductsFilterArgsDict']]]]] = None,
                                      producttype: Optional[pulumi.Input[Optional[str]]] = None,
                                      subscription_id: Optional[pulumi.Input[str]] = None,
                                      tenancy_id: Optional[pulumi.Input[str]] = None,

@@ -296,7 +296,7 @@ class AdhocQuery(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 adhoc_query_details: Optional[pulumi.Input[pulumi.InputType['AdhocQueryAdhocQueryDetailsArgs']]] = None,
+                 adhoc_query_details: Optional[pulumi.Input[Union['AdhocQueryAdhocQueryDetailsArgs', 'AdhocQueryAdhocQueryDetailsArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -313,14 +313,14 @@ class AdhocQuery(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_adhoc_query = oci.cloud_guard.AdhocQuery("test_adhoc_query",
-            adhoc_query_details=oci.cloud_guard.AdhocQueryAdhocQueryDetailsArgs(
-                adhoc_query_resources=[oci.cloud_guard.AdhocQueryAdhocQueryDetailsAdhocQueryResourceArgs(
-                    region=adhoc_query_adhoc_query_details_adhoc_query_resources_region,
-                    resource_ids=adhoc_query_adhoc_query_details_adhoc_query_resources_resource_ids,
-                    resource_type=adhoc_query_adhoc_query_details_adhoc_query_resources_resource_type,
-                )],
-                query=adhoc_query_adhoc_query_details_query,
-            ),
+            adhoc_query_details={
+                "adhoc_query_resources": [{
+                    "region": adhoc_query_adhoc_query_details_adhoc_query_resources_region,
+                    "resource_ids": adhoc_query_adhoc_query_details_adhoc_query_resources_resource_ids,
+                    "resource_type": adhoc_query_adhoc_query_details_adhoc_query_resources_resource_type,
+                }],
+                "query": adhoc_query_adhoc_query_details_query,
+            },
             compartment_id=compartment_id,
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -340,7 +340,7 @@ class AdhocQuery(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['AdhocQueryAdhocQueryDetailsArgs']] adhoc_query_details: Detailed information about the adhoc query.
+        :param pulumi.Input[Union['AdhocQueryAdhocQueryDetailsArgs', 'AdhocQueryAdhocQueryDetailsArgsDict']] adhoc_query_details: Detailed information about the adhoc query.
         :param pulumi.Input[str] compartment_id: Compartment OCID of adhoc query
         :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -369,14 +369,14 @@ class AdhocQuery(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_adhoc_query = oci.cloud_guard.AdhocQuery("test_adhoc_query",
-            adhoc_query_details=oci.cloud_guard.AdhocQueryAdhocQueryDetailsArgs(
-                adhoc_query_resources=[oci.cloud_guard.AdhocQueryAdhocQueryDetailsAdhocQueryResourceArgs(
-                    region=adhoc_query_adhoc_query_details_adhoc_query_resources_region,
-                    resource_ids=adhoc_query_adhoc_query_details_adhoc_query_resources_resource_ids,
-                    resource_type=adhoc_query_adhoc_query_details_adhoc_query_resources_resource_type,
-                )],
-                query=adhoc_query_adhoc_query_details_query,
-            ),
+            adhoc_query_details={
+                "adhoc_query_resources": [{
+                    "region": adhoc_query_adhoc_query_details_adhoc_query_resources_region,
+                    "resource_ids": adhoc_query_adhoc_query_details_adhoc_query_resources_resource_ids,
+                    "resource_type": adhoc_query_adhoc_query_details_adhoc_query_resources_resource_type,
+                }],
+                "query": adhoc_query_adhoc_query_details_query,
+            },
             compartment_id=compartment_id,
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -409,7 +409,7 @@ class AdhocQuery(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 adhoc_query_details: Optional[pulumi.Input[pulumi.InputType['AdhocQueryAdhocQueryDetailsArgs']]] = None,
+                 adhoc_query_details: Optional[pulumi.Input[Union['AdhocQueryAdhocQueryDetailsArgs', 'AdhocQueryAdhocQueryDetailsArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -447,8 +447,8 @@ class AdhocQuery(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            adhoc_query_details: Optional[pulumi.Input[pulumi.InputType['AdhocQueryAdhocQueryDetailsArgs']]] = None,
-            adhoc_query_regional_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AdhocQueryAdhocQueryRegionalDetailArgs']]]]] = None,
+            adhoc_query_details: Optional[pulumi.Input[Union['AdhocQueryAdhocQueryDetailsArgs', 'AdhocQueryAdhocQueryDetailsArgsDict']]] = None,
+            adhoc_query_regional_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AdhocQueryAdhocQueryRegionalDetailArgs', 'AdhocQueryAdhocQueryRegionalDetailArgsDict']]]]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             error_message: Optional[pulumi.Input[str]] = None,
@@ -465,8 +465,8 @@ class AdhocQuery(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['AdhocQueryAdhocQueryDetailsArgs']] adhoc_query_details: Detailed information about the adhoc query.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AdhocQueryAdhocQueryRegionalDetailArgs']]]] adhoc_query_regional_details: Instance level status for each region
+        :param pulumi.Input[Union['AdhocQueryAdhocQueryDetailsArgs', 'AdhocQueryAdhocQueryDetailsArgsDict']] adhoc_query_details: Detailed information about the adhoc query.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AdhocQueryAdhocQueryRegionalDetailArgs', 'AdhocQueryAdhocQueryRegionalDetailArgsDict']]]] adhoc_query_regional_details: Instance level status for each region
         :param pulumi.Input[str] compartment_id: Compartment OCID of adhoc query
         :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] error_message: Error message to show on UI in case of failure

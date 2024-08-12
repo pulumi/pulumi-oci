@@ -621,7 +621,7 @@ public class DomainsMyApiKey extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DomainsMyApiKey(String name) {
+    public DomainsMyApiKey(java.lang.String name) {
         this(name, DomainsMyApiKeyArgs.Empty);
     }
     /**
@@ -629,7 +629,7 @@ public class DomainsMyApiKey extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DomainsMyApiKey(String name, DomainsMyApiKeyArgs args) {
+    public DomainsMyApiKey(java.lang.String name, DomainsMyApiKeyArgs args) {
         this(name, args, null);
     }
     /**
@@ -638,12 +638,12 @@ public class DomainsMyApiKey extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DomainsMyApiKey(String name, DomainsMyApiKeyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsMyApiKey:DomainsMyApiKey", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DomainsMyApiKey(java.lang.String name, DomainsMyApiKeyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/domainsMyApiKey:DomainsMyApiKey", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DomainsMyApiKey(String name, Output<String> id, @Nullable DomainsMyApiKeyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsMyApiKey:DomainsMyApiKey", name, state, makeResourceOptions(options, id));
+    private DomainsMyApiKey(java.lang.String name, Output<java.lang.String> id, @Nullable DomainsMyApiKeyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/domainsMyApiKey:DomainsMyApiKey", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DomainsMyApiKeyArgs makeArgs(DomainsMyApiKeyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -653,7 +653,7 @@ public class DomainsMyApiKey extends com.pulumi.resources.CustomResource {
         return args == null ? DomainsMyApiKeyArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -669,7 +669,7 @@ public class DomainsMyApiKey extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DomainsMyApiKey get(String name, Output<String> id, @Nullable DomainsMyApiKeyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DomainsMyApiKey get(java.lang.String name, Output<java.lang.String> id, @Nullable DomainsMyApiKeyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DomainsMyApiKey(name, id, state, options);
     }
 }

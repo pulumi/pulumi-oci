@@ -126,7 +126,7 @@ class AwaitableGetComputedUsagesResult(GetComputedUsagesResult):
 
 def get_computed_usages(compartment_id: Optional[str] = None,
                         computed_product: Optional[str] = None,
-                        filters: Optional[Sequence[pulumi.InputType['GetComputedUsagesFilterArgs']]] = None,
+                        filters: Optional[Sequence[Union['GetComputedUsagesFilterArgs', 'GetComputedUsagesFilterArgsDict']]] = None,
                         parent_product: Optional[str] = None,
                         subscription_id: Optional[str] = None,
                         time_from: Optional[str] = None,
@@ -171,7 +171,7 @@ def get_computed_usages(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_computed_usages)
 def get_computed_usages_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                computed_product: Optional[pulumi.Input[Optional[str]]] = None,
-                               filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetComputedUsagesFilterArgs']]]]] = None,
+                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetComputedUsagesFilterArgs', 'GetComputedUsagesFilterArgsDict']]]]] = None,
                                parent_product: Optional[pulumi.Input[Optional[str]]] = None,
                                subscription_id: Optional[pulumi.Input[str]] = None,
                                time_from: Optional[pulumi.Input[str]] = None,

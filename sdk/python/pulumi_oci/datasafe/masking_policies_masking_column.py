@@ -449,7 +449,7 @@ class MaskingPoliciesMaskingColumn(pulumi.CustomResource):
                  column_name: Optional[pulumi.Input[str]] = None,
                  is_masking_enabled: Optional[pulumi.Input[bool]] = None,
                  masking_column_group: Optional[pulumi.Input[str]] = None,
-                 masking_formats: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MaskingPoliciesMaskingColumnMaskingFormatArgs']]]]] = None,
+                 masking_formats: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MaskingPoliciesMaskingColumnMaskingFormatArgs', 'MaskingPoliciesMaskingColumnMaskingFormatArgsDict']]]]] = None,
                  masking_policy_id: Optional[pulumi.Input[str]] = None,
                  object: Optional[pulumi.Input[str]] = None,
                  object_type: Optional[pulumi.Input[str]] = None,
@@ -493,36 +493,36 @@ class MaskingPoliciesMaskingColumn(pulumi.CustomResource):
             schema_name=masking_policies_masking_column_schema_name,
             is_masking_enabled=masking_policies_masking_column_is_masking_enabled,
             masking_column_group=masking_policies_masking_column_masking_column_group,
-            masking_formats=[oci.data_safe.MaskingPoliciesMaskingColumnMaskingFormatArgs(
-                format_entries=[oci.data_safe.MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs(
-                    type=masking_policies_masking_column_masking_formats_format_entries_type,
-                    column_name=masking_policies_masking_column_masking_formats_format_entries_column_name,
-                    description=masking_policies_masking_column_masking_formats_format_entries_description,
-                    end_date=masking_policies_masking_column_masking_formats_format_entries_end_date,
-                    end_length=masking_policies_masking_column_masking_formats_format_entries_end_length,
-                    end_value=masking_policies_masking_column_masking_formats_format_entries_end_value,
-                    fixed_number=masking_policies_masking_column_masking_formats_format_entries_fixed_number,
-                    fixed_string=masking_policies_masking_column_masking_formats_format_entries_fixed_string,
-                    grouping_columns=masking_policies_masking_column_masking_formats_format_entries_grouping_columns,
-                    length=masking_policies_masking_column_masking_formats_format_entries_length,
-                    library_masking_format_id=test_library_masking_format["id"],
-                    pattern=masking_policies_masking_column_masking_formats_format_entries_pattern,
-                    post_processing_function=masking_policies_masking_column_masking_formats_format_entries_post_processing_function,
-                    random_lists=masking_policies_masking_column_masking_formats_format_entries_random_list,
-                    regular_expression=masking_policies_masking_column_masking_formats_format_entries_regular_expression,
-                    replace_with=masking_policies_masking_column_masking_formats_format_entries_replace_with,
-                    schema_name=masking_policies_masking_column_masking_formats_format_entries_schema_name,
-                    sql_expression=masking_policies_masking_column_masking_formats_format_entries_sql_expression,
-                    start_date=masking_policies_masking_column_masking_formats_format_entries_start_date,
-                    start_length=masking_policies_masking_column_masking_formats_format_entries_start_length,
-                    start_position=masking_policies_masking_column_masking_formats_format_entries_start_position,
-                    start_value=masking_policies_masking_column_masking_formats_format_entries_start_value,
-                    table_name=test_table["name"],
-                    user_defined_function=masking_policies_masking_column_masking_formats_format_entries_user_defined_function,
-                )],
-                condition=masking_policies_masking_column_masking_formats_condition,
-                description=masking_policies_masking_column_masking_formats_description,
-            )],
+            masking_formats=[{
+                "format_entries": [{
+                    "type": masking_policies_masking_column_masking_formats_format_entries_type,
+                    "column_name": masking_policies_masking_column_masking_formats_format_entries_column_name,
+                    "description": masking_policies_masking_column_masking_formats_format_entries_description,
+                    "end_date": masking_policies_masking_column_masking_formats_format_entries_end_date,
+                    "end_length": masking_policies_masking_column_masking_formats_format_entries_end_length,
+                    "end_value": masking_policies_masking_column_masking_formats_format_entries_end_value,
+                    "fixed_number": masking_policies_masking_column_masking_formats_format_entries_fixed_number,
+                    "fixed_string": masking_policies_masking_column_masking_formats_format_entries_fixed_string,
+                    "grouping_columns": masking_policies_masking_column_masking_formats_format_entries_grouping_columns,
+                    "length": masking_policies_masking_column_masking_formats_format_entries_length,
+                    "library_masking_format_id": test_library_masking_format["id"],
+                    "pattern": masking_policies_masking_column_masking_formats_format_entries_pattern,
+                    "post_processing_function": masking_policies_masking_column_masking_formats_format_entries_post_processing_function,
+                    "random_lists": masking_policies_masking_column_masking_formats_format_entries_random_list,
+                    "regular_expression": masking_policies_masking_column_masking_formats_format_entries_regular_expression,
+                    "replace_with": masking_policies_masking_column_masking_formats_format_entries_replace_with,
+                    "schema_name": masking_policies_masking_column_masking_formats_format_entries_schema_name,
+                    "sql_expression": masking_policies_masking_column_masking_formats_format_entries_sql_expression,
+                    "start_date": masking_policies_masking_column_masking_formats_format_entries_start_date,
+                    "start_length": masking_policies_masking_column_masking_formats_format_entries_start_length,
+                    "start_position": masking_policies_masking_column_masking_formats_format_entries_start_position,
+                    "start_value": masking_policies_masking_column_masking_formats_format_entries_start_value,
+                    "table_name": test_table["name"],
+                    "user_defined_function": masking_policies_masking_column_masking_formats_format_entries_user_defined_function,
+                }],
+                "condition": masking_policies_masking_column_masking_formats_condition,
+                "description": masking_policies_masking_column_masking_formats_description,
+            }],
             object_type=masking_policies_masking_column_object_type,
             sensitive_type_id=test_sensitive_type["id"])
         ```
@@ -540,7 +540,7 @@ class MaskingPoliciesMaskingColumn(pulumi.CustomResource):
         :param pulumi.Input[str] column_name: The name of the database column. This attribute cannot be updated for an existing  masking column. Note that the same name is used for the masking column. There  is no separate displayName attribute for the masking column.
         :param pulumi.Input[bool] is_masking_enabled: (Updatable) Indicates whether data masking is enabled for the masking column. Set it to false if  you don't want to mask the column.
         :param pulumi.Input[str] masking_column_group: (Updatable) The group of the masking column. It's a masking group identifier and can be any string  of acceptable length. All the columns in a group are masked together to ensure that  the masked data across these columns continue to retain the same logical relationship.  For more details, check  <a href=https://docs.oracle.com/en/cloud/paas/data-safe/udscs/group-masking1.html#GUID-755056B9-9540-48C0-9491-262A44A85037>Group Masking in the Data Safe documentation.</a>
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MaskingPoliciesMaskingColumnMaskingFormatArgs']]]] masking_formats: (Updatable) The masking formats to be assigned to the masking column. You can specify a condition  as part of each masking format. It enables you to do  <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>  so that you can mask the column data values differently using different masking  formats and the associated conditions. A masking format can have one or more format  entries. The combined output of all the format entries is used for masking. It  provides the flexibility to define a masking format that can generate different parts  of a data value separately and then combine them to get the final data value for masking.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MaskingPoliciesMaskingColumnMaskingFormatArgs', 'MaskingPoliciesMaskingColumnMaskingFormatArgsDict']]]] masking_formats: (Updatable) The masking formats to be assigned to the masking column. You can specify a condition  as part of each masking format. It enables you to do  <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>  so that you can mask the column data values differently using different masking  formats and the associated conditions. A masking format can have one or more format  entries. The combined output of all the format entries is used for masking. It  provides the flexibility to define a masking format that can generate different parts  of a data value separately and then combine them to get the final data value for masking.
         :param pulumi.Input[str] masking_policy_id: The OCID of the masking policy.
         :param pulumi.Input[str] object: The name of the object (table or editioning view) that contains the database column. This attribute cannot be updated for an existing masking column.
         :param pulumi.Input[str] object_type: (Updatable) The type of the object that contains the database column.
@@ -594,36 +594,36 @@ class MaskingPoliciesMaskingColumn(pulumi.CustomResource):
             schema_name=masking_policies_masking_column_schema_name,
             is_masking_enabled=masking_policies_masking_column_is_masking_enabled,
             masking_column_group=masking_policies_masking_column_masking_column_group,
-            masking_formats=[oci.data_safe.MaskingPoliciesMaskingColumnMaskingFormatArgs(
-                format_entries=[oci.data_safe.MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs(
-                    type=masking_policies_masking_column_masking_formats_format_entries_type,
-                    column_name=masking_policies_masking_column_masking_formats_format_entries_column_name,
-                    description=masking_policies_masking_column_masking_formats_format_entries_description,
-                    end_date=masking_policies_masking_column_masking_formats_format_entries_end_date,
-                    end_length=masking_policies_masking_column_masking_formats_format_entries_end_length,
-                    end_value=masking_policies_masking_column_masking_formats_format_entries_end_value,
-                    fixed_number=masking_policies_masking_column_masking_formats_format_entries_fixed_number,
-                    fixed_string=masking_policies_masking_column_masking_formats_format_entries_fixed_string,
-                    grouping_columns=masking_policies_masking_column_masking_formats_format_entries_grouping_columns,
-                    length=masking_policies_masking_column_masking_formats_format_entries_length,
-                    library_masking_format_id=test_library_masking_format["id"],
-                    pattern=masking_policies_masking_column_masking_formats_format_entries_pattern,
-                    post_processing_function=masking_policies_masking_column_masking_formats_format_entries_post_processing_function,
-                    random_lists=masking_policies_masking_column_masking_formats_format_entries_random_list,
-                    regular_expression=masking_policies_masking_column_masking_formats_format_entries_regular_expression,
-                    replace_with=masking_policies_masking_column_masking_formats_format_entries_replace_with,
-                    schema_name=masking_policies_masking_column_masking_formats_format_entries_schema_name,
-                    sql_expression=masking_policies_masking_column_masking_formats_format_entries_sql_expression,
-                    start_date=masking_policies_masking_column_masking_formats_format_entries_start_date,
-                    start_length=masking_policies_masking_column_masking_formats_format_entries_start_length,
-                    start_position=masking_policies_masking_column_masking_formats_format_entries_start_position,
-                    start_value=masking_policies_masking_column_masking_formats_format_entries_start_value,
-                    table_name=test_table["name"],
-                    user_defined_function=masking_policies_masking_column_masking_formats_format_entries_user_defined_function,
-                )],
-                condition=masking_policies_masking_column_masking_formats_condition,
-                description=masking_policies_masking_column_masking_formats_description,
-            )],
+            masking_formats=[{
+                "format_entries": [{
+                    "type": masking_policies_masking_column_masking_formats_format_entries_type,
+                    "column_name": masking_policies_masking_column_masking_formats_format_entries_column_name,
+                    "description": masking_policies_masking_column_masking_formats_format_entries_description,
+                    "end_date": masking_policies_masking_column_masking_formats_format_entries_end_date,
+                    "end_length": masking_policies_masking_column_masking_formats_format_entries_end_length,
+                    "end_value": masking_policies_masking_column_masking_formats_format_entries_end_value,
+                    "fixed_number": masking_policies_masking_column_masking_formats_format_entries_fixed_number,
+                    "fixed_string": masking_policies_masking_column_masking_formats_format_entries_fixed_string,
+                    "grouping_columns": masking_policies_masking_column_masking_formats_format_entries_grouping_columns,
+                    "length": masking_policies_masking_column_masking_formats_format_entries_length,
+                    "library_masking_format_id": test_library_masking_format["id"],
+                    "pattern": masking_policies_masking_column_masking_formats_format_entries_pattern,
+                    "post_processing_function": masking_policies_masking_column_masking_formats_format_entries_post_processing_function,
+                    "random_lists": masking_policies_masking_column_masking_formats_format_entries_random_list,
+                    "regular_expression": masking_policies_masking_column_masking_formats_format_entries_regular_expression,
+                    "replace_with": masking_policies_masking_column_masking_formats_format_entries_replace_with,
+                    "schema_name": masking_policies_masking_column_masking_formats_format_entries_schema_name,
+                    "sql_expression": masking_policies_masking_column_masking_formats_format_entries_sql_expression,
+                    "start_date": masking_policies_masking_column_masking_formats_format_entries_start_date,
+                    "start_length": masking_policies_masking_column_masking_formats_format_entries_start_length,
+                    "start_position": masking_policies_masking_column_masking_formats_format_entries_start_position,
+                    "start_value": masking_policies_masking_column_masking_formats_format_entries_start_value,
+                    "table_name": test_table["name"],
+                    "user_defined_function": masking_policies_masking_column_masking_formats_format_entries_user_defined_function,
+                }],
+                "condition": masking_policies_masking_column_masking_formats_condition,
+                "description": masking_policies_masking_column_masking_formats_description,
+            }],
             object_type=masking_policies_masking_column_object_type,
             sensitive_type_id=test_sensitive_type["id"])
         ```
@@ -654,7 +654,7 @@ class MaskingPoliciesMaskingColumn(pulumi.CustomResource):
                  column_name: Optional[pulumi.Input[str]] = None,
                  is_masking_enabled: Optional[pulumi.Input[bool]] = None,
                  masking_column_group: Optional[pulumi.Input[str]] = None,
-                 masking_formats: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MaskingPoliciesMaskingColumnMaskingFormatArgs']]]]] = None,
+                 masking_formats: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MaskingPoliciesMaskingColumnMaskingFormatArgs', 'MaskingPoliciesMaskingColumnMaskingFormatArgsDict']]]]] = None,
                  masking_policy_id: Optional[pulumi.Input[str]] = None,
                  object: Optional[pulumi.Input[str]] = None,
                  object_type: Optional[pulumi.Input[str]] = None,
@@ -710,7 +710,7 @@ class MaskingPoliciesMaskingColumn(pulumi.CustomResource):
             key: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             masking_column_group: Optional[pulumi.Input[str]] = None,
-            masking_formats: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MaskingPoliciesMaskingColumnMaskingFormatArgs']]]]] = None,
+            masking_formats: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MaskingPoliciesMaskingColumnMaskingFormatArgs', 'MaskingPoliciesMaskingColumnMaskingFormatArgsDict']]]]] = None,
             masking_policy_id: Optional[pulumi.Input[str]] = None,
             object: Optional[pulumi.Input[str]] = None,
             object_type: Optional[pulumi.Input[str]] = None,
@@ -733,7 +733,7 @@ class MaskingPoliciesMaskingColumn(pulumi.CustomResource):
         :param pulumi.Input[str] key: The unique key that identifies the masking column. It's numeric and unique within a masking policy.
         :param pulumi.Input[str] lifecycle_details: Details about the current state of the masking column.
         :param pulumi.Input[str] masking_column_group: (Updatable) The group of the masking column. It's a masking group identifier and can be any string  of acceptable length. All the columns in a group are masked together to ensure that  the masked data across these columns continue to retain the same logical relationship.  For more details, check  <a href=https://docs.oracle.com/en/cloud/paas/data-safe/udscs/group-masking1.html#GUID-755056B9-9540-48C0-9491-262A44A85037>Group Masking in the Data Safe documentation.</a>
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MaskingPoliciesMaskingColumnMaskingFormatArgs']]]] masking_formats: (Updatable) The masking formats to be assigned to the masking column. You can specify a condition  as part of each masking format. It enables you to do  <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>  so that you can mask the column data values differently using different masking  formats and the associated conditions. A masking format can have one or more format  entries. The combined output of all the format entries is used for masking. It  provides the flexibility to define a masking format that can generate different parts  of a data value separately and then combine them to get the final data value for masking.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MaskingPoliciesMaskingColumnMaskingFormatArgs', 'MaskingPoliciesMaskingColumnMaskingFormatArgsDict']]]] masking_formats: (Updatable) The masking formats to be assigned to the masking column. You can specify a condition  as part of each masking format. It enables you to do  <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>  so that you can mask the column data values differently using different masking  formats and the associated conditions. A masking format can have one or more format  entries. The combined output of all the format entries is used for masking. It  provides the flexibility to define a masking format that can generate different parts  of a data value separately and then combine them to get the final data value for masking.
         :param pulumi.Input[str] masking_policy_id: The OCID of the masking policy.
         :param pulumi.Input[str] object: The name of the object (table or editioning view) that contains the database column. This attribute cannot be updated for an existing masking column.
         :param pulumi.Input[str] object_type: (Updatable) The type of the object that contains the database column.

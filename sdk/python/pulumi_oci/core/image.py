@@ -477,7 +477,7 @@ class Image(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 image_source_details: Optional[pulumi.Input[pulumi.InputType['ImageImageSourceDetailsArgs']]] = None,
+                 image_source_details: Optional[pulumi.Input[Union['ImageImageSourceDetailsArgs', 'ImageImageSourceDetailsArgsDict']]] = None,
                  instance_id: Optional[pulumi.Input[str]] = None,
                  launch_mode: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -537,15 +537,15 @@ class Image(pulumi.CustomResource):
             compartment_id=compartment_id,
             display_name=image_display_name,
             launch_mode=image_launch_mode,
-            image_source_details=oci.core.ImageImageSourceDetailsArgs(
-                source_type="objectStorageTuple",
-                bucket_name=bucket_name,
-                namespace_name=namespace,
-                object_name=object_name,
-                operating_system=image_image_source_details_operating_system,
-                operating_system_version=image_image_source_details_operating_system_version,
-                source_image_type=source_image_type,
-            ))
+            image_source_details={
+                "source_type": "objectStorageTuple",
+                "bucket_name": bucket_name,
+                "namespace_name": namespace,
+                "object_name": object_name,
+                "operating_system": image_image_source_details_operating_system,
+                "operating_system_version": image_image_source_details_operating_system_version,
+                "source_image_type": source_image_type,
+            })
         ```
 
         ### Create image from exported image at publicly accessible uri
@@ -557,13 +557,13 @@ class Image(pulumi.CustomResource):
             compartment_id=compartment_id,
             display_name=image_display_name,
             launch_mode=image_launch_mode,
-            image_source_details=oci.core.ImageImageSourceDetailsArgs(
-                source_type="objectStorageUri",
-                source_uri=source_uri,
-                operating_system=image_image_source_details_operating_system,
-                operating_system_version=image_image_source_details_operating_system_version,
-                source_image_type=source_image_type,
-            ))
+            image_source_details={
+                "source_type": "objectStorageUri",
+                "source_uri": source_uri,
+                "operating_system": image_image_source_details_operating_system,
+                "operating_system_version": image_image_source_details_operating_system_version,
+                "source_image_type": source_image_type,
+            })
         ```
 
         ## Import
@@ -657,15 +657,15 @@ class Image(pulumi.CustomResource):
             compartment_id=compartment_id,
             display_name=image_display_name,
             launch_mode=image_launch_mode,
-            image_source_details=oci.core.ImageImageSourceDetailsArgs(
-                source_type="objectStorageTuple",
-                bucket_name=bucket_name,
-                namespace_name=namespace,
-                object_name=object_name,
-                operating_system=image_image_source_details_operating_system,
-                operating_system_version=image_image_source_details_operating_system_version,
-                source_image_type=source_image_type,
-            ))
+            image_source_details={
+                "source_type": "objectStorageTuple",
+                "bucket_name": bucket_name,
+                "namespace_name": namespace,
+                "object_name": object_name,
+                "operating_system": image_image_source_details_operating_system,
+                "operating_system_version": image_image_source_details_operating_system_version,
+                "source_image_type": source_image_type,
+            })
         ```
 
         ### Create image from exported image at publicly accessible uri
@@ -677,13 +677,13 @@ class Image(pulumi.CustomResource):
             compartment_id=compartment_id,
             display_name=image_display_name,
             launch_mode=image_launch_mode,
-            image_source_details=oci.core.ImageImageSourceDetailsArgs(
-                source_type="objectStorageUri",
-                source_uri=source_uri,
-                operating_system=image_image_source_details_operating_system,
-                operating_system_version=image_image_source_details_operating_system_version,
-                source_image_type=source_image_type,
-            ))
+            image_source_details={
+                "source_type": "objectStorageUri",
+                "source_uri": source_uri,
+                "operating_system": image_image_source_details_operating_system,
+                "operating_system_version": image_image_source_details_operating_system_version,
+                "source_image_type": source_image_type,
+            })
         ```
 
         ## Import
@@ -713,7 +713,7 @@ class Image(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 image_source_details: Optional[pulumi.Input[pulumi.InputType['ImageImageSourceDetailsArgs']]] = None,
+                 image_source_details: Optional[pulumi.Input[Union['ImageImageSourceDetailsArgs', 'ImageImageSourceDetailsArgsDict']]] = None,
                  instance_id: Optional[pulumi.Input[str]] = None,
                  launch_mode: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -755,7 +755,7 @@ class Image(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            agent_features: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ImageAgentFeatureArgs']]]]] = None,
+            agent_features: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ImageAgentFeatureArgs', 'ImageAgentFeatureArgsDict']]]]] = None,
             base_image_id: Optional[pulumi.Input[str]] = None,
             billable_size_in_gbs: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
@@ -763,10 +763,10 @@ class Image(pulumi.CustomResource):
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            image_source_details: Optional[pulumi.Input[pulumi.InputType['ImageImageSourceDetailsArgs']]] = None,
+            image_source_details: Optional[pulumi.Input[Union['ImageImageSourceDetailsArgs', 'ImageImageSourceDetailsArgsDict']]] = None,
             instance_id: Optional[pulumi.Input[str]] = None,
             launch_mode: Optional[pulumi.Input[str]] = None,
-            launch_options: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ImageLaunchOptionArgs']]]]] = None,
+            launch_options: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ImageLaunchOptionArgs', 'ImageLaunchOptionArgsDict']]]]] = None,
             listing_type: Optional[pulumi.Input[str]] = None,
             operating_system: Optional[pulumi.Input[str]] = None,
             operating_system_version: Optional[pulumi.Input[str]] = None,
@@ -780,7 +780,7 @@ class Image(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ImageAgentFeatureArgs']]]] agent_features: Oracle Cloud Agent features supported on the image.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ImageAgentFeatureArgs', 'ImageAgentFeatureArgsDict']]]] agent_features: Oracle Cloud Agent features supported on the image.
         :param pulumi.Input[str] base_image_id: The OCID of the image originally used to launch the instance.
         :param pulumi.Input[str] billable_size_in_gbs: The size of the internal storage for this image that is subject to billing (1 GB = 1,073,741,824 bytes).  Example: `100`
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment you want the image to be created in.
@@ -802,7 +802,7 @@ class Image(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ImageLaunchOptionArgs']]]] launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ImageLaunchOptionArgs', 'ImageLaunchOptionArgsDict']]]] launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param pulumi.Input[str] listing_type: The listing type of the image. The default value is "NONE".
         :param pulumi.Input[str] operating_system: The image's operating system.  Example: `Oracle Linux`
         :param pulumi.Input[str] operating_system_version: The image's operating system version.  Example: `7.2`

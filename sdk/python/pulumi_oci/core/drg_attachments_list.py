@@ -267,7 +267,7 @@ class DrgAttachmentsList(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             attachment_type: Optional[pulumi.Input[str]] = None,
-            drg_all_attachments: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DrgAttachmentsListDrgAllAttachmentArgs']]]]] = None,
+            drg_all_attachments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DrgAttachmentsListDrgAllAttachmentArgs', 'DrgAttachmentsListDrgAllAttachmentArgsDict']]]]] = None,
             drg_id: Optional[pulumi.Input[str]] = None,
             is_cross_tenancy: Optional[pulumi.Input[bool]] = None) -> 'DrgAttachmentsList':
         """
@@ -278,7 +278,7 @@ class DrgAttachmentsList(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] attachment_type: The type for the network resource attached to the DRG.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DrgAttachmentsListDrgAllAttachmentArgs']]]] drg_all_attachments: The list of drg_attachments.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DrgAttachmentsListDrgAllAttachmentArgs', 'DrgAttachmentsListDrgAllAttachmentArgsDict']]]] drg_all_attachments: The list of drg_attachments.
         :param pulumi.Input[str] drg_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
         :param pulumi.Input[bool] is_cross_tenancy: Whether the DRG attachment lives in a different tenancy than the DRG.
                

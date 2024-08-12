@@ -252,7 +252,7 @@ public class Metastore extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public Metastore(String name) {
+    public Metastore(java.lang.String name) {
         this(name, MetastoreArgs.Empty);
     }
     /**
@@ -260,7 +260,7 @@ public class Metastore extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public Metastore(String name, MetastoreArgs args) {
+    public Metastore(java.lang.String name, MetastoreArgs args) {
         this(name, args, null);
     }
     /**
@@ -269,12 +269,12 @@ public class Metastore extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public Metastore(String name, MetastoreArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataCatalog/metastore:Metastore", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public Metastore(java.lang.String name, MetastoreArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataCatalog/metastore:Metastore", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private Metastore(String name, Output<String> id, @Nullable MetastoreState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataCatalog/metastore:Metastore", name, state, makeResourceOptions(options, id));
+    private Metastore(java.lang.String name, Output<java.lang.String> id, @Nullable MetastoreState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataCatalog/metastore:Metastore", name, state, makeResourceOptions(options, id), false);
     }
 
     private static MetastoreArgs makeArgs(MetastoreArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -284,7 +284,7 @@ public class Metastore extends com.pulumi.resources.CustomResource {
         return args == null ? MetastoreArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -300,7 +300,7 @@ public class Metastore extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static Metastore get(String name, Output<String> id, @Nullable MetastoreState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static Metastore get(java.lang.String name, Output<java.lang.String> id, @Nullable MetastoreState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new Metastore(name, id, state, options);
     }
 }

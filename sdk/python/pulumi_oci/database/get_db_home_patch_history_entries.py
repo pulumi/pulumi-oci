@@ -77,7 +77,7 @@ class AwaitableGetDbHomePatchHistoryEntriesResult(GetDbHomePatchHistoryEntriesRe
 
 
 def get_db_home_patch_history_entries(db_home_id: Optional[str] = None,
-                                      filters: Optional[Sequence[pulumi.InputType['GetDbHomePatchHistoryEntriesFilterArgs']]] = None,
+                                      filters: Optional[Sequence[Union['GetDbHomePatchHistoryEntriesFilterArgs', 'GetDbHomePatchHistoryEntriesFilterArgsDict']]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbHomePatchHistoryEntriesResult:
     """
     This data source provides the list of Db Home Patch History Entries in Oracle Cloud Infrastructure Database service.
@@ -111,7 +111,7 @@ def get_db_home_patch_history_entries(db_home_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_db_home_patch_history_entries)
 def get_db_home_patch_history_entries_output(db_home_id: Optional[pulumi.Input[str]] = None,
-                                             filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDbHomePatchHistoryEntriesFilterArgs']]]]] = None,
+                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbHomePatchHistoryEntriesFilterArgs', 'GetDbHomePatchHistoryEntriesFilterArgsDict']]]]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbHomePatchHistoryEntriesResult]:
     """
     This data source provides the list of Db Home Patch History Entries in Oracle Cloud Infrastructure Database service.

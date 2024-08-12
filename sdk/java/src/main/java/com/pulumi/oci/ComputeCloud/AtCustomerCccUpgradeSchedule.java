@@ -258,7 +258,7 @@ public class AtCustomerCccUpgradeSchedule extends com.pulumi.resources.CustomRes
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public AtCustomerCccUpgradeSchedule(String name) {
+    public AtCustomerCccUpgradeSchedule(java.lang.String name) {
         this(name, AtCustomerCccUpgradeScheduleArgs.Empty);
     }
     /**
@@ -266,7 +266,7 @@ public class AtCustomerCccUpgradeSchedule extends com.pulumi.resources.CustomRes
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public AtCustomerCccUpgradeSchedule(String name, AtCustomerCccUpgradeScheduleArgs args) {
+    public AtCustomerCccUpgradeSchedule(java.lang.String name, AtCustomerCccUpgradeScheduleArgs args) {
         this(name, args, null);
     }
     /**
@@ -275,12 +275,12 @@ public class AtCustomerCccUpgradeSchedule extends com.pulumi.resources.CustomRes
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public AtCustomerCccUpgradeSchedule(String name, AtCustomerCccUpgradeScheduleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:ComputeCloud/atCustomerCccUpgradeSchedule:AtCustomerCccUpgradeSchedule", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public AtCustomerCccUpgradeSchedule(java.lang.String name, AtCustomerCccUpgradeScheduleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:ComputeCloud/atCustomerCccUpgradeSchedule:AtCustomerCccUpgradeSchedule", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private AtCustomerCccUpgradeSchedule(String name, Output<String> id, @Nullable AtCustomerCccUpgradeScheduleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:ComputeCloud/atCustomerCccUpgradeSchedule:AtCustomerCccUpgradeSchedule", name, state, makeResourceOptions(options, id));
+    private AtCustomerCccUpgradeSchedule(java.lang.String name, Output<java.lang.String> id, @Nullable AtCustomerCccUpgradeScheduleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:ComputeCloud/atCustomerCccUpgradeSchedule:AtCustomerCccUpgradeSchedule", name, state, makeResourceOptions(options, id), false);
     }
 
     private static AtCustomerCccUpgradeScheduleArgs makeArgs(AtCustomerCccUpgradeScheduleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -290,7 +290,7 @@ public class AtCustomerCccUpgradeSchedule extends com.pulumi.resources.CustomRes
         return args == null ? AtCustomerCccUpgradeScheduleArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -306,7 +306,7 @@ public class AtCustomerCccUpgradeSchedule extends com.pulumi.resources.CustomRes
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static AtCustomerCccUpgradeSchedule get(String name, Output<String> id, @Nullable AtCustomerCccUpgradeScheduleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static AtCustomerCccUpgradeSchedule get(java.lang.String name, Output<java.lang.String> id, @Nullable AtCustomerCccUpgradeScheduleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new AtCustomerCccUpgradeSchedule(name, id, state, options);
     }
 }

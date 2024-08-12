@@ -323,7 +323,7 @@ public class BackupDestination extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public BackupDestination(String name) {
+    public BackupDestination(java.lang.String name) {
         this(name, BackupDestinationArgs.Empty);
     }
     /**
@@ -331,7 +331,7 @@ public class BackupDestination extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public BackupDestination(String name, BackupDestinationArgs args) {
+    public BackupDestination(java.lang.String name, BackupDestinationArgs args) {
         this(name, args, null);
     }
     /**
@@ -340,12 +340,12 @@ public class BackupDestination extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public BackupDestination(String name, BackupDestinationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/backupDestination:BackupDestination", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public BackupDestination(java.lang.String name, BackupDestinationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/backupDestination:BackupDestination", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private BackupDestination(String name, Output<String> id, @Nullable BackupDestinationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/backupDestination:BackupDestination", name, state, makeResourceOptions(options, id));
+    private BackupDestination(java.lang.String name, Output<java.lang.String> id, @Nullable BackupDestinationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/backupDestination:BackupDestination", name, state, makeResourceOptions(options, id), false);
     }
 
     private static BackupDestinationArgs makeArgs(BackupDestinationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -355,7 +355,7 @@ public class BackupDestination extends com.pulumi.resources.CustomResource {
         return args == null ? BackupDestinationArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -371,7 +371,7 @@ public class BackupDestination extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static BackupDestination get(String name, Output<String> id, @Nullable BackupDestinationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static BackupDestination get(java.lang.String name, Output<java.lang.String> id, @Nullable BackupDestinationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new BackupDestination(name, id, state, options);
     }
 }

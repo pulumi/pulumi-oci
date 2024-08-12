@@ -277,7 +277,7 @@ public class DedicatedVmHost extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DedicatedVmHost(String name) {
+    public DedicatedVmHost(java.lang.String name) {
         this(name, DedicatedVmHostArgs.Empty);
     }
     /**
@@ -285,7 +285,7 @@ public class DedicatedVmHost extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DedicatedVmHost(String name, DedicatedVmHostArgs args) {
+    public DedicatedVmHost(java.lang.String name, DedicatedVmHostArgs args) {
         this(name, args, null);
     }
     /**
@@ -294,12 +294,12 @@ public class DedicatedVmHost extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DedicatedVmHost(String name, DedicatedVmHostArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/dedicatedVmHost:DedicatedVmHost", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DedicatedVmHost(java.lang.String name, DedicatedVmHostArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Core/dedicatedVmHost:DedicatedVmHost", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DedicatedVmHost(String name, Output<String> id, @Nullable DedicatedVmHostState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/dedicatedVmHost:DedicatedVmHost", name, state, makeResourceOptions(options, id));
+    private DedicatedVmHost(java.lang.String name, Output<java.lang.String> id, @Nullable DedicatedVmHostState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Core/dedicatedVmHost:DedicatedVmHost", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DedicatedVmHostArgs makeArgs(DedicatedVmHostArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -309,7 +309,7 @@ public class DedicatedVmHost extends com.pulumi.resources.CustomResource {
         return args == null ? DedicatedVmHostArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -325,7 +325,7 @@ public class DedicatedVmHost extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DedicatedVmHost get(String name, Output<String> id, @Nullable DedicatedVmHostState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DedicatedVmHost get(java.lang.String name, Output<java.lang.String> id, @Nullable DedicatedVmHostState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DedicatedVmHost(name, id, state, options);
     }
 }

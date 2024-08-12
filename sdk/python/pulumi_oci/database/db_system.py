@@ -1613,12 +1613,12 @@ class DbSystem(pulumi.CustomResource):
                  cluster_name: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  cpu_core_count: Optional[pulumi.Input[int]] = None,
-                 data_collection_options: Optional[pulumi.Input[pulumi.InputType['DbSystemDataCollectionOptionsArgs']]] = None,
+                 data_collection_options: Optional[pulumi.Input[Union['DbSystemDataCollectionOptionsArgs', 'DbSystemDataCollectionOptionsArgsDict']]] = None,
                  data_storage_percentage: Optional[pulumi.Input[int]] = None,
                  data_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
                  database_edition: Optional[pulumi.Input[str]] = None,
-                 db_home: Optional[pulumi.Input[pulumi.InputType['DbSystemDbHomeArgs']]] = None,
-                 db_system_options: Optional[pulumi.Input[pulumi.InputType['DbSystemDbSystemOptionsArgs']]] = None,
+                 db_home: Optional[pulumi.Input[Union['DbSystemDbHomeArgs', 'DbSystemDbHomeArgsDict']]] = None,
+                 db_system_options: Optional[pulumi.Input[Union['DbSystemDbSystemOptionsArgs', 'DbSystemDbSystemOptionsArgsDict']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  disk_redundancy: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -1629,7 +1629,7 @@ class DbSystem(pulumi.CustomResource):
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  kms_key_version_id: Optional[pulumi.Input[str]] = None,
                  license_model: Optional[pulumi.Input[str]] = None,
-                 maintenance_window_details: Optional[pulumi.Input[pulumi.InputType['DbSystemMaintenanceWindowDetailsArgs']]] = None,
+                 maintenance_window_details: Optional[pulumi.Input[Union['DbSystemMaintenanceWindowDetailsArgs', 'DbSystemMaintenanceWindowDetailsArgsDict']]] = None,
                  node_count: Optional[pulumi.Input[int]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  private_ip: Optional[pulumi.Input[str]] = None,
@@ -1718,14 +1718,14 @@ class DbSystem(pulumi.CustomResource):
                * VM.Standard.E4.Flex - Specify any thing from 1 to 64.
                
                This parameter is not used for INTEL virtual machine DB systems because virtual machine DB systems have a set number of cores for each shape. For information about the number of cores for a virtual machine DB system shape, see [Virtual Machine DB Systems](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/overview.htm#virtualmachine)
-        :param pulumi.Input[pulumi.InputType['DbSystemDataCollectionOptionsArgs']] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+        :param pulumi.Input[Union['DbSystemDataCollectionOptionsArgs', 'DbSystemDataCollectionOptionsArgsDict']] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[int] data_storage_percentage: The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
         :param pulumi.Input[int] data_storage_size_in_gb: (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. Required for VMDBs.
         :param pulumi.Input[str] database_edition: The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
-        :param pulumi.Input[pulumi.InputType['DbSystemDbHomeArgs']] db_home: (Updatable) Details for creating a Database Home if you are creating a database by restoring from a database backup.
+        :param pulumi.Input[Union['DbSystemDbHomeArgs', 'DbSystemDbHomeArgsDict']] db_home: (Updatable) Details for creating a Database Home if you are creating a database by restoring from a database backup.
                
                **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
-        :param pulumi.Input[pulumi.InputType['DbSystemDbSystemOptionsArgs']] db_system_options: The DB system options.
+        :param pulumi.Input[Union['DbSystemDbSystemOptionsArgs', 'DbSystemDbSystemOptionsArgsDict']] db_system_options: The DB system options.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] disk_redundancy: The type of redundancy configured for the DB system. Normal is 2-way redundancy, recommended for test and development systems. High is 3-way redundancy, recommended for production systems.
         :param pulumi.Input[str] display_name: The user-friendly name for the DB system. The name does not have to be unique.
@@ -1748,7 +1748,7 @@ class DbSystem(pulumi.CustomResource):
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
-        :param pulumi.Input[pulumi.InputType['DbSystemMaintenanceWindowDetailsArgs']] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        :param pulumi.Input[Union['DbSystemMaintenanceWindowDetailsArgs', 'DbSystemMaintenanceWindowDetailsArgsDict']] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[int] node_count: The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or 2.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
@@ -1857,12 +1857,12 @@ class DbSystem(pulumi.CustomResource):
                  cluster_name: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  cpu_core_count: Optional[pulumi.Input[int]] = None,
-                 data_collection_options: Optional[pulumi.Input[pulumi.InputType['DbSystemDataCollectionOptionsArgs']]] = None,
+                 data_collection_options: Optional[pulumi.Input[Union['DbSystemDataCollectionOptionsArgs', 'DbSystemDataCollectionOptionsArgsDict']]] = None,
                  data_storage_percentage: Optional[pulumi.Input[int]] = None,
                  data_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
                  database_edition: Optional[pulumi.Input[str]] = None,
-                 db_home: Optional[pulumi.Input[pulumi.InputType['DbSystemDbHomeArgs']]] = None,
-                 db_system_options: Optional[pulumi.Input[pulumi.InputType['DbSystemDbSystemOptionsArgs']]] = None,
+                 db_home: Optional[pulumi.Input[Union['DbSystemDbHomeArgs', 'DbSystemDbHomeArgsDict']]] = None,
+                 db_system_options: Optional[pulumi.Input[Union['DbSystemDbSystemOptionsArgs', 'DbSystemDbSystemOptionsArgsDict']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  disk_redundancy: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -1873,7 +1873,7 @@ class DbSystem(pulumi.CustomResource):
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  kms_key_version_id: Optional[pulumi.Input[str]] = None,
                  license_model: Optional[pulumi.Input[str]] = None,
-                 maintenance_window_details: Optional[pulumi.Input[pulumi.InputType['DbSystemMaintenanceWindowDetailsArgs']]] = None,
+                 maintenance_window_details: Optional[pulumi.Input[Union['DbSystemMaintenanceWindowDetailsArgs', 'DbSystemMaintenanceWindowDetailsArgsDict']]] = None,
                  node_count: Optional[pulumi.Input[int]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  private_ip: Optional[pulumi.Input[str]] = None,
@@ -1978,12 +1978,12 @@ class DbSystem(pulumi.CustomResource):
             cluster_name: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             cpu_core_count: Optional[pulumi.Input[int]] = None,
-            data_collection_options: Optional[pulumi.Input[pulumi.InputType['DbSystemDataCollectionOptionsArgs']]] = None,
+            data_collection_options: Optional[pulumi.Input[Union['DbSystemDataCollectionOptionsArgs', 'DbSystemDataCollectionOptionsArgsDict']]] = None,
             data_storage_percentage: Optional[pulumi.Input[int]] = None,
             data_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
             database_edition: Optional[pulumi.Input[str]] = None,
-            db_home: Optional[pulumi.Input[pulumi.InputType['DbSystemDbHomeArgs']]] = None,
-            db_system_options: Optional[pulumi.Input[pulumi.InputType['DbSystemDbSystemOptionsArgs']]] = None,
+            db_home: Optional[pulumi.Input[Union['DbSystemDbHomeArgs', 'DbSystemDbHomeArgsDict']]] = None,
+            db_system_options: Optional[pulumi.Input[Union['DbSystemDbSystemOptionsArgs', 'DbSystemDbSystemOptionsArgsDict']]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             disk_redundancy: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
@@ -1991,7 +1991,7 @@ class DbSystem(pulumi.CustomResource):
             fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             hostname: Optional[pulumi.Input[str]] = None,
-            iorm_config_caches: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemIormConfigCachArgs']]]]] = None,
+            iorm_config_caches: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DbSystemIormConfigCachArgs', 'DbSystemIormConfigCachArgsDict']]]]] = None,
             kms_key_id: Optional[pulumi.Input[str]] = None,
             kms_key_version_id: Optional[pulumi.Input[str]] = None,
             last_maintenance_run_id: Optional[pulumi.Input[str]] = None,
@@ -1999,8 +1999,8 @@ class DbSystem(pulumi.CustomResource):
             license_model: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             listener_port: Optional[pulumi.Input[int]] = None,
-            maintenance_window_details: Optional[pulumi.Input[pulumi.InputType['DbSystemMaintenanceWindowDetailsArgs']]] = None,
-            maintenance_windows: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemMaintenanceWindowArgs']]]]] = None,
+            maintenance_window_details: Optional[pulumi.Input[Union['DbSystemMaintenanceWindowDetailsArgs', 'DbSystemMaintenanceWindowDetailsArgsDict']]] = None,
+            maintenance_windows: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DbSystemMaintenanceWindowArgs', 'DbSystemMaintenanceWindowArgsDict']]]]] = None,
             memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
             next_maintenance_run_id: Optional[pulumi.Input[str]] = None,
             node_count: Optional[pulumi.Input[int]] = None,
@@ -2052,14 +2052,14 @@ class DbSystem(pulumi.CustomResource):
                * VM.Standard.E4.Flex - Specify any thing from 1 to 64.
                
                This parameter is not used for INTEL virtual machine DB systems because virtual machine DB systems have a set number of cores for each shape. For information about the number of cores for a virtual machine DB system shape, see [Virtual Machine DB Systems](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/overview.htm#virtualmachine)
-        :param pulumi.Input[pulumi.InputType['DbSystemDataCollectionOptionsArgs']] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+        :param pulumi.Input[Union['DbSystemDataCollectionOptionsArgs', 'DbSystemDataCollectionOptionsArgsDict']] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[int] data_storage_percentage: The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
         :param pulumi.Input[int] data_storage_size_in_gb: (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. Required for VMDBs.
         :param pulumi.Input[str] database_edition: The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
-        :param pulumi.Input[pulumi.InputType['DbSystemDbHomeArgs']] db_home: (Updatable) Details for creating a Database Home if you are creating a database by restoring from a database backup.
+        :param pulumi.Input[Union['DbSystemDbHomeArgs', 'DbSystemDbHomeArgsDict']] db_home: (Updatable) Details for creating a Database Home if you are creating a database by restoring from a database backup.
                
                **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
-        :param pulumi.Input[pulumi.InputType['DbSystemDbSystemOptionsArgs']] db_system_options: The DB system options.
+        :param pulumi.Input[Union['DbSystemDbSystemOptionsArgs', 'DbSystemDbSystemOptionsArgsDict']] db_system_options: The DB system options.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] disk_redundancy: The type of redundancy configured for the DB system. Normal is 2-way redundancy, recommended for test and development systems. High is 3-way redundancy, recommended for production systems.
         :param pulumi.Input[str] display_name: The user-friendly name for the DB system. The name does not have to be unique.
@@ -2079,7 +2079,7 @@ class DbSystem(pulumi.CustomResource):
                The maximum length of the combined hostname and domain is 63 characters.
                
                **Note:** The hostname must be unique within the subnet. If it is not unique, the DB system will fail to provision.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemIormConfigCachArgs']]]] iorm_config_caches: The IORM settings of the Exadata DB system.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DbSystemIormConfigCachArgs', 'DbSystemIormConfigCachArgsDict']]]] iorm_config_caches: The IORM settings of the Exadata DB system.
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         :param pulumi.Input[str] last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
@@ -2087,8 +2087,8 @@ class DbSystem(pulumi.CustomResource):
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[int] listener_port: The port number configured for the listener on the DB system.
-        :param pulumi.Input[pulumi.InputType['DbSystemMaintenanceWindowDetailsArgs']] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemMaintenanceWindowArgs']]]] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        :param pulumi.Input[Union['DbSystemMaintenanceWindowDetailsArgs', 'DbSystemMaintenanceWindowDetailsArgsDict']] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DbSystemMaintenanceWindowArgs', 'DbSystemMaintenanceWindowArgsDict']]]] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[int] memory_size_in_gbs: Memory allocated to the DB system, in gigabytes.
         :param pulumi.Input[str] next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param pulumi.Input[int] node_count: The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or 2.

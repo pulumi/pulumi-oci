@@ -222,7 +222,7 @@ public class ManagedDatabaseGroup extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ManagedDatabaseGroup(String name) {
+    public ManagedDatabaseGroup(java.lang.String name) {
         this(name, ManagedDatabaseGroupArgs.Empty);
     }
     /**
@@ -230,7 +230,7 @@ public class ManagedDatabaseGroup extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ManagedDatabaseGroup(String name, ManagedDatabaseGroupArgs args) {
+    public ManagedDatabaseGroup(java.lang.String name, ManagedDatabaseGroupArgs args) {
         this(name, args, null);
     }
     /**
@@ -239,12 +239,12 @@ public class ManagedDatabaseGroup extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ManagedDatabaseGroup(String name, ManagedDatabaseGroupArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseManagement/managedDatabaseGroup:ManagedDatabaseGroup", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ManagedDatabaseGroup(java.lang.String name, ManagedDatabaseGroupArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DatabaseManagement/managedDatabaseGroup:ManagedDatabaseGroup", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ManagedDatabaseGroup(String name, Output<String> id, @Nullable ManagedDatabaseGroupState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseManagement/managedDatabaseGroup:ManagedDatabaseGroup", name, state, makeResourceOptions(options, id));
+    private ManagedDatabaseGroup(java.lang.String name, Output<java.lang.String> id, @Nullable ManagedDatabaseGroupState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DatabaseManagement/managedDatabaseGroup:ManagedDatabaseGroup", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ManagedDatabaseGroupArgs makeArgs(ManagedDatabaseGroupArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -254,7 +254,7 @@ public class ManagedDatabaseGroup extends com.pulumi.resources.CustomResource {
         return args == null ? ManagedDatabaseGroupArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -270,7 +270,7 @@ public class ManagedDatabaseGroup extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ManagedDatabaseGroup get(String name, Output<String> id, @Nullable ManagedDatabaseGroupState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ManagedDatabaseGroup get(java.lang.String name, Output<java.lang.String> id, @Nullable ManagedDatabaseGroupState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ManagedDatabaseGroup(name, id, state, options);
     }
 }

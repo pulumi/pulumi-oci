@@ -153,7 +153,7 @@ class AwaitableGetManagedDatabaseSqlTuningAdvisorTasksFindingsResult(GetManagedD
 
 def get_managed_database_sql_tuning_advisor_tasks_findings(begin_exec_id: Optional[str] = None,
                                                            end_exec_id: Optional[str] = None,
-                                                           filters: Optional[Sequence[pulumi.InputType['GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterArgs']]] = None,
+                                                           filters: Optional[Sequence[Union['GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterArgs', 'GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterArgsDict']]] = None,
                                                            finding_filter: Optional[str] = None,
                                                            index_hash_filter: Optional[str] = None,
                                                            managed_database_id: Optional[str] = None,
@@ -227,7 +227,7 @@ def get_managed_database_sql_tuning_advisor_tasks_findings(begin_exec_id: Option
 @_utilities.lift_output_func(get_managed_database_sql_tuning_advisor_tasks_findings)
 def get_managed_database_sql_tuning_advisor_tasks_findings_output(begin_exec_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                                   end_exec_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                                                  filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterArgs']]]]] = None,
+                                                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterArgs', 'GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterArgsDict']]]]] = None,
                                                                   finding_filter: Optional[pulumi.Input[Optional[str]]] = None,
                                                                   index_hash_filter: Optional[pulumi.Input[Optional[str]]] = None,
                                                                   managed_database_id: Optional[pulumi.Input[str]] = None,

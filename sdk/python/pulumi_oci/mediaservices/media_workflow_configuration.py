@@ -348,7 +348,7 @@ class MediaWorkflowConfiguration(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_lock_override: Optional[pulumi.Input[bool]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MediaWorkflowConfigurationLockArgs']]]]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MediaWorkflowConfigurationLockArgs', 'MediaWorkflowConfigurationLockArgsDict']]]]] = None,
                  parameters: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -372,13 +372,13 @@ class MediaWorkflowConfiguration(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            locks=[oci.media_services.MediaWorkflowConfigurationLockArgs(
-                compartment_id=compartment_id,
-                type=media_workflow_configuration_locks_type,
-                message=media_workflow_configuration_locks_message,
-                related_resource_id=test_resource["id"],
-                time_created=media_workflow_configuration_locks_time_created,
-            )])
+            locks=[{
+                "compartment_id": compartment_id,
+                "type": media_workflow_configuration_locks_type,
+                "message": media_workflow_configuration_locks_message,
+                "related_resource_id": test_resource["id"],
+                "time_created": media_workflow_configuration_locks_time_created,
+            }])
         ```
 
         ## Import
@@ -395,7 +395,7 @@ class MediaWorkflowConfiguration(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) MediaWorkflowConfiguration identifier. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MediaWorkflowConfigurationLockArgs']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MediaWorkflowConfigurationLockArgs', 'MediaWorkflowConfigurationLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[str] parameters: (Updatable) Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refers to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey > parameterName > parameterValue 
                
                
@@ -429,13 +429,13 @@ class MediaWorkflowConfiguration(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            locks=[oci.media_services.MediaWorkflowConfigurationLockArgs(
-                compartment_id=compartment_id,
-                type=media_workflow_configuration_locks_type,
-                message=media_workflow_configuration_locks_message,
-                related_resource_id=test_resource["id"],
-                time_created=media_workflow_configuration_locks_time_created,
-            )])
+            locks=[{
+                "compartment_id": compartment_id,
+                "type": media_workflow_configuration_locks_type,
+                "message": media_workflow_configuration_locks_message,
+                "related_resource_id": test_resource["id"],
+                "time_created": media_workflow_configuration_locks_time_created,
+            }])
         ```
 
         ## Import
@@ -466,7 +466,7 @@ class MediaWorkflowConfiguration(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_lock_override: Optional[pulumi.Input[bool]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MediaWorkflowConfigurationLockArgs']]]]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MediaWorkflowConfigurationLockArgs', 'MediaWorkflowConfigurationLockArgsDict']]]]] = None,
                  parameters: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -511,7 +511,7 @@ class MediaWorkflowConfiguration(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             is_lock_override: Optional[pulumi.Input[bool]] = None,
             lifecyle_details: Optional[pulumi.Input[str]] = None,
-            locks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MediaWorkflowConfigurationLockArgs']]]]] = None,
+            locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MediaWorkflowConfigurationLockArgs', 'MediaWorkflowConfigurationLockArgsDict']]]]] = None,
             parameters: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -529,7 +529,7 @@ class MediaWorkflowConfiguration(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) MediaWorkflowConfiguration identifier. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecyle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MediaWorkflowConfigurationLockArgs']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MediaWorkflowConfigurationLockArgs', 'MediaWorkflowConfigurationLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[str] parameters: (Updatable) Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refers to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey > parameterName > parameterValue 
                
                

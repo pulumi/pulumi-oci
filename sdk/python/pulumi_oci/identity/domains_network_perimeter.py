@@ -1019,12 +1019,12 @@ class DomainsNetworkPerimeter(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  external_id: Optional[pulumi.Input[str]] = None,
                  idcs_endpoint: Optional[pulumi.Input[str]] = None,
-                 ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsNetworkPerimeterIpAddressArgs']]]]] = None,
+                 ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsNetworkPerimeterIpAddressArgs', 'DomainsNetworkPerimeterIpAddressArgsDict']]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  ocid: Optional[pulumi.Input[str]] = None,
                  resource_type_schema_version: Optional[pulumi.Input[str]] = None,
                  schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsNetworkPerimeterTagArgs']]]]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsNetworkPerimeterTagArgs', 'DomainsNetworkPerimeterTagArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Network Perimeter resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -1066,7 +1066,7 @@ class DomainsNetworkPerimeter(pulumi.CustomResource):
                * type: string
                * uniqueness: none
         :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsNetworkPerimeterIpAddressArgs']]]] ip_addresses: (Updatable) IPAddresses or Ranges assigned to the NetworkPerimeter
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsNetworkPerimeterIpAddressArgs', 'DomainsNetworkPerimeterIpAddressArgsDict']]]] ip_addresses: (Updatable) IPAddresses or Ranges assigned to the NetworkPerimeter
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [value]
@@ -1111,7 +1111,7 @@ class DomainsNetworkPerimeter(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsNetworkPerimeterTagArgs']]]] tags: (Updatable) A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsNetworkPerimeterTagArgs', 'DomainsNetworkPerimeterTagArgsDict']]]] tags: (Updatable) A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -1163,12 +1163,12 @@ class DomainsNetworkPerimeter(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  external_id: Optional[pulumi.Input[str]] = None,
                  idcs_endpoint: Optional[pulumi.Input[str]] = None,
-                 ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsNetworkPerimeterIpAddressArgs']]]]] = None,
+                 ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsNetworkPerimeterIpAddressArgs', 'DomainsNetworkPerimeterIpAddressArgsDict']]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  ocid: Optional[pulumi.Input[str]] = None,
                  resource_type_schema_version: Optional[pulumi.Input[str]] = None,
                  schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsNetworkPerimeterTagArgs']]]]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsNetworkPerimeterTagArgs', 'DomainsNetworkPerimeterTagArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1223,18 +1223,18 @@ class DomainsNetworkPerimeter(pulumi.CustomResource):
             description: Optional[pulumi.Input[str]] = None,
             domain_ocid: Optional[pulumi.Input[str]] = None,
             external_id: Optional[pulumi.Input[str]] = None,
-            idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsNetworkPerimeterIdcsCreatedByArgs']]]]] = None,
+            idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsNetworkPerimeterIdcsCreatedByArgs', 'DomainsNetworkPerimeterIdcsCreatedByArgsDict']]]]] = None,
             idcs_endpoint: Optional[pulumi.Input[str]] = None,
-            idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsNetworkPerimeterIdcsLastModifiedByArgs']]]]] = None,
+            idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsNetworkPerimeterIdcsLastModifiedByArgs', 'DomainsNetworkPerimeterIdcsLastModifiedByArgsDict']]]]] = None,
             idcs_last_upgraded_in_release: Optional[pulumi.Input[str]] = None,
             idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsNetworkPerimeterIpAddressArgs']]]]] = None,
-            metas: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsNetworkPerimeterMetaArgs']]]]] = None,
+            ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsNetworkPerimeterIpAddressArgs', 'DomainsNetworkPerimeterIpAddressArgsDict']]]]] = None,
+            metas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsNetworkPerimeterMetaArgs', 'DomainsNetworkPerimeterMetaArgsDict']]]]] = None,
             name: Optional[pulumi.Input[str]] = None,
             ocid: Optional[pulumi.Input[str]] = None,
             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsNetworkPerimeterTagArgs']]]]] = None,
+            tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsNetworkPerimeterTagArgs', 'DomainsNetworkPerimeterTagArgsDict']]]]] = None,
             tenancy_ocid: Optional[pulumi.Input[str]] = None) -> 'DomainsNetworkPerimeter':
         """
         Get an existing DomainsNetworkPerimeter resource's state with the given name, id, and optional extra
@@ -1300,7 +1300,7 @@ class DomainsNetworkPerimeter(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsNetworkPerimeterIdcsCreatedByArgs']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsNetworkPerimeterIdcsCreatedByArgs', 'DomainsNetworkPerimeterIdcsCreatedByArgsDict']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1310,7 +1310,7 @@ class DomainsNetworkPerimeter(pulumi.CustomResource):
                * returned: default
                * type: complex
         :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsNetworkPerimeterIdcsLastModifiedByArgs']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsNetworkPerimeterIdcsLastModifiedByArgs', 'DomainsNetworkPerimeterIdcsLastModifiedByArgsDict']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1340,7 +1340,7 @@ class DomainsNetworkPerimeter(pulumi.CustomResource):
                * returned: request
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsNetworkPerimeterIpAddressArgs']]]] ip_addresses: (Updatable) IPAddresses or Ranges assigned to the NetworkPerimeter
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsNetworkPerimeterIpAddressArgs', 'DomainsNetworkPerimeterIpAddressArgsDict']]]] ip_addresses: (Updatable) IPAddresses or Ranges assigned to the NetworkPerimeter
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [value]
@@ -1351,7 +1351,7 @@ class DomainsNetworkPerimeter(pulumi.CustomResource):
                * returned: default
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsNetworkPerimeterMetaArgs']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsNetworkPerimeterMetaArgs', 'DomainsNetworkPerimeterMetaArgsDict']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1396,7 +1396,7 @@ class DomainsNetworkPerimeter(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsNetworkPerimeterTagArgs']]]] tags: (Updatable) A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsNetworkPerimeterTagArgs', 'DomainsNetworkPerimeterTagArgsDict']]]] tags: (Updatable) A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]

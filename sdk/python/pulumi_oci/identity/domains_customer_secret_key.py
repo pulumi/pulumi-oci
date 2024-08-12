@@ -1147,9 +1147,9 @@ class DomainsCustomerSecretKey(pulumi.CustomResource):
                  resource_type_schema_version: Optional[pulumi.Input[str]] = None,
                  schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  status: Optional[pulumi.Input[str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsCustomerSecretKeyTagArgs']]]]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionself_change_user: Optional[pulumi.Input[pulumi.InputType['DomainsCustomerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs']]] = None,
-                 user: Optional[pulumi.Input[pulumi.InputType['DomainsCustomerSecretKeyUserArgs']]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsCustomerSecretKeyTagArgs', 'DomainsCustomerSecretKeyTagArgsDict']]]]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionself_change_user: Optional[pulumi.Input[Union['DomainsCustomerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs', 'DomainsCustomerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgsDict']]] = None,
+                 user: Optional[pulumi.Input[Union['DomainsCustomerSecretKeyUserArgs', 'DomainsCustomerSecretKeyUserArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Customer Secret Key resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -1235,7 +1235,7 @@ class DomainsCustomerSecretKey(pulumi.CustomResource):
                * returned: never
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsCustomerSecretKeyTagArgs']]]] tags: A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsCustomerSecretKeyTagArgs', 'DomainsCustomerSecretKeyTagArgsDict']]]] tags: A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -1246,8 +1246,8 @@ class DomainsCustomerSecretKey(pulumi.CustomResource):
                * returned: request
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsCustomerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs']] urnietfparamsscimschemasoracleidcsextensionself_change_user: Controls whether a user can update themselves or not via User related APIs
-        :param pulumi.Input[pulumi.InputType['DomainsCustomerSecretKeyUserArgs']] user: User linked to customer secret key
+        :param pulumi.Input[Union['DomainsCustomerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs', 'DomainsCustomerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgsDict']] urnietfparamsscimschemasoracleidcsextensionself_change_user: Controls whether a user can update themselves or not via User related APIs
+        :param pulumi.Input[Union['DomainsCustomerSecretKeyUserArgs', 'DomainsCustomerSecretKeyUserArgsDict']] user: User linked to customer secret key
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1304,9 +1304,9 @@ class DomainsCustomerSecretKey(pulumi.CustomResource):
                  resource_type_schema_version: Optional[pulumi.Input[str]] = None,
                  schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  status: Optional[pulumi.Input[str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsCustomerSecretKeyTagArgs']]]]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionself_change_user: Optional[pulumi.Input[pulumi.InputType['DomainsCustomerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs']]] = None,
-                 user: Optional[pulumi.Input[pulumi.InputType['DomainsCustomerSecretKeyUserArgs']]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsCustomerSecretKeyTagArgs', 'DomainsCustomerSecretKeyTagArgsDict']]]]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionself_change_user: Optional[pulumi.Input[Union['DomainsCustomerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs', 'DomainsCustomerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgsDict']]] = None,
+                 user: Optional[pulumi.Input[Union['DomainsCustomerSecretKeyUserArgs', 'DomainsCustomerSecretKeyUserArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1364,20 +1364,20 @@ class DomainsCustomerSecretKey(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[str]] = None,
             domain_ocid: Optional[pulumi.Input[str]] = None,
             expires_on: Optional[pulumi.Input[str]] = None,
-            idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsCustomerSecretKeyIdcsCreatedByArgs']]]]] = None,
+            idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsCustomerSecretKeyIdcsCreatedByArgs', 'DomainsCustomerSecretKeyIdcsCreatedByArgsDict']]]]] = None,
             idcs_endpoint: Optional[pulumi.Input[str]] = None,
-            idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsCustomerSecretKeyIdcsLastModifiedByArgs']]]]] = None,
+            idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsCustomerSecretKeyIdcsLastModifiedByArgs', 'DomainsCustomerSecretKeyIdcsLastModifiedByArgsDict']]]]] = None,
             idcs_last_upgraded_in_release: Optional[pulumi.Input[str]] = None,
             idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            metas: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsCustomerSecretKeyMetaArgs']]]]] = None,
+            metas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsCustomerSecretKeyMetaArgs', 'DomainsCustomerSecretKeyMetaArgsDict']]]]] = None,
             ocid: Optional[pulumi.Input[str]] = None,
             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             status: Optional[pulumi.Input[str]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsCustomerSecretKeyTagArgs']]]]] = None,
+            tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsCustomerSecretKeyTagArgs', 'DomainsCustomerSecretKeyTagArgsDict']]]]] = None,
             tenancy_ocid: Optional[pulumi.Input[str]] = None,
-            urnietfparamsscimschemasoracleidcsextensionself_change_user: Optional[pulumi.Input[pulumi.InputType['DomainsCustomerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs']]] = None,
-            user: Optional[pulumi.Input[pulumi.InputType['DomainsCustomerSecretKeyUserArgs']]] = None) -> 'DomainsCustomerSecretKey':
+            urnietfparamsscimschemasoracleidcsextensionself_change_user: Optional[pulumi.Input[Union['DomainsCustomerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs', 'DomainsCustomerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgsDict']]] = None,
+            user: Optional[pulumi.Input[Union['DomainsCustomerSecretKeyUserArgs', 'DomainsCustomerSecretKeyUserArgsDict']]] = None) -> 'DomainsCustomerSecretKey':
         """
         Get an existing DomainsCustomerSecretKey resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -1458,7 +1458,7 @@ class DomainsCustomerSecretKey(pulumi.CustomResource):
                * returned: default
                * type: dateTime
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsCustomerSecretKeyIdcsCreatedByArgs']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsCustomerSecretKeyIdcsCreatedByArgs', 'DomainsCustomerSecretKeyIdcsCreatedByArgsDict']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1468,7 +1468,7 @@ class DomainsCustomerSecretKey(pulumi.CustomResource):
                * returned: default
                * type: complex
         :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsCustomerSecretKeyIdcsLastModifiedByArgs']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsCustomerSecretKeyIdcsLastModifiedByArgs', 'DomainsCustomerSecretKeyIdcsLastModifiedByArgsDict']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1498,7 +1498,7 @@ class DomainsCustomerSecretKey(pulumi.CustomResource):
                * returned: request
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsCustomerSecretKeyMetaArgs']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsCustomerSecretKeyMetaArgs', 'DomainsCustomerSecretKeyMetaArgsDict']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1545,7 +1545,7 @@ class DomainsCustomerSecretKey(pulumi.CustomResource):
                * returned: never
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsCustomerSecretKeyTagArgs']]]] tags: A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsCustomerSecretKeyTagArgs', 'DomainsCustomerSecretKeyTagArgsDict']]]] tags: A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -1567,8 +1567,8 @@ class DomainsCustomerSecretKey(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsCustomerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs']] urnietfparamsscimschemasoracleidcsextensionself_change_user: Controls whether a user can update themselves or not via User related APIs
-        :param pulumi.Input[pulumi.InputType['DomainsCustomerSecretKeyUserArgs']] user: User linked to customer secret key
+        :param pulumi.Input[Union['DomainsCustomerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs', 'DomainsCustomerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgsDict']] urnietfparamsscimschemasoracleidcsextensionself_change_user: Controls whether a user can update themselves or not via User related APIs
+        :param pulumi.Input[Union['DomainsCustomerSecretKeyUserArgs', 'DomainsCustomerSecretKeyUserArgsDict']] user: User linked to customer secret key
                
                **SCIM++ Properties:**
                * caseExact: false

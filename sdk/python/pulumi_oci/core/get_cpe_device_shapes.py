@@ -67,7 +67,7 @@ class AwaitableGetCpeDeviceShapesResult(GetCpeDeviceShapesResult):
             id=self.id)
 
 
-def get_cpe_device_shapes(filters: Optional[Sequence[pulumi.InputType['GetCpeDeviceShapesFilterArgs']]] = None,
+def get_cpe_device_shapes(filters: Optional[Sequence[Union['GetCpeDeviceShapesFilterArgs', 'GetCpeDeviceShapesFilterArgsDict']]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCpeDeviceShapesResult:
     """
     This data source provides the list of Cpe Device Shapes in Oracle Cloud Infrastructure Core service.
@@ -107,7 +107,7 @@ def get_cpe_device_shapes(filters: Optional[Sequence[pulumi.InputType['GetCpeDev
 
 
 @_utilities.lift_output_func(get_cpe_device_shapes)
-def get_cpe_device_shapes_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetCpeDeviceShapesFilterArgs']]]]] = None,
+def get_cpe_device_shapes_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCpeDeviceShapesFilterArgs', 'GetCpeDeviceShapesFilterArgsDict']]]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCpeDeviceShapesResult]:
     """
     This data source provides the list of Cpe Device Shapes in Oracle Cloud Infrastructure Core service.

@@ -93,7 +93,7 @@ class AwaitableGetExternalDbSystemsResult(GetExternalDbSystemsResult):
 
 def get_external_db_systems(compartment_id: Optional[str] = None,
                             display_name: Optional[str] = None,
-                            filters: Optional[Sequence[pulumi.InputType['GetExternalDbSystemsFilterArgs']]] = None,
+                            filters: Optional[Sequence[Union['GetExternalDbSystemsFilterArgs', 'GetExternalDbSystemsFilterArgsDict']]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalDbSystemsResult:
     """
     This data source provides the list of External Db Systems in Oracle Cloud Infrastructure Database Management service.
@@ -132,7 +132,7 @@ def get_external_db_systems(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_external_db_systems)
 def get_external_db_systems_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                    display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetExternalDbSystemsFilterArgs']]]]] = None,
+                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExternalDbSystemsFilterArgs', 'GetExternalDbSystemsFilterArgsDict']]]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalDbSystemsResult]:
     """
     This data source provides the list of External Db Systems in Oracle Cloud Infrastructure Database Management service.

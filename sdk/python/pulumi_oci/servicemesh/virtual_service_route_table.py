@@ -389,7 +389,7 @@ class VirtualServiceRouteTable(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  priority: Optional[pulumi.Input[int]] = None,
-                 route_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualServiceRouteTableRouteRuleArgs']]]]] = None,
+                 route_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualServiceRouteTableRouteRuleArgs', 'VirtualServiceRouteTableRouteRuleArgsDict']]]]] = None,
                  virtual_service_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -406,18 +406,18 @@ class VirtualServiceRouteTable(pulumi.CustomResource):
         test_virtual_service_route_table = oci.service_mesh.VirtualServiceRouteTable("test_virtual_service_route_table",
             compartment_id=compartment_id,
             name=virtual_service_route_table_name,
-            route_rules=[oci.service_mesh.VirtualServiceRouteTableRouteRuleArgs(
-                destinations=[oci.service_mesh.VirtualServiceRouteTableRouteRuleDestinationArgs(
-                    virtual_deployment_id=test_virtual_deployment["id"],
-                    weight=virtual_service_route_table_route_rules_destinations_weight,
-                    port=virtual_service_route_table_route_rules_destinations_port,
-                )],
-                type=virtual_service_route_table_route_rules_type,
-                is_grpc=virtual_service_route_table_route_rules_is_grpc,
-                path=virtual_service_route_table_route_rules_path,
-                path_type=virtual_service_route_table_route_rules_path_type,
-                request_timeout_in_ms=virtual_service_route_table_route_rules_request_timeout_in_ms,
-            )],
+            route_rules=[{
+                "destinations": [{
+                    "virtual_deployment_id": test_virtual_deployment["id"],
+                    "weight": virtual_service_route_table_route_rules_destinations_weight,
+                    "port": virtual_service_route_table_route_rules_destinations_port,
+                }],
+                "type": virtual_service_route_table_route_rules_type,
+                "is_grpc": virtual_service_route_table_route_rules_is_grpc,
+                "path": virtual_service_route_table_route_rules_path,
+                "path_type": virtual_service_route_table_route_rules_path_type,
+                "request_timeout_in_ms": virtual_service_route_table_route_rules_request_timeout_in_ms,
+            }],
             virtual_service_id=test_virtual_service["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -445,7 +445,7 @@ class VirtualServiceRouteTable(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] name: A user-friendly name. The name must be unique within the same virtual service and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
         :param pulumi.Input[int] priority: (Updatable) The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualServiceRouteTableRouteRuleArgs']]]] route_rules: (Updatable) The route rules for the virtual service.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualServiceRouteTableRouteRuleArgs', 'VirtualServiceRouteTableRouteRuleArgsDict']]]] route_rules: (Updatable) The route rules for the virtual service.
         :param pulumi.Input[str] virtual_service_id: The OCID of the service mesh in which this access policy is created.
                
                
@@ -472,18 +472,18 @@ class VirtualServiceRouteTable(pulumi.CustomResource):
         test_virtual_service_route_table = oci.service_mesh.VirtualServiceRouteTable("test_virtual_service_route_table",
             compartment_id=compartment_id,
             name=virtual_service_route_table_name,
-            route_rules=[oci.service_mesh.VirtualServiceRouteTableRouteRuleArgs(
-                destinations=[oci.service_mesh.VirtualServiceRouteTableRouteRuleDestinationArgs(
-                    virtual_deployment_id=test_virtual_deployment["id"],
-                    weight=virtual_service_route_table_route_rules_destinations_weight,
-                    port=virtual_service_route_table_route_rules_destinations_port,
-                )],
-                type=virtual_service_route_table_route_rules_type,
-                is_grpc=virtual_service_route_table_route_rules_is_grpc,
-                path=virtual_service_route_table_route_rules_path,
-                path_type=virtual_service_route_table_route_rules_path_type,
-                request_timeout_in_ms=virtual_service_route_table_route_rules_request_timeout_in_ms,
-            )],
+            route_rules=[{
+                "destinations": [{
+                    "virtual_deployment_id": test_virtual_deployment["id"],
+                    "weight": virtual_service_route_table_route_rules_destinations_weight,
+                    "port": virtual_service_route_table_route_rules_destinations_port,
+                }],
+                "type": virtual_service_route_table_route_rules_type,
+                "is_grpc": virtual_service_route_table_route_rules_is_grpc,
+                "path": virtual_service_route_table_route_rules_path,
+                "path_type": virtual_service_route_table_route_rules_path_type,
+                "request_timeout_in_ms": virtual_service_route_table_route_rules_request_timeout_in_ms,
+            }],
             virtual_service_id=test_virtual_service["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -524,7 +524,7 @@ class VirtualServiceRouteTable(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  priority: Optional[pulumi.Input[int]] = None,
-                 route_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualServiceRouteTableRouteRuleArgs']]]]] = None,
+                 route_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualServiceRouteTableRouteRuleArgs', 'VirtualServiceRouteTableRouteRuleArgsDict']]]]] = None,
                  virtual_service_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -571,7 +571,7 @@ class VirtualServiceRouteTable(pulumi.CustomResource):
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             priority: Optional[pulumi.Input[int]] = None,
-            route_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualServiceRouteTableRouteRuleArgs']]]]] = None,
+            route_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualServiceRouteTableRouteRuleArgs', 'VirtualServiceRouteTableRouteRuleArgsDict']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
@@ -591,7 +591,7 @@ class VirtualServiceRouteTable(pulumi.CustomResource):
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
         :param pulumi.Input[str] name: A user-friendly name. The name must be unique within the same virtual service and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
         :param pulumi.Input[int] priority: (Updatable) The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualServiceRouteTableRouteRuleArgs']]]] route_rules: (Updatable) The route rules for the virtual service.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualServiceRouteTableRouteRuleArgs', 'VirtualServiceRouteTableRouteRuleArgsDict']]]] route_rules: (Updatable) The route rules for the virtual service.
         :param pulumi.Input[str] state: The current state of the Resource.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time when this resource was created in an RFC3339 formatted datetime string.

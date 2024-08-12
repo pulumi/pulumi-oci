@@ -375,7 +375,7 @@ public class DatabaseToolsPrivateEndpoint extends com.pulumi.resources.CustomRes
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DatabaseToolsPrivateEndpoint(String name) {
+    public DatabaseToolsPrivateEndpoint(java.lang.String name) {
         this(name, DatabaseToolsPrivateEndpointArgs.Empty);
     }
     /**
@@ -383,7 +383,7 @@ public class DatabaseToolsPrivateEndpoint extends com.pulumi.resources.CustomRes
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DatabaseToolsPrivateEndpoint(String name, DatabaseToolsPrivateEndpointArgs args) {
+    public DatabaseToolsPrivateEndpoint(java.lang.String name, DatabaseToolsPrivateEndpointArgs args) {
         this(name, args, null);
     }
     /**
@@ -392,12 +392,12 @@ public class DatabaseToolsPrivateEndpoint extends com.pulumi.resources.CustomRes
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DatabaseToolsPrivateEndpoint(String name, DatabaseToolsPrivateEndpointArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseTools/databaseToolsPrivateEndpoint:DatabaseToolsPrivateEndpoint", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DatabaseToolsPrivateEndpoint(java.lang.String name, DatabaseToolsPrivateEndpointArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DatabaseTools/databaseToolsPrivateEndpoint:DatabaseToolsPrivateEndpoint", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DatabaseToolsPrivateEndpoint(String name, Output<String> id, @Nullable DatabaseToolsPrivateEndpointState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseTools/databaseToolsPrivateEndpoint:DatabaseToolsPrivateEndpoint", name, state, makeResourceOptions(options, id));
+    private DatabaseToolsPrivateEndpoint(java.lang.String name, Output<java.lang.String> id, @Nullable DatabaseToolsPrivateEndpointState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DatabaseTools/databaseToolsPrivateEndpoint:DatabaseToolsPrivateEndpoint", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DatabaseToolsPrivateEndpointArgs makeArgs(DatabaseToolsPrivateEndpointArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -407,7 +407,7 @@ public class DatabaseToolsPrivateEndpoint extends com.pulumi.resources.CustomRes
         return args == null ? DatabaseToolsPrivateEndpointArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -423,7 +423,7 @@ public class DatabaseToolsPrivateEndpoint extends com.pulumi.resources.CustomRes
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DatabaseToolsPrivateEndpoint get(String name, Output<String> id, @Nullable DatabaseToolsPrivateEndpointState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DatabaseToolsPrivateEndpoint get(java.lang.String name, Output<java.lang.String> id, @Nullable DatabaseToolsPrivateEndpointState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DatabaseToolsPrivateEndpoint(name, id, state, options);
     }
 }

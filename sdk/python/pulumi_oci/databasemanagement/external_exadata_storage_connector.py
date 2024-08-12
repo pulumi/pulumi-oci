@@ -448,7 +448,7 @@ class ExternalExadataStorageConnector(pulumi.CustomResource):
                  agent_id: Optional[pulumi.Input[str]] = None,
                  connection_uri: Optional[pulumi.Input[str]] = None,
                  connector_name: Optional[pulumi.Input[str]] = None,
-                 credential_info: Optional[pulumi.Input[pulumi.InputType['ExternalExadataStorageConnectorCredentialInfoArgs']]] = None,
+                 credential_info: Optional[pulumi.Input[Union['ExternalExadataStorageConnectorCredentialInfoArgs', 'ExternalExadataStorageConnectorCredentialInfoArgsDict']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  storage_server_id: Optional[pulumi.Input[str]] = None,
@@ -468,13 +468,13 @@ class ExternalExadataStorageConnector(pulumi.CustomResource):
             agent_id=test_agent["id"],
             connection_uri=external_exadata_storage_connector_connection_uri,
             connector_name=external_exadata_storage_connector_connector_name,
-            credential_info=oci.database_management.ExternalExadataStorageConnectorCredentialInfoArgs(
-                password=external_exadata_storage_connector_credential_info_password,
-                username=external_exadata_storage_connector_credential_info_username,
-                ssl_trust_store_location=external_exadata_storage_connector_credential_info_ssl_trust_store_location,
-                ssl_trust_store_password=external_exadata_storage_connector_credential_info_ssl_trust_store_password,
-                ssl_trust_store_type=external_exadata_storage_connector_credential_info_ssl_trust_store_type,
-            ),
+            credential_info={
+                "password": external_exadata_storage_connector_credential_info_password,
+                "username": external_exadata_storage_connector_credential_info_username,
+                "ssl_trust_store_location": external_exadata_storage_connector_credential_info_ssl_trust_store_location,
+                "ssl_trust_store_password": external_exadata_storage_connector_credential_info_ssl_trust_store_password,
+                "ssl_trust_store_type": external_exadata_storage_connector_credential_info_ssl_trust_store_type,
+            },
             storage_server_id=test_storage_server["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -497,7 +497,7 @@ class ExternalExadataStorageConnector(pulumi.CustomResource):
         :param pulumi.Input[str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
         :param pulumi.Input[str] connection_uri: (Updatable) The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
         :param pulumi.Input[str] connector_name: (Updatable) The name of the Exadata storage server connector.
-        :param pulumi.Input[pulumi.InputType['ExternalExadataStorageConnectorCredentialInfoArgs']] credential_info: (Updatable) The user credential information.
+        :param pulumi.Input[Union['ExternalExadataStorageConnectorCredentialInfoArgs', 'ExternalExadataStorageConnectorCredentialInfoArgsDict']] credential_info: (Updatable) The user credential information.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] storage_server_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
@@ -527,13 +527,13 @@ class ExternalExadataStorageConnector(pulumi.CustomResource):
             agent_id=test_agent["id"],
             connection_uri=external_exadata_storage_connector_connection_uri,
             connector_name=external_exadata_storage_connector_connector_name,
-            credential_info=oci.database_management.ExternalExadataStorageConnectorCredentialInfoArgs(
-                password=external_exadata_storage_connector_credential_info_password,
-                username=external_exadata_storage_connector_credential_info_username,
-                ssl_trust_store_location=external_exadata_storage_connector_credential_info_ssl_trust_store_location,
-                ssl_trust_store_password=external_exadata_storage_connector_credential_info_ssl_trust_store_password,
-                ssl_trust_store_type=external_exadata_storage_connector_credential_info_ssl_trust_store_type,
-            ),
+            credential_info={
+                "password": external_exadata_storage_connector_credential_info_password,
+                "username": external_exadata_storage_connector_credential_info_username,
+                "ssl_trust_store_location": external_exadata_storage_connector_credential_info_ssl_trust_store_location,
+                "ssl_trust_store_password": external_exadata_storage_connector_credential_info_ssl_trust_store_password,
+                "ssl_trust_store_type": external_exadata_storage_connector_credential_info_ssl_trust_store_type,
+            },
             storage_server_id=test_storage_server["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -569,7 +569,7 @@ class ExternalExadataStorageConnector(pulumi.CustomResource):
                  agent_id: Optional[pulumi.Input[str]] = None,
                  connection_uri: Optional[pulumi.Input[str]] = None,
                  connector_name: Optional[pulumi.Input[str]] = None,
-                 credential_info: Optional[pulumi.Input[pulumi.InputType['ExternalExadataStorageConnectorCredentialInfoArgs']]] = None,
+                 credential_info: Optional[pulumi.Input[Union['ExternalExadataStorageConnectorCredentialInfoArgs', 'ExternalExadataStorageConnectorCredentialInfoArgsDict']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  storage_server_id: Optional[pulumi.Input[str]] = None,
@@ -624,7 +624,7 @@ class ExternalExadataStorageConnector(pulumi.CustomResource):
             agent_id: Optional[pulumi.Input[str]] = None,
             connection_uri: Optional[pulumi.Input[str]] = None,
             connector_name: Optional[pulumi.Input[str]] = None,
-            credential_info: Optional[pulumi.Input[pulumi.InputType['ExternalExadataStorageConnectorCredentialInfoArgs']]] = None,
+            credential_info: Optional[pulumi.Input[Union['ExternalExadataStorageConnectorCredentialInfoArgs', 'ExternalExadataStorageConnectorCredentialInfoArgsDict']]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
@@ -649,7 +649,7 @@ class ExternalExadataStorageConnector(pulumi.CustomResource):
         :param pulumi.Input[str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
         :param pulumi.Input[str] connection_uri: (Updatable) The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
         :param pulumi.Input[str] connector_name: (Updatable) The name of the Exadata storage server connector.
-        :param pulumi.Input[pulumi.InputType['ExternalExadataStorageConnectorCredentialInfoArgs']] credential_info: (Updatable) The user credential information.
+        :param pulumi.Input[Union['ExternalExadataStorageConnectorCredentialInfoArgs', 'ExternalExadataStorageConnectorCredentialInfoArgsDict']] credential_info: (Updatable) The user credential information.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
         :param pulumi.Input[str] exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.

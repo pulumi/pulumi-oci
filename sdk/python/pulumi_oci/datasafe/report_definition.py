@@ -619,16 +619,16 @@ class ReportDefinition(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 column_filters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ReportDefinitionColumnFilterArgs']]]]] = None,
-                 column_infos: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ReportDefinitionColumnInfoArgs']]]]] = None,
-                 column_sortings: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ReportDefinitionColumnSortingArgs']]]]] = None,
+                 column_filters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ReportDefinitionColumnFilterArgs', 'ReportDefinitionColumnFilterArgsDict']]]]] = None,
+                 column_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ReportDefinitionColumnInfoArgs', 'ReportDefinitionColumnInfoArgsDict']]]]] = None,
+                 column_sortings: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ReportDefinitionColumnSortingArgs', 'ReportDefinitionColumnSortingArgsDict']]]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  parent_id: Optional[pulumi.Input[str]] = None,
-                 summaries: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ReportDefinitionSummaryArgs']]]]] = None,
+                 summaries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ReportDefinitionSummaryArgs', 'ReportDefinitionSummaryArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Report Definition resource in Oracle Cloud Infrastructure Data Safe service.
@@ -642,36 +642,36 @@ class ReportDefinition(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_report_definition = oci.data_safe.ReportDefinition("test_report_definition",
-            column_filters=[oci.data_safe.ReportDefinitionColumnFilterArgs(
-                expressions=report_definition_column_filters_expressions,
-                field_name=report_definition_column_filters_field_name,
-                is_enabled=report_definition_column_filters_is_enabled,
-                is_hidden=report_definition_column_filters_is_hidden,
-                operator=report_definition_column_filters_operator,
-            )],
-            column_infos=[oci.data_safe.ReportDefinitionColumnInfoArgs(
-                display_name=report_definition_column_info_display_name,
-                display_order=report_definition_column_info_display_order,
-                field_name=report_definition_column_info_field_name,
-                is_hidden=report_definition_column_info_is_hidden,
-                data_type=report_definition_column_info_data_type,
-            )],
-            column_sortings=[oci.data_safe.ReportDefinitionColumnSortingArgs(
-                field_name=report_definition_column_sortings_field_name,
-                is_ascending=report_definition_column_sortings_is_ascending,
-                sorting_order=report_definition_column_sortings_sorting_order,
-            )],
+            column_filters=[{
+                "expressions": report_definition_column_filters_expressions,
+                "field_name": report_definition_column_filters_field_name,
+                "is_enabled": report_definition_column_filters_is_enabled,
+                "is_hidden": report_definition_column_filters_is_hidden,
+                "operator": report_definition_column_filters_operator,
+            }],
+            column_infos=[{
+                "display_name": report_definition_column_info_display_name,
+                "display_order": report_definition_column_info_display_order,
+                "field_name": report_definition_column_info_field_name,
+                "is_hidden": report_definition_column_info_is_hidden,
+                "data_type": report_definition_column_info_data_type,
+            }],
+            column_sortings=[{
+                "field_name": report_definition_column_sortings_field_name,
+                "is_ascending": report_definition_column_sortings_is_ascending,
+                "sorting_order": report_definition_column_sortings_sorting_order,
+            }],
             compartment_id=compartment_id,
             display_name=report_definition_display_name,
             parent_id=test_parent["id"],
-            summaries=[oci.data_safe.ReportDefinitionSummaryArgs(
-                display_order=report_definition_summary_display_order,
-                name=report_definition_summary_name,
-                count_of=report_definition_summary_count_of,
-                group_by_field_name=report_definition_summary_group_by_field_name,
-                is_hidden=report_definition_summary_is_hidden,
-                scim_filter=report_definition_summary_scim_filter,
-            )],
+            summaries=[{
+                "display_order": report_definition_summary_display_order,
+                "name": report_definition_summary_name,
+                "count_of": report_definition_summary_count_of,
+                "group_by_field_name": report_definition_summary_group_by_field_name,
+                "is_hidden": report_definition_summary_is_hidden,
+                "scim_filter": report_definition_summary_scim_filter,
+            }],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -691,16 +691,16 @@ class ReportDefinition(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ReportDefinitionColumnFilterArgs']]]] column_filters: (Updatable) An array of column filter objects. A column Filter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ReportDefinitionColumnInfoArgs']]]] column_infos: (Updatable) An array of column objects in the order (left to right) displayed in the report. A column object stores all information about a column, including the name displayed on the UI, corresponding field name in the data source, data type of the column, and column visibility (if the column is visible to the user).
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ReportDefinitionColumnSortingArgs']]]] column_sortings: (Updatable) An array of column sorting objects. Each column sorting object stores the column name to be sorted and if the sorting is in ascending order; sorting is done by the first column in the array, then by the second column in the array, etc.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ReportDefinitionColumnFilterArgs', 'ReportDefinitionColumnFilterArgsDict']]]] column_filters: (Updatable) An array of column filter objects. A column Filter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ReportDefinitionColumnInfoArgs', 'ReportDefinitionColumnInfoArgsDict']]]] column_infos: (Updatable) An array of column objects in the order (left to right) displayed in the report. A column object stores all information about a column, including the name displayed on the UI, corresponding field name in the data source, data type of the column, and column visibility (if the column is visible to the user).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ReportDefinitionColumnSortingArgs', 'ReportDefinitionColumnSortingArgsDict']]]] column_sortings: (Updatable) An array of column sorting objects. Each column sorting object stores the column name to be sorted and if the sorting is in ascending order; sorting is done by the first column in the array, then by the second column in the array, etc.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing the report definition.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the report definition.
         :param pulumi.Input[str] display_name: (Updatable) Specifies the name of the report definition.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] parent_id: The OCID of the parent report definition.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ReportDefinitionSummaryArgs']]]] summaries: (Updatable) An array of report summary objects in the order (left to right)  displayed in the report.  A  report summary object stores all information about summary of report to be displayed, including the name displayed on UI, the display order, corresponding group by and count of values, summary visibility (if the summary is visible to user).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ReportDefinitionSummaryArgs', 'ReportDefinitionSummaryArgsDict']]]] summaries: (Updatable) An array of report summary objects in the order (left to right)  displayed in the report.  A  report summary object stores all information about summary of report to be displayed, including the name displayed on UI, the display order, corresponding group by and count of values, summary visibility (if the summary is visible to user).
         """
         ...
     @overload
@@ -720,36 +720,36 @@ class ReportDefinition(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_report_definition = oci.data_safe.ReportDefinition("test_report_definition",
-            column_filters=[oci.data_safe.ReportDefinitionColumnFilterArgs(
-                expressions=report_definition_column_filters_expressions,
-                field_name=report_definition_column_filters_field_name,
-                is_enabled=report_definition_column_filters_is_enabled,
-                is_hidden=report_definition_column_filters_is_hidden,
-                operator=report_definition_column_filters_operator,
-            )],
-            column_infos=[oci.data_safe.ReportDefinitionColumnInfoArgs(
-                display_name=report_definition_column_info_display_name,
-                display_order=report_definition_column_info_display_order,
-                field_name=report_definition_column_info_field_name,
-                is_hidden=report_definition_column_info_is_hidden,
-                data_type=report_definition_column_info_data_type,
-            )],
-            column_sortings=[oci.data_safe.ReportDefinitionColumnSortingArgs(
-                field_name=report_definition_column_sortings_field_name,
-                is_ascending=report_definition_column_sortings_is_ascending,
-                sorting_order=report_definition_column_sortings_sorting_order,
-            )],
+            column_filters=[{
+                "expressions": report_definition_column_filters_expressions,
+                "field_name": report_definition_column_filters_field_name,
+                "is_enabled": report_definition_column_filters_is_enabled,
+                "is_hidden": report_definition_column_filters_is_hidden,
+                "operator": report_definition_column_filters_operator,
+            }],
+            column_infos=[{
+                "display_name": report_definition_column_info_display_name,
+                "display_order": report_definition_column_info_display_order,
+                "field_name": report_definition_column_info_field_name,
+                "is_hidden": report_definition_column_info_is_hidden,
+                "data_type": report_definition_column_info_data_type,
+            }],
+            column_sortings=[{
+                "field_name": report_definition_column_sortings_field_name,
+                "is_ascending": report_definition_column_sortings_is_ascending,
+                "sorting_order": report_definition_column_sortings_sorting_order,
+            }],
             compartment_id=compartment_id,
             display_name=report_definition_display_name,
             parent_id=test_parent["id"],
-            summaries=[oci.data_safe.ReportDefinitionSummaryArgs(
-                display_order=report_definition_summary_display_order,
-                name=report_definition_summary_name,
-                count_of=report_definition_summary_count_of,
-                group_by_field_name=report_definition_summary_group_by_field_name,
-                is_hidden=report_definition_summary_is_hidden,
-                scim_filter=report_definition_summary_scim_filter,
-            )],
+            summaries=[{
+                "display_order": report_definition_summary_display_order,
+                "name": report_definition_summary_name,
+                "count_of": report_definition_summary_count_of,
+                "group_by_field_name": report_definition_summary_group_by_field_name,
+                "is_hidden": report_definition_summary_is_hidden,
+                "scim_filter": report_definition_summary_scim_filter,
+            }],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -782,16 +782,16 @@ class ReportDefinition(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 column_filters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ReportDefinitionColumnFilterArgs']]]]] = None,
-                 column_infos: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ReportDefinitionColumnInfoArgs']]]]] = None,
-                 column_sortings: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ReportDefinitionColumnSortingArgs']]]]] = None,
+                 column_filters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ReportDefinitionColumnFilterArgs', 'ReportDefinitionColumnFilterArgsDict']]]]] = None,
+                 column_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ReportDefinitionColumnInfoArgs', 'ReportDefinitionColumnInfoArgsDict']]]]] = None,
+                 column_sortings: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ReportDefinitionColumnSortingArgs', 'ReportDefinitionColumnSortingArgsDict']]]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  parent_id: Optional[pulumi.Input[str]] = None,
-                 summaries: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ReportDefinitionSummaryArgs']]]]] = None,
+                 summaries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ReportDefinitionSummaryArgs', 'ReportDefinitionSummaryArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -853,9 +853,9 @@ class ReportDefinition(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             category: Optional[pulumi.Input[str]] = None,
-            column_filters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ReportDefinitionColumnFilterArgs']]]]] = None,
-            column_infos: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ReportDefinitionColumnInfoArgs']]]]] = None,
-            column_sortings: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ReportDefinitionColumnSortingArgs']]]]] = None,
+            column_filters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ReportDefinitionColumnFilterArgs', 'ReportDefinitionColumnFilterArgsDict']]]]] = None,
+            column_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ReportDefinitionColumnInfoArgs', 'ReportDefinitionColumnInfoArgsDict']]]]] = None,
+            column_sortings: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ReportDefinitionColumnSortingArgs', 'ReportDefinitionColumnSortingArgsDict']]]]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             compliance_standards: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             data_source: Optional[pulumi.Input[str]] = None,
@@ -875,7 +875,7 @@ class ReportDefinition(pulumi.CustomResource):
             scheduled_report_row_limit: Optional[pulumi.Input[int]] = None,
             scim_filter: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
-            summaries: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ReportDefinitionSummaryArgs']]]]] = None,
+            summaries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ReportDefinitionSummaryArgs', 'ReportDefinitionSummaryArgsDict']]]]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None) -> 'ReportDefinition':
@@ -887,9 +887,9 @@ class ReportDefinition(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] category: Specifies the name of the category that this report belongs to.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ReportDefinitionColumnFilterArgs']]]] column_filters: (Updatable) An array of column filter objects. A column Filter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ReportDefinitionColumnInfoArgs']]]] column_infos: (Updatable) An array of column objects in the order (left to right) displayed in the report. A column object stores all information about a column, including the name displayed on the UI, corresponding field name in the data source, data type of the column, and column visibility (if the column is visible to the user).
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ReportDefinitionColumnSortingArgs']]]] column_sortings: (Updatable) An array of column sorting objects. Each column sorting object stores the column name to be sorted and if the sorting is in ascending order; sorting is done by the first column in the array, then by the second column in the array, etc.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ReportDefinitionColumnFilterArgs', 'ReportDefinitionColumnFilterArgsDict']]]] column_filters: (Updatable) An array of column filter objects. A column Filter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ReportDefinitionColumnInfoArgs', 'ReportDefinitionColumnInfoArgsDict']]]] column_infos: (Updatable) An array of column objects in the order (left to right) displayed in the report. A column object stores all information about a column, including the name displayed on the UI, corresponding field name in the data source, data type of the column, and column visibility (if the column is visible to the user).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ReportDefinitionColumnSortingArgs', 'ReportDefinitionColumnSortingArgsDict']]]] column_sortings: (Updatable) An array of column sorting objects. Each column sorting object stores the column name to be sorted and if the sorting is in ascending order; sorting is done by the first column in the array, then by the second column in the array, etc.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing the report definition.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] compliance_standards: The list of the data protection regulations/standards used in the report that will help demonstrate compliance.
         :param pulumi.Input[str] data_source: Specifies the name of a resource that provides data for the report. For example alerts, events.
@@ -909,7 +909,7 @@ class ReportDefinition(pulumi.CustomResource):
         :param pulumi.Input[int] scheduled_report_row_limit: Specifies the limit on the number of rows in the report.
         :param pulumi.Input[str] scim_filter: Additional scim filters used to get the specific summary.
         :param pulumi.Input[str] state: The current state of the report.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ReportDefinitionSummaryArgs']]]] summaries: (Updatable) An array of report summary objects in the order (left to right)  displayed in the report.  A  report summary object stores all information about summary of report to be displayed, including the name displayed on UI, the display order, corresponding group by and count of values, summary visibility (if the summary is visible to user).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ReportDefinitionSummaryArgs', 'ReportDefinitionSummaryArgsDict']]]] summaries: (Updatable) An array of report summary objects in the order (left to right)  displayed in the report.  A  report summary object stores all information about summary of report to be displayed, including the name displayed on UI, the display order, corresponding group by and count of values, summary visibility (if the summary is visible to user).
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: Specifies the date and time the report definition was created.
         :param pulumi.Input[str] time_updated: The date and time the report definition was updated.

@@ -274,7 +274,7 @@ public class DetectAnomalyJob extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DetectAnomalyJob(String name) {
+    public DetectAnomalyJob(java.lang.String name) {
         this(name, DetectAnomalyJobArgs.Empty);
     }
     /**
@@ -282,7 +282,7 @@ public class DetectAnomalyJob extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DetectAnomalyJob(String name, DetectAnomalyJobArgs args) {
+    public DetectAnomalyJob(java.lang.String name, DetectAnomalyJobArgs args) {
         this(name, args, null);
     }
     /**
@@ -291,12 +291,12 @@ public class DetectAnomalyJob extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DetectAnomalyJob(String name, DetectAnomalyJobArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:AiAnomalyDetection/detectAnomalyJob:DetectAnomalyJob", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DetectAnomalyJob(java.lang.String name, DetectAnomalyJobArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:AiAnomalyDetection/detectAnomalyJob:DetectAnomalyJob", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DetectAnomalyJob(String name, Output<String> id, @Nullable DetectAnomalyJobState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:AiAnomalyDetection/detectAnomalyJob:DetectAnomalyJob", name, state, makeResourceOptions(options, id));
+    private DetectAnomalyJob(java.lang.String name, Output<java.lang.String> id, @Nullable DetectAnomalyJobState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:AiAnomalyDetection/detectAnomalyJob:DetectAnomalyJob", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DetectAnomalyJobArgs makeArgs(DetectAnomalyJobArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -306,7 +306,7 @@ public class DetectAnomalyJob extends com.pulumi.resources.CustomResource {
         return args == null ? DetectAnomalyJobArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -322,7 +322,7 @@ public class DetectAnomalyJob extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DetectAnomalyJob get(String name, Output<String> id, @Nullable DetectAnomalyJobState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DetectAnomalyJob get(java.lang.String name, Output<java.lang.String> id, @Nullable DetectAnomalyJobState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DetectAnomalyJob(name, id, state, options);
     }
 }

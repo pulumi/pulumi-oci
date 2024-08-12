@@ -111,7 +111,7 @@ class AwaitableGetSoftwareSourceSoftwarePackagesResult(GetSoftwareSourceSoftware
 
 def get_software_source_software_packages(display_name: Optional[str] = None,
                                           display_name_contains: Optional[str] = None,
-                                          filters: Optional[Sequence[pulumi.InputType['GetSoftwareSourceSoftwarePackagesFilterArgs']]] = None,
+                                          filters: Optional[Sequence[Union['GetSoftwareSourceSoftwarePackagesFilterArgs', 'GetSoftwareSourceSoftwarePackagesFilterArgsDict']]] = None,
                                           is_latest: Optional[bool] = None,
                                           software_source_id: Optional[str] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSoftwareSourceSoftwarePackagesResult:
@@ -161,7 +161,7 @@ def get_software_source_software_packages(display_name: Optional[str] = None,
 @_utilities.lift_output_func(get_software_source_software_packages)
 def get_software_source_software_packages_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                                  display_name_contains: Optional[pulumi.Input[Optional[str]]] = None,
-                                                 filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetSoftwareSourceSoftwarePackagesFilterArgs']]]]] = None,
+                                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSoftwareSourceSoftwarePackagesFilterArgs', 'GetSoftwareSourceSoftwarePackagesFilterArgsDict']]]]] = None,
                                                  is_latest: Optional[pulumi.Input[Optional[bool]]] = None,
                                                  software_source_id: Optional[pulumi.Input[str]] = None,
                                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSoftwareSourceSoftwarePackagesResult]:

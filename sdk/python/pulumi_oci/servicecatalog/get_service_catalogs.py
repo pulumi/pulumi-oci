@@ -102,7 +102,7 @@ class AwaitableGetServiceCatalogsResult(GetServiceCatalogsResult):
 
 def get_service_catalogs(compartment_id: Optional[str] = None,
                          display_name: Optional[str] = None,
-                         filters: Optional[Sequence[pulumi.InputType['GetServiceCatalogsFilterArgs']]] = None,
+                         filters: Optional[Sequence[Union['GetServiceCatalogsFilterArgs', 'GetServiceCatalogsFilterArgsDict']]] = None,
                          service_catalog_id: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetServiceCatalogsResult:
     """
@@ -146,7 +146,7 @@ def get_service_catalogs(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_service_catalogs)
 def get_service_catalogs_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                 display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetServiceCatalogsFilterArgs']]]]] = None,
+                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetServiceCatalogsFilterArgs', 'GetServiceCatalogsFilterArgsDict']]]]] = None,
                                 service_catalog_id: Optional[pulumi.Input[Optional[str]]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetServiceCatalogsResult]:
     """

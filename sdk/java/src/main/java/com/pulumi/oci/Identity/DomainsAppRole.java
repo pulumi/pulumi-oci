@@ -966,7 +966,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DomainsAppRole(String name) {
+    public DomainsAppRole(java.lang.String name) {
         this(name, DomainsAppRoleArgs.Empty);
     }
     /**
@@ -974,7 +974,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DomainsAppRole(String name, DomainsAppRoleArgs args) {
+    public DomainsAppRole(java.lang.String name, DomainsAppRoleArgs args) {
         this(name, args, null);
     }
     /**
@@ -983,12 +983,12 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DomainsAppRole(String name, DomainsAppRoleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsAppRole:DomainsAppRole", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DomainsAppRole(java.lang.String name, DomainsAppRoleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/domainsAppRole:DomainsAppRole", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DomainsAppRole(String name, Output<String> id, @Nullable DomainsAppRoleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsAppRole:DomainsAppRole", name, state, makeResourceOptions(options, id));
+    private DomainsAppRole(java.lang.String name, Output<java.lang.String> id, @Nullable DomainsAppRoleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/domainsAppRole:DomainsAppRole", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DomainsAppRoleArgs makeArgs(DomainsAppRoleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -998,7 +998,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
         return args == null ? DomainsAppRoleArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -1014,7 +1014,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DomainsAppRole get(String name, Output<String> id, @Nullable DomainsAppRoleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DomainsAppRole get(java.lang.String name, Output<java.lang.String> id, @Nullable DomainsAppRoleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DomainsAppRole(name, id, state, options);
     }
 }

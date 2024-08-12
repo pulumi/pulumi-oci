@@ -732,7 +732,7 @@ class Cluster(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  capacity_reservation_id: Optional[pulumi.Input[str]] = None,
                  compute_availability_domain: Optional[pulumi.Input[str]] = None,
-                 datastores: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ClusterDatastoreArgs']]]]] = None,
+                 datastores: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterDatastoreArgs', 'ClusterDatastoreArgsDict']]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  esxi_hosts_count: Optional[pulumi.Input[int]] = None,
@@ -743,7 +743,7 @@ class Cluster(pulumi.CustomResource):
                  initial_host_shape_name: Optional[pulumi.Input[str]] = None,
                  instance_display_name_prefix: Optional[pulumi.Input[str]] = None,
                  is_shielded_instance_enabled: Optional[pulumi.Input[bool]] = None,
-                 network_configuration: Optional[pulumi.Input[pulumi.InputType['ClusterNetworkConfigurationArgs']]] = None,
+                 network_configuration: Optional[pulumi.Input[Union['ClusterNetworkConfigurationArgs', 'ClusterNetworkConfigurationArgsDict']]] = None,
                  sddc_id: Optional[pulumi.Input[str]] = None,
                  vmware_software_version: Optional[pulumi.Input[str]] = None,
                  workload_network_cidr: Optional[pulumi.Input[str]] = None,
@@ -767,25 +767,25 @@ class Cluster(pulumi.CustomResource):
         test_cluster = oci.ocvp.Cluster("test_cluster",
             compute_availability_domain=cluster_compute_availability_domain,
             esxi_hosts_count=cluster_esxi_hosts_count,
-            network_configuration=oci.ocvp.ClusterNetworkConfigurationArgs(
-                nsx_edge_vtep_vlan_id=test_vlan["id"],
-                nsx_vtep_vlan_id=test_vlan["id"],
-                provisioning_subnet_id=test_subnet["id"],
-                vmotion_vlan_id=test_vlan["id"],
-                vsan_vlan_id=test_vlan["id"],
-                hcx_vlan_id=test_vlan["id"],
-                nsx_edge_uplink1vlan_id=test_nsx_edge_uplink1vlan["id"],
-                nsx_edge_uplink2vlan_id=test_nsx_edge_uplink2vlan["id"],
-                provisioning_vlan_id=test_vlan["id"],
-                replication_vlan_id=test_vlan["id"],
-                vsphere_vlan_id=test_vlan["id"],
-            ),
+            network_configuration={
+                "nsx_edge_vtep_vlan_id": test_vlan["id"],
+                "nsx_vtep_vlan_id": test_vlan["id"],
+                "provisioning_subnet_id": test_subnet["id"],
+                "vmotion_vlan_id": test_vlan["id"],
+                "vsan_vlan_id": test_vlan["id"],
+                "hcx_vlan_id": test_vlan["id"],
+                "nsx_edge_uplink1vlan_id": test_nsx_edge_uplink1vlan["id"],
+                "nsx_edge_uplink2vlan_id": test_nsx_edge_uplink2vlan["id"],
+                "provisioning_vlan_id": test_vlan["id"],
+                "replication_vlan_id": test_vlan["id"],
+                "vsphere_vlan_id": test_vlan["id"],
+            },
             sddc_id=test_sddc["id"],
             capacity_reservation_id=test_capacity_reservation["id"],
-            datastores=[oci.ocvp.ClusterDatastoreArgs(
-                block_volume_ids=cluster_datastores_block_volume_ids,
-                datastore_type=cluster_datastores_datastore_type,
-            )],
+            datastores=[{
+                "block_volume_ids": cluster_datastores_block_volume_ids,
+                "datastore_type": cluster_datastores_datastore_type,
+            }],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -815,7 +815,7 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] capacity_reservation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
         :param pulumi.Input[str] compute_availability_domain: The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ClusterDatastoreArgs']]]] datastores: A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterDatastoreArgs', 'ClusterDatastoreArgsDict']]]] datastores: A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
         :param pulumi.Input[int] esxi_hosts_count: The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). 
@@ -830,7 +830,7 @@ class Cluster(pulumi.CustomResource):
                
                For example, if the value is `myCluster`, the ESXi hosts are named `myCluster-1`, `myCluster-2`, and so on.
         :param pulumi.Input[bool] is_shielded_instance_enabled: Indicates whether shielded instance is enabled for this Cluster.
-        :param pulumi.Input[pulumi.InputType['ClusterNetworkConfigurationArgs']] network_configuration: (Updatable) The network configurations used by Cluster, including [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet and VLANs.
+        :param pulumi.Input[Union['ClusterNetworkConfigurationArgs', 'ClusterNetworkConfigurationArgsDict']] network_configuration: (Updatable) The network configurations used by Cluster, including [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet and VLANs.
         :param pulumi.Input[str] sddc_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the Cluster belongs to.
         :param pulumi.Input[str] vmware_software_version: (Updatable) The VMware software bundle to install on the ESXi hosts in the Cluster. To get a list of the available versions, use [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions).
         :param pulumi.Input[str] workload_network_cidr: The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads. 
@@ -864,25 +864,25 @@ class Cluster(pulumi.CustomResource):
         test_cluster = oci.ocvp.Cluster("test_cluster",
             compute_availability_domain=cluster_compute_availability_domain,
             esxi_hosts_count=cluster_esxi_hosts_count,
-            network_configuration=oci.ocvp.ClusterNetworkConfigurationArgs(
-                nsx_edge_vtep_vlan_id=test_vlan["id"],
-                nsx_vtep_vlan_id=test_vlan["id"],
-                provisioning_subnet_id=test_subnet["id"],
-                vmotion_vlan_id=test_vlan["id"],
-                vsan_vlan_id=test_vlan["id"],
-                hcx_vlan_id=test_vlan["id"],
-                nsx_edge_uplink1vlan_id=test_nsx_edge_uplink1vlan["id"],
-                nsx_edge_uplink2vlan_id=test_nsx_edge_uplink2vlan["id"],
-                provisioning_vlan_id=test_vlan["id"],
-                replication_vlan_id=test_vlan["id"],
-                vsphere_vlan_id=test_vlan["id"],
-            ),
+            network_configuration={
+                "nsx_edge_vtep_vlan_id": test_vlan["id"],
+                "nsx_vtep_vlan_id": test_vlan["id"],
+                "provisioning_subnet_id": test_subnet["id"],
+                "vmotion_vlan_id": test_vlan["id"],
+                "vsan_vlan_id": test_vlan["id"],
+                "hcx_vlan_id": test_vlan["id"],
+                "nsx_edge_uplink1vlan_id": test_nsx_edge_uplink1vlan["id"],
+                "nsx_edge_uplink2vlan_id": test_nsx_edge_uplink2vlan["id"],
+                "provisioning_vlan_id": test_vlan["id"],
+                "replication_vlan_id": test_vlan["id"],
+                "vsphere_vlan_id": test_vlan["id"],
+            },
             sddc_id=test_sddc["id"],
             capacity_reservation_id=test_capacity_reservation["id"],
-            datastores=[oci.ocvp.ClusterDatastoreArgs(
-                block_volume_ids=cluster_datastores_block_volume_ids,
-                datastore_type=cluster_datastores_datastore_type,
-            )],
+            datastores=[{
+                "block_volume_ids": cluster_datastores_block_volume_ids,
+                "datastore_type": cluster_datastores_datastore_type,
+            }],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -925,7 +925,7 @@ class Cluster(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  capacity_reservation_id: Optional[pulumi.Input[str]] = None,
                  compute_availability_domain: Optional[pulumi.Input[str]] = None,
-                 datastores: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ClusterDatastoreArgs']]]]] = None,
+                 datastores: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterDatastoreArgs', 'ClusterDatastoreArgsDict']]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  esxi_hosts_count: Optional[pulumi.Input[int]] = None,
@@ -936,7 +936,7 @@ class Cluster(pulumi.CustomResource):
                  initial_host_shape_name: Optional[pulumi.Input[str]] = None,
                  instance_display_name_prefix: Optional[pulumi.Input[str]] = None,
                  is_shielded_instance_enabled: Optional[pulumi.Input[bool]] = None,
-                 network_configuration: Optional[pulumi.Input[pulumi.InputType['ClusterNetworkConfigurationArgs']]] = None,
+                 network_configuration: Optional[pulumi.Input[Union['ClusterNetworkConfigurationArgs', 'ClusterNetworkConfigurationArgsDict']]] = None,
                  sddc_id: Optional[pulumi.Input[str]] = None,
                  vmware_software_version: Optional[pulumi.Input[str]] = None,
                  workload_network_cidr: Optional[pulumi.Input[str]] = None,
@@ -996,7 +996,7 @@ class Cluster(pulumi.CustomResource):
             capacity_reservation_id: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             compute_availability_domain: Optional[pulumi.Input[str]] = None,
-            datastores: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ClusterDatastoreArgs']]]]] = None,
+            datastores: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterDatastoreArgs', 'ClusterDatastoreArgsDict']]]]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             esxi_hosts_count: Optional[pulumi.Input[int]] = None,
@@ -1007,15 +1007,15 @@ class Cluster(pulumi.CustomResource):
             initial_host_shape_name: Optional[pulumi.Input[str]] = None,
             instance_display_name_prefix: Optional[pulumi.Input[str]] = None,
             is_shielded_instance_enabled: Optional[pulumi.Input[bool]] = None,
-            network_configuration: Optional[pulumi.Input[pulumi.InputType['ClusterNetworkConfigurationArgs']]] = None,
+            network_configuration: Optional[pulumi.Input[Union['ClusterNetworkConfigurationArgs', 'ClusterNetworkConfigurationArgsDict']]] = None,
             sddc_id: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
-            upgrade_licenses: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ClusterUpgradeLicenseArgs']]]]] = None,
+            upgrade_licenses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterUpgradeLicenseArgs', 'ClusterUpgradeLicenseArgsDict']]]]] = None,
             vmware_software_version: Optional[pulumi.Input[str]] = None,
             vsphere_type: Optional[pulumi.Input[str]] = None,
-            vsphere_upgrade_objects: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ClusterVsphereUpgradeObjectArgs']]]]] = None,
+            vsphere_upgrade_objects: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterVsphereUpgradeObjectArgs', 'ClusterVsphereUpgradeObjectArgsDict']]]]] = None,
             workload_network_cidr: Optional[pulumi.Input[str]] = None) -> 'Cluster':
         """
         Get an existing Cluster resource's state with the given name, id, and optional extra
@@ -1027,7 +1027,7 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[str] capacity_reservation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Cluster.
         :param pulumi.Input[str] compute_availability_domain: The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ClusterDatastoreArgs']]]] datastores: A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterDatastoreArgs', 'ClusterDatastoreArgsDict']]]] datastores: A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
         :param pulumi.Input[int] esxi_hosts_count: The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). 
@@ -1042,15 +1042,15 @@ class Cluster(pulumi.CustomResource):
                
                For example, if the value is `myCluster`, the ESXi hosts are named `myCluster-1`, `myCluster-2`, and so on.
         :param pulumi.Input[bool] is_shielded_instance_enabled: Indicates whether shielded instance is enabled for this Cluster.
-        :param pulumi.Input[pulumi.InputType['ClusterNetworkConfigurationArgs']] network_configuration: (Updatable) The network configurations used by Cluster, including [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet and VLANs.
+        :param pulumi.Input[Union['ClusterNetworkConfigurationArgs', 'ClusterNetworkConfigurationArgsDict']] network_configuration: (Updatable) The network configurations used by Cluster, including [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet and VLANs.
         :param pulumi.Input[str] sddc_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the Cluster belongs to.
         :param pulumi.Input[str] state: The current state of the Cluster.
         :param pulumi.Input[str] time_created: The date and time the Cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] time_updated: The date and time the Cluster was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ClusterUpgradeLicenseArgs']]]] upgrade_licenses: The vSphere licenses to use when upgrading the Cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterUpgradeLicenseArgs', 'ClusterUpgradeLicenseArgsDict']]]] upgrade_licenses: The vSphere licenses to use when upgrading the Cluster.
         :param pulumi.Input[str] vmware_software_version: (Updatable) The VMware software bundle to install on the ESXi hosts in the Cluster. To get a list of the available versions, use [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions).
         :param pulumi.Input[str] vsphere_type: vSphere Cluster types.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ClusterVsphereUpgradeObjectArgs']]]] vsphere_upgrade_objects: The links to binary objects needed to upgrade vSphere.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterVsphereUpgradeObjectArgs', 'ClusterVsphereUpgradeObjectArgsDict']]]] vsphere_upgrade_objects: The links to binary objects needed to upgrade vSphere.
         :param pulumi.Input[str] workload_network_cidr: The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads. 
                
                

@@ -415,7 +415,7 @@ public class ProtectedDatabase extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ProtectedDatabase(String name) {
+    public ProtectedDatabase(java.lang.String name) {
         this(name, ProtectedDatabaseArgs.Empty);
     }
     /**
@@ -423,7 +423,7 @@ public class ProtectedDatabase extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ProtectedDatabase(String name, ProtectedDatabaseArgs args) {
+    public ProtectedDatabase(java.lang.String name, ProtectedDatabaseArgs args) {
         this(name, args, null);
     }
     /**
@@ -432,12 +432,12 @@ public class ProtectedDatabase extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ProtectedDatabase(String name, ProtectedDatabaseArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:RecoveryMod/protectedDatabase:ProtectedDatabase", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ProtectedDatabase(java.lang.String name, ProtectedDatabaseArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:RecoveryMod/protectedDatabase:ProtectedDatabase", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ProtectedDatabase(String name, Output<String> id, @Nullable ProtectedDatabaseState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:RecoveryMod/protectedDatabase:ProtectedDatabase", name, state, makeResourceOptions(options, id));
+    private ProtectedDatabase(java.lang.String name, Output<java.lang.String> id, @Nullable ProtectedDatabaseState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:RecoveryMod/protectedDatabase:ProtectedDatabase", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ProtectedDatabaseArgs makeArgs(ProtectedDatabaseArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -447,7 +447,7 @@ public class ProtectedDatabase extends com.pulumi.resources.CustomResource {
         return args == null ? ProtectedDatabaseArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .additionalSecretOutputs(List.of(
@@ -466,7 +466,7 @@ public class ProtectedDatabase extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ProtectedDatabase get(String name, Output<String> id, @Nullable ProtectedDatabaseState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ProtectedDatabase get(java.lang.String name, Output<java.lang.String> id, @Nullable ProtectedDatabaseState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ProtectedDatabase(name, id, state, options);
     }
 }

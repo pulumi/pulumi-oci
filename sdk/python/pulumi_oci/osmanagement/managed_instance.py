@@ -624,9 +624,9 @@ class ManagedInstance(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            autonomouses: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceAutonomouseArgs']]]]] = None,
+            autonomouses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceAutonomouseArgs', 'ManagedInstanceAutonomouseArgsDict']]]]] = None,
             bug_updates_available: Optional[pulumi.Input[int]] = None,
-            child_software_sources: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceChildSoftwareSourceArgs']]]]] = None,
+            child_software_sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceChildSoftwareSourceArgs', 'ManagedInstanceChildSoftwareSourceArgsDict']]]]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
@@ -636,7 +636,7 @@ class ManagedInstance(pulumi.CustomResource):
             ksplice_effective_kernel_version: Optional[pulumi.Input[str]] = None,
             last_boot: Optional[pulumi.Input[str]] = None,
             last_checkin: Optional[pulumi.Input[str]] = None,
-            managed_instance_groups: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceManagedInstanceGroupArgs']]]]] = None,
+            managed_instance_groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceManagedInstanceGroupArgs', 'ManagedInstanceManagedInstanceGroupArgsDict']]]]] = None,
             managed_instance_id: Optional[pulumi.Input[str]] = None,
             notification_topic_id: Optional[pulumi.Input[str]] = None,
             os_family: Optional[pulumi.Input[str]] = None,
@@ -644,7 +644,7 @@ class ManagedInstance(pulumi.CustomResource):
             os_name: Optional[pulumi.Input[str]] = None,
             os_version: Optional[pulumi.Input[str]] = None,
             other_updates_available: Optional[pulumi.Input[int]] = None,
-            parent_software_sources: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceParentSoftwareSourceArgs']]]]] = None,
+            parent_software_sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceParentSoftwareSourceArgs', 'ManagedInstanceParentSoftwareSourceArgsDict']]]]] = None,
             scheduled_job_count: Optional[pulumi.Input[int]] = None,
             security_updates_available: Optional[pulumi.Input[int]] = None,
             status: Optional[pulumi.Input[str]] = None,
@@ -657,9 +657,9 @@ class ManagedInstance(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceAutonomouseArgs']]]] autonomouses: if present, indicates the Managed Instance is an autonomous instance. Holds all the Autonomous specific information
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceAutonomouseArgs', 'ManagedInstanceAutonomouseArgsDict']]]] autonomouses: if present, indicates the Managed Instance is an autonomous instance. Holds all the Autonomous specific information
         :param pulumi.Input[int] bug_updates_available: Number of bug fix type updates available to be installed
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceChildSoftwareSourceArgs']]]] child_software_sources: list of child Software Sources attached to the Managed Instance
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceChildSoftwareSourceArgs', 'ManagedInstanceChildSoftwareSourceArgsDict']]]] child_software_sources: list of child Software Sources attached to the Managed Instance
         :param pulumi.Input[str] compartment_id: OCID for the Compartment
         :param pulumi.Input[str] description: Information specified by the user about the managed instance
         :param pulumi.Input[str] display_name: User friendly name
@@ -669,7 +669,7 @@ class ManagedInstance(pulumi.CustomResource):
         :param pulumi.Input[str] ksplice_effective_kernel_version: The ksplice effective kernel version
         :param pulumi.Input[str] last_boot: Time at which the instance last booted
         :param pulumi.Input[str] last_checkin: Time at which the instance last checked in
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceManagedInstanceGroupArgs']]]] managed_instance_groups: The ids of the managed instance groups of which this instance is a member.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceManagedInstanceGroupArgs', 'ManagedInstanceManagedInstanceGroupArgsDict']]]] managed_instance_groups: The ids of the managed instance groups of which this instance is a member.
         :param pulumi.Input[str] managed_instance_id: OCID for the managed instance
         :param pulumi.Input[str] notification_topic_id: (Updatable) OCID of the ONS topic used to send notification to users
                
@@ -681,7 +681,7 @@ class ManagedInstance(pulumi.CustomResource):
         :param pulumi.Input[str] os_name: Operating System Name
         :param pulumi.Input[str] os_version: Operating System Version
         :param pulumi.Input[int] other_updates_available: Number of non-classified updates available to be installed
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceParentSoftwareSourceArgs']]]] parent_software_sources: the parent (base) Software Source attached to the Managed Instance
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceParentSoftwareSourceArgs', 'ManagedInstanceParentSoftwareSourceArgsDict']]]] parent_software_sources: the parent (base) Software Source attached to the Managed Instance
         :param pulumi.Input[int] scheduled_job_count: Number of scheduled jobs associated with this instance
         :param pulumi.Input[int] security_updates_available: Number of security type updates available to be installed
         :param pulumi.Input[str] status: status of the managed instance.

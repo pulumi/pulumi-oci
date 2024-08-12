@@ -131,7 +131,7 @@ class AwaitableGetIpInventoryVcnOverlapsResult(GetIpInventoryVcnOverlapsResult):
 
 
 def get_ip_inventory_vcn_overlaps(compartment_lists: Optional[Sequence[str]] = None,
-                                  filters: Optional[Sequence[pulumi.InputType['GetIpInventoryVcnOverlapsFilterArgs']]] = None,
+                                  filters: Optional[Sequence[Union['GetIpInventoryVcnOverlapsFilterArgs', 'GetIpInventoryVcnOverlapsFilterArgsDict']]] = None,
                                   region_lists: Optional[Sequence[str]] = None,
                                   vcn_id: Optional[str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIpInventoryVcnOverlapsResult:
@@ -178,7 +178,7 @@ def get_ip_inventory_vcn_overlaps(compartment_lists: Optional[Sequence[str]] = N
 
 @_utilities.lift_output_func(get_ip_inventory_vcn_overlaps)
 def get_ip_inventory_vcn_overlaps_output(compartment_lists: Optional[pulumi.Input[Sequence[str]]] = None,
-                                         filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetIpInventoryVcnOverlapsFilterArgs']]]]] = None,
+                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetIpInventoryVcnOverlapsFilterArgs', 'GetIpInventoryVcnOverlapsFilterArgsDict']]]]] = None,
                                          region_lists: Optional[pulumi.Input[Sequence[str]]] = None,
                                          vcn_id: Optional[pulumi.Input[str]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIpInventoryVcnOverlapsResult]:

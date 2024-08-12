@@ -77,7 +77,7 @@ class AwaitableGetAnnotationFormatsResult(GetAnnotationFormatsResult):
 
 
 def get_annotation_formats(compartment_id: Optional[str] = None,
-                           filters: Optional[Sequence[pulumi.InputType['GetAnnotationFormatsFilterArgs']]] = None,
+                           filters: Optional[Sequence[Union['GetAnnotationFormatsFilterArgs', 'GetAnnotationFormatsFilterArgsDict']]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAnnotationFormatsResult:
     """
     This data source provides the list of Annotation Formats in Oracle Cloud Infrastructure Data Labeling Service service.
@@ -111,7 +111,7 @@ def get_annotation_formats(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_annotation_formats)
 def get_annotation_formats_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                  filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAnnotationFormatsFilterArgs']]]]] = None,
+                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAnnotationFormatsFilterArgs', 'GetAnnotationFormatsFilterArgsDict']]]]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAnnotationFormatsResult]:
     """
     This data source provides the list of Annotation Formats in Oracle Cloud Infrastructure Data Labeling Service service.

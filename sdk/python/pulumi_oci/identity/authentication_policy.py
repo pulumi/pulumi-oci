@@ -130,8 +130,8 @@ class AuthenticationPolicy(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 network_policy: Optional[pulumi.Input[pulumi.InputType['AuthenticationPolicyNetworkPolicyArgs']]] = None,
-                 password_policy: Optional[pulumi.Input[pulumi.InputType['AuthenticationPolicyPasswordPolicyArgs']]] = None,
+                 network_policy: Optional[pulumi.Input[Union['AuthenticationPolicyNetworkPolicyArgs', 'AuthenticationPolicyNetworkPolicyArgsDict']]] = None,
+                 password_policy: Optional[pulumi.Input[Union['AuthenticationPolicyPasswordPolicyArgs', 'AuthenticationPolicyPasswordPolicyArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Authentication Policy resource in Oracle Cloud Infrastructure Identity service.
@@ -146,17 +146,17 @@ class AuthenticationPolicy(pulumi.CustomResource):
 
         test_authentication_policy = oci.identity.AuthenticationPolicy("test_authentication_policy",
             compartment_id=tenancy_ocid,
-            network_policy=oci.identity.AuthenticationPolicyNetworkPolicyArgs(
-                network_source_ids=authentication_policy_network_policy_network_source_ids,
-            ),
-            password_policy=oci.identity.AuthenticationPolicyPasswordPolicyArgs(
-                is_lowercase_characters_required=authentication_policy_password_policy_is_lowercase_characters_required,
-                is_numeric_characters_required=authentication_policy_password_policy_is_numeric_characters_required,
-                is_special_characters_required=authentication_policy_password_policy_is_special_characters_required,
-                is_uppercase_characters_required=authentication_policy_password_policy_is_uppercase_characters_required,
-                is_username_containment_allowed=authentication_policy_password_policy_is_username_containment_allowed,
-                minimum_password_length=authentication_policy_password_policy_minimum_password_length,
-            ))
+            network_policy={
+                "network_source_ids": authentication_policy_network_policy_network_source_ids,
+            },
+            password_policy={
+                "is_lowercase_characters_required": authentication_policy_password_policy_is_lowercase_characters_required,
+                "is_numeric_characters_required": authentication_policy_password_policy_is_numeric_characters_required,
+                "is_special_characters_required": authentication_policy_password_policy_is_special_characters_required,
+                "is_uppercase_characters_required": authentication_policy_password_policy_is_uppercase_characters_required,
+                "is_username_containment_allowed": authentication_policy_password_policy_is_username_containment_allowed,
+                "minimum_password_length": authentication_policy_password_policy_minimum_password_length,
+            })
         ```
 
         ## Import
@@ -170,8 +170,8 @@ class AuthenticationPolicy(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment.
-        :param pulumi.Input[pulumi.InputType['AuthenticationPolicyNetworkPolicyArgs']] network_policy: (Updatable) Network policy, Consists of a list of Network Source ids.
-        :param pulumi.Input[pulumi.InputType['AuthenticationPolicyPasswordPolicyArgs']] password_policy: (Updatable) Password policy, currently set for the given compartment.
+        :param pulumi.Input[Union['AuthenticationPolicyNetworkPolicyArgs', 'AuthenticationPolicyNetworkPolicyArgsDict']] network_policy: (Updatable) Network policy, Consists of a list of Network Source ids.
+        :param pulumi.Input[Union['AuthenticationPolicyPasswordPolicyArgs', 'AuthenticationPolicyPasswordPolicyArgsDict']] password_policy: (Updatable) Password policy, currently set for the given compartment.
         """
         ...
     @overload
@@ -192,17 +192,17 @@ class AuthenticationPolicy(pulumi.CustomResource):
 
         test_authentication_policy = oci.identity.AuthenticationPolicy("test_authentication_policy",
             compartment_id=tenancy_ocid,
-            network_policy=oci.identity.AuthenticationPolicyNetworkPolicyArgs(
-                network_source_ids=authentication_policy_network_policy_network_source_ids,
-            ),
-            password_policy=oci.identity.AuthenticationPolicyPasswordPolicyArgs(
-                is_lowercase_characters_required=authentication_policy_password_policy_is_lowercase_characters_required,
-                is_numeric_characters_required=authentication_policy_password_policy_is_numeric_characters_required,
-                is_special_characters_required=authentication_policy_password_policy_is_special_characters_required,
-                is_uppercase_characters_required=authentication_policy_password_policy_is_uppercase_characters_required,
-                is_username_containment_allowed=authentication_policy_password_policy_is_username_containment_allowed,
-                minimum_password_length=authentication_policy_password_policy_minimum_password_length,
-            ))
+            network_policy={
+                "network_source_ids": authentication_policy_network_policy_network_source_ids,
+            },
+            password_policy={
+                "is_lowercase_characters_required": authentication_policy_password_policy_is_lowercase_characters_required,
+                "is_numeric_characters_required": authentication_policy_password_policy_is_numeric_characters_required,
+                "is_special_characters_required": authentication_policy_password_policy_is_special_characters_required,
+                "is_uppercase_characters_required": authentication_policy_password_policy_is_uppercase_characters_required,
+                "is_username_containment_allowed": authentication_policy_password_policy_is_username_containment_allowed,
+                "minimum_password_length": authentication_policy_password_policy_minimum_password_length,
+            })
         ```
 
         ## Import
@@ -229,8 +229,8 @@ class AuthenticationPolicy(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 network_policy: Optional[pulumi.Input[pulumi.InputType['AuthenticationPolicyNetworkPolicyArgs']]] = None,
-                 password_policy: Optional[pulumi.Input[pulumi.InputType['AuthenticationPolicyPasswordPolicyArgs']]] = None,
+                 network_policy: Optional[pulumi.Input[Union['AuthenticationPolicyNetworkPolicyArgs', 'AuthenticationPolicyNetworkPolicyArgsDict']]] = None,
+                 password_policy: Optional[pulumi.Input[Union['AuthenticationPolicyPasswordPolicyArgs', 'AuthenticationPolicyPasswordPolicyArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -256,8 +256,8 @@ class AuthenticationPolicy(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            network_policy: Optional[pulumi.Input[pulumi.InputType['AuthenticationPolicyNetworkPolicyArgs']]] = None,
-            password_policy: Optional[pulumi.Input[pulumi.InputType['AuthenticationPolicyPasswordPolicyArgs']]] = None) -> 'AuthenticationPolicy':
+            network_policy: Optional[pulumi.Input[Union['AuthenticationPolicyNetworkPolicyArgs', 'AuthenticationPolicyNetworkPolicyArgsDict']]] = None,
+            password_policy: Optional[pulumi.Input[Union['AuthenticationPolicyPasswordPolicyArgs', 'AuthenticationPolicyPasswordPolicyArgsDict']]] = None) -> 'AuthenticationPolicy':
         """
         Get an existing AuthenticationPolicy resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -266,8 +266,8 @@ class AuthenticationPolicy(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment.
-        :param pulumi.Input[pulumi.InputType['AuthenticationPolicyNetworkPolicyArgs']] network_policy: (Updatable) Network policy, Consists of a list of Network Source ids.
-        :param pulumi.Input[pulumi.InputType['AuthenticationPolicyPasswordPolicyArgs']] password_policy: (Updatable) Password policy, currently set for the given compartment.
+        :param pulumi.Input[Union['AuthenticationPolicyNetworkPolicyArgs', 'AuthenticationPolicyNetworkPolicyArgsDict']] network_policy: (Updatable) Network policy, Consists of a list of Network Source ids.
+        :param pulumi.Input[Union['AuthenticationPolicyPasswordPolicyArgs', 'AuthenticationPolicyPasswordPolicyArgsDict']] password_policy: (Updatable) Password policy, currently set for the given compartment.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

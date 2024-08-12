@@ -76,7 +76,7 @@ class AwaitableGetFleetDrsFilesResult(GetFleetDrsFilesResult):
             id=self.id)
 
 
-def get_fleet_drs_files(filters: Optional[Sequence[pulumi.InputType['GetFleetDrsFilesFilterArgs']]] = None,
+def get_fleet_drs_files(filters: Optional[Sequence[Union['GetFleetDrsFilesFilterArgs', 'GetFleetDrsFilesFilterArgsDict']]] = None,
                         fleet_id: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFleetDrsFilesResult:
     """
@@ -110,7 +110,7 @@ def get_fleet_drs_files(filters: Optional[Sequence[pulumi.InputType['GetFleetDrs
 
 
 @_utilities.lift_output_func(get_fleet_drs_files)
-def get_fleet_drs_files_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetFleetDrsFilesFilterArgs']]]]] = None,
+def get_fleet_drs_files_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFleetDrsFilesFilterArgs', 'GetFleetDrsFilesFilterArgsDict']]]]] = None,
                                fleet_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFleetDrsFilesResult]:
     """

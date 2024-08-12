@@ -122,7 +122,7 @@ class AwaitableGetWorkspaceApplicationsResult(GetWorkspaceApplicationsResult):
 
 
 def get_workspace_applications(fields: Optional[Sequence[str]] = None,
-                               filters: Optional[Sequence[pulumi.InputType['GetWorkspaceApplicationsFilterArgs']]] = None,
+                               filters: Optional[Sequence[Union['GetWorkspaceApplicationsFilterArgs', 'GetWorkspaceApplicationsFilterArgsDict']]] = None,
                                identifiers: Optional[Sequence[str]] = None,
                                name: Optional[str] = None,
                                name_contains: Optional[str] = None,
@@ -176,7 +176,7 @@ def get_workspace_applications(fields: Optional[Sequence[str]] = None,
 
 @_utilities.lift_output_func(get_workspace_applications)
 def get_workspace_applications_output(fields: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                                      filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetWorkspaceApplicationsFilterArgs']]]]] = None,
+                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetWorkspaceApplicationsFilterArgs', 'GetWorkspaceApplicationsFilterArgsDict']]]]] = None,
                                       identifiers: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                       name: Optional[pulumi.Input[Optional[str]]] = None,
                                       name_contains: Optional[pulumi.Input[Optional[str]]] = None,

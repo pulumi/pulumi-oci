@@ -93,7 +93,7 @@ class AwaitableGetProcessSetsResult(GetProcessSetsResult):
 
 def get_process_sets(compartment_id: Optional[str] = None,
                      display_name: Optional[str] = None,
-                     filters: Optional[Sequence[pulumi.InputType['GetProcessSetsFilterArgs']]] = None,
+                     filters: Optional[Sequence[Union['GetProcessSetsFilterArgs', 'GetProcessSetsFilterArgsDict']]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetProcessSetsResult:
     """
     This data source provides the list of Process Sets in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -132,7 +132,7 @@ def get_process_sets(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_process_sets)
 def get_process_sets_output(compartment_id: Optional[pulumi.Input[str]] = None,
                             display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                            filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetProcessSetsFilterArgs']]]]] = None,
+                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetProcessSetsFilterArgs', 'GetProcessSetsFilterArgsDict']]]]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProcessSetsResult]:
     """
     This data source provides the list of Process Sets in Oracle Cloud Infrastructure Stack Monitoring service.

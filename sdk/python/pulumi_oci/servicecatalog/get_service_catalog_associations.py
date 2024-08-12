@@ -114,7 +114,7 @@ class AwaitableGetServiceCatalogAssociationsResult(GetServiceCatalogAssociations
 
 def get_service_catalog_associations(entity_id: Optional[str] = None,
                                      entity_type: Optional[str] = None,
-                                     filters: Optional[Sequence[pulumi.InputType['GetServiceCatalogAssociationsFilterArgs']]] = None,
+                                     filters: Optional[Sequence[Union['GetServiceCatalogAssociationsFilterArgs', 'GetServiceCatalogAssociationsFilterArgsDict']]] = None,
                                      service_catalog_association_id: Optional[str] = None,
                                      service_catalog_id: Optional[str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetServiceCatalogAssociationsResult:
@@ -163,7 +163,7 @@ def get_service_catalog_associations(entity_id: Optional[str] = None,
 @_utilities.lift_output_func(get_service_catalog_associations)
 def get_service_catalog_associations_output(entity_id: Optional[pulumi.Input[Optional[str]]] = None,
                                             entity_type: Optional[pulumi.Input[Optional[str]]] = None,
-                                            filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetServiceCatalogAssociationsFilterArgs']]]]] = None,
+                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetServiceCatalogAssociationsFilterArgs', 'GetServiceCatalogAssociationsFilterArgsDict']]]]] = None,
                                             service_catalog_association_id: Optional[pulumi.Input[Optional[str]]] = None,
                                             service_catalog_id: Optional[pulumi.Input[Optional[str]]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetServiceCatalogAssociationsResult]:

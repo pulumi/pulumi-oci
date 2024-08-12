@@ -265,7 +265,7 @@ public class VnicAttachment extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public VnicAttachment(String name) {
+    public VnicAttachment(java.lang.String name) {
         this(name, VnicAttachmentArgs.Empty);
     }
     /**
@@ -273,7 +273,7 @@ public class VnicAttachment extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public VnicAttachment(String name, VnicAttachmentArgs args) {
+    public VnicAttachment(java.lang.String name, VnicAttachmentArgs args) {
         this(name, args, null);
     }
     /**
@@ -282,12 +282,12 @@ public class VnicAttachment extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public VnicAttachment(String name, VnicAttachmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/vnicAttachment:VnicAttachment", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public VnicAttachment(java.lang.String name, VnicAttachmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Core/vnicAttachment:VnicAttachment", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private VnicAttachment(String name, Output<String> id, @Nullable VnicAttachmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/vnicAttachment:VnicAttachment", name, state, makeResourceOptions(options, id));
+    private VnicAttachment(java.lang.String name, Output<java.lang.String> id, @Nullable VnicAttachmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Core/vnicAttachment:VnicAttachment", name, state, makeResourceOptions(options, id), false);
     }
 
     private static VnicAttachmentArgs makeArgs(VnicAttachmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -297,7 +297,7 @@ public class VnicAttachment extends com.pulumi.resources.CustomResource {
         return args == null ? VnicAttachmentArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -313,7 +313,7 @@ public class VnicAttachment extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static VnicAttachment get(String name, Output<String> id, @Nullable VnicAttachmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static VnicAttachment get(java.lang.String name, Output<java.lang.String> id, @Nullable VnicAttachmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new VnicAttachment(name, id, state, options);
     }
 }

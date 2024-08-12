@@ -113,7 +113,7 @@ class AwaitableGetIndexesResult(GetIndexesResult):
 
 
 def get_indexes(compartment_id: Optional[str] = None,
-                filters: Optional[Sequence[pulumi.InputType['GetIndexesFilterArgs']]] = None,
+                filters: Optional[Sequence[Union['GetIndexesFilterArgs', 'GetIndexesFilterArgsDict']]] = None,
                 name: Optional[str] = None,
                 state: Optional[str] = None,
                 table_name_or_id: Optional[str] = None,
@@ -162,7 +162,7 @@ def get_indexes(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_indexes)
 def get_indexes_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
-                       filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetIndexesFilterArgs']]]]] = None,
+                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetIndexesFilterArgs', 'GetIndexesFilterArgsDict']]]]] = None,
                        name: Optional[pulumi.Input[Optional[str]]] = None,
                        state: Optional[pulumi.Input[Optional[str]]] = None,
                        table_name_or_id: Optional[pulumi.Input[str]] = None,

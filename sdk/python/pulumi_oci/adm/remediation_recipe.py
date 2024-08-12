@@ -445,15 +445,15 @@ class RemediationRecipe(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 detect_configuration: Optional[pulumi.Input[pulumi.InputType['RemediationRecipeDetectConfigurationArgs']]] = None,
+                 detect_configuration: Optional[pulumi.Input[Union['RemediationRecipeDetectConfigurationArgs', 'RemediationRecipeDetectConfigurationArgsDict']]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_run_triggered_on_kb_change: Optional[pulumi.Input[bool]] = None,
                  knowledge_base_id: Optional[pulumi.Input[str]] = None,
-                 network_configuration: Optional[pulumi.Input[pulumi.InputType['RemediationRecipeNetworkConfigurationArgs']]] = None,
-                 scm_configuration: Optional[pulumi.Input[pulumi.InputType['RemediationRecipeScmConfigurationArgs']]] = None,
+                 network_configuration: Optional[pulumi.Input[Union['RemediationRecipeNetworkConfigurationArgs', 'RemediationRecipeNetworkConfigurationArgsDict']]] = None,
+                 scm_configuration: Optional[pulumi.Input[Union['RemediationRecipeScmConfigurationArgs', 'RemediationRecipeScmConfigurationArgsDict']]] = None,
                  state: Optional[pulumi.Input[str]] = None,
-                 verify_configuration: Optional[pulumi.Input[pulumi.InputType['RemediationRecipeVerifyConfigurationArgs']]] = None,
+                 verify_configuration: Optional[pulumi.Input[Union['RemediationRecipeVerifyConfigurationArgs', 'RemediationRecipeVerifyConfigurationArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Remediation Recipe resource in Oracle Cloud Infrastructure Adm service.
@@ -468,42 +468,42 @@ class RemediationRecipe(pulumi.CustomResource):
 
         test_remediation_recipe = oci.adm.RemediationRecipe("test_remediation_recipe",
             compartment_id=compartment_id,
-            detect_configuration=oci.adm.RemediationRecipeDetectConfigurationArgs(
-                exclusions=remediation_recipe_detect_configuration_exclusions,
-                max_permissible_cvss_v2score=remediation_recipe_detect_configuration_max_permissible_cvss_v2score,
-                max_permissible_cvss_v3score=remediation_recipe_detect_configuration_max_permissible_cvss_v3score,
-                max_permissible_severity=remediation_recipe_detect_configuration_max_permissible_severity,
-                upgrade_policy=remediation_recipe_detect_configuration_upgrade_policy,
-            ),
+            detect_configuration={
+                "exclusions": remediation_recipe_detect_configuration_exclusions,
+                "max_permissible_cvss_v2score": remediation_recipe_detect_configuration_max_permissible_cvss_v2score,
+                "max_permissible_cvss_v3score": remediation_recipe_detect_configuration_max_permissible_cvss_v3score,
+                "max_permissible_severity": remediation_recipe_detect_configuration_max_permissible_severity,
+                "upgrade_policy": remediation_recipe_detect_configuration_upgrade_policy,
+            },
             is_run_triggered_on_kb_change=remediation_recipe_is_run_triggered_on_kb_change,
             knowledge_base_id=test_knowledge_base["id"],
-            network_configuration=oci.adm.RemediationRecipeNetworkConfigurationArgs(
-                subnet_id=test_subnet["id"],
-                nsg_ids=remediation_recipe_network_configuration_nsg_ids,
-            ),
-            scm_configuration=oci.adm.RemediationRecipeScmConfigurationArgs(
-                branch=remediation_recipe_scm_configuration_branch,
-                is_automerge_enabled=remediation_recipe_scm_configuration_is_automerge_enabled,
-                scm_type=remediation_recipe_scm_configuration_scm_type,
-                build_file_location=remediation_recipe_scm_configuration_build_file_location,
-                external_scm_type=remediation_recipe_scm_configuration_external_scm_type,
-                oci_code_repository_id=test_repository["id"],
-                pat_secret_id=test_secret["id"],
-                repository_url=remediation_recipe_scm_configuration_repository_url,
-                username=remediation_recipe_scm_configuration_username,
-            ),
-            verify_configuration=oci.adm.RemediationRecipeVerifyConfigurationArgs(
-                build_service_type=remediation_recipe_verify_configuration_build_service_type,
-                additional_parameters=remediation_recipe_verify_configuration_additional_parameters,
-                jenkins_url=remediation_recipe_verify_configuration_jenkins_url,
-                job_name=test_job["name"],
-                pat_secret_id=test_secret["id"],
-                pipeline_id=test_pipeline["id"],
-                repository_url=remediation_recipe_verify_configuration_repository_url,
-                trigger_secret_id=test_secret["id"],
-                username=remediation_recipe_verify_configuration_username,
-                workflow_name=remediation_recipe_verify_configuration_workflow_name,
-            ),
+            network_configuration={
+                "subnet_id": test_subnet["id"],
+                "nsg_ids": remediation_recipe_network_configuration_nsg_ids,
+            },
+            scm_configuration={
+                "branch": remediation_recipe_scm_configuration_branch,
+                "is_automerge_enabled": remediation_recipe_scm_configuration_is_automerge_enabled,
+                "scm_type": remediation_recipe_scm_configuration_scm_type,
+                "build_file_location": remediation_recipe_scm_configuration_build_file_location,
+                "external_scm_type": remediation_recipe_scm_configuration_external_scm_type,
+                "oci_code_repository_id": test_repository["id"],
+                "pat_secret_id": test_secret["id"],
+                "repository_url": remediation_recipe_scm_configuration_repository_url,
+                "username": remediation_recipe_scm_configuration_username,
+            },
+            verify_configuration={
+                "build_service_type": remediation_recipe_verify_configuration_build_service_type,
+                "additional_parameters": remediation_recipe_verify_configuration_additional_parameters,
+                "jenkins_url": remediation_recipe_verify_configuration_jenkins_url,
+                "job_name": test_job["name"],
+                "pat_secret_id": test_secret["id"],
+                "pipeline_id": test_pipeline["id"],
+                "repository_url": remediation_recipe_verify_configuration_repository_url,
+                "trigger_secret_id": test_secret["id"],
+                "username": remediation_recipe_verify_configuration_username,
+                "workflow_name": remediation_recipe_verify_configuration_workflow_name,
+            },
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -525,19 +525,19 @@ class RemediationRecipe(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation recipe.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[pulumi.InputType['RemediationRecipeDetectConfigurationArgs']] detect_configuration: (Updatable) A configuration to define the constraints when detecting vulnerable dependencies.
+        :param pulumi.Input[Union['RemediationRecipeDetectConfigurationArgs', 'RemediationRecipeDetectConfigurationArgsDict']] detect_configuration: (Updatable) A configuration to define the constraints when detecting vulnerable dependencies.
         :param pulumi.Input[str] display_name: (Updatable) The name of the remediation recipe.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_run_triggered_on_kb_change: (Updatable) Boolean indicating if a run should be automatically triggered once the knowledge base is updated.
         :param pulumi.Input[str] knowledge_base_id: (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
-        :param pulumi.Input[pulumi.InputType['RemediationRecipeNetworkConfigurationArgs']] network_configuration: (Updatable) A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
-        :param pulumi.Input[pulumi.InputType['RemediationRecipeScmConfigurationArgs']] scm_configuration: (Updatable) A configuration for the Source Code Management tool/platform used by a remediation recipe.
+        :param pulumi.Input[Union['RemediationRecipeNetworkConfigurationArgs', 'RemediationRecipeNetworkConfigurationArgsDict']] network_configuration: (Updatable) A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
+        :param pulumi.Input[Union['RemediationRecipeScmConfigurationArgs', 'RemediationRecipeScmConfigurationArgsDict']] scm_configuration: (Updatable) A configuration for the Source Code Management tool/platform used by a remediation recipe.
         :param pulumi.Input[str] state: (Updatable) The target state for the Remediation Recipe. Could be set to `ACTIVE` or `INACTIVE`. 
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[pulumi.InputType['RemediationRecipeVerifyConfigurationArgs']] verify_configuration: (Updatable) The Verify stage configuration specifies a build service to run a pipeline for the recommended code changes. The build pipeline will be initiated to ensure that there is no breaking change after the dependency versions have been updated in source to avoid vulnerabilities.
+        :param pulumi.Input[Union['RemediationRecipeVerifyConfigurationArgs', 'RemediationRecipeVerifyConfigurationArgsDict']] verify_configuration: (Updatable) The Verify stage configuration specifies a build service to run a pipeline for the recommended code changes. The build pipeline will be initiated to ensure that there is no breaking change after the dependency versions have been updated in source to avoid vulnerabilities.
         """
         ...
     @overload
@@ -558,42 +558,42 @@ class RemediationRecipe(pulumi.CustomResource):
 
         test_remediation_recipe = oci.adm.RemediationRecipe("test_remediation_recipe",
             compartment_id=compartment_id,
-            detect_configuration=oci.adm.RemediationRecipeDetectConfigurationArgs(
-                exclusions=remediation_recipe_detect_configuration_exclusions,
-                max_permissible_cvss_v2score=remediation_recipe_detect_configuration_max_permissible_cvss_v2score,
-                max_permissible_cvss_v3score=remediation_recipe_detect_configuration_max_permissible_cvss_v3score,
-                max_permissible_severity=remediation_recipe_detect_configuration_max_permissible_severity,
-                upgrade_policy=remediation_recipe_detect_configuration_upgrade_policy,
-            ),
+            detect_configuration={
+                "exclusions": remediation_recipe_detect_configuration_exclusions,
+                "max_permissible_cvss_v2score": remediation_recipe_detect_configuration_max_permissible_cvss_v2score,
+                "max_permissible_cvss_v3score": remediation_recipe_detect_configuration_max_permissible_cvss_v3score,
+                "max_permissible_severity": remediation_recipe_detect_configuration_max_permissible_severity,
+                "upgrade_policy": remediation_recipe_detect_configuration_upgrade_policy,
+            },
             is_run_triggered_on_kb_change=remediation_recipe_is_run_triggered_on_kb_change,
             knowledge_base_id=test_knowledge_base["id"],
-            network_configuration=oci.adm.RemediationRecipeNetworkConfigurationArgs(
-                subnet_id=test_subnet["id"],
-                nsg_ids=remediation_recipe_network_configuration_nsg_ids,
-            ),
-            scm_configuration=oci.adm.RemediationRecipeScmConfigurationArgs(
-                branch=remediation_recipe_scm_configuration_branch,
-                is_automerge_enabled=remediation_recipe_scm_configuration_is_automerge_enabled,
-                scm_type=remediation_recipe_scm_configuration_scm_type,
-                build_file_location=remediation_recipe_scm_configuration_build_file_location,
-                external_scm_type=remediation_recipe_scm_configuration_external_scm_type,
-                oci_code_repository_id=test_repository["id"],
-                pat_secret_id=test_secret["id"],
-                repository_url=remediation_recipe_scm_configuration_repository_url,
-                username=remediation_recipe_scm_configuration_username,
-            ),
-            verify_configuration=oci.adm.RemediationRecipeVerifyConfigurationArgs(
-                build_service_type=remediation_recipe_verify_configuration_build_service_type,
-                additional_parameters=remediation_recipe_verify_configuration_additional_parameters,
-                jenkins_url=remediation_recipe_verify_configuration_jenkins_url,
-                job_name=test_job["name"],
-                pat_secret_id=test_secret["id"],
-                pipeline_id=test_pipeline["id"],
-                repository_url=remediation_recipe_verify_configuration_repository_url,
-                trigger_secret_id=test_secret["id"],
-                username=remediation_recipe_verify_configuration_username,
-                workflow_name=remediation_recipe_verify_configuration_workflow_name,
-            ),
+            network_configuration={
+                "subnet_id": test_subnet["id"],
+                "nsg_ids": remediation_recipe_network_configuration_nsg_ids,
+            },
+            scm_configuration={
+                "branch": remediation_recipe_scm_configuration_branch,
+                "is_automerge_enabled": remediation_recipe_scm_configuration_is_automerge_enabled,
+                "scm_type": remediation_recipe_scm_configuration_scm_type,
+                "build_file_location": remediation_recipe_scm_configuration_build_file_location,
+                "external_scm_type": remediation_recipe_scm_configuration_external_scm_type,
+                "oci_code_repository_id": test_repository["id"],
+                "pat_secret_id": test_secret["id"],
+                "repository_url": remediation_recipe_scm_configuration_repository_url,
+                "username": remediation_recipe_scm_configuration_username,
+            },
+            verify_configuration={
+                "build_service_type": remediation_recipe_verify_configuration_build_service_type,
+                "additional_parameters": remediation_recipe_verify_configuration_additional_parameters,
+                "jenkins_url": remediation_recipe_verify_configuration_jenkins_url,
+                "job_name": test_job["name"],
+                "pat_secret_id": test_secret["id"],
+                "pipeline_id": test_pipeline["id"],
+                "repository_url": remediation_recipe_verify_configuration_repository_url,
+                "trigger_secret_id": test_secret["id"],
+                "username": remediation_recipe_verify_configuration_username,
+                "workflow_name": remediation_recipe_verify_configuration_workflow_name,
+            },
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -628,15 +628,15 @@ class RemediationRecipe(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 detect_configuration: Optional[pulumi.Input[pulumi.InputType['RemediationRecipeDetectConfigurationArgs']]] = None,
+                 detect_configuration: Optional[pulumi.Input[Union['RemediationRecipeDetectConfigurationArgs', 'RemediationRecipeDetectConfigurationArgsDict']]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_run_triggered_on_kb_change: Optional[pulumi.Input[bool]] = None,
                  knowledge_base_id: Optional[pulumi.Input[str]] = None,
-                 network_configuration: Optional[pulumi.Input[pulumi.InputType['RemediationRecipeNetworkConfigurationArgs']]] = None,
-                 scm_configuration: Optional[pulumi.Input[pulumi.InputType['RemediationRecipeScmConfigurationArgs']]] = None,
+                 network_configuration: Optional[pulumi.Input[Union['RemediationRecipeNetworkConfigurationArgs', 'RemediationRecipeNetworkConfigurationArgsDict']]] = None,
+                 scm_configuration: Optional[pulumi.Input[Union['RemediationRecipeScmConfigurationArgs', 'RemediationRecipeScmConfigurationArgsDict']]] = None,
                  state: Optional[pulumi.Input[str]] = None,
-                 verify_configuration: Optional[pulumi.Input[pulumi.InputType['RemediationRecipeVerifyConfigurationArgs']]] = None,
+                 verify_configuration: Optional[pulumi.Input[Union['RemediationRecipeVerifyConfigurationArgs', 'RemediationRecipeVerifyConfigurationArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -686,18 +686,18 @@ class RemediationRecipe(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            detect_configuration: Optional[pulumi.Input[pulumi.InputType['RemediationRecipeDetectConfigurationArgs']]] = None,
+            detect_configuration: Optional[pulumi.Input[Union['RemediationRecipeDetectConfigurationArgs', 'RemediationRecipeDetectConfigurationArgsDict']]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             is_run_triggered_on_kb_change: Optional[pulumi.Input[bool]] = None,
             knowledge_base_id: Optional[pulumi.Input[str]] = None,
-            network_configuration: Optional[pulumi.Input[pulumi.InputType['RemediationRecipeNetworkConfigurationArgs']]] = None,
-            scm_configuration: Optional[pulumi.Input[pulumi.InputType['RemediationRecipeScmConfigurationArgs']]] = None,
+            network_configuration: Optional[pulumi.Input[Union['RemediationRecipeNetworkConfigurationArgs', 'RemediationRecipeNetworkConfigurationArgsDict']]] = None,
+            scm_configuration: Optional[pulumi.Input[Union['RemediationRecipeScmConfigurationArgs', 'RemediationRecipeScmConfigurationArgsDict']]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
-            verify_configuration: Optional[pulumi.Input[pulumi.InputType['RemediationRecipeVerifyConfigurationArgs']]] = None) -> 'RemediationRecipe':
+            verify_configuration: Optional[pulumi.Input[Union['RemediationRecipeVerifyConfigurationArgs', 'RemediationRecipeVerifyConfigurationArgsDict']]] = None) -> 'RemediationRecipe':
         """
         Get an existing RemediationRecipe resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -707,13 +707,13 @@ class RemediationRecipe(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation recipe.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[pulumi.InputType['RemediationRecipeDetectConfigurationArgs']] detect_configuration: (Updatable) A configuration to define the constraints when detecting vulnerable dependencies.
+        :param pulumi.Input[Union['RemediationRecipeDetectConfigurationArgs', 'RemediationRecipeDetectConfigurationArgsDict']] detect_configuration: (Updatable) A configuration to define the constraints when detecting vulnerable dependencies.
         :param pulumi.Input[str] display_name: (Updatable) The name of the remediation recipe.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_run_triggered_on_kb_change: (Updatable) Boolean indicating if a run should be automatically triggered once the knowledge base is updated.
         :param pulumi.Input[str] knowledge_base_id: (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
-        :param pulumi.Input[pulumi.InputType['RemediationRecipeNetworkConfigurationArgs']] network_configuration: (Updatable) A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
-        :param pulumi.Input[pulumi.InputType['RemediationRecipeScmConfigurationArgs']] scm_configuration: (Updatable) A configuration for the Source Code Management tool/platform used by a remediation recipe.
+        :param pulumi.Input[Union['RemediationRecipeNetworkConfigurationArgs', 'RemediationRecipeNetworkConfigurationArgsDict']] network_configuration: (Updatable) A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
+        :param pulumi.Input[Union['RemediationRecipeScmConfigurationArgs', 'RemediationRecipeScmConfigurationArgsDict']] scm_configuration: (Updatable) A configuration for the Source Code Management tool/platform used by a remediation recipe.
         :param pulumi.Input[str] state: (Updatable) The target state for the Remediation Recipe. Could be set to `ACTIVE` or `INACTIVE`. 
                
                
@@ -722,7 +722,7 @@ class RemediationRecipe(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The creation date and time of the Remediation Recipe (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         :param pulumi.Input[str] time_updated: The date and time the Remediation Recipe was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        :param pulumi.Input[pulumi.InputType['RemediationRecipeVerifyConfigurationArgs']] verify_configuration: (Updatable) The Verify stage configuration specifies a build service to run a pipeline for the recommended code changes. The build pipeline will be initiated to ensure that there is no breaking change after the dependency versions have been updated in source to avoid vulnerabilities.
+        :param pulumi.Input[Union['RemediationRecipeVerifyConfigurationArgs', 'RemediationRecipeVerifyConfigurationArgsDict']] verify_configuration: (Updatable) The Verify stage configuration specifies a build service to run a pipeline for the recommended code changes. The build pipeline will be initiated to ensure that there is no breaking change after the dependency versions have been updated in source to avoid vulnerabilities.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

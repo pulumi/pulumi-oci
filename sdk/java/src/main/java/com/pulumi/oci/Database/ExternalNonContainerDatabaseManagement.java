@@ -92,7 +92,7 @@ public class ExternalNonContainerDatabaseManagement extends com.pulumi.resources
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ExternalNonContainerDatabaseManagement(String name) {
+    public ExternalNonContainerDatabaseManagement(java.lang.String name) {
         this(name, ExternalNonContainerDatabaseManagementArgs.Empty);
     }
     /**
@@ -100,7 +100,7 @@ public class ExternalNonContainerDatabaseManagement extends com.pulumi.resources
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ExternalNonContainerDatabaseManagement(String name, ExternalNonContainerDatabaseManagementArgs args) {
+    public ExternalNonContainerDatabaseManagement(java.lang.String name, ExternalNonContainerDatabaseManagementArgs args) {
         this(name, args, null);
     }
     /**
@@ -109,12 +109,12 @@ public class ExternalNonContainerDatabaseManagement extends com.pulumi.resources
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ExternalNonContainerDatabaseManagement(String name, ExternalNonContainerDatabaseManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/externalNonContainerDatabaseManagement:ExternalNonContainerDatabaseManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ExternalNonContainerDatabaseManagement(java.lang.String name, ExternalNonContainerDatabaseManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/externalNonContainerDatabaseManagement:ExternalNonContainerDatabaseManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ExternalNonContainerDatabaseManagement(String name, Output<String> id, @Nullable ExternalNonContainerDatabaseManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/externalNonContainerDatabaseManagement:ExternalNonContainerDatabaseManagement", name, state, makeResourceOptions(options, id));
+    private ExternalNonContainerDatabaseManagement(java.lang.String name, Output<java.lang.String> id, @Nullable ExternalNonContainerDatabaseManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/externalNonContainerDatabaseManagement:ExternalNonContainerDatabaseManagement", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ExternalNonContainerDatabaseManagementArgs makeArgs(ExternalNonContainerDatabaseManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -124,7 +124,7 @@ public class ExternalNonContainerDatabaseManagement extends com.pulumi.resources
         return args == null ? ExternalNonContainerDatabaseManagementArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -140,7 +140,7 @@ public class ExternalNonContainerDatabaseManagement extends com.pulumi.resources
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ExternalNonContainerDatabaseManagement get(String name, Output<String> id, @Nullable ExternalNonContainerDatabaseManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ExternalNonContainerDatabaseManagement get(java.lang.String name, Output<java.lang.String> id, @Nullable ExternalNonContainerDatabaseManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ExternalNonContainerDatabaseManagement(name, id, state, options);
     }
 }

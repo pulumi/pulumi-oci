@@ -124,7 +124,7 @@ class AwaitableGetManagedDatabaseSqlTuningAdvisorTasksResult(GetManagedDatabaseS
             time_less_than_or_equal_to=self.time_less_than_or_equal_to)
 
 
-def get_managed_database_sql_tuning_advisor_tasks(filters: Optional[Sequence[pulumi.InputType['GetManagedDatabaseSqlTuningAdvisorTasksFilterArgs']]] = None,
+def get_managed_database_sql_tuning_advisor_tasks(filters: Optional[Sequence[Union['GetManagedDatabaseSqlTuningAdvisorTasksFilterArgs', 'GetManagedDatabaseSqlTuningAdvisorTasksFilterArgsDict']]] = None,
                                                   managed_database_id: Optional[str] = None,
                                                   name: Optional[str] = None,
                                                   opc_named_credential_id: Optional[str] = None,
@@ -183,7 +183,7 @@ def get_managed_database_sql_tuning_advisor_tasks(filters: Optional[Sequence[pul
 
 
 @_utilities.lift_output_func(get_managed_database_sql_tuning_advisor_tasks)
-def get_managed_database_sql_tuning_advisor_tasks_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetManagedDatabaseSqlTuningAdvisorTasksFilterArgs']]]]] = None,
+def get_managed_database_sql_tuning_advisor_tasks_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedDatabaseSqlTuningAdvisorTasksFilterArgs', 'GetManagedDatabaseSqlTuningAdvisorTasksFilterArgsDict']]]]] = None,
                                                          managed_database_id: Optional[pulumi.Input[str]] = None,
                                                          name: Optional[pulumi.Input[Optional[str]]] = None,
                                                          opc_named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,

@@ -646,14 +646,14 @@ class JavaDownloadsJavaDownloadToken(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['JavaDownloadsJavaDownloadTokenCreatedByArgs']]]]] = None,
+            created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['JavaDownloadsJavaDownloadTokenCreatedByArgs', 'JavaDownloadsJavaDownloadTokenCreatedByArgsDict']]]]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             is_default: Optional[pulumi.Input[bool]] = None,
             java_version: Optional[pulumi.Input[str]] = None,
-            last_updated_bies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['JavaDownloadsJavaDownloadTokenLastUpdatedByArgs']]]]] = None,
+            last_updated_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['JavaDownloadsJavaDownloadTokenLastUpdatedByArgs', 'JavaDownloadsJavaDownloadTokenLastUpdatedByArgsDict']]]]] = None,
             license_types: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -671,14 +671,14 @@ class JavaDownloadsJavaDownloadToken(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy scoped to the JavaDownloadToken.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['JavaDownloadsJavaDownloadTokenCreatedByArgs']]]] created_bies: An authorized principal.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['JavaDownloadsJavaDownloadTokenCreatedByArgs', 'JavaDownloadsJavaDownloadTokenCreatedByArgsDict']]]] created_bies: An authorized principal.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
         :param pulumi.Input[str] description: (Updatable) User provided description of the JavaDownloadToken.
         :param pulumi.Input[str] display_name: (Updatable) User provided display name of the JavaDownloadToken.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
         :param pulumi.Input[bool] is_default: (Updatable) The token default attribute.
         :param pulumi.Input[str] java_version: The Java version associated with the token.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['JavaDownloadsJavaDownloadTokenLastUpdatedByArgs']]]] last_updated_bies: An authorized principal.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['JavaDownloadsJavaDownloadTokenLastUpdatedByArgs', 'JavaDownloadsJavaDownloadTokenLastUpdatedByArgsDict']]]] last_updated_bies: An authorized principal.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] license_types: (Updatable) The license type(s) associated with the JavaDownloadToken.
         :param pulumi.Input[str] lifecycle_details: Possible lifecycle substates.
         :param pulumi.Input[str] state: The current state of the JavaDownloadToken.

@@ -98,7 +98,7 @@ class AwaitableGetProtectionRulesResult(GetProtectionRulesResult):
 
 
 def get_protection_rules(actions: Optional[Sequence[str]] = None,
-                         filters: Optional[Sequence[pulumi.InputType['GetProtectionRulesFilterArgs']]] = None,
+                         filters: Optional[Sequence[Union['GetProtectionRulesFilterArgs', 'GetProtectionRulesFilterArgsDict']]] = None,
                          mod_security_rule_ids: Optional[Sequence[str]] = None,
                          waas_policy_id: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetProtectionRulesResult:
@@ -143,7 +143,7 @@ def get_protection_rules(actions: Optional[Sequence[str]] = None,
 
 @_utilities.lift_output_func(get_protection_rules)
 def get_protection_rules_output(actions: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetProtectionRulesFilterArgs']]]]] = None,
+                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetProtectionRulesFilterArgs', 'GetProtectionRulesFilterArgsDict']]]]] = None,
                                 mod_security_rule_ids: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                 waas_policy_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProtectionRulesResult]:

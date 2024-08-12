@@ -435,10 +435,10 @@ class Model(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 model_details: Optional[pulumi.Input[pulumi.InputType['ModelModelDetailsArgs']]] = None,
+                 model_details: Optional[pulumi.Input[Union['ModelModelDetailsArgs', 'ModelModelDetailsArgsDict']]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
-                 test_strategy: Optional[pulumi.Input[pulumi.InputType['ModelTestStrategyArgs']]] = None,
-                 training_dataset: Optional[pulumi.Input[pulumi.InputType['ModelTrainingDatasetArgs']]] = None,
+                 test_strategy: Optional[pulumi.Input[Union['ModelTestStrategyArgs', 'ModelTestStrategyArgsDict']]] = None,
+                 training_dataset: Optional[pulumi.Input[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Model resource in Oracle Cloud Infrastructure Ai Language service.
@@ -453,15 +453,15 @@ class Model(pulumi.CustomResource):
 
         test_model = oci.ai_language.Model("test_model",
             compartment_id=compartment_id,
-            model_details=oci.ai_language.ModelModelDetailsArgs(
-                model_type=model_model_details_model_type,
-                classification_mode=oci.ai_language.ModelModelDetailsClassificationModeArgs(
-                    classification_mode=model_model_details_classification_mode_classification_mode,
-                    version=model_model_details_classification_mode_version,
-                ),
-                language_code=model_model_details_language_code,
-                version=model_model_details_version,
-            ),
+            model_details={
+                "model_type": model_model_details_model_type,
+                "classification_mode": {
+                    "classification_mode": model_model_details_classification_mode_classification_mode,
+                    "version": model_model_details_classification_mode_version,
+                },
+                "language_code": model_model_details_language_code,
+                "version": model_model_details_version,
+            },
             project_id=test_project["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -471,39 +471,39 @@ class Model(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            test_strategy=oci.ai_language.ModelTestStrategyArgs(
-                strategy_type=model_test_strategy_strategy_type,
-                testing_dataset=oci.ai_language.ModelTestStrategyTestingDatasetArgs(
-                    dataset_type=model_test_strategy_testing_dataset_dataset_type,
-                    dataset_id=test_dataset["id"],
-                    location_details=oci.ai_language.ModelTestStrategyTestingDatasetLocationDetailsArgs(
-                        bucket=model_test_strategy_testing_dataset_location_details_bucket,
-                        location_type=model_test_strategy_testing_dataset_location_details_location_type,
-                        namespace=model_test_strategy_testing_dataset_location_details_namespace,
-                        object_names=model_test_strategy_testing_dataset_location_details_object_names,
-                    ),
-                ),
-                validation_dataset=oci.ai_language.ModelTestStrategyValidationDatasetArgs(
-                    dataset_type=model_test_strategy_validation_dataset_dataset_type,
-                    dataset_id=test_dataset["id"],
-                    location_details=oci.ai_language.ModelTestStrategyValidationDatasetLocationDetailsArgs(
-                        bucket=model_test_strategy_validation_dataset_location_details_bucket,
-                        location_type=model_test_strategy_validation_dataset_location_details_location_type,
-                        namespace=model_test_strategy_validation_dataset_location_details_namespace,
-                        object_names=model_test_strategy_validation_dataset_location_details_object_names,
-                    ),
-                ),
-            ),
-            training_dataset=oci.ai_language.ModelTrainingDatasetArgs(
-                dataset_type=model_training_dataset_dataset_type,
-                dataset_id=test_dataset["id"],
-                location_details=oci.ai_language.ModelTrainingDatasetLocationDetailsArgs(
-                    bucket=model_training_dataset_location_details_bucket,
-                    location_type=model_training_dataset_location_details_location_type,
-                    namespace=model_training_dataset_location_details_namespace,
-                    object_names=model_training_dataset_location_details_object_names,
-                ),
-            ))
+            test_strategy={
+                "strategy_type": model_test_strategy_strategy_type,
+                "testing_dataset": {
+                    "dataset_type": model_test_strategy_testing_dataset_dataset_type,
+                    "dataset_id": test_dataset["id"],
+                    "location_details": {
+                        "bucket": model_test_strategy_testing_dataset_location_details_bucket,
+                        "location_type": model_test_strategy_testing_dataset_location_details_location_type,
+                        "namespace": model_test_strategy_testing_dataset_location_details_namespace,
+                        "object_names": model_test_strategy_testing_dataset_location_details_object_names,
+                    },
+                },
+                "validation_dataset": {
+                    "dataset_type": model_test_strategy_validation_dataset_dataset_type,
+                    "dataset_id": test_dataset["id"],
+                    "location_details": {
+                        "bucket": model_test_strategy_validation_dataset_location_details_bucket,
+                        "location_type": model_test_strategy_validation_dataset_location_details_location_type,
+                        "namespace": model_test_strategy_validation_dataset_location_details_namespace,
+                        "object_names": model_test_strategy_validation_dataset_location_details_object_names,
+                    },
+                },
+            },
+            training_dataset={
+                "dataset_type": model_training_dataset_dataset_type,
+                "dataset_id": test_dataset["id"],
+                "location_details": {
+                    "bucket": model_training_dataset_location_details_bucket,
+                    "location_type": model_training_dataset_location_details_location_type,
+                    "namespace": model_training_dataset_location_details_namespace,
+                    "object_names": model_training_dataset_location_details_object_names,
+                },
+            })
         ```
 
         ## Import
@@ -521,10 +521,10 @@ class Model(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) A short description of the a model.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[pulumi.InputType['ModelModelDetailsArgs']] model_details: Possible model types
+        :param pulumi.Input[Union['ModelModelDetailsArgs', 'ModelModelDetailsArgsDict']] model_details: Possible model types
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
-        :param pulumi.Input[pulumi.InputType['ModelTestStrategyArgs']] test_strategy: Possible strategy as testing and validation(optional) dataset.
-        :param pulumi.Input[pulumi.InputType['ModelTrainingDatasetArgs']] training_dataset: Possible data set type
+        :param pulumi.Input[Union['ModelTestStrategyArgs', 'ModelTestStrategyArgsDict']] test_strategy: Possible strategy as testing and validation(optional) dataset.
+        :param pulumi.Input[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict']] training_dataset: Possible data set type
         """
         ...
     @overload
@@ -545,15 +545,15 @@ class Model(pulumi.CustomResource):
 
         test_model = oci.ai_language.Model("test_model",
             compartment_id=compartment_id,
-            model_details=oci.ai_language.ModelModelDetailsArgs(
-                model_type=model_model_details_model_type,
-                classification_mode=oci.ai_language.ModelModelDetailsClassificationModeArgs(
-                    classification_mode=model_model_details_classification_mode_classification_mode,
-                    version=model_model_details_classification_mode_version,
-                ),
-                language_code=model_model_details_language_code,
-                version=model_model_details_version,
-            ),
+            model_details={
+                "model_type": model_model_details_model_type,
+                "classification_mode": {
+                    "classification_mode": model_model_details_classification_mode_classification_mode,
+                    "version": model_model_details_classification_mode_version,
+                },
+                "language_code": model_model_details_language_code,
+                "version": model_model_details_version,
+            },
             project_id=test_project["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -563,39 +563,39 @@ class Model(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            test_strategy=oci.ai_language.ModelTestStrategyArgs(
-                strategy_type=model_test_strategy_strategy_type,
-                testing_dataset=oci.ai_language.ModelTestStrategyTestingDatasetArgs(
-                    dataset_type=model_test_strategy_testing_dataset_dataset_type,
-                    dataset_id=test_dataset["id"],
-                    location_details=oci.ai_language.ModelTestStrategyTestingDatasetLocationDetailsArgs(
-                        bucket=model_test_strategy_testing_dataset_location_details_bucket,
-                        location_type=model_test_strategy_testing_dataset_location_details_location_type,
-                        namespace=model_test_strategy_testing_dataset_location_details_namespace,
-                        object_names=model_test_strategy_testing_dataset_location_details_object_names,
-                    ),
-                ),
-                validation_dataset=oci.ai_language.ModelTestStrategyValidationDatasetArgs(
-                    dataset_type=model_test_strategy_validation_dataset_dataset_type,
-                    dataset_id=test_dataset["id"],
-                    location_details=oci.ai_language.ModelTestStrategyValidationDatasetLocationDetailsArgs(
-                        bucket=model_test_strategy_validation_dataset_location_details_bucket,
-                        location_type=model_test_strategy_validation_dataset_location_details_location_type,
-                        namespace=model_test_strategy_validation_dataset_location_details_namespace,
-                        object_names=model_test_strategy_validation_dataset_location_details_object_names,
-                    ),
-                ),
-            ),
-            training_dataset=oci.ai_language.ModelTrainingDatasetArgs(
-                dataset_type=model_training_dataset_dataset_type,
-                dataset_id=test_dataset["id"],
-                location_details=oci.ai_language.ModelTrainingDatasetLocationDetailsArgs(
-                    bucket=model_training_dataset_location_details_bucket,
-                    location_type=model_training_dataset_location_details_location_type,
-                    namespace=model_training_dataset_location_details_namespace,
-                    object_names=model_training_dataset_location_details_object_names,
-                ),
-            ))
+            test_strategy={
+                "strategy_type": model_test_strategy_strategy_type,
+                "testing_dataset": {
+                    "dataset_type": model_test_strategy_testing_dataset_dataset_type,
+                    "dataset_id": test_dataset["id"],
+                    "location_details": {
+                        "bucket": model_test_strategy_testing_dataset_location_details_bucket,
+                        "location_type": model_test_strategy_testing_dataset_location_details_location_type,
+                        "namespace": model_test_strategy_testing_dataset_location_details_namespace,
+                        "object_names": model_test_strategy_testing_dataset_location_details_object_names,
+                    },
+                },
+                "validation_dataset": {
+                    "dataset_type": model_test_strategy_validation_dataset_dataset_type,
+                    "dataset_id": test_dataset["id"],
+                    "location_details": {
+                        "bucket": model_test_strategy_validation_dataset_location_details_bucket,
+                        "location_type": model_test_strategy_validation_dataset_location_details_location_type,
+                        "namespace": model_test_strategy_validation_dataset_location_details_namespace,
+                        "object_names": model_test_strategy_validation_dataset_location_details_object_names,
+                    },
+                },
+            },
+            training_dataset={
+                "dataset_type": model_training_dataset_dataset_type,
+                "dataset_id": test_dataset["id"],
+                "location_details": {
+                    "bucket": model_training_dataset_location_details_bucket,
+                    "location_type": model_training_dataset_location_details_location_type,
+                    "namespace": model_training_dataset_location_details_namespace,
+                    "object_names": model_training_dataset_location_details_object_names,
+                },
+            })
         ```
 
         ## Import
@@ -626,10 +626,10 @@ class Model(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 model_details: Optional[pulumi.Input[pulumi.InputType['ModelModelDetailsArgs']]] = None,
+                 model_details: Optional[pulumi.Input[Union['ModelModelDetailsArgs', 'ModelModelDetailsArgsDict']]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
-                 test_strategy: Optional[pulumi.Input[pulumi.InputType['ModelTestStrategyArgs']]] = None,
-                 training_dataset: Optional[pulumi.Input[pulumi.InputType['ModelTrainingDatasetArgs']]] = None,
+                 test_strategy: Optional[pulumi.Input[Union['ModelTestStrategyArgs', 'ModelTestStrategyArgsDict']]] = None,
+                 training_dataset: Optional[pulumi.Input[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -677,17 +677,17 @@ class Model(pulumi.CustomResource):
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
-            evaluation_results: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ModelEvaluationResultArgs']]]]] = None,
+            evaluation_results: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ModelEvaluationResultArgs', 'ModelEvaluationResultArgsDict']]]]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
-            model_details: Optional[pulumi.Input[pulumi.InputType['ModelModelDetailsArgs']]] = None,
+            model_details: Optional[pulumi.Input[Union['ModelModelDetailsArgs', 'ModelModelDetailsArgsDict']]] = None,
             project_id: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            test_strategy: Optional[pulumi.Input[pulumi.InputType['ModelTestStrategyArgs']]] = None,
+            test_strategy: Optional[pulumi.Input[Union['ModelTestStrategyArgs', 'ModelTestStrategyArgsDict']]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
-            training_dataset: Optional[pulumi.Input[pulumi.InputType['ModelTrainingDatasetArgs']]] = None,
+            training_dataset: Optional[pulumi.Input[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict']]] = None,
             version: Optional[pulumi.Input[str]] = None) -> 'Model':
         """
         Get an existing Model resource's state with the given name, id, and optional extra
@@ -700,17 +700,17 @@ class Model(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) A short description of the a model.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ModelEvaluationResultArgs']]]] evaluation_results: model training results of different models
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ModelEvaluationResultArgs', 'ModelEvaluationResultArgsDict']]]] evaluation_results: model training results of different models
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
-        :param pulumi.Input[pulumi.InputType['ModelModelDetailsArgs']] model_details: Possible model types
+        :param pulumi.Input[Union['ModelModelDetailsArgs', 'ModelModelDetailsArgsDict']] model_details: Possible model types
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
         :param pulumi.Input[str] state: The state of the model.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[pulumi.InputType['ModelTestStrategyArgs']] test_strategy: Possible strategy as testing and validation(optional) dataset.
+        :param pulumi.Input[Union['ModelTestStrategyArgs', 'ModelTestStrategyArgsDict']] test_strategy: Possible strategy as testing and validation(optional) dataset.
         :param pulumi.Input[str] time_created: The time the the model was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time the model was updated. An RFC3339 formatted datetime string.
-        :param pulumi.Input[pulumi.InputType['ModelTrainingDatasetArgs']] training_dataset: Possible data set type
+        :param pulumi.Input[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict']] training_dataset: Possible data set type
         :param pulumi.Input[str] version: For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

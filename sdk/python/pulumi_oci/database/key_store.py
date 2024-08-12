@@ -284,7 +284,7 @@ class KeyStore(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 type_details: Optional[pulumi.Input[pulumi.InputType['KeyStoreTypeDetailsArgs']]] = None,
+                 type_details: Optional[pulumi.Input[Union['KeyStoreTypeDetailsArgs', 'KeyStoreTypeDetailsArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Key Store resource in Oracle Cloud Infrastructure Database service.
@@ -300,13 +300,13 @@ class KeyStore(pulumi.CustomResource):
         test_key_store = oci.database.KeyStore("test_key_store",
             compartment_id=compartment_id,
             display_name=key_store_display_name,
-            type_details=oci.database.KeyStoreTypeDetailsArgs(
-                admin_username=key_store_type_details_admin_username,
-                connection_ips=key_store_type_details_connection_ips,
-                secret_id=test_secret["id"],
-                type=key_store_type_details_type,
-                vault_id=test_vault["id"],
-            ),
+            type_details={
+                "admin_username": key_store_type_details_admin_username,
+                "connection_ips": key_store_type_details_connection_ips,
+                "secret_id": test_secret["id"],
+                "type": key_store_type_details_type,
+                "vault_id": test_vault["id"],
+            },
             defined_tags=key_store_defined_tags,
             freeform_tags={
                 "Department": "Finance",
@@ -327,7 +327,7 @@ class KeyStore(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: The user-friendly name for the key store. The name does not need to be unique.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[pulumi.InputType['KeyStoreTypeDetailsArgs']] type_details: (Updatable) Key store type details.
+        :param pulumi.Input[Union['KeyStoreTypeDetailsArgs', 'KeyStoreTypeDetailsArgsDict']] type_details: (Updatable) Key store type details.
         """
         ...
     @overload
@@ -349,13 +349,13 @@ class KeyStore(pulumi.CustomResource):
         test_key_store = oci.database.KeyStore("test_key_store",
             compartment_id=compartment_id,
             display_name=key_store_display_name,
-            type_details=oci.database.KeyStoreTypeDetailsArgs(
-                admin_username=key_store_type_details_admin_username,
-                connection_ips=key_store_type_details_connection_ips,
-                secret_id=test_secret["id"],
-                type=key_store_type_details_type,
-                vault_id=test_vault["id"],
-            ),
+            type_details={
+                "admin_username": key_store_type_details_admin_username,
+                "connection_ips": key_store_type_details_connection_ips,
+                "secret_id": test_secret["id"],
+                "type": key_store_type_details_type,
+                "vault_id": test_vault["id"],
+            },
             defined_tags=key_store_defined_tags,
             freeform_tags={
                 "Department": "Finance",
@@ -390,7 +390,7 @@ class KeyStore(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 type_details: Optional[pulumi.Input[pulumi.InputType['KeyStoreTypeDetailsArgs']]] = None,
+                 type_details: Optional[pulumi.Input[Union['KeyStoreTypeDetailsArgs', 'KeyStoreTypeDetailsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -426,7 +426,7 @@ class KeyStore(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            associated_databases: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['KeyStoreAssociatedDatabaseArgs']]]]] = None,
+            associated_databases: Optional[pulumi.Input[Sequence[pulumi.Input[Union['KeyStoreAssociatedDatabaseArgs', 'KeyStoreAssociatedDatabaseArgsDict']]]]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             confirm_details_trigger: Optional[pulumi.Input[int]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -435,7 +435,7 @@ class KeyStore(pulumi.CustomResource):
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
-            type_details: Optional[pulumi.Input[pulumi.InputType['KeyStoreTypeDetailsArgs']]] = None) -> 'KeyStore':
+            type_details: Optional[pulumi.Input[Union['KeyStoreTypeDetailsArgs', 'KeyStoreTypeDetailsArgsDict']]] = None) -> 'KeyStore':
         """
         Get an existing KeyStore resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -443,7 +443,7 @@ class KeyStore(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['KeyStoreAssociatedDatabaseArgs']]]] associated_databases: List of databases associated with the key store.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['KeyStoreAssociatedDatabaseArgs', 'KeyStoreAssociatedDatabaseArgsDict']]]] associated_databases: List of databases associated with the key store.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: The user-friendly name for the key store. The name does not need to be unique.
@@ -451,7 +451,7 @@ class KeyStore(pulumi.CustomResource):
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[str] state: The current state of the key store.
         :param pulumi.Input[str] time_created: The date and time that the key store was created.
-        :param pulumi.Input[pulumi.InputType['KeyStoreTypeDetailsArgs']] type_details: (Updatable) Key store type details.
+        :param pulumi.Input[Union['KeyStoreTypeDetailsArgs', 'KeyStoreTypeDetailsArgsDict']] type_details: (Updatable) Key store type details.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

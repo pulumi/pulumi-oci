@@ -482,7 +482,7 @@ class AuditPolicyManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 audit_conditions: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AuditPolicyManagementAuditConditionArgs']]]]] = None,
+                 audit_conditions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AuditPolicyManagementAuditConditionArgs', 'AuditPolicyManagementAuditConditionArgsDict']]]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
@@ -524,7 +524,7 @@ class AuditPolicyManagement(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AuditPolicyManagementAuditConditionArgs']]]] audit_conditions: Required when provision_trigger is set. Lists the audit policy provisioning conditions for the target database.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AuditPolicyManagementAuditConditionArgs', 'AuditPolicyManagementAuditConditionArgsDict']]]] audit_conditions: Required when provision_trigger is set. Lists the audit policy provisioning conditions for the target database.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment containing the target.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the audit policy.
@@ -585,7 +585,7 @@ class AuditPolicyManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 audit_conditions: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AuditPolicyManagementAuditConditionArgs']]]]] = None,
+                 audit_conditions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AuditPolicyManagementAuditConditionArgs', 'AuditPolicyManagementAuditConditionArgsDict']]]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
@@ -632,8 +632,8 @@ class AuditPolicyManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            audit_conditions: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AuditPolicyManagementAuditConditionArgs']]]]] = None,
-            audit_specifications: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AuditPolicyManagementAuditSpecificationArgs']]]]] = None,
+            audit_conditions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AuditPolicyManagementAuditConditionArgs', 'AuditPolicyManagementAuditConditionArgsDict']]]]] = None,
+            audit_specifications: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AuditPolicyManagementAuditSpecificationArgs', 'AuditPolicyManagementAuditSpecificationArgsDict']]]]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             description: Optional[pulumi.Input[str]] = None,
@@ -657,8 +657,8 @@ class AuditPolicyManagement(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AuditPolicyManagementAuditConditionArgs']]]] audit_conditions: Required when provision_trigger is set. Lists the audit policy provisioning conditions for the target database.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AuditPolicyManagementAuditSpecificationArgs']]]] audit_specifications: Represents all available audit policy specifications relevant for the target database. For more details on available audit polcies, refer to [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AuditPolicyManagementAuditConditionArgs', 'AuditPolicyManagementAuditConditionArgsDict']]]] audit_conditions: Required when provision_trigger is set. Lists the audit policy provisioning conditions for the target database.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AuditPolicyManagementAuditSpecificationArgs', 'AuditPolicyManagementAuditSpecificationArgsDict']]]] audit_specifications: Represents all available audit policy specifications relevant for the target database. For more details on available audit polcies, refer to [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827).
         :param pulumi.Input[str] compartment_id: The OCID of the compartment containing the target.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the audit policy.

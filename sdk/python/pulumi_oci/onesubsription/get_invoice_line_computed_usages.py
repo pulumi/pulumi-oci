@@ -96,7 +96,7 @@ class AwaitableGetInvoiceLineComputedUsagesResult(GetInvoiceLineComputedUsagesRe
 
 def get_invoice_line_computed_usages(compartment_id: Optional[str] = None,
                                      fields: Optional[Sequence[str]] = None,
-                                     filters: Optional[Sequence[pulumi.InputType['GetInvoiceLineComputedUsagesFilterArgs']]] = None,
+                                     filters: Optional[Sequence[Union['GetInvoiceLineComputedUsagesFilterArgs', 'GetInvoiceLineComputedUsagesFilterArgsDict']]] = None,
                                      invoice_line_id: Optional[str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetInvoiceLineComputedUsagesResult:
     """
@@ -140,7 +140,7 @@ def get_invoice_line_computed_usages(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_invoice_line_computed_usages)
 def get_invoice_line_computed_usages_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                             fields: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                                            filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetInvoiceLineComputedUsagesFilterArgs']]]]] = None,
+                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetInvoiceLineComputedUsagesFilterArgs', 'GetInvoiceLineComputedUsagesFilterArgsDict']]]]] = None,
                                             invoice_line_id: Optional[pulumi.Input[str]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInvoiceLineComputedUsagesResult]:
     """

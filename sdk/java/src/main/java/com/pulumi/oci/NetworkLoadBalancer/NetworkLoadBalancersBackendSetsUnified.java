@@ -251,7 +251,7 @@ public class NetworkLoadBalancersBackendSetsUnified extends com.pulumi.resources
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public NetworkLoadBalancersBackendSetsUnified(String name) {
+    public NetworkLoadBalancersBackendSetsUnified(java.lang.String name) {
         this(name, NetworkLoadBalancersBackendSetsUnifiedArgs.Empty);
     }
     /**
@@ -259,7 +259,7 @@ public class NetworkLoadBalancersBackendSetsUnified extends com.pulumi.resources
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public NetworkLoadBalancersBackendSetsUnified(String name, NetworkLoadBalancersBackendSetsUnifiedArgs args) {
+    public NetworkLoadBalancersBackendSetsUnified(java.lang.String name, NetworkLoadBalancersBackendSetsUnifiedArgs args) {
         this(name, args, null);
     }
     /**
@@ -268,12 +268,12 @@ public class NetworkLoadBalancersBackendSetsUnified extends com.pulumi.resources
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public NetworkLoadBalancersBackendSetsUnified(String name, NetworkLoadBalancersBackendSetsUnifiedArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:NetworkLoadBalancer/networkLoadBalancersBackendSetsUnified:NetworkLoadBalancersBackendSetsUnified", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public NetworkLoadBalancersBackendSetsUnified(java.lang.String name, NetworkLoadBalancersBackendSetsUnifiedArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:NetworkLoadBalancer/networkLoadBalancersBackendSetsUnified:NetworkLoadBalancersBackendSetsUnified", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private NetworkLoadBalancersBackendSetsUnified(String name, Output<String> id, @Nullable NetworkLoadBalancersBackendSetsUnifiedState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:NetworkLoadBalancer/networkLoadBalancersBackendSetsUnified:NetworkLoadBalancersBackendSetsUnified", name, state, makeResourceOptions(options, id));
+    private NetworkLoadBalancersBackendSetsUnified(java.lang.String name, Output<java.lang.String> id, @Nullable NetworkLoadBalancersBackendSetsUnifiedState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:NetworkLoadBalancer/networkLoadBalancersBackendSetsUnified:NetworkLoadBalancersBackendSetsUnified", name, state, makeResourceOptions(options, id), false);
     }
 
     private static NetworkLoadBalancersBackendSetsUnifiedArgs makeArgs(NetworkLoadBalancersBackendSetsUnifiedArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -283,7 +283,7 @@ public class NetworkLoadBalancersBackendSetsUnified extends com.pulumi.resources
         return args == null ? NetworkLoadBalancersBackendSetsUnifiedArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -299,7 +299,7 @@ public class NetworkLoadBalancersBackendSetsUnified extends com.pulumi.resources
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static NetworkLoadBalancersBackendSetsUnified get(String name, Output<String> id, @Nullable NetworkLoadBalancersBackendSetsUnifiedState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static NetworkLoadBalancersBackendSetsUnified get(java.lang.String name, Output<java.lang.String> id, @Nullable NetworkLoadBalancersBackendSetsUnifiedState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new NetworkLoadBalancersBackendSetsUnified(name, id, state, options);
     }
 }

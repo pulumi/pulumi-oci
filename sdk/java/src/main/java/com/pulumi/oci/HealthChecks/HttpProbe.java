@@ -262,7 +262,7 @@ public class HttpProbe extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public HttpProbe(String name) {
+    public HttpProbe(java.lang.String name) {
         this(name, HttpProbeArgs.Empty);
     }
     /**
@@ -270,7 +270,7 @@ public class HttpProbe extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public HttpProbe(String name, HttpProbeArgs args) {
+    public HttpProbe(java.lang.String name, HttpProbeArgs args) {
         this(name, args, null);
     }
     /**
@@ -279,12 +279,12 @@ public class HttpProbe extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public HttpProbe(String name, HttpProbeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:HealthChecks/httpProbe:HttpProbe", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public HttpProbe(java.lang.String name, HttpProbeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:HealthChecks/httpProbe:HttpProbe", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private HttpProbe(String name, Output<String> id, @Nullable HttpProbeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:HealthChecks/httpProbe:HttpProbe", name, state, makeResourceOptions(options, id));
+    private HttpProbe(java.lang.String name, Output<java.lang.String> id, @Nullable HttpProbeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:HealthChecks/httpProbe:HttpProbe", name, state, makeResourceOptions(options, id), false);
     }
 
     private static HttpProbeArgs makeArgs(HttpProbeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -294,7 +294,7 @@ public class HttpProbe extends com.pulumi.resources.CustomResource {
         return args == null ? HttpProbeArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -310,7 +310,7 @@ public class HttpProbe extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static HttpProbe get(String name, Output<String> id, @Nullable HttpProbeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static HttpProbe get(java.lang.String name, Output<java.lang.String> id, @Nullable HttpProbeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new HttpProbe(name, id, state, options);
     }
 }

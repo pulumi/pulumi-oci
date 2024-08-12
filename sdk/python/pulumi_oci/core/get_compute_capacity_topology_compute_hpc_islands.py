@@ -100,7 +100,7 @@ class AwaitableGetComputeCapacityTopologyComputeHpcIslandsResult(GetComputeCapac
 def get_compute_capacity_topology_compute_hpc_islands(availability_domain: Optional[str] = None,
                                                       compartment_id: Optional[str] = None,
                                                       compute_capacity_topology_id: Optional[str] = None,
-                                                      filters: Optional[Sequence[pulumi.InputType['GetComputeCapacityTopologyComputeHpcIslandsFilterArgs']]] = None,
+                                                      filters: Optional[Sequence[Union['GetComputeCapacityTopologyComputeHpcIslandsFilterArgs', 'GetComputeCapacityTopologyComputeHpcIslandsFilterArgsDict']]] = None,
                                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetComputeCapacityTopologyComputeHpcIslandsResult:
     """
     This data source provides the list of Compute Capacity Topology Compute Hpc Islands in Oracle Cloud Infrastructure Core service.
@@ -144,7 +144,7 @@ def get_compute_capacity_topology_compute_hpc_islands(availability_domain: Optio
 def get_compute_capacity_topology_compute_hpc_islands_output(availability_domain: Optional[pulumi.Input[Optional[str]]] = None,
                                                              compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                              compute_capacity_topology_id: Optional[pulumi.Input[str]] = None,
-                                                             filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetComputeCapacityTopologyComputeHpcIslandsFilterArgs']]]]] = None,
+                                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetComputeCapacityTopologyComputeHpcIslandsFilterArgs', 'GetComputeCapacityTopologyComputeHpcIslandsFilterArgsDict']]]]] = None,
                                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetComputeCapacityTopologyComputeHpcIslandsResult]:
     """
     This data source provides the list of Compute Capacity Topology Compute Hpc Islands in Oracle Cloud Infrastructure Core service.

@@ -451,7 +451,7 @@ class OccAvailabilityCatalog(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 metadata_details: Optional[pulumi.Input[pulumi.InputType['OccAvailabilityCatalogMetadataDetailsArgs']]] = None,
+                 metadata_details: Optional[pulumi.Input[Union['OccAvailabilityCatalogMetadataDetailsArgs', 'OccAvailabilityCatalogMetadataDetailsArgsDict']]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  occ_customer_group_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -479,9 +479,9 @@ class OccAvailabilityCatalog(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            metadata_details=oci.capacity_management.OccAvailabilityCatalogMetadataDetailsArgs(
-                format_version=occ_availability_catalog_metadata_details_format_version,
-            ))
+            metadata_details={
+                "format_version": occ_availability_catalog_metadata_details_format_version,
+            })
         ```
 
         ## Import
@@ -500,7 +500,7 @@ class OccAvailabilityCatalog(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) Additional information about the availability catalog.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the availability catalog.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[pulumi.InputType['OccAvailabilityCatalogMetadataDetailsArgs']] metadata_details: Used for representing the metadata of the catalog. This denotes the version and format of the CSV file for parsing.
+        :param pulumi.Input[Union['OccAvailabilityCatalogMetadataDetailsArgs', 'OccAvailabilityCatalogMetadataDetailsArgsDict']] metadata_details: Used for representing the metadata of the catalog. This denotes the version and format of the CSV file for parsing.
         :param pulumi.Input[str] namespace: The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
         :param pulumi.Input[str] occ_customer_group_id: The OCID of the customer group.
                
@@ -538,9 +538,9 @@ class OccAvailabilityCatalog(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            metadata_details=oci.capacity_management.OccAvailabilityCatalogMetadataDetailsArgs(
-                format_version=occ_availability_catalog_metadata_details_format_version,
-            ))
+            metadata_details={
+                "format_version": occ_availability_catalog_metadata_details_format_version,
+            })
         ```
 
         ## Import
@@ -572,7 +572,7 @@ class OccAvailabilityCatalog(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 metadata_details: Optional[pulumi.Input[pulumi.InputType['OccAvailabilityCatalogMetadataDetailsArgs']]] = None,
+                 metadata_details: Optional[pulumi.Input[Union['OccAvailabilityCatalogMetadataDetailsArgs', 'OccAvailabilityCatalogMetadataDetailsArgsDict']]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  occ_customer_group_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -625,11 +625,11 @@ class OccAvailabilityCatalog(pulumi.CustomResource):
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             description: Optional[pulumi.Input[str]] = None,
-            details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['OccAvailabilityCatalogDetailArgs']]]]] = None,
+            details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OccAvailabilityCatalogDetailArgs', 'OccAvailabilityCatalogDetailArgsDict']]]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
-            metadata_details: Optional[pulumi.Input[pulumi.InputType['OccAvailabilityCatalogMetadataDetailsArgs']]] = None,
+            metadata_details: Optional[pulumi.Input[Union['OccAvailabilityCatalogMetadataDetailsArgs', 'OccAvailabilityCatalogMetadataDetailsArgsDict']]] = None,
             namespace: Optional[pulumi.Input[str]] = None,
             occ_customer_group_id: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -648,11 +648,11 @@ class OccAvailabilityCatalog(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: Since all resources are at tenancy level hence this will be the ocid of the tenancy where operation is to be performed.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Additional information about the availability catalog.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['OccAvailabilityCatalogDetailArgs']]]] details: Details about capacity available for  different resources in catalog.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['OccAvailabilityCatalogDetailArgs', 'OccAvailabilityCatalogDetailArgsDict']]]] details: Details about capacity available for  different resources in catalog.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the availability catalog.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
-        :param pulumi.Input[pulumi.InputType['OccAvailabilityCatalogMetadataDetailsArgs']] metadata_details: Used for representing the metadata of the catalog. This denotes the version and format of the CSV file for parsing.
+        :param pulumi.Input[Union['OccAvailabilityCatalogMetadataDetailsArgs', 'OccAvailabilityCatalogMetadataDetailsArgsDict']] metadata_details: Used for representing the metadata of the catalog. This denotes the version and format of the CSV file for parsing.
         :param pulumi.Input[str] namespace: The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
         :param pulumi.Input[str] occ_customer_group_id: The OCID of the customer group.
                

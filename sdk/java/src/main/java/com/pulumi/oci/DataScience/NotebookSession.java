@@ -327,7 +327,7 @@ public class NotebookSession extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public NotebookSession(String name) {
+    public NotebookSession(java.lang.String name) {
         this(name, NotebookSessionArgs.Empty);
     }
     /**
@@ -335,7 +335,7 @@ public class NotebookSession extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public NotebookSession(String name, NotebookSessionArgs args) {
+    public NotebookSession(java.lang.String name, NotebookSessionArgs args) {
         this(name, args, null);
     }
     /**
@@ -344,12 +344,12 @@ public class NotebookSession extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public NotebookSession(String name, NotebookSessionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataScience/notebookSession:NotebookSession", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public NotebookSession(java.lang.String name, NotebookSessionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataScience/notebookSession:NotebookSession", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private NotebookSession(String name, Output<String> id, @Nullable NotebookSessionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataScience/notebookSession:NotebookSession", name, state, makeResourceOptions(options, id));
+    private NotebookSession(java.lang.String name, Output<java.lang.String> id, @Nullable NotebookSessionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataScience/notebookSession:NotebookSession", name, state, makeResourceOptions(options, id), false);
     }
 
     private static NotebookSessionArgs makeArgs(NotebookSessionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -359,7 +359,7 @@ public class NotebookSession extends com.pulumi.resources.CustomResource {
         return args == null ? NotebookSessionArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -375,7 +375,7 @@ public class NotebookSession extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static NotebookSession get(String name, Output<String> id, @Nullable NotebookSessionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static NotebookSession get(java.lang.String name, Output<java.lang.String> id, @Nullable NotebookSessionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new NotebookSession(name, id, state, options);
     }
 }

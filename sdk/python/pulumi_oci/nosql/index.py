@@ -274,7 +274,7 @@ class Index(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  is_if_not_exists: Optional[pulumi.Input[bool]] = None,
-                 keys: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IndexKeyArgs']]]]] = None,
+                 keys: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IndexKeyArgs', 'IndexKeyArgsDict']]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  table_name_or_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -290,11 +290,11 @@ class Index(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_index = oci.nosql.Index("test_index",
-            keys=[oci.nosql.IndexKeyArgs(
-                column_name=index_keys_column_name,
-                json_field_type=index_keys_json_field_type,
-                json_path=index_keys_json_path,
-            )],
+            keys=[{
+                "column_name": index_keys_column_name,
+                "json_field_type": index_keys_json_field_type,
+                "json_path": index_keys_json_path,
+            }],
             name=index_name,
             table_name_or_id=test_table_name_or["id"],
             compartment_id=compartment_id,
@@ -313,7 +313,7 @@ class Index(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
         :param pulumi.Input[bool] is_if_not_exists: If true, the operation completes successfully even when the index exists.  Otherwise, an attempt to create an index that already exists will return an error.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IndexKeyArgs']]]] keys: A set of keys for a secondary index.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IndexKeyArgs', 'IndexKeyArgsDict']]]] keys: A set of keys for a secondary index.
         :param pulumi.Input[str] name: Index name.
         :param pulumi.Input[str] table_name_or_id: A table name within the compartment, or a table OCID.
                
@@ -339,11 +339,11 @@ class Index(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_index = oci.nosql.Index("test_index",
-            keys=[oci.nosql.IndexKeyArgs(
-                column_name=index_keys_column_name,
-                json_field_type=index_keys_json_field_type,
-                json_path=index_keys_json_path,
-            )],
+            keys=[{
+                "column_name": index_keys_column_name,
+                "json_field_type": index_keys_json_field_type,
+                "json_path": index_keys_json_path,
+            }],
             name=index_name,
             table_name_or_id=test_table_name_or["id"],
             compartment_id=compartment_id,
@@ -375,7 +375,7 @@ class Index(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  is_if_not_exists: Optional[pulumi.Input[bool]] = None,
-                 keys: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IndexKeyArgs']]]]] = None,
+                 keys: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IndexKeyArgs', 'IndexKeyArgsDict']]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  table_name_or_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -412,7 +412,7 @@ class Index(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             is_if_not_exists: Optional[pulumi.Input[bool]] = None,
-            keys: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IndexKeyArgs']]]]] = None,
+            keys: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IndexKeyArgs', 'IndexKeyArgsDict']]]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -428,7 +428,7 @@ class Index(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
         :param pulumi.Input[bool] is_if_not_exists: If true, the operation completes successfully even when the index exists.  Otherwise, an attempt to create an index that already exists will return an error.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IndexKeyArgs']]]] keys: A set of keys for a secondary index.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IndexKeyArgs', 'IndexKeyArgsDict']]]] keys: A set of keys for a secondary index.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail.
         :param pulumi.Input[str] name: Index name.
         :param pulumi.Input[str] state: The state of an index.

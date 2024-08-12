@@ -89,7 +89,7 @@ public class RepositoryMirror extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public RepositoryMirror(String name) {
+    public RepositoryMirror(java.lang.String name) {
         this(name, RepositoryMirrorArgs.Empty);
     }
     /**
@@ -97,7 +97,7 @@ public class RepositoryMirror extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public RepositoryMirror(String name, RepositoryMirrorArgs args) {
+    public RepositoryMirror(java.lang.String name, RepositoryMirrorArgs args) {
         this(name, args, null);
     }
     /**
@@ -106,12 +106,12 @@ public class RepositoryMirror extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public RepositoryMirror(String name, RepositoryMirrorArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DevOps/repositoryMirror:RepositoryMirror", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public RepositoryMirror(java.lang.String name, RepositoryMirrorArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DevOps/repositoryMirror:RepositoryMirror", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private RepositoryMirror(String name, Output<String> id, @Nullable RepositoryMirrorState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DevOps/repositoryMirror:RepositoryMirror", name, state, makeResourceOptions(options, id));
+    private RepositoryMirror(java.lang.String name, Output<java.lang.String> id, @Nullable RepositoryMirrorState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DevOps/repositoryMirror:RepositoryMirror", name, state, makeResourceOptions(options, id), false);
     }
 
     private static RepositoryMirrorArgs makeArgs(RepositoryMirrorArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -121,7 +121,7 @@ public class RepositoryMirror extends com.pulumi.resources.CustomResource {
         return args == null ? RepositoryMirrorArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -137,7 +137,7 @@ public class RepositoryMirror extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static RepositoryMirror get(String name, Output<String> id, @Nullable RepositoryMirrorState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static RepositoryMirror get(java.lang.String name, Output<java.lang.String> id, @Nullable RepositoryMirrorState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new RepositoryMirror(name, id, state, options);
     }
 }

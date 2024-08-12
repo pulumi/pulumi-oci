@@ -507,7 +507,7 @@ class CatalogPrivateEndpoint(pulumi.CustomResource):
             dns_zones: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
-            locks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CatalogPrivateEndpointLockArgs']]]]] = None,
+            locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CatalogPrivateEndpointLockArgs', 'CatalogPrivateEndpointLockArgsDict']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             subnet_id: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -527,7 +527,7 @@ class CatalogPrivateEndpoint(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] dns_zones: (Updatable) List of DNS zones to be used by the data assets to be harvested. Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CatalogPrivateEndpointLockArgs']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CatalogPrivateEndpointLockArgs', 'CatalogPrivateEndpointLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[str] state: The current state of the private endpoint resource.
         :param pulumi.Input[str] subnet_id: The OCID of subnet to which the reverse connection is to be created 
                

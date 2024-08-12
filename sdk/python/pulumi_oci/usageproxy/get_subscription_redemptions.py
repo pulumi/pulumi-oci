@@ -103,7 +103,7 @@ class AwaitableGetSubscriptionRedemptionsResult(GetSubscriptionRedemptionsResult
             time_redeemed_less_than=self.time_redeemed_less_than)
 
 
-def get_subscription_redemptions(filters: Optional[Sequence[pulumi.InputType['GetSubscriptionRedemptionsFilterArgs']]] = None,
+def get_subscription_redemptions(filters: Optional[Sequence[Union['GetSubscriptionRedemptionsFilterArgs', 'GetSubscriptionRedemptionsFilterArgsDict']]] = None,
                                  subscription_id: Optional[str] = None,
                                  tenancy_id: Optional[str] = None,
                                  time_redeemed_greater_than_or_equal_to: Optional[str] = None,
@@ -152,7 +152,7 @@ def get_subscription_redemptions(filters: Optional[Sequence[pulumi.InputType['Ge
 
 
 @_utilities.lift_output_func(get_subscription_redemptions)
-def get_subscription_redemptions_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetSubscriptionRedemptionsFilterArgs']]]]] = None,
+def get_subscription_redemptions_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSubscriptionRedemptionsFilterArgs', 'GetSubscriptionRedemptionsFilterArgsDict']]]]] = None,
                                         subscription_id: Optional[pulumi.Input[str]] = None,
                                         tenancy_id: Optional[pulumi.Input[str]] = None,
                                         time_redeemed_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,

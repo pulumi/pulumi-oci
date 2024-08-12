@@ -246,7 +246,7 @@ public class DedicatedVantagePoint extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DedicatedVantagePoint(String name) {
+    public DedicatedVantagePoint(java.lang.String name) {
         this(name, DedicatedVantagePointArgs.Empty);
     }
     /**
@@ -254,7 +254,7 @@ public class DedicatedVantagePoint extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DedicatedVantagePoint(String name, DedicatedVantagePointArgs args) {
+    public DedicatedVantagePoint(java.lang.String name, DedicatedVantagePointArgs args) {
         this(name, args, null);
     }
     /**
@@ -263,12 +263,12 @@ public class DedicatedVantagePoint extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DedicatedVantagePoint(String name, DedicatedVantagePointArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:ApmSynthetics/dedicatedVantagePoint:DedicatedVantagePoint", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DedicatedVantagePoint(java.lang.String name, DedicatedVantagePointArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:ApmSynthetics/dedicatedVantagePoint:DedicatedVantagePoint", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DedicatedVantagePoint(String name, Output<String> id, @Nullable DedicatedVantagePointState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:ApmSynthetics/dedicatedVantagePoint:DedicatedVantagePoint", name, state, makeResourceOptions(options, id));
+    private DedicatedVantagePoint(java.lang.String name, Output<java.lang.String> id, @Nullable DedicatedVantagePointState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:ApmSynthetics/dedicatedVantagePoint:DedicatedVantagePoint", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DedicatedVantagePointArgs makeArgs(DedicatedVantagePointArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -278,7 +278,7 @@ public class DedicatedVantagePoint extends com.pulumi.resources.CustomResource {
         return args == null ? DedicatedVantagePointArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -294,7 +294,7 @@ public class DedicatedVantagePoint extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DedicatedVantagePoint get(String name, Output<String> id, @Nullable DedicatedVantagePointState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DedicatedVantagePoint get(java.lang.String name, Output<java.lang.String> id, @Nullable DedicatedVantagePointState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DedicatedVantagePoint(name, id, state, options);
     }
 }

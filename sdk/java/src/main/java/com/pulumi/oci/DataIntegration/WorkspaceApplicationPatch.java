@@ -409,7 +409,7 @@ public class WorkspaceApplicationPatch extends com.pulumi.resources.CustomResour
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public WorkspaceApplicationPatch(String name) {
+    public WorkspaceApplicationPatch(java.lang.String name) {
         this(name, WorkspaceApplicationPatchArgs.Empty);
     }
     /**
@@ -417,7 +417,7 @@ public class WorkspaceApplicationPatch extends com.pulumi.resources.CustomResour
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public WorkspaceApplicationPatch(String name, WorkspaceApplicationPatchArgs args) {
+    public WorkspaceApplicationPatch(java.lang.String name, WorkspaceApplicationPatchArgs args) {
         this(name, args, null);
     }
     /**
@@ -426,12 +426,12 @@ public class WorkspaceApplicationPatch extends com.pulumi.resources.CustomResour
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public WorkspaceApplicationPatch(String name, WorkspaceApplicationPatchArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataIntegration/workspaceApplicationPatch:WorkspaceApplicationPatch", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public WorkspaceApplicationPatch(java.lang.String name, WorkspaceApplicationPatchArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataIntegration/workspaceApplicationPatch:WorkspaceApplicationPatch", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private WorkspaceApplicationPatch(String name, Output<String> id, @Nullable WorkspaceApplicationPatchState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataIntegration/workspaceApplicationPatch:WorkspaceApplicationPatch", name, state, makeResourceOptions(options, id));
+    private WorkspaceApplicationPatch(java.lang.String name, Output<java.lang.String> id, @Nullable WorkspaceApplicationPatchState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataIntegration/workspaceApplicationPatch:WorkspaceApplicationPatch", name, state, makeResourceOptions(options, id), false);
     }
 
     private static WorkspaceApplicationPatchArgs makeArgs(WorkspaceApplicationPatchArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -441,7 +441,7 @@ public class WorkspaceApplicationPatch extends com.pulumi.resources.CustomResour
         return args == null ? WorkspaceApplicationPatchArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -457,7 +457,7 @@ public class WorkspaceApplicationPatch extends com.pulumi.resources.CustomResour
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static WorkspaceApplicationPatch get(String name, Output<String> id, @Nullable WorkspaceApplicationPatchState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static WorkspaceApplicationPatch get(java.lang.String name, Output<java.lang.String> id, @Nullable WorkspaceApplicationPatchState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new WorkspaceApplicationPatch(name, id, state, options);
     }
 }

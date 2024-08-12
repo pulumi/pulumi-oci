@@ -396,9 +396,9 @@ class MonitoredResourcesAssociateMonitoredResource(pulumi.CustomResource):
             association_type: Optional[pulumi.Input[str]] = None,
             category: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            destination_resource_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgs']]]]] = None,
+            destination_resource_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgs', 'MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgsDict']]]]] = None,
             destination_resource_id: Optional[pulumi.Input[str]] = None,
-            source_resource_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgs']]]]] = None,
+            source_resource_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgs', 'MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgsDict']]]]] = None,
             source_resource_id: Optional[pulumi.Input[str]] = None,
             tenant_id: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None) -> 'MonitoredResourcesAssociateMonitoredResource':
@@ -415,9 +415,9 @@ class MonitoredResourcesAssociateMonitoredResource(pulumi.CustomResource):
                * User created using API (USER_API)
                * User created using tags (USER_TAG_ASSOC).
         :param pulumi.Input[str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgs']]]] destination_resource_details: Association Resource Details.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgs', 'MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgsDict']]]] destination_resource_details: Association Resource Details.
         :param pulumi.Input[str] destination_resource_id: Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgs']]]] source_resource_details: Association Resource Details.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgs', 'MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgsDict']]]] source_resource_details: Association Resource Details.
         :param pulumi.Input[str] source_resource_id: Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). 
                
                

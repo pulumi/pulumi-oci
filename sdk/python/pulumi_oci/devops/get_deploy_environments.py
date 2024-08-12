@@ -117,7 +117,7 @@ class AwaitableGetDeployEnvironmentsResult(GetDeployEnvironmentsResult):
 
 def get_deploy_environments(compartment_id: Optional[str] = None,
                             display_name: Optional[str] = None,
-                            filters: Optional[Sequence[pulumi.InputType['GetDeployEnvironmentsFilterArgs']]] = None,
+                            filters: Optional[Sequence[Union['GetDeployEnvironmentsFilterArgs', 'GetDeployEnvironmentsFilterArgsDict']]] = None,
                             id: Optional[str] = None,
                             project_id: Optional[str] = None,
                             state: Optional[str] = None,
@@ -170,7 +170,7 @@ def get_deploy_environments(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_deploy_environments)
 def get_deploy_environments_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                    display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDeployEnvironmentsFilterArgs']]]]] = None,
+                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDeployEnvironmentsFilterArgs', 'GetDeployEnvironmentsFilterArgsDict']]]]] = None,
                                    id: Optional[pulumi.Input[Optional[str]]] = None,
                                    project_id: Optional[pulumi.Input[Optional[str]]] = None,
                                    state: Optional[pulumi.Input[Optional[str]]] = None,

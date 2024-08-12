@@ -369,7 +369,7 @@ public class OpaInstance extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public OpaInstance(String name) {
+    public OpaInstance(java.lang.String name) {
         this(name, OpaInstanceArgs.Empty);
     }
     /**
@@ -377,7 +377,7 @@ public class OpaInstance extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public OpaInstance(String name, OpaInstanceArgs args) {
+    public OpaInstance(java.lang.String name, OpaInstanceArgs args) {
         this(name, args, null);
     }
     /**
@@ -386,12 +386,12 @@ public class OpaInstance extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public OpaInstance(String name, OpaInstanceArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Opa/opaInstance:OpaInstance", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public OpaInstance(java.lang.String name, OpaInstanceArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Opa/opaInstance:OpaInstance", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private OpaInstance(String name, Output<String> id, @Nullable OpaInstanceState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Opa/opaInstance:OpaInstance", name, state, makeResourceOptions(options, id));
+    private OpaInstance(java.lang.String name, Output<java.lang.String> id, @Nullable OpaInstanceState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Opa/opaInstance:OpaInstance", name, state, makeResourceOptions(options, id), false);
     }
 
     private static OpaInstanceArgs makeArgs(OpaInstanceArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -401,7 +401,7 @@ public class OpaInstance extends com.pulumi.resources.CustomResource {
         return args == null ? OpaInstanceArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -417,7 +417,7 @@ public class OpaInstance extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static OpaInstance get(String name, Output<String> id, @Nullable OpaInstanceState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static OpaInstance get(java.lang.String name, Output<java.lang.String> id, @Nullable OpaInstanceState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new OpaInstance(name, id, state, options);
     }
 }

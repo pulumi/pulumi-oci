@@ -755,7 +755,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DataGuardAssociation(String name) {
+    public DataGuardAssociation(java.lang.String name) {
         this(name, DataGuardAssociationArgs.Empty);
     }
     /**
@@ -763,7 +763,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DataGuardAssociation(String name, DataGuardAssociationArgs args) {
+    public DataGuardAssociation(java.lang.String name, DataGuardAssociationArgs args) {
         this(name, args, null);
     }
     /**
@@ -772,12 +772,12 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DataGuardAssociation(String name, DataGuardAssociationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/dataGuardAssociation:DataGuardAssociation", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DataGuardAssociation(java.lang.String name, DataGuardAssociationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/dataGuardAssociation:DataGuardAssociation", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DataGuardAssociation(String name, Output<String> id, @Nullable DataGuardAssociationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/dataGuardAssociation:DataGuardAssociation", name, state, makeResourceOptions(options, id));
+    private DataGuardAssociation(java.lang.String name, Output<java.lang.String> id, @Nullable DataGuardAssociationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/dataGuardAssociation:DataGuardAssociation", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DataGuardAssociationArgs makeArgs(DataGuardAssociationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -787,7 +787,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
         return args == null ? DataGuardAssociationArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .additionalSecretOutputs(List.of(
@@ -806,7 +806,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DataGuardAssociation get(String name, Output<String> id, @Nullable DataGuardAssociationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DataGuardAssociation get(java.lang.String name, Output<java.lang.String> id, @Nullable DataGuardAssociationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DataGuardAssociation(name, id, state, options);
     }
 }

@@ -32,7 +32,7 @@ public class MaskingPoliciesApplyDifferenceToMaskingColumns extends com.pulumi.r
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public MaskingPoliciesApplyDifferenceToMaskingColumns(String name) {
+    public MaskingPoliciesApplyDifferenceToMaskingColumns(java.lang.String name) {
         this(name, MaskingPoliciesApplyDifferenceToMaskingColumnsArgs.Empty);
     }
     /**
@@ -40,7 +40,7 @@ public class MaskingPoliciesApplyDifferenceToMaskingColumns extends com.pulumi.r
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public MaskingPoliciesApplyDifferenceToMaskingColumns(String name, MaskingPoliciesApplyDifferenceToMaskingColumnsArgs args) {
+    public MaskingPoliciesApplyDifferenceToMaskingColumns(java.lang.String name, MaskingPoliciesApplyDifferenceToMaskingColumnsArgs args) {
         this(name, args, null);
     }
     /**
@@ -49,12 +49,12 @@ public class MaskingPoliciesApplyDifferenceToMaskingColumns extends com.pulumi.r
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public MaskingPoliciesApplyDifferenceToMaskingColumns(String name, MaskingPoliciesApplyDifferenceToMaskingColumnsArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/maskingPoliciesApplyDifferenceToMaskingColumns:MaskingPoliciesApplyDifferenceToMaskingColumns", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public MaskingPoliciesApplyDifferenceToMaskingColumns(java.lang.String name, MaskingPoliciesApplyDifferenceToMaskingColumnsArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataSafe/maskingPoliciesApplyDifferenceToMaskingColumns:MaskingPoliciesApplyDifferenceToMaskingColumns", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private MaskingPoliciesApplyDifferenceToMaskingColumns(String name, Output<String> id, @Nullable MaskingPoliciesApplyDifferenceToMaskingColumnsState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/maskingPoliciesApplyDifferenceToMaskingColumns:MaskingPoliciesApplyDifferenceToMaskingColumns", name, state, makeResourceOptions(options, id));
+    private MaskingPoliciesApplyDifferenceToMaskingColumns(java.lang.String name, Output<java.lang.String> id, @Nullable MaskingPoliciesApplyDifferenceToMaskingColumnsState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataSafe/maskingPoliciesApplyDifferenceToMaskingColumns:MaskingPoliciesApplyDifferenceToMaskingColumns", name, state, makeResourceOptions(options, id), false);
     }
 
     private static MaskingPoliciesApplyDifferenceToMaskingColumnsArgs makeArgs(MaskingPoliciesApplyDifferenceToMaskingColumnsArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -64,7 +64,7 @@ public class MaskingPoliciesApplyDifferenceToMaskingColumns extends com.pulumi.r
         return args == null ? MaskingPoliciesApplyDifferenceToMaskingColumnsArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -80,7 +80,7 @@ public class MaskingPoliciesApplyDifferenceToMaskingColumns extends com.pulumi.r
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static MaskingPoliciesApplyDifferenceToMaskingColumns get(String name, Output<String> id, @Nullable MaskingPoliciesApplyDifferenceToMaskingColumnsState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static MaskingPoliciesApplyDifferenceToMaskingColumns get(java.lang.String name, Output<java.lang.String> id, @Nullable MaskingPoliciesApplyDifferenceToMaskingColumnsState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new MaskingPoliciesApplyDifferenceToMaskingColumns(name, id, state, options);
     }
 }

@@ -104,7 +104,7 @@ class AwaitableGetServiceGatewaysResult(GetServiceGatewaysResult):
 
 
 def get_service_gateways(compartment_id: Optional[str] = None,
-                         filters: Optional[Sequence[pulumi.InputType['GetServiceGatewaysFilterArgs']]] = None,
+                         filters: Optional[Sequence[Union['GetServiceGatewaysFilterArgs', 'GetServiceGatewaysFilterArgsDict']]] = None,
                          state: Optional[str] = None,
                          vcn_id: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetServiceGatewaysResult:
@@ -149,7 +149,7 @@ def get_service_gateways(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_service_gateways)
 def get_service_gateways_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetServiceGatewaysFilterArgs']]]]] = None,
+                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetServiceGatewaysFilterArgs', 'GetServiceGatewaysFilterArgsDict']]]]] = None,
                                 state: Optional[pulumi.Input[Optional[str]]] = None,
                                 vcn_id: Optional[pulumi.Input[Optional[str]]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetServiceGatewaysResult]:

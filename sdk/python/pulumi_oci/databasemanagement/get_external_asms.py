@@ -106,7 +106,7 @@ class AwaitableGetExternalAsmsResult(GetExternalAsmsResult):
 def get_external_asms(compartment_id: Optional[str] = None,
                       display_name: Optional[str] = None,
                       external_db_system_id: Optional[str] = None,
-                      filters: Optional[Sequence[pulumi.InputType['GetExternalAsmsFilterArgs']]] = None,
+                      filters: Optional[Sequence[Union['GetExternalAsmsFilterArgs', 'GetExternalAsmsFilterArgsDict']]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalAsmsResult:
     """
     This data source provides the list of External Asms in Oracle Cloud Infrastructure Database Management service.
@@ -150,7 +150,7 @@ def get_external_asms(compartment_id: Optional[str] = None,
 def get_external_asms_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                              display_name: Optional[pulumi.Input[Optional[str]]] = None,
                              external_db_system_id: Optional[pulumi.Input[Optional[str]]] = None,
-                             filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetExternalAsmsFilterArgs']]]]] = None,
+                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExternalAsmsFilterArgs', 'GetExternalAsmsFilterArgsDict']]]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalAsmsResult]:
     """
     This data source provides the list of External Asms in Oracle Cloud Infrastructure Database Management service.

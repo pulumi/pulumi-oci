@@ -131,7 +131,7 @@ class ManagedInstanceGroupUpdateAllPackagesManagement(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  managed_instance_group_id: Optional[pulumi.Input[str]] = None,
                  update_types: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 work_request_details: Optional[pulumi.Input[pulumi.InputType['ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs']]] = None,
+                 work_request_details: Optional[pulumi.Input[Union['ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Managed Instance Group Update All Packages Management resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -147,10 +147,10 @@ class ManagedInstanceGroupUpdateAllPackagesManagement(pulumi.CustomResource):
         test_managed_instance_group_update_all_packages_management = oci.os_management_hub.ManagedInstanceGroupUpdateAllPackagesManagement("test_managed_instance_group_update_all_packages_management",
             managed_instance_group_id=test_managed_instance_group["id"],
             update_types=managed_instance_group_update_all_packages_management_update_types,
-            work_request_details=oci.os_management_hub.ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs(
-                description=managed_instance_group_update_all_packages_management_work_request_details_description,
-                display_name=managed_instance_group_update_all_packages_management_work_request_details_display_name,
-            ))
+            work_request_details={
+                "description": managed_instance_group_update_all_packages_management_work_request_details_description,
+                "display_name": managed_instance_group_update_all_packages_management_work_request_details_display_name,
+            })
         ```
 
         ## Import
@@ -165,7 +165,7 @@ class ManagedInstanceGroupUpdateAllPackagesManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] update_types: The type of updates to be applied.
-        :param pulumi.Input[pulumi.InputType['ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs']] work_request_details: Provides the name and description of the job.
+        :param pulumi.Input[Union['ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgsDict']] work_request_details: Provides the name and description of the job.
         """
         ...
     @overload
@@ -187,10 +187,10 @@ class ManagedInstanceGroupUpdateAllPackagesManagement(pulumi.CustomResource):
         test_managed_instance_group_update_all_packages_management = oci.os_management_hub.ManagedInstanceGroupUpdateAllPackagesManagement("test_managed_instance_group_update_all_packages_management",
             managed_instance_group_id=test_managed_instance_group["id"],
             update_types=managed_instance_group_update_all_packages_management_update_types,
-            work_request_details=oci.os_management_hub.ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs(
-                description=managed_instance_group_update_all_packages_management_work_request_details_description,
-                display_name=managed_instance_group_update_all_packages_management_work_request_details_display_name,
-            ))
+            work_request_details={
+                "description": managed_instance_group_update_all_packages_management_work_request_details_description,
+                "display_name": managed_instance_group_update_all_packages_management_work_request_details_display_name,
+            })
         ```
 
         ## Import
@@ -218,7 +218,7 @@ class ManagedInstanceGroupUpdateAllPackagesManagement(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  managed_instance_group_id: Optional[pulumi.Input[str]] = None,
                  update_types: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 work_request_details: Optional[pulumi.Input[pulumi.InputType['ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs']]] = None,
+                 work_request_details: Optional[pulumi.Input[Union['ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -245,7 +245,7 @@ class ManagedInstanceGroupUpdateAllPackagesManagement(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             managed_instance_group_id: Optional[pulumi.Input[str]] = None,
             update_types: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            work_request_details: Optional[pulumi.Input[pulumi.InputType['ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs']]] = None) -> 'ManagedInstanceGroupUpdateAllPackagesManagement':
+            work_request_details: Optional[pulumi.Input[Union['ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgsDict']]] = None) -> 'ManagedInstanceGroupUpdateAllPackagesManagement':
         """
         Get an existing ManagedInstanceGroupUpdateAllPackagesManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -255,7 +255,7 @@ class ManagedInstanceGroupUpdateAllPackagesManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] update_types: The type of updates to be applied.
-        :param pulumi.Input[pulumi.InputType['ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs']] work_request_details: Provides the name and description of the job.
+        :param pulumi.Input[Union['ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgsDict']] work_request_details: Provides the name and description of the job.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

@@ -224,7 +224,7 @@ public class Report extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public Report(String name) {
+    public Report(java.lang.String name) {
         this(name, ReportArgs.Empty);
     }
     /**
@@ -232,7 +232,7 @@ public class Report extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public Report(String name, ReportArgs args) {
+    public Report(java.lang.String name, ReportArgs args) {
         this(name, args, null);
     }
     /**
@@ -241,12 +241,12 @@ public class Report extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public Report(String name, ReportArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/report:Report", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public Report(java.lang.String name, ReportArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataSafe/report:Report", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private Report(String name, Output<String> id, @Nullable ReportState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/report:Report", name, state, makeResourceOptions(options, id));
+    private Report(java.lang.String name, Output<java.lang.String> id, @Nullable ReportState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataSafe/report:Report", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ReportArgs makeArgs(ReportArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -256,7 +256,7 @@ public class Report extends com.pulumi.resources.CustomResource {
         return args == null ? ReportArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -272,7 +272,7 @@ public class Report extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static Report get(String name, Output<String> id, @Nullable ReportState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static Report get(java.lang.String name, Output<java.lang.String> id, @Nullable ReportState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new Report(name, id, state, options);
     }
 }

@@ -251,7 +251,7 @@ public class AiPrivateEndpoint extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public AiPrivateEndpoint(String name) {
+    public AiPrivateEndpoint(java.lang.String name) {
         this(name, AiPrivateEndpointArgs.Empty);
     }
     /**
@@ -259,7 +259,7 @@ public class AiPrivateEndpoint extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public AiPrivateEndpoint(String name, AiPrivateEndpointArgs args) {
+    public AiPrivateEndpoint(java.lang.String name, AiPrivateEndpointArgs args) {
         this(name, args, null);
     }
     /**
@@ -268,12 +268,12 @@ public class AiPrivateEndpoint extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public AiPrivateEndpoint(String name, AiPrivateEndpointArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:AiAnomalyDetection/aiPrivateEndpoint:AiPrivateEndpoint", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public AiPrivateEndpoint(java.lang.String name, AiPrivateEndpointArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:AiAnomalyDetection/aiPrivateEndpoint:AiPrivateEndpoint", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private AiPrivateEndpoint(String name, Output<String> id, @Nullable AiPrivateEndpointState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:AiAnomalyDetection/aiPrivateEndpoint:AiPrivateEndpoint", name, state, makeResourceOptions(options, id));
+    private AiPrivateEndpoint(java.lang.String name, Output<java.lang.String> id, @Nullable AiPrivateEndpointState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:AiAnomalyDetection/aiPrivateEndpoint:AiPrivateEndpoint", name, state, makeResourceOptions(options, id), false);
     }
 
     private static AiPrivateEndpointArgs makeArgs(AiPrivateEndpointArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -283,7 +283,7 @@ public class AiPrivateEndpoint extends com.pulumi.resources.CustomResource {
         return args == null ? AiPrivateEndpointArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -299,7 +299,7 @@ public class AiPrivateEndpoint extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static AiPrivateEndpoint get(String name, Output<String> id, @Nullable AiPrivateEndpointState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static AiPrivateEndpoint get(java.lang.String name, Output<java.lang.String> id, @Nullable AiPrivateEndpointState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new AiPrivateEndpoint(name, id, state, options);
     }
 }

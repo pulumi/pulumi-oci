@@ -102,7 +102,7 @@ public class BackupCancelManagement extends com.pulumi.resources.CustomResource 
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public BackupCancelManagement(String name) {
+    public BackupCancelManagement(java.lang.String name) {
         this(name, BackupCancelManagementArgs.Empty);
     }
     /**
@@ -110,7 +110,7 @@ public class BackupCancelManagement extends com.pulumi.resources.CustomResource 
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public BackupCancelManagement(String name, BackupCancelManagementArgs args) {
+    public BackupCancelManagement(java.lang.String name, BackupCancelManagementArgs args) {
         this(name, args, null);
     }
     /**
@@ -119,12 +119,12 @@ public class BackupCancelManagement extends com.pulumi.resources.CustomResource 
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public BackupCancelManagement(String name, BackupCancelManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/backupCancelManagement:BackupCancelManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public BackupCancelManagement(java.lang.String name, BackupCancelManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/backupCancelManagement:BackupCancelManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private BackupCancelManagement(String name, Output<String> id, @Nullable BackupCancelManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/backupCancelManagement:BackupCancelManagement", name, state, makeResourceOptions(options, id));
+    private BackupCancelManagement(java.lang.String name, Output<java.lang.String> id, @Nullable BackupCancelManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/backupCancelManagement:BackupCancelManagement", name, state, makeResourceOptions(options, id), false);
     }
 
     private static BackupCancelManagementArgs makeArgs(BackupCancelManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -134,7 +134,7 @@ public class BackupCancelManagement extends com.pulumi.resources.CustomResource 
         return args == null ? BackupCancelManagementArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -150,7 +150,7 @@ public class BackupCancelManagement extends com.pulumi.resources.CustomResource 
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static BackupCancelManagement get(String name, Output<String> id, @Nullable BackupCancelManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static BackupCancelManagement get(java.lang.String name, Output<java.lang.String> id, @Nullable BackupCancelManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new BackupCancelManagement(name, id, state, options);
     }
 }

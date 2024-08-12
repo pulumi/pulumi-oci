@@ -125,7 +125,7 @@ class AwaitableGetRatecardsResult(GetRatecardsResult):
 
 
 def get_ratecards(compartment_id: Optional[str] = None,
-                  filters: Optional[Sequence[pulumi.InputType['GetRatecardsFilterArgs']]] = None,
+                  filters: Optional[Sequence[Union['GetRatecardsFilterArgs', 'GetRatecardsFilterArgsDict']]] = None,
                   part_number: Optional[str] = None,
                   subscription_id: Optional[str] = None,
                   time_from: Optional[str] = None,
@@ -185,7 +185,7 @@ def get_ratecards(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_ratecards)
 def get_ratecards_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                         filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetRatecardsFilterArgs']]]]] = None,
+                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRatecardsFilterArgs', 'GetRatecardsFilterArgsDict']]]]] = None,
                          part_number: Optional[pulumi.Input[Optional[str]]] = None,
                          subscription_id: Optional[pulumi.Input[str]] = None,
                          time_from: Optional[pulumi.Input[Optional[str]]] = None,

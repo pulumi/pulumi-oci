@@ -389,7 +389,7 @@ class AlarmSuppression(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 alarm_suppression_target: Optional[pulumi.Input[pulumi.InputType['AlarmSuppressionAlarmSuppressionTargetArgs']]] = None,
+                 alarm_suppression_target: Optional[pulumi.Input[Union['AlarmSuppressionAlarmSuppressionTargetArgs', 'AlarmSuppressionAlarmSuppressionTargetArgsDict']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  dimensions: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -417,10 +417,10 @@ class AlarmSuppression(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_alarm_suppression = oci.monitoring.AlarmSuppression("test_alarm_suppression",
-            alarm_suppression_target=oci.monitoring.AlarmSuppressionAlarmSuppressionTargetArgs(
-                alarm_id=test_alarm["id"],
-                target_type=alarm_suppression_alarm_suppression_target_target_type,
-            ),
+            alarm_suppression_target={
+                "alarm_id": test_alarm["id"],
+                "target_type": alarm_suppression_alarm_suppression_target_target_type,
+            },
             dimensions=alarm_suppression_dimensions,
             display_name=alarm_suppression_display_name,
             time_suppress_from=alarm_suppression_time_suppress_from,
@@ -444,7 +444,7 @@ class AlarmSuppression(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['AlarmSuppressionAlarmSuppressionTargetArgs']] alarm_suppression_target: The target of the alarm suppression.
+        :param pulumi.Input[Union['AlarmSuppressionAlarmSuppressionTargetArgs', 'AlarmSuppressionAlarmSuppressionTargetArgsDict']] alarm_suppression_target: The target of the alarm suppression.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: Human-readable reason for this alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
                
@@ -488,10 +488,10 @@ class AlarmSuppression(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_alarm_suppression = oci.monitoring.AlarmSuppression("test_alarm_suppression",
-            alarm_suppression_target=oci.monitoring.AlarmSuppressionAlarmSuppressionTargetArgs(
-                alarm_id=test_alarm["id"],
-                target_type=alarm_suppression_alarm_suppression_target_target_type,
-            ),
+            alarm_suppression_target={
+                "alarm_id": test_alarm["id"],
+                "target_type": alarm_suppression_alarm_suppression_target_target_type,
+            },
             dimensions=alarm_suppression_dimensions,
             display_name=alarm_suppression_display_name,
             time_suppress_from=alarm_suppression_time_suppress_from,
@@ -528,7 +528,7 @@ class AlarmSuppression(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 alarm_suppression_target: Optional[pulumi.Input[pulumi.InputType['AlarmSuppressionAlarmSuppressionTargetArgs']]] = None,
+                 alarm_suppression_target: Optional[pulumi.Input[Union['AlarmSuppressionAlarmSuppressionTargetArgs', 'AlarmSuppressionAlarmSuppressionTargetArgsDict']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  dimensions: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -577,7 +577,7 @@ class AlarmSuppression(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            alarm_suppression_target: Optional[pulumi.Input[pulumi.InputType['AlarmSuppressionAlarmSuppressionTargetArgs']]] = None,
+            alarm_suppression_target: Optional[pulumi.Input[Union['AlarmSuppressionAlarmSuppressionTargetArgs', 'AlarmSuppressionAlarmSuppressionTargetArgsDict']]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             description: Optional[pulumi.Input[str]] = None,
@@ -596,7 +596,7 @@ class AlarmSuppression(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['AlarmSuppressionAlarmSuppressionTargetArgs']] alarm_suppression_target: The target of the alarm suppression.
+        :param pulumi.Input[Union['AlarmSuppressionAlarmSuppressionTargetArgs', 'AlarmSuppressionAlarmSuppressionTargetArgsDict']] alarm_suppression_target: The target of the alarm suppression.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm suppression.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: Human-readable reason for this alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.

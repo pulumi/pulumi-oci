@@ -146,7 +146,7 @@ class ObjectLifecyclePolicy(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  bucket: Optional[pulumi.Input[str]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ObjectLifecyclePolicyRuleArgs']]]]] = None,
+                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ObjectLifecyclePolicyRuleArgs', 'ObjectLifecyclePolicyRuleArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Object Lifecycle Policy resource in Oracle Cloud Infrastructure Object Storage service.
@@ -162,19 +162,19 @@ class ObjectLifecyclePolicy(pulumi.CustomResource):
         test_object_lifecycle_policy = oci.object_storage.ObjectLifecyclePolicy("test_object_lifecycle_policy",
             bucket=object_lifecycle_policy_bucket,
             namespace=object_lifecycle_policy_namespace,
-            rules=[oci.object_storage.ObjectLifecyclePolicyRuleArgs(
-                action=object_lifecycle_policy_rules_action,
-                is_enabled=object_lifecycle_policy_rules_is_enabled,
-                name=object_lifecycle_policy_rules_name,
-                time_amount=object_lifecycle_policy_rules_time_amount,
-                time_unit=object_lifecycle_policy_rules_time_unit,
-                object_name_filter=oci.object_storage.ObjectLifecyclePolicyRuleObjectNameFilterArgs(
-                    exclusion_patterns=object_lifecycle_policy_rules_object_name_filter_exclusion_patterns,
-                    inclusion_patterns=object_lifecycle_policy_rules_object_name_filter_inclusion_patterns,
-                    inclusion_prefixes=object_lifecycle_policy_rules_object_name_filter_inclusion_prefixes,
-                ),
-                target=object_lifecycle_policy_rules_target,
-            )])
+            rules=[{
+                "action": object_lifecycle_policy_rules_action,
+                "is_enabled": object_lifecycle_policy_rules_is_enabled,
+                "name": object_lifecycle_policy_rules_name,
+                "time_amount": object_lifecycle_policy_rules_time_amount,
+                "time_unit": object_lifecycle_policy_rules_time_unit,
+                "object_name_filter": {
+                    "exclusion_patterns": object_lifecycle_policy_rules_object_name_filter_exclusion_patterns,
+                    "inclusion_patterns": object_lifecycle_policy_rules_object_name_filter_inclusion_patterns,
+                    "inclusion_prefixes": object_lifecycle_policy_rules_object_name_filter_inclusion_prefixes,
+                },
+                "target": object_lifecycle_policy_rules_target,
+            }])
         ```
 
         ## Import
@@ -189,7 +189,7 @@ class ObjectLifecyclePolicy(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
         :param pulumi.Input[str] namespace: The Object Storage namespace used for the request.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ObjectLifecyclePolicyRuleArgs']]]] rules: (Updatable) The bucket's set of lifecycle policy rules.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ObjectLifecyclePolicyRuleArgs', 'ObjectLifecyclePolicyRuleArgsDict']]]] rules: (Updatable) The bucket's set of lifecycle policy rules.
         """
         ...
     @overload
@@ -211,19 +211,19 @@ class ObjectLifecyclePolicy(pulumi.CustomResource):
         test_object_lifecycle_policy = oci.object_storage.ObjectLifecyclePolicy("test_object_lifecycle_policy",
             bucket=object_lifecycle_policy_bucket,
             namespace=object_lifecycle_policy_namespace,
-            rules=[oci.object_storage.ObjectLifecyclePolicyRuleArgs(
-                action=object_lifecycle_policy_rules_action,
-                is_enabled=object_lifecycle_policy_rules_is_enabled,
-                name=object_lifecycle_policy_rules_name,
-                time_amount=object_lifecycle_policy_rules_time_amount,
-                time_unit=object_lifecycle_policy_rules_time_unit,
-                object_name_filter=oci.object_storage.ObjectLifecyclePolicyRuleObjectNameFilterArgs(
-                    exclusion_patterns=object_lifecycle_policy_rules_object_name_filter_exclusion_patterns,
-                    inclusion_patterns=object_lifecycle_policy_rules_object_name_filter_inclusion_patterns,
-                    inclusion_prefixes=object_lifecycle_policy_rules_object_name_filter_inclusion_prefixes,
-                ),
-                target=object_lifecycle_policy_rules_target,
-            )])
+            rules=[{
+                "action": object_lifecycle_policy_rules_action,
+                "is_enabled": object_lifecycle_policy_rules_is_enabled,
+                "name": object_lifecycle_policy_rules_name,
+                "time_amount": object_lifecycle_policy_rules_time_amount,
+                "time_unit": object_lifecycle_policy_rules_time_unit,
+                "object_name_filter": {
+                    "exclusion_patterns": object_lifecycle_policy_rules_object_name_filter_exclusion_patterns,
+                    "inclusion_patterns": object_lifecycle_policy_rules_object_name_filter_inclusion_patterns,
+                    "inclusion_prefixes": object_lifecycle_policy_rules_object_name_filter_inclusion_prefixes,
+                },
+                "target": object_lifecycle_policy_rules_target,
+            }])
         ```
 
         ## Import
@@ -251,7 +251,7 @@ class ObjectLifecyclePolicy(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  bucket: Optional[pulumi.Input[str]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ObjectLifecyclePolicyRuleArgs']]]]] = None,
+                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ObjectLifecyclePolicyRuleArgs', 'ObjectLifecyclePolicyRuleArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -281,7 +281,7 @@ class ObjectLifecyclePolicy(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             bucket: Optional[pulumi.Input[str]] = None,
             namespace: Optional[pulumi.Input[str]] = None,
-            rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ObjectLifecyclePolicyRuleArgs']]]]] = None,
+            rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ObjectLifecyclePolicyRuleArgs', 'ObjectLifecyclePolicyRuleArgsDict']]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None) -> 'ObjectLifecyclePolicy':
         """
         Get an existing ObjectLifecyclePolicy resource's state with the given name, id, and optional extra
@@ -292,7 +292,7 @@ class ObjectLifecyclePolicy(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
         :param pulumi.Input[str] namespace: The Object Storage namespace used for the request.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ObjectLifecyclePolicyRuleArgs']]]] rules: (Updatable) The bucket's set of lifecycle policy rules.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ObjectLifecyclePolicyRuleArgs', 'ObjectLifecyclePolicyRuleArgsDict']]]] rules: (Updatable) The bucket's set of lifecycle policy rules.
         :param pulumi.Input[str] time_created: The date and time the object lifecycle policy was created, as described in [RFC 3339](https://tools.ietf.org/html/rfc3339).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

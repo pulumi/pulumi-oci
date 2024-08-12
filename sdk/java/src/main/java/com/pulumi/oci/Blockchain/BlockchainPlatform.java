@@ -473,7 +473,7 @@ public class BlockchainPlatform extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public BlockchainPlatform(String name) {
+    public BlockchainPlatform(java.lang.String name) {
         this(name, BlockchainPlatformArgs.Empty);
     }
     /**
@@ -481,7 +481,7 @@ public class BlockchainPlatform extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public BlockchainPlatform(String name, BlockchainPlatformArgs args) {
+    public BlockchainPlatform(java.lang.String name, BlockchainPlatformArgs args) {
         this(name, args, null);
     }
     /**
@@ -490,12 +490,12 @@ public class BlockchainPlatform extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public BlockchainPlatform(String name, BlockchainPlatformArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Blockchain/blockchainPlatform:BlockchainPlatform", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public BlockchainPlatform(java.lang.String name, BlockchainPlatformArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Blockchain/blockchainPlatform:BlockchainPlatform", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private BlockchainPlatform(String name, Output<String> id, @Nullable BlockchainPlatformState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Blockchain/blockchainPlatform:BlockchainPlatform", name, state, makeResourceOptions(options, id));
+    private BlockchainPlatform(java.lang.String name, Output<java.lang.String> id, @Nullable BlockchainPlatformState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Blockchain/blockchainPlatform:BlockchainPlatform", name, state, makeResourceOptions(options, id), false);
     }
 
     private static BlockchainPlatformArgs makeArgs(BlockchainPlatformArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -505,7 +505,7 @@ public class BlockchainPlatform extends com.pulumi.resources.CustomResource {
         return args == null ? BlockchainPlatformArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .additionalSecretOutputs(List.of(
@@ -524,7 +524,7 @@ public class BlockchainPlatform extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static BlockchainPlatform get(String name, Output<String> id, @Nullable BlockchainPlatformState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static BlockchainPlatform get(java.lang.String name, Output<java.lang.String> id, @Nullable BlockchainPlatformState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new BlockchainPlatform(name, id, state, options);
     }
 }

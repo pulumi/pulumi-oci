@@ -496,7 +496,7 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public LogAnalyticsObjectCollectionRule(String name) {
+    public LogAnalyticsObjectCollectionRule(java.lang.String name) {
         this(name, LogAnalyticsObjectCollectionRuleArgs.Empty);
     }
     /**
@@ -504,7 +504,7 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public LogAnalyticsObjectCollectionRule(String name, LogAnalyticsObjectCollectionRuleArgs args) {
+    public LogAnalyticsObjectCollectionRule(java.lang.String name, LogAnalyticsObjectCollectionRuleArgs args) {
         this(name, args, null);
     }
     /**
@@ -513,12 +513,12 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public LogAnalyticsObjectCollectionRule(String name, LogAnalyticsObjectCollectionRuleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:LogAnalytics/logAnalyticsObjectCollectionRule:LogAnalyticsObjectCollectionRule", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public LogAnalyticsObjectCollectionRule(java.lang.String name, LogAnalyticsObjectCollectionRuleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:LogAnalytics/logAnalyticsObjectCollectionRule:LogAnalyticsObjectCollectionRule", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private LogAnalyticsObjectCollectionRule(String name, Output<String> id, @Nullable LogAnalyticsObjectCollectionRuleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:LogAnalytics/logAnalyticsObjectCollectionRule:LogAnalyticsObjectCollectionRule", name, state, makeResourceOptions(options, id));
+    private LogAnalyticsObjectCollectionRule(java.lang.String name, Output<java.lang.String> id, @Nullable LogAnalyticsObjectCollectionRuleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:LogAnalytics/logAnalyticsObjectCollectionRule:LogAnalyticsObjectCollectionRule", name, state, makeResourceOptions(options, id), false);
     }
 
     private static LogAnalyticsObjectCollectionRuleArgs makeArgs(LogAnalyticsObjectCollectionRuleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -528,7 +528,7 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
         return args == null ? LogAnalyticsObjectCollectionRuleArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -544,7 +544,7 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static LogAnalyticsObjectCollectionRule get(String name, Output<String> id, @Nullable LogAnalyticsObjectCollectionRuleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static LogAnalyticsObjectCollectionRule get(java.lang.String name, Output<java.lang.String> id, @Nullable LogAnalyticsObjectCollectionRuleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new LogAnalyticsObjectCollectionRule(name, id, state, options);
     }
 }

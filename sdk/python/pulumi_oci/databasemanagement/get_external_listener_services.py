@@ -98,7 +98,7 @@ class AwaitableGetExternalListenerServicesResult(GetExternalListenerServicesResu
 
 
 def get_external_listener_services(external_listener_id: Optional[str] = None,
-                                   filters: Optional[Sequence[pulumi.InputType['GetExternalListenerServicesFilterArgs']]] = None,
+                                   filters: Optional[Sequence[Union['GetExternalListenerServicesFilterArgs', 'GetExternalListenerServicesFilterArgsDict']]] = None,
                                    managed_database_id: Optional[str] = None,
                                    opc_named_credential_id: Optional[str] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalListenerServicesResult:
@@ -143,7 +143,7 @@ def get_external_listener_services(external_listener_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_external_listener_services)
 def get_external_listener_services_output(external_listener_id: Optional[pulumi.Input[str]] = None,
-                                          filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetExternalListenerServicesFilterArgs']]]]] = None,
+                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExternalListenerServicesFilterArgs', 'GetExternalListenerServicesFilterArgsDict']]]]] = None,
                                           managed_database_id: Optional[pulumi.Input[str]] = None,
                                           opc_named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalListenerServicesResult]:

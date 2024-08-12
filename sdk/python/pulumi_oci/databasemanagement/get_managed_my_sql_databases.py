@@ -80,7 +80,7 @@ class AwaitableGetManagedMySqlDatabasesResult(GetManagedMySqlDatabasesResult):
 
 
 def get_managed_my_sql_databases(compartment_id: Optional[str] = None,
-                                 filters: Optional[Sequence[pulumi.InputType['GetManagedMySqlDatabasesFilterArgs']]] = None,
+                                 filters: Optional[Sequence[Union['GetManagedMySqlDatabasesFilterArgs', 'GetManagedMySqlDatabasesFilterArgsDict']]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedMySqlDatabasesResult:
     """
     This data source provides the list of Managed My Sql Databases in Oracle Cloud Infrastructure Database Management service.
@@ -114,7 +114,7 @@ def get_managed_my_sql_databases(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_managed_my_sql_databases)
 def get_managed_my_sql_databases_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                        filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetManagedMySqlDatabasesFilterArgs']]]]] = None,
+                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedMySqlDatabasesFilterArgs', 'GetManagedMySqlDatabasesFilterArgsDict']]]]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedMySqlDatabasesResult]:
     """
     This data source provides the list of Managed My Sql Databases in Oracle Cloud Infrastructure Database Management service.

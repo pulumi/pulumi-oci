@@ -370,7 +370,7 @@ class DeployPipeline(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 deploy_pipeline_parameters: Optional[pulumi.Input[pulumi.InputType['DeployPipelineDeployPipelineParametersArgs']]] = None,
+                 deploy_pipeline_parameters: Optional[pulumi.Input[Union['DeployPipelineDeployPipelineParametersArgs', 'DeployPipelineDeployPipelineParametersArgsDict']]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -392,13 +392,13 @@ class DeployPipeline(pulumi.CustomResource):
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            deploy_pipeline_parameters=oci.dev_ops.DeployPipelineDeployPipelineParametersArgs(
-                items=[oci.dev_ops.DeployPipelineDeployPipelineParametersItemArgs(
-                    name=deploy_pipeline_deploy_pipeline_parameters_items_name,
-                    default_value=deploy_pipeline_deploy_pipeline_parameters_items_default_value,
-                    description=deploy_pipeline_deploy_pipeline_parameters_items_description,
-                )],
-            ),
+            deploy_pipeline_parameters={
+                "items": [{
+                    "name": deploy_pipeline_deploy_pipeline_parameters_items_name,
+                    "default_value": deploy_pipeline_deploy_pipeline_parameters_items_default_value,
+                    "description": deploy_pipeline_deploy_pipeline_parameters_items_description,
+                }],
+            },
             description=deploy_pipeline_description,
             display_name=deploy_pipeline_display_name,
             freeform_tags={
@@ -417,7 +417,7 @@ class DeployPipeline(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[pulumi.InputType['DeployPipelineDeployPipelineParametersArgs']] deploy_pipeline_parameters: (Updatable) Specifies list of parameters present in the deployment pipeline. In case of Update operation, replaces existing parameters list. Merging with existing parameters is not supported.
+        :param pulumi.Input[Union['DeployPipelineDeployPipelineParametersArgs', 'DeployPipelineDeployPipelineParametersArgsDict']] deploy_pipeline_parameters: (Updatable) Specifies list of parameters present in the deployment pipeline. In case of Update operation, replaces existing parameters list. Merging with existing parameters is not supported.
         :param pulumi.Input[str] description: (Updatable) Optional description about the deployment pipeline.
         :param pulumi.Input[str] display_name: (Updatable) Deployment pipeline display name. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
@@ -449,13 +449,13 @@ class DeployPipeline(pulumi.CustomResource):
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            deploy_pipeline_parameters=oci.dev_ops.DeployPipelineDeployPipelineParametersArgs(
-                items=[oci.dev_ops.DeployPipelineDeployPipelineParametersItemArgs(
-                    name=deploy_pipeline_deploy_pipeline_parameters_items_name,
-                    default_value=deploy_pipeline_deploy_pipeline_parameters_items_default_value,
-                    description=deploy_pipeline_deploy_pipeline_parameters_items_description,
-                )],
-            ),
+            deploy_pipeline_parameters={
+                "items": [{
+                    "name": deploy_pipeline_deploy_pipeline_parameters_items_name,
+                    "default_value": deploy_pipeline_deploy_pipeline_parameters_items_default_value,
+                    "description": deploy_pipeline_deploy_pipeline_parameters_items_description,
+                }],
+            },
             description=deploy_pipeline_description,
             display_name=deploy_pipeline_display_name,
             freeform_tags={
@@ -487,7 +487,7 @@ class DeployPipeline(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 deploy_pipeline_parameters: Optional[pulumi.Input[pulumi.InputType['DeployPipelineDeployPipelineParametersArgs']]] = None,
+                 deploy_pipeline_parameters: Optional[pulumi.Input[Union['DeployPipelineDeployPipelineParametersArgs', 'DeployPipelineDeployPipelineParametersArgsDict']]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -529,9 +529,9 @@ class DeployPipeline(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            deploy_pipeline_artifacts: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DeployPipelineDeployPipelineArtifactArgs']]]]] = None,
-            deploy_pipeline_environments: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DeployPipelineDeployPipelineEnvironmentArgs']]]]] = None,
-            deploy_pipeline_parameters: Optional[pulumi.Input[pulumi.InputType['DeployPipelineDeployPipelineParametersArgs']]] = None,
+            deploy_pipeline_artifacts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DeployPipelineDeployPipelineArtifactArgs', 'DeployPipelineDeployPipelineArtifactArgsDict']]]]] = None,
+            deploy_pipeline_environments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DeployPipelineDeployPipelineEnvironmentArgs', 'DeployPipelineDeployPipelineEnvironmentArgsDict']]]]] = None,
+            deploy_pipeline_parameters: Optional[pulumi.Input[Union['DeployPipelineDeployPipelineParametersArgs', 'DeployPipelineDeployPipelineParametersArgsDict']]] = None,
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -550,9 +550,9 @@ class DeployPipeline(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment where the pipeline is created.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DeployPipelineDeployPipelineArtifactArgs']]]] deploy_pipeline_artifacts: List of all artifacts used in the pipeline.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DeployPipelineDeployPipelineEnvironmentArgs']]]] deploy_pipeline_environments: List of all environments used in the pipeline.
-        :param pulumi.Input[pulumi.InputType['DeployPipelineDeployPipelineParametersArgs']] deploy_pipeline_parameters: (Updatable) Specifies list of parameters present in the deployment pipeline. In case of Update operation, replaces existing parameters list. Merging with existing parameters is not supported.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DeployPipelineDeployPipelineArtifactArgs', 'DeployPipelineDeployPipelineArtifactArgsDict']]]] deploy_pipeline_artifacts: List of all artifacts used in the pipeline.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DeployPipelineDeployPipelineEnvironmentArgs', 'DeployPipelineDeployPipelineEnvironmentArgsDict']]]] deploy_pipeline_environments: List of all environments used in the pipeline.
+        :param pulumi.Input[Union['DeployPipelineDeployPipelineParametersArgs', 'DeployPipelineDeployPipelineParametersArgsDict']] deploy_pipeline_parameters: (Updatable) Specifies list of parameters present in the deployment pipeline. In case of Update operation, replaces existing parameters list. Merging with existing parameters is not supported.
         :param pulumi.Input[str] description: (Updatable) Optional description about the deployment pipeline.
         :param pulumi.Input[str] display_name: (Updatable) Deployment pipeline display name. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`

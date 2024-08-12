@@ -165,7 +165,7 @@ class AwaitableGetSecurityAssessmentFindingsResult(GetSecurityAssessmentFindings
 
 def get_security_assessment_findings(access_level: Optional[str] = None,
                                      compartment_id_in_subtree: Optional[bool] = None,
-                                     filters: Optional[Sequence[pulumi.InputType['GetSecurityAssessmentFindingsFilterArgs']]] = None,
+                                     filters: Optional[Sequence[Union['GetSecurityAssessmentFindingsFilterArgs', 'GetSecurityAssessmentFindingsFilterArgsDict']]] = None,
                                      finding_key: Optional[str] = None,
                                      is_top_finding: Optional[bool] = None,
                                      references: Optional[str] = None,
@@ -222,7 +222,7 @@ def get_security_assessment_findings(access_level: Optional[str] = None,
 @_utilities.lift_output_func(get_security_assessment_findings)
 def get_security_assessment_findings_output(access_level: Optional[pulumi.Input[Optional[str]]] = None,
                                             compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
-                                            filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetSecurityAssessmentFindingsFilterArgs']]]]] = None,
+                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSecurityAssessmentFindingsFilterArgs', 'GetSecurityAssessmentFindingsFilterArgsDict']]]]] = None,
                                             finding_key: Optional[pulumi.Input[Optional[str]]] = None,
                                             is_top_finding: Optional[pulumi.Input[Optional[bool]]] = None,
                                             references: Optional[pulumi.Input[Optional[str]]] = None,

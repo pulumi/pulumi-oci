@@ -520,7 +520,7 @@ class CrossConnect(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_active: Optional[pulumi.Input[bool]] = None,
                  location_name: Optional[pulumi.Input[str]] = None,
-                 macsec_properties: Optional[pulumi.Input[pulumi.InputType['CrossConnectMacsecPropertiesArgs']]] = None,
+                 macsec_properties: Optional[pulumi.Input[Union['CrossConnectMacsecPropertiesArgs', 'CrossConnectMacsecPropertiesArgsDict']]] = None,
                  near_cross_connect_or_cross_connect_group_id: Optional[pulumi.Input[str]] = None,
                  port_speed_shape_name: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -567,15 +567,15 @@ class CrossConnect(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            macsec_properties=oci.core.CrossConnectMacsecPropertiesArgs(
-                state=cross_connect_macsec_properties_state,
-                encryption_cipher=cross_connect_macsec_properties_encryption_cipher,
-                is_unprotected_traffic_allowed=cross_connect_macsec_properties_is_unprotected_traffic_allowed,
-                primary_key=oci.core.CrossConnectMacsecPropertiesPrimaryKeyArgs(
-                    connectivity_association_key_secret_id=test_secret["id"],
-                    connectivity_association_name_secret_id=test_secret["id"],
-                ),
-            ),
+            macsec_properties={
+                "state": cross_connect_macsec_properties_state,
+                "encryption_cipher": cross_connect_macsec_properties_encryption_cipher,
+                "is_unprotected_traffic_allowed": cross_connect_macsec_properties_is_unprotected_traffic_allowed,
+                "primary_key": {
+                    "connectivity_association_key_secret_id": test_secret["id"],
+                    "connectivity_association_name_secret_id": test_secret["id"],
+                },
+            },
             near_cross_connect_or_cross_connect_group_id=test_cross_connect_group["id"])
         ```
 
@@ -598,7 +598,7 @@ class CrossConnect(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_active: (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
         :param pulumi.Input[str] location_name: The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
-        :param pulumi.Input[pulumi.InputType['CrossConnectMacsecPropertiesArgs']] macsec_properties: (Updatable) Properties used to configure MACsec (if capable).
+        :param pulumi.Input[Union['CrossConnectMacsecPropertiesArgs', 'CrossConnectMacsecPropertiesArgsDict']] macsec_properties: (Updatable) Properties used to configure MACsec (if capable).
         :param pulumi.Input[str] near_cross_connect_or_cross_connect_group_id: If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
         :param pulumi.Input[str] port_speed_shape_name: The port speed for this cross-connect. To get a list of the available port speeds, see [ListCrossConnectPortSpeedShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectPortSpeedShape/ListCrossconnectPortSpeedShapes).  Example: `10 Gbps` 
                
@@ -655,15 +655,15 @@ class CrossConnect(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            macsec_properties=oci.core.CrossConnectMacsecPropertiesArgs(
-                state=cross_connect_macsec_properties_state,
-                encryption_cipher=cross_connect_macsec_properties_encryption_cipher,
-                is_unprotected_traffic_allowed=cross_connect_macsec_properties_is_unprotected_traffic_allowed,
-                primary_key=oci.core.CrossConnectMacsecPropertiesPrimaryKeyArgs(
-                    connectivity_association_key_secret_id=test_secret["id"],
-                    connectivity_association_name_secret_id=test_secret["id"],
-                ),
-            ),
+            macsec_properties={
+                "state": cross_connect_macsec_properties_state,
+                "encryption_cipher": cross_connect_macsec_properties_encryption_cipher,
+                "is_unprotected_traffic_allowed": cross_connect_macsec_properties_is_unprotected_traffic_allowed,
+                "primary_key": {
+                    "connectivity_association_key_secret_id": test_secret["id"],
+                    "connectivity_association_name_secret_id": test_secret["id"],
+                },
+            },
             near_cross_connect_or_cross_connect_group_id=test_cross_connect_group["id"])
         ```
 
@@ -699,7 +699,7 @@ class CrossConnect(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_active: Optional[pulumi.Input[bool]] = None,
                  location_name: Optional[pulumi.Input[str]] = None,
-                 macsec_properties: Optional[pulumi.Input[pulumi.InputType['CrossConnectMacsecPropertiesArgs']]] = None,
+                 macsec_properties: Optional[pulumi.Input[Union['CrossConnectMacsecPropertiesArgs', 'CrossConnectMacsecPropertiesArgsDict']]] = None,
                  near_cross_connect_or_cross_connect_group_id: Optional[pulumi.Input[str]] = None,
                  port_speed_shape_name: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -753,7 +753,7 @@ class CrossConnect(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             is_active: Optional[pulumi.Input[bool]] = None,
             location_name: Optional[pulumi.Input[str]] = None,
-            macsec_properties: Optional[pulumi.Input[pulumi.InputType['CrossConnectMacsecPropertiesArgs']]] = None,
+            macsec_properties: Optional[pulumi.Input[Union['CrossConnectMacsecPropertiesArgs', 'CrossConnectMacsecPropertiesArgsDict']]] = None,
             near_cross_connect_or_cross_connect_group_id: Optional[pulumi.Input[str]] = None,
             oci_logical_device_name: Optional[pulumi.Input[str]] = None,
             oci_physical_device_name: Optional[pulumi.Input[str]] = None,
@@ -777,7 +777,7 @@ class CrossConnect(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_active: (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
         :param pulumi.Input[str] location_name: The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
-        :param pulumi.Input[pulumi.InputType['CrossConnectMacsecPropertiesArgs']] macsec_properties: (Updatable) Properties used to configure MACsec (if capable).
+        :param pulumi.Input[Union['CrossConnectMacsecPropertiesArgs', 'CrossConnectMacsecPropertiesArgsDict']] macsec_properties: (Updatable) Properties used to configure MACsec (if capable).
         :param pulumi.Input[str] near_cross_connect_or_cross_connect_group_id: If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
         :param pulumi.Input[str] oci_logical_device_name: The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
         :param pulumi.Input[str] oci_physical_device_name: The FastConnect device that terminates the physical connection.

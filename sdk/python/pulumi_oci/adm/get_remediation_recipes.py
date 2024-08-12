@@ -105,7 +105,7 @@ class AwaitableGetRemediationRecipesResult(GetRemediationRecipesResult):
 
 def get_remediation_recipes(compartment_id: Optional[str] = None,
                             display_name: Optional[str] = None,
-                            filters: Optional[Sequence[pulumi.InputType['GetRemediationRecipesFilterArgs']]] = None,
+                            filters: Optional[Sequence[Union['GetRemediationRecipesFilterArgs', 'GetRemediationRecipesFilterArgsDict']]] = None,
                             id: Optional[str] = None,
                             state: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRemediationRecipesResult:
@@ -154,7 +154,7 @@ def get_remediation_recipes(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_remediation_recipes)
 def get_remediation_recipes_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                    display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetRemediationRecipesFilterArgs']]]]] = None,
+                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRemediationRecipesFilterArgs', 'GetRemediationRecipesFilterArgsDict']]]]] = None,
                                    id: Optional[pulumi.Input[Optional[str]]] = None,
                                    state: Optional[pulumi.Input[Optional[str]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRemediationRecipesResult]:

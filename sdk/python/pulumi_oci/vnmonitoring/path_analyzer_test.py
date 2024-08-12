@@ -384,13 +384,13 @@ class PathAnalyzerTest(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 destination_endpoint: Optional[pulumi.Input[pulumi.InputType['PathAnalyzerTestDestinationEndpointArgs']]] = None,
+                 destination_endpoint: Optional[pulumi.Input[Union['PathAnalyzerTestDestinationEndpointArgs', 'PathAnalyzerTestDestinationEndpointArgsDict']]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  protocol: Optional[pulumi.Input[int]] = None,
-                 protocol_parameters: Optional[pulumi.Input[pulumi.InputType['PathAnalyzerTestProtocolParametersArgs']]] = None,
-                 query_options: Optional[pulumi.Input[pulumi.InputType['PathAnalyzerTestQueryOptionsArgs']]] = None,
-                 source_endpoint: Optional[pulumi.Input[pulumi.InputType['PathAnalyzerTestSourceEndpointArgs']]] = None,
+                 protocol_parameters: Optional[pulumi.Input[Union['PathAnalyzerTestProtocolParametersArgs', 'PathAnalyzerTestProtocolParametersArgsDict']]] = None,
+                 query_options: Optional[pulumi.Input[Union['PathAnalyzerTestQueryOptionsArgs', 'PathAnalyzerTestQueryOptionsArgsDict']]] = None,
+                 source_endpoint: Optional[pulumi.Input[Union['PathAnalyzerTestSourceEndpointArgs', 'PathAnalyzerTestSourceEndpointArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Path Analyzer Test resource in Oracle Cloud Infrastructure Vn Monitoring service.
@@ -405,29 +405,29 @@ class PathAnalyzerTest(pulumi.CustomResource):
 
         test_path_analyzer_test = oci.vn_monitoring.PathAnalyzerTest("test_path_analyzer_test",
             compartment_id=compartment_id,
-            destination_endpoint=oci.vn_monitoring.PathAnalyzerTestDestinationEndpointArgs(
-                type=path_analyzer_test_destination_endpoint_type,
-                address=path_analyzer_test_destination_endpoint_address,
-                instance_id=test_instance["id"],
-                listener_id=test_listener["id"],
-                load_balancer_id=test_load_balancer["id"],
-                network_load_balancer_id=test_network_load_balancer["id"],
-                subnet_id=test_subnet["id"],
-                vlan_id=test_vlan["id"],
-                vnic_id=test_vnic_attachment["id"],
-            ),
+            destination_endpoint={
+                "type": path_analyzer_test_destination_endpoint_type,
+                "address": path_analyzer_test_destination_endpoint_address,
+                "instance_id": test_instance["id"],
+                "listener_id": test_listener["id"],
+                "load_balancer_id": test_load_balancer["id"],
+                "network_load_balancer_id": test_network_load_balancer["id"],
+                "subnet_id": test_subnet["id"],
+                "vlan_id": test_vlan["id"],
+                "vnic_id": test_vnic_attachment["id"],
+            },
             protocol=path_analyzer_test_protocol,
-            source_endpoint=oci.vn_monitoring.PathAnalyzerTestSourceEndpointArgs(
-                type=path_analyzer_test_source_endpoint_type,
-                address=path_analyzer_test_source_endpoint_address,
-                instance_id=test_instance["id"],
-                listener_id=test_listener["id"],
-                load_balancer_id=test_load_balancer["id"],
-                network_load_balancer_id=test_network_load_balancer["id"],
-                subnet_id=test_subnet["id"],
-                vlan_id=test_vlan["id"],
-                vnic_id=test_vnic_attachment["id"],
-            ),
+            source_endpoint={
+                "type": path_analyzer_test_source_endpoint_type,
+                "address": path_analyzer_test_source_endpoint_address,
+                "instance_id": test_instance["id"],
+                "listener_id": test_listener["id"],
+                "load_balancer_id": test_load_balancer["id"],
+                "network_load_balancer_id": test_network_load_balancer["id"],
+                "subnet_id": test_subnet["id"],
+                "vlan_id": test_vlan["id"],
+                "vnic_id": test_vnic_attachment["id"],
+            },
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -435,16 +435,16 @@ class PathAnalyzerTest(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            protocol_parameters=oci.vn_monitoring.PathAnalyzerTestProtocolParametersArgs(
-                type=path_analyzer_test_protocol_parameters_type,
-                destination_port=path_analyzer_test_protocol_parameters_destination_port,
-                icmp_code=path_analyzer_test_protocol_parameters_icmp_code,
-                icmp_type=path_analyzer_test_protocol_parameters_icmp_type,
-                source_port=path_analyzer_test_protocol_parameters_source_port,
-            ),
-            query_options=oci.vn_monitoring.PathAnalyzerTestQueryOptionsArgs(
-                is_bi_directional_analysis=path_analyzer_test_query_options_is_bi_directional_analysis,
-            ))
+            protocol_parameters={
+                "type": path_analyzer_test_protocol_parameters_type,
+                "destination_port": path_analyzer_test_protocol_parameters_destination_port,
+                "icmp_code": path_analyzer_test_protocol_parameters_icmp_code,
+                "icmp_type": path_analyzer_test_protocol_parameters_icmp_type,
+                "source_port": path_analyzer_test_protocol_parameters_source_port,
+            },
+            query_options={
+                "is_bi_directional_analysis": path_analyzer_test_query_options_is_bi_directional_analysis,
+            })
         ```
 
         ## Import
@@ -459,13 +459,13 @@ class PathAnalyzerTest(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the `PathAnalyzerTest` resource's compartment.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[pulumi.InputType['PathAnalyzerTestDestinationEndpointArgs']] destination_endpoint: (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
+        :param pulumi.Input[Union['PathAnalyzerTestDestinationEndpointArgs', 'PathAnalyzerTestDestinationEndpointArgsDict']] destination_endpoint: (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[int] protocol: (Updatable) The IP protocol to use in the `PathAnalyzerTest` resource.
-        :param pulumi.Input[pulumi.InputType['PathAnalyzerTestProtocolParametersArgs']] protocol_parameters: (Updatable) Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
-        :param pulumi.Input[pulumi.InputType['PathAnalyzerTestQueryOptionsArgs']] query_options: (Updatable) Defines the query options required for a `PathAnalyzerTest` resource.
-        :param pulumi.Input[pulumi.InputType['PathAnalyzerTestSourceEndpointArgs']] source_endpoint: (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
+        :param pulumi.Input[Union['PathAnalyzerTestProtocolParametersArgs', 'PathAnalyzerTestProtocolParametersArgsDict']] protocol_parameters: (Updatable) Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
+        :param pulumi.Input[Union['PathAnalyzerTestQueryOptionsArgs', 'PathAnalyzerTestQueryOptionsArgsDict']] query_options: (Updatable) Defines the query options required for a `PathAnalyzerTest` resource.
+        :param pulumi.Input[Union['PathAnalyzerTestSourceEndpointArgs', 'PathAnalyzerTestSourceEndpointArgsDict']] source_endpoint: (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
         """
         ...
     @overload
@@ -486,29 +486,29 @@ class PathAnalyzerTest(pulumi.CustomResource):
 
         test_path_analyzer_test = oci.vn_monitoring.PathAnalyzerTest("test_path_analyzer_test",
             compartment_id=compartment_id,
-            destination_endpoint=oci.vn_monitoring.PathAnalyzerTestDestinationEndpointArgs(
-                type=path_analyzer_test_destination_endpoint_type,
-                address=path_analyzer_test_destination_endpoint_address,
-                instance_id=test_instance["id"],
-                listener_id=test_listener["id"],
-                load_balancer_id=test_load_balancer["id"],
-                network_load_balancer_id=test_network_load_balancer["id"],
-                subnet_id=test_subnet["id"],
-                vlan_id=test_vlan["id"],
-                vnic_id=test_vnic_attachment["id"],
-            ),
+            destination_endpoint={
+                "type": path_analyzer_test_destination_endpoint_type,
+                "address": path_analyzer_test_destination_endpoint_address,
+                "instance_id": test_instance["id"],
+                "listener_id": test_listener["id"],
+                "load_balancer_id": test_load_balancer["id"],
+                "network_load_balancer_id": test_network_load_balancer["id"],
+                "subnet_id": test_subnet["id"],
+                "vlan_id": test_vlan["id"],
+                "vnic_id": test_vnic_attachment["id"],
+            },
             protocol=path_analyzer_test_protocol,
-            source_endpoint=oci.vn_monitoring.PathAnalyzerTestSourceEndpointArgs(
-                type=path_analyzer_test_source_endpoint_type,
-                address=path_analyzer_test_source_endpoint_address,
-                instance_id=test_instance["id"],
-                listener_id=test_listener["id"],
-                load_balancer_id=test_load_balancer["id"],
-                network_load_balancer_id=test_network_load_balancer["id"],
-                subnet_id=test_subnet["id"],
-                vlan_id=test_vlan["id"],
-                vnic_id=test_vnic_attachment["id"],
-            ),
+            source_endpoint={
+                "type": path_analyzer_test_source_endpoint_type,
+                "address": path_analyzer_test_source_endpoint_address,
+                "instance_id": test_instance["id"],
+                "listener_id": test_listener["id"],
+                "load_balancer_id": test_load_balancer["id"],
+                "network_load_balancer_id": test_network_load_balancer["id"],
+                "subnet_id": test_subnet["id"],
+                "vlan_id": test_vlan["id"],
+                "vnic_id": test_vnic_attachment["id"],
+            },
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -516,16 +516,16 @@ class PathAnalyzerTest(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            protocol_parameters=oci.vn_monitoring.PathAnalyzerTestProtocolParametersArgs(
-                type=path_analyzer_test_protocol_parameters_type,
-                destination_port=path_analyzer_test_protocol_parameters_destination_port,
-                icmp_code=path_analyzer_test_protocol_parameters_icmp_code,
-                icmp_type=path_analyzer_test_protocol_parameters_icmp_type,
-                source_port=path_analyzer_test_protocol_parameters_source_port,
-            ),
-            query_options=oci.vn_monitoring.PathAnalyzerTestQueryOptionsArgs(
-                is_bi_directional_analysis=path_analyzer_test_query_options_is_bi_directional_analysis,
-            ))
+            protocol_parameters={
+                "type": path_analyzer_test_protocol_parameters_type,
+                "destination_port": path_analyzer_test_protocol_parameters_destination_port,
+                "icmp_code": path_analyzer_test_protocol_parameters_icmp_code,
+                "icmp_type": path_analyzer_test_protocol_parameters_icmp_type,
+                "source_port": path_analyzer_test_protocol_parameters_source_port,
+            },
+            query_options={
+                "is_bi_directional_analysis": path_analyzer_test_query_options_is_bi_directional_analysis,
+            })
         ```
 
         ## Import
@@ -553,13 +553,13 @@ class PathAnalyzerTest(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 destination_endpoint: Optional[pulumi.Input[pulumi.InputType['PathAnalyzerTestDestinationEndpointArgs']]] = None,
+                 destination_endpoint: Optional[pulumi.Input[Union['PathAnalyzerTestDestinationEndpointArgs', 'PathAnalyzerTestDestinationEndpointArgsDict']]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  protocol: Optional[pulumi.Input[int]] = None,
-                 protocol_parameters: Optional[pulumi.Input[pulumi.InputType['PathAnalyzerTestProtocolParametersArgs']]] = None,
-                 query_options: Optional[pulumi.Input[pulumi.InputType['PathAnalyzerTestQueryOptionsArgs']]] = None,
-                 source_endpoint: Optional[pulumi.Input[pulumi.InputType['PathAnalyzerTestSourceEndpointArgs']]] = None,
+                 protocol_parameters: Optional[pulumi.Input[Union['PathAnalyzerTestProtocolParametersArgs', 'PathAnalyzerTestProtocolParametersArgsDict']]] = None,
+                 query_options: Optional[pulumi.Input[Union['PathAnalyzerTestQueryOptionsArgs', 'PathAnalyzerTestQueryOptionsArgsDict']]] = None,
+                 source_endpoint: Optional[pulumi.Input[Union['PathAnalyzerTestSourceEndpointArgs', 'PathAnalyzerTestSourceEndpointArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -602,13 +602,13 @@ class PathAnalyzerTest(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            destination_endpoint: Optional[pulumi.Input[pulumi.InputType['PathAnalyzerTestDestinationEndpointArgs']]] = None,
+            destination_endpoint: Optional[pulumi.Input[Union['PathAnalyzerTestDestinationEndpointArgs', 'PathAnalyzerTestDestinationEndpointArgsDict']]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             protocol: Optional[pulumi.Input[int]] = None,
-            protocol_parameters: Optional[pulumi.Input[pulumi.InputType['PathAnalyzerTestProtocolParametersArgs']]] = None,
-            query_options: Optional[pulumi.Input[pulumi.InputType['PathAnalyzerTestQueryOptionsArgs']]] = None,
-            source_endpoint: Optional[pulumi.Input[pulumi.InputType['PathAnalyzerTestSourceEndpointArgs']]] = None,
+            protocol_parameters: Optional[pulumi.Input[Union['PathAnalyzerTestProtocolParametersArgs', 'PathAnalyzerTestProtocolParametersArgsDict']]] = None,
+            query_options: Optional[pulumi.Input[Union['PathAnalyzerTestQueryOptionsArgs', 'PathAnalyzerTestQueryOptionsArgsDict']]] = None,
+            source_endpoint: Optional[pulumi.Input[Union['PathAnalyzerTestSourceEndpointArgs', 'PathAnalyzerTestSourceEndpointArgsDict']]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
@@ -622,13 +622,13 @@ class PathAnalyzerTest(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the `PathAnalyzerTest` resource's compartment.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[pulumi.InputType['PathAnalyzerTestDestinationEndpointArgs']] destination_endpoint: (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
+        :param pulumi.Input[Union['PathAnalyzerTestDestinationEndpointArgs', 'PathAnalyzerTestDestinationEndpointArgsDict']] destination_endpoint: (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[int] protocol: (Updatable) The IP protocol to use in the `PathAnalyzerTest` resource.
-        :param pulumi.Input[pulumi.InputType['PathAnalyzerTestProtocolParametersArgs']] protocol_parameters: (Updatable) Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
-        :param pulumi.Input[pulumi.InputType['PathAnalyzerTestQueryOptionsArgs']] query_options: (Updatable) Defines the query options required for a `PathAnalyzerTest` resource.
-        :param pulumi.Input[pulumi.InputType['PathAnalyzerTestSourceEndpointArgs']] source_endpoint: (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
+        :param pulumi.Input[Union['PathAnalyzerTestProtocolParametersArgs', 'PathAnalyzerTestProtocolParametersArgsDict']] protocol_parameters: (Updatable) Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
+        :param pulumi.Input[Union['PathAnalyzerTestQueryOptionsArgs', 'PathAnalyzerTestQueryOptionsArgsDict']] query_options: (Updatable) Defines the query options required for a `PathAnalyzerTest` resource.
+        :param pulumi.Input[Union['PathAnalyzerTestSourceEndpointArgs', 'PathAnalyzerTestSourceEndpointArgsDict']] source_endpoint: (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
         :param pulumi.Input[str] state: The current state of the `PathAnalyzerTest` resource.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time the `PathAnalyzerTest` resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).

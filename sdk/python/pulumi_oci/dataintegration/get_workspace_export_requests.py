@@ -131,7 +131,7 @@ class AwaitableGetWorkspaceExportRequestsResult(GetWorkspaceExportRequestsResult
 
 
 def get_workspace_export_requests(export_status: Optional[str] = None,
-                                  filters: Optional[Sequence[pulumi.InputType['GetWorkspaceExportRequestsFilterArgs']]] = None,
+                                  filters: Optional[Sequence[Union['GetWorkspaceExportRequestsFilterArgs', 'GetWorkspaceExportRequestsFilterArgsDict']]] = None,
                                   name: Optional[str] = None,
                                   projection: Optional[str] = None,
                                   time_ended_in_millis: Optional[str] = None,
@@ -190,7 +190,7 @@ def get_workspace_export_requests(export_status: Optional[str] = None,
 
 @_utilities.lift_output_func(get_workspace_export_requests)
 def get_workspace_export_requests_output(export_status: Optional[pulumi.Input[Optional[str]]] = None,
-                                         filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetWorkspaceExportRequestsFilterArgs']]]]] = None,
+                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetWorkspaceExportRequestsFilterArgs', 'GetWorkspaceExportRequestsFilterArgsDict']]]]] = None,
                                          name: Optional[pulumi.Input[Optional[str]]] = None,
                                          projection: Optional[pulumi.Input[Optional[str]]] = None,
                                          time_ended_in_millis: Optional[pulumi.Input[Optional[str]]] = None,

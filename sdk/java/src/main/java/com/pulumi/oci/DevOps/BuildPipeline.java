@@ -258,7 +258,7 @@ public class BuildPipeline extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public BuildPipeline(String name) {
+    public BuildPipeline(java.lang.String name) {
         this(name, BuildPipelineArgs.Empty);
     }
     /**
@@ -266,7 +266,7 @@ public class BuildPipeline extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public BuildPipeline(String name, BuildPipelineArgs args) {
+    public BuildPipeline(java.lang.String name, BuildPipelineArgs args) {
         this(name, args, null);
     }
     /**
@@ -275,12 +275,12 @@ public class BuildPipeline extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public BuildPipeline(String name, BuildPipelineArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DevOps/buildPipeline:BuildPipeline", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public BuildPipeline(java.lang.String name, BuildPipelineArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DevOps/buildPipeline:BuildPipeline", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private BuildPipeline(String name, Output<String> id, @Nullable BuildPipelineState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DevOps/buildPipeline:BuildPipeline", name, state, makeResourceOptions(options, id));
+    private BuildPipeline(java.lang.String name, Output<java.lang.String> id, @Nullable BuildPipelineState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DevOps/buildPipeline:BuildPipeline", name, state, makeResourceOptions(options, id), false);
     }
 
     private static BuildPipelineArgs makeArgs(BuildPipelineArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -290,7 +290,7 @@ public class BuildPipeline extends com.pulumi.resources.CustomResource {
         return args == null ? BuildPipelineArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -306,7 +306,7 @@ public class BuildPipeline extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static BuildPipeline get(String name, Output<String> id, @Nullable BuildPipelineState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static BuildPipeline get(java.lang.String name, Output<java.lang.String> id, @Nullable BuildPipelineState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new BuildPipeline(name, id, state, options);
     }
 }

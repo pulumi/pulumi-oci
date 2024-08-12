@@ -85,7 +85,7 @@ class AwaitableGetRepositoryAuthorsResult(GetRepositoryAuthorsResult):
             repository_id=self.repository_id)
 
 
-def get_repository_authors(filters: Optional[Sequence[pulumi.InputType['GetRepositoryAuthorsFilterArgs']]] = None,
+def get_repository_authors(filters: Optional[Sequence[Union['GetRepositoryAuthorsFilterArgs', 'GetRepositoryAuthorsFilterArgsDict']]] = None,
                            ref_name: Optional[str] = None,
                            repository_id: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRepositoryAuthorsResult:
@@ -124,7 +124,7 @@ def get_repository_authors(filters: Optional[Sequence[pulumi.InputType['GetRepos
 
 
 @_utilities.lift_output_func(get_repository_authors)
-def get_repository_authors_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetRepositoryAuthorsFilterArgs']]]]] = None,
+def get_repository_authors_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRepositoryAuthorsFilterArgs', 'GetRepositoryAuthorsFilterArgsDict']]]]] = None,
                                   ref_name: Optional[pulumi.Input[Optional[str]]] = None,
                                   repository_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRepositoryAuthorsResult]:

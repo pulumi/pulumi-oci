@@ -76,7 +76,7 @@ class AwaitableGetTargetDatabasePeerTargetDatabasesResult(GetTargetDatabasePeerT
             target_database_id=self.target_database_id)
 
 
-def get_target_database_peer_target_databases(filters: Optional[Sequence[pulumi.InputType['GetTargetDatabasePeerTargetDatabasesFilterArgs']]] = None,
+def get_target_database_peer_target_databases(filters: Optional[Sequence[Union['GetTargetDatabasePeerTargetDatabasesFilterArgs', 'GetTargetDatabasePeerTargetDatabasesFilterArgsDict']]] = None,
                                               target_database_id: Optional[str] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetTargetDatabasePeerTargetDatabasesResult:
     """
@@ -110,7 +110,7 @@ def get_target_database_peer_target_databases(filters: Optional[Sequence[pulumi.
 
 
 @_utilities.lift_output_func(get_target_database_peer_target_databases)
-def get_target_database_peer_target_databases_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetTargetDatabasePeerTargetDatabasesFilterArgs']]]]] = None,
+def get_target_database_peer_target_databases_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetTargetDatabasePeerTargetDatabasesFilterArgs', 'GetTargetDatabasePeerTargetDatabasesFilterArgsDict']]]]] = None,
                                                      target_database_id: Optional[pulumi.Input[str]] = None,
                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTargetDatabasePeerTargetDatabasesResult]:
     """

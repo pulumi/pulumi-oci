@@ -105,7 +105,7 @@ class AwaitableGetSecurityPoliciesResult(GetSecurityPoliciesResult):
 
 def get_security_policies(compartment_id: Optional[str] = None,
                           display_name: Optional[str] = None,
-                          filters: Optional[Sequence[pulumi.InputType['GetSecurityPoliciesFilterArgs']]] = None,
+                          filters: Optional[Sequence[Union['GetSecurityPoliciesFilterArgs', 'GetSecurityPoliciesFilterArgsDict']]] = None,
                           id: Optional[str] = None,
                           state: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSecurityPoliciesResult:
@@ -154,7 +154,7 @@ def get_security_policies(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_security_policies)
 def get_security_policies_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                  display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetSecurityPoliciesFilterArgs']]]]] = None,
+                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSecurityPoliciesFilterArgs', 'GetSecurityPoliciesFilterArgsDict']]]]] = None,
                                  id: Optional[pulumi.Input[Optional[str]]] = None,
                                  state: Optional[pulumi.Input[Optional[str]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityPoliciesResult]:

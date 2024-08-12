@@ -104,7 +104,7 @@ class AwaitableGetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult(GetSec
 
 
 def get_security_policy_deployment_security_policy_entry_states(deployment_status: Optional[str] = None,
-                                                                filters: Optional[Sequence[pulumi.InputType['GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgs']]] = None,
+                                                                filters: Optional[Sequence[Union['GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgs', 'GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgsDict']]] = None,
                                                                 security_policy_deployment_id: Optional[str] = None,
                                                                 security_policy_entry_id: Optional[str] = None,
                                                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult:
@@ -150,7 +150,7 @@ def get_security_policy_deployment_security_policy_entry_states(deployment_statu
 
 @_utilities.lift_output_func(get_security_policy_deployment_security_policy_entry_states)
 def get_security_policy_deployment_security_policy_entry_states_output(deployment_status: Optional[pulumi.Input[Optional[str]]] = None,
-                                                                       filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgs']]]]] = None,
+                                                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgs', 'GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgsDict']]]]] = None,
                                                                        security_policy_deployment_id: Optional[pulumi.Input[str]] = None,
                                                                        security_policy_entry_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult]:

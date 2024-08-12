@@ -80,7 +80,7 @@ class AwaitableGetNamespacesResult(GetNamespacesResult):
 
 
 def get_namespaces(compartment_id: Optional[str] = None,
-                   filters: Optional[Sequence[pulumi.InputType['GetNamespacesFilterArgs']]] = None,
+                   filters: Optional[Sequence[Union['GetNamespacesFilterArgs', 'GetNamespacesFilterArgsDict']]] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNamespacesResult:
     """
     This data source provides the list of Namespaces in Oracle Cloud Infrastructure Log Analytics service.
@@ -115,7 +115,7 @@ def get_namespaces(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_namespaces)
 def get_namespaces_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                          filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetNamespacesFilterArgs']]]]] = None,
+                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNamespacesFilterArgs', 'GetNamespacesFilterArgsDict']]]]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNamespacesResult]:
     """
     This data source provides the list of Namespaces in Oracle Cloud Infrastructure Log Analytics service.

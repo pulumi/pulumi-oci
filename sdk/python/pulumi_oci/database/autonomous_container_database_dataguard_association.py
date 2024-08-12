@@ -639,7 +639,7 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
                  autonomous_container_database_id: Optional[pulumi.Input[str]] = None,
                  fast_start_fail_over_lag_limit_in_seconds: Optional[pulumi.Input[int]] = None,
                  is_automatic_failover_enabled: Optional[pulumi.Input[bool]] = None,
-                 peer_autonomous_container_database_backup_config: Optional[pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs']]] = None,
+                 peer_autonomous_container_database_backup_config: Optional[pulumi.Input[Union['AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgsDict']]] = None,
                  peer_autonomous_container_database_compartment_id: Optional[pulumi.Input[str]] = None,
                  peer_autonomous_container_database_display_name: Optional[pulumi.Input[str]] = None,
                  peer_autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
@@ -672,17 +672,17 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
             protection_mode=autonomous_container_database_dataguard_association_protection_mode,
             fast_start_fail_over_lag_limit_in_seconds=autonomous_container_database_dataguard_association_fast_start_fail_over_lag_limit_in_seconds,
             is_automatic_failover_enabled=autonomous_container_database_dataguard_association_is_automatic_failover_enabled,
-            peer_autonomous_container_database_backup_config=oci.database.AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs(
-                backup_destination_details=[oci.database.AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs(
-                    type=autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_type,
-                    dbrs_policy_id=test_policy["id"],
-                    id=autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_id,
-                    internet_proxy=autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_internet_proxy,
-                    vpc_password=autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_password,
-                    vpc_user=autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_user,
-                )],
-                recovery_window_in_days=autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_recovery_window_in_days,
-            ),
+            peer_autonomous_container_database_backup_config={
+                "backup_destination_details": [{
+                    "type": autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_type,
+                    "dbrs_policy_id": test_policy["id"],
+                    "id": autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_id,
+                    "internet_proxy": autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_internet_proxy,
+                    "vpc_password": autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_password,
+                    "vpc_user": autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_user,
+                }],
+                "recovery_window_in_days": autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_recovery_window_in_days,
+            },
             peer_autonomous_container_database_compartment_id=test_compartment["id"],
             peer_autonomous_vm_cluster_id=test_autonomous_vm_cluster["id"],
             peer_cloud_autonomous_vm_cluster_id=test_cloud_autonomous_vm_cluster["id"],
@@ -703,7 +703,7 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
         :param pulumi.Input[str] autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[int] fast_start_fail_over_lag_limit_in_seconds: (Updatable) The lag time for my preference based on data loss tolerance in seconds.
         :param pulumi.Input[bool] is_automatic_failover_enabled: (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `is_automatic_failover_enabled = true`.
-        :param pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs']] peer_autonomous_container_database_backup_config: Backup options for the standby Autonomous Container Database.
+        :param pulumi.Input[Union['AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgsDict']] peer_autonomous_container_database_backup_config: Backup options for the standby Autonomous Container Database.
         :param pulumi.Input[str] peer_autonomous_container_database_compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database will be created.
         :param pulumi.Input[str] peer_autonomous_container_database_display_name: The display name for the peer Autonomous Container Database.
         :param pulumi.Input[str] peer_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Exadata VM Cluster.
@@ -747,17 +747,17 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
             protection_mode=autonomous_container_database_dataguard_association_protection_mode,
             fast_start_fail_over_lag_limit_in_seconds=autonomous_container_database_dataguard_association_fast_start_fail_over_lag_limit_in_seconds,
             is_automatic_failover_enabled=autonomous_container_database_dataguard_association_is_automatic_failover_enabled,
-            peer_autonomous_container_database_backup_config=oci.database.AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs(
-                backup_destination_details=[oci.database.AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs(
-                    type=autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_type,
-                    dbrs_policy_id=test_policy["id"],
-                    id=autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_id,
-                    internet_proxy=autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_internet_proxy,
-                    vpc_password=autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_password,
-                    vpc_user=autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_user,
-                )],
-                recovery_window_in_days=autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_recovery_window_in_days,
-            ),
+            peer_autonomous_container_database_backup_config={
+                "backup_destination_details": [{
+                    "type": autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_type,
+                    "dbrs_policy_id": test_policy["id"],
+                    "id": autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_id,
+                    "internet_proxy": autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_internet_proxy,
+                    "vpc_password": autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_password,
+                    "vpc_user": autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_user,
+                }],
+                "recovery_window_in_days": autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_recovery_window_in_days,
+            },
             peer_autonomous_container_database_compartment_id=test_compartment["id"],
             peer_autonomous_vm_cluster_id=test_autonomous_vm_cluster["id"],
             peer_cloud_autonomous_vm_cluster_id=test_cloud_autonomous_vm_cluster["id"],
@@ -792,7 +792,7 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
                  autonomous_container_database_id: Optional[pulumi.Input[str]] = None,
                  fast_start_fail_over_lag_limit_in_seconds: Optional[pulumi.Input[int]] = None,
                  is_automatic_failover_enabled: Optional[pulumi.Input[bool]] = None,
-                 peer_autonomous_container_database_backup_config: Optional[pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs']]] = None,
+                 peer_autonomous_container_database_backup_config: Optional[pulumi.Input[Union['AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgsDict']]] = None,
                  peer_autonomous_container_database_compartment_id: Optional[pulumi.Input[str]] = None,
                  peer_autonomous_container_database_display_name: Optional[pulumi.Input[str]] = None,
                  peer_autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
@@ -857,7 +857,7 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
             fast_start_fail_over_lag_limit_in_seconds: Optional[pulumi.Input[int]] = None,
             is_automatic_failover_enabled: Optional[pulumi.Input[bool]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
-            peer_autonomous_container_database_backup_config: Optional[pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs']]] = None,
+            peer_autonomous_container_database_backup_config: Optional[pulumi.Input[Union['AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgsDict']]] = None,
             peer_autonomous_container_database_compartment_id: Optional[pulumi.Input[str]] = None,
             peer_autonomous_container_database_dataguard_association_id: Optional[pulumi.Input[str]] = None,
             peer_autonomous_container_database_display_name: Optional[pulumi.Input[str]] = None,
@@ -888,7 +888,7 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
         :param pulumi.Input[int] fast_start_fail_over_lag_limit_in_seconds: (Updatable) The lag time for my preference based on data loss tolerance in seconds.
         :param pulumi.Input[bool] is_automatic_failover_enabled: (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `is_automatic_failover_enabled = true`.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycleState, if available.
-        :param pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs']] peer_autonomous_container_database_backup_config: Backup options for the standby Autonomous Container Database.
+        :param pulumi.Input[Union['AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgsDict']] peer_autonomous_container_database_backup_config: Backup options for the standby Autonomous Container Database.
         :param pulumi.Input[str] peer_autonomous_container_database_compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database will be created.
         :param pulumi.Input[str] peer_autonomous_container_database_dataguard_association_id: The OCID of the peer Autonomous Container Database-Autonomous Data Guard association.
         :param pulumi.Input[str] peer_autonomous_container_database_display_name: The display name for the peer Autonomous Container Database.

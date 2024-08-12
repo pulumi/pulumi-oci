@@ -96,7 +96,7 @@ class AwaitableGetNetworkFirewallPolicyDecryptionRulesResult(GetNetworkFirewallP
 
 def get_network_firewall_policy_decryption_rules(decryption_rule_priority_order: Optional[int] = None,
                                                  display_name: Optional[str] = None,
-                                                 filters: Optional[Sequence[pulumi.InputType['GetNetworkFirewallPolicyDecryptionRulesFilterArgs']]] = None,
+                                                 filters: Optional[Sequence[Union['GetNetworkFirewallPolicyDecryptionRulesFilterArgs', 'GetNetworkFirewallPolicyDecryptionRulesFilterArgsDict']]] = None,
                                                  network_firewall_policy_id: Optional[str] = None,
                                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkFirewallPolicyDecryptionRulesResult:
     """
@@ -140,7 +140,7 @@ def get_network_firewall_policy_decryption_rules(decryption_rule_priority_order:
 @_utilities.lift_output_func(get_network_firewall_policy_decryption_rules)
 def get_network_firewall_policy_decryption_rules_output(decryption_rule_priority_order: Optional[pulumi.Input[Optional[int]]] = None,
                                                         display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                                        filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetNetworkFirewallPolicyDecryptionRulesFilterArgs']]]]] = None,
+                                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNetworkFirewallPolicyDecryptionRulesFilterArgs', 'GetNetworkFirewallPolicyDecryptionRulesFilterArgsDict']]]]] = None,
                                                         network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
                                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkFirewallPolicyDecryptionRulesResult]:
     """

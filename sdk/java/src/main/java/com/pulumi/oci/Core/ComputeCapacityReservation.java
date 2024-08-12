@@ -278,7 +278,7 @@ public class ComputeCapacityReservation extends com.pulumi.resources.CustomResou
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ComputeCapacityReservation(String name) {
+    public ComputeCapacityReservation(java.lang.String name) {
         this(name, ComputeCapacityReservationArgs.Empty);
     }
     /**
@@ -286,7 +286,7 @@ public class ComputeCapacityReservation extends com.pulumi.resources.CustomResou
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ComputeCapacityReservation(String name, ComputeCapacityReservationArgs args) {
+    public ComputeCapacityReservation(java.lang.String name, ComputeCapacityReservationArgs args) {
         this(name, args, null);
     }
     /**
@@ -295,12 +295,12 @@ public class ComputeCapacityReservation extends com.pulumi.resources.CustomResou
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ComputeCapacityReservation(String name, ComputeCapacityReservationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/computeCapacityReservation:ComputeCapacityReservation", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ComputeCapacityReservation(java.lang.String name, ComputeCapacityReservationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Core/computeCapacityReservation:ComputeCapacityReservation", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ComputeCapacityReservation(String name, Output<String> id, @Nullable ComputeCapacityReservationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Core/computeCapacityReservation:ComputeCapacityReservation", name, state, makeResourceOptions(options, id));
+    private ComputeCapacityReservation(java.lang.String name, Output<java.lang.String> id, @Nullable ComputeCapacityReservationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Core/computeCapacityReservation:ComputeCapacityReservation", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ComputeCapacityReservationArgs makeArgs(ComputeCapacityReservationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -310,7 +310,7 @@ public class ComputeCapacityReservation extends com.pulumi.resources.CustomResou
         return args == null ? ComputeCapacityReservationArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -326,7 +326,7 @@ public class ComputeCapacityReservation extends com.pulumi.resources.CustomResou
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ComputeCapacityReservation get(String name, Output<String> id, @Nullable ComputeCapacityReservationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ComputeCapacityReservation get(java.lang.String name, Output<java.lang.String> id, @Nullable ComputeCapacityReservationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ComputeCapacityReservation(name, id, state, options);
     }
 }

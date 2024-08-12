@@ -105,7 +105,7 @@ class AwaitableGetClusterNetworksResult(GetClusterNetworksResult):
 
 def get_cluster_networks(compartment_id: Optional[str] = None,
                          display_name: Optional[str] = None,
-                         filters: Optional[Sequence[pulumi.InputType['GetClusterNetworksFilterArgs']]] = None,
+                         filters: Optional[Sequence[Union['GetClusterNetworksFilterArgs', 'GetClusterNetworksFilterArgsDict']]] = None,
                          state: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetClusterNetworksResult:
     """
@@ -150,7 +150,7 @@ def get_cluster_networks(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_cluster_networks)
 def get_cluster_networks_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                 display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetClusterNetworksFilterArgs']]]]] = None,
+                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetClusterNetworksFilterArgs', 'GetClusterNetworksFilterArgsDict']]]]] = None,
                                 state: Optional[pulumi.Input[Optional[str]]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetClusterNetworksResult]:
     """

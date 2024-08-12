@@ -509,7 +509,7 @@ class ResourceAction(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            actions: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ResourceActionActionArgs']]]]] = None,
+            actions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ResourceActionActionArgs', 'ResourceActionActionArgsDict']]]]] = None,
             category_id: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             compartment_name: Optional[pulumi.Input[str]] = None,
@@ -534,7 +534,7 @@ class ResourceAction(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ResourceActionActionArgs']]]] actions: Details about the recommended action.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ResourceActionActionArgs', 'ResourceActionActionArgsDict']]]] actions: Details about the recommended action.
         :param pulumi.Input[str] category_id: The unique OCID associated with the category.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment.
         :param pulumi.Input[str] compartment_name: The name associated with the compartment.

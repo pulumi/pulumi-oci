@@ -89,7 +89,7 @@ public class OperationsInsightsWarehouseRotateWarehouseWallet extends com.pulumi
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public OperationsInsightsWarehouseRotateWarehouseWallet(String name) {
+    public OperationsInsightsWarehouseRotateWarehouseWallet(java.lang.String name) {
         this(name, OperationsInsightsWarehouseRotateWarehouseWalletArgs.Empty);
     }
     /**
@@ -97,7 +97,7 @@ public class OperationsInsightsWarehouseRotateWarehouseWallet extends com.pulumi
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public OperationsInsightsWarehouseRotateWarehouseWallet(String name, OperationsInsightsWarehouseRotateWarehouseWalletArgs args) {
+    public OperationsInsightsWarehouseRotateWarehouseWallet(java.lang.String name, OperationsInsightsWarehouseRotateWarehouseWalletArgs args) {
         this(name, args, null);
     }
     /**
@@ -106,12 +106,12 @@ public class OperationsInsightsWarehouseRotateWarehouseWallet extends com.pulumi
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public OperationsInsightsWarehouseRotateWarehouseWallet(String name, OperationsInsightsWarehouseRotateWarehouseWalletArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Opsi/operationsInsightsWarehouseRotateWarehouseWallet:OperationsInsightsWarehouseRotateWarehouseWallet", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public OperationsInsightsWarehouseRotateWarehouseWallet(java.lang.String name, OperationsInsightsWarehouseRotateWarehouseWalletArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Opsi/operationsInsightsWarehouseRotateWarehouseWallet:OperationsInsightsWarehouseRotateWarehouseWallet", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private OperationsInsightsWarehouseRotateWarehouseWallet(String name, Output<String> id, @Nullable OperationsInsightsWarehouseRotateWarehouseWalletState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Opsi/operationsInsightsWarehouseRotateWarehouseWallet:OperationsInsightsWarehouseRotateWarehouseWallet", name, state, makeResourceOptions(options, id));
+    private OperationsInsightsWarehouseRotateWarehouseWallet(java.lang.String name, Output<java.lang.String> id, @Nullable OperationsInsightsWarehouseRotateWarehouseWalletState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Opsi/operationsInsightsWarehouseRotateWarehouseWallet:OperationsInsightsWarehouseRotateWarehouseWallet", name, state, makeResourceOptions(options, id), false);
     }
 
     private static OperationsInsightsWarehouseRotateWarehouseWalletArgs makeArgs(OperationsInsightsWarehouseRotateWarehouseWalletArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -121,7 +121,7 @@ public class OperationsInsightsWarehouseRotateWarehouseWallet extends com.pulumi
         return args == null ? OperationsInsightsWarehouseRotateWarehouseWalletArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -137,7 +137,7 @@ public class OperationsInsightsWarehouseRotateWarehouseWallet extends com.pulumi
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static OperationsInsightsWarehouseRotateWarehouseWallet get(String name, Output<String> id, @Nullable OperationsInsightsWarehouseRotateWarehouseWalletState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static OperationsInsightsWarehouseRotateWarehouseWallet get(java.lang.String name, Output<java.lang.String> id, @Nullable OperationsInsightsWarehouseRotateWarehouseWalletState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new OperationsInsightsWarehouseRotateWarehouseWallet(name, id, state, options);
     }
 }

@@ -106,7 +106,7 @@ class AwaitableGetManagedDatabaseUserProxiedForUsersResult(GetManagedDatabaseUse
             user_name=self.user_name)
 
 
-def get_managed_database_user_proxied_for_users(filters: Optional[Sequence[pulumi.InputType['GetManagedDatabaseUserProxiedForUsersFilterArgs']]] = None,
+def get_managed_database_user_proxied_for_users(filters: Optional[Sequence[Union['GetManagedDatabaseUserProxiedForUsersFilterArgs', 'GetManagedDatabaseUserProxiedForUsersFilterArgsDict']]] = None,
                                                 managed_database_id: Optional[str] = None,
                                                 name: Optional[str] = None,
                                                 opc_named_credential_id: Optional[str] = None,
@@ -155,7 +155,7 @@ def get_managed_database_user_proxied_for_users(filters: Optional[Sequence[pulum
 
 
 @_utilities.lift_output_func(get_managed_database_user_proxied_for_users)
-def get_managed_database_user_proxied_for_users_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetManagedDatabaseUserProxiedForUsersFilterArgs']]]]] = None,
+def get_managed_database_user_proxied_for_users_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedDatabaseUserProxiedForUsersFilterArgs', 'GetManagedDatabaseUserProxiedForUsersFilterArgsDict']]]]] = None,
                                                        managed_database_id: Optional[pulumi.Input[str]] = None,
                                                        name: Optional[pulumi.Input[Optional[str]]] = None,
                                                        opc_named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,

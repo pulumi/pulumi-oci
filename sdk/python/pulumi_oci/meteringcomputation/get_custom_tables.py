@@ -92,7 +92,7 @@ class AwaitableGetCustomTablesResult(GetCustomTablesResult):
 
 
 def get_custom_tables(compartment_id: Optional[str] = None,
-                      filters: Optional[Sequence[pulumi.InputType['GetCustomTablesFilterArgs']]] = None,
+                      filters: Optional[Sequence[Union['GetCustomTablesFilterArgs', 'GetCustomTablesFilterArgsDict']]] = None,
                       saved_report_id: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCustomTablesResult:
     """
@@ -131,7 +131,7 @@ def get_custom_tables(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_custom_tables)
 def get_custom_tables_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                             filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetCustomTablesFilterArgs']]]]] = None,
+                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCustomTablesFilterArgs', 'GetCustomTablesFilterArgsDict']]]]] = None,
                              saved_report_id: Optional[pulumi.Input[str]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCustomTablesResult]:
     """

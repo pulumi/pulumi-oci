@@ -673,7 +673,7 @@ class RedisCluster(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
-            node_collections: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['RedisClusterNodeCollectionArgs']]]]] = None,
+            node_collections: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RedisClusterNodeCollectionArgs', 'RedisClusterNodeCollectionArgsDict']]]]] = None,
             node_count: Optional[pulumi.Input[int]] = None,
             node_memory_in_gbs: Optional[pulumi.Input[float]] = None,
             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -699,7 +699,7 @@ class RedisCluster(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, the message might provide actionable information for a resource in `FAILED` state.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['RedisClusterNodeCollectionArgs']]]] node_collections: The collection of Redis cluster nodes.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RedisClusterNodeCollectionArgs', 'RedisClusterNodeCollectionArgsDict']]]] node_collections: The collection of Redis cluster nodes.
         :param pulumi.Input[int] node_count: (Updatable) The number of nodes in the Redis cluster.
         :param pulumi.Input[float] node_memory_in_gbs: (Updatable) The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Redis Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).

@@ -351,14 +351,14 @@ class AutoScalingConfiguration(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 auto_scaling_resources: Optional[pulumi.Input[pulumi.InputType['AutoScalingConfigurationAutoScalingResourcesArgs']]] = None,
+                 auto_scaling_resources: Optional[pulumi.Input[Union['AutoScalingConfigurationAutoScalingResourcesArgs', 'AutoScalingConfigurationAutoScalingResourcesArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  cool_down_in_seconds: Optional[pulumi.Input[int]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_enabled: Optional[pulumi.Input[bool]] = None,
-                 policies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutoScalingConfigurationPolicyArgs']]]]] = None,
+                 policies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutoScalingConfigurationPolicyArgs', 'AutoScalingConfigurationPolicyArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Auto Scaling Configuration resource in Oracle Cloud Infrastructure Auto Scaling service.
@@ -372,44 +372,44 @@ class AutoScalingConfiguration(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_auto_scaling_configuration = oci.autoscaling.AutoScalingConfiguration("test_auto_scaling_configuration",
-            auto_scaling_resources=oci.autoscaling.AutoScalingConfigurationAutoScalingResourcesArgs(
-                id=auto_scaling_configuration_auto_scaling_resources_id,
-                type=auto_scaling_configuration_auto_scaling_resources_type,
-            ),
+            auto_scaling_resources={
+                "id": auto_scaling_configuration_auto_scaling_resources_id,
+                "type": auto_scaling_configuration_auto_scaling_resources_type,
+            },
             compartment_id=compartment_id,
-            policies=[oci.autoscaling.AutoScalingConfigurationPolicyArgs(
-                policy_type=auto_scaling_configuration_policies_policy_type,
-                capacity=oci.autoscaling.AutoScalingConfigurationPolicyCapacityArgs(
-                    initial=auto_scaling_configuration_policies_capacity_initial,
-                    max=auto_scaling_configuration_policies_capacity_max,
-                    min=auto_scaling_configuration_policies_capacity_min,
-                ),
-                display_name=auto_scaling_configuration_policies_display_name,
-                execution_schedule=oci.autoscaling.AutoScalingConfigurationPolicyExecutionScheduleArgs(
-                    expression=auto_scaling_configuration_policies_execution_schedule_expression,
-                    timezone=auto_scaling_configuration_policies_execution_schedule_timezone,
-                    type=auto_scaling_configuration_policies_execution_schedule_type,
-                ),
-                is_enabled=auto_scaling_configuration_policies_is_enabled,
-                resource_action=oci.autoscaling.AutoScalingConfigurationPolicyResourceActionArgs(
-                    action=auto_scaling_configuration_policies_resource_action_action,
-                    action_type=auto_scaling_configuration_policies_resource_action_action_type,
-                ),
-                rules=[oci.autoscaling.AutoScalingConfigurationPolicyRuleArgs(
-                    action=oci.autoscaling.AutoScalingConfigurationPolicyRuleActionArgs(
-                        type=auto_scaling_configuration_policies_rules_action_type,
-                        value=auto_scaling_configuration_policies_rules_action_value,
-                    ),
-                    display_name=auto_scaling_configuration_policies_rules_display_name,
-                    metric=oci.autoscaling.AutoScalingConfigurationPolicyRuleMetricArgs(
-                        metric_type=auto_scaling_configuration_policies_rules_metric_metric_type,
-                        threshold=oci.autoscaling.AutoScalingConfigurationPolicyRuleMetricThresholdArgs(
-                            operator=auto_scaling_configuration_policies_rules_metric_threshold_operator,
-                            value=auto_scaling_configuration_policies_rules_metric_threshold_value,
-                        ),
-                    ),
-                )],
-            )],
+            policies=[{
+                "policy_type": auto_scaling_configuration_policies_policy_type,
+                "capacity": {
+                    "initial": auto_scaling_configuration_policies_capacity_initial,
+                    "max": auto_scaling_configuration_policies_capacity_max,
+                    "min": auto_scaling_configuration_policies_capacity_min,
+                },
+                "display_name": auto_scaling_configuration_policies_display_name,
+                "execution_schedule": {
+                    "expression": auto_scaling_configuration_policies_execution_schedule_expression,
+                    "timezone": auto_scaling_configuration_policies_execution_schedule_timezone,
+                    "type": auto_scaling_configuration_policies_execution_schedule_type,
+                },
+                "is_enabled": auto_scaling_configuration_policies_is_enabled,
+                "resource_action": {
+                    "action": auto_scaling_configuration_policies_resource_action_action,
+                    "action_type": auto_scaling_configuration_policies_resource_action_action_type,
+                },
+                "rules": [{
+                    "action": {
+                        "type": auto_scaling_configuration_policies_rules_action_type,
+                        "value": auto_scaling_configuration_policies_rules_action_value,
+                    },
+                    "display_name": auto_scaling_configuration_policies_rules_display_name,
+                    "metric": {
+                        "metric_type": auto_scaling_configuration_policies_rules_metric_metric_type,
+                        "threshold": {
+                            "operator": auto_scaling_configuration_policies_rules_metric_threshold_operator,
+                            "value": auto_scaling_configuration_policies_rules_metric_threshold_value,
+                        },
+                    },
+                }],
+            }],
             cool_down_in_seconds=auto_scaling_configuration_cool_down_in_seconds,
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -431,7 +431,7 @@ class AutoScalingConfiguration(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['AutoScalingConfigurationAutoScalingResourcesArgs']] auto_scaling_resources: A resource that is managed by an autoscaling configuration. The only supported type is `instancePool`.
+        :param pulumi.Input[Union['AutoScalingConfigurationAutoScalingResourcesArgs', 'AutoScalingConfigurationAutoScalingResourcesArgsDict']] auto_scaling_resources: A resource that is managed by an autoscaling configuration. The only supported type is `instancePool`.
                
                Each instance pool can have one autoscaling configuration.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the autoscaling configuration.
@@ -442,7 +442,7 @@ class AutoScalingConfiguration(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether the autoscaling configuration is enabled.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutoScalingConfigurationPolicyArgs']]]] policies: Autoscaling policy definitions for the autoscaling configuration. An autoscaling policy defines the criteria that trigger autoscaling actions and the actions to take.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AutoScalingConfigurationPolicyArgs', 'AutoScalingConfigurationPolicyArgsDict']]]] policies: Autoscaling policy definitions for the autoscaling configuration. An autoscaling policy defines the criteria that trigger autoscaling actions and the actions to take.
         """
         ...
     @overload
@@ -462,44 +462,44 @@ class AutoScalingConfiguration(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_auto_scaling_configuration = oci.autoscaling.AutoScalingConfiguration("test_auto_scaling_configuration",
-            auto_scaling_resources=oci.autoscaling.AutoScalingConfigurationAutoScalingResourcesArgs(
-                id=auto_scaling_configuration_auto_scaling_resources_id,
-                type=auto_scaling_configuration_auto_scaling_resources_type,
-            ),
+            auto_scaling_resources={
+                "id": auto_scaling_configuration_auto_scaling_resources_id,
+                "type": auto_scaling_configuration_auto_scaling_resources_type,
+            },
             compartment_id=compartment_id,
-            policies=[oci.autoscaling.AutoScalingConfigurationPolicyArgs(
-                policy_type=auto_scaling_configuration_policies_policy_type,
-                capacity=oci.autoscaling.AutoScalingConfigurationPolicyCapacityArgs(
-                    initial=auto_scaling_configuration_policies_capacity_initial,
-                    max=auto_scaling_configuration_policies_capacity_max,
-                    min=auto_scaling_configuration_policies_capacity_min,
-                ),
-                display_name=auto_scaling_configuration_policies_display_name,
-                execution_schedule=oci.autoscaling.AutoScalingConfigurationPolicyExecutionScheduleArgs(
-                    expression=auto_scaling_configuration_policies_execution_schedule_expression,
-                    timezone=auto_scaling_configuration_policies_execution_schedule_timezone,
-                    type=auto_scaling_configuration_policies_execution_schedule_type,
-                ),
-                is_enabled=auto_scaling_configuration_policies_is_enabled,
-                resource_action=oci.autoscaling.AutoScalingConfigurationPolicyResourceActionArgs(
-                    action=auto_scaling_configuration_policies_resource_action_action,
-                    action_type=auto_scaling_configuration_policies_resource_action_action_type,
-                ),
-                rules=[oci.autoscaling.AutoScalingConfigurationPolicyRuleArgs(
-                    action=oci.autoscaling.AutoScalingConfigurationPolicyRuleActionArgs(
-                        type=auto_scaling_configuration_policies_rules_action_type,
-                        value=auto_scaling_configuration_policies_rules_action_value,
-                    ),
-                    display_name=auto_scaling_configuration_policies_rules_display_name,
-                    metric=oci.autoscaling.AutoScalingConfigurationPolicyRuleMetricArgs(
-                        metric_type=auto_scaling_configuration_policies_rules_metric_metric_type,
-                        threshold=oci.autoscaling.AutoScalingConfigurationPolicyRuleMetricThresholdArgs(
-                            operator=auto_scaling_configuration_policies_rules_metric_threshold_operator,
-                            value=auto_scaling_configuration_policies_rules_metric_threshold_value,
-                        ),
-                    ),
-                )],
-            )],
+            policies=[{
+                "policy_type": auto_scaling_configuration_policies_policy_type,
+                "capacity": {
+                    "initial": auto_scaling_configuration_policies_capacity_initial,
+                    "max": auto_scaling_configuration_policies_capacity_max,
+                    "min": auto_scaling_configuration_policies_capacity_min,
+                },
+                "display_name": auto_scaling_configuration_policies_display_name,
+                "execution_schedule": {
+                    "expression": auto_scaling_configuration_policies_execution_schedule_expression,
+                    "timezone": auto_scaling_configuration_policies_execution_schedule_timezone,
+                    "type": auto_scaling_configuration_policies_execution_schedule_type,
+                },
+                "is_enabled": auto_scaling_configuration_policies_is_enabled,
+                "resource_action": {
+                    "action": auto_scaling_configuration_policies_resource_action_action,
+                    "action_type": auto_scaling_configuration_policies_resource_action_action_type,
+                },
+                "rules": [{
+                    "action": {
+                        "type": auto_scaling_configuration_policies_rules_action_type,
+                        "value": auto_scaling_configuration_policies_rules_action_value,
+                    },
+                    "display_name": auto_scaling_configuration_policies_rules_display_name,
+                    "metric": {
+                        "metric_type": auto_scaling_configuration_policies_rules_metric_metric_type,
+                        "threshold": {
+                            "operator": auto_scaling_configuration_policies_rules_metric_threshold_operator,
+                            "value": auto_scaling_configuration_policies_rules_metric_threshold_value,
+                        },
+                    },
+                }],
+            }],
             cool_down_in_seconds=auto_scaling_configuration_cool_down_in_seconds,
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -534,14 +534,14 @@ class AutoScalingConfiguration(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 auto_scaling_resources: Optional[pulumi.Input[pulumi.InputType['AutoScalingConfigurationAutoScalingResourcesArgs']]] = None,
+                 auto_scaling_resources: Optional[pulumi.Input[Union['AutoScalingConfigurationAutoScalingResourcesArgs', 'AutoScalingConfigurationAutoScalingResourcesArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  cool_down_in_seconds: Optional[pulumi.Input[int]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_enabled: Optional[pulumi.Input[bool]] = None,
-                 policies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutoScalingConfigurationPolicyArgs']]]]] = None,
+                 policies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutoScalingConfigurationPolicyArgs', 'AutoScalingConfigurationPolicyArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -578,7 +578,7 @@ class AutoScalingConfiguration(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            auto_scaling_resources: Optional[pulumi.Input[pulumi.InputType['AutoScalingConfigurationAutoScalingResourcesArgs']]] = None,
+            auto_scaling_resources: Optional[pulumi.Input[Union['AutoScalingConfigurationAutoScalingResourcesArgs', 'AutoScalingConfigurationAutoScalingResourcesArgsDict']]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             cool_down_in_seconds: Optional[pulumi.Input[int]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -587,7 +587,7 @@ class AutoScalingConfiguration(pulumi.CustomResource):
             is_enabled: Optional[pulumi.Input[bool]] = None,
             max_resource_count: Optional[pulumi.Input[int]] = None,
             min_resource_count: Optional[pulumi.Input[int]] = None,
-            policies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutoScalingConfigurationPolicyArgs']]]]] = None,
+            policies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutoScalingConfigurationPolicyArgs', 'AutoScalingConfigurationPolicyArgsDict']]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None) -> 'AutoScalingConfiguration':
         """
         Get an existing AutoScalingConfiguration resource's state with the given name, id, and optional extra
@@ -596,7 +596,7 @@ class AutoScalingConfiguration(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['AutoScalingConfigurationAutoScalingResourcesArgs']] auto_scaling_resources: A resource that is managed by an autoscaling configuration. The only supported type is `instancePool`.
+        :param pulumi.Input[Union['AutoScalingConfigurationAutoScalingResourcesArgs', 'AutoScalingConfigurationAutoScalingResourcesArgsDict']] auto_scaling_resources: A resource that is managed by an autoscaling configuration. The only supported type is `instancePool`.
                
                Each instance pool can have one autoscaling configuration.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the autoscaling configuration.
@@ -609,7 +609,7 @@ class AutoScalingConfiguration(pulumi.CustomResource):
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether the autoscaling configuration is enabled.
         :param pulumi.Input[int] max_resource_count: The maximum number of resources to scale out to.
         :param pulumi.Input[int] min_resource_count: The minimum number of resources to scale in to.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutoScalingConfigurationPolicyArgs']]]] policies: Autoscaling policy definitions for the autoscaling configuration. An autoscaling policy defines the criteria that trigger autoscaling actions and the actions to take.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AutoScalingConfigurationPolicyArgs', 'AutoScalingConfigurationPolicyArgsDict']]]] policies: Autoscaling policy definitions for the autoscaling configuration. An autoscaling policy defines the criteria that trigger autoscaling actions and the actions to take.
         :param pulumi.Input[str] time_created: The date and time the autoscaling configuration was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

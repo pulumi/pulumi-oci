@@ -418,7 +418,7 @@ public class DbHome extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DbHome(String name) {
+    public DbHome(java.lang.String name) {
         this(name, DbHomeArgs.Empty);
     }
     /**
@@ -426,7 +426,7 @@ public class DbHome extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DbHome(String name, @Nullable DbHomeArgs args) {
+    public DbHome(java.lang.String name, @Nullable DbHomeArgs args) {
         this(name, args, null);
     }
     /**
@@ -435,12 +435,12 @@ public class DbHome extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DbHome(String name, @Nullable DbHomeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/dbHome:DbHome", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DbHome(java.lang.String name, @Nullable DbHomeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/dbHome:DbHome", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DbHome(String name, Output<String> id, @Nullable DbHomeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/dbHome:DbHome", name, state, makeResourceOptions(options, id));
+    private DbHome(java.lang.String name, Output<java.lang.String> id, @Nullable DbHomeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/dbHome:DbHome", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DbHomeArgs makeArgs(@Nullable DbHomeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -450,7 +450,7 @@ public class DbHome extends com.pulumi.resources.CustomResource {
         return args == null ? DbHomeArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -466,7 +466,7 @@ public class DbHome extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DbHome get(String name, Output<String> id, @Nullable DbHomeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DbHome get(java.lang.String name, Output<java.lang.String> id, @Nullable DbHomeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DbHome(name, id, state, options);
     }
 }

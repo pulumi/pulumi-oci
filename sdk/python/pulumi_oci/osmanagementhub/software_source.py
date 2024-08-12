@@ -805,7 +805,7 @@ class SoftwareSource(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 custom_software_source_filter: Optional[pulumi.Input[pulumi.InputType['SoftwareSourceCustomSoftwareSourceFilterArgs']]] = None,
+                 custom_software_source_filter: Optional[pulumi.Input[Union['SoftwareSourceCustomSoftwareSourceFilterArgs', 'SoftwareSourceCustomSoftwareSourceFilterArgsDict']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -818,7 +818,7 @@ class SoftwareSource(pulumi.CustomResource):
                  packages: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  software_source_type: Optional[pulumi.Input[str]] = None,
                  software_source_version: Optional[pulumi.Input[str]] = None,
-                 vendor_software_sources: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SoftwareSourceVendorSoftwareSourceArgs']]]]] = None,
+                 vendor_software_sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SoftwareSourceVendorSoftwareSourceArgs', 'SoftwareSourceVendorSoftwareSourceArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Software Source resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -836,7 +836,7 @@ class SoftwareSource(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
-        :param pulumi.Input[pulumi.InputType['SoftwareSourceCustomSoftwareSourceFilterArgs']] custom_software_source_filter: (Updatable) Provides the information used to apply filters to a vendor software source to create or update a custom software source.
+        :param pulumi.Input[Union['SoftwareSourceCustomSoftwareSourceFilterArgs', 'SoftwareSourceCustomSoftwareSourceFilterArgsDict']] custom_software_source_filter: (Updatable) Provides the information used to apply filters to a vendor software source to create or update a custom software source.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) User-specified description for the software source. Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) User-friendly name for the software source. Does not have to be unique and you can change the name later. Avoid entering confidential information.
@@ -854,7 +854,7 @@ class SoftwareSource(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] packages: A property used for compatibility only. It doesn't provide a complete list of packages. See [AddPackagesToSoftwareSourceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/osmh/latest/datatypes/AddPackagesToSoftwareSourceDetails) for providing the list of packages used to create the software source when isCreatedFromPackageList is set to true.
         :param pulumi.Input[str] software_source_type: (Updatable) Type of software source.
         :param pulumi.Input[str] software_source_version: The version to assign to this custom software source.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SoftwareSourceVendorSoftwareSourceArgs']]]] vendor_software_sources: (Updatable) List of vendor software sources.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SoftwareSourceVendorSoftwareSourceArgs', 'SoftwareSourceVendorSoftwareSourceArgsDict']]]] vendor_software_sources: (Updatable) List of vendor software sources.
         """
         ...
     @overload
@@ -891,7 +891,7 @@ class SoftwareSource(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 custom_software_source_filter: Optional[pulumi.Input[pulumi.InputType['SoftwareSourceCustomSoftwareSourceFilterArgs']]] = None,
+                 custom_software_source_filter: Optional[pulumi.Input[Union['SoftwareSourceCustomSoftwareSourceFilterArgs', 'SoftwareSourceCustomSoftwareSourceFilterArgsDict']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -904,7 +904,7 @@ class SoftwareSource(pulumi.CustomResource):
                  packages: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  software_source_type: Optional[pulumi.Input[str]] = None,
                  software_source_version: Optional[pulumi.Input[str]] = None,
-                 vendor_software_sources: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SoftwareSourceVendorSoftwareSourceArgs']]]]] = None,
+                 vendor_software_sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SoftwareSourceVendorSoftwareSourceArgs', 'SoftwareSourceVendorSoftwareSourceArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -965,7 +965,7 @@ class SoftwareSource(pulumi.CustomResource):
             availability_at_oci: Optional[pulumi.Input[str]] = None,
             checksum_type: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            custom_software_source_filter: Optional[pulumi.Input[pulumi.InputType['SoftwareSourceCustomSoftwareSourceFilterArgs']]] = None,
+            custom_software_source_filter: Optional[pulumi.Input[Union['SoftwareSourceCustomSoftwareSourceFilterArgs', 'SoftwareSourceCustomSoftwareSourceFilterArgsDict']]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
@@ -991,7 +991,7 @@ class SoftwareSource(pulumi.CustomResource):
             time_created: Optional[pulumi.Input[str]] = None,
             url: Optional[pulumi.Input[str]] = None,
             vendor_name: Optional[pulumi.Input[str]] = None,
-            vendor_software_sources: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SoftwareSourceVendorSoftwareSourceArgs']]]]] = None) -> 'SoftwareSource':
+            vendor_software_sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SoftwareSourceVendorSoftwareSourceArgs', 'SoftwareSourceVendorSoftwareSourceArgsDict']]]]] = None) -> 'SoftwareSource':
         """
         Get an existing SoftwareSource resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -1004,7 +1004,7 @@ class SoftwareSource(pulumi.CustomResource):
         :param pulumi.Input[str] availability_at_oci: Availability of the software source (for Oracle Cloud Infrastructure environments).
         :param pulumi.Input[str] checksum_type: The yum repository checksum type used by this software source.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
-        :param pulumi.Input[pulumi.InputType['SoftwareSourceCustomSoftwareSourceFilterArgs']] custom_software_source_filter: (Updatable) Provides the information used to apply filters to a vendor software source to create or update a custom software source.
+        :param pulumi.Input[Union['SoftwareSourceCustomSoftwareSourceFilterArgs', 'SoftwareSourceCustomSoftwareSourceFilterArgsDict']] custom_software_source_filter: (Updatable) Provides the information used to apply filters to a vendor software source to create or update a custom software source.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) User-specified description for the software source. Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) User-friendly name for the software source. Does not have to be unique and you can change the name later. Avoid entering confidential information.
@@ -1035,7 +1035,7 @@ class SoftwareSource(pulumi.CustomResource):
         :param pulumi.Input[str] time_created: The date and time the software source was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param pulumi.Input[str] url: URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is 'custom/<repoId>'.
         :param pulumi.Input[str] vendor_name: Name of the vendor providing the software source.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SoftwareSourceVendorSoftwareSourceArgs']]]] vendor_software_sources: (Updatable) List of vendor software sources.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SoftwareSourceVendorSoftwareSourceArgs', 'SoftwareSourceVendorSoftwareSourceArgsDict']]]] vendor_software_sources: (Updatable) List of vendor software sources.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

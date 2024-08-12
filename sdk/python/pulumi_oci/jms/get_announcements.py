@@ -94,7 +94,7 @@ class AwaitableGetAnnouncementsResult(GetAnnouncementsResult):
             time_start=self.time_start)
 
 
-def get_announcements(filters: Optional[Sequence[pulumi.InputType['GetAnnouncementsFilterArgs']]] = None,
+def get_announcements(filters: Optional[Sequence[Union['GetAnnouncementsFilterArgs', 'GetAnnouncementsFilterArgsDict']]] = None,
                       summary_contains: Optional[str] = None,
                       time_end: Optional[str] = None,
                       time_start: Optional[str] = None,
@@ -138,7 +138,7 @@ def get_announcements(filters: Optional[Sequence[pulumi.InputType['GetAnnounceme
 
 
 @_utilities.lift_output_func(get_announcements)
-def get_announcements_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAnnouncementsFilterArgs']]]]] = None,
+def get_announcements_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAnnouncementsFilterArgs', 'GetAnnouncementsFilterArgsDict']]]]] = None,
                              summary_contains: Optional[pulumi.Input[Optional[str]]] = None,
                              time_end: Optional[pulumi.Input[Optional[str]]] = None,
                              time_start: Optional[pulumi.Input[Optional[str]]] = None,

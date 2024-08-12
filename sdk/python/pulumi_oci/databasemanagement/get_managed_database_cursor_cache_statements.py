@@ -106,7 +106,7 @@ class AwaitableGetManagedDatabaseCursorCacheStatementsResult(GetManagedDatabaseC
             sql_text=self.sql_text)
 
 
-def get_managed_database_cursor_cache_statements(filters: Optional[Sequence[pulumi.InputType['GetManagedDatabaseCursorCacheStatementsFilterArgs']]] = None,
+def get_managed_database_cursor_cache_statements(filters: Optional[Sequence[Union['GetManagedDatabaseCursorCacheStatementsFilterArgs', 'GetManagedDatabaseCursorCacheStatementsFilterArgsDict']]] = None,
                                                  limit: Optional[int] = None,
                                                  managed_database_id: Optional[str] = None,
                                                  opc_named_credential_id: Optional[str] = None,
@@ -153,7 +153,7 @@ def get_managed_database_cursor_cache_statements(filters: Optional[Sequence[pulu
 
 
 @_utilities.lift_output_func(get_managed_database_cursor_cache_statements)
-def get_managed_database_cursor_cache_statements_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetManagedDatabaseCursorCacheStatementsFilterArgs']]]]] = None,
+def get_managed_database_cursor_cache_statements_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedDatabaseCursorCacheStatementsFilterArgs', 'GetManagedDatabaseCursorCacheStatementsFilterArgsDict']]]]] = None,
                                                         limit: Optional[pulumi.Input[Optional[int]]] = None,
                                                         managed_database_id: Optional[pulumi.Input[str]] = None,
                                                         opc_named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,

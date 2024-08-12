@@ -591,7 +591,7 @@ class Backup(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             backup_size: Optional[pulumi.Input[int]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            db_system_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BackupDbSystemDetailArgs']]]]] = None,
+            db_system_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BackupDbSystemDetailArgs', 'BackupDbSystemDetailArgsDict']]]]] = None,
             db_system_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             description: Optional[pulumi.Input[str]] = None,
@@ -615,7 +615,7 @@ class Backup(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] backup_size: The size of the backup, in gigabytes.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BackupDbSystemDetailArgs']]]] db_system_details: Information about the database system associated with a backup.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['BackupDbSystemDetailArgs', 'BackupDbSystemDetailArgsDict']]]] db_system_details: Information about the database system associated with a backup.
         :param pulumi.Input[str] db_system_id: The ID of the database system.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) A description for the backup.

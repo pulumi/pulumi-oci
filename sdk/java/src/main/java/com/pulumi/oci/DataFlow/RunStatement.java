@@ -177,7 +177,7 @@ public class RunStatement extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public RunStatement(String name) {
+    public RunStatement(java.lang.String name) {
         this(name, RunStatementArgs.Empty);
     }
     /**
@@ -185,7 +185,7 @@ public class RunStatement extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public RunStatement(String name, RunStatementArgs args) {
+    public RunStatement(java.lang.String name, RunStatementArgs args) {
         this(name, args, null);
     }
     /**
@@ -194,12 +194,12 @@ public class RunStatement extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public RunStatement(String name, RunStatementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataFlow/runStatement:RunStatement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public RunStatement(java.lang.String name, RunStatementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataFlow/runStatement:RunStatement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private RunStatement(String name, Output<String> id, @Nullable RunStatementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataFlow/runStatement:RunStatement", name, state, makeResourceOptions(options, id));
+    private RunStatement(java.lang.String name, Output<java.lang.String> id, @Nullable RunStatementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataFlow/runStatement:RunStatement", name, state, makeResourceOptions(options, id), false);
     }
 
     private static RunStatementArgs makeArgs(RunStatementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -209,7 +209,7 @@ public class RunStatement extends com.pulumi.resources.CustomResource {
         return args == null ? RunStatementArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -225,7 +225,7 @@ public class RunStatement extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static RunStatement get(String name, Output<String> id, @Nullable RunStatementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static RunStatement get(java.lang.String name, Output<java.lang.String> id, @Nullable RunStatementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new RunStatement(name, id, state, options);
     }
 }

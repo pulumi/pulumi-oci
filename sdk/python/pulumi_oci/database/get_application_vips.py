@@ -105,7 +105,7 @@ class AwaitableGetApplicationVipsResult(GetApplicationVipsResult):
 
 def get_application_vips(cloud_vm_cluster_id: Optional[str] = None,
                          compartment_id: Optional[str] = None,
-                         filters: Optional[Sequence[pulumi.InputType['GetApplicationVipsFilterArgs']]] = None,
+                         filters: Optional[Sequence[Union['GetApplicationVipsFilterArgs', 'GetApplicationVipsFilterArgsDict']]] = None,
                          state: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetApplicationVipsResult:
     """
@@ -149,7 +149,7 @@ def get_application_vips(cloud_vm_cluster_id: Optional[str] = None,
 @_utilities.lift_output_func(get_application_vips)
 def get_application_vips_output(cloud_vm_cluster_id: Optional[pulumi.Input[str]] = None,
                                 compartment_id: Optional[pulumi.Input[str]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetApplicationVipsFilterArgs']]]]] = None,
+                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetApplicationVipsFilterArgs', 'GetApplicationVipsFilterArgsDict']]]]] = None,
                                 state: Optional[pulumi.Input[Optional[str]]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetApplicationVipsResult]:
     """

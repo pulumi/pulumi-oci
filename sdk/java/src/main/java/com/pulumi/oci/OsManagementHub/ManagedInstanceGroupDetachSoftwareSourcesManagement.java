@@ -119,7 +119,7 @@ public class ManagedInstanceGroupDetachSoftwareSourcesManagement extends com.pul
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ManagedInstanceGroupDetachSoftwareSourcesManagement(String name) {
+    public ManagedInstanceGroupDetachSoftwareSourcesManagement(java.lang.String name) {
         this(name, ManagedInstanceGroupDetachSoftwareSourcesManagementArgs.Empty);
     }
     /**
@@ -127,7 +127,7 @@ public class ManagedInstanceGroupDetachSoftwareSourcesManagement extends com.pul
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ManagedInstanceGroupDetachSoftwareSourcesManagement(String name, ManagedInstanceGroupDetachSoftwareSourcesManagementArgs args) {
+    public ManagedInstanceGroupDetachSoftwareSourcesManagement(java.lang.String name, ManagedInstanceGroupDetachSoftwareSourcesManagementArgs args) {
         this(name, args, null);
     }
     /**
@@ -136,12 +136,12 @@ public class ManagedInstanceGroupDetachSoftwareSourcesManagement extends com.pul
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ManagedInstanceGroupDetachSoftwareSourcesManagement(String name, ManagedInstanceGroupDetachSoftwareSourcesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:OsManagementHub/managedInstanceGroupDetachSoftwareSourcesManagement:ManagedInstanceGroupDetachSoftwareSourcesManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ManagedInstanceGroupDetachSoftwareSourcesManagement(java.lang.String name, ManagedInstanceGroupDetachSoftwareSourcesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:OsManagementHub/managedInstanceGroupDetachSoftwareSourcesManagement:ManagedInstanceGroupDetachSoftwareSourcesManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ManagedInstanceGroupDetachSoftwareSourcesManagement(String name, Output<String> id, @Nullable ManagedInstanceGroupDetachSoftwareSourcesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:OsManagementHub/managedInstanceGroupDetachSoftwareSourcesManagement:ManagedInstanceGroupDetachSoftwareSourcesManagement", name, state, makeResourceOptions(options, id));
+    private ManagedInstanceGroupDetachSoftwareSourcesManagement(java.lang.String name, Output<java.lang.String> id, @Nullable ManagedInstanceGroupDetachSoftwareSourcesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:OsManagementHub/managedInstanceGroupDetachSoftwareSourcesManagement:ManagedInstanceGroupDetachSoftwareSourcesManagement", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ManagedInstanceGroupDetachSoftwareSourcesManagementArgs makeArgs(ManagedInstanceGroupDetachSoftwareSourcesManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -151,7 +151,7 @@ public class ManagedInstanceGroupDetachSoftwareSourcesManagement extends com.pul
         return args == null ? ManagedInstanceGroupDetachSoftwareSourcesManagementArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -167,7 +167,7 @@ public class ManagedInstanceGroupDetachSoftwareSourcesManagement extends com.pul
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ManagedInstanceGroupDetachSoftwareSourcesManagement get(String name, Output<String> id, @Nullable ManagedInstanceGroupDetachSoftwareSourcesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ManagedInstanceGroupDetachSoftwareSourcesManagement get(java.lang.String name, Output<java.lang.String> id, @Nullable ManagedInstanceGroupDetachSoftwareSourcesManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ManagedInstanceGroupDetachSoftwareSourcesManagement(name, id, state, options);
     }
 }

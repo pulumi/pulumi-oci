@@ -88,7 +88,7 @@ class AwaitableGetVirtualCircuitPublicPrefixesResult(GetVirtualCircuitPublicPref
             virtual_circuit_public_prefixes=self.virtual_circuit_public_prefixes)
 
 
-def get_virtual_circuit_public_prefixes(filters: Optional[Sequence[pulumi.InputType['GetVirtualCircuitPublicPrefixesFilterArgs']]] = None,
+def get_virtual_circuit_public_prefixes(filters: Optional[Sequence[Union['GetVirtualCircuitPublicPrefixesFilterArgs', 'GetVirtualCircuitPublicPrefixesFilterArgsDict']]] = None,
                                         verification_state: Optional[str] = None,
                                         virtual_circuit_id: Optional[str] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVirtualCircuitPublicPrefixesResult:
@@ -130,7 +130,7 @@ def get_virtual_circuit_public_prefixes(filters: Optional[Sequence[pulumi.InputT
 
 
 @_utilities.lift_output_func(get_virtual_circuit_public_prefixes)
-def get_virtual_circuit_public_prefixes_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetVirtualCircuitPublicPrefixesFilterArgs']]]]] = None,
+def get_virtual_circuit_public_prefixes_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVirtualCircuitPublicPrefixesFilterArgs', 'GetVirtualCircuitPublicPrefixesFilterArgsDict']]]]] = None,
                                                verification_state: Optional[pulumi.Input[Optional[str]]] = None,
                                                virtual_circuit_id: Optional[pulumi.Input[str]] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVirtualCircuitPublicPrefixesResult]:

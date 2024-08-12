@@ -46,7 +46,7 @@ public class BdsInstanceOsPatchAction extends com.pulumi.resources.CustomResourc
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public BdsInstanceOsPatchAction(String name) {
+    public BdsInstanceOsPatchAction(java.lang.String name) {
         this(name, BdsInstanceOsPatchActionArgs.Empty);
     }
     /**
@@ -54,7 +54,7 @@ public class BdsInstanceOsPatchAction extends com.pulumi.resources.CustomResourc
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public BdsInstanceOsPatchAction(String name, BdsInstanceOsPatchActionArgs args) {
+    public BdsInstanceOsPatchAction(java.lang.String name, BdsInstanceOsPatchActionArgs args) {
         this(name, args, null);
     }
     /**
@@ -63,12 +63,12 @@ public class BdsInstanceOsPatchAction extends com.pulumi.resources.CustomResourc
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public BdsInstanceOsPatchAction(String name, BdsInstanceOsPatchActionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:BigDataService/bdsInstanceOsPatchAction:BdsInstanceOsPatchAction", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public BdsInstanceOsPatchAction(java.lang.String name, BdsInstanceOsPatchActionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:BigDataService/bdsInstanceOsPatchAction:BdsInstanceOsPatchAction", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private BdsInstanceOsPatchAction(String name, Output<String> id, @Nullable BdsInstanceOsPatchActionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:BigDataService/bdsInstanceOsPatchAction:BdsInstanceOsPatchAction", name, state, makeResourceOptions(options, id));
+    private BdsInstanceOsPatchAction(java.lang.String name, Output<java.lang.String> id, @Nullable BdsInstanceOsPatchActionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:BigDataService/bdsInstanceOsPatchAction:BdsInstanceOsPatchAction", name, state, makeResourceOptions(options, id), false);
     }
 
     private static BdsInstanceOsPatchActionArgs makeArgs(BdsInstanceOsPatchActionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -78,7 +78,7 @@ public class BdsInstanceOsPatchAction extends com.pulumi.resources.CustomResourc
         return args == null ? BdsInstanceOsPatchActionArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .additionalSecretOutputs(List.of(
@@ -97,7 +97,7 @@ public class BdsInstanceOsPatchAction extends com.pulumi.resources.CustomResourc
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static BdsInstanceOsPatchAction get(String name, Output<String> id, @Nullable BdsInstanceOsPatchActionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static BdsInstanceOsPatchAction get(java.lang.String name, Output<java.lang.String> id, @Nullable BdsInstanceOsPatchActionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new BdsInstanceOsPatchAction(name, id, state, options);
     }
 }

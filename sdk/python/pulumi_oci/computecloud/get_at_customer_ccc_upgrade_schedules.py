@@ -145,7 +145,7 @@ def get_at_customer_ccc_upgrade_schedules(access_level: Optional[str] = None,
                                           compartment_id_in_subtree: Optional[bool] = None,
                                           display_name: Optional[str] = None,
                                           display_name_contains: Optional[str] = None,
-                                          filters: Optional[Sequence[pulumi.InputType['GetAtCustomerCccUpgradeSchedulesFilterArgs']]] = None,
+                                          filters: Optional[Sequence[Union['GetAtCustomerCccUpgradeSchedulesFilterArgs', 'GetAtCustomerCccUpgradeSchedulesFilterArgsDict']]] = None,
                                           state: Optional[str] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAtCustomerCccUpgradeSchedulesResult:
     """
@@ -209,7 +209,7 @@ def get_at_customer_ccc_upgrade_schedules_output(access_level: Optional[pulumi.I
                                                  compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                                                  display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                                  display_name_contains: Optional[pulumi.Input[Optional[str]]] = None,
-                                                 filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAtCustomerCccUpgradeSchedulesFilterArgs']]]]] = None,
+                                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAtCustomerCccUpgradeSchedulesFilterArgs', 'GetAtCustomerCccUpgradeSchedulesFilterArgsDict']]]]] = None,
                                                  state: Optional[pulumi.Input[Optional[str]]] = None,
                                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAtCustomerCccUpgradeSchedulesResult]:
     """

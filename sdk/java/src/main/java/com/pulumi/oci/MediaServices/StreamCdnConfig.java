@@ -290,7 +290,7 @@ public class StreamCdnConfig extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public StreamCdnConfig(String name) {
+    public StreamCdnConfig(java.lang.String name) {
         this(name, StreamCdnConfigArgs.Empty);
     }
     /**
@@ -298,7 +298,7 @@ public class StreamCdnConfig extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public StreamCdnConfig(String name, StreamCdnConfigArgs args) {
+    public StreamCdnConfig(java.lang.String name, StreamCdnConfigArgs args) {
         this(name, args, null);
     }
     /**
@@ -307,12 +307,12 @@ public class StreamCdnConfig extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public StreamCdnConfig(String name, StreamCdnConfigArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:MediaServices/streamCdnConfig:StreamCdnConfig", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public StreamCdnConfig(java.lang.String name, StreamCdnConfigArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:MediaServices/streamCdnConfig:StreamCdnConfig", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private StreamCdnConfig(String name, Output<String> id, @Nullable StreamCdnConfigState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:MediaServices/streamCdnConfig:StreamCdnConfig", name, state, makeResourceOptions(options, id));
+    private StreamCdnConfig(java.lang.String name, Output<java.lang.String> id, @Nullable StreamCdnConfigState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:MediaServices/streamCdnConfig:StreamCdnConfig", name, state, makeResourceOptions(options, id), false);
     }
 
     private static StreamCdnConfigArgs makeArgs(StreamCdnConfigArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -322,7 +322,7 @@ public class StreamCdnConfig extends com.pulumi.resources.CustomResource {
         return args == null ? StreamCdnConfigArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -338,7 +338,7 @@ public class StreamCdnConfig extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static StreamCdnConfig get(String name, Output<String> id, @Nullable StreamCdnConfigState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static StreamCdnConfig get(java.lang.String name, Output<java.lang.String> id, @Nullable StreamCdnConfigState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new StreamCdnConfig(name, id, state, options);
     }
 }

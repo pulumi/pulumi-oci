@@ -116,7 +116,7 @@ class AwaitableGetManagedInstanceGroupModulesResult(GetManagedInstanceGroupModul
 
 
 def get_managed_instance_group_modules(compartment_id: Optional[str] = None,
-                                       filters: Optional[Sequence[pulumi.InputType['GetManagedInstanceGroupModulesFilterArgs']]] = None,
+                                       filters: Optional[Sequence[Union['GetManagedInstanceGroupModulesFilterArgs', 'GetManagedInstanceGroupModulesFilterArgsDict']]] = None,
                                        managed_instance_group_id: Optional[str] = None,
                                        name: Optional[str] = None,
                                        name_contains: Optional[str] = None,
@@ -190,7 +190,7 @@ def get_managed_instance_group_modules(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_managed_instance_group_modules)
 def get_managed_instance_group_modules_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                              filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetManagedInstanceGroupModulesFilterArgs']]]]] = None,
+                                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedInstanceGroupModulesFilterArgs', 'GetManagedInstanceGroupModulesFilterArgsDict']]]]] = None,
                                               managed_instance_group_id: Optional[pulumi.Input[str]] = None,
                                               name: Optional[pulumi.Input[Optional[str]]] = None,
                                               name_contains: Optional[pulumi.Input[Optional[str]]] = None,

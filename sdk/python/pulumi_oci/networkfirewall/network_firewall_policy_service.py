@@ -193,7 +193,7 @@ class NetworkFirewallPolicyService(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
-                 port_ranges: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyServicePortRangeArgs']]]]] = None,
+                 port_ranges: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkFirewallPolicyServicePortRangeArgs', 'NetworkFirewallPolicyServicePortRangeArgsDict']]]]] = None,
                  type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -210,10 +210,10 @@ class NetworkFirewallPolicyService(pulumi.CustomResource):
         test_network_firewall_policy_service = oci.network_firewall.NetworkFirewallPolicyService("test_network_firewall_policy_service",
             name=network_firewall_policy_service_name,
             network_firewall_policy_id=test_network_firewall_policy["id"],
-            port_ranges=[oci.network_firewall.NetworkFirewallPolicyServicePortRangeArgs(
-                minimum_port=network_firewall_policy_service_port_ranges_minimum_port,
-                maximum_port=network_firewall_policy_service_port_ranges_maximum_port,
-            )],
+            port_ranges=[{
+                "minimum_port": network_firewall_policy_service_port_ranges_minimum_port,
+                "maximum_port": network_firewall_policy_service_port_ranges_maximum_port,
+            }],
             type=network_firewall_policy_service_type)
         ```
 
@@ -229,7 +229,7 @@ class NetworkFirewallPolicyService(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] name: Name of the service
         :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyServicePortRangeArgs']]]] port_ranges: (Updatable) List of port-ranges to be used.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkFirewallPolicyServicePortRangeArgs', 'NetworkFirewallPolicyServicePortRangeArgsDict']]]] port_ranges: (Updatable) List of port-ranges to be used.
         :param pulumi.Input[str] type: Describes the type of Service. The accepted values are 
                
                
@@ -256,10 +256,10 @@ class NetworkFirewallPolicyService(pulumi.CustomResource):
         test_network_firewall_policy_service = oci.network_firewall.NetworkFirewallPolicyService("test_network_firewall_policy_service",
             name=network_firewall_policy_service_name,
             network_firewall_policy_id=test_network_firewall_policy["id"],
-            port_ranges=[oci.network_firewall.NetworkFirewallPolicyServicePortRangeArgs(
-                minimum_port=network_firewall_policy_service_port_ranges_minimum_port,
-                maximum_port=network_firewall_policy_service_port_ranges_maximum_port,
-            )],
+            port_ranges=[{
+                "minimum_port": network_firewall_policy_service_port_ranges_minimum_port,
+                "maximum_port": network_firewall_policy_service_port_ranges_maximum_port,
+            }],
             type=network_firewall_policy_service_type)
         ```
 
@@ -288,7 +288,7 @@ class NetworkFirewallPolicyService(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
-                 port_ranges: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyServicePortRangeArgs']]]]] = None,
+                 port_ranges: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkFirewallPolicyServicePortRangeArgs', 'NetworkFirewallPolicyServicePortRangeArgsDict']]]]] = None,
                  type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -323,7 +323,7 @@ class NetworkFirewallPolicyService(pulumi.CustomResource):
             name: Optional[pulumi.Input[str]] = None,
             network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
             parent_resource_id: Optional[pulumi.Input[str]] = None,
-            port_ranges: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyServicePortRangeArgs']]]]] = None,
+            port_ranges: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkFirewallPolicyServicePortRangeArgs', 'NetworkFirewallPolicyServicePortRangeArgsDict']]]]] = None,
             type: Optional[pulumi.Input[str]] = None) -> 'NetworkFirewallPolicyService':
         """
         Get an existing NetworkFirewallPolicyService resource's state with the given name, id, and optional extra
@@ -335,7 +335,7 @@ class NetworkFirewallPolicyService(pulumi.CustomResource):
         :param pulumi.Input[str] name: Name of the service
         :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[str] parent_resource_id: OCID of the Network Firewall Policy this service belongs to.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyServicePortRangeArgs']]]] port_ranges: (Updatable) List of port-ranges to be used.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkFirewallPolicyServicePortRangeArgs', 'NetworkFirewallPolicyServicePortRangeArgsDict']]]] port_ranges: (Updatable) List of port-ranges to be used.
         :param pulumi.Input[str] type: Describes the type of Service. The accepted values are 
                
                

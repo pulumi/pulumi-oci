@@ -97,7 +97,7 @@ class AwaitableGetManagementAgentAvailableHistoriesResult(GetManagementAgentAvai
             time_availability_status_started_less_than=self.time_availability_status_started_less_than)
 
 
-def get_management_agent_available_histories(filters: Optional[Sequence[pulumi.InputType['GetManagementAgentAvailableHistoriesFilterArgs']]] = None,
+def get_management_agent_available_histories(filters: Optional[Sequence[Union['GetManagementAgentAvailableHistoriesFilterArgs', 'GetManagementAgentAvailableHistoriesFilterArgsDict']]] = None,
                                              management_agent_id: Optional[str] = None,
                                              time_availability_status_ended_greater_than: Optional[str] = None,
                                              time_availability_status_started_less_than: Optional[str] = None,
@@ -141,7 +141,7 @@ def get_management_agent_available_histories(filters: Optional[Sequence[pulumi.I
 
 
 @_utilities.lift_output_func(get_management_agent_available_histories)
-def get_management_agent_available_histories_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetManagementAgentAvailableHistoriesFilterArgs']]]]] = None,
+def get_management_agent_available_histories_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagementAgentAvailableHistoriesFilterArgs', 'GetManagementAgentAvailableHistoriesFilterArgsDict']]]]] = None,
                                                     management_agent_id: Optional[pulumi.Input[str]] = None,
                                                     time_availability_status_ended_greater_than: Optional[pulumi.Input[Optional[str]]] = None,
                                                     time_availability_status_started_less_than: Optional[pulumi.Input[Optional[str]]] = None,

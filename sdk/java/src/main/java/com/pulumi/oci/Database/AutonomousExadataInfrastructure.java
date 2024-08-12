@@ -410,7 +410,7 @@ public class AutonomousExadataInfrastructure extends com.pulumi.resources.Custom
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public AutonomousExadataInfrastructure(String name) {
+    public AutonomousExadataInfrastructure(java.lang.String name) {
         this(name, AutonomousExadataInfrastructureArgs.Empty);
     }
     /**
@@ -418,7 +418,7 @@ public class AutonomousExadataInfrastructure extends com.pulumi.resources.Custom
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public AutonomousExadataInfrastructure(String name, AutonomousExadataInfrastructureArgs args) {
+    public AutonomousExadataInfrastructure(java.lang.String name, AutonomousExadataInfrastructureArgs args) {
         this(name, args, null);
     }
     /**
@@ -427,12 +427,12 @@ public class AutonomousExadataInfrastructure extends com.pulumi.resources.Custom
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public AutonomousExadataInfrastructure(String name, AutonomousExadataInfrastructureArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/autonomousExadataInfrastructure:AutonomousExadataInfrastructure", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public AutonomousExadataInfrastructure(java.lang.String name, AutonomousExadataInfrastructureArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/autonomousExadataInfrastructure:AutonomousExadataInfrastructure", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private AutonomousExadataInfrastructure(String name, Output<String> id, @Nullable AutonomousExadataInfrastructureState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/autonomousExadataInfrastructure:AutonomousExadataInfrastructure", name, state, makeResourceOptions(options, id));
+    private AutonomousExadataInfrastructure(java.lang.String name, Output<java.lang.String> id, @Nullable AutonomousExadataInfrastructureState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/autonomousExadataInfrastructure:AutonomousExadataInfrastructure", name, state, makeResourceOptions(options, id), false);
     }
 
     private static AutonomousExadataInfrastructureArgs makeArgs(AutonomousExadataInfrastructureArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -442,7 +442,7 @@ public class AutonomousExadataInfrastructure extends com.pulumi.resources.Custom
         return args == null ? AutonomousExadataInfrastructureArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -458,7 +458,7 @@ public class AutonomousExadataInfrastructure extends com.pulumi.resources.Custom
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static AutonomousExadataInfrastructure get(String name, Output<String> id, @Nullable AutonomousExadataInfrastructureState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static AutonomousExadataInfrastructure get(java.lang.String name, Output<java.lang.String> id, @Nullable AutonomousExadataInfrastructureState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new AutonomousExadataInfrastructure(name, id, state, options);
     }
 }

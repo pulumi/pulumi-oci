@@ -109,7 +109,7 @@ class AwaitableGetManagedInstanceAvailablePackagesResult(GetManagedInstanceAvail
 def get_managed_instance_available_packages(compartment_id: Optional[str] = None,
                                             display_name_contains: Optional[str] = None,
                                             display_names: Optional[Sequence[str]] = None,
-                                            filters: Optional[Sequence[pulumi.InputType['GetManagedInstanceAvailablePackagesFilterArgs']]] = None,
+                                            filters: Optional[Sequence[Union['GetManagedInstanceAvailablePackagesFilterArgs', 'GetManagedInstanceAvailablePackagesFilterArgsDict']]] = None,
                                             managed_instance_id: Optional[str] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedInstanceAvailablePackagesResult:
     """
@@ -158,7 +158,7 @@ def get_managed_instance_available_packages(compartment_id: Optional[str] = None
 def get_managed_instance_available_packages_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                    display_name_contains: Optional[pulumi.Input[Optional[str]]] = None,
                                                    display_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                                                   filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetManagedInstanceAvailablePackagesFilterArgs']]]]] = None,
+                                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedInstanceAvailablePackagesFilterArgs', 'GetManagedInstanceAvailablePackagesFilterArgsDict']]]]] = None,
                                                    managed_instance_id: Optional[pulumi.Input[str]] = None,
                                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedInstanceAvailablePackagesResult]:
     """

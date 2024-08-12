@@ -105,7 +105,7 @@ class AwaitableGetExascaleDbStorageVaultsResult(GetExascaleDbStorageVaultsResult
 
 def get_exascale_db_storage_vaults(compartment_id: Optional[str] = None,
                                    display_name: Optional[str] = None,
-                                   filters: Optional[Sequence[pulumi.InputType['GetExascaleDbStorageVaultsFilterArgs']]] = None,
+                                   filters: Optional[Sequence[Union['GetExascaleDbStorageVaultsFilterArgs', 'GetExascaleDbStorageVaultsFilterArgsDict']]] = None,
                                    state: Optional[str] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExascaleDbStorageVaultsResult:
     """
@@ -149,7 +149,7 @@ def get_exascale_db_storage_vaults(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_exascale_db_storage_vaults)
 def get_exascale_db_storage_vaults_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                           display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                          filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetExascaleDbStorageVaultsFilterArgs']]]]] = None,
+                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExascaleDbStorageVaultsFilterArgs', 'GetExascaleDbStorageVaultsFilterArgsDict']]]]] = None,
                                           state: Optional[pulumi.Input[Optional[str]]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExascaleDbStorageVaultsResult]:
     """

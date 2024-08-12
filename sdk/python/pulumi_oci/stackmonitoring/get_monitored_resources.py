@@ -110,7 +110,7 @@ class AwaitableGetMonitoredResourcesResult(GetMonitoredResourcesResult):
 
 
 def get_monitored_resources(compartment_id: Optional[str] = None,
-                            filters: Optional[Sequence[pulumi.InputType['GetMonitoredResourcesFilterArgs']]] = None,
+                            filters: Optional[Sequence[Union['GetMonitoredResourcesFilterArgs', 'GetMonitoredResourcesFilterArgsDict']]] = None,
                             name: Optional[str] = None,
                             status: Optional[str] = None,
                             work_request_id: Optional[str] = None,
@@ -159,7 +159,7 @@ def get_monitored_resources(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_monitored_resources)
 def get_monitored_resources_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetMonitoredResourcesFilterArgs']]]]] = None,
+                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMonitoredResourcesFilterArgs', 'GetMonitoredResourcesFilterArgsDict']]]]] = None,
                                    name: Optional[pulumi.Input[Optional[str]]] = None,
                                    status: Optional[pulumi.Input[Optional[str]]] = None,
                                    work_request_id: Optional[pulumi.Input[Optional[str]]] = None,

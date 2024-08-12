@@ -638,7 +638,7 @@ class ExternalPluggableDatabase(pulumi.CustomResource):
             compartment_id: Optional[pulumi.Input[str]] = None,
             database_configuration: Optional[pulumi.Input[str]] = None,
             database_edition: Optional[pulumi.Input[str]] = None,
-            database_management_configs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalPluggableDatabaseDatabaseManagementConfigArgs']]]]] = None,
+            database_management_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExternalPluggableDatabaseDatabaseManagementConfigArgs', 'ExternalPluggableDatabaseDatabaseManagementConfigArgsDict']]]]] = None,
             database_version: Optional[pulumi.Input[str]] = None,
             db_id: Optional[pulumi.Input[str]] = None,
             db_packs: Optional[pulumi.Input[str]] = None,
@@ -649,9 +649,9 @@ class ExternalPluggableDatabase(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             ncharacter_set: Optional[pulumi.Input[str]] = None,
-            operations_insights_configs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalPluggableDatabaseOperationsInsightsConfigArgs']]]]] = None,
+            operations_insights_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExternalPluggableDatabaseOperationsInsightsConfigArgs', 'ExternalPluggableDatabaseOperationsInsightsConfigArgsDict']]]]] = None,
             source_id: Optional[pulumi.Input[str]] = None,
-            stack_monitoring_configs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalPluggableDatabaseStackMonitoringConfigArgs']]]]] = None,
+            stack_monitoring_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExternalPluggableDatabaseStackMonitoringConfigArgs', 'ExternalPluggableDatabaseStackMonitoringConfigArgsDict']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_zone: Optional[pulumi.Input[str]] = None) -> 'ExternalPluggableDatabase':
@@ -666,7 +666,7 @@ class ExternalPluggableDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[str] database_configuration: The Oracle Database configuration
         :param pulumi.Input[str] database_edition: The Oracle Database edition.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalPluggableDatabaseDatabaseManagementConfigArgs']]]] database_management_configs: The configuration of the Database Management service.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExternalPluggableDatabaseDatabaseManagementConfigArgs', 'ExternalPluggableDatabaseDatabaseManagementConfigArgsDict']]]] database_management_configs: The configuration of the Database Management service.
         :param pulumi.Input[str] database_version: The Oracle Database version.
         :param pulumi.Input[str] db_id: The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
         :param pulumi.Input[str] db_packs: The database packs licensed for the external Oracle Database.
@@ -677,13 +677,13 @@ class ExternalPluggableDatabase(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[str] ncharacter_set: The national character of the external database.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalPluggableDatabaseOperationsInsightsConfigArgs']]]] operations_insights_configs: The configuration of Operations Insights for the external database
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExternalPluggableDatabaseOperationsInsightsConfigArgs', 'ExternalPluggableDatabaseOperationsInsightsConfigArgsDict']]]] operations_insights_configs: The configuration of Operations Insights for the external database
         :param pulumi.Input[str] source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the the non-container database that was converted to a pluggable database to create this resource.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalPluggableDatabaseStackMonitoringConfigArgs']]]] stack_monitoring_configs: The configuration of Stack Monitoring for the external database.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExternalPluggableDatabaseStackMonitoringConfigArgs', 'ExternalPluggableDatabaseStackMonitoringConfigArgsDict']]]] stack_monitoring_configs: The configuration of Stack Monitoring for the external database.
         :param pulumi.Input[str] state: The current state of the Oracle Cloud Infrastructure external database resource.
         :param pulumi.Input[str] time_created: The date and time the database was created.
         :param pulumi.Input[str] time_zone: The time zone of the external database. It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.

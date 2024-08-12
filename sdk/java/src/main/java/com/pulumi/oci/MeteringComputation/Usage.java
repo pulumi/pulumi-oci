@@ -266,7 +266,7 @@ public class Usage extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public Usage(String name) {
+    public Usage(java.lang.String name) {
         this(name, UsageArgs.Empty);
     }
     /**
@@ -274,7 +274,7 @@ public class Usage extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public Usage(String name, UsageArgs args) {
+    public Usage(java.lang.String name, UsageArgs args) {
         this(name, args, null);
     }
     /**
@@ -283,12 +283,12 @@ public class Usage extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public Usage(String name, UsageArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:MeteringComputation/usage:Usage", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public Usage(java.lang.String name, UsageArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:MeteringComputation/usage:Usage", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private Usage(String name, Output<String> id, @Nullable UsageState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:MeteringComputation/usage:Usage", name, state, makeResourceOptions(options, id));
+    private Usage(java.lang.String name, Output<java.lang.String> id, @Nullable UsageState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:MeteringComputation/usage:Usage", name, state, makeResourceOptions(options, id), false);
     }
 
     private static UsageArgs makeArgs(UsageArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -298,7 +298,7 @@ public class Usage extends com.pulumi.resources.CustomResource {
         return args == null ? UsageArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -314,7 +314,7 @@ public class Usage extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static Usage get(String name, Output<String> id, @Nullable UsageState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static Usage get(java.lang.String name, Output<java.lang.String> id, @Nullable UsageState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new Usage(name, id, state, options);
     }
 }

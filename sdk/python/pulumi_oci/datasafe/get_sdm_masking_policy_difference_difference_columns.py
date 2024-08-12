@@ -150,7 +150,7 @@ class AwaitableGetSdmMaskingPolicyDifferenceDifferenceColumnsResult(GetSdmMaskin
 
 def get_sdm_masking_policy_difference_difference_columns(column_names: Optional[Sequence[str]] = None,
                                                          difference_type: Optional[str] = None,
-                                                         filters: Optional[Sequence[pulumi.InputType['GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArgs']]] = None,
+                                                         filters: Optional[Sequence[Union['GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArgs', 'GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArgsDict']]] = None,
                                                          objects: Optional[Sequence[str]] = None,
                                                          planned_action: Optional[str] = None,
                                                          schema_names: Optional[Sequence[str]] = None,
@@ -214,7 +214,7 @@ def get_sdm_masking_policy_difference_difference_columns(column_names: Optional[
 @_utilities.lift_output_func(get_sdm_masking_policy_difference_difference_columns)
 def get_sdm_masking_policy_difference_difference_columns_output(column_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                                                 difference_type: Optional[pulumi.Input[Optional[str]]] = None,
-                                                                filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArgs']]]]] = None,
+                                                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArgs', 'GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArgsDict']]]]] = None,
                                                                 objects: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                                                 planned_action: Optional[pulumi.Input[Optional[str]]] = None,
                                                                 schema_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,

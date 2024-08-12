@@ -296,7 +296,7 @@ public class ExternalDatabaseConnector extends com.pulumi.resources.CustomResour
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ExternalDatabaseConnector(String name) {
+    public ExternalDatabaseConnector(java.lang.String name) {
         this(name, ExternalDatabaseConnectorArgs.Empty);
     }
     /**
@@ -304,7 +304,7 @@ public class ExternalDatabaseConnector extends com.pulumi.resources.CustomResour
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ExternalDatabaseConnector(String name, ExternalDatabaseConnectorArgs args) {
+    public ExternalDatabaseConnector(java.lang.String name, ExternalDatabaseConnectorArgs args) {
         this(name, args, null);
     }
     /**
@@ -313,12 +313,12 @@ public class ExternalDatabaseConnector extends com.pulumi.resources.CustomResour
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ExternalDatabaseConnector(String name, ExternalDatabaseConnectorArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/externalDatabaseConnector:ExternalDatabaseConnector", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ExternalDatabaseConnector(java.lang.String name, ExternalDatabaseConnectorArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/externalDatabaseConnector:ExternalDatabaseConnector", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ExternalDatabaseConnector(String name, Output<String> id, @Nullable ExternalDatabaseConnectorState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/externalDatabaseConnector:ExternalDatabaseConnector", name, state, makeResourceOptions(options, id));
+    private ExternalDatabaseConnector(java.lang.String name, Output<java.lang.String> id, @Nullable ExternalDatabaseConnectorState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/externalDatabaseConnector:ExternalDatabaseConnector", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ExternalDatabaseConnectorArgs makeArgs(ExternalDatabaseConnectorArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -328,7 +328,7 @@ public class ExternalDatabaseConnector extends com.pulumi.resources.CustomResour
         return args == null ? ExternalDatabaseConnectorArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -344,7 +344,7 @@ public class ExternalDatabaseConnector extends com.pulumi.resources.CustomResour
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ExternalDatabaseConnector get(String name, Output<String> id, @Nullable ExternalDatabaseConnectorState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ExternalDatabaseConnector get(java.lang.String name, Output<java.lang.String> id, @Nullable ExternalDatabaseConnectorState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ExternalDatabaseConnector(name, id, state, options);
     }
 }

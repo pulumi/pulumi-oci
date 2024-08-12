@@ -114,7 +114,7 @@ class AwaitableGetReplicationSchedulesResult(GetReplicationSchedulesResult):
 
 def get_replication_schedules(compartment_id: Optional[str] = None,
                               display_name: Optional[str] = None,
-                              filters: Optional[Sequence[pulumi.InputType['GetReplicationSchedulesFilterArgs']]] = None,
+                              filters: Optional[Sequence[Union['GetReplicationSchedulesFilterArgs', 'GetReplicationSchedulesFilterArgsDict']]] = None,
                               replication_schedule_id: Optional[str] = None,
                               state: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetReplicationSchedulesResult:
@@ -163,7 +163,7 @@ def get_replication_schedules(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_replication_schedules)
 def get_replication_schedules_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                      display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                     filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetReplicationSchedulesFilterArgs']]]]] = None,
+                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetReplicationSchedulesFilterArgs', 'GetReplicationSchedulesFilterArgsDict']]]]] = None,
                                      replication_schedule_id: Optional[pulumi.Input[Optional[str]]] = None,
                                      state: Optional[pulumi.Input[Optional[str]]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetReplicationSchedulesResult]:

@@ -142,7 +142,7 @@ class AwaitableGetManagedDatabaseAlertLogCountsResult(GetManagedDatabaseAlertLog
             type_filter=self.type_filter)
 
 
-def get_managed_database_alert_log_counts(filters: Optional[Sequence[pulumi.InputType['GetManagedDatabaseAlertLogCountsFilterArgs']]] = None,
+def get_managed_database_alert_log_counts(filters: Optional[Sequence[Union['GetManagedDatabaseAlertLogCountsFilterArgs', 'GetManagedDatabaseAlertLogCountsFilterArgsDict']]] = None,
                                           group_by: Optional[str] = None,
                                           is_regular_expression: Optional[bool] = None,
                                           level_filter: Optional[str] = None,
@@ -211,7 +211,7 @@ def get_managed_database_alert_log_counts(filters: Optional[Sequence[pulumi.Inpu
 
 
 @_utilities.lift_output_func(get_managed_database_alert_log_counts)
-def get_managed_database_alert_log_counts_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetManagedDatabaseAlertLogCountsFilterArgs']]]]] = None,
+def get_managed_database_alert_log_counts_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedDatabaseAlertLogCountsFilterArgs', 'GetManagedDatabaseAlertLogCountsFilterArgsDict']]]]] = None,
                                                  group_by: Optional[pulumi.Input[Optional[str]]] = None,
                                                  is_regular_expression: Optional[pulumi.Input[Optional[bool]]] = None,
                                                  level_filter: Optional[pulumi.Input[Optional[str]]] = None,

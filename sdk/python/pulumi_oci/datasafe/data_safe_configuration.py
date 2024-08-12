@@ -334,7 +334,7 @@ class DataSafeConfiguration(pulumi.CustomResource):
             data_safe_nat_gateway_ip_address: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            global_settings: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DataSafeConfigurationGlobalSettingArgs']]]]] = None,
+            global_settings: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DataSafeConfigurationGlobalSettingArgs', 'DataSafeConfigurationGlobalSettingArgsDict']]]]] = None,
             is_enabled: Optional[pulumi.Input[bool]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_enabled: Optional[pulumi.Input[str]] = None,
@@ -350,7 +350,7 @@ class DataSafeConfiguration(pulumi.CustomResource):
         :param pulumi.Input[str] data_safe_nat_gateway_ip_address: The Oracle Data Safe's NAT Gateway IP Address.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DataSafeConfigurationGlobalSettingArgs']]]] global_settings: Details of the tenancy level global settings in Data Safe.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DataSafeConfigurationGlobalSettingArgs', 'DataSafeConfigurationGlobalSettingArgsDict']]]] global_settings: Details of the tenancy level global settings in Data Safe.
         :param pulumi.Input[bool] is_enabled: (Updatable) Indicates if Data Safe is enabled.
                
                

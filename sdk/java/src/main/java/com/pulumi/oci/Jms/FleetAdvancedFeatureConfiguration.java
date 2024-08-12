@@ -281,7 +281,7 @@ public class FleetAdvancedFeatureConfiguration extends com.pulumi.resources.Cust
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public FleetAdvancedFeatureConfiguration(String name) {
+    public FleetAdvancedFeatureConfiguration(java.lang.String name) {
         this(name, FleetAdvancedFeatureConfigurationArgs.Empty);
     }
     /**
@@ -289,7 +289,7 @@ public class FleetAdvancedFeatureConfiguration extends com.pulumi.resources.Cust
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public FleetAdvancedFeatureConfiguration(String name, FleetAdvancedFeatureConfigurationArgs args) {
+    public FleetAdvancedFeatureConfiguration(java.lang.String name, FleetAdvancedFeatureConfigurationArgs args) {
         this(name, args, null);
     }
     /**
@@ -298,12 +298,12 @@ public class FleetAdvancedFeatureConfiguration extends com.pulumi.resources.Cust
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public FleetAdvancedFeatureConfiguration(String name, FleetAdvancedFeatureConfigurationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Jms/fleetAdvancedFeatureConfiguration:FleetAdvancedFeatureConfiguration", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public FleetAdvancedFeatureConfiguration(java.lang.String name, FleetAdvancedFeatureConfigurationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Jms/fleetAdvancedFeatureConfiguration:FleetAdvancedFeatureConfiguration", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private FleetAdvancedFeatureConfiguration(String name, Output<String> id, @Nullable FleetAdvancedFeatureConfigurationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Jms/fleetAdvancedFeatureConfiguration:FleetAdvancedFeatureConfiguration", name, state, makeResourceOptions(options, id));
+    private FleetAdvancedFeatureConfiguration(java.lang.String name, Output<java.lang.String> id, @Nullable FleetAdvancedFeatureConfigurationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Jms/fleetAdvancedFeatureConfiguration:FleetAdvancedFeatureConfiguration", name, state, makeResourceOptions(options, id), false);
     }
 
     private static FleetAdvancedFeatureConfigurationArgs makeArgs(FleetAdvancedFeatureConfigurationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -313,7 +313,7 @@ public class FleetAdvancedFeatureConfiguration extends com.pulumi.resources.Cust
         return args == null ? FleetAdvancedFeatureConfigurationArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -329,7 +329,7 @@ public class FleetAdvancedFeatureConfiguration extends com.pulumi.resources.Cust
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static FleetAdvancedFeatureConfiguration get(String name, Output<String> id, @Nullable FleetAdvancedFeatureConfigurationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static FleetAdvancedFeatureConfiguration get(java.lang.String name, Output<java.lang.String> id, @Nullable FleetAdvancedFeatureConfigurationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new FleetAdvancedFeatureConfiguration(name, id, state, options);
     }
 }

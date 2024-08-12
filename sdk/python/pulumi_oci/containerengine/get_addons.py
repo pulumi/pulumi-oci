@@ -77,7 +77,7 @@ class AwaitableGetAddonsResult(GetAddonsResult):
 
 
 def get_addons(cluster_id: Optional[str] = None,
-               filters: Optional[Sequence[pulumi.InputType['GetAddonsFilterArgs']]] = None,
+               filters: Optional[Sequence[Union['GetAddonsFilterArgs', 'GetAddonsFilterArgsDict']]] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAddonsResult:
     """
     This data source provides the list of Addons in Oracle Cloud Infrastructure Container Engine service.
@@ -111,7 +111,7 @@ def get_addons(cluster_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_addons)
 def get_addons_output(cluster_id: Optional[pulumi.Input[str]] = None,
-                      filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAddonsFilterArgs']]]]] = None,
+                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAddonsFilterArgs', 'GetAddonsFilterArgsDict']]]]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAddonsResult]:
     """
     This data source provides the list of Addons in Oracle Cloud Infrastructure Container Engine service.

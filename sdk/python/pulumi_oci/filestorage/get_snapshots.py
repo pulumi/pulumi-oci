@@ -115,7 +115,7 @@ class AwaitableGetSnapshotsResult(GetSnapshotsResult):
 def get_snapshots(compartment_id: Optional[str] = None,
                   file_system_id: Optional[str] = None,
                   filesystem_snapshot_policy_id: Optional[str] = None,
-                  filters: Optional[Sequence[pulumi.InputType['GetSnapshotsFilterArgs']]] = None,
+                  filters: Optional[Sequence[Union['GetSnapshotsFilterArgs', 'GetSnapshotsFilterArgsDict']]] = None,
                   id: Optional[str] = None,
                   state: Optional[str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSnapshotsResult:
@@ -174,7 +174,7 @@ def get_snapshots(compartment_id: Optional[str] = None,
 def get_snapshots_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                          file_system_id: Optional[pulumi.Input[Optional[str]]] = None,
                          filesystem_snapshot_policy_id: Optional[pulumi.Input[Optional[str]]] = None,
-                         filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetSnapshotsFilterArgs']]]]] = None,
+                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSnapshotsFilterArgs', 'GetSnapshotsFilterArgsDict']]]]] = None,
                          id: Optional[pulumi.Input[Optional[str]]] = None,
                          state: Optional[pulumi.Input[Optional[str]]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSnapshotsResult]:

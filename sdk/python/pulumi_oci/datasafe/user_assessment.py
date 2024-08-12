@@ -748,7 +748,7 @@ class UserAssessment(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             ignored_assessment_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            ignored_targets: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['UserAssessmentIgnoredTargetArgs']]]]] = None,
+            ignored_targets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['UserAssessmentIgnoredTargetArgs', 'UserAssessmentIgnoredTargetArgsDict']]]]] = None,
             is_assessment_scheduled: Optional[pulumi.Input[bool]] = None,
             is_baseline: Optional[pulumi.Input[bool]] = None,
             is_deviated_from_baseline: Optional[pulumi.Input[bool]] = None,
@@ -779,7 +779,7 @@ class UserAssessment(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) The display name of the user assessment.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ignored_assessment_ids: List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['UserAssessmentIgnoredTargetArgs']]]] ignored_targets: List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
+        :param pulumi.Input[Sequence[pulumi.Input[Union['UserAssessmentIgnoredTargetArgs', 'UserAssessmentIgnoredTargetArgsDict']]]] ignored_targets: List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
         :param pulumi.Input[bool] is_assessment_scheduled: (Updatable) Indicates whether the assessment is scheduled to run.
         :param pulumi.Input[bool] is_baseline: Indicates if the user assessment is set as a baseline. This is applicable only to saved user assessments.
         :param pulumi.Input[bool] is_deviated_from_baseline: Indicates if the user assessment deviates from the baseline.

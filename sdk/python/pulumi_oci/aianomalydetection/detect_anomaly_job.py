@@ -417,9 +417,9 @@ class DetectAnomalyJob(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 input_details: Optional[pulumi.Input[pulumi.InputType['DetectAnomalyJobInputDetailsArgs']]] = None,
+                 input_details: Optional[pulumi.Input[Union['DetectAnomalyJobInputDetailsArgs', 'DetectAnomalyJobInputDetailsArgsDict']]] = None,
                  model_id: Optional[pulumi.Input[str]] = None,
-                 output_details: Optional[pulumi.Input[pulumi.InputType['DetectAnomalyJobOutputDetailsArgs']]] = None,
+                 output_details: Optional[pulumi.Input[Union['DetectAnomalyJobOutputDetailsArgs', 'DetectAnomalyJobOutputDetailsArgsDict']]] = None,
                  sensitivity: Optional[pulumi.Input[float]] = None,
                  __props__=None):
         """
@@ -440,9 +440,9 @@ class DetectAnomalyJob(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that starts the job.
         :param pulumi.Input[str] description: (Updatable) A short description of the detect anomaly job.
         :param pulumi.Input[str] display_name: (Updatable) Detect anomaly job display name.
-        :param pulumi.Input[pulumi.InputType['DetectAnomalyJobInputDetailsArgs']] input_details: Detect anomaly asynchronous job details.
+        :param pulumi.Input[Union['DetectAnomalyJobInputDetailsArgs', 'DetectAnomalyJobInputDetailsArgsDict']] input_details: Detect anomaly asynchronous job details.
         :param pulumi.Input[str] model_id: The OCID of the trained model.
-        :param pulumi.Input[pulumi.InputType['DetectAnomalyJobOutputDetailsArgs']] output_details: Detect anomaly job output details.
+        :param pulumi.Input[Union['DetectAnomalyJobOutputDetailsArgs', 'DetectAnomalyJobOutputDetailsArgsDict']] output_details: Detect anomaly job output details.
         :param pulumi.Input[float] sensitivity: The value that customer can adjust to control the sensitivity of anomaly detection
                
                
@@ -486,9 +486,9 @@ class DetectAnomalyJob(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 input_details: Optional[pulumi.Input[pulumi.InputType['DetectAnomalyJobInputDetailsArgs']]] = None,
+                 input_details: Optional[pulumi.Input[Union['DetectAnomalyJobInputDetailsArgs', 'DetectAnomalyJobInputDetailsArgsDict']]] = None,
                  model_id: Optional[pulumi.Input[str]] = None,
-                 output_details: Optional[pulumi.Input[pulumi.InputType['DetectAnomalyJobOutputDetailsArgs']]] = None,
+                 output_details: Optional[pulumi.Input[Union['DetectAnomalyJobOutputDetailsArgs', 'DetectAnomalyJobOutputDetailsArgsDict']]] = None,
                  sensitivity: Optional[pulumi.Input[float]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -538,10 +538,10 @@ class DetectAnomalyJob(pulumi.CustomResource):
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            input_details: Optional[pulumi.Input[pulumi.InputType['DetectAnomalyJobInputDetailsArgs']]] = None,
+            input_details: Optional[pulumi.Input[Union['DetectAnomalyJobInputDetailsArgs', 'DetectAnomalyJobInputDetailsArgsDict']]] = None,
             lifecycle_state_details: Optional[pulumi.Input[str]] = None,
             model_id: Optional[pulumi.Input[str]] = None,
-            output_details: Optional[pulumi.Input[pulumi.InputType['DetectAnomalyJobOutputDetailsArgs']]] = None,
+            output_details: Optional[pulumi.Input[Union['DetectAnomalyJobOutputDetailsArgs', 'DetectAnomalyJobOutputDetailsArgsDict']]] = None,
             project_id: Optional[pulumi.Input[str]] = None,
             sensitivity: Optional[pulumi.Input[float]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -561,10 +561,10 @@ class DetectAnomalyJob(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) A short description of the detect anomaly job.
         :param pulumi.Input[str] display_name: (Updatable) Detect anomaly job display name.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[pulumi.InputType['DetectAnomalyJobInputDetailsArgs']] input_details: Detect anomaly asynchronous job details.
+        :param pulumi.Input[Union['DetectAnomalyJobInputDetailsArgs', 'DetectAnomalyJobInputDetailsArgsDict']] input_details: Detect anomaly asynchronous job details.
         :param pulumi.Input[str] lifecycle_state_details: The current state details of the batch document job.
         :param pulumi.Input[str] model_id: The OCID of the trained model.
-        :param pulumi.Input[pulumi.InputType['DetectAnomalyJobOutputDetailsArgs']] output_details: Detect anomaly job output details.
+        :param pulumi.Input[Union['DetectAnomalyJobOutputDetailsArgs', 'DetectAnomalyJobOutputDetailsArgsDict']] output_details: Detect anomaly job output details.
         :param pulumi.Input[str] project_id: The OCID of the project.
         :param pulumi.Input[float] sensitivity: The value that customer can adjust to control the sensitivity of anomaly detection
                

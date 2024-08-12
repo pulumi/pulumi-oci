@@ -306,7 +306,7 @@ public class ResourceAction extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ResourceAction(String name) {
+    public ResourceAction(java.lang.String name) {
         this(name, ResourceActionArgs.Empty);
     }
     /**
@@ -314,7 +314,7 @@ public class ResourceAction extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ResourceAction(String name, ResourceActionArgs args) {
+    public ResourceAction(java.lang.String name, ResourceActionArgs args) {
         this(name, args, null);
     }
     /**
@@ -323,12 +323,12 @@ public class ResourceAction extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ResourceAction(String name, ResourceActionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Optimizer/resourceAction:ResourceAction", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ResourceAction(java.lang.String name, ResourceActionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Optimizer/resourceAction:ResourceAction", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ResourceAction(String name, Output<String> id, @Nullable ResourceActionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Optimizer/resourceAction:ResourceAction", name, state, makeResourceOptions(options, id));
+    private ResourceAction(java.lang.String name, Output<java.lang.String> id, @Nullable ResourceActionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Optimizer/resourceAction:ResourceAction", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ResourceActionArgs makeArgs(ResourceActionArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -338,7 +338,7 @@ public class ResourceAction extends com.pulumi.resources.CustomResource {
         return args == null ? ResourceActionArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -354,7 +354,7 @@ public class ResourceAction extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ResourceAction get(String name, Output<String> id, @Nullable ResourceActionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ResourceAction get(java.lang.String name, Output<java.lang.String> id, @Nullable ResourceActionState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ResourceAction(name, id, state, options);
     }
 }

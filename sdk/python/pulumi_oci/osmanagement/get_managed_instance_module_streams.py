@@ -119,7 +119,7 @@ class AwaitableGetManagedInstanceModuleStreamsResult(GetManagedInstanceModuleStr
 
 
 def get_managed_instance_module_streams(compartment_id: Optional[str] = None,
-                                        filters: Optional[Sequence[pulumi.InputType['GetManagedInstanceModuleStreamsFilterArgs']]] = None,
+                                        filters: Optional[Sequence[Union['GetManagedInstanceModuleStreamsFilterArgs', 'GetManagedInstanceModuleStreamsFilterArgsDict']]] = None,
                                         managed_instance_id: Optional[str] = None,
                                         module_name: Optional[str] = None,
                                         stream_name: Optional[str] = None,
@@ -199,7 +199,7 @@ def get_managed_instance_module_streams(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_managed_instance_module_streams)
 def get_managed_instance_module_streams_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                               filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetManagedInstanceModuleStreamsFilterArgs']]]]] = None,
+                                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedInstanceModuleStreamsFilterArgs', 'GetManagedInstanceModuleStreamsFilterArgsDict']]]]] = None,
                                                managed_instance_id: Optional[pulumi.Input[str]] = None,
                                                module_name: Optional[pulumi.Input[Optional[str]]] = None,
                                                stream_name: Optional[pulumi.Input[Optional[str]]] = None,

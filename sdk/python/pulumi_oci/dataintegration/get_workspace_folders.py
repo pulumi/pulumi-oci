@@ -132,7 +132,7 @@ class AwaitableGetWorkspaceFoldersResult(GetWorkspaceFoldersResult):
 
 def get_workspace_folders(aggregator_key: Optional[str] = None,
                           fields: Optional[Sequence[str]] = None,
-                          filters: Optional[Sequence[pulumi.InputType['GetWorkspaceFoldersFilterArgs']]] = None,
+                          filters: Optional[Sequence[Union['GetWorkspaceFoldersFilterArgs', 'GetWorkspaceFoldersFilterArgsDict']]] = None,
                           identifiers: Optional[Sequence[str]] = None,
                           name: Optional[str] = None,
                           name_contains: Optional[str] = None,
@@ -191,7 +191,7 @@ def get_workspace_folders(aggregator_key: Optional[str] = None,
 @_utilities.lift_output_func(get_workspace_folders)
 def get_workspace_folders_output(aggregator_key: Optional[pulumi.Input[Optional[str]]] = None,
                                  fields: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetWorkspaceFoldersFilterArgs']]]]] = None,
+                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetWorkspaceFoldersFilterArgs', 'GetWorkspaceFoldersFilterArgsDict']]]]] = None,
                                  identifiers: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                  name: Optional[pulumi.Input[Optional[str]]] = None,
                                  name_contains: Optional[pulumi.Input[Optional[str]]] = None,

@@ -377,7 +377,7 @@ public class TargetDatabase extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public TargetDatabase(String name) {
+    public TargetDatabase(java.lang.String name) {
         this(name, TargetDatabaseArgs.Empty);
     }
     /**
@@ -385,7 +385,7 @@ public class TargetDatabase extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public TargetDatabase(String name, TargetDatabaseArgs args) {
+    public TargetDatabase(java.lang.String name, TargetDatabaseArgs args) {
         this(name, args, null);
     }
     /**
@@ -394,12 +394,12 @@ public class TargetDatabase extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public TargetDatabase(String name, TargetDatabaseArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/targetDatabase:TargetDatabase", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public TargetDatabase(java.lang.String name, TargetDatabaseArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataSafe/targetDatabase:TargetDatabase", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private TargetDatabase(String name, Output<String> id, @Nullable TargetDatabaseState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/targetDatabase:TargetDatabase", name, state, makeResourceOptions(options, id));
+    private TargetDatabase(java.lang.String name, Output<java.lang.String> id, @Nullable TargetDatabaseState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataSafe/targetDatabase:TargetDatabase", name, state, makeResourceOptions(options, id), false);
     }
 
     private static TargetDatabaseArgs makeArgs(TargetDatabaseArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -409,7 +409,7 @@ public class TargetDatabase extends com.pulumi.resources.CustomResource {
         return args == null ? TargetDatabaseArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -425,7 +425,7 @@ public class TargetDatabase extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static TargetDatabase get(String name, Output<String> id, @Nullable TargetDatabaseState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static TargetDatabase get(java.lang.String name, Output<java.lang.String> id, @Nullable TargetDatabaseState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new TargetDatabase(name, id, state, options);
     }
 }

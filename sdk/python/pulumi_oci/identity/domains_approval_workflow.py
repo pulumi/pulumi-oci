@@ -1021,18 +1021,18 @@ class DomainsApprovalWorkflow(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 approval_workflow_steps: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsApprovalWorkflowApprovalWorkflowStepArgs']]]]] = None,
+                 approval_workflow_steps: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsApprovalWorkflowApprovalWorkflowStepArgs', 'DomainsApprovalWorkflowApprovalWorkflowStepArgsDict']]]]] = None,
                  attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  attributes: Optional[pulumi.Input[str]] = None,
                  authorization: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  idcs_endpoint: Optional[pulumi.Input[str]] = None,
-                 max_duration: Optional[pulumi.Input[pulumi.InputType['DomainsApprovalWorkflowMaxDurationArgs']]] = None,
+                 max_duration: Optional[pulumi.Input[Union['DomainsApprovalWorkflowMaxDurationArgs', 'DomainsApprovalWorkflowMaxDurationArgsDict']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  ocid: Optional[pulumi.Input[str]] = None,
                  resource_type_schema_version: Optional[pulumi.Input[str]] = None,
                  schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsApprovalWorkflowTagArgs']]]]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsApprovalWorkflowTagArgs', 'DomainsApprovalWorkflowTagArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Approval Workflow resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -1049,7 +1049,7 @@ class DomainsApprovalWorkflow(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsApprovalWorkflowApprovalWorkflowStepArgs']]]] approval_workflow_steps: (Updatable) ApprovalWorkflowSteps applicable for the ApprovalWorkflowInstance.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsApprovalWorkflowApprovalWorkflowStepArgs', 'DomainsApprovalWorkflowApprovalWorkflowStepArgsDict']]]] approval_workflow_steps: (Updatable) ApprovalWorkflowSteps applicable for the ApprovalWorkflowInstance.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -1076,7 +1076,7 @@ class DomainsApprovalWorkflow(pulumi.CustomResource):
                * type: string
                * uniqueness: none
         :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[pulumi.InputType['DomainsApprovalWorkflowMaxDurationArgs']] max_duration: (Updatable) Max duration of the ApprovalWorkflow must be acted at all levels.
+        :param pulumi.Input[Union['DomainsApprovalWorkflowMaxDurationArgs', 'DomainsApprovalWorkflowMaxDurationArgsDict']] max_duration: (Updatable) Max duration of the ApprovalWorkflow must be acted at all levels.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -1121,7 +1121,7 @@ class DomainsApprovalWorkflow(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsApprovalWorkflowTagArgs']]]] tags: (Updatable) A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsApprovalWorkflowTagArgs', 'DomainsApprovalWorkflowTagArgsDict']]]] tags: (Updatable) A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
@@ -1167,18 +1167,18 @@ class DomainsApprovalWorkflow(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 approval_workflow_steps: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsApprovalWorkflowApprovalWorkflowStepArgs']]]]] = None,
+                 approval_workflow_steps: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsApprovalWorkflowApprovalWorkflowStepArgs', 'DomainsApprovalWorkflowApprovalWorkflowStepArgsDict']]]]] = None,
                  attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  attributes: Optional[pulumi.Input[str]] = None,
                  authorization: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  idcs_endpoint: Optional[pulumi.Input[str]] = None,
-                 max_duration: Optional[pulumi.Input[pulumi.InputType['DomainsApprovalWorkflowMaxDurationArgs']]] = None,
+                 max_duration: Optional[pulumi.Input[Union['DomainsApprovalWorkflowMaxDurationArgs', 'DomainsApprovalWorkflowMaxDurationArgsDict']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  ocid: Optional[pulumi.Input[str]] = None,
                  resource_type_schema_version: Optional[pulumi.Input[str]] = None,
                  schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsApprovalWorkflowTagArgs']]]]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsApprovalWorkflowTagArgs', 'DomainsApprovalWorkflowTagArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1225,7 +1225,7 @@ class DomainsApprovalWorkflow(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            approval_workflow_steps: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsApprovalWorkflowApprovalWorkflowStepArgs']]]]] = None,
+            approval_workflow_steps: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsApprovalWorkflowApprovalWorkflowStepArgs', 'DomainsApprovalWorkflowApprovalWorkflowStepArgsDict']]]]] = None,
             attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             attributes: Optional[pulumi.Input[str]] = None,
             authorization: Optional[pulumi.Input[str]] = None,
@@ -1233,18 +1233,18 @@ class DomainsApprovalWorkflow(pulumi.CustomResource):
             delete_in_progress: Optional[pulumi.Input[bool]] = None,
             description: Optional[pulumi.Input[str]] = None,
             domain_ocid: Optional[pulumi.Input[str]] = None,
-            idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsApprovalWorkflowIdcsCreatedByArgs']]]]] = None,
+            idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsApprovalWorkflowIdcsCreatedByArgs', 'DomainsApprovalWorkflowIdcsCreatedByArgsDict']]]]] = None,
             idcs_endpoint: Optional[pulumi.Input[str]] = None,
-            idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsApprovalWorkflowIdcsLastModifiedByArgs']]]]] = None,
+            idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsApprovalWorkflowIdcsLastModifiedByArgs', 'DomainsApprovalWorkflowIdcsLastModifiedByArgsDict']]]]] = None,
             idcs_last_upgraded_in_release: Optional[pulumi.Input[str]] = None,
             idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            max_duration: Optional[pulumi.Input[pulumi.InputType['DomainsApprovalWorkflowMaxDurationArgs']]] = None,
-            metas: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsApprovalWorkflowMetaArgs']]]]] = None,
+            max_duration: Optional[pulumi.Input[Union['DomainsApprovalWorkflowMaxDurationArgs', 'DomainsApprovalWorkflowMaxDurationArgsDict']]] = None,
+            metas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsApprovalWorkflowMetaArgs', 'DomainsApprovalWorkflowMetaArgsDict']]]]] = None,
             name: Optional[pulumi.Input[str]] = None,
             ocid: Optional[pulumi.Input[str]] = None,
             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsApprovalWorkflowTagArgs']]]]] = None,
+            tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsApprovalWorkflowTagArgs', 'DomainsApprovalWorkflowTagArgsDict']]]]] = None,
             tenancy_ocid: Optional[pulumi.Input[str]] = None) -> 'DomainsApprovalWorkflow':
         """
         Get an existing DomainsApprovalWorkflow resource's state with the given name, id, and optional extra
@@ -1253,7 +1253,7 @@ class DomainsApprovalWorkflow(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsApprovalWorkflowApprovalWorkflowStepArgs']]]] approval_workflow_steps: (Updatable) ApprovalWorkflowSteps applicable for the ApprovalWorkflowInstance.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsApprovalWorkflowApprovalWorkflowStepArgs', 'DomainsApprovalWorkflowApprovalWorkflowStepArgsDict']]]] approval_workflow_steps: (Updatable) ApprovalWorkflowSteps applicable for the ApprovalWorkflowInstance.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -1312,7 +1312,7 @@ class DomainsApprovalWorkflow(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsApprovalWorkflowIdcsCreatedByArgs']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsApprovalWorkflowIdcsCreatedByArgs', 'DomainsApprovalWorkflowIdcsCreatedByArgsDict']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1322,7 +1322,7 @@ class DomainsApprovalWorkflow(pulumi.CustomResource):
                * returned: default
                * type: complex
         :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsApprovalWorkflowIdcsLastModifiedByArgs']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsApprovalWorkflowIdcsLastModifiedByArgs', 'DomainsApprovalWorkflowIdcsLastModifiedByArgsDict']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
                
                **SCIM++ Properties:**
                * idcsSearchable: true
@@ -1352,7 +1352,7 @@ class DomainsApprovalWorkflow(pulumi.CustomResource):
                * returned: request
                * type: string
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsApprovalWorkflowMaxDurationArgs']] max_duration: (Updatable) Max duration of the ApprovalWorkflow must be acted at all levels.
+        :param pulumi.Input[Union['DomainsApprovalWorkflowMaxDurationArgs', 'DomainsApprovalWorkflowMaxDurationArgsDict']] max_duration: (Updatable) Max duration of the ApprovalWorkflow must be acted at all levels.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -1363,7 +1363,7 @@ class DomainsApprovalWorkflow(pulumi.CustomResource):
                * returned: default
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsApprovalWorkflowMetaArgs']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsApprovalWorkflowMetaArgs', 'DomainsApprovalWorkflowMetaArgsDict']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
                
                **SCIM++ Properties:**
                * caseExact: false
@@ -1408,7 +1408,7 @@ class DomainsApprovalWorkflow(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsApprovalWorkflowTagArgs']]]] tags: (Updatable) A list of tags on this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsApprovalWorkflowTagArgs', 'DomainsApprovalWorkflowTagArgsDict']]]] tags: (Updatable) A list of tags on this resource.
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]

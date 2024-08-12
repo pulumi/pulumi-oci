@@ -337,7 +337,7 @@ class BuildPipeline(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 build_pipeline_parameters: Optional[pulumi.Input[pulumi.InputType['BuildPipelineBuildPipelineParametersArgs']]] = None,
+                 build_pipeline_parameters: Optional[pulumi.Input[Union['BuildPipelineBuildPipelineParametersArgs', 'BuildPipelineBuildPipelineParametersArgsDict']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -357,13 +357,13 @@ class BuildPipeline(pulumi.CustomResource):
 
         test_build_pipeline = oci.dev_ops.BuildPipeline("test_build_pipeline",
             project_id=test_project["id"],
-            build_pipeline_parameters=oci.dev_ops.BuildPipelineBuildPipelineParametersArgs(
-                items=[oci.dev_ops.BuildPipelineBuildPipelineParametersItemArgs(
-                    default_value=build_pipeline_build_pipeline_parameters_items_default_value,
-                    name=build_pipeline_build_pipeline_parameters_items_name,
-                    description=build_pipeline_build_pipeline_parameters_items_description,
-                )],
-            ),
+            build_pipeline_parameters={
+                "items": [{
+                    "default_value": build_pipeline_build_pipeline_parameters_items_default_value,
+                    "name": build_pipeline_build_pipeline_parameters_items_name,
+                    "description": build_pipeline_build_pipeline_parameters_items_description,
+                }],
+            },
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -384,7 +384,7 @@ class BuildPipeline(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['BuildPipelineBuildPipelineParametersArgs']] build_pipeline_parameters: (Updatable) Specifies list of parameters present in a build pipeline. An UPDATE operation replaces the existing parameters list entirely.
+        :param pulumi.Input[Union['BuildPipelineBuildPipelineParametersArgs', 'BuildPipelineBuildPipelineParametersArgsDict']] build_pipeline_parameters: (Updatable) Specifies list of parameters present in a build pipeline. An UPDATE operation replaces the existing parameters list entirely.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Optional description about the build pipeline.
         :param pulumi.Input[str] display_name: (Updatable) Build pipeline display name. Avoid entering confidential information.
@@ -414,13 +414,13 @@ class BuildPipeline(pulumi.CustomResource):
 
         test_build_pipeline = oci.dev_ops.BuildPipeline("test_build_pipeline",
             project_id=test_project["id"],
-            build_pipeline_parameters=oci.dev_ops.BuildPipelineBuildPipelineParametersArgs(
-                items=[oci.dev_ops.BuildPipelineBuildPipelineParametersItemArgs(
-                    default_value=build_pipeline_build_pipeline_parameters_items_default_value,
-                    name=build_pipeline_build_pipeline_parameters_items_name,
-                    description=build_pipeline_build_pipeline_parameters_items_description,
-                )],
-            ),
+            build_pipeline_parameters={
+                "items": [{
+                    "default_value": build_pipeline_build_pipeline_parameters_items_default_value,
+                    "name": build_pipeline_build_pipeline_parameters_items_name,
+                    "description": build_pipeline_build_pipeline_parameters_items_description,
+                }],
+            },
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -454,7 +454,7 @@ class BuildPipeline(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 build_pipeline_parameters: Optional[pulumi.Input[pulumi.InputType['BuildPipelineBuildPipelineParametersArgs']]] = None,
+                 build_pipeline_parameters: Optional[pulumi.Input[Union['BuildPipelineBuildPipelineParametersArgs', 'BuildPipelineBuildPipelineParametersArgsDict']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -493,7 +493,7 @@ class BuildPipeline(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            build_pipeline_parameters: Optional[pulumi.Input[pulumi.InputType['BuildPipelineBuildPipelineParametersArgs']]] = None,
+            build_pipeline_parameters: Optional[pulumi.Input[Union['BuildPipelineBuildPipelineParametersArgs', 'BuildPipelineBuildPipelineParametersArgsDict']]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             description: Optional[pulumi.Input[str]] = None,
@@ -512,7 +512,7 @@ class BuildPipeline(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['BuildPipelineBuildPipelineParametersArgs']] build_pipeline_parameters: (Updatable) Specifies list of parameters present in a build pipeline. An UPDATE operation replaces the existing parameters list entirely.
+        :param pulumi.Input[Union['BuildPipelineBuildPipelineParametersArgs', 'BuildPipelineBuildPipelineParametersArgsDict']] build_pipeline_parameters: (Updatable) Specifies list of parameters present in a build pipeline. An UPDATE operation replaces the existing parameters list entirely.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment where the build pipeline is created.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Optional description about the build pipeline.

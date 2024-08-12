@@ -184,7 +184,7 @@ public class ManagedDatabasesChangeDatabaseParameter extends com.pulumi.resource
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ManagedDatabasesChangeDatabaseParameter(String name) {
+    public ManagedDatabasesChangeDatabaseParameter(java.lang.String name) {
         this(name, ManagedDatabasesChangeDatabaseParameterArgs.Empty);
     }
     /**
@@ -192,7 +192,7 @@ public class ManagedDatabasesChangeDatabaseParameter extends com.pulumi.resource
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ManagedDatabasesChangeDatabaseParameter(String name, ManagedDatabasesChangeDatabaseParameterArgs args) {
+    public ManagedDatabasesChangeDatabaseParameter(java.lang.String name, ManagedDatabasesChangeDatabaseParameterArgs args) {
         this(name, args, null);
     }
     /**
@@ -201,12 +201,12 @@ public class ManagedDatabasesChangeDatabaseParameter extends com.pulumi.resource
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ManagedDatabasesChangeDatabaseParameter(String name, ManagedDatabasesChangeDatabaseParameterArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseManagement/managedDatabasesChangeDatabaseParameter:ManagedDatabasesChangeDatabaseParameter", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ManagedDatabasesChangeDatabaseParameter(java.lang.String name, ManagedDatabasesChangeDatabaseParameterArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DatabaseManagement/managedDatabasesChangeDatabaseParameter:ManagedDatabasesChangeDatabaseParameter", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ManagedDatabasesChangeDatabaseParameter(String name, Output<String> id, @Nullable ManagedDatabasesChangeDatabaseParameterState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseManagement/managedDatabasesChangeDatabaseParameter:ManagedDatabasesChangeDatabaseParameter", name, state, makeResourceOptions(options, id));
+    private ManagedDatabasesChangeDatabaseParameter(java.lang.String name, Output<java.lang.String> id, @Nullable ManagedDatabasesChangeDatabaseParameterState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DatabaseManagement/managedDatabasesChangeDatabaseParameter:ManagedDatabasesChangeDatabaseParameter", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ManagedDatabasesChangeDatabaseParameterArgs makeArgs(ManagedDatabasesChangeDatabaseParameterArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -216,7 +216,7 @@ public class ManagedDatabasesChangeDatabaseParameter extends com.pulumi.resource
         return args == null ? ManagedDatabasesChangeDatabaseParameterArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -232,7 +232,7 @@ public class ManagedDatabasesChangeDatabaseParameter extends com.pulumi.resource
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ManagedDatabasesChangeDatabaseParameter get(String name, Output<String> id, @Nullable ManagedDatabasesChangeDatabaseParameterState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ManagedDatabasesChangeDatabaseParameter get(java.lang.String name, Output<java.lang.String> id, @Nullable ManagedDatabasesChangeDatabaseParameterState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ManagedDatabasesChangeDatabaseParameter(name, id, state, options);
     }
 }

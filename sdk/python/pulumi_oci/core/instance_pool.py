@@ -445,8 +445,8 @@ class InstancePool(pulumi.CustomResource):
                  instance_configuration_id: Optional[pulumi.Input[str]] = None,
                  instance_display_name_formatter: Optional[pulumi.Input[str]] = None,
                  instance_hostname_formatter: Optional[pulumi.Input[str]] = None,
-                 load_balancers: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InstancePoolLoadBalancerArgs']]]]] = None,
-                 placement_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InstancePoolPlacementConfigurationArgs']]]]] = None,
+                 load_balancers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstancePoolLoadBalancerArgs', 'InstancePoolLoadBalancerArgsDict']]]]] = None,
+                 placement_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstancePoolPlacementConfigurationArgs', 'InstancePoolPlacementConfigurationArgsDict']]]]] = None,
                  size: Optional[pulumi.Input[int]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -468,26 +468,26 @@ class InstancePool(pulumi.CustomResource):
         test_instance_pool = oci.core.InstancePool("test_instance_pool",
             compartment_id=compartment_id,
             instance_configuration_id=test_instance_configuration["id"],
-            placement_configurations=[oci.core.InstancePoolPlacementConfigurationArgs(
-                availability_domain=instance_pool_placement_configurations_availability_domain,
-                fault_domains=instance_pool_placement_configurations_fault_domains,
-                primary_subnet_id=test_subnet["id"],
-                primary_vnic_subnets=oci.core.InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs(
-                    subnet_id=test_subnet["id"],
-                    ipv6address_ipv6subnet_cidr_pair_details=[oci.core.InstancePoolPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs(
-                        ipv6subnet_cidr=instance_pool_placement_configurations_primary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
-                    )],
-                    is_assign_ipv6ip=instance_pool_placement_configurations_primary_vnic_subnets_is_assign_ipv6ip,
-                ),
-                secondary_vnic_subnets=[oci.core.InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs(
-                    subnet_id=test_subnet["id"],
-                    display_name=instance_pool_placement_configurations_secondary_vnic_subnets_display_name,
-                    ipv6address_ipv6subnet_cidr_pair_details=[oci.core.InstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs(
-                        ipv6subnet_cidr=instance_pool_placement_configurations_secondary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
-                    )],
-                    is_assign_ipv6ip=instance_pool_placement_configurations_secondary_vnic_subnets_is_assign_ipv6ip,
-                )],
-            )],
+            placement_configurations=[{
+                "availability_domain": instance_pool_placement_configurations_availability_domain,
+                "fault_domains": instance_pool_placement_configurations_fault_domains,
+                "primary_subnet_id": test_subnet["id"],
+                "primary_vnic_subnets": {
+                    "subnet_id": test_subnet["id"],
+                    "ipv6address_ipv6subnet_cidr_pair_details": [{
+                        "ipv6subnet_cidr": instance_pool_placement_configurations_primary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
+                    }],
+                    "is_assign_ipv6ip": instance_pool_placement_configurations_primary_vnic_subnets_is_assign_ipv6ip,
+                },
+                "secondary_vnic_subnets": [{
+                    "subnet_id": test_subnet["id"],
+                    "display_name": instance_pool_placement_configurations_secondary_vnic_subnets_display_name,
+                    "ipv6address_ipv6subnet_cidr_pair_details": [{
+                        "ipv6subnet_cidr": instance_pool_placement_configurations_secondary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
+                    }],
+                    "is_assign_ipv6ip": instance_pool_placement_configurations_secondary_vnic_subnets_is_assign_ipv6ip,
+                }],
+            }],
             size=instance_pool_size,
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -498,12 +498,12 @@ class InstancePool(pulumi.CustomResource):
             },
             instance_display_name_formatter=instance_pool_instance_display_name_formatter,
             instance_hostname_formatter=instance_pool_instance_hostname_formatter,
-            load_balancers=[oci.core.InstancePoolLoadBalancerArgs(
-                backend_set_name=test_backend_set["name"],
-                load_balancer_id=test_load_balancer["id"],
-                port=instance_pool_load_balancers_port,
-                vnic_selection=instance_pool_load_balancers_vnic_selection,
-            )])
+            load_balancers=[{
+                "backend_set_name": test_backend_set["name"],
+                "load_balancer_id": test_load_balancer["id"],
+                "port": instance_pool_load_balancers_port,
+                "vnic_selection": instance_pool_load_balancers_vnic_selection,
+            }])
         ```
 
         ## Import
@@ -523,8 +523,8 @@ class InstancePool(pulumi.CustomResource):
         :param pulumi.Input[str] instance_configuration_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
         :param pulumi.Input[str] instance_display_name_formatter: (Updatable) A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
         :param pulumi.Input[str] instance_hostname_formatter: (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InstancePoolLoadBalancerArgs']]]] load_balancers: The load balancers to attach to the instance pool.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InstancePoolPlacementConfigurationArgs']]]] placement_configurations: (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['InstancePoolLoadBalancerArgs', 'InstancePoolLoadBalancerArgsDict']]]] load_balancers: The load balancers to attach to the instance pool.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['InstancePoolPlacementConfigurationArgs', 'InstancePoolPlacementConfigurationArgsDict']]]] placement_configurations: (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
                
                To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
         :param pulumi.Input[int] size: (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool's actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool's actual size will be reflected in this size attribute.
@@ -558,26 +558,26 @@ class InstancePool(pulumi.CustomResource):
         test_instance_pool = oci.core.InstancePool("test_instance_pool",
             compartment_id=compartment_id,
             instance_configuration_id=test_instance_configuration["id"],
-            placement_configurations=[oci.core.InstancePoolPlacementConfigurationArgs(
-                availability_domain=instance_pool_placement_configurations_availability_domain,
-                fault_domains=instance_pool_placement_configurations_fault_domains,
-                primary_subnet_id=test_subnet["id"],
-                primary_vnic_subnets=oci.core.InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs(
-                    subnet_id=test_subnet["id"],
-                    ipv6address_ipv6subnet_cidr_pair_details=[oci.core.InstancePoolPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs(
-                        ipv6subnet_cidr=instance_pool_placement_configurations_primary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
-                    )],
-                    is_assign_ipv6ip=instance_pool_placement_configurations_primary_vnic_subnets_is_assign_ipv6ip,
-                ),
-                secondary_vnic_subnets=[oci.core.InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs(
-                    subnet_id=test_subnet["id"],
-                    display_name=instance_pool_placement_configurations_secondary_vnic_subnets_display_name,
-                    ipv6address_ipv6subnet_cidr_pair_details=[oci.core.InstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs(
-                        ipv6subnet_cidr=instance_pool_placement_configurations_secondary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
-                    )],
-                    is_assign_ipv6ip=instance_pool_placement_configurations_secondary_vnic_subnets_is_assign_ipv6ip,
-                )],
-            )],
+            placement_configurations=[{
+                "availability_domain": instance_pool_placement_configurations_availability_domain,
+                "fault_domains": instance_pool_placement_configurations_fault_domains,
+                "primary_subnet_id": test_subnet["id"],
+                "primary_vnic_subnets": {
+                    "subnet_id": test_subnet["id"],
+                    "ipv6address_ipv6subnet_cidr_pair_details": [{
+                        "ipv6subnet_cidr": instance_pool_placement_configurations_primary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
+                    }],
+                    "is_assign_ipv6ip": instance_pool_placement_configurations_primary_vnic_subnets_is_assign_ipv6ip,
+                },
+                "secondary_vnic_subnets": [{
+                    "subnet_id": test_subnet["id"],
+                    "display_name": instance_pool_placement_configurations_secondary_vnic_subnets_display_name,
+                    "ipv6address_ipv6subnet_cidr_pair_details": [{
+                        "ipv6subnet_cidr": instance_pool_placement_configurations_secondary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
+                    }],
+                    "is_assign_ipv6ip": instance_pool_placement_configurations_secondary_vnic_subnets_is_assign_ipv6ip,
+                }],
+            }],
             size=instance_pool_size,
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -588,12 +588,12 @@ class InstancePool(pulumi.CustomResource):
             },
             instance_display_name_formatter=instance_pool_instance_display_name_formatter,
             instance_hostname_formatter=instance_pool_instance_hostname_formatter,
-            load_balancers=[oci.core.InstancePoolLoadBalancerArgs(
-                backend_set_name=test_backend_set["name"],
-                load_balancer_id=test_load_balancer["id"],
-                port=instance_pool_load_balancers_port,
-                vnic_selection=instance_pool_load_balancers_vnic_selection,
-            )])
+            load_balancers=[{
+                "backend_set_name": test_backend_set["name"],
+                "load_balancer_id": test_load_balancer["id"],
+                "port": instance_pool_load_balancers_port,
+                "vnic_selection": instance_pool_load_balancers_vnic_selection,
+            }])
         ```
 
         ## Import
@@ -626,8 +626,8 @@ class InstancePool(pulumi.CustomResource):
                  instance_configuration_id: Optional[pulumi.Input[str]] = None,
                  instance_display_name_formatter: Optional[pulumi.Input[str]] = None,
                  instance_hostname_formatter: Optional[pulumi.Input[str]] = None,
-                 load_balancers: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InstancePoolLoadBalancerArgs']]]]] = None,
-                 placement_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InstancePoolPlacementConfigurationArgs']]]]] = None,
+                 load_balancers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstancePoolLoadBalancerArgs', 'InstancePoolLoadBalancerArgsDict']]]]] = None,
+                 placement_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstancePoolPlacementConfigurationArgs', 'InstancePoolPlacementConfigurationArgsDict']]]]] = None,
                  size: Optional[pulumi.Input[int]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -678,8 +678,8 @@ class InstancePool(pulumi.CustomResource):
             instance_configuration_id: Optional[pulumi.Input[str]] = None,
             instance_display_name_formatter: Optional[pulumi.Input[str]] = None,
             instance_hostname_formatter: Optional[pulumi.Input[str]] = None,
-            load_balancers: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InstancePoolLoadBalancerArgs']]]]] = None,
-            placement_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InstancePoolPlacementConfigurationArgs']]]]] = None,
+            load_balancers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstancePoolLoadBalancerArgs', 'InstancePoolLoadBalancerArgsDict']]]]] = None,
+            placement_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstancePoolPlacementConfigurationArgs', 'InstancePoolPlacementConfigurationArgsDict']]]]] = None,
             size: Optional[pulumi.Input[int]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None) -> 'InstancePool':
@@ -698,8 +698,8 @@ class InstancePool(pulumi.CustomResource):
         :param pulumi.Input[str] instance_configuration_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
         :param pulumi.Input[str] instance_display_name_formatter: (Updatable) A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
         :param pulumi.Input[str] instance_hostname_formatter: (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InstancePoolLoadBalancerArgs']]]] load_balancers: The load balancers to attach to the instance pool.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InstancePoolPlacementConfigurationArgs']]]] placement_configurations: (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['InstancePoolLoadBalancerArgs', 'InstancePoolLoadBalancerArgsDict']]]] load_balancers: The load balancers to attach to the instance pool.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['InstancePoolPlacementConfigurationArgs', 'InstancePoolPlacementConfigurationArgsDict']]]] placement_configurations: (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
                
                To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
         :param pulumi.Input[int] size: (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool's actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool's actual size will be reflected in this size attribute.

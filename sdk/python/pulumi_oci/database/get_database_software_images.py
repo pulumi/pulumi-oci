@@ -141,7 +141,7 @@ class AwaitableGetDatabaseSoftwareImagesResult(GetDatabaseSoftwareImagesResult):
 
 def get_database_software_images(compartment_id: Optional[str] = None,
                                  display_name: Optional[str] = None,
-                                 filters: Optional[Sequence[pulumi.InputType['GetDatabaseSoftwareImagesFilterArgs']]] = None,
+                                 filters: Optional[Sequence[Union['GetDatabaseSoftwareImagesFilterArgs', 'GetDatabaseSoftwareImagesFilterArgsDict']]] = None,
                                  image_shape_family: Optional[str] = None,
                                  image_type: Optional[str] = None,
                                  is_upgrade_supported: Optional[bool] = None,
@@ -200,7 +200,7 @@ def get_database_software_images(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_database_software_images)
 def get_database_software_images_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                         display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                        filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDatabaseSoftwareImagesFilterArgs']]]]] = None,
+                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDatabaseSoftwareImagesFilterArgs', 'GetDatabaseSoftwareImagesFilterArgsDict']]]]] = None,
                                         image_shape_family: Optional[pulumi.Input[Optional[str]]] = None,
                                         image_type: Optional[pulumi.Input[Optional[str]]] = None,
                                         is_upgrade_supported: Optional[pulumi.Input[Optional[bool]]] = None,

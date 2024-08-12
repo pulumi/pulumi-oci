@@ -91,7 +91,7 @@ class AwaitableGetFusionEnvironmentDataMaskingActivitiesResult(GetFusionEnvironm
             state=self.state)
 
 
-def get_fusion_environment_data_masking_activities(filters: Optional[Sequence[pulumi.InputType['GetFusionEnvironmentDataMaskingActivitiesFilterArgs']]] = None,
+def get_fusion_environment_data_masking_activities(filters: Optional[Sequence[Union['GetFusionEnvironmentDataMaskingActivitiesFilterArgs', 'GetFusionEnvironmentDataMaskingActivitiesFilterArgsDict']]] = None,
                                                    fusion_environment_id: Optional[str] = None,
                                                    state: Optional[str] = None,
                                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFusionEnvironmentDataMaskingActivitiesResult:
@@ -130,7 +130,7 @@ def get_fusion_environment_data_masking_activities(filters: Optional[Sequence[pu
 
 
 @_utilities.lift_output_func(get_fusion_environment_data_masking_activities)
-def get_fusion_environment_data_masking_activities_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetFusionEnvironmentDataMaskingActivitiesFilterArgs']]]]] = None,
+def get_fusion_environment_data_masking_activities_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFusionEnvironmentDataMaskingActivitiesFilterArgs', 'GetFusionEnvironmentDataMaskingActivitiesFilterArgsDict']]]]] = None,
                                                           fusion_environment_id: Optional[pulumi.Input[str]] = None,
                                                           state: Optional[pulumi.Input[Optional[str]]] = None,
                                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFusionEnvironmentDataMaskingActivitiesResult]:

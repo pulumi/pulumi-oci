@@ -76,7 +76,7 @@ class AwaitableGetManagedPreferredCredentialsResult(GetManagedPreferredCredentia
             preferred_credential_collections=self.preferred_credential_collections)
 
 
-def get_managed_preferred_credentials(filters: Optional[Sequence[pulumi.InputType['GetManagedPreferredCredentialsFilterArgs']]] = None,
+def get_managed_preferred_credentials(filters: Optional[Sequence[Union['GetManagedPreferredCredentialsFilterArgs', 'GetManagedPreferredCredentialsFilterArgsDict']]] = None,
                                       managed_database_id: Optional[str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedPreferredCredentialsResult:
     """
@@ -110,7 +110,7 @@ def get_managed_preferred_credentials(filters: Optional[Sequence[pulumi.InputTyp
 
 
 @_utilities.lift_output_func(get_managed_preferred_credentials)
-def get_managed_preferred_credentials_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetManagedPreferredCredentialsFilterArgs']]]]] = None,
+def get_managed_preferred_credentials_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedPreferredCredentialsFilterArgs', 'GetManagedPreferredCredentialsFilterArgsDict']]]]] = None,
                                              managed_database_id: Optional[pulumi.Input[str]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedPreferredCredentialsResult]:
     """

@@ -192,7 +192,7 @@ public class DbNodeConsoleHistory extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DbNodeConsoleHistory(String name) {
+    public DbNodeConsoleHistory(java.lang.String name) {
         this(name, DbNodeConsoleHistoryArgs.Empty);
     }
     /**
@@ -200,7 +200,7 @@ public class DbNodeConsoleHistory extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DbNodeConsoleHistory(String name, DbNodeConsoleHistoryArgs args) {
+    public DbNodeConsoleHistory(java.lang.String name, DbNodeConsoleHistoryArgs args) {
         this(name, args, null);
     }
     /**
@@ -209,12 +209,12 @@ public class DbNodeConsoleHistory extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DbNodeConsoleHistory(String name, DbNodeConsoleHistoryArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/dbNodeConsoleHistory:DbNodeConsoleHistory", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DbNodeConsoleHistory(java.lang.String name, DbNodeConsoleHistoryArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/dbNodeConsoleHistory:DbNodeConsoleHistory", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DbNodeConsoleHistory(String name, Output<String> id, @Nullable DbNodeConsoleHistoryState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/dbNodeConsoleHistory:DbNodeConsoleHistory", name, state, makeResourceOptions(options, id));
+    private DbNodeConsoleHistory(java.lang.String name, Output<java.lang.String> id, @Nullable DbNodeConsoleHistoryState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/dbNodeConsoleHistory:DbNodeConsoleHistory", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DbNodeConsoleHistoryArgs makeArgs(DbNodeConsoleHistoryArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -224,7 +224,7 @@ public class DbNodeConsoleHistory extends com.pulumi.resources.CustomResource {
         return args == null ? DbNodeConsoleHistoryArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -240,7 +240,7 @@ public class DbNodeConsoleHistory extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DbNodeConsoleHistory get(String name, Output<String> id, @Nullable DbNodeConsoleHistoryState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DbNodeConsoleHistory get(java.lang.String name, Output<java.lang.String> id, @Nullable DbNodeConsoleHistoryState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DbNodeConsoleHistory(name, id, state, options);
     }
 }

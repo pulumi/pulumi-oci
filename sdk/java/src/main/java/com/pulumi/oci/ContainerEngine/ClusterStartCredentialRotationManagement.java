@@ -100,7 +100,7 @@ public class ClusterStartCredentialRotationManagement extends com.pulumi.resourc
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ClusterStartCredentialRotationManagement(String name) {
+    public ClusterStartCredentialRotationManagement(java.lang.String name) {
         this(name, ClusterStartCredentialRotationManagementArgs.Empty);
     }
     /**
@@ -108,7 +108,7 @@ public class ClusterStartCredentialRotationManagement extends com.pulumi.resourc
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ClusterStartCredentialRotationManagement(String name, ClusterStartCredentialRotationManagementArgs args) {
+    public ClusterStartCredentialRotationManagement(java.lang.String name, ClusterStartCredentialRotationManagementArgs args) {
         this(name, args, null);
     }
     /**
@@ -117,12 +117,12 @@ public class ClusterStartCredentialRotationManagement extends com.pulumi.resourc
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ClusterStartCredentialRotationManagement(String name, ClusterStartCredentialRotationManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:ContainerEngine/clusterStartCredentialRotationManagement:ClusterStartCredentialRotationManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ClusterStartCredentialRotationManagement(java.lang.String name, ClusterStartCredentialRotationManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:ContainerEngine/clusterStartCredentialRotationManagement:ClusterStartCredentialRotationManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ClusterStartCredentialRotationManagement(String name, Output<String> id, @Nullable ClusterStartCredentialRotationManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:ContainerEngine/clusterStartCredentialRotationManagement:ClusterStartCredentialRotationManagement", name, state, makeResourceOptions(options, id));
+    private ClusterStartCredentialRotationManagement(java.lang.String name, Output<java.lang.String> id, @Nullable ClusterStartCredentialRotationManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:ContainerEngine/clusterStartCredentialRotationManagement:ClusterStartCredentialRotationManagement", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ClusterStartCredentialRotationManagementArgs makeArgs(ClusterStartCredentialRotationManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -132,7 +132,7 @@ public class ClusterStartCredentialRotationManagement extends com.pulumi.resourc
         return args == null ? ClusterStartCredentialRotationManagementArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -148,7 +148,7 @@ public class ClusterStartCredentialRotationManagement extends com.pulumi.resourc
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ClusterStartCredentialRotationManagement get(String name, Output<String> id, @Nullable ClusterStartCredentialRotationManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ClusterStartCredentialRotationManagement get(java.lang.String name, Output<java.lang.String> id, @Nullable ClusterStartCredentialRotationManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ClusterStartCredentialRotationManagement(name, id, state, options);
     }
 }

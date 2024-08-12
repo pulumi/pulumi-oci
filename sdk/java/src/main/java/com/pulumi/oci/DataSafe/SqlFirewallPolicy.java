@@ -337,7 +337,7 @@ public class SqlFirewallPolicy extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public SqlFirewallPolicy(String name) {
+    public SqlFirewallPolicy(java.lang.String name) {
         this(name, SqlFirewallPolicyArgs.Empty);
     }
     /**
@@ -345,7 +345,7 @@ public class SqlFirewallPolicy extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public SqlFirewallPolicy(String name, SqlFirewallPolicyArgs args) {
+    public SqlFirewallPolicy(java.lang.String name, SqlFirewallPolicyArgs args) {
         this(name, args, null);
     }
     /**
@@ -354,12 +354,12 @@ public class SqlFirewallPolicy extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public SqlFirewallPolicy(String name, SqlFirewallPolicyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/sqlFirewallPolicy:SqlFirewallPolicy", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public SqlFirewallPolicy(java.lang.String name, SqlFirewallPolicyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataSafe/sqlFirewallPolicy:SqlFirewallPolicy", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private SqlFirewallPolicy(String name, Output<String> id, @Nullable SqlFirewallPolicyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/sqlFirewallPolicy:SqlFirewallPolicy", name, state, makeResourceOptions(options, id));
+    private SqlFirewallPolicy(java.lang.String name, Output<java.lang.String> id, @Nullable SqlFirewallPolicyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataSafe/sqlFirewallPolicy:SqlFirewallPolicy", name, state, makeResourceOptions(options, id), false);
     }
 
     private static SqlFirewallPolicyArgs makeArgs(SqlFirewallPolicyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -369,7 +369,7 @@ public class SqlFirewallPolicy extends com.pulumi.resources.CustomResource {
         return args == null ? SqlFirewallPolicyArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -385,7 +385,7 @@ public class SqlFirewallPolicy extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static SqlFirewallPolicy get(String name, Output<String> id, @Nullable SqlFirewallPolicyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static SqlFirewallPolicy get(java.lang.String name, Output<java.lang.String> id, @Nullable SqlFirewallPolicyState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new SqlFirewallPolicy(name, id, state, options);
     }
 }

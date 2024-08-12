@@ -111,7 +111,7 @@ class AwaitableGetServiceEnvironmentsResult(GetServiceEnvironmentsResult):
 
 def get_service_environments(compartment_id: Optional[str] = None,
                              display_name: Optional[str] = None,
-                             filters: Optional[Sequence[pulumi.InputType['GetServiceEnvironmentsFilterArgs']]] = None,
+                             filters: Optional[Sequence[Union['GetServiceEnvironmentsFilterArgs', 'GetServiceEnvironmentsFilterArgsDict']]] = None,
                              service_environment_id: Optional[str] = None,
                              service_environment_type: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetServiceEnvironmentsResult:
@@ -163,7 +163,7 @@ def get_service_environments(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_service_environments)
 def get_service_environments_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                     display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                    filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetServiceEnvironmentsFilterArgs']]]]] = None,
+                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetServiceEnvironmentsFilterArgs', 'GetServiceEnvironmentsFilterArgsDict']]]]] = None,
                                     service_environment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                     service_environment_type: Optional[pulumi.Input[Optional[str]]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetServiceEnvironmentsResult]:

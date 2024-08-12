@@ -87,7 +87,7 @@ class AwaitableGetDbSystemShapesResult(GetDbSystemShapesResult):
 
 def get_db_system_shapes(availability_domain: Optional[str] = None,
                          compartment_id: Optional[str] = None,
-                         filters: Optional[Sequence[pulumi.InputType['GetDbSystemShapesFilterArgs']]] = None,
+                         filters: Optional[Sequence[Union['GetDbSystemShapesFilterArgs', 'GetDbSystemShapesFilterArgsDict']]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbSystemShapesResult:
     """
     This data source provides the list of Db System Shapes in Oracle Cloud Infrastructure Database service.
@@ -126,7 +126,7 @@ def get_db_system_shapes(availability_domain: Optional[str] = None,
 @_utilities.lift_output_func(get_db_system_shapes)
 def get_db_system_shapes_output(availability_domain: Optional[pulumi.Input[Optional[str]]] = None,
                                 compartment_id: Optional[pulumi.Input[str]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDbSystemShapesFilterArgs']]]]] = None,
+                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbSystemShapesFilterArgs', 'GetDbSystemShapesFilterArgsDict']]]]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbSystemShapesResult]:
     """
     This data source provides the list of Db System Shapes in Oracle Cloud Infrastructure Database service.

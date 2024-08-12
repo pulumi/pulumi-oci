@@ -456,7 +456,7 @@ class BootVolumeBackup(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
-                 source_details: Optional[pulumi.Input[pulumi.InputType['BootVolumeBackupSourceDetailsArgs']]] = None,
+                 source_details: Optional[pulumi.Input[Union['BootVolumeBackupSourceDetailsArgs', 'BootVolumeBackupSourceDetailsArgsDict']]] = None,
                  type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -504,7 +504,7 @@ class BootVolumeBackup(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
-        :param pulumi.Input[pulumi.InputType['BootVolumeBackupSourceDetailsArgs']] source_details: Details of the volume backup source in the cloud. Cannot be defined if `boot_volume_id` is defined.
+        :param pulumi.Input[Union['BootVolumeBackupSourceDetailsArgs', 'BootVolumeBackupSourceDetailsArgsDict']] source_details: Details of the volume backup source in the cloud. Cannot be defined if `boot_volume_id` is defined.
         :param pulumi.Input[str] type: The type of backup to create. If omitted, defaults to incremental. Supported values are 'FULL' or 'INCREMENTAL'.
         """
         ...
@@ -571,7 +571,7 @@ class BootVolumeBackup(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
-                 source_details: Optional[pulumi.Input[pulumi.InputType['BootVolumeBackupSourceDetailsArgs']]] = None,
+                 source_details: Optional[pulumi.Input[Union['BootVolumeBackupSourceDetailsArgs', 'BootVolumeBackupSourceDetailsArgsDict']]] = None,
                  type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -620,7 +620,7 @@ class BootVolumeBackup(pulumi.CustomResource):
             kms_key_id: Optional[pulumi.Input[str]] = None,
             size_in_gbs: Optional[pulumi.Input[str]] = None,
             source_boot_volume_backup_id: Optional[pulumi.Input[str]] = None,
-            source_details: Optional[pulumi.Input[pulumi.InputType['BootVolumeBackupSourceDetailsArgs']]] = None,
+            source_details: Optional[pulumi.Input[Union['BootVolumeBackupSourceDetailsArgs', 'BootVolumeBackupSourceDetailsArgsDict']]] = None,
             source_type: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -645,7 +645,7 @@ class BootVolumeBackup(pulumi.CustomResource):
         :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
         :param pulumi.Input[str] size_in_gbs: The size of the boot volume, in GBs.
         :param pulumi.Input[str] source_boot_volume_backup_id: The OCID of the source boot volume backup.
-        :param pulumi.Input[pulumi.InputType['BootVolumeBackupSourceDetailsArgs']] source_details: Details of the volume backup source in the cloud. Cannot be defined if `boot_volume_id` is defined.
+        :param pulumi.Input[Union['BootVolumeBackupSourceDetailsArgs', 'BootVolumeBackupSourceDetailsArgsDict']] source_details: Details of the volume backup source in the cloud. Cannot be defined if `boot_volume_id` is defined.
         :param pulumi.Input[str] source_type: Specifies whether the backup was created manually, or via scheduled backup policy.
         :param pulumi.Input[str] state: The current state of a boot volume backup.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`

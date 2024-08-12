@@ -76,7 +76,7 @@ class AwaitableGetVirtualCircuitAssociatedTunnelsResult(GetVirtualCircuitAssocia
             virtual_circuit_id=self.virtual_circuit_id)
 
 
-def get_virtual_circuit_associated_tunnels(filters: Optional[Sequence[pulumi.InputType['GetVirtualCircuitAssociatedTunnelsFilterArgs']]] = None,
+def get_virtual_circuit_associated_tunnels(filters: Optional[Sequence[Union['GetVirtualCircuitAssociatedTunnelsFilterArgs', 'GetVirtualCircuitAssociatedTunnelsFilterArgsDict']]] = None,
                                            virtual_circuit_id: Optional[str] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVirtualCircuitAssociatedTunnelsResult:
     """
@@ -110,7 +110,7 @@ def get_virtual_circuit_associated_tunnels(filters: Optional[Sequence[pulumi.Inp
 
 
 @_utilities.lift_output_func(get_virtual_circuit_associated_tunnels)
-def get_virtual_circuit_associated_tunnels_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetVirtualCircuitAssociatedTunnelsFilterArgs']]]]] = None,
+def get_virtual_circuit_associated_tunnels_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVirtualCircuitAssociatedTunnelsFilterArgs', 'GetVirtualCircuitAssociatedTunnelsFilterArgsDict']]]]] = None,
                                                   virtual_circuit_id: Optional[pulumi.Input[str]] = None,
                                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVirtualCircuitAssociatedTunnelsResult]:
     """

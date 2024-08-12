@@ -118,7 +118,7 @@ class AwaitableGetExternalDatabaseConnectorsResult(GetExternalDatabaseConnectors
 def get_external_database_connectors(compartment_id: Optional[str] = None,
                                      display_name: Optional[str] = None,
                                      external_database_id: Optional[str] = None,
-                                     filters: Optional[Sequence[pulumi.InputType['GetExternalDatabaseConnectorsFilterArgs']]] = None,
+                                     filters: Optional[Sequence[Union['GetExternalDatabaseConnectorsFilterArgs', 'GetExternalDatabaseConnectorsFilterArgsDict']]] = None,
                                      state: Optional[str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalDatabaseConnectorsResult:
     """
@@ -167,7 +167,7 @@ def get_external_database_connectors(compartment_id: Optional[str] = None,
 def get_external_database_connectors_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                             display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                             external_database_id: Optional[pulumi.Input[str]] = None,
-                                            filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetExternalDatabaseConnectorsFilterArgs']]]]] = None,
+                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExternalDatabaseConnectorsFilterArgs', 'GetExternalDatabaseConnectorsFilterArgsDict']]]]] = None,
                                             state: Optional[pulumi.Input[Optional[str]]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalDatabaseConnectorsResult]:
     """

@@ -450,7 +450,7 @@ class VolumeGroupBackup(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 source_details: Optional[pulumi.Input[pulumi.InputType['VolumeGroupBackupSourceDetailsArgs']]] = None,
+                 source_details: Optional[pulumi.Input[Union['VolumeGroupBackupSourceDetailsArgs', 'VolumeGroupBackupSourceDetailsArgsDict']]] = None,
                  type: Optional[pulumi.Input[str]] = None,
                  volume_group_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -493,7 +493,7 @@ class VolumeGroupBackup(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[pulumi.InputType['VolumeGroupBackupSourceDetailsArgs']] source_details: Details of the volume group backup source in the cloud.
+        :param pulumi.Input[Union['VolumeGroupBackupSourceDetailsArgs', 'VolumeGroupBackupSourceDetailsArgsDict']] source_details: Details of the volume group backup source in the cloud.
         :param pulumi.Input[str] type: The type of backup to create. If omitted, defaults to incremental.
                * Allowed values are :
                * FULL
@@ -558,7 +558,7 @@ class VolumeGroupBackup(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 source_details: Optional[pulumi.Input[pulumi.InputType['VolumeGroupBackupSourceDetailsArgs']]] = None,
+                 source_details: Optional[pulumi.Input[Union['VolumeGroupBackupSourceDetailsArgs', 'VolumeGroupBackupSourceDetailsArgsDict']]] = None,
                  type: Optional[pulumi.Input[str]] = None,
                  volume_group_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -605,7 +605,7 @@ class VolumeGroupBackup(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             size_in_gbs: Optional[pulumi.Input[str]] = None,
             size_in_mbs: Optional[pulumi.Input[str]] = None,
-            source_details: Optional[pulumi.Input[pulumi.InputType['VolumeGroupBackupSourceDetailsArgs']]] = None,
+            source_details: Optional[pulumi.Input[Union['VolumeGroupBackupSourceDetailsArgs', 'VolumeGroupBackupSourceDetailsArgsDict']]] = None,
             source_type: Optional[pulumi.Input[str]] = None,
             source_volume_group_backup_id: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -630,7 +630,7 @@ class VolumeGroupBackup(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] size_in_gbs: The aggregate size of the volume group backup, in GBs.
         :param pulumi.Input[str] size_in_mbs: The aggregate size of the volume group backup, in MBs.
-        :param pulumi.Input[pulumi.InputType['VolumeGroupBackupSourceDetailsArgs']] source_details: Details of the volume group backup source in the cloud.
+        :param pulumi.Input[Union['VolumeGroupBackupSourceDetailsArgs', 'VolumeGroupBackupSourceDetailsArgsDict']] source_details: Details of the volume group backup source in the cloud.
         :param pulumi.Input[str] source_type: Specifies whether the volume group backup was created manually, or via scheduled backup policy.
         :param pulumi.Input[str] source_volume_group_backup_id: The OCID of the source volume group backup.
         :param pulumi.Input[str] state: The current state of a volume group backup.

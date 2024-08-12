@@ -358,7 +358,7 @@ public class SensitiveType extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public SensitiveType(String name) {
+    public SensitiveType(java.lang.String name) {
         this(name, SensitiveTypeArgs.Empty);
     }
     /**
@@ -366,7 +366,7 @@ public class SensitiveType extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public SensitiveType(String name, SensitiveTypeArgs args) {
+    public SensitiveType(java.lang.String name, SensitiveTypeArgs args) {
         this(name, args, null);
     }
     /**
@@ -375,12 +375,12 @@ public class SensitiveType extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public SensitiveType(String name, SensitiveTypeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/sensitiveType:SensitiveType", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public SensitiveType(java.lang.String name, SensitiveTypeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataSafe/sensitiveType:SensitiveType", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private SensitiveType(String name, Output<String> id, @Nullable SensitiveTypeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/sensitiveType:SensitiveType", name, state, makeResourceOptions(options, id));
+    private SensitiveType(java.lang.String name, Output<java.lang.String> id, @Nullable SensitiveTypeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataSafe/sensitiveType:SensitiveType", name, state, makeResourceOptions(options, id), false);
     }
 
     private static SensitiveTypeArgs makeArgs(SensitiveTypeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -390,7 +390,7 @@ public class SensitiveType extends com.pulumi.resources.CustomResource {
         return args == null ? SensitiveTypeArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -406,7 +406,7 @@ public class SensitiveType extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static SensitiveType get(String name, Output<String> id, @Nullable SensitiveTypeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static SensitiveType get(java.lang.String name, Output<java.lang.String> id, @Nullable SensitiveTypeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new SensitiveType(name, id, state, options);
     }
 }

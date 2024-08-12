@@ -359,7 +359,7 @@ class NetworkSource(pulumi.CustomResource):
                  name: Optional[pulumi.Input[str]] = None,
                  public_source_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  services: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 virtual_source_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSourceVirtualSourceListArgs']]]]] = None,
+                 virtual_source_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkSourceVirtualSourceListArgs', 'NetworkSourceVirtualSourceListArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Network Source resource in Oracle Cloud Infrastructure Identity service.
@@ -420,7 +420,7 @@ class NetworkSource(pulumi.CustomResource):
         :param pulumi.Input[str] name: The name you assign to the network source during creation. The name must be unique across all groups in the tenancy and cannot be changed.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] public_source_lists: (Updatable) A list of allowed public IP addresses and CIDR ranges.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] services: (Updatable) A list of services allowed to make on-behalf-of requests. These requests can have different source IP addresses than those listed in the network source. Currently, only `all` and `none` are supported. The default is `all`.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSourceVirtualSourceListArgs']]]] virtual_source_lists: (Updatable) A list of allowed VCN OCID and IP range pairs. Example:`"vcnId": "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]` 
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkSourceVirtualSourceListArgs', 'NetworkSourceVirtualSourceListArgsDict']]]] virtual_source_lists: (Updatable) A list of allowed VCN OCID and IP range pairs. Example:`"vcnId": "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]` 
                
                
                ** IMPORTANT **
@@ -504,7 +504,7 @@ class NetworkSource(pulumi.CustomResource):
                  name: Optional[pulumi.Input[str]] = None,
                  public_source_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  services: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 virtual_source_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSourceVirtualSourceListArgs']]]]] = None,
+                 virtual_source_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkSourceVirtualSourceListArgs', 'NetworkSourceVirtualSourceListArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -549,7 +549,7 @@ class NetworkSource(pulumi.CustomResource):
             services: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
-            virtual_source_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSourceVirtualSourceListArgs']]]]] = None) -> 'NetworkSource':
+            virtual_source_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkSourceVirtualSourceListArgs', 'NetworkSourceVirtualSourceListArgsDict']]]]] = None) -> 'NetworkSource':
         """
         Get an existing NetworkSource resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -567,7 +567,7 @@ class NetworkSource(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] services: (Updatable) A list of services allowed to make on-behalf-of requests. These requests can have different source IP addresses than those listed in the network source. Currently, only `all` and `none` are supported. The default is `all`.
         :param pulumi.Input[str] state: The network source object's current state. After creating a network source, make sure its `lifecycleState` changes from CREATING to ACTIVE before using it.
         :param pulumi.Input[str] time_created: Date and time the group was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSourceVirtualSourceListArgs']]]] virtual_source_lists: (Updatable) A list of allowed VCN OCID and IP range pairs. Example:`"vcnId": "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]` 
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkSourceVirtualSourceListArgs', 'NetworkSourceVirtualSourceListArgsDict']]]] virtual_source_lists: (Updatable) A list of allowed VCN OCID and IP range pairs. Example:`"vcnId": "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]` 
                
                
                ** IMPORTANT **

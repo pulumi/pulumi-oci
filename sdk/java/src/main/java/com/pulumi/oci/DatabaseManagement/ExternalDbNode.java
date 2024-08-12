@@ -295,7 +295,7 @@ public class ExternalDbNode extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ExternalDbNode(String name) {
+    public ExternalDbNode(java.lang.String name) {
         this(name, ExternalDbNodeArgs.Empty);
     }
     /**
@@ -303,7 +303,7 @@ public class ExternalDbNode extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ExternalDbNode(String name, ExternalDbNodeArgs args) {
+    public ExternalDbNode(java.lang.String name, ExternalDbNodeArgs args) {
         this(name, args, null);
     }
     /**
@@ -312,12 +312,12 @@ public class ExternalDbNode extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ExternalDbNode(String name, ExternalDbNodeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseManagement/externalDbNode:ExternalDbNode", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ExternalDbNode(java.lang.String name, ExternalDbNodeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DatabaseManagement/externalDbNode:ExternalDbNode", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ExternalDbNode(String name, Output<String> id, @Nullable ExternalDbNodeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseManagement/externalDbNode:ExternalDbNode", name, state, makeResourceOptions(options, id));
+    private ExternalDbNode(java.lang.String name, Output<java.lang.String> id, @Nullable ExternalDbNodeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DatabaseManagement/externalDbNode:ExternalDbNode", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ExternalDbNodeArgs makeArgs(ExternalDbNodeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -327,7 +327,7 @@ public class ExternalDbNode extends com.pulumi.resources.CustomResource {
         return args == null ? ExternalDbNodeArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -343,7 +343,7 @@ public class ExternalDbNode extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ExternalDbNode get(String name, Output<String> id, @Nullable ExternalDbNodeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ExternalDbNode get(java.lang.String name, Output<java.lang.String> id, @Nullable ExternalDbNodeState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ExternalDbNode(name, id, state, options);
     }
 }

@@ -114,7 +114,7 @@ class AwaitableGetOperationsInsightsWarehouseUsersResult(GetOperationsInsightsWa
 
 def get_operations_insights_warehouse_users(compartment_id: Optional[str] = None,
                                             display_name: Optional[str] = None,
-                                            filters: Optional[Sequence[pulumi.InputType['GetOperationsInsightsWarehouseUsersFilterArgs']]] = None,
+                                            filters: Optional[Sequence[Union['GetOperationsInsightsWarehouseUsersFilterArgs', 'GetOperationsInsightsWarehouseUsersFilterArgsDict']]] = None,
                                             id: Optional[str] = None,
                                             operations_insights_warehouse_id: Optional[str] = None,
                                             states: Optional[Sequence[str]] = None,
@@ -167,7 +167,7 @@ def get_operations_insights_warehouse_users(compartment_id: Optional[str] = None
 @_utilities.lift_output_func(get_operations_insights_warehouse_users)
 def get_operations_insights_warehouse_users_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                    display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                                   filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetOperationsInsightsWarehouseUsersFilterArgs']]]]] = None,
+                                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOperationsInsightsWarehouseUsersFilterArgs', 'GetOperationsInsightsWarehouseUsersFilterArgsDict']]]]] = None,
                                                    id: Optional[pulumi.Input[Optional[str]]] = None,
                                                    operations_insights_warehouse_id: Optional[pulumi.Input[str]] = None,
                                                    states: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,

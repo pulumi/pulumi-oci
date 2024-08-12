@@ -1678,7 +1678,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public DomainsUser(String name) {
+    public DomainsUser(java.lang.String name) {
         this(name, DomainsUserArgs.Empty);
     }
     /**
@@ -1686,7 +1686,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DomainsUser(String name, DomainsUserArgs args) {
+    public DomainsUser(java.lang.String name, DomainsUserArgs args) {
         this(name, args, null);
     }
     /**
@@ -1695,12 +1695,12 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DomainsUser(String name, DomainsUserArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsUser:DomainsUser", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public DomainsUser(java.lang.String name, DomainsUserArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/domainsUser:DomainsUser", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private DomainsUser(String name, Output<String> id, @Nullable DomainsUserState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Identity/domainsUser:DomainsUser", name, state, makeResourceOptions(options, id));
+    private DomainsUser(java.lang.String name, Output<java.lang.String> id, @Nullable DomainsUserState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Identity/domainsUser:DomainsUser", name, state, makeResourceOptions(options, id), false);
     }
 
     private static DomainsUserArgs makeArgs(DomainsUserArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -1710,7 +1710,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
         return args == null ? DomainsUserArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .additionalSecretOutputs(List.of(
@@ -1729,7 +1729,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static DomainsUser get(String name, Output<String> id, @Nullable DomainsUserState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static DomainsUser get(java.lang.String name, Output<java.lang.String> id, @Nullable DomainsUserState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new DomainsUser(name, id, state, options);
     }
 }

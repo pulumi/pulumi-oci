@@ -105,7 +105,7 @@ class AwaitableGetOpaInstancesResult(GetOpaInstancesResult):
 
 def get_opa_instances(compartment_id: Optional[str] = None,
                       display_name: Optional[str] = None,
-                      filters: Optional[Sequence[pulumi.InputType['GetOpaInstancesFilterArgs']]] = None,
+                      filters: Optional[Sequence[Union['GetOpaInstancesFilterArgs', 'GetOpaInstancesFilterArgsDict']]] = None,
                       id: Optional[str] = None,
                       state: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOpaInstancesResult:
@@ -153,7 +153,7 @@ def get_opa_instances(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_opa_instances)
 def get_opa_instances_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                              display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                             filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetOpaInstancesFilterArgs']]]]] = None,
+                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOpaInstancesFilterArgs', 'GetOpaInstancesFilterArgsDict']]]]] = None,
                              id: Optional[pulumi.Input[Optional[str]]] = None,
                              state: Optional[pulumi.Input[Optional[str]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOpaInstancesResult]:

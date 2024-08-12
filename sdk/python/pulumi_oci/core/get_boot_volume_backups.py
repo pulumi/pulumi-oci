@@ -130,7 +130,7 @@ class AwaitableGetBootVolumeBackupsResult(GetBootVolumeBackupsResult):
 def get_boot_volume_backups(boot_volume_id: Optional[str] = None,
                             compartment_id: Optional[str] = None,
                             display_name: Optional[str] = None,
-                            filters: Optional[Sequence[pulumi.InputType['GetBootVolumeBackupsFilterArgs']]] = None,
+                            filters: Optional[Sequence[Union['GetBootVolumeBackupsFilterArgs', 'GetBootVolumeBackupsFilterArgsDict']]] = None,
                             source_boot_volume_backup_id: Optional[str] = None,
                             state: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBootVolumeBackupsResult:
@@ -184,7 +184,7 @@ def get_boot_volume_backups(boot_volume_id: Optional[str] = None,
 def get_boot_volume_backups_output(boot_volume_id: Optional[pulumi.Input[Optional[str]]] = None,
                                    compartment_id: Optional[pulumi.Input[str]] = None,
                                    display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetBootVolumeBackupsFilterArgs']]]]] = None,
+                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBootVolumeBackupsFilterArgs', 'GetBootVolumeBackupsFilterArgsDict']]]]] = None,
                                    source_boot_volume_backup_id: Optional[pulumi.Input[Optional[str]]] = None,
                                    state: Optional[pulumi.Input[Optional[str]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBootVolumeBackupsResult]:

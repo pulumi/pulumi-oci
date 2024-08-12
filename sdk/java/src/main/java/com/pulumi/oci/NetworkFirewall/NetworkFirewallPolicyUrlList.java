@@ -148,7 +148,7 @@ public class NetworkFirewallPolicyUrlList extends com.pulumi.resources.CustomRes
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public NetworkFirewallPolicyUrlList(String name) {
+    public NetworkFirewallPolicyUrlList(java.lang.String name) {
         this(name, NetworkFirewallPolicyUrlListArgs.Empty);
     }
     /**
@@ -156,7 +156,7 @@ public class NetworkFirewallPolicyUrlList extends com.pulumi.resources.CustomRes
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public NetworkFirewallPolicyUrlList(String name, NetworkFirewallPolicyUrlListArgs args) {
+    public NetworkFirewallPolicyUrlList(java.lang.String name, NetworkFirewallPolicyUrlListArgs args) {
         this(name, args, null);
     }
     /**
@@ -165,12 +165,12 @@ public class NetworkFirewallPolicyUrlList extends com.pulumi.resources.CustomRes
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public NetworkFirewallPolicyUrlList(String name, NetworkFirewallPolicyUrlListArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:NetworkFirewall/networkFirewallPolicyUrlList:NetworkFirewallPolicyUrlList", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public NetworkFirewallPolicyUrlList(java.lang.String name, NetworkFirewallPolicyUrlListArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:NetworkFirewall/networkFirewallPolicyUrlList:NetworkFirewallPolicyUrlList", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private NetworkFirewallPolicyUrlList(String name, Output<String> id, @Nullable NetworkFirewallPolicyUrlListState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:NetworkFirewall/networkFirewallPolicyUrlList:NetworkFirewallPolicyUrlList", name, state, makeResourceOptions(options, id));
+    private NetworkFirewallPolicyUrlList(java.lang.String name, Output<java.lang.String> id, @Nullable NetworkFirewallPolicyUrlListState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:NetworkFirewall/networkFirewallPolicyUrlList:NetworkFirewallPolicyUrlList", name, state, makeResourceOptions(options, id), false);
     }
 
     private static NetworkFirewallPolicyUrlListArgs makeArgs(NetworkFirewallPolicyUrlListArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -180,7 +180,7 @@ public class NetworkFirewallPolicyUrlList extends com.pulumi.resources.CustomRes
         return args == null ? NetworkFirewallPolicyUrlListArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -196,7 +196,7 @@ public class NetworkFirewallPolicyUrlList extends com.pulumi.resources.CustomRes
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static NetworkFirewallPolicyUrlList get(String name, Output<String> id, @Nullable NetworkFirewallPolicyUrlListState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static NetworkFirewallPolicyUrlList get(java.lang.String name, Output<java.lang.String> id, @Nullable NetworkFirewallPolicyUrlListState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new NetworkFirewallPolicyUrlList(name, id, state, options);
     }
 }

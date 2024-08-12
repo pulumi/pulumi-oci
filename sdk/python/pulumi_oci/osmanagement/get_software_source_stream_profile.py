@@ -122,7 +122,7 @@ class AwaitableGetSoftwareSourceStreamProfileResult(GetSoftwareSourceStreamProfi
 
 
 def get_software_source_stream_profile(compartment_id: Optional[str] = None,
-                                       filters: Optional[Sequence[pulumi.InputType['GetSoftwareSourceStreamProfileFilterArgs']]] = None,
+                                       filters: Optional[Sequence[Union['GetSoftwareSourceStreamProfileFilterArgs', 'GetSoftwareSourceStreamProfileFilterArgsDict']]] = None,
                                        module_name: Optional[str] = None,
                                        profile_name: Optional[str] = None,
                                        software_source_id: Optional[str] = None,
@@ -188,7 +188,7 @@ def get_software_source_stream_profile(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_software_source_stream_profile)
 def get_software_source_stream_profile_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                              filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetSoftwareSourceStreamProfileFilterArgs']]]]] = None,
+                                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSoftwareSourceStreamProfileFilterArgs', 'GetSoftwareSourceStreamProfileFilterArgsDict']]]]] = None,
                                               module_name: Optional[pulumi.Input[Optional[str]]] = None,
                                               profile_name: Optional[pulumi.Input[Optional[str]]] = None,
                                               software_source_id: Optional[pulumi.Input[str]] = None,

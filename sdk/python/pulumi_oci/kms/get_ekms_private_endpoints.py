@@ -80,7 +80,7 @@ class AwaitableGetEkmsPrivateEndpointsResult(GetEkmsPrivateEndpointsResult):
 
 
 def get_ekms_private_endpoints(compartment_id: Optional[str] = None,
-                               filters: Optional[Sequence[pulumi.InputType['GetEkmsPrivateEndpointsFilterArgs']]] = None,
+                               filters: Optional[Sequence[Union['GetEkmsPrivateEndpointsFilterArgs', 'GetEkmsPrivateEndpointsFilterArgsDict']]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetEkmsPrivateEndpointsResult:
     """
     This data source provides the list of Ekms Private Endpoints in Oracle Cloud Infrastructure Kms service.
@@ -114,7 +114,7 @@ def get_ekms_private_endpoints(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_ekms_private_endpoints)
 def get_ekms_private_endpoints_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                      filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetEkmsPrivateEndpointsFilterArgs']]]]] = None,
+                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetEkmsPrivateEndpointsFilterArgs', 'GetEkmsPrivateEndpointsFilterArgsDict']]]]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEkmsPrivateEndpointsResult]:
     """
     This data source provides the list of Ekms Private Endpoints in Oracle Cloud Infrastructure Kms service.

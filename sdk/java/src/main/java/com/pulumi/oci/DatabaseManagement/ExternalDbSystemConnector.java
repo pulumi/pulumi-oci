@@ -305,7 +305,7 @@ public class ExternalDbSystemConnector extends com.pulumi.resources.CustomResour
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ExternalDbSystemConnector(String name) {
+    public ExternalDbSystemConnector(java.lang.String name) {
         this(name, ExternalDbSystemConnectorArgs.Empty);
     }
     /**
@@ -313,7 +313,7 @@ public class ExternalDbSystemConnector extends com.pulumi.resources.CustomResour
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ExternalDbSystemConnector(String name, ExternalDbSystemConnectorArgs args) {
+    public ExternalDbSystemConnector(java.lang.String name, ExternalDbSystemConnectorArgs args) {
         this(name, args, null);
     }
     /**
@@ -322,12 +322,12 @@ public class ExternalDbSystemConnector extends com.pulumi.resources.CustomResour
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ExternalDbSystemConnector(String name, ExternalDbSystemConnectorArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseManagement/externalDbSystemConnector:ExternalDbSystemConnector", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ExternalDbSystemConnector(java.lang.String name, ExternalDbSystemConnectorArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DatabaseManagement/externalDbSystemConnector:ExternalDbSystemConnector", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ExternalDbSystemConnector(String name, Output<String> id, @Nullable ExternalDbSystemConnectorState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseManagement/externalDbSystemConnector:ExternalDbSystemConnector", name, state, makeResourceOptions(options, id));
+    private ExternalDbSystemConnector(java.lang.String name, Output<java.lang.String> id, @Nullable ExternalDbSystemConnectorState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DatabaseManagement/externalDbSystemConnector:ExternalDbSystemConnector", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ExternalDbSystemConnectorArgs makeArgs(ExternalDbSystemConnectorArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -337,7 +337,7 @@ public class ExternalDbSystemConnector extends com.pulumi.resources.CustomResour
         return args == null ? ExternalDbSystemConnectorArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -353,7 +353,7 @@ public class ExternalDbSystemConnector extends com.pulumi.resources.CustomResour
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ExternalDbSystemConnector get(String name, Output<String> id, @Nullable ExternalDbSystemConnectorState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ExternalDbSystemConnector get(java.lang.String name, Output<java.lang.String> id, @Nullable ExternalDbSystemConnectorState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ExternalDbSystemConnector(name, id, state, options);
     }
 }

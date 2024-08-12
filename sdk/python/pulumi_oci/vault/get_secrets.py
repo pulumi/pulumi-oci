@@ -113,7 +113,7 @@ class AwaitableGetSecretsResult(GetSecretsResult):
 
 
 def get_secrets(compartment_id: Optional[str] = None,
-                filters: Optional[Sequence[pulumi.InputType['GetSecretsFilterArgs']]] = None,
+                filters: Optional[Sequence[Union['GetSecretsFilterArgs', 'GetSecretsFilterArgsDict']]] = None,
                 name: Optional[str] = None,
                 state: Optional[str] = None,
                 vault_id: Optional[str] = None,
@@ -162,7 +162,7 @@ def get_secrets(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_secrets)
 def get_secrets_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                       filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetSecretsFilterArgs']]]]] = None,
+                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSecretsFilterArgs', 'GetSecretsFilterArgsDict']]]]] = None,
                        name: Optional[pulumi.Input[Optional[str]]] = None,
                        state: Optional[pulumi.Input[Optional[str]]] = None,
                        vault_id: Optional[pulumi.Input[Optional[str]]] = None,

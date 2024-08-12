@@ -199,7 +199,7 @@ public class Rrset extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public Rrset(String name) {
+    public Rrset(java.lang.String name) {
         this(name, RrsetArgs.Empty);
     }
     /**
@@ -207,7 +207,7 @@ public class Rrset extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public Rrset(String name, RrsetArgs args) {
+    public Rrset(java.lang.String name, RrsetArgs args) {
         this(name, args, null);
     }
     /**
@@ -216,12 +216,12 @@ public class Rrset extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public Rrset(String name, RrsetArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Dns/rrset:Rrset", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public Rrset(java.lang.String name, RrsetArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Dns/rrset:Rrset", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private Rrset(String name, Output<String> id, @Nullable RrsetState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Dns/rrset:Rrset", name, state, makeResourceOptions(options, id));
+    private Rrset(java.lang.String name, Output<java.lang.String> id, @Nullable RrsetState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Dns/rrset:Rrset", name, state, makeResourceOptions(options, id), false);
     }
 
     private static RrsetArgs makeArgs(RrsetArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -231,7 +231,7 @@ public class Rrset extends com.pulumi.resources.CustomResource {
         return args == null ? RrsetArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -247,7 +247,7 @@ public class Rrset extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static Rrset get(String name, Output<String> id, @Nullable RrsetState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static Rrset get(java.lang.String name, Output<java.lang.String> id, @Nullable RrsetState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new Rrset(name, id, state, options);
     }
 }

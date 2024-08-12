@@ -369,7 +369,7 @@ class ExternalDbSystemDiscovery(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalDbSystemDiscoveryPatchOperationArgs']]]]] = None,
+                 patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExternalDbSystemDiscoveryPatchOperationArgs', 'ExternalDbSystemDiscoveryPatchOperationArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the External Db System Discovery resource in Oracle Cloud Infrastructure Database Management service.
@@ -393,7 +393,7 @@ class ExternalDbSystemDiscovery(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalDbSystemDiscoveryPatchOperationArgs']]]] patch_operations: (Updatable)
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExternalDbSystemDiscoveryPatchOperationArgs', 'ExternalDbSystemDiscoveryPatchOperationArgsDict']]]] patch_operations: (Updatable)
         """
         ...
     @overload
@@ -436,7 +436,7 @@ class ExternalDbSystemDiscovery(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalDbSystemDiscoveryPatchOperationArgs']]]]] = None,
+                 patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExternalDbSystemDiscoveryPatchOperationArgs', 'ExternalDbSystemDiscoveryPatchOperationArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -478,13 +478,13 @@ class ExternalDbSystemDiscovery(pulumi.CustomResource):
             agent_id: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            discovered_components: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalDbSystemDiscoveryDiscoveredComponentArgs']]]]] = None,
+            discovered_components: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExternalDbSystemDiscoveryDiscoveredComponentArgs', 'ExternalDbSystemDiscoveryDiscoveredComponentArgsDict']]]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             external_db_system_discovery_id: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             grid_home: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
-            patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalDbSystemDiscoveryPatchOperationArgs']]]]] = None,
+            patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExternalDbSystemDiscoveryPatchOperationArgs', 'ExternalDbSystemDiscoveryPatchOperationArgsDict']]]]] = None,
             resource_id: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -500,12 +500,12 @@ class ExternalDbSystemDiscovery(pulumi.CustomResource):
         :param pulumi.Input[str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalDbSystemDiscoveryDiscoveredComponentArgs']]]] discovered_components: The list of DB system components that were found in the DB system discovery.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExternalDbSystemDiscoveryDiscoveredComponentArgs', 'ExternalDbSystemDiscoveryDiscoveredComponentArgsDict']]]] discovered_components: The list of DB system components that were found in the DB system discovery.
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] grid_home: The directory in which Oracle Grid Infrastructure is installed.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalDbSystemDiscoveryPatchOperationArgs']]]] patch_operations: (Updatable)
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExternalDbSystemDiscoveryPatchOperationArgs', 'ExternalDbSystemDiscoveryPatchOperationArgsDict']]]] patch_operations: (Updatable)
         :param pulumi.Input[str] resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
         :param pulumi.Input[str] state: The current lifecycle state of the external DB system discovery resource.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`

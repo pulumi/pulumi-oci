@@ -118,7 +118,7 @@ class AwaitableGetComputeCapacityReservationsResult(GetComputeCapacityReservatio
 def get_compute_capacity_reservations(availability_domain: Optional[str] = None,
                                       compartment_id: Optional[str] = None,
                                       display_name: Optional[str] = None,
-                                      filters: Optional[Sequence[pulumi.InputType['GetComputeCapacityReservationsFilterArgs']]] = None,
+                                      filters: Optional[Sequence[Union['GetComputeCapacityReservationsFilterArgs', 'GetComputeCapacityReservationsFilterArgsDict']]] = None,
                                       state: Optional[str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetComputeCapacityReservationsResult:
     """
@@ -170,7 +170,7 @@ def get_compute_capacity_reservations(availability_domain: Optional[str] = None,
 def get_compute_capacity_reservations_output(availability_domain: Optional[pulumi.Input[Optional[str]]] = None,
                                              compartment_id: Optional[pulumi.Input[str]] = None,
                                              display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                             filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetComputeCapacityReservationsFilterArgs']]]]] = None,
+                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetComputeCapacityReservationsFilterArgs', 'GetComputeCapacityReservationsFilterArgsDict']]]]] = None,
                                              state: Optional[pulumi.Input[Optional[str]]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetComputeCapacityReservationsResult]:
     """

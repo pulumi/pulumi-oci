@@ -26,7 +26,7 @@ public class AddSdmColumns extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public AddSdmColumns(String name) {
+    public AddSdmColumns(java.lang.String name) {
         this(name, AddSdmColumnsArgs.Empty);
     }
     /**
@@ -34,7 +34,7 @@ public class AddSdmColumns extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public AddSdmColumns(String name, AddSdmColumnsArgs args) {
+    public AddSdmColumns(java.lang.String name, AddSdmColumnsArgs args) {
         this(name, args, null);
     }
     /**
@@ -43,12 +43,12 @@ public class AddSdmColumns extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public AddSdmColumns(String name, AddSdmColumnsArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/addSdmColumns:AddSdmColumns", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public AddSdmColumns(java.lang.String name, AddSdmColumnsArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataSafe/addSdmColumns:AddSdmColumns", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private AddSdmColumns(String name, Output<String> id, @Nullable AddSdmColumnsState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/addSdmColumns:AddSdmColumns", name, state, makeResourceOptions(options, id));
+    private AddSdmColumns(java.lang.String name, Output<java.lang.String> id, @Nullable AddSdmColumnsState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataSafe/addSdmColumns:AddSdmColumns", name, state, makeResourceOptions(options, id), false);
     }
 
     private static AddSdmColumnsArgs makeArgs(AddSdmColumnsArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -58,7 +58,7 @@ public class AddSdmColumns extends com.pulumi.resources.CustomResource {
         return args == null ? AddSdmColumnsArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -74,7 +74,7 @@ public class AddSdmColumns extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static AddSdmColumns get(String name, Output<String> id, @Nullable AddSdmColumnsState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static AddSdmColumns get(java.lang.String name, Output<java.lang.String> id, @Nullable AddSdmColumnsState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new AddSdmColumns(name, id, state, options);
     }
 }

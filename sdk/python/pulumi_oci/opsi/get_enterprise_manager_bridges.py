@@ -115,7 +115,7 @@ class AwaitableGetEnterpriseManagerBridgesResult(GetEnterpriseManagerBridgesResu
 def get_enterprise_manager_bridges(compartment_id: Optional[str] = None,
                                    compartment_id_in_subtree: Optional[bool] = None,
                                    display_name: Optional[str] = None,
-                                   filters: Optional[Sequence[pulumi.InputType['GetEnterpriseManagerBridgesFilterArgs']]] = None,
+                                   filters: Optional[Sequence[Union['GetEnterpriseManagerBridgesFilterArgs', 'GetEnterpriseManagerBridgesFilterArgsDict']]] = None,
                                    id: Optional[str] = None,
                                    states: Optional[Sequence[str]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetEnterpriseManagerBridgesResult:
@@ -169,7 +169,7 @@ def get_enterprise_manager_bridges(compartment_id: Optional[str] = None,
 def get_enterprise_manager_bridges_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                           compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                                           display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                          filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetEnterpriseManagerBridgesFilterArgs']]]]] = None,
+                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetEnterpriseManagerBridgesFilterArgs', 'GetEnterpriseManagerBridgesFilterArgsDict']]]]] = None,
                                           id: Optional[pulumi.Input[Optional[str]]] = None,
                                           states: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEnterpriseManagerBridgesResult]:

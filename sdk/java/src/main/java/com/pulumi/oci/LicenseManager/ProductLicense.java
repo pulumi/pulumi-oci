@@ -373,7 +373,7 @@ public class ProductLicense extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ProductLicense(String name) {
+    public ProductLicense(java.lang.String name) {
         this(name, ProductLicenseArgs.Empty);
     }
     /**
@@ -381,7 +381,7 @@ public class ProductLicense extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ProductLicense(String name, ProductLicenseArgs args) {
+    public ProductLicense(java.lang.String name, ProductLicenseArgs args) {
         this(name, args, null);
     }
     /**
@@ -390,12 +390,12 @@ public class ProductLicense extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ProductLicense(String name, ProductLicenseArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:LicenseManager/productLicense:ProductLicense", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ProductLicense(java.lang.String name, ProductLicenseArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:LicenseManager/productLicense:ProductLicense", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ProductLicense(String name, Output<String> id, @Nullable ProductLicenseState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:LicenseManager/productLicense:ProductLicense", name, state, makeResourceOptions(options, id));
+    private ProductLicense(java.lang.String name, Output<java.lang.String> id, @Nullable ProductLicenseState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:LicenseManager/productLicense:ProductLicense", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ProductLicenseArgs makeArgs(ProductLicenseArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -405,7 +405,7 @@ public class ProductLicense extends com.pulumi.resources.CustomResource {
         return args == null ? ProductLicenseArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -421,7 +421,7 @@ public class ProductLicense extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ProductLicense get(String name, Output<String> id, @Nullable ProductLicenseState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ProductLicense get(java.lang.String name, Output<java.lang.String> id, @Nullable ProductLicenseState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ProductLicense(name, id, state, options);
     }
 }

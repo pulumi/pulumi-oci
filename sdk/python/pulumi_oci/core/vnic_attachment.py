@@ -304,7 +304,7 @@ class VnicAttachment(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 create_vnic_details: Optional[pulumi.Input[pulumi.InputType['VnicAttachmentCreateVnicDetailsArgs']]] = None,
+                 create_vnic_details: Optional[pulumi.Input[Union['VnicAttachmentCreateVnicDetailsArgs', 'VnicAttachmentCreateVnicDetailsArgsDict']]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  instance_id: Optional[pulumi.Input[str]] = None,
                  nic_index: Optional[pulumi.Input[int]] = None,
@@ -323,21 +323,21 @@ class VnicAttachment(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_vnic_attachment = oci.core.VnicAttachment("test_vnic_attachment",
-            create_vnic_details=oci.core.VnicAttachmentCreateVnicDetailsArgs(
-                assign_ipv6ip=vnic_attachment_create_vnic_details_assign_ipv6ip,
-                assign_private_dns_record=vnic_attachment_create_vnic_details_assign_private_dns_record,
-                assign_public_ip=vnic_attachment_create_vnic_details_assign_public_ip,
-                defined_tags=vnic_attachment_create_vnic_details_defined_tags,
-                display_name=vnic_attachment_create_vnic_details_display_name,
-                freeform_tags=vnic_attachment_create_vnic_details_freeform_tags,
-                hostname_label=vnic_attachment_create_vnic_details_hostname_label,
-                ipv6address_ipv6subnet_cidr_pair_details=vnic_attachment_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details,
-                nsg_ids=vnic_attachment_create_vnic_details_nsg_ids,
-                private_ip=vnic_attachment_create_vnic_details_private_ip,
-                skip_source_dest_check=vnic_attachment_create_vnic_details_skip_source_dest_check,
-                subnet_id=test_subnet["id"],
-                vlan_id=test_vlan["id"],
-            ),
+            create_vnic_details={
+                "assign_ipv6ip": vnic_attachment_create_vnic_details_assign_ipv6ip,
+                "assign_private_dns_record": vnic_attachment_create_vnic_details_assign_private_dns_record,
+                "assign_public_ip": vnic_attachment_create_vnic_details_assign_public_ip,
+                "defined_tags": vnic_attachment_create_vnic_details_defined_tags,
+                "display_name": vnic_attachment_create_vnic_details_display_name,
+                "freeform_tags": vnic_attachment_create_vnic_details_freeform_tags,
+                "hostname_label": vnic_attachment_create_vnic_details_hostname_label,
+                "ipv6address_ipv6subnet_cidr_pair_details": vnic_attachment_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details,
+                "nsg_ids": vnic_attachment_create_vnic_details_nsg_ids,
+                "private_ip": vnic_attachment_create_vnic_details_private_ip,
+                "skip_source_dest_check": vnic_attachment_create_vnic_details_skip_source_dest_check,
+                "subnet_id": test_subnet["id"],
+                "vlan_id": test_vlan["id"],
+            },
             instance_id=test_instance["id"],
             display_name=vnic_attachment_display_name,
             nic_index=vnic_attachment_nic_index)
@@ -353,7 +353,7 @@ class VnicAttachment(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['VnicAttachmentCreateVnicDetailsArgs']] create_vnic_details: (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+        :param pulumi.Input[Union['VnicAttachmentCreateVnicDetailsArgs', 'VnicAttachmentCreateVnicDetailsArgsDict']] create_vnic_details: (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[str] instance_id: The OCID of the instance.
         :param pulumi.Input[int] nic_index: Which physical network interface card (NIC) the VNIC will use. Defaults to 0. Certain bare metal instance shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to one of these instances, you can specify which NIC the VNIC will use. For more information, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm). 
@@ -382,21 +382,21 @@ class VnicAttachment(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_vnic_attachment = oci.core.VnicAttachment("test_vnic_attachment",
-            create_vnic_details=oci.core.VnicAttachmentCreateVnicDetailsArgs(
-                assign_ipv6ip=vnic_attachment_create_vnic_details_assign_ipv6ip,
-                assign_private_dns_record=vnic_attachment_create_vnic_details_assign_private_dns_record,
-                assign_public_ip=vnic_attachment_create_vnic_details_assign_public_ip,
-                defined_tags=vnic_attachment_create_vnic_details_defined_tags,
-                display_name=vnic_attachment_create_vnic_details_display_name,
-                freeform_tags=vnic_attachment_create_vnic_details_freeform_tags,
-                hostname_label=vnic_attachment_create_vnic_details_hostname_label,
-                ipv6address_ipv6subnet_cidr_pair_details=vnic_attachment_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details,
-                nsg_ids=vnic_attachment_create_vnic_details_nsg_ids,
-                private_ip=vnic_attachment_create_vnic_details_private_ip,
-                skip_source_dest_check=vnic_attachment_create_vnic_details_skip_source_dest_check,
-                subnet_id=test_subnet["id"],
-                vlan_id=test_vlan["id"],
-            ),
+            create_vnic_details={
+                "assign_ipv6ip": vnic_attachment_create_vnic_details_assign_ipv6ip,
+                "assign_private_dns_record": vnic_attachment_create_vnic_details_assign_private_dns_record,
+                "assign_public_ip": vnic_attachment_create_vnic_details_assign_public_ip,
+                "defined_tags": vnic_attachment_create_vnic_details_defined_tags,
+                "display_name": vnic_attachment_create_vnic_details_display_name,
+                "freeform_tags": vnic_attachment_create_vnic_details_freeform_tags,
+                "hostname_label": vnic_attachment_create_vnic_details_hostname_label,
+                "ipv6address_ipv6subnet_cidr_pair_details": vnic_attachment_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details,
+                "nsg_ids": vnic_attachment_create_vnic_details_nsg_ids,
+                "private_ip": vnic_attachment_create_vnic_details_private_ip,
+                "skip_source_dest_check": vnic_attachment_create_vnic_details_skip_source_dest_check,
+                "subnet_id": test_subnet["id"],
+                "vlan_id": test_vlan["id"],
+            },
             instance_id=test_instance["id"],
             display_name=vnic_attachment_display_name,
             nic_index=vnic_attachment_nic_index)
@@ -425,7 +425,7 @@ class VnicAttachment(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 create_vnic_details: Optional[pulumi.Input[pulumi.InputType['VnicAttachmentCreateVnicDetailsArgs']]] = None,
+                 create_vnic_details: Optional[pulumi.Input[Union['VnicAttachmentCreateVnicDetailsArgs', 'VnicAttachmentCreateVnicDetailsArgsDict']]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  instance_id: Optional[pulumi.Input[str]] = None,
                  nic_index: Optional[pulumi.Input[int]] = None,
@@ -466,7 +466,7 @@ class VnicAttachment(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             availability_domain: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            create_vnic_details: Optional[pulumi.Input[pulumi.InputType['VnicAttachmentCreateVnicDetailsArgs']]] = None,
+            create_vnic_details: Optional[pulumi.Input[Union['VnicAttachmentCreateVnicDetailsArgs', 'VnicAttachmentCreateVnicDetailsArgsDict']]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             instance_id: Optional[pulumi.Input[str]] = None,
             nic_index: Optional[pulumi.Input[int]] = None,
@@ -485,7 +485,7 @@ class VnicAttachment(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[str] compartment_id: The OCID of the compartment the VNIC attachment is in, which is the same compartment the instance is in.
-        :param pulumi.Input[pulumi.InputType['VnicAttachmentCreateVnicDetailsArgs']] create_vnic_details: (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+        :param pulumi.Input[Union['VnicAttachmentCreateVnicDetailsArgs', 'VnicAttachmentCreateVnicDetailsArgsDict']] create_vnic_details: (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[str] instance_id: The OCID of the instance.
         :param pulumi.Input[int] nic_index: Which physical network interface card (NIC) the VNIC will use. Defaults to 0. Certain bare metal instance shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to one of these instances, you can specify which NIC the VNIC will use. For more information, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm). 

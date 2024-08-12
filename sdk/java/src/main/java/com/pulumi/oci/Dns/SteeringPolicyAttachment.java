@@ -210,7 +210,7 @@ public class SteeringPolicyAttachment extends com.pulumi.resources.CustomResourc
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public SteeringPolicyAttachment(String name) {
+    public SteeringPolicyAttachment(java.lang.String name) {
         this(name, SteeringPolicyAttachmentArgs.Empty);
     }
     /**
@@ -218,7 +218,7 @@ public class SteeringPolicyAttachment extends com.pulumi.resources.CustomResourc
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public SteeringPolicyAttachment(String name, SteeringPolicyAttachmentArgs args) {
+    public SteeringPolicyAttachment(java.lang.String name, SteeringPolicyAttachmentArgs args) {
         this(name, args, null);
     }
     /**
@@ -227,12 +227,12 @@ public class SteeringPolicyAttachment extends com.pulumi.resources.CustomResourc
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public SteeringPolicyAttachment(String name, SteeringPolicyAttachmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Dns/steeringPolicyAttachment:SteeringPolicyAttachment", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public SteeringPolicyAttachment(java.lang.String name, SteeringPolicyAttachmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Dns/steeringPolicyAttachment:SteeringPolicyAttachment", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private SteeringPolicyAttachment(String name, Output<String> id, @Nullable SteeringPolicyAttachmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Dns/steeringPolicyAttachment:SteeringPolicyAttachment", name, state, makeResourceOptions(options, id));
+    private SteeringPolicyAttachment(java.lang.String name, Output<java.lang.String> id, @Nullable SteeringPolicyAttachmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Dns/steeringPolicyAttachment:SteeringPolicyAttachment", name, state, makeResourceOptions(options, id), false);
     }
 
     private static SteeringPolicyAttachmentArgs makeArgs(SteeringPolicyAttachmentArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -242,7 +242,7 @@ public class SteeringPolicyAttachment extends com.pulumi.resources.CustomResourc
         return args == null ? SteeringPolicyAttachmentArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -258,7 +258,7 @@ public class SteeringPolicyAttachment extends com.pulumi.resources.CustomResourc
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static SteeringPolicyAttachment get(String name, Output<String> id, @Nullable SteeringPolicyAttachmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static SteeringPolicyAttachment get(java.lang.String name, Output<java.lang.String> id, @Nullable SteeringPolicyAttachmentState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new SteeringPolicyAttachment(name, id, state, options);
     }
 }

@@ -97,7 +97,7 @@ class AwaitableGetPublicationPackagesResult(GetPublicationPackagesResult):
             publication_packages=self.publication_packages)
 
 
-def get_publication_packages(filters: Optional[Sequence[pulumi.InputType['GetPublicationPackagesFilterArgs']]] = None,
+def get_publication_packages(filters: Optional[Sequence[Union['GetPublicationPackagesFilterArgs', 'GetPublicationPackagesFilterArgsDict']]] = None,
                              package_type: Optional[str] = None,
                              package_version: Optional[str] = None,
                              publication_id: Optional[str] = None,
@@ -141,7 +141,7 @@ def get_publication_packages(filters: Optional[Sequence[pulumi.InputType['GetPub
 
 
 @_utilities.lift_output_func(get_publication_packages)
-def get_publication_packages_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetPublicationPackagesFilterArgs']]]]] = None,
+def get_publication_packages_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPublicationPackagesFilterArgs', 'GetPublicationPackagesFilterArgsDict']]]]] = None,
                                     package_type: Optional[pulumi.Input[Optional[str]]] = None,
                                     package_version: Optional[pulumi.Input[Optional[str]]] = None,
                                     publication_id: Optional[pulumi.Input[str]] = None,

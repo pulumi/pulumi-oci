@@ -106,7 +106,7 @@ class AwaitableGetExternalListenersResult(GetExternalListenersResult):
 def get_external_listeners(compartment_id: Optional[str] = None,
                            display_name: Optional[str] = None,
                            external_db_system_id: Optional[str] = None,
-                           filters: Optional[Sequence[pulumi.InputType['GetExternalListenersFilterArgs']]] = None,
+                           filters: Optional[Sequence[Union['GetExternalListenersFilterArgs', 'GetExternalListenersFilterArgsDict']]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalListenersResult:
     """
     This data source provides the list of External Listeners in Oracle Cloud Infrastructure Database Management service.
@@ -150,7 +150,7 @@ def get_external_listeners(compartment_id: Optional[str] = None,
 def get_external_listeners_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                   display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                   external_db_system_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                  filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetExternalListenersFilterArgs']]]]] = None,
+                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExternalListenersFilterArgs', 'GetExternalListenersFilterArgsDict']]]]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalListenersResult]:
     """
     This data source provides the list of External Listeners in Oracle Cloud Infrastructure Database Management service.

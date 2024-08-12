@@ -118,7 +118,7 @@ class AwaitableGetMigrationPlanAvailableShapesResult(GetMigrationPlanAvailableSh
 def get_migration_plan_available_shapes(availability_domain: Optional[str] = None,
                                         compartment_id: Optional[str] = None,
                                         dvh_host_id: Optional[str] = None,
-                                        filters: Optional[Sequence[pulumi.InputType['GetMigrationPlanAvailableShapesFilterArgs']]] = None,
+                                        filters: Optional[Sequence[Union['GetMigrationPlanAvailableShapesFilterArgs', 'GetMigrationPlanAvailableShapesFilterArgsDict']]] = None,
                                         migration_plan_id: Optional[str] = None,
                                         reserved_capacity_id: Optional[str] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMigrationPlanAvailableShapesResult:
@@ -172,7 +172,7 @@ def get_migration_plan_available_shapes(availability_domain: Optional[str] = Non
 def get_migration_plan_available_shapes_output(availability_domain: Optional[pulumi.Input[Optional[str]]] = None,
                                                compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                dvh_host_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                               filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetMigrationPlanAvailableShapesFilterArgs']]]]] = None,
+                                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMigrationPlanAvailableShapesFilterArgs', 'GetMigrationPlanAvailableShapesFilterArgsDict']]]]] = None,
                                                migration_plan_id: Optional[pulumi.Input[str]] = None,
                                                reserved_capacity_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMigrationPlanAvailableShapesResult]:

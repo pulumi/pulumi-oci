@@ -76,7 +76,7 @@ class AwaitableGetRegionSubscriptionsResult(GetRegionSubscriptionsResult):
             tenancy_id=self.tenancy_id)
 
 
-def get_region_subscriptions(filters: Optional[Sequence[pulumi.InputType['GetRegionSubscriptionsFilterArgs']]] = None,
+def get_region_subscriptions(filters: Optional[Sequence[Union['GetRegionSubscriptionsFilterArgs', 'GetRegionSubscriptionsFilterArgsDict']]] = None,
                              tenancy_id: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRegionSubscriptionsResult:
     """
@@ -110,7 +110,7 @@ def get_region_subscriptions(filters: Optional[Sequence[pulumi.InputType['GetReg
 
 
 @_utilities.lift_output_func(get_region_subscriptions)
-def get_region_subscriptions_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetRegionSubscriptionsFilterArgs']]]]] = None,
+def get_region_subscriptions_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRegionSubscriptionsFilterArgs', 'GetRegionSubscriptionsFilterArgsDict']]]]] = None,
                                     tenancy_id: Optional[pulumi.Input[str]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRegionSubscriptionsResult]:
     """

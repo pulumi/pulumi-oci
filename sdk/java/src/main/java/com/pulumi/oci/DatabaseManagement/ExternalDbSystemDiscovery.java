@@ -249,7 +249,7 @@ public class ExternalDbSystemDiscovery extends com.pulumi.resources.CustomResour
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ExternalDbSystemDiscovery(String name) {
+    public ExternalDbSystemDiscovery(java.lang.String name) {
         this(name, ExternalDbSystemDiscoveryArgs.Empty);
     }
     /**
@@ -257,7 +257,7 @@ public class ExternalDbSystemDiscovery extends com.pulumi.resources.CustomResour
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ExternalDbSystemDiscovery(String name, ExternalDbSystemDiscoveryArgs args) {
+    public ExternalDbSystemDiscovery(java.lang.String name, ExternalDbSystemDiscoveryArgs args) {
         this(name, args, null);
     }
     /**
@@ -266,12 +266,12 @@ public class ExternalDbSystemDiscovery extends com.pulumi.resources.CustomResour
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ExternalDbSystemDiscovery(String name, ExternalDbSystemDiscoveryArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseManagement/externalDbSystemDiscovery:ExternalDbSystemDiscovery", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public ExternalDbSystemDiscovery(java.lang.String name, ExternalDbSystemDiscoveryArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DatabaseManagement/externalDbSystemDiscovery:ExternalDbSystemDiscovery", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ExternalDbSystemDiscovery(String name, Output<String> id, @Nullable ExternalDbSystemDiscoveryState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DatabaseManagement/externalDbSystemDiscovery:ExternalDbSystemDiscovery", name, state, makeResourceOptions(options, id));
+    private ExternalDbSystemDiscovery(java.lang.String name, Output<java.lang.String> id, @Nullable ExternalDbSystemDiscoveryState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DatabaseManagement/externalDbSystemDiscovery:ExternalDbSystemDiscovery", name, state, makeResourceOptions(options, id), false);
     }
 
     private static ExternalDbSystemDiscoveryArgs makeArgs(ExternalDbSystemDiscoveryArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -281,7 +281,7 @@ public class ExternalDbSystemDiscovery extends com.pulumi.resources.CustomResour
         return args == null ? ExternalDbSystemDiscoveryArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -297,7 +297,7 @@ public class ExternalDbSystemDiscovery extends com.pulumi.resources.CustomResour
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ExternalDbSystemDiscovery get(String name, Output<String> id, @Nullable ExternalDbSystemDiscoveryState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ExternalDbSystemDiscovery get(java.lang.String name, Output<java.lang.String> id, @Nullable ExternalDbSystemDiscoveryState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ExternalDbSystemDiscovery(name, id, state, options);
     }
 }

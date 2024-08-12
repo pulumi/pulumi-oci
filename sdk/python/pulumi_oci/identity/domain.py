@@ -871,7 +871,7 @@ class Domain(pulumi.CustomResource):
             is_primary_email_required: Optional[pulumi.Input[bool]] = None,
             license_type: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
-            replica_regions: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainReplicaRegionArgs']]]]] = None,
+            replica_regions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainReplicaRegionArgs', 'DomainReplicaRegionArgsDict']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             type: Optional[pulumi.Input[str]] = None,
@@ -903,7 +903,7 @@ class Domain(pulumi.CustomResource):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] lifecycle_details: Any additional details about the current state of the Domain.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainReplicaRegionArgs']]]] replica_regions: The regions domain is replication to.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainReplicaRegionArgs', 'DomainReplicaRegionArgsDict']]]] replica_regions: The regions domain is replication to.
         :param pulumi.Input[str] state: The current state.
         :param pulumi.Input[str] time_created: Date and time the domain was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] type: The type of the domain.

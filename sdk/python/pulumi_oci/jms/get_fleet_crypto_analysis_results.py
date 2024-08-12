@@ -176,7 +176,7 @@ class AwaitableGetFleetCryptoAnalysisResultsResult(GetFleetCryptoAnalysisResults
 
 
 def get_fleet_crypto_analysis_results(aggregation_mode: Optional[str] = None,
-                                      filters: Optional[Sequence[pulumi.InputType['GetFleetCryptoAnalysisResultsFilterArgs']]] = None,
+                                      filters: Optional[Sequence[Union['GetFleetCryptoAnalysisResultsFilterArgs', 'GetFleetCryptoAnalysisResultsFilterArgsDict']]] = None,
                                       finding_count: Optional[int] = None,
                                       finding_count_greater_than: Optional[int] = None,
                                       fleet_id: Optional[str] = None,
@@ -255,7 +255,7 @@ def get_fleet_crypto_analysis_results(aggregation_mode: Optional[str] = None,
 
 @_utilities.lift_output_func(get_fleet_crypto_analysis_results)
 def get_fleet_crypto_analysis_results_output(aggregation_mode: Optional[pulumi.Input[Optional[str]]] = None,
-                                             filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetFleetCryptoAnalysisResultsFilterArgs']]]]] = None,
+                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFleetCryptoAnalysisResultsFilterArgs', 'GetFleetCryptoAnalysisResultsFilterArgsDict']]]]] = None,
                                              finding_count: Optional[pulumi.Input[Optional[int]]] = None,
                                              finding_count_greater_than: Optional[pulumi.Input[Optional[int]]] = None,
                                              fleet_id: Optional[pulumi.Input[str]] = None,

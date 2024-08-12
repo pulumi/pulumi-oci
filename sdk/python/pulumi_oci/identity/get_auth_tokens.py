@@ -79,7 +79,7 @@ class AwaitableGetAuthTokensResult(GetAuthTokensResult):
             user_id=self.user_id)
 
 
-def get_auth_tokens(filters: Optional[Sequence[pulumi.InputType['GetAuthTokensFilterArgs']]] = None,
+def get_auth_tokens(filters: Optional[Sequence[Union['GetAuthTokensFilterArgs', 'GetAuthTokensFilterArgsDict']]] = None,
                     user_id: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAuthTokensResult:
     """
@@ -114,7 +114,7 @@ def get_auth_tokens(filters: Optional[Sequence[pulumi.InputType['GetAuthTokensFi
 
 
 @_utilities.lift_output_func(get_auth_tokens)
-def get_auth_tokens_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAuthTokensFilterArgs']]]]] = None,
+def get_auth_tokens_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAuthTokensFilterArgs', 'GetAuthTokensFilterArgsDict']]]]] = None,
                            user_id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAuthTokensResult]:
     """

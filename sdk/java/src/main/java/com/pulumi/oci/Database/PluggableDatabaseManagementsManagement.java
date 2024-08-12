@@ -381,7 +381,7 @@ public class PluggableDatabaseManagementsManagement extends com.pulumi.resources
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public PluggableDatabaseManagementsManagement(String name) {
+    public PluggableDatabaseManagementsManagement(java.lang.String name) {
         this(name, PluggableDatabaseManagementsManagementArgs.Empty);
     }
     /**
@@ -389,7 +389,7 @@ public class PluggableDatabaseManagementsManagement extends com.pulumi.resources
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public PluggableDatabaseManagementsManagement(String name, PluggableDatabaseManagementsManagementArgs args) {
+    public PluggableDatabaseManagementsManagement(java.lang.String name, PluggableDatabaseManagementsManagementArgs args) {
         this(name, args, null);
     }
     /**
@@ -398,12 +398,12 @@ public class PluggableDatabaseManagementsManagement extends com.pulumi.resources
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public PluggableDatabaseManagementsManagement(String name, PluggableDatabaseManagementsManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/pluggableDatabaseManagementsManagement:PluggableDatabaseManagementsManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public PluggableDatabaseManagementsManagement(java.lang.String name, PluggableDatabaseManagementsManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/pluggableDatabaseManagementsManagement:PluggableDatabaseManagementsManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private PluggableDatabaseManagementsManagement(String name, Output<String> id, @Nullable PluggableDatabaseManagementsManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:Database/pluggableDatabaseManagementsManagement:PluggableDatabaseManagementsManagement", name, state, makeResourceOptions(options, id));
+    private PluggableDatabaseManagementsManagement(java.lang.String name, Output<java.lang.String> id, @Nullable PluggableDatabaseManagementsManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:Database/pluggableDatabaseManagementsManagement:PluggableDatabaseManagementsManagement", name, state, makeResourceOptions(options, id), false);
     }
 
     private static PluggableDatabaseManagementsManagementArgs makeArgs(PluggableDatabaseManagementsManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -413,7 +413,7 @@ public class PluggableDatabaseManagementsManagement extends com.pulumi.resources
         return args == null ? PluggableDatabaseManagementsManagementArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -429,7 +429,7 @@ public class PluggableDatabaseManagementsManagement extends com.pulumi.resources
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static PluggableDatabaseManagementsManagement get(String name, Output<String> id, @Nullable PluggableDatabaseManagementsManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static PluggableDatabaseManagementsManagement get(java.lang.String name, Output<java.lang.String> id, @Nullable PluggableDatabaseManagementsManagementState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new PluggableDatabaseManagementsManagement(name, id, state, options);
     }
 }

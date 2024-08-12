@@ -176,7 +176,7 @@ public class AlertPolicyRule extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public AlertPolicyRule(String name) {
+    public AlertPolicyRule(java.lang.String name) {
         this(name, AlertPolicyRuleArgs.Empty);
     }
     /**
@@ -184,7 +184,7 @@ public class AlertPolicyRule extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public AlertPolicyRule(String name, AlertPolicyRuleArgs args) {
+    public AlertPolicyRule(java.lang.String name, AlertPolicyRuleArgs args) {
         this(name, args, null);
     }
     /**
@@ -193,12 +193,12 @@ public class AlertPolicyRule extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public AlertPolicyRule(String name, AlertPolicyRuleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/alertPolicyRule:AlertPolicyRule", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public AlertPolicyRule(java.lang.String name, AlertPolicyRuleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataSafe/alertPolicyRule:AlertPolicyRule", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private AlertPolicyRule(String name, Output<String> id, @Nullable AlertPolicyRuleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/alertPolicyRule:AlertPolicyRule", name, state, makeResourceOptions(options, id));
+    private AlertPolicyRule(java.lang.String name, Output<java.lang.String> id, @Nullable AlertPolicyRuleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataSafe/alertPolicyRule:AlertPolicyRule", name, state, makeResourceOptions(options, id), false);
     }
 
     private static AlertPolicyRuleArgs makeArgs(AlertPolicyRuleArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -208,7 +208,7 @@ public class AlertPolicyRule extends com.pulumi.resources.CustomResource {
         return args == null ? AlertPolicyRuleArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -224,7 +224,7 @@ public class AlertPolicyRule extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static AlertPolicyRule get(String name, Output<String> id, @Nullable AlertPolicyRuleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static AlertPolicyRule get(java.lang.String name, Output<java.lang.String> id, @Nullable AlertPolicyRuleState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new AlertPolicyRule(name, id, state, options);
     }
 }

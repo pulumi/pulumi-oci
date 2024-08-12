@@ -667,7 +667,7 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public BdsInstance(String name) {
+    public BdsInstance(java.lang.String name) {
         this(name, BdsInstanceArgs.Empty);
     }
     /**
@@ -675,7 +675,7 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public BdsInstance(String name, BdsInstanceArgs args) {
+    public BdsInstance(java.lang.String name, BdsInstanceArgs args) {
         this(name, args, null);
     }
     /**
@@ -684,12 +684,12 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public BdsInstance(String name, BdsInstanceArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:BigDataService/bdsInstance:BdsInstance", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public BdsInstance(java.lang.String name, BdsInstanceArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:BigDataService/bdsInstance:BdsInstance", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private BdsInstance(String name, Output<String> id, @Nullable BdsInstanceState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:BigDataService/bdsInstance:BdsInstance", name, state, makeResourceOptions(options, id));
+    private BdsInstance(java.lang.String name, Output<java.lang.String> id, @Nullable BdsInstanceState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:BigDataService/bdsInstance:BdsInstance", name, state, makeResourceOptions(options, id), false);
     }
 
     private static BdsInstanceArgs makeArgs(BdsInstanceArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -699,7 +699,7 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
         return args == null ? BdsInstanceArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .additionalSecretOutputs(List.of(
@@ -718,7 +718,7 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static BdsInstance get(String name, Output<String> id, @Nullable BdsInstanceState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static BdsInstance get(java.lang.String name, Output<java.lang.String> id, @Nullable BdsInstanceState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new BdsInstance(name, id, state, options);
     }
 }

@@ -321,10 +321,10 @@ class ManagedInstanceManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 child_software_sources: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceManagementChildSoftwareSourceArgs']]]]] = None,
-                 managed_instance_groups: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceManagementManagedInstanceGroupArgs']]]]] = None,
+                 child_software_sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceManagementChildSoftwareSourceArgs', 'ManagedInstanceManagementChildSoftwareSourceArgsDict']]]]] = None,
+                 managed_instance_groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceManagementManagedInstanceGroupArgs', 'ManagedInstanceManagementManagedInstanceGroupArgsDict']]]]] = None,
                  managed_instance_id: Optional[pulumi.Input[str]] = None,
-                 parent_software_source: Optional[pulumi.Input[pulumi.InputType['ManagedInstanceManagementParentSoftwareSourceArgs']]] = None,
+                 parent_software_source: Optional[pulumi.Input[Union['ManagedInstanceManagementParentSoftwareSourceArgs', 'ManagedInstanceManagementParentSoftwareSourceArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Managed Instance Management in Oracle Cloud Infrastructure OS Management service.
@@ -350,18 +350,18 @@ class ManagedInstanceManagement(pulumi.CustomResource):
 
         test_managed_instance_management = oci.os_management.ManagedInstanceManagement("test_managed_instance_management",
             managed_instance_id=test_managed_instance["id"],
-            parent_software_source=oci.os_management.ManagedInstanceManagementParentSoftwareSourceArgs(
-                id=test_parent_software_source["id"],
-                name=test_parent_software_source["displayName"],
-            ),
-            managed_instance_groups=[oci.os_management.ManagedInstanceManagementManagedInstanceGroupArgs(
-                id=test_managed_instance_group["id"],
-                display_name=managed_instance_group_display_name,
-            )],
-            child_software_sources=[oci.os_management.ManagedInstanceManagementChildSoftwareSourceArgs(
-                id=test_software_source_child["id"],
-                name=test_software_source_child["displayName"],
-            )])
+            parent_software_source={
+                "id": test_parent_software_source["id"],
+                "name": test_parent_software_source["displayName"],
+            },
+            managed_instance_groups=[{
+                "id": test_managed_instance_group["id"],
+                "display_name": managed_instance_group_display_name,
+            }],
+            child_software_sources=[{
+                "id": test_software_source_child["id"],
+                "name": test_software_source_child["displayName"],
+            }])
         ```
 
         ## Import
@@ -370,10 +370,10 @@ class ManagedInstanceManagement(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceManagementChildSoftwareSourceArgs']]]] child_software_sources: (Updatable) list of child Software Sources attached to the Managed Instance
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceManagementManagedInstanceGroupArgs']]]] managed_instance_groups: (Updatable) The ids of the managed instance groups of which this instance is a member.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceManagementChildSoftwareSourceArgs', 'ManagedInstanceManagementChildSoftwareSourceArgsDict']]]] child_software_sources: (Updatable) list of child Software Sources attached to the Managed Instance
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceManagementManagedInstanceGroupArgs', 'ManagedInstanceManagementManagedInstanceGroupArgsDict']]]] managed_instance_groups: (Updatable) The ids of the managed instance groups of which this instance is a member.
         :param pulumi.Input[str] managed_instance_id: OCID for the managed instance
-        :param pulumi.Input[pulumi.InputType['ManagedInstanceManagementParentSoftwareSourceArgs']] parent_software_source: (Updatable) the parent (base) Software Source attached to the Managed Instance
+        :param pulumi.Input[Union['ManagedInstanceManagementParentSoftwareSourceArgs', 'ManagedInstanceManagementParentSoftwareSourceArgsDict']] parent_software_source: (Updatable) the parent (base) Software Source attached to the Managed Instance
         """
         ...
     @overload
@@ -405,18 +405,18 @@ class ManagedInstanceManagement(pulumi.CustomResource):
 
         test_managed_instance_management = oci.os_management.ManagedInstanceManagement("test_managed_instance_management",
             managed_instance_id=test_managed_instance["id"],
-            parent_software_source=oci.os_management.ManagedInstanceManagementParentSoftwareSourceArgs(
-                id=test_parent_software_source["id"],
-                name=test_parent_software_source["displayName"],
-            ),
-            managed_instance_groups=[oci.os_management.ManagedInstanceManagementManagedInstanceGroupArgs(
-                id=test_managed_instance_group["id"],
-                display_name=managed_instance_group_display_name,
-            )],
-            child_software_sources=[oci.os_management.ManagedInstanceManagementChildSoftwareSourceArgs(
-                id=test_software_source_child["id"],
-                name=test_software_source_child["displayName"],
-            )])
+            parent_software_source={
+                "id": test_parent_software_source["id"],
+                "name": test_parent_software_source["displayName"],
+            },
+            managed_instance_groups=[{
+                "id": test_managed_instance_group["id"],
+                "display_name": managed_instance_group_display_name,
+            }],
+            child_software_sources=[{
+                "id": test_software_source_child["id"],
+                "name": test_software_source_child["displayName"],
+            }])
         ```
 
         ## Import
@@ -438,10 +438,10 @@ class ManagedInstanceManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 child_software_sources: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceManagementChildSoftwareSourceArgs']]]]] = None,
-                 managed_instance_groups: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceManagementManagedInstanceGroupArgs']]]]] = None,
+                 child_software_sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceManagementChildSoftwareSourceArgs', 'ManagedInstanceManagementChildSoftwareSourceArgsDict']]]]] = None,
+                 managed_instance_groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceManagementManagedInstanceGroupArgs', 'ManagedInstanceManagementManagedInstanceGroupArgsDict']]]]] = None,
                  managed_instance_id: Optional[pulumi.Input[str]] = None,
-                 parent_software_source: Optional[pulumi.Input[pulumi.InputType['ManagedInstanceManagementParentSoftwareSourceArgs']]] = None,
+                 parent_software_source: Optional[pulumi.Input[Union['ManagedInstanceManagementParentSoftwareSourceArgs', 'ManagedInstanceManagementParentSoftwareSourceArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -477,18 +477,18 @@ class ManagedInstanceManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            child_software_sources: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceManagementChildSoftwareSourceArgs']]]]] = None,
+            child_software_sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceManagementChildSoftwareSourceArgs', 'ManagedInstanceManagementChildSoftwareSourceArgsDict']]]]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             last_boot: Optional[pulumi.Input[str]] = None,
             last_checkin: Optional[pulumi.Input[str]] = None,
-            managed_instance_groups: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceManagementManagedInstanceGroupArgs']]]]] = None,
+            managed_instance_groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceManagementManagedInstanceGroupArgs', 'ManagedInstanceManagementManagedInstanceGroupArgsDict']]]]] = None,
             managed_instance_id: Optional[pulumi.Input[str]] = None,
             os_kernel_version: Optional[pulumi.Input[str]] = None,
             os_name: Optional[pulumi.Input[str]] = None,
             os_version: Optional[pulumi.Input[str]] = None,
-            parent_software_source: Optional[pulumi.Input[pulumi.InputType['ManagedInstanceManagementParentSoftwareSourceArgs']]] = None,
+            parent_software_source: Optional[pulumi.Input[Union['ManagedInstanceManagementParentSoftwareSourceArgs', 'ManagedInstanceManagementParentSoftwareSourceArgsDict']]] = None,
             status: Optional[pulumi.Input[str]] = None,
             updates_available: Optional[pulumi.Input[int]] = None) -> 'ManagedInstanceManagement':
         """
@@ -498,18 +498,18 @@ class ManagedInstanceManagement(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceManagementChildSoftwareSourceArgs']]]] child_software_sources: (Updatable) list of child Software Sources attached to the Managed Instance
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceManagementChildSoftwareSourceArgs', 'ManagedInstanceManagementChildSoftwareSourceArgsDict']]]] child_software_sources: (Updatable) list of child Software Sources attached to the Managed Instance
         :param pulumi.Input[str] compartment_id: OCID for the Compartment
         :param pulumi.Input[str] description: Information specified by the user about the managed instance
         :param pulumi.Input[str] display_name: User friendly name
         :param pulumi.Input[str] last_boot: Time at which the instance last booted
         :param pulumi.Input[str] last_checkin: Time at which the instance last checked in
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceManagementManagedInstanceGroupArgs']]]] managed_instance_groups: (Updatable) The ids of the managed instance groups of which this instance is a member.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceManagementManagedInstanceGroupArgs', 'ManagedInstanceManagementManagedInstanceGroupArgsDict']]]] managed_instance_groups: (Updatable) The ids of the managed instance groups of which this instance is a member.
         :param pulumi.Input[str] managed_instance_id: OCID for the managed instance
         :param pulumi.Input[str] os_kernel_version: Operating System Kernel Version
         :param pulumi.Input[str] os_name: Operating System Name
         :param pulumi.Input[str] os_version: Operating System Version
-        :param pulumi.Input[pulumi.InputType['ManagedInstanceManagementParentSoftwareSourceArgs']] parent_software_source: (Updatable) the parent (base) Software Source attached to the Managed Instance
+        :param pulumi.Input[Union['ManagedInstanceManagementParentSoftwareSourceArgs', 'ManagedInstanceManagementParentSoftwareSourceArgsDict']] parent_software_source: (Updatable) the parent (base) Software Source attached to the Managed Instance
         :param pulumi.Input[str] status: status of the managed instance.
         :param pulumi.Input[int] updates_available: Number of updates available to be installed
         """

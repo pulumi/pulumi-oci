@@ -32,7 +32,7 @@ public class MaskData extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public MaskData(String name) {
+    public MaskData(java.lang.String name) {
         this(name, MaskDataArgs.Empty);
     }
     /**
@@ -40,7 +40,7 @@ public class MaskData extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public MaskData(String name, MaskDataArgs args) {
+    public MaskData(java.lang.String name, MaskDataArgs args) {
         this(name, args, null);
     }
     /**
@@ -49,12 +49,12 @@ public class MaskData extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public MaskData(String name, MaskDataArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/maskData:MaskData", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public MaskData(java.lang.String name, MaskDataArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataSafe/maskData:MaskData", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private MaskData(String name, Output<String> id, @Nullable MaskDataState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:DataSafe/maskData:MaskData", name, state, makeResourceOptions(options, id));
+    private MaskData(java.lang.String name, Output<java.lang.String> id, @Nullable MaskDataState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:DataSafe/maskData:MaskData", name, state, makeResourceOptions(options, id), false);
     }
 
     private static MaskDataArgs makeArgs(MaskDataArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -64,7 +64,7 @@ public class MaskData extends com.pulumi.resources.CustomResource {
         return args == null ? MaskDataArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -80,7 +80,7 @@ public class MaskData extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static MaskData get(String name, Output<String> id, @Nullable MaskDataState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static MaskData get(java.lang.String name, Output<java.lang.String> id, @Nullable MaskDataState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new MaskData(name, id, state, options);
     }
 }

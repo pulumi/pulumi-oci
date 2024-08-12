@@ -416,14 +416,14 @@ class VirtualDeployment(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_logging: Optional[pulumi.Input[pulumi.InputType['VirtualDeploymentAccessLoggingArgs']]] = None,
+                 access_logging: Optional[pulumi.Input[Union['VirtualDeploymentAccessLoggingArgs', 'VirtualDeploymentAccessLoggingArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 listeners: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualDeploymentListenerArgs']]]]] = None,
+                 listeners: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualDeploymentListenerArgs', 'VirtualDeploymentListenerArgsDict']]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 service_discovery: Optional[pulumi.Input[pulumi.InputType['VirtualDeploymentServiceDiscoveryArgs']]] = None,
+                 service_discovery: Optional[pulumi.Input[Union['VirtualDeploymentServiceDiscoveryArgs', 'VirtualDeploymentServiceDiscoveryArgsDict']]] = None,
                  virtual_service_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -441,9 +441,9 @@ class VirtualDeployment(pulumi.CustomResource):
             compartment_id=compartment_id,
             name=virtual_deployment_name,
             virtual_service_id=test_virtual_service["id"],
-            access_logging=oci.service_mesh.VirtualDeploymentAccessLoggingArgs(
-                is_enabled=virtual_deployment_access_logging_is_enabled,
-            ),
+            access_logging={
+                "is_enabled": virtual_deployment_access_logging_is_enabled,
+            },
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -451,16 +451,16 @@ class VirtualDeployment(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            listeners=[oci.service_mesh.VirtualDeploymentListenerArgs(
-                port=virtual_deployment_listeners_port,
-                protocol=virtual_deployment_listeners_protocol,
-                idle_timeout_in_ms=virtual_deployment_listeners_idle_timeout_in_ms,
-                request_timeout_in_ms=virtual_deployment_listeners_request_timeout_in_ms,
-            )],
-            service_discovery=oci.service_mesh.VirtualDeploymentServiceDiscoveryArgs(
-                type=virtual_deployment_service_discovery_type,
-                hostname=virtual_deployment_service_discovery_hostname,
-            ))
+            listeners=[{
+                "port": virtual_deployment_listeners_port,
+                "protocol": virtual_deployment_listeners_protocol,
+                "idle_timeout_in_ms": virtual_deployment_listeners_idle_timeout_in_ms,
+                "request_timeout_in_ms": virtual_deployment_listeners_request_timeout_in_ms,
+            }],
+            service_discovery={
+                "type": virtual_deployment_service_discovery_type,
+                "hostname": virtual_deployment_service_discovery_hostname,
+            })
         ```
 
         ## Import
@@ -473,14 +473,14 @@ class VirtualDeployment(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['VirtualDeploymentAccessLoggingArgs']] access_logging: (Updatable) This configuration determines if logging is enabled and where the logs will be output.
+        :param pulumi.Input[Union['VirtualDeploymentAccessLoggingArgs', 'VirtualDeploymentAccessLoggingArgsDict']] access_logging: (Updatable) This configuration determines if logging is enabled and where the logs will be output.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualDeploymentListenerArgs']]]] listeners: (Updatable) The listeners for the virtual deployment.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualDeploymentListenerArgs', 'VirtualDeploymentListenerArgsDict']]]] listeners: (Updatable) The listeners for the virtual deployment.
         :param pulumi.Input[str] name: A user-friendly name. The name must be unique within the same virtual service and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-        :param pulumi.Input[pulumi.InputType['VirtualDeploymentServiceDiscoveryArgs']] service_discovery: (Updatable) Service Discovery configuration for virtual deployments.
+        :param pulumi.Input[Union['VirtualDeploymentServiceDiscoveryArgs', 'VirtualDeploymentServiceDiscoveryArgsDict']] service_discovery: (Updatable) Service Discovery configuration for virtual deployments.
         :param pulumi.Input[str] virtual_service_id: The OCID of the service mesh in which this access policy is created.
                
                
@@ -508,9 +508,9 @@ class VirtualDeployment(pulumi.CustomResource):
             compartment_id=compartment_id,
             name=virtual_deployment_name,
             virtual_service_id=test_virtual_service["id"],
-            access_logging=oci.service_mesh.VirtualDeploymentAccessLoggingArgs(
-                is_enabled=virtual_deployment_access_logging_is_enabled,
-            ),
+            access_logging={
+                "is_enabled": virtual_deployment_access_logging_is_enabled,
+            },
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -518,16 +518,16 @@ class VirtualDeployment(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            listeners=[oci.service_mesh.VirtualDeploymentListenerArgs(
-                port=virtual_deployment_listeners_port,
-                protocol=virtual_deployment_listeners_protocol,
-                idle_timeout_in_ms=virtual_deployment_listeners_idle_timeout_in_ms,
-                request_timeout_in_ms=virtual_deployment_listeners_request_timeout_in_ms,
-            )],
-            service_discovery=oci.service_mesh.VirtualDeploymentServiceDiscoveryArgs(
-                type=virtual_deployment_service_discovery_type,
-                hostname=virtual_deployment_service_discovery_hostname,
-            ))
+            listeners=[{
+                "port": virtual_deployment_listeners_port,
+                "protocol": virtual_deployment_listeners_protocol,
+                "idle_timeout_in_ms": virtual_deployment_listeners_idle_timeout_in_ms,
+                "request_timeout_in_ms": virtual_deployment_listeners_request_timeout_in_ms,
+            }],
+            service_discovery={
+                "type": virtual_deployment_service_discovery_type,
+                "hostname": virtual_deployment_service_discovery_hostname,
+            })
         ```
 
         ## Import
@@ -553,14 +553,14 @@ class VirtualDeployment(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_logging: Optional[pulumi.Input[pulumi.InputType['VirtualDeploymentAccessLoggingArgs']]] = None,
+                 access_logging: Optional[pulumi.Input[Union['VirtualDeploymentAccessLoggingArgs', 'VirtualDeploymentAccessLoggingArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 listeners: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualDeploymentListenerArgs']]]]] = None,
+                 listeners: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualDeploymentListenerArgs', 'VirtualDeploymentListenerArgsDict']]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 service_discovery: Optional[pulumi.Input[pulumi.InputType['VirtualDeploymentServiceDiscoveryArgs']]] = None,
+                 service_discovery: Optional[pulumi.Input[Union['VirtualDeploymentServiceDiscoveryArgs', 'VirtualDeploymentServiceDiscoveryArgsDict']]] = None,
                  virtual_service_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -599,15 +599,15 @@ class VirtualDeployment(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            access_logging: Optional[pulumi.Input[pulumi.InputType['VirtualDeploymentAccessLoggingArgs']]] = None,
+            access_logging: Optional[pulumi.Input[Union['VirtualDeploymentAccessLoggingArgs', 'VirtualDeploymentAccessLoggingArgsDict']]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             description: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
-            listeners: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualDeploymentListenerArgs']]]]] = None,
+            listeners: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualDeploymentListenerArgs', 'VirtualDeploymentListenerArgsDict']]]]] = None,
             name: Optional[pulumi.Input[str]] = None,
-            service_discovery: Optional[pulumi.Input[pulumi.InputType['VirtualDeploymentServiceDiscoveryArgs']]] = None,
+            service_discovery: Optional[pulumi.Input[Union['VirtualDeploymentServiceDiscoveryArgs', 'VirtualDeploymentServiceDiscoveryArgsDict']]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
@@ -620,15 +620,15 @@ class VirtualDeployment(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['VirtualDeploymentAccessLoggingArgs']] access_logging: (Updatable) This configuration determines if logging is enabled and where the logs will be output.
+        :param pulumi.Input[Union['VirtualDeploymentAccessLoggingArgs', 'VirtualDeploymentAccessLoggingArgsDict']] access_logging: (Updatable) This configuration determines if logging is enabled and where the logs will be output.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualDeploymentListenerArgs']]]] listeners: (Updatable) The listeners for the virtual deployment.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualDeploymentListenerArgs', 'VirtualDeploymentListenerArgsDict']]]] listeners: (Updatable) The listeners for the virtual deployment.
         :param pulumi.Input[str] name: A user-friendly name. The name must be unique within the same virtual service and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-        :param pulumi.Input[pulumi.InputType['VirtualDeploymentServiceDiscoveryArgs']] service_discovery: (Updatable) Service Discovery configuration for virtual deployments.
+        :param pulumi.Input[Union['VirtualDeploymentServiceDiscoveryArgs', 'VirtualDeploymentServiceDiscoveryArgsDict']] service_discovery: (Updatable) Service Discovery configuration for virtual deployments.
         :param pulumi.Input[str] state: The current state of the Resource.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time when this resource was created in an RFC3339 formatted datetime string.

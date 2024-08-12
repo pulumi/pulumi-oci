@@ -129,7 +129,7 @@ class AwaitableGetProtectedDatabasesResult(GetProtectedDatabasesResult):
 
 def get_protected_databases(compartment_id: Optional[str] = None,
                             display_name: Optional[str] = None,
-                            filters: Optional[Sequence[pulumi.InputType['GetProtectedDatabasesFilterArgs']]] = None,
+                            filters: Optional[Sequence[Union['GetProtectedDatabasesFilterArgs', 'GetProtectedDatabasesFilterArgsDict']]] = None,
                             id: Optional[str] = None,
                             protection_policy_id: Optional[str] = None,
                             recovery_service_subnet_id: Optional[str] = None,
@@ -187,7 +187,7 @@ def get_protected_databases(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_protected_databases)
 def get_protected_databases_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                    display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetProtectedDatabasesFilterArgs']]]]] = None,
+                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetProtectedDatabasesFilterArgs', 'GetProtectedDatabasesFilterArgsDict']]]]] = None,
                                    id: Optional[pulumi.Input[Optional[str]]] = None,
                                    protection_policy_id: Optional[pulumi.Input[Optional[str]]] = None,
                                    recovery_service_subnet_id: Optional[pulumi.Input[Optional[str]]] = None,

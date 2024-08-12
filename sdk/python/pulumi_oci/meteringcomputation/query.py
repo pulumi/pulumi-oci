@@ -97,7 +97,7 @@ class Query(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 query_definition: Optional[pulumi.Input[pulumi.InputType['QueryQueryDefinitionArgs']]] = None,
+                 query_definition: Optional[pulumi.Input[Union['QueryQueryDefinitionArgs', 'QueryQueryDefinitionArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Query resource in Oracle Cloud Infrastructure Metering Computation service.
@@ -112,36 +112,36 @@ class Query(pulumi.CustomResource):
 
         test_query = oci.metering_computation.Query("test_query",
             compartment_id=compartment_id,
-            query_definition=oci.metering_computation.QueryQueryDefinitionArgs(
-                cost_analysis_ui=oci.metering_computation.QueryQueryDefinitionCostAnalysisUiArgs(
-                    graph=query_query_definition_cost_analysis_ui_graph,
-                    is_cumulative_graph=query_query_definition_cost_analysis_ui_is_cumulative_graph,
-                ),
-                display_name=query_query_definition_display_name,
-                report_query=oci.metering_computation.QueryQueryDefinitionReportQueryArgs(
-                    granularity=query_query_definition_report_query_granularity,
-                    tenant_id=test_tenant["id"],
-                    compartment_depth=query_query_definition_report_query_compartment_depth,
-                    date_range_name=query_query_definition_report_query_date_range_name,
-                    filter=query_query_definition_report_query_filter,
-                    forecast=oci.metering_computation.QueryQueryDefinitionReportQueryForecastArgs(
-                        time_forecast_ended=query_query_definition_report_query_forecast_time_forecast_ended,
-                        forecast_type=query_query_definition_report_query_forecast_forecast_type,
-                        time_forecast_started=query_query_definition_report_query_forecast_time_forecast_started,
-                    ),
-                    group_bies=query_query_definition_report_query_group_by,
-                    group_by_tags=[oci.metering_computation.QueryQueryDefinitionReportQueryGroupByTagArgs(
-                        key=query_query_definition_report_query_group_by_tag_key,
-                        namespace=query_query_definition_report_query_group_by_tag_namespace,
-                        value=query_query_definition_report_query_group_by_tag_value,
-                    )],
-                    is_aggregate_by_time=query_query_definition_report_query_is_aggregate_by_time,
-                    query_type=query_query_definition_report_query_query_type,
-                    time_usage_ended=query_query_definition_report_query_time_usage_ended,
-                    time_usage_started=query_query_definition_report_query_time_usage_started,
-                ),
-                version=query_query_definition_version,
-            ))
+            query_definition={
+                "cost_analysis_ui": {
+                    "graph": query_query_definition_cost_analysis_ui_graph,
+                    "is_cumulative_graph": query_query_definition_cost_analysis_ui_is_cumulative_graph,
+                },
+                "display_name": query_query_definition_display_name,
+                "report_query": {
+                    "granularity": query_query_definition_report_query_granularity,
+                    "tenant_id": test_tenant["id"],
+                    "compartment_depth": query_query_definition_report_query_compartment_depth,
+                    "date_range_name": query_query_definition_report_query_date_range_name,
+                    "filter": query_query_definition_report_query_filter,
+                    "forecast": {
+                        "time_forecast_ended": query_query_definition_report_query_forecast_time_forecast_ended,
+                        "forecast_type": query_query_definition_report_query_forecast_forecast_type,
+                        "time_forecast_started": query_query_definition_report_query_forecast_time_forecast_started,
+                    },
+                    "group_bies": query_query_definition_report_query_group_by,
+                    "group_by_tags": [{
+                        "key": query_query_definition_report_query_group_by_tag_key,
+                        "namespace": query_query_definition_report_query_group_by_tag_namespace,
+                        "value": query_query_definition_report_query_group_by_tag_value,
+                    }],
+                    "is_aggregate_by_time": query_query_definition_report_query_is_aggregate_by_time,
+                    "query_type": query_query_definition_report_query_query_type,
+                    "time_usage_ended": query_query_definition_report_query_time_usage_ended,
+                    "time_usage_started": query_query_definition_report_query_time_usage_started,
+                },
+                "version": query_query_definition_version,
+            })
         ```
 
         ## Import
@@ -155,7 +155,7 @@ class Query(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: The compartment OCID.
-        :param pulumi.Input[pulumi.InputType['QueryQueryDefinitionArgs']] query_definition: (Updatable) The common fields for queries.
+        :param pulumi.Input[Union['QueryQueryDefinitionArgs', 'QueryQueryDefinitionArgsDict']] query_definition: (Updatable) The common fields for queries.
         """
         ...
     @overload
@@ -176,36 +176,36 @@ class Query(pulumi.CustomResource):
 
         test_query = oci.metering_computation.Query("test_query",
             compartment_id=compartment_id,
-            query_definition=oci.metering_computation.QueryQueryDefinitionArgs(
-                cost_analysis_ui=oci.metering_computation.QueryQueryDefinitionCostAnalysisUiArgs(
-                    graph=query_query_definition_cost_analysis_ui_graph,
-                    is_cumulative_graph=query_query_definition_cost_analysis_ui_is_cumulative_graph,
-                ),
-                display_name=query_query_definition_display_name,
-                report_query=oci.metering_computation.QueryQueryDefinitionReportQueryArgs(
-                    granularity=query_query_definition_report_query_granularity,
-                    tenant_id=test_tenant["id"],
-                    compartment_depth=query_query_definition_report_query_compartment_depth,
-                    date_range_name=query_query_definition_report_query_date_range_name,
-                    filter=query_query_definition_report_query_filter,
-                    forecast=oci.metering_computation.QueryQueryDefinitionReportQueryForecastArgs(
-                        time_forecast_ended=query_query_definition_report_query_forecast_time_forecast_ended,
-                        forecast_type=query_query_definition_report_query_forecast_forecast_type,
-                        time_forecast_started=query_query_definition_report_query_forecast_time_forecast_started,
-                    ),
-                    group_bies=query_query_definition_report_query_group_by,
-                    group_by_tags=[oci.metering_computation.QueryQueryDefinitionReportQueryGroupByTagArgs(
-                        key=query_query_definition_report_query_group_by_tag_key,
-                        namespace=query_query_definition_report_query_group_by_tag_namespace,
-                        value=query_query_definition_report_query_group_by_tag_value,
-                    )],
-                    is_aggregate_by_time=query_query_definition_report_query_is_aggregate_by_time,
-                    query_type=query_query_definition_report_query_query_type,
-                    time_usage_ended=query_query_definition_report_query_time_usage_ended,
-                    time_usage_started=query_query_definition_report_query_time_usage_started,
-                ),
-                version=query_query_definition_version,
-            ))
+            query_definition={
+                "cost_analysis_ui": {
+                    "graph": query_query_definition_cost_analysis_ui_graph,
+                    "is_cumulative_graph": query_query_definition_cost_analysis_ui_is_cumulative_graph,
+                },
+                "display_name": query_query_definition_display_name,
+                "report_query": {
+                    "granularity": query_query_definition_report_query_granularity,
+                    "tenant_id": test_tenant["id"],
+                    "compartment_depth": query_query_definition_report_query_compartment_depth,
+                    "date_range_name": query_query_definition_report_query_date_range_name,
+                    "filter": query_query_definition_report_query_filter,
+                    "forecast": {
+                        "time_forecast_ended": query_query_definition_report_query_forecast_time_forecast_ended,
+                        "forecast_type": query_query_definition_report_query_forecast_forecast_type,
+                        "time_forecast_started": query_query_definition_report_query_forecast_time_forecast_started,
+                    },
+                    "group_bies": query_query_definition_report_query_group_by,
+                    "group_by_tags": [{
+                        "key": query_query_definition_report_query_group_by_tag_key,
+                        "namespace": query_query_definition_report_query_group_by_tag_namespace,
+                        "value": query_query_definition_report_query_group_by_tag_value,
+                    }],
+                    "is_aggregate_by_time": query_query_definition_report_query_is_aggregate_by_time,
+                    "query_type": query_query_definition_report_query_query_type,
+                    "time_usage_ended": query_query_definition_report_query_time_usage_ended,
+                    "time_usage_started": query_query_definition_report_query_time_usage_started,
+                },
+                "version": query_query_definition_version,
+            })
         ```
 
         ## Import
@@ -232,7 +232,7 @@ class Query(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 query_definition: Optional[pulumi.Input[pulumi.InputType['QueryQueryDefinitionArgs']]] = None,
+                 query_definition: Optional[pulumi.Input[Union['QueryQueryDefinitionArgs', 'QueryQueryDefinitionArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -259,7 +259,7 @@ class Query(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            query_definition: Optional[pulumi.Input[pulumi.InputType['QueryQueryDefinitionArgs']]] = None) -> 'Query':
+            query_definition: Optional[pulumi.Input[Union['QueryQueryDefinitionArgs', 'QueryQueryDefinitionArgsDict']]] = None) -> 'Query':
         """
         Get an existing Query resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -268,7 +268,7 @@ class Query(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: The compartment OCID.
-        :param pulumi.Input[pulumi.InputType['QueryQueryDefinitionArgs']] query_definition: (Updatable) The common fields for queries.
+        :param pulumi.Input[Union['QueryQueryDefinitionArgs', 'QueryQueryDefinitionArgsDict']] query_definition: (Updatable) The common fields for queries.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

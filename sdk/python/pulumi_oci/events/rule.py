@@ -397,7 +397,7 @@ class Rule(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 actions: Optional[pulumi.Input[pulumi.InputType['RuleActionsArgs']]] = None,
+                 actions: Optional[pulumi.Input[Union['RuleActionsArgs', 'RuleActionsArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  condition: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -418,16 +418,16 @@ class Rule(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_rule = oci.events.Rule("test_rule",
-            actions=oci.events.RuleActionsArgs(
-                actions=[oci.events.RuleActionsActionArgs(
-                    action_type=rule_actions_actions_action_type,
-                    is_enabled=rule_actions_actions_is_enabled,
-                    description=rule_actions_actions_description,
-                    function_id=test_function["id"],
-                    stream_id=test_stream["id"],
-                    topic_id=test_topic["id"],
-                )],
-            ),
+            actions={
+                "actions": [{
+                    "action_type": rule_actions_actions_action_type,
+                    "is_enabled": rule_actions_actions_is_enabled,
+                    "description": rule_actions_actions_description,
+                    "function_id": test_function["id"],
+                    "stream_id": test_stream["id"],
+                    "topic_id": test_topic["id"],
+                }],
+            },
             compartment_id=compartment_id,
             condition=rule_condition,
             display_name=rule_display_name,
@@ -451,7 +451,7 @@ class Rule(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['RuleActionsArgs']] actions: (Updatable) A list of ActionDetails objects to create for a rule.
+        :param pulumi.Input[Union['RuleActionsArgs', 'RuleActionsArgsDict']] actions: (Updatable) A list of ActionDetails objects to create for a rule.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
         :param pulumi.Input[str] condition: (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
                * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
@@ -494,16 +494,16 @@ class Rule(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_rule = oci.events.Rule("test_rule",
-            actions=oci.events.RuleActionsArgs(
-                actions=[oci.events.RuleActionsActionArgs(
-                    action_type=rule_actions_actions_action_type,
-                    is_enabled=rule_actions_actions_is_enabled,
-                    description=rule_actions_actions_description,
-                    function_id=test_function["id"],
-                    stream_id=test_stream["id"],
-                    topic_id=test_topic["id"],
-                )],
-            ),
+            actions={
+                "actions": [{
+                    "action_type": rule_actions_actions_action_type,
+                    "is_enabled": rule_actions_actions_is_enabled,
+                    "description": rule_actions_actions_description,
+                    "function_id": test_function["id"],
+                    "stream_id": test_stream["id"],
+                    "topic_id": test_topic["id"],
+                }],
+            },
             compartment_id=compartment_id,
             condition=rule_condition,
             display_name=rule_display_name,
@@ -540,7 +540,7 @@ class Rule(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 actions: Optional[pulumi.Input[pulumi.InputType['RuleActionsArgs']]] = None,
+                 actions: Optional[pulumi.Input[Union['RuleActionsArgs', 'RuleActionsArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  condition: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -588,7 +588,7 @@ class Rule(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            actions: Optional[pulumi.Input[pulumi.InputType['RuleActionsArgs']]] = None,
+            actions: Optional[pulumi.Input[Union['RuleActionsArgs', 'RuleActionsArgsDict']]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             condition: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -606,7 +606,7 @@ class Rule(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['RuleActionsArgs']] actions: (Updatable) A list of ActionDetails objects to create for a rule.
+        :param pulumi.Input[Union['RuleActionsArgs', 'RuleActionsArgsDict']] actions: (Updatable) A list of ActionDetails objects to create for a rule.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
         :param pulumi.Input[str] condition: (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
                * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`

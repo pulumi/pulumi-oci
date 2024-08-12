@@ -99,7 +99,7 @@ class AwaitableGetEventsResult(GetEventsResult):
 
 def get_events(compartment_id: Optional[str] = None,
                end_time: Optional[str] = None,
-               filters: Optional[Sequence[pulumi.InputType['GetEventsFilterArgs']]] = None,
+               filters: Optional[Sequence[Union['GetEventsFilterArgs', 'GetEventsFilterArgsDict']]] = None,
                start_time: Optional[str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetEventsResult:
     """
@@ -148,7 +148,7 @@ def get_events(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_events)
 def get_events_output(compartment_id: Optional[pulumi.Input[str]] = None,
                       end_time: Optional[pulumi.Input[str]] = None,
-                      filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetEventsFilterArgs']]]]] = None,
+                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetEventsFilterArgs', 'GetEventsFilterArgsDict']]]]] = None,
                       start_time: Optional[pulumi.Input[str]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEventsResult]:
     """

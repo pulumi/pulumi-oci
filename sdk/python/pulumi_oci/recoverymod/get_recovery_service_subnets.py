@@ -117,7 +117,7 @@ class AwaitableGetRecoveryServiceSubnetsResult(GetRecoveryServiceSubnetsResult):
 
 def get_recovery_service_subnets(compartment_id: Optional[str] = None,
                                  display_name: Optional[str] = None,
-                                 filters: Optional[Sequence[pulumi.InputType['GetRecoveryServiceSubnetsFilterArgs']]] = None,
+                                 filters: Optional[Sequence[Union['GetRecoveryServiceSubnetsFilterArgs', 'GetRecoveryServiceSubnetsFilterArgsDict']]] = None,
                                  id: Optional[str] = None,
                                  state: Optional[str] = None,
                                  vcn_id: Optional[str] = None,
@@ -170,7 +170,7 @@ def get_recovery_service_subnets(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_recovery_service_subnets)
 def get_recovery_service_subnets_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                         display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                        filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetRecoveryServiceSubnetsFilterArgs']]]]] = None,
+                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRecoveryServiceSubnetsFilterArgs', 'GetRecoveryServiceSubnetsFilterArgsDict']]]]] = None,
                                         id: Optional[pulumi.Input[Optional[str]]] = None,
                                         state: Optional[pulumi.Input[Optional[str]]] = None,
                                         vcn_id: Optional[pulumi.Input[Optional[str]]] = None,

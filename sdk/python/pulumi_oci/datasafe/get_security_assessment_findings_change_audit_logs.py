@@ -172,7 +172,7 @@ class AwaitableGetSecurityAssessmentFindingsChangeAuditLogsResult(GetSecurityAss
             time_valid_until_less_than=self.time_valid_until_less_than)
 
 
-def get_security_assessment_findings_change_audit_logs(filters: Optional[Sequence[pulumi.InputType['GetSecurityAssessmentFindingsChangeAuditLogsFilterArgs']]] = None,
+def get_security_assessment_findings_change_audit_logs(filters: Optional[Sequence[Union['GetSecurityAssessmentFindingsChangeAuditLogsFilterArgs', 'GetSecurityAssessmentFindingsChangeAuditLogsFilterArgsDict']]] = None,
                                                        finding_key: Optional[str] = None,
                                                        finding_title: Optional[str] = None,
                                                        is_risk_deferred: Optional[bool] = None,
@@ -255,7 +255,7 @@ def get_security_assessment_findings_change_audit_logs(filters: Optional[Sequenc
 
 
 @_utilities.lift_output_func(get_security_assessment_findings_change_audit_logs)
-def get_security_assessment_findings_change_audit_logs_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetSecurityAssessmentFindingsChangeAuditLogsFilterArgs']]]]] = None,
+def get_security_assessment_findings_change_audit_logs_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSecurityAssessmentFindingsChangeAuditLogsFilterArgs', 'GetSecurityAssessmentFindingsChangeAuditLogsFilterArgsDict']]]]] = None,
                                                               finding_key: Optional[pulumi.Input[Optional[str]]] = None,
                                                               finding_title: Optional[pulumi.Input[Optional[str]]] = None,
                                                               is_risk_deferred: Optional[pulumi.Input[Optional[bool]]] = None,

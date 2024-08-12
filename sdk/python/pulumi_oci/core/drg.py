@@ -411,7 +411,7 @@ class Drg(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            default_drg_route_tables: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DrgDefaultDrgRouteTableArgs']]]]] = None,
+            default_drg_route_tables: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DrgDefaultDrgRouteTableArgs', 'DrgDefaultDrgRouteTableArgsDict']]]]] = None,
             default_export_drg_route_distribution_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
@@ -427,7 +427,7 @@ class Drg(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the DRG.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DrgDefaultDrgRouteTableArgs']]]] default_drg_route_tables: The default DRG route table for this DRG. Each network type has a default DRG route table.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DrgDefaultDrgRouteTableArgs', 'DrgDefaultDrgRouteTableArgsDict']]]] default_drg_route_tables: The default DRG route table for this DRG. Each network type has a default DRG route table.
         :param pulumi.Input[str] default_export_drg_route_distribution_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this DRG's default export route distribution for the DRG attachments.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.

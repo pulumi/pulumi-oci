@@ -88,7 +88,7 @@ class AwaitableGetSensitiveDataModelSensitiveSchemasResult(GetSensitiveDataModel
             sensitive_schema_collections=self.sensitive_schema_collections)
 
 
-def get_sensitive_data_model_sensitive_schemas(filters: Optional[Sequence[pulumi.InputType['GetSensitiveDataModelSensitiveSchemasFilterArgs']]] = None,
+def get_sensitive_data_model_sensitive_schemas(filters: Optional[Sequence[Union['GetSensitiveDataModelSensitiveSchemasFilterArgs', 'GetSensitiveDataModelSensitiveSchemasFilterArgsDict']]] = None,
                                                schema_names: Optional[Sequence[str]] = None,
                                                sensitive_data_model_id: Optional[str] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSensitiveDataModelSensitiveSchemasResult:
@@ -127,7 +127,7 @@ def get_sensitive_data_model_sensitive_schemas(filters: Optional[Sequence[pulumi
 
 
 @_utilities.lift_output_func(get_sensitive_data_model_sensitive_schemas)
-def get_sensitive_data_model_sensitive_schemas_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetSensitiveDataModelSensitiveSchemasFilterArgs']]]]] = None,
+def get_sensitive_data_model_sensitive_schemas_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSensitiveDataModelSensitiveSchemasFilterArgs', 'GetSensitiveDataModelSensitiveSchemasFilterArgsDict']]]]] = None,
                                                       schema_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                                       sensitive_data_model_id: Optional[pulumi.Input[str]] = None,
                                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSensitiveDataModelSensitiveSchemasResult]:

@@ -106,7 +106,7 @@ class AwaitableGetComputeClustersResult(GetComputeClustersResult):
 def get_compute_clusters(availability_domain: Optional[str] = None,
                          compartment_id: Optional[str] = None,
                          display_name: Optional[str] = None,
-                         filters: Optional[Sequence[pulumi.InputType['GetComputeClustersFilterArgs']]] = None,
+                         filters: Optional[Sequence[Union['GetComputeClustersFilterArgs', 'GetComputeClustersFilterArgsDict']]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetComputeClustersResult:
     """
     This data source provides the list of Compute Clusters in Oracle Cloud Infrastructure Core service.
@@ -151,7 +151,7 @@ def get_compute_clusters(availability_domain: Optional[str] = None,
 def get_compute_clusters_output(availability_domain: Optional[pulumi.Input[Optional[str]]] = None,
                                 compartment_id: Optional[pulumi.Input[str]] = None,
                                 display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetComputeClustersFilterArgs']]]]] = None,
+                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetComputeClustersFilterArgs', 'GetComputeClustersFilterArgsDict']]]]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetComputeClustersResult]:
     """
     This data source provides the list of Compute Clusters in Oracle Cloud Infrastructure Core service.

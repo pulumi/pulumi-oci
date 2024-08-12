@@ -159,7 +159,7 @@ public class RuleSet extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public RuleSet(String name) {
+    public RuleSet(java.lang.String name) {
         this(name, RuleSetArgs.Empty);
     }
     /**
@@ -167,7 +167,7 @@ public class RuleSet extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public RuleSet(String name, RuleSetArgs args) {
+    public RuleSet(java.lang.String name, RuleSetArgs args) {
         this(name, args, null);
     }
     /**
@@ -176,12 +176,12 @@ public class RuleSet extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public RuleSet(String name, RuleSetArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:LoadBalancer/ruleSet:RuleSet", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
+    public RuleSet(java.lang.String name, RuleSetArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:LoadBalancer/ruleSet:RuleSet", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private RuleSet(String name, Output<String> id, @Nullable RuleSetState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("oci:LoadBalancer/ruleSet:RuleSet", name, state, makeResourceOptions(options, id));
+    private RuleSet(java.lang.String name, Output<java.lang.String> id, @Nullable RuleSetState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("oci:LoadBalancer/ruleSet:RuleSet", name, state, makeResourceOptions(options, id), false);
     }
 
     private static RuleSetArgs makeArgs(RuleSetArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
@@ -191,7 +191,7 @@ public class RuleSet extends com.pulumi.resources.CustomResource {
         return args == null ? RuleSetArgs.Empty : args;
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -207,7 +207,7 @@ public class RuleSet extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static RuleSet get(String name, Output<String> id, @Nullable RuleSetState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static RuleSet get(java.lang.String name, Output<java.lang.String> id, @Nullable RuleSetState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new RuleSet(name, id, state, options);
     }
 }

@@ -77,7 +77,7 @@ class AwaitableGetNotebookSessionShapesResult(GetNotebookSessionShapesResult):
 
 
 def get_notebook_session_shapes(compartment_id: Optional[str] = None,
-                                filters: Optional[Sequence[pulumi.InputType['GetNotebookSessionShapesFilterArgs']]] = None,
+                                filters: Optional[Sequence[Union['GetNotebookSessionShapesFilterArgs', 'GetNotebookSessionShapesFilterArgsDict']]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNotebookSessionShapesResult:
     """
     This data source provides the list of Notebook Session Shapes in Oracle Cloud Infrastructure Data Science service.
@@ -111,7 +111,7 @@ def get_notebook_session_shapes(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_notebook_session_shapes)
 def get_notebook_session_shapes_output(compartment_id: Optional[pulumi.Input[str]] = None,
-                                       filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetNotebookSessionShapesFilterArgs']]]]] = None,
+                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNotebookSessionShapesFilterArgs', 'GetNotebookSessionShapesFilterArgsDict']]]]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNotebookSessionShapesResult]:
     """
     This data source provides the list of Notebook Session Shapes in Oracle Cloud Infrastructure Data Science service.

@@ -85,7 +85,7 @@ class AwaitableGetManagedDatabasesAsmPropertiesResult(GetManagedDatabasesAsmProp
             name=self.name)
 
 
-def get_managed_databases_asm_properties(filters: Optional[Sequence[pulumi.InputType['GetManagedDatabasesAsmPropertiesFilterArgs']]] = None,
+def get_managed_databases_asm_properties(filters: Optional[Sequence[Union['GetManagedDatabasesAsmPropertiesFilterArgs', 'GetManagedDatabasesAsmPropertiesFilterArgsDict']]] = None,
                                          managed_database_id: Optional[str] = None,
                                          name: Optional[str] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabasesAsmPropertiesResult:
@@ -124,7 +124,7 @@ def get_managed_databases_asm_properties(filters: Optional[Sequence[pulumi.Input
 
 
 @_utilities.lift_output_func(get_managed_databases_asm_properties)
-def get_managed_databases_asm_properties_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetManagedDatabasesAsmPropertiesFilterArgs']]]]] = None,
+def get_managed_databases_asm_properties_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedDatabasesAsmPropertiesFilterArgs', 'GetManagedDatabasesAsmPropertiesFilterArgsDict']]]]] = None,
                                                 managed_database_id: Optional[pulumi.Input[str]] = None,
                                                 name: Optional[pulumi.Input[Optional[str]]] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabasesAsmPropertiesResult]:

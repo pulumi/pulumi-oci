@@ -103,7 +103,7 @@ class AwaitableGetMediaWorkflowJobFactsResult(GetMediaWorkflowJobFactsResult):
             type=self.type)
 
 
-def get_media_workflow_job_facts(filters: Optional[Sequence[pulumi.InputType['GetMediaWorkflowJobFactsFilterArgs']]] = None,
+def get_media_workflow_job_facts(filters: Optional[Sequence[Union['GetMediaWorkflowJobFactsFilterArgs', 'GetMediaWorkflowJobFactsFilterArgsDict']]] = None,
                                  key: Optional[str] = None,
                                  media_workflow_job_id: Optional[str] = None,
                                  type: Optional[str] = None,
@@ -148,7 +148,7 @@ def get_media_workflow_job_facts(filters: Optional[Sequence[pulumi.InputType['Ge
 
 
 @_utilities.lift_output_func(get_media_workflow_job_facts)
-def get_media_workflow_job_facts_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetMediaWorkflowJobFactsFilterArgs']]]]] = None,
+def get_media_workflow_job_facts_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMediaWorkflowJobFactsFilterArgs', 'GetMediaWorkflowJobFactsFilterArgsDict']]]]] = None,
                                         key: Optional[pulumi.Input[Optional[str]]] = None,
                                         media_workflow_job_id: Optional[pulumi.Input[str]] = None,
                                         type: Optional[pulumi.Input[Optional[str]]] = None,

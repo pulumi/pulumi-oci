@@ -467,7 +467,7 @@ class Api(pulumi.CustomResource):
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
-            validation_results: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ApiValidationResultArgs']]]]] = None) -> 'Api':
+            validation_results: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ApiValidationResultArgs', 'ApiValidationResultArgsDict']]]]] = None) -> 'Api':
         """
         Get an existing Api resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -496,7 +496,7 @@ class Api(pulumi.CustomResource):
         :param pulumi.Input[str] state: The current state of the API.
         :param pulumi.Input[str] time_created: The time this resource was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ApiValidationResultArgs']]]] validation_results: Status of each feature available from the API.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ApiValidationResultArgs', 'ApiValidationResultArgsDict']]]] validation_results: Status of each feature available from the API.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

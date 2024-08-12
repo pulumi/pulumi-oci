@@ -102,7 +102,7 @@ class AwaitableGetLogAnalyticsLogGroupsResult(GetLogAnalyticsLogGroupsResult):
 
 def get_log_analytics_log_groups(compartment_id: Optional[str] = None,
                                  display_name: Optional[str] = None,
-                                 filters: Optional[Sequence[pulumi.InputType['GetLogAnalyticsLogGroupsFilterArgs']]] = None,
+                                 filters: Optional[Sequence[Union['GetLogAnalyticsLogGroupsFilterArgs', 'GetLogAnalyticsLogGroupsFilterArgsDict']]] = None,
                                  namespace: Optional[str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLogAnalyticsLogGroupsResult:
     """
@@ -146,7 +146,7 @@ def get_log_analytics_log_groups(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_log_analytics_log_groups)
 def get_log_analytics_log_groups_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                         display_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                        filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetLogAnalyticsLogGroupsFilterArgs']]]]] = None,
+                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetLogAnalyticsLogGroupsFilterArgs', 'GetLogAnalyticsLogGroupsFilterArgsDict']]]]] = None,
                                         namespace: Optional[pulumi.Input[str]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLogAnalyticsLogGroupsResult]:
     """

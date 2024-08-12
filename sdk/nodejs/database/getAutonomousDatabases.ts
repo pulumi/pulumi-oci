@@ -10,7 +10,8 @@ import * as utilities from "../utilities";
  * ## 
  *
  * ***
- * subcategory: "Database"
+ * ## subcategory: "Database"
+ *
  * layout: "oci"
  * page_title: "Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabases"
  * sidebar_current: "docs-oci-datasource-database-autonomous_databases"
@@ -187,7 +188,8 @@ export interface GetAutonomousDatabasesResult {
  * ## 
  *
  * ***
- * subcategory: "Database"
+ * ## subcategory: "Database"
+ *
  * layout: "oci"
  * page_title: "Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabases"
  * sidebar_current: "docs-oci-datasource-database-autonomous_databases"

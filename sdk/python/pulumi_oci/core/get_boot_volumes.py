@@ -105,7 +105,7 @@ class AwaitableGetBootVolumesResult(GetBootVolumesResult):
 
 def get_boot_volumes(availability_domain: Optional[str] = None,
                      compartment_id: Optional[str] = None,
-                     filters: Optional[Sequence[pulumi.InputType['GetBootVolumesFilterArgs']]] = None,
+                     filters: Optional[Sequence[Union['GetBootVolumesFilterArgs', 'GetBootVolumesFilterArgsDict']]] = None,
                      volume_group_id: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBootVolumesResult:
     """
@@ -149,7 +149,7 @@ def get_boot_volumes(availability_domain: Optional[str] = None,
 @_utilities.lift_output_func(get_boot_volumes)
 def get_boot_volumes_output(availability_domain: Optional[pulumi.Input[Optional[str]]] = None,
                             compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
-                            filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetBootVolumesFilterArgs']]]]] = None,
+                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBootVolumesFilterArgs', 'GetBootVolumesFilterArgsDict']]]]] = None,
                             volume_group_id: Optional[pulumi.Input[Optional[str]]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBootVolumesResult]:
     """

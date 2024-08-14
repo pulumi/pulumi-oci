@@ -406,8 +406,8 @@ class NetworkLoadBalancersBackendSetsUnified(pulumi.CustomResource):
                 "weight": network_load_balancers_backend_sets_unified_backends_weight,
             }],
             ip_version=network_load_balancers_backend_sets_unified_ip_version,
-            is_instant_failover_enabled=network_load_balancers_backend_sets_unified_is_instant_failover_enabled,
             is_fail_open=network_load_balancers_backend_sets_unified_is_fail_open,
+            is_instant_failover_enabled=network_load_balancers_backend_sets_unified_is_instant_failover_enabled,
             is_preserve_source=network_load_balancers_backend_sets_unified_is_preserve_source)
         ```
 
@@ -490,8 +490,8 @@ class NetworkLoadBalancersBackendSetsUnified(pulumi.CustomResource):
                 "weight": network_load_balancers_backend_sets_unified_backends_weight,
             }],
             ip_version=network_load_balancers_backend_sets_unified_ip_version,
-            is_instant_failover_enabled=network_load_balancers_backend_sets_unified_is_instant_failover_enabled,
             is_fail_open=network_load_balancers_backend_sets_unified_is_fail_open,
+            is_instant_failover_enabled=network_load_balancers_backend_sets_unified_is_instant_failover_enabled,
             is_preserve_source=network_load_balancers_backend_sets_unified_is_preserve_source)
         ```
 

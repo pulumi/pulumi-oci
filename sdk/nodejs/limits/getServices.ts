@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Services in Oracle Cloud Infrastructure Limits service.
  *
- * Returns the list of supported services.
+ * Returns the list of supported services. If subscription ID is provided then only services supported by subscription will be returned.
  * This includes the programmatic service name, along with the friendly service name.
  *
  * ## Example Usage
@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  *
  * const testServices = oci.Limits.getServices({
  *     compartmentId: tenancyOcid,
+ *     subscriptionId: subscriptionOcid,
  * });
  * ```
  */
@@ -29,6 +30,7 @@ export function getServices(args: GetServicesArgs, opts?: pulumi.InvokeOptions):
     return pulumi.runtime.invoke("oci:Limits/getServices:getServices", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
+        "subscriptionId": args.subscriptionId,
     }, opts);
 }
 
@@ -41,6 +43,10 @@ export interface GetServicesArgs {
      */
     compartmentId: string;
     filters?: inputs.Limits.GetServicesFilter[];
+    /**
+     * The OCID of the subscription assigned to tenant
+     */
+    subscriptionId?: string;
 }
 
 /**
@@ -57,11 +63,12 @@ export interface GetServicesResult {
      * The list of services.
      */
     readonly services: outputs.Limits.GetServicesService[];
+    readonly subscriptionId?: string;
 }
 /**
  * This data source provides the list of Services in Oracle Cloud Infrastructure Limits service.
  *
- * Returns the list of supported services.
+ * Returns the list of supported services. If subscription ID is provided then only services supported by subscription will be returned.
  * This includes the programmatic service name, along with the friendly service name.
  *
  * ## Example Usage
@@ -72,6 +79,7 @@ export interface GetServicesResult {
  *
  * const testServices = oci.Limits.getServices({
  *     compartmentId: tenancyOcid,
+ *     subscriptionId: subscriptionOcid,
  * });
  * ```
  */
@@ -88,4 +96,8 @@ export interface GetServicesOutputArgs {
      */
     compartmentId: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Limits.GetServicesFilterArgs>[]>;
+    /**
+     * The OCID of the subscription assigned to tenant
+     */
+    subscriptionId?: pulumi.Input<string>;
 }

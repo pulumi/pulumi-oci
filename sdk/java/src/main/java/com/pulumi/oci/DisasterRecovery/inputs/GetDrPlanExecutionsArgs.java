@@ -49,21 +49,6 @@ public final class GetDrPlanExecutionsArgs extends com.pulumi.resources.InvokeAr
     }
 
     /**
-     * The DR plan execution type.
-     * 
-     */
-    @Import(name="drPlanExecutionType")
-    private @Nullable Output<String> drPlanExecutionType;
-
-    /**
-     * @return The DR plan execution type.
-     * 
-     */
-    public Optional<Output<String>> drPlanExecutionType() {
-        return Optional.ofNullable(this.drPlanExecutionType);
-    }
-
-    /**
      * The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
@@ -105,7 +90,6 @@ public final class GetDrPlanExecutionsArgs extends com.pulumi.resources.InvokeAr
     private GetDrPlanExecutionsArgs(GetDrPlanExecutionsArgs $) {
         this.displayName = $.displayName;
         this.drPlanExecutionId = $.drPlanExecutionId;
-        this.drPlanExecutionType = $.drPlanExecutionType;
         this.drProtectionGroupId = $.drProtectionGroupId;
         this.filters = $.filters;
         this.state = $.state;
@@ -169,27 +153,6 @@ public final class GetDrPlanExecutionsArgs extends com.pulumi.resources.InvokeAr
          */
         public Builder drPlanExecutionId(String drPlanExecutionId) {
             return drPlanExecutionId(Output.of(drPlanExecutionId));
-        }
-
-        /**
-         * @param drPlanExecutionType The DR plan execution type.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder drPlanExecutionType(@Nullable Output<String> drPlanExecutionType) {
-            $.drPlanExecutionType = drPlanExecutionType;
-            return this;
-        }
-
-        /**
-         * @param drPlanExecutionType The DR plan execution type.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder drPlanExecutionType(String drPlanExecutionType) {
-            return drPlanExecutionType(Output.of(drPlanExecutionType));
         }
 
         /**

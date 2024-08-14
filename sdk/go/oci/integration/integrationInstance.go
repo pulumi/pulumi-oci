@@ -138,6 +138,8 @@ type IntegrationInstance struct {
 	State pulumi.StringOutput `pulumi:"state"`
 	// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	StateMessage pulumi.StringOutput `pulumi:"stateMessage"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time the the Integration Instance was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
@@ -244,6 +246,8 @@ type integrationInstanceState struct {
 	State *string `pulumi:"state"`
 	// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	StateMessage *string `pulumi:"stateMessage"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the the Integration Instance was created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
@@ -299,6 +303,8 @@ type IntegrationInstanceState struct {
 	State pulumi.StringPtrInput
 	// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	StateMessage pulumi.StringPtrInput
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput
 	// The time the the Integration Instance was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
 	// The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
@@ -600,6 +606,11 @@ func (o IntegrationInstanceOutput) State() pulumi.StringOutput {
 // An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 func (o IntegrationInstanceOutput) StateMessage() pulumi.StringOutput {
 	return o.ApplyT(func(v *IntegrationInstance) pulumi.StringOutput { return v.StateMessage }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o IntegrationInstanceOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v *IntegrationInstance) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
 }
 
 // The time the the Integration Instance was created. An RFC3339 formatted datetime string.

@@ -45,6 +45,16 @@ public final class GetListenerResult {
      * 
      */
     private String protocol;
+    /**
+     * @return The duration for TCP idle timeout in seconds. Example: `300`
+     * 
+     */
+    private Integer tcpIdleTimeout;
+    /**
+     * @return The duration for UDP idle timeout in seconds. Example: `120`
+     * 
+     */
+    private Integer udpIdleTimeout;
 
     private GetListenerResult() {}
     /**
@@ -98,6 +108,20 @@ public final class GetListenerResult {
     public String protocol() {
         return this.protocol;
     }
+    /**
+     * @return The duration for TCP idle timeout in seconds. Example: `300`
+     * 
+     */
+    public Integer tcpIdleTimeout() {
+        return this.tcpIdleTimeout;
+    }
+    /**
+     * @return The duration for UDP idle timeout in seconds. Example: `120`
+     * 
+     */
+    public Integer udpIdleTimeout() {
+        return this.udpIdleTimeout;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -117,6 +141,8 @@ public final class GetListenerResult {
         private String networkLoadBalancerId;
         private Integer port;
         private String protocol;
+        private Integer tcpIdleTimeout;
+        private Integer udpIdleTimeout;
         public Builder() {}
         public Builder(GetListenerResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -129,6 +155,8 @@ public final class GetListenerResult {
     	      this.networkLoadBalancerId = defaults.networkLoadBalancerId;
     	      this.port = defaults.port;
     	      this.protocol = defaults.protocol;
+    	      this.tcpIdleTimeout = defaults.tcpIdleTimeout;
+    	      this.udpIdleTimeout = defaults.udpIdleTimeout;
         }
 
         @CustomType.Setter
@@ -203,6 +231,22 @@ public final class GetListenerResult {
             this.protocol = protocol;
             return this;
         }
+        @CustomType.Setter
+        public Builder tcpIdleTimeout(Integer tcpIdleTimeout) {
+            if (tcpIdleTimeout == null) {
+              throw new MissingRequiredPropertyException("GetListenerResult", "tcpIdleTimeout");
+            }
+            this.tcpIdleTimeout = tcpIdleTimeout;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder udpIdleTimeout(Integer udpIdleTimeout) {
+            if (udpIdleTimeout == null) {
+              throw new MissingRequiredPropertyException("GetListenerResult", "udpIdleTimeout");
+            }
+            this.udpIdleTimeout = udpIdleTimeout;
+            return this;
+        }
         public GetListenerResult build() {
             final var _resultValue = new GetListenerResult();
             _resultValue.defaultBackendSetName = defaultBackendSetName;
@@ -214,6 +258,8 @@ public final class GetListenerResult {
             _resultValue.networkLoadBalancerId = networkLoadBalancerId;
             _resultValue.port = port;
             _resultValue.protocol = protocol;
+            _resultValue.tcpIdleTimeout = tcpIdleTimeout;
+            _resultValue.udpIdleTimeout = udpIdleTimeout;
             return _resultValue;
         }
     }

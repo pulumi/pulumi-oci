@@ -76,6 +76,21 @@ public final class GetResourceAvailabilityArgs extends com.pulumi.resources.Invo
         return this.serviceName;
     }
 
+    /**
+     * The OCID of the subscription assigned to tenant
+     * 
+     */
+    @Import(name="subscriptionId")
+    private @Nullable Output<String> subscriptionId;
+
+    /**
+     * @return The OCID of the subscription assigned to tenant
+     * 
+     */
+    public Optional<Output<String>> subscriptionId() {
+        return Optional.ofNullable(this.subscriptionId);
+    }
+
     private GetResourceAvailabilityArgs() {}
 
     private GetResourceAvailabilityArgs(GetResourceAvailabilityArgs $) {
@@ -83,6 +98,7 @@ public final class GetResourceAvailabilityArgs extends com.pulumi.resources.Invo
         this.compartmentId = $.compartmentId;
         this.limitName = $.limitName;
         this.serviceName = $.serviceName;
+        this.subscriptionId = $.subscriptionId;
     }
 
     public static Builder builder() {
@@ -185,6 +201,27 @@ public final class GetResourceAvailabilityArgs extends com.pulumi.resources.Invo
          */
         public Builder serviceName(String serviceName) {
             return serviceName(Output.of(serviceName));
+        }
+
+        /**
+         * @param subscriptionId The OCID of the subscription assigned to tenant
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subscriptionId(@Nullable Output<String> subscriptionId) {
+            $.subscriptionId = subscriptionId;
+            return this;
+        }
+
+        /**
+         * @param subscriptionId The OCID of the subscription assigned to tenant
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subscriptionId(String subscriptionId) {
+            return subscriptionId(Output.of(subscriptionId));
         }
 
         public GetResourceAvailabilityArgs build() {

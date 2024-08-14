@@ -75,6 +75,14 @@ export interface GetListenerResult {
      * The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). "ListNetworkLoadBalancersProtocols" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP`
      */
     readonly protocol: string;
+    /**
+     * The duration for TCP idle timeout in seconds. Example: `300`
+     */
+    readonly tcpIdleTimeout: number;
+    /**
+     * The duration for UDP idle timeout in seconds. Example: `120`
+     */
+    readonly udpIdleTimeout: number;
 }
 /**
  * This data source provides details about a specific Listener resource in Oracle Cloud Infrastructure Network Load Balancer service.

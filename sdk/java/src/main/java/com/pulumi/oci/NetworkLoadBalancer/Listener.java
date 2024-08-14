@@ -53,6 +53,8 @@ import javax.annotation.Nullable;
  *             .protocol(listenerProtocol)
  *             .ipVersion(listenerIpVersion)
  *             .isPpv2enabled(listenerIsPpv2enabled)
+ *             .tcpIdleTimeout(listenerTcpIdleTimeout)
+ *             .udpIdleTimeout(listenerUdpIdleTimeout)
  *             .build());
  * 
  *     }
@@ -159,9 +161,6 @@ public class Listener extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). &#34;ListNetworkLoadBalancersProtocols&#34; API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP`
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="protocol", refs={String.class}, tree="[0]")
     private Output<String> protocol;
@@ -169,12 +168,43 @@ public class Listener extends com.pulumi.resources.CustomResource {
     /**
      * @return (Updatable) The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). &#34;ListNetworkLoadBalancersProtocols&#34; API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP`
      * 
+     */
+    public Output<String> protocol() {
+        return this.protocol;
+    }
+    /**
+     * (Updatable) The duration for TCP idle timeout in seconds. Example: `300`
+     * 
+     */
+    @Export(name="tcpIdleTimeout", refs={Integer.class}, tree="[0]")
+    private Output<Integer> tcpIdleTimeout;
+
+    /**
+     * @return (Updatable) The duration for TCP idle timeout in seconds. Example: `300`
+     * 
+     */
+    public Output<Integer> tcpIdleTimeout() {
+        return this.tcpIdleTimeout;
+    }
+    /**
+     * (Updatable) The duration for UDP idle timeout in seconds. Example: `120`
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> protocol() {
-        return this.protocol;
+    @Export(name="udpIdleTimeout", refs={Integer.class}, tree="[0]")
+    private Output<Integer> udpIdleTimeout;
+
+    /**
+     * @return (Updatable) The duration for UDP idle timeout in seconds. Example: `120`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<Integer> udpIdleTimeout() {
+        return this.udpIdleTimeout;
     }
 
     /**

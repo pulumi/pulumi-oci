@@ -10,21 +10,6 @@ import * as utilities from "../utilities";
  * This data source provides the list of Dr Plan Executions in Oracle Cloud Infrastructure Disaster Recovery service.
  *
  * Get a summary list of all DR plan executions for a DR protection group.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testDrPlanExecutions = oci.DisasterRecovery.getDrPlanExecutions({
- *     drProtectionGroupId: testDrProtectionGroup.id,
- *     displayName: drPlanExecutionDisplayName,
- *     drPlanExecutionId: testDrPlanExecution.id,
- *     drPlanExecutionType: drPlanExecutionDrPlanExecutionType,
- *     state: drPlanExecutionState,
- * });
- * ```
  */
 export function getDrPlanExecutions(args: GetDrPlanExecutionsArgs, opts?: pulumi.InvokeOptions): Promise<GetDrPlanExecutionsResult> {
 
@@ -32,7 +17,6 @@ export function getDrPlanExecutions(args: GetDrPlanExecutionsArgs, opts?: pulumi
     return pulumi.runtime.invoke("oci:DisasterRecovery/getDrPlanExecutions:getDrPlanExecutions", {
         "displayName": args.displayName,
         "drPlanExecutionId": args.drPlanExecutionId,
-        "drPlanExecutionType": args.drPlanExecutionType,
         "drProtectionGroupId": args.drProtectionGroupId,
         "filters": args.filters,
         "state": args.state,
@@ -51,10 +35,6 @@ export interface GetDrPlanExecutionsArgs {
      * The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
      */
     drPlanExecutionId?: string;
-    /**
-     * The DR plan execution type.
-     */
-    drPlanExecutionType?: string;
     /**
      * The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      */
@@ -79,7 +59,6 @@ export interface GetDrPlanExecutionsResult {
      */
     readonly drPlanExecutionCollections: outputs.DisasterRecovery.GetDrPlanExecutionsDrPlanExecutionCollection[];
     readonly drPlanExecutionId?: string;
-    readonly drPlanExecutionType?: string;
     /**
      * The OCID of the DR protection group to which this DR plan execution belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      */
@@ -98,21 +77,6 @@ export interface GetDrPlanExecutionsResult {
  * This data source provides the list of Dr Plan Executions in Oracle Cloud Infrastructure Disaster Recovery service.
  *
  * Get a summary list of all DR plan executions for a DR protection group.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testDrPlanExecutions = oci.DisasterRecovery.getDrPlanExecutions({
- *     drProtectionGroupId: testDrProtectionGroup.id,
- *     displayName: drPlanExecutionDisplayName,
- *     drPlanExecutionId: testDrPlanExecution.id,
- *     drPlanExecutionType: drPlanExecutionDrPlanExecutionType,
- *     state: drPlanExecutionState,
- * });
- * ```
  */
 export function getDrPlanExecutionsOutput(args: GetDrPlanExecutionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDrPlanExecutionsResult> {
     return pulumi.output(args).apply((a: any) => getDrPlanExecutions(a, opts))
@@ -130,10 +94,6 @@ export interface GetDrPlanExecutionsOutputArgs {
      * The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
      */
     drPlanExecutionId?: pulumi.Input<string>;
-    /**
-     * The DR plan execution type.
-     */
-    drPlanExecutionType?: pulumi.Input<string>;
     /**
      * The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      */

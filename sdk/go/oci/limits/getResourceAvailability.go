@@ -16,6 +16,7 @@ import (
 // For a given compartmentId, resource limit name, and scope, returns the following:
 //   - The number of available resources associated with the given limit.
 //   - The usage in the selected compartment for the given limit.
+//     If Subscription Id is provided, then usage for resource created in that subscription will be returned
 //     Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
 //
 // ## Example Usage
@@ -37,6 +38,7 @@ import (
 //				LimitName:          resourceAvailabilityLimitName,
 //				ServiceName:        testService.Name,
 //				AvailabilityDomain: pulumi.StringRef(resourceAvailabilityAvailabilityDomain),
+//				SubscriptionId:     pulumi.StringRef(subscriptionOcid),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -66,6 +68,8 @@ type GetResourceAvailabilityArgs struct {
 	LimitName string `pulumi:"limitName"`
 	// The service name of the target quota.
 	ServiceName string `pulumi:"serviceName"`
+	// The OCID of the subscription assigned to tenant
+	SubscriptionId *string `pulumi:"subscriptionId"`
 }
 
 // A collection of values returned by getResourceAvailability.
@@ -81,9 +85,10 @@ type GetResourceAvailabilityResult struct {
 	// The current most accurate usage in the given compartment.
 	FractionalUsage float64 `pulumi:"fractionalUsage"`
 	// The provider-assigned unique ID for this managed resource.
-	Id          string `pulumi:"id"`
-	LimitName   string `pulumi:"limitName"`
-	ServiceName string `pulumi:"serviceName"`
+	Id             string  `pulumi:"id"`
+	LimitName      string  `pulumi:"limitName"`
+	ServiceName    string  `pulumi:"serviceName"`
+	SubscriptionId *string `pulumi:"subscriptionId"`
 	// The current usage in the given compartment. To support resources with fractional counts, the field rounds up to the nearest integer.
 	Used string `pulumi:"used"`
 }
@@ -111,6 +116,8 @@ type GetResourceAvailabilityOutputArgs struct {
 	LimitName pulumi.StringInput `pulumi:"limitName"`
 	// The service name of the target quota.
 	ServiceName pulumi.StringInput `pulumi:"serviceName"`
+	// The OCID of the subscription assigned to tenant
+	SubscriptionId pulumi.StringPtrInput `pulumi:"subscriptionId"`
 }
 
 func (GetResourceAvailabilityOutputArgs) ElementType() reflect.Type {
@@ -171,6 +178,10 @@ func (o GetResourceAvailabilityResultOutput) LimitName() pulumi.StringOutput {
 
 func (o GetResourceAvailabilityResultOutput) ServiceName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResourceAvailabilityResult) string { return v.ServiceName }).(pulumi.StringOutput)
+}
+
+func (o GetResourceAvailabilityResultOutput) SubscriptionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourceAvailabilityResult) *string { return v.SubscriptionId }).(pulumi.StringPtrOutput)
 }
 
 // The current usage in the given compartment. To support resources with fractional counts, the field rounds up to the nearest integer.

@@ -21,15 +21,22 @@ namespace Pulumi.Oci.Limits.Outputs
         /// The service name. Use this when calling other APIs.
         /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// An array of subscription types supported by the service. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
+        /// </summary>
+        public readonly ImmutableArray<string> SupportedSubscriptions;
 
         [OutputConstructor]
         private GetServicesServiceResult(
             string description,
 
-            string name)
+            string name,
+
+            ImmutableArray<string> supportedSubscriptions)
         {
             Description = description;
             Name = name;
+            SupportedSubscriptions = supportedSubscriptions;
         }
     }
 }

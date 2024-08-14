@@ -10,7 +10,8 @@ import * as utilities from "../utilities";
  * For a given compartmentId, resource limit name, and scope, returns the following:
  *   * The number of available resources associated with the given limit.
  *   * The usage in the selected compartment for the given limit.
- *       Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
+ *     If Subscription Id is provided, then usage for resource created in that subscription will be returned
+ *     Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
  *
  * ## Example Usage
  *
@@ -23,6 +24,7 @@ import * as utilities from "../utilities";
  *     limitName: resourceAvailabilityLimitName,
  *     serviceName: testService.name,
  *     availabilityDomain: resourceAvailabilityAvailabilityDomain,
+ *     subscriptionId: subscriptionOcid,
  * });
  * ```
  */
@@ -34,6 +36,7 @@ export function getResourceAvailability(args: GetResourceAvailabilityArgs, opts?
         "compartmentId": args.compartmentId,
         "limitName": args.limitName,
         "serviceName": args.serviceName,
+        "subscriptionId": args.subscriptionId,
     }, opts);
 }
 
@@ -57,6 +60,10 @@ export interface GetResourceAvailabilityArgs {
      * The service name of the target quota.
      */
     serviceName: string;
+    /**
+     * The OCID of the subscription assigned to tenant
+     */
+    subscriptionId?: string;
 }
 
 /**
@@ -87,6 +94,7 @@ export interface GetResourceAvailabilityResult {
     readonly id: string;
     readonly limitName: string;
     readonly serviceName: string;
+    readonly subscriptionId?: string;
     /**
      * The current usage in the given compartment. To support resources with fractional counts, the field rounds up to the nearest integer.
      */
@@ -98,7 +106,8 @@ export interface GetResourceAvailabilityResult {
  * For a given compartmentId, resource limit name, and scope, returns the following:
  *   * The number of available resources associated with the given limit.
  *   * The usage in the selected compartment for the given limit.
- *       Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
+ *     If Subscription Id is provided, then usage for resource created in that subscription will be returned
+ *     Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
  *
  * ## Example Usage
  *
@@ -111,6 +120,7 @@ export interface GetResourceAvailabilityResult {
  *     limitName: resourceAvailabilityLimitName,
  *     serviceName: testService.name,
  *     availabilityDomain: resourceAvailabilityAvailabilityDomain,
+ *     subscriptionId: subscriptionOcid,
  * });
  * ```
  */
@@ -138,4 +148,8 @@ export interface GetResourceAvailabilityOutputArgs {
      * The service name of the target quota.
      */
     serviceName: pulumi.Input<string>;
+    /**
+     * The OCID of the subscription assigned to tenant
+     */
+    subscriptionId?: pulumi.Input<string>;
 }

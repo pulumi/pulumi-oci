@@ -186,6 +186,10 @@ namespace Pulumi.Oci.Integration
         /// </summary>
         public readonly string StateMessage;
         /// <summary>
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> SystemTags;
+        /// <summary>
         /// The time the the Integration Instance was created. An RFC3339 formatted datetime string.
         /// </summary>
         public readonly string TimeCreated;
@@ -246,6 +250,8 @@ namespace Pulumi.Oci.Integration
 
             string stateMessage,
 
+            ImmutableDictionary<string, object> systemTags,
+
             string timeCreated,
 
             string timeUpdated)
@@ -275,6 +281,7 @@ namespace Pulumi.Oci.Integration
             Shape = shape;
             State = state;
             StateMessage = stateMessage;
+            SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
         }

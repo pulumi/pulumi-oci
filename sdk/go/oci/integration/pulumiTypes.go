@@ -2049,6 +2049,8 @@ type GetIntegrationInstancesIntegrationInstance struct {
 	State string `pulumi:"state"`
 	// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	StateMessage string `pulumi:"stateMessage"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the the Integration Instance was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
@@ -2112,6 +2114,8 @@ type GetIntegrationInstancesIntegrationInstanceArgs struct {
 	State pulumi.StringInput `pulumi:"state"`
 	// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	StateMessage pulumi.StringInput `pulumi:"stateMessage"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time the the Integration Instance was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
@@ -2296,6 +2300,11 @@ func (o GetIntegrationInstancesIntegrationInstanceOutput) State() pulumi.StringO
 // An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 func (o GetIntegrationInstancesIntegrationInstanceOutput) StateMessage() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) string { return v.StateMessage }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetIntegrationInstancesIntegrationInstanceOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
 // The time the the Integration Instance was created. An RFC3339 formatted datetime string.

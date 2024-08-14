@@ -60,6 +60,16 @@ export type AuditTrailManagement = import("./auditTrailManagement").AuditTrailMa
 export const AuditTrailManagement: typeof import("./auditTrailManagement").AuditTrailManagement = null as any;
 utilities.lazyLoad(exports, ["AuditTrailManagement"], () => require("./auditTrailManagement"));
 
+export { CalculateAuditVolumeAvailableArgs, CalculateAuditVolumeAvailableState } from "./calculateAuditVolumeAvailable";
+export type CalculateAuditVolumeAvailable = import("./calculateAuditVolumeAvailable").CalculateAuditVolumeAvailable;
+export const CalculateAuditVolumeAvailable: typeof import("./calculateAuditVolumeAvailable").CalculateAuditVolumeAvailable = null as any;
+utilities.lazyLoad(exports, ["CalculateAuditVolumeAvailable"], () => require("./calculateAuditVolumeAvailable"));
+
+export { CalculateAuditVolumeCollectedArgs, CalculateAuditVolumeCollectedState } from "./calculateAuditVolumeCollected";
+export type CalculateAuditVolumeCollected = import("./calculateAuditVolumeCollected").CalculateAuditVolumeCollected;
+export const CalculateAuditVolumeCollected: typeof import("./calculateAuditVolumeCollected").CalculateAuditVolumeCollected = null as any;
+utilities.lazyLoad(exports, ["CalculateAuditVolumeCollected"], () => require("./calculateAuditVolumeCollected"));
+
 export { CompareSecurityAssessmentArgs, CompareSecurityAssessmentState } from "./compareSecurityAssessment";
 export type CompareSecurityAssessment = import("./compareSecurityAssessment").CompareSecurityAssessment;
 export const CompareSecurityAssessment: typeof import("./compareSecurityAssessment").CompareSecurityAssessment = null as any;
@@ -837,6 +847,10 @@ const _module = {
                 return new AuditTrail(name, <any>undefined, { urn })
             case "oci:DataSafe/auditTrailManagement:AuditTrailManagement":
                 return new AuditTrailManagement(name, <any>undefined, { urn })
+            case "oci:DataSafe/calculateAuditVolumeAvailable:CalculateAuditVolumeAvailable":
+                return new CalculateAuditVolumeAvailable(name, <any>undefined, { urn })
+            case "oci:DataSafe/calculateAuditVolumeCollected:CalculateAuditVolumeCollected":
+                return new CalculateAuditVolumeCollected(name, <any>undefined, { urn })
             case "oci:DataSafe/compareSecurityAssessment:CompareSecurityAssessment":
                 return new CompareSecurityAssessment(name, <any>undefined, { urn })
             case "oci:DataSafe/compareUserAssessment:CompareUserAssessment":
@@ -927,6 +941,8 @@ pulumi.runtime.registerResourceModule("oci", "DataSafe/auditProfile", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/auditProfileManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/auditTrail", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/auditTrailManagement", _module)
+pulumi.runtime.registerResourceModule("oci", "DataSafe/calculateAuditVolumeAvailable", _module)
+pulumi.runtime.registerResourceModule("oci", "DataSafe/calculateAuditVolumeCollected", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/compareSecurityAssessment", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/compareUserAssessment", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/dataSafeConfiguration", _module)

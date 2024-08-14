@@ -111,9 +111,6 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). &#34;ListNetworkLoadBalancersProtocols&#34; API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP`
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="protocol", required=true)
     private Output<String> protocol;
@@ -121,12 +118,45 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return (Updatable) The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). &#34;ListNetworkLoadBalancersProtocols&#34; API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP`
      * 
+     */
+    public Output<String> protocol() {
+        return this.protocol;
+    }
+
+    /**
+     * (Updatable) The duration for TCP idle timeout in seconds. Example: `300`
+     * 
+     */
+    @Import(name="tcpIdleTimeout")
+    private @Nullable Output<Integer> tcpIdleTimeout;
+
+    /**
+     * @return (Updatable) The duration for TCP idle timeout in seconds. Example: `300`
+     * 
+     */
+    public Optional<Output<Integer>> tcpIdleTimeout() {
+        return Optional.ofNullable(this.tcpIdleTimeout);
+    }
+
+    /**
+     * (Updatable) The duration for UDP idle timeout in seconds. Example: `120`
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> protocol() {
-        return this.protocol;
+    @Import(name="udpIdleTimeout")
+    private @Nullable Output<Integer> udpIdleTimeout;
+
+    /**
+     * @return (Updatable) The duration for UDP idle timeout in seconds. Example: `120`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<Integer>> udpIdleTimeout() {
+        return Optional.ofNullable(this.udpIdleTimeout);
     }
 
     private ListenerArgs() {}
@@ -139,6 +169,8 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         this.networkLoadBalancerId = $.networkLoadBalancerId;
         this.port = $.port;
         this.protocol = $.protocol;
+        this.tcpIdleTimeout = $.tcpIdleTimeout;
+        this.udpIdleTimeout = $.udpIdleTimeout;
     }
 
     public static Builder builder() {
@@ -288,9 +320,6 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param protocol (Updatable) The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). &#34;ListNetworkLoadBalancersProtocols&#34; API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP`
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -302,14 +331,59 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param protocol (Updatable) The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). &#34;ListNetworkLoadBalancersProtocols&#34; API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP`
          * 
+         * @return builder
+         * 
+         */
+        public Builder protocol(String protocol) {
+            return protocol(Output.of(protocol));
+        }
+
+        /**
+         * @param tcpIdleTimeout (Updatable) The duration for TCP idle timeout in seconds. Example: `300`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tcpIdleTimeout(@Nullable Output<Integer> tcpIdleTimeout) {
+            $.tcpIdleTimeout = tcpIdleTimeout;
+            return this;
+        }
+
+        /**
+         * @param tcpIdleTimeout (Updatable) The duration for TCP idle timeout in seconds. Example: `300`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tcpIdleTimeout(Integer tcpIdleTimeout) {
+            return tcpIdleTimeout(Output.of(tcpIdleTimeout));
+        }
+
+        /**
+         * @param udpIdleTimeout (Updatable) The duration for UDP idle timeout in seconds. Example: `120`
+         * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
          */
-        public Builder protocol(String protocol) {
-            return protocol(Output.of(protocol));
+        public Builder udpIdleTimeout(@Nullable Output<Integer> udpIdleTimeout) {
+            $.udpIdleTimeout = udpIdleTimeout;
+            return this;
+        }
+
+        /**
+         * @param udpIdleTimeout (Updatable) The duration for UDP idle timeout in seconds. Example: `120`
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder udpIdleTimeout(Integer udpIdleTimeout) {
+            return udpIdleTimeout(Output.of(udpIdleTimeout));
         }
 
         public ListenerArgs build() {

@@ -16,6 +16,8 @@ from .audit_profile import *
 from .audit_profile_management import *
 from .audit_trail import *
 from .audit_trail_management import *
+from .calculate_audit_volume_available import *
+from .calculate_audit_volume_collected import *
 from .compare_security_assessment import *
 from .compare_user_assessment import *
 from .data_safe_configuration import *

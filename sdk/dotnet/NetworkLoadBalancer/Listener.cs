@@ -33,6 +33,8 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     ///         Protocol = listenerProtocol,
     ///         IpVersion = listenerIpVersion,
     ///         IsPpv2enabled = listenerIsPpv2enabled,
+    ///         TcpIdleTimeout = listenerTcpIdleTimeout,
+    ///         UdpIdleTimeout = listenerUdpIdleTimeout,
     ///     });
     /// 
     /// });
@@ -86,14 +88,26 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public Output<int> Port { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). "ListNetworkLoadBalancersProtocols" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP` 
+        /// (Updatable) The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). "ListNetworkLoadBalancersProtocols" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP`
+        /// </summary>
+        [Output("protocol")]
+        public Output<string> Protocol { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The duration for TCP idle timeout in seconds. Example: `300`
+        /// </summary>
+        [Output("tcpIdleTimeout")]
+        public Output<int> TcpIdleTimeout { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The duration for UDP idle timeout in seconds. Example: `120` 
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Output("protocol")]
-        public Output<string> Protocol { get; private set; } = null!;
+        [Output("udpIdleTimeout")]
+        public Output<int> UdpIdleTimeout { get; private set; } = null!;
 
 
         /// <summary>
@@ -178,14 +192,26 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public Input<int> Port { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). "ListNetworkLoadBalancersProtocols" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP` 
+        /// (Updatable) The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). "ListNetworkLoadBalancersProtocols" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP`
+        /// </summary>
+        [Input("protocol", required: true)]
+        public Input<string> Protocol { get; set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The duration for TCP idle timeout in seconds. Example: `300`
+        /// </summary>
+        [Input("tcpIdleTimeout")]
+        public Input<int>? TcpIdleTimeout { get; set; }
+
+        /// <summary>
+        /// (Updatable) The duration for UDP idle timeout in seconds. Example: `120` 
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("protocol", required: true)]
-        public Input<string> Protocol { get; set; } = null!;
+        [Input("udpIdleTimeout")]
+        public Input<int>? UdpIdleTimeout { get; set; }
 
         public ListenerArgs()
         {
@@ -232,14 +258,26 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public Input<int>? Port { get; set; }
 
         /// <summary>
-        /// (Updatable) The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). "ListNetworkLoadBalancersProtocols" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP` 
+        /// (Updatable) The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). "ListNetworkLoadBalancersProtocols" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP`
+        /// </summary>
+        [Input("protocol")]
+        public Input<string>? Protocol { get; set; }
+
+        /// <summary>
+        /// (Updatable) The duration for TCP idle timeout in seconds. Example: `300`
+        /// </summary>
+        [Input("tcpIdleTimeout")]
+        public Input<int>? TcpIdleTimeout { get; set; }
+
+        /// <summary>
+        /// (Updatable) The duration for UDP idle timeout in seconds. Example: `120` 
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("protocol")]
-        public Input<string>? Protocol { get; set; }
+        [Input("udpIdleTimeout")]
+        public Input<int>? UdpIdleTimeout { get; set; }
 
         public ListenerState()
         {

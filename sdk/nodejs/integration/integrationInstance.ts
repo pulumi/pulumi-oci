@@ -186,6 +186,10 @@ export class IntegrationInstance extends pulumi.CustomResource {
      */
     public /*out*/ readonly stateMessage!: pulumi.Output<string>;
     /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    /**
      * The time the the Integration Instance was created. An RFC3339 formatted datetime string.
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
@@ -230,6 +234,7 @@ export class IntegrationInstance extends pulumi.CustomResource {
             resourceInputs["shape"] = state ? state.shape : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["stateMessage"] = state ? state.stateMessage : undefined;
+            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
         } else {
@@ -272,6 +277,7 @@ export class IntegrationInstance extends pulumi.CustomResource {
             resourceInputs["instanceUrl"] = undefined /*out*/;
             resourceInputs["privateEndpointOutboundConnections"] = undefined /*out*/;
             resourceInputs["stateMessage"] = undefined /*out*/;
+            resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
         }
@@ -379,6 +385,10 @@ export interface IntegrationInstanceState {
      * An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
     stateMessage?: pulumi.Input<string>;
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    systemTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * The time the the Integration Instance was created. An RFC3339 formatted datetime string.
      */

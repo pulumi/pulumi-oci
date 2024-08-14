@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Limits
         /// <summary>
         /// This data source provides the list of Limit Values in Oracle Cloud Infrastructure Limits service.
         /// 
-        /// Includes a full list of resource limits belonging to a given service.
+        /// Includes a full list of resource limits belonging to a given service. If subscription Id is provided, limit value for subscription will be returned.
         /// 
         /// 
         /// ## Example Usage
@@ -34,6 +34,7 @@ namespace Pulumi.Oci.Limits
         ///         AvailabilityDomain = limitValueAvailabilityDomain,
         ///         Name = limitValueName,
         ///         ScopeType = limitValueScopeType,
+        ///         SubscriptionId = subscriptionOcid,
         ///     });
         /// 
         /// });
@@ -45,7 +46,7 @@ namespace Pulumi.Oci.Limits
         /// <summary>
         /// This data source provides the list of Limit Values in Oracle Cloud Infrastructure Limits service.
         /// 
-        /// Includes a full list of resource limits belonging to a given service.
+        /// Includes a full list of resource limits belonging to a given service. If subscription Id is provided, limit value for subscription will be returned.
         /// 
         /// 
         /// ## Example Usage
@@ -65,6 +66,7 @@ namespace Pulumi.Oci.Limits
         ///         AvailabilityDomain = limitValueAvailabilityDomain,
         ///         Name = limitValueName,
         ///         ScopeType = limitValueScopeType,
+        ///         SubscriptionId = subscriptionOcid,
         ///     });
         /// 
         /// });
@@ -115,6 +117,12 @@ namespace Pulumi.Oci.Limits
         [Input("serviceName", required: true)]
         public string ServiceName { get; set; } = null!;
 
+        /// <summary>
+        /// The OCID of the subscription assigned to tenant
+        /// </summary>
+        [Input("subscriptionId")]
+        public string? SubscriptionId { get; set; }
+
         public GetLimitValuesArgs()
         {
         }
@@ -161,6 +169,12 @@ namespace Pulumi.Oci.Limits
         [Input("serviceName", required: true)]
         public Input<string> ServiceName { get; set; } = null!;
 
+        /// <summary>
+        /// The OCID of the subscription assigned to tenant
+        /// </summary>
+        [Input("subscriptionId")]
+        public Input<string>? SubscriptionId { get; set; }
+
         public GetLimitValuesInvokeArgs()
         {
         }
@@ -194,6 +208,7 @@ namespace Pulumi.Oci.Limits
         /// </summary>
         public readonly string? ScopeType;
         public readonly string ServiceName;
+        public readonly string? SubscriptionId;
 
         [OutputConstructor]
         private GetLimitValuesResult(
@@ -211,7 +226,9 @@ namespace Pulumi.Oci.Limits
 
             string? scopeType,
 
-            string serviceName)
+            string serviceName,
+
+            string? subscriptionId)
         {
             AvailabilityDomain = availabilityDomain;
             CompartmentId = compartmentId;
@@ -221,6 +238,7 @@ namespace Pulumi.Oci.Limits
             Name = name;
             ScopeType = scopeType;
             ServiceName = serviceName;
+            SubscriptionId = subscriptionId;
         }
     }
 }

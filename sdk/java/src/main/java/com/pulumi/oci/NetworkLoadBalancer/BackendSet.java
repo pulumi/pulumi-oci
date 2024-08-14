@@ -73,8 +73,8 @@ import javax.annotation.Nullable;
  *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
  *             .policy(backendSetPolicy)
  *             .ipVersion(backendSetIpVersion)
- *             .isInstantFailoverEnabled(backendSetIsInstantFailoverEnabled)
  *             .isFailOpen(backendSetIsFailOpen)
+ *             .isInstantFailoverEnabled(backendSetIsInstantFailoverEnabled)
  *             .isPreserveSource(backendSetIsPreserveSource)
  *             .build());
  * 

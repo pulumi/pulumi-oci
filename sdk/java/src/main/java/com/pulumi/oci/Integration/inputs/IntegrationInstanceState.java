@@ -370,6 +370,21 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
     }
 
     /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    @Import(name="systemTags")
+    private @Nullable Output<Map<String,Object>> systemTags;
+
+    /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Optional<Output<Map<String,Object>>> systemTags() {
+        return Optional.ofNullable(this.systemTags);
+    }
+
+    /**
      * The time the the Integration Instance was created. An RFC3339 formatted datetime string.
      * 
      */
@@ -425,6 +440,7 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
         this.shape = $.shape;
         this.state = $.state;
         this.stateMessage = $.stateMessage;
+        this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
     }
@@ -962,6 +978,27 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
          */
         public Builder stateMessage(String stateMessage) {
             return stateMessage(Output.of(stateMessage));
+        }
+
+        /**
+         * @param systemTags Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemTags(@Nullable Output<Map<String,Object>> systemTags) {
+            $.systemTags = systemTags;
+            return this;
+        }
+
+        /**
+         * @param systemTags Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemTags(Map<String,Object> systemTags) {
+            return systemTags(Output.of(systemTags));
         }
 
         /**

@@ -37,6 +37,7 @@ public final class GetLimitDefinitionsResult {
      * 
      */
     private @Nullable String serviceName;
+    private @Nullable String subscriptionId;
 
     private GetLimitDefinitionsResult() {}
     public String compartmentId() {
@@ -73,6 +74,9 @@ public final class GetLimitDefinitionsResult {
     public Optional<String> serviceName() {
         return Optional.ofNullable(this.serviceName);
     }
+    public Optional<String> subscriptionId() {
+        return Optional.ofNullable(this.subscriptionId);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -89,6 +93,7 @@ public final class GetLimitDefinitionsResult {
         private List<GetLimitDefinitionsLimitDefinition> limitDefinitions;
         private @Nullable String name;
         private @Nullable String serviceName;
+        private @Nullable String subscriptionId;
         public Builder() {}
         public Builder(GetLimitDefinitionsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -98,6 +103,7 @@ public final class GetLimitDefinitionsResult {
     	      this.limitDefinitions = defaults.limitDefinitions;
     	      this.name = defaults.name;
     	      this.serviceName = defaults.serviceName;
+    	      this.subscriptionId = defaults.subscriptionId;
         }
 
         @CustomType.Setter
@@ -148,6 +154,12 @@ public final class GetLimitDefinitionsResult {
             this.serviceName = serviceName;
             return this;
         }
+        @CustomType.Setter
+        public Builder subscriptionId(@Nullable String subscriptionId) {
+
+            this.subscriptionId = subscriptionId;
+            return this;
+        }
         public GetLimitDefinitionsResult build() {
             final var _resultValue = new GetLimitDefinitionsResult();
             _resultValue.compartmentId = compartmentId;
@@ -156,6 +168,7 @@ public final class GetLimitDefinitionsResult {
             _resultValue.limitDefinitions = limitDefinitions;
             _resultValue.name = name;
             _resultValue.serviceName = serviceName;
+            _resultValue.subscriptionId = subscriptionId;
             return _resultValue;
         }
     }

@@ -21,7 +21,7 @@ class GetListenerResult:
     """
     A collection of values returned by getListener.
     """
-    def __init__(__self__, default_backend_set_name=None, id=None, ip_version=None, is_ppv2enabled=None, listener_name=None, name=None, network_load_balancer_id=None, port=None, protocol=None):
+    def __init__(__self__, default_backend_set_name=None, id=None, ip_version=None, is_ppv2enabled=None, listener_name=None, name=None, network_load_balancer_id=None, port=None, protocol=None, tcp_idle_timeout=None, udp_idle_timeout=None):
         if default_backend_set_name and not isinstance(default_backend_set_name, str):
             raise TypeError("Expected argument 'default_backend_set_name' to be a str")
         pulumi.set(__self__, "default_backend_set_name", default_backend_set_name)
@@ -49,6 +49,12 @@ class GetListenerResult:
         if protocol and not isinstance(protocol, str):
             raise TypeError("Expected argument 'protocol' to be a str")
         pulumi.set(__self__, "protocol", protocol)
+        if tcp_idle_timeout and not isinstance(tcp_idle_timeout, int):
+            raise TypeError("Expected argument 'tcp_idle_timeout' to be a int")
+        pulumi.set(__self__, "tcp_idle_timeout", tcp_idle_timeout)
+        if udp_idle_timeout and not isinstance(udp_idle_timeout, int):
+            raise TypeError("Expected argument 'udp_idle_timeout' to be a int")
+        pulumi.set(__self__, "udp_idle_timeout", udp_idle_timeout)
 
     @property
     @pulumi.getter(name="defaultBackendSetName")
@@ -113,6 +119,22 @@ class GetListenerResult:
         """
         return pulumi.get(self, "protocol")
 
+    @property
+    @pulumi.getter(name="tcpIdleTimeout")
+    def tcp_idle_timeout(self) -> int:
+        """
+        The duration for TCP idle timeout in seconds. Example: `300`
+        """
+        return pulumi.get(self, "tcp_idle_timeout")
+
+    @property
+    @pulumi.getter(name="udpIdleTimeout")
+    def udp_idle_timeout(self) -> int:
+        """
+        The duration for UDP idle timeout in seconds. Example: `120`
+        """
+        return pulumi.get(self, "udp_idle_timeout")
+
 
 class AwaitableGetListenerResult(GetListenerResult):
     # pylint: disable=using-constant-test
@@ -128,7 +150,9 @@ class AwaitableGetListenerResult(GetListenerResult):
             name=self.name,
             network_load_balancer_id=self.network_load_balancer_id,
             port=self.port,
-            protocol=self.protocol)
+            protocol=self.protocol,
+            tcp_idle_timeout=self.tcp_idle_timeout,
+            udp_idle_timeout=self.udp_idle_timeout)
 
 
 def get_listener(listener_name: Optional[str] = None,
@@ -168,7 +192,9 @@ def get_listener(listener_name: Optional[str] = None,
         name=pulumi.get(__ret__, 'name'),
         network_load_balancer_id=pulumi.get(__ret__, 'network_load_balancer_id'),
         port=pulumi.get(__ret__, 'port'),
-        protocol=pulumi.get(__ret__, 'protocol'))
+        protocol=pulumi.get(__ret__, 'protocol'),
+        tcp_idle_timeout=pulumi.get(__ret__, 'tcp_idle_timeout'),
+        udp_idle_timeout=pulumi.get(__ret__, 'udp_idle_timeout'))
 
 
 @_utilities.lift_output_func(get_listener)

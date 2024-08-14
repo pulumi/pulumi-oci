@@ -131,6 +131,11 @@ public final class GetIntegrationInstanceResult {
      */
     private String stateMessage;
     /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    private Map<String,Object> systemTags;
+    /**
      * @return The time the the Integration Instance was created. An RFC3339 formatted datetime string.
      * 
      */
@@ -302,6 +307,13 @@ public final class GetIntegrationInstanceResult {
         return this.stateMessage;
     }
     /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Map<String,Object> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * @return The time the the Integration Instance was created. An RFC3339 formatted datetime string.
      * 
      */
@@ -350,6 +362,7 @@ public final class GetIntegrationInstanceResult {
         private String shape;
         private String state;
         private String stateMessage;
+        private Map<String,Object> systemTags;
         private String timeCreated;
         private String timeUpdated;
         public Builder() {}
@@ -380,6 +393,7 @@ public final class GetIntegrationInstanceResult {
     	      this.shape = defaults.shape;
     	      this.state = defaults.state;
     	      this.stateMessage = defaults.stateMessage;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
         }
@@ -603,6 +617,14 @@ public final class GetIntegrationInstanceResult {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,Object> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstanceResult", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetIntegrationInstanceResult", "timeCreated");
@@ -645,6 +667,7 @@ public final class GetIntegrationInstanceResult {
             _resultValue.shape = shape;
             _resultValue.state = state;
             _resultValue.stateMessage = stateMessage;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             return _resultValue;

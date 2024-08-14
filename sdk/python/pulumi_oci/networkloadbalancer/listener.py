@@ -20,20 +20,24 @@ class ListenerArgs:
                  protocol: pulumi.Input[str],
                  ip_version: Optional[pulumi.Input[str]] = None,
                  is_ppv2enabled: Optional[pulumi.Input[bool]] = None,
-                 name: Optional[pulumi.Input[str]] = None):
+                 name: Optional[pulumi.Input[str]] = None,
+                 tcp_idle_timeout: Optional[pulumi.Input[int]] = None,
+                 udp_idle_timeout: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a Listener resource.
         :param pulumi.Input[str] default_backend_set_name: (Updatable) The name of the associated backend set.  Example: `example_backend_set`
         :param pulumi.Input[str] network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
         :param pulumi.Input[int] port: (Updatable) The communication port for the listener.  Example: `80`
-        :param pulumi.Input[str] protocol: (Updatable) The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). "ListNetworkLoadBalancersProtocols" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP` 
+        :param pulumi.Input[str] protocol: (Updatable) The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). "ListNetworkLoadBalancersProtocols" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP`
+        :param pulumi.Input[str] ip_version: (Updatable) IP version associated with the listener.
+        :param pulumi.Input[bool] is_ppv2enabled: (Updatable) Property to enable/disable PPv2 feature for this listener.
+        :param pulumi.Input[str] name: A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
+        :param pulumi.Input[int] tcp_idle_timeout: (Updatable) The duration for TCP idle timeout in seconds. Example: `300`
+        :param pulumi.Input[int] udp_idle_timeout: (Updatable) The duration for UDP idle timeout in seconds. Example: `120` 
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] ip_version: (Updatable) IP version associated with the listener.
-        :param pulumi.Input[bool] is_ppv2enabled: (Updatable) Property to enable/disable PPv2 feature for this listener.
-        :param pulumi.Input[str] name: A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
         """
         pulumi.set(__self__, "default_backend_set_name", default_backend_set_name)
         pulumi.set(__self__, "network_load_balancer_id", network_load_balancer_id)
@@ -45,6 +49,10 @@ class ListenerArgs:
             pulumi.set(__self__, "is_ppv2enabled", is_ppv2enabled)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if tcp_idle_timeout is not None:
+            pulumi.set(__self__, "tcp_idle_timeout", tcp_idle_timeout)
+        if udp_idle_timeout is not None:
+            pulumi.set(__self__, "udp_idle_timeout", udp_idle_timeout)
 
     @property
     @pulumi.getter(name="defaultBackendSetName")
@@ -86,11 +94,7 @@ class ListenerArgs:
     @pulumi.getter
     def protocol(self) -> pulumi.Input[str]:
         """
-        (Updatable) The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). "ListNetworkLoadBalancersProtocols" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). "ListNetworkLoadBalancersProtocols" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP`
         """
         return pulumi.get(self, "protocol")
 
@@ -134,6 +138,34 @@ class ListenerArgs:
     def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
 
+    @property
+    @pulumi.getter(name="tcpIdleTimeout")
+    def tcp_idle_timeout(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The duration for TCP idle timeout in seconds. Example: `300`
+        """
+        return pulumi.get(self, "tcp_idle_timeout")
+
+    @tcp_idle_timeout.setter
+    def tcp_idle_timeout(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "tcp_idle_timeout", value)
+
+    @property
+    @pulumi.getter(name="udpIdleTimeout")
+    def udp_idle_timeout(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The duration for UDP idle timeout in seconds. Example: `120` 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "udp_idle_timeout")
+
+    @udp_idle_timeout.setter
+    def udp_idle_timeout(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "udp_idle_timeout", value)
+
 
 @pulumi.input_type
 class _ListenerState:
@@ -144,7 +176,9 @@ class _ListenerState:
                  name: Optional[pulumi.Input[str]] = None,
                  network_load_balancer_id: Optional[pulumi.Input[str]] = None,
                  port: Optional[pulumi.Input[int]] = None,
-                 protocol: Optional[pulumi.Input[str]] = None):
+                 protocol: Optional[pulumi.Input[str]] = None,
+                 tcp_idle_timeout: Optional[pulumi.Input[int]] = None,
+                 udp_idle_timeout: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering Listener resources.
         :param pulumi.Input[str] default_backend_set_name: (Updatable) The name of the associated backend set.  Example: `example_backend_set`
@@ -153,7 +187,9 @@ class _ListenerState:
         :param pulumi.Input[str] name: A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
         :param pulumi.Input[str] network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
         :param pulumi.Input[int] port: (Updatable) The communication port for the listener.  Example: `80`
-        :param pulumi.Input[str] protocol: (Updatable) The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). "ListNetworkLoadBalancersProtocols" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP` 
+        :param pulumi.Input[str] protocol: (Updatable) The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). "ListNetworkLoadBalancersProtocols" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP`
+        :param pulumi.Input[int] tcp_idle_timeout: (Updatable) The duration for TCP idle timeout in seconds. Example: `300`
+        :param pulumi.Input[int] udp_idle_timeout: (Updatable) The duration for UDP idle timeout in seconds. Example: `120` 
                
                
                ** IMPORTANT **
@@ -173,6 +209,10 @@ class _ListenerState:
             pulumi.set(__self__, "port", port)
         if protocol is not None:
             pulumi.set(__self__, "protocol", protocol)
+        if tcp_idle_timeout is not None:
+            pulumi.set(__self__, "tcp_idle_timeout", tcp_idle_timeout)
+        if udp_idle_timeout is not None:
+            pulumi.set(__self__, "udp_idle_timeout", udp_idle_timeout)
 
     @property
     @pulumi.getter(name="defaultBackendSetName")
@@ -250,17 +290,41 @@ class _ListenerState:
     @pulumi.getter
     def protocol(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). "ListNetworkLoadBalancersProtocols" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). "ListNetworkLoadBalancersProtocols" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP`
         """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
     def protocol(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "protocol", value)
+
+    @property
+    @pulumi.getter(name="tcpIdleTimeout")
+    def tcp_idle_timeout(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The duration for TCP idle timeout in seconds. Example: `300`
+        """
+        return pulumi.get(self, "tcp_idle_timeout")
+
+    @tcp_idle_timeout.setter
+    def tcp_idle_timeout(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "tcp_idle_timeout", value)
+
+    @property
+    @pulumi.getter(name="udpIdleTimeout")
+    def udp_idle_timeout(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The duration for UDP idle timeout in seconds. Example: `120` 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "udp_idle_timeout")
+
+    @udp_idle_timeout.setter
+    def udp_idle_timeout(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "udp_idle_timeout", value)
 
 
 class Listener(pulumi.CustomResource):
@@ -275,6 +339,8 @@ class Listener(pulumi.CustomResource):
                  network_load_balancer_id: Optional[pulumi.Input[str]] = None,
                  port: Optional[pulumi.Input[int]] = None,
                  protocol: Optional[pulumi.Input[str]] = None,
+                 tcp_idle_timeout: Optional[pulumi.Input[int]] = None,
+                 udp_idle_timeout: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
         This resource provides the Listener resource in Oracle Cloud Infrastructure Network Load Balancer service.
@@ -294,7 +360,9 @@ class Listener(pulumi.CustomResource):
             port=listener_port,
             protocol=listener_protocol,
             ip_version=listener_ip_version,
-            is_ppv2enabled=listener_is_ppv2enabled)
+            is_ppv2enabled=listener_is_ppv2enabled,
+            tcp_idle_timeout=listener_tcp_idle_timeout,
+            udp_idle_timeout=listener_udp_idle_timeout)
         ```
 
         ## Import
@@ -313,7 +381,9 @@ class Listener(pulumi.CustomResource):
         :param pulumi.Input[str] name: A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
         :param pulumi.Input[str] network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
         :param pulumi.Input[int] port: (Updatable) The communication port for the listener.  Example: `80`
-        :param pulumi.Input[str] protocol: (Updatable) The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). "ListNetworkLoadBalancersProtocols" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP` 
+        :param pulumi.Input[str] protocol: (Updatable) The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). "ListNetworkLoadBalancersProtocols" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP`
+        :param pulumi.Input[int] tcp_idle_timeout: (Updatable) The duration for TCP idle timeout in seconds. Example: `300`
+        :param pulumi.Input[int] udp_idle_timeout: (Updatable) The duration for UDP idle timeout in seconds. Example: `120` 
                
                
                ** IMPORTANT **
@@ -343,7 +413,9 @@ class Listener(pulumi.CustomResource):
             port=listener_port,
             protocol=listener_protocol,
             ip_version=listener_ip_version,
-            is_ppv2enabled=listener_is_ppv2enabled)
+            is_ppv2enabled=listener_is_ppv2enabled,
+            tcp_idle_timeout=listener_tcp_idle_timeout,
+            udp_idle_timeout=listener_udp_idle_timeout)
         ```
 
         ## Import
@@ -376,6 +448,8 @@ class Listener(pulumi.CustomResource):
                  network_load_balancer_id: Optional[pulumi.Input[str]] = None,
                  port: Optional[pulumi.Input[int]] = None,
                  protocol: Optional[pulumi.Input[str]] = None,
+                 tcp_idle_timeout: Optional[pulumi.Input[int]] = None,
+                 udp_idle_timeout: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -400,6 +474,8 @@ class Listener(pulumi.CustomResource):
             if protocol is None and not opts.urn:
                 raise TypeError("Missing required property 'protocol'")
             __props__.__dict__["protocol"] = protocol
+            __props__.__dict__["tcp_idle_timeout"] = tcp_idle_timeout
+            __props__.__dict__["udp_idle_timeout"] = udp_idle_timeout
         super(Listener, __self__).__init__(
             'oci:NetworkLoadBalancer/listener:Listener',
             resource_name,
@@ -416,7 +492,9 @@ class Listener(pulumi.CustomResource):
             name: Optional[pulumi.Input[str]] = None,
             network_load_balancer_id: Optional[pulumi.Input[str]] = None,
             port: Optional[pulumi.Input[int]] = None,
-            protocol: Optional[pulumi.Input[str]] = None) -> 'Listener':
+            protocol: Optional[pulumi.Input[str]] = None,
+            tcp_idle_timeout: Optional[pulumi.Input[int]] = None,
+            udp_idle_timeout: Optional[pulumi.Input[int]] = None) -> 'Listener':
         """
         Get an existing Listener resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -430,7 +508,9 @@ class Listener(pulumi.CustomResource):
         :param pulumi.Input[str] name: A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
         :param pulumi.Input[str] network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
         :param pulumi.Input[int] port: (Updatable) The communication port for the listener.  Example: `80`
-        :param pulumi.Input[str] protocol: (Updatable) The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). "ListNetworkLoadBalancersProtocols" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP` 
+        :param pulumi.Input[str] protocol: (Updatable) The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). "ListNetworkLoadBalancersProtocols" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP`
+        :param pulumi.Input[int] tcp_idle_timeout: (Updatable) The duration for TCP idle timeout in seconds. Example: `300`
+        :param pulumi.Input[int] udp_idle_timeout: (Updatable) The duration for UDP idle timeout in seconds. Example: `120` 
                
                
                ** IMPORTANT **
@@ -447,6 +527,8 @@ class Listener(pulumi.CustomResource):
         __props__.__dict__["network_load_balancer_id"] = network_load_balancer_id
         __props__.__dict__["port"] = port
         __props__.__dict__["protocol"] = protocol
+        __props__.__dict__["tcp_idle_timeout"] = tcp_idle_timeout
+        __props__.__dict__["udp_idle_timeout"] = udp_idle_timeout
         return Listener(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -501,11 +583,27 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter
     def protocol(self) -> pulumi.Output[str]:
         """
-        (Updatable) The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). "ListNetworkLoadBalancersProtocols" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP` 
+        (Updatable) The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). "ListNetworkLoadBalancersProtocols" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP`
+        """
+        return pulumi.get(self, "protocol")
+
+    @property
+    @pulumi.getter(name="tcpIdleTimeout")
+    def tcp_idle_timeout(self) -> pulumi.Output[int]:
+        """
+        (Updatable) The duration for TCP idle timeout in seconds. Example: `300`
+        """
+        return pulumi.get(self, "tcp_idle_timeout")
+
+    @property
+    @pulumi.getter(name="udpIdleTimeout")
+    def udp_idle_timeout(self) -> pulumi.Output[int]:
+        """
+        (Updatable) The duration for UDP idle timeout in seconds. Example: `120` 
 
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        return pulumi.get(self, "protocol")
+        return pulumi.get(self, "udp_idle_timeout")
 

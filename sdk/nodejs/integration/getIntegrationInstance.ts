@@ -133,6 +133,10 @@ export interface GetIntegrationInstanceResult {
      */
     readonly stateMessage: string;
     /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    readonly systemTags: {[key: string]: any};
+    /**
      * The time the the Integration Instance was created. An RFC3339 formatted datetime string.
      */
     readonly timeCreated: string;

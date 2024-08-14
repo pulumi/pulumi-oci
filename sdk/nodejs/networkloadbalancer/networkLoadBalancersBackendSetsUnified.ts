@@ -51,8 +51,8 @@ import * as utilities from "../utilities";
  *         weight: networkLoadBalancersBackendSetsUnifiedBackendsWeight,
  *     }],
  *     ipVersion: networkLoadBalancersBackendSetsUnifiedIpVersion,
- *     isInstantFailoverEnabled: networkLoadBalancersBackendSetsUnifiedIsInstantFailoverEnabled,
  *     isFailOpen: networkLoadBalancersBackendSetsUnifiedIsFailOpen,
+ *     isInstantFailoverEnabled: networkLoadBalancersBackendSetsUnifiedIsInstantFailoverEnabled,
  *     isPreserveSource: networkLoadBalancersBackendSetsUnifiedIsPreserveSource,
  * });
  * ```

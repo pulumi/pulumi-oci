@@ -54,8 +54,8 @@ import (
 //				NetworkLoadBalancerId:    pulumi.Any(testNetworkLoadBalancer.Id),
 //				Policy:                   pulumi.Any(backendSetPolicy),
 //				IpVersion:                pulumi.Any(backendSetIpVersion),
-//				IsInstantFailoverEnabled: pulumi.Any(backendSetIsInstantFailoverEnabled),
 //				IsFailOpen:               pulumi.Any(backendSetIsFailOpen),
+//				IsInstantFailoverEnabled: pulumi.Any(backendSetIsInstantFailoverEnabled),
 //				IsPreserveSource:         pulumi.Any(backendSetIsPreserveSource),
 //			})
 //			if err != nil {

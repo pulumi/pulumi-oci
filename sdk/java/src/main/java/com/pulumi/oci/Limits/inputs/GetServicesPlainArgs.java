@@ -39,11 +39,27 @@ public final class GetServicesPlainArgs extends com.pulumi.resources.InvokeArgs 
         return Optional.ofNullable(this.filters);
     }
 
+    /**
+     * The OCID of the subscription assigned to tenant
+     * 
+     */
+    @Import(name="subscriptionId")
+    private @Nullable String subscriptionId;
+
+    /**
+     * @return The OCID of the subscription assigned to tenant
+     * 
+     */
+    public Optional<String> subscriptionId() {
+        return Optional.ofNullable(this.subscriptionId);
+    }
+
     private GetServicesPlainArgs() {}
 
     private GetServicesPlainArgs(GetServicesPlainArgs $) {
         this.compartmentId = $.compartmentId;
         this.filters = $.filters;
+        this.subscriptionId = $.subscriptionId;
     }
 
     public static Builder builder() {
@@ -82,6 +98,17 @@ public final class GetServicesPlainArgs extends com.pulumi.resources.InvokeArgs 
 
         public Builder filters(GetServicesFilter... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param subscriptionId The OCID of the subscription assigned to tenant
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subscriptionId(@Nullable String subscriptionId) {
+            $.subscriptionId = subscriptionId;
+            return this;
         }
 
         public GetServicesPlainArgs build() {

@@ -15,28 +15,6 @@ namespace Pulumi.Oci.DisasterRecovery
         /// This data source provides the list of Dr Plan Executions in Oracle Cloud Infrastructure Disaster Recovery service.
         /// 
         /// Get a summary list of all DR plan executions for a DR protection group.
-        /// 
-        /// ## Example Usage
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Oci = Pulumi.Oci;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var testDrPlanExecutions = Oci.DisasterRecovery.GetDrPlanExecutions.Invoke(new()
-        ///     {
-        ///         DrProtectionGroupId = testDrProtectionGroup.Id,
-        ///         DisplayName = drPlanExecutionDisplayName,
-        ///         DrPlanExecutionId = testDrPlanExecution.Id,
-        ///         DrPlanExecutionType = drPlanExecutionDrPlanExecutionType,
-        ///         State = drPlanExecutionState,
-        ///     });
-        /// 
-        /// });
-        /// ```
         /// </summary>
         public static Task<GetDrPlanExecutionsResult> InvokeAsync(GetDrPlanExecutionsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDrPlanExecutionsResult>("oci:DisasterRecovery/getDrPlanExecutions:getDrPlanExecutions", args ?? new GetDrPlanExecutionsArgs(), options.WithDefaults());
@@ -45,28 +23,6 @@ namespace Pulumi.Oci.DisasterRecovery
         /// This data source provides the list of Dr Plan Executions in Oracle Cloud Infrastructure Disaster Recovery service.
         /// 
         /// Get a summary list of all DR plan executions for a DR protection group.
-        /// 
-        /// ## Example Usage
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Oci = Pulumi.Oci;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var testDrPlanExecutions = Oci.DisasterRecovery.GetDrPlanExecutions.Invoke(new()
-        ///     {
-        ///         DrProtectionGroupId = testDrProtectionGroup.Id,
-        ///         DisplayName = drPlanExecutionDisplayName,
-        ///         DrPlanExecutionId = testDrPlanExecution.Id,
-        ///         DrPlanExecutionType = drPlanExecutionDrPlanExecutionType,
-        ///         State = drPlanExecutionState,
-        ///     });
-        /// 
-        /// });
-        /// ```
         /// </summary>
         public static Output<GetDrPlanExecutionsResult> Invoke(GetDrPlanExecutionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDrPlanExecutionsResult>("oci:DisasterRecovery/getDrPlanExecutions:getDrPlanExecutions", args ?? new GetDrPlanExecutionsInvokeArgs(), options.WithDefaults());
@@ -86,12 +42,6 @@ namespace Pulumi.Oci.DisasterRecovery
         /// </summary>
         [Input("drPlanExecutionId")]
         public string? DrPlanExecutionId { get; set; }
-
-        /// <summary>
-        /// The DR plan execution type.
-        /// </summary>
-        [Input("drPlanExecutionType")]
-        public string? DrPlanExecutionType { get; set; }
 
         /// <summary>
         /// The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
@@ -134,12 +84,6 @@ namespace Pulumi.Oci.DisasterRecovery
         public Input<string>? DrPlanExecutionId { get; set; }
 
         /// <summary>
-        /// The DR plan execution type.
-        /// </summary>
-        [Input("drPlanExecutionType")]
-        public Input<string>? DrPlanExecutionType { get; set; }
-
-        /// <summary>
         /// The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         /// </summary>
         [Input("drProtectionGroupId", required: true)]
@@ -178,7 +122,6 @@ namespace Pulumi.Oci.DisasterRecovery
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDrPlanExecutionsDrPlanExecutionCollectionResult> DrPlanExecutionCollections;
         public readonly string? DrPlanExecutionId;
-        public readonly string? DrPlanExecutionType;
         /// <summary>
         /// The OCID of the DR protection group to which this DR plan execution belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         /// </summary>
@@ -201,8 +144,6 @@ namespace Pulumi.Oci.DisasterRecovery
 
             string? drPlanExecutionId,
 
-            string? drPlanExecutionType,
-
             string drProtectionGroupId,
 
             ImmutableArray<Outputs.GetDrPlanExecutionsFilterResult> filters,
@@ -214,7 +155,6 @@ namespace Pulumi.Oci.DisasterRecovery
             DisplayName = displayName;
             DrPlanExecutionCollections = drPlanExecutionCollections;
             DrPlanExecutionId = drPlanExecutionId;
-            DrPlanExecutionType = drPlanExecutionType;
             DrProtectionGroupId = drProtectionGroupId;
             Filters = filters;
             Id = id;

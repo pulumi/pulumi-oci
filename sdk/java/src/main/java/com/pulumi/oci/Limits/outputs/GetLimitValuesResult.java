@@ -43,6 +43,7 @@ public final class GetLimitValuesResult {
      */
     private @Nullable String scopeType;
     private String serviceName;
+    private @Nullable String subscriptionId;
 
     private GetLimitValuesResult() {}
     /**
@@ -89,6 +90,9 @@ public final class GetLimitValuesResult {
     public String serviceName() {
         return this.serviceName;
     }
+    public Optional<String> subscriptionId() {
+        return Optional.ofNullable(this.subscriptionId);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -107,6 +111,7 @@ public final class GetLimitValuesResult {
         private @Nullable String name;
         private @Nullable String scopeType;
         private String serviceName;
+        private @Nullable String subscriptionId;
         public Builder() {}
         public Builder(GetLimitValuesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -118,6 +123,7 @@ public final class GetLimitValuesResult {
     	      this.name = defaults.name;
     	      this.scopeType = defaults.scopeType;
     	      this.serviceName = defaults.serviceName;
+    	      this.subscriptionId = defaults.subscriptionId;
         }
 
         @CustomType.Setter
@@ -182,6 +188,12 @@ public final class GetLimitValuesResult {
             this.serviceName = serviceName;
             return this;
         }
+        @CustomType.Setter
+        public Builder subscriptionId(@Nullable String subscriptionId) {
+
+            this.subscriptionId = subscriptionId;
+            return this;
+        }
         public GetLimitValuesResult build() {
             final var _resultValue = new GetLimitValuesResult();
             _resultValue.availabilityDomain = availabilityDomain;
@@ -192,6 +204,7 @@ public final class GetLimitValuesResult {
             _resultValue.name = name;
             _resultValue.scopeType = scopeType;
             _resultValue.serviceName = serviceName;
+            _resultValue.subscriptionId = subscriptionId;
             return _resultValue;
         }
     }

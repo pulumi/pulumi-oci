@@ -22,7 +22,7 @@ class GetIntegrationInstanceResult:
     """
     A collection of values returned by getIntegrationInstance.
     """
-    def __init__(__self__, alternate_custom_endpoints=None, attachments=None, compartment_id=None, consumption_model=None, custom_endpoints=None, defined_tags=None, display_name=None, domain_id=None, enable_process_automation_trigger=None, freeform_tags=None, id=None, idcs_at=None, idcs_infos=None, instance_url=None, integration_instance_id=None, integration_instance_type=None, is_byol=None, is_file_server_enabled=None, is_visual_builder_enabled=None, message_packs=None, network_endpoint_details=None, private_endpoint_outbound_connections=None, shape=None, state=None, state_message=None, time_created=None, time_updated=None):
+    def __init__(__self__, alternate_custom_endpoints=None, attachments=None, compartment_id=None, consumption_model=None, custom_endpoints=None, defined_tags=None, display_name=None, domain_id=None, enable_process_automation_trigger=None, freeform_tags=None, id=None, idcs_at=None, idcs_infos=None, instance_url=None, integration_instance_id=None, integration_instance_type=None, is_byol=None, is_file_server_enabled=None, is_visual_builder_enabled=None, message_packs=None, network_endpoint_details=None, private_endpoint_outbound_connections=None, shape=None, state=None, state_message=None, system_tags=None, time_created=None, time_updated=None):
         if alternate_custom_endpoints and not isinstance(alternate_custom_endpoints, list):
             raise TypeError("Expected argument 'alternate_custom_endpoints' to be a list")
         pulumi.set(__self__, "alternate_custom_endpoints", alternate_custom_endpoints)
@@ -98,6 +98,9 @@ class GetIntegrationInstanceResult:
         if state_message and not isinstance(state_message, str):
             raise TypeError("Expected argument 'state_message' to be a str")
         pulumi.set(__self__, "state_message", state_message)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -294,6 +297,14 @@ class GetIntegrationInstanceResult:
         return pulumi.get(self, "state_message")
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
@@ -341,6 +352,7 @@ class AwaitableGetIntegrationInstanceResult(GetIntegrationInstanceResult):
             shape=self.shape,
             state=self.state,
             state_message=self.state_message,
+            system_tags=self.system_tags,
             time_created=self.time_created,
             time_updated=self.time_updated)
 
@@ -395,6 +407,7 @@ def get_integration_instance(integration_instance_id: Optional[str] = None,
         shape=pulumi.get(__ret__, 'shape'),
         state=pulumi.get(__ret__, 'state'),
         state_message=pulumi.get(__ret__, 'state_message'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 

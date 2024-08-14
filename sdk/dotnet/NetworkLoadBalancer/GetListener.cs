@@ -138,6 +138,14 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). "ListNetworkLoadBalancersProtocols" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP`
         /// </summary>
         public readonly string Protocol;
+        /// <summary>
+        /// The duration for TCP idle timeout in seconds. Example: `300`
+        /// </summary>
+        public readonly int TcpIdleTimeout;
+        /// <summary>
+        /// The duration for UDP idle timeout in seconds. Example: `120`
+        /// </summary>
+        public readonly int UdpIdleTimeout;
 
         [OutputConstructor]
         private GetListenerResult(
@@ -157,7 +165,11 @@ namespace Pulumi.Oci.NetworkLoadBalancer
 
             int port,
 
-            string protocol)
+            string protocol,
+
+            int tcpIdleTimeout,
+
+            int udpIdleTimeout)
         {
             DefaultBackendSetName = defaultBackendSetName;
             Id = id;
@@ -168,6 +180,8 @@ namespace Pulumi.Oci.NetworkLoadBalancer
             NetworkLoadBalancerId = networkLoadBalancerId;
             Port = port;
             Protocol = protocol;
+            TcpIdleTimeout = tcpIdleTimeout;
+            UdpIdleTimeout = udpIdleTimeout;
         }
     }
 }

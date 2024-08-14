@@ -1967,6 +1967,22 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DataSafe/calculateAuditVolumeAvailable",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/calculateAuditVolumeAvailable:CalculateAuditVolumeAvailable": "CalculateAuditVolumeAvailable"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataSafe/calculateAuditVolumeCollected",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/calculateAuditVolumeCollected:CalculateAuditVolumeCollected": "CalculateAuditVolumeCollected"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DataSafe/compareSecurityAssessment",
   "fqn": "pulumi_oci.datasafe",
   "classes": {

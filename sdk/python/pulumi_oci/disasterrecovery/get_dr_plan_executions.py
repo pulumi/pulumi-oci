@@ -23,7 +23,7 @@ class GetDrPlanExecutionsResult:
     """
     A collection of values returned by getDrPlanExecutions.
     """
-    def __init__(__self__, display_name=None, dr_plan_execution_collections=None, dr_plan_execution_id=None, dr_plan_execution_type=None, dr_protection_group_id=None, filters=None, id=None, state=None):
+    def __init__(__self__, display_name=None, dr_plan_execution_collections=None, dr_plan_execution_id=None, dr_protection_group_id=None, filters=None, id=None, state=None):
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
@@ -33,9 +33,6 @@ class GetDrPlanExecutionsResult:
         if dr_plan_execution_id and not isinstance(dr_plan_execution_id, str):
             raise TypeError("Expected argument 'dr_plan_execution_id' to be a str")
         pulumi.set(__self__, "dr_plan_execution_id", dr_plan_execution_id)
-        if dr_plan_execution_type and not isinstance(dr_plan_execution_type, str):
-            raise TypeError("Expected argument 'dr_plan_execution_type' to be a str")
-        pulumi.set(__self__, "dr_plan_execution_type", dr_plan_execution_type)
         if dr_protection_group_id and not isinstance(dr_protection_group_id, str):
             raise TypeError("Expected argument 'dr_protection_group_id' to be a str")
         pulumi.set(__self__, "dr_protection_group_id", dr_protection_group_id)
@@ -69,11 +66,6 @@ class GetDrPlanExecutionsResult:
     @pulumi.getter(name="drPlanExecutionId")
     def dr_plan_execution_id(self) -> Optional[str]:
         return pulumi.get(self, "dr_plan_execution_id")
-
-    @property
-    @pulumi.getter(name="drPlanExecutionType")
-    def dr_plan_execution_type(self) -> Optional[str]:
-        return pulumi.get(self, "dr_plan_execution_type")
 
     @property
     @pulumi.getter(name="drProtectionGroupId")
@@ -114,7 +106,6 @@ class AwaitableGetDrPlanExecutionsResult(GetDrPlanExecutionsResult):
             display_name=self.display_name,
             dr_plan_execution_collections=self.dr_plan_execution_collections,
             dr_plan_execution_id=self.dr_plan_execution_id,
-            dr_plan_execution_type=self.dr_plan_execution_type,
             dr_protection_group_id=self.dr_protection_group_id,
             filters=self.filters,
             id=self.id,
@@ -123,7 +114,6 @@ class AwaitableGetDrPlanExecutionsResult(GetDrPlanExecutionsResult):
 
 def get_dr_plan_executions(display_name: Optional[str] = None,
                            dr_plan_execution_id: Optional[str] = None,
-                           dr_plan_execution_type: Optional[str] = None,
                            dr_protection_group_id: Optional[str] = None,
                            filters: Optional[Sequence[Union['GetDrPlanExecutionsFilterArgs', 'GetDrPlanExecutionsFilterArgsDict']]] = None,
                            state: Optional[str] = None,
@@ -133,30 +123,15 @@ def get_dr_plan_executions(display_name: Optional[str] = None,
 
     Get a summary list of all DR plan executions for a DR protection group.
 
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_dr_plan_executions = oci.DisasterRecovery.get_dr_plan_executions(dr_protection_group_id=test_dr_protection_group["id"],
-        display_name=dr_plan_execution_display_name,
-        dr_plan_execution_id=test_dr_plan_execution["id"],
-        dr_plan_execution_type=dr_plan_execution_dr_plan_execution_type,
-        state=dr_plan_execution_state)
-    ```
-
 
     :param str display_name: A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
     :param str dr_plan_execution_id: The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
-    :param str dr_plan_execution_type: The DR plan execution type.
     :param str dr_protection_group_id: The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
     :param str state: A filter to return only DR plan executions that match the given lifecycle state.
     """
     __args__ = dict()
     __args__['displayName'] = display_name
     __args__['drPlanExecutionId'] = dr_plan_execution_id
-    __args__['drPlanExecutionType'] = dr_plan_execution_type
     __args__['drProtectionGroupId'] = dr_protection_group_id
     __args__['filters'] = filters
     __args__['state'] = state
@@ -167,7 +142,6 @@ def get_dr_plan_executions(display_name: Optional[str] = None,
         display_name=pulumi.get(__ret__, 'display_name'),
         dr_plan_execution_collections=pulumi.get(__ret__, 'dr_plan_execution_collections'),
         dr_plan_execution_id=pulumi.get(__ret__, 'dr_plan_execution_id'),
-        dr_plan_execution_type=pulumi.get(__ret__, 'dr_plan_execution_type'),
         dr_protection_group_id=pulumi.get(__ret__, 'dr_protection_group_id'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
@@ -177,7 +151,6 @@ def get_dr_plan_executions(display_name: Optional[str] = None,
 @_utilities.lift_output_func(get_dr_plan_executions)
 def get_dr_plan_executions_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                   dr_plan_execution_id: Optional[pulumi.Input[Optional[str]]] = None,
-                                  dr_plan_execution_type: Optional[pulumi.Input[Optional[str]]] = None,
                                   dr_protection_group_id: Optional[pulumi.Input[str]] = None,
                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDrPlanExecutionsFilterArgs', 'GetDrPlanExecutionsFilterArgsDict']]]]] = None,
                                   state: Optional[pulumi.Input[Optional[str]]] = None,
@@ -187,23 +160,9 @@ def get_dr_plan_executions_output(display_name: Optional[pulumi.Input[Optional[s
 
     Get a summary list of all DR plan executions for a DR protection group.
 
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_dr_plan_executions = oci.DisasterRecovery.get_dr_plan_executions(dr_protection_group_id=test_dr_protection_group["id"],
-        display_name=dr_plan_execution_display_name,
-        dr_plan_execution_id=test_dr_plan_execution["id"],
-        dr_plan_execution_type=dr_plan_execution_dr_plan_execution_type,
-        state=dr_plan_execution_state)
-    ```
-
 
     :param str display_name: A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
     :param str dr_plan_execution_id: The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
-    :param str dr_plan_execution_type: The DR plan execution type.
     :param str dr_protection_group_id: The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
     :param str state: A filter to return only DR plan executions that match the given lifecycle state.
     """

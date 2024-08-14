@@ -49,6 +49,14 @@ namespace Pulumi.Oci.Limits.Outputs
         /// The target service name.
         /// </summary>
         public readonly string ServiceName;
+        /// <summary>
+        /// Supported quota family names for creation of quota policy.
+        /// </summary>
+        public readonly ImmutableArray<string> SupportedQuotaFamilies;
+        /// <summary>
+        /// An array of subscription types supported by the limit. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
+        /// </summary>
+        public readonly ImmutableArray<string> SupportedSubscriptions;
 
         [OutputConstructor]
         private GetLimitDefinitionsLimitDefinitionResult(
@@ -68,7 +76,11 @@ namespace Pulumi.Oci.Limits.Outputs
 
             string scopeType,
 
-            string serviceName)
+            string serviceName,
+
+            ImmutableArray<string> supportedQuotaFamilies,
+
+            ImmutableArray<string> supportedSubscriptions)
         {
             AreQuotasSupported = areQuotasSupported;
             Description = description;
@@ -79,6 +91,8 @@ namespace Pulumi.Oci.Limits.Outputs
             Name = name;
             ScopeType = scopeType;
             ServiceName = serviceName;
+            SupportedQuotaFamilies = supportedQuotaFamilies;
+            SupportedSubscriptions = supportedSubscriptions;
         }
     }
 }

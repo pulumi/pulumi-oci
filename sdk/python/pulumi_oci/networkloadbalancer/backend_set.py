@@ -379,8 +379,8 @@ class BackendSet(pulumi.CustomResource):
             network_load_balancer_id=test_network_load_balancer["id"],
             policy=backend_set_policy,
             ip_version=backend_set_ip_version,
-            is_instant_failover_enabled=backend_set_is_instant_failover_enabled,
             is_fail_open=backend_set_is_fail_open,
+            is_instant_failover_enabled=backend_set_is_instant_failover_enabled,
             is_preserve_source=backend_set_is_preserve_source)
         ```
 
@@ -452,8 +452,8 @@ class BackendSet(pulumi.CustomResource):
             network_load_balancer_id=test_network_load_balancer["id"],
             policy=backend_set_policy,
             ip_version=backend_set_ip_version,
-            is_instant_failover_enabled=backend_set_is_instant_failover_enabled,
             is_fail_open=backend_set_is_fail_open,
+            is_instant_failover_enabled=backend_set_is_instant_failover_enabled,
             is_preserve_source=backend_set_is_preserve_source)
         ```
 

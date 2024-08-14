@@ -17,7 +17,8 @@ namespace Pulumi.Oci.Limits
         /// For a given compartmentId, resource limit name, and scope, returns the following:
         ///   * The number of available resources associated with the given limit.
         ///   * The usage in the selected compartment for the given limit.
-        ///   Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
+        /// If Subscription Id is provided, then usage for resource created in that subscription will be returned
+        /// Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
         /// 
         /// 
         /// ## Example Usage
@@ -36,6 +37,7 @@ namespace Pulumi.Oci.Limits
         ///         LimitName = resourceAvailabilityLimitName,
         ///         ServiceName = testService.Name,
         ///         AvailabilityDomain = resourceAvailabilityAvailabilityDomain,
+        ///         SubscriptionId = subscriptionOcid,
         ///     });
         /// 
         /// });
@@ -50,7 +52,8 @@ namespace Pulumi.Oci.Limits
         /// For a given compartmentId, resource limit name, and scope, returns the following:
         ///   * The number of available resources associated with the given limit.
         ///   * The usage in the selected compartment for the given limit.
-        ///   Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
+        /// If Subscription Id is provided, then usage for resource created in that subscription will be returned
+        /// Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
         /// 
         /// 
         /// ## Example Usage
@@ -69,6 +72,7 @@ namespace Pulumi.Oci.Limits
         ///         LimitName = resourceAvailabilityLimitName,
         ///         ServiceName = testService.Name,
         ///         AvailabilityDomain = resourceAvailabilityAvailabilityDomain,
+        ///         SubscriptionId = subscriptionOcid,
         ///     });
         /// 
         /// });
@@ -105,6 +109,12 @@ namespace Pulumi.Oci.Limits
         [Input("serviceName", required: true)]
         public string ServiceName { get; set; } = null!;
 
+        /// <summary>
+        /// The OCID of the subscription assigned to tenant
+        /// </summary>
+        [Input("subscriptionId")]
+        public string? SubscriptionId { get; set; }
+
         public GetResourceAvailabilityArgs()
         {
         }
@@ -136,6 +146,12 @@ namespace Pulumi.Oci.Limits
         /// </summary>
         [Input("serviceName", required: true)]
         public Input<string> ServiceName { get; set; } = null!;
+
+        /// <summary>
+        /// The OCID of the subscription assigned to tenant
+        /// </summary>
+        [Input("subscriptionId")]
+        public Input<string>? SubscriptionId { get; set; }
 
         public GetResourceAvailabilityInvokeArgs()
         {
@@ -171,6 +187,7 @@ namespace Pulumi.Oci.Limits
         public readonly string Id;
         public readonly string LimitName;
         public readonly string ServiceName;
+        public readonly string? SubscriptionId;
         /// <summary>
         /// The current usage in the given compartment. To support resources with fractional counts, the field rounds up to the nearest integer.
         /// </summary>
@@ -196,6 +213,8 @@ namespace Pulumi.Oci.Limits
 
             string serviceName,
 
+            string? subscriptionId,
+
             string used)
         {
             AvailabilityDomain = availabilityDomain;
@@ -207,6 +226,7 @@ namespace Pulumi.Oci.Limits
             Id = id;
             LimitName = limitName;
             ServiceName = serviceName;
+            SubscriptionId = subscriptionId;
             Used = used;
         }
     }

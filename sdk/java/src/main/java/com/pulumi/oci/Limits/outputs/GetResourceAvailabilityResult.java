@@ -42,6 +42,7 @@ public final class GetResourceAvailabilityResult {
     private String id;
     private String limitName;
     private String serviceName;
+    private @Nullable String subscriptionId;
     /**
      * @return The current usage in the given compartment. To support resources with fractional counts, the field rounds up to the nearest integer.
      * 
@@ -96,6 +97,9 @@ public final class GetResourceAvailabilityResult {
     public String serviceName() {
         return this.serviceName;
     }
+    public Optional<String> subscriptionId() {
+        return Optional.ofNullable(this.subscriptionId);
+    }
     /**
      * @return The current usage in the given compartment. To support resources with fractional counts, the field rounds up to the nearest integer.
      * 
@@ -122,6 +126,7 @@ public final class GetResourceAvailabilityResult {
         private String id;
         private String limitName;
         private String serviceName;
+        private @Nullable String subscriptionId;
         private String used;
         public Builder() {}
         public Builder(GetResourceAvailabilityResult defaults) {
@@ -135,6 +140,7 @@ public final class GetResourceAvailabilityResult {
     	      this.id = defaults.id;
     	      this.limitName = defaults.limitName;
     	      this.serviceName = defaults.serviceName;
+    	      this.subscriptionId = defaults.subscriptionId;
     	      this.used = defaults.used;
         }
 
@@ -209,6 +215,12 @@ public final class GetResourceAvailabilityResult {
             return this;
         }
         @CustomType.Setter
+        public Builder subscriptionId(@Nullable String subscriptionId) {
+
+            this.subscriptionId = subscriptionId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder used(String used) {
             if (used == null) {
               throw new MissingRequiredPropertyException("GetResourceAvailabilityResult", "used");
@@ -227,6 +239,7 @@ public final class GetResourceAvailabilityResult {
             _resultValue.id = id;
             _resultValue.limitName = limitName;
             _resultValue.serviceName = serviceName;
+            _resultValue.subscriptionId = subscriptionId;
             _resultValue.used = used;
             return _resultValue;
         }

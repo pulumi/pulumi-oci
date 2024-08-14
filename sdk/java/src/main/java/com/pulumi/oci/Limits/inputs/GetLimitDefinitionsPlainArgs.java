@@ -69,6 +69,21 @@ public final class GetLimitDefinitionsPlainArgs extends com.pulumi.resources.Inv
         return Optional.ofNullable(this.serviceName);
     }
 
+    /**
+     * The OCID of the subscription assigned to tenant
+     * 
+     */
+    @Import(name="subscriptionId")
+    private @Nullable String subscriptionId;
+
+    /**
+     * @return The OCID of the subscription assigned to tenant
+     * 
+     */
+    public Optional<String> subscriptionId() {
+        return Optional.ofNullable(this.subscriptionId);
+    }
+
     private GetLimitDefinitionsPlainArgs() {}
 
     private GetLimitDefinitionsPlainArgs(GetLimitDefinitionsPlainArgs $) {
@@ -76,6 +91,7 @@ public final class GetLimitDefinitionsPlainArgs extends com.pulumi.resources.Inv
         this.filters = $.filters;
         this.name = $.name;
         this.serviceName = $.serviceName;
+        this.subscriptionId = $.subscriptionId;
     }
 
     public static Builder builder() {
@@ -135,6 +151,17 @@ public final class GetLimitDefinitionsPlainArgs extends com.pulumi.resources.Inv
          */
         public Builder serviceName(@Nullable String serviceName) {
             $.serviceName = serviceName;
+            return this;
+        }
+
+        /**
+         * @param subscriptionId The OCID of the subscription assigned to tenant
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subscriptionId(@Nullable String subscriptionId) {
+            $.subscriptionId = subscriptionId;
             return this;
         }
 

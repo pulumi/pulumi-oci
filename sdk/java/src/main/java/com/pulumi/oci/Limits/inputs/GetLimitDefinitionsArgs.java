@@ -70,6 +70,21 @@ public final class GetLimitDefinitionsArgs extends com.pulumi.resources.InvokeAr
         return Optional.ofNullable(this.serviceName);
     }
 
+    /**
+     * The OCID of the subscription assigned to tenant
+     * 
+     */
+    @Import(name="subscriptionId")
+    private @Nullable Output<String> subscriptionId;
+
+    /**
+     * @return The OCID of the subscription assigned to tenant
+     * 
+     */
+    public Optional<Output<String>> subscriptionId() {
+        return Optional.ofNullable(this.subscriptionId);
+    }
+
     private GetLimitDefinitionsArgs() {}
 
     private GetLimitDefinitionsArgs(GetLimitDefinitionsArgs $) {
@@ -77,6 +92,7 @@ public final class GetLimitDefinitionsArgs extends com.pulumi.resources.InvokeAr
         this.filters = $.filters;
         this.name = $.name;
         this.serviceName = $.serviceName;
+        this.subscriptionId = $.subscriptionId;
     }
 
     public static Builder builder() {
@@ -171,6 +187,27 @@ public final class GetLimitDefinitionsArgs extends com.pulumi.resources.InvokeAr
          */
         public Builder serviceName(String serviceName) {
             return serviceName(Output.of(serviceName));
+        }
+
+        /**
+         * @param subscriptionId The OCID of the subscription assigned to tenant
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subscriptionId(@Nullable Output<String> subscriptionId) {
+            $.subscriptionId = subscriptionId;
+            return this;
+        }
+
+        /**
+         * @param subscriptionId The OCID of the subscription assigned to tenant
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subscriptionId(String subscriptionId) {
+            return subscriptionId(Output.of(subscriptionId));
         }
 
         public GetLimitDefinitionsArgs build() {

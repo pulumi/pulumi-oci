@@ -1324,6 +1324,236 @@ func (o AuditProfileAuditTrailArrayOutput) Index(i pulumi.IntInput) AuditProfile
 	}).(AuditProfileAuditTrailOutput)
 }
 
+type CalculateAuditVolumeAvailableAvailableAuditVolume struct {
+	// The OCID of the audit.
+	AuditProfileId       *string `pulumi:"auditProfileId"`
+	MonthInConsideration *string `pulumi:"monthInConsideration"`
+	TrailLocation        *string `pulumi:"trailLocation"`
+	Volume               *string `pulumi:"volume"`
+}
+
+// CalculateAuditVolumeAvailableAvailableAuditVolumeInput is an input type that accepts CalculateAuditVolumeAvailableAvailableAuditVolumeArgs and CalculateAuditVolumeAvailableAvailableAuditVolumeOutput values.
+// You can construct a concrete instance of `CalculateAuditVolumeAvailableAvailableAuditVolumeInput` via:
+//
+//	CalculateAuditVolumeAvailableAvailableAuditVolumeArgs{...}
+type CalculateAuditVolumeAvailableAvailableAuditVolumeInput interface {
+	pulumi.Input
+
+	ToCalculateAuditVolumeAvailableAvailableAuditVolumeOutput() CalculateAuditVolumeAvailableAvailableAuditVolumeOutput
+	ToCalculateAuditVolumeAvailableAvailableAuditVolumeOutputWithContext(context.Context) CalculateAuditVolumeAvailableAvailableAuditVolumeOutput
+}
+
+type CalculateAuditVolumeAvailableAvailableAuditVolumeArgs struct {
+	// The OCID of the audit.
+	AuditProfileId       pulumi.StringPtrInput `pulumi:"auditProfileId"`
+	MonthInConsideration pulumi.StringPtrInput `pulumi:"monthInConsideration"`
+	TrailLocation        pulumi.StringPtrInput `pulumi:"trailLocation"`
+	Volume               pulumi.StringPtrInput `pulumi:"volume"`
+}
+
+func (CalculateAuditVolumeAvailableAvailableAuditVolumeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CalculateAuditVolumeAvailableAvailableAuditVolume)(nil)).Elem()
+}
+
+func (i CalculateAuditVolumeAvailableAvailableAuditVolumeArgs) ToCalculateAuditVolumeAvailableAvailableAuditVolumeOutput() CalculateAuditVolumeAvailableAvailableAuditVolumeOutput {
+	return i.ToCalculateAuditVolumeAvailableAvailableAuditVolumeOutputWithContext(context.Background())
+}
+
+func (i CalculateAuditVolumeAvailableAvailableAuditVolumeArgs) ToCalculateAuditVolumeAvailableAvailableAuditVolumeOutputWithContext(ctx context.Context) CalculateAuditVolumeAvailableAvailableAuditVolumeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CalculateAuditVolumeAvailableAvailableAuditVolumeOutput)
+}
+
+// CalculateAuditVolumeAvailableAvailableAuditVolumeArrayInput is an input type that accepts CalculateAuditVolumeAvailableAvailableAuditVolumeArray and CalculateAuditVolumeAvailableAvailableAuditVolumeArrayOutput values.
+// You can construct a concrete instance of `CalculateAuditVolumeAvailableAvailableAuditVolumeArrayInput` via:
+//
+//	CalculateAuditVolumeAvailableAvailableAuditVolumeArray{ CalculateAuditVolumeAvailableAvailableAuditVolumeArgs{...} }
+type CalculateAuditVolumeAvailableAvailableAuditVolumeArrayInput interface {
+	pulumi.Input
+
+	ToCalculateAuditVolumeAvailableAvailableAuditVolumeArrayOutput() CalculateAuditVolumeAvailableAvailableAuditVolumeArrayOutput
+	ToCalculateAuditVolumeAvailableAvailableAuditVolumeArrayOutputWithContext(context.Context) CalculateAuditVolumeAvailableAvailableAuditVolumeArrayOutput
+}
+
+type CalculateAuditVolumeAvailableAvailableAuditVolumeArray []CalculateAuditVolumeAvailableAvailableAuditVolumeInput
+
+func (CalculateAuditVolumeAvailableAvailableAuditVolumeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CalculateAuditVolumeAvailableAvailableAuditVolume)(nil)).Elem()
+}
+
+func (i CalculateAuditVolumeAvailableAvailableAuditVolumeArray) ToCalculateAuditVolumeAvailableAvailableAuditVolumeArrayOutput() CalculateAuditVolumeAvailableAvailableAuditVolumeArrayOutput {
+	return i.ToCalculateAuditVolumeAvailableAvailableAuditVolumeArrayOutputWithContext(context.Background())
+}
+
+func (i CalculateAuditVolumeAvailableAvailableAuditVolumeArray) ToCalculateAuditVolumeAvailableAvailableAuditVolumeArrayOutputWithContext(ctx context.Context) CalculateAuditVolumeAvailableAvailableAuditVolumeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CalculateAuditVolumeAvailableAvailableAuditVolumeArrayOutput)
+}
+
+type CalculateAuditVolumeAvailableAvailableAuditVolumeOutput struct{ *pulumi.OutputState }
+
+func (CalculateAuditVolumeAvailableAvailableAuditVolumeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CalculateAuditVolumeAvailableAvailableAuditVolume)(nil)).Elem()
+}
+
+func (o CalculateAuditVolumeAvailableAvailableAuditVolumeOutput) ToCalculateAuditVolumeAvailableAvailableAuditVolumeOutput() CalculateAuditVolumeAvailableAvailableAuditVolumeOutput {
+	return o
+}
+
+func (o CalculateAuditVolumeAvailableAvailableAuditVolumeOutput) ToCalculateAuditVolumeAvailableAvailableAuditVolumeOutputWithContext(ctx context.Context) CalculateAuditVolumeAvailableAvailableAuditVolumeOutput {
+	return o
+}
+
+// The OCID of the audit.
+func (o CalculateAuditVolumeAvailableAvailableAuditVolumeOutput) AuditProfileId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CalculateAuditVolumeAvailableAvailableAuditVolume) *string { return v.AuditProfileId }).(pulumi.StringPtrOutput)
+}
+
+func (o CalculateAuditVolumeAvailableAvailableAuditVolumeOutput) MonthInConsideration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CalculateAuditVolumeAvailableAvailableAuditVolume) *string { return v.MonthInConsideration }).(pulumi.StringPtrOutput)
+}
+
+func (o CalculateAuditVolumeAvailableAvailableAuditVolumeOutput) TrailLocation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CalculateAuditVolumeAvailableAvailableAuditVolume) *string { return v.TrailLocation }).(pulumi.StringPtrOutput)
+}
+
+func (o CalculateAuditVolumeAvailableAvailableAuditVolumeOutput) Volume() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CalculateAuditVolumeAvailableAvailableAuditVolume) *string { return v.Volume }).(pulumi.StringPtrOutput)
+}
+
+type CalculateAuditVolumeAvailableAvailableAuditVolumeArrayOutput struct{ *pulumi.OutputState }
+
+func (CalculateAuditVolumeAvailableAvailableAuditVolumeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CalculateAuditVolumeAvailableAvailableAuditVolume)(nil)).Elem()
+}
+
+func (o CalculateAuditVolumeAvailableAvailableAuditVolumeArrayOutput) ToCalculateAuditVolumeAvailableAvailableAuditVolumeArrayOutput() CalculateAuditVolumeAvailableAvailableAuditVolumeArrayOutput {
+	return o
+}
+
+func (o CalculateAuditVolumeAvailableAvailableAuditVolumeArrayOutput) ToCalculateAuditVolumeAvailableAvailableAuditVolumeArrayOutputWithContext(ctx context.Context) CalculateAuditVolumeAvailableAvailableAuditVolumeArrayOutput {
+	return o
+}
+
+func (o CalculateAuditVolumeAvailableAvailableAuditVolumeArrayOutput) Index(i pulumi.IntInput) CalculateAuditVolumeAvailableAvailableAuditVolumeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CalculateAuditVolumeAvailableAvailableAuditVolume {
+		return vs[0].([]CalculateAuditVolumeAvailableAvailableAuditVolume)[vs[1].(int)]
+	}).(CalculateAuditVolumeAvailableAvailableAuditVolumeOutput)
+}
+
+type CalculateAuditVolumeCollectedCollectedAuditVolume struct {
+	ArchivedVolume *string `pulumi:"archivedVolume"`
+	// The OCID of the audit.
+	AuditProfileId       *string `pulumi:"auditProfileId"`
+	MonthInConsideration *string `pulumi:"monthInConsideration"`
+	OnlineVolume         *string `pulumi:"onlineVolume"`
+}
+
+// CalculateAuditVolumeCollectedCollectedAuditVolumeInput is an input type that accepts CalculateAuditVolumeCollectedCollectedAuditVolumeArgs and CalculateAuditVolumeCollectedCollectedAuditVolumeOutput values.
+// You can construct a concrete instance of `CalculateAuditVolumeCollectedCollectedAuditVolumeInput` via:
+//
+//	CalculateAuditVolumeCollectedCollectedAuditVolumeArgs{...}
+type CalculateAuditVolumeCollectedCollectedAuditVolumeInput interface {
+	pulumi.Input
+
+	ToCalculateAuditVolumeCollectedCollectedAuditVolumeOutput() CalculateAuditVolumeCollectedCollectedAuditVolumeOutput
+	ToCalculateAuditVolumeCollectedCollectedAuditVolumeOutputWithContext(context.Context) CalculateAuditVolumeCollectedCollectedAuditVolumeOutput
+}
+
+type CalculateAuditVolumeCollectedCollectedAuditVolumeArgs struct {
+	ArchivedVolume pulumi.StringPtrInput `pulumi:"archivedVolume"`
+	// The OCID of the audit.
+	AuditProfileId       pulumi.StringPtrInput `pulumi:"auditProfileId"`
+	MonthInConsideration pulumi.StringPtrInput `pulumi:"monthInConsideration"`
+	OnlineVolume         pulumi.StringPtrInput `pulumi:"onlineVolume"`
+}
+
+func (CalculateAuditVolumeCollectedCollectedAuditVolumeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CalculateAuditVolumeCollectedCollectedAuditVolume)(nil)).Elem()
+}
+
+func (i CalculateAuditVolumeCollectedCollectedAuditVolumeArgs) ToCalculateAuditVolumeCollectedCollectedAuditVolumeOutput() CalculateAuditVolumeCollectedCollectedAuditVolumeOutput {
+	return i.ToCalculateAuditVolumeCollectedCollectedAuditVolumeOutputWithContext(context.Background())
+}
+
+func (i CalculateAuditVolumeCollectedCollectedAuditVolumeArgs) ToCalculateAuditVolumeCollectedCollectedAuditVolumeOutputWithContext(ctx context.Context) CalculateAuditVolumeCollectedCollectedAuditVolumeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CalculateAuditVolumeCollectedCollectedAuditVolumeOutput)
+}
+
+// CalculateAuditVolumeCollectedCollectedAuditVolumeArrayInput is an input type that accepts CalculateAuditVolumeCollectedCollectedAuditVolumeArray and CalculateAuditVolumeCollectedCollectedAuditVolumeArrayOutput values.
+// You can construct a concrete instance of `CalculateAuditVolumeCollectedCollectedAuditVolumeArrayInput` via:
+//
+//	CalculateAuditVolumeCollectedCollectedAuditVolumeArray{ CalculateAuditVolumeCollectedCollectedAuditVolumeArgs{...} }
+type CalculateAuditVolumeCollectedCollectedAuditVolumeArrayInput interface {
+	pulumi.Input
+
+	ToCalculateAuditVolumeCollectedCollectedAuditVolumeArrayOutput() CalculateAuditVolumeCollectedCollectedAuditVolumeArrayOutput
+	ToCalculateAuditVolumeCollectedCollectedAuditVolumeArrayOutputWithContext(context.Context) CalculateAuditVolumeCollectedCollectedAuditVolumeArrayOutput
+}
+
+type CalculateAuditVolumeCollectedCollectedAuditVolumeArray []CalculateAuditVolumeCollectedCollectedAuditVolumeInput
+
+func (CalculateAuditVolumeCollectedCollectedAuditVolumeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CalculateAuditVolumeCollectedCollectedAuditVolume)(nil)).Elem()
+}
+
+func (i CalculateAuditVolumeCollectedCollectedAuditVolumeArray) ToCalculateAuditVolumeCollectedCollectedAuditVolumeArrayOutput() CalculateAuditVolumeCollectedCollectedAuditVolumeArrayOutput {
+	return i.ToCalculateAuditVolumeCollectedCollectedAuditVolumeArrayOutputWithContext(context.Background())
+}
+
+func (i CalculateAuditVolumeCollectedCollectedAuditVolumeArray) ToCalculateAuditVolumeCollectedCollectedAuditVolumeArrayOutputWithContext(ctx context.Context) CalculateAuditVolumeCollectedCollectedAuditVolumeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CalculateAuditVolumeCollectedCollectedAuditVolumeArrayOutput)
+}
+
+type CalculateAuditVolumeCollectedCollectedAuditVolumeOutput struct{ *pulumi.OutputState }
+
+func (CalculateAuditVolumeCollectedCollectedAuditVolumeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CalculateAuditVolumeCollectedCollectedAuditVolume)(nil)).Elem()
+}
+
+func (o CalculateAuditVolumeCollectedCollectedAuditVolumeOutput) ToCalculateAuditVolumeCollectedCollectedAuditVolumeOutput() CalculateAuditVolumeCollectedCollectedAuditVolumeOutput {
+	return o
+}
+
+func (o CalculateAuditVolumeCollectedCollectedAuditVolumeOutput) ToCalculateAuditVolumeCollectedCollectedAuditVolumeOutputWithContext(ctx context.Context) CalculateAuditVolumeCollectedCollectedAuditVolumeOutput {
+	return o
+}
+
+func (o CalculateAuditVolumeCollectedCollectedAuditVolumeOutput) ArchivedVolume() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CalculateAuditVolumeCollectedCollectedAuditVolume) *string { return v.ArchivedVolume }).(pulumi.StringPtrOutput)
+}
+
+// The OCID of the audit.
+func (o CalculateAuditVolumeCollectedCollectedAuditVolumeOutput) AuditProfileId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CalculateAuditVolumeCollectedCollectedAuditVolume) *string { return v.AuditProfileId }).(pulumi.StringPtrOutput)
+}
+
+func (o CalculateAuditVolumeCollectedCollectedAuditVolumeOutput) MonthInConsideration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CalculateAuditVolumeCollectedCollectedAuditVolume) *string { return v.MonthInConsideration }).(pulumi.StringPtrOutput)
+}
+
+func (o CalculateAuditVolumeCollectedCollectedAuditVolumeOutput) OnlineVolume() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CalculateAuditVolumeCollectedCollectedAuditVolume) *string { return v.OnlineVolume }).(pulumi.StringPtrOutput)
+}
+
+type CalculateAuditVolumeCollectedCollectedAuditVolumeArrayOutput struct{ *pulumi.OutputState }
+
+func (CalculateAuditVolumeCollectedCollectedAuditVolumeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CalculateAuditVolumeCollectedCollectedAuditVolume)(nil)).Elem()
+}
+
+func (o CalculateAuditVolumeCollectedCollectedAuditVolumeArrayOutput) ToCalculateAuditVolumeCollectedCollectedAuditVolumeArrayOutput() CalculateAuditVolumeCollectedCollectedAuditVolumeArrayOutput {
+	return o
+}
+
+func (o CalculateAuditVolumeCollectedCollectedAuditVolumeArrayOutput) ToCalculateAuditVolumeCollectedCollectedAuditVolumeArrayOutputWithContext(ctx context.Context) CalculateAuditVolumeCollectedCollectedAuditVolumeArrayOutput {
+	return o
+}
+
+func (o CalculateAuditVolumeCollectedCollectedAuditVolumeArrayOutput) Index(i pulumi.IntInput) CalculateAuditVolumeCollectedCollectedAuditVolumeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CalculateAuditVolumeCollectedCollectedAuditVolume {
+		return vs[0].([]CalculateAuditVolumeCollectedCollectedAuditVolume)[vs[1].(int)]
+	}).(CalculateAuditVolumeCollectedCollectedAuditVolumeOutput)
+}
+
 type DataSafeConfigurationGlobalSetting struct {
 	// The paid usage option chosen by the customer admin.
 	IsPaidUsage *bool `pulumi:"isPaidUsage"`
@@ -53569,6 +53799,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AuditPolicyManagementAuditSpecificationArrayInput)(nil)).Elem(), AuditPolicyManagementAuditSpecificationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AuditProfileAuditTrailInput)(nil)).Elem(), AuditProfileAuditTrailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AuditProfileAuditTrailArrayInput)(nil)).Elem(), AuditProfileAuditTrailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CalculateAuditVolumeAvailableAvailableAuditVolumeInput)(nil)).Elem(), CalculateAuditVolumeAvailableAvailableAuditVolumeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CalculateAuditVolumeAvailableAvailableAuditVolumeArrayInput)(nil)).Elem(), CalculateAuditVolumeAvailableAvailableAuditVolumeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CalculateAuditVolumeCollectedCollectedAuditVolumeInput)(nil)).Elem(), CalculateAuditVolumeCollectedCollectedAuditVolumeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CalculateAuditVolumeCollectedCollectedAuditVolumeArrayInput)(nil)).Elem(), CalculateAuditVolumeCollectedCollectedAuditVolumeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DataSafeConfigurationGlobalSettingInput)(nil)).Elem(), DataSafeConfigurationGlobalSettingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DataSafeConfigurationGlobalSettingArrayInput)(nil)).Elem(), DataSafeConfigurationGlobalSettingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseSecurityConfigManagementSqlFirewallConfigInput)(nil)).Elem(), DatabaseSecurityConfigManagementSqlFirewallConfigArgs{})
@@ -54281,6 +54515,10 @@ func init() {
 	pulumi.RegisterOutputType(AuditPolicyManagementAuditSpecificationArrayOutput{})
 	pulumi.RegisterOutputType(AuditProfileAuditTrailOutput{})
 	pulumi.RegisterOutputType(AuditProfileAuditTrailArrayOutput{})
+	pulumi.RegisterOutputType(CalculateAuditVolumeAvailableAvailableAuditVolumeOutput{})
+	pulumi.RegisterOutputType(CalculateAuditVolumeAvailableAvailableAuditVolumeArrayOutput{})
+	pulumi.RegisterOutputType(CalculateAuditVolumeCollectedCollectedAuditVolumeOutput{})
+	pulumi.RegisterOutputType(CalculateAuditVolumeCollectedCollectedAuditVolumeArrayOutput{})
 	pulumi.RegisterOutputType(DataSafeConfigurationGlobalSettingOutput{})
 	pulumi.RegisterOutputType(DataSafeConfigurationGlobalSettingArrayOutput{})
 	pulumi.RegisterOutputType(DatabaseSecurityConfigManagementSqlFirewallConfigOutput{})

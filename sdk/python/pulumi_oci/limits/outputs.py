@@ -141,7 +141,9 @@ class GetLimitDefinitionsLimitDefinitionResult(dict):
                  is_resource_availability_supported: bool,
                  name: str,
                  scope_type: str,
-                 service_name: str):
+                 service_name: str,
+                 supported_quota_families: Sequence[str],
+                 supported_subscriptions: Sequence[str]):
         """
         :param bool are_quotas_supported: If true, quota policies can be created on top of this resource limit.
         :param str description: The limit description.
@@ -152,6 +154,8 @@ class GetLimitDefinitionsLimitDefinitionResult(dict):
         :param str name: Optional field, filter for a specific resource limit.
         :param str scope_type: Reflects the scope of the resource limit, whether Global (across all regions), regional, or availability domain-specific.
         :param str service_name: The target service name.
+        :param Sequence[str] supported_quota_families: Supported quota family names for creation of quota policy.
+        :param Sequence[str] supported_subscriptions: An array of subscription types supported by the limit. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
         """
         pulumi.set(__self__, "are_quotas_supported", are_quotas_supported)
         pulumi.set(__self__, "description", description)
@@ -162,6 +166,8 @@ class GetLimitDefinitionsLimitDefinitionResult(dict):
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "scope_type", scope_type)
         pulumi.set(__self__, "service_name", service_name)
+        pulumi.set(__self__, "supported_quota_families", supported_quota_families)
+        pulumi.set(__self__, "supported_subscriptions", supported_subscriptions)
 
     @property
     @pulumi.getter(name="areQuotasSupported")
@@ -234,6 +240,22 @@ class GetLimitDefinitionsLimitDefinitionResult(dict):
         The target service name.
         """
         return pulumi.get(self, "service_name")
+
+    @property
+    @pulumi.getter(name="supportedQuotaFamilies")
+    def supported_quota_families(self) -> Sequence[str]:
+        """
+        Supported quota family names for creation of quota policy.
+        """
+        return pulumi.get(self, "supported_quota_families")
+
+    @property
+    @pulumi.getter(name="supportedSubscriptions")
+    def supported_subscriptions(self) -> Sequence[str]:
+        """
+        An array of subscription types supported by the limit. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
+        """
+        return pulumi.get(self, "supported_subscriptions")
 
 
 @pulumi.output_type
@@ -616,13 +638,16 @@ class GetServicesFilterResult(dict):
 class GetServicesServiceResult(dict):
     def __init__(__self__, *,
                  description: str,
-                 name: str):
+                 name: str,
+                 supported_subscriptions: Sequence[str]):
         """
         :param str description: The friendly service name.
         :param str name: The service name. Use this when calling other APIs.
+        :param Sequence[str] supported_subscriptions: An array of subscription types supported by the service. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
         """
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "supported_subscriptions", supported_subscriptions)
 
     @property
     @pulumi.getter
@@ -639,5 +664,13 @@ class GetServicesServiceResult(dict):
         The service name. Use this when calling other APIs.
         """
         return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="supportedSubscriptions")
+    def supported_subscriptions(self) -> Sequence[str]:
+        """
+        An array of subscription types supported by the service. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
+        """
+        return pulumi.get(self, "supported_subscriptions")
 
 

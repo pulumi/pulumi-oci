@@ -992,7 +992,7 @@ class GetBackendSetBackendResult(dict):
         """
         :param str ip_address: The IP address of the backend server. Example: `10.0.0.3`
         :param bool is_backup: Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
-        :param bool is_drain: Whether the network load balancer should drain this server. Servers marked "isDrain" receive no  incoming traffic.  Example: `false`
+        :param bool is_drain: Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
         :param bool is_offline: Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
         :param str name: A user-friendly name for the backend set that must be unique and cannot be changed.
         :param int port: The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
@@ -1028,7 +1028,7 @@ class GetBackendSetBackendResult(dict):
     @pulumi.getter(name="isDrain")
     def is_drain(self) -> bool:
         """
-        Whether the network load balancer should drain this server. Servers marked "isDrain" receive no  incoming traffic.  Example: `false`
+        Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
         """
         return pulumi.get(self, "is_drain")
 
@@ -1402,7 +1402,7 @@ class GetBackendSetsBackendSetCollectionItemBackendResult(dict):
         """
         :param str ip_address: The IP address of the backend server. Example: `10.0.0.3`
         :param bool is_backup: Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
-        :param bool is_drain: Whether the network load balancer should drain this server. Servers marked "isDrain" receive no  incoming traffic.  Example: `false`
+        :param bool is_drain: Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
         :param bool is_offline: Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
         :param str name: A user-friendly name for the backend set that must be unique and cannot be changed.
         :param int port: The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
@@ -1438,7 +1438,7 @@ class GetBackendSetsBackendSetCollectionItemBackendResult(dict):
     @pulumi.getter(name="isDrain")
     def is_drain(self) -> bool:
         """
-        Whether the network load balancer should drain this server. Servers marked "isDrain" receive no  incoming traffic.  Example: `false`
+        Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
         """
         return pulumi.get(self, "is_drain")
 
@@ -1930,7 +1930,9 @@ class GetListenersListenerCollectionItemResult(dict):
                  name: str,
                  network_load_balancer_id: str,
                  port: int,
-                 protocol: str):
+                 protocol: str,
+                 tcp_idle_timeout: int,
+                 udp_idle_timeout: int):
         """
         :param str default_backend_set_name: The name of the associated backend set.  Example: `example_backend_set`
         :param str ip_version: IP version associated with the listener.
@@ -1939,6 +1941,8 @@ class GetListenersListenerCollectionItemResult(dict):
         :param str network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
         :param int port: The communication port for the listener.  Example: `80`
         :param str protocol: The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). "ListNetworkLoadBalancersProtocols" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP`
+        :param int tcp_idle_timeout: The duration for TCP idle timeout in seconds. Example: `300`
+        :param int udp_idle_timeout: The duration for UDP idle timeout in seconds. Example: `120`
         """
         pulumi.set(__self__, "default_backend_set_name", default_backend_set_name)
         pulumi.set(__self__, "id", id)
@@ -1948,6 +1952,8 @@ class GetListenersListenerCollectionItemResult(dict):
         pulumi.set(__self__, "network_load_balancer_id", network_load_balancer_id)
         pulumi.set(__self__, "port", port)
         pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "tcp_idle_timeout", tcp_idle_timeout)
+        pulumi.set(__self__, "udp_idle_timeout", udp_idle_timeout)
 
     @property
     @pulumi.getter(name="defaultBackendSetName")
@@ -2009,6 +2015,22 @@ class GetListenersListenerCollectionItemResult(dict):
         The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). "ListNetworkLoadBalancersProtocols" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP`
         """
         return pulumi.get(self, "protocol")
+
+    @property
+    @pulumi.getter(name="tcpIdleTimeout")
+    def tcp_idle_timeout(self) -> int:
+        """
+        The duration for TCP idle timeout in seconds. Example: `300`
+        """
+        return pulumi.get(self, "tcp_idle_timeout")
+
+    @property
+    @pulumi.getter(name="udpIdleTimeout")
+    def udp_idle_timeout(self) -> int:
+        """
+        The duration for UDP idle timeout in seconds. Example: `120`
+        """
+        return pulumi.get(self, "udp_idle_timeout")
 
 
 @pulumi.output_type

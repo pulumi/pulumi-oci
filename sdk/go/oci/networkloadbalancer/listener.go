@@ -38,6 +38,8 @@ import (
 //				Protocol:              pulumi.Any(listenerProtocol),
 //				IpVersion:             pulumi.Any(listenerIpVersion),
 //				IsPpv2enabled:         pulumi.Any(listenerIsPpv2enabled),
+//				TcpIdleTimeout:        pulumi.Any(listenerTcpIdleTimeout),
+//				UdpIdleTimeout:        pulumi.Any(listenerUdpIdleTimeout),
 //			})
 //			if err != nil {
 //				return err
@@ -71,10 +73,14 @@ type Listener struct {
 	// (Updatable) The communication port for the listener.  Example: `80`
 	Port pulumi.IntOutput `pulumi:"port"`
 	// (Updatable) The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). "ListNetworkLoadBalancersProtocols" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP`
+	Protocol pulumi.StringOutput `pulumi:"protocol"`
+	// (Updatable) The duration for TCP idle timeout in seconds. Example: `300`
+	TcpIdleTimeout pulumi.IntOutput `pulumi:"tcpIdleTimeout"`
+	// (Updatable) The duration for UDP idle timeout in seconds. Example: `120`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	Protocol pulumi.StringOutput `pulumi:"protocol"`
+	UdpIdleTimeout pulumi.IntOutput `pulumi:"udpIdleTimeout"`
 }
 
 // NewListener registers a new resource with the given unique name, arguments, and options.
@@ -132,10 +138,14 @@ type listenerState struct {
 	// (Updatable) The communication port for the listener.  Example: `80`
 	Port *int `pulumi:"port"`
 	// (Updatable) The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). "ListNetworkLoadBalancersProtocols" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP`
+	Protocol *string `pulumi:"protocol"`
+	// (Updatable) The duration for TCP idle timeout in seconds. Example: `300`
+	TcpIdleTimeout *int `pulumi:"tcpIdleTimeout"`
+	// (Updatable) The duration for UDP idle timeout in seconds. Example: `120`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	Protocol *string `pulumi:"protocol"`
+	UdpIdleTimeout *int `pulumi:"udpIdleTimeout"`
 }
 
 type ListenerState struct {
@@ -152,10 +162,14 @@ type ListenerState struct {
 	// (Updatable) The communication port for the listener.  Example: `80`
 	Port pulumi.IntPtrInput
 	// (Updatable) The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). "ListNetworkLoadBalancersProtocols" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP`
+	Protocol pulumi.StringPtrInput
+	// (Updatable) The duration for TCP idle timeout in seconds. Example: `300`
+	TcpIdleTimeout pulumi.IntPtrInput
+	// (Updatable) The duration for UDP idle timeout in seconds. Example: `120`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	Protocol pulumi.StringPtrInput
+	UdpIdleTimeout pulumi.IntPtrInput
 }
 
 func (ListenerState) ElementType() reflect.Type {
@@ -176,10 +190,14 @@ type listenerArgs struct {
 	// (Updatable) The communication port for the listener.  Example: `80`
 	Port int `pulumi:"port"`
 	// (Updatable) The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). "ListNetworkLoadBalancersProtocols" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP`
+	Protocol string `pulumi:"protocol"`
+	// (Updatable) The duration for TCP idle timeout in seconds. Example: `300`
+	TcpIdleTimeout *int `pulumi:"tcpIdleTimeout"`
+	// (Updatable) The duration for UDP idle timeout in seconds. Example: `120`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	Protocol string `pulumi:"protocol"`
+	UdpIdleTimeout *int `pulumi:"udpIdleTimeout"`
 }
 
 // The set of arguments for constructing a Listener resource.
@@ -197,10 +215,14 @@ type ListenerArgs struct {
 	// (Updatable) The communication port for the listener.  Example: `80`
 	Port pulumi.IntInput
 	// (Updatable) The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). "ListNetworkLoadBalancersProtocols" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP`
+	Protocol pulumi.StringInput
+	// (Updatable) The duration for TCP idle timeout in seconds. Example: `300`
+	TcpIdleTimeout pulumi.IntPtrInput
+	// (Updatable) The duration for UDP idle timeout in seconds. Example: `120`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	Protocol pulumi.StringInput
+	UdpIdleTimeout pulumi.IntPtrInput
 }
 
 func (ListenerArgs) ElementType() reflect.Type {
@@ -321,11 +343,21 @@ func (o ListenerOutput) Port() pulumi.IntOutput {
 }
 
 // (Updatable) The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). "ListNetworkLoadBalancersProtocols" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP`
+func (o ListenerOutput) Protocol() pulumi.StringOutput {
+	return o.ApplyT(func(v *Listener) pulumi.StringOutput { return v.Protocol }).(pulumi.StringOutput)
+}
+
+// (Updatable) The duration for TCP idle timeout in seconds. Example: `300`
+func (o ListenerOutput) TcpIdleTimeout() pulumi.IntOutput {
+	return o.ApplyT(func(v *Listener) pulumi.IntOutput { return v.TcpIdleTimeout }).(pulumi.IntOutput)
+}
+
+// (Updatable) The duration for UDP idle timeout in seconds. Example: `120`
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o ListenerOutput) Protocol() pulumi.StringOutput {
-	return o.ApplyT(func(v *Listener) pulumi.StringOutput { return v.Protocol }).(pulumi.StringOutput)
+func (o ListenerOutput) UdpIdleTimeout() pulumi.IntOutput {
+	return o.ApplyT(func(v *Listener) pulumi.IntOutput { return v.UdpIdleTimeout }).(pulumi.IntOutput)
 }
 
 type ListenerArrayOutput struct{ *pulumi.OutputState }

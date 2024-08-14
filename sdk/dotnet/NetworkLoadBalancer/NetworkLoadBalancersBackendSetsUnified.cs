@@ -65,8 +65,8 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     ///             },
     ///         },
     ///         IpVersion = networkLoadBalancersBackendSetsUnifiedIpVersion,
-    ///         IsInstantFailoverEnabled = networkLoadBalancersBackendSetsUnifiedIsInstantFailoverEnabled,
     ///         IsFailOpen = networkLoadBalancersBackendSetsUnifiedIsFailOpen,
+    ///         IsInstantFailoverEnabled = networkLoadBalancersBackendSetsUnifiedIsInstantFailoverEnabled,
     ///         IsPreserveSource = networkLoadBalancersBackendSetsUnifiedIsPreserveSource,
     ///     });
     /// 

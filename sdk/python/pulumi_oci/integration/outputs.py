@@ -966,6 +966,7 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
                  shape: str,
                  state: str,
                  state_message: str,
+                 system_tags: Mapping[str, Any],
                  time_created: str,
                  time_updated: str):
         """
@@ -990,6 +991,7 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
         :param str shape: Shape
         :param str state: Life cycle state to query on.
         :param str state_message: An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time the the Integration Instance was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
         """
@@ -1017,6 +1019,7 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "state_message", state_message)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
 
@@ -1202,6 +1205,14 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
         An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "state_message")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")

@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Limits
         /// <summary>
         /// This data source provides the list of Services in Oracle Cloud Infrastructure Limits service.
         /// 
-        /// Returns the list of supported services.
+        /// Returns the list of supported services. If subscription ID is provided then only services supported by subscription will be returned.
         /// This includes the programmatic service name, along with the friendly service name.
         /// 
         /// 
@@ -31,6 +31,7 @@ namespace Pulumi.Oci.Limits
         ///     var testServices = Oci.Limits.GetServices.Invoke(new()
         ///     {
         ///         CompartmentId = tenancyOcid,
+        ///         SubscriptionId = subscriptionOcid,
         ///     });
         /// 
         /// });
@@ -42,7 +43,7 @@ namespace Pulumi.Oci.Limits
         /// <summary>
         /// This data source provides the list of Services in Oracle Cloud Infrastructure Limits service.
         /// 
-        /// Returns the list of supported services.
+        /// Returns the list of supported services. If subscription ID is provided then only services supported by subscription will be returned.
         /// This includes the programmatic service name, along with the friendly service name.
         /// 
         /// 
@@ -59,6 +60,7 @@ namespace Pulumi.Oci.Limits
         ///     var testServices = Oci.Limits.GetServices.Invoke(new()
         ///     {
         ///         CompartmentId = tenancyOcid,
+        ///         SubscriptionId = subscriptionOcid,
         ///     });
         /// 
         /// });
@@ -85,6 +87,12 @@ namespace Pulumi.Oci.Limits
             set => _filters = value;
         }
 
+        /// <summary>
+        /// The OCID of the subscription assigned to tenant
+        /// </summary>
+        [Input("subscriptionId")]
+        public string? SubscriptionId { get; set; }
+
         public GetServicesArgs()
         {
         }
@@ -107,6 +115,12 @@ namespace Pulumi.Oci.Limits
             set => _filters = value;
         }
 
+        /// <summary>
+        /// The OCID of the subscription assigned to tenant
+        /// </summary>
+        [Input("subscriptionId")]
+        public Input<string>? SubscriptionId { get; set; }
+
         public GetServicesInvokeArgs()
         {
         }
@@ -127,6 +141,7 @@ namespace Pulumi.Oci.Limits
         /// The list of services.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetServicesServiceResult> Services;
+        public readonly string? SubscriptionId;
 
         [OutputConstructor]
         private GetServicesResult(
@@ -136,12 +151,15 @@ namespace Pulumi.Oci.Limits
 
             string id,
 
-            ImmutableArray<Outputs.GetServicesServiceResult> services)
+            ImmutableArray<Outputs.GetServicesServiceResult> services,
+
+            string? subscriptionId)
         {
             CompartmentId = compartmentId;
             Filters = filters;
             Id = id;
             Services = services;
+            SubscriptionId = subscriptionId;
         }
     }
 }

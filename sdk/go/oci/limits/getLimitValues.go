@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Limit Values in Oracle Cloud Infrastructure Limits service.
 //
-// Includes a full list of resource limits belonging to a given service.
+// Includes a full list of resource limits belonging to a given service. If subscription Id is provided, limit value for subscription will be returned.
 //
 // ## Example Usage
 //
@@ -35,6 +35,7 @@ import (
 //				AvailabilityDomain: pulumi.StringRef(limitValueAvailabilityDomain),
 //				Name:               pulumi.StringRef(limitValueName),
 //				ScopeType:          pulumi.StringRef(limitValueScopeType),
+//				SubscriptionId:     pulumi.StringRef(subscriptionOcid),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -67,6 +68,8 @@ type GetLimitValuesArgs struct {
 	ScopeType *string `pulumi:"scopeType"`
 	// The target service name.
 	ServiceName string `pulumi:"serviceName"`
+	// The OCID of the subscription assigned to tenant
+	SubscriptionId *string `pulumi:"subscriptionId"`
 }
 
 // A collection of values returned by getLimitValues.
@@ -82,8 +85,9 @@ type GetLimitValuesResult struct {
 	// The resource limit name. To be used for writing policies (in case of quotas) or other programmatic calls.
 	Name *string `pulumi:"name"`
 	// The scope type of the limit.
-	ScopeType   *string `pulumi:"scopeType"`
-	ServiceName string  `pulumi:"serviceName"`
+	ScopeType      *string `pulumi:"scopeType"`
+	ServiceName    string  `pulumi:"serviceName"`
+	SubscriptionId *string `pulumi:"subscriptionId"`
 }
 
 func GetLimitValuesOutput(ctx *pulumi.Context, args GetLimitValuesOutputArgs, opts ...pulumi.InvokeOption) GetLimitValuesResultOutput {
@@ -112,6 +116,8 @@ type GetLimitValuesOutputArgs struct {
 	ScopeType pulumi.StringPtrInput `pulumi:"scopeType"`
 	// The target service name.
 	ServiceName pulumi.StringInput `pulumi:"serviceName"`
+	// The OCID of the subscription assigned to tenant
+	SubscriptionId pulumi.StringPtrInput `pulumi:"subscriptionId"`
 }
 
 func (GetLimitValuesOutputArgs) ElementType() reflect.Type {
@@ -168,6 +174,10 @@ func (o GetLimitValuesResultOutput) ScopeType() pulumi.StringPtrOutput {
 
 func (o GetLimitValuesResultOutput) ServiceName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLimitValuesResult) string { return v.ServiceName }).(pulumi.StringOutput)
+}
+
+func (o GetLimitValuesResultOutput) SubscriptionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLimitValuesResult) *string { return v.SubscriptionId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

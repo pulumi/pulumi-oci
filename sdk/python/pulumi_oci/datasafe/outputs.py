@@ -19,6 +19,8 @@ __all__ = [
     'AuditPolicyManagementAuditConditionEnableCondition',
     'AuditPolicyManagementAuditSpecification',
     'AuditProfileAuditTrail',
+    'CalculateAuditVolumeAvailableAvailableAuditVolume',
+    'CalculateAuditVolumeCollectedCollectedAuditVolume',
     'DataSafeConfigurationGlobalSetting',
     'DatabaseSecurityConfigManagementSqlFirewallConfig',
     'DatabaseSecurityConfigSqlFirewallConfig',
@@ -1463,6 +1465,136 @@ class AuditProfileAuditTrail(dict):
         The OCID of the workrequest for audit trail which collects audit records.
         """
         return pulumi.get(self, "work_request_id")
+
+
+@pulumi.output_type
+class CalculateAuditVolumeAvailableAvailableAuditVolume(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "auditProfileId":
+            suggest = "audit_profile_id"
+        elif key == "monthInConsideration":
+            suggest = "month_in_consideration"
+        elif key == "trailLocation":
+            suggest = "trail_location"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CalculateAuditVolumeAvailableAvailableAuditVolume. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CalculateAuditVolumeAvailableAvailableAuditVolume.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CalculateAuditVolumeAvailableAvailableAuditVolume.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 audit_profile_id: Optional[str] = None,
+                 month_in_consideration: Optional[str] = None,
+                 trail_location: Optional[str] = None,
+                 volume: Optional[str] = None):
+        """
+        :param str audit_profile_id: The OCID of the audit.
+        """
+        if audit_profile_id is not None:
+            pulumi.set(__self__, "audit_profile_id", audit_profile_id)
+        if month_in_consideration is not None:
+            pulumi.set(__self__, "month_in_consideration", month_in_consideration)
+        if trail_location is not None:
+            pulumi.set(__self__, "trail_location", trail_location)
+        if volume is not None:
+            pulumi.set(__self__, "volume", volume)
+
+    @property
+    @pulumi.getter(name="auditProfileId")
+    def audit_profile_id(self) -> Optional[str]:
+        """
+        The OCID of the audit.
+        """
+        return pulumi.get(self, "audit_profile_id")
+
+    @property
+    @pulumi.getter(name="monthInConsideration")
+    def month_in_consideration(self) -> Optional[str]:
+        return pulumi.get(self, "month_in_consideration")
+
+    @property
+    @pulumi.getter(name="trailLocation")
+    def trail_location(self) -> Optional[str]:
+        return pulumi.get(self, "trail_location")
+
+    @property
+    @pulumi.getter
+    def volume(self) -> Optional[str]:
+        return pulumi.get(self, "volume")
+
+
+@pulumi.output_type
+class CalculateAuditVolumeCollectedCollectedAuditVolume(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "archivedVolume":
+            suggest = "archived_volume"
+        elif key == "auditProfileId":
+            suggest = "audit_profile_id"
+        elif key == "monthInConsideration":
+            suggest = "month_in_consideration"
+        elif key == "onlineVolume":
+            suggest = "online_volume"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CalculateAuditVolumeCollectedCollectedAuditVolume. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CalculateAuditVolumeCollectedCollectedAuditVolume.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CalculateAuditVolumeCollectedCollectedAuditVolume.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 archived_volume: Optional[str] = None,
+                 audit_profile_id: Optional[str] = None,
+                 month_in_consideration: Optional[str] = None,
+                 online_volume: Optional[str] = None):
+        """
+        :param str audit_profile_id: The OCID of the audit.
+        """
+        if archived_volume is not None:
+            pulumi.set(__self__, "archived_volume", archived_volume)
+        if audit_profile_id is not None:
+            pulumi.set(__self__, "audit_profile_id", audit_profile_id)
+        if month_in_consideration is not None:
+            pulumi.set(__self__, "month_in_consideration", month_in_consideration)
+        if online_volume is not None:
+            pulumi.set(__self__, "online_volume", online_volume)
+
+    @property
+    @pulumi.getter(name="archivedVolume")
+    def archived_volume(self) -> Optional[str]:
+        return pulumi.get(self, "archived_volume")
+
+    @property
+    @pulumi.getter(name="auditProfileId")
+    def audit_profile_id(self) -> Optional[str]:
+        """
+        The OCID of the audit.
+        """
+        return pulumi.get(self, "audit_profile_id")
+
+    @property
+    @pulumi.getter(name="monthInConsideration")
+    def month_in_consideration(self) -> Optional[str]:
+        return pulumi.get(self, "month_in_consideration")
+
+    @property
+    @pulumi.getter(name="onlineVolume")
+    def online_volume(self) -> Optional[str]:
+        return pulumi.get(self, "online_volume")
 
 
 @pulumi.output_type

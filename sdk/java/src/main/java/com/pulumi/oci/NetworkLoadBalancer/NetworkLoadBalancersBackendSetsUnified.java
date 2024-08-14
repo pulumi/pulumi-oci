@@ -84,8 +84,8 @@ import javax.annotation.Nullable;
  *                 .weight(networkLoadBalancersBackendSetsUnifiedBackendsWeight)
  *                 .build())
  *             .ipVersion(networkLoadBalancersBackendSetsUnifiedIpVersion)
- *             .isInstantFailoverEnabled(networkLoadBalancersBackendSetsUnifiedIsInstantFailoverEnabled)
  *             .isFailOpen(networkLoadBalancersBackendSetsUnifiedIsFailOpen)
+ *             .isInstantFailoverEnabled(networkLoadBalancersBackendSetsUnifiedIsInstantFailoverEnabled)
  *             .isPreserveSource(networkLoadBalancersBackendSetsUnifiedIsPreserveSource)
  *             .build());
  * 

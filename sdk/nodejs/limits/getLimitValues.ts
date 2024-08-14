@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Limit Values in Oracle Cloud Infrastructure Limits service.
  *
- * Includes a full list of resource limits belonging to a given service.
+ * Includes a full list of resource limits belonging to a given service. If subscription Id is provided, limit value for subscription will be returned.
  *
  * ## Example Usage
  *
@@ -23,6 +23,7 @@ import * as utilities from "../utilities";
  *     availabilityDomain: limitValueAvailabilityDomain,
  *     name: limitValueName,
  *     scopeType: limitValueScopeType,
+ *     subscriptionId: subscriptionOcid,
  * });
  * ```
  */
@@ -36,6 +37,7 @@ export function getLimitValues(args: GetLimitValuesArgs, opts?: pulumi.InvokeOpt
         "name": args.name,
         "scopeType": args.scopeType,
         "serviceName": args.serviceName,
+        "subscriptionId": args.subscriptionId,
     }, opts);
 }
 
@@ -64,6 +66,10 @@ export interface GetLimitValuesArgs {
      * The target service name.
      */
     serviceName: string;
+    /**
+     * The OCID of the subscription assigned to tenant
+     */
+    subscriptionId?: string;
 }
 
 /**
@@ -93,11 +99,12 @@ export interface GetLimitValuesResult {
      */
     readonly scopeType?: string;
     readonly serviceName: string;
+    readonly subscriptionId?: string;
 }
 /**
  * This data source provides the list of Limit Values in Oracle Cloud Infrastructure Limits service.
  *
- * Includes a full list of resource limits belonging to a given service.
+ * Includes a full list of resource limits belonging to a given service. If subscription Id is provided, limit value for subscription will be returned.
  *
  * ## Example Usage
  *
@@ -111,6 +118,7 @@ export interface GetLimitValuesResult {
  *     availabilityDomain: limitValueAvailabilityDomain,
  *     name: limitValueName,
  *     scopeType: limitValueScopeType,
+ *     subscriptionId: subscriptionOcid,
  * });
  * ```
  */
@@ -143,4 +151,8 @@ export interface GetLimitValuesOutputArgs {
      * The target service name.
      */
     serviceName: pulumi.Input<string>;
+    /**
+     * The OCID of the subscription assigned to tenant
+     */
+    subscriptionId?: pulumi.Input<string>;
 }

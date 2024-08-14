@@ -51,8 +51,8 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     ///         NetworkLoadBalancerId = testNetworkLoadBalancer.Id,
     ///         Policy = backendSetPolicy,
     ///         IpVersion = backendSetIpVersion,
-    ///         IsInstantFailoverEnabled = backendSetIsInstantFailoverEnabled,
     ///         IsFailOpen = backendSetIsFailOpen,
+    ///         IsInstantFailoverEnabled = backendSetIsInstantFailoverEnabled,
     ///         IsPreserveSource = backendSetIsPreserveSource,
     ///     });
     /// 

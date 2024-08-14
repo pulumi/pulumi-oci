@@ -21,7 +21,7 @@ class GetResourceAvailabilityResult:
     """
     A collection of values returned by getResourceAvailability.
     """
-    def __init__(__self__, availability_domain=None, available=None, compartment_id=None, effective_quota_value=None, fractional_availability=None, fractional_usage=None, id=None, limit_name=None, service_name=None, used=None):
+    def __init__(__self__, availability_domain=None, available=None, compartment_id=None, effective_quota_value=None, fractional_availability=None, fractional_usage=None, id=None, limit_name=None, service_name=None, subscription_id=None, used=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -49,6 +49,9 @@ class GetResourceAvailabilityResult:
         if service_name and not isinstance(service_name, str):
             raise TypeError("Expected argument 'service_name' to be a str")
         pulumi.set(__self__, "service_name", service_name)
+        if subscription_id and not isinstance(subscription_id, str):
+            raise TypeError("Expected argument 'subscription_id' to be a str")
+        pulumi.set(__self__, "subscription_id", subscription_id)
         if used and not isinstance(used, str):
             raise TypeError("Expected argument 'used' to be a str")
         pulumi.set(__self__, "used", used)
@@ -114,6 +117,11 @@ class GetResourceAvailabilityResult:
         return pulumi.get(self, "service_name")
 
     @property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> Optional[str]:
+        return pulumi.get(self, "subscription_id")
+
+    @property
     @pulumi.getter
     def used(self) -> str:
         """
@@ -137,6 +145,7 @@ class AwaitableGetResourceAvailabilityResult(GetResourceAvailabilityResult):
             id=self.id,
             limit_name=self.limit_name,
             service_name=self.service_name,
+            subscription_id=self.subscription_id,
             used=self.used)
 
 
@@ -144,6 +153,7 @@ def get_resource_availability(availability_domain: Optional[str] = None,
                               compartment_id: Optional[str] = None,
                               limit_name: Optional[str] = None,
                               service_name: Optional[str] = None,
+                              subscription_id: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetResourceAvailabilityResult:
     """
     This data source provides details about a specific Resource Availability resource in Oracle Cloud Infrastructure Limits service.
@@ -151,7 +161,8 @@ def get_resource_availability(availability_domain: Optional[str] = None,
     For a given compartmentId, resource limit name, and scope, returns the following:
       * The number of available resources associated with the given limit.
       * The usage in the selected compartment for the given limit.
-          Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
+        If Subscription Id is provided, then usage for resource created in that subscription will be returned
+        Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
 
     ## Example Usage
 
@@ -162,7 +173,8 @@ def get_resource_availability(availability_domain: Optional[str] = None,
     test_resource_availability = oci.Limits.get_resource_availability(compartment_id=tenancy_ocid,
         limit_name=resource_availability_limit_name,
         service_name=test_service["name"],
-        availability_domain=resource_availability_availability_domain)
+        availability_domain=resource_availability_availability_domain,
+        subscription_id=subscription_ocid)
     ```
 
 
@@ -170,12 +182,14 @@ def get_resource_availability(availability_domain: Optional[str] = None,
     :param str compartment_id: The OCID of the compartment for which data is being fetched.
     :param str limit_name: The limit name for which to fetch the data.
     :param str service_name: The service name of the target quota.
+    :param str subscription_id: The OCID of the subscription assigned to tenant
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
     __args__['compartmentId'] = compartment_id
     __args__['limitName'] = limit_name
     __args__['serviceName'] = service_name
+    __args__['subscriptionId'] = subscription_id
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:Limits/getResourceAvailability:getResourceAvailability', __args__, opts=opts, typ=GetResourceAvailabilityResult).value
 
@@ -189,6 +203,7 @@ def get_resource_availability(availability_domain: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         limit_name=pulumi.get(__ret__, 'limit_name'),
         service_name=pulumi.get(__ret__, 'service_name'),
+        subscription_id=pulumi.get(__ret__, 'subscription_id'),
         used=pulumi.get(__ret__, 'used'))
 
 
@@ -197,6 +212,7 @@ def get_resource_availability_output(availability_domain: Optional[pulumi.Input[
                                      compartment_id: Optional[pulumi.Input[str]] = None,
                                      limit_name: Optional[pulumi.Input[str]] = None,
                                      service_name: Optional[pulumi.Input[str]] = None,
+                                     subscription_id: Optional[pulumi.Input[Optional[str]]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetResourceAvailabilityResult]:
     """
     This data source provides details about a specific Resource Availability resource in Oracle Cloud Infrastructure Limits service.
@@ -204,7 +220,8 @@ def get_resource_availability_output(availability_domain: Optional[pulumi.Input[
     For a given compartmentId, resource limit name, and scope, returns the following:
       * The number of available resources associated with the given limit.
       * The usage in the selected compartment for the given limit.
-          Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
+        If Subscription Id is provided, then usage for resource created in that subscription will be returned
+        Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
 
     ## Example Usage
 
@@ -215,7 +232,8 @@ def get_resource_availability_output(availability_domain: Optional[pulumi.Input[
     test_resource_availability = oci.Limits.get_resource_availability(compartment_id=tenancy_ocid,
         limit_name=resource_availability_limit_name,
         service_name=test_service["name"],
-        availability_domain=resource_availability_availability_domain)
+        availability_domain=resource_availability_availability_domain,
+        subscription_id=subscription_ocid)
     ```
 
 
@@ -223,5 +241,6 @@ def get_resource_availability_output(availability_domain: Optional[pulumi.Input[
     :param str compartment_id: The OCID of the compartment for which data is being fetched.
     :param str limit_name: The limit name for which to fetch the data.
     :param str service_name: The service name of the target quota.
+    :param str subscription_id: The OCID of the subscription assigned to tenant
     """
     ...

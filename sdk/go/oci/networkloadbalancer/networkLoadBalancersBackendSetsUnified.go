@@ -66,8 +66,8 @@ import (
 //					},
 //				},
 //				IpVersion:                pulumi.Any(networkLoadBalancersBackendSetsUnifiedIpVersion),
-//				IsInstantFailoverEnabled: pulumi.Any(networkLoadBalancersBackendSetsUnifiedIsInstantFailoverEnabled),
 //				IsFailOpen:               pulumi.Any(networkLoadBalancersBackendSetsUnifiedIsFailOpen),
+//				IsInstantFailoverEnabled: pulumi.Any(networkLoadBalancersBackendSetsUnifiedIsInstantFailoverEnabled),
 //				IsPreserveSource:         pulumi.Any(networkLoadBalancersBackendSetsUnifiedIsPreserveSource),
 //			})
 //			if err != nil {

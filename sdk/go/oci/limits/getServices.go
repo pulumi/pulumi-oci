@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Services in Oracle Cloud Infrastructure Limits service.
 //
-// Returns the list of supported services.
+// Returns the list of supported services. If subscription ID is provided then only services supported by subscription will be returned.
 // This includes the programmatic service name, along with the friendly service name.
 //
 // ## Example Usage
@@ -31,7 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Limits.GetServices(ctx, &limits.GetServicesArgs{
-//				CompartmentId: tenancyOcid,
+//				CompartmentId:  tenancyOcid,
+//				SubscriptionId: pulumi.StringRef(subscriptionOcid),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -56,6 +57,8 @@ type GetServicesArgs struct {
 	// The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
 	CompartmentId string              `pulumi:"compartmentId"`
 	Filters       []GetServicesFilter `pulumi:"filters"`
+	// The OCID of the subscription assigned to tenant
+	SubscriptionId *string `pulumi:"subscriptionId"`
 }
 
 // A collection of values returned by getServices.
@@ -65,7 +68,8 @@ type GetServicesResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// The list of services.
-	Services []GetServicesService `pulumi:"services"`
+	Services       []GetServicesService `pulumi:"services"`
+	SubscriptionId *string              `pulumi:"subscriptionId"`
 }
 
 func GetServicesOutput(ctx *pulumi.Context, args GetServicesOutputArgs, opts ...pulumi.InvokeOption) GetServicesResultOutput {
@@ -86,6 +90,8 @@ type GetServicesOutputArgs struct {
 	// The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
 	CompartmentId pulumi.StringInput          `pulumi:"compartmentId"`
 	Filters       GetServicesFilterArrayInput `pulumi:"filters"`
+	// The OCID of the subscription assigned to tenant
+	SubscriptionId pulumi.StringPtrInput `pulumi:"subscriptionId"`
 }
 
 func (GetServicesOutputArgs) ElementType() reflect.Type {
@@ -123,6 +129,10 @@ func (o GetServicesResultOutput) Id() pulumi.StringOutput {
 // The list of services.
 func (o GetServicesResultOutput) Services() GetServicesServiceArrayOutput {
 	return o.ApplyT(func(v GetServicesResult) []GetServicesService { return v.Services }).(GetServicesServiceArrayOutput)
+}
+
+func (o GetServicesResultOutput) SubscriptionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServicesResult) *string { return v.SubscriptionId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

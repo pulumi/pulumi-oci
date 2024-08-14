@@ -41,8 +41,8 @@ import * as utilities from "../utilities";
  *     networkLoadBalancerId: testNetworkLoadBalancer.id,
  *     policy: backendSetPolicy,
  *     ipVersion: backendSetIpVersion,
- *     isInstantFailoverEnabled: backendSetIsInstantFailoverEnabled,
  *     isFailOpen: backendSetIsFailOpen,
+ *     isInstantFailoverEnabled: backendSetIsInstantFailoverEnabled,
  *     isPreserveSource: backendSetIsPreserveSource,
  * });
  * ```

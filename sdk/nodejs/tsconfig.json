@@ -1037,6 +1037,8 @@
         "datasafe/auditProfileManagement.ts",
         "datasafe/auditTrail.ts",
         "datasafe/auditTrailManagement.ts",
+        "datasafe/calculateAuditVolumeAvailable.ts",
+        "datasafe/calculateAuditVolumeCollected.ts",
         "datasafe/compareSecurityAssessment.ts",
         "datasafe/compareUserAssessment.ts",
         "datasafe/dataSafeConfiguration.ts",

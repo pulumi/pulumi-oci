@@ -43,6 +43,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AuditTrail{}
 	case "oci:DataSafe/auditTrailManagement:AuditTrailManagement":
 		r = &AuditTrailManagement{}
+	case "oci:DataSafe/calculateAuditVolumeAvailable:CalculateAuditVolumeAvailable":
+		r = &CalculateAuditVolumeAvailable{}
+	case "oci:DataSafe/calculateAuditVolumeCollected:CalculateAuditVolumeCollected":
+		r = &CalculateAuditVolumeCollected{}
 	case "oci:DataSafe/compareSecurityAssessment:CompareSecurityAssessment":
 		r = &CompareSecurityAssessment{}
 	case "oci:DataSafe/compareUserAssessment:CompareUserAssessment":
@@ -183,6 +187,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"DataSafe/auditTrailManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataSafe/calculateAuditVolumeAvailable",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataSafe/calculateAuditVolumeCollected",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

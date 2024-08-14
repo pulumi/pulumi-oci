@@ -265,6 +265,10 @@ type GetLimitDefinitionsLimitDefinition struct {
 	ScopeType string `pulumi:"scopeType"`
 	// The target service name.
 	ServiceName string `pulumi:"serviceName"`
+	// Supported quota family names for creation of quota policy.
+	SupportedQuotaFamilies []string `pulumi:"supportedQuotaFamilies"`
+	// An array of subscription types supported by the limit. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
+	SupportedSubscriptions []string `pulumi:"supportedSubscriptions"`
 }
 
 // GetLimitDefinitionsLimitDefinitionInput is an input type that accepts GetLimitDefinitionsLimitDefinitionArgs and GetLimitDefinitionsLimitDefinitionOutput values.
@@ -297,6 +301,10 @@ type GetLimitDefinitionsLimitDefinitionArgs struct {
 	ScopeType pulumi.StringInput `pulumi:"scopeType"`
 	// The target service name.
 	ServiceName pulumi.StringInput `pulumi:"serviceName"`
+	// Supported quota family names for creation of quota policy.
+	SupportedQuotaFamilies pulumi.StringArrayInput `pulumi:"supportedQuotaFamilies"`
+	// An array of subscription types supported by the limit. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
+	SupportedSubscriptions pulumi.StringArrayInput `pulumi:"supportedSubscriptions"`
 }
 
 func (GetLimitDefinitionsLimitDefinitionArgs) ElementType() reflect.Type {
@@ -393,6 +401,16 @@ func (o GetLimitDefinitionsLimitDefinitionOutput) ScopeType() pulumi.StringOutpu
 // The target service name.
 func (o GetLimitDefinitionsLimitDefinitionOutput) ServiceName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLimitDefinitionsLimitDefinition) string { return v.ServiceName }).(pulumi.StringOutput)
+}
+
+// Supported quota family names for creation of quota policy.
+func (o GetLimitDefinitionsLimitDefinitionOutput) SupportedQuotaFamilies() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetLimitDefinitionsLimitDefinition) []string { return v.SupportedQuotaFamilies }).(pulumi.StringArrayOutput)
+}
+
+// An array of subscription types supported by the limit. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
+func (o GetLimitDefinitionsLimitDefinitionOutput) SupportedSubscriptions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetLimitDefinitionsLimitDefinition) []string { return v.SupportedSubscriptions }).(pulumi.StringArrayOutput)
 }
 
 type GetLimitDefinitionsLimitDefinitionArrayOutput struct{ *pulumi.OutputState }
@@ -1303,6 +1321,8 @@ type GetServicesService struct {
 	Description string `pulumi:"description"`
 	// The service name. Use this when calling other APIs.
 	Name string `pulumi:"name"`
+	// An array of subscription types supported by the service. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
+	SupportedSubscriptions []string `pulumi:"supportedSubscriptions"`
 }
 
 // GetServicesServiceInput is an input type that accepts GetServicesServiceArgs and GetServicesServiceOutput values.
@@ -1321,6 +1341,8 @@ type GetServicesServiceArgs struct {
 	Description pulumi.StringInput `pulumi:"description"`
 	// The service name. Use this when calling other APIs.
 	Name pulumi.StringInput `pulumi:"name"`
+	// An array of subscription types supported by the service. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
+	SupportedSubscriptions pulumi.StringArrayInput `pulumi:"supportedSubscriptions"`
 }
 
 func (GetServicesServiceArgs) ElementType() reflect.Type {
@@ -1382,6 +1404,11 @@ func (o GetServicesServiceOutput) Description() pulumi.StringOutput {
 // The service name. Use this when calling other APIs.
 func (o GetServicesServiceOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServicesService) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// An array of subscription types supported by the service. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
+func (o GetServicesServiceOutput) SupportedSubscriptions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetServicesService) []string { return v.SupportedSubscriptions }).(pulumi.StringArrayOutput)
 }
 
 type GetServicesServiceArrayOutput struct{ *pulumi.OutputState }

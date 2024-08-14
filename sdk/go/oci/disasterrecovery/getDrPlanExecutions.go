@@ -14,36 +14,6 @@ import (
 // This data source provides the list of Dr Plan Executions in Oracle Cloud Infrastructure Disaster Recovery service.
 //
 // Get a summary list of all DR plan executions for a DR protection group.
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DisasterRecovery"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DisasterRecovery.GetDrPlanExecutions(ctx, &disasterrecovery.GetDrPlanExecutionsArgs{
-//				DrProtectionGroupId: testDrProtectionGroup.Id,
-//				DisplayName:         pulumi.StringRef(drPlanExecutionDisplayName),
-//				DrPlanExecutionId:   pulumi.StringRef(testDrPlanExecution.Id),
-//				DrPlanExecutionType: pulumi.StringRef(drPlanExecutionDrPlanExecutionType),
-//				State:               pulumi.StringRef(drPlanExecutionState),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 func GetDrPlanExecutions(ctx *pulumi.Context, args *GetDrPlanExecutionsArgs, opts ...pulumi.InvokeOption) (*GetDrPlanExecutionsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDrPlanExecutionsResult
@@ -60,8 +30,6 @@ type GetDrPlanExecutionsArgs struct {
 	DisplayName *string `pulumi:"displayName"`
 	// The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
 	DrPlanExecutionId *string `pulumi:"drPlanExecutionId"`
-	// The DR plan execution type.
-	DrPlanExecutionType *string `pulumi:"drPlanExecutionType"`
 	// The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	DrProtectionGroupId string                      `pulumi:"drProtectionGroupId"`
 	Filters             []GetDrPlanExecutionsFilter `pulumi:"filters"`
@@ -76,7 +44,6 @@ type GetDrPlanExecutionsResult struct {
 	// The list of dr_plan_execution_collection.
 	DrPlanExecutionCollections []GetDrPlanExecutionsDrPlanExecutionCollection `pulumi:"drPlanExecutionCollections"`
 	DrPlanExecutionId          *string                                        `pulumi:"drPlanExecutionId"`
-	DrPlanExecutionType        *string                                        `pulumi:"drPlanExecutionType"`
 	// The OCID of the DR protection group to which this DR plan execution belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	DrProtectionGroupId string                      `pulumi:"drProtectionGroupId"`
 	Filters             []GetDrPlanExecutionsFilter `pulumi:"filters"`
@@ -105,8 +72,6 @@ type GetDrPlanExecutionsOutputArgs struct {
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
 	DrPlanExecutionId pulumi.StringPtrInput `pulumi:"drPlanExecutionId"`
-	// The DR plan execution type.
-	DrPlanExecutionType pulumi.StringPtrInput `pulumi:"drPlanExecutionType"`
 	// The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	DrProtectionGroupId pulumi.StringInput                  `pulumi:"drProtectionGroupId"`
 	Filters             GetDrPlanExecutionsFilterArrayInput `pulumi:"filters"`
@@ -147,10 +112,6 @@ func (o GetDrPlanExecutionsResultOutput) DrPlanExecutionCollections() GetDrPlanE
 
 func (o GetDrPlanExecutionsResultOutput) DrPlanExecutionId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsResult) *string { return v.DrPlanExecutionId }).(pulumi.StringPtrOutput)
-}
-
-func (o GetDrPlanExecutionsResultOutput) DrPlanExecutionType() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsResult) *string { return v.DrPlanExecutionType }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the DR protection group to which this DR plan execution belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`

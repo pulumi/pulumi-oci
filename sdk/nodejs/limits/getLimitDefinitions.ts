@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Limit Definitions in Oracle Cloud Infrastructure Limits service.
  *
- * Includes a list of resource limits that are currently supported.
+ * Includes a list of resource limits that are currently supported. If subscription Id is provided, then only resource limits supported by subscription will be returned
  * If the 'areQuotasSupported' property is true, you can create quota policies on top of this limit at the
  * compartment level.
  *
@@ -23,6 +23,7 @@ import * as utilities from "../utilities";
  *     compartmentId: tenancyOcid,
  *     name: limitDefinitionName,
  *     serviceName: testService.name,
+ *     subscriptionId: subscriptionOcid,
  * });
  * ```
  */
@@ -34,6 +35,7 @@ export function getLimitDefinitions(args: GetLimitDefinitionsArgs, opts?: pulumi
         "filters": args.filters,
         "name": args.name,
         "serviceName": args.serviceName,
+        "subscriptionId": args.subscriptionId,
     }, opts);
 }
 
@@ -54,6 +56,10 @@ export interface GetLimitDefinitionsArgs {
      * The target service name.
      */
     serviceName?: string;
+    /**
+     * The OCID of the subscription assigned to tenant
+     */
+    subscriptionId?: string;
 }
 
 /**
@@ -78,11 +84,12 @@ export interface GetLimitDefinitionsResult {
      * The service name of the limit.
      */
     readonly serviceName?: string;
+    readonly subscriptionId?: string;
 }
 /**
  * This data source provides the list of Limit Definitions in Oracle Cloud Infrastructure Limits service.
  *
- * Includes a list of resource limits that are currently supported.
+ * Includes a list of resource limits that are currently supported. If subscription Id is provided, then only resource limits supported by subscription will be returned
  * If the 'areQuotasSupported' property is true, you can create quota policies on top of this limit at the
  * compartment level.
  *
@@ -96,6 +103,7 @@ export interface GetLimitDefinitionsResult {
  *     compartmentId: tenancyOcid,
  *     name: limitDefinitionName,
  *     serviceName: testService.name,
+ *     subscriptionId: subscriptionOcid,
  * });
  * ```
  */
@@ -120,4 +128,8 @@ export interface GetLimitDefinitionsOutputArgs {
      * The target service name.
      */
     serviceName?: pulumi.Input<string>;
+    /**
+     * The OCID of the subscription assigned to tenant
+     */
+    subscriptionId?: pulumi.Input<string>;
 }

@@ -20252,6 +20252,26 @@ export namespace DataSafe {
         workRequestId?: pulumi.Input<string>;
     }
 
+    export interface CalculateAuditVolumeAvailableAvailableAuditVolume {
+        /**
+         * The OCID of the audit.
+         */
+        auditProfileId?: pulumi.Input<string>;
+        monthInConsideration?: pulumi.Input<string>;
+        trailLocation?: pulumi.Input<string>;
+        volume?: pulumi.Input<string>;
+    }
+
+    export interface CalculateAuditVolumeCollectedCollectedAuditVolume {
+        archivedVolume?: pulumi.Input<string>;
+        /**
+         * The OCID of the audit.
+         */
+        auditProfileId?: pulumi.Input<string>;
+        monthInConsideration?: pulumi.Input<string>;
+        onlineVolume?: pulumi.Input<string>;
+    }
+
     export interface DataSafeConfigurationGlobalSetting {
         /**
          * The paid usage option chosen by the customer admin.

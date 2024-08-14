@@ -6,6 +6,7 @@ package com.pulumi.oci.Limits.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
@@ -20,6 +21,11 @@ public final class GetServicesService {
      * 
      */
     private String name;
+    /**
+     * @return An array of subscription types supported by the service. e,g The type of subscription, such as &#39;SAAS&#39;, &#39;ERP&#39;, &#39;CRM&#39;.
+     * 
+     */
+    private List<String> supportedSubscriptions;
 
     private GetServicesService() {}
     /**
@@ -36,6 +42,13 @@ public final class GetServicesService {
     public String name() {
         return this.name;
     }
+    /**
+     * @return An array of subscription types supported by the service. e,g The type of subscription, such as &#39;SAAS&#39;, &#39;ERP&#39;, &#39;CRM&#39;.
+     * 
+     */
+    public List<String> supportedSubscriptions() {
+        return this.supportedSubscriptions;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -48,11 +61,13 @@ public final class GetServicesService {
     public static final class Builder {
         private String description;
         private String name;
+        private List<String> supportedSubscriptions;
         public Builder() {}
         public Builder(GetServicesService defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
     	      this.name = defaults.name;
+    	      this.supportedSubscriptions = defaults.supportedSubscriptions;
         }
 
         @CustomType.Setter
@@ -71,10 +86,22 @@ public final class GetServicesService {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
+        public Builder supportedSubscriptions(List<String> supportedSubscriptions) {
+            if (supportedSubscriptions == null) {
+              throw new MissingRequiredPropertyException("GetServicesService", "supportedSubscriptions");
+            }
+            this.supportedSubscriptions = supportedSubscriptions;
+            return this;
+        }
+        public Builder supportedSubscriptions(String... supportedSubscriptions) {
+            return supportedSubscriptions(List.of(supportedSubscriptions));
+        }
         public GetServicesService build() {
             final var _resultValue = new GetServicesService();
             _resultValue.description = description;
             _resultValue.name = name;
+            _resultValue.supportedSubscriptions = supportedSubscriptions;
             return _resultValue;
         }
     }

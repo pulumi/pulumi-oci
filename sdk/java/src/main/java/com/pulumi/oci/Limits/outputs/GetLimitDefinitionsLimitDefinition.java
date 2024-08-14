@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
@@ -56,6 +57,16 @@ public final class GetLimitDefinitionsLimitDefinition {
      * 
      */
     private String serviceName;
+    /**
+     * @return Supported quota family names for creation of quota policy.
+     * 
+     */
+    private List<String> supportedQuotaFamilies;
+    /**
+     * @return An array of subscription types supported by the limit. e,g The type of subscription, such as &#39;SAAS&#39;, &#39;ERP&#39;, &#39;CRM&#39;.
+     * 
+     */
+    private List<String> supportedSubscriptions;
 
     private GetLimitDefinitionsLimitDefinition() {}
     /**
@@ -121,6 +132,20 @@ public final class GetLimitDefinitionsLimitDefinition {
     public String serviceName() {
         return this.serviceName;
     }
+    /**
+     * @return Supported quota family names for creation of quota policy.
+     * 
+     */
+    public List<String> supportedQuotaFamilies() {
+        return this.supportedQuotaFamilies;
+    }
+    /**
+     * @return An array of subscription types supported by the limit. e,g The type of subscription, such as &#39;SAAS&#39;, &#39;ERP&#39;, &#39;CRM&#39;.
+     * 
+     */
+    public List<String> supportedSubscriptions() {
+        return this.supportedSubscriptions;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -140,6 +165,8 @@ public final class GetLimitDefinitionsLimitDefinition {
         private String name;
         private String scopeType;
         private String serviceName;
+        private List<String> supportedQuotaFamilies;
+        private List<String> supportedSubscriptions;
         public Builder() {}
         public Builder(GetLimitDefinitionsLimitDefinition defaults) {
     	      Objects.requireNonNull(defaults);
@@ -152,6 +179,8 @@ public final class GetLimitDefinitionsLimitDefinition {
     	      this.name = defaults.name;
     	      this.scopeType = defaults.scopeType;
     	      this.serviceName = defaults.serviceName;
+    	      this.supportedQuotaFamilies = defaults.supportedQuotaFamilies;
+    	      this.supportedSubscriptions = defaults.supportedSubscriptions;
         }
 
         @CustomType.Setter
@@ -226,6 +255,28 @@ public final class GetLimitDefinitionsLimitDefinition {
             this.serviceName = serviceName;
             return this;
         }
+        @CustomType.Setter
+        public Builder supportedQuotaFamilies(List<String> supportedQuotaFamilies) {
+            if (supportedQuotaFamilies == null) {
+              throw new MissingRequiredPropertyException("GetLimitDefinitionsLimitDefinition", "supportedQuotaFamilies");
+            }
+            this.supportedQuotaFamilies = supportedQuotaFamilies;
+            return this;
+        }
+        public Builder supportedQuotaFamilies(String... supportedQuotaFamilies) {
+            return supportedQuotaFamilies(List.of(supportedQuotaFamilies));
+        }
+        @CustomType.Setter
+        public Builder supportedSubscriptions(List<String> supportedSubscriptions) {
+            if (supportedSubscriptions == null) {
+              throw new MissingRequiredPropertyException("GetLimitDefinitionsLimitDefinition", "supportedSubscriptions");
+            }
+            this.supportedSubscriptions = supportedSubscriptions;
+            return this;
+        }
+        public Builder supportedSubscriptions(String... supportedSubscriptions) {
+            return supportedSubscriptions(List.of(supportedSubscriptions));
+        }
         public GetLimitDefinitionsLimitDefinition build() {
             final var _resultValue = new GetLimitDefinitionsLimitDefinition();
             _resultValue.areQuotasSupported = areQuotasSupported;
@@ -237,6 +288,8 @@ public final class GetLimitDefinitionsLimitDefinition {
             _resultValue.name = name;
             _resultValue.scopeType = scopeType;
             _resultValue.serviceName = serviceName;
+            _resultValue.supportedQuotaFamilies = supportedQuotaFamilies;
+            _resultValue.supportedSubscriptions = supportedSubscriptions;
             return _resultValue;
         }
     }

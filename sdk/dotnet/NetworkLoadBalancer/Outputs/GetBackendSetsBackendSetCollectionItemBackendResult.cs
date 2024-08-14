@@ -22,7 +22,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Outputs
         /// </summary>
         public readonly bool IsBackup;
         /// <summary>
-        /// Whether the network load balancer should drain this server. Servers marked "isDrain" receive no  incoming traffic.  Example: `false`
+        /// Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
         /// </summary>
         public readonly bool IsDrain;
         /// <summary>

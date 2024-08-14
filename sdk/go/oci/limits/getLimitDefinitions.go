@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Limit Definitions in Oracle Cloud Infrastructure Limits service.
 //
-// Includes a list of resource limits that are currently supported.
+// Includes a list of resource limits that are currently supported. If subscription Id is provided, then only resource limits supported by subscription will be returned
 // If the 'areQuotasSupported' property is true, you can create quota policies on top of this limit at the
 // compartment level.
 //
@@ -32,9 +32,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Limits.GetLimitDefinitions(ctx, &limits.GetLimitDefinitionsArgs{
-//				CompartmentId: tenancyOcid,
-//				Name:          pulumi.StringRef(limitDefinitionName),
-//				ServiceName:   pulumi.StringRef(testService.Name),
+//				CompartmentId:  tenancyOcid,
+//				Name:           pulumi.StringRef(limitDefinitionName),
+//				ServiceName:    pulumi.StringRef(testService.Name),
+//				SubscriptionId: pulumi.StringRef(subscriptionOcid),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -63,6 +64,8 @@ type GetLimitDefinitionsArgs struct {
 	Name *string `pulumi:"name"`
 	// The target service name.
 	ServiceName *string `pulumi:"serviceName"`
+	// The OCID of the subscription assigned to tenant
+	SubscriptionId *string `pulumi:"subscriptionId"`
 }
 
 // A collection of values returned by getLimitDefinitions.
@@ -76,7 +79,8 @@ type GetLimitDefinitionsResult struct {
 	// The resource limit name. To be used for writing policies (in case of quotas) or other programmatic calls.
 	Name *string `pulumi:"name"`
 	// The service name of the limit.
-	ServiceName *string `pulumi:"serviceName"`
+	ServiceName    *string `pulumi:"serviceName"`
+	SubscriptionId *string `pulumi:"subscriptionId"`
 }
 
 func GetLimitDefinitionsOutput(ctx *pulumi.Context, args GetLimitDefinitionsOutputArgs, opts ...pulumi.InvokeOption) GetLimitDefinitionsResultOutput {
@@ -101,6 +105,8 @@ type GetLimitDefinitionsOutputArgs struct {
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The target service name.
 	ServiceName pulumi.StringPtrInput `pulumi:"serviceName"`
+	// The OCID of the subscription assigned to tenant
+	SubscriptionId pulumi.StringPtrInput `pulumi:"subscriptionId"`
 }
 
 func (GetLimitDefinitionsOutputArgs) ElementType() reflect.Type {
@@ -148,6 +154,10 @@ func (o GetLimitDefinitionsResultOutput) Name() pulumi.StringPtrOutput {
 // The service name of the limit.
 func (o GetLimitDefinitionsResultOutput) ServiceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetLimitDefinitionsResult) *string { return v.ServiceName }).(pulumi.StringPtrOutput)
+}
+
+func (o GetLimitDefinitionsResultOutput) SubscriptionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLimitDefinitionsResult) *string { return v.SubscriptionId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

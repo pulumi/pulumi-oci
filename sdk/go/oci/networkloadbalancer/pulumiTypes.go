@@ -1868,7 +1868,7 @@ type GetBackendSetBackend struct {
 	IpAddress string `pulumi:"ipAddress"`
 	// Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
 	IsBackup bool `pulumi:"isBackup"`
-	// Whether the network load balancer should drain this server. Servers marked "isDrain" receive no  incoming traffic.  Example: `false`
+	// Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
 	IsDrain bool `pulumi:"isDrain"`
 	// Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
 	IsOffline bool `pulumi:"isOffline"`
@@ -1898,7 +1898,7 @@ type GetBackendSetBackendArgs struct {
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
 	// Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
 	IsBackup pulumi.BoolInput `pulumi:"isBackup"`
-	// Whether the network load balancer should drain this server. Servers marked "isDrain" receive no  incoming traffic.  Example: `false`
+	// Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
 	IsDrain pulumi.BoolInput `pulumi:"isDrain"`
 	// Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
 	IsOffline pulumi.BoolInput `pulumi:"isOffline"`
@@ -1973,7 +1973,7 @@ func (o GetBackendSetBackendOutput) IsBackup() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetBackendSetBackend) bool { return v.IsBackup }).(pulumi.BoolOutput)
 }
 
-// Whether the network load balancer should drain this server. Servers marked "isDrain" receive no  incoming traffic.  Example: `false`
+// Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
 func (o GetBackendSetBackendOutput) IsDrain() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetBackendSetBackend) bool { return v.IsDrain }).(pulumi.BoolOutput)
 }
@@ -2621,7 +2621,7 @@ type GetBackendSetsBackendSetCollectionItemBackend struct {
 	IpAddress string `pulumi:"ipAddress"`
 	// Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
 	IsBackup bool `pulumi:"isBackup"`
-	// Whether the network load balancer should drain this server. Servers marked "isDrain" receive no  incoming traffic.  Example: `false`
+	// Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
 	IsDrain bool `pulumi:"isDrain"`
 	// Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
 	IsOffline bool `pulumi:"isOffline"`
@@ -2651,7 +2651,7 @@ type GetBackendSetsBackendSetCollectionItemBackendArgs struct {
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
 	// Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
 	IsBackup pulumi.BoolInput `pulumi:"isBackup"`
-	// Whether the network load balancer should drain this server. Servers marked "isDrain" receive no  incoming traffic.  Example: `false`
+	// Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
 	IsDrain pulumi.BoolInput `pulumi:"isDrain"`
 	// Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
 	IsOffline pulumi.BoolInput `pulumi:"isOffline"`
@@ -2726,7 +2726,7 @@ func (o GetBackendSetsBackendSetCollectionItemBackendOutput) IsBackup() pulumi.B
 	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemBackend) bool { return v.IsBackup }).(pulumi.BoolOutput)
 }
 
-// Whether the network load balancer should drain this server. Servers marked "isDrain" receive no  incoming traffic.  Example: `false`
+// Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
 func (o GetBackendSetsBackendSetCollectionItemBackendOutput) IsDrain() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemBackend) bool { return v.IsDrain }).(pulumi.BoolOutput)
 }
@@ -3813,6 +3813,10 @@ type GetListenersListenerCollectionItem struct {
 	Port int `pulumi:"port"`
 	// The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). "ListNetworkLoadBalancersProtocols" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP`
 	Protocol string `pulumi:"protocol"`
+	// The duration for TCP idle timeout in seconds. Example: `300`
+	TcpIdleTimeout int `pulumi:"tcpIdleTimeout"`
+	// The duration for UDP idle timeout in seconds. Example: `120`
+	UdpIdleTimeout int `pulumi:"udpIdleTimeout"`
 }
 
 // GetListenersListenerCollectionItemInput is an input type that accepts GetListenersListenerCollectionItemArgs and GetListenersListenerCollectionItemOutput values.
@@ -3842,6 +3846,10 @@ type GetListenersListenerCollectionItemArgs struct {
 	Port pulumi.IntInput `pulumi:"port"`
 	// The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). "ListNetworkLoadBalancersProtocols" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP`
 	Protocol pulumi.StringInput `pulumi:"protocol"`
+	// The duration for TCP idle timeout in seconds. Example: `300`
+	TcpIdleTimeout pulumi.IntInput `pulumi:"tcpIdleTimeout"`
+	// The duration for UDP idle timeout in seconds. Example: `120`
+	UdpIdleTimeout pulumi.IntInput `pulumi:"udpIdleTimeout"`
 }
 
 func (GetListenersListenerCollectionItemArgs) ElementType() reflect.Type {
@@ -3932,6 +3940,16 @@ func (o GetListenersListenerCollectionItemOutput) Port() pulumi.IntOutput {
 // The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). "ListNetworkLoadBalancersProtocols" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP`
 func (o GetListenersListenerCollectionItemOutput) Protocol() pulumi.StringOutput {
 	return o.ApplyT(func(v GetListenersListenerCollectionItem) string { return v.Protocol }).(pulumi.StringOutput)
+}
+
+// The duration for TCP idle timeout in seconds. Example: `300`
+func (o GetListenersListenerCollectionItemOutput) TcpIdleTimeout() pulumi.IntOutput {
+	return o.ApplyT(func(v GetListenersListenerCollectionItem) int { return v.TcpIdleTimeout }).(pulumi.IntOutput)
+}
+
+// The duration for UDP idle timeout in seconds. Example: `120`
+func (o GetListenersListenerCollectionItemOutput) UdpIdleTimeout() pulumi.IntOutput {
+	return o.ApplyT(func(v GetListenersListenerCollectionItem) int { return v.UdpIdleTimeout }).(pulumi.IntOutput)
 }
 
 type GetListenersListenerCollectionItemArrayOutput struct{ *pulumi.OutputState }

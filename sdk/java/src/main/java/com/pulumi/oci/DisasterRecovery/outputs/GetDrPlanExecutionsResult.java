@@ -26,7 +26,6 @@ public final class GetDrPlanExecutionsResult {
      */
     private List<GetDrPlanExecutionsDrPlanExecutionCollection> drPlanExecutionCollections;
     private @Nullable String drPlanExecutionId;
-    private @Nullable String drPlanExecutionType;
     /**
      * @return The OCID of the DR protection group to which this DR plan execution belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
@@ -61,9 +60,6 @@ public final class GetDrPlanExecutionsResult {
     }
     public Optional<String> drPlanExecutionId() {
         return Optional.ofNullable(this.drPlanExecutionId);
-    }
-    public Optional<String> drPlanExecutionType() {
-        return Optional.ofNullable(this.drPlanExecutionType);
     }
     /**
      * @return The OCID of the DR protection group to which this DR plan execution belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
@@ -102,7 +98,6 @@ public final class GetDrPlanExecutionsResult {
         private @Nullable String displayName;
         private List<GetDrPlanExecutionsDrPlanExecutionCollection> drPlanExecutionCollections;
         private @Nullable String drPlanExecutionId;
-        private @Nullable String drPlanExecutionType;
         private String drProtectionGroupId;
         private @Nullable List<GetDrPlanExecutionsFilter> filters;
         private String id;
@@ -113,7 +108,6 @@ public final class GetDrPlanExecutionsResult {
     	      this.displayName = defaults.displayName;
     	      this.drPlanExecutionCollections = defaults.drPlanExecutionCollections;
     	      this.drPlanExecutionId = defaults.drPlanExecutionId;
-    	      this.drPlanExecutionType = defaults.drPlanExecutionType;
     	      this.drProtectionGroupId = defaults.drProtectionGroupId;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
@@ -141,12 +135,6 @@ public final class GetDrPlanExecutionsResult {
         public Builder drPlanExecutionId(@Nullable String drPlanExecutionId) {
 
             this.drPlanExecutionId = drPlanExecutionId;
-            return this;
-        }
-        @CustomType.Setter
-        public Builder drPlanExecutionType(@Nullable String drPlanExecutionType) {
-
-            this.drPlanExecutionType = drPlanExecutionType;
             return this;
         }
         @CustomType.Setter
@@ -185,7 +173,6 @@ public final class GetDrPlanExecutionsResult {
             _resultValue.displayName = displayName;
             _resultValue.drPlanExecutionCollections = drPlanExecutionCollections;
             _resultValue.drPlanExecutionId = drPlanExecutionId;
-            _resultValue.drPlanExecutionType = drPlanExecutionType;
             _resultValue.drProtectionGroupId = drProtectionGroupId;
             _resultValue.filters = filters;
             _resultValue.id = id;

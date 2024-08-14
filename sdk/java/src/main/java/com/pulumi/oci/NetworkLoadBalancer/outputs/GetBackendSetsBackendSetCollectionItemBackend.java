@@ -23,7 +23,7 @@ public final class GetBackendSetsBackendSetCollectionItemBackend {
      */
     private Boolean isBackup;
     /**
-     * @return Whether the network load balancer should drain this server. Servers marked &#34;isDrain&#34; receive no  incoming traffic.  Example: `false`
+     * @return Whether the network load balancer should drain this server. Servers marked &#34;isDrain&#34; receive no incoming traffic.  Example: `false`
      * 
      */
     private Boolean isDrain;
@@ -69,7 +69,7 @@ public final class GetBackendSetsBackendSetCollectionItemBackend {
         return this.isBackup;
     }
     /**
-     * @return Whether the network load balancer should drain this server. Servers marked &#34;isDrain&#34; receive no  incoming traffic.  Example: `false`
+     * @return Whether the network load balancer should drain this server. Servers marked &#34;isDrain&#34; receive no incoming traffic.  Example: `false`
      * 
      */
     public Boolean isDrain() {

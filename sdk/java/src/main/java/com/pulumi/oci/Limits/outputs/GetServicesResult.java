@@ -10,6 +10,7 @@ import com.pulumi.oci.Limits.outputs.GetServicesService;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -26,6 +27,7 @@ public final class GetServicesResult {
      * 
      */
     private List<GetServicesService> services;
+    private @Nullable String subscriptionId;
 
     private GetServicesResult() {}
     public String compartmentId() {
@@ -48,6 +50,9 @@ public final class GetServicesResult {
     public List<GetServicesService> services() {
         return this.services;
     }
+    public Optional<String> subscriptionId() {
+        return Optional.ofNullable(this.subscriptionId);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -62,6 +67,7 @@ public final class GetServicesResult {
         private @Nullable List<GetServicesFilter> filters;
         private String id;
         private List<GetServicesService> services;
+        private @Nullable String subscriptionId;
         public Builder() {}
         public Builder(GetServicesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,6 +75,7 @@ public final class GetServicesResult {
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.services = defaults.services;
+    	      this.subscriptionId = defaults.subscriptionId;
         }
 
         @CustomType.Setter
@@ -107,12 +114,19 @@ public final class GetServicesResult {
         public Builder services(GetServicesService... services) {
             return services(List.of(services));
         }
+        @CustomType.Setter
+        public Builder subscriptionId(@Nullable String subscriptionId) {
+
+            this.subscriptionId = subscriptionId;
+            return this;
+        }
         public GetServicesResult build() {
             final var _resultValue = new GetServicesResult();
             _resultValue.compartmentId = compartmentId;
             _resultValue.filters = filters;
             _resultValue.id = id;
             _resultValue.services = services;
+            _resultValue.subscriptionId = subscriptionId;
             return _resultValue;
         }
     }

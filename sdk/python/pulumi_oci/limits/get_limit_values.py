@@ -23,7 +23,7 @@ class GetLimitValuesResult:
     """
     A collection of values returned by getLimitValues.
     """
-    def __init__(__self__, availability_domain=None, compartment_id=None, filters=None, id=None, limit_values=None, name=None, scope_type=None, service_name=None):
+    def __init__(__self__, availability_domain=None, compartment_id=None, filters=None, id=None, limit_values=None, name=None, scope_type=None, service_name=None, subscription_id=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -48,6 +48,9 @@ class GetLimitValuesResult:
         if service_name and not isinstance(service_name, str):
             raise TypeError("Expected argument 'service_name' to be a str")
         pulumi.set(__self__, "service_name", service_name)
+        if subscription_id and not isinstance(subscription_id, str):
+            raise TypeError("Expected argument 'subscription_id' to be a str")
+        pulumi.set(__self__, "subscription_id", subscription_id)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -104,6 +107,11 @@ class GetLimitValuesResult:
     def service_name(self) -> str:
         return pulumi.get(self, "service_name")
 
+    @property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> Optional[str]:
+        return pulumi.get(self, "subscription_id")
+
 
 class AwaitableGetLimitValuesResult(GetLimitValuesResult):
     # pylint: disable=using-constant-test
@@ -118,7 +126,8 @@ class AwaitableGetLimitValuesResult(GetLimitValuesResult):
             limit_values=self.limit_values,
             name=self.name,
             scope_type=self.scope_type,
-            service_name=self.service_name)
+            service_name=self.service_name,
+            subscription_id=self.subscription_id)
 
 
 def get_limit_values(availability_domain: Optional[str] = None,
@@ -127,11 +136,12 @@ def get_limit_values(availability_domain: Optional[str] = None,
                      name: Optional[str] = None,
                      scope_type: Optional[str] = None,
                      service_name: Optional[str] = None,
+                     subscription_id: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLimitValuesResult:
     """
     This data source provides the list of Limit Values in Oracle Cloud Infrastructure Limits service.
 
-    Includes a full list of resource limits belonging to a given service.
+    Includes a full list of resource limits belonging to a given service. If subscription Id is provided, limit value for subscription will be returned.
 
     ## Example Usage
 
@@ -143,7 +153,8 @@ def get_limit_values(availability_domain: Optional[str] = None,
         service_name=test_service["name"],
         availability_domain=limit_value_availability_domain,
         name=limit_value_name,
-        scope_type=limit_value_scope_type)
+        scope_type=limit_value_scope_type,
+        subscription_id=subscription_ocid)
     ```
 
 
@@ -152,6 +163,7 @@ def get_limit_values(availability_domain: Optional[str] = None,
     :param str name: Optional field, can be used to see a specific resource limit value.
     :param str scope_type: Filter entries by scope type.
     :param str service_name: The target service name.
+    :param str subscription_id: The OCID of the subscription assigned to tenant
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
@@ -160,6 +172,7 @@ def get_limit_values(availability_domain: Optional[str] = None,
     __args__['name'] = name
     __args__['scopeType'] = scope_type
     __args__['serviceName'] = service_name
+    __args__['subscriptionId'] = subscription_id
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:Limits/getLimitValues:getLimitValues', __args__, opts=opts, typ=GetLimitValuesResult).value
 
@@ -171,7 +184,8 @@ def get_limit_values(availability_domain: Optional[str] = None,
         limit_values=pulumi.get(__ret__, 'limit_values'),
         name=pulumi.get(__ret__, 'name'),
         scope_type=pulumi.get(__ret__, 'scope_type'),
-        service_name=pulumi.get(__ret__, 'service_name'))
+        service_name=pulumi.get(__ret__, 'service_name'),
+        subscription_id=pulumi.get(__ret__, 'subscription_id'))
 
 
 @_utilities.lift_output_func(get_limit_values)
@@ -181,11 +195,12 @@ def get_limit_values_output(availability_domain: Optional[pulumi.Input[Optional[
                             name: Optional[pulumi.Input[Optional[str]]] = None,
                             scope_type: Optional[pulumi.Input[Optional[str]]] = None,
                             service_name: Optional[pulumi.Input[str]] = None,
+                            subscription_id: Optional[pulumi.Input[Optional[str]]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLimitValuesResult]:
     """
     This data source provides the list of Limit Values in Oracle Cloud Infrastructure Limits service.
 
-    Includes a full list of resource limits belonging to a given service.
+    Includes a full list of resource limits belonging to a given service. If subscription Id is provided, limit value for subscription will be returned.
 
     ## Example Usage
 
@@ -197,7 +212,8 @@ def get_limit_values_output(availability_domain: Optional[pulumi.Input[Optional[
         service_name=test_service["name"],
         availability_domain=limit_value_availability_domain,
         name=limit_value_name,
-        scope_type=limit_value_scope_type)
+        scope_type=limit_value_scope_type,
+        subscription_id=subscription_ocid)
     ```
 
 
@@ -206,5 +222,6 @@ def get_limit_values_output(availability_domain: Optional[pulumi.Input[Optional[
     :param str name: Optional field, can be used to see a specific resource limit value.
     :param str scope_type: Filter entries by scope type.
     :param str service_name: The target service name.
+    :param str subscription_id: The OCID of the subscription assigned to tenant
     """
     ...

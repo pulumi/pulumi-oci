@@ -23,7 +23,7 @@ class GetLimitDefinitionsResult:
     """
     A collection of values returned by getLimitDefinitions.
     """
-    def __init__(__self__, compartment_id=None, filters=None, id=None, limit_definitions=None, name=None, service_name=None):
+    def __init__(__self__, compartment_id=None, filters=None, id=None, limit_definitions=None, name=None, service_name=None, subscription_id=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -42,6 +42,9 @@ class GetLimitDefinitionsResult:
         if service_name and not isinstance(service_name, str):
             raise TypeError("Expected argument 'service_name' to be a str")
         pulumi.set(__self__, "service_name", service_name)
+        if subscription_id and not isinstance(subscription_id, str):
+            raise TypeError("Expected argument 'subscription_id' to be a str")
+        pulumi.set(__self__, "subscription_id", subscription_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -85,6 +88,11 @@ class GetLimitDefinitionsResult:
         """
         return pulumi.get(self, "service_name")
 
+    @property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> Optional[str]:
+        return pulumi.get(self, "subscription_id")
+
 
 class AwaitableGetLimitDefinitionsResult(GetLimitDefinitionsResult):
     # pylint: disable=using-constant-test
@@ -97,18 +105,20 @@ class AwaitableGetLimitDefinitionsResult(GetLimitDefinitionsResult):
             id=self.id,
             limit_definitions=self.limit_definitions,
             name=self.name,
-            service_name=self.service_name)
+            service_name=self.service_name,
+            subscription_id=self.subscription_id)
 
 
 def get_limit_definitions(compartment_id: Optional[str] = None,
                           filters: Optional[Sequence[Union['GetLimitDefinitionsFilterArgs', 'GetLimitDefinitionsFilterArgsDict']]] = None,
                           name: Optional[str] = None,
                           service_name: Optional[str] = None,
+                          subscription_id: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLimitDefinitionsResult:
     """
     This data source provides the list of Limit Definitions in Oracle Cloud Infrastructure Limits service.
 
-    Includes a list of resource limits that are currently supported.
+    Includes a list of resource limits that are currently supported. If subscription Id is provided, then only resource limits supported by subscription will be returned
     If the 'areQuotasSupported' property is true, you can create quota policies on top of this limit at the
     compartment level.
 
@@ -120,19 +130,22 @@ def get_limit_definitions(compartment_id: Optional[str] = None,
 
     test_limit_definitions = oci.Limits.get_limit_definitions(compartment_id=tenancy_ocid,
         name=limit_definition_name,
-        service_name=test_service["name"])
+        service_name=test_service["name"],
+        subscription_id=subscription_ocid)
     ```
 
 
     :param str compartment_id: The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
     :param str name: Optional field, filter for a specific resource limit.
     :param str service_name: The target service name.
+    :param str subscription_id: The OCID of the subscription assigned to tenant
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
     __args__['name'] = name
     __args__['serviceName'] = service_name
+    __args__['subscriptionId'] = subscription_id
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:Limits/getLimitDefinitions:getLimitDefinitions', __args__, opts=opts, typ=GetLimitDefinitionsResult).value
 
@@ -142,7 +155,8 @@ def get_limit_definitions(compartment_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         limit_definitions=pulumi.get(__ret__, 'limit_definitions'),
         name=pulumi.get(__ret__, 'name'),
-        service_name=pulumi.get(__ret__, 'service_name'))
+        service_name=pulumi.get(__ret__, 'service_name'),
+        subscription_id=pulumi.get(__ret__, 'subscription_id'))
 
 
 @_utilities.lift_output_func(get_limit_definitions)
@@ -150,11 +164,12 @@ def get_limit_definitions_output(compartment_id: Optional[pulumi.Input[str]] = N
                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetLimitDefinitionsFilterArgs', 'GetLimitDefinitionsFilterArgsDict']]]]] = None,
                                  name: Optional[pulumi.Input[Optional[str]]] = None,
                                  service_name: Optional[pulumi.Input[Optional[str]]] = None,
+                                 subscription_id: Optional[pulumi.Input[Optional[str]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLimitDefinitionsResult]:
     """
     This data source provides the list of Limit Definitions in Oracle Cloud Infrastructure Limits service.
 
-    Includes a list of resource limits that are currently supported.
+    Includes a list of resource limits that are currently supported. If subscription Id is provided, then only resource limits supported by subscription will be returned
     If the 'areQuotasSupported' property is true, you can create quota policies on top of this limit at the
     compartment level.
 
@@ -166,12 +181,14 @@ def get_limit_definitions_output(compartment_id: Optional[pulumi.Input[str]] = N
 
     test_limit_definitions = oci.Limits.get_limit_definitions(compartment_id=tenancy_ocid,
         name=limit_definition_name,
-        service_name=test_service["name"])
+        service_name=test_service["name"],
+        subscription_id=subscription_ocid)
     ```
 
 
     :param str compartment_id: The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
     :param str name: Optional field, filter for a specific resource limit.
     :param str service_name: The target service name.
+    :param str subscription_id: The OCID of the subscription assigned to tenant
     """
     ...

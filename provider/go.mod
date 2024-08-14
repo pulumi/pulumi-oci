@@ -9,7 +9,7 @@ replace (
 )
 
 require (
-	github.com/oracle/terraform-provider-oci v1.0.19-0.20240807114005-cc3872537436 // indirect
+	github.com/oracle/terraform-provider-oci v1.0.19-0.20240813203426-84175fdf4223 // indirect
 	github.com/oracle/terraform-provider-oci/shim v0.0.0
 	github.com/pulumi/pulumi-terraform-bridge/v3 v3.89.0
 	github.com/pulumi/pulumi/pkg/v3 v3.128.0 // indirect
@@ -169,7 +169,7 @@ require (
 	github.com/oklog/run v1.1.0 // indirect
 	github.com/opentracing/basictracer-go v1.1.0 // indirect
 	github.com/opentracing/opentracing-go v1.2.0 // indirect
-	github.com/oracle/oci-go-sdk/v65 v65.71.0 // indirect
+	github.com/oracle/oci-go-sdk/v65 v65.71.1 // indirect
 	github.com/pgavlin/fx v0.1.6 // indirect
 	github.com/pgavlin/goldmark v1.1.33-0.20200616210433-b5eb04559386 // indirect
 	github.com/pjbgf/sha1cd v0.3.0 // indirect
